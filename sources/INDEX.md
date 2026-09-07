@@ -1,7 +1,8 @@
 # Research Sources Catalog (2024–2026)
 
-**Total Papers Downloaded:** 35 / 35
-**Total Size:** 98.68 MB
+**Total Papers Downloaded:** 35 / 35  
+**Total Size:** 98.68 MB  
+**Dictionary & Summary Guide:** See [**`PAPERS_DICTIONARY.md`**](./PAPERS_DICTIONARY.md) for what each paper does and how it specifically connects to our research.
 
 All papers are primary research publications (excluding surveys/SLRs) directly relevant to comparing Multi-Agent Systems of smaller LLMs vs. Single-Agent Systems of larger quantized LLMs under memory constraints.
 
