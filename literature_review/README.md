@@ -9,7 +9,9 @@ This folder contains a complete, in-depth academic literature review of **35 pri
 
 ## Structure of the Literature Review
 
-The review is organized into five thematic documents plus this master synthesis:
+> 💡 **Individual Paper Study Guides:** Looking for a standalone, exhaustive breakdown of a specific paper? Visit [**`summaries/`**](./summaries/README.md) for 35 dedicated study guides covering every paper's architecture, methodology, limitations, and strategic relevance.
+
+The literature review is organized into five thematic synthesis documents, 35 dedicated study summaries, plus this master synthesis:
 
 | Document | Covered Papers | Core Themes |
 | :--- | :--- | :--- |
