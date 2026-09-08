@@ -23,7 +23,62 @@ Prior agentic scaling literature almost exclusively equalizes compute (FLOPs, th
 
 ---
 
-## 2. Formal Experimental Design Matrix
+## 2. Research Gaps, Prior Work Limitations & What We Can Do
+
+A systematic analysis of the 35 foundational papers across multi-agent systems, budget normalization, and quantization reveals **5 critical research gaps** and **1 major real-world application void**:
+
+### Gap 1: The "Compute-Budget" vs. "Physical Memory" Disconnect
+- **Prior Work:** Tran & Kiela (2026), Wang et al. (EMNLP 2024).  
+  Equalized resources along the axis of "thinking tokens" or "inference FLOPs" to conclude that single agents consistently match or outperform multi-agent systems on reasoning.
+- **The Blind Spot / Limitation:** Tokens and FLOPs are *soft operational costs* that can be relaxed by spending more budget or waiting longer. In contrast, physical hardware memory (resident GPU VRAM) is a *rigid, non-negotiable physical wall*. Exceeding VRAM triggers an immediate, fatal CUDA Out-of-Memory (OOM) crash or massive offloading latency penalties.
+- **What We Do (Our Contribution):** We establish the first systematic evaluation that equalizes **physical resident hardware VRAM ($M$)**. We investigate whether the single-agent advantage holds when the freed memory is used to deploy a larger, post-training quantized model (e.g., 32B @ 4-bit) against an intact multi-agent team (e.g., 2× 7B @ INT8 or 1× 7B + 2× 3B @ FP16).
+
+### Gap 2: The Cross-Silo Disconnect Between Quantization and Agent Collaboration
+- **Prior Work:**
+  - *Quantization Literature (AWQ, QuaRot, SpinQuant, Bench360):* Compresses monolithic models in isolation to minimize perplexity loss, never testing whether that memory would be better allocated to an orchestrated team of smaller models.
+  - *Agent Literature (Mixture-of-Agents, AgentVerse, MetaGPT, ChatDev):* Explores multi-agent synergy under the assumption of unconstrained cloud API memory, never profiling concurrent resident GPU footprints.
+- **The Blind Spot / Limitation:** Neither literature speaks to the other. Quantization researchers ignore collaborative agent specialization; agent researchers ignore model quantization and hardware memory limits.
+- **What We Do (Our Contribution):** We directly bridge these two literatures, pitting post-training quantized large models (SAS) against high-precision multi-agent teams (MAS) at identical VRAM residency tiers (8 GB, 16 GB, 24 GB).
+
+### Gap 3: Confounded Baselines in Small-Agent Tool Research
+- **Prior Work:** Żywot, Chen, & de Rijke (2026).  
+  Claimed that small collaborative agents (4B) beat a large monolithic model (32B) on the GAIA benchmark.
+- **The Blind Spot / Limitation:** The comparison was confounded by tool access. Small agents were equipped with external tools (Python interpreters, web search, calculators) while the large model was evaluated without tools or without equalized memory.
+- **What We Do (Our Contribution):** We conduct the first unconfounded test by giving **both** the single agent and the multi-agent system identical toolkits, prompting formats (ReAct/CoT), and runtime environments under an identical resident memory envelope.
+
+### Gap 4: The Micro-to-Macro "Capacity Penalty" Analogy
+- **Prior Work:** Chen et al. (2026, the $q_s$ inequality), Cemri et al. (2025, MAST).  
+  At the micro-architectural layer inside a single model, Chen et al. proved mathematically that sparse Mixture-of-Experts (MoEs) lose to dense monolithic models when total stored resident parameters are held equal.
+- **The Blind Spot / Limitation:** Nobody has evaluated whether this law also governs the macro-orchestration level. An MAS is conceptually an external, coarsely-routed MoE. Does partitioning a 16 GB memory budget across multiple small agents incur an identical (or worse) capacity penalty due to inter-agent communication overhead and context collapse?
+- **What We Do (Our Contribution):** We empirically test the "Macro-Capacity Hypothesis" at the agent coordination layer, determining whether multi-agent systems suffer an irreversible capacity fragmentation penalty under total memory parity.
+
+### Gap 5: The Task-Type Moderator Spectrum
+- **Prior Work:** Flat, contradictory claims in prior literature: Tran & Kiela claimed "SAS universally wins," while MoA and Żywot et al. claimed "MAS universally wins."
+- **The Blind Spot / Limitation:** Neither claim holds universally. The winner is governed by the underlying task dependency structure (Kim et al., 2025):
+  - *Knowledge-Dense & Deep Logical Reasoning (MMLU-Pro, MuSiQue, FRAMES):* Small models lack the parametric depth to derive answers, and inter-agent communication is lossy (Data Processing Inequality).
+  - *Tool-Intensive & Step-Decomposable Workflows (GAIA, SWE-bench Lite):* Specialized agents with dedicated tool interfaces divide and conquer effectively.
+- **What We Do (Our Contribution):** We map the exact phase boundary and crossover threshold where the advantage flips from the quantized single agent to the multi-agent system based on task complexity, reasoning depth, and tool reliance.
+
+---
+
+### The Real-World Application Gap (The Local Deployment Dilemma)
+In local workstation, on-device, and private enterprise deployments, engineers face a concrete dilemma on hardware such as an **RTX 4090 (24 GB)**, an **Apple M-series unified memory laptop (16 GB)**, or an **RTX 4060 (8 GB)**:
+1. **Option A:** Host a single large model quantized to 4-bit (e.g., Qwen-2.5-32B at INT4 via AWQ).
+2. **Option B:** Host an orchestrated multi-agent team of smaller models (e.g., 1× 7B orchestrator + 2× 3B tool agents via vLLM/Ollama).
+
+Currently, zero scientific literature exists to inform this deployment decision. Our research directly provides the definitive benchmark, latency trade-offs, and accuracy guidelines for local edge practitioners.
+
+---
+
+### Summary of Core Scientific Contributions Claimed by This Project
+1. **First Memory-Equated Evaluation:** First benchmark strictly holding physical resident VRAM ($M$) constant across single-agent and multi-agent systems.
+2. **The Scale-vs-Precision Frontier:** First empirical characterization of whether aggressive quantization of large models outperforms multi-agent collaboration of smaller, higher-precision models.
+3. **Task-Type Phase Boundary:** Formal mapping of when SAS dominates (closed-book multi-hop reasoning & parametric recall) versus when MAS dominates (tool-augmented decomposition).
+4. **Memory Allocation Breakdown:** Empirical guidance on how to partition a fixed memory budget: concentrated in one model, allocated to an orchestrator, or distributed among peer debate agents.
+
+---
+
+## 3. Formal Experimental Design Matrix
 
 To make this rigorous enough for top-tier venues (NeurIPS, ICLR, ACL, EMNLP), the experiment needs clean isolation of variables.
 
@@ -68,7 +123,7 @@ Define exact resident memory tiers reflecting standard hardware boundaries:
 
 ---
 
-## 3. Proposed Repository Architecture (`project-agere`)
+## 4. Proposed Repository Architecture (`project-agere`)
 
 To structure this research cleanly from day one, here is the recommended architecture:
 
@@ -113,7 +168,7 @@ project-agere/
 
 ---
 
-## 4. Next Steps & Implementation Choices
+## 5. Next Steps & Implementation Choices
 
 Before we initialize the repository and build the experimental pipeline, please share your preferences on:
 
