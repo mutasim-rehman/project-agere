@@ -108,22 +108,90 @@ Define exact resident memory tiers reflecting standard hardware boundaries:
 2. **Peer Review / Debate (Reflection):** Two equal-sized small models cross-verify and debate answers.
 3. **Sequential Pipeline (Decompose $\to$ Execute $\to$ Verify):** Dedicated modular sub-agents handling stages sequentially.
 
-### D. Benchmarks & Task Taxonomies
-1. **Multi-Hop Reasoning:** MuSiQue, HotpotQA, or GSM8K / MATH-500.
-2. **Tool-Use & Interactive Planning:** GAIA (subsets), ToolBench, or BFCL.
-3. **Parametric Knowledge & Comprehension:** MMLU-Pro / ARC-Challenge.
+### D. Primary Reasoning Benchmarks & Dataset Selection
+To prevent benchmark fatigue and cherry-picking accusations, we focus on **3 gold-standard datasets** representing 3 distinct modes of reasoning:
 
-### E. Measurement Metrics
-- **Primary:** Task Accuracy / Success Rate.
-- **Secondary (Efficiency & Profiling):**
-  - Peak Resident VRAM (measured via `torch.cuda.max_memory_allocated()` or `pynvml`).
-  - Total Token Footprint (Input, Output, Intermediate Agent Communication Tokens).
-  - Wall-Clock Latency (TTFT: Time To First Token, end-to-end task completion time).
-  - Quantization degradation curve vs. Coordination overhead cost.
+1. **Multi-Hop Relational Synthesis:** [**FRAMES**](https://arxiv.org/abs/2409.05591) (Factuality, Retrieval, and Multi-hop Evaluation, 2–15 hops).
+   - *Purpose:* Replicates Tran & Kiela (2026) to test if inter-agent handoffs suffer context decay under memory constraints.
+2. **Formal Symbolic & Quantitative Deduction:** **GSM8K** (grade-school arithmetic) and **MATH-500** (high-school/Olympiad derivation).
+   - *Purpose:* Tests step-by-step logical derivation where a single arithmetic error ruins the reasoning chain.
+3. **Deep Conceptual STEM & Anti-Memorization:** **GPQA Diamond** (graduate-level physics, chemistry, biology).
+   - *Purpose:* Tests parametric knowledge depth where web search is useless and only deep model representations succeed.
 
 ---
 
-## 4. Proposed Repository Architecture (`project-agere`)
+## 4. Mathematical Evaluation Framework & Decision Metrics
+
+To scientifically declare whether SAS or MAS is "better," we formulate a multi-dimensional evaluation methodology incorporating accuracy, statistical significance, efficiency ratios, and Pareto dominance.
+
+```
+                              Decision Triad
+                                    │
+         ┌──────────────────────────┼──────────────────────────┐
+         ▼                          ▼                          ▼
+  [1. Accuracy & EM]     [2. Significance (p < 0.05)]   [3. Pareto ROI (η_M, η_T)]
+  Task success rate         McNemar's χ² test &            Accuracy per VRAM GB &
+    on identical splits      Bootstrap 95% CIs              Accuracy per 1k tokens
+```
+
+### 1. Primary Task Accuracy: Exact Match (EM)
+For ground-truth reference $y_i^*$ and model output $\hat{y}_i$:
+$$\text{Acc} = \frac{1}{N} \sum_{i=1}^N \mathbb{I}(\hat{y}_i = y_i^*)$$
+*(For mathematical datasets like MATH-500, symbolic parsing via `sympy` verifies exact numerical and algebraic equivalence).*
+
+### 2. Statistical Significance Testing: McNemar's Test
+A simple percentage difference (e.g., $71.2\%$ vs. $68.5\%$) is insufficient without proving statistical significance. Because both architectures are evaluated on the **exact same test questions**, we compute **McNemar's Chi-Square Test** with continuity correction on the $2 \times 2$ contingency matrix:
+
+$$\chi^2 = \frac{(|b - c| - 1)^2}{b + c}$$
+
+* Where $b$ is the count of items where SAS is correct and MAS is incorrect, and $c$ is the count where MAS is correct and SAS is incorrect.
+* **Decision Rule:** A performance margin is statistically valid *if and only if* **$p\text{-value} < 0.05$** ($\chi^2 > 3.841$ at 1 degree of freedom).
+* **Paired Bootstrap Resampling:** We also compute **95% Confidence Intervals** across $B = 1,000$ bootstrap iterations to verify non-overlapping error margins.
+
+### 3. Pareto Dominance Condition
+Holding peak resident memory within budget ($M_{\text{peak}} \le M_{\text{budget}}$), System $A$ strictly **Pareto-dominates** System $B$ ($A \succ B$) if:
+
+$$\text{Acc}(A) \ge \text{Acc}(B) \quad \land \quad L(A) \le L(B) \quad \land \quad T(A) \le T(B)$$
+
+with at least one strict inequality, where $L$ is end-to-end wall-clock latency and $T$ is total tokens consumed per query.
+
+### 4. Memory-Efficiency ROI Ratio ($\eta_M$)
+Quantifies the accuracy return-on-investment per gigabyte of resident GPU memory:
+$$\eta_M = \frac{\text{Accuracy (\%)}}{\text{Peak Resident VRAM (GB)}}$$
+
+*Higher $\eta_M$ indicates superior memory density.*
+
+### 5. Token Economy Efficiency Ratio ($\eta_T$)
+*(Inspired by Wang et al., EMNLP 2024)*  
+Quantifies how efficiently the system converts token generation into correct reasoning answers:
+$$\eta_T = \frac{\text{Accuracy (\%)}}{\mathbb{E}[\text{Total Generated Tokens}] / 1000}$$
+
+*An architecture that spends 3,500 tokens in multi-agent debate to achieve 70% accuracy is 5× less token-efficient than a single agent achieving 69% with 700 tokens.*
+
+### 6. Phase Boundary & Crossover Threshold ($\theta^*$)
+To discover the exact task conditions that favor one paradigm over the other, we model the performance gap $\Delta$ as a function of task complexity $\theta$ (reasoning hop count or tool dependencies):
+
+$$\Delta(\theta) = \text{Score}_{\text{MAS}}(\theta) - \text{Score}_{\text{SAS}}(\theta)$$
+
+* $\Delta(\theta) < 0$: Quantized Single Agent dominates (quantization degradation is smaller than multi-agent coordination decay).
+* $\Delta(\theta) > 0$: Multi-Agent System dominates (task decomposition and specialization outweigh small model capacity limits).
+* **The Crossover Point $\theta^*$:** The mathematical threshold where $\Delta(\theta^*) = 0$ defines the paper's core theoretical contribution.
+
+---
+
+### Architectural Decision Matrix
+
+| Evaluation Dimension | Mathematical Formulation | Proves Single-Agent (SAS) Superiority | Proves Multi-Agent (MAS) Superiority |
+| :--- | :--- | :--- | :--- |
+| **Reasoning Accuracy** | $\text{Acc} = \frac{1}{N} \sum \mathbb{I}(\hat{y}=y^*)$ | Higher accuracy on multi-hop derivation (FRAMES, MATH). | Higher accuracy on decomposed sub-stages. |
+| **Statistical Confidence** | $\chi^2 > 3.841$ ($p < 0.05$) | Performance gap is statistically significant over $N$ runs. | Performance gap is statistically significant over $N$ runs. |
+| **Memory Density** | $\eta_M = \text{Acc} / \text{VRAM}_{\text{peak}}$ | Higher accuracy achieved per gigabyte of VRAM. | Higher accuracy achieved per gigabyte of VRAM. |
+| **Token Economy** | $\eta_T = \text{Acc} / (\text{Tokens}/1000)$ | Generates fewer intermediate tokens to reach final answer. | Generates fewer intermediate tokens to reach final answer. |
+| **Latency** | $T_{\text{wall-clock}}$ & $\text{TTFT}$ | Lower latency due to zero inter-agent round trips. | Lower latency due to parallel worker execution. |
+
+---
+
+## 5. Proposed Repository Architecture (`project-agere`)
 
 To structure this research cleanly from day one, here is the recommended architecture:
 
@@ -168,11 +236,11 @@ project-agere/
 
 ---
 
-## 5. Next Steps & Implementation Choices
+## 6. Next Steps & Implementation Choices
 
 Before we initialize the repository and build the experimental pipeline, please share your preferences on:
 
 1. **Hardware Setup:** What GPU(s) or compute environment will you run experiments on (e.g., local RTX 3090/4090, 16 GB laptop GPU, cloud A100/H100, or RunPod/Colab)?
 2. **Target Model Family:** Would you prefer **Qwen 2.5** (versatile, 0.5B to 72B), **Llama 3.1/3.2** (1B to 70B), or both?
 3. **Inference Backend:** Would you prefer **vLLM** (best for serving multiple concurrent models/workers with paged KV cache) or standard **PyTorch + Hugging Face / bitsandbytes / AWQ** (simplest for exact VRAM allocation monitoring)?
-4. **Primary Benchmark Focus:** Should we start prototyping the evaluation pipeline on **multi-hop reasoning** (e.g., GSM8K / MuSiQue) or **tool-agent benchmarks** (e.g., GAIA / ToolBench)?
+4. **Primary Benchmark Focus:** Should we start prototyping the evaluation pipeline on **multi-hop reasoning** (e.g., GSM8K / MuSiQue / FRAMES) or **tool-agent benchmarks** (e.g., GAIA / ToolBench)?
