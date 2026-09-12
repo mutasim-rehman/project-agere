@@ -14,7 +14,7 @@ This document provides a comprehensive, rigorous literature review of Papers 22 
 The industry-standard, hardware-friendly weight-only quantization method for LLMs, demonstrating that protecting the top ~1% of salient weights (identified by activation magnitude rather than weight magnitude) preserves generalization and enables lossless 4-bit integer inference on edge and workstation GPUs.
 
 ### 2. How It Relates to Our Research
-Serves as our **primary quantization technique for the Single-Agent System (SAS) arm**. To fit larger models (e.g., 14B, 32B, 70B) into our target resident VRAM budgets (8 GB, 16 GB, 24 GB), we use AWQ to compress the model weights to 4-bit precision without breaking their core reasoning abilities.
+Serves as the **primary quantization technique for both Cell B (SAS-Quant) and Cell D (MAS-Quant)**. In our 2×2 Factorial Design, AWQ allows us to compress larger models (e.g., 7B, 14B, 32B) to INT4 precision to evaluate both a single monolithic generalist (Cell B) and orchestrated sub-agent teams (Cell D) across all 15 resident VRAM tiers (4 GB to 32 GB).
 
 ### 3. Detailed Methodology
 * **Core Technique:** Activation-aware per-channel scaling factor optimization; applies an equivalent transformation $W' = W \cdot S$ and $X' = S^{-1} \cdot X$ to reduce quantization error on salient weights.
@@ -48,7 +48,7 @@ Serves as our **primary quantization technique for the Single-Agent System (SAS)
 A breakthrough quantization scheme that uses randomized orthogonal Hadamard rotations to eliminate activation outliers, enabling **full end-to-end 4-bit inference** across model weights, activations, and the KV-cache simultaneously with virtually zero accuracy degradation.
 
 ### 2. How It Relates to Our Research
-Provides our **end-to-end 4-bit baseline**. While AWQ leaves activations and KV caches in 16-bit, QuaRot quantizes the entire pipeline to 4-bit. This allows us to test an even larger model within our VRAM envelope because the KV-cache memory footprint is reduced by $4\times$.
+Provides our **end-to-end 4-bit baseline for high-capacity memory tiers**. While AWQ leaves activations and KV caches in 16-bit, QuaRot quantizes the entire pipeline to 4-bit. This allows us to evaluate extreme model scaling within our VRAM envelope (e.g. 70B class models in upper tiers) because the KV-cache memory footprint is reduced by $4\times$.
 
 ### 3. Detailed Methodology
 * **Core Mechanism:** Multiplies weight matrices and activation vectors by orthogonal randomized Hadamard matrices ($H$), exploiting computational invariance: $(X H)(H^T W) = X W$.

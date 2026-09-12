@@ -14,7 +14,7 @@ This document provides a comprehensive, rigorous literature review of the first 
 An empirical and information-theoretic study demonstrating that reported performance advantages of Multi-Agent Systems (MAS) over Single-Agent Systems (SAS) on multi-hop reasoning tasks are primarily artifacts of increased test-time compute. When both architectures are strictly evaluated under **equal thinking token budgets**, a single agent consistently matches or outperforms multi-agent configurations.
 
 ### 2. How It Relates to Our Research
-This is our **primary structural baseline template**. Tran & Kiela equalized test-time computation along the **thinking token budget** axis while holding model size constant. Our research adopts their comparative paradigm (SAS vs. sequential, debate, and ensemble MAS) but swaps the controlled resource constraint from *token budget* to *hardware resident VRAM budget ($M$)* and adds model scale + quantization on the single-agent arm.
+This is our **primary structural baseline template**. Tran & Kiela equalized test-time computation along the **thinking token budget** axis while holding model size constant. Our research adopts their comparative paradigm but upgrades it into a **2×2 Factorial Experimental Design** ($N_{\text{agents}} \in \{\text{Single}, \text{Multi}\} \times \text{Precision} \in \{\text{Native FP16}, \text{Quantized}\}$): swapping the soft token budget for a strict physical resident VRAM budget ($M$) and evaluating both Single-Agent and Multi-Agent configurations under native FP16 and post-training quantization to measure their interaction ($\Delta_{\text{interaction}}$).
 
 ### 3. Detailed Methodology
 * **Models Evaluated:** Qwen3 family, DeepSeek-R1-Distill-Llama, and Gemini 2.5.
@@ -37,7 +37,7 @@ This is our **primary structural baseline template**. Tran & Kiela equalized tes
 * **Compute vs. Hardware Reality:** Thinking tokens are a soft cost. In edge or single-GPU deployment, hardware memory (VRAM) is a rigid physical barrier, which this paper completely overlooks.
 
 ### 6. Why We SHOULD Include It as a Source
-* It is the most direct conceptual predecessor to our work. Citing it establishes our paper's primary gap: *"Tran & Kiela equalized compute tokens; we equalize hardware resident memory and investigate the scale-vs-quantization trade-off."*
+* It is the most direct conceptual predecessor to our work. Citing it establishes our paper's primary gap: *"Tran & Kiela equalized compute tokens under homogeneous models; we equalize physical resident VRAM under strict memory parity and investigate how multi-agent orchestration and quantization interact."*
 * Reviewers will immediately respect the structural alignment with a high-profile Stanford preprint.
 
 ### 7. Why We Might NOT Include It (Risks / Filtering Rationale)
@@ -90,7 +90,7 @@ Serves as our **alternative base paper** and primary justification for the tool-
 A large-scale foundational study that replaces ad-hoc agent heuristics with formal quantitative scaling laws, investigating how system performance scales across agent count, coordination structures, base model capabilities, and task properties.
 
 ### 2. How It Relates to Our Research
-Provides the **theoretical scaling framework** for our paper. When we allocate a fixed 16 GB VRAM budget into either 1× 32B (quantized) or 4× 3B (dense) agents, Kim et al.'s framework allows us to predict whether the task's dependency structure will cause the multi-agent system to hit a coordination bottleneck.
+Provides the **theoretical scaling framework** for our 2×2 Factorial Design. Across our 15 memory tiers (4 GB to 32 GB), Kim et al.'s framework allows us to predict whether task dependency structures will cause multi-agent systems (Cells C and D) to hit coordination bottlenecks or whether modular sub-agent specialization buffers against quantization noise ($\Delta_{\text{interaction}} > 0$).
 
 ### 3. Detailed Methodology
 * **Coordination Topologies:** Independent (Parallel), Centralized (Orchestrator-Worker), Decentralized (Peer-to-Peer), and Hybrid topologies.

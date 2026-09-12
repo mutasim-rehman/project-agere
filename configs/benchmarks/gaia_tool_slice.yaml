@@ -1,0 +1,53 @@
+# Lean Benchmark Configuration: GAIA Tool-Intensive Slice
+# Project Agere: 2x2 Factorial Iso-Memory Study
+# Role: Primary Benchmark Anchor (Base Paper Domain - Zywot et al. 2026)
+# Target Hypothesis: Role Specialization Noise-Buffering (Delta_interaction > 0)
+
+benchmark_id: "gaia_tool_slice"
+benchmark_name: "GAIA (General AI Assistants) Lean Tool-Intensive Subset"
+benchmark_version: "2023_v1"
+dataset_source: "gaia-benchmark/GAIA"
+split: "validation"
+sample_size: 100
+
+task_characterization:
+  domain: "tool_augmented_assistant"
+  reasoning_type: "step_decomposable_with_tools"
+  primary_driver: "modular_specialization"
+  hypothesized_interaction: "positive_buffering"
+  rationale: >
+    In tool-intensive workflows, decomposed sub-agent prompts collapse the required
+    token manifold into narrow sub-tasks (e.g. query formulation, python calculation,
+    table extraction). Specialized quantized sub-agents (Cell D) can isolate precision
+    perturbations, allowing orchestration to act as a noise buffer against quantization loss.
+
+subset_distribution:
+  level_1_simple_tools: 50     # 1-3 steps, search or calculation
+  level_2_multi_step_tools: 50 # 4-8 steps, multimodal files, chained tool use
+  level_3_extreme_research: 0  # Excluded to preserve compute budget
+
+standardized_tool_environment:
+  python_interpreter:
+    enabled: true
+    timeout_seconds: 15
+    memory_limit_mb: 512
+    libraries: ["math", "sympy", "pandas", "numpy", "datetime", "re"]
+  web_search_engine:
+    enabled: true
+    max_results_per_query: 5
+    provider: "duckduckgo_or_cached_serp"
+  file_inspector:
+    enabled: true
+    supported_formats: [".txt", ".json", ".csv", ".pdf"]
+
+evaluation_protocol:
+  metrics:
+    - "exact_match_accuracy"
+    - "tool_call_efficiency"
+    - "memory_efficiency_eta_m"
+    - "token_efficiency_eta_t"
+  deterministic_grader: true
+  scoring_method: "canonical_string_or_numeric_equivalence"
+  temperature_deterministic: 0.0
+  temperature_stochastic: 0.7
+  repetition_seeds: [42, 123, 999]

@@ -48,7 +48,7 @@ This is our **primary methodological inspiration for budget normalization**. Wan
 A unified benchmarking suite that provides a 360-degree evaluation of local LLM inference across model architectures, precision quantization levels, serving runtimes, hardware memory constraints, latency, and energy consumption.
 
 ### 2. How It Relates to Our Research
-Serves as our **hardware and memory profiling protocol**. Bench360 establishes how to measure and report exact GPU VRAM residency (weights + KV-cache + CUDA runtime overhead), latency (TTFT, TPS), and throughput when running quantized models locally on consumer/workstation GPUs.
+Serves as our **hardware and memory profiling protocol and our internal replication control baseline**. Bench360 demonstrated at the single-agent level that larger quantized models consistently beat smaller unquantized models under fixed VRAM. In our 2×2 Factorial Design, this establishes Cell B vs. Cell A as our internal replication control baseline, while providing the empirical measurement protocol for verifying our 15 VRAM hardware tiers (4 GB to 32 GB) under the Memory Utilization Parity Protocol (MUPP).
 
 ### 3. Detailed Methodology
 * **Dimensions Profiled:**
@@ -149,7 +149,7 @@ Demonstrates how **multi-agent systems behave under explicit resource boundaries
 A theoretical and mathematical paper that derives the **$q_s$ inequality**, formalizing the dual penalty incurred by sparse Mixture-of-Experts (MoE) architectures at inference: memory capacity overhead and routing inefficiencies compared to compute-matched dense models.
 
 ### 2. How It Relates to Our Research
-Provides the **formal mathematical foundation** for why Multi-Agent Systems might inherently struggle against single large models under equal memory. Dividing a fixed memory budget into multiple small sub-agents is structurally analogous to an MoE: each sub-agent retains a fraction of total capacity, incurring a coordination and memory overhead penalty that the $q_s$ inequality quantifies.
+Provides the **formal mathematical foundation for the Compounding Error / Double Penalty Hypothesis ($\Delta_{\text{interaction}} < 0$) in our 2×2 Factorial Design**. Chen et al. proved that sparse MoEs incur an inherent inference double penalty under total parameter parity compared to dense models. In our 2×2 grid, Cell D (MAS-Quant) combines both post-training quantization and multi-agent routing. If quantization noise compounds across lossy natural language handoffs, Cell D will underperform both Cell C (MAS-FP16) and Cell B (SAS-Quant) by more than predicted from each effect alone—a direct macro-level confirmation of the $q_s$ inequality operating at the agent orchestration layer.
 
 ### 3. Detailed Methodology
 * **Theoretical Framework:** Quality-equivalence multiplier ($q_s$) bounding the parameter gap between routed architectures and dense monolithic models.

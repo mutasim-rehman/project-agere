@@ -1,0 +1,28 @@
+# Quantized Multi-Agent System (Cell D) — 14 GB Tier
+# Architecture: MAS-Q-14G — 1× 14B @ INT4 (orch) + 1× 7B @ INT4 (worker) + 1× 1.5B @ INT8 (verifier)
+
+architecture: "quantized_mas"
+tier: "14gb"
+vram_budget_gb: 14
+layout: "1× 14B @ INT4 (orch) + 1× 7B @ INT4 (worker) + 1× 1.5B @ INT8 (verifier)"
+scientific_mechanism: "Full 3-agent AHDS with 14B orch + 7B worker + 1.5B verifier"
+
+memory_utilization_target: 0.95
+total_weight_vram_gb: 12.9
+allocated_kv_cache_gb: 0.8
+total_resident_vram_gb: 13.7
+vram_utilization_pct: 97.9
+
+agents:
+  - role: "orchestrator"
+    model: "Qwen/Qwen2.5-14B-Instruct"
+    quantization: "INT4-AWQ"
+    estimated_weight_vram_gb: 7.6
+  - role: "worker"
+    model: "Qwen/Qwen2.5-7B-Instruct"
+    quantization: "INT4-AWQ"
+    estimated_weight_vram_gb: 3.8
+  - role: "verifier"
+    model: "Qwen/Qwen2.5-1.5B-Instruct"
+    quantization: "INT8"
+    estimated_weight_vram_gb: 1.5

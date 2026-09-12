@@ -1,0 +1,71 @@
+# Hardware Tier: 6 GB (Entry Mobile / Legacy)
+# Tier 2 of 15 — Example hardware: RTX 4050 Mobile, RTX 2060
+# Experimental Framework: 2x2 Factorial Design (Architecture x Precision)
+
+tier:
+  name: "6gb"
+  label: "Tier 2 — Entry Mobile / Legacy"
+  vram_budget_gb: 6
+  example_hardware: "RTX 4050 Mobile, RTX 2060"
+
+  memory_parity_protocol:
+    target_memory_utilization_ratio: 0.95
+    target_resident_vram_gb: 5.7
+    enforce_runtime_kv_saturation: true
+    max_weight_vram_gb: 5.0
+    runtime_overhead_reserve_gb: 0.5
+
+# ============================================================
+# 2x2 FACTORIAL EXPERIMENTAL DESIGN CELLS
+# All 4 cells strictly equated to >= 95% physical VRAM saturation
+# ============================================================
+factorial_design:
+  # CELL A: Single-Agent FP16 (Control Baseline)
+  cell_a_sas_fp16:
+    model: "Qwen/Qwen2.5-1.5B-Instruct"
+    quantization: "FP16"
+    weight_vram_gb: 3.0
+    allocated_kv_cache_gb: 2.7
+    total_resident_vram_gb: 5.7
+    vram_utilization_pct: 95.0
+    role: "Control Baseline (Bench360 lower anchor)"
+
+  # CELL B: Single-Agent Quantized (Scaled-up Single Model)
+  cell_b_sas_quant:
+    model: "Qwen/Qwen2.5-7B-Instruct"
+    quantization: "INT6 (Q6_K)"
+    weight_vram_gb: 5.3
+    allocated_kv_cache_gb: 0.5
+    total_resident_vram_gb: 5.8
+    vram_utilization_pct: 96.7
+    role: "Scaled Quantized Generalist (Bench360 winner at single-model level)"
+
+  # CELL C: Multi-Agent FP16 (Original MAS Hypothesis)
+  cell_c_mas_fp16:
+    config_id: "MAS-6G-A"
+    layout: "1× 1.5B (orch) + 2× 0.5B (workers) FP16"
+    weight_vram_gb: 5.0
+    allocated_kv_cache_gb: 0.8
+    total_resident_vram_gb: 5.8
+    vram_utilization_pct: 96.7
+    role: "Hierarchical FP16 team"
+
+  # CELL D: Multi-Agent Quantized (NEW: Larger Sub-Agents, Quantized & Orchestrated)
+  cell_d_mas_quant:
+    config_id: "MAS-Q-6G"
+    layout: "1× 7B @ INT4 (orch) + 1× 1.5B @ INT8 (worker)"
+    agents:
+      - role: "orchestrator"
+        model: "Qwen/Qwen2.5-7B-Instruct"
+        quantization: "INT4-AWQ"
+        estimated_vram_gb: 3.8
+      - role: "worker"
+        model: "Qwen/Qwen2.5-1.5B-Instruct"
+        quantization: "INT8"
+        estimated_vram_gb: 1.5
+    weight_vram_gb: 5.3
+    allocated_kv_cache_gb: 0.5
+    total_resident_vram_gb: 5.8
+    vram_utilization_pct: 96.7
+    scientific_mechanism: "Scales orch from 1.5B to 7B via INT4"
+

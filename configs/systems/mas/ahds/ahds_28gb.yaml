@@ -1,0 +1,42 @@
+# AHDS Configuration — 28 GB Tier (Native FP16)
+# Adaptive Hierarchical with Dynamic Pruning & Structured Communication
+
+architecture: "ahds"
+tier: "28gb"
+vram_budget_gb: 28
+strategy: "3-agent, full AHDS"
+num_agents: 3
+
+# --- Memory Utilization Parity Protocol (MUPP) ---
+memory_utilization_target: 0.95
+total_weight_vram_gb: 26.0
+allocated_kv_cache_gb: 1.5
+total_resident_vram_gb: 27.5
+vram_utilization_pct: 98.2
+
+# --- AHDS Hyperparameters ---
+confidence_threshold_tau: 0.7
+max_worker_token_budget: 256
+early_termination: true
+structured_communication: true
+paged_attention_sharing: true
+
+# --- Agent Definitions (ALL FP16 — Native Precision Only) ---
+orchestrator:
+  model: "Qwen/Qwen2.5-7B-Instruct"
+  quantization: "FP16"
+  estimated_vram_gb: 14.0
+
+workers:
+  - role: "reasoning_worker"
+    model: "Qwen/Qwen2.5-3B-Instruct"
+    quantization: "FP16"
+    estimated_vram_gb: 6.0
+    activation: "dynamic"
+
+verifier:
+  model: "Qwen/Qwen2.5-3B-Instruct"
+  quantization: "FP16"
+  estimated_vram_gb: 6.0
+  activation: "always"
+

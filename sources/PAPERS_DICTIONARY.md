@@ -1,7 +1,9 @@
 # Research Papers Dictionary & Context Guide
 
-> **Core Research Question:**  
-> *Under a fixed resident VRAM memory budget $M$, can a Multi-Agent System (MAS) of smaller language models outperform a Single-Agent System (SAS) using a larger but quantized language model?*
+> **Overarching Research Question:**  
+> *Given a fixed, non-negotiable resident GPU memory budget (VRAM $M$), do the choice of architecture (Single-Agent monolithic vs. Multi-Agent modular orchestration) and the choice of compression strategy (native FP16 vs. quantized scaling) act independently, or do they interact — such that the optimal compression strategy depends on which architecture is chosen, and vice versa?*
+> 
+> *Examined via a 2×2 Factorial Design across 15 memory tiers (4 GB to 32 GB): Cell A (SAS-FP16), Cell B (SAS-Quant), Cell C (MAS-FP16), and Cell D (MAS-Quant).*
 
 This dictionary catalogs all **35 primary research papers** stored in [`sources/`](./). For each paper, it defines **what the paper is** and **how it directly connects to our research** in concise, one-sentence explanations.
 
@@ -158,9 +160,9 @@ This dictionary catalogs all **35 primary research papers** stored in [`sources/
 ### 16. Bench360: Benchmarking Local LLM Inference from 360 Degrees
 * **File:** [`16_Lin_2025_Bench360_Benchmarking_Local_LLM_Inference.pdf`](./16_Lin_2025_Bench360_Benchmarking_Local_LLM_Inference.pdf)  
 * **Authors & Venue:** Lin et al. — *arXiv:2511.16682 (Late 2025)*  
-* **Role:** **VRAM & Hardware Profiling Protocol**  
+* **Role:** **Replication Baseline (Cell B vs. Cell A) & VRAM Profiling Protocol**  
 * **What it is:** A comprehensive benchmarking suite that evaluates local LLMs across resident VRAM usage, latency, throughput, energy consumption, and task accuracy.  
-* **How it relates to our research:** Provides the exact measurement protocol and metrics to enforce and report our physical resident VRAM tiers (8 GB, 16 GB, 24 GB).
+* **How it relates to our research:** Establishes the single-agent winner baseline (Cell B quantized beats Cell A unquantized) which we replicate as our internal control, while providing the profiling protocol for our 15 VRAM tiers (4 GB to 32 GB).
 
 ---
 
@@ -185,9 +187,9 @@ This dictionary catalogs all **35 primary research papers** stored in [`sources/
 ### 19. The $q_s$ Inequality: Quantifying the Double Penalty of Mixture-of-Experts at Inference
 * **File:** [`19_Chen_2026_The_qs_Inequality_MoE_Inference_Penalty.pdf`](./19_Chen_2026_The_qs_Inequality_MoE_Inference_Penalty.pdf)  
 * **Authors & Venue:** Chen et al. — *arXiv:2603.08960 (March 2026)*  
-* **Role:** Mathematical Capacity vs. Memory Scaling Laws  
+* **Role:** **Theoretical Bridge for $\Delta_{\text{interaction}}$ (Double Penalty Hypothesis)**  
 * **What it is:** Derives a mathematical quality-equivalence formula proving that distributing capacity into sub-networks incurs a memory and inference penalty compared to dense monolithic networks.  
-* **How it relates to our research:** Provides the mathematical foundation for our hypothesis: that partitioning a fixed memory budget across multiple small agents imposes a similar capacity penalty.
+* **How it relates to our research:** Provides the theoretical foundation for our Compounding Error / Double Penalty Hypothesis ($\Delta_{\text{interaction}} < 0$) in Cell D (MAS-Quant): testing whether quantizing sub-agents and routing across natural language boundaries multiplies noise across stages, mirroring the $q_s$ MoE capacity penalty at the macro-orchestration layer.
 
 ---
 
@@ -214,9 +216,9 @@ This dictionary catalogs all **35 primary research papers** stored in [`sources/
 ### 22. AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration
 * **File:** [`22_Lin_2024_AWQ_Activation_Aware_Weight_Quantization.pdf`](./22_Lin_2024_AWQ_Activation_Aware_Weight_Quantization.pdf)  
 * **Authors & Venue:** Ji Lin, Song Han et al. (MIT HAN Lab) — *MLSys 2024 (Best Paper Award)*  
-* **Role:** **Primary 4-Bit Quantization Backbone**  
+* **Role:** **Quantization Engine for Cell B (SAS-Quant) & Cell D (MAS-Quant)**  
 * **What it is:** Protects salient weight channels by observing activation distributions, delivering accurate 4-bit weight-only quantization without backpropagation.  
-* **How it relates to our research:** Serves as the primary quantization technique used to compress our large single-agent models (e.g., 14B, 32B, 70B) into our target VRAM tiers.
+* **How it relates to our research:** Serves as the primary quantization technique used to compress models in both Cell B (large monolithic generalist) and Cell D (large sub-agents in an orchestrated MAS) across our 15 VRAM tiers.
 
 ---
 

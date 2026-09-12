@@ -1,0 +1,44 @@
+# Lean Benchmark Configuration: MuSiQue Multi-Hop Reasoning Slice
+# Project Agere: 2x2 Factorial Iso-Memory Study
+# Role: Contrasting Moderator Anchor & Calibration Sanity Check (Tran & Kiela 2026)
+# Target Hypothesis: Compounding Error / DPI Double Penalty (Delta_interaction < 0)
+
+benchmark_id: "musique_reasoning_slice"
+benchmark_name: "MuSiQue Multi-Hop Reasoning Calibration Subset"
+benchmark_version: "2022_v1"
+dataset_source: "allenai/musique"
+split: "validation"
+sample_size: 150
+
+task_characterization:
+  domain: "closed_book_multi_hop_qa"
+  reasoning_type: "sequential_information_synthesis"
+  primary_driver: "relational_coherence_and_retention"
+  hypothesized_interaction: "negative_compounding"
+  rationale: >
+    In pure sequential multi-hop derivation, intermediate outputs are discretized across
+    natural language handoffs. Under the Data Processing Inequality (DPI), quantization noise
+    in Agent 1 becomes corrupted input context for Agent 2, cascading multiplicatively.
+    Quantized MAS (Cell D) is hypothesized to suffer an MoE-style double penalty (Delta < 0).
+
+subset_distribution:
+  two_hop_questions: 50       # Baseline multi-hop derivation
+  three_hop_questions: 50     # Moderate dependency tracking
+  four_hop_questions: 50      # High sequential dependency where DPI bites hardest
+
+standardized_environment:
+  tools_enabled: false        # Closed-book reasoning to match Tran & Kiela's protocol
+  prompting_format: "chain_of_thought_standardized"
+  max_thinking_tokens_per_agent: 1024
+
+evaluation_protocol:
+  metrics:
+    - "exact_match_f1"
+    - "factual_consistency_score"
+    - "memory_efficiency_eta_m"
+    - "cascading_error_rate"
+  calibration_anchor: "tran_kiela_2026_published_baselines"
+  scoring_method: "token_f1_and_exact_match"
+  temperature_deterministic: 0.0
+  temperature_stochastic: 0.7
+  repetition_seeds: [42, 123, 999]

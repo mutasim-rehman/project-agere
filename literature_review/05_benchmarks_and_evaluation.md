@@ -14,7 +14,7 @@ This document provides a comprehensive, rigorous literature review of Papers 31 
 The gold-standard evaluation benchmark for general AI assistants, comprising 466 meticulously curated, real-world questions designed to test multimodal handling, complex multi-step reasoning, web navigation, and tool execution—tasks that are conceptually trivial for humans but notoriously challenging for LLMs.
 
 ### 2. How It Relates to Our Research
-Serves as our **primary benchmark for evaluating tool-augmented multi-agent systems**. Our central hypothesis posits that task type moderates the SAS vs. MAS winner: while large quantized models may dominate closed-book reasoning, we hypothesize that small multi-agent teams (e.g., Planner + Searcher + Coder) will dominate GAIA due to tool specialization.
+Serves as our **primary benchmark for testing whether tool-augmented environments buffer against quantization noise in multi-agent systems ($\Delta_{\text{interaction}} > 0$)**. While sequential multi-hop reasoning (FRAMES) is hypothesized to cause error cascade compounding ($\Delta_{\text{interaction}} < 0$), parallel tool-augmented tasks on GAIA allow specialized sub-agents (Planner, Searcher, Coder) to isolate quantization perturbations, testing whether orchestration acts as a protective noise buffer under equal resident VRAM.
 
 ### 3. Detailed Methodology
 * **Task Structure:** 466 questions categorized into 3 difficulty levels:
@@ -82,7 +82,7 @@ Serves as our **complex multi-step code execution benchmark**. It allows us to t
 A dedicated multi-hop evaluation benchmark designed to rigorously assess LLM factual accuracy and multi-hop reasoning by requiring models to retrieve, cross-reference, and synthesize information across 2 to 15 distinct sources and structured knowledge representations.
 
 ### 2. How It Relates to Our Research
-Serves as our **primary multi-hop reasoning benchmark**. It is the exact dataset used by Tran & Kiela (2026) to demonstrate that single agents outperform multi-agent systems. Replicating evaluation on FRAMES under our memory-budgeted setup provides a direct, apples-to-apples bridge to Tran & Kiela's baseline.
+Serves as our **primary multi-hop reasoning benchmark for testing the Compounding Noise / Double Penalty Hypothesis ($\Delta_{\text{interaction}} < 0$)**. It is the exact dataset used by Tran & Kiela (2026). In our 2×2 Factorial Design, FRAMES provides the acid test for whether quantization noise compounds multiplicatively across sequential inter-agent reasoning handoffs in Cell D compared to Cells C, B, and A under strict resident memory parity.
 
 ### 3. Detailed Methodology
 * **Dataset Characteristics:** Questions requiring up to 15 reasoning hops across multiple articles and structured tables.

@@ -1,0 +1,71 @@
+# Hardware Tier: 30 GB (Professional Mid)
+# Tier 14 of 15 — Example hardware: V100-32GB partial, A100 fractional
+# Experimental Framework: 2x2 Factorial Design (Architecture x Precision)
+
+tier:
+  name: "30gb"
+  label: "Tier 14 — Professional Mid"
+  vram_budget_gb: 30
+  example_hardware: "V100-32GB partial, A100 fractional"
+
+  memory_parity_protocol:
+    target_memory_utilization_ratio: 0.95
+    target_resident_vram_gb: 28.5
+    enforce_runtime_kv_saturation: true
+    max_weight_vram_gb: 28.0
+    runtime_overhead_reserve_gb: 1.0
+
+# ============================================================
+# 2x2 FACTORIAL EXPERIMENTAL DESIGN CELLS
+# All 4 cells strictly equated to >= 95% physical VRAM saturation
+# ============================================================
+factorial_design:
+  # CELL A: Single-Agent FP16 (Control Baseline)
+  cell_a_sas_fp16:
+    model: "Qwen/Qwen2.5-14B-Instruct"
+    quantization: "FP16"
+    weight_vram_gb: 28.0
+    allocated_kv_cache_gb: 1.5
+    total_resident_vram_gb: 29.5
+    vram_utilization_pct: 98.3
+    role: "Control Baseline (Bench360 lower anchor)"
+
+  # CELL B: Single-Agent Quantized (Scaled-up Single Model)
+  cell_b_sas_quant:
+    model: "Qwen/Qwen2.5-14B-Instruct"
+    quantization: "FP16"
+    weight_vram_gb: 28.0
+    allocated_kv_cache_gb: 1.5
+    total_resident_vram_gb: 29.5
+    vram_utilization_pct: 98.3
+    role: "Scaled Quantized Generalist (Bench360 winner at single-model level)"
+
+  # CELL C: Multi-Agent FP16 (Original MAS Hypothesis)
+  cell_c_mas_fp16:
+    config_id: "MAS-30G-A"
+    layout: "1× 7B (orch) + 1× 7B (worker) FP16"
+    weight_vram_gb: 28.0
+    allocated_kv_cache_gb: 1.5
+    total_resident_vram_gb: 29.5
+    vram_utilization_pct: 98.3
+    role: "Dual-7B FP16 team"
+
+  # CELL D: Multi-Agent Quantized (NEW: Larger Sub-Agents, Quantized & Orchestrated)
+  cell_d_mas_quant:
+    config_id: "MAS-Q-30G"
+    layout: "1× 14B @ INT8 (orch) + 1× 14B @ INT8 (worker)"
+    agents:
+      - role: "orchestrator"
+        model: "Qwen/Qwen2.5-14B-Instruct"
+        quantization: "INT8"
+        estimated_vram_gb: 14.0
+      - role: "worker"
+        model: "Qwen/Qwen2.5-14B-Instruct"
+        quantization: "INT8"
+        estimated_vram_gb: 14.0
+    weight_vram_gb: 28.0
+    allocated_kv_cache_gb: 1.5
+    total_resident_vram_gb: 29.5
+    vram_utilization_pct: 98.3
+    scientific_mechanism: "Dual-14B @ INT8 peer team"
+

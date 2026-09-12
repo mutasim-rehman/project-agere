@@ -1,0 +1,28 @@
+# Quantized Multi-Agent System (Cell D) — 32 GB Tier
+# Architecture: MAS-Q-32G — 1× 32B @ INT4 (orch) + 1× 14B @ INT4 (worker) + 1× 7B @ INT4 (verifier)
+
+architecture: "quantized_mas"
+tier: "32gb"
+vram_budget_gb: 32
+layout: "1× 32B @ INT4 (orch) + 1× 14B @ INT4 (worker) + 1× 7B @ INT4 (verifier)"
+scientific_mechanism: "Massive 32B orch + 14B worker + 7B verifier team"
+
+memory_utilization_target: 0.95
+total_weight_vram_gb: 27.9
+allocated_kv_cache_gb: 3.0
+total_resident_vram_gb: 30.9
+vram_utilization_pct: 96.6
+
+agents:
+  - role: "orchestrator"
+    model: "Qwen/Qwen2.5-32B-Instruct"
+    quantization: "INT4-AWQ"
+    estimated_weight_vram_gb: 16.5
+  - role: "worker"
+    model: "Qwen/Qwen2.5-14B-Instruct"
+    quantization: "INT4-AWQ"
+    estimated_weight_vram_gb: 7.6
+  - role: "verifier"
+    model: "Qwen/Qwen2.5-7B-Instruct"
+    quantization: "INT4-AWQ"
+    estimated_weight_vram_gb: 3.8

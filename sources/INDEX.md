@@ -4,7 +4,7 @@
 **Total Size:** 98.68 MB  
 **Dictionary & Summary Guide:** See [**`PAPERS_DICTIONARY.md`**](./PAPERS_DICTIONARY.md) for what each paper does and how it specifically connects to our research.
 
-All papers are primary research publications (excluding surveys/SLRs) directly relevant to comparing Multi-Agent Systems of smaller LLMs vs. Single-Agent Systems of larger quantized LLMs under memory constraints.
+All papers are primary research publications (excluding surveys/SLRs) directly foundational to our **2×2 Factorial Iso-Memory Study** (*"Spend It Together or Spend It Big: How Multi-Agent Orchestration and Quantization Interact Under a Fixed Memory Budget"*), investigating the interaction between architectural modularity (Single-Agent vs. Multi-Agent) and post-training compression (Native FP16 vs. Quantized Scaling) under strict physical VRAM budgets across 15 hardware tiers.
 
 | # | File | Title | Authors | Year | Venue | Role / Relevance | Size |
 |---|---|---|---|---|---|---|---|
