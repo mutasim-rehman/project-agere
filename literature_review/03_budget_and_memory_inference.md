@@ -229,3 +229,62 @@ Represents an **adaptive memory-budgeting baseline**. In contrast to our static 
 
 ### 7. Why We Might NOT Include It (Risks / Filtering Rationale)
 * Secondary to our main question; can be filtered out when compiling the final 15 core papers.
+
+---
+
+## 40. PolyKV: A Shared Asymmetrically-Compressed KV Cache Pool for Multi-Agent LLM Inference
+
+* **File:** [`../sources/40_Patel_2026_PolyKV_Shared_Asymmetrically_Compressed_KV_Cache_MAS.pdf`](../sources/40_Patel_2026_PolyKV_Shared_Asymmetrically_Compressed_KV_Cache_MAS.pdf)
+* **Authors:** Ishan Patel, Ishan Joshi
+* **Affiliation & Venue:** *arXiv:2604.24971 (April 2026)*
+
+### 1. What It Is
+A systems architecture for multi-agent LLM inference in which multiple concurrent agents share a single, asymmetrically-compressed KV-cache pool instead of maintaining redundant per-agent KV allocations.
+
+### 2. How It Relates to Our Research
+Directly addresses our **Memory Utilization Parity Protocol (MUPP)** and serving infrastructure for **Cell C (MAS-FP16)** and **Cell D (MAS-Quant)**. PolyKV demonstrates how concurrent multi-agent teams can scale to high agent counts without exceeding strict hardware VRAM limits.
+
+### 3. Detailed Methodology
+* **Asymmetric Compression:** Keys quantized at INT8 (`q8_0`) to preserve attention softmax stability; Values compressed using TurboQuant MSE (Fast Walsh-Hadamard Transform + 3-bit Lloyd-Max quantization).
+* **Evaluation:** SmolLM2-1.7B-Instruct and LLaMA-3-8B-Instruct up to 15 concurrent agents across 4K context.
+* **Metrics:** KV Cache VRAM Footprint, Perplexity Degradation, BERTScore F1.
+
+### 4. Key Findings & Theoretical Contributions
+* **97.7% KV Memory Reduction:** On LLaMA-3-8B with 15 agents sharing a 4K context, reduces KV cache memory from 19.8 GB to 0.45 GB.
+* **Negligible Quality Degradation:** Maintains an average of only +0.57% perplexity change and 0.928 BERTScore F1, with PPL delta actually improving as context length increases.
+
+---
+
+## 41. QKVShare: Quantized KV-Cache Handoff for Multi-Agent On-Device LLMs
+
+* **File:** [`../sources/41_Honavar_2026_QKVShare_Quantized_KV_Cache_Handoff_Multi_Agent_OnDevice.pdf`](../sources/41_Honavar_2026_QKVShare_Quantized_KV_Cache_Handoff_Multi_Agent_OnDevice.pdf)
+* **Authors:** Pratik Honavar, Tejpratap GVSL
+* **Affiliation & Venue:** *arXiv:2605.03884 (May 2026)*
+
+### 1. What It Is
+A framework for quantized KV-cache handoff between on-device agents, combining token-level mixed-precision allocation and a self-contained CacheCard representation.
+
+### 2. How It Relates to Our Research
+Informs the on-device execution path of **Cell D (MAS-Quant)** on constrained memory tiers (4 GB to 12 GB), eliminating costly full context re-prefill penalties during sequential inter-agent handoffs.
+
+### 3. Key Findings & Theoretical Contributions
+* **Latency Reduction:** Cuts Time-to-First-Token (TTFT) compared to full re-prefill across all contexts (130.7 ms vs. 150.2 ms at 1K; 397.1 ms vs. 1029.7 ms at 8K context — a 61.4% reduction).
+* **Multi-Hop Resilience:** Adaptive quantization maintains competitive accuracy under repeated handoff, showing greatest advantages in deep multi-hop workflows.
+
+---
+
+## 43. Warp-Cortex: An Asynchronous, Memory-Efficient Architecture for Million-Agent Cognitive Scaling on Consumer Hardware
+
+* **File:** [`../sources/43_Ruiz_Williams_2026_Warp_Cortex_Memory_Efficient_Architecture_Million_Agent.pdf`](../sources/43_Ruiz_Williams_2026_Warp_Cortex_Memory_Efficient_Architecture_Million_Agent.pdf)
+* **Authors:** Jorge L. Ruiz Williams
+* **Affiliation & Venue:** *arXiv:2601.01298 (January 2026)*
+
+### 1. What It Is
+An asynchronous multi-agent architecture that decouples agent logic from physical GPU memory through Singleton Weight Sharing and Topological Synapse KV-cache manifold sparsification.
+
+### 2. How It Relates to Our Research
+Establishes the theoretical lower bound for physical memory consumption in multi-agent systems on consumer hardware. It proves that homogeneous agent teams can share a single resident model instance ($O(1)$ weight footprint) while maintaining isolated execution streams.
+
+### 3. Key Findings & Theoretical Contributions
+* **Massive Concurrency on Consumer GPUs:** Empirically demonstrates 100 concurrent agents running within 2.2 GB total VRAM on an RTX 4090.
+* **Topological KV Sparsification:** Uses witness-complex techniques from Topological Data Analysis (TDA) to compress context from $O(N \cdot L)$ to $O(N \cdot k)$, preserving persistent homological features of the latent reasoning manifold.

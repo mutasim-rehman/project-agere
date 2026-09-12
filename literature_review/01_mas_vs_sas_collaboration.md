@@ -277,3 +277,90 @@ Informs the **orchestration protocol** of our MAS arm. It provides standardized 
 
 ### 7. Why We Might NOT Include It (Risks / Filtering Rationale)
 * Highly specialized for orchestration benchmarks; if our experiments rely on established benchmarks like GAIA, FRAMES, and GSM8K, MAS-Orchestra can be filtered out to prioritize core quantization and budget papers.
+
+---
+
+## 37. Hallucination Cascade: Analyzing Error Propagation in Multi-Agent LLM Systems
+
+* **File:** [`../sources/37_Jamshidi_2026_Hallucination_Cascade_Analyzing_Error_Propagation_MAS.pdf`](../sources/37_Jamshidi_2026_Hallucination_Cascade_Analyzing_Error_Propagation_MAS.pdf)
+* **Authors:** Saeid Jamshidi, Arghavan Moradi Dakhel, Kawser Wazed Nafi
+* **Affiliation & Venue:** *arXiv:2606.07937 (June 2026)*
+
+### 1. What It Is
+An empirical study tracking claim-level error propagation and dynamic hallucination evolution across sequential multi-agent LLM chains across 10 knowledge domains (500 cascade experiments, 1,250 evaluated responses).
+
+### 2. How It Relates to Our Research
+Directly addresses **RQ2 (C vs. B)**, **RQ4 (D vs. B)**, and the **Interaction Term ($\Delta_{\text{interaction}}$)**. It provides quantitative empirical data showing that while multi-agent cascades can attenuate surface hallucinations (amplification factor 0.644), they suffer a continuous decay in underlying factual consistency (0.789 to 0.769).
+
+### 3. Detailed Methodology
+* **Cascade Depth:** 3-agent sequential chains evaluated on GPT-5.3, DeepSeek-V3, and LLaMA-3-70B-Instruct.
+* **Granularity:** Claim-level atomic fact tracking before and after each agent-to-agent transition.
+* **Metrics:** Normalized Hallucination Score, Factual Preservation Rate, Amplification Factor.
+
+### 4. Key Findings & Theoretical Contributions
+* **Attenuation vs. Preservation Trade-Off:** Each agent handoff reduces hallucination score by an average of 0.072 but causes small, steady losses in factual consistency, demonstrating that multi-agent refinement suppresses noise at the expense of subtle factual erosion.
+* **Heterogeneous Model Resilience:** LLaMA-3-70B demonstrated superior factual preservation compared to smaller or faster models, indicating that model capacity within the cascade governs handoff stability.
+
+---
+
+## 38. The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines
+
+* **File:** [`../sources/38_Singh_2026_The_Hallucination_Snowball_State_Transitions_MAS_Pipelines.pdf`](../sources/38_Singh_2026_The_Hallucination_Snowball_State_Transitions_MAS_Pipelines.pdf)
+* **Authors:** Prabhjot Singh, Bhushan Pawar
+* **Affiliation & Venue:** *arXiv:2608.14588 (June 2026)*
+
+### 1. What It Is
+A formal mathematical and empirical study demonstrating that unverified sequential agent pipelines cause injected hallucinations to transform into derived computations and narrative prose, becoming progressively undetectable. It introduces a 4-state Markov model and proves that inter-agent boundary verification halts this snowball effect.
+
+### 2. How It Relates to Our Research
+Provides the core theoretical and architectural justification for **AHDS Principle 3 (Confidence Gating)** and **Principle 4 (Dedicated Verifier)**. It proves mathematically why naive sequential MAS fails against monolithic models and why boundary verification gates are strictly necessary.
+
+### 3. Detailed Methodology
+* **Pipeline:** 4-agent sequential financial analysis pipeline evaluated on FinanceBench with 346 automatically injected hallucinations.
+* **Markov States:** $S_1$ (Raw Fact) $	o$ $S_2$ (Derived Computation) $	o$ $S_3$ (Narrative Prose) $	o$ $S_4$ (Invisible / Approved).
+* **Interventions Tested:** No verification vs. End-of-Pipeline verification vs. Per-Boundary Verification Gates.
+
+### 4. Key Findings & Theoretical Contributions
+* **Near-Irreversible Escape:** Per-boundary escape probabilities escalate dramatically (24.6% at $S_1$, 48.3% at $S_2$, 89.3% at $S_3$). By Stage 4, 23.7% of hallucinations survive completely undetected even by frontier models.
+* **Timing Trumps Mechanism:** Boundary verification gates between agents reduce hallucination survival from 58.4% to 16.2% ($p < 10^{-6}$), whereas end-of-pipeline checking yields a statistically negligible 2.3 percentage point improvement. "When you verify matters more than whether you verify."
+
+---
+
+## 39. AgentAsk: Multi-Agent Systems Need to Ask
+
+* **File:** [`../sources/39_Lin_2025_AgentAsk_Multi_Agent_Systems_Need_to_Ask.pdf`](../sources/39_Lin_2025_AgentAsk_Multi_Agent_Systems_Need_to_Ask.pdf)
+* **Authors:** Bohan Lin, Kuo Yang, Zelin Tan
+* **Affiliation & Venue:** *arXiv:2510.07593 (October 2025)*
+
+### 1. What It Is
+An empirical investigation into why multi-agent systems fail to outperform single-agent baselines, introducing an edge-level error taxonomy and an active clarification module (AgentAsk) deployed at message handoffs.
+
+### 2. How It Relates to Our Research
+Directly addresses the **C vs. B** comparison and provides the empirical basis for **AHDS Principle 2 (Strict Pydantic JSON Contracts)** by categorizing and mitigating inter-agent communication degradation.
+
+### 3. Key Findings & Taxonomy
+* **Edge-Level Taxonomy:** Classifies multi-agent communication breakdowns into 4 dominant failure types:
+  1. *Data Gap:* Missing context or incomplete parameters passed to downstream workers.
+  2. *Signal Corruption:* Noise, tone drift, or unparseable text format degrading downstream agent comprehension.
+  3. *Referential Drift:* Shift in terminology or variable references over sequential turns.
+  4. *Capability Gap:* Downstream agent assigned a task exceeding its parametric capacity.
+* **Clarification Efficiency:** Intervening with minimal structured clarification queries at critical handoff edges improves overall system accuracy by up to 4.69% while keeping latency overhead under 10%.
+
+---
+
+## 42. Quantigence: A Multi-Agent Framework for Post-Quantum Security Analysis on Commodity Hardware
+
+* **File:** [`../sources/42_Alquwayfili_2025_Quantigence_Multi_Agent_Post_Quantum_Commodity_Hardware.pdf`](../sources/42_Alquwayfili_2025_Quantigence_Multi_Agent_Post_Quantum_Commodity_Hardware.pdf)
+* **Authors:** Abdulmalik Alquwayfili
+* **Affiliation & Venue:** *arXiv:2512.12989 (December 2025)*
+
+### 1. What It Is
+An empirical deployment of a 4-bit quantized multi-agent supervisor/specialist architecture running serially on a single commodity 8 GB GPU, evaluating performance against single-agent baselines across both atomic lookups and multi-faceted complex tasks.
+
+### 2. How It Relates to Our Research
+Serves as an exact real-world prototype for **Cell D (MAS-Quant)** vs. **Cell A/B (SAS)** under our 8 GB hardware budget tier.
+
+### 3. Key Findings & Empirical Grounding
+* **Task Complexity Moderation:** On atomic, single-fact retrieval queries, single tool-using models proved superior (98% vs. 57% zero-shot), with multi-agent decomposition adding unnecessary overhead.
+* **Quantized MAS Superiority on Complex Workflows:** On complex, multi-faceted queries requiring multi-step synthesis, the 4-bit quantized supervisor/specialist team outperformed single agents, improving rubric coverage from 78% to 89%.
+* **Proof of Commodity Viability:** Demonstrates that 4-bit quantized multi-agent systems fit stably within an 8 GB consumer VRAM envelope when executed with disciplined context and tool grounding.

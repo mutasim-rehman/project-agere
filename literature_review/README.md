@@ -5,7 +5,7 @@
 > **Overarching Research Question:**  
 > *Given a fixed, non-negotiable physical hardware memory budget (resident GPU VRAM $M$), do the choice of architecture (Single-Agent monolithic vs. Multi-Agent modular orchestration) and the choice of compression strategy (retain smaller models at native FP16 precision vs. scale parameter count up and quantize) act independently, or do they interact — such that the optimal compression strategy depends on which architecture is chosen, and vice versa?*
 
-This document provides the master synthesis of our in-depth academic literature review of **35 primary research papers** published between **2024 and 2026** (excluding all surveys, SLRs, and informal benchmarks). Every paper is analyzed across its problem statement, methodology, theoretical novelty, empirical findings, critical limitations, and exact role in our **2×2 Factorial Experimental Design**.
+This document provides the master synthesis of our in-depth academic literature review of **43 primary research papers** published between **2024 and 2026** (excluding all surveys, SLRs, and informal benchmarks). Every paper is analyzed across its problem statement, methodology, theoretical novelty, empirical findings, critical limitations, and exact role in our **2×2 Factorial Experimental Design**.
 
 ---
 
@@ -120,6 +120,7 @@ The review is organized into five thematic synthesis documents, 35 dedicated stu
 | [**`03_budget_and_memory_inference.md`**](./03_budget_and_memory_inference.md) | **15 – 21** | Budget-aware evaluation (Wang et al. EMNLP), hardware VRAM profiling (Bench360), inference compute scaling (Monkeys), tool budgets, MoE capacity penalty ($q_s$ inequality), and vLLM PagedAttention. Theoretical foundation for MUPP and $\Delta_{\text{interaction}}$. |
 | [**`04_quantization_and_ondevice.md`**](./04_quantization_and_ondevice.md) | **22 – 30** | Quantization algorithms for Cell B and Cell D (AWQ, QuaRot, SpinQuant, AQLM, AutoRound), sub-billion on-device design (MobileLLM), ternary BitNet, and multi-agent KV sharing (SGLang). |
 | [**`05_benchmarks_and_evaluation.md`**](./05_benchmarks_and_evaluation.md) | **31 – 35** | Standardized evaluation infrastructure: tool-use (GAIA, BFCL), multi-step engineering (SWE-bench), multi-hop reasoning (FRAMES), and parametric world knowledge (MMLU-Pro). Task moderator suite. |
+| [**`../sources/PAPERS_DICTIONARY.md#pillar-5-quantized-multi-agent-systems-error-cascades--shared-memory-architectures`**](../sources/PAPERS_DICTIONARY.md#pillar-5-quantized-multi-agent-systems-error-cascades--shared-memory-architectures) | **36 – 43** | **New 2025–2026 Quantized MAS & Memory Literature:** Quantized agent failure amplification (Jang et al. 2026), dynamic hallucination cascades (Jamshidi et al. 2026), Markov error snowballing (Singh & Pawar 2026), edge error taxonomies (Lin et al. 2025), shared compressed KV pools (PolyKV 2026), quantized KV handoffs (QKVShare 2026), 8 GB quantized MAS on commodity GPUs (Quantigence 2025), and singleton weight sharing (Warp-Cortex 2026). Direct empirical and theoretical foundation for Cells B, C, D, and $\Delta_{\text{interaction}}$. |
 
 ---
 
@@ -144,6 +145,16 @@ The recommended **15-paper core subset** mapped to their exact roles in the 2×2
 | **13** | **Kwon et al. (vLLM, 2023)** | SOSP 2023 / MLSys | **Serving Infrastructure:** PagedAttention runtime enforcing `--gpu-memory-utilization 0.95` across all 60 conditions. |
 | **14** | **Mialon et al. (GAIA, 2024)** | ICLR 2024 | **Anchor 1 Primary Benchmark (Tool-Use):** Base paper domain testing the Role Specialization Buffering Hypothesis ($\Delta_{\text{interaction}} > 0$). |
 | **15** | **Krishna et al. (FRAMES, 2024)** | EMNLP 2024 / arXiv | **Anchor 2 Calibration Benchmark (Reasoning):** Direct replication of Tran & Kiela's multi-hop domain testing the Double Penalty Hypothesis ($\Delta_{\text{interaction}} < 0$). |
+
+---
+
+
+### Additional Core 2025–2026 Literature (Direct Factorial & Architectural Grounding)
+* **Jang et al. (July 2026, arXiv:2607.27275):** *Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents.* Proves that 4-bit quantization causes a 2.5× amplification in agent tool failures masked by standard error budgets; establishes diagnostic failure-volume metrics for Cells B and D.
+* **Singh & Pawar (June 2026, arXiv:2608.14588):** *The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines.* Models multi-agent error escalation as a Markov process, proving that inter-agent boundary verification reduces hallucination survival from 58.4% to 16.2%; provides direct mathematical justification for AHDS boundary gating.
+* **Jamshidi et al. (June 2026, arXiv:2606.07937):** *Hallucination Cascade: Analyzing Error Propagation in Multi-Agent LLM Systems.* Empirically tracks claim-level error attenuation vs. factual decay across agent cascades, directly informing $\Delta_{\text{interaction}}$.
+* **Patel & Joshi (April 2026, arXiv:2604.24971):** *PolyKV: A Shared Asymmetrically-Compressed KV Cache Pool for Multi-Agent LLM Inference.* Shrinks multi-agent KV-cache memory by 97.7% via INT8 keys and 3-bit values, establishing high-density local multi-agent serving.
+* **Alquwayfili (Dec 2025, arXiv:2512.12989):** *Quantigence: A Multi-Agent Framework for Post-Quantum Security Analysis on Commodity Hardware.* Demonstrates a 4-bit quantized multi-agent system outperforming single agents on multi-faceted tasks within an 8 GB consumer GPU budget (empirical prototype of Cell D vs. Cell A/B).
 
 ---
 

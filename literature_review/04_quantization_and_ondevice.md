@@ -293,3 +293,30 @@ Directly solves the **multi-agent memory scaling bottleneck**. In multi-agent sy
 
 ### 7. Why We Might NOT Include It (Risks / Filtering Rationale)
 * Can be cited together with vLLM in the Systems/Implementation subsection.
+
+---
+
+## 36. Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents
+
+* **File:** [`../sources/36_Jang_2026_Flat_Score_Amplified_Failures_Quantized_LLM_Agents.pdf`](../sources/36_Jang_2026_Flat_Score_Amplified_Failures_Quantized_LLM_Agents.pdf)
+* **Authors:** Jiwon Jang, Kisu Yang, Heuiseok Lim
+* **Affiliation & Venue:** Korea University — *arXiv:2607.27275 (July 2026)*
+
+### 1. What It Is
+An empirical investigation demonstrating that standard benchmark metrics conceal severe process-level degradation in 4-bit quantized tool-calling agents because lenient error budgets absorb a 2.5× surge in failure volume (+17.6 points/task). Shrinking the error budget re-exposes a catastrophic 17-point accuracy drop.
+
+### 2. How It Relates to Our Research
+Provides the foundational explanation for **Cell B (SAS-Quant)** vs. **Cell A (SAS-FP16)** and **Cell D (MAS-Quant)** vs. **Cell C (MAS-FP16)**. It exposes the critical vulnerability of quantized models when executing multi-turn tool-calling and agentic workflows: single-turn benchmarks show "lossless" quantization, but agentic tasks suffer massive failure amplification unless protected by tight error verification.
+
+### 3. Detailed Methodology
+* **Benchmark:** $\tau^2$-bench across dense and MoE open-weight families (8 experimental cells, 456 episodes each) at 16-bit, 8-bit, and 4-bit weights.
+* **Failure Decomposition:** Granular tracking of tool-name hallucinations, argument formatting errors, and entity reference drift.
+* **Diagnostic Protocol:** Evaluating task success under shrinking error budgets ($k \in [2, 10]$) and measuring per-channel error volumes.
+
+### 4. Key Novelty & Theoretical Contributions
+* **The Error Budget Masking Effect:** Shows that task rewards remain flat only because typical agent benchmarks grant up to 10 retry/error attempts per episode, absorbing the 2.5× failure surge. When the budget is constrained to 2 errors (realistic for autonomous production systems), quantized models suffer a 17-point collapse.
+* **Identical Failure Typology:** Quantization does not generate novel failure modes (rank correlation $\ge 0.94$, only 0.18% novel events); rather, it massively amplifies the specific failure modes the model already exhibits at full precision.
+* **Diagnostic Standard for Agentic Quantization:** Mandates reporting per-channel error volume and success curves under variable error budgets rather than simple end-to-end task completion rates.
+
+### 5. Why We Include It as a Core Source
+* Essential for our **2×2 Factorial Study**: Explains why Bench360 (single-turn) declared quantized models the winner (Cell B > Cell A), while multi-agent pipelines (Cell D) may encounter compounding failure cascades. Informs our logging protocol to record per-step tool errors.

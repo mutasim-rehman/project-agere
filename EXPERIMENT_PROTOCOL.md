@@ -139,11 +139,11 @@ All multi-agent configurations in Cells C and D utilize the **Adaptive Hierarchi
 |:---:|:---|:---|:---|
 | **P1** | Context Dilution & Bloat | Du et al. (2023), Chen et al. (2024) | Strict JSON-schema inter-agent contracts (maximum 200-word payload). Raw reasoning scratchpads are pruned. |
 | **P2** | Sycophancy & False Consensus | Liang et al. (2023) | Anonymous, blinded role execution. Sub-agents do not know peer identities or confidence scores. |
-| **P3** | Cascading Hallucination | Bench360 (2024), DyLAN (2024) | Deterministic gating validator. Output is rejected and regenerated if JSON schema or math checks fail. |
-| **P4** | Unbounded Token Explosion | Agere Survey (2024) | Fixed-budget token quotas per role; maximum 2 inter-agent revision hops. |
-| **P5** | Role Under-Specialization | MetaGPT (2023) | Differentiated system prompts with negative constraints and strict domain boundaries. |
-| **P6** | Topology Rigidity | DyLAN (2024) | Dynamic role invocation: single-step questions bypass secondary workers to save compute. |
-| **P7** | Memory Bloat & Thrashing | Project Agere Survey | Concurrent model co-residency in shared VRAM pool; shared prefix caching where supported. |
+| **P3** | Cascading Hallucination | Jamshidi et al. (2026), Singh & Pawar (2026) | Inter-agent boundary verification gates; models 4-state Markov error transitions to halt hallucination snowballing (reduces escape from 58.4% to 16.2%). |
+| **P4** | Unbounded Token Explosion | Agere Survey (2024), Lin et al. (2025) | Fixed-budget token quotas per role; maximum 2 inter-agent revision hops; AgentAsk edge clarification. |
+| **P5** | Role Under-Specialization | MetaGPT (2023), Alquwayfili (2025) | Differentiated system prompts with domain-restricted tool boundaries (demonstrated effective on 8 GB commodity GPUs). |
+| **P6** | Communication Noise & Drift | Lin et al. (AgentAsk, 2025) | Edge-level taxonomy mitigations: strict Pydantic JSON contracts eliminate Signal Corruption and Referential Drift. |
+| **P7** | Memory Bloat & Thrashing | Patel & Joshi (PolyKV, 2026), Ruiz Williams (Warp-Cortex, 2026) | Concurrent model co-residency via singleton weight sharing, PagedAttention, and shared compressed KV-cache pools (up to 97.7% KV reduction). |
 
 ### 6.2 AHDS Role Definitions
 1. **Orchestrator / Decomposer:** Receives the original user prompt, performs problem decomposition into independent sub-tasks, assigns sub-tasks to specialist workers, and synthesizes the final output.

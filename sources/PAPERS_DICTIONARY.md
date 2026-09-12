@@ -5,7 +5,7 @@
 > 
 > *Examined via a 2×2 Factorial Design across 15 memory tiers (4 GB to 32 GB): Cell A (SAS-FP16), Cell B (SAS-Quant), Cell C (MAS-FP16), and Cell D (MAS-Quant).*
 
-This dictionary catalogs all **35 primary research papers** stored in [`sources/`](./). For each paper, it defines **what the paper is** and **how it directly connects to our research** in concise, one-sentence explanations.
+This dictionary catalogs all **43 primary research papers** stored in [`sources/`](./). For each paper, it defines **what the paper is** and **how it directly connects to our research** in concise, one-sentence explanations.
 
 ---
 
@@ -14,7 +14,8 @@ This dictionary catalogs all **35 primary research papers** stored in [`sources/
 2. [Pillar 2: Budget-Constrained & Memory-Aware Inference (15–21)](#pillar-2-budget-constrained--memory-aware-inference)
 3. [Pillar 3: Quantization, Memory Scaling & On-Device Models (22–30)](#pillar-3-quantization-memory-scaling--on-device-models)
 4. [Pillar 4: Benchmarks & Empirical Evaluation Infrastructure (31–35)](#pillar-4-benchmarks--empirical-evaluation-infrastructure)
-5. [Quick Reference Matrix](#quick-reference-matrix)
+5. [Pillar 5: Quantized Multi-Agent Systems, Error Cascades & Shared Memory Architectures (36–43)](#pillar-5-quantized-multi-agent-systems-error-cascades--shared-memory-architectures)
+6. [Quick Reference Matrix](#quick-reference-matrix)
 
 ---
 
@@ -341,6 +342,88 @@ This dictionary catalogs all **35 primary research papers** stored in [`sources/
 
 ---
 
+---
+
+## Pillar 5: Quantized Multi-Agent Systems, Error Cascades & Shared Memory Architectures
+
+### 36. Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents
+* **File:** [`36_Jang_2026_Flat_Score_Amplified_Failures_Quantized_LLM_Agents.pdf`](./36_Jang_2026_Flat_Score_Amplified_Failures_Quantized_LLM_Agents.pdf)  
+* **Authors & Venue:** Jiwon Jang, Kisu Yang, Heuiseok Lim (Korea University) — *arXiv:2607.27275 (July 2026)*  
+* **Role:** **Empirical Foundation for Quantized Agent Failure Masking & Error Budget Diagnostics**  
+* **Target RQs:** **A vs. B, D vs. A, D vs. B, $\Delta_{\text{interaction}}$**  
+* **What it is:** Discovers that standard agent benchmarks mask catastrophic degradation in 4-bit post-training quantization because generous error budgets (e.g., 10 allowed failures) absorb a massive 2.5× surge in tool-name hallucinations and entity errors (+17.6 points/task), but tightening the error budget to 2 re-exposes a severe 17-point accuracy collapse.  
+* **How it relates to our research:** Directly explains why single-turn benchmarks (like Bench360 for Cell A vs. B) report quantization as "virtually lossless," whereas multi-turn agent execution (Cell D vs. B and Cell D vs. A) suffers amplified process failures; provides our protocol's diagnostic error-budget and per-channel failure logging metrics.
+
+---
+
+### 37. Hallucination Cascade: Analyzing Error Propagation in Multi-Agent LLM Systems
+* **File:** [`37_Jamshidi_2026_Hallucination_Cascade_Analyzing_Error_Propagation_MAS.pdf`](./37_Jamshidi_2026_Hallucination_Cascade_Analyzing_Error_Propagation_MAS.pdf)  
+* **Authors & Venue:** Saeid Jamshidi, Arghavan Moradi Dakhel, Kawser Wazed Nafi — *arXiv:2606.07937 (June 2026)*  
+* **Role:** **Empirical Multi-Agent Error Cascades & Factual Attenuation vs. Decay**  
+* **Target RQs:** **C vs. B, D vs. B, $\Delta_{\text{interaction}}$**  
+* **What it is:** Analyzes dynamic hallucination propagation across sequential multi-agent cascades across 10 knowledge domains over 500 trials, finding that deeper cascades achieve net hallucination attenuation (amplification factor of 0.644) but incur a subtle, compounding decay in underlying factual accuracy (0.789 to 0.769).  
+* **How it relates to our research:** Empirically grounds our interaction hypothesis ($\Delta_{\text{interaction}}$), illustrating the exact trade-off between role-specialized error filtering and compounding factual degradation across inter-agent handoffs in multi-agent systems.
+
+---
+
+### 38. The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines
+* **File:** [`38_Singh_2026_The_Hallucination_Snowball_State_Transitions_MAS_Pipelines.pdf`](./38_Singh_2026_The_Hallucination_Snowball_State_Transitions_MAS_Pipelines.pdf)  
+* **Authors & Venue:** Prabhjot Singh, Bhushan Pawar — *arXiv:2608.14588 (June 2026)*  
+* **Role:** **Mathematical Markov Error Snowball Model & Handoff Boundary Verification Gates**  
+* **Target RQs:** **C vs. B, D vs. B, Architecture (AHDS Principles 3 & 4)**  
+* **What it is:** Models sequential multi-agent error propagation as a first-order Markov process over four progressive states (Raw Fact $\to$ Derived $\to$ Narrative $\to$ Invisible) with escalating escape probabilities (24.6% to 89.3%), proving that boundary verification gates between agents reduce hallucination survival from 58.4% to 16.2%, whereas end-of-pipeline checking only achieves a negligible 2.3 pp gain.  
+* **How it relates to our research:** Mathematically and empirically justifies our AHDS architecture's per-handoff confidence gating and dedicated verifier, demonstrating why unverified multi-agent pipelines fail and how structured boundary gates eliminate error snowballing.
+
+---
+
+### 39. AgentAsk: Multi-Agent Systems Need to Ask
+* **File:** [`39_Lin_2025_AgentAsk_Multi_Agent_Systems_Need_to_Ask.pdf`](./39_Lin_2025_AgentAsk_Multi_Agent_Systems_Need_to_Ask.pdf)  
+* **Authors & Venue:** Bohan Lin, Kuo Yang, Zelin Tan — *arXiv:2510.07593 (October 2025)*  
+* **Role:** **MAS Edge-Level Error Taxonomy & Dynamic Clarification Protocols**  
+* **Target RQs:** **C vs. B, D vs. B, Architecture (AHDS Principles 2 & 3)**  
+* **What it is:** Introduces an edge-level failure taxonomy in multi-agent communication identifying four core breakdown modes (Data Gap, Signal Corruption, Referential Drift, Capability Gap) and proposes a lightweight clarification intervention module that improves overall task accuracy by up to 4.69% with under 10% latency overhead.  
+* **How it relates to our research:** Supplies the specific failure taxonomy for multi-agent handoffs and directly motivates AHDS's strict Pydantic JSON contracts and clarification protocols to eliminate Signal Corruption and Referential Drift.
+
+---
+
+### 40. PolyKV: A Shared Asymmetrically-Compressed KV Cache Pool for Multi-Agent LLM Inference
+* **File:** [`40_Patel_2026_PolyKV_Shared_Asymmetrically_Compressed_KV_Cache_MAS.pdf`](./40_Patel_2026_PolyKV_Shared_Asymmetrically_Compressed_KV_Cache_MAS.pdf)  
+* **Authors & Venue:** Ishan Patel, Ishan Joshi — *arXiv:2604.24971 (April 2026)*  
+* **Role:** **Shared Asymmetrically-Compressed KV-Cache Pool for Concurrent MAS Inference**  
+* **Target RQs:** **Methodology & Architecture, MUPP Serving Protocol, Cell C & Cell D Hosting**  
+* **What it is:** Presents PolyKV, a serving system where multiple concurrent inference agents share a single asymmetrically compressed KV-cache pool (INT8 Keys + 3-bit Lloyd-Max FWHT Values), achieving a 97.7% reduction in KV-cache footprint (19.8 GB $\to$ 0.45 GB for 15 agents on Llama-3-8B) with negligible (+0.57%) perplexity degradation.  
+* **How it relates to our research:** Provides the state-of-the-art serving architecture enabling concurrent multi-agent teams (Cell C and Cell D) to fit comfortably within strict physical VRAM budgets without memory swapping, directly supporting our Memory Utilization Parity Protocol (MUPP).
+
+---
+
+### 41. QKVShare: Quantized KV-Cache Handoff for Multi-Agent On-Device LLMs
+* **File:** [`41_Honavar_2026_QKVShare_Quantized_KV_Cache_Handoff_Multi_Agent_OnDevice.pdf`](./41_Honavar_2026_QKVShare_Quantized_KV_Cache_Handoff_Multi_Agent_OnDevice.pdf)  
+* **Authors & Venue:** Pratik Honavar, Tejpratap GVSL — *arXiv:2605.03884 (May 2026)*  
+* **Role:** **Quantized KV-Cache Handoff for Edge Multi-Agent Systems & TTFT Acceleration**  
+* **Target RQs:** **Methodology & Architecture, Cell D On-Device Serving**  
+* **What it is:** Designs a token-level mixed-precision quantized KV-cache handoff mechanism using self-contained CacheCard representations between edge agents, cutting Time-to-First-Token (TTFT) by up to 61% (397 ms vs. 1030 ms at 8K context) relative to full context re-prefill.  
+* **How it relates to our research:** Eliminates the quadratic re-prefill penalty during inter-agent message handoffs in edge hardware tiers (4 GB to 12 GB), making multi-agent execution computationally viable on constrained GPUs.
+
+---
+
+### 42. Quantigence: A Multi-Agent Framework for Post-Quantum Security Analysis on Commodity Hardware
+* **File:** [`42_Alquwayfili_2025_Quantigence_Multi_Agent_Post_Quantum_Commodity_Hardware.pdf`](./42_Alquwayfili_2025_Quantigence_Multi_Agent_Post_Quantum_Commodity_Hardware.pdf)  
+* **Authors & Venue:** Abdulmalik Alquwayfili — *arXiv:2512.12989 (December 2025)*  
+* **Role:** **Empirical Quantized MAS vs. SAS Evaluation on Commodity Hardware (8 GB VRAM)**  
+* **Target RQs:** **D vs. A, D vs. B, Task Complexity Moderation**  
+* **What it is:** Demonstrates a 4-bit quantized multi-agent supervisor/worker pipeline running serially on a single commodity 8 GB GPU, proving that while single tool-using agents dominate atomic single-fact queries, multi-agent decomposition outperforms single agents (89% vs. 78% rubric coverage) on complex multi-faceted workflows.  
+* **How it relates to our research:** Serves as a direct empirical prototype for Cell D vs. Cell A/B on consumer hardware (8 GB budget), corroborating our task complexity hypothesis that modular multi-agent decomposition shields quantized models on multi-faceted tasks.
+
+---
+
+### 43. Warp-Cortex: An Asynchronous, Memory-Efficient Architecture for Million-Agent Cognitive Scaling on Consumer Hardware
+* **File:** [`43_Ruiz_Williams_2026_Warp_Cortex_Memory_Efficient_Architecture_Million_Agent.pdf`](./43_Ruiz_Williams_2026_Warp_Cortex_Memory_Efficient_Architecture_Million_Agent.pdf)  
+* **Authors & Venue:** Jorge L. Ruiz Williams — *arXiv:2601.01298 (January 2026)*  
+* **Role:** **Singleton Weight Sharing & Topological KV Sparsification Architecture**  
+* **Target RQs:** **Methodology & Architecture, Zero-Redundancy Local MAS Hosting**  
+* **What it is:** Decouples multi-agent logic from physical GPU memory through singleton weight sharing ($O(1)$ parameter footprint) and topological KV-cache manifold sparsification, hosting 100 concurrent agents within 2.2 GB VRAM on a consumer RTX 4090.  
+* **How it relates to our research:** Establishes the architectural basis for hosting homogeneous multi-agent teams on consumer GPUs with zero redundant weight footprint, ensuring the entire physical memory budget can be dedicated to KV-cache depth and agent reasoning capacity.
+
 ## Quick Reference Matrix
 
 | # | Paper | Core Topic | Role in Your Study |
@@ -380,3 +463,11 @@ This dictionary catalogs all **35 primary research papers** stored in [`sources/
 | **33** | **FRAMES (2024)** | Factuality & multi-hop evaluation | **Primary Multi-Hop Reasoning Benchmark** |
 | **34** | **BFCL (ICML 2024)** | Berkeley function-calling leaderboard | Tool-calling parameter precision evaluation |
 | **35** | **MMLU-Pro (NeurIPS 2024)**| Robust multi-task language understanding| **Parametric World Knowledge Benchmark** |
+| **36** | **Jang et al. (2026)** | Quantized agent failure amplification | **Cell B & D Diagnostics** (Error budget masking & tool hallucination) |
+| **37** | **Jamshidi et al. (2026)** | Hallucination cascades in MAS | **$\Delta_{\text{interaction}}$ Grounding** (Attenuation vs. factual decay across cascades) |
+| **38** | **Singh & Pawar (2026)** | Markov error snowball & boundary gates | **AHDS Architecture** (Boundary verification eliminates 16.2% vs 58.4% error escape) |
+| **39** | **Lin et al. (AgentAsk, 2025)** | Edge-level error taxonomy in MAS | **AHDS Contracts** (Signal corruption & referential drift elimination) |
+| **40** | **Patel & Joshi (PolyKV, 2026)**| Shared compressed KV-cache for MAS | **MUPP Serving Protocol** (97.7% KV memory reduction for concurrent MAS) |
+| **41** | **Honavar & GVSL (2026)** | Quantized KV-cache handoff on edge | **Cell D On-Device Serving** (61% TTFT reduction across agent handoffs) |
+| **42** | **Alquwayfili (2025)** | Quantized MAS on 8 GB commodity GPU | **Cell D vs. SAS Prototype** (89% vs 78% on complex tasks under 8 GB) |
+| **43** | **Ruiz Williams (2026)** | Singleton weight sharing on consumer GPU| **Local MAS Hosting** (Zero-redundancy homogeneous agent hosting) |

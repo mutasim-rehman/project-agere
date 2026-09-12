@@ -34,13 +34,13 @@
 *Survey, synthesize, and identify what's missing.*
 
 ### 2.1 — Source Collection
-- [x] Identify and curate the 35 primary research papers
-- [x] Download all 35 PDFs to `sources/`
+- [x] Identify and curate 43 primary research papers (2024–2026)
+- [x] Download all 43 PDFs to `sources/` (115.78 MB, 100% valid)
 - [x] Build `sources/INDEX.md` with full bibliographic entries
 - [x] Build `sources/PAPERS_DICTIONARY.md` with paper-level metadata
 
 ### 2.2 — Individual Paper Analysis
-- [x] Write individual study summaries for all 35 papers (`literature_review/summaries/`)
+- [x] Write individual study summaries for all papers (`literature_review/summaries/`) and catalog in `sources/PAPERS_DICTIONARY.md` (Pillars 1–5, Papers 01–43)
   - [x] Papers 01–08 (MAS vs. SAS & collaboration)
   - [x] Papers 09–14 (MAS topologies & frameworks)
   - [x] Papers 15–21 (Budget, memory, inference)
@@ -56,7 +56,7 @@
 
 ### 2.4 — Master Synthesis & Bibliography Curation
 - [x] Write `literature_review/README.md` master synthesis document
-- [x] Filter 35 papers down to the 15-paper core bibliography
+- [x] Curate the core bibliography and map new 2025–2026 literature to 2×2 Factorial RQs
 - [x] Justify why each of the remaining 20 papers was excluded
 - [x] Write paper-framing templates (Introduction & Related Work paragraphs)
 
@@ -469,9 +469,9 @@
 
 | Phase | Status | Key Deliverable |
 | :--- | :---: | :--- |
-| 1. Problem Definition | ✅ Done | `README.md` with RQs, gaps, contributions |
-| 2. Literature Review | 🟡 ~95% | 35 summaries + 5 thematic docs + master synthesis |
-| 3. Experimental Design | 🟡 ~95% | 2×2 Factorial Design across 15 tiers (Cells A, B, C, D) + 45 YAML configs (15 hardware tiers, 15 Cell D quant MAS, 15 AHDS) + Interaction Term (Two-Way ANOVA); needs protocol doc |
+| 1. Problem Definition | ✅ Done | `README.md` with 5 RQs, 2×2 grid, and interaction term |
+| 2. Literature Review | ✅ Done | 43 PDFs downloaded (115.78 MB), `INDEX.md`, `PAPERS_DICTIONARY.md`, 5 thematic pillars, master `README.md` |
+| 3. Experimental Design | ✅ Done | Formal `EXPERIMENT_PROTOCOL.md`, 47 YAML configs (15 tiers, 15 AHDS FP16, 15 Quant MAS, 2 benchmarks), Three-Way ANOVA model, 100% MUPP audit |
 | 4. Environment Setup | ⬜ Not Started | Repository scaffolding, deps, model downloads |
 | 5. Core Implementation | ⬜ Not Started | Agent code, inference engine, profiling, eval harness |
 | 6. Pilot Experiments | ⬜ Not Started | Smoke tests on 10–50 samples |
