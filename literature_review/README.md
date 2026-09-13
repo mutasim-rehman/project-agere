@@ -27,18 +27,33 @@ $$\begin{array}{c|c|c}
 \hline
 \end{array}$$
 
-### The Four Base Questions & The Headline Interaction Term
-1. **RQ1 (Cell A vs. Cell B — Baseline Replication):** Does a larger, quantized single model outperform a smaller, full-precision single model at equal memory? *(Replicates Bench360 as our internal control baseline).*
-2. **RQ2 (Cell C vs. Cell B — Original Agere Hypothesis):** Does a multi-agent system of smaller, full-precision agents outperform a single larger, quantized model at equal memory?
-3. **RQ3 (Cell D vs. Cell A — Quantized MAS vs. Small Generalist):** Does a multi-agent system of larger, quantized agents outperform a single smaller, full-precision model at equal memory?
-4. **RQ4 (Cell D vs. Cell B — Quantized MAS vs. Giant Generalist):** Does a multi-agent system of larger, quantized agents outperform a single, much larger quantized model at equal memory?
-5. **RQ5 (The Interaction Term — Core Theoretical Prize):** Does quantization degrade performance **more, less, or the same amount** when applied inside an orchestrated multi-agent system ($D$ vs. $C$) as it does inside a single model ($B$ vs. $A$)?
+### The Core Scientific Aim: Mapping Separability vs. Coupling (Not Picking a Winner)
 
-$$\Delta_{\text{interaction}} = [\text{Score}(D) - \text{Score}(C)] - [\text{Score}(B) - \text{Score}(A)]$$
+The aim of Project Agere is explicitly **not** to "find a champion" or run an empirical tournament. Rather, the goal is to **characterize how two fundamental design choices—architecture (single agent vs. orchestrated multi-agent) and compression strategy (stay smaller at full precision vs. scale up and quantize)—interact under a fixed physical memory budget, and whether that interaction depends on the structural nature of the task.** You are not picking a champion; you are mapping a design space and finding out whether the two axes can be reasoned about independently or not.
 
-* **Hypothesis 1 (Compounding Error / "Double Penalty" — $q_s$ Inequality):** $\Delta_{\text{interaction}} < 0$. Quantization noise compounds multiplicatively across inter-agent natural language handoffs. Discretized intermediate outputs amplify errors that remain continuous inside a monolithic model, validating Chen et al.'s $q_s$ MoE capacity penalty at the macro-orchestration layer.
-* **Hypothesis 2 (Role Specialization Noise-Buffering):** $\Delta_{\text{interaction}} > 0$. Sub-agents assigned narrow, constrained tasks experience a collapsed active token manifold, rendering specialized roles more resilient to precision loss than a single generalist maintaining long-range multi-task state.
-* **Null Hypothesis ($H_0$):** $\Delta_{\text{interaction}} = 0$. Architectural modularity and compression strategy are orthogonal, strictly additive design decisions.
+Concretely, this study answers the primary question sitting directly above all four individual comparisons:
+> **"Does quantization cost the same amount whether you apply it inside one monolithic model or distribute it across several orchestrated agents?"**
+
+### The Four Corners & The Central Interaction Question
+The four pairwise comparisons are **the four boundary corners of the 2×2 factorial design space**—none of them is the point on its own; they are the four corners required to observe and quantify the interaction at all:
+
+#### The Central Question (The Headline Scientific Prize)
+* **RQ5 (The Interaction Term — $\Delta_{\text{interaction}}$):** Does post-training quantization cost the same amount whether applied inside a single monolithic model or distributed across an orchestrated multi-agent system?
+  $$\Delta_{\text{interaction}} = \Delta_{\text{Quant}|\text{MAS}} - \Delta_{\text{Quant}|\text{SAS}} = [\text{Score}(D) - \text{Score}(C)] - [\text{Score}(B) - \text{Score}(A)]$$
+
+  * **Separability (Null Hypothesis, $\Delta = 0$):** Quantization's penalty is identical across both architectures. Architecture and compression are orthogonal design choices that can be decided independently.
+  * **Compounding Noise / Double Penalty ($\Delta < 0$):** Quantization noise stacks multiplicatively across inter-agent natural language handoffs, incurring a macro-orchestration double penalty (the $q_s$ inequality). Quantization is super-additively destructive in multi-agent pipelines.
+  * **Role Specialization Noise-Buffering ($\Delta > 0$):** Narrow role prompts collapse the active token manifold, and external tool feedback allows quantized sub-agents to absorb low-bit precision loss better than a lone generalist maintaining long-range state.
+
+#### The Four Corners (Boundary Evidence)
+1. **Corner 1 — RQ1 (Cell A vs. Cell B — Quantization Cost in SAS):** Does a larger, quantized single model outperform a smaller, full-precision single model at equal memory? *(Replication control of Bench360: $\Delta_{\text{Quant}|\text{SAS}} = \text{Score}(B) - \text{Score}(A)$).*
+2. **Corner 2 — RQ2 (Cell C vs. Cell B — Native MAS vs. Quantized Monolith):** Does a multi-agent system composed of smaller, full-precision sub-agents outperform a single larger, quantized model at equal memory? *(Original Agere hypothesis).*
+3. **Corner 3 — RQ3 (Cell D vs. Cell A — Quantized MAS vs. Native Monolith):** Does a multi-agent system composed of larger, quantized agents outperform a single smaller, full-precision model at equal memory?
+4. **Corner 4 — RQ4 (Cell D vs. Cell B — Quantized MAS vs. Quantized Monolith):** Does a multi-agent system composed of larger, quantized agents outperform a single, much larger quantized model at equal memory? *(The missing comparison in prior literature).*
+
+### What "Done" Looks Like Concretely: The Practitioner Deployment Framework
+Not a leaderboard table with a winner circled, but a decision-theoretic statement of the form:
+> *Under a fixed resident memory budget $M$, [Architecture] paired with [Compression Strategy] is preferable when tasks are [Tool-Intensive vs. Deep Relational Reasoning], because [Specific Causal Mechanism logged in error diagnostics: tool hallucination surge vs. Markov boundary escape], and this held/didn't hold across two task families.*
 
 ---
 

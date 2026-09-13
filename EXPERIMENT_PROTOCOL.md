@@ -26,6 +26,26 @@ Prior literature has evaluated these two dimensions in isolation:
 
 This protocol formalizes a **2×2 Factorial Experimental Design** across **15 discrete hardware memory tiers** (4 GB to 32 GB at 2 GB increments), testing whether architectural modularity and post-training compression act independently, or whether they exhibit a significant non-linear interaction effect ($\Delta_{\text{interaction}}$).
 
+### 1.1 The Core Scientific Aim: Mapping Separability vs. Coupling (Not Picking a Winner)
+
+The aim of this research is explicitly **not** to "find a champion" or run an empirical benchmark tournament. Rather, the goal is to **characterize how two fundamental design choices—architecture (single agent vs. orchestrated multi-agent) and compression strategy (stay smaller at full precision vs. scale up and quantize)—interact under a fixed physical memory budget, and whether that interaction depends on the structural nature of the task.** You are not picking a champion; you are mapping a design space and finding out whether the two axes can be reasoned about independently or not.
+
+Concretely, this study answers the primary question sitting directly above all four individual comparisons:
+> **"Does quantization cost the same amount whether you apply it inside one monolithic model or distribute it across several orchestrated agents?"**
+
+The four base pairwise comparisons (A vs. B, C vs. B, D vs. A, D vs. B) are **the four boundary corners of the 2×2 factorial design space**—none of them is the point on its own; they are the four corners required to observe and quantify the interaction at all:
+* If quantization's penalty is roughly the same size in both settings ($\Delta_{\text{interaction}} \approx 0$), this establishes a clean **Separability Law**: practitioners can treat architectural modularity and compression strategy as orthogonal, decoupled engineering choices.
+* If quantization's penalty differs significantly ($\Delta_{\text{interaction}} \neq 0$), this establishes an **Interaction Law**:
+  - **Role-Specialization Buffering ($\Delta_{\text{interaction}} > 0$):** Narrow role prompts collapse the active token manifold, and external tool feedback allows quantized sub-agents to absorb low-bit precision loss better than a lone generalist maintaining long-range state.
+  - **Compounding Degradation ($\Delta_{\text{interaction}} < 0$):** Quantization noise stacks multiplicatively across inter-agent natural language handoffs, incurring a macro-orchestration double penalty (the $q_s$ inequality).
+
+Furthermore, the **Task-Type Moderator** is not an evaluation add-on to broaden coverage; it represents the **fundamental condition of validity** of the interaction effect:
+* If the interaction effect holds or flips between **tool-intensive workflows** (GAIA, where isolated operational roles buffer noise) and **pure multi-hop reasoning** (MuSiQue/FRAMES, where unassisted sequential handoffs compound errors under the Data Processing Inequality), that modulation is the actual scientific content of the paper. Testing both anchors proves whether the interaction effect is a general property of memory-constrained LLM systems or a narrow artifact of a single benchmark.
+
+**What "Done" Looks Like Concretely:**
+Not a leaderboard table with a winner circled, but a decision-theoretic statement of the form:
+> *Under a fixed resident VRAM budget $M$, [Architecture] paired with [Compression Strategy] is preferable when tasks are [Tool-Intensive vs. Deep Relational Reasoning], because [Specific Causal Mechanism logged in error diagnostics: tool hallucination surge vs. Markov boundary escape], and this held/didn't hold across two task families.*
+
 ---
 
 ## 2. Theoretical Framework & 2×2 Factorial Design
@@ -57,12 +77,19 @@ $$\begin{array}{c|c|c}
 
 ## 3. Research Questions & Mechanistic Hypotheses
 
-### 3.1 Research Questions
-* **RQ1 (A vs. B — Control Baseline Replication):** Does a larger, quantized single model outperform a smaller, native FP16 single model under identical resident memory limits? *(Replicates Bench360 findings as our internal baseline control).*
-* **RQ2 (C vs. B — Original Agere Question):** Does a multi-agent system of smaller native FP16 agents outperform a single larger quantized model under equal memory?
-* **RQ3 (D vs. A — Quantized Modular vs. Native Single):** Does a multi-agent system of larger, quantized agents outperform a single smaller native FP16 model under equal memory?
-* **RQ4 (D vs. B — Quantized Modular vs. Quantized Monolith):** Does a multi-agent system of larger, quantized agents outperform a single much larger quantized model under equal memory?
-* **RQ5 (The Interaction Term — Core Theoretical Contribution):** Does post-training quantization degrade performance more, less, or equally inside an orchestrated multi-agent system compared to a single monolithic model?
+### 3.1 Research Questions: The Four Corners & The Central Question Above Them
+
+The four base research questions are the **four corners of the factorial space**, providing the essential empirical bounds to observe the central interaction question:
+
+#### The Central Question (The Headline Scientific Prize)
+* **RQ5 (The Interaction Term — $\Delta_{	ext{interaction}}$):** Does post-training quantization cost the same amount whether applied inside a single monolithic model or distributed across an orchestrated multi-agent system?
+  $$\Delta_{	ext{interaction}} = \Delta_{	ext{Quant}|	ext{MAS}} - \Delta_{	ext{Quant}|	ext{SAS}} = [	ext{Score}(D) - 	ext{Score}(C)] - [	ext{Score}(B) - 	ext{Score}(A)]$$
+
+#### The Four Corners (Boundary Evidence)
+* **Corner 1 — RQ1 (A vs. B — Quantization Cost in SAS / Control Replication):** Does a larger, quantized single model outperform a smaller, native FP16 single model under identical resident memory limits? *(Replicates Bench360 as our internal baseline control: $\Delta_{	ext{Quant}|	ext{SAS}} = 	ext{Score}(B) - 	ext{Score}(A)$).*
+* **Corner 2 — RQ2 (C vs. B — Native MAS vs. Quantized Monolith):** Does a multi-agent system of smaller native FP16 agents outperform a single larger quantized model under equal memory? *(Original Agere hypothesis).*
+* **Corner 3 — RQ3 (D vs. A — Quantized MAS vs. Native Monolith):** Does a multi-agent system of larger, quantized agents outperform a single smaller native FP16 model under equal memory?
+* **Corner 4 — RQ4 (D vs. B — Quantized MAS vs. Quantized Monolith):** Does a multi-agent system of larger, quantized agents outperform a single much larger quantized model under equal memory? *(The missing comparison in prior literature).*
 
 ### 3.2 The Interaction Metric
 The factorial interaction effect is formally defined as:

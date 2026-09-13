@@ -17,12 +17,15 @@
 - [x] Articulate why VRAM is a hard physical ceiling vs. soft token/FLOP budgets
 - [x] Define the 5 research gaps from prior work (Compute-vs-Memory, Cross-Silo, Tool Confound, $q_s$ Inequality, Task Moderator)
 - [x] Frame the real-world application gap (local deployment dilemma across 15 hardware tiers)
-- [x] Formulate the 5 Core Research Questions:
-  - [x] **RQ1 (A vs. B):** Does larger quantized single model beat smaller FP16 single model? (Replication control)
-  - [x] **RQ2 (C vs. B):** Does native FP16 MAS beat single larger quantized model? (Original RQ)
-  - [x] **RQ3 (D vs. A):** Does quantized MAS of larger models beat single smaller FP16 model?
-  - [x] **RQ4 (D vs. B):** Does quantized MAS of larger models beat single giant quantized model?
-  - [x] **RQ5 (Interaction Term):** Does quantization degrade performance more, less, or equally inside MAS vs. SAS?
+- [x] Frame the Core Scientific Aim: **Mapping Separability vs. Coupling (Not Picking a Winner)**
+  - Central Question: Does quantization cost the same amount inside one model vs. across orchestrated agents?
+  - The Four Corners (Boundary Evidence):
+    - [x] **Corner 1 — RQ1 (A vs. B):** Quantization cost in SAS ($\Delta_{	ext{Quant}|	ext{SAS}} = 	ext{Score}(B) - 	ext{Score}(A)$)
+    - [x] **Corner 2 — RQ2 (C vs. B):** Native MAS vs. Quantized Monolith (Original Agere hypothesis)
+    - [x] **Corner 3 — RQ3 (D vs. A):** Quantized MAS vs. Native Monolith
+    - [x] **Corner 4 — RQ4 (D vs. B):** Quantized MAS vs. Quantized Monolith (The missing cell in literature)
+  - [x] **The Central Question — RQ5 (Interaction Term):** $\Delta_{	ext{interaction}} = \Delta_{	ext{Quant}|	ext{MAS}} - \Delta_{	ext{Quant}|	ext{SAS}}$
+  - [x] **Task Moderator as Boundary Condition:** GAIA (tool noise-buffering, $\Delta > 0$) vs. MuSiQue (reasoning error compounding, $\Delta < 0$)
 - [x] Formulate explicit hypotheses for the 2×2 Factorial Interaction:
   - [x] **Hypothesis 1 (Compounding Error / Double Penalty — $q_s$ Inequality):** $\Delta_{\text{interaction}} < 0$. Quantization noise stacks across agent handoffs.
   - [x] **Hypothesis 2 (Role Specialization Noise-Buffering):** $\Delta_{\text{interaction}} > 0$. Role specialization buffers against quantization noise.
@@ -421,19 +424,19 @@
 - [ ] Hyperparameters (temperature, top-p, max tokens, number of debate rounds, etc.)
 - [ ] Number of seeds and total compute used
 
-### 9.7 — Section 5: Results
-- [ ] Main results table and discussion
-- [ ] Per-benchmark analysis (where SAS wins, where MAS wins, and why)
-- [ ] Phase boundary and crossover findings
-- [ ] Efficiency analysis ($\eta_M$, $\eta_T$, latency)
-- [ ] Ablation findings
-- [ ] Statistical significance reporting
+### 9.7 — Section 5: Results (Separability vs. Coupling Analysis)
+- [ ] Main 2×2 Factorial Results: Map the 4 corners across 15 memory tiers (Cells A, B, C, D)
+- [ ] Core Interaction Test: Quantify $\Delta_{	ext{interaction}} = \Delta_{	ext{Quant}|	ext{MAS}} - \Delta_{	ext{Quant}|	ext{SAS}}$ (Test Separability vs. Coupling)
+- [ ] Three-Way Factorial ANOVA with Task Moderation: Report $F$, $p$, and $\eta_p^2$ for main effects, $(lphaeta)$, and $[(lphaeta)\delta]$
+- [ ] Task-Moderator Divergence: Contrast tool-buffering on GAIA vs. DPI error compounding on MuSiQue
+- [ ] Diagnostic Error Budget Analysis: Plot accuracy collapse under shrinking budgets ($k \in \{2, 5, 10\}$) following Jang et al. (2026)
+- [ ] Boundary Escape Quantification: Measure inter-agent error transmission across AHDS gates following Singh & Pawar (2026)
 
-### 9.8 — Section 6: Discussion
-- [ ] Interpret the crossover threshold — practical deployment guidance
-- [ ] Connect findings back to the $q_s$ inequality (does the macro-capacity hypothesis hold?)
-- [ ] Address when practitioners should choose SAS vs. MAS
-- [ ] Discuss surprising or counter-intuitive findings
+### 9.8 — Section 6: Discussion (The Practitioner Deployment Matrix)
+- [ ] Formulate the final Decision Framework: under fixed resident VRAM $M$, which pairing is optimal given task geometry and error budget
+- [ ] Causal Mechanisms: Explain the divergence via tool prompt manifold collapse vs. ungrounded token degradation
+- [ ] Connect findings back to the $q_s$ inequality (does the macro-orchestration capacity penalty hold?)
+- [ ] Practical deployment guidelines for local edge (4–12 GB), workstation (14–24 GB), and dual-GPU (26–32 GB) systems
 
 ### 9.9 — Section 7: Limitations & Future Work
 - [ ] Model family scope (only Qwen / only Llama — does it generalize?)

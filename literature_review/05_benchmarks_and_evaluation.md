@@ -163,3 +163,37 @@ Serves as our **parametric world knowledge benchmark**. It directly tests our co
 
 ### 7. Why We Might NOT Include It (Risks / Filtering Rationale)
 * None. It is the gold-standard benchmark for parametric knowledge depth.
+
+---
+
+## 6. Synthesis: The Minimal Dual-Benchmark Design as the Boundary Condition of the Interaction Effect
+
+A critical insight of this research is that benchmark selection is **not merely an exercise in coverage or finding where one system beats another**. Rather, the choice of benchmarks defines the **fundamental boundary condition of validity** for the interaction between architecture (SAS vs. MAS) and compression (FP16 vs. Quantized).
+
+```
+                               THE TASK MODERATOR SPECTRUM
+               
+    MuSiQue / FRAMES                                                 GAIA
+  [Multi-Hop Reasoning]                                     [Tool-Intensive Agentic]
+ ───────────────────────┬─────────────────────────────────────────────┬────────────────────────►
+                        │                                             │
+    • Closed-book       │                                             │  • Open-ended tools
+    • Lossy token pass  │                                             │  • Deterministic sandboxes
+    • DPI degradation   │                                             │  • Narrow operational roles
+                        ▼                                             ▼
+          Hypothesis: Δ < 0                             Hypothesis: Δ > 0
+         (Double Penalty Trap)                         (Role-Buffering Shield)
+```
+
+### 6.1 Anchor 1: GAIA (Testing the Role-Buffering Hypothesis, $\Delta > 0$)
+* **Mechanism:** In GAIA, agents operate within constrained functional roles (e.g., Python code execution, search query formulation, file inspection). The active token manifold required for each role is strictly bounded.
+* **Hypothesis:** Orchestration buffers against quantization noise because sub-agents are not forced to maintain long-range multi-task state in low-bit weights. Furthermore, external deterministic tool execution (Python interpreter stdout) acts as a hard sanity filter on intermediate outputs.
+
+### 6.2 Anchor 2: MuSiQue / FRAMES (Testing the Compounding Degradation Hypothesis, $\Delta < 0$)
+* **Mechanism:** In unassisted multi-hop reasoning, intermediate facts are passed purely as natural language tokens across sequential agent handoffs.
+* **Hypothesis:** Under the Data Processing Inequality (DPI) and the Markov error snowball model (Singh & Pawar, 2026), each discrete agent handoff amplifies quantization-induced stochasticity and hallucination. Quantization imposes an inescapable double penalty on multi-agent collaboration.
+
+### 6.3 Diagnostic Evaluation Standard (Jang et al., 2026)
+Following Jang et al. (July 2026, *Flat Score, Amplified Failures*), end-to-end task scores alone are insufficient because generous benchmark error allowances (up to 10 retries per episode) absorb up to 2.5× amplification in tool hallucination volume. Our evaluation pipeline therefore enforces:
+1. **Variable Error Budget Curves:** Evaluating episode success under $k \in \{2, 5, 10\}$ error caps to expose operational fragility.
+2. **Per-Channel Failure Logging:** Tracking tool-name hallucinations, schema formatting syntax errors, and inter-agent boundary escape rates to substantiate the exact causal failure mechanisms behind the 2×2 interaction.
