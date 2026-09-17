@@ -1,3 +1,5 @@
+> **Note (Sept 2026):** Active sections: **22, 27, 36–38**. SAS-Quant = monolith; MAS-FP16 = team (not MAS-Quant unless optional 2×2).
+
 # Literature Review: Pillar 3 — Quantization, Memory Scaling & On-Device LLMs (Papers 22–30)
 
 This document provides a comprehensive, rigorous literature review of Papers 22 through 30, covering **weight-only and end-to-end quantization, extreme low-bit compression, sub-billion on-device model architectures, and multi-agent KV-cache serving runtimes**.

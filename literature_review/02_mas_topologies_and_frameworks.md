@@ -1,3 +1,5 @@
+> **Note (Sept 2026):** **Deprioritized.** Use MetaGPT via paper **11** and [`06_regulated_finance_local_llm.md`](./06_regulated_finance_local_llm.md) instead.
+
 # Literature Review: Pillar 1 (Continued) — Multi-Agent Topologies & Frameworks (Papers 09–14)
 
 This document provides a comprehensive, rigorous literature review of Papers 09 through 14, covering the foundational **Multi-Agent System (MAS) topologies, collaborative frameworks, and communication protocols**.

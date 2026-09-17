@@ -1,3 +1,5 @@
+> **Note (Sept 2026):** Archival pillar doc (VRAM-era). Current scope: [`06_regulated_finance_local_llm.md`](./06_regulated_finance_local_llm.md). Active papers here: **01, 02, 03, 07** only.
+
 # Literature Review: Pillar 1 — Multi-Agent Systems vs. Single-Agent Scaling (Papers 01–08)
 
 This document provides a comprehensive, rigorous literature review of the first 8 papers covering **Single-Agent vs. Multi-Agent System (SAS vs. MAS) comparisons, agent scaling behavior, and orchestration failure modes**.

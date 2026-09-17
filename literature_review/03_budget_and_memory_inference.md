@@ -1,3 +1,5 @@
+> **Note (Sept 2026):** Active sections: papers **15, 16** (token budget + local quant monolith). Ignore VRAM-tier content.
+
 # Literature Review: Pillar 2 — Budget-Constrained & Memory-Aware Inference (Papers 15–21)
 
 This document provides a comprehensive, rigorous literature review of Papers 15 through 21, covering **budget-normalized evaluation methodologies, local hardware memory profiling, inference compute scaling, and resource-bounded serving**.

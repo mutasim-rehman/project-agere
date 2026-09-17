@@ -1,7 +1,9 @@
 # Spend It Together or Spend It Big: Research Roadmap & TODO
-*(Project Agere — A 2×2 Factorial Study of Architectural Modularity and Post-Training Quantization Under Strict VRAM Parity)*
+*(Project Agere — MAS-FP16 vs. SAS-Quant on Analyst RAM for Regulated Finance)*
 
-> **Overarching RQ:** Given a fixed physical resident VRAM budget $M$, do the choice of architecture (Single-Agent vs. Multi-Agent) and the choice of compression strategy (native FP16 vs. quantized scaling) act independently, or do they interact — such that the optimal compression strategy depends on which architecture is chosen?
+> **Overarching RQ:** Can a multi-agent system of smaller, full-precision LLMs outperform a single larger, quantized LLM when both use the **same peak system RAM** and the **same thinking-token budget** on KYC/credit/mortgage document workflows?
+>
+> **Application:** [`APPLICATION.md`](./APPLICATION.md) | **Protocol:** [`EXPERIMENT_PROTOCOL.md`](./EXPERIMENT_PROTOCOL.md) v3.0
 
 ---
 
@@ -63,11 +65,15 @@
 - [x] Justify why each of the remaining 20 papers was excluded
 - [x] Write paper-framing templates (Introduction & Related Work paragraphs)
 
-### 2.5 — Final Literature Review Polishing
-- [ ] Cross-check every claim in thematic docs against the actual paper summaries for accuracy
-- [ ] Add missing cross-references between thematic documents (e.g., link quantization findings to MAS evaluation gaps)
-- [ ] Verify no relevant 2025–2026 papers were missed (do a final arXiv sweep for "multi-agent VRAM", "quantized agent", "memory-constrained LLM")
-- [ ] Add a "Limitations of This Review" sub-section to the master README
+### 2.5 — Literature Review (Finance pivot — Sept 2026)
+- [x] Pivot master LR to finance + system RAM ([`literature_review/README.md`](./literature_review/README.md))
+- [x] Add application synthesis [`literature_review/06_regulated_finance_local_llm.md`](./literature_review/06_regulated_finance_local_llm.md)
+- [x] Curate 16-paper corpus; document exclusions [`sources/EXCLUDED_PAPERS.md`](./sources/EXCLUDED_PAPERS.md)
+- [x] Download MortarBench + Financial QA SME papers to `sources/papers/`
+- [x] Add regulatory context [`sources/regulatory/README.md`](./sources/regulatory/README.md)
+- [x] Write summaries for papers 44–45
+- [ ] Add "Limitations" section to LR README after first experiments
+- [ ] arXiv sweep: "on-prem KYC LLM", "local LLM financial hallucination", "mortgage agent benchmark"
 
 ---
 

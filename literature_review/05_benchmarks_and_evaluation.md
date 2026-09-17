@@ -1,3 +1,5 @@
+> **Note (Sept 2026):** Replace GAIA/SWE/MMLU focus with **34 (BFCL), 44, 45** — see [`06_regulated_finance_local_llm.md`](./06_regulated_finance_local_llm.md).
+
 # Literature Review: Pillar 4 — Benchmarks & Empirical Evaluation Infrastructure (Papers 31–35)
 
 This document provides a comprehensive, rigorous literature review of Papers 31 through 35, covering the official **benchmark datasets, evaluation protocols, and leaderboards** used to measure reasoning depth, tool usage, and parametric knowledge.
