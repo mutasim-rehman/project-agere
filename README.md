@@ -6,7 +6,9 @@
 
 Banks and funds that **cannot use cloud LLMs** on KYC and credit files default to **one large quantized model on the analyst PC**; we test whether a **team of smaller full-precision agents** is a better use of the **same RAM and thinking-token budget**.
 
-→ Full application framing: [`APPLICATION.md`](./APPLICATION.md)
+→ Full application framing: [`APPLICATION.md`](./APPLICATION.md)  
+→ Domain glossary & workflows: [`FINANCE_DOMAIN_CONTEXT.md`](./FINANCE_DOMAIN_CONTEXT.md)  
+→ SAS vs MAS gap list & improve-then-compare loop: [`SYSTEM_GAPS_AND_IMPROVEMENTS.md`](./SYSTEM_GAPS_AND_IMPROVEMENTS.md)
 
 ---
 
@@ -68,16 +70,18 @@ Protocol detail: [`EXPERIMENT_PROTOCOL.md`](./EXPERIMENT_PROTOCOL.md)
 ## Repository layout
 
 ```
-APPLICATION.md          # Who benefits (supervisor-facing)
-README.md               # This file
-EXPERIMENT_PROTOCOL.md  # RAM + token parity study spec
-configs/                # Hardware + system YAML (to be aligned to RAM tiers)
-literature_review/      # Thematic synthesis + per-paper summaries (legacy summaries retained)
+APPLICATION.md                  # Who benefits (supervisor-facing)
+FINANCE_DOMAIN_CONTEXT.md       # KYC/credit/mortgage + compliance glossary
+SYSTEM_GAPS_AND_IMPROVEMENTS.md # Where SAS-Quant / MAS fail; fix backlog; compare loop
+README.md                       # This file
+EXPERIMENT_PROTOCOL.md          # RAM + token parity study spec
+configs/                        # Hardware + system YAML (to be aligned to RAM tiers)
+literature_review/              # Thematic synthesis + per-paper summaries (legacy summaries retained)
 sources/
-  papers/               # Downloaded PDFs
+  papers/                       # Downloaded PDFs
   INDEX.md
   PAPERS_DICTIONARY.md
-  regulatory/           # FINRA/SEC pointers (non-PDF)
+  regulatory/                   # FINRA/SEC pointers (non-PDF)
 ```
 
 ---

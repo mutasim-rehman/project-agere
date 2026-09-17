@@ -20,6 +20,8 @@ The default local install is: **quantize the largest single model that fits in R
 
 > **Can a multi-agent system of smaller, full-precision LLMs outperform a single larger, quantized LLM when both use the same hardware resources (peak resident RAM) and the same thinking-token budget?**
 
+Domain glossary: [`FINANCE_DOMAIN_CONTEXT.md`](./FINANCE_DOMAIN_CONTEXT.md). Gap list and improve-then-compare loop: [`SYSTEM_GAPS_AND_IMPROVEMENTS.md`](./SYSTEM_GAPS_AND_IMPROVEMENTS.md).
+
 ## Primary workflow under study
 
 **KYC/CDD case-file preparation** (primary) and **credit-memo narrative drafting** (secondary): multi-document ingest, structured extraction, discrepancy flags, **citation-grounded draft**, verifier pass. The LLM **does not** approve customers, assign risk ratings, or file SARs.
