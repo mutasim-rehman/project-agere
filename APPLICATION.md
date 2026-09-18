@@ -4,7 +4,7 @@
 
 | Stakeholder | Role | Constraint |
 | :--- | :--- | :--- |
-| **Compliance / IT (buyer)** | Regional bank, private-credit fund, RIA, fintech onboarding team | Cannot send KYC files, credit packs, or client PII to public cloud LLM APIs (GDPR, DORA, Reg S-P, FINRA 24-09, MNPI policies) |
+| **Compliance / IT (buyer)** | Commercial banks, emerging market institutions (e.g., Pakistani banks under SBP/FATF rules), private-credit funds, RIAs, fintech onboarding teams | Cannot send KYC files, credit packs, or client PII to public cloud LLM APIs (GDPR, DORA, Reg S-P, SBP BPRD/Cybersecurity directives, FINRA 24-09, MNPI policies) |
 | **KYC / credit analyst (user)** | Prepares case files and memo drafts; **human signs off** | Standard **16 GB RAM** office PC, often **CPU-only** (llama.cpp / Ollama), no datacenter GPU |
 | **MLRO / supervisor** | Reviews audit trail and sampling | Needs cited evidence, refusal on missing data, immutable logs—not leaderboard accuracy |
 
