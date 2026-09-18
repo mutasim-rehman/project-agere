@@ -48,8 +48,8 @@ Industry default: one larger Q4/Q5 generalist + tools on 16 GB.
 
 | ID | Gap | What it looks like on KYC/credit | Why it happens | Improvement to try | Priority |
 | :--- | :--- | :--- | :--- | :--- | :---: |
-| **S1** | **No domain adaptation** | Weak on KYC field names, memo structure, refusal phrasing | Quantization only compresses a *general* model | LoRA / QLoRA / instruction tune on synthetic KYC+memo packs | P0 |
-| **S2** | **Invention under missing data** | Fills blank DOB, invents registry #, fabricates deposit | Generalist trained to be “helpful”; quant amplifies tool/agent errors ([Jang 2026](./literature_review/04_quantization_and_ondevice.md)) | Explicit refuse policy; “UNKNOWN” tokens; verifier pass; train on missing-field examples | P0 |
+| **S1** | **No domain adaptation** | Weak on KYC field names, memo structure, refusal phrasing (e.g. NADRA CNIC formats, SBP PR terminology) | Quantization only compresses a *general* model | LoRA / QLoRA / instruction tune on synthetic KYC+memo packs | P0 |
+| **S2** | **Invention under missing data** | Fills blank DOB, invents registry #, fabricates deposit (or hallucinating e-CIB / tax clearance) | Generalist trained to be “helpful”; quant amplifies tool/agent errors ([Jang 2026](./literature_review/04_quantization_and_ondevice.md)) | Explicit refuse policy; “UNKNOWN” tokens; verifier pass; train on missing-field examples | P0 |
 | **S3** | **Mixed roles in one brain** | Extraction errors invisible inside fluent narrative | One prompt does extract+judge+draft | Single-model **staged prompts** (pseudo-pipeline) + JSON schema checkpoints | P0 |
 | **S4** | **Weak numeric discipline** | Prose changes EBITDA / DSCR vs spreadsheet | LLM treats numbers as language | Force calculator tool; ban free-form amounts; cite tool JSON only | P0 |
 | **S5** | **Tool-call brittleness under quant** | Wrong tool names, bad args, entity drift mid-case | Quant amplifies existing agent failures ([Jang 2026](./literature_review/04_quantization_and_ondevice.md)) | Stricter schemas (BFCL-style); fewer tools; retry budget ≤2 | P1 |
