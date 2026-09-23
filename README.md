@@ -7,6 +7,7 @@
 Banks and funds that **cannot use cloud LLMs** on KYC and credit files default to **one large quantized model on the analyst PC**; we test whether a **team of smaller full-precision agents** is a better use of the **same RAM and thinking-token budget**.
 
 → Full application framing: [`APPLICATION.md`](./APPLICATION.md)  
+→ Master methodology specification: [`METHODOLOGY.md`](./METHODOLOGY.md)  
 → Domain glossary & workflows: [`FINANCE_DOMAIN_CONTEXT.md`](./FINANCE_DOMAIN_CONTEXT.md)  
 → SAS vs MAS gap list & improve-then-compare loop: [`SYSTEM_GAPS_AND_IMPROVEMENTS.md`](./SYSTEM_GAPS_AND_IMPROVEMENTS.md)
 
@@ -71,6 +72,7 @@ Protocol detail: [`EXPERIMENT_PROTOCOL.md`](./EXPERIMENT_PROTOCOL.md)
 
 ```
 APPLICATION.md                  # Who benefits (supervisor-facing)
+METHODOLOGY.md                  # Comprehensive experimental methodology & domain adaptation
 FINANCE_DOMAIN_CONTEXT.md       # KYC/credit/mortgage + compliance glossary
 SYSTEM_GAPS_AND_IMPROVEMENTS.md # Where SAS-Quant / MAS fail; fix backlog; compare loop
 README.md                       # This file
