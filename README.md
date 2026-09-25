@@ -72,7 +72,7 @@ Protocol detail: [`EXPERIMENT_PROTOCOL.md`](./EXPERIMENT_PROTOCOL.md)
 
 ```
 APPLICATION.md                  # Who benefits (supervisor-facing)
-METHODOLOGY.md                  # Comprehensive experimental methodology & domain adaptation
+METHODOLOGY.md                  # Methodology: tiers, models, Q4_K_M, fine-tune, judgement, NVMe lab store
 FINANCE_DOMAIN_CONTEXT.md       # KYC/credit/mortgage + compliance glossary
 SYSTEM_GAPS_AND_IMPROVEMENTS.md # Where SAS-Quant / MAS fail; fix backlog; compare loop
 README.md                       # This file
