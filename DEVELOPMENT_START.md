@@ -24,25 +24,25 @@ Machine-readable copy of the same lock: [`configs/locked/`](./configs/locked/).
 | Configs a runner can load for the current study | Yes, as of this lock | [`configs/locked/`](./configs/locked/) |
 | Python package, inference code, datasets on disk | No | [§9](#9-what-to-build-first) |
 
-Start on the **16 GB** tier. Build the naive baseline before any fine-tune. Do not implement the old 15-tier GPU plan in [`TODO.md`](./TODO.md) Phase 4–7.
+Start on the **16 GB** tier. Build the naive baseline before any fine-tune. The old 15-tier GPU checklist and its YAML have been removed from the tree.
 
 ---
 
 ## 1. What was already written, and what contradicted it
 
-The decisions below were already made in [`METHODOLOGY.md`](./METHODOLOGY.md) v1.1 (25 September 2026), sections 10–17. They were not in one place a developer could follow, and three older artifacts still describe a different study:
+The decisions below were already made in [`METHODOLOGY.md`](./METHODOLOGY.md) v1.1 (25 September 2026), sections 10–17. An earlier draft described a different study: 15 GPU VRAM tiers, CUDA, vLLM, AWQ, GAIA, and GSM8K. That draft’s checklist and YAML have been **deleted**. Where the remaining prose still disagrees with this file, this file wins.
 
-| Topic | Older text | Lock used for code |
+| Topic | What the older draft said | Lock used for code |
 | :--- | :--- | :--- |
-| Hardware axis | [`TODO.md`](./TODO.md) and `configs/hardware_tiers/`, `configs/systems/mas/`: **15 GPU VRAM tiers**, CUDA, vLLM, AWQ | **3 system-RAM tiers** (8 / 16 / 32 GB), **CPU**, llama.cpp. Those YAML trees are archived. See [`configs/README.md`](./configs/README.md). |
-| Model family | Protocol: “Qwen2.5 / Llama 3.x”. Methodology §4.1: “14B or Llama-3.1-8B/14B”. TODO: “choose a family” still open | **Qwen2.5-Instruct only.** Llama stays out of scope until the 16 GB headline result exists. |
-| SAS quant | Protocol allows “Q5/Q8”. TODO lists INT8, AWQ, 2-bit, 1-bit as the main sweep. Cell D YAML is INT4-AWQ | **GGUF Q4_K_M on every SAS tier.** Q5_K_M is a sensitivity run only. Q3 and below are not a system we compare. AWQ is the paper that justifies 4-bit. It is not the file we run. |
-| MAS at 16 GB | `configs/systems/mas/ahds/ahds_16gb.yaml`: two 3B FP16 models plus a 1.5B | **One** 3B (orchestrator and drafter), **one** 1.5B extractor, **one** 1.5B verifier |
-| MAS at 8 GB | AHDS YAML: 1.5B + 1.5B + 0.5B | **1.5B + 0.5B + 0.5B** |
-| MAS at 32 GB | AHDS YAML: 7B + 7B + 0.5B | **7B + 3B + 1.5B** |
-| How many agents | Protocol lists five roles | **Three generative models** plus one shared embedding retriever. The drafter is the orchestrator checkpoint, not a fourth LLM. |
-| Saturation rule | Old YAML: ≥95% of GPU VRAM (MUPP) | **RUPP:** peak RSS ≤ tier, and both arms should reach **≥85%** of the tier on a real case. Measure it. Do not pad memory to fake the percentage. |
-| Headline benchmarks | TODO: GAIA, GSM8K, MATH-500, GPQA | **Tracks A–D** in [§8](#8-tasks-the-first-code-must-score). GAIA and GSM8K are not the start path. |
+| Hardware axis | 15 GPU VRAM tiers, CUDA, vLLM | **3 system-RAM tiers** (8 / 16 / 32 GB), **CPU**, llama.cpp |
+| Model family | “Qwen2.5 / Llama 3.x”, family still open. Methodology §4.1 still says “or Llama-3.1” | **Qwen2.5-Instruct only.** Llama stays out of scope until the 16 GB headline result exists. |
+| SAS quant | Q5/Q8, INT8, AWQ, 2-bit, 1-bit as the main sweep | **GGUF Q4_K_M on every SAS tier.** Q5_K_M is a sensitivity run only. Q3 and below are not a system we compare. AWQ is the paper that justifies 4-bit. It is not the file we run. |
+| MAS at 16 GB | Two 3B FP16 models plus a 1.5B | **One** 3B (orchestrator and drafter), **one** 1.5B extractor, **one** 1.5B verifier |
+| MAS at 8 GB | 1.5B + 1.5B + 0.5B | **1.5B + 0.5B + 0.5B** |
+| MAS at 32 GB | 7B + 7B + 0.5B | **7B + 3B + 1.5B** |
+| How many agents | Five named roles, each a model | **Three generative models** plus one shared embedding retriever. The drafter is the orchestrator checkpoint, not a fourth LLM. |
+| Saturation rule | ≥95% of GPU VRAM | **RUPP:** peak RSS ≤ tier, and both arms should reach **≥85%** of the tier on a real case. Measure it. Do not pad memory to fake the percentage. |
+| Headline benchmarks | GAIA, GSM8K, MATH-500, GPQA | **Tracks A–D** in [§8](#8-tasks-the-first-code-must-score) |
 
 ---
 
@@ -305,7 +305,7 @@ Primary judgement, 16 GB, resident, 2,048 thinking tokens, **hardened** systems:
 
 ## 9. What to build first
 
-Phase 4 in [`TODO.md`](./TODO.md) is the old GPU checklist. Follow this order instead.
+Follow this order.
 
 1. **Lab layout, not weights in git.** `AGERE_ROOT` on the external SSD (`weights/`, `adapters/`, `datasets/`, `runs/`, `manifests/`). The job refuses to start if `AGERE_ROOT` is unset. SHA-256 every GGUF before a config points at it.
 2. **16 GB naive SAS.** Load `Qwen2.5-14B-Instruct` Q4_K_M in llama.cpp. One case. Record peak RSS and tokens. Cap the process at 16 GB.
@@ -327,14 +327,3 @@ Still open, and none of them block step 2:
 | Whether the lab has a 24 GB GPU for 14B QLoRA | Fallback is a labelled 7B stand-in. The 14B Q4 baseline still runs. |
 | llama.cpp version pin | Pin the version in the environment when it is installed. |
 
----
-
-## 10. Documents that are not the spec for coding
-
-| Path | What to do with it |
-| :--- | :--- |
-| `configs/hardware_tiers/*.yaml` | Archived GPU tiers. Do not load. |
-| `configs/systems/mas/quant/*.yaml` | Archived Cell D AWQ layouts. Do not load. |
-| `configs/systems/mas/ahds/*.yaml` | Archived. Model sizes disagree with [§3](#3-models-per-tier). |
-| `configs/benchmarks/gaia_tool_slice.yaml`, `musique_reasoning_slice.yaml` | Old task moderator. Track D may use a MuSiQue slice later. It is not the first dataset to download. |
-| [`TODO.md`](./TODO.md) Phases 4–7 | Historical. The start order is [§9](#9-what-to-build-first). |

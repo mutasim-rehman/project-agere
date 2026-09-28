@@ -79,8 +79,7 @@ FINANCE_DOMAIN_CONTEXT.md       # KYC/credit/mortgage + compliance glossary
 SYSTEM_GAPS_AND_IMPROVEMENTS.md # Where SAS-Quant / MAS fail; fix backlog; compare loop
 README.md                       # This file
 EXPERIMENT_PROTOCOL.md          # RAM + token parity study spec
-configs/locked/                 # Authoritative 8/16/32 GB SAS and MAS configs
-configs/                        # Legacy 15-tier GPU YAML — do not load
+configs/locked/                 # 8/16/32 GB SAS and MAS configs
 literature_review/              # Thematic synthesis + per-paper summaries (legacy summaries retained)
 sources/
   papers/                       # Downloaded PDFs

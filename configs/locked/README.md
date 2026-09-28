@@ -2,7 +2,7 @@
 
 These files are the machine-readable copy of [`../../DEVELOPMENT_START.md`](../../DEVELOPMENT_START.md).
 
-Load these. Do not load `../hardware_tiers/` or `../systems/mas/`.
+These are the only system configs in the repo.
 
 | File | Contents |
 | :--- | :--- |
