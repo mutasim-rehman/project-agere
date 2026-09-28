@@ -4,6 +4,8 @@
 > **Overarching RQ:** Can a multi-agent system of smaller, full-precision LLMs outperform a single larger, quantized LLM when both use the **same peak system RAM** and the **same thinking-token budget** on KYC/credit/mortgage document workflows?
 >
 > **Application:** [`APPLICATION.md`](./APPLICATION.md) | **Protocol:** [`EXPERIMENT_PROTOCOL.md`](./EXPERIMENT_PROTOCOL.md) v3.0
+>
+> **Coding spec (28 Sep 2026):** [`DEVELOPMENT_START.md`](./DEVELOPMENT_START.md) and [`configs/locked/`](./configs/locked/). Phases 4–7 below still describe the superseded 15-tier GPU plan. Do not implement that plan. Model family, Q4_K_M, QLoRA, and the three-model MAS layouts are locked.
 
 ---
 

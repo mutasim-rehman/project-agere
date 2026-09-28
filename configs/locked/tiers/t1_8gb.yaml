@@ -1,0 +1,53 @@
+tier_id: t1
+name: 8 GB legacy analyst laptop
+primary: false
+peak_rss_cap_gb: 8
+min_peak_rss_fraction: 0.85
+context_tokens: 4096
+thinking_token_cap: 2048
+thinking_token_sweep: [1024, 2048, 4096]
+runtime: llama.cpp
+device: cpu
+job_must_be_capped_at_tier: true
+
+sas:
+  arm: SAS-Quant
+  hf_id: Qwen/Qwen2.5-7B-Instruct
+  gguf: Q4_K_M
+  weight_gb_approx: 4.7
+  finetune: qlora_nf4_then_requant_q4_k_m
+  finetune_gpu_vram_gb: 12
+  finetune_fallback: cpu_offload_or_any_gpu_that_holds_7b_nf4
+
+mas:
+  arm: MAS-FP16
+  generative_model_count: 3
+  residency_primary: resident
+  residency_secondary: sequential
+  weight_sum_gb_approx: 5.1
+  shrink_order_if_over_cap: [extractor, verifier]
+  models:
+    - instance: orchestrator_drafter
+      roles: [orchestrator, drafter]
+      hf_id: Qwen/Qwen2.5-1.5B-Instruct
+      gguf: F16
+      weight_gb_approx: 3.1
+    - instance: extractor
+      roles: [extractor]
+      hf_id: Qwen/Qwen2.5-0.5B-Instruct
+      gguf: F16
+      weight_gb_approx: 1.0
+    - instance: verifier
+      roles: [verifier]
+      hf_id: Qwen/Qwen2.5-0.5B-Instruct
+      gguf: F16
+      weight_gb_approx: 1.0
+  retriever:
+    hf_id: BAAI/bge-small-en-v1.5
+    generative: false
+  token_schedule:
+    extractor: 0.30
+    retriever: 0.10
+    drafter: 0.40
+    verifier: 0.20
+    reserve_verifier_first: true

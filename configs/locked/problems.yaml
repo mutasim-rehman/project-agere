@@ -1,0 +1,40 @@
+# Gap → fix. Priorities match SYSTEM_GAPS_AND_IMPROVEMENTS.md.
+# P0 must be attempted before the hardened comparison.
+
+sas:
+  - {id: S1, priority: P0, fix: qlora_on_synthetic_kyc_and_credit_mixture}
+  - {id: S2, priority: P0, fix: train_missing_and_unverified_tokens}
+  - {id: S3, priority: P0, fix: staged_prompts_with_json_checkpoints}
+  - {id: S4, priority: P0, fix: financial_calculator_only_no_prose_arithmetic}
+  - {id: S5, priority: P1, fix: four_tools_strict_schema_max_two_retries}
+  - {id: S6, priority: P0, fix: mandatory_span_ids_plus_string_match}
+  - {id: S7, priority: P0, fix: deterministic_mismatch_diff}
+  - {id: S8, priority: P1, fix: chunked_extract_into_case_store}
+  - {id: S9, priority: P1, fix: fixed_memo_template_and_discrepancy_table}
+  - {id: S10, priority: P1, fix: draft_only_no_approval_language}
+  - {id: S11, priority: P0, fix: case_scoped_index_no_cross_client_retrieval}
+  - {id: S12, priority: P2, fix: stay_on_q4_k_m_no_q3_or_q2_arm}
+
+mas:
+  - {id: M1, priority: P0, fix: one_sop_and_json_done_schema}
+  - {id: M2, priority: P0, fix: json_only_handoff_missing_is_a_value}
+  - {id: M3, priority: P0, fix: verifier_rejects_failed_quote_check}
+  - {id: M4, priority: P0, fix: stateless_workers_constraint_packet_every_call}
+  - {id: M5, priority: P1, fix: filter_retrieval_by_product_jurisdiction_doc_ids}
+  - {id: M6, priority: P1, fix: no_debate_one_pass_plus_one_repair}
+  - {id: M7, priority: P0, fix: verifier_is_span_match_not_a_rewriter}
+  - {id: M8, priority: P0, fix: token_schedule_verifier_reserved_first}
+  - {id: M9, priority: P1, fix: report_resident_and_sequential_separately}
+  - {id: M10, priority: P1, fix: largest_model_is_orchestrator_stages_are_code}
+  - {id: M11, priority: P2, fix: one_case_store_only_extractor_reads_documents}
+  - {id: M12, priority: P0, fix: role_prompts_schemas_optional_role_lora}
+  - {id: M13, priority: P0, fix: pass_requires_every_amount_to_match_a_span}
+  - {id: M14, priority: P2, fix: one_json_log_line_per_stage}
+
+shared:
+  - {id: X1, fix: score_invention_mismatch_grounding_refusal}
+  - {id: X2, fix: calculator_outside_the_model}
+  - {id: X3, fix: draft_only_human_signs}
+  - {id: X4, fix: synthetic_packs_only}
+  - {id: X5, fix: identical_tool_schemas}
+  - {id: X6, fix: rupp_and_shared_thinking_token_cap}

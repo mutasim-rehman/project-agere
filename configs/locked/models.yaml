@@ -1,0 +1,61 @@
+# Checkpoint registry. Sizes are weights only.
+# GGUF files are produced from the official snapshot and hashed on the lab SSD.
+# See DEVELOPMENT_START.md sections 2–4.
+
+family: Qwen2.5-Instruct
+second_family: out_of_scope_until_16gb_headline_exists
+inference_runtime: llama.cpp
+inference_device: cpu
+
+checkpoints:
+  - id: qwen2.5-0.5b-instruct
+    hf_id: Qwen/Qwen2.5-0.5B-Instruct
+    params_b: 0.5
+    f16_weight_gb: 1.0
+    q4_k_m_weight_gb: null
+    used_as: [mas_worker]
+  - id: qwen2.5-1.5b-instruct
+    hf_id: Qwen/Qwen2.5-1.5B-Instruct
+    params_b: 1.5
+    f16_weight_gb: 3.1
+    q4_k_m_weight_gb: null
+    used_as: [mas_orchestrator, mas_worker]
+  - id: qwen2.5-3b-instruct
+    hf_id: Qwen/Qwen2.5-3B-Instruct
+    params_b: 3
+    f16_weight_gb: 6.2
+    q4_k_m_weight_gb: null
+    used_as: [mas_orchestrator, mas_worker]
+  - id: qwen2.5-7b-instruct
+    hf_id: Qwen/Qwen2.5-7B-Instruct
+    params_b: 7
+    f16_weight_gb: 15
+    q4_k_m_weight_gb: 4.7
+    used_as: [sas_t1, mas_orchestrator_t3, labelled_qlora_stand_in]
+  - id: qwen2.5-14b-instruct
+    hf_id: Qwen/Qwen2.5-14B-Instruct
+    params_b: 14
+    f16_weight_gb: null
+    q4_k_m_weight_gb: 9.0
+    used_as: [sas_t2]
+  - id: qwen2.5-32b-instruct
+    hf_id: Qwen/Qwen2.5-32B-Instruct
+    params_b: 32
+    f16_weight_gb: null
+    q4_k_m_weight_gb: 20
+    used_as: [sas_t3]
+
+retriever:
+  hf_id: BAAI/bge-small-en-v1.5
+  generative: false
+  shared_across_arms: true
+  counted_in_rss: true
+
+gguf:
+  mas_precision: F16
+  sas_precision: Q4_K_M
+  sas_sensitivity_only: Q5_K_M
+  forbidden_for_headline: [Q3_K_M, Q2_K, IQ2, AWQ, GPTQ]
+  filename_pattern:
+    f16: "qwen2.5-{size}-instruct-f16.gguf"
+    q4_k_m: "qwen2.5-{size}-instruct-q4_k_m.gguf"

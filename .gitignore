@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.gguf
+*.safetensors
+weights/
+adapters/
+experiments/
+runs/
+.DS_Store

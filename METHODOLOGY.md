@@ -12,6 +12,7 @@
 
 | Question | Section |
 | :--- | :--- |
+| Coding lock if this file and the configs disagree | [`DEVELOPMENT_START.md`](./DEVELOPMENT_START.md) |
 | Which model on each RAM tier, and on what hardware | [§10](#10-models-quantization-and-hardware-by-tier) |
 | Which quantization method, and how fine-tuning works | [§11](#11-quantization-method-and-fine-tuning-procedure) |
 | Which datasets, and what is forbidden in training | [§12](#12-datasets-train-dev-and-test) |
