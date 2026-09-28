@@ -1,0 +1,52 @@
+# SAS fine-tune, then re-quantize. MAS adapters are optional.
+# DEVELOPMENT_START.md section 5.
+
+sas:
+  method: qlora_nf4
+  not_method: qa_lora
+  base_quant: nf4
+  double_quant: true
+  lora_rank: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  compute_dtype: bf16_else_fp16
+  optimizer: adamw_8bit
+  learning_rate: 2.0e-4
+  schedule: cosine
+  warmup_ratio: 0.03
+  epochs: [2, 3]
+  early_stop_metric: dev_invention_rate
+  early_stop_patience_epochs: 1
+  sequence_length: 2048
+  memo_sequence_length_if_headroom: 4096
+  effective_batch_size: 16
+  mixture_by_example_count:
+    missing_data: 0.40
+    tool_calls: 0.30
+    citations: 0.30
+  after_train:
+    - merge_adapter_into_16bit
+    - convert_gguf_f16
+    - llama_quantize_q4_k_m
+    - smoke_test_peak_rss
+  evaluated_file: q4_k_m_gguf
+  never_evaluate: merged_16bit
+
+  gpu_vram_gb:
+    "7b": 12
+    "14b": 24
+    "32b": 48
+  fallback:
+    "14b_without_24gb_gpu": labelled_7b_q4_stand_in_plus_untuned_14b_q4_baseline
+    "32b_without_48gb_gpu": skip_lora_run_q4_base_with_same_prompts_and_tools
+
+mas_role_lora:
+  required: false
+  keep_rule: improves_dev_invention_rate_or_mismatch_recall
+  else: discard_and_ship_base_f16
+  roles:
+    extractor: field_json_only
+    drafter: memo_citing_existing_ids_only
+    verifier: binary_pass_fail_with_hard_negatives
+    orchestrator: prompt_and_schema_unless_dev_drops_stages

@@ -16,7 +16,7 @@
 
 ## Configs status
 
-Existing YAML under `configs/hardware_tiers/` and `configs/systems/mas/*` still reflect the **old VRAM 15-tier** design. **Next implementation step:** regenerate configs for 3 RAM tiers and CPU inference—or treat legacy YAML as archived.
+The 15-tier GPU YAML and the old implementation checklist have been removed. The current lock is [`DEVELOPMENT_START.md`](./DEVELOPMENT_START.md) plus [`configs/locked/`](./configs/locked/) (8 / 16 / 32 GB, Q4_K_M SAS, three-model F16 MAS, QLoRA). Next implementation step is the 16 GB naive baseline in that document, section 9.
 
 ## New downloads
 

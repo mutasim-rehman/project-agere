@@ -9,6 +9,8 @@ Banks and funds that **cannot use cloud LLMs** on KYC and credit files default t
 → Full application framing: [`APPLICATION.md`](./APPLICATION.md)  
 → Master methodology specification: [`METHODOLOGY.md`](./METHODOLOGY.md)  
 → Phase 1 literature review & gap synthesis: [`PHASE_1_LITERATURE_REVIEW.md`](./PHASE_1_LITERATURE_REVIEW.md)  
+→ **Development lock (models, quant, fine-tune, MAS per tier):** [`DEVELOPMENT_START.md`](./DEVELOPMENT_START.md)  
+→ **Final evaluation:** Agere-KYC-Synth (100) + Agere-Credit-Synth (75), pooled — [`DEVELOPMENT_START.md`](./DEVELOPMENT_START.md) §8, [`METHODOLOGY.md`](./METHODOLOGY.md) §14
 → Domain glossary & workflows: [`FINANCE_DOMAIN_CONTEXT.md`](./FINANCE_DOMAIN_CONTEXT.md)  
 → SAS vs MAS gap list & improve-then-compare loop: [`SYSTEM_GAPS_AND_IMPROVEMENTS.md`](./SYSTEM_GAPS_AND_IMPROVEMENTS.md)
 
@@ -75,11 +77,12 @@ Protocol detail: [`EXPERIMENT_PROTOCOL.md`](./EXPERIMENT_PROTOCOL.md)
 APPLICATION.md                  # Who benefits (supervisor-facing)
 METHODOLOGY.md                  # Methodology: tiers, models, Q4_K_M, fine-tune, judgement, NVMe lab store
 PHASE_1_LITERATURE_REVIEW.md    # Phase 1: Literature review, comparison table & research gaps
+DEVELOPMENT_START.md            # Locked spec for coding: models, quant, fine-tune, MAS, problems
 FINANCE_DOMAIN_CONTEXT.md       # KYC/credit/mortgage + compliance glossary
 SYSTEM_GAPS_AND_IMPROVEMENTS.md # Where SAS-Quant / MAS fail; fix backlog; compare loop
 README.md                       # This file
 EXPERIMENT_PROTOCOL.md          # RAM + token parity study spec
-configs/                        # Hardware + system YAML (to be aligned to RAM tiers)
+configs/locked/                 # 8/16/32 GB SAS and MAS configs
 literature_review/              # Thematic synthesis + per-paper summaries (legacy summaries retained)
 sources/
   papers/                       # Downloaded PDFs

@@ -1,7 +1,3 @@
-# Configs (legacy notice)
+# Configs
 
-YAML files under `hardware_tiers/` and `systems/mas/` were generated for the **superseded GPU VRAM 15-tier 2×2 factorial**.
-
-**Current study** uses **3 RAM tiers (8 / 16 / 32 GB)** and CPU inference per [`../EXPERIMENT_PROTOCOL.md`](../EXPERIMENT_PROTOCOL.md) v3.0.
-
-Regenerate configs before running experiments; do not treat existing VRAM saturation tables as authoritative.
+Load [`locked/`](./locked/). That tree matches [`../DEVELOPMENT_START.md`](../DEVELOPMENT_START.md): three system-RAM tiers (8 / 16 / 32 GB), Qwen2.5-Instruct, SAS at GGUF Q4_K_M, MAS as three F16 models.

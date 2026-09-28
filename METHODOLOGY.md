@@ -12,9 +12,11 @@
 
 | Question | Section |
 | :--- | :--- |
+| Coding lock if this file and the configs disagree | [`DEVELOPMENT_START.md`](./DEVELOPMENT_START.md) |
 | Which model on each RAM tier, and on what hardware | [§10](#10-models-quantization-and-hardware-by-tier) |
 | Which quantization method, and how fine-tuning works | [§11](#11-quantization-method-and-fine-tuning-procedure) |
 | Which datasets, and what is forbidden in training | [§12](#12-datasets-train-dev-and-test) |
+| Which datasets are the final evaluation | [§14](#14-judgement-basis) |
 | Which MAS failures we fix, and how | [§13](#13-mas-failure-modes-and-the-fix-for-each) |
 | On what basis both systems are judged | [§14](#14-judgement-basis) |
 | How both arms are made as strong as this lab can make them | [§15](#15-making-both-systems-as-strong-as-they-can-be) |
@@ -418,6 +420,8 @@ SAS receives the matching hardening so the team is not compared with a crippled 
 ---
 
 ## 14. Judgement Basis
+
+**Final evaluation datasets.** The score that decides the paper is the frozen test split of **Agere-KYC-Synth** (Track B, 100 cases) and **Agere-Credit-Synth** (Track C, 75 cases), pooled. Primary metric: invention rate. Co-primary: mismatch recall on planted conflicts. **MortarBench** (Track A) is secondary. **FRAMES or a MuSiQue slice** (Track D, 100 questions) is a control and does not pick the winner. Dev is not the final evaluation. Test is one shot per frozen system.
 
 Both systems see the same cases, the same tools, the same \(T_{\text{think}}\), and the same RSS cap. The primary tier is **16 GB, resident mode, 2,048 thinking tokens, hardened systems**. 8 GB and 32 GB say whether the 16 GB result moves when the machine changes. Latency is reported and does not pick the winner.
 
