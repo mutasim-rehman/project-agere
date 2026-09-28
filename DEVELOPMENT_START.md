@@ -290,7 +290,13 @@ Detail and the fair-comparison checklist: [`SYSTEM_GAPS_AND_IMPROVEMENTS.md`](./
 
 ---
 
-## 8. Tasks the first code must score
+## 8. Final evaluation
+
+The final score uses the frozen **test** split only. Dev stops training and decides which adapters stay. Each frozen system is scored once, with seeds 42, 123, and 999. The test manifest (file names and SHA-256) is written before the first training step, and those cases never enter a batch.
+
+The headline datasets are **Agere-KYC-Synth** (Track B, 100 test cases) and **Agere-Credit-Synth** (Track C, 75 test cases), pooled. Primary metric: invention rate (lower is better). Co-primary: mismatch recall on planted conflicts (higher is better). Setting: hardened systems, 16 GB, resident mode, 2,048 thinking tokens.
+
+**MortarBench** (Track A; or an 80-case style-alike pack if the official set cannot be obtained) is secondary. **FRAMES or a MuSiQue slice** (Track D, 100 questions, no case documents) is a control, scored with exact match. A win on Track A or Track D does not override a loss on invention rate. Latency is reported and does not pick the winner. Naive scores stay in the paper as the floor.
 
 | Track | Task | What “good” means | n test |
 | :--- | :--- | :--- | ---: |
