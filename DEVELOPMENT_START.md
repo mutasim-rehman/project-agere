@@ -42,7 +42,7 @@ The decisions below were already made in [`METHODOLOGY.md`](./METHODOLOGY.md) v1
 | MAS at 32 GB | 7B + 7B + 0.5B | **7B + 3B + 1.5B** |
 | How many agents | Five named roles, each a model | **Three generative models** plus one shared embedding retriever. The drafter is the orchestrator checkpoint, not a fourth LLM. |
 | Saturation rule | ≥95% of GPU VRAM | **RUPP:** peak RSS ≤ tier, and both arms should reach **≥85%** of the tier on a real case. Measure it. Do not pad memory to fake the percentage. |
-| Headline benchmarks | GAIA, GSM8K, MATH-500, GPQA | **Tracks A–D** in [§8](#8-tasks-the-first-code-must-score) |
+| Headline benchmarks | GAIA, GSM8K, MATH-500, GPQA | **Tracks A–D** in [§8](#8-final-evaluation) |
 
 ---
 
@@ -311,19 +311,11 @@ Primary judgement, 16 GB, resident, 2,048 thinking tokens, **hardened** systems:
 
 ## 9. What to build first
 
-Follow this order.
+The staged plan is [`ROADMAP.md`](./ROADMAP.md). Hand an agent one phase at a time. The order is: SSD, download, quantize, score the untouched models, fine-tune and quantize again, harden the team, final test, then the dev loop. 8 GB and 32 GB come last.
 
-1. **Lab layout, not weights in git.** `AGERE_ROOT` on the external SSD (`weights/`, `adapters/`, `datasets/`, `runs/`, `manifests/`). The job refuses to start if `AGERE_ROOT` is unset. SHA-256 every GGUF before a config points at it.
-2. **16 GB naive SAS.** Load `Qwen2.5-14B-Instruct` Q4_K_M in llama.cpp. One case. Record peak RSS and tokens. Cap the process at 16 GB.
-3. **16 GB naive MAS.** Load the three F16 models in [§3](#3-models-per-tier) resident. JSON handoff, no debate, no LoRA yet. Same case, same token cap, same tools.
-4. **Four tools and the case schema** (Pydantic). Calculator and citation check are deterministic.
-5. **Scorer** for invention, mismatch recall, grounding, refusal. Tag each failure with one S* or M* id.
-6. **Freeze naive scores on dev.** Then harden (QLoRA, staged SAS prompt, MAS gates). Test is one shot after the freeze.
-7. **Only then** repeat the smoke test at 8 GB and 32 GB.
+Cells A (SAS at F16) and D (quantized MAS) are optional and are not on this path.
 
-Cells A (SAS at F16) and D (quantized MAS) are optional and are not this start path.
-
-Still open, and none of them block step 2:
+Still open, and none of them block Phase 0 or Phase 1 of the roadmap:
 
 | Item | Rule already in place |
 | :--- | :--- |
