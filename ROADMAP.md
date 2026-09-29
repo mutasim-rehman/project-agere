@@ -81,9 +81,11 @@ AGERE_SSD_ROOT/
 
 **Goal:** The 16 GB checkpoints are on the SSD, their hashes are recorded in the repository, and weights are not in git.
 
+**Status: Complete (2026-09-29).** Five pinned snapshots totaling about 37.3 GiB are stored under `H:\AGERE\weights\hf\`; all 49 model/tokenizer files passed SHA-256 verification against the repository manifests.
+
 **Steps**
 
-1.1 Before downloading, set and validate this machine's `AGERE_SSD_ROOT`. Download these official snapshots into `$AGERE_SSD_ROOT/weights/hf/`:
+1.1 Before downloading, set and validate this machine's `AGERE_SSD_ROOT`. Install the downloader dependency on the computer (not the SSD) with `python -m pip install -r requirements-phase1.txt`, then run `python scripts/download_hf_snapshots.py`. The downloader pins each snapshot to its resolved Hub revision, preflights available space, resumes partial files, and writes only model/tokenizer assets under `$AGERE_SSD_ROOT/weights/hf/`:
 
 | Role | Hugging Face id |
 | :--- | :--- |
@@ -95,17 +97,24 @@ AGERE_SSD_ROOT/
 
 1.2 Write a SHA-256 line for each snapshot to the repository's `manifests/weights.sha256` before any config points at the files. Include the SSD-relative artifact path and checksum.
 
-1.3 Leave 7B, 0.5B, and 32B for Phase 8.
+1.3 Defer the 7B and 32B checkpoints until Phase 8. Download the 0.5B checkpoint now; it is required by the primary 16 GB team and reused by the 8 GB tier.
 
 **Do not:** Quantize yet. Download Llama. Commit weights.
 
-**Done when:** All four snapshots load from `AGERE_SSD_ROOT` and every hash in the repository manifest matches a recompute.
+**Done when:** All five snapshots load from `AGERE_SSD_ROOT`, their immutable Hub revisions and per-file SHA-256 hashes are recorded in repository manifests, and every recorded hash matches a recompute.
 
 ---
 
 ## Phase 2 — Quantize
 
 **Goal:** Runnable GGUF files for the untouched baseline. The single model is Q4_K_M. The team stays full precision.
+
+**Planning estimate for the current development laptop (2026-09-29):** Ryzen 5 8645HS (6 cores / 12 threads), 15.3 GiB physical RAM, RTX 4050 Laptop GPU with 6 GiB VRAM; H: has 110.1 GiB free. Use the CPU conversion/quantization path to match the locked CPU experiment; the GPU is not required for Phase 2. The official llama.cpp flow converts Hugging Face weights to GGUF, then quantizes the GGUF file.
+
+- **SSD space:** Budget about 47 GiB peak additional space: ~27.5 GiB for temporary 14B F16 GGUF, ~10.3 GiB for the three retained MAS F16 GGUFs, and ~9 GiB for 14B Q4_K_M. The current H: free space is sufficient; keep at least 55 GiB free before starting. Delete the temporary 14B F16 GGUF only after Q4 output and its checksum verify.
+- **Local PC space:** Keep all source/build code, Python environment, logs, and smoke results on the PC/repository. The current D: checkout drive has 8.6 GiB free and C: has 1.6 GiB free, which is tight for build tools, Python packages, and Windows temporary files; free at least 10–15 GiB on the internal working/system drives first, and keep package/build caches off H:.
+- **RAM:** A recent interactive-session reading was 3.9 GiB available. With 15.3 GiB physical RAM and the required 1 GiB safety margin, that live host state would allow only about a 2.9 GiB job cap and cannot smoke-load either arm. Close memory-heavy apps, record a fresh idle baseline, and recalculate the effective cap before the Phase 2 smoke tests. Never raise the cap to force a model to fit.
+- **Elapsed time:** Plan on **3–6 hours** on this CPU, including environment/build setup, conversion of the three smaller F16 GGUFs, 14B F16 conversion and Q4_K_M quantization, and smoke checks. Keep a **half day** free in case the 14B conversion/quantization is memory- or thermally limited. This is a planning estimate, not a benchmark from this host.
 
 **Steps**
 
