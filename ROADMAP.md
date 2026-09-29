@@ -4,6 +4,8 @@
 **Use this file to drive an agent one stage at a time.**  
 Decisions (which model, which quant, which test set) stay in [`DEVELOPMENT_START.md`](./DEVELOPMENT_START.md). This file is only the order of work.
 
+**Co-equal outcomes:** this roadmap delivers both a reproducible research result and a working local-first analyst product. Each phase has a research deliverable and a product deliverable; neither track is complete if only the other is usable.
+
 Start at **Phase 0**. Finish a phase before opening the next one. The first machine is **16 GB**. 8 GB and 32 GB wait until Phase 8.
 
 ## How to hand a phase to an agent
@@ -257,6 +259,56 @@ AGERE_ROOT/
 **Do not:** Let a 32 GB result replace the 16 GB number.
 
 **Done when:** Each tier has a smoke RSS log and a dev or test table labelled with the tier and the residency mode.
+
+---
+
+## Co-equal product track
+
+Complete these product deliverables alongside the numbered research/build phases. The final product is a demonstrable analyst workflow, and the paper reports how that workflow performs under the locked study conditions. Use synthetic or explicitly licensed data only.
+
+### Alongside Phase 0 — Define the analyst workflow
+
+- [ ] Write the product brief: target analyst, buyer, local deployment boundary, first job-to-be-done, and limits of use.
+- [ ] Map the KYC/CDD flow: create/open case → inspect source documents → review extracted fields and evidence → resolve missing/conflicting facts → review cited summary → approve/export.
+- [ ] Specify the review states (`MISSING`, `UNVERIFIED_IN_SOURCE`, conflict, verified) and the human approval boundary.
+- [ ] Define what gets stored in the local case record and audit trail; keep real customer PII out of the demo.
+
+### Alongside Phases 1–2 — Make local setup and evidence visible
+
+- [ ] Create a simple local case browser and document viewer using the synthetic demo pack.
+- [ ] Show which pinned model, quantization, tokenizer/template, and runtime are loaded; include license/source information.
+- [ ] Surface model-load failures and RAM-cap failures with actionable messages; never silently fall back to another model or quantization.
+- [ ] Make extracted facts open the exact source document and page/span supporting them.
+
+### Alongside Phases 3–5 — Build the reviewable casework experience
+
+- [ ] Present the same case result shape for SAS and MAS: structured facts, source citations, missing fields, discrepancy flags, draft summary, and verifier status.
+- [ ] Give the analyst controls to inspect evidence, correct fields, mark a discrepancy resolved/unresolved, and approve or reject the draft.
+- [ ] Keep generated claims traceable to case evidence and policy snippets; visibly flag claims with no supporting span.
+- [ ] Keep financial calculations deterministic and show the inputs and result used in the draft.
+- [ ] Save a case-level audit record with input-document hashes, model/config revision, tool results, generated draft, analyst edits, and approval/export event. Avoid retaining private chain-of-thought.
+- [ ] Provide an exportable review package with the final draft, cited evidence, discrepancy register, and run metadata.
+
+### Alongside Phase 6 — Prepare a truthful product demonstration
+
+- [ ] Build a scripted demonstration using held-out demo cases that are separate from the research test split.
+- [ ] Demonstrate clean, incomplete, and conflicting case packs, including at least one case where the assistant abstains or marks information missing.
+- [ ] Report research metrics and product/usability feedback separately; do not use the research test set for product iteration or user-facing claims.
+- [ ] State model, data, hardware, local-processing, and human-review limitations in the demo materials. Do not claim compliance certification or autonomous decision capability.
+
+### Alongside Phases 7–8 — Iterate and document deployment fit
+
+- [ ] Gather structured feedback on task completion, citation discoverability, discrepancy comprehension, correction effort, and confidence in the review trail.
+- [ ] Fix product usability issues using dev/demo cases; record changes and do not alter frozen research test results.
+- [ ] Show measured RAM use, latency, and any model swap/loading behavior for each tier actually demonstrated.
+- [ ] Document setup, supported hardware, local data handling, known limitations, and a repeatable demo path.
+
+### Product done when
+
+- [ ] An analyst can take a synthetic KYC case from local documents through evidence review, discrepancy handling, draft correction, approval, and export.
+- [ ] Every material extracted fact or draft claim has a visible source or is explicitly flagged as unsupported/missing.
+- [ ] The case record explains which system ran and what tools/evidence/analyst actions shaped the exported result.
+- [ ] Product usability findings and research performance results are reported as distinct evidence for the two project outcomes.
 
 ---
 
