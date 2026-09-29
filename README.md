@@ -4,7 +4,7 @@
 
 ## One-sentence pitch
 
-Banks and funds that **cannot use cloud LLMs** on KYC and credit files default to **one large quantized model on the analyst PC**; we test whether a **team of smaller full-precision agents** is a better use of the **same RAM and thinking-token budget**.
+Banks and funds that **cannot use cloud LLMs** on KYC and credit files default to **one large quantized model on the analyst PC**; we test whether a **team of smaller full-precision agents** performs differently under the **same host-adjusted process RSS cap and thinking-token budget**.
 
 → Full application framing: [`APPLICATION.md`](./APPLICATION.md)  
 → Master methodology specification: [`METHODOLOGY.md`](./METHODOLOGY.md)  
@@ -19,7 +19,7 @@ Banks and funds that **cannot use cloud LLMs** on KYC and credit files default t
 
 ## Core research question
 
-> **Can a multi-agent system consisting of smaller, full-precision LLMs outperform a single larger, quantized LLM when both systems use the same peak resident system RAM and the same thinking-token budget?**
+> **Can a multi-agent system consisting of smaller, full-precision LLMs outperform a single larger, quantized LLM when both systems use the same host-adjusted process-tree RSS cap—after reserving RAM for the OS/background tasks—and the same thinking-token budget?**
 
 ### Competing deployments (primary comparison)
 
@@ -27,7 +27,7 @@ Banks and funds that **cannot use cloud LLMs** on KYC and credit files default t
 | :--- | :--- | :--- |
 | **Architecture** | Orchestrated specialists (extract → retrieve → draft → verify) | One generalist model |
 | **Precision** | Native FP16/BF16 sub-models | Post-training quant (GGUF Q4_K_M, etc.) |
-| **RAM** | Peak RSS matched to tier | Peak RSS matched to tier |
+| **RAM** | Same host-adjusted process-tree RSS cap for both arms | Same host-adjusted process-tree RSS cap for both arms |
 | **Tokens** | Equal thinking-token cap per case ([Tran & Kiela, 2026](./sources/papers/01_Tran_2026_Single_Agent_LLMs_Outperform_Multi_Agent.pdf)) | Same cap |
 
 ### Optional extension (2×2 for reviewers)
@@ -51,7 +51,7 @@ Cells **A** (SAS-FP16) and **D** (MAS-Quant) complete a factorial to measure $\D
 ## Method (summary)
 
 1. **RAM tiers:** 8 GB, 16 GB (primary), 32 GB — CPU-first inference.  
-2. **RAM Utilization Parity Protocol (RUPP):** match **peak RSS** (weights + KV + runtime); report **resident** vs **sequential swap** MAS separately.  
+2. **RAM Parity Protocol (RUPP):** match the host-adjusted process RSS cap after reserving at least 20% of physical RAM for the OS/background tasks; nominal caps are **6.4 / 12.8 / 25.6 GB** on 8 / 16 / 32 GB tiers. Report resident vs. sequential MAS separately.
 3. **Token parity:** fixed thinking-token budget per task instance.  
 4. **Tools:** identical extractors, policy RAG, and calculators for both arms.  
 5. **Metrics:** grounding (citation accuracy), invented amounts, missed mismatches—not MMLU.  

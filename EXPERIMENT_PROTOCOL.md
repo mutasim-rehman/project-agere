@@ -13,7 +13,7 @@
 
 **Invariants:**
 
-1. **Peak system RAM** $M_{\text{peak}}$ (RSS) matched per tier (RUPP).  
+1. **Memory ceiling:** Both arms use the same host-adjusted process-tree RSS cap per tier after reserving RAM for OS/background tasks (RUPP); measure and report each arm's actual peak RSS.
 2. **Thinking-token budget** $T_{\text{think}}$ matched per task ([Tran & Kiela, 2026](./sources/papers/01_Tran_2026_Single_Agent_LLMs_Outperform_Multi_Agent.pdf)).  
 3. **Identical tools** (extract, search policy corpus, calculator, citation checker).  
 4. **Human-in-the-loop:** systems produce drafts only; no automated approval.
@@ -26,8 +26,8 @@
 
 | ID | Question |
 | :--- | :--- |
-| **RQ0 (headline)** | Does **MAS-FP16** outperform **SAS-Quant** on finance document workflows at equal $M_{\text{peak}}$ and $T_{\text{think}}$? |
-| **RQ1** | Replication: does **SAS-Quant** beat **SAS-FP16** at equal RAM? (Bench360 control) |
+| **RQ0 (headline)** | Does **MAS-FP16** outperform **SAS-Quant** on finance document workflows under the same host-adjusted RSS ceiling and $T_{\text{think}}$? |
+| **RQ1** | Replication: does **SAS-Quant** beat **SAS-FP16** under the same host-adjusted process RSS ceiling? (Bench360 control) |
 | **RQ2** | Optional factorial: $\Delta_{\text{interaction}}$ if Cells A and D are run |
 | **RQ3** | Does advantage flip on **negative-control** multi-hop (no documents)? |
 
@@ -35,15 +35,17 @@
 
 ## 3. RAM tiers
 
-| Tier | Target $M_{\text{peak}}$ | Example | Primary? |
-| :--- | :--- | :--- | :---: |
-| T1 | 8 GB | Legacy laptop | |
-| T2 | **16 GB** | Standard analyst PC | **Yes** |
-| T3 | 32 GB | Power workstation | |
+| Tier | Physical RAM | Nominal process-tree RSS cap | Example | Primary? |
+| :--- | :--- | :--- | :--- | :---: |
+| T1 | 8 GB | **6.4 GB** | Legacy laptop | |
+| T2 | **16 GB** | **12.8 GB** | Standard analyst PC | **Yes** |
+| T3 | 32 GB | **25.6 GB** | Power workstation | |
 
 **RUPP (RAM Utilization Parity Protocol):**
 
-- Report **peak RSS** during a full case (weights + KV + runtime).  
+- Reserve at least 20% of tier physical RAM for OS/background tasks. The nominal aggregate process-tree RSS caps are 6.4 / 12.8 / 25.6 GB for the 8 / 16 / 32 GB tiers.
+- Before each run, record actual host RAM, idle non-job use, and available memory. Effective cap is the smaller of 80% of tier RAM and host RAM minus idle non-job use and a 1 GB safety margin. If this reduces the nominal cap, use the lower cap for both arms; never raise the cap to make a model fit.
+- Report **process-tree peak RSS** during a full case (weights + KV + runtime), host-wide available memory before/during the case, and the effective cap. Do not force either arm to use a target fraction of RAM.
 - **MAS modes:** (a) *resident*—all agents loaded; (b) *sequential*—load/unload per stage (document real laptops). Both arms must declare mode; primary analysis uses **resident** for fairness, **sequential** as supplementary.
 
 ---
@@ -52,7 +54,7 @@
 
 ### 4.1 SAS-Quant (industry default)
 
-- One instruct model at **Q4_K_M** (or tier-calibrated Q5/Q8) sized to fill ~75–85% of RAM budget at load.  
+- One instruct model at **Q4_K_M** sized to fit the effective process-tree RSS cap after reserving memory for the OS/background tasks. Q5_K_M is sensitivity only. No utilization target.
 - Same system prompt + ReAct tool loop as MAS.
 
 ### 4.2 MAS-FP16 (specialist team)
@@ -67,7 +69,7 @@ Suggested topology (MetaGPT-style):
 | Drafter | Case narrative with citations |
 | Verifier | Quote match; flag invention |
 
-Sub-models: Qwen2.5 / Llama 3.x at **FP16**; team sized so **resident** peak RSS ≈ SAS-Quant tier.
+Sub-models: Qwen2.5 at **FP16** for the locked comparison; the resident team is sized to fit under the same effective process-tree RSS cap as SAS-Quant. The cap is a ceiling applied to both arms, not a requirement that both consume equal memory. Start with the tier-specific team in the locked config, measure full-case process-tree RSS including KV cache and runtime, and reduce context or the smallest worker if the effective cap is exceeded.
 
 ### 4.3 Controls
 

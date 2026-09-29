@@ -15,7 +15,7 @@ Banks, asset managers, non-banking financial institutions (NBFCs), and microfina
 The standard local deployment default is: **download the largest open-weights model that can fit into analyst workstation RAM when quantized** (e.g., 7B to 14B parameters compressed to 4-bit integer weights like GGUF `Q4_K_M`) and run it via local runtimes such as `llama.cpp` or `Ollama` on standard **16 GB RAM** office desktops without enterprise GPUs.
 
 **Project Agere** challenges this default:
-> **Does a multi-agent team of smaller, full-precision models (MAS-FP16) outperform a single larger quantized generalist model (SAS-Quant) when both systems are constrained to the exact same peak resident RAM (RSS) and the exact same thinking-token budget?**
+> **Does a multi-agent team of smaller, full-precision models (MAS-FP16) outperform a single larger quantized generalist model (SAS-Quant) when both systems operate under the same host-adjusted process-tree RSS ceiling and the same thinking-token budget?** The ceiling reserves RAM for OS/background work; actual peak RSS is measured and reported for each arm.
 
 **Cardinal Rule of the System:**
 The AI system **drafts, extracts, flags discrepancies, and cites evidence**. A licensed **human officer (credit underwriter, compliance officer, or MLRO) retains sole decision-making authority**. The AI system must **never** autonomously approve credit, assign regulatory risk ratings, clear sanction alerts, or generate and file regulatory suspicious transaction filings without human sign-off.

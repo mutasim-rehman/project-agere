@@ -43,11 +43,11 @@ The decisions below were already made in [`METHODOLOGY.md`](./METHODOLOGY.md) v1
 | Hardware axis | 15 GPU VRAM tiers, CUDA, vLLM | **3 system-RAM tiers** (8 / 16 / 32 GB), **CPU**, llama.cpp |
 | Model family | “Qwen2.5 / Llama 3.x”, family still open. Methodology §4.1 still says “or Llama-3.1” | **Qwen2.5-Instruct only.** Llama stays out of scope until the 16 GB headline result exists. |
 | SAS quant | Q5/Q8, INT8, AWQ, 2-bit, 1-bit as the main sweep | **GGUF Q4_K_M on every SAS tier.** Q5_K_M is a sensitivity run only. Q3 and below are not a system we compare. AWQ is the paper that justifies 4-bit. It is not the file we run. |
-| MAS at 16 GB | Two 3B FP16 models plus a 1.5B | **One** 3B (orchestrator and drafter), **one** 1.5B extractor, **one** 1.5B verifier |
+| MAS at 16 GB | Two 3B FP16 models plus a 1.5B | **One** 3B (orchestrator and drafter), **one** 1.5B extractor, **one** 0.5B verifier |
 | MAS at 8 GB | 1.5B + 1.5B + 0.5B | **1.5B + 0.5B + 0.5B** |
-| MAS at 32 GB | 7B + 7B + 0.5B | **7B + 3B + 1.5B** |
+| MAS at 32 GB | 7B + 7B + 0.5B | **7B + 3B + 0.5B** |
 | How many agents | Five named roles, each a model | **Three generative models** plus one shared embedding retriever. The drafter is the orchestrator checkpoint, not a fourth LLM. |
-| Saturation rule | ≥95% of GPU VRAM | **RUPP:** peak RSS ≤ tier, and both arms should reach **≥85%** of the tier on a real case. Measure it. Do not pad memory to fake the percentage. |
+| Memory budget | The old plan treated the whole tier as available | **RUPP:** reserve at least 20% of tier RAM for OS/background use; cap aggregate job RSS at 80% of physical tier or less if measured host use requires it. No target utilization percentage. |
 | Headline benchmarks | GAIA, GSM8K, MATH-500, GPQA | **Tracks A–D** in [§8](#8-final-evaluation) |
 
 ---
@@ -62,7 +62,7 @@ The decisions below were already made in [`METHODOLOGY.md`](./METHODOLOGY.md) v1
 | Retriever | `BAAI/bge-small-en-v1.5`, same index on both arms, counted inside the RSS cap |
 | Inference | llama.cpp, CPU, AVX2. No GPU at inference. Ollama is an acceptable wrapper only if it loads these exact GGUF types and we still record peak RSS ourselves. |
 | Training | **QLoRA NF4** on a GPU, then merge, then **re-quantize to Q4_K_M**. The evaluated SAS is never the merged 16-bit model. |
-| Primary tier | 16 GB peak RSS, resident MAS, 2,048 thinking tokens |
+| Primary tier | 16 GB physical RAM; nominal 12.8 GB job RSS cap (lower if host use requires); resident MAS; 2,048 thinking tokens |
 | Seeds | 42, 123, 999 |
 | Human rule | Draft, extract, flag, cite. No credit approval, no risk rating, no SAR/STR filing. |
 
@@ -82,7 +82,13 @@ Do not pin a third-party GGUF mirror in git. Convert from the official snapshot 
 
 Weight figures below are weights only. KV cache and the process sit on top. A one-case smoke test records peak RSS before a tier is treated as runnable. If peak RSS exceeds the cap, shrink the **smallest worker** first. The orchestrator is not the first model to shrink.
 
-The lab PC may have more RAM than the tier. Cap the job (cgroup / `ulimit`) at the tier. A run with no cap is not a result.
+The lab PC may have more RAM than the tier. Cap the job (cgroup / `ulimit`) at the effective tier budget below. A run with no cap is not a result.
+
+### Physical RAM is not the inference budget
+
+Reserve at least 20% of the target tier for the operating system and background tasks. The nominal aggregate RSS caps are **6.4 GB for an 8 GB device**, **12.8 GB for a 16 GB device**, and **25.6 GB for a 32 GB device**. Before experiments, record idle OS/background memory on the actual host. The effective cap is `min(0.8 × target-tier RAM, host physical RAM − measured idle non-job use − 1 GB safety margin)`. If this gives a lower cap, use it and adjust model sizes or context before running. Never raise the cap to force a model to fit.
+
+Count the whole inference process tree (including loaded retriever and runtime) against one shared arm cap. Also record host-wide available memory before and during each run; stop if the reserved OS/background headroom is breached. The cap is a ceiling, not a target utilization percentage.
 
 ---
 
@@ -98,10 +104,10 @@ Three generative models on every MAS tier. The retriever is not one of them.
 | **SAS fine-tune** | QLoRA on the 7B. Needs a **≥12 GB** GPU, or a slow CPU-offload run | QLoRA on the 14B. Needs a **≥24 GB** GPU. If that GPU does not exist, fine-tune a **7B Q4 stand-in and label it**. Still run the untouched 14B Q4 as the baseline | 32B QLoRA is **optional** and needs **≥48 GB** VRAM. The required 32 GB system is the Q4_K_M base plus the same prompts, schemas, and tools as 16 GB |
 | **MAS model 1 — orchestrator and drafter** | 1.5B F16, ~3.1 GB | 3B F16, ~6.2 GB | 7B F16, ~15 GB |
 | **MAS model 2 — extractor** | 0.5B F16, ~1.0 GB | 1.5B F16, ~3.1 GB | 3B F16, ~6.2 GB |
-| **MAS model 3 — verifier** | 0.5B F16, ~1.0 GB | 1.5B F16, ~3.1 GB | 1.5B F16, ~3.1 GB |
+| **MAS model 3 — verifier** | 0.5B F16, ~1.0 GB | 0.5B F16, ~1.0 GB | 0.5B F16, ~1.0 GB |
 | **MAS generative count** | 3 | 3 | 3 |
 | **Retriever** | `bge-small-en-v1.5` | same | same |
-| **MAS weight sum** | ~5.1 GB | ~12.4 GB | ~24 GB |
+| **MAS weight sum** | ~5.1 GB | ~10.3 GB | ~22.2 GB |
 | Eval context | 4,096 | 8,192 | 8,192 |
 | Thinking-token cap | 2,048 (also report 1,024 and 4,096) | same | same |
 | MAS LoRA | Optional, role-specific, 0.5B–3B fit a 12 GB GPU. Drop the adapter if dev does not improve | same | 7B orchestrator LoRA only if a GPU can hold it; otherwise prompt and schema only |

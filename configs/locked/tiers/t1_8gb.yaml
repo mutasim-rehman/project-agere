@@ -1,14 +1,22 @@
 tier_id: t1
 name: 8 GB legacy analyst laptop
 primary: false
-peak_rss_cap_gb: 8
-min_peak_rss_fraction: 0.85
+# Nominal cap; recompute a possibly lower effective cap from the actual host before every run.
+physical_ram_gb: 8
+nominal_os_background_reserve_fraction: 0.20
+nominal_os_background_reserve_gb: 1.6
+nominal_peak_rss_cap_gb: 6.4
+safety_headroom_gb: 1.0
+effective_peak_rss_cap_formula: min(nominal_peak_rss_cap_gb, host_physical_ram_gb - measured_idle_non_job_use_gb - safety_headroom_gb)
+peak_rss_cap_gb: 6.4
+cap_is_ceiling_not_utilization_target: true
 context_tokens: 4096
 thinking_token_cap: 2048
 thinking_token_sweep: [1024, 2048, 4096]
 runtime: llama.cpp
 device: cpu
-job_must_be_capped_at_tier: true
+effective_cap_must_be_measured_before_each_run: true
+job_must_be_capped_at_effective_rss_budget: true
 
 sas:
   arm: SAS-Quant

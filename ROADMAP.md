@@ -20,7 +20,7 @@ Paste this, with the phase number filled in:
 
 | Phase | What happens | Where the files go |
 | :---: | :--- | :--- |
-| **0** | Validate SSD path, repository checkout, llama.cpp, 16 GB cap | Code/manifests in repo; datasets/weights on SSD |
+| **0** | Validate SSD path, repository checkout, llama.cpp, 16 GB physical tier / 12.8 GB nominal job cap | Code/manifests in repo; datasets/weights on SSD |
 | **1** | Download the 16 GB models | External SSD |
 | **2** | Convert to GGUF and quantize the single model | External SSD |
 | **3** | Score the **untouched** single model, then the **untouched** team | Dev cases only |
@@ -69,11 +69,11 @@ AGERE_SSD_ROOT/
 
 0.4 Before starting **every phase or run**, supply the current machine's correct `AGERE_SSD_ROOT`. The runner must print the resolved repo root and SSD root, validate that the SSD is mounted and contains the required input directories, and refuse to start if the variable is missing, stale, or invalid. Set model-hub/cache paths (including `HF_HOME`/`HF_HUB_CACHE`) beneath `$AGERE_SSD_ROOT/weights/` so large model downloads never default to the local disk. Never silently substitute a local path.
 
-0.5 Write manifests, logs, traces, metrics, checkpoints of evaluation outputs, and reports under the repository (`manifests/`, `runs/`, `experiments/`, or `results/`). Add a 16 GB RSS cap for the process (cgroup or `ulimit`). A lab PC with more RAM does not get to use it.
+0.5 Write manifests, logs, traces, metrics, checkpoints of evaluation outputs, and reports under the repository (`manifests/`, `runs/`, `experiments/`, or `results/`). For the 16 GB physical tier, set a nominal 12.8 GB aggregate process-tree RSS cap; lower it if the actual host's idle OS/background use plus a 1 GB safety margin requires less. On larger lab PCs, cap to the 16 GB tier's effective budget. A lab PC with more RAM does not get to use it.
 
 **Do not:** Download models. Write training code.
 
-**Done when:** A process exits with a clear error if `AGERE_SSD_ROOT` is missing or incorrect; it reports the resolved paths; a smoke run writes its log under the repo; and a hello-process under the cap stays at or below 16 GB RSS.
+**Done when:** A process exits with a clear error if `AGERE_SSD_ROOT` is missing or incorrect; it reports the resolved paths; a smoke run writes its log under the repo; and the effective RSS cap plus host-wide memory monitor preserve the OS/background reserve.
 
 ---
 
@@ -89,7 +89,8 @@ AGERE_SSD_ROOT/
 | :--- | :--- |
 | Single model (SAS) | `Qwen/Qwen2.5-14B-Instruct` |
 | Orchestrator and drafter | `Qwen/Qwen2.5-3B-Instruct` |
-| Extractor and verifier | `Qwen/Qwen2.5-1.5B-Instruct` |
+| Extractor | `Qwen/Qwen2.5-1.5B-Instruct` |
+| Verifier | `Qwen/Qwen2.5-0.5B-Instruct` |
 | Retriever | `BAAI/bge-small-en-v1.5` |
 
 1.2 Write a SHA-256 line for each snapshot to the repository's `manifests/weights.sha256` before any config points at the files. Include the SSD-relative artifact path and checksum.
@@ -108,19 +109,19 @@ AGERE_SSD_ROOT/
 
 **Steps**
 
-2.1 Convert each Qwen snapshot to GGUF **F16**.
+2.1 Convert the 3B, 1.5B, and 0.5B Qwen snapshots to GGUF **F16**.
 
-2.2 Quantize **only** the 14B F16 file to **Q4_K_M**. Leave the 3B and 1.5B files at F16. Do not produce Q3, Q2, or AWQ for the headline.
+2.2 Quantize **only** the 14B F16 file to **Q4_K_M**. Leave the 3B, 1.5B, and 0.5B team files at F16. Do not produce Q3, Q2, or AWQ for the headline.
 
-2.3 Save converted and quantized weight files under `AGERE_SSD_ROOT/weights/gguf/`. Name them `qwen2.5-14b-instruct-q4_k_m.gguf`, `qwen2.5-3b-instruct-f16.gguf`, `qwen2.5-1.5b-instruct-f16.gguf`. Hash each file into the repository's `manifests/weights.sha256`.
+2.3 Save converted and quantized weight files under `AGERE_SSD_ROOT/weights/gguf/`. Name them `qwen2.5-14b-instruct-q4_k_m.gguf`, `qwen2.5-3b-instruct-f16.gguf`, `qwen2.5-1.5b-instruct-f16.gguf`, and `qwen2.5-0.5b-instruct-f16.gguf`. Hash each file into the repository's `manifests/weights.sha256`.
 
-2.4 Smoke-load the 14B Q4_K_M under the 16 GB cap. Generate a few tokens. Record peak RSS and the llama.cpp version in the repository's `runs/smoke_sas_16gb.json`.
+2.4 Smoke-load the 14B Q4_K_M under the effective 16 GB-tier process cap (12.8 GB nominal maximum). Generate a few tokens. Record process-tree peak RSS, host-wide available memory, idle baseline, effective cap, and llama.cpp version in the repository's `runs/smoke_sas_16gb.json`.
 
-2.5 Smoke-load the 3B and the 1.5B **together** (resident). Record peak RSS in the repository's `runs/smoke_mas_16gb.json`. If the cap breaks, shrink the 1.5B worker first, not the 3B.
+2.5 Smoke-load the 3B, 1.5B, and 0.5B **together** (resident). Record the same memory fields in the repository's `runs/smoke_mas_16gb.json`. If the effective cap is exceeded, lower context or shrink the smallest worker first; do not raise the cap.
 
 **Do not:** Fine-tune. Score a dataset. Turn the team into a fourth model.
 
-**Done when:** Both smoke JSON files exist in the repo, both peak RSS numbers are ≤ 16 GB, and the Q4 file on the SSD is the one that will be scored in Phase 3.
+**Done when:** Both smoke JSON files exist in the repo, both process-tree peaks are within the effective cap with OS/background headroom intact, and the Q4 file on the SSD is the one that will be scored in Phase 3.
 
 ---
 
@@ -136,9 +137,9 @@ AGERE_SSD_ROOT/
 
 3.3 Implement the scorer: invention rate, mismatch recall, grounding accuracy, refusal correctness. Tag each failed case with one id from [`configs/locked/problems.yaml`](./configs/locked/problems.yaml).
 
-3.4 Run **untouched SAS**: 14B Q4_K_M, no adapter, 2,048 thinking tokens, 16 GB cap, on the **dev** slices of Agere-KYC-Synth and Agere-Credit-Synth read from `AGERE_SSD_ROOT`. Seeds later; one seed is enough to freeze a floor. Save outputs under repository `runs/naive_sas/`.
+3.4 Run **untouched SAS**: 14B Q4_K_M, no adapter, 2,048 thinking tokens, effective 16 GB-tier process cap (12.8 GB nominal maximum), on the **dev** slices of Agere-KYC-Synth and Agere-Credit-Synth read from `AGERE_SSD_ROOT`. Seeds later; one seed is enough to freeze a floor. Save outputs under repository `runs/naive_sas/`.
 
-3.5 Run **untouched MAS**: 3B orchestrator/drafter, 1.5B extractor, 1.5B verifier, all F16, resident, same cases, same token cap, same tools. One forward pass per role. No debate and no LoRA. Read weights and cases from the validated SSD root; save outputs under repository `runs/naive_mas/`.
+3.5 Run **untouched MAS**: 3B orchestrator/drafter, 1.5B extractor, 0.5B verifier, all F16, resident, same effective cap, cases, token cap, and tools as SAS. One forward pass per role. No debate and no LoRA. Read weights and cases from the validated SSD root; save outputs under repository `runs/naive_mas/`.
 
 3.6 Write `runs/naive_floor.json` in the repository with both scores. Do not edit this file after it is written.
 
@@ -150,7 +151,7 @@ AGERE_SSD_ROOT/
 
 ## Phase 4 — Fine-tune, then quantize again
 
-**Goal:** A domain-adapted single model that still fits the 16 GB tier as Q4_K_M.
+**Goal:** A domain-adapted single model that still fits the effective 16 GB-tier process cap as Q4_K_M, with OS/background headroom preserved.
 
 **Steps**
 
@@ -160,13 +161,13 @@ AGERE_SSD_ROOT/
 
 4.3 Merge the adapter into 16-bit weights. Save the merged and converted/quantized weight artifacts on the SSD under `weights/`; hash each artifact in the repository manifest. The merged 16-bit model is not what gets scored.
 
-4.4 Smoke-test peak RSS of the new Q4 file under the 16 GB cap.
+4.4 Smoke-test process-tree RSS and host-wide available memory under the effective 16 GB-tier cap. Save both to the repo run log.
 
 4.5 Score it on **dev**. Keep the adapter only if dev invention rate or mismatch recall improves and the other does not collapse. Otherwise discard it from the SSD and record that in the repository run log.
 
 **Do not:** Train on test. Compare against the team yet. Replace `naive_floor.json`.
 
-**Done when:** The evaluated file on the SSD is a hashed Q4_K_M under 16 GB RSS, and the dev delta is written to repository `runs/sas_qlora_dev.json`.
+**Done when:** The evaluated file on the SSD is a hashed Q4_K_M within the effective 16 GB-tier process cap, OS/background headroom is intact, and the dev delta is written to repository `runs/sas_qlora_dev.json`.
 
 ---
 
@@ -190,7 +191,7 @@ AGERE_SSD_ROOT/
 
 **Do not:** Quantize the team. Add a second 3B. Touch the test split.
 
-**Done when:** A dev run finishes resident under 16 GB, writes one JSON line per stage (tokens, RSS, gap id) to the repository, and `runs/mas_hardened_dev.json` records the delta versus the naive MAS floor.
+**Done when:** A dev run finishes resident within the effective 16 GB-tier cap, preserves OS/background headroom, writes one JSON line per stage (tokens, RSS, gap id) to the repository, and `runs/mas_hardened_dev.json` records the delta versus the naive MAS floor.
 
 ---
 
@@ -211,7 +212,7 @@ AGERE_SSD_ROOT/
 | MortarBench, or a labelled 80-case style-alike | rest, or 80 | Secondary |
 | FRAMES or a MuSiQue slice | 100 | Control |
 
-6.3 Three seeds: 42, 123, 999. Same case id on both arms. 16 GB, resident, 2,048 thinking tokens.
+6.3 Three seeds: 42, 123, 999. Same case id on both arms. 16 GB physical RAM tier, same effective process cap (12.8 GB nominal maximum), resident, 2,048 thinking tokens.
 
 6.4 Report invention rate (primary) and mismatch recall (co-primary) on the pooled 175 KYC and credit cases. A win on MortarBench or on the control does not override a loss on invention rate.
 
@@ -253,15 +254,15 @@ AGERE_SSD_ROOT/
 
 8.1 Download and convert the extra checkpoints from [`configs/locked/tiers/`](./configs/locked/tiers/): 7B and 0.5B for 8 GB; 7B and 32B for 32 GB. Hash them.
 
-8.2 8 GB SAS is 7B Q4_K_M. 8 GB team is 1.5B + 0.5B + 0.5B, all F16. 32 GB SAS is 32B Q4_K_M. 32 GB team is 7B + 3B + 1.5B, all F16.
+8.2 The nominal process caps are **6.4 GB on 8 GB physical RAM** and **25.6 GB on 32 GB physical RAM**, reduced further if measured idle host use plus 1 GB safety margin requires it. 8 GB SAS is 7B Q4_K_M; the team is 1.5B + 0.5B + 0.5B F16 (5.1 GB of weights). 32 GB SAS is 32B Q4_K_M; the team is 7B + 3B + 0.5B F16 (22.2 GB of weights). Smoke-test each against its effective cap; lower context or shrink the smallest model if runtime/KV memory does not fit.
 
-8.3 Cap the job at that tier. Smoke-test RSS. Then repeat Phase 3 and, if a GPU exists for it, the matching fine-tune. 32B QLoRA is optional (needs ≥48 GB VRAM). The required 32 GB result is the Q4 base plus the same prompts, schemas, and tools as 16 GB.
+8.3 Cap the aggregate process tree at the effective budget, monitor host-wide available memory, and preserve OS/background reserve. Then repeat Phase 3 and, if a GPU exists for it, the matching fine-tune. 32B QLoRA is optional (needs ≥48 GB VRAM). The required 32 GB result is the Q4 base plus the same prompts, schemas, and tools as 16 GB.
 
 8.4 Report these tables separately from the 16 GB headline.
 
 **Do not:** Let a 32 GB result replace the 16 GB number.
 
-**Done when:** Each tier has a smoke RSS log and a dev or test table labelled with the tier and the residency mode.
+**Done when:** Each tier has a smoke log with physical RAM, idle baseline, reserve, effective process cap, peak process-tree RSS, minimum host-wide available memory, and a dev or test table labelled with tier and residency mode.
 
 ---
 

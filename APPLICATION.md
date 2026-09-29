@@ -18,7 +18,7 @@ The default local install is: **quantize the largest single model that fits in R
 
 ## Research question (original Agere formulation)
 
-> **Can a multi-agent system of smaller, full-precision LLMs outperform a single larger, quantized LLM when both use the same hardware resources (peak resident RAM) and the same thinking-token budget?**
+> **Can a multi-agent system of smaller, full-precision LLMs outperform a single larger, quantized LLM when both use the same host-adjusted process-tree RSS cap—after reserving physical RAM for the OS/background tasks—and the same thinking-token budget?**
 
 Domain glossary: [`FINANCE_DOMAIN_CONTEXT.md`](./FINANCE_DOMAIN_CONTEXT.md). Gap list and improve-then-compare loop: [`SYSTEM_GAPS_AND_IMPROVEMENTS.md`](./SYSTEM_GAPS_AND_IMPROVEMENTS.md).
 
@@ -37,13 +37,15 @@ Domain glossary: [`FINANCE_DOMAIN_CONTEXT.md`](./FINANCE_DOMAIN_CONTEXT.md). Gap
 ## Deployment stack (study assumption)
 
 - **Runtime:** llama.cpp or Ollama on Windows/Linux analyst machines  
-- **Parity:** peak RSS (weights + KV + runtime) ≤ RAM tier; equal **thinking tokens** per case (Tran & Kiela protocol)  
+- **Parity:** equal process-tree peak RSS cap (weights + KV + runtime) per physical RAM tier, after an OS/background reserve; equal **thinking tokens** per case (Tran & Kiela protocol)
 - **MAS modes:** (1) all agents resident; (2) sequential load/unload (real laptop behavior)—reported separately  
 
 ## RAM tiers (study design)
 
-| Tier | Example hardware | Typical use |
-| :--- | :--- | :--- |
-| **8 GB** | Legacy analyst laptop | Minimal team or 7B Q4 monolith |
-| **16 GB** | Standard bank workstation | **Primary tier** for paper |
-| **32 GB** | Power user / team lead | Larger quantized monolith vs. bigger FP16 team |
+| Tier | Physical RAM / nominal job RSS ceiling | Example locked comparison | Typical use |
+| :--- | :--- | :--- | :--- |
+| **8 GB** | 8 GB / **6.4 GB** | 7B Q4 SAS vs. resident 1.5B + 0.5B + 0.5B FP16 MAS | Legacy analyst laptop; smoke-test and reduce context/team if needed |
+| **16 GB** | 16 GB / **12.8 GB** | 14B Q4 SAS vs. resident 3B + 1.5B + 0.5B FP16 MAS | Standard bank workstation; **primary research tier** |
+| **32 GB** | 32 GB / **25.6 GB** | 32B Q4 SAS vs. resident 7B + 3B + 0.5B FP16 MAS | Power user / team lead; secondary tier |
+
+These are ceilings, not targets: reserve at least 20% of physical RAM for the OS and background work, then lower the job cap if the host's measured idle use plus a 1 GB safety margin requires it. The full inference process tree, including runtime and KV cache, must fit under that effective cap.

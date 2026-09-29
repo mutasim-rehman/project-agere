@@ -13,7 +13,7 @@
 ### 1.1 Context and Problem Formulation
 In regulated financial institutions (commercial banks, investment funds, and lending institutions), deployment of generative Large Language Models (LLMs) on high-liability documentation tasks—such as Know Your Customer (KYC) onboarding, Customer Due Diligence (CDD), credit approval memo drafting, and mortgage underwriting—faces strict data privacy and regulatory constraints (e.g., FINRA Notice 24-09, SEC 17a-4, GDPR, DORA, and State Bank of Pakistan AML/CFT directives). Transmission of customer Personally Identifiable Information (PII), confidential financial statements, or suspicious activity traces to public cloud LLM endpoints is strictly prohibited. Consequently, institutions rely on local, on-premise execution using runtimes such as `llama.cpp` and `Ollama` on standard corporate workstations (typically equipped with 16 GB system RAM and commodity CPUs, without datacenter GPUs).
 
-The default operational paradigm adopted by industry practitioners is to maximize parameter scale within the workstation's memory envelope by deploying a single, heavily quantized monolithic model—typically a 14B parameter generalist compressed to 4-bit integer weights (e.g., GGUF `Q4_K_M`). Project Agere investigates an alternative architectural hypothesis: partitioning that identical 16 GB RAM envelope and an invariant thinking-token budget across an orchestrated team of smaller, native full-precision (FP16/BF16) specialized agents (e.g., 3B Orchestrator/Drafter, 1.5B Extractor, 1.5B Verifier).
+The default operational paradigm adopted by industry practitioners is to maximize parameter scale within the workstation's memory envelope by deploying a single, heavily quantized monolithic model—typically a 14B parameter generalist compressed to 4-bit integer weights (e.g., GGUF `Q4_K_M`). Project Agere investigates an alternative architectural hypothesis: comparing a quantized single model and an orchestrated team of smaller, native full-precision (FP16/BF16) specialized agents under the same host-adjusted process RSS cap and thinking-token budget. The primary 16 GB physical-RAM tier has a nominal 12.8 GB job cap after reserving 20% for the OS/background work; measured idle host use plus a 1 GB safety margin can reduce it further. Its proposed team is 3B Orchestrator/Drafter, 1.5B Extractor, and 0.5B Verifier.
 
 To establish the academic foundation and identify unexplored gaps, we conducted a critical analysis of 9 peer-reviewed and pre-print research studies published in 2025 and 2026 spanning top venues (ICLR, EMNLP, MLSys, IEEE, Stanford, Amsterdam, Google Research).
 
@@ -88,7 +88,7 @@ In the financial domain, **Financial QA SME (2026)** proved that within strict S
 
 6. **Missing Experiments Across Prior Work:**
    - A controlled head-to-head evaluation between a **domain-fine-tuned quantized monolithic model (SAS-Quant)** and a **structured, verifier-gated multi-agent full-precision system (MAS-FP16)** where:
-     - Peak resident system RAM is strictly matched ($M_{\text{peak}} \le 16\text{ GB}$).
+     - Both arms share the same host-adjusted process-tree RSS ceiling (nominally 12.8 GB on the 16 GB tier), with actual peak RSS measured per run.
      - Thinking-token budgets ($T_{\text{think}}$) are identical.
      - Available tools and execution environments are identical.
 
@@ -217,7 +217,7 @@ To eliminate the 14 documented multi-agent failure modes (Cemri et al. MAST, M1�
 5. **M5 (Inter-Agent Misalignment):** Policy retrieval queries are strictly scoped with case metadata (jurisdiction, product type, document IDs).
 6. **M6 (Endless Debate Loops):** The topology enforces a **directed acyclic graph (DAG)**: one forward extraction pass, one drafting pass, and at most one repair pass upon verifier rejection. Multi-round open debate is structurally barred.
 7. **M8 (Token Budget Fragmentation):** A dynamic scheduler allocates the thinking-token budget ($T_{\text{think}} = 2048$): Extractor 30% (~614 tokens), Retriever 10% (~205 tokens), Drafter 40% (~819 tokens), and Verifier 20% (~410 tokens). Verification tokens are reserved upfront.
-8. **M9 (RAM Residency):** All sub-models remain concurrently resident in RAM. On the primary 16 GB tier: Orchestrator/Drafter (3B FP16, ~6.2 GB) + Extractor (1.5B FP16, ~3.1 GB) + Verifier (1.5B FP16, ~3.1 GB) + KV/runtime buffer (~3.4 GB) = 15.8 GB peak RSS.
+8. **M9 (RAM Residency):** All sub-models remain concurrently resident within the effective process RSS cap, leaving physical RAM for the OS and background tasks. On the primary 16 GB tier, the nominal process cap is 12.8 GB; the proposed team is Orchestrator/Drafter (3B FP16, ~6.2 GB) + Extractor (1.5B FP16, ~3.1 GB) + Verifier (0.5B FP16, ~1.0 GB), with remaining process memory for KV cache and runtime. Host measurement may lower this cap further.
 9. **M10 (Weak Orchestrator):** Solved via **asymmetric parameter allocation** (Żywot et al., 2026): the orchestrator/drafter is assigned the largest model (3B FP16), while workers receive smaller, task-specialized checkpoints (1.5B FP16).
 10. **M11 (Tool Call Races):** All document ingest is mediated through a single unified case store. Only the Extractor agent possesses tool permissions for `document_extractor`.
 11. **M12 (No Domain Specialization):** Role prompts are enforced with specialized system schemas and optional role-specific LoRA adapters.
@@ -231,5 +231,5 @@ To eliminate the 14 documented multi-agent failure modes (Cemri et al. MAST, M1�
 Following the approval of Phase 1, the research group proceeds along the established roadmap:
 - **Phase 2 (Baseline Freeze):** Deploy off-the-shelf Q4_K_M monolith and naive MAS pipeline; record baseline error rates across Tracks A–D.
 - **Phase 3 (Hardening):** Execute QLoRA fine-tuning for SAS-Quant (with re-quantization to Q4_K_M) and deploy AHDS JSON contracts and Verifier gates for MAS-FP16.
-- **Phase 4 (Head-to-Head Evaluation):** Benchmark hardened systems under 16 GB RAM and 2,048 thinking-token parity across 3 random seeds.
+- **Phase 4 (Head-to-Head Evaluation):** Benchmark hardened systems on the 16 GB physical-RAM tier under the same host-adjusted process RSS ceiling (12.8 GB nominal maximum) and 2,048 thinking-token parity across 3 random seeds.
 - **Phase 5 (Ablations & Deployment Guidance):** Deconstruct individual contribution of fine-tuning vs. architectural verifiers; submit findings for peer review.

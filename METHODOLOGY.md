@@ -29,14 +29,14 @@
 ## 1. Executive Summary & Research Motivation
 
 ### 1.1 The Core Research Question
-> **Can a Multi-Agent System consisting of smaller, full-precision LLMs (MAS-FP16) outperform a single larger, quantized LLM (SAS-Quant) when both systems are strictly constrained to the same peak resident system RAM and the same thinking-token budget on regulated financial document workflows?**
+> **Can a Multi-Agent System consisting of smaller, full-precision LLMs (MAS-FP16) outperform a single larger, quantized LLM (SAS-Quant) when both systems operate under the same host-adjusted process-tree RSS ceiling and thinking-token budget on regulated financial document workflows?**
 
 ### 1.2 The Real-World Deployment Dilemma
 In commercial banks, asset managers, and financial institutions operating under strict regulatory regimes (e.g., FINRA Notice 24-09, SEC 17a-4, GDPR, DORA, and State Bank of Pakistan AML/CFT directives):
 - **Cloud APIs are Legally Prohibited:** Customer Personally Identifiable Information (PII), confidential credit packs, tax records, and sanctions screening hits cannot be transmitted across corporate perimeters or national borders to public cloud endpoints (OpenAI, Anthropic, Google).
 - **Workstation Compute Realities:** Compliance officers and credit underwriters execute local CPU-first inference (via `llama.cpp` or `Ollama`) on standard **16 GB RAM** corporate workstations without enterprise datacenter GPUs.
 - **The Prevailing Industry Default:** IT departments default to downloading the largest open-weights model that can fit into RAM when aggressively quantized (e.g., 14B parameter model compressed to 4-bit integer weights like GGUF `Q4_K_M`).
-- **The Core Scientific Hypothesis:** Rather than spending the 16 GB memory budget on one compressed generalist, allocating the same RAM across an orchestrated team of smaller, native full-precision (FP16/BF16) specialized agents (e.g., 3B Orchestrator/Drafter + 1.5B Extractor + 1.5B Verifier) yields higher grounding accuracy, lower hallucinated amount rates, and superior regulatory compliance.
+- **The Core Scientific Hypothesis:** Rather than spending the effective 16 GB-tier job budget on one compressed generalist, allocating the same capped process memory across an orchestrated team of smaller, native full-precision (FP16/BF16) specialized agents (e.g., 3B Orchestrator/Drafter + 1.5B Extractor + 0.5B Verifier) may improve grounding or reduce invented values. This remains a testable hypothesis, not an assumed result.
 
 ---
 
@@ -84,7 +84,7 @@ To achieve academic novelty and valid deployment guidance, our methodology adopt
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ Phase 0: System Specification & Parity Invariants                           │
-│ - Hardware limits: 16 GB Peak RAM (RUPP), CPU-first execution               │
+│ - Hardware tier: 16 GB physical RAM; 12.8 GB nominal job RSS cap            │
 │ - Shared invariants: $T_{\text{think}}$ token budget cap, identical tools   │
 └──────────────────────────────────────┬──────────────────────────────────────┘
                                        │
@@ -167,9 +167,9 @@ To eliminate multi-agent failures (M1–M14) without quantizing weights, the mul
    - Following Żywot et al. (2026), orchestrator capacity is prioritized. The 16 GB layout below is the primary tier. The 8 GB and 32 GB layouts are in [§10](#10-models-quantization-and-hardware-by-tier).
      - **Orchestrator / Drafter:** Qwen2.5-3B-Instruct (FP16, ~6.2 GB).
      - **Extractor:** Qwen2.5-1.5B-Instruct (FP16, ~3.1 GB).
-     - **Verifier:** Qwen2.5-1.5B-Instruct (FP16, ~3.1 GB).
+     - **Verifier:** Qwen2.5-0.5B-Instruct (FP16, ~1.0 GB).
      - **Retriever:** shared embedding index, not a fourth generative model.
-     - **KV cache and runtime:** the remainder of the 16 GB cap.
+     - **KV cache and runtime:** fit within the measured effective 16 GB-tier job cap after reserving OS/background RAM.
 4. **Dynamic Token Budget Scheduler ($T_{\text{think}}$):**
    - An immutable token quota is apportioned across pipeline stages (e.g., Extractor: 30%, Drafter: 40%, Verifier: 30%), preventing token starvation and eliminating infinite debate loops.
 
@@ -182,9 +182,11 @@ To ensure scientific validity and eliminate confounding variables, three strict 
 ### 5.1 RAM Utilization Parity Protocol (RUPP)
 - **Primary Hardware Tier:** **16 GB System RAM** (standard compliance workstation).
 - **Secondary Sensitivity Tiers:** **8 GB** (legacy laptops) and **32 GB** (power workstations).
-- **Peak RSS Invariant:**
-  $$\text{RSS}_{\text{peak}} = M_{\text{weights}} + M_{\text{KV-cache}} + M_{\text{runtime}} \le M_{\text{budget}}$$
-- Both arms must utilize $\ge 85\%$ of the target hardware tier at peak execution to ensure fair resource saturation.
+- **Physical-memory reserve:** Do not treat the whole physical RAM tier as model memory. Reserve at least 20% for the OS and background tasks. Nominal aggregate process-tree RSS caps are 6.4 GB (8 GB tier), 12.8 GB (16 GB tier), and 25.6 GB (32 GB tier).
+- **Host-adjusted cap:** Before runs, record idle non-job memory on the actual host. The effective process cap is $M_{\text{job}} = \min(0.8 M_{\text{tier}}, M_{\text{host}} - M_{\text{idle}} - 1\text{ GB})$. If this is lower than the nominal cap, both arms use that lower cap. Never increase it to fit a model.
+- **Peak RSS invariant:**
+  $$\text{RSS}_{\text{peak, process tree}} = M_{\text{weights}} + M_{\text{KV-cache}} + M_{\text{runtime}} \le M_{\text{job}}$$
+- Record host-wide available memory before and during every run and stop if the reserved OS/background headroom is breached. The cap is an upper bound; there is no target utilization percentage.
 - **Residency Modes:** Primary analysis mandates **concurrent resident memory** (all sub-models remain loaded simultaneously in RAM). A secondary **sequential swap mode** (loading/unloading models per stage) is reported separately to reflect memory-constrained consumer laptops.
 
 ### 5.2 Thinking-Token Parity ($T_{\text{think}}$)
@@ -298,18 +300,19 @@ Phase 5: Ablation Studies & Final Synthesis
 
 One model family is used on both arms so the comparison is architecture and precision, not “Qwen versus Llama.” The family is **Qwen2.5-Instruct**. A second family is out of scope unless the primary 16 GB result is already in hand.
 
-Sizes below are llama.cpp GGUF footprints (weights only). KV cache and the process runtime sit on top. Before a tier is locked, a one-case smoke test records peak RSS. If peak RSS exceeds the tier, the smallest worker steps down. The orchestrator is not the first model to shrink.
+Sizes below are llama.cpp GGUF footprints (weights only). KV cache and the process runtime sit on top. Physical RAM is not the inference budget: reserve 20% of the tier for the OS/background baseline, then lower the nominal cap if the actual host's idle use plus a 1 GB safety margin needs more. Before a tier is locked, a one-case smoke test records process-tree peak RSS and host-wide available memory. If peak RSS exceeds the effective cap, lower context or shrink the smallest worker. The orchestrator is not the first model to shrink.
 
-The **tier** is a cap on peak RSS of the inference stack (`weights + KV + runtime`). It is the analyst machine we claim to represent. The **lab host** may be larger. When it is, `systemd` / `ulimit` / a cgroup holds the job to the tier so the extra RAM cannot become an unreported advantage.
+The **tier** describes physical RAM on the analyst machine we claim to represent. The **job cap** is at most 80% of that RAM and may be lower after measuring the lab host's idle use. The **lab host** may be larger; `systemd` / `ulimit` / a cgroup holds the aggregate job process tree to the effective cap so extra RAM cannot become an unreported advantage. Both arms use the same effective cap.
 
 | | **T1 — 8 GB** | **T2 — 16 GB (primary)** | **T3 — 32 GB** |
 | :--- | :--- | :--- | :--- |
 | **What it represents** | Legacy analyst laptop | Standard bank workstation | Team-lead / power desktop |
 | **SAS-Quant model** | Qwen2.5-**7B**-Instruct | Qwen2.5-**14B**-Instruct | Qwen2.5-**32B**-Instruct |
 | **SAS quant** | GGUF **Q4_K_M** (~4.7 GB) | GGUF **Q4_K_M** (~9.0 GB) | GGUF **Q4_K_M** (~20 GB) |
-| **MAS-FP16 resident team** | Orchestrator **1.5B** FP16 (~3.1 GB); Extractor **0.5B** FP16 (~1.0 GB); Verifier **0.5B** FP16 (~1.0 GB) | Orchestrator/Drafter **3B** FP16 (~6.2 GB); Extractor **1.5B** FP16 (~3.1 GB); Verifier **1.5B** FP16 (~3.1 GB) | Orchestrator **7B** FP16 (~15 GB); Extractor **3B** FP16 (~6.2 GB); Verifier **1.5B** FP16 (~3.1 GB) |
+| **Nominal aggregate job RSS cap** | **6.4 GB** (lower if host-adjusted cap requires) | **12.8 GB** (lower if host-adjusted cap requires) | **25.6 GB** (lower if host-adjusted cap requires) |
+| **MAS-FP16 resident team** | Orchestrator **1.5B** FP16 (~3.1 GB); Extractor **0.5B** FP16 (~1.0 GB); Verifier **0.5B** FP16 (~1.0 GB) | Orchestrator/Drafter **3B** FP16 (~6.2 GB); Extractor **1.5B** FP16 (~3.1 GB); Verifier **0.5B** FP16 (~1.0 GB) | Orchestrator **7B** FP16 (~15 GB); Extractor **3B** FP16 (~6.2 GB); Verifier **0.5B** FP16 (~1.0 GB) |
 | **Retriever (both arms)** | `bge-small` embedding, same index, counted inside the RSS cap | same | same |
-| **Rough weight sum, MAS** | ~5.1 GB | ~12.4 GB | ~24 GB |
+| **Rough weight sum, MAS** | ~5.1 GB | ~10.3 GB | ~22.2 GB |
 | **Context at eval** | 4,096 tokens | 8,192 tokens | 8,192 tokens |
 | **Primary token cap** | 2,048 thinking tokens | 2,048 thinking tokens | 2,048 thinking tokens |
 
@@ -320,8 +323,8 @@ Q4_K_M is the quant on every SAS tier. We do not switch the 8 GB machine to Q2 o
 | | **T1 — 8 GB** | **T2 — 16 GB** | **T3 — 32 GB** |
 | :--- | :--- | :--- | :--- |
 | **Deployment machine the paper talks about** | 8 GB RAM, 4 CPU cores, no discrete GPU, HDD or SATA SSD | 16 GB RAM, 4–8 cores (Core i5/i7 class), integrated graphics, SATA SSD | 32 GB RAM, 8+ cores, SSD |
-| **Lab host we prefer** | 16 GB RAM PC, job capped at 8 GB RSS | 32 GB RAM PC, job capped at 16 GB RSS | 64 GB RAM PC, job capped at 32 GB RSS |
-| **Minimum lab host if nothing larger exists** | The 8 GB PC itself, text-only Linux, browser closed | The 16 GB PC itself, text-only session, browser closed | The 32 GB PC itself |
+| **Lab host we prefer** | 16 GB RAM PC, job capped at ≤6.4 GB RSS (possibly lower) | 32 GB RAM PC, job capped at ≤12.8 GB RSS (possibly lower) | 64 GB RAM PC, job capped at ≤25.6 GB RSS (possibly lower) |
+| **Minimum lab host if nothing larger exists** | The 8 GB PC itself, text-only Linux, browser closed; lower cap if idle use requires | The 16 GB PC itself, text-only session, browser closed; lower cap if idle use requires | The 32 GB PC itself; lower cap if idle use requires |
 | **CPU** | x86-64 with AVX2 | AVX2; AVX-512 helpful, not required | AVX2 |
 | **GPU for inference** | None. Inference is CPU, llama.cpp | None | None |
 | **GPU for fine-tuning this tier’s SAS** | ≥12 GB VRAM for 7B QLoRA | ≥24 GB VRAM for 14B QLoRA | ≥48 GB VRAM for 32B QLoRA |

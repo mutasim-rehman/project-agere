@@ -1,14 +1,22 @@
 tier_id: t3
 name: 32 GB team-lead workstation
 primary: false
-peak_rss_cap_gb: 32
-min_peak_rss_fraction: 0.85
+# Nominal cap; recompute a possibly lower effective cap from the actual host before every run.
+physical_ram_gb: 32
+nominal_os_background_reserve_fraction: 0.20
+nominal_os_background_reserve_gb: 6.4
+nominal_peak_rss_cap_gb: 25.6
+safety_headroom_gb: 1.0
+effective_peak_rss_cap_formula: min(nominal_peak_rss_cap_gb, host_physical_ram_gb - measured_idle_non_job_use_gb - safety_headroom_gb)
+peak_rss_cap_gb: 25.6
+cap_is_ceiling_not_utilization_target: true
 context_tokens: 8192
 thinking_token_cap: 2048
 thinking_token_sweep: [1024, 2048, 4096]
 runtime: llama.cpp
 device: cpu
-job_must_be_capped_at_tier: true
+effective_cap_must_be_measured_before_each_run: true
+job_must_be_capped_at_effective_rss_budget: true
 
 sas:
   arm: SAS-Quant
@@ -24,7 +32,7 @@ mas:
   generative_model_count: 3
   residency_primary: resident
   residency_secondary: sequential
-  weight_sum_gb_approx: 24.3
+  weight_sum_gb_approx: 22.2
   shrink_order_if_over_cap: [extractor, verifier]
   models:
     - instance: orchestrator_drafter
@@ -39,9 +47,9 @@ mas:
       weight_gb_approx: 6.2
     - instance: verifier
       roles: [verifier]
-      hf_id: Qwen/Qwen2.5-1.5B-Instruct
+      hf_id: Qwen/Qwen2.5-0.5B-Instruct
       gguf: F16
-      weight_gb_approx: 3.1
+      weight_gb_approx: 1.0
   retriever:
     hf_id: BAAI/bge-small-en-v1.5
     generative: false

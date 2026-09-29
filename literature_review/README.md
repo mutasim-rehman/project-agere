@@ -10,7 +10,7 @@
 
 ## Overarching research question
 
-> Can a **multi-agent system of smaller, full-precision LLMs** outperform a **single larger, quantized LLM** when both use the **same peak resident system RAM** and the **same thinking-token budget**, on **KYC/credit/mortgage document tasks** where cloud APIs are prohibited?
+> Can a **multi-agent system of smaller, full-precision LLMs** outperform a **single larger, quantized LLM** when both operate under the **same host-adjusted process-tree RSS ceiling** and the **same thinking-token budget**, on **KYC/credit/mortgage document tasks** where cloud APIs are prohibited? The ceiling reserves memory for OS/background tasks and is lowered when measured idle host use requires it.
 
 ---
 
