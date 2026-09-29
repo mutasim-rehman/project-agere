@@ -21,7 +21,7 @@
 | Which MAS failures we fix, and how | [§13](#13-mas-failure-modes-and-the-fix-for-each) |
 | On what basis both systems are judged | [§14](#14-judgement-basis) |
 | How both arms are made as strong as this lab can make them | [§15](#15-making-both-systems-as-strong-as-they-can-be) |
-| External NVMe so lab PCs do not hold the only copy | [§16](#16-lab-storage-external-nvme) |
+| External SSD stores only datasets and model artifacts; code and results stay in repo | [§16](#16-external-ssd-and-repository-storage) |
 | Synthetic data and the human sign-off rule | [§17](#17-ethical-compliance-considerations) |
 
 ---
@@ -379,7 +379,7 @@ If a role LoRA does not improve the dev set, it is discarded and the base FP16 c
 
 ## 12. Datasets: Train, Dev, and Test
 
-No real customer file is used. Training and test are split by generator seed and then frozen. The test manifest (file names and SHA-256) is written to the NVMe **before** the first training step. Anything hashed as test is never in a training batch.
+No real customer file is used. Training and test are split by generator seed and then frozen. The test manifest (file names and SHA-256) is written to the repository **before** the first training step. Dataset files stay on the external SSD. Anything hashed as test is never in a training batch.
 
 | Corpus | What it is | Train | Dev (hardening) | Test (judgement) |
 | :--- | :--- | :--- | :--- | :--- |
@@ -414,7 +414,7 @@ These are the MAST-aligned gaps in [`SYSTEM_GAPS_AND_IMPROVEMENTS.md`](./SYSTEM_
 | **M11** | Two agents extract the same PDF differently | One case store. Only the extractor calls `document_extractor`. |
 | **M12** | Roles are names on a general chat model | Role prompts plus the optional role LoRAs in [§11.4](#114-mas-adapters). |
 | **M13** | Verifier always says the draft is fine | Binary checklist, hard negatives, and a rule that `PASS` requires every amount to match a span. |
-| **M14** | Hard to debug | One JSON log line per stage on the NVMe, including token counts and RSS. |
+| **M14** | Hard to debug | One JSON log line per stage in the repository, including token counts and RSS. |
 
 SAS receives the matching hardening so the team is not compared with a crippled monolith: domain QLoRA (S1, S2), staged prompts (S3), calculator-only amounts (S4), schema-limited tools (S5), span ids (S6), a deterministic mismatch diff (S7), chunked extract when the pack is long (S8), a fixed memo template (S9, S10), and a client-scoped index (S11). Quant level stays Q4_K_M (S12).
 
@@ -458,37 +458,49 @@ Naive scores stay in the paper as the floor. They are not the headline compariso
 
 ---
 
-## 16. Lab Storage: External NVMe
+## 16. External SSD and Repository Storage
 
-Lab PCs are shared. Local disks get wiped, imaged, or filled by the next class. **The system of record is an external NVMe SSD.** Weights, adapters, datasets, indexes, and logs live there. The lab PC holds the OS, the llama.cpp binary, and a mount.
+The external SSD is an artifact drive, not a project drive. It stores only the large inputs and model artifacts: datasets and their derived data indexes/caches, downloaded source weights, converted/quantized weights, trained adapters, and merged weight files. **No source code, runtime/build files, logs, manifests, evaluation outputs, or reports belong on the SSD.** All of those stay under the repository checkout on the laptop/PC/lab machine and are committed or backed up with the repository as appropriate.
 
-### Drive
+### Per-run path requirement
 
-- **1 TB minimum, 2 TB preferred**, NVMe in a USB 3.2 10 Gbps enclosure or faster (USB4 / Thunderbolt if the lab PCs have it). A spinning disk is too slow to load a 20 GB GGUF repeatedly.
-- Format **exFAT** if both Windows and Linux lab images must read it. Format **ext4** if every machine is Linux.
-- Label the volume `AGERE`. Mount it at the same path on every machine: `/mnt/agere` on Linux, `E:\agere` or a subst drive on Windows.
-- The job **refuses to start** if `AGERE_ROOT` is missing. A run must not silently fall back to the internal disk and leave the only checkpoint there.
+- Before starting any phase, dataset operation, training job, evaluation, or other run, set `AGERE_SSD_ROOT` to the correct absolute mount path for the external SSD on that machine.
+- The runner prints the resolved repository root and SSD root, verifies the SSD is mounted and contains the expected `weights/` and/or `datasets/` inputs, and refuses to run if the path is unset, stale, or invalid.
+- Point model-hub/download caches (such as `HF_HOME` and `HF_HUB_CACHE`) under `AGERE_SSD_ROOT/weights/` and dataset loaders under `AGERE_SSD_ROOT/datasets/`; do not let libraries silently cache these large artifacts on the machine's system drive.
+- Never silently fall back to a same-named folder on the local disk. Model and dataset inputs must resolve beneath `AGERE_SSD_ROOT`; code and every output must resolve beneath the repository root.
+- The exact mount point may differ across computers, so pass the current machine's path rather than assuming `/mnt/agere` or a particular Windows drive letter.
 
-Loading a 9 GB model over a 10 Gbps link is on the order of ten seconds. That cost is startup only. Generation stays in RAM. KV cache is not paged out to the SSD.
-
-### Layout
+### SSD layout
 
 ```
-AGERE_ROOT/
-  weights/          # HF snapshots and GGUF, never committed to git
-  adapters/         # LoRA per tier and role, plus the merged-then-Q4 GGUF
+AGERE_SSD_ROOT/
+  weights/
+    hf/                 # downloaded official model snapshots
+    gguf/               # converted and quantized model weights
+    adapters/           # trained adapter weights and merged model weights
   datasets/
     train/
     dev/
-    test/           # immutable after the manifest is written
-  policy_index/
-  runs/             # one folder per case: output, tokens, RSS, gap tag
-  manifests/        # SHA-256 lists for weights and for the frozen test set
+    test/               # immutable after the test manifest is committed
+    derived/            # dataset-derived indexes/caches only
 ```
 
-Git stores code and this methodology. It does not store weights or case outputs. Each new GGUF gets a SHA-256 line in `manifests/` before anyone points a config at it. After a case, the log is flushed to the SSD (`fsync`) so a power cut on the lab PC does not drop the last result.
+### Repository layout for code and results
 
-Two practical rules: unmount the SSD before unplugging it, and keep the SSD with the team rather than in a PC that another class will reimage. A second copy of `weights/` and `adapters/` onto another disk is the backup. Until that copy exists, the external SSD is the only copy that matters.
+```
+<repository>/
+  src/                  # all project source code
+  third_party/          # local source/build for runtime tools when needed
+  configs/              # configs refer to artifacts beneath AGERE_SSD_ROOT
+  manifests/            # artifact hashes, dataset/test hashes, runtime versions
+  runs/                 # per-run JSON logs, traces, memory/token records
+  experiments/          # scored evaluations and analysis inputs
+  results/              # summaries, figures, and reports
+```
+
+Each source or processed weight file gets a SHA-256 entry in the repository's `manifests/weights.sha256`. The frozen test dataset manifest lives in the repository's `manifests/test.sha256` before training starts. Logs and evaluation outputs are written under the repository throughout; do not stage them on the SSD and copy them later.
+
+The SSD must be mounted and its path checked at the start of every phase/run. Unmount before unplugging it. Keep a backup copy of the datasets and weights; repository backups cover code, manifests, logs, and evaluation results.
 
 ---
 

@@ -6,6 +6,8 @@ Decisions (which model, which quant, which test set) stay in [`DEVELOPMENT_START
 
 **Co-equal outcomes:** this roadmap delivers both a reproducible research result and a working local-first analyst product. Each phase has a research deliverable and a product deliverable; neither track is complete if only the other is usable.
 
+**Storage rule:** the external SSD holds only datasets and model artifacts (source weights, converted/quantized weights, and adapters). Code, tools, dependencies, manifests, logs, evaluation outputs, and reports stay in the repository checkout on the laptop/PC/lab machine. Before every phase, dataset access, training job, evaluation, or other run, set and validate the actual external-drive path in `AGERE_SSD_ROOT`; never assume a path or fall back to another drive.
+
 Start at **Phase 0**. Finish a phase before opening the next one. The first machine is **16 GB**. 8 GB and 32 GB wait until Phase 8.
 
 ## How to hand a phase to an agent
@@ -18,11 +20,11 @@ Paste this, with the phase number filled in:
 
 | Phase | What happens | Where the files go |
 | :---: | :--- | :--- |
-| **0** | SSD layout, llama.cpp, 16 GB cap | Lab machine |
+| **0** | Validate SSD path, repository checkout, llama.cpp, 16 GB cap | Code/manifests in repo; datasets/weights on SSD |
 | **1** | Download the 16 GB models | External SSD |
 | **2** | Convert to GGUF and quantize the single model | External SSD |
 | **3** | Score the **untouched** single model, then the **untouched** team | Dev cases only |
-| **4** | Fine-tune the single model, merge, quantize **again** | SSD `adapters/` |
+| **4** | Fine-tune the single model, merge, quantize **again** | Adapter/weight artifacts on SSD; code/logs in repo |
 | **5** | Build the real multi-agent team (JSON, verifier, budget) | Code |
 | **6** | Final evaluation, once | Test cases |
 | **7** | Loop: tag failures, change one thing on dev, or ablate | Dev cases |
@@ -42,45 +44,46 @@ Fine-tuning is **after** the untouched scores are frozen. The team is scored onc
 
 ## Phase 0 — SSD and runtime
 
-**Goal:** A job can see the external drive and cannot silently use the internal disk.
+**Goal:** Every job reads only dataset/model artifacts from the explicitly supplied external SSD path; all code and run products stay in the repository checkout.
 
 **Steps**
 
-0.1 Mount the external NVMe at `AGERE_ROOT` (`/mnt/agere` on Linux). The volume label is `AGERE`. 1 TB minimum, 2 TB preferred. ext4 if every machine is Linux; exFAT if Windows must read it.
+0.1 Mount the external NVMe and set `AGERE_SSD_ROOT` to its actual absolute mount path for this machine (for example `/mnt/AGERE` on Linux or the assigned drive path on Windows). Do not hard-code an assumed drive letter or mount point. The volume label is `AGERE`.
 
-0.2 Create this layout. Weights never go into git.
+0.2 Keep this layout on the external SSD. It contains only datasets and model artifacts; source code, runtime binaries, logs, manifests, and evaluation results do not go here.
 
 ```
-AGERE_ROOT/
+AGERE_SSD_ROOT/
   weights/
-  adapters/
-  datasets/train/
-  datasets/dev/
-  datasets/test/
-  policy_index/
-  runs/
-  manifests/
+    hf/                 # original model snapshots
+    gguf/               # converted and quantized model weights
+    adapters/           # trained adapters and merged model weights
+  datasets/
+    train/
+    dev/
+    test/               # immutable after the test manifest is committed
+    derived/            # dataset-derived indexes/caches only
 ```
 
-0.3 Install llama.cpp and record the version in `manifests/runtime.txt`. Inference is CPU. A GPU is for fine-tuning only.
+0.3 Keep the repository checkout, llama.cpp source/build, and all dependencies on the laptop/PC/lab machine, not on the external SSD. Record runtime versions in the repository at `manifests/runtime.txt`. Inference is CPU. A GPU is for fine-tuning only.
 
-0.4 Make the runner refuse to start when `AGERE_ROOT` is unset or not a mount.
+0.4 Before starting **every phase or run**, supply the current machine's correct `AGERE_SSD_ROOT`. The runner must print the resolved repo root and SSD root, validate that the SSD is mounted and contains the required input directories, and refuse to start if the variable is missing, stale, or invalid. Set model-hub/cache paths (including `HF_HOME`/`HF_HUB_CACHE`) beneath `$AGERE_SSD_ROOT/weights/` so large model downloads never default to the local disk. Never silently substitute a local path.
 
-0.5 Add a 16 GB RSS cap for the process (cgroup or `ulimit`). A lab PC with more RAM does not get to use it.
+0.5 Write manifests, logs, traces, metrics, checkpoints of evaluation outputs, and reports under the repository (`manifests/`, `runs/`, `experiments/`, or `results/`). Add a 16 GB RSS cap for the process (cgroup or `ulimit`). A lab PC with more RAM does not get to use it.
 
 **Do not:** Download models. Write training code.
 
-**Done when:** The process exits with a clear error if `AGERE_ROOT` is missing, and a hello-process under the cap stays at or below 16 GB RSS.
+**Done when:** A process exits with a clear error if `AGERE_SSD_ROOT` is missing or incorrect; it reports the resolved paths; a smoke run writes its log under the repo; and a hello-process under the cap stays at or below 16 GB RSS.
 
 ---
 
 ## Phase 1 — Download models onto the SSD
 
-**Goal:** The 16 GB checkpoints are on the SSD, hashed, and not in git.
+**Goal:** The 16 GB checkpoints are on the SSD, their hashes are recorded in the repository, and weights are not in git.
 
 **Steps**
 
-1.1 Download these official snapshots into `AGERE_ROOT/weights/hf/`:
+1.1 Before downloading, set and validate this machine's `AGERE_SSD_ROOT`. Download these official snapshots into `$AGERE_SSD_ROOT/weights/hf/`:
 
 | Role | Hugging Face id |
 | :--- | :--- |
@@ -89,13 +92,13 @@ AGERE_ROOT/
 | Extractor and verifier | `Qwen/Qwen2.5-1.5B-Instruct` |
 | Retriever | `BAAI/bge-small-en-v1.5` |
 
-1.2 Write a SHA-256 line for each snapshot to `AGERE_ROOT/manifests/weights.sha256` before any config points at the files.
+1.2 Write a SHA-256 line for each snapshot to the repository's `manifests/weights.sha256` before any config points at the files. Include the SSD-relative artifact path and checksum.
 
 1.3 Leave 7B, 0.5B, and 32B for Phase 8.
 
 **Do not:** Quantize yet. Download Llama. Commit weights.
 
-**Done when:** All four snapshots load as directories on the SSD and every hash in the manifest matches a recompute.
+**Done when:** All four snapshots load from `AGERE_SSD_ROOT` and every hash in the repository manifest matches a recompute.
 
 ---
 
@@ -109,15 +112,15 @@ AGERE_ROOT/
 
 2.2 Quantize **only** the 14B F16 file to **Q4_K_M**. Leave the 3B and 1.5B files at F16. Do not produce Q3, Q2, or AWQ for the headline.
 
-2.3 Name them `qwen2.5-14b-instruct-q4_k_m.gguf`, `qwen2.5-3b-instruct-f16.gguf`, `qwen2.5-1.5b-instruct-f16.gguf`. Hash each file into `manifests/weights.sha256`.
+2.3 Save converted and quantized weight files under `AGERE_SSD_ROOT/weights/gguf/`. Name them `qwen2.5-14b-instruct-q4_k_m.gguf`, `qwen2.5-3b-instruct-f16.gguf`, `qwen2.5-1.5b-instruct-f16.gguf`. Hash each file into the repository's `manifests/weights.sha256`.
 
-2.4 Smoke-load the 14B Q4_K_M under the 16 GB cap. Generate a few tokens. Record peak RSS and the llama.cpp version in `runs/smoke_sas_16gb.json`.
+2.4 Smoke-load the 14B Q4_K_M under the 16 GB cap. Generate a few tokens. Record peak RSS and the llama.cpp version in the repository's `runs/smoke_sas_16gb.json`.
 
-2.5 Smoke-load the 3B and the 1.5B **together** (resident). Record peak RSS in `runs/smoke_mas_16gb.json`. If the cap breaks, shrink the 1.5B worker first, not the 3B.
+2.5 Smoke-load the 3B and the 1.5B **together** (resident). Record peak RSS in the repository's `runs/smoke_mas_16gb.json`. If the cap breaks, shrink the 1.5B worker first, not the 3B.
 
 **Do not:** Fine-tune. Score a dataset. Turn the team into a fourth model.
 
-**Done when:** Both smoke JSON files exist, both peak RSS numbers are ≤ 16 GB, and the Q4 file is the one that will be scored in Phase 3.
+**Done when:** Both smoke JSON files exist in the repo, both peak RSS numbers are ≤ 16 GB, and the Q4 file on the SSD is the one that will be scored in Phase 3.
 
 ---
 
@@ -127,17 +130,17 @@ AGERE_ROOT/
 
 **Steps**
 
-3.1 Write the test-set manifest (names and SHA-256) to `AGERE_ROOT/manifests/test.sha256` **before** any training and before this scoring run if the test files already exist. Anything in that manifest is off limits here.
+3.1 Write the test-set manifest (names and SHA-256) to the repository's `manifests/test.sha256` **before** any training and before this scoring run if the test files already exist. Dataset files remain on the SSD. Anything in that manifest is off limits here.
 
 3.2 Implement the four tools, same schemas for both arms: `document_extractor`, `policy_retriever`, `financial_calculator`, `citation_verifier`. Amounts come from the calculator. The citation tool is a string match.
 
 3.3 Implement the scorer: invention rate, mismatch recall, grounding accuracy, refusal correctness. Tag each failed case with one id from [`configs/locked/problems.yaml`](./configs/locked/problems.yaml).
 
-3.4 Run **untouched SAS**: 14B Q4_K_M, no adapter, 2,048 thinking tokens, 16 GB cap, on the **dev** slices of Agere-KYC-Synth and Agere-Credit-Synth. Seeds later; one seed is enough to freeze a floor. Save outputs under `runs/naive_sas/`.
+3.4 Run **untouched SAS**: 14B Q4_K_M, no adapter, 2,048 thinking tokens, 16 GB cap, on the **dev** slices of Agere-KYC-Synth and Agere-Credit-Synth read from `AGERE_SSD_ROOT`. Seeds later; one seed is enough to freeze a floor. Save outputs under repository `runs/naive_sas/`.
 
-3.5 Run **untouched MAS**: 3B orchestrator/drafter, 1.5B extractor, 1.5B verifier, all F16, resident, same cases, same token cap, same tools. One forward pass per role. No debate and no LoRA. Save outputs under `runs/naive_mas/`.
+3.5 Run **untouched MAS**: 3B orchestrator/drafter, 1.5B extractor, 1.5B verifier, all F16, resident, same cases, same token cap, same tools. One forward pass per role. No debate and no LoRA. Read weights and cases from the validated SSD root; save outputs under repository `runs/naive_mas/`.
 
-3.6 Write `runs/naive_floor.json` with both scores. Do not edit this file after it is written.
+3.6 Write `runs/naive_floor.json` in the repository with both scores. Do not edit this file after it is written.
 
 **Do not:** Call the test split. Start QLoRA. Add a verifier gate and then call the result “naive”.
 
@@ -155,15 +158,15 @@ AGERE_ROOT/
 
 4.2 GPU: ≥24 GB VRAM for the 14B. If that GPU does not exist, fine-tune a **7B** stand-in and label every run `7b-stand-in`. The untouched 14B Q4 from Phase 3 still stays in the table.
 
-4.3 Merge the adapter into 16-bit weights. Convert to GGUF F16. Quantize to Q4_K_M. Hash the new GGUF. The merged 16-bit model is not what gets scored.
+4.3 Merge the adapter into 16-bit weights. Save the merged and converted/quantized weight artifacts on the SSD under `weights/`; hash each artifact in the repository manifest. The merged 16-bit model is not what gets scored.
 
 4.4 Smoke-test peak RSS of the new Q4 file under the 16 GB cap.
 
-4.5 Score it on **dev**. Keep the adapter only if dev invention rate or mismatch recall improves and the other does not collapse. Otherwise discard it and record that in the run log.
+4.5 Score it on **dev**. Keep the adapter only if dev invention rate or mismatch recall improves and the other does not collapse. Otherwise discard it from the SSD and record that in the repository run log.
 
 **Do not:** Train on test. Compare against the team yet. Replace `naive_floor.json`.
 
-**Done when:** The evaluated file is a hashed Q4_K_M under 16 GB RSS, and the dev delta versus the naive floor is written to `runs/sas_qlora_dev.json`.
+**Done when:** The evaluated file on the SSD is a hashed Q4_K_M under 16 GB RSS, and the dev delta is written to repository `runs/sas_qlora_dev.json`.
 
 ---
 
@@ -187,7 +190,7 @@ AGERE_ROOT/
 
 **Do not:** Quantize the team. Add a second 3B. Touch the test split.
 
-**Done when:** A dev run finishes resident under 16 GB, logs one JSON line per stage (tokens, RSS, gap id), and `runs/mas_hardened_dev.json` records the delta versus the naive MAS floor.
+**Done when:** A dev run finishes resident under 16 GB, writes one JSON line per stage (tokens, RSS, gap id) to the repository, and `runs/mas_hardened_dev.json` records the delta versus the naive MAS floor.
 
 ---
 
@@ -214,7 +217,7 @@ AGERE_ROOT/
 
 **Do not:** Change a prompt because of a test result. Average in a run that broke the RAM cap or the token cap.
 
-**Done when:** `runs/final/` has both arms, three seeds, and a short `results.md` that states the 16 GB pooled invention rate first.
+**Done when:** Repository `runs/final/` has both arms, three seeds, and a short `results.md` that states the 16 GB pooled invention rate first. Inputs were read from the validated SSD path; outputs remain in the repo.
 
 ---
 

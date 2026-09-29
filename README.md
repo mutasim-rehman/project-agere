@@ -74,9 +74,11 @@ Protocol detail: [`EXPERIMENT_PROTOCOL.md`](./EXPERIMENT_PROTOCOL.md)
 
 ## Repository layout
 
+**Storage:** The external SSD contains datasets and model artifacts only. Code, manifests, logs, evaluations, and reports stay in the repository checkout. Set and validate `AGERE_SSD_ROOT` before every phase or run; details are in [`ROADMAP.md`](./ROADMAP.md) and [`METHODOLOGY.md`](./METHODOLOGY.md) §16.
+
 ```
 APPLICATION.md                  # Who benefits (supervisor-facing)
-METHODOLOGY.md                  # Methodology: tiers, models, Q4_K_M, fine-tune, judgement, NVMe lab store
+METHODOLOGY.md                  # Methodology: tiers, models, Q4_K_M, fine-tune, judgement, and SSD/repository storage policy
 PHASE_1_LITERATURE_REVIEW.md    # Phase 1: Literature review, comparison table & research gaps
 DEVELOPMENT_START.md            # Locked spec for coding: models, quant, fine-tune, MAS, problems
 ROADMAP.md                      # Phase-by-phase build order for agent sessions

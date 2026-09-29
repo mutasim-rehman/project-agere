@@ -26,6 +26,12 @@ Machine-readable copy of the same lock: [`configs/locked/`](./configs/locked/).
 
 Start on the **16 GB** tier. Build the naive baseline before any fine-tune. The old 15-tier GPU checklist and its YAML have been removed from the tree.
 
+## Storage rule for every phase and run
+
+The repository checkout on the laptop/PC/lab machine contains all code, runtime/build files, manifests, logs, evaluation outputs, and reports. The external SSD contains only datasets (including derived indexes/caches) and model artifacts (downloaded, converted, quantized, merged, and adapter weights).
+
+Before starting **any phase, dataset operation, training job, evaluation, or other run**, set `AGERE_SSD_ROOT` to the correct absolute mount path for the external SSD on the current machine. The runner must print and validate that path and the repository root, and stop if the drive/path is missing or invalid. Do not assume the mount point or silently fall back to a local path. Point model-hub/download caches such as `HF_HOME` and `HF_HUB_CACHE` under `$AGERE_SSD_ROOT/weights/`; dataset loaders must also read only from `$AGERE_SSD_ROOT/datasets/`. All run outputs go under repository `runs/`, `experiments/`, `manifests/`, or `results/`.
+
 ---
 
 ## 1. What was already written, and what contradicted it
@@ -72,7 +78,7 @@ Official Hugging Face ids:
 | 32B | `Qwen/Qwen2.5-32B-Instruct` |
 | Embeddings | `BAAI/bge-small-en-v1.5` |
 
-Do not pin a third-party GGUF mirror in git. Convert from the official snapshot (or record the exact file URL **and** SHA-256 in `manifests/` on the lab SSD at download time). Filename pattern: `qwen2.5-<size>-instruct-f16.gguf` and `qwen2.5-<size>-instruct-q4_k_m.gguf`.
+Do not pin a third-party GGUF mirror in git. Convert from the official snapshot (or record the exact file URL **and** SHA-256 in the repository's `manifests/` at download time). Store all source and processed weights under `AGERE_SSD_ROOT/weights/`; manifest metadata remains in the repository. Filename pattern: `qwen2.5-<size>-instruct-f16.gguf` and `qwen2.5-<size>-instruct-q4_k_m.gguf`.
 
 Weight figures below are weights only. KV cache and the process sit on top. A one-case smoke test records peak RSS before a tier is treated as runnable. If peak RSS exceeds the cap, shrink the **smallest worker** first. The orchestrator is not the first model to shrink.
 
@@ -185,7 +191,7 @@ The verifier’s real decision is a checklist plus string match against the case
 
 ### 5.3 Data the fine-tune may see
 
-No real customer file. The test manifest (names and SHA-256) is written to the lab SSD **before** the first training step. Anything hashed as test never enters a batch. Dev is where training stops and where adapters are kept or dropped. Test is one shot per frozen system.
+No real customer file. The test manifest (names and SHA-256) is written to repository `manifests/test.sha256` **before** the first training step. Dataset files remain on the external SSD. Anything hashed as test never enters a batch. Dev is where training stops and where adapter weights on the SSD are kept or dropped. Test is one shot per frozen system.
 
 | Corpus | Train | Dev | Test |
 | :--- | ---: | ---: | ---: |
@@ -311,7 +317,7 @@ Primary judgement, 16 GB, resident, 2,048 thinking tokens, **hardened** systems:
 
 ## 9. What to build first
 
-The staged plan is [`ROADMAP.md`](./ROADMAP.md). Hand an agent one phase at a time. The order is: SSD, download, quantize, score the untouched models, fine-tune and quantize again, harden the team, final test, then the dev loop. 8 GB and 32 GB come last.
+The staged plan is [`ROADMAP.md`](./ROADMAP.md). Hand an agent one phase at a time. Before every phase/run, provide and validate `AGERE_SSD_ROOT`. Code and run products remain in the repository; only datasets and model artifacts go on the SSD. The order is: SSD path/runtime check, download, quantize, score the untouched models, fine-tune and quantize again, harden the team, final test, then the dev loop. 8 GB and 32 GB come last.
 
 Cells A (SAS at F16) and D (quantized MAS) are optional and are not on this path.
 
@@ -319,7 +325,7 @@ Still open, and none of them block Phase 0 or Phase 1 of the roadmap:
 
 | Item | Rule already in place |
 | :--- | :--- |
-| Exact GGUF SHA-256 | Written to `manifests/` at download. Not invented here. |
+| Exact GGUF SHA-256 | Written to repository `manifests/` at download. Not invented here. |
 | Which role LoRAs survive | Dev invention rate or mismatch recall. Else discard. |
 | Official MortarBench files vs a style-alike pack | Style-alike is allowed and must be labelled as such. |
 | Whether the lab has a 24 GB GPU for 14B QLoRA | Fallback is a labelled 7B stand-in. The 14B Q4 baseline still runs. |

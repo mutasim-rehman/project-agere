@@ -161,7 +161,7 @@ The quantized monolithic baseline (Qwen2.5-14B-Instruct @ GGUF Q4_K_M on 16 GB R
 ### 4.2 Data Splits and Leakage Prevention Invariant
 To ensure complete evaluation integrity:
 - **Generation Seed Partitioning:** Training, dev, and test sets are generated using disjoint pseudo-random generator seeds.
-- **Pre-Training Test Manifest Hashing:** Before any training step or adapter optimization begins, the complete test dataset is hashed (SHA-256) and stored in an immutable manifest (`AGERE_ROOT/manifests/test_manifest.sha256`) on the external NVMe storage.
+- **Pre-Training Test Manifest Hashing:** Before any training step or adapter optimization begins, the complete test dataset is hashed (SHA-256) and stored in an immutable repository manifest (`manifests/test_manifest.sha256`). Dataset files remain on the external SSD.
 - **Zero Evaluation Leakage:**
   - `Agere-KYC-Synth`: 400 cases Train, 100 cases Dev, 100 cases Test.
   - `Agere-Credit-Synth`: 200 cases Train, 50 cases Dev, 75 cases Test.
@@ -222,7 +222,7 @@ To eliminate the 14 documented multi-agent failure modes (Cemri et al. MAST, M1â
 10. **M11 (Tool Call Races):** All document ingest is mediated through a single unified case store. Only the Extractor agent possesses tool permissions for `document_extractor`.
 11. **M12 (No Domain Specialization):** Role prompts are enforced with specialized system schemas and optional role-specific LoRA adapters.
 12. **M13 (Verification Theatre):** The verifier is constrained to a binary pass/fail checklist combined with hard-coded string matching, preventing sycophantic approval.
-13. **M14 (Operational Latency & Debuggability):** Every inter-agent exchange emits a structured JSON log line recording elapsed time, token consumption, and peak RSS directly to the NVMe storage.
+13. **M14 (Operational Latency & Debuggability):** Every inter-agent exchange emits a structured JSON log line recording elapsed time, token consumption, and peak RSS under the repository's `runs/` directory. The external SSD is reserved for datasets and model artifacts.
 
 ---
 

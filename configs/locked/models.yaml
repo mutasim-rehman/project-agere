@@ -1,5 +1,5 @@
 # Checkpoint registry. Sizes are weights only.
-# GGUF files are produced from the official snapshot and hashed on the lab SSD.
+# Source and processed weights live on the external SSD; their SHA-256 manifest lives in the repository.
 # See DEVELOPMENT_START.md sections 2–4.
 
 family: Qwen2.5-Instruct

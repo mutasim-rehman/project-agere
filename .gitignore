@@ -7,6 +7,5 @@ venv/
 *.safetensors
 weights/
 adapters/
-experiments/
-runs/
+# Evaluation logs and outputs under these repository directories are intentionally trackable.
 .DS_Store
