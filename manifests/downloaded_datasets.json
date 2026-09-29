@@ -1,0 +1,383 @@
+{
+  "generated_utc": "2026-09-29T18:48:48.8530911Z",
+  "ssd_subdir": "datasets/",
+  "policy": "Dataset files are on the SSD; this manifest stays in the repository.",
+  "datasets": [
+    {
+      "id": "mortarbench",
+      "repo": "ManavMunjal/MortarBench",
+      "revision": "ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f",
+      "license": "CC-BY-4.0",
+      "files": [
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/data/questions.jsonl",
+          "upstream_path": "data/questions.jsonl",
+          "sha256": "35430725e025ced03cbe0ec990eca7b67f7e3061db9d9834220ab56a825529ce",
+          "bytes": 4303842
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/data/test_cases.jsonl",
+          "upstream_path": "data/test_cases.jsonl",
+          "sha256": "e002031fab78d81db38d96f87f0730e7ff7e264d03ca37a24b6ca8c9846541da",
+          "bytes": 423242
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Labeled Questions and Answers.xlsx",
+          "upstream_path": "raw/Labeled Questions and Answers.xlsx",
+          "sha256": "77df01071d976930ab66b03c501fcdf938e4a666c72ef8a500af2c1f7f976000",
+          "bytes": 188541
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/case_1a.pdf",
+          "upstream_path": "raw/Test Case 1 Docs/case_1a.pdf",
+          "sha256": "96f6b7d25d43e82ef59f4cde58df1e7a5481f627ef7b273cbbf650156e3094ea",
+          "bytes": 45137
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/case_1b.pdf",
+          "upstream_path": "raw/Test Case 1 Docs/case_1b.pdf",
+          "sha256": "b4052a3748a387d7f8f57cffdc0a67711a553702aa3f2f407e6c1b454c9986de",
+          "bytes": 2855
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/plaid.json",
+          "upstream_path": "raw/Test Case 1 Docs/plaid.json",
+          "sha256": "2ed760b486387ac02799997bba2a28e184b980316fdf2d6a2c0e601454c7ee07",
+          "bytes": 17820
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 1 Docs/plaid_with_ids.json",
+          "sha256": "75244f720738adca5638042afb55776b2973bdb4798701a8f48c7b8f851057f2",
+          "bytes": 19848
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/test_case_1_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 1 Docs/test_case_1_bank_statement_solo.json",
+          "sha256": "89b249d7fa60efad7223d74198e3528b355725efc7de677f28a1baa8787472ce",
+          "bytes": 174979
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 1 Docs/ulad.xml",
+          "sha256": "96cedd493c20b648b0f21dfcc46133edc4241d080beaf29aeb456d1dd12909d2",
+          "bytes": 22493
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/plaid.json",
+          "upstream_path": "raw/Test Case 10 Docs/plaid.json",
+          "sha256": "fa69a39a8ac5fc4b7b9f17fa9a494f7d96ad9e226ac30b9603d9f01396a400fb",
+          "bytes": 14761
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 10 Docs/plaid_with_ids.json",
+          "sha256": "ec0f88c85941643d0cd55e7c52f5cb5b574d0fc778f4c8e12cb078d4d0d92c04",
+          "bytes": 17440
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/test_case_10_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 10 Docs/test_case_10_bank_statement_solo.json",
+          "sha256": "fd54d566116f78c5d328d1dbfcc4ef9ba8557fc2cc3a70d0769452185fb9484d",
+          "bytes": 176791
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/test_case_10a.pdf",
+          "upstream_path": "raw/Test Case 10 Docs/test_case_10a.pdf",
+          "sha256": "0bbd1ed1bb1e2c86d8839a03f58f9680a1476bf0a5290f13ef6530b05bdbf7f0",
+          "bytes": 23612
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/test_case_10b.pdf",
+          "upstream_path": "raw/Test Case 10 Docs/test_case_10b.pdf",
+          "sha256": "c2586dbd3d1fb2be7c9431621958036138c5c835f5ff14e95241162de36551ed",
+          "bytes": 46746
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 10 Docs/ulad.xml",
+          "sha256": "395bcec77f5f346de737e433fa79b10ac304e853ee5ac95314c9de7081627f5f",
+          "bytes": 30952
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/case_2.pdf",
+          "upstream_path": "raw/Test Case 2 Docs/case_2.pdf",
+          "sha256": "ee18cb04a97c8fb2902108fbd256461943720df74b78ece1270cb5b0f67bbac8",
+          "bytes": 43751
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/plaid.json",
+          "upstream_path": "raw/Test Case 2 Docs/plaid.json",
+          "sha256": "8dff15757aba92470129660048f7d64b4b245fbd92e6615a0f3f6cb3608478d0",
+          "bytes": 14727
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 2 Docs/plaid_with_ids.json",
+          "sha256": "703cb6f2e453dae33f40ef51a9b72cf072b2952781c88a8f15d468a9621b104e",
+          "bytes": 17855
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/test_case_2_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 2 Docs/test_case_2_bank_statement_solo.json",
+          "sha256": "364b6155631898aeb388e2da1f17ab1e4ee7f0bc64ed386e151dae50a10970e5",
+          "bytes": 167464
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 2 Docs/ulad.xml",
+          "sha256": "7100004e87a2e84c5ee697f5c7809d32def324689f12ea1b0bea0d79c7c9debf",
+          "bytes": 34207
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/case_3.pdf",
+          "upstream_path": "raw/Test Case 3 Docs/case_3.pdf",
+          "sha256": "c7b35ccbbf3eb977912ffb1af7d5e434aa5fe327256e3329d17362ec4b3f9c21",
+          "bytes": 271386
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/plaid.json",
+          "upstream_path": "raw/Test Case 3 Docs/plaid.json",
+          "sha256": "bcfacafc7a67018d53b222973ed5099a562f9bf6a8e0417de001179cb2dc6093",
+          "bytes": 9943
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 3 Docs/plaid_with_ids.json",
+          "sha256": "e249511ab7f0ec30b2e31e2132c69e45e7d5e51cb06f75d8cb481bd9cdae75d9",
+          "bytes": 11921
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/test_case_3_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 3 Docs/test_case_3_bank_statement_solo.json",
+          "sha256": "b86b542f256045b6b1783baf4712b59c22266c4f1c2d983f47da5dcc555b3151",
+          "bytes": 144742
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 3 Docs/ulad.xml",
+          "sha256": "fd0c13da2e5b50799575a1ce61163328d3c0c3f3e335e325bebe4c0d507060da",
+          "bytes": 20927
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/case_4a.pdf",
+          "upstream_path": "raw/Test Case 4 Docs/case_4a.pdf",
+          "sha256": "55b66ae7b798dc6c9b520f9a52c34f4ad6083c1586bb7ac66007eb3582d50943",
+          "bytes": 34252
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/case_4b.pdf",
+          "upstream_path": "raw/Test Case 4 Docs/case_4b.pdf",
+          "sha256": "c982a0b48bee6fabddf63e287fd3305ead79218a70dadfdfc3e8d0f4977e7a96",
+          "bytes": 42731
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/plaid1.json",
+          "upstream_path": "raw/Test Case 4 Docs/plaid1.json",
+          "sha256": "983fb39e4503cccbc45d079eca44f1578d0690fdd0dac7741f0f0b19879590f2",
+          "bytes": 11525
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/plaid2.json",
+          "upstream_path": "raw/Test Case 4 Docs/plaid2.json",
+          "sha256": "36d5e279bd92ece35eeeba6b069d99980910a723efae972eac0cd8c8fd3429fc",
+          "bytes": 9409
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 4 Docs/plaid_with_ids.json",
+          "sha256": "7ba4dc9e4d53e17dc51a3e098eaf45f1c195a62826fee386ed348c7653a38967",
+          "bytes": 26166
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/test_case_4_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 4 Docs/test_case_4_bank_statement_solo.json",
+          "sha256": "a4bb8ea8322b6964aa5fb98b5ec4e740d8d541d5900019d902a4dc3544bde3f1",
+          "bytes": 200610
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 4 Docs/ulad.xml",
+          "sha256": "b6880a3f413ff6278b9bde99a198bbf386fa05674085a2e50f61bfd0e1edf6e1",
+          "bytes": 37831
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/case_5.pdf",
+          "upstream_path": "raw/Test Case 5 Docs/case_5.pdf",
+          "sha256": "398b718ebeb0816e072562c19eddbf0d7ee8828afe1bf906b1dbc45e3f47fa48",
+          "bytes": 44864
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/case_5b.pdf",
+          "upstream_path": "raw/Test Case 5 Docs/case_5b.pdf",
+          "sha256": "95440bc8aea69ae6963afdb25d4256c61af13cc94e53bf14e79cb5a0d7ffb14d",
+          "bytes": 2557
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/plaid.json",
+          "upstream_path": "raw/Test Case 5 Docs/plaid.json",
+          "sha256": "bcf5785e60894d4324e4803d3deede62bf94f0a75891b8db3601d3540d23b15f",
+          "bytes": 14528
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 5 Docs/plaid_with_ids.json",
+          "sha256": "b4ce10ba71ac64b3e63614898754933a6a7fa71108f3fd5f3a55a266e581033e",
+          "bytes": 16114
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/test_case_5_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 5 Docs/test_case_5_bank_statement_solo.json",
+          "sha256": "eaa08df63502a0af5d116ef3f8c95cb9b8bbef9f8249f431a2f468bab87bd04d",
+          "bytes": 137999
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 5 Docs/ulad.xml",
+          "sha256": "4930c911e06e9eee5c86dd4299753a113ffb4ffec6c952fc661b40755f866bf5",
+          "bytes": 29191
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/plaid.json",
+          "upstream_path": "raw/Test Case 6 Docs/plaid.json",
+          "sha256": "6efb5abaadf9d5a44def30acf2d372abf5c3a752bf8380cdc60df560363c9379",
+          "bytes": 15407
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 6 Docs/plaid_with_ids.json",
+          "sha256": "fea332c2d11866cae7d7806a0587e30c406046b66b8b8e1dc86bd4cb9e565d1d",
+          "bytes": 18535
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/test_case_6.pdf",
+          "upstream_path": "raw/Test Case 6 Docs/test_case_6.pdf",
+          "sha256": "0443f5886025db80740a301d2fd531512588942d3846ac5f8ab388a5efc511b8",
+          "bytes": 47384
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/test_case_6_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 6 Docs/test_case_6_bank_statement_solo.json",
+          "sha256": "63a5deb32fa23140be38c535fece3c51dd11562db5e3da018ab9627ee37ef537",
+          "bytes": 166062
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 6 Docs/ulad.xml",
+          "sha256": "fd906c54882e54c28adb7f32bfb9e7e7be23619c6acb68e73f7850a766e82830",
+          "bytes": 28755
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/plaid.json",
+          "upstream_path": "raw/Test Case 7 Docs/plaid.json",
+          "sha256": "37299f45da69ce24a2ce13ab435b8a624bea01b10bc525528e5cb171941b6591",
+          "bytes": 15292
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 7 Docs/plaid_with_ids.json",
+          "sha256": "e9b75fb7a677487310b2fe79cc9e77c0b2e1683ddd907e3eae147a2c931314b5",
+          "bytes": 18420
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/test_case_7.pdf",
+          "upstream_path": "raw/Test Case 7 Docs/test_case_7.pdf",
+          "sha256": "03c0e0c0d921c7ae60aedfd7112ec8fde9dc6f19bcde115f216916147221e722",
+          "bytes": 45199
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/test_case_7_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 7 Docs/test_case_7_bank_statement_solo.json",
+          "sha256": "e0ffbadbc92a64f0947ff0d41bd6c217740e9b36112acc5ae52119ba0ee97947",
+          "bytes": 172736
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 7 Docs/ulad.xml",
+          "sha256": "b699be55693dfb5c1f95cfc4e48486ef2a73a3f8e9c44e15234be81c6e84b1fa",
+          "bytes": 43574
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/plaid1.json",
+          "upstream_path": "raw/Test Case 9 Docs/plaid1.json",
+          "sha256": "49f5f211ac3dd842ae3cb2e5976dd7e0b18c0bcb14f991671ce6ffbc93eb1481",
+          "bytes": 11153
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/plaid2.json",
+          "upstream_path": "raw/Test Case 9 Docs/plaid2.json",
+          "sha256": "4e083788ddeabdc8cdf87e38853cf7395324bb8bc5467e5f35d864a2b18a045e",
+          "bytes": 9043
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/plaid_with_ids.json",
+          "upstream_path": "raw/Test Case 9 Docs/plaid_with_ids.json",
+          "sha256": "47197f775d0f730ae68edc78b948c43b5453445438e14bb5e51de2f53cabcc62",
+          "bytes": 26718
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/test_case_9_bank_statement_solo.json",
+          "upstream_path": "raw/Test Case 9 Docs/test_case_9_bank_statement_solo.json",
+          "sha256": "a0ceafe54b4ad78f62bea99bab49c0740b3a482caa4b1457a6caf62251b533ca",
+          "bytes": 219690
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/test_case_9a.pdf",
+          "upstream_path": "raw/Test Case 9 Docs/test_case_9a.pdf",
+          "sha256": "e01c3daa504943474b3fed189fe640a2f610c1114eb226dc185ac17bf1648dd7",
+          "bytes": 43913
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/test_case_9b.pdf",
+          "upstream_path": "raw/Test Case 9 Docs/test_case_9b.pdf",
+          "sha256": "3a205504ec0e47c49b20cb8c8ea65d5ddc89fb0f1e772e28a0ffb1c196cd73a8",
+          "bytes": 34605
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/ulad.xml",
+          "upstream_path": "raw/Test Case 9 Docs/ulad.xml",
+          "sha256": "94af3060e787fd6440786b995c21b1a20930e3b1f5e362bb42324c68733adb7b",
+          "bytes": 46056
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/benchmark_dataset_metadata.json",
+          "upstream_path": "raw/benchmark_dataset_metadata.json",
+          "sha256": "464b0824071c4e91c969676df656ac54a9fd795ab4cd38fbcab3f1a58173b215",
+          "bytes": 28827
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/benchmark_dataset_test_cases.jsonl",
+          "upstream_path": "raw/benchmark_dataset_test_cases.jsonl",
+          "sha256": "3a65c334fe10306f0e9c5a0d13a8961d5fe8b330d6fba4bf2137f59a03d7ec87",
+          "bytes": 410074
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/questions_unique_generated.csv",
+          "upstream_path": "raw/questions_unique_generated.csv",
+          "sha256": "d3981acb18bddfcdbff0037e637a86a8d8f3536760aba337d8d8c0a53d87b7ae",
+          "bytes": 12303
+        },
+        {
+          "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/ulad_template.json",
+          "upstream_path": "raw/ulad_template.json",
+          "sha256": "c35653731d8f7b26b8381a69c80901859730a1e644d3e85190298dc3c177e2bf",
+          "bytes": 15147
+        }
+      ]
+    },
+    {
+      "id": "frames-benchmark",
+      "repo": "google/frames-benchmark",
+      "revision": "58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "datasets/external/FRAMES/58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef/test.tsv",
+          "upstream_path": "test.tsv",
+          "sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+          "bytes": 484887
+        }
+      ]
+    }
+  ]
+}

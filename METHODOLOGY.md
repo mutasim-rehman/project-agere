@@ -384,6 +384,8 @@ If a role LoRA does not improve the dev set, it is discarded and the base FP16 c
 
 No real customer file is used. Training and test are split by generator seed and then frozen. The test manifest (file names and SHA-256) is written to the repository **before** the first training step. Dataset files stay on the external SSD. Anything hashed as test is never in a training batch.
 
+The first deterministic implementation is `scripts/prepare_project_datasets.py` (`agere-synth-v1`). It writes the specified KYC/credit counts plus a 600-row train SFT mixture and 60-row dev SFT set beneath `AGERE_SSD_ROOT/datasets/`; their hashes and split counts are stored in repository manifests. The SFT rows are generated from train cases only, and dev rows come from dev cases only. This is a starter corpus and must pass the dataset-quality review in `ROADMAP.md` §0.5 before it supports paper results or a model fine-tune.
+
 | Corpus | What it is | Train | Dev (hardening) | Test (judgement) |
 | :--- | :--- | :--- | :--- | :--- |
 | **Agere-KYC-Synth** | CNIC/SNIC, NTN, ATL line, SECP-style shareholding, sanctions hit or clean bill. Planted mismatches and blank fields. | 400 cases | 100 | 100 (Track B) |
@@ -395,6 +397,8 @@ No real customer file is used. Training and test are split by generator seed and
 | **Policy index** | Public SBP prudential excerpts, FATF recommendation text, a synthetic bank SOP. Same index mounted for both arms. | index only | index only | index only |
 
 Dev is where we stop training, tune the verifier threshold, and decide whether an adapter stays. Test is touched once per frozen system, three seeds, and not used to pick prompts.
+
+MortarBench and FRAMES are pinned external datasets staged beneath `AGERE_SSD_ROOT/datasets/external/`; MortarBench's complete test JSONL is secondary, and a deterministic 100-question FRAMES slice is frozen separately. The fine-tuning mixture is project-generated, not downloaded from a public data host. Public SBP/FATF policy sources used to build the retriever index are separate input artifacts and must be versioned on the SSD before policy-grounded runs.
 
 ---
 

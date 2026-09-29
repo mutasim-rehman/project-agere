@@ -1,0 +1,74 @@
+{
+  "generator": "agere-synth-v1",
+  "seed": 20260929,
+  "ssd_subdir": "datasets/agere_synthetic/agere-synth-v1/",
+  "train_mix": {
+    "missing_data": 240,
+    "tool_calls": 180,
+    "citations": 180
+  },
+  "dev_mix": {
+    "missing_data": 24,
+    "tool_calls": 18,
+    "citations": 18
+  },
+  "evaluation_slices": [
+    {
+      "dataset": "FRAMES",
+      "path": "datasets/external/FRAMES/58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef/frames_100.jsonl",
+      "rows": 100,
+      "sha256": "df9853ec0efc67c3cecff1db3bd874ca894585409f132d0ac1d4e30d25486e1d"
+    }
+  ],
+  "files": [
+    {
+      "path": "datasets/agere_synthetic/agere-synth-v1/train/kyc.jsonl",
+      "rows": 400,
+      "sha256": "1884fa8f354c981cf90bc8994ac7c310d9e99f757690e8b97e3bca1addd3d866",
+      "dataset": "Agere-KYC-Synth/train"
+    },
+    {
+      "path": "datasets/agere_synthetic/agere-synth-v1/train/credit.jsonl",
+      "rows": 200,
+      "sha256": "1ddaf4d477d8fb99a92a678b58b216babb0052b2d4524ae07053f1d4d4001d06",
+      "dataset": "Agere-Credit-Synth/train"
+    },
+    {
+      "path": "datasets/agere_synthetic/agere-synth-v1/dev/kyc.jsonl",
+      "rows": 100,
+      "sha256": "564adc70878e20435be2a63dbe28cdcd1b7179ca3d78aefd276b81c1f1c6baa9",
+      "dataset": "Agere-KYC-Synth/dev"
+    },
+    {
+      "path": "datasets/agere_synthetic/agere-synth-v1/dev/credit.jsonl",
+      "rows": 50,
+      "sha256": "5ed7e960a6c10693f99e4ef733e07a7c15b18be5845faf6d37d1988340d0011f",
+      "dataset": "Agere-Credit-Synth/dev"
+    },
+    {
+      "path": "datasets/agere_synthetic/agere-synth-v1/test/kyc.jsonl",
+      "rows": 100,
+      "sha256": "b96c08057398cc27d90bd073a06207798dadb1a06a3475730a6176c07a1e8aef",
+      "dataset": "Agere-KYC-Synth/test"
+    },
+    {
+      "path": "datasets/agere_synthetic/agere-synth-v1/test/credit.jsonl",
+      "rows": 75,
+      "sha256": "c650054221a2d3b1c4aff0b3bf32a80ad9c7b49420a2163ee2053e0c79e2bc79",
+      "dataset": "Agere-Credit-Synth/test"
+    },
+    {
+      "path": "datasets/agere_synthetic/agere-synth-v1/finetune/train.jsonl",
+      "rows": 600,
+      "sha256": "1f07b42fbf665feb97744a3594c2a4a0305ad5a877bddf7b267cdb5c98fe565b",
+      "dataset": "Agere-SFT/train"
+    },
+    {
+      "path": "datasets/agere_synthetic/agere-synth-v1/finetune/dev.jsonl",
+      "rows": 60,
+      "sha256": "56cfba8aced6af280fa13efebe617ca4029b12de77d5c309c25eecb3f84d0e32",
+      "dataset": "Agere-SFT/dev"
+    }
+  ],
+  "note": "Synthetic starter corpus; validate content, labels, diversity, and coverage before using it for scientific claims or training. Test files are frozen in manifests/test.sha256."
+}
