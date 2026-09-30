@@ -8,7 +8,7 @@ Decisions (which model, which quant, which test set) stay in [`DEVELOPMENT_START
 
 **Storage rule from Phase 2 onward:** code, tools, Python environments, and runtime builds stay in the repository checkout on the laptop/PC/lab machine. The external SSD holds datasets, model artifacts, logs, manifests, evaluation outputs, and reports. The existing Phase 0/1 manifests in git remain as input records; new run products go to the SSD. Before every phase or run, set and validate the actual external-drive path in `AGERE_SSD_ROOT`; never assume a path or fall back to another drive.
 
-Start at **Phase 0**. Finish a phase before opening the next one. The first machine is **16 GB**. 8 GB and 32 GB wait until Phase 8.
+Start at **Phase 0**. Finish a phase before opening the next one. The **16 GB** tier is the primary research comparison. Phase 2 prepares and smoke checks all three tiers while the lab PC and SSD are together; scored 8 GB and 32 GB comparisons wait until Phase 8.
 
 ## How to hand a phase to an agent
 
@@ -22,13 +22,13 @@ Paste this, with the phase number filled in:
 | :---: | :--- | :--- |
 | **0** | Validate SSD path, repository checkout, llama.cpp, 16 GB physical tier / 12.8 GB nominal job cap | Historical manifests in repo; datasets/weights on SSD |
 | **1** | Download the 16 GB models | External SSD |
-| **2** | Convert to GGUF and quantize the single model | External SSD |
+| **2** | Convert and smoke all three tiers' GGUF files | External SSD |
 | **3** | Score the **untouched** single model, then the **untouched** team | Dev cases only |
 | **4** | Fine-tune the single model, merge, quantize **again** | Code on host; adapters, weights, logs, results on SSD |
 | **5** | Build the real multi-agent team (JSON, verifier, budget) | Code |
 | **6** | Final evaluation, once | Test cases |
 | **7** | Loop: tag failures, change one thing on dev, or ablate | Dev cases |
-| **8** | Repeat the smoke test at 8 GB and 32 GB | After Phase 6 |
+| **8** | Score the 8 GB and 32 GB tier comparisons | After Phase 6 |
 
 Fine-tuning is **after** the untouched scores are frozen. The team is scored once in its simple form in Phase 3, then rebuilt in Phase 5. Phase 6 does not get a second look.
 
@@ -88,7 +88,7 @@ AGERE_SSD_ROOT/
 
 **Goal:** The 16 GB checkpoints are on the SSD, their hashes are recorded in the repository, and weights are not in git.
 
-**Status: Complete (2026-09-29).** Five pinned snapshots totaling about 37.3 GiB are stored under `H:\AGERE\weights\hf\`; all 49 model/tokenizer files passed SHA-256 verification against the repository manifests. The optional 7B and 32B source snapshots were staged on 2026-09-30 (35 files, 75.2 GiB) and recorded with SHA-256 in the same manifests; their Phase 8 conversion remains pending.
+**Status: Complete (2026-09-29).** Five pinned snapshots totaling about 37.3 GiB are stored under `H:\AGERE\weights\hf\`; all 49 model/tokenizer files passed SHA-256 verification against the repository manifests. The 7B and 32B source snapshots were staged on 2026-09-30 (35 files, 75.2 GiB) and recorded with SHA-256 in the same manifests; their conversion is part of Phase 2.
 
 **Steps**
 
@@ -106,7 +106,7 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 1.2 Write a SHA-256 line for each snapshot to the repository's `manifests/weights.sha256` before any config points at the files. Include the SSD-relative artifact path and checksum.
 
-1.3 The 7B and 32B checkpoints are required for the 8 GB and 32 GB tiers in Phase 8. Their source snapshots may be staged early when SSD capacity permits by adding `--include-tier-checkpoints` to the download command; this is download-only and does not start Phase 8. Conversion, quantization, smoke tests, and tier evaluations remain in Phase 8. The 0.5B checkpoint is shared with the primary 16 GB team.
+1.3 The 7B and 32B checkpoints are required for the 8 GB and 32 GB tiers. Stage their source snapshots by adding `--include-tier-checkpoints` to the download command. Phase 2 converts, quantizes, and smoke checks all three tiers; Phase 8 runs the scored 8 GB and 32 GB comparisons. The 0.5B checkpoint is shared across all three teams.
 
 **Do not:** Quantize yet. Download Llama. Commit weights.
 
@@ -114,32 +114,32 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 ---
 
-## Phase 2 — Quantize
+## Phase 2 — Convert, quantize, and smoke all tiers
 
-**Goal:** Runnable GGUF files for the untouched baseline. The single model is Q4_K_M. The team stays full precision.
+**Goal:** Runnable GGUF files for all three tiers' untouched baselines. Each SAS is Q4_K_M and every MAS model instance stays F16. This preparation does not score datasets.
 
 **Lab PC runbook:** [`PHASE_2_LAB_RUN.md`](./PHASE_2_LAB_RUN.md) gives the exact commands. The runner pins llama.cpp `v0.5.0`, checks the Phase 1 source hashes, converts with CPU tools, and puts every Phase 2 output and log on the mounted SSD. It prints the resolved SSD and repository paths on every invocation.
 
-- **SSD space:** Budget about **50 GiB** peak additional space: up to ~29.5 GiB for temporary 14B F16 GGUF, ~10.7 GiB for the three retained MAS F16 GGUFs, and ~9 GiB for 14B Q4_K_M. Keep at least **60 GiB free** before a fresh conversion, including safety room. The runner computes a smaller remaining requirement when resuming.
+- **SSD space:** Budget about **123 GiB** peak additional space across all tiers and keep at least **133 GiB free** before a fresh conversion, including 10 GiB safety room. The 14B and 32B F16 intermediates are deleted after each Q4 checksum. The runner computes a smaller remaining requirement when resuming. The last check on the development SSD found 149.4 GiB free, so this is feasible but leaves limited margin for unrelated files.
 - **Local PC space:** Keep the repository checkout, Python environment, llama.cpp source/build, and installed packages on the lab PC. Its memory and available local disk must be checked there; the development laptop's earlier measurements do not describe the lab PC.
-- **RAM:** Before each smoke arm, measure the lab PC's idle OS/background use. Cap the aggregate model process tree at the lower of 12.8 GB and the host's available memory minus a 1 GB safety reserve. Monitor host-wide available memory while the arm is loaded. Never raise the cap to force a model to fit.
+- **RAM:** Before each smoke arm, measure the lab PC's idle OS/background use. Cap the aggregate model process tree at the lower of that tier's nominal **6.4 / 12.8 / 25.6 GB** cap and the host's available memory minus a 1 GB safety reserve. Monitor host-wide available memory while the arm is loaded. Never raise the cap to force a model to fit.
 - **Elapsed time:** Conversion and quantization may take hours; the exact time depends on the lab PC CPU and SSD throughput. The per-step SSD logs and session log show progress and any failure.
 
 **Steps**
 
-2.1 Convert the 3B, 1.5B, and 0.5B Qwen snapshots to GGUF **F16**.
+2.1 Convert the 7B, 3B, 1.5B, and 0.5B Qwen snapshots to GGUF **F16**. The 7B F16 file is retained for the 32 GB team.
 
-2.2 Quantize **only** the 14B F16 file to **Q4_K_M**. Leave the 3B, 1.5B, and 0.5B team files at F16. Do not produce Q3, Q2, or AWQ for the headline.
+2.2 Convert 14B and 32B to temporary F16 GGUF, then quantize 7B, 14B, and 32B to **Q4_K_M**. Keep 7B F16 for the 32 GB team. Delete the 14B and 32B F16 intermediates only after each Q4 checksum is recorded. Do not produce Q3, Q2, or AWQ for the headline.
 
-2.3 Save converted and quantized weight files under `AGERE_SSD_ROOT/weights/gguf/`. Name them `qwen2.5-14b-instruct-q4_k_m.gguf`, `qwen2.5-3b-instruct-f16.gguf`, `qwen2.5-1.5b-instruct-f16.gguf`, and `qwen2.5-0.5b-instruct-f16.gguf`. Hash each file into `AGERE_SSD_ROOT/phase2/manifests/weights.sha256` and `gguf_artifacts.json`.
+2.3 Save all seven final GGUF files under `AGERE_SSD_ROOT/weights/gguf/`: Q4_K_M for 7B, 14B, and 32B; F16 for 0.5B, 1.5B, 3B, and 7B. Hash each file into `AGERE_SSD_ROOT/phase2/manifests/weights.sha256` and `gguf_artifacts.json`.
 
-2.4 Smoke-load the 14B Q4_K_M under the effective 16 GB-tier process cap (12.8 GB nominal maximum). Generate a few tokens. Record process-tree peak RSS, host-wide available memory, idle baseline, effective cap, and llama.cpp version in `AGERE_SSD_ROOT/phase2/runs/smoke_sas_16gb.json`.
+2.4 Smoke-load each tier's SAS Q4_K_M under its effective process cap and generate a few tokens. Record process-tree peak RSS, host-wide available memory, idle baseline, effective cap, and llama.cpp version in `AGERE_SSD_ROOT/phase2/runs/smoke_sas_<tier>gb.json`.
 
-2.5 Smoke-load the 3B, 1.5B, and 0.5B **together** (resident). Record the same memory fields in `AGERE_SSD_ROOT/phase2/runs/smoke_mas_16gb.json`. If the effective cap is exceeded, lower context or shrink the smallest worker first; do not raise the cap. Record the actual context so Phase 3 uses the same configuration.
+2.5 Smoke-load each tier's three MAS model **instances together** (resident), including two distinct 0.5B instances on the 8 GB tier. Record the same memory fields in `AGERE_SSD_ROOT/phase2/runs/smoke_mas_<tier>gb.json`. If the effective cap is exceeded, lower context or shrink the smallest worker first; do not raise the cap. Record the actual context so later scoring uses the same configuration.
 
 **Do not:** Fine-tune. Score a dataset. Turn the team into a fourth model.
 
-**Done when:** Both SSD smoke JSON files report `passed` at the same context, both process-tree peaks are within the effective cap with OS/background headroom intact, all four final GGUF hashes are recorded on the SSD, and `AGERE_SSD_ROOT/phase2/phase2_summary.json` reports `complete`.
+**Done when:** All six SSD smoke JSON files report `passed`, SAS and MAS use the same context within each tier, every process-tree peak is within its effective cap with OS/background headroom intact, all seven final GGUF hashes are recorded on the SSD, and `AGERE_SSD_ROOT/phase2/phase2_summary.json` reports `complete`.
 
 ---
 
@@ -270,9 +270,9 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 **Steps**
 
-8.1 Download and convert the extra checkpoints from [`configs/locked/tiers/`](./configs/locked/tiers/): 7B and 0.5B for 8 GB; 7B and 32B for 32 GB. Hash them.
+8.1 Recheck the Phase 2 hashes and smoke results for the 8 GB and 32 GB checkpoints from [`configs/locked/tiers/`](./configs/locked/tiers/). Reconvert and re-smoke only if the earlier preparation failed or the frozen model/runtime changed.
 
-8.2 The nominal process caps are **6.4 GB on 8 GB physical RAM** and **25.6 GB on 32 GB physical RAM**, reduced further if measured idle host use plus 1 GB safety margin requires it. 8 GB SAS is 7B Q4_K_M; the team is 1.5B + 0.5B + 0.5B F16 (5.1 GB of weights). 32 GB SAS is 32B Q4_K_M; the team is 7B + 3B + 0.5B F16 (22.2 GB of weights). Smoke-test each against its effective cap; lower context or shrink the smallest model if runtime/KV memory does not fit.
+8.2 The nominal process caps are **6.4 GB on 8 GB physical RAM** and **25.6 GB on 32 GB physical RAM**, reduced further if measured idle host use plus 1 GB safety margin requires it. 8 GB SAS is 7B Q4_K_M; the team is 1.5B + 0.5B + 0.5B F16 (5.1 GB of weights). 32 GB SAS is 32B Q4_K_M; the team is 7B + 3B + 0.5B F16 (22.2 GB of weights). Use the contexts established by the Phase 2 smoke runs; lower context or shrink the smallest model if the actual scored workload cannot fit.
 
 8.3 Cap the aggregate process tree at the effective budget, monitor host-wide available memory, and preserve OS/background reserve. Then repeat Phase 3 and, if a GPU exists for it, the matching fine-tune. 32B QLoRA is optional (needs ≥48 GB VRAM). The required 32 GB result is the Q4 base plus the same prompts, schemas, and tools as 16 GB.
 

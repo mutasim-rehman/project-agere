@@ -33,9 +33,27 @@ SOURCE_MODELS = {
     "0.5b": "Qwen/Qwen2.5-0.5B-Instruct",
     "1.5b": "Qwen/Qwen2.5-1.5B-Instruct",
     "3b": "Qwen/Qwen2.5-3B-Instruct",
+    "7b": "Qwen/Qwen2.5-7B-Instruct",
     "14b": "Qwen/Qwen2.5-14B-Instruct",
+    "32b": "Qwen/Qwen2.5-32B-Instruct",
 }
-F16_SIZES_GIB = {"0.5b": 1.2, "1.5b": 3.2, "3b": 6.3}
+F16_SIZES_GIB = {"0.5b": 1.2, "1.5b": 3.2, "3b": 6.3, "7b": 15.0,
+                 "14b": 29.5, "32b": 62.0}
+Q4_SIZES_GIB = {"7b": 5.0, "14b": 9.0, "32b": 21.0}
+FINAL_MODELS = (("0.5b", "f16"), ("1.5b", "f16"), ("3b", "f16"),
+                ("7b", "f16"), ("7b", "q4_k_m"), ("14b", "q4_k_m"),
+                ("32b", "q4_k_m"))
+TIERS = {
+    "8": {"cap_gb": 6.4, "context": 4096, "sas": "7b",
+          "mas": (("orchestrator_drafter", "1.5b"), ("extractor", "0.5b"),
+                  ("verifier", "0.5b"))},
+    "16": {"cap_gb": 12.8, "context": 8192, "sas": "14b",
+           "mas": (("orchestrator_drafter", "3b"), ("extractor", "1.5b"),
+                   ("verifier", "0.5b"))},
+    "32": {"cap_gb": 25.6, "context": 8192, "sas": "32b",
+           "mas": (("orchestrator_drafter", "7b"), ("extractor", "3b"),
+                   ("verifier", "0.5b"))},
+}
 GIB = 1024**3
 GB = 1000**3
 
@@ -109,8 +127,7 @@ class Paths:
     def source(self, size: str) -> Path:
         return self.ssd / "weights" / "hf" / SOURCE_MODELS[size].replace("/", "--")
 
-    def output(self, size: str) -> Path:
-        kind = "q4_k_m" if size == "14b" else "f16"
+    def output(self, size: str, kind: str) -> Path:
         return self.gguf / f"qwen2.5-{size}-instruct-{kind}.gguf"
 
 
@@ -206,7 +223,7 @@ def setup(paths: Paths) -> None:
     run_logged(["cmake", "--build", str(paths.llama / "build"), "--config", "Release",
                 "--target", "llama-quantize", "llama-server", "--parallel",
                 str(min(os.cpu_count() or 4, 8))], paths.logs / "setup.log")
-    run_logged([sys.executable, "-m", "pip", "install", "psutil>=6,<8"],
+    run_logged([sys.executable, "-m", "pip", "install", "psutil>=6,<8", "PyYAML>=6,<7"],
                paths.logs / "setup.log")
     requirements = paths.llama / "requirements" / "requirements-convert_hf_to_gguf.txt"
     if not requirements.is_file():
@@ -227,6 +244,32 @@ def setup(paths: Paths) -> None:
         "cmake": capture(["cmake", "--version"]).splitlines()[0],
     })
     print(f"Pinned CPU runtime ready: {commit}", flush=True)
+
+
+def verify_locked_tiers() -> None:
+    try:
+        import yaml
+    except ImportError as exc:
+        raise RuntimeError("PyYAML is missing; run the Phase 2 setup command first.") from exc
+    for tier, spec in TIERS.items():
+        config_path = REPO / "configs" / "locked" / "tiers" / f"t{('8', '16', '32').index(tier) + 1}_{tier}gb.yaml"
+        config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+        expected = {
+            "physical_ram_gb": int(tier),
+            "nominal_peak_rss_cap_gb": spec["cap_gb"],
+            "context_tokens": spec["context"],
+        }
+        for key, value in expected.items():
+            if config.get(key) != value:
+                die(f"Runner {tier} GB {key} differs from locked config {config_path}: {value!r} versus {config.get(key)!r}")
+        sas = config.get("sas", {})
+        if sas.get("hf_id") != SOURCE_MODELS[spec["sas"]] or sas.get("gguf") != "Q4_K_M":
+            die(f"Runner {tier} GB SAS differs from locked config {config_path}")
+        locked_mas = [(item.get("instance"), item.get("hf_id"), item.get("gguf"))
+                      for item in config.get("mas", {}).get("models", [])]
+        runner_mas = [(instance, SOURCE_MODELS[size], "F16") for instance, size in spec["mas"]]
+        if locked_mas != runner_mas:
+            die(f"Runner {tier} GB MAS differs from locked config {config_path}")
 
 
 def verify_sources(paths: Paths) -> dict[str, str]:
@@ -287,21 +330,67 @@ def conversion_env(paths: Paths) -> dict[str, str]:
 
 
 def preflight_space(paths: Paths) -> None:
-    needed_gib = 10.0  # safety room for temporary files and filesystem overhead
-    for size, amount in F16_SIZES_GIB.items():
-        if not valid_gguf(paths.output(size)):
-            needed_gib += amount
-    if not valid_gguf(paths.output("14b")):
-        if not valid_gguf(paths.gguf / "qwen2.5-14b-instruct-f16.tmp.gguf"):
-            needed_gib += 29.5
-        needed_gib += 9.0
+    # Simulate conversion order. The 14B and 32B F16 intermediates are
+    # removed after each Q4 checksum, so their peak space is not additive.
+    retained_gib = 0.0
+    peak_gib = 0.0
+    for size in ("0.5b", "1.5b", "3b"):
+        if not valid_gguf(paths.output(size, "f16")):
+            retained_gib += F16_SIZES_GIB[size]
+            peak_gib = max(peak_gib, retained_gib)
+    for size in ("14b", "7b", "32b"):
+        f16 = paths.output(size, "f16") if size == "7b" else intermediate_f16(paths, size)
+        q4 = paths.output(size, "q4_k_m")
+        if size == "7b" and not valid_gguf(f16):
+            retained_gib += F16_SIZES_GIB[size]
+            peak_gib = max(peak_gib, retained_gib)
+        if not valid_gguf(q4):
+            temp_gib = F16_SIZES_GIB[size] if size != "7b" and not valid_gguf(f16) else 0.0
+            peak_gib = max(peak_gib, retained_gib + temp_gib + Q4_SIZES_GIB[size])
+            retained_gib += Q4_SIZES_GIB[size]
+    needed_gib = peak_gib + 10.0  # safety room for temporary files and filesystem overhead
     free_gib = shutil.disk_usage(paths.ssd).free / GIB
     print(f"Conversion space preflight: need ~{needed_gib:.1f} GiB, free {free_gib:.1f} GiB")
     if free_gib < needed_gib:
-        die(f"Insufficient SSD space for Phase 2 conversion; free at least {needed_gib:.1f} GiB.")
+        die(f"Insufficient SSD space for all-tier conversion; free at least {needed_gib:.1f} GiB.")
+
+
+def intermediate_f16(paths: Paths, size: str) -> Path:
+    return paths.gguf / f"qwen2.5-{size}-instruct-f16.tmp.gguf"
+
+
+def convert_f16(paths: Paths, converter: Path, size: str, output: Path,
+                environment: dict[str, str]) -> None:
+    if valid_gguf(output):
+        print(f"Already present: {output}")
+        return
+    partial = output.with_name(output.stem + ".partial.gguf")
+    partial.unlink(missing_ok=True)
+    run_logged([sys.executable, "-u", str(converter), str(paths.source(size)),
+                "--outtype", "f16", "--outfile", str(partial)],
+               paths.logs / f"convert_{size}.log", cwd=paths.llama, env=environment)
+    if not valid_gguf(partial):
+        die(f"Converter did not produce a valid GGUF: {partial}")
+    os.replace(partial, output)
+
+
+def quantize_model(paths: Paths, quantize: Path, size: str, f16: Path,
+                   environment: dict[str, str]) -> None:
+    q4 = paths.output(size, "q4_k_m")
+    if valid_gguf(q4):
+        print(f"Already present: {q4}")
+        return
+    partial = q4.with_name(q4.stem + ".partial.gguf")
+    partial.unlink(missing_ok=True)
+    run_logged([str(quantize), str(f16), str(partial), "Q4_K_M"],
+               paths.logs / f"quantize_{size}.log", cwd=paths.llama, env=environment)
+    if not valid_gguf(partial):
+        die(f"Quantizer did not produce a valid GGUF: {partial}")
+    os.replace(partial, q4)
 
 
 def convert(paths: Paths) -> None:
+    verify_locked_tiers()
     runtime_commit(paths)
     quantize = binary(paths, "llama-quantize")
     converter = paths.llama / "convert_hf_to_gguf.py"
@@ -311,45 +400,27 @@ def convert(paths: Paths) -> None:
     preflight_space(paths)
     environment = conversion_env(paths)
     for size in ("0.5b", "1.5b", "3b"):
-        output = paths.output(size)
-        if valid_gguf(output):
-            print(f"Already present: {output}")
-            continue
-        partial = output.with_name(output.stem + ".partial.gguf")
-        partial.unlink(missing_ok=True)
-        run_logged([sys.executable, "-u", str(converter), str(paths.source(size)),
-                    "--outtype", "f16", "--outfile", str(partial)],
-                   paths.logs / f"convert_{size}.log", cwd=paths.llama, env=environment)
-        if not valid_gguf(partial):
-            die(f"Converter did not produce a valid GGUF: {partial}")
-        os.replace(partial, output)
-    q4 = paths.output("14b")
-    temporary_f16 = paths.gguf / "qwen2.5-14b-instruct-f16.tmp.gguf"
-    if not valid_gguf(q4):
-        if not valid_gguf(temporary_f16):
-            partial_f16 = temporary_f16.with_name(temporary_f16.stem + ".partial.gguf")
-            partial_f16.unlink(missing_ok=True)
-            run_logged([sys.executable, "-u", str(converter), str(paths.source("14b")),
-                        "--outtype", "f16", "--outfile", str(partial_f16)],
-                       paths.logs / "convert_14b.log", cwd=paths.llama, env=environment)
-            if not valid_gguf(partial_f16):
-                die(f"Converter did not produce a valid GGUF: {partial_f16}")
-            os.replace(partial_f16, temporary_f16)
-        partial_q4 = q4.with_name(q4.stem + ".partial.gguf")
-        partial_q4.unlink(missing_ok=True)
-        run_logged([str(quantize), str(temporary_f16), str(partial_q4), "Q4_K_M"],
-                   paths.logs / "quantize_14b.log", cwd=paths.llama, env=environment)
-        if not valid_gguf(partial_q4):
-            die(f"Quantizer did not produce a valid GGUF: {partial_q4}")
-        os.replace(partial_q4, q4)
+        convert_f16(paths, converter, size, paths.output(size, "f16"), environment)
+    for size in ("14b", "7b", "32b"):
+        q4 = paths.output(size, "q4_k_m")
+        f16 = paths.output(size, "f16") if size == "7b" else intermediate_f16(paths, size)
+        if size == "7b" or not valid_gguf(q4):
+            convert_f16(paths, converter, size, f16, environment)
+        if not valid_gguf(q4):
+            quantize_model(paths, quantize, size, f16, environment)
+        if size != "7b" and f16.is_file():
+            checksum = sha256(q4, progress=True)
+            print(f"Verified Q4 checksum before removing {size} F16 intermediate: {checksum}")
+            f16.unlink()
+            print(f"Removed verified intermediate: {f16}")
     records = []
-    for size in ("0.5b", "1.5b", "3b", "14b"):
-        output = paths.output(size)
+    for size, kind in FINAL_MODELS:
+        output = paths.output(size, kind)
         if not valid_gguf(output):
             die(f"Missing or invalid Phase 2 output: {output}")
         checksum = sha256(output, progress=True)
         records.append({"model": SOURCE_MODELS[size], "source_revision": revisions[SOURCE_MODELS[size]],
-                        "gguf_type": "Q4_K_M" if size == "14b" else "F16",
+                        "gguf_type": kind.upper(),
                         "path": output.relative_to(paths.ssd).as_posix(),
                         "size_bytes": output.stat().st_size, "sha256": checksum})
         print(f"SHA-256 {output.name}: {checksum}", flush=True)
@@ -359,10 +430,7 @@ def convert(paths: Paths) -> None:
     (paths.manifests / "weights.sha256").write_text(
         "".join(f"{record['sha256']}  {record['path']}\n" for record in records), encoding="utf-8"
     )
-    if temporary_f16.is_file():
-        temporary_f16.unlink()
-        print(f"Removed verified intermediate: {temporary_f16}")
-    print(f"Four Phase 2 model files and hashes are ready under {paths.ssd}")
+    print(f"Seven GGUF model files covering all three tiers are ready under {paths.ssd}")
 
 
 def free_port() -> int:
@@ -570,46 +638,47 @@ def wait_ready(process: subprocess.Popen, port: int, monitor: MemoryMonitor, lab
     die(f"Timed out loading {label} after {timeout_seconds}s; see {log}")
 
 
-def smoke_arm(paths: Paths, arm: str, context: int, timeout_seconds: int) -> dict:
+def smoke_arm(paths: Paths, tier: str, arm: str, context: int, timeout_seconds: int) -> dict:
     try:
         import psutil
     except ImportError as exc:
         raise RuntimeError("psutil is missing; run the Phase 2 setup command first.") from exc
     idle = psutil.virtual_memory()
     reserve = GB
-    nominal_cap = int(12.8 * GB)
+    tier_spec = TIERS[tier]
+    nominal_cap = int(tier_spec["cap_gb"] * GB)
     effective = min(nominal_cap, idle.available - reserve)
     if effective <= 0:
         die("Insufficient idle host memory after the required 1 GB OS safety reserve.")
-    labels = ["14b"] if arm == "sas" else ["3b", "1.5b", "0.5b"]
+    labels = (("sas", tier_spec["sas"]),) if arm == "sas" else tier_spec["mas"]
     monitor = MemoryMonitor(effective, reserve)
     hard_cap: HardMemoryCap | None = None
     processes: list[subprocess.Popen] = []
     handles = []
     result: dict = {
-        "arm": arm, "started_at_utc": now(), "status": "failed",
+        "arm": arm, "tier_ram_gb": int(tier), "started_at_utc": now(), "status": "failed",
         "repository_root": str(REPO), "ssd_root": str(paths.ssd),
         "llama_cpp_commit": LLAMA_COMMIT, "context_tokens_per_model": context,
         "host_physical_bytes": idle.total,
         "idle_host_available_bytes": idle.available,
         "idle_non_job_use_bytes": idle.total - idle.available,
-        "nominal_16gb_process_cap_bytes": nominal_cap,
+        "nominal_tier_process_cap_bytes": nominal_cap,
         "os_safety_reserve_bytes": reserve,
         "effective_process_cap_bytes": effective,
         "models": [],
     }
-    output = paths.runs / f"smoke_{arm}_16gb.json"
-    print(f"{arm.upper()} effective process cap: {effective / GB:.2f} GB; idle host available: {idle.available / GB:.2f} GB")
+    output = paths.runs / f"smoke_{arm}_{tier}gb.json"
+    print(f"{tier} GB {arm.upper()} effective process cap: {effective / GB:.2f} GB; idle host available: {idle.available / GB:.2f} GB")
     try:
-        hard_cap = HardMemoryCap(effective, arm)
+        hard_cap = HardMemoryCap(effective, f"{tier}-{arm}")
         result["hard_cap_method"] = hard_cap.method
         monitor.start()
-        for size in labels:
-            model = paths.output(size)
+        for instance, size in labels:
+            model = paths.output(size, "q4_k_m" if arm == "sas" else "f16")
             if not valid_gguf(model):
-                die(f"Missing model for {arm} smoke: {model}")
+                die(f"Missing model for {tier} GB {arm} smoke: {model}")
             port = free_port()
-            log = paths.logs / f"smoke_{arm}_{size}.log"
+            log = paths.logs / f"smoke_{tier}gb_{arm}_{instance}.log"
             handle = log.open("a", encoding="utf-8")
             handles.append(handle)
             command = [str(binary(paths, "llama-server")), "--model", str(model),
@@ -623,9 +692,10 @@ def smoke_arm(paths: Paths, arm: str, context: int, timeout_seconds: int) -> dic
             processes.append(process)
             monitor.processes.append(process)
             hard_cap.add(process.pid)
-            print(f"Loading {size} on localhost:{port}; server log: {log}", flush=True)
-            wait_ready(process, port, monitor, size, timeout_seconds, log)
-            result["models"].append({"model": SOURCE_MODELS[size], "path": model.relative_to(paths.ssd).as_posix(),
+            print(f"Loading {tier} GB {instance} ({size}) on localhost:{port}; server log: {log}", flush=True)
+            wait_ready(process, port, monitor, f"{tier} GB {instance}", timeout_seconds, log)
+            result["models"].append({"instance": instance, "model": SOURCE_MODELS[size],
+                                     "path": model.relative_to(paths.ssd).as_posix(),
                                      "port": port, "log": log.relative_to(paths.ssd).as_posix()})
         for item in result["models"]:
             if monitor.breach:
@@ -637,7 +707,7 @@ def smoke_arm(paths: Paths, arm: str, context: int, timeout_seconds: int) -> dic
                 die(f"Completion produced no tokens for {item['model']}")
             item["completion"] = str(response["content"])[:256]
             item["tokens_predicted"] = response.get("tokens_predicted")
-            print(f"Generated {item['model']}: {item['completion']!r}", flush=True)
+            print(f"Generated {item['instance']} ({item['model']}): {item['completion']!r}", flush=True)
         if monitor.breach:
             die(monitor.breach)
         if any(process.poll() is not None for process in processes):
@@ -674,7 +744,7 @@ def smoke_arm(paths: Paths, arm: str, context: int, timeout_seconds: int) -> dic
         write_json(output, result)
         print(f"Wrote {output}: {result['status']}", flush=True)
     if result["status"] != "passed":
-        die(result.get("memory_breach") or result.get("cleanup_error") or f"{arm} smoke failed")
+        die(result.get("memory_breach") or result.get("cleanup_error") or f"{tier} GB {arm} smoke failed")
     return result
 
 
@@ -683,11 +753,12 @@ def verify_outputs(paths: Paths) -> None:
     if not manifest.is_file():
         die(f"Missing Phase 2 GGUF manifest; run convert first: {manifest}")
     entries = read_json(manifest).get("artifacts", [])
-    if len(entries) != 4:
-        die("The Phase 2 GGUF manifest must contain exactly four models.")
-    expected = {paths.output(size).relative_to(paths.ssd).as_posix() for size in SOURCE_MODELS}
+    if len(entries) != len(FINAL_MODELS):
+        die("The GGUF manifest must contain seven files across the three tiers.")
+    expected = {paths.output(size, kind).relative_to(paths.ssd).as_posix()
+                for size, kind in FINAL_MODELS}
     if {entry.get("path") for entry in entries} != expected:
-        die("The Phase 2 GGUF manifest does not list the four locked output filenames.")
+        die("The GGUF manifest does not list the seven locked output filenames.")
     for entry in entries:
         model = (paths.ssd / PurePosixPath(entry["path"])).resolve()
         if not model.is_relative_to(paths.gguf) or not valid_gguf(model):
@@ -697,33 +768,44 @@ def verify_outputs(paths: Paths) -> None:
         print(f"Verified GGUF: {model.name}", flush=True)
 
 
-def smoke(paths: Paths, arm: str, context: int, timeout_seconds: int) -> None:
+def smoke(paths: Paths, tier: str, arm: str, context: int | None, timeout_seconds: int) -> None:
+    verify_locked_tiers()
     runtime_commit(paths)
     binary(paths, "llama-server")
     verify_outputs(paths)
-    selected = ("sas", "mas") if arm == "both" else (arm,)
+    selected_arms = ("sas", "mas") if arm == "both" else (arm,)
+    selected_tiers = ("16", "8", "32") if tier == "all" else (tier,)
     write_json(paths.phase / "phase2_summary.json", {
         "generated_at_utc": now(), "status": "incomplete",
-        "message": f"Smoke run started for {', '.join(selected)} at context {context}",
+        "message": f"Smoke run started for tiers {', '.join(selected_tiers)} and arms {', '.join(selected_arms)}",
     })
-    for name in selected:
-        smoke_arm(paths, name, context, timeout_seconds)
-    sas = paths.runs / "smoke_sas_16gb.json"
-    mas = paths.runs / "smoke_mas_16gb.json"
-    if sas.is_file() and mas.is_file():
-        sas_result, mas_result = read_json(sas), read_json(mas)
-        same_context = sas_result.get("context_tokens_per_model") == mas_result.get("context_tokens_per_model")
-        status = "complete" if (sas_result.get("status") == "passed" and
-                                mas_result.get("status") == "passed" and same_context) else "incomplete"
-        write_json(paths.phase / "phase2_summary.json", {
-            "generated_at_utc": now(), "status": status,
-            "context_tokens_per_model": context if same_context else None,
-            "sas_smoke": "phase2/runs/smoke_sas_16gb.json",
-            "mas_smoke": "phase2/runs/smoke_mas_16gb.json",
-            "gguf_manifest": "phase2/manifests/gguf_artifacts.json",
-            "runtime_manifest": "phase2/manifests/runtime.json",
-        })
-        print(f"Phase 2 summary: {status} at {paths.phase / 'phase2_summary.json'}")
+    for tier_name in selected_tiers:
+        actual_context = context if context is not None else TIERS[tier_name]["context"]
+        for arm_name in selected_arms:
+            smoke_arm(paths, tier_name, arm_name, actual_context, timeout_seconds)
+    tier_results = {}
+    for tier_name in TIERS:
+        sas = paths.runs / f"smoke_sas_{tier_name}gb.json"
+        mas = paths.runs / f"smoke_mas_{tier_name}gb.json"
+        if sas.is_file() and mas.is_file():
+            sas_result, mas_result = read_json(sas), read_json(mas)
+            same_context = sas_result.get("context_tokens_per_model") == mas_result.get("context_tokens_per_model")
+            passed = sas_result.get("status") == mas_result.get("status") == "passed" and same_context
+            tier_results[tier_name] = {
+                "status": "passed" if passed else "incomplete",
+                "context_tokens_per_model": sas_result.get("context_tokens_per_model") if same_context else None,
+                "sas_smoke": f"phase2/runs/smoke_sas_{tier_name}gb.json",
+                "mas_smoke": f"phase2/runs/smoke_mas_{tier_name}gb.json",
+            }
+    status = "complete" if len(tier_results) == 3 and all(
+        value["status"] == "passed" for value in tier_results.values()
+    ) else "incomplete"
+    write_json(paths.phase / "phase2_summary.json", {
+        "generated_at_utc": now(), "status": status, "tiers": tier_results,
+        "gguf_manifest": "phase2/manifests/gguf_artifacts.json",
+        "runtime_manifest": "phase2/manifests/runtime.json",
+    })
+    print(f"All-tier Phase 2 summary: {status} at {paths.phase / 'phase2_summary.json'}")
 
 
 class Tee:
@@ -746,13 +828,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("step", choices=("setup", "convert", "smoke", "all"))
     parser.add_argument("--arm", choices=("sas", "mas", "both"), default="both",
-                        help="smoke step: arm to load; both is the Phase 2 completion path")
-    parser.add_argument("--context", type=int, default=8192,
-                        help="smoke context tokens per model; default is the locked 16 GB tier value")
+                        help="smoke step: arm to load; both is the completion path")
+    parser.add_argument("--tier", choices=("8", "16", "32", "all"), default="all",
+                        help="smoke step: RAM tier to load; all is the completion path")
+    parser.add_argument("--context", type=int,
+                        help="override the locked context for the selected smoke tier(s)")
     parser.add_argument("--load-timeout", type=int, default=900,
                         help="seconds allowed for each model server to load")
     args = parser.parse_args()
-    if args.context < 512 or args.load_timeout < 30:
+    if (args.context is not None and args.context < 512) or args.load_timeout < 30:
         parser.error("--context must be >=512 and --load-timeout must be >=30")
     try:
         paths = validate_paths()
@@ -766,7 +850,7 @@ def main() -> int:
                     if args.step in ("convert", "all"):
                         convert(paths)
                     if args.step in ("smoke", "all"):
-                        smoke(paths, args.arm, args.context, args.load_timeout)
+                        smoke(paths, args.tier, args.arm, args.context, args.load_timeout)
                 except (RuntimeError, OSError, subprocess.CalledProcessError) as exc:
                     print(f"ERROR: {exc}", file=sys.stderr, flush=True)
                     return 1
