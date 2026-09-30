@@ -176,26 +176,27 @@ def policy_retriever(case: dict) -> dict:
 
 
 def expected_facts(case: dict, tools: dict) -> dict[str, dict]:
-    labels = case["labels"]
     index = source_index(case)
+    extracted = tools["document_extractor"]["fields"]
     def line_span(number: str) -> str:
         matches = [span for span in index if span.endswith(f"#{number}")]
         if len(matches) != 1:
             fail(f"Missing unique {number} span in {case['id']}")
         return matches[0]
     if case["_kind"] == "kyc":
-        expiry = tools["document_extractor"]["fields"]["expiry"][0]["value"]
+        expiry = extracted["expiry"][0]["value"]
+        registry_name = extracted["beneficial_owner_1"][0]["value"].rsplit(" (", 1)[0]
         return {
-            "registry_name": {"value": labels["registry_name"], "span_id": line_span("L03")},
-            "declared_name": {"value": labels["declared_name"], "span_id": line_span("L05")},
-            "screening_status": {"value": labels["screening_status"], "span_id": line_span("L04")},
+            "registry_name": {"value": registry_name, "span_id": line_span("L03")},
+            "declared_name": {"value": extracted["applicant_name"][0]["value"], "span_id": line_span("L05")},
+            "screening_status": {"value": extracted["status"][0]["value"], "span_id": line_span("L04")},
             "identity_expiry_date": {"value": "MISSING" if expiry == "NOT_PROVIDED" else expiry,
                                      "span_id": None if expiry == "NOT_PROVIDED" else line_span("L01")},
         }
     calculations = tools["financial_calculator"]["results"]
-    review = tools["document_extractor"]["fields"]["last_review_date"][0]["value"]
+    review = extracted["last_review_date"][0]["value"]
     return {
-        "e_cib_status": {"value": labels["e_cib_status"], "span_id": line_span("L04")},
+        "e_cib_status": {"value": extracted["status"][0]["value"], "span_id": line_span("L04")},
         "e_cib_last_review_date": {"value": "MISSING" if review == "NOT_PROVIDED" else review,
                                    "span_id": None if review == "NOT_PROVIDED" else line_span("L04")},
         "dscr": {"value": calculations["dscr"]["value"], "span_id": "CALC#DSCR"},
@@ -246,11 +247,16 @@ def citation_verifier(case: dict, facts: dict, truth: dict) -> dict:
 
 def score_case(case: dict, answer: dict | None, tools: dict, arm: str) -> dict:
     truth = expected_facts(case, tools)
+    source_mismatch = (case["_kind"] == "kyc" and
+                       truth["registry_name"]["value"] != truth["declared_name"]["value"])
+    label_disagreement = (case["_kind"] == "kyc" and
+                          bool(case["labels"]["identity_name_mismatch"]) != source_mismatch)
     if answer is None:
         missing_count = sum(item["value"] == "MISSING" for item in truth.values())
         return {"valid_json": False, "structured_claims_complete": False,
                 "structured_invention": None,
-                "mismatch_eligible": bool(case["_kind"] == "kyc" and case["labels"]["identity_name_mismatch"]),
+                "mismatch_eligible": source_mismatch,
+                "mismatch_label_disagreement": label_disagreement,
                 "mismatch_detected": False, "grounded": 0,
                 "grounding_total": len(truth) - missing_count,
                 "refusal_correct": 0, "refusal_total": missing_count,
@@ -269,7 +275,7 @@ def score_case(case: dict, answer: dict | None, tools: dict, arm: str) -> dict:
     grounded = sum(verifier["checks"][field]["supported"] for field in claims)
     missing = [field for field, expected in truth.items() if expected["value"] == "MISSING"]
     refusal_correct = sum(verifier["checks"][field]["supported"] for field in missing)
-    mismatch_eligible = case["_kind"] == "kyc" and bool(case["labels"]["identity_name_mismatch"])
+    mismatch_eligible = source_mismatch
     mismatch_detected = answer.get("identity_name_mismatch") is True if mismatch_eligible else False
     mismatch_false_positive = (case["_kind"] == "kyc" and not mismatch_eligible and
                                answer.get("identity_name_mismatch") is True)
@@ -293,6 +299,7 @@ def score_case(case: dict, answer: dict | None, tools: dict, arm: str) -> dict:
             "structured_claims_complete": claims_complete,
             "structured_invention": invented, "invented_fields": invented_fields,
             "mismatch_eligible": mismatch_eligible,
+            "mismatch_label_disagreement": label_disagreement,
             "mismatch_detected": mismatch_detected,
             "mismatch_false_positive": mismatch_false_positive,
             "grounded": grounded,
@@ -640,6 +647,7 @@ def summarize_arm(directory: Path, arm: str, expected_ids: list[str]) -> dict:
         "unscorable_invalid_or_incomplete_cases": len(records) - len(scorable),
         "mismatch_recall": sum(row["score"]["mismatch_detected"] for row in mismatch) / len(mismatch) if mismatch else None,
         "mismatch_positive_cases": len(mismatch),
+        "mismatch_label_disagreements": sum(bool(row["score"].get("mismatch_label_disagreement")) for row in records),
         "mismatch_false_positives": sum(bool(row["score"].get("mismatch_false_positive")) for row in records),
         "grounding_accuracy": sum(row["score"]["grounded"] for row in records) / grounding_total if grounding_total else None,
         "grounded_claims": sum(row["score"]["grounded"] for row in records),
