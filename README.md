@@ -74,7 +74,7 @@ Protocol detail: [`EXPERIMENT_PROTOCOL.md`](./EXPERIMENT_PROTOCOL.md)
 
 ## Repository layout
 
-**Storage:** Code, Python environments, and runtime builds stay on the laptop/PC/lab computer. From Phase 2 onward, the external SSD contains datasets, model artifacts, manifests, logs, evaluations, and reports. Set and validate `AGERE_SSD_ROOT` before every phase or run. For the lab PC conversion and smoke commands, see [`PHASE_2_LAB_RUN.md`](./PHASE_2_LAB_RUN.md).
+**Storage:** Code, Python environments, and runtime builds stay on the laptop/PC/lab computer. From Phase 2 onward, the external SSD contains datasets, model artifacts, manifests, logs, evaluations, and reports. Set and validate `AGERE_SSD_ROOT` before every phase or run. For the lab PC conversion and smoke commands, see [`PHASE_2_LAB_RUN.md`](./PHASE_2_LAB_RUN.md). For the optional original-HF versus GGUF dev checkpoint diagnostic, see [`CHECKPOINT_EVAL_LAB_RUN.md`](./CHECKPOINT_EVAL_LAB_RUN.md).
 
 ```
 APPLICATION.md                  # Who benefits (supervisor-facing)

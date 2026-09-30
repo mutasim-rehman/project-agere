@@ -141,6 +141,8 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 **Done when:** All six SSD smoke JSON files report `passed`, SAS and MAS use the same context within each tier, every process-tree peak is within its effective cap with OS/background headroom intact, all seven final GGUF hashes are recorded on the SSD, and `AGERE_SSD_ROOT/phase2/phase2_summary.json` reports `complete`.
 
+**Optional checkpoint diagnostic after conversion:** [`CHECKPOINT_EVAL_LAB_RUN.md`](./CHECKPOINT_EVAL_LAB_RUN.md) compares each original HF checkpoint with its Phase 2 GGUF output on the synthetic **dev** tasks and stores every result under `AGERE_SSD_ROOT/runs/checkpoint_diagnostics/`. This is a format/quantization progress check, not the Phase 3 system floor or the held-out Phase 6 evaluation. It does not change the locked phase order or consume the test split.
+
 ---
 
 ## Phase 3 — Score the untouched models
