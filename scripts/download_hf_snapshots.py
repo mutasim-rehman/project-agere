@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import os
@@ -18,6 +19,10 @@ REPOSITORIES = (
     "Qwen/Qwen2.5-1.5B-Instruct",
     "Qwen/Qwen2.5-0.5B-Instruct",
     "BAAI/bge-small-en-v1.5",
+)
+TIER_REPOSITORIES = (
+    "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen/Qwen2.5-32B-Instruct",
 )
 ALLOW_PATTERNS = (
     "*.safetensors",
@@ -70,6 +75,17 @@ def load_hf_token_from_dotenv() -> bool:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--include-tier-checkpoints",
+        action="store_true",
+        help=(
+            "also stage the 7B and 32B source checkpoints used by the 8 GB and "
+            "32 GB tiers (download only; does not convert or evaluate them)"
+        ),
+    )
+    args = parser.parse_args()
+
     root_value = os.environ.get("AGERE_SSD_ROOT")
     if not root_value:
         raise SystemExit("ERROR: Set AGERE_SSD_ROOT to the mounted external SSD path first.")
@@ -110,7 +126,8 @@ def main() -> int:
     api = HfApi()
     plan: list[tuple[str, str, Path, list[object]]] = []
     required_bytes = 0
-    for repo_id in REPOSITORIES:
+    repositories = REPOSITORIES + (TIER_REPOSITORIES if args.include_tier_checkpoints else ())
+    for repo_id in repositories:
         info = api.model_info(repo_id, files_metadata=True)
         if not info.sha:
             raise SystemExit(f"ERROR: Hub did not return an immutable revision for {repo_id}")

@@ -91,6 +91,8 @@ AGERE_SSD_ROOT/
 
 1.1 Before downloading, set and validate this machine's `AGERE_SSD_ROOT`. Install the downloader dependency on the computer (not the SSD) with `python -m pip install -r requirements-phase1.txt`, then run `python scripts/download_hf_snapshots.py`. The downloader pins each snapshot to its resolved Hub revision, preflights available space, resumes partial files, and writes only model/tokenizer assets under `$AGERE_SSD_ROOT/weights/hf/`:
 
+To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/download_hf_snapshots.py --include-tier-checkpoints`. This adds the 7B and 32B snapshots and reports file-level transfer progress. It still writes only to the SSD weights directory; SHA-256 manifests are written in the repository.
+
 | Role | Hugging Face id |
 | :--- | :--- |
 | Single model (SAS) | `Qwen/Qwen2.5-14B-Instruct` |
@@ -101,7 +103,7 @@ AGERE_SSD_ROOT/
 
 1.2 Write a SHA-256 line for each snapshot to the repository's `manifests/weights.sha256` before any config points at the files. Include the SSD-relative artifact path and checksum.
 
-1.3 Defer the 7B and 32B checkpoints until Phase 8. Download the 0.5B checkpoint now; it is required by the primary 16 GB team and reused by the 8 GB tier.
+1.3 The 7B and 32B checkpoints are required for the 8 GB and 32 GB tiers in Phase 8. Their source snapshots may be staged early when SSD capacity permits by adding `--include-tier-checkpoints` to the download command; this is download-only and does not start Phase 8. Conversion, quantization, smoke tests, and tier evaluations remain in Phase 8. The 0.5B checkpoint is shared with the primary 16 GB team.
 
 **Do not:** Quantize yet. Download Llama. Commit weights.
 
