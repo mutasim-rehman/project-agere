@@ -23,7 +23,7 @@ from pathlib import Path
 from phase2 import (GB, HardMemoryCap, MemoryMonitor, Paths, REPO, SOURCE_MODELS,
                     TIERS, Tee, binary, capture, free_port, kill_tree, request_json,
                     runtime_commit, sha256, validate_paths, verify_locked_tiers,
-                    wait_ready, write_json)
+                    wait_ready, write_json, host_reserve, safe_process_cap, require_lab_guard)
 
 
 DATA_VERSION = "agere-synth-v1"
@@ -348,7 +348,7 @@ class ServerGroup:
         self.processes: list[subprocess.Popen] = []
         self.handles = []
         self.ports: dict[str, int] = {}
-        self.monitor = MemoryMonitor(cap_bytes, GB)
+        self.monitor = MemoryMonitor(cap_bytes, host_reserve())
         self.hard: HardMemoryCap | None = None
         self.monitoring = False
         self.started_at = now()
@@ -357,9 +357,9 @@ class ServerGroup:
         import psutil
 
         idle = psutil.virtual_memory()
-        if idle.available < self.cap_bytes + GB:
+        if idle.available < self.cap_bytes + host_reserve():
             fail(f"Host idle memory {idle.available / GB:.2f} GB cannot support the frozen "
-                 f"{self.cap_bytes / GB:.2f} GB process cap plus 1 GB OS reserve. "
+                 f"{self.cap_bytes / GB:.2f} GB process cap plus {host_reserve() / GB:.2f} GB OS reserve. "
                  "Use a new run id on this host, or free background memory.")
         self.idle = idle
         self.hard = HardMemoryCap(self.cap_bytes, f"phase3-{self.tier}-{self.arm}")
@@ -384,10 +384,9 @@ class ServerGroup:
                            "--parallel", "1"]
                 handle.write(f"\n[{now()}] command={subprocess.list2cmdline(command)}\n")
                 handle.flush()
-                process = subprocess.Popen(command, cwd=REPO, stdout=handle, stderr=subprocess.STDOUT)
+                process = self.hard.spawn(command, cwd=REPO, stdout=handle, stderr=subprocess.STDOUT)
                 self.processes.append(process)
                 self.monitor.processes.append(process)
-                self.hard.add(process.pid)
                 print(f"Loading {self.tier} GB {self.arm} {instance} ({size}); log={log}", flush=True)
                 wait_ready(process, port, self.monitor, instance, self.timeout_seconds, log)
                 self.ports[instance] = port
@@ -432,7 +431,7 @@ class ServerGroup:
             "idle_non_job_use_bytes": self.idle.total - self.idle.available,
             "nominal_process_cap_bytes": int(TIERS[self.tier]["cap_gb"] * GB),
             "effective_process_cap_bytes": self.cap_bytes,
-            "os_safety_reserve_bytes": GB,
+            "os_safety_reserve_bytes": host_reserve(),
             "peak_process_tree_rss_bytes": self.monitor.peak_rss_bytes,
             "minimum_host_available_bytes": self.monitor.minimum_host_available_bytes if self.monitor.samples else None,
             "hard_cap_method": self.hard.method if self.hard else None,
@@ -515,7 +514,7 @@ def prepare_tier(paths: Paths, tier: str, run_id: str, limit: int) -> tuple[Path
     directory = run_directory(paths, run_id, tier)
     directory.mkdir(parents=True, exist_ok=True)
     manifest = directory / "run_manifest.json"
-    cap = min(int(TIERS[tier]["cap_gb"] * GB), psutil.virtual_memory().available - GB)
+    cap = safe_process_cap(int(TIERS[tier]["cap_gb"] * GB))
     if cap <= 0:
         fail("Insufficient host memory after the required 1 GB OS reserve")
     fixed = {"protocol_version": PROTOCOL_VERSION, "tier_gb": int(tier),
@@ -525,7 +524,8 @@ def prepare_tier(paths: Paths, tier: str, run_id: str, limit: int) -> tuple[Path
              "tool_schemas": TOOL_SCHEMAS, "policy_corpus_status": "UNAVAILABLE",
              "project_commit": capture(["git", "rev-parse", "HEAD"]),
              "problem_taxonomy_sha256": sha256(REPO / "configs" / "locked" / "problems.yaml"),
-             "residency": "resident", "device": "cpu", "seed": 42}
+             "residency": "resident", "device": "cpu", "seed": 42,
+             "os_safety_reserve_bytes": host_reserve()}
     if manifest.is_file():
         existing = load_json(manifest)
         if any(existing.get(key) != value for key, value in fixed.items()):
@@ -535,7 +535,7 @@ def prepare_tier(paths: Paths, tier: str, run_id: str, limit: int) -> tuple[Path
         write_json(manifest, {**fixed, "created_at_utc": now(),
                               "effective_process_cap_bytes": cap,
                               "nominal_process_cap_bytes": int(TIERS[tier]["cap_gb"] * GB),
-                              "os_safety_reserve_bytes": GB,
+                              "os_safety_reserve_bytes": host_reserve(),
                               "status": "provisional_synthetic_dev"})
     print(f"Tier {tier} GB: {len(cases)} dev cases; shared cap {cap / GB:.2f} GB; "
           f"context {context}; SSD output {directory}", flush=True)
@@ -745,7 +745,13 @@ def execute(paths: Paths, args: argparse.Namespace) -> int:
     tier_status = {}
     for tier in tiers:
         try:
-            directory, cases, manifest = prepare_tier(paths, tier, args.run_id, args.limit)
+            if args.step == "summarize":
+                directory = run_directory(paths, args.run_id, tier)
+                manifest = load_json(directory / "run_manifest.json")
+                if args.limit != manifest["limit"]:
+                    fail("Summarize --limit must match the existing run manifest")
+            else:
+                directory, cases, manifest = prepare_tier(paths, tier, args.run_id, args.limit)
             if args.step == "run":
                 arms = ("sas", "mas") if args.arm == "both" else (args.arm,)
                 for arm in arms:
@@ -789,6 +795,8 @@ def main() -> int:
         parser.error("--limit must be 1–150 and --load-timeout must be at least 30")
     try:
         paths = validate_paths()
+        if args.step == "run":
+            require_lab_guard()
         session_log = paths.ssd / "runs" / "phase3" / args.run_id / "logs" / f"session_{datetime.now(timezone.utc):%Y%m%dT%H%M%SZ}.log"
         session_log.parent.mkdir(parents=True, exist_ok=True)
         with session_log.open("a", encoding="utf-8") as stream:

@@ -22,7 +22,7 @@ from pathlib import Path
 from phase2 import (GB, GIB, F16_SIZES_GIB, HardMemoryCap, MemoryMonitor, Paths, REPO, SOURCE_MODELS,
                     TIERS, binary, capture, free_port, kill_tree, request_json,
                     run_logged, runtime_commit, sha256, validate_paths, verify_locked_tiers,
-                    write_json)
+                    write_json, host_reserve, safe_process_cap, require_lab_guard)
 
 
 DATASET_VERSION = "agere-synth-v1"
@@ -226,9 +226,11 @@ def hf_infer(paths: Paths, size: str, prompts: list[str], max_new_tokens: int):
     source = paths.source(size)
     available = psutil.virtual_memory().available
     required = int((F16_SIZES_GIB[size] + 2) * GIB)
-    if available < required:
+    budget = safe_process_cap(2**63 - 1)
+    if required > budget:
         fail(f"Original HF {size} needs roughly {required / GIB:.1f} GiB free host RAM to load safely; "
-             f"only {available / GIB:.1f} GiB is available. GGUF can still run separately.")
+             f"safe job budget is {budget / GIB:.1f} GiB (host available {available / GIB:.1f}). "
+             "HF reference unavailable on this host; use a larger-memory host. GGUF can run separately.")
     tokenizer = AutoTokenizer.from_pretrained(source, local_files_only=True)
     model = AutoModelForCausalLM.from_pretrained(
         source, local_files_only=True, torch_dtype=torch.float16,
@@ -256,7 +258,7 @@ def gguf_infer(paths: Paths, tier: str, size: str, kind: str,
 
     runtime_commit(paths)
     idle = psutil.virtual_memory()
-    cap = min(int(TIERS[tier]["cap_gb"] * GB), idle.available - GB)
+    cap = safe_process_cap(int(TIERS[tier]["cap_gb"] * GB))
     if cap <= 0:
         fail("Insufficient host memory after the 1 GB OS reserve")
     port = free_port()
@@ -264,16 +266,15 @@ def gguf_infer(paths: Paths, tier: str, size: str, kind: str,
                "--host", "127.0.0.1", "--port", str(port), "--ctx-size", str(context),
                "--n-gpu-layers", "0", "--fit", "off", "--parallel", "1", "--threads", "4"]
     hard = HardMemoryCap(cap, f"diag-{tier}-{size}")
-    monitor = MemoryMonitor(cap, GB)
+    monitor = MemoryMonitor(cap, host_reserve())
     process = None
     monitoring = False
     try:
         with log.open("a", encoding="utf-8") as stream:
             stream.write(f"\n[{now()}] command={subprocess.list2cmdline(command)}\n")
             stream.flush()
-            process = subprocess.Popen(command, cwd=REPO, stdout=stream, stderr=subprocess.STDOUT)
+            process = hard.spawn(command, cwd=REPO, stdout=stream, stderr=subprocess.STDOUT)
             monitor.processes.append(process)
-            hard.add(process.pid)
             monitor.start()
             monitoring = True
             deadline = time.monotonic() + 900
@@ -316,6 +317,7 @@ def gguf_infer(paths: Paths, tier: str, size: str, kind: str,
             "measured_at_utc": now(), "tier_gb": int(tier), "model_size": size,
             "host_physical_bytes": idle.total, "idle_host_available_bytes": idle.available,
             "effective_process_cap_bytes": cap,
+            "os_safety_reserve_bytes": host_reserve(),
             "peak_process_tree_rss_bytes": monitor.peak_rss_bytes,
             "minimum_host_available_bytes": monitor.minimum_host_available_bytes if monitor.samples else None,
             "breach": monitor.breach,
@@ -433,6 +435,8 @@ def main() -> int:
         parser.error("limit must be 1–60, max-new-tokens positive, and context at least 512")
     try:
         paths = validate_paths()
+        if args.step in ("run", "worker"):
+            require_lab_guard()
         verify_locked_tiers()
         if args.step == "setup":
             run_logged([sys.executable, "-m", "pip", "install", "accelerate>=1,<2"],
@@ -462,7 +466,7 @@ def main() -> int:
                                "--size", size, "--kind", kind]
                     log = directory / "logs" / f"{format_name}_{size}_{kind}.log"
                     try:
-                        run_logged(command, log)
+                        run_logged(command, log, guarded=True)
                     except RuntimeError as exc:
                         failure = {"tier": tier, "size": size, "format": format_name,
                                    "error": str(exc), "log": str(log), "at_utc": now()}

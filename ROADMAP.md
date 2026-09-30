@@ -1,5 +1,7 @@
 # Build roadmap
 
+> Ubuntu lab update: Phase 2 is still incomplete. The September 30 runs stopped during 1.5B conversion after source verification. Use the bounded launcher for Phase 2, checkpoint diagnostics, and Phase 3. See [lab recovery and commands](LAB_RECOVERY.md). Its default 4 GiB host reserve and whole-job cap may lower the nominal tier budgets further.
+
 **Project:** Agere  
 **Use this file to drive an agent one stage at a time.**  
 Decisions (which model, which quant, which test set) stay in [`DEVELOPMENT_START.md`](./DEVELOPMENT_START.md). This file is only the order of work.
@@ -76,7 +78,7 @@ AGERE_SSD_ROOT/
 
 **Data-quality gate:** `agere-synth-v1` is a deterministic synthetic starter corpus generated from fabricated records, not a validated research benchmark. Phase 3 may record a clearly labelled **provisional dev floor** on it, but before paper-grade Phase 3 claims or Phase 4 training, inspect and improve case diversity, labels, source evidence, financial edge cases, and KYC policy coverage; record the reviewed dataset version and freeze its tests. The 600 SFT rows are project-generated, not a publicly downloadable corpus. MortarBench is a secondary official benchmark; FRAMES is only the 100-question negative-control slice. The SBP/FATF policy corpus and synthetic bank SOP still need to be acquired/created and versioned before the retriever can be evaluated.
 
-0.6 From Phase 2 onward, write manifests, logs, traces, metrics, evaluation outputs, and reports beneath `AGERE_SSD_ROOT`. For the 16 GB physical tier, set a nominal 12.8 GB aggregate process-tree RSS cap; lower it if the actual host's idle OS/background use plus a 1 GB safety margin requires less. On larger lab PCs, cap to the 16 GB tier's effective budget. A lab PC with more RAM does not get to use it.
+0.6 From Phase 2 onward, write manifests, logs, traces, metrics, evaluation outputs, and reports beneath `AGERE_SSD_ROOT`. Nominal aggregate process-tree RSS caps are 6.4 / 12.8 / 25.6 GB for the 8 / 16 / 32 GB tiers. Lower them for measured host use and runner overhead. On Ubuntu, use `scripts/lab_run.py`, whose default outer-service headroom reserves 4 GiB for the host, 1 GiB for launch variation, and 1 GiB for its control process, and whose evaluations retain another 0.5 GiB fluctuation margin. See `LAB_RECOVERY.md` for attached-SSD incident evidence, commands, and diagnostics. Never raise a cap to force a model to fit.
 
 **Do not:** Download models. Write training code.
 
@@ -122,7 +124,7 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 - **SSD space:** Budget about **123 GiB** peak additional space across all tiers and keep at least **133 GiB free** before a fresh conversion, including 10 GiB safety room. The 14B and 32B F16 intermediates are deleted after each Q4 checksum. The runner computes a smaller remaining requirement when resuming. The last check on the development SSD found 149.4 GiB free, so this is feasible but leaves limited margin for unrelated files.
 - **Local PC space:** Keep the repository checkout, Python environment, llama.cpp source/build, and installed packages on the lab PC. Its memory and available local disk must be checked there; the development laptop's earlier measurements do not describe the lab PC.
-- **RAM:** Before each smoke arm, measure the lab PC's idle OS/background use. Cap the aggregate model process tree at the lower of that tier's nominal **6.4 / 12.8 / 25.6 GB** cap and the host's available memory minus a 1 GB safety reserve. Monitor host-wide available memory while the arm is loaded. Never raise the cap to force a model to fit.
+- **RAM:** Before each smoke arm, measure the lab PC's idle OS/background use. Cap the aggregate model process tree at the lower of that tier's nominal **6.4 / 12.8 / 25.6 GB** cap and the host's available memory minus its configured safety reserve and runtime headroom. Monitor host-wide available memory while the arm is loaded. On Ubuntu, use the bounded launcher in `LAB_RECOVERY.md`. Never raise the cap to force a model to fit.
 - **Elapsed time:** Conversion and quantization may take hours; the exact time depends on the lab PC CPU and SSD throughput. The per-step SSD logs and session log show progress and any failure.
 
 **Steps**
@@ -278,7 +280,7 @@ The staged synthetic corpus has not passed the data-quality gate in Phase 0, and
 
 8.1 Recheck the Phase 2 hashes and smoke results for the 8 GB and 32 GB checkpoints from [`configs/locked/tiers/`](./configs/locked/tiers/). Reconvert and re-smoke only if the earlier preparation failed or the frozen model/runtime changed.
 
-8.2 The nominal process caps are **6.4 GB on 8 GB physical RAM** and **25.6 GB on 32 GB physical RAM**, reduced further if measured idle host use plus 1 GB safety margin requires it. 8 GB SAS is 7B Q4_K_M; the team is 1.5B + 0.5B + 0.5B F16 (5.1 GB of weights). 32 GB SAS is 32B Q4_K_M; the team is 7B + 3B + 0.5B F16 (22.2 GB of weights). Use the contexts established by the Phase 2 smoke runs; lower context or shrink the smallest model if the actual scored workload cannot fit.
+8.2 The nominal process caps are **6.4 GB on 8 GB physical RAM** and **25.6 GB on 32 GB physical RAM**, reduced further for measured host use and runtime headroom. On the 32 GB Ubuntu host the 4 GiB host reserve can make the 32 GB MAS tier infeasible; test its SAS and MAS smoke separately and record a blocked/unavailable result rather than raising caps. 8 GB SAS is 7B Q4_K_M; the team is 1.5B + 0.5B + 0.5B F16 (5.1 GB of weights). 32 GB SAS is 32B Q4_K_M; the team is 7B + 3B + 0.5B F16 (22.2 GB of weights). Use the contexts established by the Phase 2 smoke runs; lower context or shrink the smallest model if the actual scored workload cannot fit.
 
 8.3 Cap the aggregate process tree at the effective budget, monitor host-wide available memory, and preserve OS/background reserve. Review the existing Phase 3 dev floor, then score the frozen hardened systems on the held-out tier comparison. If a GPU exists, a matching fine-tune is optional; 32B QLoRA needs ≥48 GB VRAM. The required 32 GB result is the Q4 base plus the same prompts, schemas, and tools as 16 GB.
 

@@ -44,7 +44,7 @@
 **RUPP (RAM Utilization Parity Protocol):**
 
 - Reserve at least 20% of tier physical RAM for OS/background tasks. The nominal aggregate process-tree RSS caps are 6.4 / 12.8 / 25.6 GB for the 8 / 16 / 32 GB tiers.
-- Before each run, record actual host RAM, idle non-job use, and available memory. Effective cap is the smaller of 80% of tier RAM and host RAM minus idle non-job use and a 1 GB safety margin. If this reduces the nominal cap, use the lower cap for both arms; never raise the cap to make a model fit.
+- Before each run, record actual host RAM, idle non-job use, and available memory. On Windows, effective cap is the smaller of 80% of tier RAM and host RAM minus idle non-job use and a minimum 1 GB safety margin plus runner overhead. On Ubuntu, the lab launcher also applies an outer job cap and 4 GiB host reserve; record its measured effective process cap and reserve in both arms. If this reduces the nominal cap, use the lower cap for both arms; never raise the cap to make a model fit.
 - Report **process-tree peak RSS** during a full case (weights + KV + runtime), host-wide available memory before/during the case, and the effective cap. Do not force either arm to use a target fraction of RAM.
 - **MAS modes:** (a) *resident*—all agents loaded; (b) *sequential*—load/unload per stage (document real laptops). Both arms must declare mode; primary analysis uses **resident** for fairness, **sequential** as supplementary.
 

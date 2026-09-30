@@ -15,7 +15,7 @@ $env:AGERE_SSD_ROOT = 'X:\AGERE'
 .\.venv\Scripts\python.exe scripts\phase3.py summarize --tier all
 ```
 
-The run prints each case's tier, arm, progress, generated tokens, structured invention flag, and observed peak RSS. It visits **16 GB, 8 GB, then 32 GB**; each arm is run alone, and all three MAS model processes remain resident together for its cases. The runner applies the same fixed host-adjusted cap to both arms of a tier, leaves 1 GB of host memory available for the OS, and terminates model servers on a memory breach. Its defaults use the matching Phase 2 smoke contexts. A full all-tier CPU run can take a long time; leave the SSD connected and keep background RAM use stable.
+The run prints each case's tier, arm, progress, generated tokens, structured invention flag, and observed peak RSS. It visits **16 GB, 8 GB, then 32 GB**; each arm is run alone, and all three MAS model processes remain resident together for its cases. The runner applies the same fixed host-adjusted cap to both arms of a tier, preserves the configured host reserve (4 GiB under the Ubuntu launcher; at least 1 GB on Windows), and terminates model servers on a memory breach. Its defaults use the matching Phase 2 smoke contexts. A full all-tier CPU run can take a long time; leave the SSD connected and keep background RAM use stable.
 
 If a tier or arm fails, inspect its SSD `failure.json`, `memory.json`, server logs, and session log. Rerun the same command to resume completed cases. To rerun just one tier or arm, use `--tier 8`, `--tier 16`, or `--tier 32`, and optionally `--arm sas` or `--arm mas`. If a memory breach occurred, use a **new run ID** after changing the setup; the breached run is marked invalid and cannot create a floor. To preview the workflow without a full floor, use `--limit 10 --run-id preview10`; this preview covers only the first 10 KYC cases.
 
@@ -24,11 +24,11 @@ If a tier or arm fails, inspect its SSD `failure.json`, `memory.json`, server lo
 ```bash
 git pull --ff-only
 export AGERE_SSD_ROOT=/media/your-user/AGERE
-.venv/bin/python scripts/phase3.py run --tier all --arm both
+.venv/bin/python scripts/lab_run.py run -- phase3.py run --tier all --arm both
 .venv/bin/python scripts/phase3.py summarize --tier all
 ```
 
-Linux requires the same writable delegated cgroup v2 memory controller used in Phase 2. A host that cannot load the 32 GB tier under its cap will log that tier's failure while preserving completed 16 GB and 8 GB results. Run that tier later on a suitable host with the SSD and the same repository commit.
+The Ubuntu launcher supplies a delegated cgroup and an outer memory ceiling. It returns immediately after starting a background service; wait for `lab_run.py status` to show completion before summarizing or starting another job. Use the printed `tail -F` command for live progress. See [lab recovery](LAB_RECOVERY.md). A host that cannot load the 32 GB tier under its cap will log that tier's failure while preserving completed 16 GB and 8 GB results. Run that tier later on a suitable host with the SSD and the same repository commit.
 
 ## What is scored
 

@@ -4,7 +4,7 @@ This optional early run compares each **original Hugging Face F16 checkpoint** w
 
 This is a **checkpoint-level diagnostic**, with strict JSON, missing-field, tool-call, and citation proxy scores. It is not the orchestrated SAS-versus-MAS comparison, does not measure the paper's full invention rate, and never reads train or frozen test rows. Keep the Phase 3 and Phase 6 evaluations separate. The `agere-synth-v1` starter set still needs the roadmap's data-quality review before a research claim.
 
-The runner verifies the committed dev dataset hashes, the selected original HF file hashes, and each selected GGUF SHA-256 from the Phase 2 SSD manifest. It renders identical chat prompts with the original tokenizer for both formats, runs greedy CPU generation, saves each case immediately, resumes completed cases, and writes a summary after each variant. GGUF is subject to the tier's host-adjusted RAM cap and 1 GB OS reserve. Original F16 HF models are **quality references**, not tier-feasible deployment candidates: 14B and 32B may need much more host RAM and run slowly on CPU. The runner skips an HF model with a clear logged error if safe free RAM is unavailable, and continues other variants. Do not compare HF and GGUF latency as a controlled performance result.
+The runner verifies the committed dev dataset hashes, the selected original HF file hashes, and each selected GGUF SHA-256 from the Phase 2 SSD manifest. It renders identical chat prompts with the original tokenizer for both formats, runs greedy CPU generation, saves each case immediately, resumes completed cases, and writes a summary after each variant. GGUF is subject to the tier's host-adjusted RAM cap and configured OS reserve (4 GiB by default under the Ubuntu launcher). Original F16 HF models are **quality references**, not tier-feasible deployment candidates: 14B and 32B exceed the conservative job budget on this 32 GB Ubuntu host. The runner records an explicit infeasible-reference failure and continues other variants; it does not emit a fake score. Do not compare HF and GGUF latency as a controlled performance result.
 
 ## Windows PowerShell
 
@@ -21,7 +21,7 @@ $env:AGERE_SSD_ROOT = 'X:\AGERE'
 
 The GGUF command works once `AGERE_SSD_ROOT/phase2/manifests/gguf_artifacts.json` exists. The HF command can run independently, but let conversion finish first to avoid competing for RAM and SSD bandwidth. For an early short preview, use `--limit 12 --run-id preview12` on **both** run commands; the full 60-row run uses the default `dev_sft_v1` run ID. A different limit, token cap, context, or dataset requires a new run ID. Each command prints per-case progress and elapsed time. Rerunning resumes finished cases rather than rewriting them.
 
-To run another tier after the 16 GB run, change `--tier` to `8` or `32`. The original 32B F16 checkpoint usually needs a host with well over 64 GiB free RAM; its Q4_K_M GGUF diagnostic can run separately on a suitable 32 GB tier host. `--tier all` walks 16, 8, then 32 GB. If one variant fails, the runner records it, continues other variants, and exits nonzero at the end.
+To run another tier after the 16 GB run, change `--tier` to `8` or `32`. The original 32B F16 checkpoint has a 64 GiB weights/loading preflight estimate, plus the host reserve and runner allowance; its Q4_K_M GGUF diagnostic can run separately on a suitable 32 GB tier host. `--tier all` walks 16, 8, then 32 GB. If one variant fails, the runner records it, continues other variants, and exits nonzero at the end.
 
 ## Linux
 
@@ -29,12 +29,12 @@ To run another tier after the 16 GB run, change `--tier` to `8` or `32`. The ori
 git pull --ff-only
 export AGERE_SSD_ROOT=/media/your-user/AGERE
 .venv/bin/python scripts/eval_checkpoints.py setup
-.venv/bin/python scripts/eval_checkpoints.py run --tier 16 --arm both --format gguf
-.venv/bin/python scripts/eval_checkpoints.py run --tier 16 --arm both --format hf
+.venv/bin/python scripts/lab_run.py run -- eval_checkpoints.py run --tier 16 --arm both --format gguf
+.venv/bin/python scripts/lab_run.py run -- eval_checkpoints.py run --tier 16 --arm both --format hf
 .venv/bin/python scripts/eval_checkpoints.py summarize --tier 16
 ```
 
-GGUF runs on Linux require the same writable delegated cgroup v2 memory controller as the Phase 2 smoke check.
+Run these jobs sequentially: the launcher returns after starting a background service, so use `lab_run.py status` and the printed `tail -F` command before starting the next job. Both HF and GGUF workers are bounded. On the 32 GB lab PC, original HF 14B/32B references exceed the safe budget; their failures are recorded without fabricated scores. See [lab recovery](LAB_RECOVERY.md).
 
 ## SSD outputs
 

@@ -1,5 +1,7 @@
 # Development start lock
 
+> Ubuntu lab update: Phase 2 is still incomplete. The September 30 runs stopped during 1.5B conversion after source verification. Use the bounded launcher for Phase 2, checkpoint diagnostics, and Phase 3. See [lab recovery and commands](LAB_RECOVERY.md). Its default 4 GiB host reserve and whole-job cap may lower the nominal tier budgets further.
+
 **Project:** Agere  
 **Date locked:** 28 September 2026  
 **Status:** Decisions gathered. Application code has not been written.  
@@ -86,7 +88,7 @@ The lab PC may have more RAM than the tier. Cap the job (cgroup / `ulimit`) at t
 
 ### Physical RAM is not the inference budget
 
-Reserve at least 20% of the target tier for the operating system and background tasks. The nominal aggregate RSS caps are **6.4 GB for an 8 GB device**, **12.8 GB for a 16 GB device**, and **25.6 GB for a 32 GB device**. Before experiments, record idle OS/background memory on the actual host. The effective cap is `min(0.8 × target-tier RAM, host physical RAM − measured idle non-job use − 1 GB safety margin)`. If this gives a lower cap, use it and adjust model sizes or context before running. Never raise the cap to force a model to fit.
+Reserve at least 20% of the target tier for the operating system and background tasks. The nominal aggregate RSS caps are **6.4 GB for an 8 GB device**, **12.8 GB for a 16 GB device**, and **25.6 GB for a 32 GB device**. Before experiments, record idle OS/background memory on the actual host. On Windows, compute the cap from measured host RAM and a minimum 1 GB OS reserve plus runner overhead. On Ubuntu lab PCs, use `scripts/lab_run.py`: it applies an outer cgroup cap with a 4 GiB host reserve plus launch/control headroom, and sets each model-process cap below that ceiling. See `LAB_RECOVERY.md`. If this gives a lower cap, use it and adjust model sizes or context before running. Never raise the cap to force a model to fit.
 
 Count the whole inference process tree (including loaded retriever and runtime) against one shared arm cap. Also record host-wide available memory before and during each run; stop if the reserved OS/background headroom is breached. The cap is a ceiling, not a target utilization percentage.
 

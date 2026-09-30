@@ -24,6 +24,8 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
+from gguf_integrity import inspect_gguf
+
 
 REPO = Path(__file__).resolve().parents[1]
 LLAMA_URL = "https://github.com/ggml-org/llama.cpp.git"
@@ -56,6 +58,30 @@ TIERS = {
 }
 GIB = 1024**3
 GB = 1000**3
+
+
+def require_lab_guard() -> None:
+    if sys.platform == "linux":
+        from lab_run import guarded_root
+        guarded_root()
+
+
+def host_reserve() -> int:
+    return max(GB, int(os.environ.get("AGERE_HOST_RESERVE_BYTES", GB)))
+
+
+def safe_process_cap(nominal: int) -> int:
+    import psutil
+    # Leave fluctuation room as well as the watchdog's minimum host reserve.
+    cap = min(nominal, psutil.virtual_memory().available - host_reserve() - GIB // 2)
+    if sys.platform == "linux":
+        from lab_run import guarded_root
+        root = guarded_root()
+        # The enclosing job also contains Python, logs, and charged file cache.
+        cap = min(cap, int((root / "memory.max").read_text()) - GIB)
+    if cap <= 0:
+        die("Insufficient RAM after host reserve and runner overhead.")
+    return cap
 
 
 def now() -> str:
@@ -151,24 +177,50 @@ def validate_paths() -> Paths:
     return paths
 
 
-def run_logged(command: list[str], log: Path, *, cwd: Path = REPO, env: dict | None = None) -> None:
+def run_logged(command: list[str], log: Path, *, cwd: Path = REPO, env: dict | None = None,
+               guarded: bool = False) -> None:
+    if guarded:
+        require_lab_guard()
+    cap = safe_process_cap(2**63 - 1) if guarded else None
+    hard = HardMemoryCap(cap, "worker") if cap else None
+    monitor = MemoryMonitor(cap, host_reserve()) if cap else None
+    try:
+        _run_logged(command, log, cwd=cwd, env=env, hard=hard, monitor=monitor)
+    finally:
+        if monitor:
+            monitor.stop()
+            write_json(log.with_suffix(".memory.json"), {
+                "recorded_at_utc": now(), "cap_bytes": cap,
+                "host_reserve_bytes": host_reserve(), "breach": monitor.breach,
+                "cgroup_memory_events": hard.memory_events() if hard else None,
+                "peak_rss_bytes": monitor.peak_rss_bytes,
+                "minimum_host_available_bytes": monitor.minimum_host_available_bytes if monitor.samples else None})
+        if hard:
+            hard.close()
+
+
+def _run_logged(command, log, *, cwd, env, hard, monitor) -> None:
     log.parent.mkdir(parents=True, exist_ok=True)
     with log.open("a", encoding="utf-8", errors="replace") as output:
         output.write(f"\n[{now()}] cwd={cwd}\n[{now()}] command={subprocess.list2cmdline(command)}\n")
         output.flush()
         print(f"$ {subprocess.list2cmdline(command)}", flush=True)
-        with subprocess.Popen(command, cwd=cwd, env=env, stdout=subprocess.PIPE,
+        spawn = hard.spawn if hard else subprocess.Popen
+        with spawn(command, cwd=cwd, env=env, stdout=subprocess.PIPE,
                               stderr=subprocess.STDOUT, text=True, encoding="utf-8",
                               errors="replace", bufsize=1) as process:
             assert process.stdout is not None
             try:
+                if monitor:
+                    monitor.processes.append(process)
+                    monitor.start()
                 for line in process.stdout:
                     print(line, end="", flush=True)
                     output.write(line)
                     output.flush()
                 return_code = process.wait()
-            except KeyboardInterrupt:
-                process.terminate()
+            except BaseException:
+                kill_tree(process)
                 try:
                     process.wait(timeout=10)
                 except subprocess.TimeoutExpired:
@@ -176,6 +228,9 @@ def run_logged(command: list[str], log: Path, *, cwd: Path = REPO, env: dict | N
                 output.write(f"[{now()}] interrupted\n")
                 raise
         output.write(f"[{now()}] exit={return_code}\n")
+        if monitor and monitor.breach:
+            output.write(f"[{now()}] memory_guard={monitor.breach}\n")
+            die(f"{monitor.breach}; see {log}")
     if return_code:
         die(f"Command exited {return_code}; see {log}")
 
@@ -272,7 +327,7 @@ def verify_locked_tiers() -> None:
             die(f"Runner {tier} GB MAS differs from locked config {config_path}")
 
 
-def verify_sources(paths: Paths) -> dict[str, str]:
+def verify_sources(paths: Paths, sizes: tuple[str, ...] | None = None) -> dict[str, str]:
     manifest = REPO / "manifests" / "hf_snapshots.json"
     if not manifest.is_file():
         die(f"Missing Phase 1 source manifest in the cloned repository: {manifest}")
@@ -282,6 +337,9 @@ def verify_sources(paths: Paths) -> dict[str, str]:
     with (paths.logs / "verify_sources.log").open("a", encoding="utf-8") as log:
         log.write(f"\n[{now()}] Verifying Phase 2 source weights at {paths.ssd}\n")
         for size, repo_id in SOURCE_MODELS.items():
+            if sizes is not None and size not in sizes:
+                continue
+            print(f"SOURCE VERIFICATION {size}: this is hashing, not conversion.", flush=True)
             model_entries = [entry for entry in entries if entry.get("repo_id") == repo_id]
             if not model_entries or not any(str(e.get("path", "")).endswith(".safetensors") for e in model_entries):
                 die(f"Phase 1 manifest has no complete safetensors listing for {repo_id}.")
@@ -317,28 +375,37 @@ def verify_sources(paths: Paths) -> dict[str, str]:
 def valid_gguf(path: Path) -> bool:
     if not path.is_file() or path.stat().st_size < 100_000_000:
         return False
-    with path.open("rb") as stream:
-        return stream.read(4) == b"GGUF"
+    try:
+        inspect_gguf(path)
+        return True
+    except (OSError, ValueError):
+        return False
 
 
 def conversion_env(paths: Paths) -> dict[str, str]:
     environment = os.environ.copy()
     environment.update({"TMP": str(paths.scratch), "TEMP": str(paths.scratch),
                         "TMPDIR": str(paths.scratch), "PYTHONUNBUFFERED": "1",
+                        "OMP_NUM_THREADS": "4", "MKL_NUM_THREADS": "4",
+                        "OPENBLAS_NUM_THREADS": "4", "TOKENIZERS_PARALLELISM": "false",
                         "HF_HOME": str(paths.ssd / "weights" / "hub_cache")})
     return environment
 
 
-def preflight_space(paths: Paths) -> None:
+def preflight_space(paths: Paths, sizes: tuple[str, ...] | None = None) -> None:
     # Simulate conversion order. The 14B and 32B F16 intermediates are
     # removed after each Q4 checksum, so their peak space is not additive.
     retained_gib = 0.0
     peak_gib = 0.0
     for size in ("0.5b", "1.5b", "3b"):
+        if sizes is not None and size not in sizes:
+            continue
         if not valid_gguf(paths.output(size, "f16")):
             retained_gib += F16_SIZES_GIB[size]
             peak_gib = max(peak_gib, retained_gib)
     for size in ("14b", "7b", "32b"):
+        if sizes is not None and size not in sizes:
+            continue
         f16 = paths.output(size, "f16") if size == "7b" else intermediate_f16(paths, size)
         q4 = paths.output(size, "q4_k_m")
         if size == "7b" and not valid_gguf(f16):
@@ -365,10 +432,11 @@ def convert_f16(paths: Paths, converter: Path, size: str, output: Path,
         print(f"Already present: {output}")
         return
     partial = output.with_name(output.stem + ".partial.gguf")
+    print(f"CONVERT {size} -> F16 (an incomplete partial is restarted)", flush=True)
     partial.unlink(missing_ok=True)
     run_logged([sys.executable, "-u", str(converter), str(paths.source(size)),
                 "--outtype", "f16", "--outfile", str(partial)],
-               paths.logs / f"convert_{size}.log", cwd=paths.llama, env=environment)
+               paths.logs / f"convert_{size}.log", cwd=paths.llama, env=environment, guarded=True)
     if not valid_gguf(partial):
         die(f"Converter did not produce a valid GGUF: {partial}")
     os.replace(partial, output)
@@ -382,26 +450,33 @@ def quantize_model(paths: Paths, quantize: Path, size: str, f16: Path,
         return
     partial = q4.with_name(q4.stem + ".partial.gguf")
     partial.unlink(missing_ok=True)
-    run_logged([str(quantize), str(f16), str(partial), "Q4_K_M"],
-               paths.logs / f"quantize_{size}.log", cwd=paths.llama, env=environment)
+    print(f"QUANTIZE {size} -> Q4_K_M", flush=True)
+    run_logged([str(quantize), "--max-buffer-size", "1024",
+                str(f16), str(partial), "Q4_K_M", "4"],
+               paths.logs / f"quantize_{size}.log", cwd=paths.llama, env=environment, guarded=True)
     if not valid_gguf(partial):
         die(f"Quantizer did not produce a valid GGUF: {partial}")
     os.replace(partial, q4)
 
 
-def convert(paths: Paths) -> None:
+def convert(paths: Paths, sizes: tuple[str, ...] | None = None) -> None:
+    require_lab_guard()
     verify_locked_tiers()
     runtime_commit(paths)
     quantize = binary(paths, "llama-quantize")
     converter = paths.llama / "convert_hf_to_gguf.py"
     if not converter.is_file():
         die(f"Missing pinned converter: {converter}")
-    revisions = verify_sources(paths)
-    preflight_space(paths)
+    preflight_space(paths, sizes)
+    revisions = verify_sources(paths, sizes)
     environment = conversion_env(paths)
     for size in ("0.5b", "1.5b", "3b"):
+        if sizes is not None and size not in sizes:
+            continue
         convert_f16(paths, converter, size, paths.output(size, "f16"), environment)
     for size in ("14b", "7b", "32b"):
+        if sizes is not None and size not in sizes:
+            continue
         q4 = paths.output(size, "q4_k_m")
         f16 = paths.output(size, "f16") if size == "7b" else intermediate_f16(paths, size)
         if size == "7b" or not valid_gguf(q4):
@@ -413,6 +488,9 @@ def convert(paths: Paths) -> None:
             print(f"Verified Q4 checksum before removing {size} F16 intermediate: {checksum}")
             f16.unlink()
             print(f"Removed verified intermediate: {f16}")
+    if sizes is not None:
+        print("Selected models finished. Run convert without --models to verify all sources and publish the seven-file manifest.")
+        return
     records = []
     for size, kind in FINAL_MODELS:
         output = paths.output(size, kind)
@@ -440,6 +518,8 @@ def free_port() -> int:
 
 
 def kill_tree(process: subprocess.Popen) -> None:
+    if process.poll() is not None:
+        return
     try:
         import psutil
         parent = psutil.Process(process.pid)
@@ -468,7 +548,8 @@ class MemoryMonitor:
 
     def stop(self) -> None:
         self._stop.set()
-        self._thread.join(timeout=3)
+        if self._thread.ident is not None:
+            self._thread.join(timeout=3)
 
     def _watch(self) -> None:
         import psutil
@@ -567,11 +648,8 @@ class HardMemoryCap:
         self._kernel = kernel
 
     def _linux_setup(self, cap_bytes: int, arm: str) -> None:
-        membership = Path("/proc/self/cgroup").read_text(encoding="utf-8").splitlines()
-        unified = next((row.split("::", 1)[1] for row in membership if row.startswith("0::")), None)
-        if unified is None:
-            die("Linux smoke requires cgroup v2 for an aggregate hard memory cap.")
-        parent = Path("/sys/fs/cgroup") / unified.lstrip("/")
+        from lab_run import guarded_root
+        parent = guarded_root()
         group = parent / f"agere-phase2-{os.getpid()}-{arm}"
         try:
             group.mkdir()
@@ -585,6 +663,22 @@ class HardMemoryCap:
                     pass
             die(f"Cannot create a writable cgroup v2 memory limit at {parent}: {exc}")
         self._cgroup = group
+
+    def spawn(self, command: list[str], **kwargs) -> subprocess.Popen:
+        if self._cgroup is not None:
+            # Join before exec/model allocation. Moving a running parent later
+            # would not move children it had already spawned.
+            command = [sys.executable, str(REPO / "scripts" / "cgroup_exec.py"),
+                       str(self._cgroup), *command]
+        process = subprocess.Popen(command, **kwargs)
+        try:
+            if self._handle is not None:
+                self.add(process.pid)
+        except BaseException:
+            kill_tree(process)
+            process.wait()
+            raise
+        return process
 
     def add(self, pid: int) -> None:
         if self._handle is not None:
@@ -605,8 +699,20 @@ class HardMemoryCap:
             self._kernel.CloseHandle(self._handle)
             self._handle = None
         if self._cgroup is not None:
-            self._cgroup.rmdir()
+            for attempt in range(20):
+                try:
+                    self._cgroup.rmdir()
+                    break
+                except OSError:
+                    if attempt == 19:
+                        raise
+                    time.sleep(0.1)
             self._cgroup = None
+
+    def memory_events(self) -> str | None:
+        if self._cgroup is not None:
+            return (self._cgroup / "memory.events").read_text()
+        return None
 
 
 def request_json(url: str, data: dict | None = None, *, timeout: float = 5) -> dict:
@@ -644,10 +750,10 @@ def smoke_arm(paths: Paths, tier: str, arm: str, context: int, timeout_seconds: 
     except ImportError as exc:
         raise RuntimeError("psutil is missing; run the Phase 2 setup command first.") from exc
     idle = psutil.virtual_memory()
-    reserve = GB
+    reserve = host_reserve()
     tier_spec = TIERS[tier]
     nominal_cap = int(tier_spec["cap_gb"] * GB)
-    effective = min(nominal_cap, idle.available - reserve)
+    effective = safe_process_cap(nominal_cap)
     if effective <= 0:
         die("Insufficient idle host memory after the required 1 GB OS safety reserve.")
     labels = (("sas", tier_spec["sas"]),) if arm == "sas" else tier_spec["mas"]
@@ -688,10 +794,9 @@ def smoke_arm(paths: Paths, tier: str, arm: str, context: int, timeout_seconds: 
                        "--parallel", "1"]
             handle.write(f"\n[{now()}] command={subprocess.list2cmdline(command)}\n")
             handle.flush()
-            process = subprocess.Popen(command, cwd=REPO, stdout=handle, stderr=subprocess.STDOUT)
+            process = hard_cap.spawn(command, cwd=REPO, stdout=handle, stderr=subprocess.STDOUT)
             processes.append(process)
             monitor.processes.append(process)
-            hard_cap.add(process.pid)
             print(f"Loading {tier} GB {instance} ({size}) on localhost:{port}; server log: {log}", flush=True)
             wait_ready(process, port, monitor, f"{tier} GB {instance}", timeout_seconds, log)
             result["models"].append({"instance": instance, "model": SOURCE_MODELS[size],
@@ -835,11 +940,17 @@ def main() -> int:
                         help="override the locked context for the selected smoke tier(s)")
     parser.add_argument("--load-timeout", type=int, default=900,
                         help="seconds allowed for each model server to load")
+    parser.add_argument("--models", nargs="+", choices=SOURCE_MODELS,
+                        help="convert only these sizes for recovery; omitting builds/publishes all seven files")
     args = parser.parse_args()
+    if args.models and args.step != "convert":
+        parser.error("--models applies only to convert")
     if (args.context is not None and args.context < 512) or args.load_timeout < 30:
         parser.error("--context must be >=512 and --load-timeout must be >=30")
     try:
         paths = validate_paths()
+        if args.step != "setup":
+            require_lab_guard()
         logfile = paths.logs / f"session_{datetime.now(timezone.utc):%Y%m%dT%H%M%SZ}_{args.step}.log"
         with logfile.open("a", encoding="utf-8") as session_log:
             with redirect_stdout(Tee(sys.stdout, session_log)), redirect_stderr(Tee(sys.stderr, session_log)):
@@ -848,7 +959,7 @@ def main() -> int:
                     if args.step in ("setup", "all"):
                         setup(paths)
                     if args.step in ("convert", "all"):
-                        convert(paths)
+                        convert(paths, tuple(args.models) if args.models else None)
                     if args.step in ("smoke", "all"):
                         smoke(paths, args.tier, args.arm, args.context, args.load_timeout)
                 except (RuntimeError, OSError, subprocess.CalledProcessError) as exc:
