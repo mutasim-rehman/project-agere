@@ -21,7 +21,7 @@
 | Which MAS failures we fix, and how | [§13](#13-mas-failure-modes-and-the-fix-for-each) |
 | On what basis both systems are judged | [§14](#14-judgement-basis) |
 | How both arms are made as strong as this lab can make them | [§15](#15-making-both-systems-as-strong-as-they-can-be) |
-| External SSD stores only datasets and model artifacts; code and results stay in repo | [§16](#16-external-ssd-and-repository-storage) |
+| External SSD stores datasets, models, and Phase 2 onward results; code stays on the computer | [§16](#16-external-ssd-and-repository-storage) |
 | Synthetic data and the human sign-off rule | [§17](#17-ethical-compliance-considerations) |
 
 ---
@@ -421,7 +421,7 @@ These are the MAST-aligned gaps in [`SYSTEM_GAPS_AND_IMPROVEMENTS.md`](./SYSTEM_
 | **M11** | Two agents extract the same PDF differently | One case store. Only the extractor calls `document_extractor`. |
 | **M12** | Roles are names on a general chat model | Role prompts plus the optional role LoRAs in [§11.4](#114-mas-adapters). |
 | **M13** | Verifier always says the draft is fine | Binary checklist, hard negatives, and a rule that `PASS` requires every amount to match a span. |
-| **M14** | Hard to debug | One JSON log line per stage in the repository, including token counts and RSS. |
+| **M14** | Hard to debug | One JSON log line per stage on the SSD, including token counts and RSS. |
 
 SAS receives the matching hardening so the team is not compared with a crippled monolith: domain QLoRA (S1, S2), staged prompts (S3), calculator-only amounts (S4), schema-limited tools (S5), span ids (S6), a deterministic mismatch diff (S7), chunked extract when the pack is long (S8), a fixed memo template (S9, S10), and a client-scoped index (S11). Quant level stays Q4_K_M (S12).
 
@@ -467,14 +467,14 @@ Naive scores stay in the paper as the floor. They are not the headline compariso
 
 ## 16. External SSD and Repository Storage
 
-The external SSD is an artifact drive, not a project drive. It stores only the large inputs and model artifacts: datasets and their derived data indexes/caches, downloaded source weights, converted/quantized weights, trained adapters, and merged weight files. **No source code, runtime/build files, logs, manifests, evaluation outputs, or reports belong on the SSD.** All of those stay under the repository checkout on the laptop/PC/lab machine and are committed or backed up with the repository as appropriate.
+The external SSD is the artifact and run-output drive. It stores datasets and their derived indexes/caches, downloaded source weights, converted/quantized weights, trained adapters, merged weights, and all Phase 2 onward logs, manifests, evaluation outputs, and reports. **Source code, Python environments, and runtime/build files stay in the repository checkout on the laptop/PC/lab machine.** Existing Phase 0/1 input manifests in git remain frozen historical records; Phase 2 and later products travel with the SSD.
 
 ### Per-run path requirement
 
 - Before starting any phase, dataset operation, training job, evaluation, or other run, set `AGERE_SSD_ROOT` to the correct absolute mount path for the external SSD on that machine.
 - The runner prints the resolved repository root and SSD root, verifies the SSD is mounted and contains the expected `weights/` and/or `datasets/` inputs, and refuses to run if the path is unset, stale, or invalid.
 - Point model-hub/download caches (such as `HF_HOME` and `HF_HUB_CACHE`) under `AGERE_SSD_ROOT/weights/` and dataset loaders under `AGERE_SSD_ROOT/datasets/`; do not let libraries silently cache these large artifacts on the machine's system drive.
-- Never silently fall back to a same-named folder on the local disk. Model and dataset inputs must resolve beneath `AGERE_SSD_ROOT`; code and every output must resolve beneath the repository root.
+- Never silently fall back to a same-named folder on the local disk. Model inputs, dataset inputs, and run products must resolve beneath `AGERE_SSD_ROOT`; code and builds must resolve beneath the computer's checkout.
 - The exact mount point may differ across computers, so pass the current machine's path rather than assuming `/mnt/agere` or a particular Windows drive letter.
 
 ### SSD layout
@@ -490,24 +490,24 @@ AGERE_SSD_ROOT/
     dev/
     test/               # immutable after the test manifest is committed
     derived/            # dataset-derived indexes/caches only
+  phase2/               # conversion logs, GGUF hashes, runtime metadata, smoke results
+  runs/                 # later training/evaluation logs and traces
+  results/              # later summaries, figures, and reports
 ```
 
-### Repository layout for code and results
+### Repository layout for code and builds
 
 ```
 <repository>/
   src/                  # all project source code
-  third_party/          # local source/build for runtime tools when needed
   configs/              # configs refer to artifacts beneath AGERE_SSD_ROOT
-  manifests/            # artifact hashes, dataset/test hashes, runtime versions
-  runs/                 # per-run JSON logs, traces, memory/token records
-  experiments/          # scored evaluations and analysis inputs
-  results/              # summaries, figures, and reports
+  manifests/            # frozen Phase 0/1 input records already committed
+  .local/llama.cpp/      # ignored local Phase 2 converter and CPU build
 ```
 
-Each source or processed weight file gets a SHA-256 entry in the repository's `manifests/weights.sha256`. The frozen test dataset manifest lives in the repository's `manifests/test.sha256` before training starts. Logs and evaluation outputs are written under the repository throughout; do not stage them on the SSD and copy them later.
+The Phase 1 source files are checked against the existing repository `manifests/weights.sha256` and `hf_snapshots.json`. Each Phase 2 GGUF file gets a new SHA-256 entry under `AGERE_SSD_ROOT/phase2/manifests/`. The frozen Phase 0 test dataset manifest stays in repository `manifests/test.sha256` as the input record; later run manifests copy its values onto the SSD. Logs and evaluation outputs are written directly to the SSD.
 
-The SSD must be mounted and its path checked at the start of every phase/run. Unmount before unplugging it. Keep a backup copy of the datasets and weights; repository backups cover code, manifests, logs, and evaluation results.
+The SSD must be mounted and its path checked at the start of every phase/run. Unmount before unplugging it. Back up the SSD's datasets, weights, manifests, logs, and evaluation results separately from the code repository.
 
 ---
 

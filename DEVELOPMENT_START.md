@@ -28,9 +28,9 @@ Start on the **16 GB** tier. Build the naive baseline before any fine-tune. The 
 
 ## Storage rule for every phase and run
 
-The repository checkout on the laptop/PC/lab machine contains all code, runtime/build files, manifests, logs, evaluation outputs, and reports. The external SSD contains only datasets (including derived indexes/caches) and model artifacts (downloaded, converted, quantized, merged, and adapter weights).
+The repository checkout on the laptop/PC/lab machine contains code, Python environments, and runtime/build files. From Phase 2 onward, the external SSD contains datasets and model artifacts plus generated manifests, logs, evaluation outputs, and reports. Existing Phase 0/1 input manifests remain in the repository as historical records.
 
-Before starting **any phase, dataset operation, training job, evaluation, or other run**, set `AGERE_SSD_ROOT` to the correct absolute mount path for the external SSD on the current machine. The runner must print and validate that path and the repository root, and stop if the drive/path is missing or invalid. Do not assume the mount point or silently fall back to a local path. Point model-hub/download caches such as `HF_HOME` and `HF_HUB_CACHE` under `$AGERE_SSD_ROOT/weights/`; dataset loaders must also read only from `$AGERE_SSD_ROOT/datasets/`. All run outputs go under repository `runs/`, `experiments/`, `manifests/`, or `results/`.
+Before starting **any phase, dataset operation, training job, evaluation, or other run**, set `AGERE_SSD_ROOT` to the correct absolute mount path for the external SSD on the current machine. The runner must print and validate that path and the repository root, and stop if the drive/path is missing or invalid. Do not assume the mount point or silently fall back to a local path. Point model-hub/download caches such as `HF_HOME` and `HF_HUB_CACHE` under `$AGERE_SSD_ROOT/weights/`; dataset loaders must also read only from `$AGERE_SSD_ROOT/datasets/`. Phase 2 and later run products go under the SSD root.
 
 ---
 
@@ -78,7 +78,7 @@ Official Hugging Face ids:
 | 32B | `Qwen/Qwen2.5-32B-Instruct` |
 | Embeddings | `BAAI/bge-small-en-v1.5` |
 
-Do not pin a third-party GGUF mirror in git. Convert from the official snapshot (or record the exact file URL **and** SHA-256 in the repository's `manifests/` at download time). Store all source and processed weights under `AGERE_SSD_ROOT/weights/`; manifest metadata remains in the repository. Filename pattern: `qwen2.5-<size>-instruct-f16.gguf` and `qwen2.5-<size>-instruct-q4_k_m.gguf`.
+Do not pin a third-party GGUF mirror in git. Convert from the official snapshot (or record the exact file URL **and** SHA-256 in an SSD manifest at download time). Store all source and processed weights under `AGERE_SSD_ROOT/weights/`; Phase 2 hashes and provenance go under `AGERE_SSD_ROOT/phase2/manifests/`. Filename pattern: `qwen2.5-<size>-instruct-f16.gguf` and `qwen2.5-<size>-instruct-q4_k_m.gguf`.
 
 Weight figures below are weights only. KV cache and the process sit on top. A one-case smoke test records peak RSS before a tier is treated as runnable. If peak RSS exceeds the cap, shrink the **smallest worker** first. The orchestrator is not the first model to shrink.
 
@@ -197,7 +197,7 @@ The verifier’s real decision is a checklist plus string match against the case
 
 ### 5.3 Data the fine-tune may see
 
-No real customer file. The test manifest (names and SHA-256) is written to repository `manifests/test.sha256` **before** the first training step. Dataset files remain on the external SSD. Anything hashed as test never enters a batch. Dev is where training stops and where adapter weights on the SSD are kept or dropped. Test is one shot per frozen system.
+No real customer file. The Phase 0 test manifest (names and SHA-256) was written to repository `manifests/test.sha256`; later training/evaluation runs copy its frozen values into an SSD run manifest **before** the first training step. Dataset files remain on the external SSD. Anything hashed as test never enters a batch. Dev is where training stops and where adapter weights on the SSD are kept or dropped. Test is one shot per frozen system.
 
 | Corpus | Train | Dev | Test |
 | :--- | ---: | ---: | ---: |
@@ -323,7 +323,7 @@ Primary judgement, 16 GB, resident, 2,048 thinking tokens, **hardened** systems:
 
 ## 9. What to build first
 
-The staged plan is [`ROADMAP.md`](./ROADMAP.md). Hand an agent one phase at a time. Before every phase/run, provide and validate `AGERE_SSD_ROOT`. Code and run products remain in the repository; only datasets and model artifacts go on the SSD. The order is: SSD path/runtime check, download, quantize, score the untouched models, fine-tune and quantize again, harden the team, final test, then the dev loop. 8 GB and 32 GB come last.
+The staged plan is [`ROADMAP.md`](./ROADMAP.md). Hand an agent one phase at a time. Before every phase/run, provide and validate `AGERE_SSD_ROOT`. Code and runtime builds remain on the computer; Phase 2 and later run products go on the SSD. The order is: SSD path/runtime check, download, quantize, score the untouched models, fine-tune and quantize again, harden the team, final test, then the dev loop. 8 GB and 32 GB come last.
 
 Cells A (SAS at F16) and D (quantized MAS) are optional and are not on this path.
 
@@ -331,7 +331,7 @@ Still open, and none of them block Phase 0 or Phase 1 of the roadmap:
 
 | Item | Rule already in place |
 | :--- | :--- |
-| Exact GGUF SHA-256 | Written to repository `manifests/` at download. Not invented here. |
+| Exact GGUF SHA-256 | Written to `AGERE_SSD_ROOT/phase2/manifests/` during conversion. Not invented here. |
 | Which role LoRAs survive | Dev invention rate or mismatch recall. Else discard. |
 | Official MortarBench files vs a style-alike pack | Style-alike is allowed and must be labelled as such. |
 | Whether the lab has a 24 GB GPU for 14B QLoRA | Fallback is a labelled 7B stand-in. The 14B Q4 baseline still runs. |

@@ -1,11 +1,12 @@
 __pycache__/
 *.py[cod]
 .venv/
+.local/
 venv/
 .env
 *.gguf
 *.safetensors
 weights/
 adapters/
-# Evaluation logs and outputs under these repository directories are intentionally trackable.
+# Phase 2 onward logs and outputs are written to AGERE_SSD_ROOT.
 .DS_Store

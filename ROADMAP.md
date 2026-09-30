@@ -6,7 +6,7 @@ Decisions (which model, which quant, which test set) stay in [`DEVELOPMENT_START
 
 **Co-equal outcomes:** this roadmap delivers both a reproducible research result and a working local-first analyst product. Each phase has a research deliverable and a product deliverable; neither track is complete if only the other is usable.
 
-**Storage rule:** the external SSD holds only datasets and model artifacts (source weights, converted/quantized weights, and adapters). Code, tools, dependencies, manifests, logs, evaluation outputs, and reports stay in the repository checkout on the laptop/PC/lab machine. Before every phase, dataset access, training job, evaluation, or other run, set and validate the actual external-drive path in `AGERE_SSD_ROOT`; never assume a path or fall back to another drive.
+**Storage rule from Phase 2 onward:** code, tools, Python environments, and runtime builds stay in the repository checkout on the laptop/PC/lab machine. The external SSD holds datasets, model artifacts, logs, manifests, evaluation outputs, and reports. The existing Phase 0/1 manifests in git remain as input records; new run products go to the SSD. Before every phase or run, set and validate the actual external-drive path in `AGERE_SSD_ROOT`; never assume a path or fall back to another drive.
 
 Start at **Phase 0**. Finish a phase before opening the next one. The first machine is **16 GB**. 8 GB and 32 GB wait until Phase 8.
 
@@ -20,11 +20,11 @@ Paste this, with the phase number filled in:
 
 | Phase | What happens | Where the files go |
 | :---: | :--- | :--- |
-| **0** | Validate SSD path, repository checkout, llama.cpp, 16 GB physical tier / 12.8 GB nominal job cap | Code/manifests in repo; datasets/weights on SSD |
+| **0** | Validate SSD path, repository checkout, llama.cpp, 16 GB physical tier / 12.8 GB nominal job cap | Historical manifests in repo; datasets/weights on SSD |
 | **1** | Download the 16 GB models | External SSD |
 | **2** | Convert to GGUF and quantize the single model | External SSD |
 | **3** | Score the **untouched** single model, then the **untouched** team | Dev cases only |
-| **4** | Fine-tune the single model, merge, quantize **again** | Adapter/weight artifacts on SSD; code/logs in repo |
+| **4** | Fine-tune the single model, merge, quantize **again** | Code on host; adapters, weights, logs, results on SSD |
 | **5** | Build the real multi-agent team (JSON, verifier, budget) | Code |
 | **6** | Final evaluation, once | Test cases |
 | **7** | Loop: tag failures, change one thing on dev, or ablate | Dev cases |
@@ -44,13 +44,13 @@ Fine-tuning is **after** the untouched scores are frozen. The team is scored onc
 
 ## Phase 0 — SSD and runtime
 
-**Goal:** Every job reads only dataset/model artifacts from the explicitly supplied external SSD path; all code and run products stay in the repository checkout.
+**Goal:** Every job uses an explicitly supplied external SSD path. Code and build tools run from the computer; phase outputs travel with the SSD.
 
 **Steps**
 
 0.1 Mount the external NVMe and set `AGERE_SSD_ROOT` to its actual absolute mount path for this machine (for example `/mnt/AGERE` on Linux or the assigned drive path on Windows). Do not hard-code an assumed drive letter or mount point. The volume label is `AGERE`.
 
-0.2 Keep this layout on the external SSD. It contains only datasets and model artifacts; source code, runtime binaries, logs, manifests, and evaluation results do not go here.
+0.2 Keep this layout on the external SSD. Source code and runtime binaries stay on the computer. Phase outputs, including logs and manifests, are stored on the SSD.
 
 ```
 AGERE_SSD_ROOT/
@@ -63,21 +63,24 @@ AGERE_SSD_ROOT/
     dev/
     test/               # immutable after the test manifest is committed
     derived/            # dataset-derived indexes/caches only
+  phase2/               # Phase 2 logs, manifests, smoke results, summary
+  runs/                 # later evaluation and training logs
+  results/              # later reports and figures
 ```
 
-0.3 Keep the repository checkout, llama.cpp source/build, and all dependencies on the laptop/PC/lab machine, not on the external SSD. Record runtime versions in the repository at `manifests/runtime.txt`. Inference is CPU. A GPU is for fine-tuning only.
+0.3 Keep the repository checkout, llama.cpp source/build, and all dependencies on the laptop/PC/lab machine. Record Phase 2 runtime versions on the SSD at `phase2/manifests/runtime.json`. Inference is CPU. A GPU is for fine-tuning only.
 
 0.4 Before starting **every phase or run**, supply the current machine's correct `AGERE_SSD_ROOT`. The runner must print the resolved repo root and SSD root, validate that the SSD is mounted and contains the required input directories, and refuse to start if the variable is missing, stale, or invalid. Set model-hub/cache paths (including `HF_HOME`/`HF_HUB_CACHE`) beneath `$AGERE_SSD_ROOT/weights/` so large model downloads never default to the local disk. Never silently substitute a local path.
 
-0.5 **Stage datasets before evaluation or training.** On Windows, set `$env:AGERE_SSD_ROOT='H:\AGERE'` (or the current machine's actual mount), then run `scripts\download_project_datasets.ps1` and `scripts\prepare_project_datasets.py`. The downloader puts the pinned MortarBench snapshot and the Google FRAMES source TSV under `datasets/external/`; the preparation script writes Agere-KYC-Synth (400/100/100), Agere-Credit-Synth (200/50/75), the 600-example QLoRA train mixture, its 60-example dev set, and a deterministic 100-question FRAMES slice under `datasets/`. It writes dataset metadata and the held-out SHA-256 manifest under repository `manifests/`. No code, logs, manifests, or evaluation output is written to the SSD.
+0.5 **Stage datasets before evaluation or training.** On Windows, set `$env:AGERE_SSD_ROOT='H:\AGERE'` (or the current machine's actual mount), then run `scripts\download_project_datasets.ps1` and `scripts\prepare_project_datasets.py`. The downloader puts the pinned MortarBench snapshot and the Google FRAMES source TSV under `datasets/external/`; the preparation script writes Agere-KYC-Synth (400/100/100), Agere-Credit-Synth (200/50/75), the 600-example QLoRA train mixture, its 60-example dev set, and a deterministic 100-question FRAMES slice under `datasets/`. The existing Phase 0 dataset metadata and held-out SHA-256 manifest were written under repository `manifests/` and remain frozen there as input records.
 
 **Data-quality gate:** `agere-synth-v1` is a deterministic synthetic starter corpus generated from fabricated records, not a validated research benchmark. Before Phase 3/4, inspect and improve case diversity, labels, source evidence, financial edge cases, and KYC policy coverage; record the reviewed dataset version and freeze its tests before training. The 600 SFT rows are project-generated, not a publicly downloadable corpus. MortarBench is a secondary official benchmark; FRAMES is only the 100-question negative-control slice. The SBP/FATF policy corpus and synthetic bank SOP still need to be acquired/created and versioned before the retriever can be evaluated.
 
-0.6 Write manifests, logs, traces, metrics, checkpoints of evaluation outputs, and reports under the repository (`manifests/`, `runs/`, `experiments/`, or `results/`). For the 16 GB physical tier, set a nominal 12.8 GB aggregate process-tree RSS cap; lower it if the actual host's idle OS/background use plus a 1 GB safety margin requires less. On larger lab PCs, cap to the 16 GB tier's effective budget. A lab PC with more RAM does not get to use it.
+0.6 From Phase 2 onward, write manifests, logs, traces, metrics, evaluation outputs, and reports beneath `AGERE_SSD_ROOT`. For the 16 GB physical tier, set a nominal 12.8 GB aggregate process-tree RSS cap; lower it if the actual host's idle OS/background use plus a 1 GB safety margin requires less. On larger lab PCs, cap to the 16 GB tier's effective budget. A lab PC with more RAM does not get to use it.
 
 **Do not:** Download models. Write training code.
 
-**Done when:** A process exits with a clear error if `AGERE_SSD_ROOT` is missing or incorrect; it reports the resolved paths; a smoke run writes its log under the repo; and the effective RSS cap plus host-wide memory monitor preserve the OS/background reserve.
+**Done when:** A process exits with a clear error if `AGERE_SSD_ROOT` is missing or incorrect; it reports the resolved paths; subsequent smoke runs write logs on the SSD; and the effective RSS cap plus host-wide memory monitor preserve the OS/background reserve.
 
 ---
 
@@ -85,7 +88,7 @@ AGERE_SSD_ROOT/
 
 **Goal:** The 16 GB checkpoints are on the SSD, their hashes are recorded in the repository, and weights are not in git.
 
-**Status: Complete (2026-09-29).** Five pinned snapshots totaling about 37.3 GiB are stored under `H:\AGERE\weights\hf\`; all 49 model/tokenizer files passed SHA-256 verification against the repository manifests.
+**Status: Complete (2026-09-29).** Five pinned snapshots totaling about 37.3 GiB are stored under `H:\AGERE\weights\hf\`; all 49 model/tokenizer files passed SHA-256 verification against the repository manifests. The optional 7B and 32B source snapshots were staged on 2026-09-30 (35 files, 75.2 GiB) and recorded with SHA-256 in the same manifests; their Phase 8 conversion remains pending.
 
 **Steps**
 
@@ -115,12 +118,12 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 **Goal:** Runnable GGUF files for the untouched baseline. The single model is Q4_K_M. The team stays full precision.
 
-**Planning estimate for the current development laptop (2026-09-29):** Ryzen 5 8645HS (6 cores / 12 threads), 15.3 GiB physical RAM, RTX 4050 Laptop GPU with 6 GiB VRAM; H: has 110.1 GiB free. Use the CPU conversion/quantization path to match the locked CPU experiment; the GPU is not required for Phase 2. The official llama.cpp flow converts Hugging Face weights to GGUF, then quantizes the GGUF file.
+**Lab PC runbook:** [`PHASE_2_LAB_RUN.md`](./PHASE_2_LAB_RUN.md) gives the exact commands. The runner pins llama.cpp `v0.5.0`, checks the Phase 1 source hashes, converts with CPU tools, and puts every Phase 2 output and log on the mounted SSD. It prints the resolved SSD and repository paths on every invocation.
 
-- **SSD space:** Budget about **49 GB (45 GiB)** peak additional space: ~29.5 GB for temporary 14B F16 GGUF, ~10.3 GB for the three retained MAS F16 GGUFs, and ~9 GB for 14B Q4_K_M. The current H: free space is sufficient; keep at least 55 GiB free before starting. Delete the temporary 14B F16 GGUF only after Q4 output and its checksum verify.
-- **Local PC space:** Keep all source/build code, Python environment, logs, and smoke results on the PC/repository. The current D: checkout drive has 8.6 GiB free and C: has 1.6 GiB free, which is tight for build tools, Python packages, and Windows temporary files. Free at least 15 GiB on the chosen internal working drive; if Windows/Python caches use C:, free more space there or redirect those caches to D:. Keep package/build caches off H:.
-- **RAM:** A recent interactive-session reading was 3.9 GiB available. With 15.3 GiB physical RAM and the required 1 GiB safety margin, that live host state would allow only about a 2.9 GiB job cap and cannot smoke-load either arm. Close memory-heavy apps, record a fresh idle baseline, and recalculate the effective cap before the Phase 2 smoke tests. Never raise the cap to force a model to fit.
-- **Elapsed time:** Plan on **3–6 hours** on this CPU, including environment/build setup, conversion of the three smaller F16 GGUFs, 14B F16 conversion and Q4_K_M quantization, and smoke checks. Keep a **half day** free in case the 14B conversion/quantization is memory- or thermally limited. This is a planning estimate, not a benchmark from this host.
+- **SSD space:** Budget about **50 GiB** peak additional space: up to ~29.5 GiB for temporary 14B F16 GGUF, ~10.7 GiB for the three retained MAS F16 GGUFs, and ~9 GiB for 14B Q4_K_M. Keep at least **60 GiB free** before a fresh conversion, including safety room. The runner computes a smaller remaining requirement when resuming.
+- **Local PC space:** Keep the repository checkout, Python environment, llama.cpp source/build, and installed packages on the lab PC. Its memory and available local disk must be checked there; the development laptop's earlier measurements do not describe the lab PC.
+- **RAM:** Before each smoke arm, measure the lab PC's idle OS/background use. Cap the aggregate model process tree at the lower of 12.8 GB and the host's available memory minus a 1 GB safety reserve. Monitor host-wide available memory while the arm is loaded. Never raise the cap to force a model to fit.
+- **Elapsed time:** Conversion and quantization may take hours; the exact time depends on the lab PC CPU and SSD throughput. The per-step SSD logs and session log show progress and any failure.
 
 **Steps**
 
@@ -128,15 +131,15 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 2.2 Quantize **only** the 14B F16 file to **Q4_K_M**. Leave the 3B, 1.5B, and 0.5B team files at F16. Do not produce Q3, Q2, or AWQ for the headline.
 
-2.3 Save converted and quantized weight files under `AGERE_SSD_ROOT/weights/gguf/`. Name them `qwen2.5-14b-instruct-q4_k_m.gguf`, `qwen2.5-3b-instruct-f16.gguf`, `qwen2.5-1.5b-instruct-f16.gguf`, and `qwen2.5-0.5b-instruct-f16.gguf`. Hash each file into the repository's `manifests/weights.sha256`.
+2.3 Save converted and quantized weight files under `AGERE_SSD_ROOT/weights/gguf/`. Name them `qwen2.5-14b-instruct-q4_k_m.gguf`, `qwen2.5-3b-instruct-f16.gguf`, `qwen2.5-1.5b-instruct-f16.gguf`, and `qwen2.5-0.5b-instruct-f16.gguf`. Hash each file into `AGERE_SSD_ROOT/phase2/manifests/weights.sha256` and `gguf_artifacts.json`.
 
-2.4 Smoke-load the 14B Q4_K_M under the effective 16 GB-tier process cap (12.8 GB nominal maximum). Generate a few tokens. Record process-tree peak RSS, host-wide available memory, idle baseline, effective cap, and llama.cpp version in the repository's `runs/smoke_sas_16gb.json`.
+2.4 Smoke-load the 14B Q4_K_M under the effective 16 GB-tier process cap (12.8 GB nominal maximum). Generate a few tokens. Record process-tree peak RSS, host-wide available memory, idle baseline, effective cap, and llama.cpp version in `AGERE_SSD_ROOT/phase2/runs/smoke_sas_16gb.json`.
 
-2.5 Smoke-load the 3B, 1.5B, and 0.5B **together** (resident). Record the same memory fields in the repository's `runs/smoke_mas_16gb.json`. If the effective cap is exceeded, lower context or shrink the smallest worker first; do not raise the cap.
+2.5 Smoke-load the 3B, 1.5B, and 0.5B **together** (resident). Record the same memory fields in `AGERE_SSD_ROOT/phase2/runs/smoke_mas_16gb.json`. If the effective cap is exceeded, lower context or shrink the smallest worker first; do not raise the cap. Record the actual context so Phase 3 uses the same configuration.
 
 **Do not:** Fine-tune. Score a dataset. Turn the team into a fourth model.
 
-**Done when:** Both smoke JSON files exist in the repo, both process-tree peaks are within the effective cap with OS/background headroom intact, and the Q4 file on the SSD is the one that will be scored in Phase 3.
+**Done when:** Both SSD smoke JSON files report `passed` at the same context, both process-tree peaks are within the effective cap with OS/background headroom intact, all four final GGUF hashes are recorded on the SSD, and `AGERE_SSD_ROOT/phase2/phase2_summary.json` reports `complete`.
 
 ---
 
@@ -146,17 +149,17 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 **Steps**
 
-3.1 Write the test-set manifest (names and SHA-256) to the repository's `manifests/test.sha256` **before** any training and before this scoring run if the test files already exist. Dataset files remain on the SSD. Anything in that manifest is off limits here.
+3.1 Check the frozen test-set manifest (`manifests/test.sha256` from Phase 0); copy its names and SHA-256 values into the SSD run manifest before training or scoring. Dataset files remain on the SSD. Anything in that manifest is off limits here.
 
 3.2 Implement the four tools, same schemas for both arms: `document_extractor`, `policy_retriever`, `financial_calculator`, `citation_verifier`. Amounts come from the calculator. The citation tool is a string match.
 
 3.3 Implement the scorer: invention rate, mismatch recall, grounding accuracy, refusal correctness. Tag each failed case with one id from [`configs/locked/problems.yaml`](./configs/locked/problems.yaml).
 
-3.4 Run **untouched SAS**: 14B Q4_K_M, no adapter, 2,048 thinking tokens, effective 16 GB-tier process cap (12.8 GB nominal maximum), on the **dev** slices of Agere-KYC-Synth and Agere-Credit-Synth read from `AGERE_SSD_ROOT`. Seeds later; one seed is enough to freeze a floor. Save outputs under repository `runs/naive_sas/`.
+3.4 Run **untouched SAS**: 14B Q4_K_M, no adapter, 2,048 thinking tokens, effective 16 GB-tier process cap (12.8 GB nominal maximum), on the **dev** slices of Agere-KYC-Synth and Agere-Credit-Synth read from `AGERE_SSD_ROOT`. Seeds later; one seed is enough to freeze a floor. Save outputs under `AGERE_SSD_ROOT/runs/naive_sas/`.
 
-3.5 Run **untouched MAS**: 3B orchestrator/drafter, 1.5B extractor, 0.5B verifier, all F16, resident, same effective cap, cases, token cap, and tools as SAS. One forward pass per role. No debate and no LoRA. Read weights and cases from the validated SSD root; save outputs under repository `runs/naive_mas/`.
+3.5 Run **untouched MAS**: 3B orchestrator/drafter, 1.5B extractor, 0.5B verifier, all F16, resident, same effective cap, cases, token cap, and tools as SAS. One forward pass per role. No debate and no LoRA. Read weights and cases from the validated SSD root; save outputs under `AGERE_SSD_ROOT/runs/naive_mas/`.
 
-3.6 Write `runs/naive_floor.json` in the repository with both scores. Do not edit this file after it is written.
+3.6 Write `AGERE_SSD_ROOT/runs/naive_floor.json` with both scores. Do not edit this file after it is written.
 
 **Do not:** Call the test split. Start QLoRA. Add a verifier gate and then call the result “naive”.
 
@@ -174,15 +177,15 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 4.2 GPU: ≥24 GB VRAM for the 14B. If that GPU does not exist, fine-tune a **7B** stand-in and label every run `7b-stand-in`. The untouched 14B Q4 from Phase 3 still stays in the table.
 
-4.3 Merge the adapter into 16-bit weights. Save the merged and converted/quantized weight artifacts on the SSD under `weights/`; hash each artifact in the repository manifest. The merged 16-bit model is not what gets scored.
+4.3 Merge the adapter into 16-bit weights. Save the merged and converted/quantized weight artifacts on the SSD under `weights/`; hash each artifact in an SSD manifest. The merged 16-bit model is not what gets scored.
 
-4.4 Smoke-test process-tree RSS and host-wide available memory under the effective 16 GB-tier cap. Save both to the repo run log.
+4.4 Smoke-test process-tree RSS and host-wide available memory under the effective 16 GB-tier cap. Save both to the SSD run log.
 
-4.5 Score it on **dev**. Keep the adapter only if dev invention rate or mismatch recall improves and the other does not collapse. Otherwise discard it from the SSD and record that in the repository run log.
+4.5 Score it on **dev**. Keep the adapter only if dev invention rate or mismatch recall improves and the other does not collapse. Otherwise discard it from the SSD and record that in the SSD run log.
 
 **Do not:** Train on test. Compare against the team yet. Replace `naive_floor.json`.
 
-**Done when:** The evaluated file on the SSD is a hashed Q4_K_M within the effective 16 GB-tier process cap, OS/background headroom is intact, and the dev delta is written to repository `runs/sas_qlora_dev.json`.
+**Done when:** The evaluated file on the SSD is a hashed Q4_K_M within the effective 16 GB-tier process cap, OS/background headroom is intact, and the dev delta is written to `AGERE_SSD_ROOT/runs/sas_qlora_dev.json`.
 
 ---
 
@@ -206,7 +209,7 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 **Do not:** Quantize the team. Add a second 3B. Touch the test split.
 
-**Done when:** A dev run finishes resident within the effective 16 GB-tier cap, preserves OS/background headroom, writes one JSON line per stage (tokens, RSS, gap id) to the repository, and `runs/mas_hardened_dev.json` records the delta versus the naive MAS floor.
+**Done when:** A dev run finishes resident within the effective 16 GB-tier cap, preserves OS/background headroom, writes one JSON line per stage (tokens, RSS, gap id) to the SSD, and `AGERE_SSD_ROOT/runs/mas_hardened_dev.json` records the delta versus the naive MAS floor.
 
 ---
 
@@ -233,7 +236,7 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 **Do not:** Change a prompt because of a test result. Average in a run that broke the RAM cap or the token cap.
 
-**Done when:** Repository `runs/final/` has both arms, three seeds, and a short `results.md` that states the 16 GB pooled invention rate first. Inputs were read from the validated SSD path; outputs remain in the repo.
+**Done when:** `AGERE_SSD_ROOT/runs/final/` has both arms, three seeds, and a short `results.md` that states the 16 GB pooled invention rate first. Inputs and outputs use the validated SSD path.
 
 ---
 

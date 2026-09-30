@@ -18,6 +18,10 @@ EXPECTED_REPOSITORIES = {
     "Qwen/Qwen2.5-0.5B-Instruct",
     "BAAI/bge-small-en-v1.5",
 }
+OPTIONAL_TIER_REPOSITORIES = {
+    "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen/Qwen2.5-32B-Instruct",
+}
 
 
 def hash_file(path: Path) -> str:
@@ -44,8 +48,13 @@ def main() -> int:
     snapshot_data = json.loads(snapshots_manifest.read_text(encoding="utf-8"))
     artifacts = snapshot_data.get("artifacts", [])
     repositories = {artifact.get("repo_id") for artifact in artifacts}
-    if repositories != EXPECTED_REPOSITORIES:
-        raise SystemExit(f"ERROR: Expected five model snapshots; manifest contains {len(repositories)}.")
+    missing = EXPECTED_REPOSITORIES - repositories
+    unexpected = repositories - EXPECTED_REPOSITORIES - OPTIONAL_TIER_REPOSITORIES
+    if missing or unexpected:
+        raise SystemExit(
+            f"ERROR: Snapshot set differs from the locked models; "
+            f"missing={sorted(missing)}, unexpected={sorted(unexpected)}."
+        )
 
     manifest_rows: list[tuple[str, str, Path]] = []
     for line_number, raw_line in enumerate(weights_manifest.read_text(encoding="utf-8").splitlines(), 1):
