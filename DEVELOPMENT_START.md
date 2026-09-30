@@ -323,7 +323,7 @@ Primary judgement, 16 GB, resident, 2,048 thinking tokens, **hardened** systems:
 
 ## 9. What to build first
 
-The staged plan is [`ROADMAP.md`](./ROADMAP.md). Hand an agent one phase at a time. Before every phase/run, provide and validate `AGERE_SSD_ROOT`. Code and runtime builds remain on the computer; Phase 2 and later run products go on the SSD. The order is: SSD path/runtime check, download, convert/quantize and smoke all three tiers, score the untouched 16 GB models, fine-tune and quantize again, harden the team, final test, then the dev loop. Scored 8 GB and 32 GB comparisons come last; their GGUF preparation is completed during the lab PC Phase 2 visit.
+The staged plan is [`ROADMAP.md`](./ROADMAP.md). Hand an agent one phase at a time. Before every phase/run, provide and validate `AGERE_SSD_ROOT`. Code and runtime builds remain on the computer; Phase 2 and later run products go on the SSD. The order is: SSD path/runtime check, download, convert/quantize and smoke all three tiers, record provisional untouched dev floors for all three tiers, fine-tune and quantize again, harden the team, final test, then the dev loop. The held-out 8 GB and 32 GB comparisons come last; their GGUF preparation is completed during the lab PC Phase 2 visit. The 16 GB tier remains the primary research result.
 
 Cells A (SAS at F16) and D (quantized MAS) are optional and are not on this path.
 

@@ -8,7 +8,7 @@ Decisions (which model, which quant, which test set) stay in [`DEVELOPMENT_START
 
 **Storage rule from Phase 2 onward:** code, tools, Python environments, and runtime builds stay in the repository checkout on the laptop/PC/lab machine. The external SSD holds datasets, model artifacts, logs, manifests, evaluation outputs, and reports. The existing Phase 0/1 manifests in git remain as input records; new run products go to the SSD. Before every phase or run, set and validate the actual external-drive path in `AGERE_SSD_ROOT`; never assume a path or fall back to another drive.
 
-Start at **Phase 0**. Finish a phase before opening the next one. The **16 GB** tier is the primary research comparison. Phase 2 prepares and smoke checks all three tiers while the lab PC and SSD are together; scored 8 GB and 32 GB comparisons wait until Phase 8.
+Start at **Phase 0**. Finish a phase before opening the next one. The **16 GB** tier is the primary research comparison. Phase 2 prepares and smoke checks all three tiers; Phase 3 records untouched dev floors for all three tiers on the lab PC. The held-out 8 GB and 32 GB comparisons remain in Phase 8 after the 16 GB system is frozen.
 
 ## How to hand a phase to an agent
 
@@ -23,7 +23,7 @@ Paste this, with the phase number filled in:
 | **0** | Validate SSD path, repository checkout, llama.cpp, 16 GB physical tier / 12.8 GB nominal job cap | Historical manifests in repo; datasets/weights on SSD |
 | **1** | Download the 16 GB models | External SSD |
 | **2** | Convert and smoke all three tiers' GGUF files | External SSD |
-| **3** | Score the **untouched** single model, then the **untouched** team | Dev cases only |
+| **3** | Score the **untouched** single model and team at all three tiers | Dev cases only |
 | **4** | Fine-tune the single model, merge, quantize **again** | Code on host; adapters, weights, logs, results on SSD |
 | **5** | Build the real multi-agent team (JSON, verifier, budget) | Code |
 | **6** | Final evaluation, once | Test cases |
@@ -74,7 +74,7 @@ AGERE_SSD_ROOT/
 
 0.5 **Stage datasets before evaluation or training.** On Windows, set `$env:AGERE_SSD_ROOT='H:\AGERE'` (or the current machine's actual mount), then run `scripts\download_project_datasets.ps1` and `scripts\prepare_project_datasets.py`. The downloader puts the pinned MortarBench snapshot and the Google FRAMES source TSV under `datasets/external/`; the preparation script writes Agere-KYC-Synth (400/100/100), Agere-Credit-Synth (200/50/75), the 600-example QLoRA train mixture, its 60-example dev set, and a deterministic 100-question FRAMES slice under `datasets/`. The existing Phase 0 dataset metadata and held-out SHA-256 manifest were written under repository `manifests/` and remain frozen there as input records.
 
-**Data-quality gate:** `agere-synth-v1` is a deterministic synthetic starter corpus generated from fabricated records, not a validated research benchmark. Before Phase 3/4, inspect and improve case diversity, labels, source evidence, financial edge cases, and KYC policy coverage; record the reviewed dataset version and freeze its tests before training. The 600 SFT rows are project-generated, not a publicly downloadable corpus. MortarBench is a secondary official benchmark; FRAMES is only the 100-question negative-control slice. The SBP/FATF policy corpus and synthetic bank SOP still need to be acquired/created and versioned before the retriever can be evaluated.
+**Data-quality gate:** `agere-synth-v1` is a deterministic synthetic starter corpus generated from fabricated records, not a validated research benchmark. Phase 3 may record a clearly labelled **provisional dev floor** on it, but before paper-grade Phase 3 claims or Phase 4 training, inspect and improve case diversity, labels, source evidence, financial edge cases, and KYC policy coverage; record the reviewed dataset version and freeze its tests. The 600 SFT rows are project-generated, not a publicly downloadable corpus. MortarBench is a secondary official benchmark; FRAMES is only the 100-question negative-control slice. The SBP/FATF policy corpus and synthetic bank SOP still need to be acquired/created and versioned before the retriever can be evaluated.
 
 0.6 From Phase 2 onward, write manifests, logs, traces, metrics, evaluation outputs, and reports beneath `AGERE_SSD_ROOT`. For the 16 GB physical tier, set a nominal 12.8 GB aggregate process-tree RSS cap; lower it if the actual host's idle OS/background use plus a 1 GB safety margin requires less. On larger lab PCs, cap to the 16 GB tier's effective budget. A lab PC with more RAM does not get to use it.
 
@@ -106,7 +106,7 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 1.2 Write a SHA-256 line for each snapshot to the repository's `manifests/weights.sha256` before any config points at the files. Include the SSD-relative artifact path and checksum.
 
-1.3 The 7B and 32B checkpoints are required for the 8 GB and 32 GB tiers. Stage their source snapshots by adding `--include-tier-checkpoints` to the download command. Phase 2 converts, quantizes, and smoke checks all three tiers; Phase 8 runs the scored 8 GB and 32 GB comparisons. The 0.5B checkpoint is shared across all three teams.
+1.3 The 7B and 32B checkpoints are required for the 8 GB and 32 GB tiers. Stage their source snapshots by adding `--include-tier-checkpoints` to the download command. Phase 2 converts, quantizes, and smoke checks all three tiers; Phase 3 runs their provisional dev floors; Phase 8 runs the later held-out 8 GB and 32 GB comparisons. The 0.5B checkpoint is shared across all three teams.
 
 **Do not:** Quantize yet. Download Llama. Commit weights.
 
@@ -147,7 +147,9 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 ## Phase 3 — Score the untouched models
 
-**Goal:** A frozen floor for the off-the-shelf Q4 model and for a simple team, on **dev** only.
+**Goal:** A separate untouched Q4 SAS versus simple resident F16 MAS floor for **each** 8 GB, 16 GB, and 32 GB tier, on **dev** only. The 16 GB tier remains the preregistered primary comparison.
+
+**Lab PC runbook:** [`PHASE_3_LAB_RUN.md`](./PHASE_3_LAB_RUN.md) gives the all-tier CLI. The runner verifies the Phase 2 GGUF hashes and smoke contexts, checks the committed dev dataset hashes, copies frozen test filenames and hashes into the SSD run manifest without reading those test files, and writes every trace, log, summary, and model-memory record to the SSD. It resumes completed cases.
 
 **Steps**
 
@@ -157,15 +159,17 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 3.3 Implement the scorer: invention rate, mismatch recall, grounding accuracy, refusal correctness. Tag each failed case with one id from [`configs/locked/problems.yaml`](./configs/locked/problems.yaml).
 
-3.4 Run **untouched SAS**: 14B Q4_K_M, no adapter, 2,048 thinking tokens, effective 16 GB-tier process cap (12.8 GB nominal maximum), on the **dev** slices of Agere-KYC-Synth and Agere-Credit-Synth read from `AGERE_SSD_ROOT`. Seeds later; one seed is enough to freeze a floor. Save outputs under `AGERE_SSD_ROOT/runs/naive_sas/`.
+3.4 Run **untouched SAS** in each tier: 7B, 14B, or 32B Q4_K_M, no adapter, 2,048 generated-token ceiling, the same tool packet, and the tier's host-adjusted process cap. Score the **dev** slices of Agere-KYC-Synth and Agere-Credit-Synth read from `AGERE_SSD_ROOT`. Save outputs under `AGERE_SSD_ROOT/runs/phase3/<run-id>/tier<tier>/naive_sas/`.
 
-3.5 Run **untouched MAS**: 3B orchestrator/drafter, 1.5B extractor, 0.5B verifier, all F16, resident, same effective cap, cases, token cap, and tools as SAS. One forward pass per role. No debate and no LoRA. Read weights and cases from the validated SSD root; save outputs under `AGERE_SSD_ROOT/runs/naive_mas/`.
+3.5 Run each tier's three locked **untouched MAS** instances, all F16 and resident, under the same effective cap, cases, 2,048-token ceiling, and deterministic tools as SAS. One forward pass per extractor, drafter, and verifier; no debate, verifier gate, or LoRA. Save outputs under `AGERE_SSD_ROOT/runs/phase3/<run-id>/tier<tier>/naive_mas/`.
 
-3.6 Write `AGERE_SSD_ROOT/runs/naive_floor.json` with both scores. Do not edit this file after it is written.
+3.6 Write one immutable `AGERE_SSD_ROOT/runs/phase3/<run-id>/tier<tier>/naive_floor.json` per tier only when both arms finish all 150 dev cases within the cap. Do not edit a floor after it is written. An all-tier summary lives at `AGERE_SSD_ROOT/runs/phase3/<run-id>/all_tiers_summary.json`.
+
+The staged synthetic corpus has not passed the data-quality gate in Phase 0, and the versioned policy index is not staged. The Phase 3 runner marks these floors **provisional**, reports policy retrieval as `UNAVAILABLE`, and labels its invention metric as structured-claim only. Do not present this output as a complete policy-grounded paper result until those inputs and a human review of free-text drafts are added.
 
 **Do not:** Call the test split. Start QLoRA. Add a verifier gate and then call the result “naive”.
 
-**Done when:** `naive_floor.json` exists for both arms, every run log has thinking tokens and peak RSS, and no test-manifest hash appears in the inputs.
+**Done when:** All three tier floors contain both arms, every run log has generated tokens and peak RSS, all caps and OS reserves were preserved, and no test file was opened. The scientific Phase 3 gate additionally requires the dataset-quality and policy-corpus limitations above to be resolved or explicitly reported.
 
 ---
 
@@ -268,7 +272,7 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 ## Phase 8 — 8 GB and 32 GB
 
-**Goal:** See whether the 16 GB result moves when the machine changes. Only after Phase 6.
+**Goal:** Run the later held-out and hardened 8 GB and 32 GB comparisons after Phase 6, using the earlier Phase 3 dev floors as reference.
 
 **Steps**
 
@@ -276,7 +280,7 @@ To stage the 8 GB and 32 GB tier sources early as well, run `python scripts/down
 
 8.2 The nominal process caps are **6.4 GB on 8 GB physical RAM** and **25.6 GB on 32 GB physical RAM**, reduced further if measured idle host use plus 1 GB safety margin requires it. 8 GB SAS is 7B Q4_K_M; the team is 1.5B + 0.5B + 0.5B F16 (5.1 GB of weights). 32 GB SAS is 32B Q4_K_M; the team is 7B + 3B + 0.5B F16 (22.2 GB of weights). Use the contexts established by the Phase 2 smoke runs; lower context or shrink the smallest model if the actual scored workload cannot fit.
 
-8.3 Cap the aggregate process tree at the effective budget, monitor host-wide available memory, and preserve OS/background reserve. Then repeat Phase 3 and, if a GPU exists for it, the matching fine-tune. 32B QLoRA is optional (needs ≥48 GB VRAM). The required 32 GB result is the Q4 base plus the same prompts, schemas, and tools as 16 GB.
+8.3 Cap the aggregate process tree at the effective budget, monitor host-wide available memory, and preserve OS/background reserve. Review the existing Phase 3 dev floor, then score the frozen hardened systems on the held-out tier comparison. If a GPU exists, a matching fine-tune is optional; 32B QLoRA needs ≥48 GB VRAM. The required 32 GB result is the Q4 base plus the same prompts, schemas, and tools as 16 GB.
 
 8.4 Report these tables separately from the 16 GB headline.
 
