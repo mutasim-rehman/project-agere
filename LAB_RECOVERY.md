@@ -25,12 +25,20 @@ Inspected on the development PC with the SSD at `H:\AGERE`. The lab logs used
   reliable port with a known-good cable before resuming.
 
 The user observed a black screen followed by the account chooser, with all
-applications closed after login. This is consistent with an ended desktop
-session or a reboot. The saved logs contain no terminating exception, exit
-code, OOM event, or kernel journal. **Root cause is unresolved.** Memory/OOM,
-desktop/NVIDIA failure, and system/storage problems remain hypotheses. A
-small model can still coincide with system memory pressure, but the repeated
-1.5B stop is not evidence that the 32B model exhausted RAM.
+applications closed after login. The later user journal export
+`user-session-crash-window.log` records `systemd-oomd` killing processes from
+the terminal's VTE scope at both stop times. The scope reached a 26.6 GiB
+memory peak at 16:35:43 PKT on the first run and 26.1 GiB at 17:40:29 PKT on
+the second; both report 0 bytes of swap peak. At the same timestamps,
+`systemd-oomd` killed GNOME Shell and other desktop services, and GNOME's user
+session shut down. This matches the black screen and account chooser. The
+repeatable cause is severe memory pressure during the terminal workload,
+followed by `systemd-oomd` terminating the desktop session. The user journal
+does not identify the exact child process or show the kernel's global memory
+state, so it cannot establish whether the converter alone, other concurrent
+programs, or their combined memory use triggered the pressure. The repeated
+1.5B stop is not evidence that the 32B model exhausted RAM; 32B had only been
+source-verified, not converted.
 
 ## Recovery on the actual lab PC
 
@@ -64,6 +72,15 @@ if the lab permits it (this is a persistent user setting, reversible with
 ```bash
 loginctl enable-linger "$USER"
 ```
+
+Do not relaunch Phase 2 directly in a GNOME terminal. Run it through
+`scripts/lab_run.py`, which launches a detached user service with an aggregate
+memory ceiling, host-RAM reserve, and telemetry. This contains a memory-limit
+failure to the experiment job instead of allowing terminal pressure to take
+down the desktop. Use the current repository version containing that launcher
+and wait for its recorded status. If the bounded retry is stopped by its cap,
+keep the failed output and telemetry for review; do not raise the cap or
+disable `systemd-oomd` on this 32 GB host.
 
 First retry only the interrupted model:
 
