@@ -1,6 +1,7 @@
 # Project Agere Phase 1 Literature Review and Research Specification
 
 **Project title:** *Spend It Together or Spend It Big? Multi-Agent Full-Precision Teams vs. Quantized Monoliths on Analyst Workstation RAM for Regulated Finance*  
+**Project members:** Mutasim ur Rehman and Ahmad Raza  
 **Document:** Initial literature review and research specification  
 **Date:** October 2026  
 **Status:** Working draft for supervisor review
