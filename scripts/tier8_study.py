@@ -185,7 +185,17 @@ class Engine:
                 current = rss_bytes()
                 self.peak = max(self.peak, current)
                 if current > self.cap:
-                    print(f"Stopping load: RSS {current / phase2.GB:.2f} GB exceeded {self.cap / phase2.GB:.2f} GB",
+                    breach = {"rss_bytes": current, "cap_bytes": self.cap,
+                              "rss_gb": round(current / phase2.GB, 3),
+                              "cap_gb": round(self.cap / phase2.GB, 3),
+                              "role": role}
+                    try:
+                        breach_path = self.paths.ssd / "runs" / "tier8" / STUDY / "cap_breach.json"
+                        breach_path.parent.mkdir(parents=True, exist_ok=True)
+                        breach_path.write_text(json.dumps(breach) + "\n", encoding="utf-8")
+                    except OSError:
+                        pass
+                    print(f"Stopping load: RSS {current / phase2.GB:.3f} GB exceeded {self.cap / phase2.GB:.3f} GB",
                           flush=True)
                     os._exit(2)
 
@@ -205,9 +215,12 @@ class Engine:
     def load(self, specs: list[tuple[str, str, str]], *, resident: bool) -> str:
         self.close()
         weight_bytes = sum(self.paths.output(size, kind).stat().st_size for _, size, kind in specs)
-        if resident and weight_bytes > int(self.cap * 0.90):
-            print(f"Combined weights {weight_bytes / phase2.GB:.2f} GB do not fit the "
-                  f"{self.cap / phase2.GB:.2f} GB cap together. Using sequential load/unload.", flush=True)
+        # The 7B Q4 file is 4.68 GB and its earlier load RSS was 6.40 GB.
+        overhead = int(1.72 * phase2.GB)
+        if resident and len(specs) > 1 and weight_bytes + overhead > self.cap:
+            print(f"Combined weights {weight_bytes / phase2.GB:.2f} GB plus the measured "
+                  f"runtime overhead do not fit the {self.cap / phase2.GB:.2f} GB cap together. "
+                  "Using sequential load/unload.", flush=True)
             resident = False
         if resident:
             try:
@@ -216,6 +229,8 @@ class Engine:
                 self.mode = "resident"
                 return self.mode
             except MemoryError:
+                if len(specs) == 1:
+                    raise
                 print("Resident load crossed the cap. Switching this arm to sequential load/unload.", flush=True)
                 self.close()
                 self.peak = rss_bytes()

@@ -26,7 +26,9 @@ The cap is `min(6.4 GB, available RAM minus 1 GB safety)`. It is not raised to f
 
 On 18 October 2026 the host had 16.39 GB total and about 6.7 GB available. The effective cap was about 5.68 GB. Loading `qwen2.5-7b-instruct-q4_k_m.gguf` crossed that cap in about 20 seconds. The runner stopped the process. No dev case was scored. ChatGPT, Spotify, and Cursor were left running.
 
-A later measurement the same night showed 6.8 GB available, so the cap was 5.8 GB. One retry was run. At 6.85 GB available the cap was 5.85 GB. The 7B Q4 load reached 6.40 GB RSS and the runner stopped it. No dev case was scored. Inference attempts stop here. They resume only when available memory is high enough for a 6.40 GB load to sit inside the cap, which means the cap must be at least 6.40 GB. The nominal ceiling is 6.40 GB, so that requires available memory of at least 7.40 GB before the process starts. ChatGPT, Spotify, and Cursor were not closed.
+A later measurement the same night showed 6.8 GB available, so the cap was 5.8 GB. One retry was run. At 6.85 GB available the cap was 5.85 GB. The 7B Q4 load reached 6.40 GB RSS and the runner stopped it. No dev case was scored.
+
+The host was then measured at 7.60 GB available, so the cap was the full nominal ceiling of 6.40 GB. `qwen2.5-7b-instruct-q4_k_m.gguf` was loaded once at context 4096. The resident constructor crossed the cap. The runner then loaded that same single file once more under the sequential path, which is the same load for a one-model arm. That second constructor returned at **6.59 GB** RSS. The process stopped. No further load was started. No dev case was scored. ChatGPT, Spotify, and Cursor were not closed. The cap was not raised.
 
 ## Packages
 
@@ -40,6 +42,8 @@ QLoRA was not started. The order runs training only after the naive dev floor ex
 ## Result
 
 There is no invention rate and no mismatch recall. The untouched comparison, the fine-tune, the hardened team, and the held-out test did not run.
+
+The load that blocked the study peaked at **6.59 GB** RSS against the 6.40 GB cap (runner print, two decimal places). That is the stopping measurement. It is not a scored run.
 
 ## Policy corpus
 
@@ -55,7 +59,7 @@ The torch wheel is `H:\AGERE\tmp\torch-2.6.0+cu124-cp312-cp312-win_amd64.whl` (d
 
 ## Sequential team
 
-If resident MAS weights do not fit under 90% of the cap, the reported 8 GB team is sequential. That result is not described as resident.
+If more than one model is resident and the combined weight files plus the measured 1.72 GB runtime overhead exceed the cap, the team is sequential load/unload and is labeled as such. That path was not reached. The single 7B Q4 model itself exceeded 6.40 GB.
 
 ## Runs that break the cap
 
