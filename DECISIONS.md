@@ -26,7 +26,20 @@ The cap is `min(6.4 GB, available RAM minus 1 GB safety)`. It is not raised to f
 
 On 18 October 2026 the host had 16.39 GB total and about 6.7 GB available. The effective cap was about 5.68 GB. Loading `qwen2.5-7b-instruct-q4_k_m.gguf` crossed that cap in about 20 seconds. The runner stopped the process. No dev case was scored. ChatGPT, Spotify, and Cursor were left running.
 
-A later measurement the same night showed 6.8 GB available, so the cap was 5.8 GB. That is only 0.12 GB more than the failed attempt. One retry is allowed. If that load still exceeds the cap, inference attempts stop rather than looping.
+A later measurement the same night showed 6.8 GB available, so the cap was 5.8 GB. One retry was run. At 6.85 GB available the cap was 5.85 GB. The 7B Q4 load reached 6.40 GB RSS and the runner stopped it. No dev case was scored. Inference attempts stop here. They resume only when available memory is high enough for a 6.40 GB load to sit inside the cap, which means the cap must be at least 6.40 GB. The nominal ceiling is 6.40 GB, so that requires available memory of at least 7.40 GB before the process starts. ChatGPT, Spotify, and Cursor were not closed.
+
+## Packages
+
+Installed into `D:\project-agere\.venv` on 18 October 2026:
+
+- `torch==2.6.0+cu124` from `H:\AGERE\tmp\torch-2.6.0+cu124-cp312-cp312-win_amd64.whl`. CUDA is available on the RTX 4050.
+- `transformers==5.20.1`, `peft==0.21.2`, `accelerate==1.15.0`, `bitsandbytes==0.50.2`.
+
+QLoRA was not started. The order runs training only after the naive dev floor exists, and that floor does not exist.
+
+## Result
+
+There is no invention rate and no mismatch recall. The untouched comparison, the fine-tune, the hardened team, and the held-out test did not run.
 
 ## Policy corpus
 
