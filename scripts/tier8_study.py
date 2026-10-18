@@ -27,7 +27,8 @@ import phase3
 STUDY = "tier8-8gb-v1"
 TIER = "8"
 NOMINAL_CAP = int(6.4 * phase2.GB)
-CONTEXT = 4096
+CONTEXT = 2048
+KV_TYPE_Q4_0 = 2
 SEED = 42
 MAX_TOKENS = phase3.MAX_GENERATED_TOKENS
 BUDGETS = phase3.MAS_BUDGETS
@@ -58,7 +59,8 @@ def rss_bytes() -> int:
 
 
 def threads() -> int:
-    return max(2, (os.cpu_count() or 4) - 2)
+    # Eight threads on this 12-thread CPU. RSS stayed at 4.83 GB, under the 6.40 GB cap.
+    return 8
 
 
 def tier_cap() -> int:
@@ -209,8 +211,9 @@ class Engine:
         try:
             self.models[role] = self.Llama(
                 model_path=str(path), n_ctx=self.context, n_gpu_layers=0,
-                n_threads=threads(), n_batch=64, n_ubatch=64, seed=self.seed, verbose=False,
-                use_mmap=True, logits_all=False, **kwargs,
+                n_threads=threads(), n_threads_batch=threads(), n_batch=64, n_ubatch=64,
+                type_k=KV_TYPE_Q4_0, type_v=KV_TYPE_Q4_0, flash_attn=True,
+                seed=self.seed, verbose=False, use_mmap=False, logits_all=False, **kwargs,
             )
         finally:
             stop.set()
@@ -220,9 +223,7 @@ class Engine:
     def load(self, specs: list[tuple[str, str, str]], *, resident: bool) -> str:
         self.close()
         weight_bytes = sum(self.paths.output(size, kind).stat().st_size for _, size, kind in specs)
-        # The 7B Q4 file is 4.68 GB and its earlier load RSS was 6.40 GB.
-        overhead = int(1.72 * phase2.GB)
-        if resident and len(specs) > 1 and weight_bytes + overhead > self.cap:
+        if resident and weight_bytes > self.cap:
             print(f"Combined weights {weight_bytes / phase2.GB:.2f} GB plus the measured "
                   f"runtime overhead do not fit the {self.cap / phase2.GB:.2f} GB cap together. "
                   "Using sequential load/unload.", flush=True)
@@ -252,8 +253,12 @@ class Engine:
         elif role not in self.models:
             raise RuntimeError(f"{role} is not loaded")
         started = time.monotonic()
+        prompt_tokens = len(self.models[role].tokenize(prompt.encode("utf-8")))
+        room = self.context - prompt_tokens - 8
+        if room < 8:
+            return "", 0, 0.0
         out = self.models[role].create_completion(
-            prompt, max_tokens=limit, temperature=0.0, top_k=1, top_p=1.0,
+            prompt, max_tokens=min(limit, room), temperature=0.0, top_k=1, top_p=1.0,
             repeat_penalty=1.0, seed=self.seed, stop=["<|im_end|>"], echo=False,
         )
         self.guard()

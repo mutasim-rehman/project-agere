@@ -57,7 +57,9 @@ The 7B Q4 load does not fit the 6.40 GB cap at any locked context. Peaks, one lo
 
 The cap is 6,400,000,000 bytes. These peaks are not scored runs.
 
-One later load kept context 1024 and used `n_batch=64` and `n_ubatch=64`. Process RSS was **6,406,934,528 bytes (6.407 GB)**. That is still over the cap. It is not a scored run. No further load was started.
+One later load kept context 1024 and used `n_batch=64` and `n_ubatch=64`. Process RSS was **6,406,934,528 bytes (6.407 GB)**. That is still over the cap. It is not a scored run.
+
+A fit measurement on the same night found the overrun was Windows counting a memory-mapped weight file on top of a private allocation. With `use_mmap=False`, context 2048, 4 threads, Q4_0 KV cache, and flash attention, a 1,400-token prompt plus generation stayed at **4.83 GB** RSS. The same settings loaded the three team models together at **5.31 GB** RSS. Both are under the 6.40 GB cap. The cap was not raised. Weights are unchanged: SAS remains Q4_K_M and the team remains F16. KV cache is Q4_0 on both arms so the cache dtype is not an extra advantage for one arm. Prompts are about 1,600 tokens, so context 2048 leaves a few hundred tokens of generation room and `max_tokens` is clamped to that room.
 
 ## Policy corpus
 
