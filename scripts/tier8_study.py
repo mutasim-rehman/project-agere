@@ -209,7 +209,7 @@ class Engine:
         try:
             self.models[role] = self.Llama(
                 model_path=str(path), n_ctx=self.context, n_gpu_layers=0,
-                n_threads=threads(), n_batch=256, seed=self.seed, verbose=False,
+                n_threads=threads(), n_batch=64, n_ubatch=64, seed=self.seed, verbose=False,
                 use_mmap=True, logits_all=False, **kwargs,
             )
         finally:

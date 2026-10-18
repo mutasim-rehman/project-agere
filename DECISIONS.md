@@ -32,6 +32,8 @@ The host was then measured at 7.60 GB available, so the cap was the full nominal
 
 The locked protocol lowers context when the scored workload does not fit. Both arms would have used the same context. With 7.72 GB available the cap stayed 6.40 GB. One load at context **2048** returned at **6,466,244,608 bytes (6.466 GB)**. With 7.85 GB available the cap stayed 6.40 GB. One load at context **1024** returned at **6,407,192,576 bytes (6.407 GB)**. Both are above the 6,400,000,000 byte cap. No lower context was tried. No dev case was scored.
 
+The 1024-token load was 7,192,576 bytes over the cap. That is a compute-buffer fit adjustment, not a cap change. `Llama()` now uses `n_batch=64` and `n_ubatch=64` instead of `n_batch=256`. Context stays 1024. Contexts 4096 and 2048 were not retried. The cap stays 6,400,000,000 bytes. With 7.67 GB available, that one load returned at **6,406,934,528 bytes (6.407 GB)**, still 6,934,528 bytes over the cap. It was not loaded again.
+
 ## Packages
 
 Installed into `D:\project-agere\.venv` on 18 October 2026:
@@ -54,6 +56,8 @@ The 7B Q4 load does not fit the 6.40 GB cap at any locked context. Peaks, one lo
 | 1024 | 6,407,192,576 bytes (6.407 GB) |
 
 The cap is 6,400,000,000 bytes. These peaks are not scored runs.
+
+One later load kept context 1024 and used `n_batch=64` and `n_ubatch=64`. Process RSS was **6,406,934,528 bytes (6.407 GB)**. That is still over the cap. It is not a scored run. No further load was started.
 
 ## Policy corpus
 
