@@ -155,11 +155,25 @@ class Engine:
     def note(self) -> None:
         self.peak = max(self.peak, rss_bytes())
 
+    def _record_breach(self, current: int, role: str) -> None:
+        breach = {"rss_bytes": current, "cap_bytes": self.cap,
+                  "rss_gb": round(current / phase2.GB, 3),
+                  "cap_gb": round(self.cap / phase2.GB, 3),
+                  "context": self.context, "role": role}
+        try:
+            breach_path = self.paths.ssd / "runs" / "tier8" / STUDY / "cap_breach.json"
+            breach_path.parent.mkdir(parents=True, exist_ok=True)
+            breach_path.write_text(json.dumps(breach) + "\n", encoding="utf-8")
+        except OSError:
+            pass
+
     def guard(self) -> None:
         current = rss_bytes()
         self.peak = max(self.peak, current)
         if current > self.cap:
-            raise MemoryError(f"Process RSS {current / phase2.GB:.2f} GB exceeded the {self.cap / phase2.GB:.2f} GB cap")
+            self._record_breach(current, "guard")
+            raise MemoryError(
+                f"Process RSS {current} bytes ({current / phase2.GB:.3f} GB) exceeded the {self.cap / phase2.GB:.3f} GB cap")
 
     def close(self) -> None:
         for model in self.models.values():
@@ -185,17 +199,8 @@ class Engine:
                 current = rss_bytes()
                 self.peak = max(self.peak, current)
                 if current > self.cap:
-                    breach = {"rss_bytes": current, "cap_bytes": self.cap,
-                              "rss_gb": round(current / phase2.GB, 3),
-                              "cap_gb": round(self.cap / phase2.GB, 3),
-                              "role": role}
-                    try:
-                        breach_path = self.paths.ssd / "runs" / "tier8" / STUDY / "cap_breach.json"
-                        breach_path.parent.mkdir(parents=True, exist_ok=True)
-                        breach_path.write_text(json.dumps(breach) + "\n", encoding="utf-8")
-                    except OSError:
-                        pass
-                    print(f"Stopping load: RSS {current / phase2.GB:.3f} GB exceeded {self.cap / phase2.GB:.3f} GB",
+                    self._record_breach(current, role)
+                    print(f"Stopping load: RSS {current} bytes ({current / phase2.GB:.3f} GB) exceeded {self.cap / phase2.GB:.3f} GB",
                           flush=True)
                     os._exit(2)
 
@@ -210,7 +215,7 @@ class Engine:
         finally:
             stop.set()
         self.guard()
-        print(f"Loaded {role}; RSS {rss_bytes() / phase2.GB:.2f} GB", flush=True)
+        print(f"Loaded {role}; RSS {rss_bytes()} bytes ({rss_bytes() / phase2.GB:.3f} GB)", flush=True)
 
     def load(self, specs: list[tuple[str, str, str]], *, resident: bool) -> str:
         self.close()

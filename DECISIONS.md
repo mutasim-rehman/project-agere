@@ -28,7 +28,9 @@ On 18 October 2026 the host had 16.39 GB total and about 6.7 GB available. The e
 
 A later measurement the same night showed 6.8 GB available, so the cap was 5.8 GB. One retry was run. At 6.85 GB available the cap was 5.85 GB. The 7B Q4 load reached 6.40 GB RSS and the runner stopped it. No dev case was scored.
 
-The host was then measured at 7.60 GB available, so the cap was the full nominal ceiling of 6.40 GB. `qwen2.5-7b-instruct-q4_k_m.gguf` was loaded once at context 4096. The resident constructor crossed the cap. The runner then loaded that same single file once more under the sequential path, which is the same load for a one-model arm. That second constructor returned at **6.59 GB** RSS. The process stopped. No further load was started. No dev case was scored. ChatGPT, Spotify, and Cursor were not closed. The cap was not raised.
+The host was then measured at 7.60 GB available, so the cap was the full nominal ceiling of 6.40 GB. `qwen2.5-7b-instruct-q4_k_m.gguf` was loaded once at context 4096. The resident constructor crossed the cap. The runner then loaded that same single file once more under the sequential path, which is the same load for a one-model arm. That second constructor returned at **6.59 GB** RSS. The process stopped. Context 4096 was not loaded again. ChatGPT, Spotify, and Cursor were not closed. The cap was not raised.
+
+The locked protocol lowers context when the scored workload does not fit. Both arms would have used the same context. With 7.72 GB available the cap stayed 6.40 GB. One load at context **2048** returned at **6,466,244,608 bytes (6.466 GB)**. With 7.85 GB available the cap stayed 6.40 GB. One load at context **1024** returned at **6,407,192,576 bytes (6.407 GB)**. Both are above the 6,400,000,000 byte cap. No lower context was tried. No dev case was scored.
 
 ## Packages
 
@@ -43,7 +45,15 @@ QLoRA was not started. The order runs training only after the naive dev floor ex
 
 There is no invention rate and no mismatch recall. The untouched comparison, the fine-tune, the hardened team, and the held-out test did not run.
 
-The load that blocked the study peaked at **6.59 GB** RSS against the 6.40 GB cap (runner print, two decimal places). That is the stopping measurement. It is not a scored run.
+The 7B Q4 load does not fit the 6.40 GB cap at any locked context. Peaks, one load each:
+
+| Context | Process RSS |
+| --- | --- |
+| 4096 | 6.59 GB (runner print, two decimal places) |
+| 2048 | 6,466,244,608 bytes (6.466 GB) |
+| 1024 | 6,407,192,576 bytes (6.407 GB) |
+
+The cap is 6,400,000,000 bytes. These peaks are not scored runs.
 
 ## Policy corpus
 
