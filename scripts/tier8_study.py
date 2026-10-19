@@ -28,7 +28,6 @@ STUDY = "tier8-8gb-v1"
 TIER = "8"
 NOMINAL_CAP = int(6.4 * phase2.GB)
 CONTEXT = 2048
-KV_TYPE_Q4_0 = 2
 SEED = 42
 MAX_TOKENS = phase3.MAX_GENERATED_TOKENS
 BUDGETS = phase3.MAS_BUDGETS
@@ -212,7 +211,6 @@ class Engine:
             self.models[role] = self.Llama(
                 model_path=str(path), n_ctx=self.context, n_gpu_layers=0,
                 n_threads=threads(), n_threads_batch=threads(), n_batch=64, n_ubatch=64,
-                type_k=KV_TYPE_Q4_0, type_v=KV_TYPE_Q4_0, flash_attn=True,
                 seed=self.seed, verbose=False, use_mmap=False, logits_all=False, **kwargs,
             )
         finally:
