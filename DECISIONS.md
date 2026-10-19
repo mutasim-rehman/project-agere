@@ -58,6 +58,8 @@ Invention is among complete claim sets. The team had 93 complete sets. Failure t
 
 The naive floor above is the untouched comparison. The fine-tune, the hardened team, and the held-out test follow it.
 
+The first QLoRA attempt loaded the 7B on the RTX 4050 and then failed before the first step: installed `transformers` 5.20 takes the 3% warmup as `warmup_steps=0.03`, not `warmup_ratio`. The locked ratio is unchanged. The retry uses that argument.
+
 The 7B Q4 load does not fit the 6.40 GB cap at any locked context. Peaks, one load each:
 
 | Context | Process RSS |

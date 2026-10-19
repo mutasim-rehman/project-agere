@@ -106,7 +106,7 @@ def main() -> int:
     args = TrainingArguments(
         output_dir=str(OUT / "trainer"), per_device_train_batch_size=1,
         gradient_accumulation_steps=16, learning_rate=2e-4, num_train_epochs=2,
-        warmup_ratio=0.03, lr_scheduler_type="cosine", fp16=True, logging_steps=10,
+        warmup_steps=0.03, lr_scheduler_type="cosine", fp16=True, logging_steps=10,
         save_strategy="no", report_to=[], seed=42, dataloader_pin_memory=False,
         gradient_checkpointing=True, optim="paged_adamw_8bit", max_grad_norm=1.0,
         remove_unused_columns=False)
