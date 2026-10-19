@@ -41,12 +41,22 @@ def load_rows(path: Path) -> list[dict]:
     return rows
 
 
+def token_ids(value) -> list[int]:
+    if hasattr(value, "input_ids"):
+        value = value["input_ids"]
+    if hasattr(value, "tolist"):
+        value = value.tolist()
+    if value and isinstance(value[0], list):
+        value = value[0]
+    return [int(token) for token in value]
+
+
 def tokenize_rows(tokenizer, rows: list[dict]) -> list[dict]:
     items = []
     for row in rows:
         messages = row["messages"]
-        full = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=False)
-        prompt = tokenizer.apply_chat_template(messages[:-1], tokenize=True, add_generation_prompt=True)
+        full = token_ids(tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=False))
+        prompt = token_ids(tokenizer.apply_chat_template(messages[:-1], tokenize=True, add_generation_prompt=True))
         full = full[:MAX_LENGTH]
         labels = list(full)
         cutoff = min(len(prompt), len(labels))
@@ -55,6 +65,9 @@ def tokenize_rows(tokenizer, rows: list[dict]) -> list[dict]:
         if all(label == -100 for label in labels):
             continue
         items.append({"input_ids": full, "labels": labels, "attention_mask": [1] * len(full)})
+    if not items:
+        raise RuntimeError("Every training row was masked. The chat template did not leave assistant tokens.")
+    print(f"Kept {len(items)} of {len(rows)} rows", flush=True)
     return items
 
 
