@@ -60,6 +60,8 @@ The naive floor above is the untouched comparison. The fine-tune, the hardened t
 
 The first QLoRA attempt loaded the 7B on the RTX 4050 and then failed before the first step: installed `transformers` 5.20 takes the 3% warmup as `warmup_steps=0.03`, not `warmup_ratio`. The locked ratio is unchanged. The retry uses that argument.
 
+QLoRA then completed: 600 rows, 2 epochs, sequence length 512, train loss 0.2195, about 4.9 hours on the RTX 4050. The adapter is `H:\AGERE\weights\adapters\tier8-7b-qlora`. It is a PEFT adapter, not a GGUF LoRA, so it is not loaded onto the Q4 file. The scored SAS remains the base Q4_K_M with the staged prompt.
+
 The 7B Q4 load does not fit the 6.40 GB cap at any locked context. Peaks, one load each:
 
 | Context | Process RSS |
