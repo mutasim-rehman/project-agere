@@ -43,9 +43,20 @@ Installed into `D:\project-agere\.venv` on 18 October 2026:
 
 QLoRA was not started. The order runs training only after the naive dev floor exists, and that floor does not exist.
 
+## Naive development floor
+
+Rerun with F16 KV, no flash attention, no memory map, context 2048, seed 42. Both arms stayed under the 6.40 GB cap. This replaces the discarded Q4-KV run.
+
+| Arm | Valid JSON | Invention | Mismatch recall | Grounding | Refusal | Peak RSS |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| SAS 7B Q4 | 100% | 78.0% | 0% | 81.8% | 0% | 5.03 GB |
+| MAS resident | 62% | 91.4% | 0% | 37.2% | 0% | 5.53 GB |
+
+Invention is among complete claim sets. The team had 93 complete sets. Failure tags: SAS `S6` on 117 of 150; MAS `M2` 57, `M3` 85, `M7` 8. Neither arm flagged a name mismatch or refused a missing field. The untouched team is worse on invention, grounding, and valid JSON.
+
 ## Result
 
-There is no invention rate and no mismatch recall. The untouched comparison, the fine-tune, the hardened team, and the held-out test did not run.
+The naive floor above is the untouched comparison. The fine-tune, the hardened team, and the held-out test follow it.
 
 The 7B Q4 load does not fit the 6.40 GB cap at any locked context. Peaks, one load each:
 
