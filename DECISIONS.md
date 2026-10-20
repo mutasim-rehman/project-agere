@@ -73,6 +73,21 @@ The resumed hardened dev run finished. It did not beat the untouched floor.
 
 Hardened SAS tags: `S3` 121, `S6` 29. Hardened MAS tag: `M2` on all 150. Valid JSON collapsed, so both repairs are reverted. The frozen systems are the untouched 7B Q4 and the untouched team.
 
+## Held-out test
+
+Pooled Agere-KYC-Synth (100) and Agere-Credit-Synth (75). Seed 42, temperature 0, context 2048, F16 KV, no memory map. Both arms stayed under the 6.40 GB cap.
+
+| Arm | Valid JSON | Invention | Mismatch recall | Grounding | Refusal | Peak RSS |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| SAS 7B Q4 | 100% | 71.4% | 0% | 84.4% | 0% | 5.03 GB |
+| MAS resident | 63.4% | 80.2% | 0% | 36.3% | 0% | 5.54 GB |
+
+Invention is lower-better, among complete claim sets. The team had 111 complete sets. SAS tags: `S6` on 125 of 175. MAS tags: `M2` 64, `M3` 89, `M7` 22. The single quantized model invented less and grounded more. Neither arm caught a planted name mismatch or refused a missing field.
+
+FRAMES closed-book control, 100 questions: SAS exact match 1%, MAS exact match 2%. That small team edge does not override the KYC and credit invention result.
+
+The 8 GB study is complete. The QLoRA adapter remains on disk and was not part of this scored comparison.
+
 The 7B Q4 load does not fit the 6.40 GB cap at any locked context. Peaks, one load each:
 
 | Context | Process RSS |
