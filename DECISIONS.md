@@ -64,6 +64,15 @@ QLoRA then completed: 600 rows, 2 epochs, sequence length 512, train loss 0.2195
 
 The hardened development run died after writing `CR-DEV-0032` (132 of 150 SAS cases). The process was gone and the case file had not been updated for about an hour. The runner resumes completed case ids, so that run was started again rather than repeated.
 
+The resumed hardened dev run finished. It did not beat the untouched floor.
+
+| Arm | Valid JSON | Invention | Mismatch recall | Grounding |
+| :--- | ---: | ---: | ---: | ---: |
+| Hardened SAS | 19.3% | 100% of 29 complete sets | 20% | 10.7% |
+| Hardened MAS | 0% | none scored | 0% | 0% |
+
+Hardened SAS tags: `S3` 121, `S6` 29. Hardened MAS tag: `M2` on all 150. Valid JSON collapsed, so both repairs are reverted. The frozen systems are the untouched 7B Q4 and the untouched team.
+
 The 7B Q4 load does not fit the 6.40 GB cap at any locked context. Peaks, one load each:
 
 | Context | Process RSS |

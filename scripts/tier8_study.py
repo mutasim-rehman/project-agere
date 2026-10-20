@@ -572,13 +572,18 @@ def freeze(root: Path) -> dict:
     sas_base = json.loads((root / "dev" / "hardened_sas_base" / "summary.json").read_text(encoding="utf-8"))
     lora_path = root / "dev" / "hardened_sas_lora" / "summary.json"
     sas_lora = json.loads(lora_path.read_text(encoding="utf-8")) if lora_path.is_file() else None
-    sas_choice = "hardened_sas_base"
-    sas_reason = "Staged prompt is the hardened SAS. No adapter beat it on dev."
-    if sas_lora and sas_lora.get("status") == "complete" and better(sas_lora, sas_base):
+    sas_choice = "naive_sas"
+    sas_reason = "The staged prompt did not beat the untouched 7B on dev. The untouched model stays."
+    sas_baseline = naive_sas
+    if sas_base.get("status") == "complete" and better(sas_base, naive_sas):
+        sas_choice = "hardened_sas_base"
+        sas_reason = "The staged prompt improved dev invention or mismatch recall without collapsing the other."
+        sas_baseline = sas_base
+    if sas_lora and sas_lora.get("status") == "complete" and better(sas_lora, sas_baseline):
         sas_choice = "hardened_sas_lora"
         sas_reason = "QLoRA adapter improved dev invention or mismatch recall without collapsing the other."
     elif sas_lora and sas_lora.get("status") == "complete":
-        sas_reason = "QLoRA adapter did not improve dev invention or mismatch recall without a collapse. Base Q4 stays."
+        sas_reason = "QLoRA adapter did not beat the selected SAS on dev. The selected base stays."
     mas_choice = "naive_mas"
     mas_reason = "Hardened team did not improve the dev floor. The naive team remains the frozen MAS."
     if hardened_mas.get("status") == "complete" and better(hardened_mas, naive_mas):
