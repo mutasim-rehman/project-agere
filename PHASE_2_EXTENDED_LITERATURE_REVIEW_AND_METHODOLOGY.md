@@ -10,12 +10,12 @@
 
 ## Executive Summary
 
-Phase 2 transitions Project Agere from foundational research gap identification into an extended, peer-reviewed literature synthesis and a comprehensive, technically justified research methodology. Operating under strict banking secrecy, Personally Identifiable Information (PII) protection, and regulatory mandates (e.g., FINRA Notice 24-09, SEC Rule 17a-4, EU AI Act, DORA, and State Bank of Pakistan AML/CFT regulations), financial institutions are legally prohibited from transmitting client KYC portfolios, credit memo dossiers, or suspicious transaction data to public cloud APIs. Analyst workstations—typically constrained to 16 GB physical system RAM without datacenter GPUs—represent the binding physical deployment envelope.
+Phase 2 moves Project Agere from foundational research gap identification into an extended, in-depth literature review, critical synthesis, and comprehensive, technically sound research methodology. Operating under strict banking secrecy, Personally Identifiable Information (PII) protection, and regulatory mandates (e.g., FINRA Notice 24-09, SEC Rule 17a-4, EU AI Act, DORA, and State Bank of Pakistan AML/CFT regulations), financial institutions are legally prohibited from transmitting client KYC portfolios, credit memo dossiers, or suspicious transaction data to public cloud APIs. Analyst workstations—typically constrained to 16 GB of physical system RAM without datacenter GPUs—represent the binding physical deployment envelope.
 
 This document fulfills the four required deliverables of Milestone 02:
-1. **Deliverable 1 — Extended Literature Review:** Identification, critical synthesis, and structured comparison of **10 additional peer-reviewed research papers published in 2025–2026** from top-tier Q1/Q2 venues (NeurIPS, ICLR, ACL, NAACL, EMNLP, IEEE).
-2. **Deliverable 2 — Refined Research Gap:** Rigorous synthesis of **four potential research gaps**, cross-referenced with empirical evidence across the literature, and justified across six structural questions (what exists, limitations, uninvestigated domains, significance, and proposed interventions).
-3. **Deliverable 3 — Proposed Step-by-Step Research Methodology:** A 12-step reproducible pipeline spanning research inputs, synthetic generation, preprocessing, representation, model architectures, baseline protocols, experimental design, compliance-first grounding metrics, statistical testing, ablations, failure forensics, and final deployment outputs.
+1. **Deliverable 1 — Extended Literature Review:** Identification, critical synthesis, and structured comparison of 10 additional peer-reviewed research papers published in 2025–2026 from top-tier Q1/Q2 venues (NeurIPS, ICLR, ACL, NAACL, EMNLP, IEEE).
+2. **Deliverable 2 — Refined Research Gap:** Rigorous synthesis of four potential research gaps grounded in empirical evidence across the literature and justified across six structural questions (what exists, what are the limitations, what domains remain uninvestigated, why the gap is significant, what interventions are proposed, and how the research addresses them).
+3. **Deliverable 3 — Proposed Step-by-Step Research Methodology:** A reproducible, 12-step pipeline spanning research inputs, synthetic generation, preprocessing, representation, model architectures, baseline protocols, experimental design, compliance-first grounding metrics, statistical testing, ablations, failure forensics, and final deployment outputs.
 4. **Deliverable 4 — Research Methodology Architecture Diagram:** An exhaustive, multi-tier ASCII/Unicode architectural schematic illustrating data flows, process-tree memory caps, thinking-token budgets, deterministic tool interfaces, and human-in-the-loop compliance sign-off.
 
 ---
@@ -23,13 +23,13 @@ This document fulfills the four required deliverables of Milestone 02:
 ## Deliverable 1: Extended Literature Review (2025–2026 Corpus)
 
 ### 1.1 Context and Selection Criteria for the Extended Corpus
-Phase 1 examined 9 foundational studies (Tran & Kiela 2026; Żywot et al. 2026; Kim et al. 2025; Cemri et al. MAST 2025; Lin et al. Bench360 2025; Jang et al. 2026; Singh & Pawar 2026; Financial QA SME 2026; MortarBench 2026). While these studies established that token budgets confound multi-agent evaluations and that quantization degrades tool reliability, they left crucial methodological questions unresolved regarding dynamic orchestration, actor-critic coordination, role differentiation, multi-agent critique and revision, and hardware-constrained local deployment.
+Phase 1 examined 9 foundational studies (Tran & Kiela 2026; Żywot et al. 2026; Kim et al. 2025; Cemri et al. MAST 2025; Lin et al. Bench360 2025; Jang et al. 2026; Singh & Pawar 2026; Financial QA SME 2026; MortarBench 2026). These studies confirmed that token budgets can confound multi-agent evaluations and that quantization reduces tool-calling reliability, but they left open critical methodological issues involving dynamic orchestration, actor-critic coordination, role differentiation, multi-agent critique and revision, and hardware-constrained local deployment.
 
-To rigorously extend the academic foundation, we identified **10 additional peer-reviewed research papers published exclusively in 2025 and 2026**. Each selected paper satisfies the following strict criteria:
-- **Publication Venue:** Published in recognized Q1/Q2 top-tier conferences or journals (NeurIPS, ICLR, ACL, NAACL, EMNLP, IEEE Access).
-- **Recency:** Published in 2025 or 2026.
-- **Methodological Depth:** Contains reproducible experimental designs, explicit dataset specifications, clear baseline comparisons, and rigorous evaluation metrics.
-- **Domain Relevance:** Directly investigates multi-agent coordination, orchestration topology, error cascading, verification/refinement, extreme quantization, or high-liability domain applications.
+To establish the most rigorous academic grounding possible, we identified 10 additional peer-reviewed research papers published exclusively in 2025 and 2026. Each selected paper satisfies the following strict criteria:
+- **Publication Venue:** Published in recognized top-tier conferences or journals (NeurIPS, ICLR, ACL, NAACL, EMNLP, IEEE Access).
+- **Recency:** Published exclusively in 2025 or 2026.
+- **Methodological Depth:** Provides reproducible experimental designs, clear baseline comparisons, explicit dataset specifications, and rigorous evaluation measures.
+- **Direct Domain Relevance:** Proactively explores multi-agent coordination, orchestration topology, error cascading, refinement/verification, extreme quantization, or high-liability domain applications.
 
 ---
 
@@ -57,29 +57,29 @@ To rigorously extend the academic foundation, we identified **10 additional peer
 ```
 
 #### Theme 1: Dynamic Orchestration, Adaptive Topologies, and Directed Execution Graphs
-Static multi-agent pipelines (e.g., fixed sequential chains or rigid round-robin debates) suffer from excessive token consumption and rigid coordination overhead. **Dang et al. (NeurIPS 2025)** introduced *Evolving Orchestration*, utilizing reinforcement learning to train a centralized orchestrator that dynamically schedules sub-agents and constructs compact, instance-specific reasoning topologies. Their framework demonstrated that pruning unnecessary communication hops reduces token expenditure by 34% while boosting task accuracy on complex multi-domain benchmarks. Complementing this, **Yang et al. (NeurIPS 2025)** presented *AgentNet*, a decentralized framework where agents coordinate through Directed Acyclic Graphs (DAGs) without a central bottleneck. In parallel, **Estornell et al. (ICLR 2025)** formulated *ACC-Collab*, introducing an actor-critic paradigm to optimize multi-agent collaboration and credit assignment across sequential decision steps.
+Multi-agent pipelines often suffer from excessive token consumption and rigid coordination overhead, particularly in static sequential chains or fixed round-robin debates. **Dang et al. (NeurIPS 2025)** proposed a reinforcement learning-based method to train a centralized orchestrator that dynamically schedules sub-agents and constructs compact, instance-specific reasoning topologies. Their framework demonstrated that eliminating unnecessary communication hops saves 34% of token expenditure while improving task accuracy on complex multi-domain benchmarks. In parallel, **Yang et al. (NeurIPS 2025)** introduced *AgentNet*, a decentralized framework where agents coordinate through Directed Acyclic Graphs (DAGs) without a central bottleneck. Meanwhile, **Estornell et al. (ICLR 2025)** presented *ACC-Collab*, an actor-critic framework that optimizes multi-agent collaboration and credit assignment across sequential decision steps.
 
-*Critical Evaluation & Identified Limitations for Local Deployments:* While dynamic graph scheduling and actor-critic coordination improve theoretical task efficiency, these systems were evaluated on unconstrained cloud clusters. They introduce non-trivial meta-orchestration models and gradient computation overheads that are completely untenable on a 16 GB workstation. Furthermore, they fail to constrain peak resident process RAM ($M_{\text{job}}$), nor do they evaluate whether a single quantized generalist model operating under staged prompt scheduling achieves superior reasoning within the same hardware ceiling.
+*Critical Evaluation & Identified Limitations for Local Deployments:* While dynamic graph scheduling and actor-critic coordination improve theoretical task efficiency, these systems were evaluated on unconstrained cloud clusters. They introduce non-trivial meta-orchestration models and gradient computation overheads that are simply not viable on a 16 GB workstation. Furthermore, they fail to constrain peak resident process RAM ($M_{\text{job}}$), nor do they investigate whether a single quantized generalist model operating under staged prompt scheduling can outperform distributed agent graphs under the same physical hardware ceiling.
 
 #### Theme 2: Turn-Aware Role Differentiation and Coordination Overhead
-A persistent failure mode in multi-agent systems is semantic homogenisation, where collaborative agents collapse into mutual agreement and regurgitate intermediate errors. **Li et al. (ACL 2025)** addressed this through learned role embeddings and turn-aware role differentiation via Multi-Agent Reinforcement Learning (MARL). By enforcing orthogonal functional roles during inter-agent debates, their method prevented consensus collapse and boosted reasoning diversity across 7 reasoning benchmarks. However, **Sun et al. (EMNLP 2025, Collab-Overcooked)** critically evaluated the limits of collaboration across 13 contemporary LLMs, demonstrating that despite prompt-level role differentiation, models suffer severe degradation in continuous adaptation, spatial coordination, and long-horizon planning, frequently experiencing communication deadlocks.
+Semantic homogenisation is one of the most common failure modes in multi-agent systems, where collaborative agents converge toward a false consensus and compound intermediate errors. To overcome this, **Li et al. (ACL 2025)** employed learned role embeddings and Multi-Agent Reinforcement Learning (MARL) for turn-aware role differentiation. Their approach succeeded in enforcing orthogonal functional roles during inter-agent debates, avoiding consensus collapse, and increasing reasoning diversity across 7 reasoning benchmarks. Concurrently, **Sun et al. (EMNLP 2025, Collab-Overcooked)** critically examined the causes of collaboration failure across 13 contemporary LLMs, demonstrating that while role prompting works in early conversational turns, models suffer severe performance drops in continuous adaptation, spatial coordination, and long-horizon planning, frequently resulting in communication deadlocks.
 
-*Critical Evaluation & Identified Limitations for Regulated Finance:* Li et al.'s debate frameworks require multiple forward passes and round-robin dialogues ($N \ge 3$ turns), which directly violates the Data Processing Inequality (DPI) and rapidly depletes workstation token budgets ($T_{\text{think}} \le 2048$). In financial compliance (e.g., verifying a corporate shareholding registry or calculating a debt-service coverage ratio), unconstrained debate induces hallucination snowballs. What is required is not open-ended natural language argumentation, but deterministic role specialization governed by strictly typed schemas.
+*Critical Evaluation & Identified Limitations for Regulated Finance:* Li et al.'s debate frameworks require multiple forward passes and round-robin dialogues ($N \ge 3$ turns), which directly contravenes the Data Processing Inequality (DPI) and rapidly depletes workstation token budgets ($T_{\text{think}} \le 2048$). In financial compliance (such as checking a corporate share register or computing a debt-service coverage ratio), open discussion promotes hallucination snowballs. What is required is not open-ended natural language argumentation, but deterministic role specialization governed by strictly typed schemas.
 
 #### Theme 3: Multi-Agent Error Detection, Critique Reranking, and Claim Degradation
-To enhance factual reliability, **Wan et al. (NAACL 2025)** developed *MAMM-Refine*, an architecture where specialist critique agents identify errors in generated drafts and rerank candidate revisions based on factual alignment scores. Their findings proved that reranking candidate revisions using structured critique tokens significantly outperforms unconstrained autoregressive revision generation. However, **Jamshidi et al. (EMNLP 2026)** rigorously modeled inter-agent factual decay, demonstrating that across sequential multi-agent handoffs, unsupported claims decay along an exponential decay function unless anchored by deterministic external retrieval or formal verification boundaries.
+To improve factual reliability, **Wan et al. (NAACL 2025)** developed *MAMM-Refine*, an architecture that leverages feedback from specialist critique agents to rerank candidate revisions in generated drafts based on factual alignment scores. Their results demonstrated that reranking candidate revisions with structured critique tokens is substantially more effective than unconstrained autoregressive revision generation. However, **Jamshidi et al. (EMNLP 2026)** rigorously modeled inter-agent factual decay, demonstrating that across sequential multi-agent handoffs, unsupported factual claims decay following an exponential decay function unless anchored by deterministic external retrieval or formal verification boundaries.
 
-*Critical Evaluation & Identified Limitations:* MAMM-Refine evaluated summarization and open-domain QA, failing to measure domain-specific compliance risks such as numerical discrepancy detection, missing tax identifiers, or citation span validity. Jamshidi et al.'s analysis was primarily observational and synthetic. Neither study implemented a physical memory ceiling nor evaluated whether a fine-tuned quantized monolith with staged prompting could eliminate the need for multi-model critique loops altogether.
+*Critical Evaluation & Identified Limitations:* MAMM-Refine focused on open-domain summarization and question answering, leaving domain-specific compliance risks unmeasured—such as numerical discrepancy detection, missing statutory tax identifiers, or citation span precision. Jamshidi et al.'s analysis was primarily observational and synthetic. Neither study enforced a physical memory ceiling or evaluated whether multi-model critique loops could be eliminated entirely by using a fine-tuned quantized monolith paired with staged prompts.
 
 #### Theme 4: High-Liability Domain Benchmarking and the Single-Agent Parity Reality
-In high-liability regulated domains, the assumption that multi-agent collaboration inherently outperforms single models has been forcefully challenged. **Zhu et al. (NeurIPS 2025, MedAgentBoard)** established a comprehensive benchmark across four clinical task families (medical QA, diagnostic summarization, EHR trajectory prediction, and treatment planning). Their empirical results revealed that while multi-agent teams show marginal advantages in multi-modal diagnostic aggregation, strong single-agent models with extended Chain-of-Thought match or outperform multi-agent configurations in over 70% of clinical document workflows, while exhibiting dramatically lower latency and zero coordination failure modes.
+In high-liability regulated domains, the assumption that multi-agent collaboration is inherently superior to single-model execution has been forcefully challenged. **Zhu et al. (NeurIPS 2025, MedAgentBoard)** established a comprehensive benchmark across four clinical task families (medical QA, diagnostic summarization, EHR trajectory prediction, and treatment planning). Their empirical findings revealed that while multi-agent teams achieve marginal improvements in multimodal diagnostic aggregation, strong single-agent models with extended Chain-of-Thought match or outperform multi-agent teams across more than 70% of clinical document workflows, exhibiting dramatically lower latency and eliminating coordination-related failure modes.
 
-*Critical Evaluation & Identified Limitations:* MedAgentBoard represents a milestone in high-liability domain evaluation, but its focus is strictly biomedical. Regulated banking and compliance workflows possess fundamentally distinct characteristics: strict statutory definitions (e.g., FATF beneficial ownership thresholds, SBP Prudential Regulations), complex tabular reconciliations (bank statements vs. audited balance sheets), and zero tolerance for numeric invention. Furthermore, Zhu et al. evaluated models via API endpoints without hardware memory caps or quantization parity.
+*Critical Evaluation & Identified Limitations:* While MedAgentBoard represents a milestone in high-liability domain evaluation, its focus is strictly biomedical. Regulated banking and compliance workflows possess fundamentally distinct characteristics: statutory compliance thresholds are strictly codified by law (e.g., FATF beneficial ownership thresholds, SBP Prudential Regulations); cross-document reconciliations are highly complex (bank statements vs. audited balance sheets); and there is zero tolerance for numerical fabrication. Moreover, Zhu et al. evaluated models exclusively via commercial cloud API endpoints without hardware memory caps or quantization parity.
 
 #### Theme 5: Hardware-Aware Quantization and Multi-Agent Inference on Commodity RAM
-Bridging the gap between multi-agent theory and physical hardware, **Alquwayfili et al. (IEEE Access 2025, Quantigence)** introduced a framework for orchestrating 4-bit quantized multi-agent systems on consumer-grade hardware envelopes. By optimizing weight residency and offloading dormant agents to system RAM, they demonstrated the feasibility of running multi-agent teams on commodity devices. On the single-model compression front, **Liu et al. (ICLR 2025, SpinQuant)** demonstrated that learned orthogonal rotations eliminate outlier activation dimensions, allowing 4-bit weight and activation quantization (W4A4) with near-lossless perplexity on standard LLMs.
+Bridging the gap between multi-agent theory and physical hardware, **Alquwayfili et al. (IEEE Access 2025, Quantigence)** developed a framework to orchestrate 4-bit quantized multi-agent systems on consumer-grade hardware envelopes. By optimizing weight residency and offloading dormant agents to system RAM, they demonstrated the feasibility of deploying multi-agent teams on commodity devices. On the single-model compression front, **Liu et al. (ICLR 2025, SpinQuant)** demonstrated that learned orthogonal rotations eliminate outlier activation dimensions, enabling 4-bit weight and activation quantization (W4A4) without significant loss of perplexity on standard LLMs.
 
-*Critical Evaluation & Identified Limitations:* Alquwayfili et al. evaluated multi-agent teams where *all* agents were quantized to 4-bit, which—as demonstrated by Jang et al. (2026)—causes a severe compounding of tool-syntax failures and JSON truncation. They did not investigate the alternative architectural paradigm: deploying *native full-precision (FP16)* small specialist agents versus a *single quantized monolith (SAS-Quant)* under identical peak process RAM. Liu et al. focused exclusively on perplexity preservation for single models on GPUs, omitting CPU-first workstation execution and agentic tool invocation.
+*Critical Evaluation & Identified Limitations:* Alquwayfili et al. evaluated multi-agent teams where *all* sub-agents were quantized to 4 bits, which—as demonstrated by Jang et al. (2026)—causes a severe compounding of tool-syntax failures and JSON truncation. They did not explore the alternative architectural paradigm: deploying native full-precision (FP16) small specialist agents instead of a single quantized monolith (SAS-Quant) under the same peak process RAM. Liu et al. focused exclusively on perplexity preservation for single models on GPU tensor cores, omitting CPU-first workstation execution and agentic tool invocation.
 
 ---
 
@@ -122,38 +122,38 @@ Guided by the combined Phase 1 and Phase 2 literature base, we synthesize **four
 To satisfy the core Milestone 02 research criteria, we answer the six mandatory analytical questions:
 
 #### 1. What has already been done?
-Prior research has rigorously explored several individual components of LLM deployment:
-- **Test-Time Compute Control:** Tran & Kiela (2026) and Wang et al. (EMNLP 2024) established that unconstrained multi-agent dialogue creates an illusory performance advantage, proving that holding thinking tokens ($T_{\text{think}}$) invariant often enables single-agent Chain-of-Thought to match multi-agent systems.
-- **Local Inference Profiling:** Lin et al. (Bench360, 2025) profiled local LLM inference engines (llama.cpp, vLLM, SGLang) across latency, throughput, energy, and VRAM, establishing that larger quantized models routinely Pareto-dominate small native models on general language benchmarks.
-- **Multi-Agent Coordination & Failure Taxonomies:** Cemri et al. (MAST, 2025) classified 1,600+ multi-agent traces into 14 distinct failure modes. Dang et al. (2025), Yang et al. (2025), and Li et al. (2025) introduced dynamic DAG orchestration and role differentiation to mitigate coordination collapse.
-- **Quantization Vulnerabilities:** Jang et al. (2026) demonstrated that 4-bit quantization disproportionately degrades tool-calling precision and entity extraction in agentic workflows.
+Prior research has rigorously explored several individual dimensions of LLM deployment:
+- **Test-Time Compute Control:** Tran & Kiela (2026) and Wang et al. (EMNLP 2024) demonstrated that unconstrained multi-agent dialogue creates an illusory performance advantage, proving that holding thinking tokens ($T_{\text{think}}$) invariant often enables single-agent Chain-of-Thought to match or exceed multi-agent systems.
+- **Local Inference Profiling:** Lin et al. (Bench360, 2025) profiled local LLM inference engines—`llama.cpp`, `vLLM`, and `SGLang`—with respect to latency, throughput, energy, and VRAM, establishing that larger quantized models frequently Pareto-dominate smaller native models on general language benchmarks.
+- **Multi-Agent Coordination & Failure Taxonomies:** Cemri et al. (MAST, 2025) categorized 1,600+ multi-agent execution traces into 14 distinct failure modes. Dang et al. (2025), Yang et al. (2025), and Li et al. (2025) proposed dynamic DAG orchestration and learned role differentiation to prevent coordination collapse.
+- **Agentic Quantization Vulnerabilities:** Jang et al. (2026) demonstrated that 4-bit quantization exerts a disproportionate negative impact on tool-calling precision, syntax stability, and entity extraction tasks in agentic workflows.
 
 #### 2. What approaches currently exist?
 Two dominant paradigms currently exist in industry and academia:
-1. **The Quantized Monolith Paradigm (SAS-Quant):** IT practitioners default to downloading the largest open-weights model capable of fitting into workstation RAM when compressed to 4 bits (e.g., Qwen2.5-14B @ GGUF Q4_K_M on 16 GB RAM). This model executes all task phases autoregressively.
-2. **The Cloud-Elastic Multi-Agent Paradigm:** Academic multi-agent systems instantiate multiple instances of frontier models (GPT-4o, Claude-3.5) across unconstrained cloud APIs, coordinating via open natural language dialogue, debate loops, or dynamic DAG schedulers (MetaGPT, ChatDev, AgentNet).
+1. **The Quantized Monolith Paradigm (SAS-Quant):** When deploying on local hardware, IT practitioners default to selecting the largest open-weights model capable of fitting into workstation RAM when aggressively compressed to 4 bits (such as Qwen2.5-14B @ GGUF Q4_K_M on 16 GB RAM). In this configuration, all task phases are executed autoregressively by the single compressed model.
+2. **The Cloud-Elastic Multi-Agent Paradigm:** Academic multi-agent systems instantiate multiple instances of frontier models (e.g., GPT-4o, Claude-3.5) operating within unconstrained cloud APIs, communicating through open natural language dialogue, debate loops, or dynamic DAG schedulers (MetaGPT, ChatDev, AgentNet).
 
 #### 3. What are their limitations?
-Both existing approaches suffer from profound technical and operational flaws:
-- *Limitations of the Quantized Monolith:* While 4-bit compression preserves general semantic knowledge, it severely degrades **refusal discipline** (causing models to fabricate missing data rather than admitting omission) and **tool-syntax stability** (producing malformed JSON arguments and arithmetic hallucinations).
-- *Limitations of Cloud-Elastic Multi-Agent Systems:* Cloud multi-agent architectures are **legally unusable** in regulated finance due to data residency (GDPR, DORA, SEC Rule 17a-4, SBP AML/CFT). Furthermore, when ported to local hardware, loading multiple independent LLMs causes **catastrophic memory overruns**, while unconstrained natural language handoffs suffer from the **Data Processing Inequality** ($I(X; Z) \le I(X; Y)$) and **Markovian hallucination snowballs**.
+Both existing approaches suffer from profound technical and functional limitations:
+- *Limitations of the Quantized Monolith:* While 4-bit compression largely preserves general semantic knowledge, it severely degrades **refusal discipline** (causing models to invent plausible missing data rather than acknowledging omission) and **tool-syntax stability** (producing malformed JSON arguments and arithmetic hallucinations).
+- *Limitations of Cloud-Elastic Multi-Agent Systems:* Cloud multi-agent systems are legally impermissible in regulated finance due to strict data residency requirements (GDPR, DORA, SEC Rule 17a-4, SBP AML/CFT). Furthermore, porting multiple independent LLMs to local hardware results in catastrophic memory overruns, while unconstrained natural language handoffs suffer from the Data Processing Inequality ($I(X; Z) \le I(X; Y)$) and Markovian hallucination snowballs.
 
 #### 4. What remains insufficiently investigated?
-The literature reveals a complete absence of research at the intersection of:
-- **Workstation Physical RAM Parity:** No study has matched the aggregate process-tree Resident Set Size (RSS) of a multi-agent team against a quantized monolith.
-- **Full-Precision Specialists vs. Compressed Generalist:** No study has tested whether partitioning a 12.8 GB process memory cap across an orchestrated team of native, uncompressed (FP16/BF16) small specialist models (e.g., 3B Orchestrator + 1.5B Extractor + 0.5B Verifier) provides superior grounding compared to spending the entire budget on one 14B Q4_K_M monolith.
-- **Document-Grounded Compliance Evaluation:** No benchmark evaluates local models on high-liability financial documentation tasks featuring planted document discrepancies, missing statutory disclosures, and strict citation requirements.
+The literature reveals an absence of research at the intersection of:
+- **Workstation Process Memory Parity:** No published study has matched the aggregate process-tree Resident Set Size (RSS) of a multi-agent team against a quantized monolith under identical hardware envelopes.
+- **Full-Precision Specialists vs. Compressed Generalist:** No research investigates whether allocating a 12.8 GB process memory cap across an orchestrated team of native, uncompressed (FP16/BF16) small specialist models (e.g., 3B Orchestrator + 1.5B Extractor + 0.5B Verifier) provides superior factual grounding compared to concentrating the entire memory budget on a single 14B Q4_K_M monolith.
+- **Document-Grounded Compliance Evaluation:** No benchmark evaluates local models on high-liability financial documentation tasks that incorporate planted cross-document discrepancies, missing statutory disclosures, and strict citation requirements.
 
 #### 5. Why is this gap important?
-This gap directly governs real-world IT procurement and compliance safety across thousands of banking institutions:
-- **Regulatory Liability:** Regulated institutions face severe statutory penalties for hallucinated compliance filings or missed AML/PEP indicators. If 4-bit quantization creates silent grounding failures, deploying quantized monoliths exposes institutions to systemic legal liability.
-- **Capital & Hardware Efficiency:** Financial institutions cannot provision \$30,000 datacenter GPUs for every compliance analyst. If full-precision specialist teams outperform quantized monoliths on existing 16 GB workstations, institutions can achieve state-of-the-art document verification without massive capital expenditure.
+This gap directly impacts compliance safety and real-world IT procurement for thousands of banking institutions:
+- **Statutory Penalties for Regulated Institutions:** Financial institutions are exposed to severe statutory penalties for fraudulent or hallucinated compliance filings and for failing to detect AML/PEP red flags. Deploying quantized monoliths introduces systemic legal liability if 4-bit quantization causes silent grounding failures.
+- **Capital & Hardware Efficiency:** Financial institutions cannot provision \$30,000 datacenter GPUs for every compliance analyst. If full-precision specialist teams demonstrate superior verification performance to quantized monoliths on existing 16 GB workstations, institutions can achieve enterprise-grade compliance automation without substantial capital expenditure.
 
 #### 6. How will your research address it?
 Project Agere resolves this dilemma through a controlled, leakage-free empirical investigation:
 - We formulate and enforce the **RAM Utilization Parity Protocol (RUPP)**, locking both systems to the exact same host-adjusted process RSS ceiling (12.8 GB nominal on 16 GB workstations) and identical thinking-token budgets ($T_{\text{think}} = 2048$).
-- We implement the **"Improve-Then-Compare"** loop: rather than testing naive baselines, we harden the quantized monolith via **QLoRA domain fine-tuning** (for refusal discipline and tool formatting) and harden the multi-agent team via the **AHDS framework** (strictly typed JSON contracts and an independent deterministic verifier boundary gate).
-- We benchmark both hardened systems across realistic financial compliance tasks (MortarBench, synthetic KYC/CDD dossiers, SME credit memos) using specialized, compliance-aligned grounding metrics.
+- Rather than testing naive baselines, we implement an **"Improve-Then-Compare"** loop: we harden the quantized monolith through QLoRA domain fine-tuning (refusal discipline, deterministic calculator calls, and span citation) and harden the multi-agent team through the AHDS framework (strictly typed Pydantic JSON contracts and an independent deterministic verifier boundary gate).
+- We benchmark both hardened systems on realistic financial compliance tasks (MortarBench, synthetic KYC/CDD dossiers, SME credit memos) using specialized, compliance-aligned grounding metrics.
 
 ---
 
@@ -182,31 +182,31 @@ Project Agere's research methodology is structured into 12 sequential, fully rep
 
 ### Step 1 — Define the Research Input
 The research inputs represent high-liability corporate banking documentation where automated extraction and narrative synthesis are subjected to mandatory human oversight:
-1. **Know-Your-Customer (KYC) / Customer Due Diligence (CDD) Dossiers:** Multi-document customer packets comprising national identity records (CNIC/SNIC), tax authority filings (FBR Active Taxpayer List / NTN verifications), corporate registrar certificates (SECP Form 29 / Form A beneficial ownership schedules), and utility verification bills.
-2. **Commercial SME Credit Approval Files:** Loan application files containing three consecutive years of audited balance sheets, profit-and-loss statements, cash-flow reconciliations, and central credit bureau debt summaries (e-CIB reports).
-3. **Mortgage Loan Origination Packages (MortarBench):** Synthetic, distribution-faithful borrower files containing Uniform Residential Loan Applications (FNMA Form 1003 / ULAD), W-2 wage statements, paystubs, and consecutive monthly checking/savings bank statements.
-4. **Negative Control Input Slice:** Multi-hop question-answering cases from FRAMES and MuSiQue without document context, designed to verify theoretical boundary conditions.
+1. **Multi-Document Customer Dossiers (KYC / CDD):** Customer packets comprising national identity records (CNIC/SNIC), utility verification bills, tax authority filings (FBR Active Taxpayer List / NTN verification certificates), and corporate registrar documents (SECP Form 29 / Form A beneficial ownership schedules).
+2. **Commercial SME Credit Approval Files:** Corporate loan application files including three consecutive years of audited balance sheets, profit-and-loss statements, cash-flow reconciliations, and central credit bureau debt summaries (e-CIB reports).
+3. **Mortgage Loan Origination Packages (MortarBench):** Synthetic, distribution-faithful borrower packages that include Uniform Residential Loan Applications (FNMA Form 1003 / ULAD), W-2 wage statements, paystubs, and consecutive monthly checking/savings bank statements.
+4. **Negative Control Input Slice:** Multi-hop question-answering cases from FRAMES and MuSiQue with no document context, evaluated to verify theoretical boundary conditions and confirm whether multi-agent performance advantages depend strictly on external document grounding.
 
 ### Step 2 — Data Collection and Synthetic Generation
 Due to banking confidentiality laws and GDPR restrictions, real customer dossiers cannot be publicly published. We construct synthetic, legally compliant, distribution-faithful corpora:
-- **`Agere-KYC-Synth`:** 600 synthetic customer onboarding cases generated using rule-based stochastic templates aligned with Pakistan State Bank AML/CFT regulations and FATF 40 Recommendations (400 Train, 100 Dev, 100 Held-Out Test).
+- **`Agere-KYC-Synth`:** 600 synthetic customer onboarding cases created using rule-based stochastic templates aligned with Pakistan State Bank AML/CFT regulations and FATF 40 Recommendations (400 Train, 100 Dev, 100 Held-Out Test).
 - **`Agere-Credit-Synth`:** 325 synthetic SME corporate credit dossiers featuring realistic financial ratios, debt obligations, and credit histories (200 Train, 50 Dev, 75 Held-Out Test).
 - **`MortarBench Track A`:** 200 standardized mortgage underwriting cases from the published benchmark corpus (strictly held-out; 0 training instances).
-- **Cryptographic Test Manifest Invariant:** All evaluation splits are generated using disjoint pseudo-random seeds, hashed using SHA-256 (`manifests/test_manifest.sha256`), and locked on an external drive prior to model fine-tuning to guarantee zero evaluation leakage.
+- **Test Manifest Integrity:** To ensure complete prevention of evaluation data leakage, all evaluation splits are generated using disjoint pseudo-random seeds, cryptographically hashed with SHA-256 (`manifests/test_manifest.sha256`), and locked on an external drive prior to model fine-tuning.
 
 ### Step 3 — Data Preprocessing
-Inputs undergo standardized parsing and systematic mutation to establish verifiable ground-truth targets:
-- **Structured OCR & Text Chunking:** PDF documents are converted to clean plain-text representations with preserved coordinate bounding boxes and tabular markdown alignments using `pdfplumber` and `pydantic`.
+Inputs are systematically mutated and parsed into verified ground-truth targets:
+- **Structured OCR & Text Chunking:** `pdfplumber` and `pydantic` are utilized to convert PDF files into clean plain-text formats, preserving tabular markdown alignments and coordinate bounding boxes.
 - **Systematic Error & Discrepancy Injection:**
-  - *Planted Inconsistencies (30% of cases):* Name spelling variations, mismatched CNIC numbers between registry and ID, expired tax certificates, undisclosed Politically Exposed Persons (PEPs), and unlisted bank loans.
-  - *Omitted Data Fields (25% of cases):* Intentionally redacted or absent fields (e.g., missing director CNIC issue date, unstated operating turnover) to test refusal discipline.
-  - *Numerical Incompatibilities (20% of cases):* Conflicting cash figures between balance sheet cash assets and bank statement closing balances.
+  - *Planted Inconsistencies (30% of cases):* Name spelling variations, mismatched CNIC numbers between registry records and ID cards, expired tax certificates, undisclosed Politically Exposed Persons (PEPs), and unlisted bank loans.
+  - *Omitted Data Fields (25% of cases):* Intentionally redacted or absent fields (e.g., omitted director CNIC issue dates, unstated operating turnover) to evaluate refusal discipline.
+  - *Numerical Incompatibilities (20% of cases):* Conflicting cash figures between balance sheet cash assets and closing balances on bank statements.
 
 ### Step 4 — Feature Engineering and Representation
-To eliminate unstructured conversational noise and establish strict grounding targets:
+To remove conversational noise and establish strict grounding objectives from the ground up:
 - **Typed Pydantic Schemas:** All entity representations are defined as strict schemas (e.g., `KYCEntitySchema`, `CreditRatioSchema`). Fields require explicit status flags: `VERIFIED`, `DISCREPANCY`, or `MISSING`.
-- **Verifiable Citation Span Pointers:** Textual representations link extracted facts directly to source coordinates: `[DocID: Page P, Lines L1-L2: "exact substring"]`.
-- **Deterministic Ratio Computation:** Rather than allowing LLMs to attempt arithmetic in free-form tokens, financial metrics (Debt Burden Ratio, Current Ratio, Debt Service Coverage Ratio) are engineered as programmatic tool targets computed deterministically.
+- **Verifiable Citation Span Pointers:** Extracted facts are directly linked to source document coordinates: `[DocID: Page P, Lines L1-L2: "exact substring"]`.
+- **Deterministic Ratio Computation:** Financial metrics (Debt Burden Ratio, Current Ratio, Debt Service Coverage Ratio) are engineered as programmatic tool targets computed deterministically, preventing the LLM from attempting free-form arithmetic in autoregressive tokens.
 
 ### Step 5 — Proposed Model / Method (Hardened MAS-FP16)
 The primary proposed architecture is the **Adaptive Hierarchical with Dynamic Pruning & Structured Communication (AHDS)** full-precision team. Operating under concurrent RAM residency on the 16 GB tier (nominal job cap: 12.8 GB):
@@ -217,74 +217,74 @@ The primary proposed architecture is the **Adaptive Hierarchical with Dynamic Pr
    - **Shared Local Embedding Retriever:** `bge-small` (~0.4 GB RSS).
    - **KV-Cache & Runtime Footprint:** ~1.8 GB RSS (Total peak process RSS: ~12.5 GB $\le 12.8\text{ GB}$).
 2. **Architectural Guardrails (Mitigating Gaps M1–M14):**
-   - *Strict JSON Contracts (M2, DPI):* Inter-agent communication is exclusively serialized through validated Pydantic JSON payloads; natural language conversational chatter is programmatically prohibited.
-   - *Stateless Execution (M4):* Context collapse is prevented by injecting fresh task-constraint packets into sub-agents on each turn, eliminating instruction dilution across chat histories.
-   - *Independent Verifier Boundary Gate (M3, M7, M13):* An automated boundary gate intercepts drafted narratives before human delivery. It programmatically extracts all amounts, dates, and entity claims, executing regex and exact substring checks against the Extractor cache. Unsubstantiated claims trigger an automated single-pass repair routing.
+   - *Strict JSON Contracts (M2, DPI):* All inter-agent communication is exclusively serialized through validated Pydantic JSON formats; natural language conversational chatter is programmatically prohibited.
+   - *Stateless Execution (M4):* On every turn, fresh task-constraint packets are injected into sub-agents, preventing instruction dilution across chat histories.
+   - *Independent Verifier Boundary Gate (M3, M7, M13):* An automated boundary gate intercepts drafted narratives before delivery to the compliance officer. It programmatically extracts all monetary figures, dates, and entity claims, executing regex and exact substring checks against the Extractor cache. If unsubstantiated claims are detected, they trigger an automated single-pass repair routing.
 
 ### Step 6 — Baseline Methods
-To ensure a fair, rigorous, and scientifically meaningful comparison, we evaluate multiple baseline arms:
-1. **Hardened SAS-Quant (Primary Competing Arm):** Qwen2.5-14B-Instruct compressed to 4-bit integer weights via GGUF `Q4_K_M` (~9.0 GB weights + ~2.2 GB KV/runtime $\approx 11.2\text{ GB}$ peak RSS). Hardened via **QLoRA (NF4)** on a curated 3-task domain adaptation mixture:
-   - *Task A (Refusal Discipline, 40%):* Trained to emit `"field_status": "MISSING"` under incomplete data, penalizing fabricated values with infinite loss.
+Multiple baseline configurations are evaluated to ensure a fair, rigorous, and scientifically valid comparison:
+1. **Hardened SAS-Quant (Primary Competing Arm):** Qwen2.5-14B-Instruct compressed to 4-bit integer weights via GGUF `Q4_K_M` (~9.0 GB weights + ~2.2 GB KV/runtime $\approx 11.2\text{ GB}$ peak RSS). Trained on a curated 3-task domain adaptation mixture using QLoRA (NF4):
+   - *Task A (Refusal Discipline, 40%):* Trained to output `"field_status": "MISSING"` when data is incomplete, penalized with infinite loss if plausible figures are fabricated.
    - *Task B (Strict Function Calling, 30%):* Trained on schema-valid JSON calculator tool calls.
-   - *Task C (Span Citation, 30%):* Trained to link all factual assertions to exact document spans.
-   - Operates via deterministic staged prompting (Stage 1: Extract, Stage 2: Policy Check, Stage 3: Draft).
+   - *Task C (Span Citation, 30%):* Trained to link all factual assertions to specific spans in the source documents.
+   - Operates via a deterministic staged prompting approach (Stage 1: Extract, Stage 2: Policy Check, Stage 3: Draft).
 2. **Naive SAS-Quant Baseline:** Vanilla off-the-shelf Qwen2.5-14B-Instruct @ GGUF Q4_K_M without domain fine-tuning.
-3. **Naive MAS-FP16 Baseline:** Off-the-shelf multi-agent team communicating via unstructured, open-ended conversational prompts without JSON schemas or verifier gates.
-4. **Small Single-Model Baseline (SAS-FP16):** Single Qwen2.5-3B-Instruct native FP16 model, establishing the lower-bound performance of uncompressed small models without multi-agent role decomposition.
+3. **Naive MAS-FP16 Baseline:** Multi-agent team baseline communicating through unstructured, open-ended conversational prompts without JSON schemas or verifier gates.
+4. **Small Single-Model Baseline (SAS-FP16):** Single Qwen2.5-3B-Instruct native FP16 model, representing the baseline performance of small uncompressed models without multi-agent role decomposition.
 
 ### Step 7 — Experimental Design & Parity Invariants
-Experiments are executed under three inviolable parity protocols:
+Experiments are executed according to three strict parity protocols:
 1. **RAM Utilization Parity Protocol (RUPP):**
-   - Evaluated on a standard workstation (16 GB physical RAM).
-   - Operating system and background processes are allocated a mandatory 20% reserve ($3.2\text{ GB}$).
+   - Evaluated on a standard corporate workstation (16 GB physical memory).
+   - A mandatory 20% reserve ($3.2\text{ GB}$) is allocated for the operating system and background processes.
    - The nominal aggregate process-tree RSS cap is locked to $12.8\text{ GB}$, adjusted downwards if host idle memory demands ($M_{\text{job}} = \min(0.8 M_{\text{tier}}, M_{\text{host}} - M_{\text{idle}} - 1\text{ GB})$).
-   - Peak RSS is profiled continuously at 100 ms intervals via `psutil`.
+   - Peak RSS is continuously profiled at 100 ms intervals using `psutil`.
 2. **Thinking-Token Parity ($T_{\text{think}}$):**
-   - The cumulative test-time generation and intermediate reasoning tokens per task instance are capped at an identical budget across both arms:
+   - The total number of test-time generation and intermediate reasoning tokens for each task instance is locked to an identical shared budget across both arms:
      $$T_{\text{think}}(\text{SAS}) = \sum_{k=1}^K T_{\text{think}}(\text{Agent}_k) = 2,048\text{ tokens}$$
 3. **Tool and Runtime Parity:**
-   - Both arms access the exact same deterministic Python tools (`document_extractor`, `policy_retriever`, `financial_calculator`, `citation_verifier`) through Berkeley Function-Calling Leaderboard (BFCL) compliant JSON interfaces.
-   - Both arms execute via CPU-first inference using `llama.cpp` on identical hardware cores.
-   - All evaluations are repeated across 3 fixed random seeds ($42, 123, 999$).
+   - Both arms access the exact same deterministic Python tools (`document_extractor`, `policy_retriever`, `financial_calculator`, `citation_verifier`) via Berkeley Function-Calling Leaderboard (BFCL) compatible interfaces.
+   - Both arms execute inference CPU-only using `llama.cpp` on identical hardware cores.
+   - All evaluations are performed across 3 fixed random seeds ($42, 123, 999$).
 
 ### Step 8 — Evaluation Metrics
-Systems are evaluated on compliance-aligned grounding metrics rather than generic NLP similarity:
-1. **Grounding Accuracy ($GA$):** The proportion of factual narrative claims supported by verified document span pointers:
+Systems are assessed using grounding metrics aligned with regulatory compliance rather than generic NLP text similarity:
+1. **Grounding Accuracy ($GA$):** Proportion of factual narrative claims supported by verified document span pointers:
    $$GA = \frac{\sum_{i=1}^N \mathbb{I}(\text{Claim}_i \in \text{Source Spans})}{\text{Total Factual Claims Drafted}} \times 100\%$$
-2. **Structured Invention Rate ($IR$, Primary Safety Metric - Lower is Better):** The percentage of evaluated cases containing hallucinated financial figures, dates, or legal entities:
+2. **Structured Invention Rate ($IR$, Primary Safety Metric - Lower is Better):** Percentage of evaluated cases containing fabricated financial figures, dates, or legal entities:
    $$IR = \frac{\text{Cases with Hallucinated Figures or Names}}{\text{Total Cases Evaluated}} \times 100\%$$
-3. **Planted Mismatch Recall ($MR$):** The recall of intentionally injected document discrepancies correctly flagged by the system:
+3. **Planted Mismatch Recall ($MR$):** Rate of correctly flagging deliberately injected cross-document discrepancies:
    $$MR = \frac{\text{Planted Discrepancies Correctly Flagged}}{\text{Total Planted Document Discrepancies}} \times 100\%$$
-4. **Refusal Correctness ($RC$):** The proportion of intentionally omitted fields correctly refused as `MISSING` or `UNKNOWN`:
+4. **Refusal Correctness ($RC$):** Percentage of intentionally omitted fields correctly refused as `MISSING` or `UNKNOWN`:
    $$RC = \frac{\text{Omitted Fields Correctly Refused}}{\text{Total Intentionally Omitted Fields}} \times 100\%$$
-5. **Token Efficiency:** Accuracy score per 1,000 thinking tokens consumed.
+5. **Token Efficiency:** Accuracy score achieved per 1,000 thinking tokens consumed.
 6. **Wall-Clock Latency:** Total execution time in seconds per case file on CPU runtime.
 
 ### Step 9 — Statistical and Comparative Analysis
-To establish scientific rigor and reject the null hypothesis ($H_0$):
+To apply scientific rigor and evaluate the null hypothesis ($H_0$):
 - **Hypothesis Testing for Binary Outcomes:** Case-level binary outcomes (e.g., case-level invention occurrences and mismatch detections) are compared using **paired McNemar's tests** ($\chi^2$ with continuity correction) across matched test instances.
-- **Continuous Metric Testing:** Grounding Accuracy and Refusal Correctness are compared using the non-parametric **Wilcoxon signed-rank test** for paired samples.
+- **Continuous Metric Testing:** The non-parametric **Wilcoxon signed-rank test** for paired samples is used for comparing Grounding Accuracy and Refusal Correctness distributions.
 - **Confidence Intervals:** 95% bootstrap confidence intervals are computed using 1,000 resamples per evaluation track.
-- **Factorial Interaction Analysis:** To assess whether full-precision multi-agent teams interact synergistically with workstation memory constraints, a two-way ANOVA is conducted across the $2 \times 2$ factorial space (Architecture: SAS vs. MAS; Precision: Q4 vs. FP16):
+- **Factorial Interaction Analysis:** A two-way ANOVA is utilized to evaluate whether full-precision multi-agent teams interact synergistically with workstation memory constraints across the $2 \times 2$ factorial space (Architecture: SAS vs. MAS; Precision: Q4 vs. FP16):
   $$\Delta_{\text{interaction}} = [S(\text{MAS-FP16}) - S(\text{MAS-Q4})] - [S(\text{SAS-FP16}) - S(\text{SAS-Q4})]$$
 
 ### Step 10 — Ablation and Component Analysis
-To isolate the exact causal mechanisms driving performance differences, we conduct systematic ablation experiments:
-1. **Ablation Arm 1 (MAS without Verifier Gate):** Remove the independent verifier agent from MAS-FP16, routing drafted narratives directly to output to quantify the exact hallucination-reduction contribution of the boundary gate.
+We perform systematic ablation experiments to isolate the causal drivers of performance:
+1. **Ablation Arm 1 (MAS without Verifier Gate):** Remove the verifier agent from MAS-FP16 and route drafted narratives directly to output to measure the exact contribution of the boundary gate to hallucination reduction.
 2. **Ablation Arm 2 (MAS without Typed JSON Schemas):** Replace structured Pydantic handoffs with free-form conversational dialogue to measure context collapse and information erosion under the Data Processing Inequality.
-3. **Ablation Arm 3 (SAS without QLoRA Hardening):** Evaluate SAS-Quant without domain fine-tuning to measure the exact performance gain attributable to refusal and tool adaptation.
+3. **Ablation Arm 3 (SAS without QLoRA Hardening):** Evaluate SAS-Quant without domain fine-tuning to measure the performance delta attributable solely to refusal and tool adaptation.
 4. **Token Budget Sensitivity Analysis:** Evaluate both systems across scaled thinking-token budgets: $T_{\text{think}} \in \{1024, 2048, 4096\}$.
 5. **Hardware Memory Tier Sensitivity:** Execute secondary evaluations on the held-out **8 GB tier** (6.4 GB job cap; 7B Q4 vs. 1.5B+0.5B+0.5B FP16) and **32 GB tier** (25.6 GB job cap; 32B Q4 vs. 7B+3B+0.5B FP16).
 
 ### Step 11 — Error and Failure Forensics
-Every failed case is automatically captured in structured JSON logs (`runs/`) and categorized according to established failure taxonomies:
+All failed cases are automatically logged in structured JSON format (`runs/`) and mapped to established failure taxonomies:
 - **MAS Failure Modes (Cemri et al. MAST, M1–M14):** Forensic tagging of Specification Drift (M1), Lossy Handoff Information Decay (M2), Markov Hallucination Cascades (M3), Context Collapse (M4), Tool Race Conditions (M11), and Verification Theatre (M13).
 - **SAS Quantization Failure Modes (S1–S12):** Forensic tagging of Refusal Failure / Eager Fabrication (S2), Arithmetic Drift in Prose (S4), Tool Syntax Brittleness (S5), and Citation Theatre (S6).
 - **Confusion Matrix Construction:** Factual claims are categorized into True Grounded Assertions, False Fabrications, Correct Refusals, and Erroneous Rejections.
 
 ### Step 12 — Final Research Output and Decision Guidance
-The research produces two tangible deliverables:
-1. **The Compliance Decision Framework:** An empirical decision matrix and decision tree providing IT compliance architects with definitive guidance: specifying the exact memory threshold, task complexity, and token budget under which an institution should deploy a quantized monolith versus a full-precision multi-agent team.
+The research produces two practical deliverables:
+1. **The Compliance Decision Framework:** An empirical decision matrix and decision tree providing IT compliance architects with definitive guidance regarding the memory threshold, task complexity, and token budget required to deploy a quantized monolith versus a full-precision multi-agent team.
 2. **Audit-Ready Compliance Artifacts:** Standardized, machine-readable JSON compliance dossiers complete with exact span citations, reconciliation logs, planted discrepancy flags, and mandatory human sign-off blocks.
 
 ---
