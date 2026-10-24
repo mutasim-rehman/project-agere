@@ -8,6 +8,7 @@ This is a working research assessment, not a novelty certificate.
 | [CRITIC](https://arxiv.org/html/2305.11738v4) | Framework and introduction | External-tool verification followed by correction is established. |
 | [CLR](https://arxiv.org/html/2608.11994v1) | Method, budget and scope | Critical-claim falsification and reliability-weighted candidate selection are established. CLR selects among generated candidates rather than constructing repaired answers. |
 | [BRA-Audit](https://arxiv.org/html/2608.14668v1) | Algorithm 1 and system/method formulation | Trusted audit points, selective rollback, and re-auditing already exist. Localized recovery by itself is not a credible new contribution. |
+| [Chain-of-Verification](https://aclanthology.org/2024.findings-acl.212/) | Published abstract and method summary | Independent verification questions that avoid conditioning on earlier answers are established. Blind re-extraction must be treated as a baseline, not claimed as a new idea. |
 
 The remaining candidate is an empirically useful **transactional field-repair
 contract under simultaneous RAM and token constraints**, evaluated in both SAS
@@ -36,9 +37,17 @@ to delivered cases cannot be the sole outcome.
 - Original structured v1 development tasks are completely solved by rule-only
   parsing (150/150). That benchmark cannot establish the need for an LLM.
 - Unit tests establish patch isolation and delivery-gate behavior only.
-- No model-based improvement, architecture winner, or novelty claim is established.
+- Shared-weight MAS now fits with about 5.14 GB observed peak RSS. A four-case
+  pilot improved correct delivered coverage from 0/4 to 1/4 but did not improve
+  complete-answer correctness (1/4). Patch repair added tokens with no gains on
+  those four cases. No architecture winner or novelty claim is established.
 - The new 24-case KYC diagnostic is deliberately a pilot. It is still templated,
   lacks credit coverage, and requires stronger baselines and external validation.
+- A generator-aware rule control also solves all 24 temporal KYC probes. Use them
+  for mechanism regression, not as the sole evidence of a useful LLM contribution.
+- Non-oracle lexical retrieval on the fixed first 24 FinQA development records
+  retrieves all annotated evidence for 19/24. This is a retrieval diagnostic, not
+  question-answering accuracy. Public benchmark contamination is unassessed.
 
 ## Next decisions depend on measurements
 

@@ -1,0 +1,10 @@
+Verified qwen2.5-0.5b-instruct-fp16.gguf
+Verified qwen2.5-1.5b-instruct-fp16.gguf
+Downloading qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf: 3993201344 bytes
+Transfer qwen2.5-7b-instruct-q4_k_m-00001-of-00002.partial: offset=703227414, status=206, content_length=3289973930
+Transfer ended at 3993201344/3993201344 bytes
+Verified qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf
+Downloading qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf: 689872288 bytes
+Transfer qwen2.5-7b-instruct-q4_k_m-00002-of-00002.partial: offset=0, status=206, content_length=689872288
+Transfer ended at 689872288/689872288 bytes
+Verified qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf

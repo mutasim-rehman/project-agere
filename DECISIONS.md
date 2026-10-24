@@ -40,6 +40,17 @@
 - Next run tests transactional patch repair on the same four development cases.
   The 7B first shard has now passed the official SHA-256 check; second shard is
   downloading. The SAS arm will receive the same compact schemas and field checks.
+- Patch pilot `mas-shared-patch-smoke-05`: 1/4 correct and correctly delivered,
+  zero incorrect deliveries, zero repair gains or regressions, peak RSS
+  5,145,071,616 bytes. Tokens increased to 1,709 from 1,321 without accuracy gain.
+  Do not retain this intervention as an empirical improvement on these cases.
+  Raw repair responses mostly repeat existing facts; investigate answer anchoring
+  and stronger independent re-extraction as a known CoVe-style baseline.
+- Both official 7B shards now pass SHA-256 verification. The first SAS four-case
+  pilot is running serially after the MAS runs, with the same schema and verifier
+  controls. Do not infer a final result from a partial case file.
+- Public FinQA development data is supplemental; potential pretraining contamination
+  is unknown. No claim of unseen financial-document validation is justified yet.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

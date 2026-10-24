@@ -1,42 +1,54 @@
 # Research checkpoint — 24 October 2026
 
-Goal remains active. No novel method or model improvement is established yet.
+Goal remains active. No defensible novelty or architecture winner is established.
 
-## Verified milestones
+## Verified infrastructure
 
-- `5db7756`: evidence contracts, atomic repair, token ledger; pushed.
-- `9bb1262`: label-free deterministic v1 baseline; pushed.
-- `70ec680`: source-visible/gated pipelines and temporal KYC probes; pushed.
-- `6d861cd`: opaque document IDs, paired analysis, novelty audit; pushed.
-- Current standard-library test suite: 16 passing tests.
-- Rule-only original development baseline: 150/150 case success, 20/20 mismatches,
-  51/51 missing fields, zero generated tokens. Raw predictions and scores retained.
+- Local Python 3.12; source-built llama-cpp-python 0.3.16 imports and generates.
+- All official weights, including both 7B Q4 shards, pass revision-pinned SHA-256.
+- Small-model native-F16 conversions preserve full precision but did not reduce size.
+- 31 tests pass. Code, decisions, raw completed runs and paired analyses are committed.
+- Milestone pushes use the project .env token through the ignored askpass helper.
+- Leave the user's unrelated .GITIGNORE file untouched.
 
-## Infrastructure in progress
+## Measured results
 
-- Project-local Python 3.12 and dependencies installed.
-- CPU llama-cpp-python 0.3.19 wheel fails import (musl dependency); local source
-  installation of 0.3.16 is running. Inspect `logs/runtime-build.log` and the actual
-  process/session before deciding whether it failed; an empty log is not failure.
-- Official 0.5B F16 GGUF downloaded and SHA-256 verified. 1.5B download is running;
-  7B Q4 shards follow. Verified entries are recorded in `evidence/models.json`.
-- Official F16 files are larger than the old conversions. Inspect tensor types
-  and resident fit; a reproducibly documented F16 conversion may be needed to
-  keep the original MAS allocation inside 6.4 GB. Never silently raise the cap.
+| Condition | Cases correct | Correct deliveries | Incorrect deliveries | Observed peak RSS |
+|---|---:|---:|---:|---:|
+| Original v1 rules | 150/150 | Not assessed | Not assessed | Not assessed |
+| Temporal KYC rules | 24/24 | Not assessed | Not assessed | Not assessed |
+| MAS initial four-case pilot | 1/4 | 0 | 0 | 5.787 GB |
+| MAS independent/field, distinct instances | Invalid memory | — | — | 6.411 GB |
+| Free-citation distinct-instance control | Invalid memory | — | — | 6.405 GB |
+| MAS shared weights, independent/field | 1/4 | 1 | 0 | 5.145 GB |
+| MAS shared weights, patch repair | 1/4 | 1 | 0 | 5.145 GB |
 
-## Next executable checks
+The shared setup uses three roles and two resident model instances; identical
+0.5B weights are reused serially with KV reset before each call. Memory sharing
+is engineering, not a novelty claim. Sampled RSS cannot establish an unobserved
+absolute peak. Invalid runs are excluded from accuracy comparisons.
 
-1. Confirm source-built runtime import; capture dependency versions.
-2. Validate one small-model generation and constrained JSON under measured memory.
-3. Finish weight integrity checks, establish both arms' resident fit.
-4. Run a four-case smoke for each arm and no/full/patch repair before larger runs:
-   `.venv/bin/python scripts/tier8_v2_run.py --arm sas --repair none --limit 4 --out research/tier8_v2/runs/sas-none-smoke-01`
-   Use distinct output directories; the runner refuses to mix trials.
-5. Inspect raw outputs and truncation before selecting prompt/budget changes.
-6. Expand credit and task variation, add strong non-LLM baselines, allocate equal
-   development effort, and complete the research loop described in PROTOCOL.md.
+Patch repair spent 1,709 tokens versus 1,321 without repair and yielded no gains
+in this four-case pilot. All runs are development diagnostics, not confirmation.
 
-The 24-case KYC probe is development-only, not confirmatory evidence. The old
-test split was not opened during this redevelopment. No new held-out test exists
-yet. Best-system search, adaptive routing, external validation, full evaluation,
-and a defensible originality assessment are still outstanding.
+## Live work at checkpoint
+
+SAS pilot: research/tier8_v2/runs/sas-field-smoke-01, launched by exec session
+17710. Revalidate that handle or the actual process before deciding it stopped.
+A partial case file is not a completed result. All weight downloads have finished.
+
+## Next research work
+
+1. Inspect the completed SAS pilot and verifier errors, then commit/push the result.
+2. Evaluate stronger independent re-extraction against anchored repair; recognize
+   Chain-of-Verification as prior art. Do not keep tuning only a rule-solvable toy.
+3. Connect the bounded cited arithmetic executor to the non-oracle FinQA packets.
+   The fixed first-24 dev slice retrieves all gold evidence in 19/24 cases; never
+   use gold retrieval or programs in model prompts.
+4. Expand credit and independent source layouts, compare strong SAS/MAS with equal
+   development effort, and measure actual tokens, false locks, regressions and cost.
+5. Develop and ablate a narrower useful contribution, complete full-paper novelty
+   review, and freeze new confirmatory data/systems before any publication claim.
+
+The existing test split remains unopened during redevelopment. No new frozen
+confirmatory evaluation exists yet. See DECISIONS.md and NOVELTY_AUDIT.md.
