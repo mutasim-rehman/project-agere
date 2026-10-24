@@ -2,6 +2,35 @@
 
 ## Redevelopment — 24 October 2026
 
+### Implemented guarded QLoRA fit/training path (execution pending)
+
+- Added a pinned prequantized training-base fetcher with config/blob checks,
+  resumable weight transfer, LFS SHA/size verification and a disk-headroom guard.
+  The 3B metadata/config snapshot is prepared; its weights are not yet downloaded.
+  Training NF4 and deployment GGUF Q4_K_M are explicitly distinct quantizations.
+- Added a separate adapter trainer consuming exactly the HF/GGUF-parity-checked
+  no-analysis deployment tokens. User/prompt tokens are masked; complete assistant
+  targets are preserved. The frozen 661/100 train/validation split is checked.
+  Base/config/data identities are verified before loading; only LoRA parameters
+  may be trainable. The 7B path exists but GPU fit is not assumed or measured.
+- First execution is a two-update fit diagnostic on the longest training sequence,
+  exercising real forward/backward, nonzero finite gradients, optimizer-state
+  memory and changed adapter tensors. It does not count as trained-system quality.
+  Full baseline training is one epoch, batch-one accumulation eight, rank 8,
+  alpha 16, dropout .05, all linear projections, AdamW lr 2e-4, clipping 1.0.
+  This is an initial resource-feasible baseline, not an optimality claim.
+- Training records loading/update events, losses, GPU allocated/reserved peaks,
+  sampled host RSS, adapter file hashes and train-only validation teacher-forced
+  loss. Peak tracking begins before model loading. Training resource measurements
+  are separate from the simulated 8 GB deployment RSS ceiling. Applied GGUF adapter
+  inference and actual task gains remain required; neither is inferred from loss.
+- The live-process guard was exercised against the actual SAS monitor and refused
+  before creating an output directory or importing/loading Torch. It also requires
+  the CPU sequence's complete journal and valid SAS summary before model work.
+  CUDA installation is ongoing; no real fit/training step has run. All 151 tests
+  pass, including exact label masking and tokenizer mismatch rejection. Frozen
+  inference code/data remain unchanged.
+
 ### Reclaimed reproducible model-download caches for adaptation
 
 - SHA256-verified both original 0.5B/1.5B public FP16 GGUF downloads and their native

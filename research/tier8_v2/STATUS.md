@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 148 contract tests pass. They do not establish financial reasoning correctness.
+- 151 contract tests pass. They do not establish financial reasoning correctness.
 - Separate memory-monitored fixed-output repair harness is ready for plain versus
   proof feedback on the same algebraically flagged cohort. Original output tokens
   are debited; changed answers are reverified. Grammar/compatibility checks pass,
@@ -177,3 +177,10 @@ removed, reclaiming 4.827 GB. Native inference files remain verified and retaine
 reclaimed-source-cache-01.json records pinned source hashes and recovery identity.
 The separate CUDA training stack is being installed. GPU model fit/training and
 adapter application remain untested; no training overlaps the active CPU sequence.
+
+Guarded QLoRA trainer is implemented in scripts/tier8_v2_adapt.py. It refuses live
+CPU inference, verifies the 661/100 parity-checked corpus/base, and has a two-update
+longest-example fit diagnostic before a separate full one-epoch run. Actual fit,
+training, conversion and applied-adapter inference are unexecuted. The guard was
+verified against the live SAS process. Training-base 3B metadata/config is pinned;
+weight download and the CUDA runtime installation are still pending completion.

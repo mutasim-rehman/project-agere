@@ -21,3 +21,24 @@ prefix masking and reject any mismatch with the stored token-ID SHA. Validate th
 HF tokenizer against these GGUF token sequences before fitting. Do not apply a
 second chat template, truncate targets, train a verifier on invented PASS labels,
 or evaluate without proving that the trained adapter is actually loaded.
+
+## Execution gates
+
+The official HF tokenizer parity audit passes all 761 examples for both profiles.
+The inference environment remains separate from `.venv-training`. After the frozen
+CPU sequence completes and the pinned training base is downloaded, the first real
+model step is:
+
+```bash
+.venv-training/bin/python scripts/tier8_v2_adapt.py --profile 3b --mode fit --out research/tier8_v2/runs/adapter-3b-fit-01
+```
+
+This diagnostic performs two updates on the longest training example and saves
+weight-change/gradient/memory proof. It is not an accuracy experiment. Only after
+it succeeds should a separate `--mode train` run execute the 661-example epoch.
+Use a new output directory. The trainer refuses overlap, existing outputs, changed
+inputs and tokenizer mismatches. The 7B path still needs its own actual fit check.
+
+Training loss and saved adapter files do not prove deployment behavior. Convert
+the adapter for the measured runtime, prove it is applied, then evaluate each arm
+against its matched unadapted no-analysis baseline and the best existing baseline.

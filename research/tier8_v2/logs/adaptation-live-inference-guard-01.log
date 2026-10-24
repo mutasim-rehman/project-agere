@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py", line 201, in <module>
+    main()
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py", line 61, in main
+    guard_no_inference()
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py", line 44, in guard_no_inference
+    raise ValueError(f"Another inference/training process is active: {process.pid}")
+ValueError: Another inference/training process is active: 169054
