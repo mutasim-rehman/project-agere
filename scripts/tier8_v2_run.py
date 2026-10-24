@@ -248,14 +248,30 @@ def verified_models(arm):
 def worker(args, out):
     models = Models(args.arm, args.context, args.residency)
     rows = [json.loads(line) for line in inside(args.data).read_text().splitlines() if line][:args.limit]
+    if args.task == "finqa":
+        from tier8_v2_financial_pipeline import run_financial, evaluate_financial
+        gold_rows = json.loads(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_text())
+        gold = {r["id"]: r for r in gold_rows}
+        if len(gold) != len(gold_rows):
+            raise ValueError("Duplicate financial evaluation IDs")
     for case in rows:
+        if case.get("split") not in ("development", "dev"):
+            raise ValueError("This runner accepts development data only")
         public = {k: v for k, v in case.items() if k != "gold"}
-        result = run_case(public, models, args.arm, args.repair, verification=args.verification,
-                          handoff=args.handoff, citations=args.citations,
-                          event_sink=lambda event: append(out / "stages.jsonl", event))
-        result["initial_score"] = evaluate(case, result["initial_answer"])
+        sink = lambda event: append(out / "stages.jsonl", event)
+        if args.task == "finqa":
+            if public["question"] != gold[case["id"]]["qa"]["question"]:
+                raise ValueError("Public question differs from evaluation source")
+            result = run_financial(public, models, args.arm, args.repair, event_sink=sink)
+            result["initial_score"] = evaluate_financial(gold[case["id"]], result["initial_answer"], result["initial_execution"])
+            result["score"] = evaluate_financial(gold[case["id"]], result["answer"], result["execution"])
+            result["all_gold_evidence_retrieved"] = set(gold[case["id"]]["qa"]["gold_inds"]) <= set(public["evidence"])
+        else:
+            result = run_case(public, models, args.arm, args.repair, verification=args.verification,
+                              handoff=args.handoff, citations=args.citations, event_sink=sink)
+            result["initial_score"] = evaluate(case, result["initial_answer"])
+            result["score"] = evaluate(case, result["answer"])
         result["residency"] = args.residency
-        result["score"] = evaluate(case, result["answer"])
         append(out / "cases.jsonl", result)
         print(json.dumps({"id": case["id"], "success": result["score"]["case_success"],
                           "delivered": result["delivered"], "tokens": result["tokens"]}), flush=True)
@@ -265,16 +281,23 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--arm", choices=("sas", "mas"), required=True)
     parser.add_argument("--repair", choices=("none", "full", "patch"), required=True)
-    parser.add_argument("--data", default="research/tier8_v2/data/development.jsonl")
+    parser.add_argument("--task", choices=("kyc", "finqa"), default="kyc")
+    parser.add_argument("--data")
     parser.add_argument("--out", required=True)
     parser.add_argument("--limit", type=int, default=4)
-    parser.add_argument("--context", type=int, default=2048)
+    parser.add_argument("--context", type=int)
     parser.add_argument("--verification", choices=("joint", "field"), default="field")
     parser.add_argument("--handoff", choices=("proposal", "independent"), default="independent")
     parser.add_argument("--citations", choices=("free", "enum"), default="enum")
     parser.add_argument("--residency", choices=("distinct", "shared"), default="shared")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
+    if args.data is None:
+        args.data = "research/tier8_v2/data/finqa-development-public.jsonl" if args.task == "finqa" else "research/tier8_v2/data/development.jsonl"
+    if args.context is None:
+        args.context = 4096 if args.task == "finqa" else 2048
+    if args.task == "finqa" and (args.handoff != "independent" or args.verification != "field" or args.citations != "enum"):
+        raise ValueError("KYC-specific handoff/verification/citation overrides are not implemented for FinQA")
     if args.limit <= 0:
         raise ValueError("Positive case limit required")
     out = inside(args.out)
@@ -286,7 +309,8 @@ def main():
         raise ValueError("Use a new output directory; never mix runs")
     out.mkdir(parents=True)
     data = inside(args.data)
-    sources = [Path(__file__), ROOT / "scripts/evidence_contract.py", ROOT / "scripts/tier8_v2_data.py"]
+    sources = [Path(__file__), ROOT / "scripts/evidence_contract.py", ROOT / "scripts/tier8_v2_data.py",
+               ROOT / "scripts/tier8_v2_financial_pipeline.py", ROOT / "scripts/evidence_calculator.py", ROOT / "scripts/tier8_v2_finqa.py"]
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),
                 "code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                 "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
@@ -295,6 +319,10 @@ def main():
                 "started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                 "runtime": subprocess.check_output([sys.executable, "-c", "import llama_cpp;print(llama_cpp.__version__)"], text=True).strip()}
     manifest["models"] = verified_models(args.arm)
+    if args.task == "finqa":
+        manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()
+        manifest["task_policy"] = {"verification": "operand-operation-unit checks", "handoff": "fallible source-ID suggestion",
+                                   "citations": "enumerated source and step IDs", "metric": "custom numeric execution tolerance 1e-5"}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak = 0
     breached = False
@@ -332,6 +360,8 @@ def main():
                "delivered_incorrect": sum(r["delivered"] and not r["score"]["case_success"] for r in rows),
                "repair_regressions": sum(r["initial_score"]["case_success"] and not r["score"]["case_success"] for r in rows),
                "repair_gains": sum(not r["initial_score"]["case_success"] and r["score"]["case_success"] for r in rows),
+               "initial_case_successes": sum(r["initial_score"]["case_success"] for r in rows),
+               "withheld": sum(not r["delivered"] for r in rows),
                "total_generated_tokens": sum(r["tokens"] for r in rows)}
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))

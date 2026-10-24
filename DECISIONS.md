@@ -66,6 +66,24 @@
   4,978,438,144 bytes. The current anchored patch policy improves neither arm on
   these four cases. Preserve this negative result and move beyond the rule-solvable
   KYC pilot instead of claiming success from extra engineering alone.
+- Implemented a FinQA development adapter: cited arithmetic programs, bounded
+  deterministic execution, source-visible operand/operation/unit checks, and
+  localized program-step repair with recomputation of dependents. These are
+  baselines/components; no new-method claim is established by implementation.
+- Both FinQA arms use context 4096 provisionally (KYC diagnostics retain 2048),
+  the same 2048 total generated-token ceiling, and the same measured 6.40 GB RSS
+  ceiling. Memory fit must be verified by actual runs. Program and verification
+  grammars compile under the installed runtime; 43 tests pass.
+- FinQA gold audit was completed before numerical model inference on the fixed
+  first-24 prefix. Percentage executable answers mix fraction and percentage-point
+  conventions; two records disagree with their reported answers even after display
+  rounding. Retain all 24. Primary diagnostic correctness uses reported-answer
+  rounding and the model's declared unit; raw exe_ans tolerance 1e-5 is separate.
+  Neither metric is FinQA's official program-equivalence score. Gold is never used
+  to rescale deployment output or choose a repair.
+- False-lock correctness is not assessed per FinQA program step: numerical gold
+  does not uniquely identify a valid alternative reasoning program. Do not reuse
+  the KYC field-lock metric as if it provided such ground truth.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

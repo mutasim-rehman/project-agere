@@ -23,6 +23,7 @@ def diagnostics(rows):
               "prompt_tokens": sum(s.get("prompt_tokens", 0) for r in rows for s in r["stages"]),
               "inference_seconds": sum(s.get("seconds", 0) for r in rows for s in r["stages"]),
               "truncated_stages": sum(s.get("finish_reason") == "length" for r in rows for s in r["stages"])}
+    lock_assessed = all(r.get("task") != "finqa" for r in rows)
     for row in rows:
         correct = row["initial_score"]["case_success"]
         key = "initial_verifier_" + ("true_accepts" if correct else "false_accepts") if verifier_passed(row) else "initial_verifier_" + ("false_rejects" if correct else "true_rejects")
@@ -31,7 +32,11 @@ def diagnostics(rows):
             after = row["score"]["field_correct"][field]
             result["field_repair_gains"] += int(not before and after)
             result["field_repair_regressions"] += int(before and not after)
-            result["wrong_fields_left_locked"] += int(row["repair"] == "patch" and row["repair_attempted"] and not before and not after and field not in row.get("repair_scope", []))
+            if lock_assessed:
+                result["wrong_fields_left_locked"] += int(row["repair"] == "patch" and row["repair_attempted"] and not before and not after and field not in row.get("repair_scope", []))
+    if not lock_assessed:
+        result["wrong_fields_left_locked"] = None
+        result["lock_scope_note"] = "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
     return result
 
 
