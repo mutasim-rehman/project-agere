@@ -149,6 +149,16 @@
   tokens plus chat margin for generation. Record which examples fit each case.
   Next run evaluates the entire declared 24-case slice, including the two reference
   disagreements and incomplete retrieval cases. Fifty-six tests pass.
+- A broader primary-source check identified FinMAN (EMNLP 2025) as a close prior
+  baseline. It already stages formula planning, extraction, code execution and
+  checking, and examines token/runtime scaling. Do not claim those as new. The
+  published constrained-decoding literature also motivates prompt adaptation and
+  demonstrations. RELATED_WORK_MATRIX.md records inspected scope and open gaps.
+- Added an optional 128/256-token natural-language measure/formula analysis stage
+  before structured programming. It shares the existing 2048-token ledger; the
+  verifier does not see these preliminary notes. This is a reasoning baseline,
+  not a novelty claim. Its default is zero, preserving the running common recipe.
+  Fifty-seven tests pass; real model validation remains pending.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

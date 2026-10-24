@@ -26,6 +26,7 @@ test_unpaired_cases_are_rejected (test_tier8_v2_analyze.AnalysisTests.test_unpai
 test_all_latent_answers_are_source_supported (test_tier8_v2_data.DataTests.test_all_latent_answers_are_source_supported) ... ok
 test_document_ids_do_not_reveal_source_roles (test_tier8_v2_data.DataTests.test_document_ids_do_not_reveal_source_roles) ... ok
 test_supported_stale_owner_is_semantically_wrong (test_tier8_v2_data.DataTests.test_supported_stale_owner_is_semantically_wrong) ... ok
+test_analysis_is_an_extra_budgeted_stage_not_gold_input (test_tier8_v2_financial_pipeline.FinancialTests.test_analysis_is_an_extra_budgeted_stage_not_gold_input) ... ok
 test_contradictory_review_is_rejected (test_tier8_v2_financial_pipeline.FinancialTests.test_contradictory_review_is_rejected) ... ok
 test_demonstrations_are_omitted_when_output_reserve_would_not_fit (test_tier8_v2_financial_pipeline.FinancialTests.test_demonstrations_are_omitted_when_output_reserve_would_not_fit) ... ok
 test_deployment_rejects_gold_fields (test_tier8_v2_financial_pipeline.FinancialTests.test_deployment_rejects_gold_fields) ... ok
@@ -62,6 +63,6 @@ ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 56 tests in 0.010s
+Ran 57 tests in 0.024s
 
 OK

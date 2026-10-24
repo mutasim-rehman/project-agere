@@ -132,6 +132,14 @@ class FinancialTests(unittest.TestCase):
         self.assertEqual(ids, ["TRAIN"])
         self.assertLess(text.index("TRAINING"), text.index("ACTUAL"))
 
+    def test_analysis_is_an_extra_budgeted_stage_not_gold_input(self):
+        models = FakeModels(["Use profit divided by debt service.", self.answer, self.passed])
+        result = run_financial(self.public, models, "sas", "none", analysis_tokens=128)
+        self.assertEqual([s["stage"] for s in result["stages"]], ["analyze_question", "program", "verify_program"])
+        self.assertEqual(result["tokens"], 30)
+        self.assertIn("Use profit divided", models.prompts[1])
+        self.assertNotIn("Preliminary reasoning", models.prompts[2])
+
 
 if __name__ == "__main__":
     unittest.main()

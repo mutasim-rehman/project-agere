@@ -95,9 +95,10 @@ class Models:
             print(json.dumps({"role": role, "weights": filename, "shared_instance": False}), flush=True)
 
     @staticmethod
-    def prompt(content):
+    def prompt(content, structured=True):
+        style = "Return JSON only." if structured else "Give concise source-grounded reasoning."
         return ("<|im_start|>system\nYou reconcile financial evidence for human review. "
-                  "Use authoritative sources only. Return JSON only.<|im_end|>\n"
+                  f"Use authoritative sources only. {style}<|im_end|>\n"
                   f"<|im_start|>user\n{content}<|im_end|>\n<|im_start|>assistant\n")
 
     def count_prompt_tokens(self, role, content):
@@ -107,7 +108,7 @@ class Models:
         model = self.models[role]
         # Roles never inherit conversational KV state, including when weights share.
         model.reset()
-        prompt = self.prompt(content)
+        prompt = self.prompt(content, structured=schema is not None)
         prompt_tokens = len(model.tokenize(prompt.encode(), add_bos=True))
         available = max(0, self.context - prompt_tokens - 8)
         limit = min(available, budget.allowance(requested))
@@ -115,17 +116,20 @@ class Models:
         if limit == 0:
             return None, {"stage": stage, "role": role, "prompt": content, "prompt_tokens": prompt_tokens,
                           "generated_tokens": 0, "finish_reason": "no_context_or_budget", "response": "", "seconds": 0}
+        grammar = {"grammar": self.grammar.from_json_schema(json.dumps(schema), verbose=False)} if schema is not None else {}
         output = model.create_completion(prompt, max_tokens=limit, temperature=0,
             top_k=1, seed=42, repeat_penalty=1, stop=["<|im_end|>"],
-            grammar=self.grammar.from_json_schema(json.dumps(schema), verbose=False))
+            **grammar)
         choice = output["choices"][0]
         used = output["usage"]["completion_tokens"]
         budget.charge(used)
         text = choice["text"]
-        try:
-            answer = json.loads(text)
-        except json.JSONDecodeError:
-            answer = None
+        answer = text
+        if schema is not None:
+            try:
+                answer = json.loads(text)
+            except json.JSONDecodeError:
+                answer = None
         return answer, {"stage": stage, "role": role, "prompt": content, "prompt_tokens": prompt_tokens,
             "requested_tokens": requested, "effective_limit": limit, "generated_tokens": used,
             "finish_reason": choice["finish_reason"], "response": text, "seconds": time.monotonic() - start}
@@ -279,7 +283,9 @@ def worker(args, out):
                 raise ValueError("Public question differs from evaluation source")
             result = run_financial(public, models, args.arm, args.repair, event_sink=sink,
                                    representation=args.program_mode, unit_mode=args.unit_mode, selector=args.selector,
-                                   causal_mode=args.causal_mode, catalog_style=args.catalog_style, demonstrations=demonstrations)
+                                   causal_mode=args.causal_mode, catalog_style=args.catalog_style, demonstrations=demonstrations,
+                                   analysis_tokens=args.analysis_tokens)
+            # Analysis output is budgeted by the same ledger inside run_financial.
             result["initial_score"] = evaluate_financial(gold[case["id"]], result["initial_answer"], result["initial_execution"])
             result["score"] = evaluate_financial(gold[case["id"]], result["answer"], result["execution"])
             result["all_gold_evidence_retrieved"] = set(gold[case["id"]]["qa"]["gold_inds"]) <= set(public["evidence"])
@@ -313,6 +319,7 @@ def main():
     parser.add_argument("--causal-mode", choices=("check", "grammar"), default="check")
     parser.add_argument("--catalog-style", choices=("full", "compact"), default="full")
     parser.add_argument("--demos", type=int, choices=(0, 1, 2), default=0)
+    parser.add_argument("--analysis-tokens", type=int, choices=(0, 128, 256), default=0)
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.data is None:
@@ -323,6 +330,8 @@ def main():
         raise ValueError("Causal grammar and compact catalogs require reference programs")
     if args.demos and (args.task != "finqa" or args.program_mode != "reference"):
         raise ValueError("Training demonstrations require FinQA reference programs")
+    if args.analysis_tokens and args.task != "finqa":
+        raise ValueError("Formula analysis is currently implemented for FinQA only")
     if args.task == "finqa" and (args.handoff != "independent" or args.verification != "field" or args.citations != "enum"):
         raise ValueError("KYC-specific handoff/verification/citation overrides are not implemented for FinQA")
     if args.limit <= 0:
@@ -358,6 +367,7 @@ def main():
                                    "selector": args.selector, "program_mode": args.program_mode, "unit_mode": args.unit_mode,
                                    "causal_mode": args.causal_mode, "catalog_style": args.catalog_style,
                                    "demonstrations_requested": args.demos, "demonstration_policy": "training only; exact tokenizer fit reserves 768 generation tokens",
+                                   "analysis_tokens": args.analysis_tokens,
                                    "citations": "enumerated source and step IDs", "metric": "declared-unit reported answer with rounding; raw exe_ans separately"}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak = 0
