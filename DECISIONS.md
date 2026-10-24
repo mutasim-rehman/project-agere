@@ -18,6 +18,15 @@
   no-candidate preservation; 68 tests pass. No real-model repair gain is claimed.
 - Strong generation remains the priority. See REDEVELOPMENT_PLAN.md for the
   staged optimization, matched-resource controls and confirmatory requirements.
+- Matching SAS first-24 baseline has completed under peak RSS 5,131,907,072 bytes:
+  7 reported-answer matches, 6 raw-execution matches, 7 correct deliveries,
+  6 incorrect deliveries and 11 withheld, 2059 output tokens. MAS has 1 match,
+  1 correct delivery and 13 incorrect deliveries on the same IDs. Paired exact
+  McNemar p=0.0703125 is exploratory, not a final architecture conclusion.
+- Final graph coverage is limited: zero oracle-correctable MAS errors and one SAS
+  error. Do not expand this narrow mechanism into the main contribution without
+  evidence. Prioritize measure/formula reasoning. A two-case MAS 128-token
+  formula-analysis smoke is now running, otherwise matching the baseline.
 
 ### First resident MAS pilot
 

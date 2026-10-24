@@ -910,11 +910,11 @@
     },
     {
       "run": "finqa-sas-demos-dev24-01",
-      "complete": false,
-      "run_status": "live_snapshot",
-      "cases_observed": 17,
-      "executable_programs": 13,
-      "programs_with_unused_steps": 1,
+      "complete": true,
+      "run_status": "complete",
+      "cases_observed": 24,
+      "executable_programs": 16,
+      "programs_with_unused_steps": 2,
       "correct_programs_with_unused_steps": 0,
       "oracle_reconnection_potential_gains": 1,
       "oracle_caution": "Candidate coverage only, not a model-selected repair gain; gold used after candidate enumeration.",
@@ -1253,6 +1253,117 @@
             {
               "id": "KEEP",
               "value": "0.3401112603107615576443506618",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "MSI/2006/page_61.pdf-3",
+          "steps": 3,
+          "answer_ancestors": [
+            0,
+            2
+          ],
+          "unused_steps": [
+            1
+          ],
+          "repair_hints": [
+            {
+              "unused_step": 1,
+              "possible_consumer_steps": [
+                2
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            }
+          ],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 3,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-140400",
+              "edit": null
+            },
+            {
+              "id": "E001",
+              "value": "-33.96226415094339622641509434",
+              "edit": {
+                "step": 2,
+                "side": "left",
+                "before": {
+                  "span_id": "STEP#0",
+                  "value": "#0"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            },
+            {
+              "id": "E002",
+              "value": "476.8301886792452830188679245",
+              "edit": {
+                "step": 2,
+                "side": "right",
+                "before": {
+                  "span_id": "CONST",
+                  "value": "100"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "DVN/2014/page_85.pdf-1",
+          "steps": 6,
+          "answer_ancestors": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.0000448",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "SPGI/2018/page_74.pdf-1",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.9039677975848188614146060955",
               "edit": null
             }
           ]

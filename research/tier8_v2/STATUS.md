@@ -32,6 +32,13 @@ are not established. Do not mark the goal complete from these development result
   examples: 1/24 correct, 1 correct delivery, 13 wrong deliveries, 10 withheld.
   All 24 programs were source-supported/executable; peak RSS 5.248 GB; no truncation.
   Raw-execution and reported-answer metrics both have one match.
+- Matching SAS baseline completed: 7/24 reported-answer matches, 6/24 raw execution
+  matches, 7 correct deliveries, 6 incorrect deliveries, 11 withheld. Peak RSS
+  5.132 GB; 2059 generated tokens; no stage truncation. The paired success
+  difference is +6/24 for SAS, exploratory exact McNemar p=0.0703.
+- Completed graph audit finds only one oracle-correctable SAS error and zero MAS
+  errors under the bounded reconnection candidate set. This is a narrow mechanism,
+  not a promising general solution to the present semantic reasoning failures.
 - Shared retrieval includes all annotated evidence in 19/24 cases. Two reference
   records disagree; all remain included with separate metrics.
 - Both selected training demonstration pages and annual-report groups are absent
@@ -39,14 +46,15 @@ are not established. Do not mark the goal complete from these development result
 
 ## Live run
 
-Matching SAS baseline: research/tier8_v2/runs/finqa-sas-demos-dev24-01
-Exec session: 55655. Revalidate this handle or its actual worker process before
-calling it stopped. It runs the same recipe with analysis_tokens=0. Partial output
-is not a final result. Do not launch a competing inference job on this host.
+MAS formula-analysis smoke: research/tier8_v2/runs/finqa-mas-analysis-smoke-01
+Exec session: 7824. Revalidate its worker process before calling it stopped.
+Two development cases, analysis_tokens=128, otherwise matching the baseline.
+Partial output is not a final result. Do not launch competing inference here.
 
 ## Next steps
 
-1. Inspect and commit/push the completed SAS 24-case run and paired analysis.
+1. Preserve the completed SAS run and paired analysis; do not infer a general
+   architecture winner from these development cases.
 2. Validate budgeted formula analysis in actual inference, then evaluate it in both
    arms with the same recipe. Strong baselines must separate reasoning from syntax.
 3. Investigate stronger resident-model verification and FinMAN-style staged formula
