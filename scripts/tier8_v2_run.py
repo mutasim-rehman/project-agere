@@ -20,9 +20,9 @@ from tier8_v2_data import FIELDS, evaluate
 ROOT = Path(__file__).resolve().parents[1]
 WEIGHTS = ROOT / "weights/tier8_v2"
 MODEL_FILES = {"sas": {"sas": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf"},
-               "mas": {"extractor": "qwen2.5-0.5b-instruct-fp16.gguf",
-                       "drafter": "qwen2.5-1.5b-instruct-fp16.gguf",
-                       "verifier": "qwen2.5-0.5b-instruct-fp16.gguf"}}
+               "mas": {"extractor": "qwen2.5-0.5b-instruct-native-f16.gguf",
+                       "drafter": "qwen2.5-1.5b-instruct-native-f16.gguf",
+                       "verifier": "qwen2.5-0.5b-instruct-native-f16.gguf"}}
 SCHEMA = {"type": "object", "properties": {
     "case_id": {"type": "string"},
     "facts": {"type": "object", "properties": {f: {"type": "object", "properties": {
@@ -180,6 +180,9 @@ def passed(verdict):
 def verified_models(arm):
     manifest_path = ROOT / "research/tier8_v2/evidence/models.json"
     entries = json.loads(manifest_path.read_text())
+    native = ROOT / "research/tier8_v2/evidence/native-models.json"
+    if native.exists():
+        entries += json.loads(native.read_text())
     required = set(MODEL_FILES[arm].values())
     if arm == "sas":
         required.add("qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf")

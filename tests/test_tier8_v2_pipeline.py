@@ -69,7 +69,7 @@ class PipelineTests(unittest.TestCase):
             evidence = base / "research/tier8_v2/evidence"
             evidence.mkdir(parents=True)
             entries = []
-            for name in ("qwen2.5-0.5b-instruct-fp16.gguf", "qwen2.5-1.5b-instruct-fp16.gguf"):
+            for name in ("qwen2.5-0.5b-instruct-native-f16.gguf", "qwen2.5-1.5b-instruct-native-f16.gguf"):
                 (base / name).write_bytes(b"verified-fixture")
                 entries.append({"file": name, "bytes": 16, "sha256": hashlib.sha256(b"verified-fixture").hexdigest()})
             (evidence / "models.json").write_text(json.dumps(entries))

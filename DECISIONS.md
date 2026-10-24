@@ -75,6 +75,17 @@
   FinQA's test data remains unopened.
 - Add a separately labeled 0.5B primitive diagnostic for runtime/token corruption
   checks. It cannot be counted as SAS-versus-MAS evidence.
+- The generator-aware rule control solves all 24 temporal KYC probes. Treat them
+  as regression tests, not evidence that an LLM is needed. Do not tune synthetic
+  complexity merely to defeat a parser. Public-report tasks and broader independent
+  sources are needed to establish practical value.
+- FinQA first-24 development slice: non-oracle shared lexical retrieval includes
+  all annotated evidence in 19/24 cases, and 34/41 annotated evidence units. Missing
+  evidence is a measured retrieval limitation, not automatically a generation error.
+- Official small-model GGUF files include larger embeddings than the earlier
+  conversions. Prepare reproducible native-F16 conversion with F16 output and
+  embedding tensors, preserving original hashes. Native F16 remains unquantized;
+  actual resident fit and generation behavior must be measured after conversion.
 
 **Study:** `tier8-8gb-v1`  
 **SSD:** `H:\AGERE` (`AGERE_SSD_ROOT`)  

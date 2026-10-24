@@ -1,0 +1,475 @@
+[
+  {
+    "id": "V/2008/page_17.pdf-1",
+    "gold_units": [
+      "table_3"
+    ],
+    "selected_units": [
+      "table_3",
+      "text_0",
+      "text_55",
+      "text_57",
+      "text_59",
+      "text_61",
+      "text_63",
+      "text_64"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "C/2017/page_328.pdf-1",
+    "gold_units": [
+      "table_1",
+      "table_6"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_3",
+      "table_4",
+      "table_6",
+      "text_0",
+      "text_1",
+      "text_2"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 2,
+    "gold_total": 2
+  },
+  {
+    "id": "DVN/2007/page_58.pdf-2",
+    "gold_units": [
+      "table_3",
+      "table_5",
+      "text_34"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_3",
+      "table_4",
+      "table_5",
+      "text_30",
+      "text_31",
+      "text_34"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 3,
+    "gold_total": 3
+  },
+  {
+    "id": "ETR/2011/page_341.pdf-3",
+    "gold_units": [
+      "table_2",
+      "table_3"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_3",
+      "table_4",
+      "text_1",
+      "text_12",
+      "text_2",
+      "text_3"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 2,
+    "gold_total": 2
+  },
+  {
+    "id": "ETR/2004/page_213.pdf-2",
+    "gold_units": [
+      "table_2",
+      "text_1",
+      "text_6"
+    ],
+    "selected_units": [
+      "table_2",
+      "text_1",
+      "text_10",
+      "text_2",
+      "text_3",
+      "text_4",
+      "text_5",
+      "text_7"
+    ],
+    "all_gold_retrieved": false,
+    "gold_retrieved": 2,
+    "gold_total": 3
+  },
+  {
+    "id": "PM/2017/page_38.pdf-1",
+    "gold_units": [
+      "table_3"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_3",
+      "text_0",
+      "text_19",
+      "text_2",
+      "text_21",
+      "text_6"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "JPM/2008/page_85.pdf-3",
+    "gold_units": [
+      "table_1",
+      "table_4"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "text_0",
+      "text_17",
+      "text_19",
+      "text_22",
+      "text_24",
+      "text_28"
+    ],
+    "all_gold_retrieved": false,
+    "gold_retrieved": 1,
+    "gold_total": 2
+  },
+  {
+    "id": "PNC/2013/page_207.pdf-1",
+    "gold_units": [
+      "table_1"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "text_0",
+      "text_10",
+      "text_14",
+      "text_16",
+      "text_17",
+      "text_4"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "CME/2017/page_97.pdf-5",
+    "gold_units": [
+      "table_2"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_3",
+      "table_4",
+      "table_5",
+      "table_6",
+      "text_1",
+      "text_3"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "PNC/2013/page_62.pdf-2",
+    "gold_units": [
+      "table_6"
+    ],
+    "selected_units": [
+      "table_3",
+      "table_4",
+      "table_5",
+      "table_6",
+      "table_8",
+      "text_15",
+      "text_18",
+      "text_19"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "AAPL/2004/page_36.pdf-2",
+    "gold_units": [
+      "table_4"
+    ],
+    "selected_units": [
+      "table_3",
+      "table_4",
+      "text_1",
+      "text_11",
+      "text_12",
+      "text_13",
+      "text_15",
+      "text_18"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "PKG/2009/page_65.pdf-4",
+    "gold_units": [
+      "table_6",
+      "table_7"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_5",
+      "table_7",
+      "text_0",
+      "text_1",
+      "text_2",
+      "text_3",
+      "text_7"
+    ],
+    "all_gold_retrieved": false,
+    "gold_retrieved": 1,
+    "gold_total": 2
+  },
+  {
+    "id": "LMT/2013/page_74.pdf-4",
+    "gold_units": [
+      "table_3"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_3",
+      "text_0",
+      "text_11",
+      "text_2",
+      "text_20",
+      "text_21"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "STT/2011/page_83.pdf-1",
+    "gold_units": [
+      "text_2"
+    ],
+    "selected_units": [
+      "table_3",
+      "table_4",
+      "text_0",
+      "text_1",
+      "text_2",
+      "text_20",
+      "text_24",
+      "text_4"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "MRO/2007/page_149.pdf-2",
+    "gold_units": [
+      "table_4"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_12",
+      "table_13",
+      "table_2",
+      "table_3",
+      "table_4",
+      "table_5",
+      "text_0"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "AOS/2004/page_11.pdf-2",
+    "gold_units": [
+      "table_4",
+      "table_5"
+    ],
+    "selected_units": [
+      "table_2",
+      "table_3",
+      "table_4",
+      "table_5",
+      "text_26",
+      "text_27",
+      "text_5",
+      "text_8"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 2,
+    "gold_total": 2
+  },
+  {
+    "id": "C/2010/page_223.pdf-3",
+    "gold_units": [
+      "table_1",
+      "table_8"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_4",
+      "table_5",
+      "table_7",
+      "table_8",
+      "text_6",
+      "text_7"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 2,
+    "gold_total": 2
+  },
+  {
+    "id": "MSI/2006/page_61.pdf-3",
+    "gold_units": [
+      "table_1"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_4",
+      "text_16",
+      "text_25",
+      "text_6",
+      "text_8",
+      "text_9"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "ABMD/2006/page_75.pdf-1",
+    "gold_units": [
+      "table_1",
+      "table_2"
+    ],
+    "selected_units": [
+      "table_5",
+      "text_18",
+      "text_19",
+      "text_21",
+      "text_22",
+      "text_24",
+      "text_8",
+      "text_9"
+    ],
+    "all_gold_retrieved": false,
+    "gold_retrieved": 0,
+    "gold_total": 2
+  },
+  {
+    "id": "AMAT/2013/page_18.pdf-2",
+    "gold_units": [
+      "text_18"
+    ],
+    "selected_units": [
+      "text_0",
+      "text_12",
+      "text_13",
+      "text_18",
+      "text_19",
+      "text_3",
+      "text_5",
+      "text_6"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "DVN/2014/page_85.pdf-1",
+    "gold_units": [
+      "table_1",
+      "table_2",
+      "table_3",
+      "table_4",
+      "table_5",
+      "text_10"
+    ],
+    "selected_units": [
+      "table_1",
+      "table_2",
+      "table_3",
+      "table_4",
+      "table_5",
+      "text_10",
+      "text_5",
+      "text_6"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 6,
+    "gold_total": 6
+  },
+  {
+    "id": "SPGI/2018/page_74.pdf-1",
+    "gold_units": [
+      "text_12"
+    ],
+    "selected_units": [
+      "text_10",
+      "text_12",
+      "text_13",
+      "text_30",
+      "text_32",
+      "text_34",
+      "text_5",
+      "text_7"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  },
+  {
+    "id": "ZBH/2003/page_58.pdf-3",
+    "gold_units": [
+      "table_1",
+      "table_4"
+    ],
+    "selected_units": [
+      "table_3",
+      "text_14",
+      "text_22",
+      "text_23",
+      "text_26",
+      "text_29",
+      "text_31",
+      "text_5"
+    ],
+    "all_gold_retrieved": false,
+    "gold_retrieved": 0,
+    "gold_total": 2
+  },
+  {
+    "id": "AMT/2005/page_105.pdf-2",
+    "gold_units": [
+      "table_5"
+    ],
+    "selected_units": [
+      "table_5",
+      "text_0",
+      "text_1",
+      "text_3",
+      "text_6",
+      "text_7",
+      "text_8",
+      "text_9"
+    ],
+    "all_gold_retrieved": true,
+    "gold_retrieved": 1,
+    "gold_total": 1
+  }
+]
