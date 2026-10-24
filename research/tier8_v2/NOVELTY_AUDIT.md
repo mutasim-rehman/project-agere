@@ -2,6 +2,17 @@
 
 This is a working research assessment, not a novelty certificate.
 
+## Current falsification and next diagnostic
+
+Endpoint repair has zero oracle gains on the stronger SAS analysis baseline;
+its apparent headroom on weaker generation does not establish a useful method.
+Exact functional-influence diagnostics now identify two wrong deliveries in that
+stronger baseline whose cited quantities cancel algebraically. Standard symbolic
+algebra is not novel, and cancellation can be legitimate. Four training sketches
+also reveal ambiguous equal-value cell binding. Any proof-informed repair must
+resolve this distinction, improve actual answers against a matched retry baseline,
+and survive broader/frozen evaluation before becoming a contribution claim.
+
 The closer-prior review now includes [BudgetVerify](https://arxiv.org/html/2609.33052v1),
 whose method routes financial answers between no verification, local revision and
 independent re-solving using offline correctness/cost supervision. Adaptive token

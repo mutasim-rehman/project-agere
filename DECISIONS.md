@@ -2,6 +2,38 @@
 
 ## Redevelopment — 24 October 2026
 
+### Exact functional-influence diagnostic
+
+- Added an offline bounded rational-polynomial audit of source-reference programs.
+  Each quantity ID is an independent symbol, even if observed values coincide.
+  A zero rational derivative proves value independence on the program's defined
+  domain, unlike a local numerical gradient that can vanish at a stationary point.
+  Division-definedness guards are retained. This is standard symbolic algebra,
+  not a claim that differentiation, provenance or cancellation detection is new.
+- Bounds on operations, polynomial terms and coefficient bits return unknown on
+  excess work; unsupported inputs are not certified. A canceled quantity may
+  still establish that division is defined or legitimately cancel, so the audit
+  is a repair hint, not a correctness certificate or automatic rejection policy.
+- Completed-program audit: two source-cancellation cases in the original MAS
+  baseline (one wrong delivery), none in original SAS, two in stronger SAS analysis
+  (both wrong deliveries), none in the eight-case 3B diagnostic. Strong SAS examples
+  include multiplying a financial amount by zero and canceling a period quantity
+  by dividing and multiplying by it. No model-selected repair is measured yet.
+- Countercheck on all 620 training sketches finds four flagged numeric targets.
+  All reuse one source variable in an apparent two-period comparison: value-only
+  target compilation can bind equal numbers from distinct source roles to the
+  same cell, creating constant transfer sketches. This exposes source-identity
+  ambiguity in the training adapter; it does not prove that legitimate zero-change
+  answers are wrong. Future sketch derivation must preserve/resolve cell roles or
+  mark such transfers ambiguous. The frozen bank is unchanged, and the current
+  queued runs use the separate fixed examples, not these four retrieved sketches.
+- Audit checks each run's packet hash and historical quantity-catalog code hash
+  before interpreting references. One hundred five tests pass, including exact
+  cancellation, distinct equal-valued cells, stationary points, division guards
+  and resource exhaustion. No frozen input changed; only new offline files/tests
+  were added. A future proof-informed repair needs comparison against retry and
+  simple identity heuristics before any utility or originality claim.
+
 ### Table-complete retrieval control and larger-drafter diagnostic
 
 - Added a shared non-oracle packet variant retaining all table rows and the four

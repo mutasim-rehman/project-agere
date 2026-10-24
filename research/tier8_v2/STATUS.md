@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 97 contract tests pass. They do not establish financial reasoning correctness.
+- 105 contract tests pass. They do not establish financial reasoning correctness.
 
 ## Completed development measurements
 
@@ -47,6 +47,12 @@ confirmation are not established. Historical results and raw runs remain preserv
   are committed. Source edits may resume. No old worker needs restarting.
 
 ## Mechanism diagnostics
+
+- New offline exact value-influence audit detects algebraically canceled source
+  quantities, conditional on defined divisions. It flags two wrong deliveries in
+  stronger SAS, but is not a semantic correctness certificate or rejection rule.
+  Four numeric training sketches also flag, exposing equal-value cell-binding
+  ambiguity in transfer construction. No frozen bank/code input was modified.
 
 - Strict sketch+unit shape matches: retrieved top two cover 10/24, whole bank 15/24.
   Equivalent formulas are not counted. This is expressibility, not achieved accuracy.

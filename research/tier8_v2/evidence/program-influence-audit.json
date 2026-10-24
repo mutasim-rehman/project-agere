@@ -1,0 +1,2274 @@
+{
+  "scope": "Offline program-value influence. No semantic correctness certificate or achieved repair gain.",
+  "cautions": [
+    "Source IDs are independent symbolic variables; observed equal numbers do not merge.",
+    "Zero derivative is an exact rational identity, conditional on defined division, not a local numerical gradient.",
+    "Legitimate formulas and domain conditions can cancel source values; do not gate answers solely on this result.",
+    "Unknown/unsupported cases are not certified. This is standard bounded symbolic algebra, not established novelty."
+  ],
+  "runs": [
+    {
+      "run": "finqa-mas-demos-dev24-01",
+      "n": 24,
+      "analyzed": 24,
+      "cases_with_cancelled_source_value_influence": 2,
+      "flagged_correct_cases": 0,
+      "flagged_wrong_deliveries": 1,
+      "max_analysis_seconds": 0.0026584349980112165,
+      "case_file_sha256": "69131a242fcc19c6ba8456983c121385ef07813354392e83c2bd0b8182178254",
+      "cases": [
+        {
+          "case_id": "V/2008/page_17.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A002",
+              "A003"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A002",
+              "A003"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A002"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 16,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.0001834760005294811,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "C/2017/page_328.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 23,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00010520799696678296,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "DVN/2007/page_58.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A007",
+              "A009"
+            ],
+            "value_active_sources": [
+              "A007"
+            ],
+            "value_inactive_sources": [
+              "A009"
+            ],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A009"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 14,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {
+            "A009": {
+              "value": "198",
+              "span_id": "table_3",
+              "context": ": canada | gas ( bcf ): 198"
+            }
+          },
+          "analysis_seconds": 0.0010222279997833539,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "ETR/2011/page_341.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A005",
+              "A006"
+            ],
+            "value_active_sources": [
+              "A005",
+              "A006"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A005"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00011866400018334389,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "ETR/2004/page_213.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A005",
+              "A006"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A005",
+              "A006"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A005"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 16,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 7.94000006862916e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "PM/2017/page_38.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00013831099931849167,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "JPM/2008/page_85.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A000"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00010194199785473756,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "PNC/2013/page_207.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 16,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 7.704499876126647e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "CME/2017/page_97.pdf-5",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00027839500035042875,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "PNC/2013/page_62.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00010252300126012415,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "AAPL/2004/page_36.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00010072000077343546,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "PKG/2009/page_65.pdf-4",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A001"
+            ],
+            "value_inactive_sources": [
+              "A002"
+            ],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              },
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A002"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 14,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {
+            "A002": {
+              "value": "2014",
+              "span_id": "table_5",
+              "context": ": 2014"
+            }
+          },
+          "analysis_seconds": 7.414999708998948e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "LMT/2013/page_74.pdf-4",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 8.474999776808545e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "STT/2011/page_83.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A002",
+              "A008"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A002",
+              "A008"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 25,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 9.164299990516156e-05,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "MRO/2007/page_149.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A021"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A021"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 2,
+                "denominator_sources": [
+                  "A000"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 27,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00010296400068909861,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "AOS/2004/page_11.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001",
+              "A010"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001",
+              "A010"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A000"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 16,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.929199687670916e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "C/2010/page_223.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A021"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A021"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A021"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.0026584349980112165,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "MSI/2006/page_61.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              },
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 12,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 8.528100079274736e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "ABMD/2006/page_75.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00014590499995392747,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "AMAT/2013/page_18.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A002",
+              "A005"
+            ],
+            "value_active_sources": [
+              "A002",
+              "A005"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 7.46810001146514e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "DVN/2014/page_85.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A011",
+              "A013"
+            ],
+            "value_active_sources": [
+              "A011",
+              "A013"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 50,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00018592099877423607,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "SPGI/2018/page_74.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 22,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 8.106300083454698e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "ZBH/2003/page_58.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 16,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 6.839900015620515e-05,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "AMT/2005/page_105.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.43529968126677e-05,
+          "correct": true,
+          "delivered": true
+        }
+      ]
+    },
+    {
+      "run": "finqa-sas-demos-dev24-01",
+      "n": 24,
+      "analyzed": 16,
+      "cases_with_cancelled_source_value_influence": 0,
+      "flagged_correct_cases": 0,
+      "flagged_wrong_deliveries": 0,
+      "max_analysis_seconds": 0.0014717459998792037,
+      "case_file_sha256": "2593086efab8da7647b89c5083f76f86c8d653abc4048bbd338c142596965860",
+      "cases": [
+        {
+          "case_id": "V/2008/page_17.pdf-1",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 8.520000847056508e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "C/2017/page_328.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A002",
+              "A022"
+            ],
+            "value_active_sources": [
+              "A002",
+              "A022"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A002"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 21,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00016295800014631823,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "DVN/2007/page_58.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A011",
+              "A019"
+            ],
+            "value_active_sources": [
+              "A011",
+              "A019"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A019"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 12,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00014768799883313477,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "ETR/2011/page_341.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A006"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A006"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 6.198700066306628e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "ETR/2004/page_213.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A002"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.631599924527109e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "PM/2017/page_38.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A010",
+              "A011"
+            ],
+            "value_active_sources": [
+              "A010",
+              "A011"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.3050000133225694e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "JPM/2008/page_85.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.3093001547968015e-05,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "PNC/2013/page_207.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001",
+              "A002",
+              "A004",
+              "A005"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001",
+              "A002",
+              "A004",
+              "A005"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 3,
+                "denominator_sources": [
+                  "A001",
+                  "A002",
+                  "A004",
+                  "A005"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              },
+              {
+                "step": 4,
+                "denominator_sources": [
+                  "A001",
+                  "A002",
+                  "A004",
+                  "A005"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 148,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.0003400210007384885,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "CME/2017/page_97.pdf-5",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A002",
+              "A003"
+            ],
+            "value_active_sources": [
+              "A002",
+              "A003"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 7.01019998814445e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "PNC/2013/page_62.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A006",
+              "A007",
+              "A010"
+            ],
+            "value_active_sources": [
+              "A006",
+              "A007",
+              "A010"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A010"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 26,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 8.511100168107077e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "AAPL/2004/page_36.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A005"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A005"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.76099994557444e-05,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "PKG/2009/page_65.pdf-4",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.4099942897446454e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "LMT/2013/page_74.pdf-4",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A006",
+              "A007"
+            ],
+            "value_active_sources": [
+              "A006",
+              "A007"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.5224001698661596e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "STT/2011/page_83.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A009",
+              "A013"
+            ],
+            "value_active_sources": [
+              "A009",
+              "A013"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A013"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.443500099820085e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "MRO/2007/page_149.pdf-2",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 2.410015440545976e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "AOS/2004/page_11.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A010",
+              "A015"
+            ],
+            "value_active_sources": [
+              "A010",
+              "A015"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A015"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.373299816506915e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "C/2010/page_223.pdf-3",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 9.62001649895683e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "MSI/2006/page_61.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A005",
+              "A026"
+            ],
+            "value_active_sources": [
+              "A005",
+              "A026"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A000"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 21,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00010683099753805436,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "ABMD/2006/page_75.pdf-1",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.210014594718814e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "AMAT/2013/page_18.pdf-2",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.0999945010989904e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "DVN/2014/page_85.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A003",
+              "A005",
+              "A007",
+              "A009"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A003",
+              "A005",
+              "A007",
+              "A009"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 4,
+                "denominator_sources": [],
+                "condition": "denominator must be defined and nonzero"
+              },
+              {
+                "step": 5,
+                "denominator_sources": [],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 84,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.0014717459998792037,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "SPGI/2018/page_74.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.000107253003079677,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "ZBH/2003/page_58.pdf-3",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.9099904824979603e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "AMT/2005/page_105.pdf-2",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.110014171805233e-07,
+          "correct": false,
+          "delivered": false
+        }
+      ]
+    },
+    {
+      "run": "finqa-sas-analysis-dev24-01",
+      "n": 24,
+      "analyzed": 19,
+      "cases_with_cancelled_source_value_influence": 2,
+      "flagged_correct_cases": 0,
+      "flagged_wrong_deliveries": 2,
+      "max_analysis_seconds": 0.00020256300194887444,
+      "case_file_sha256": "14bb9ff350ddc55a7cacd8308ac4f0baf2c6335f71bb63d0a1cfeb8777e53354",
+      "cases": [
+        {
+          "case_id": "V/2008/page_17.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A002"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 8.982000144897029e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "C/2017/page_328.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A002",
+              "A022",
+              "A031"
+            ],
+            "value_active_sources": [
+              "A002",
+              "A022",
+              "A031"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 1,
+                "denominator_sources": [
+                  "A002"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 32,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00011989599806838669,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "DVN/2007/page_58.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A011",
+              "A019"
+            ],
+            "value_active_sources": [
+              "A011",
+              "A019"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A019"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 12,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 8.209500083466992e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "ETR/2011/page_341.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A006"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A006"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.606600097962655e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "ETR/2004/page_213.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A002"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 12,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 6.35799988231156e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "PM/2017/page_38.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A010",
+              "A011"
+            ],
+            "value_active_sources": [
+              "A010",
+              "A011"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.9661997511284426e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "JPM/2008/page_85.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.351200186647475e-05,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "PNC/2013/page_207.pdf-1",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.0099985199049115e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "CME/2017/page_97.pdf-5",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A002",
+              "A003"
+            ],
+            "value_active_sources": [
+              "A002",
+              "A003"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.2219999158987775e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "PNC/2013/page_62.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A006",
+              "A007"
+            ],
+            "value_active_sources": [
+              "A006",
+              "A007"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.600699710659683e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "AAPL/2004/page_36.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.734000347321853e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "PKG/2009/page_65.pdf-4",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 2.899978426285088e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "LMT/2013/page_74.pdf-4",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A006",
+              "A007"
+            ],
+            "value_active_sources": [
+              "A006",
+              "A007"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.896300040651113e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "STT/2011/page_83.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A008",
+              "A009"
+            ],
+            "value_active_sources": [
+              "A008"
+            ],
+            "value_inactive_sources": [
+              "A009"
+            ],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 2,
+                "denominator_sources": [],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 12,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {
+            "A009": {
+              "value": "303",
+              "span_id": "text_2",
+              "context": "these unrealized losses related to reclassifications totaled $ 303 million , or $ 189 million after-tax , and $ 523 million , or $ 317 million after-tax , as of december 31 , 2011 and 2010 , respectively , and were recorded in accumulated other comprehensive income , or oci ."
+            }
+          },
+          "analysis_seconds": 6.03239968768321e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "MRO/2007/page_149.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A019",
+              "A020"
+            ],
+            "value_active_sources": [
+              "A020"
+            ],
+            "value_inactive_sources": [
+              "A019"
+            ],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A019"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 14,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {
+            "A019": {
+              "value": "1654",
+              "span_id": "table_4",
+              "context": "( in millions ): development costs incurred during the period | 2007: 1654"
+            }
+          },
+          "analysis_seconds": 4.634700235328637e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "AOS/2004/page_11.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A010",
+              "A015"
+            ],
+            "value_active_sources": [
+              "A010",
+              "A015"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A015"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 12,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.394300049170852e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "C/2010/page_223.pdf-3",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.1099989428184927e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "MSI/2006/page_61.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A006"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A006"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A000"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 12,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.4153002818347886e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "ABMD/2006/page_75.pdf-1",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 2.1999949240125716e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "AMAT/2013/page_18.pdf-2",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.310030246619135e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "DVN/2014/page_85.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A001",
+              "A003",
+              "A005",
+              "A007",
+              "A009"
+            ],
+            "value_active_sources": [
+              "A001",
+              "A003",
+              "A005",
+              "A007",
+              "A009"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 4,
+                "denominator_sources": [],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 78,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00020256300194887444,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "SPGI/2018/page_74.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A005",
+              "A016"
+            ],
+            "value_active_sources": [
+              "A005",
+              "A016"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A005"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 7.767699935357086e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "ZBH/2003/page_58.pdf-3",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 5.61460001335945e-05,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "AMT/2005/page_105.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [],
+            "symbolic_operations": 15,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 6.779800241929479e-05,
+          "correct": true,
+          "delivered": true
+        }
+      ]
+    },
+    {
+      "run": "finqa-mas-3b-analysis-dev8-01",
+      "n": 8,
+      "analyzed": 3,
+      "cases_with_cancelled_source_value_influence": 0,
+      "flagged_correct_cases": 0,
+      "flagged_wrong_deliveries": 0,
+      "max_analysis_seconds": 0.00011540799823706038,
+      "case_file_sha256": "735deef51ce94bd9bc76e4ea176fe1191c17c6f37b7500a4b184f514ff5c231e",
+      "cases": [
+        {
+          "case_id": "V/2008/page_17.pdf-1",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A002"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A002"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A002"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 8.298700049635954e-05,
+          "correct": true,
+          "delivered": true
+        },
+        {
+          "case_id": "C/2017/page_328.pdf-1",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 7.810012903064489e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "DVN/2007/page_58.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A011",
+              "A019"
+            ],
+            "value_active_sources": [
+              "A011",
+              "A019"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A019"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 10,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.294099926482886e-05,
+          "correct": true,
+          "delivered": false
+        },
+        {
+          "case_id": "ETR/2011/page_341.pdf-3",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.6100027500651777e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "ETR/2004/page_213.pdf-2",
+          "influence": {
+            "status": "analyzed",
+            "syntactic_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_active_sources": [
+              "A000",
+              "A001"
+            ],
+            "value_inactive_sources": [],
+            "value_independent_of_all_sources": false,
+            "division_guards": [
+              {
+                "step": 0,
+                "denominator_sources": [
+                  "A001"
+                ],
+                "condition": "denominator must be defined and nonzero"
+              }
+            ],
+            "symbolic_operations": 12,
+            "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 0.00011540799823706038,
+          "correct": false,
+          "delivered": true
+        },
+        {
+          "case_id": "PM/2017/page_38.pdf-1",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 4.5100023271515965e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "JPM/2008/page_85.pdf-3",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.1099989428184927e-07,
+          "correct": false,
+          "delivered": false
+        },
+        {
+          "case_id": "PNC/2013/page_207.pdf-1",
+          "influence": {
+            "status": "not_executable"
+          },
+          "inactive_source_contexts": {},
+          "analysis_seconds": 3.309978637844324e-07,
+          "correct": false,
+          "delivered": false
+        }
+      ]
+    }
+  ],
+  "training_bank_sha256": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a",
+  "training_examples": 620,
+  "training_cancelled_or_unknown_examples": [
+    {
+      "source_id": "AWK/2018/page_172.pdf-2",
+      "question": "what was the change in the amount of future annual commitments related to minimum quantities of purchased water between \\\\n2019 and 2020?",
+      "sketch": {
+        "answer_unit": "number",
+        "steps": [
+          {
+            "op": "subtract",
+            "left": "V0",
+            "right": "V0"
+          }
+        ],
+        "slots": {
+          "V0": {
+            "training_value": "65",
+            "context": ": 2021 | amount: 65"
+          }
+        }
+      },
+      "influence": {
+        "status": "analyzed",
+        "syntactic_sources": [
+          "V0"
+        ],
+        "value_active_sources": [],
+        "value_inactive_sources": [
+          "V0"
+        ],
+        "value_independent_of_all_sources": true,
+        "division_guards": [],
+        "symbolic_operations": 6,
+        "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+      }
+    },
+    {
+      "source_id": "ORLY/2015/page_28.pdf-2",
+      "question": "what is the roi of an investment in the s&p500 from 2010 to 2011?",
+      "sketch": {
+        "answer_unit": "fraction",
+        "steps": [
+          {
+            "op": "subtract",
+            "left": "V0",
+            "right": "V0"
+          },
+          {
+            "op": "divide",
+            "left": "#0",
+            "right": "V0"
+          }
+        ],
+        "slots": {
+          "V0": {
+            "training_value": "100",
+            "context": "company/index: s&p 500 | december 31 , 2010: $ 100"
+          }
+        }
+      },
+      "influence": {
+        "status": "analyzed",
+        "syntactic_sources": [
+          "V0"
+        ],
+        "value_active_sources": [],
+        "value_inactive_sources": [
+          "V0"
+        ],
+        "value_independent_of_all_sources": true,
+        "division_guards": [
+          {
+            "step": 1,
+            "denominator_sources": [
+              "V0"
+            ],
+            "condition": "denominator must be defined and nonzero"
+          }
+        ],
+        "symbolic_operations": 7,
+        "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+      }
+    },
+    {
+      "source_id": "SLB/2011/page_56.pdf-2",
+      "question": "what was the net change in shares outstanding during 2011?",
+      "sketch": {
+        "answer_unit": "number",
+        "steps": [
+          {
+            "op": "subtract",
+            "left": "V0",
+            "right": "V0"
+          }
+        ],
+        "slots": {
+          "V0": {
+            "training_value": "1434",
+            "context": ": balance december 31 2011 | issued: 1434"
+          }
+        }
+      },
+      "influence": {
+        "status": "analyzed",
+        "syntactic_sources": [
+          "V0"
+        ],
+        "value_active_sources": [],
+        "value_inactive_sources": [
+          "V0"
+        ],
+        "value_independent_of_all_sources": true,
+        "division_guards": [],
+        "symbolic_operations": 6,
+        "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+      }
+    },
+    {
+      "source_id": "UPS/2015/page_108.pdf-2",
+      "question": "what was the change in millions of aircraft from 2014 to 2015?",
+      "sketch": {
+        "answer_unit": "number",
+        "steps": [
+          {
+            "op": "subtract",
+            "left": "V0",
+            "right": "V0"
+          }
+        ],
+        "slots": {
+          "V0": {
+            "training_value": "2289",
+            "context": ": aircraft | 2015: 2289"
+          }
+        }
+      },
+      "influence": {
+        "status": "analyzed",
+        "syntactic_sources": [
+          "V0"
+        ],
+        "value_active_sources": [],
+        "value_inactive_sources": [
+          "V0"
+        ],
+        "value_independent_of_all_sources": true,
+        "division_guards": [],
+        "symbolic_operations": 6,
+        "caution": "Exact value dependence only, conditional on defined divisions; not semantic correctness or a rejection rule."
+      }
+    }
+  ]
+}
