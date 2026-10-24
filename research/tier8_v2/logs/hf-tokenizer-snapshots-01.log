@@ -1,0 +1,93 @@
+{
+  "profiles": {
+    "mas-3b-q4": {
+      "repo": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "folder": "weights/hf-tokenizers/mas-3b-q4",
+      "files": [
+        {
+          "file": "tokenizer.json",
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "git_blob": "443909a61d429dff23010e5bddd28ff530edda00"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 7305,
+          "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+          "git_blob": "07bfe0640cb5a0037f9322287fbfc682806cf672"
+        },
+        {
+          "file": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "git_blob": "4783fe10ac3adce15ac8f358ef5462739852c569"
+        },
+        {
+          "file": "merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "git_blob": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0"
+        },
+        {
+          "file": "config.json",
+          "bytes": 661,
+          "sha256": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+          "git_blob": "51b83fbd4e2d363b60235b9c8d494046a83c1cbf"
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 242,
+          "sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+          "git_blob": "bf077f03dc569cfb8a90b3ec1ad20365a620bad6"
+        }
+      ]
+    },
+    "sas-7b-q4": {
+      "repo": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "folder": "weights/hf-tokenizers/sas-7b-q4",
+      "files": [
+        {
+          "file": "tokenizer.json",
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "git_blob": "443909a61d429dff23010e5bddd28ff530edda00"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "bytes": 7305,
+          "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+          "git_blob": "07bfe0640cb5a0037f9322287fbfc682806cf672"
+        },
+        {
+          "file": "vocab.json",
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+          "git_blob": "4783fe10ac3adce15ac8f358ef5462739852c569"
+        },
+        {
+          "file": "merges.txt",
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+          "git_blob": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0"
+        },
+        {
+          "file": "config.json",
+          "bytes": 663,
+          "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+          "git_blob": "0178295f88afc3c7f279ed284f961f8c1be00654"
+        },
+        {
+          "file": "generation_config.json",
+          "bytes": 243,
+          "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+          "git_blob": "0eb3c536657dcd12626e09eca4b6198c0cbcde1e"
+        }
+      ]
+    }
+  },
+  "only_tokenizer_config_assets": true,
+  "model_weights_downloaded": false,
+  "script_sha256": "ac7dc745d3f002f5d099e2841d83547362daebe82f51a4d599b8f83d4e886234"
+}

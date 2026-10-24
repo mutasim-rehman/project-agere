@@ -2,6 +2,30 @@
 
 ## Redevelopment — 24 October 2026
 
+### Official HF tokenizer parity verified before adaptation
+
+- Created .venv-training independently; the research .venv and all frozen inference
+  source/data inputs are untouched. Pinned Transformers 4.57.1 (known Qwen2.5
+  integration) and Tokenizers 0.22.2; the complete resolved tokenizer environment
+  is recorded. This deliberately avoids changing the active inference runtime.
+- Downloaded only tokenizer/config assets from official Qwen 3B and 7B repositories
+  at explicit commit SHAs. Verified file sizes and Git-blob or LFS hashes, then
+  recorded local SHA256s. HF caches are inside the repository; parity uses local
+  assets with remote code and online fallback disabled. No model weights fetched.
+- HF AutoTokenizer matches every full deployment sequence, prompt prefix mask and
+  length in all 761 retained rows for both profiles. This clears the tokenizer
+  prerequisite only; no training, adapter application or reasoning gain occurred.
+- Reviewed official Transformers 4.57.1 bitsandbytes and PEFT quantization guidance.
+  QLoRA is an established baseline technique. Prequantized Unsloth snapshots are
+  available (3B 2,054,625,552 bytes; 7B 5,547,254,622 bytes). Using them would change
+  the training quantization from deployment GGUF Q4_K_M and must be labelled; no
+  equivalence to the original FP16 training checkpoint is asserted.
+- Host has an RTX 4050 with 6,141 MiB VRAM; GPU fit/backward-step feasibility remains
+  untested. About 2.2 GB disk free is insufficient for a GPU stack plus base weights.
+  Next reclaim only redundant public-download FP16 caches after checking their
+  pinned hashes; retain native inference files and provenance. Actual training
+  must wait until the active serial CPU inference sequence finishes.
+
 ### MAS 3B longer-analysis ablation completed
 
 - The 256-token analysis run completed all 24 fixed development cases under peak

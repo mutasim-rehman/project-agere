@@ -40,8 +40,8 @@ persisted source-ID mismatches. Existing live experiments/demos are unaffected.
 Actual no-analysis/no-demo deployment prompt capture is complete: 761 examples
 fit 1,024 training tokens for both GGUF tokenizers (661 train, 100 validation),
 without truncation. Full token-ID hashes agree. See evidence/deployment-sft-1024-02.json
-and data/ADAPTATION_README.md. HF tokenizer parity, training and actual adapter
-application remain pending. Manual historical prompt counts treat chat markers as
+and data/ADAPTATION_README.md. Official HF tokenizer parity now passes all 761 examples for both profiles.
+Training and actual adapter application remain pending. Manual historical prompt counts treat chat markers as
 ordinary text; generation recognizes them. Fix accounting after the frozen runs;
 keep historical counts explicitly labelled estimates, with no silent rescoring.
 
@@ -53,7 +53,7 @@ source targets (559 rejected), checks deployment unit admissibility, and preserv
 all rejection counts/IDs. Source uniqueness is numerical, not semantic adjudication.
 Audit: evidence/cell-adaptation-data-02.json; independent materialized hash, split,
 exclusion and total-count checks pass. Deployment prompt fitting is complete for the no-analysis baseline above;
-HF parity, training, adapter application and comparative inference remain pending.
+HF parity passes; training, adapter application and comparative inference remain pending.
 All 59 frozen live inputs remain unchanged. This is a baseline-enabling corpus,
 not a demonstrated reasoning gain or original method.
 
@@ -166,3 +166,8 @@ No new sealed confirmatory evaluation exists; the FinQA test split remains unope
 
 Use .local/git-askpass with .env for milestone pushes; never expose credentials.
 Leave the unrelated user-owned .GITIGNORE untouched.
+
+Tokenizer runtime is isolated in .venv-training; exact package versions are in
+runtime-tokenizers-requirements.txt. Official pinned tokenizer assets and parity
+proof are in evidence/hf-tokenizer-snapshots-01.json and hf-tokenizer-parity-01.json.
+No GPU training has run; disk and backward-step feasibility must be addressed.

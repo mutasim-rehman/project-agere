@@ -1,0 +1,33 @@
+Using CPython 3.12.15 interpreter at: .venv/bin/python
+Creating virtual environment at: .venv-training
+Activate with: source .venv-training/bin/activate
+Using Python 3.12.15 environment at: .venv-training
+Resolved 18 packages in 5.34s
+Downloading hf-xet (4.0MiB)
+Downloading tokenizers (3.1MiB)
+Downloading numpy (16.0MiB)
+Downloading transformers (11.4MiB)
+ Downloaded tokenizers
+ Downloaded hf-xet
+ Downloaded transformers
+ Downloaded numpy
+Prepared 18 packages in 13.09s
+Installed 18 packages in 43ms
+ + certifi==2026.10.23
+ + charset-normalizer==3.5.2
+ + filelock==4.2.4
+ + fsspec==2026.9.0
+ + hf-xet==1.7.0
+ + huggingface-hub==0.36.2
+ + idna==3.20
+ + numpy==2.5.4
+ + packaging==26.3
+ + pyyaml==6.0.3
+ + regex==2026.9.29
+ + requests==2.34.2
+ + safetensors==0.8.0
+ + tokenizers==0.22.2
+ + tqdm==4.70.1
+ + transformers==4.57.1
+ + typing-extensions==4.16.0
+ + urllib3==2.8.0
