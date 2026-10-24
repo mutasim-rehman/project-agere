@@ -2,6 +2,27 @@
 
 ## Redevelopment — 24 October 2026
 
+### Paired repair-result validation
+
+- Added a dedicated component-replay evaluator rather than treating replay as a
+  fresh generation run. It requires complete memory-valid runs, identical model/
+  source/code/snapshot identities, matching initial states and algebraic cohorts,
+  correct condition order and consistent case-level token debits.
+- It recomputes source executions, baseline/final scores, delivery gates and
+  functional-influence triggers. Logged retry prompts must contain the symbolic
+  diagnostic only in the proof condition. Unflagged cases cannot change or spend
+  retry tokens. These checks prevent a cohort or bookkeeping change from looking
+  like useful feedback.
+- Reports all-case paired outcomes as primary, eligible-only outcomes secondarily,
+  corrections/regressions, wrong deliveries/withholding, fresh tokens/prompts/calls,
+  truncation, fresh worker wall time/RSS and recorded baseline costs separately.
+  Input-artifact and analysis-code hashes preserve reproducibility. No discordance
+  or a zero bootstrap interval must not be interpreted as equivalence or novelty.
+- One hundred twenty-nine tests pass, including a full evaluator integration
+  fixture with mocked model replies and real development source packets. That
+  fixture is software validation, not an observed model repair gain. Only new
+  analysis code/tests were added; all 53 frozen experiment inputs remain unchanged.
+
 ### Controlled proof-feedback repair component
 
 - Implemented a gold-free repair function and a separate memory-monitored replay
