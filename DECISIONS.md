@@ -169,6 +169,12 @@
 - Independent audit confirms both selected demonstration pages AND annual-report
   groups are absent from all FinQA development records. This verifies the actual
   selected examples; broader pretraining contamination remains unknown.
+- Added a MAS verifier-size ablation: reuse the already available 1.5B checkpoint
+  instead of the weak 0.5B critic, with an explicit shared-instance label. When the
+  selector is disabled, do not load an unused extractor. This homogeneous role-pair
+  uses one checkpoint and separate reset calls; do not describe it as independently
+  trained specialists. Default remains 0.5B and the live SAS run is unchanged.
+  Fifty-nine tests pass; this profile still needs actual inference evaluation.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

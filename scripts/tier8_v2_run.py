@@ -24,6 +24,18 @@ MODEL_FILES = {"sas": {"sas": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf"},
                "mas": {"extractor": "qwen2.5-0.5b-instruct-native-f16.gguf",
                        "drafter": "qwen2.5-1.5b-instruct-native-f16.gguf",
                        "verifier": "qwen2.5-0.5b-instruct-native-f16.gguf"}}
+
+
+def model_files(arm, verifier_model="0.5b", use_selector=True):
+    files = dict(MODEL_FILES[arm])
+    if arm == "mas":
+        if verifier_model == "1.5b":
+            files["verifier"] = files["drafter"]
+        if not use_selector:
+            files.pop("extractor")
+    return files
+
+
 SCHEMA = {"type": "object", "properties": {
     "case_id": {"type": "string"},
     "facts": {"type": "object", "properties": {f: {"type": "object", "properties": {
@@ -76,12 +88,12 @@ def append(path, record):
 
 
 class Models:
-    def __init__(self, arm, context, residency="distinct"):
+    def __init__(self, arm, context, residency="distinct", verifier_model="0.5b", use_selector=True):
         from llama_cpp import Llama, LlamaGrammar
         self.grammar = LlamaGrammar
         self.models = {}
         self.context = context
-        files = MODEL_FILES[arm]
+        files = model_files(arm, verifier_model, use_selector)
         opened = {}
         for role, filename in files.items():
             if residency == "shared" and filename in opened:
@@ -230,13 +242,13 @@ def passed(verdict):
     return isinstance(verdict, dict) and verdict.get("verdict") == "PASS" and verdict.get("unsupported_fields") == []
 
 
-def verified_models(arm):
+def verified_models(arm, verifier_model="0.5b", use_selector=True):
     manifest_path = ROOT / "research/tier8_v2/evidence/models.json"
     entries = json.loads(manifest_path.read_text())
     native = ROOT / "research/tier8_v2/evidence/native-models.json"
     if native.exists():
         entries += json.loads(native.read_text())
-    required = set(MODEL_FILES[arm].values())
+    required = set(model_files(arm, verifier_model, use_selector).values())
     if arm == "sas":
         required.add("qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf")
     selected = []
@@ -257,7 +269,8 @@ def verified_models(arm):
 
 
 def worker(args, out):
-    models = Models(args.arm, args.context, args.residency)
+    models = Models(args.arm, args.context, args.residency, args.verifier_model,
+                    args.task == "kyc" or args.selector == "suggest")
     rows = [json.loads(line) for line in inside(args.data).read_text().splitlines() if line][:args.limit]
     if args.task == "finqa":
         from tier8_v2_financial_pipeline import run_financial, evaluate_financial
@@ -295,6 +308,7 @@ def worker(args, out):
             result["initial_score"] = evaluate(case, result["initial_answer"])
             result["score"] = evaluate(case, result["answer"])
         result["residency"] = args.residency
+        result["verifier_checkpoint"] = model_files(args.arm, args.verifier_model).get("verifier", MODEL_FILES["sas"]["sas"])
         append(out / "cases.jsonl", result)
         print(json.dumps({"id": case["id"], "success": result["score"]["case_success"],
                           "delivered": result["delivered"], "tokens": result["tokens"]}), flush=True)
@@ -320,6 +334,7 @@ def main():
     parser.add_argument("--catalog-style", choices=("full", "compact"), default="full")
     parser.add_argument("--demos", type=int, choices=(0, 1, 2), default=0)
     parser.add_argument("--analysis-tokens", type=int, choices=(0, 128, 256), default=0)
+    parser.add_argument("--verifier-model", choices=("0.5b", "1.5b"), default="0.5b")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.data is None:
@@ -332,6 +347,8 @@ def main():
         raise ValueError("Training demonstrations require FinQA reference programs")
     if args.analysis_tokens and args.task != "finqa":
         raise ValueError("Formula analysis is currently implemented for FinQA only")
+    if args.arm == "sas" and args.verifier_model != "0.5b":
+        raise ValueError("SAS verification uses its own 7B checkpoint; verifier-model selects MAS only")
     if args.task == "finqa" and (args.handoff != "independent" or args.verification != "field" or args.citations != "enum"):
         raise ValueError("KYC-specific handoff/verification/citation overrides are not implemented for FinQA")
     if args.limit <= 0:
@@ -356,7 +373,7 @@ def main():
                 "cap_bytes": min(6_400_000_000, psutil.virtual_memory().available - 1_000_000_000),
                 "started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                 "runtime": subprocess.check_output([sys.executable, "-c", "import llama_cpp;print(llama_cpp.__version__)"], text=True).strip()}
-    manifest["models"] = verified_models(args.arm)
+    manifest["models"] = verified_models(args.arm, args.verifier_model, args.task == "kyc" or args.selector == "suggest")
     if args.task == "finqa":
         manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()
         if args.demos:
@@ -368,6 +385,7 @@ def main():
                                    "causal_mode": args.causal_mode, "catalog_style": args.catalog_style,
                                    "demonstrations_requested": args.demos, "demonstration_policy": "training only; exact tokenizer fit reserves 768 generation tokens",
                                    "analysis_tokens": args.analysis_tokens,
+                                   "verifier_checkpoint": model_files(args.arm, args.verifier_model).get("verifier", MODEL_FILES["sas"]["sas"]),
                                    "citations": "enumerated source and step IDs", "metric": "declared-unit reported answer with rounding; raw exe_ans separately"}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak = 0

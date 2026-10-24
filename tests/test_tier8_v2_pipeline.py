@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from tier8_v2_data import generate
-from tier8_v2_run import run_case, verified_models, answer_schema, normalize_verdict, Models
+from tier8_v2_run import run_case, verified_models, answer_schema, normalize_verdict, Models, model_files
 
 
 class FakeModels:
@@ -117,6 +117,20 @@ class PipelineTests(unittest.TestCase):
             calls.clear()
             Models("mas", 2048, "distinct")
             self.assertEqual(len(calls), 3)
+
+    def test_larger_verifier_reuses_drafter_without_unused_selector(self):
+        calls = []
+        def fake_llama(**kwargs):
+            calls.append(kwargs)
+            return object()
+        with patch.dict(sys.modules, {"llama_cpp": SimpleNamespace(Llama=fake_llama, LlamaGrammar=object)}):
+            pair = Models("mas", 4096, "shared", verifier_model="1.5b", use_selector=False)
+            self.assertEqual(len(calls), 1)
+            self.assertEqual(set(pair.models), {"drafter", "verifier"})
+            self.assertIs(pair.models["drafter"], pair.models["verifier"])
+
+    def test_sas_file_selection_is_unaffected_by_mas_profile(self):
+        self.assertEqual(model_files("sas"), model_files("sas", "1.5b", False))
 
 
 if __name__ == "__main__":
