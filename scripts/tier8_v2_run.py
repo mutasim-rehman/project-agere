@@ -121,8 +121,10 @@ def run_case(public, models, arm, repair):
         "PASS only if all are correct. On FAIL identify every wrong field. Return verdict and unsupported_fields.",
         VERIFY_SCHEMA, 192, "verify")
     verifier_pass = passed(verdict)
+    initial_verdict = verdict
     needs_repair = bool(issues) or not verifier_pass
     repair_accepted = False
+    allowed = set()
     if repair != "none" and needs_repair:
         semantic_fields = verdict.get("unsupported_fields", []) if isinstance(verdict, dict) else list(FIELDS)
         allowed = {i.field for i in issues if i.field in FIELDS} | (set(semantic_fields) & set(FIELDS))
@@ -157,6 +159,8 @@ def run_case(public, models, arm, repair):
     return {"case_id": public["id"], "arm": arm, "repair": repair, "initial_answer": initial,
             "answer": answer, "delivered": delivered, "repair_attempted": needs_repair and repair != "none",
             "repair_accepted": repair_accepted, "tokens": budget.spent, "stages": trace,
+            "initial_verdict": initial_verdict, "final_verdict": verdict,
+            "repair_scope": sorted(allowed), "initial_support_issues": [asdict(i) for i in issues],
             "final_support_issues": [asdict(i) for i in final_issues]}
 
 

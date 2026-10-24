@@ -6,6 +6,8 @@ test_ledger_reserves_and_enforces_budget (test_evidence_contract.ContractTests.t
 test_missing_needs_absence_evidence (test_evidence_contract.ContractTests.test_missing_needs_absence_evidence) ... ok
 test_repair_cannot_change_locked_claim (test_evidence_contract.ContractTests.test_repair_cannot_change_locked_claim) ... ok
 test_substring_is_not_numeric_evidence (test_evidence_contract.ContractTests.test_substring_is_not_numeric_evidence) ... ok
+test_false_accept_is_not_hidden_by_support_gate (test_tier8_v2_analyze.AnalysisTests.test_false_accept_is_not_hidden_by_support_gate) ... ok
+test_false_lock_is_visible_despite_no_regression (test_tier8_v2_analyze.AnalysisTests.test_false_lock_is_visible_despite_no_regression) ... ok
 test_paired_identity_has_zero_difference (test_tier8_v2_analyze.AnalysisTests.test_paired_identity_has_zero_difference) ... ok
 test_unpaired_cases_are_rejected (test_tier8_v2_analyze.AnalysisTests.test_unpaired_cases_are_rejected) ... ok
 test_all_latent_answers_are_source_supported (test_tier8_v2_data.DataTests.test_all_latent_answers_are_source_supported) ... ok
@@ -18,6 +20,6 @@ test_semantic_verifier_fail_blocks_supported_answer (test_tier8_v2_pipeline.Pipe
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 18 tests in 0.008s
+Ran 20 tests in 0.008s
 
 OK

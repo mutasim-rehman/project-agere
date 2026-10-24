@@ -66,6 +66,15 @@
   shards), reject contradictory PASS verdicts, and reserve 192 output tokens for
   post-repair verification. These controls address evidence validity rather than
   implying a research finding.
+- Record verifier confusion and wrong fields left locked, not just repair gains.
+  Low repair regression alone is insufficient if the controller preserves incorrect
+  fields. These metrics use gold only in the independent analysis after generation.
+- Download only FinQA development data plus license/documentation from official
+  repository commit 0f16e2867befa6840783e58be38c9efb9229d742. This is supplementary
+  public financial-report validation, not a replacement for the KYC/credit scope.
+  FinQA's test data remains unopened.
+- Add a separately labeled 0.5B primitive diagnostic for runtime/token corruption
+  checks. It cannot be counted as SAS-versus-MAS evidence.
 
 **Study:** `tier8-8gb-v1`  
 **SSD:** `H:\AGERE` (`AGERE_SSD_ROOT`)  
