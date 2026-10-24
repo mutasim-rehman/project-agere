@@ -22,6 +22,7 @@ Goal remains active. No defensible novelty or architecture winner is established
 | Free-citation distinct-instance control | Invalid memory | — | — | 6.405 GB |
 | MAS shared weights, independent/field | 1/4 | 1 | 0 | 5.145 GB |
 | MAS shared weights, patch repair | 1/4 | 1 | 0 | 5.145 GB |
+| SAS shared controls, no repair | 3/4 | 2 | 0 | 4.978 GB |
 
 The shared setup uses three roles and two resident model instances; identical
 0.5B weights are reused serially with KV reset before each call. Memory sharing
@@ -33,13 +34,13 @@ in this four-case pilot. All runs are development diagnostics, not confirmation.
 
 ## Live work at checkpoint
 
-SAS pilot: research/tier8_v2/runs/sas-field-smoke-01, launched by exec session
-17710. Revalidate that handle or the actual process before deciding it stopped.
+SAS patch pilot: research/tier8_v2/runs/sas-patch-smoke-02, launched by exec session
+98898. Revalidate that handle or the actual process before deciding it stopped.
 A partial case file is not a completed result. All weight downloads have finished.
 
 ## Next research work
 
-1. Inspect the completed SAS pilot and verifier errors, then commit/push the result.
+1. Inspect the completed SAS patch pilot and verifier errors, then commit/push the result.
 2. Evaluate stronger independent re-extraction against anchored repair; recognize
    Chain-of-Verification as prior art. Do not keep tuning only a rule-solvable toy.
 3. Connect the bounded cited arithmetic executor to the non-oracle FinQA packets.

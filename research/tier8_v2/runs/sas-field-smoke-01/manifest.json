@@ -1,0 +1,42 @@
+{
+  "config": {
+    "arm": "sas",
+    "repair": "none",
+    "data": "research/tier8_v2/data/development.jsonl",
+    "out": "research/tier8_v2/runs/sas-field-smoke-01",
+    "limit": 4,
+    "context": 2048,
+    "verification": "field",
+    "handoff": "independent",
+    "citations": "enum",
+    "residency": "shared",
+    "worker": false
+  },
+  "data_sha256": "d45359e106a5d9d6921d109e1f3241cbaa8b144651fe0cd914c821964e058b9b",
+  "code_sha256": {
+    "tier8_v2_run.py": "0d5c14f99361b97c2f999a65a3b4dddae4f77dc216f605fecbbce3f33da7c59d",
+    "evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33"
+  },
+  "git_head": "a8cac62ad7e86895dca1efe999a85ef26bde4aa4",
+  "host_total_bytes": 15438409728,
+  "cap_bytes": 6400000000,
+  "started_utc": "2026-10-24T08:03:45Z",
+  "runtime": "0.3.16",
+  "models": [
+    {
+      "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "bytes": 3993201344,
+      "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "bytes": 689872288,
+      "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a"
+    }
+  ]
+}

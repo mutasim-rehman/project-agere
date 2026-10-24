@@ -51,6 +51,15 @@
   controls. Do not infer a final result from a partial case file.
 - Public FinQA development data is supplemental; potential pretraining contamination
   is unknown. No claim of unseen financial-document validation is justified yet.
+- SAS pilot `sas-field-smoke-01` completed: 3/4 correct, 2/4 correctly delivered,
+  no incorrect deliveries, peak parent-plus-worker RSS 4,978,413,568 bytes, 707
+  generated tokens. One correct missing-date answer was withheld because the
+  verifier returned UNKNOWN for explicit absence. This is an observed false reject.
+  The fourth case was incorrect; do not report the partial 3/3 as the final result.
+- The same four-case SAS patch-repair run is now live (`sas-patch-smoke-02`).
+  It uses the same repair and verification policy as MAS. Inspect completion and
+  traces before selecting the next intervention. No publication conclusion follows
+  from the exploratory 3/4 SAS versus 1/4 MAS comparison.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside
