@@ -1,0 +1,1263 @@
+{
+  "scope": "Development diagnostics; incomplete runs are snapshots, not final counts",
+  "runs": [
+    {
+      "run": "finqa-mas-demos-dev24-01",
+      "complete": true,
+      "run_status": "complete",
+      "cases_observed": 24,
+      "executable_programs": 24,
+      "programs_with_unused_steps": 3,
+      "correct_programs_with_unused_steps": 0,
+      "oracle_reconnection_potential_gains": 0,
+      "oracle_caution": "Candidate coverage only, not a model-selected repair gain; gold used after candidate enumeration.",
+      "audit": [
+        {
+          "id": "V/2008/page_17.pdf-1",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "10956.4",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "C/2017/page_328.pdf-1",
+          "steps": 3,
+          "answer_ancestors": [
+            0,
+            2
+          ],
+          "unused_steps": [
+            1
+          ],
+          "repair_hints": [
+            {
+              "unused_step": 1,
+              "possible_consumer_steps": [
+                2
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            }
+          ],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 3,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-61411",
+              "edit": null
+            },
+            {
+              "id": "E001",
+              "value": "-30.52236580516898608349900597",
+              "edit": {
+                "step": 2,
+                "side": "left",
+                "before": {
+                  "span_id": "STEP#0",
+                  "value": "#0"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            },
+            {
+              "id": "E002",
+              "value": "1950.477634194831013916500994",
+              "edit": {
+                "step": 2,
+                "side": "right",
+                "before": {
+                  "span_id": "table_1",
+                  "value": "31"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "DVN/2007/page_58.pdf-2",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "20.00000000000000000000000000",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "ETR/2011/page_341.pdf-3",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.7237313432835820895522388060",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "ETR/2004/page_213.pdf-2",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "3746.087774294670846394984325",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "PM/2017/page_38.pdf-1",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.1108508146097327228197210095",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "JPM/2008/page_85.pdf-3",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.3479545053782401692823135250",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "PNC/2013/page_207.pdf-1",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "11081.33557611438183347350715",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "CME/2017/page_97.pdf-5",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-0.660765",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "PNC/2013/page_62.pdf-2",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.05531609195402298850574712644",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "AAPL/2004/page_36.pdf-2",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.06147540983606557377049180328",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "PKG/2009/page_65.pdf-4",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.0001438641922025607826212055819",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "LMT/2013/page_74.pdf-4",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-0.008649984553599011430336731542",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "STT/2011/page_83.pdf-1",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "19499",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "MRO/2007/page_149.pdf-2",
+          "steps": 3,
+          "answer_ancestors": [
+            0,
+            2
+          ],
+          "unused_steps": [
+            1
+          ],
+          "repair_hints": [
+            {
+              "unused_step": 1,
+              "possible_consumer_steps": [
+                2
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            }
+          ],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 3,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.7892367505627174135461428279",
+              "edit": null
+            },
+            {
+              "id": "E001",
+              "value": "1.255985267034990791896869245",
+              "edit": {
+                "step": 2,
+                "side": "left",
+                "before": {
+                  "span_id": "STEP#0",
+                  "value": "#0"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            },
+            {
+              "id": "E002",
+              "value": "0.6283805799934832192896709026",
+              "edit": {
+                "step": 2,
+                "side": "right",
+                "before": {
+                  "span_id": "table_1",
+                  "value": "-4887"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "AOS/2004/page_11.pdf-2",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "59513.70",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "C/2010/page_223.pdf-3",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "12.5",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "MSI/2006/page_61.pdf-3",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.002302294497660948986411227445",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "ABMD/2006/page_75.pdf-1",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "1.399900398406374501992031873",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "AMAT/2013/page_18.pdf-2",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-2011",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "DVN/2014/page_85.pdf-1",
+          "steps": 8,
+          "answer_ancestors": [
+            7
+          ],
+          "unused_steps": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "repair_hints": [
+            {
+              "unused_step": 0,
+              "possible_consumer_steps": [
+                7
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            },
+            {
+              "unused_step": 1,
+              "possible_consumer_steps": [
+                7
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            },
+            {
+              "unused_step": 2,
+              "possible_consumer_steps": [
+                7
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            },
+            {
+              "unused_step": 3,
+              "possible_consumer_steps": [
+                7
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            },
+            {
+              "unused_step": 4,
+              "possible_consumer_steps": [
+                7
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            },
+            {
+              "unused_step": 5,
+              "possible_consumer_steps": [
+                7
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            },
+            {
+              "unused_step": 6,
+              "possible_consumer_steps": [
+                7
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            }
+          ],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 15,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "2050",
+              "edit": null
+            },
+            {
+              "id": "E001",
+              "value": "2097",
+              "edit": {
+                "step": 7,
+                "side": "left",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "2014"
+                },
+                "after": {
+                  "value": "#0",
+                  "span_id": "STEP#0"
+                }
+              }
+            },
+            {
+              "id": "E002",
+              "value": "2098",
+              "edit": {
+                "step": 7,
+                "side": "left",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "2014"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            },
+            {
+              "id": "E003",
+              "value": "2099",
+              "edit": {
+                "step": 7,
+                "side": "left",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "2014"
+                },
+                "after": {
+                  "value": "#2",
+                  "span_id": "STEP#2"
+                }
+              }
+            },
+            {
+              "id": "E004",
+              "value": "2100",
+              "edit": {
+                "step": 7,
+                "side": "left",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "2014"
+                },
+                "after": {
+                  "value": "#3",
+                  "span_id": "STEP#3"
+                }
+              }
+            },
+            {
+              "id": "E005",
+              "value": "111",
+              "edit": {
+                "step": 7,
+                "side": "left",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "2014"
+                },
+                "after": {
+                  "value": "#4",
+                  "span_id": "STEP#4"
+                }
+              }
+            },
+            {
+              "id": "E006",
+              "value": "2619",
+              "edit": {
+                "step": 7,
+                "side": "left",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "2014"
+                },
+                "after": {
+                  "value": "#5",
+                  "span_id": "STEP#5"
+                }
+              }
+            },
+            {
+              "id": "E007",
+              "value": "85.7",
+              "edit": {
+                "step": 7,
+                "side": "left",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "2014"
+                },
+                "after": {
+                  "value": "#6",
+                  "span_id": "STEP#6"
+                }
+              }
+            },
+            {
+              "id": "E008",
+              "value": "4075",
+              "edit": {
+                "step": 7,
+                "side": "right",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "36"
+                },
+                "after": {
+                  "value": "#0",
+                  "span_id": "STEP#0"
+                }
+              }
+            },
+            {
+              "id": "E009",
+              "value": "4076",
+              "edit": {
+                "step": 7,
+                "side": "right",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "36"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            },
+            {
+              "id": "E010",
+              "value": "4077",
+              "edit": {
+                "step": 7,
+                "side": "right",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "36"
+                },
+                "after": {
+                  "value": "#2",
+                  "span_id": "STEP#2"
+                }
+              }
+            },
+            {
+              "id": "E011",
+              "value": "4078",
+              "edit": {
+                "step": 7,
+                "side": "right",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "36"
+                },
+                "after": {
+                  "value": "#3",
+                  "span_id": "STEP#3"
+                }
+              }
+            },
+            {
+              "id": "E012",
+              "value": "2089",
+              "edit": {
+                "step": 7,
+                "side": "right",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "36"
+                },
+                "after": {
+                  "value": "#4",
+                  "span_id": "STEP#4"
+                }
+              }
+            },
+            {
+              "id": "E013",
+              "value": "4597",
+              "edit": {
+                "step": 7,
+                "side": "right",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "36"
+                },
+                "after": {
+                  "value": "#5",
+                  "span_id": "STEP#5"
+                }
+              }
+            },
+            {
+              "id": "E014",
+              "value": "2063.7",
+              "edit": {
+                "step": 7,
+                "side": "right",
+                "before": {
+                  "span_id": "text_5",
+                  "value": "36"
+                },
+                "after": {
+                  "value": "#6",
+                  "span_id": "STEP#6"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "SPGI/2018/page_74.pdf-1",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-0.09603220241518113858539390454",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "ZBH/2003/page_58.pdf-3",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "52.33869846000993541977148534",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "AMT/2005/page_105.pdf-2",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": true,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [
+            "KEEP"
+          ],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "4575515",
+              "edit": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "finqa-sas-demos-dev24-01",
+      "complete": false,
+      "run_status": "live_snapshot",
+      "cases_observed": 17,
+      "executable_programs": 13,
+      "programs_with_unused_steps": 1,
+      "correct_programs_with_unused_steps": 0,
+      "oracle_reconnection_potential_gains": 1,
+      "oracle_caution": "Candidate coverage only, not a model-selected repair gain; gold used after candidate enumeration.",
+      "audit": [
+        {
+          "id": "C/2017/page_328.pdf-1",
+          "steps": 3,
+          "answer_ancestors": [
+            0,
+            2
+          ],
+          "unused_steps": [
+            1
+          ],
+          "repair_hints": [
+            {
+              "unused_step": 1,
+              "possible_consumer_steps": [
+                2
+              ],
+              "caution": "Check intended formula; do not assume unused work belongs in the answer."
+            }
+          ],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 3,
+          "oracle_correct_candidate_ids": [
+            "E001"
+          ],
+          "oracle_potential_gain": true,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "9350.0",
+              "edit": null
+            },
+            {
+              "id": "E001",
+              "value": "93.500",
+              "edit": {
+                "step": 2,
+                "side": "left",
+                "before": {
+                  "span_id": "STEP#0",
+                  "value": "#0"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            },
+            {
+              "id": "E002",
+              "value": "87.4225",
+              "edit": {
+                "step": 2,
+                "side": "right",
+                "before": {
+                  "span_id": "CONST",
+                  "value": "100"
+                },
+                "after": {
+                  "value": "#1",
+                  "span_id": "STEP#1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "DVN/2007/page_58.pdf-2",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": true,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [
+            "KEEP"
+          ],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "24.69135802469135802469135802",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "ETR/2011/page_341.pdf-3",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": true,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [
+            "KEEP"
+          ],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "18.6",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "ETR/2004/page_213.pdf-2",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": true,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [
+            "KEEP"
+          ],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.6030612244897959183673469388",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "PM/2017/page_38.pdf-1",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": true,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [
+            "KEEP"
+          ],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "688",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "JPM/2008/page_85.pdf-3",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "1.533635318774930701102021500",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "PNC/2013/page_207.pdf-1",
+          "steps": 5,
+          "answer_ancestors": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.002829011399750635583831688320",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "CME/2017/page_97.pdf-5",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": true,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [
+            "KEEP"
+          ],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "995",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "PNC/2013/page_62.pdf-2",
+          "steps": 2,
+          "answer_ancestors": [
+            0,
+            1
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-2176.258064516129032258064516",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "AAPL/2004/page_36.pdf-2",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-1680.5",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "LMT/2013/page_74.pdf-4",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": true,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [
+            "KEEP"
+          ],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "-1.9",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "STT/2011/page_83.pdf-1",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": false,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "9.774193548387096774193548387",
+              "edit": null
+            }
+          ]
+        },
+        {
+          "id": "AOS/2004/page_11.pdf-2",
+          "steps": 1,
+          "answer_ancestors": [
+            0
+          ],
+          "unused_steps": [],
+          "repair_hints": [],
+          "case_correct": true,
+          "pruning_value_preserved": true,
+          "candidate_count": 1,
+          "oracle_correct_candidate_ids": [
+            "KEEP"
+          ],
+          "oracle_potential_gain": false,
+          "candidates": [
+            {
+              "id": "KEEP",
+              "value": "0.3401112603107615576443506618",
+              "edit": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

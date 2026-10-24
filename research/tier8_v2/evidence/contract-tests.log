@@ -19,6 +19,13 @@ test_ledger_reserves_and_enforces_budget (test_evidence_contract.ContractTests.t
 test_missing_needs_absence_evidence (test_evidence_contract.ContractTests.test_missing_needs_absence_evidence) ... ok
 test_repair_cannot_change_locked_claim (test_evidence_contract.ContractTests.test_repair_cannot_change_locked_claim) ... ok
 test_substring_is_not_numeric_evidence (test_evidence_contract.ContractTests.test_substring_is_not_numeric_evidence) ... ok
+test_edge_candidates_preserve_operations_and_other_operands (test_program_graph.GraphTests.test_edge_candidates_preserve_operations_and_other_operands) ... ok
+test_future_edge_is_rejected (test_program_graph.GraphTests.test_future_edge_is_rejected) ... ok
+test_live_snapshot_ignores_only_incomplete_tail (test_program_graph.GraphTests.test_live_snapshot_ignores_only_incomplete_tail) ... ok
+test_no_dead_steps_leaves_only_keep (test_program_graph.GraphTests.test_no_dead_steps_leaves_only_keep) ... ok
+test_pruning_renumbers_references_and_preserves_value (test_program_graph.GraphTests.test_pruning_renumbers_references_and_preserves_value) ... ok
+test_unused_intermediate_is_identified_without_gold (test_program_graph.GraphTests.test_unused_intermediate_is_identified_without_gold) ... ok
+test_valid_branching_uses_both_parents (test_program_graph.GraphTests.test_valid_branching_uses_both_parents) ... ok
 test_false_accept_is_not_hidden_by_support_gate (test_tier8_v2_analyze.AnalysisTests.test_false_accept_is_not_hidden_by_support_gate) ... ok
 test_false_lock_is_visible_despite_no_regression (test_tier8_v2_analyze.AnalysisTests.test_false_lock_is_visible_despite_no_regression) ... ok
 test_paired_identity_has_zero_difference (test_tier8_v2_analyze.AnalysisTests.test_paired_identity_has_zero_difference) ... ok
@@ -67,6 +74,6 @@ ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 59 tests in 0.020s
+Ran 66 tests in 0.021s
 
 OK

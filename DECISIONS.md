@@ -175,6 +175,18 @@
   uses one checkpoint and separate reset calls; do not describe it as independently
   trained specialists. Default remains 0.5B and the live SAS run is unchanged.
   Fifty-nine tests pass; this profile still needs actual inference evaluation.
+- A saved SAS program computed a useful intermediate and then bypassed it in the
+  final step. Added gold-free dataflow diagnostics, value-preserving dead-step
+  pruning for executable programs, and bounded single-edge reconnection candidates.
+  Operations, quantities, units and all other edges stay fixed; KEEP remains an option.
+- Offline candidate coverage uses gold only AFTER enumerating candidates and is
+  labeled an oracle upper bound, never a model repair gain. MAS has three programs
+  with unused steps but no correct reconnection candidate; a partial SAS snapshot
+  has one candidate-recoverable error. This argues against treating orphan repair
+  as a general solution for the weak MAS generator. A selector has not been tested.
+- Snapshot readers ignore only an unfinished final JSONL record, not malformed
+  completed records. Larger-verifier and formula-analysis inference still await
+  the currently live SAS baseline; avoid concurrent inference contention.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

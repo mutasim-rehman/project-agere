@@ -1,0 +1,24 @@
+[
+  {
+    "run": "finqa-mas-demos-dev24-01",
+    "complete": true,
+    "run_status": "complete",
+    "cases_observed": 24,
+    "executable_programs": 24,
+    "programs_with_unused_steps": 3,
+    "correct_programs_with_unused_steps": 0,
+    "oracle_reconnection_potential_gains": 0,
+    "oracle_caution": "Candidate coverage only, not a model-selected repair gain; gold used after candidate enumeration."
+  },
+  {
+    "run": "finqa-sas-demos-dev24-01",
+    "complete": false,
+    "run_status": "live_snapshot",
+    "cases_observed": 17,
+    "executable_programs": 13,
+    "programs_with_unused_steps": 1,
+    "correct_programs_with_unused_steps": 0,
+    "oracle_reconnection_potential_gains": 1,
+    "oracle_caution": "Candidate coverage only, not a model-selected repair gain; gold used after candidate enumeration."
+  }
+]
