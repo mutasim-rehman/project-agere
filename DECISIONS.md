@@ -2,6 +2,40 @@
 
 ## Redevelopment — 24 October 2026
 
+### Controlled proof-feedback repair component
+
+- Implemented a gold-free repair function and a separate memory-monitored replay
+  harness. Plain and proof conditions use the same exact-cancellation trigger,
+  model, 512-token retry allowance and 192-token verification allowance. Only
+  proof exposes the value-influence diagnostic and its legitimacy/domain caveats.
+  Both can KEEP, replace with a grounded reference plan, or explicitly abstain.
+- Original generation/verification tokens are debited before fresh calls from
+  the same 2048-case ledger. Invalid proposals preserve the old state; changed
+  proposals are executed and reverified. Algebraic cancellation is not itself a
+  rejection reason. This tests feedback value, not just the effect of an extra call.
+- Parent exports model-only snapshots, rejecting inconsistent token traces and
+  duplicate case IDs. Worker does not read old scores; gold evaluation occurs
+  after all repair calls. Fresh repair latency/tokens and recorded baseline costs
+  remain separate. This is fixed-output component replay, not measured fresh
+  end-to-end generation; any positive result still needs a fresh integrated run.
+- Preflight checks baseline completeness, packet/evaluation hashes, helper hashes,
+  model/runtime compatibility and AST equality of actual inference/scoring helpers.
+  The parent records code/checkpoint/snapshot hashes and sampled process-tree RSS,
+  rejects concurrent inference and existing outputs, and retains failed partials.
+- One hundred twenty-two tests pass, covering labels excluded from snapshots,
+  shared budget debit, proof/plain trigger equality, legitimate KEEP, invalid
+  replacement rollback, post-verification delivery gating and exhausted budget.
+  Actual grammar compilation passed on both eligible strong-SAS baseline cases;
+  compatibility preflight passed. No real repair gains are measured yet.
+- Prospective development-pilot rule: after the frozen sequence completes,
+  choose between SAS analysis and SAS table-complete analysis by higher primary
+  correctness, then correct delivery, fewer wrong deliveries and fewer output
+  tokens (stable name tie break). Run plain then proof on ALL saved cases of that
+  selected baseline; eligibility is algebraic, never selected using case labels.
+  Aggregate development selection is disclosed; this is not a held-out test.
+- Only new files were added to the experiment path. The existing frozen SAS
+  retrieval run and all 46 input hashes remain unchanged.
+
 ### Full larger-drafter allocation result
 
 - Matched 3B Q4 analysis completed 24/24 within peak RSS 3,829,968,896 bytes:

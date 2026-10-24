@@ -21,7 +21,11 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 111 contract tests pass. They do not establish financial reasoning correctness.
+- 122 contract tests pass. They do not establish financial reasoning correctness.
+- Separate memory-monitored fixed-output repair harness is ready for plain versus
+  proof feedback on the same algebraically flagged cohort. Original output tokens
+  are debited; changed answers are reverified. Grammar/compatibility checks pass,
+  but real-model repair gain and fresh end-to-end benefit remain unmeasured.
 
 ## Completed development measurements
 
