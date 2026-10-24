@@ -2,6 +2,24 @@
 
 ## Redevelopment — 24 October 2026
 
+### Serial sketch diagnostic execution
+
+- Prepared a frozen two-job sequence: MAS then SAS, first two development records,
+  no analysis, retrieved demonstrations, sketch planner, no repair. These isolate
+  the planner from the ongoing direct-program SAS analysis ablation. The two
+  familiar debug cases are exploratory, not confirmatory evidence.
+- The sequence identifies the current SAS monitor by PID 68882 and its actual
+  creation time, waits for that process, and requires a complete memory-valid
+  24-case summary before starting either job. It refuses an observed active
+  inference process, changed frozen inputs, existing outputs, or failed run;
+  it does not restart/retry a job or overwrite its artifacts.
+- Stored argv, source/data hashes and dependency identity in
+  data/sketch-smokes-sequence-01.json. The controller records each wait/launch/exit
+  in a new journal; each experiment retains the normal memory/stage evidence.
+  Eighty tests pass, including rejection of failed/partial/over-cap dependencies.
+  This is execution plumbing, not a research contribution. Preserve frozen code
+  and data until the queued experiments finish, or explicitly replace the plan.
+
 ### Training-sketch and source-binding baseline
 
 - Added a separate offline shape audit, never imported by deployment. Retrieve

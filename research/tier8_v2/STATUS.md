@@ -16,7 +16,7 @@ are not established. Do not mark the goal complete from these development result
 - Matching SAS analysis smoke completed 2/2 reported-answer matches (1/2 raw
   execution matches), both correctly delivered, versus 0/2 in its baseline prefix.
   Both analysis calls reached their allowance. Larger development testing remains.
-- 78 tests pass. These checks establish contracts, not financial correctness.
+- 80 tests pass. These checks establish contracts, not financial correctness.
 - Optional training-sketch planner chooses a retrieved formula and binds its
   variables to current quantities. Preserves operations/constants/units and logs
   choice versus bindings. All 24 schemas compile; real-model gains unmeasured.
@@ -68,6 +68,11 @@ Exec session: 14672. Revalidate its worker process before calling it stopped.
 24 development cases, 128 analysis tokens, fixed demonstrations; matches the
 no-analysis baseline otherwise. The debug prefix is reused development data.
 Partial output is not a final result. Do not launch competing inference here.
+
+Prepared serial follow-up plan: data/sketch-smokes-sequence-01.json. It identifies
+monitor PID 68882 and its creation time, then requires valid completion before MAS
+and SAS two-case sketch diagnostics. The source/data hashes are frozen: avoid code
+or data edits until completion or explicitly invalidate/replace this plan.
 
 ## Next steps
 
