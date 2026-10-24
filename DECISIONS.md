@@ -58,6 +58,14 @@
   re-auditing are prior art. Do not claim novelty for those concepts. Keep testing
   field-level transactional preservation, false locks and repair regressions as a
   narrower hypothesis; the publication contribution remains unproven.
+- Continued from verified progress: five commits were pushed in the previous goal
+  turn. The source-runtime installation and model download processes remain live;
+  source cache size and weight partial size have increased. Do not restart them
+  solely because installation has not printed a progress line.
+- Before pilot runs, enforce per-run weight SHA-256 checks (including both 7B
+  shards), reject contradictory PASS verdicts, and reserve 192 output tokens for
+  post-repair verification. These controls address evidence validity rather than
+  implying a research finding.
 
 **Study:** `tier8-8gb-v1`  
 **SSD:** `H:\AGERE` (`AGERE_SSD_ROOT`)  

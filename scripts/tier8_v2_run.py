@@ -19,6 +19,10 @@ from tier8_v2_data import FIELDS, evaluate
 
 ROOT = Path(__file__).resolve().parents[1]
 WEIGHTS = ROOT / "weights/tier8_v2"
+MODEL_FILES = {"sas": {"sas": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf"},
+               "mas": {"extractor": "qwen2.5-0.5b-instruct-fp16.gguf",
+                       "drafter": "qwen2.5-1.5b-instruct-fp16.gguf",
+                       "verifier": "qwen2.5-0.5b-instruct-fp16.gguf"}}
 SCHEMA = {"type": "object", "properties": {
     "case_id": {"type": "string"},
     "facts": {"type": "object", "properties": {f: {"type": "object", "properties": {
@@ -52,10 +56,7 @@ class Models:
         self.grammar = LlamaGrammar
         self.models = {}
         self.context = context
-        files = {"sas": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf"} if arm == "sas" else {
-            "extractor": "qwen2.5-0.5b-instruct-fp16.gguf",
-            "drafter": "qwen2.5-1.5b-instruct-fp16.gguf",
-            "verifier": "qwen2.5-0.5b-instruct-fp16.gguf"}
+        files = MODEL_FILES[arm]
         # Separate resident contexts for the two specialist instances.
         for role, filename in files.items():
             self.models[role] = Llama(model_path=str(WEIGHTS / filename), n_ctx=context,
@@ -134,13 +135,13 @@ def run_case(public, models, arm, repair):
             patch = call(drafter, task + "\nEvidence:\n" + evidence + "\nCurrent answer:\n" + json.dumps(answer)
                 + "\nRepair ONLY these facts; return a map of field to value/span_id: " + json.dumps(sorted(allowed))
                 + "\nFeedback:\n" + json.dumps({"issues": [asdict(i) for i in issues], "verifier": verdict}),
-                patch_schema, budget.allowance(768), "repair_patch")
+                patch_schema, budget.allowance(768, reserve=192), "repair_patch")
             answer, repair_accepted = commit_patch(answer, patch, allowed=allowed, spans=spans, calculations={})
             # Derived mismatch is recomputed from the final named facts for both repair methods.
         else:
             candidate = call(drafter, draft_prompt + "\nCorrect this previous answer:\n" + json.dumps(answer)
                 + "\nFeedback:\n" + json.dumps({"issues": [asdict(i) for i in issues], "verifier": verdict}),
-                SCHEMA, budget.allowance(768), "repair_full")
+                SCHEMA, budget.allowance(768, reserve=192), "repair_full")
             if candidate is not None:
                 answer, repair_accepted = candidate, True
     answer = derive_mismatch(answer)
@@ -170,6 +171,29 @@ def derive_mismatch(answer):
 
 def passed(verdict):
     return isinstance(verdict, dict) and verdict.get("verdict") == "PASS" and verdict.get("unsupported_fields") == []
+
+
+def verified_models(arm):
+    manifest_path = ROOT / "research/tier8_v2/evidence/models.json"
+    entries = json.loads(manifest_path.read_text())
+    required = set(MODEL_FILES[arm].values())
+    if arm == "sas":
+        required.add("qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf")
+    selected = []
+    for name in sorted(required):
+        matches = [e for e in entries if Path(e["file"]).name == name]
+        if len(matches) != 1:
+            raise ValueError(f"One verified weight manifest entry required: {name}")
+        entry = matches[0]
+        path = inside(entry["file"])
+        digest = hashlib.sha256()
+        with path.open("rb") as stream:
+            for block in iter(lambda: stream.read(8 * 1024 * 1024), b""):
+                digest.update(block)
+        if path.stat().st_size != entry["bytes"] or digest.hexdigest() != entry["sha256"]:
+            raise ValueError(f"Weight integrity mismatch: {name}")
+        selected.append(entry)
+    return selected
 
 
 def worker(args, out):
@@ -214,9 +238,7 @@ def main():
                 "cap_bytes": min(6_400_000_000, psutil.virtual_memory().available - 1_000_000_000),
                 "started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                 "runtime": subprocess.check_output([sys.executable, "-c", "import llama_cpp;print(llama_cpp.__version__)"], text=True).strip()}
-    model_manifest = ROOT / "research/tier8_v2/evidence/models.json"
-    if model_manifest.exists():
-        manifest["models"] = json.loads(model_manifest.read_text())
+    manifest["models"] = verified_models(args.arm)
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak = 0
     breached = False

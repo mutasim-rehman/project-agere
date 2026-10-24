@@ -11,11 +11,13 @@ test_unpaired_cases_are_rejected (test_tier8_v2_analyze.AnalysisTests.test_unpai
 test_all_latent_answers_are_source_supported (test_tier8_v2_data.DataTests.test_all_latent_answers_are_source_supported) ... ok
 test_document_ids_do_not_reveal_source_roles (test_tier8_v2_data.DataTests.test_document_ids_do_not_reveal_source_roles) ... ok
 test_supported_stale_owner_is_semantically_wrong (test_tier8_v2_data.DataTests.test_supported_stale_owner_is_semantically_wrong) ... ok
+test_changed_weight_fails_integrity_gate (test_tier8_v2_pipeline.PipelineTests.test_changed_weight_fails_integrity_gate) ... ok
+test_contradictory_pass_is_not_delivery_authorization (test_tier8_v2_pipeline.PipelineTests.test_contradictory_pass_is_not_delivery_authorization) ... ok
 test_patch_repair_needs_fresh_verdict (test_tier8_v2_pipeline.PipelineTests.test_patch_repair_needs_fresh_verdict) ... ok
 test_semantic_verifier_fail_blocks_supported_answer (test_tier8_v2_pipeline.PipelineTests.test_semantic_verifier_fail_blocks_supported_answer) ... ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 16 tests in 0.007s
+Ran 18 tests in 0.008s
 
 OK

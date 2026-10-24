@@ -1,12 +1,15 @@
 import copy
 import json
 import sys
+import hashlib
+import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from tier8_v2_data import generate
-from tier8_v2_run import run_case
+from tier8_v2_run import run_case, verified_models
 
 
 class FakeModels:
@@ -52,6 +55,29 @@ class PipelineTests(unittest.TestCase):
         result = run_case(self.public, models, "sas", "patch")
         self.assertFalse(result["repair_accepted"])
         self.assertFalse(result["delivered"])
+
+    def test_contradictory_pass_is_not_delivery_authorization(self):
+        models = FakeModels([self.good, {"verdict": "PASS", "unsupported_fields": ["registered_owner"]}])
+        result = run_case(self.public, models, "sas", "none")
+        self.assertFalse(result["delivered"])
+
+    def test_changed_weight_fails_integrity_gate(self):
+        root = Path(__file__).resolve().parents[1]
+        (root / ".local/tmp").mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=root / ".local/tmp") as directory:
+            base = Path(directory)
+            evidence = base / "research/tier8_v2/evidence"
+            evidence.mkdir(parents=True)
+            entries = []
+            for name in ("qwen2.5-0.5b-instruct-fp16.gguf", "qwen2.5-1.5b-instruct-fp16.gguf"):
+                (base / name).write_bytes(b"verified-fixture")
+                entries.append({"file": name, "bytes": 16, "sha256": hashlib.sha256(b"verified-fixture").hexdigest()})
+            (evidence / "models.json").write_text(json.dumps(entries))
+            with patch("tier8_v2_run.ROOT", base):
+                self.assertEqual(len(verified_models("mas")), 2)
+                (base / entries[0]["file"]).write_bytes(b"tampered-fixture")
+                with self.assertRaisesRegex(ValueError, "integrity mismatch"):
+                    verified_models("mas")
 
 
 if __name__ == "__main__":
