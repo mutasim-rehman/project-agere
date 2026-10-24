@@ -1,0 +1,49 @@
+{
+  "paired": {
+    "n": 4,
+    "right_minus_left_success": 0.0,
+    "paired_bootstrap_95_interval": [
+      0.0,
+      0.0
+    ],
+    "right_only_correct": 0,
+    "left_only_correct": 0,
+    "exact_mcnemar_p": 1.0,
+    "interval_caution": "No discordant cases; a degenerate bootstrap interval does not establish equivalence.",
+    "note": "Exploratory development comparison; no multiple-comparison adjustment or publication claim."
+  },
+  "left": {
+    "n": 4,
+    "field_repair_gains": 0,
+    "field_repair_regressions": 0,
+    "wrong_fields_left_locked": 0,
+    "initial_verifier_true_accepts": 2,
+    "initial_verifier_false_accepts": 0,
+    "initial_verifier_true_rejects": 1,
+    "initial_verifier_false_rejects": 1,
+    "delivered_correct": 2,
+    "delivered_incorrect": 0,
+    "withheld": 2,
+    "generated_tokens": 707,
+    "prompt_tokens": 6225,
+    "inference_seconds": 195.37109036900074,
+    "truncated_stages": 0
+  },
+  "right": {
+    "n": 4,
+    "field_repair_gains": 0,
+    "field_repair_regressions": 0,
+    "wrong_fields_left_locked": 1,
+    "initial_verifier_true_accepts": 2,
+    "initial_verifier_false_accepts": 0,
+    "initial_verifier_true_rejects": 1,
+    "initial_verifier_false_rejects": 1,
+    "delivered_correct": 2,
+    "delivered_incorrect": 0,
+    "withheld": 2,
+    "generated_tokens": 839,
+    "prompt_tokens": 8601,
+    "inference_seconds": 256.7318886120029,
+    "truncated_stages": 0
+  }
+}

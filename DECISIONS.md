@@ -60,6 +60,12 @@
   It uses the same repair and verification policy as MAS. Inspect completion and
   traces before selecting the next intervention. No publication conclusion follows
   from the exploratory 3/4 SAS versus 1/4 MAS comparison.
+- Continuation inspected the live SAS repair process rather than restarting it.
+  It completed: 3/4 correct, 2/4 correctly delivered, zero incorrect deliveries,
+  no repair gains or regressions, 839 tokens versus 707 without repair. Peak RSS
+  4,978,438,144 bytes. The current anchored patch policy improves neither arm on
+  these four cases. Preserve this negative result and move beyond the rule-solvable
+  KYC pilot instead of claiming success from extra engineering alone.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside
