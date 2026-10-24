@@ -2,6 +2,21 @@
 
 ## Redevelopment — 24 October 2026
 
+### First resident MAS pilot
+
+- `mas-none-smoke-01` completed 4/4 cases inside the 6.40 GB cap, peak measured
+  parent-plus-worker RSS 5,787,037,696 bytes. Correct complete answers: 1/4;
+  delivered correct: 0/4; delivered incorrect: 0/4. This is a diagnostic sample.
+- All extractor/drafter fact proposals matched in the four cases. The small
+  verifier always emitted PASS with identity_name_mismatch in unsupported_fields.
+  The gate correctly rejected contradictory verdicts. No generation was truncated;
+  observed prompt lengths were 531–795 tokens, well below context 2048.
+- Next intervention is grounded in these traces: constrain case IDs and citations
+  to valid values for both arms; use per-field verifier judgments; test independent
+  drafting rather than passing the extractor's proposed answer into the drafter.
+  Record specialist disagreement for later ablation instead of assuming consensus
+  is reliable. Broader experiments remain necessary.
+
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside
   this directory; this overrides the historical external-SSD storage convention.
