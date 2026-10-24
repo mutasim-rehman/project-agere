@@ -1,0 +1,12 @@
+Downloading qwen2.5-0.5b-instruct-fp16.gguf: 1266425696 bytes
+Verified qwen2.5-0.5b-instruct-fp16.gguf
+Downloading qwen2.5-1.5b-instruct-fp16.gguf: 3560416288 bytes
+Verified qwen2.5-1.5b-instruct-fp16.gguf
+Downloading qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf: 3993201344 bytes
+Traceback (most recent call last):
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_download.py", line 57, in <module>
+    main()
+    ~~~~^^
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_download.py", line 48, in main
+    raise RuntimeError(f"Integrity failure: {name}")
+RuntimeError: Integrity failure: qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf

@@ -1,0 +1,7 @@
+{
+  "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.partial",
+  "bytes": 703227414,
+  "sha256": "f9e9d325fce95d766a219b191ff3a746634fd9505710079f8779008cf93b10c7",
+  "header_hex": "47475546030000001801000000000000",
+  "status": "rejected_integrity"
+}

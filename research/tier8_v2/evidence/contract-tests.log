@@ -1,3 +1,8 @@
+test_cited_multistep_result_has_transitive_lineage (test_evidence_calculator.CalculatorTests.test_cited_multistep_result_has_transitive_lineage) ... ok
+test_constants_cannot_replace_all_evidence (test_evidence_calculator.CalculatorTests.test_constants_cannot_replace_all_evidence) ... ok
+test_future_reference_rejected (test_evidence_calculator.CalculatorTests.test_future_reference_rejected) ... ok
+test_invented_operand_rejected_despite_valid_arithmetic (test_evidence_calculator.CalculatorTests.test_invented_operand_rejected_despite_valid_arithmetic) ... ok
+test_numeric_units_and_accounting_negatives (test_evidence_calculator.CalculatorTests.test_numeric_units_and_accounting_negatives) ... ok
 test_atomic_repair_preserves_good_claims (test_evidence_contract.ContractTests.test_atomic_repair_preserves_good_claims) ... ok
 test_batch_with_bad_claim_is_rejected_atomically (test_evidence_contract.ContractTests.test_batch_with_bad_claim_is_rejected_atomically) ... ok
 test_boolean_is_not_calculator_number (test_evidence_contract.ContractTests.test_boolean_is_not_calculator_number) ... ok
@@ -22,6 +27,6 @@ test_semantic_verifier_fail_blocks_supported_answer (test_tier8_v2_pipeline.Pipe
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.009s
+Ran 27 tests in 0.038s
 
 OK

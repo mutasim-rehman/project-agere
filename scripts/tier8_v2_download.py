@@ -3,7 +3,9 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import re
 import urllib.request
+import urllib.error
 
 ROOT = Path(__file__).resolve().parents[1]
 DEST = ROOT / "weights" / "tier8_v2"
@@ -22,6 +24,36 @@ def digest(path):
     return h.hexdigest()
 
 
+def transfer(url, partial, expected_size):
+    """Resume only range-validated prefixes; reject contradictory HTTP metadata."""
+    for attempt in range(12):
+        offset = partial.stat().st_size if partial.exists() else 0
+        if offset == expected_size:
+            return
+        if offset > expected_size:
+            raise RuntimeError("Partial exceeds expected size")
+        request = urllib.request.Request(url + f"?download=true&agere_retry={attempt}",
+                                         headers={"Range": f"bytes={offset}-", "Cache-Control": "no-cache"})
+        try:
+            with urllib.request.urlopen(request, timeout=120) as source:
+                if source.status == 206:
+                    match = re.fullmatch(r"bytes (\d+)-(\d+)/(\d+)", source.headers.get("Content-Range", ""))
+                    if not match or int(match[1]) != offset or int(match[3]) != expected_size:
+                        raise RuntimeError("Inconsistent Content-Range")
+                elif offset:
+                    raise RuntimeError("Server refused a validated resume")
+                print(f"Transfer {partial.name}: offset={offset}, status={source.status}, content_length={source.headers.get('Content-Length')}", flush=True)
+                with partial.open("ab" if offset else "wb") as out:
+                    shutil.copyfileobj(source, out, length=8 * 1024 * 1024)
+            actual = partial.stat().st_size
+            print(f"Transfer ended at {actual}/{expected_size} bytes", flush=True)
+            if actual == offset:
+                raise RuntimeError("No download progress")
+        except (OSError, urllib.error.URLError) as exc:
+            print(f"Transfer interrupted: {type(exc).__name__}; prefix retained", flush=True)
+    raise RuntimeError("Transfer did not reach the verified size after 12 requests")
+
+
 def main():
     DEST.mkdir(parents=True, exist_ok=True)
     manifest = []
@@ -37,14 +69,15 @@ def main():
             target = DEST / name
             if not target.exists() or target.stat().st_size != size or digest(target) != expected:
                 partial = target.with_suffix(".partial")
-                if shutil.disk_usage(DEST).free < size + 500_000_000:
+                offset = partial.stat().st_size if partial.exists() else 0
+                if shutil.disk_usage(DEST).free < size - offset + 500_000_000:
                     raise RuntimeError("Insufficient disk headroom")
                 url = f"https://huggingface.co/{repo}/resolve/{revision}/{name}"
                 print(f"Downloading {name}: {size} bytes", flush=True)
-                # Retry the process on network failure; completed verified files are reused.
-                with urllib.request.urlopen(url, timeout=120) as source, partial.open("wb") as out:
-                    shutil.copyfileobj(source, out, length=8 * 1024 * 1024)
-                if partial.stat().st_size != size or digest(partial) != expected:
+                transfer(url, partial, size)
+                actual_sha = digest(partial)
+                if partial.stat().st_size != size or actual_sha != expected:
+                    partial.rename(partial.with_name(partial.name + ".rejected-" + actual_sha[:12]))
                     raise RuntimeError(f"Integrity failure: {name}")
                 partial.replace(target)
             print(f"Verified {name}", flush=True)

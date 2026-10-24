@@ -86,6 +86,21 @@
   conversions. Prepare reproducible native-F16 conversion with F16 output and
   embedding tensors, preserving original hashes. Native F16 remains unquantized;
   actual resident fit and generation behavior must be measured after conversion.
+- Runtime source build completed and imports: llama-cpp-python 0.3.16, numpy 2.5.4,
+  psutil 7.2.2. The 0.5B primitive diagnostic passed 3/3 (arithmetic, name copying,
+  explicit missing status) at measured peak RSS 1,437,417,472 bytes. This is not a
+  full-task or architecture result and contradicts no broader capacity hypothesis.
+- The proposed F16 conversion did NOT reduce either official file's size: 0.5B
+  remains 1,266,425,696 bytes and 1.5B 3,560,416,288 bytes. The earlier suggestion
+  that F32 embeddings caused the difference was an unverified assumption; it is
+  not supported by this conversion. Measure resident MAS fit before further changes.
+- The first 7B shard transfer ended after 703,227,414 of 3,993,201,344 bytes and
+  was rejected. Retain rejected prefix metadata and original failure log. Added
+  Content-Range-validated resume with final SHA-256 verification; retry is live.
+- Added bounded cited-operand arithmetic for forthcoming public-report experiments.
+  Deterministic execution is established FinQA methodology, not a novelty claim.
+  Constants are explicitly whitelisted; final results must depend on source evidence.
+  Numerical citation support still does not prove the correct financial interpretation.
 
 **Study:** `tier8-8gb-v1`  
 **SSD:** `H:\AGERE` (`AGERE_SSD_ROOT`)  

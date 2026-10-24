@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "scope": "0.5B primitive diagnostic; not an architecture comparison",
+  "n": 3,
+  "correct": 3,
+  "runtime": "0.3.16",
+  "weights_sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc",
+  "peak_rss_bytes": 1437417472,
+  "cap_bytes": 6400000000
+}

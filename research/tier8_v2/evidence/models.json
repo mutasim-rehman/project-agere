@@ -1,0 +1,16 @@
+[
+  {
+    "repo": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+    "file": "weights/tier8_v2/qwen2.5-0.5b-instruct-fp16.gguf",
+    "bytes": 1266425696,
+    "sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+    "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "file": "weights/tier8_v2/qwen2.5-1.5b-instruct-fp16.gguf",
+    "bytes": 3560416288,
+    "sha256": "fc89e330deb3fd8fa560f1c0f35a1e2b8da96d59e13445559ed190307a6f5649"
+  }
+]
