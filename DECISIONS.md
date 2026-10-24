@@ -2,6 +2,29 @@
 
 ## Redevelopment — 24 October 2026
 
+### Completed reasoning and frozen sketch sequence
+
+- Full SAS 128-token analysis ablation completed 24/24 within peak RSS
+  5,131,788,288 bytes. Reported-answer correctness and correct delivery improved
+  from 7/24 to 13/24, with six newly correct cases and zero regressions on that
+  metric; wrong deliveries decreased from six to five, withheld from 11 to six.
+  Output tokens increased 2059 to 5135 and prompt tokens 73469 to 98085.
+- Paired exploratory exact McNemar p=0.03125; no multiple-comparison adjustment
+  or fresh confirmation. All 24 analysis calls reached the 128-token allowance.
+  Raw executable-reference matches increased 6 to 8 with different percentage
+  conventions; the zero-regression statement applies only to the primary
+  declared-unit reported-answer metric. This known reasoning baseline is a
+  useful development improvement, not a novelty claim.
+- Frozen serial diagnostics completed without competing inference: MAS sketch
+  0/2 correct, both wrongly delivered, 156 tokens, peak RSS 5,236,670,464 bytes;
+  SAS sketch 1/2 correct and delivered, no wrong deliveries, one abstention,
+  110 tokens, peak RSS 5,114,847,232 bytes. MAS chose wrong quantity bindings;
+  SAS abstained on the payment-volume case. Preserve both negative/partial results.
+- The controller journal ends complete; all three runs have matching expected
+  record counts, successful exit status and sampled peaks below the cap. The
+  frozen execution sequence is finished, so source changes may resume. Next
+  independent controls are larger quantized drafter allocation and endpoint repair.
+
 ### Source-operand risk diagnostic
 
 - Audited completed source-reference baselines for source quantities with integer
