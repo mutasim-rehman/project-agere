@@ -21,10 +21,11 @@ def generate(index: int, seed: int = 20261024) -> dict:
     missing = index % 3 == 0
     applicant = other if mismatch else owner
     cid = f"EVIDENCE-DEV-{index:04d}"
-    # Distinct document IDs keep shuffling separate from semantic truth.
-    registry = f"{cid}-REG-CURRENT#L01"
-    declaration = f"{cid}-FORM#L01"
-    identity = f"{cid}-ID#L01"
+    # Opaque randomized IDs must not disclose which source is authoritative.
+    ids = rng.sample(range(100, 999), 5)
+    registry = f"{cid}-DOC-{ids[0]}#L01"
+    declaration = f"{cid}-DOC-{ids[1]}#L01"
+    identity = f"{cid}-DOC-{ids[2]}#L01"
     templates = (
         f"The registry extract issued on 2026-09-01 records {owner} as the beneficial owner.",
         f"As of its issue date, 2026-09-01, this registry names {owner} as beneficial owner.",
@@ -33,10 +34,10 @@ def generate(index: int, seed: int = 20261024) -> dict:
     )
     docs = [
         {"id": registry.split("#")[0], "lines": ["L01 " + templates[index % len(templates)]]},
-        {"id": f"{cid}-REG-OLD", "lines": [f"L01 A registry extract issued on 2025-09-01 records {stale_owner} as the beneficial owner."]},
+        {"id": f"{cid}-DOC-{ids[3]}", "lines": [f"L01 A registry extract issued on 2025-09-01 records {stale_owner} as the beneficial owner."]},
         {"id": declaration.split("#")[0], "lines": [f"L01 The applicant declares their name as {applicant} on the onboarding form signed 2026-09-02."]},
         {"id": identity.split("#")[0], "lines": ["L01 The identity expiry date was not supplied." if missing else "L01 The identity document expires on 2028-12-31."]},
-        {"id": f"{cid}-NOTE", "lines": [f"L01 Relationship manager {other} scheduled a review for 2029-12-31. This is an internal note, not an identity record or registry filing."]},
+        {"id": f"{cid}-DOC-{ids[4]}", "lines": [f"L01 Relationship manager {other} scheduled a review for 2029-12-31. This is an internal note, not an identity record or registry filing."]},
     ]
     rng.shuffle(docs)
     truth = {

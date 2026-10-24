@@ -1,0 +1,49 @@
+# Candidate novelty audit — 24 October 2026
+
+This is a working research assessment, not a novelty certificate.
+
+| Prior work | Inspected scope | Consequence for Agere |
+|---|---|---|
+| [Self-Refine](https://arxiv.org/abs/2303.17651) | Abstract | Iterative self-feedback is established. |
+| [CRITIC](https://arxiv.org/html/2305.11738v4) | Framework and introduction | External-tool verification followed by correction is established. |
+| [CLR](https://arxiv.org/html/2608.11994v1) | Method, budget and scope | Critical-claim falsification and reliability-weighted candidate selection are established. CLR selects among generated candidates rather than constructing repaired answers. |
+| [BRA-Audit](https://arxiv.org/html/2608.14668v1) | Algorithm 1 and system/method formulation | Trusted audit points, selective rollback, and re-auditing already exist. Localized recovery by itself is not a credible new contribution. |
+
+The remaining candidate is an empirically useful **transactional field-repair
+contract under simultaneous RAM and token constraints**, evaluated in both SAS
+and MAS. It must be distinguished from graph-localized recovery through its
+field-level preservation rules, rejection behavior, and treatment of derived
+dependencies. The current implementation preserves unrelated fact entries and
+recomputes name mismatch; it does not yet provide a general dependency graph.
+
+## Falsifiable hypotheses
+
+1. Field patches reduce correct-to-incorrect transitions relative to full-answer
+   regeneration at matched resource ceilings.
+2. The benefit survives verifier false positives and false negatives; false locks
+   do not offset preservation gains.
+3. The effect remains on unfamiliar source layouts and independently sourced data,
+   rather than only the synthetic generator used to develop the controller.
+4. Under a memory ceiling, changing verification/repair allocation can outperform
+   fixed allocation without merely moving errors into withheld answers.
+
+Report correct delivered coverage, incorrect deliveries, withheld answers, field
+accuracy, total tokens, prompt processing, latency, and memory. Accuracy restricted
+to delivered cases cannot be the sole outcome.
+
+## Evidence so far
+
+- Original structured v1 development tasks are completely solved by rule-only
+  parsing (150/150). That benchmark cannot establish the need for an LLM.
+- Unit tests establish patch isolation and delivery-gate behavior only.
+- No model-based improvement, architecture winner, or novelty claim is established.
+- The new 24-case KYC diagnostic is deliberately a pilot. It is still templated,
+  lacks credit coverage, and requires stronger baselines and external validation.
+
+## Next decisions depend on measurements
+
+If a compact deterministic baseline also solves the new tasks, improve task
+coverage rather than claim a model contribution. If both strong systems already
+solve them, add realistic ambiguity and longer evidence; do not inject arbitrary
+errors solely to produce gains. Fault injection may measure mechanisms separately,
+but must be labeled and accompanied by naturally occurring error results.

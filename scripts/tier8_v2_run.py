@@ -119,7 +119,7 @@ def run_case(public, models, arm, repair):
         + "\nCheck source authority, date precedence, field identity, citations and the mismatch boolean. "
         "PASS only if all are correct. On FAIL identify every wrong field. Return verdict and unsupported_fields.",
         VERIFY_SCHEMA, 192, "verify")
-    verifier_pass = isinstance(verdict, dict) and verdict.get("verdict") == "PASS"
+    verifier_pass = passed(verdict)
     needs_repair = bool(issues) or not verifier_pass
     repair_accepted = False
     if repair != "none" and needs_repair:
@@ -151,7 +151,7 @@ def run_case(public, models, arm, repair):
             + "\nRepaired answer:\n" + json.dumps(answer)
             + "\nCheck all values, authority, dates and mismatch. Return verdict and unsupported_fields.",
             VERIFY_SCHEMA, budget.allowance(192), "verify_repair")
-        verifier_pass = isinstance(verdict, dict) and verdict.get("verdict") == "PASS"
+        verifier_pass = passed(verdict)
     delivered = not final_issues and verifier_pass
     return {"case_id": public["id"], "arm": arm, "repair": repair, "initial_answer": initial,
             "answer": answer, "delivered": delivered, "repair_attempted": needs_repair and repair != "none",
@@ -166,6 +166,10 @@ def derive_mismatch(answer):
         if a not in (None, "MISSING") and b not in (None, "MISSING"):
             return {**answer, "identity_name_mismatch": a != b}
     return answer
+
+
+def passed(verdict):
+    return isinstance(verdict, dict) and verdict.get("verdict") == "PASS" and verdict.get("unsupported_fields") == []
 
 
 def worker(args, out):

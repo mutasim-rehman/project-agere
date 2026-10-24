@@ -47,6 +47,17 @@
   and full-paper novelty review remain required work.
 - CPU wheel 0.3.19 installed but failed import because its shared object requires
   musl on this glibc host. Preserve install evidence; build 0.3.16 locally instead.
+- Milestone 3 (70ec680) pushed. Review then found semantic source roles encoded in
+  diagnostic document IDs; replace those with opaque randomized IDs before any
+  model evaluation and regenerate the development manifest. No model results exist
+  for the earlier probe version.
+- Added paired analysis that rejects incomplete, memory-invalid, mismatched-data,
+  duplicated-ID and unpaired runs. Sixteen tests now pass across contracts, data,
+  delivery gates and paired statistics.
+- Full method inspection of BRA-Audit Algorithm 1 confirms localized rollback and
+  re-auditing are prior art. Do not claim novelty for those concepts. Keep testing
+  field-level transactional preservation, false locks and repair regressions as a
+  narrower hypothesis; the publication contribution remains unproven.
 
 **Study:** `tier8-8gb-v1`  
 **SSD:** `H:\AGERE` (`AGERE_SSD_ROOT`)  
