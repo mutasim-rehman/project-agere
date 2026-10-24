@@ -1,0 +1,56 @@
+{
+  "source_validation": {
+    "public_packets_identical": true,
+    "retrieval_change_allowed": false,
+    "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51"
+  },
+  "paired": {
+    "n": 24,
+    "right_minus_left_success": 0.0,
+    "paired_bootstrap_95_interval": [
+      -0.125,
+      0.125
+    ],
+    "right_only_correct": 1,
+    "left_only_correct": 1,
+    "exact_mcnemar_p": 1,
+    "interval_caution": "Development sample only; assess sampling and template dependence before generalizing.",
+    "note": "Exploratory development comparison; no multiple-comparison adjustment or publication claim."
+  },
+  "left": {
+    "n": 24,
+    "field_repair_gains": 0,
+    "field_repair_regressions": 0,
+    "wrong_fields_left_locked": null,
+    "initial_verifier_true_accepts": 3,
+    "initial_verifier_false_accepts": 19,
+    "initial_verifier_true_rejects": 1,
+    "initial_verifier_false_rejects": 1,
+    "delivered_correct": 3,
+    "delivered_incorrect": 1,
+    "withheld": 20,
+    "generated_tokens": 4778,
+    "prompt_tokens": 96037,
+    "inference_seconds": 980.6381393619995,
+    "truncated_stages": 24,
+    "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+  },
+  "right": {
+    "n": 24,
+    "field_repair_gains": 0,
+    "field_repair_regressions": 0,
+    "wrong_fields_left_locked": null,
+    "initial_verifier_true_accepts": 3,
+    "initial_verifier_false_accepts": 19,
+    "initial_verifier_true_rejects": 1,
+    "initial_verifier_false_rejects": 1,
+    "delivered_correct": 3,
+    "delivered_incorrect": 10,
+    "withheld": 11,
+    "generated_tokens": 7653,
+    "prompt_tokens": 100111,
+    "inference_seconds": 1154.5463532070025,
+    "truncated_stages": 13,
+    "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+  }
+}

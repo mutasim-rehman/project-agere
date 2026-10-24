@@ -124,6 +124,14 @@ are pending; all live frozen inputs remain unchanged.
 
 ## Completed follow-up and next measurements
 
+MAS 3B 256-token analysis completed: 4/24 reported matches, 4 raw matches,
+3 correct deliveries, 10 wrong deliveries, 11 withheld; peak RSS 3.827 GB.
+Against 128 tokens: one primary win/one loss, unchanged correct delivery, wrong
+deliveries 1 to 10, generated tokens 4778 to 7653. V2 unit sensitivity leaves
+both totals unchanged. No further MAS reasoning-budget expansion is planned.
+SAS 256-token analysis started at 16:00:38 UTC and remains in the frozen sequence.
+
+
 The earlier baseline and proof-pilot controllers completed successfully. A new
 analysis-length sequence is active (details below).
 Table-complete SAS: 13/24 reported matches, 8 raw matches, 13 correct deliveries,
@@ -146,7 +154,7 @@ Live frozen experiment: 256-token analysis for MAS 3B and SAS on the same origin
 24 packets, fixed two demos and unchanged total token/RSS ceilings. Compare each
 against its own 128-token result. This is stronger-baseline tuning. Controller
 session 61231, PID 159981; plan data/analysis256-sequence-01.json, journal/log prefix
-logs/analysis256-sequence-01. First MAS case persisted; 59 inputs remain frozen.
+logs/analysis256-sequence-01. MAS completed; SAS is now running. All 59 inputs remain frozen.
 Historical metric/output files remain immutable; any revised scores must be
 versioned separately. Next baseline work must address source binding, longer
 reasoning and model adaptation, rather than presenting this negative pilot as

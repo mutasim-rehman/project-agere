@@ -2,6 +2,26 @@
 
 ## Redevelopment — 24 October 2026
 
+### MAS 3B longer-analysis ablation completed
+
+- The 256-token analysis run completed all 24 fixed development cases under peak
+  sampled RSS 3,827,347,456 bytes (cap 6.40 GB). Four reported matches and four raw
+  execution matches; 3 correct deliveries, 10 wrong deliveries, 11 withheld. Total
+  generated tokens 7,653; recorded inference time 1,154.55 seconds. Prompt-token
+  counts remain the frozen legacy manual estimates described below.
+- Matched 128-token baseline: four reported matches, two raw matches, 3 correct
+  deliveries, 1 wrong delivery, 20 withheld, 4,778 generated tokens. Primary paired
+  comparison has one win and one loss (net zero, exploratory McNemar p=1). The
+  separate v2 ratio-unit audit leaves both totals unchanged at four. More reasoning
+  increases answered coverage without increasing correct delivery on this slice.
+- No extra budget expansion is justified for MAS by this result. The original
+  128-token condition remains preferable on these observed delivery/cost measures;
+  neither is a broadly optimized or confirmed system. Verifier mistakes and actual
+  model adaptation remain open; do not present more model calls as progress alone.
+- SAS 256-token analysis started serially at 16:00:38 UTC. Sequence session 61231
+  and its 59-input freeze remain active. Only the completed MAS run and its own
+  log/paired audits are committed now; the live sequence journal remains open.
+
 ### Correct persisted adaptation identities and capture deployment SFT prompts
 
 - Found and corrected our adaptation serialization bug before any model training:
