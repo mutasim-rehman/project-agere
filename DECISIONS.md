@@ -28,6 +28,20 @@
   choice schemas and the empty-source abstention schema compile. Seventy-eight
   contract tests pass. Real-model gains remain unmeasured; SAS worker 68915 is
   still live, so no competing inference is launched.
+- Closer-prior review found BudgetVerify (arXiv:2609.33052v1). Inspected its
+  methodology/setup: offline training correctness/cost labels supervise a router
+  over no check, local revision and independent solve-first calculator verification.
+  Inputs are pre-verification features. This closes a broad adaptive financial
+  verification/token-allocation novelty claim. A host-RSS limit was not found in
+  those sections; do not claim no prior RAM-constrained method without fuller
+  review. Our strict change contracts still require demonstrated benefit over
+  those established alternatives, not merely implementation under another cap.
+- Inspected FinChain dataset/metric sections: controlled symbolic templates,
+  semantic/numeric step alignment with DTW and 5% relative numeric tolerance.
+  Treat as possible supplementary mechanism evaluation; do not loosen our main
+  metric or equate numeric closeness with correct measure binding. No FinChain
+  data/test split was downloaded or opened. CIFQA abstract adds a further prior
+  for financial specialist agents plus deterministic rule/calculation tools.
 
 ### Question-retrieved training demonstrations
 

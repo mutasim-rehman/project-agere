@@ -2,6 +2,13 @@
 
 This is a working research assessment, not a novelty certificate.
 
+The closer-prior review now includes [BudgetVerify](https://arxiv.org/html/2609.33052v1),
+whose method routes financial answers between no verification, local revision and
+independent re-solving using offline correctness/cost supervision. Adaptive token
+allocation across these options cannot be our originality claim. Strict dependency
+preservation under a measured RAM ceiling is still only a hypothesis; its useful
+distinction from existing local repair and routing has not been demonstrated.
+
 | Prior work | Inspected scope | Consequence for Agere |
 |---|---|---|
 | [Self-Refine](https://arxiv.org/abs/2303.17651) | Abstract | Iterative self-feedback is established. |
