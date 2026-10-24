@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 129 contract tests pass. They do not establish financial reasoning correctness.
+- 133 contract tests pass. They do not establish financial reasoning correctness.
 - Separate memory-monitored fixed-output repair harness is ready for plain versus
   proof feedback on the same algebraically flagged cohort. Original output tokens
   are debited; changed answers are reverified. Grammar/compatibility checks pass,
@@ -98,7 +98,13 @@ tokens (3582 versus 3239). This is component replay, not fresh end-to-end infere
 Validated paired results are in evidence/finqa-proofpilot-paired-01.json and
 evidence/finqa-sas-table-analysis-dev24-paired.json. No proof-feedback gain exists.
 
-Audit the scorer's ratio/percentage contract before selecting further baselines.
+The separate v2 ratio-unit sensitivity audit reproduces legacy scores and changes
+none of the six analysis/replay totals. AAPL percentage-point annotation remains
+unresolved; no historical result was overwritten. See evidence/finqa-unit-audit-v2.json.
+
+Next frozen experiment: 256-token analysis for MAS 3B and SAS on the same original
+24 packets, fixed two demos and unchanged total token/RSS ceilings. Compare each
+against its own 128-token result. This is stronger-baseline tuning.
 Historical metric/output files remain immutable; any revised scores must be
 versioned separately. Next baseline work must address source binding, longer
 reasoning and model adaptation, rather than presenting this negative pilot as

@@ -2,6 +2,33 @@
 
 ## Redevelopment — 24 October 2026
 
+### Versioned scoring sensitivity audit and reasoning-length experiment
+
+- Confirmed a scorer/prompt mismatch: `number` is permitted for ratios, and the
+  JPM ratio question's grammar forces it, but the legacy scorer rejects that label
+  against a percent-bearing reference. A synthetic scoring-only counterexample
+  reproduces this; it is not a model success or corrected experimental answer.
+- Added a separate offline reported-units-v2-number-ratio evaluator. It treats
+  number/fraction as canonical and scales only explicit percent. No prediction is
+  rescaled according to gold magnitude. It revalidates completed cohorts, source
+  hashes, executions and legacy scores, then writes separate sensitivity results.
+  Historical artifacts, deployment prompts and inference scoring remain unchanged.
+- The six completed analysis/replay runs have no changed case outcomes under v2.
+  AAPL's bare .2 gross-margin reference remains an unresolved percentage-point
+  annotation; no hand-written per-case scoring exception was introduced. Report
+  legacy and v2 sensitivity together until reference conventions are adjudicated.
+- All 133 tests pass. With every 128-token analysis stage truncated, the next
+  matched development intervention is 256-token formula analysis, first MAS 3B Q4
+  with its 0.5B verifier and then SAS 7B Q4. Use the same original public packets,
+  fixed two training demonstrations, 24 cases, 2048 total generated tokens/case
+  and sampled 6.40 GB RSS ceiling. Longer analysis consumes that shared budget.
+  Compare each against its own completed 128-token condition; this is baseline
+  tuning, not a new method or a pure architecture/precision ablation.
+- No further expansion of proof-feedback repair is justified by its zero observed
+  correction advantage. Source binding, training-target ambiguity and actual
+  train-only model adaptation remain higher-priority mechanism work; their useful
+  novelty is still unestablished. Do not call either arm optimized yet.
+
 ### Completed retrieval and controlled feedback experiments
 
 - The frozen stronger-baseline sequence and its dependent proof pilot both
