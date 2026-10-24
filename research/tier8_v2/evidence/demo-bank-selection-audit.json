@@ -1,5 +1,5 @@
 {
-  "bank_sha256": "b80061a086be18ce9b486ec8ed4f7062f2c51b06f5c8f39ec8314466e303544a",
+  "bank_sha256": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a",
   "bank_examples": 620,
   "development_report_overlap": 0,
   "cases": [
@@ -364,5 +364,5 @@
       ]
     }
   ],
-  "note": "Pre-inference retrieval audit only. Exact tokenizer fitting may include fewer demonstrations. Development answer/program fields are never passed to retrieval."
+  "note": "Pre-inference retrieval audit only. Exact tokenizer fitting may include fewer demonstrations. Development answer/program fields are never passed to retrieval. Sketch metadata added; selected IDs independently revalidated unchanged."
 }

@@ -308,7 +308,7 @@ def worker(args, out):
             result = run_financial(public, models, args.arm, args.repair, event_sink=sink,
                                    representation=args.program_mode, unit_mode=args.unit_mode, selector=args.selector,
                                    causal_mode=args.causal_mode, catalog_style=args.catalog_style, demonstrations=selected_demos,
-                                   analysis_tokens=args.analysis_tokens)
+                                   analysis_tokens=args.analysis_tokens, planner=args.planner)
             result["demonstration_selection"] = {"policy": args.demo_policy,
                 "candidates": [{"source_id": e["source_id"], "score": e.get("retrieval_score")} for e in selected_demos],
                 "query_fields": ["question"] if demo_index else [], "development_answers_used": False}
@@ -348,6 +348,7 @@ def main():
     parser.add_argument("--catalog-style", choices=("full", "compact"), default="full")
     parser.add_argument("--demos", type=int, choices=(0, 1, 2), default=0)
     parser.add_argument("--demo-policy", choices=("fixed", "retrieved"), default="fixed")
+    parser.add_argument("--planner", choices=("direct", "sketch"), default="direct")
     parser.add_argument("--analysis-tokens", type=int, choices=(0, 128, 256), default=0)
     parser.add_argument("--verifier-model", choices=("0.5b", "1.5b"), default="0.5b")
     parser.add_argument("--worker", action="store_true")
@@ -362,6 +363,8 @@ def main():
         raise ValueError("Training demonstrations require FinQA reference programs")
     if args.demo_policy == "retrieved" and not args.demos:
         raise ValueError("Retrieved demonstrations require --demos 1 or 2")
+    if args.planner == "sketch" and (args.task != "finqa" or args.program_mode != "reference" or args.demo_policy != "retrieved" or args.repair != "none"):
+        raise ValueError("Sketch baseline requires FinQA reference programs, retrieved demos and no repair")
     if args.analysis_tokens and args.task != "finqa":
         raise ValueError("Formula analysis is currently implemented for FinQA only")
     if args.repair == "edge" and (args.task != "finqa" or args.program_mode != "reference"):
@@ -386,6 +389,7 @@ def main():
     sources.append(ROOT / "scripts/evidence_atoms.py")
     sources.append(ROOT / "scripts/tier8_v2_demos.py")
     sources.append(ROOT / "scripts/tier8_v2_demo_retrieval.py")
+    sources.append(ROOT / "scripts/tier8_v2_sketches.py")
     sources.append(ROOT / "scripts/program_graph.py")
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),
                 "code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
@@ -409,6 +413,7 @@ def main():
                                    "demonstrations_requested": args.demos, "demonstration_policy": args.demo_policy,
                                    "demonstration_fit": "training only; exact tokenizer fit reserves 768 generation tokens",
                                    "analysis_tokens": args.analysis_tokens,
+                                   "planner": args.planner,
                                    "verifier_checkpoint": model_files(args.arm, args.verifier_model).get("verifier", MODEL_FILES["sas"]["sas"]),
                                    "citations": "enumerated source and step IDs", "metric": "declared-unit reported answer with rounding; raw exe_ans separately"}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")

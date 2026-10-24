@@ -2,6 +2,33 @@
 
 ## Redevelopment — 24 October 2026
 
+### Training-sketch and source-binding baseline
+
+- Added optional `--planner sketch` for both SAS and MAS. It uses question-only
+  retrieved training examples and abstracts their source operands into V slots,
+  retaining repeated-variable identity, operations, constants, step dependencies
+  and declared units. Slot context and training question explain the formula;
+  training numeric values are explicitly not current evidence.
+- A single <=384-token constrained call chooses a sketch and maps all V slots to
+  current A quantity IDs, or chooses NONE. Code instantiates and executes that
+  structure before the existing verifier. The choice cannot introduce literals,
+  constants, steps or operations. Incorrect formula selection/binding is still
+  possible; executability and training provenance do not imply semantic truth.
+- Exact tokenizer fitting reserves 768 generation tokens and filters incompatible
+  output-unit sketches. The same 2048-token case ledger, memory monitoring and
+  source packets remain. Proposed/fitted source IDs and raw sketch choice are
+  recorded separately. Current implementation supports no-repair evaluation only;
+  later repair comparisons require explicit controls, not silent mode mixing.
+- This is a staged program-induction baseline related to FinMAN-style planning,
+  not an originality claim. Separating formula choice from source binding is meant
+  to strengthen generation and expose which decisions a future repair must change.
+- Rebuilt the same 620-example bank with sketch metadata; independent audit
+  confirms selection IDs unchanged and no development annual-report overlaps.
+  Prior bank versions remain in Git and old run hashes remain immutable. All 24
+  choice schemas and the empty-source abstention schema compile. Seventy-eight
+  contract tests pass. Real-model gains remain unmeasured; SAS worker 68915 is
+  still live, so no competing inference is launched.
+
 ### Question-retrieved training demonstrations
 
 - Added a stronger known baseline: question-only BM25 retrieval over eligible

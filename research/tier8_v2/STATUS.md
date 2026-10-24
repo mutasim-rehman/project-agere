@@ -16,7 +16,10 @@ are not established. Do not mark the goal complete from these development result
 - Matching SAS analysis smoke completed 2/2 reported-answer matches (1/2 raw
   execution matches), both correctly delivered, versus 0/2 in its baseline prefix.
   Both analysis calls reached their allowance. Larger development testing remains.
-- 73 tests pass. These checks establish contracts, not financial correctness.
+- 78 tests pass. These checks establish contracts, not financial correctness.
+- Optional training-sketch planner chooses a retrieved formula and binds its
+  variables to current quantities. Preserves operations/constants/units and logs
+  choice versus bindings. All 24 schemas compile; real-model gains unmeasured.
 - Optional question-only BM25 demonstration retrieval uses 620 eligible training
   examples, excluding all annual reports in development. MAS smoke remains 0/2
   correct, one wrong delivery and one withheld; both demos fit each prompt. Fixed

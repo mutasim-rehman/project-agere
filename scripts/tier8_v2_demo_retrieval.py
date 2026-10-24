@@ -13,6 +13,7 @@ from pathlib import Path
 from evidence_atoms import atom_catalog
 from tier8_v2_demos import target_plan, example_text
 from tier8_v2_finqa import packet, tokens
+from tier8_v2_sketches import make_sketch
 
 ROOT = Path(__file__).resolve().parents[1]
 BANK = "research/tier8_v2/data/finqa-training-demo-bank.json"
@@ -78,7 +79,8 @@ def build_bank(train, excluded_groups):
             skipped["example_longer_than_1800_chars"] += 1
             continue
         examples.append({"source_id": row["id"], "split": "train", "question": public["question"],
-                         "text": text, "target": target, "report_disjoint_from_all_development": True})
+                         "text": text, "target": target, "sketch": make_sketch(target, atoms),
+                         "report_disjoint_from_all_development": True})
     return examples, dict(skipped)
 
 

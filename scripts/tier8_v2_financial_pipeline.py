@@ -12,6 +12,7 @@ from evidence_calculator import CONSTANTS, OPERATIONS, execute
 from evidence_contract import TokenLedger
 from evidence_atoms import atom_catalog, reference_schema, reference_step_schema, compile_plan, patch_plan
 from program_graph import audit_graph, edge_candidates
+from tier8_v2_sketches import fit_sketches, choice_schema, instantiate_choice
 
 
 def program_schema(evidence, units=("number", "percent", "fraction")):
@@ -96,7 +97,7 @@ def fit_demonstrations(prompt, demonstrations, models, role):
             + "\n\n".join(e["text"] for e in used) + "\n\nNow solve the actual question using its own source IDs:\n" + prompt), [e["source_id"] for e in used]
 
 
-def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest", causal_mode="check", catalog_style="full", demonstrations=(), analysis_tokens=0):
+def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest", causal_mode="check", catalog_style="full", demonstrations=(), analysis_tokens=0, planner="direct"):
     if set(public) & {"gold", "qa", "answer", "program", "model_input", "gold_inds"}:
         raise ValueError("Gold/annotated fields must not enter deployment")
     evidence = public["evidence"]
@@ -158,8 +159,18 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             "Distinguish similarly named metrics. Do not invent missing evidence. Keep the reasoning concise.",
             None, analysis_tokens, "analyze_question")
         draft_prompt += "\nPreliminary reasoning (may be wrong; recheck the sources):\n" + str(notes)
-    draft_prompt, used_demos = fit_demonstrations(draft_prompt, demonstrations, models, drafter)
-    plan = call(drafter, draft_prompt, schema, 768, "program")
+    sketch_choice = None
+    if planner == "sketch":
+        if representation != "reference":
+            raise ValueError("Sketch planning requires reference programs")
+        sketch_context = context + ("\nPreliminary reasoning (may be wrong):\n" + str(notes) if notes else "")
+        draft_prompt, sketches = fit_sketches(sketch_context, demonstrations, models, drafter, units)
+        sketch_choice = call(drafter, draft_prompt, choice_schema(sketches, atoms), 384, "bind_sketch")
+        plan = instantiate_choice(sketch_choice, sketches, atoms)
+        used_demos = [e["source_id"] for e in sketches]
+    else:
+        draft_prompt, used_demos = fit_demonstrations(draft_prompt, demonstrations, models, drafter)
+        plan = call(drafter, draft_prompt, schema, 768, "program")
     initial_plan = deepcopy(plan)
     answer = decode(plan)
     initial = deepcopy(answer)
@@ -257,6 +268,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             "initial_plan": initial_plan, "plan": plan, "representation": representation, "unit_mode": unit_mode, "selector": selector,
             "causal_mode": causal_mode, "catalog_style": catalog_style,
             "demonstrations_used": used_demos,
+            "planner": planner, "sketch_choice": sketch_choice,
             "analysis_tokens_requested": analysis_tokens, "analysis_notes": notes,
             "edge_repair": edge_trace,
             "active_roles": sorted({s["role"] for s in stages}),
