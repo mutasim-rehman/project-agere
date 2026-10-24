@@ -1,0 +1,15 @@
+{
+  "scope": "Independent source-overlap audit; training split membership does not imply annual-report disjointness",
+  "examples": [
+    {
+      "id": "AAL/2014/page_89.pdf-2",
+      "page_overlaps_dev": false,
+      "annual_report_overlaps_dev": false
+    },
+    {
+      "id": "AAL/2014/page_92.pdf-1",
+      "page_overlaps_dev": false,
+      "annual_report_overlaps_dev": false
+    }
+  ]
+}

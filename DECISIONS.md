@@ -159,6 +159,16 @@
   verifier does not see these preliminary notes. This is a reasoning baseline,
   not a novelty claim. Its default is zero, preserving the running common recipe.
   Fifty-seven tests pass; real model validation remains pending.
+- Full 24-case MAS demonstration baseline completed: 1/24 correct under both
+  reported-answer and raw-execution metrics; 1 correct delivery, 13 wrong deliveries,
+  10 withheld. All 24 programs were source-supported and executable; no stage was
+  truncated. Peak RSS 5,247,533,056 bytes, 2,710 output tokens total. This is a
+  negative quality result despite successful protocol enforcement.
+- Matching 24-case SAS baseline is live with analysis_tokens=0. Preserve the common
+  recipe for comparison before applying the optional formula-analysis intervention.
+- Independent audit confirms both selected demonstration pages AND annual-report
+  groups are absent from all FinQA development records. This verifies the actual
+  selected examples; broader pretraining contamination remains unknown.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

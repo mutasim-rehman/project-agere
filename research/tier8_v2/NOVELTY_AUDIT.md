@@ -48,6 +48,11 @@ to delivered cases cannot be the sole outcome.
 - Non-oracle lexical retrieval on the fixed first 24 FinQA development records
   retrieves all annotated evidence for 19/24. This is a retrieval diagnostic, not
   question-answering accuracy. Public benchmark contamination is unassessed.
+- The 24-case MAS demonstration baseline has now completed: all 24 programs passed
+  source-support/execution checks, but only one answer matched either numerical
+  reference metric. Thirteen wrong answers passed the neural verifier. Stronger
+  reasoning and verification baselines remain necessary before claiming a useful
+  repair contribution. See RELATED_WORK_MATRIX.md for closer financial-QA priors.
 
 ## Next decisions depend on measurements
 

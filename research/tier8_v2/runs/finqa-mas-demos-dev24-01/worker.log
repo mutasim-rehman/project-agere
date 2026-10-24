@@ -1,0 +1,29 @@
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (8192) -- the full capacity of the model will not be utilized
+{"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (8192) -- the full capacity of the model will not be utilized
+{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
+{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": true}
+{"id": "V/2008/page_17.pdf-1", "success": false, "delivered": true, "tokens": 108}
+{"id": "C/2017/page_328.pdf-1", "success": false, "delivered": false, "tokens": 123}
+{"id": "DVN/2007/page_58.pdf-2", "success": false, "delivered": false, "tokens": 108}
+{"id": "ETR/2011/page_341.pdf-3", "success": false, "delivered": false, "tokens": 102}
+{"id": "ETR/2004/page_213.pdf-2", "success": false, "delivered": true, "tokens": 107}
+{"id": "PM/2017/page_38.pdf-1", "success": false, "delivered": true, "tokens": 108}
+{"id": "JPM/2008/page_85.pdf-3", "success": false, "delivered": true, "tokens": 107}
+{"id": "PNC/2013/page_207.pdf-1", "success": false, "delivered": true, "tokens": 108}
+{"id": "CME/2017/page_97.pdf-5", "success": false, "delivered": false, "tokens": 102}
+{"id": "PNC/2013/page_62.pdf-2", "success": false, "delivered": true, "tokens": 108}
+{"id": "AAPL/2004/page_36.pdf-2", "success": false, "delivered": false, "tokens": 106}
+{"id": "PKG/2009/page_65.pdf-4", "success": false, "delivered": true, "tokens": 102}
+{"id": "LMT/2013/page_74.pdf-4", "success": false, "delivered": true, "tokens": 112}
+{"id": "STT/2011/page_83.pdf-1", "success": false, "delivered": false, "tokens": 102}
+{"id": "MRO/2007/page_149.pdf-2", "success": false, "delivered": false, "tokens": 126}
+{"id": "AOS/2004/page_11.pdf-2", "success": false, "delivered": true, "tokens": 108}
+{"id": "C/2010/page_223.pdf-3", "success": false, "delivered": false, "tokens": 102}
+{"id": "MSI/2006/page_61.pdf-3", "success": false, "delivered": true, "tokens": 105}
+{"id": "ABMD/2006/page_75.pdf-1", "success": false, "delivered": true, "tokens": 108}
+{"id": "AMAT/2013/page_18.pdf-2", "success": false, "delivered": true, "tokens": 111}
+{"id": "DVN/2014/page_85.pdf-1", "success": false, "delivered": false, "tokens": 249}
+{"id": "SPGI/2018/page_74.pdf-1", "success": false, "delivered": true, "tokens": 109}
+{"id": "ZBH/2003/page_58.pdf-3", "success": false, "delivered": false, "tokens": 102}
+{"id": "AMT/2005/page_105.pdf-2", "success": true, "delivered": true, "tokens": 87}
