@@ -2,6 +2,43 @@
 
 ## Redevelopment — 24 October 2026
 
+### Correct persisted adaptation identities and capture deployment SFT prompts
+
+- Found and corrected our adaptation serialization bug before any model training:
+  revision 01 sorted nested evidence keys after assigning A-IDs. Reloaded source
+  IDs disagreed in 1,607/1,653 training and 192/198 validation examples. The earlier
+  hash/split checks did not validate this property and were insufficient. Revision
+  01 remains immutable historical evidence and is explicitly superseded; do not
+  train on it. Its affected IDs/hashes are retained in a supersession audit.
+- Revision 02 canonicalizes evidence order before generating labels, then reloads
+  and checks every persisted catalog, target execution and cell binding. Counts
+  remain 1,653 train / 198 validation. Added a serialization regression test. An
+  additional audit reconstructs all 620 existing demonstration strings exactly;
+  those strings preserve their ordering and the live inference inputs are unchanged.
+- Added draft-prompt capture by stopping the actual deployment pipeline at its
+  program call; no model output or invented verifier label is produced. Captured
+  reference/compact/question-unit/causal prompts have no analysis or demonstrations.
+  Both arms produce identical prompt text/schema. Cell metadata remains in the
+  structured corpus, not in this existing deployment prompt. Evaluate this trained
+  no-analysis configuration separately from the stronger analysis baselines.
+- Inspected local llama-cpp-python completion source: generation recognizes chat
+  special tokens, but our existing manual prompt counter does not. The live runner
+  is frozen and its recorded counts remain historical manual estimates. New SFT
+  encoding matches actual generation (special=True, no auto BOS/EOS; runtime flags
+  checked). On all retained prompts both 3B/7B tokenizers show 21 fewer tokens than
+  the manual counter. Correct runtime accounting after the frozen sequence ends;
+  do not silently overwrite previous logs or use prompt counts as exact compute.
+- Vocab-only tokenization makes zero generation calls. At 1,024 training tokens,
+  761 examples fit both pinned tokenizers (661 train / 100 validation); 1,090 are
+  excluded rather than truncated. Whole-sequence token hashes agree across both
+  tokenizers. Prefix-mask boundaries, source identities, exact prompts, split
+  isolation and saved hashes validate. This biases training toward shorter inputs.
+- Early uncommitted prompt-export prototypes were superseded after special-token
+  and source-order checks; their local artifacts/logs are preserved and never used
+  for training. A policy check also initially rejected a harmless unused CLS token;
+  the corrected check follows completion's actual BOS/EOS behavior. Final export
+  requires HF tokenizer parity before training. Full suite: 148 tests pass.
+
 ### Train-only adaptation corpus with explicit binding quarantine
 
 - Added a structured-data exporter over all 6,251 pinned FinQA training records,

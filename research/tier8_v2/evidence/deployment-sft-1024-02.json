@@ -1,0 +1,4421 @@
+{
+  "input_sha256": {
+    "research/tier8_v2/data/finqa-cell-adaptation-train-02.jsonl": "30039625e42d53c75c690700fed57c4d9809fc9229023fdbf7e444669dab95a5",
+    "research/tier8_v2/data/finqa-cell-adaptation-validation-02.jsonl": "369bc8ef2ca5238d21866ffca97ae1d1813de13ca392ed23c19c84bb736cb2a5"
+  },
+  "max_training_tokens": 1024,
+  "deployment_context": 4096,
+  "target_budget": 768,
+  "model_calls": 0,
+  "tokenization_policy": "add_bos=False, special=True; pinned Qwen no-auto-BOS/EOS/CLS/SEP policy verified against llama-cpp-python completion source",
+  "input_n": 1851,
+  "kept_n": 761,
+  "rejected": {
+    "AAL/2014/page_18.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAL/2014/page_92.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAL/2014/page_92.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAL/2017/page_10.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAL/2017/page_10.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2006/page_85.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2006/page_85.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2006/page_85.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2007/page_83.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2013/page_32.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2016/page_26.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2016/page_26.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2016/page_65.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAP/2016/page_65.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2002/page_23.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2002/page_26.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2006/page_103.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2007/page_48.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2007/page_48.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2007/page_48.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2007/page_51.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2007/page_51.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2007/page_51.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2007/page_70.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2011/page_38.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2011/page_38.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2011/page_65.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_24.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_24.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_36.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_36.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_38.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_38.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_38.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_38.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_71.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_71.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2012/page_71.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2013/page_27.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2013/page_27.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2013/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2013/page_41.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2015/page_24.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2015/page_56.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2015/page_56.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2016/page_23.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABC/2005/page_40.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABC/2005/page_40.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABMD/2003/page_22.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABMD/2003/page_22.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABMD/2008/page_52.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABMD/2008/page_52.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABMD/2008/page_52.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABMD/2008/page_87.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABMD/2012/page_75.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ABMD/2012/page_75.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/1999/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/1999/page_33.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/1999/page_33.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/1999/page_33.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2010/page_50.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2010/page_73.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2010/page_90.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2010/page_90.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2010/page_90.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2012/page_65.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2015/page_72.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2016/page_79.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2019/page_71.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADI/2019/page_71.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AES/2010/page_225.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AES/2010/page_225.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AES/2011/page_131.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AES/2011/page_230.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AES/2011/page_230.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AES/2011/page_230.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AES/2011/page_269.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ALLE/2017/page_118.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ALLE/2017/page_29.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ALLE/2017/page_29.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMAT/2012/page_37.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMAT/2015/page_14.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMAT/2015/page_14.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMAT/2015/page_14.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMAT/2017/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMAT/2017/page_33.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2002/page_74.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2002/page_74.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2002/page_74.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2003/page_85.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2003/page_85.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2003/page_92.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2003/page_92.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2006/page_116.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2006/page_31.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2006/page_61.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2006/page_61.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_111.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_114.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_114.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_114.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_116.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_116.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_116.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_35.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_35.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_98.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_98.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_99.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2007/page_99.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2014/page_157.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2014/page_157.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2014/page_88.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2015/page_50.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AMT/2015/page_50.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANSS/2012/page_92.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANSS/2014/page_49.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANSS/2014/page_49.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANSS/2014/page_49.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANSS/2014/page_57.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANSS/2014/page_57.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANSS/2016/page_82.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANSS/2016/page_82.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2007/page_184.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2015/page_43.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2015/page_45.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2015/page_45.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2015/page_45.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2015/page_62.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2015/page_62.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2015/page_72.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2015/page_77.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AON/2018/page_41.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AOS/2010/page_23.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AOS/2016/page_24.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AOS/2016/page_24.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "APTV/2013/page_48.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "APTV/2013/page_48.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "APTV/2013/page_48.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "APTV/2015/page_50.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "APTV/2015/page_50.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "APTV/2016/page_47.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "APTV/2018/page_36.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2014/page_45.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2014/page_45.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2014/page_45.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2014/page_7.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2014/page_7.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2017/page_143.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2017/page_143.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2017/page_143.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2017/page_154.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2018/page_103.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2018/page_152.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2018/page_97.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2009/page_80.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2009/page_80.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2009/page_80.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2009/page_80.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2009/page_81.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2016/page_21.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2016/page_62.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2016/page_62.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BDX/2017/page_32.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKNG/2017/page_35.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKNG/2017/page_35.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKNG/2018/page_34.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKNG/2018/page_34.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKR/2018/page_105.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKR/2018/page_127.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKR/2018/page_52.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKR/2018/page_61.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKR/2018/page_61.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLK/2008/page_75.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLK/2008/page_75.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLK/2010/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLK/2010/page_46.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLK/2015/page_123.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLL/2006/page_47.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLL/2006/page_47.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLL/2006/page_89.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLL/2006/page_89.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLL/2006/page_94.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLL/2006/page_94.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BLL/2011/page_29.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_162.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_200.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_200.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_248.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_248.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_255.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_255.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_255.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_255.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_279.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_279.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_279.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_38.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_38.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_38.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_41.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_41.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_42.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_42.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2009/page_48.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2015/page_314.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2015/page_314.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2015/page_314.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2015/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2015/page_46.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2015/page_73.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2015/page_73.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2015/page_73.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2016/page_120.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2016/page_120.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2016/page_333.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_179.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_179.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_255.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_255.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_255.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_287.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_287.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_296.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_53.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "C/2018/page_53.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2010/page_42.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2010/page_42.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2015/page_28.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2015/page_28.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2008/page_112.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2008/page_217.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2008/page_218.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2008/page_243.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2008/page_243.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2008/page_243.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2009/page_220.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2009/page_220.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2009/page_220.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2009/page_233.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2009/page_233.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CB/2009/page_233.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDNS/2007/page_30.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDNS/2007/page_30.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDNS/2007/page_30.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDNS/2007/page_93.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2013/page_106.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2013/page_106.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2013/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2013/page_33.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2013/page_33.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2013/page_36.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2015/page_53.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2015/page_54.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2015/page_54.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2015/page_54.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDW/2015/page_54.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2005/page_56.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2005/page_56.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2005/page_56.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2009/page_121.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2009/page_35.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2009/page_35.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2009/page_35.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2010/page_134.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2010/page_134.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2010/page_134.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2010/page_134.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2014/page_32.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2014/page_32.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2017/page_37.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2017/page_37.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CE/2017/page_37.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CMCSA/2004/page_30.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "D/2002/page_39.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DG/2008/page_86.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DG/2008/page_86.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DG/2008/page_86.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2008/page_141.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2008/page_141.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2013/page_60.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2013/page_60.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2013/page_60.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2016/page_11.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2016/page_11.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2016/page_30.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2016/page_30.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2017/page_41.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2017/page_41.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2018/page_39.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISCA/2018/page_39.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISH/2002/page_94.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DISH/2002/page_94.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2004/page_27.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2004/page_27.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2004/page_27.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2008/page_29.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2008/page_29.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2008/page_29.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2008/page_49.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2008/page_49.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2010/page_41.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2010/page_41.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2010/page_56.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2012/page_31.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2016/page_59.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2016/page_64.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2016/page_64.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2016/page_64.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DRE/2016/page_64.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2011/page_26.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2011/page_26.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2011/page_99.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2011/page_99.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2011/page_99.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2012/page_100.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2012/page_100.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2013/page_101.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2015/page_92.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "DVN/2017/page_31.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ECL/2017/page_57.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ECL/2017/page_95.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EL/2009/page_112.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EL/2009/page_112.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EMN/2018/page_90.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EMR/2018/page_55.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EMR/2018/page_55.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EMR/2018/page_55.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EOG/2016/page_80.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EOG/2016/page_80.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EOG/2017/page_102.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EOG/2017/page_85.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EOG/2017/page_85.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EOG/2017/page_93.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EOG/2018/page_89.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ETFC/2012/page_155.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ETFC/2012/page_155.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ETFC/2015/page_27.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ETFC/2015/page_27.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ETR/2007/page_36.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ETR/2009/page_107.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EW/2013/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EW/2013/page_83.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EW/2013/page_83.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EW/2014/page_35.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EXPD/2017/page_30.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EXPD/2018/page_27.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EXR/2005/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2006/page_48.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2006/page_48.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2006/page_48.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2006/page_48.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2006/page_88.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2006/page_88.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2006/page_98.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2010/page_89.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2010/page_89.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2012/page_30.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2012/page_30.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2016/page_49.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2016/page_49.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FIS/2016/page_93.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FITB/2013/page_163.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FRT/2004/page_53.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FRT/2009/page_124.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FTV/2017/page_45.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FTV/2017/page_45.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2008/page_83.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2014/page_25.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2015/page_38.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2018/page_39.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2018/page_43.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2018/page_43.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2018/page_59.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2018/page_59.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2018/page_77.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2018/page_77.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GPN/2007/page_39.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GPN/2007/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GPN/2016/page_84.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GRMN/2007/page_76.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GRMN/2007/page_76.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GS/2015/page_74.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GS/2015/page_74.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GS/2018/page_165.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GS/2018/page_165.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GS/2018/page_165.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GS/2018/page_70.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GS/2018/page_76.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GS/2018/page_76.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HFC/2011/page_92.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HFC/2011/page_92.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HFC/2011/page_92.pdf-6": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HFC/2017/page_103.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HFC/2018/page_43.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HFC/2018/page_43.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2004/page_122.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2004/page_122.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2004/page_125.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2004/page_125.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2004/page_125.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2004/page_192.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2004/page_67.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2012/page_132.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2013/page_124.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2013/page_212.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2014/page_126.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HIG/2014/page_126.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2011/page_100.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2011/page_114.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2011/page_52.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2011/page_52.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2011/page_60.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2011/page_69.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2012/page_47.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2012/page_47.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2013/page_116.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2013/page_116.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2015/page_120.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2015/page_120.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2015/page_124.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HII/2018/page_64.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HOLX/2003/page_41.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HOLX/2003/page_41.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HOLX/2004/page_59.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HOLX/2004/page_87.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HOLX/2004/page_87.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HOLX/2005/page_61.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HOLX/2009/page_141.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HST/2007/page_62.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HST/2017/page_142.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HST/2017/page_142.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HUM/2008/page_18.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HUM/2008/page_18.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HUM/2018/page_129.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HUM/2018/page_46.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HUM/2018/page_46.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HWM/2015/page_73.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HWM/2015/page_80.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HWM/2015/page_87.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HWM/2015/page_92.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HWM/2015/page_95.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HWM/2018/page_110.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2006/page_86.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2006/page_86.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2006/page_86.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2008/page_77.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2008/page_77.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2008/page_77.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2008/page_87.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2008/page_87.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2008/page_87.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2008/page_87.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2018/page_24.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2015/page_122.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2017/page_45.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2017/page_45.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2017/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2017/page_46.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2013/page_101.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2013/page_101.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2013/page_101.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2013/page_101.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2013/page_61.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2013/page_62.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2013/page_62.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2013/page_64.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2018/page_50.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2018/page_50.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2018/page_50.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2006/page_41.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2007/page_97.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2007/page_97.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2007/page_97.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2007/page_97.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2012/page_21.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2012/page_44.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2012/page_44.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2012/page_89.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2012/page_89.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2012/page_89.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2013/page_22.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2013/page_35.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2013/page_36.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2013/page_46.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2014/page_23.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2014/page_36.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2014/page_47.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2014/page_47.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2016/page_37.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2016/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2016/page_46.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2016/page_86.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2016/page_86.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2017/page_26.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2017/page_26.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2017/page_26.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2017/page_38.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2017/page_38.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2017/page_40.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2017/page_49.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2017/page_49.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_100.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_104.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_104.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_104.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_26.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_26.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_26.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_26.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IPG/2018/page_78.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IQV/2016/page_57.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IQV/2016/page_65.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IQV/2016/page_65.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IQV/2018/page_59.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IQV/2018/page_59.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2009/page_28.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2009/page_28.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2009/page_28.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2011/page_34.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2011/page_34.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2015/page_20.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2016/page_25.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2016/page_61.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2019/page_17.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2003/page_24.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2003/page_24.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2003/page_35.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2003/page_35.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2003/page_35.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2003/page_35.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2003/page_44.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2003/page_67.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2004/page_31.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_132.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_132.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_144.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_144.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_144.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_187.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_187.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_197.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_219.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_59.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2010/page_59.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2012/page_148.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2012/page_148.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2012/page_93.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2012/page_93.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2015/page_132.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2015/page_77.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2015/page_77.pdf-5": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2016/page_141.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2016/page_73.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2016/page_73.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2016/page_73.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2017/page_144.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JPM/2017/page_145.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "K/2012/page_44.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "K/2012/page_44.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "K/2012/page_80.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "K/2012/page_80.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2006/page_67.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2008/page_126.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2008/page_126.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2009/page_145.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2009/page_25.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2010/page_86.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2010/page_94.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2010/page_94.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2010/page_94.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2014/page_108.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2014/page_112.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2014/page_130.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KIM/2014/page_130.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "KMI/2010/page_164.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "L/2016/page_62.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "L/2016/page_62.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LKQ/2007/page_76.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LKQ/2007/page_76.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LKQ/2007/page_82.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LKQ/2012/page_25.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2002/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2002/page_33.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2007/page_37.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2007/page_37.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2007/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2007/page_55.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2007/page_55.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_45.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_45.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_46.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_46.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_47.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_47.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_47.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_49.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_49.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_49.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_85.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_85.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2014/page_93.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2018/page_104.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2018/page_104.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2018/page_104.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "LMT/2018/page_85.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MA/2009/page_115.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MA/2009/page_115.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MA/2009/page_115.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MA/2009/page_115.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MA/2009/page_123.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MA/2009/page_123.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MA/2018/page_34.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAA/2015/page_56.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAA/2015/page_56.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAA/2015/page_57.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAA/2015/page_57.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAA/2015/page_57.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAA/2017/page_89.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAA/2018/page_19.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAA/2018/page_19.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAR/2010/page_55.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAR/2010/page_55.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAS/2010/page_29.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAS/2010/page_86.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAS/2013/page_27.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAS/2013/page_27.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MAS/2017/page_37.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MKTX/2009/page_79.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MKTX/2011/page_43.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MKTX/2011/page_43.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MKTX/2014/page_39.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MKTX/2014/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MKTX/2014/page_39.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2007/page_37.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2007/page_38.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2007/page_39.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2007/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2012/page_45.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2013/page_26.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2013/page_48.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2013/page_48.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2015/page_50.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2015/page_50.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MMM/2015/page_52.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MO/2017/page_10.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MO/2017/page_10.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRK/2013/page_116.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRK/2013/page_116.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRK/2013/page_116.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRK/2013/page_116.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2003/page_65.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2012/page_18.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2012/page_41.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2012/page_41.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2012/page_41.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2013/page_23.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2018/page_111.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2018/page_111.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2018/page_93.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MRO/2018/page_93.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2005/page_43.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2005/page_64.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2005/page_64.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2005/page_64.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2005/page_64.pdf-5": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2005/page_64.pdf-6": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2007/page_68.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2008/page_71.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2008/page_73.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2008/page_73.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2016/page_88.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "NCLH/2016/page_84.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "NCLH/2016/page_84.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "NKE/2014/page_36.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "NKE/2015/page_37.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "OKE/2007/page_51.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "OKE/2007/page_56.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ORLY/2015/page_28.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ORLY/2018/page_30.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2001/page_78.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2004/page_21.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2004/page_21.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2004/page_21.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2004/page_23.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2004/page_23.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2004/page_23.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2005/page_27.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2005/page_27.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2005/page_29.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2006/page_27.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2006/page_28.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2006/page_28.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2006/page_28.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2006/page_65.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2006/page_65.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PKG/2015/page_62.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2007/page_107.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2007/page_108.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2008/page_32.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_110.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_110.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_116.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_157.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_222.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_222.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_222.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_222.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_46.pdf-5": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_58.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_58.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_58.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_58.pdf-5": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_58.pdf-6": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_96.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_98.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_98.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2012/page_98.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2014/page_156.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2014/page_205.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2014/page_205.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2014/page_92.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PNC/2014/page_92.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2006/page_21.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2006/page_21.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2006/page_21.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2006/page_22.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2008/page_19.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2008/page_47.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2008/page_47.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2008/page_47.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2010/page_68.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2010/page_68.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2012/page_70.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2012/page_70.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2012/page_76.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2012/page_76.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2016/page_42.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2016/page_42.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2018/page_32.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "PPG/2018/page_32.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2005/page_40.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2008/page_19.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2009/page_13.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2009/page_90.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2010/page_81.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2010/page_81.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2011/page_16.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2012/page_17.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2012/page_17.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2012/page_17.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2013/page_17.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2013/page_17.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2013/page_18.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2013/page_18.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2016/page_37.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2016/page_37.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2016/page_7.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2016/page_7.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2016/page_7.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2016/page_7.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2017/page_38.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2017/page_38.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2018/page_38.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2006/page_122.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2006/page_31.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2006/page_31.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2006/page_31.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2007/page_84.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2012/page_123.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2012/page_31.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2012/page_31.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2012/page_31.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2013/page_109.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2013/page_109.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RE/2014/page_125.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "REGN/2010/page_64.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "REGN/2010/page_64.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "REGN/2010/page_64.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "REGN/2010/page_72.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "REGN/2010/page_72.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "REGN/2010/page_72.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2005/page_55.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2008/page_114.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2008/page_114.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2008/page_127.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2008/page_131.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2008/page_43.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2013/page_137.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2013/page_69.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2014/page_123.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2018/page_139.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RSG/2018/page_56.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2006/page_45.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2006/page_45.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2006/page_45.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2006/page_82.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2009/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2009/page_46.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2009/page_57.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2010/page_58.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2010/page_58.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLB/2011/page_41.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2010/page_50.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2010/page_50.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2010/page_81.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2010/page_90.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2011/page_58.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2012/page_61.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2013/page_133.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2013/page_133.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2017/page_114.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2017/page_114.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2017/page_114.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2017/page_114.pdf-6": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2017/page_61.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SLG/2017/page_61.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SNA/2007/page_47.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SNA/2007/page_47.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SNA/2013/page_111.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SNA/2013/page_111.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SPGI/2017/page_73.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2001/page_36.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2001/page_41.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2001/page_41.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2001/page_41.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2001/page_74.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2006/page_92.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2006/page_92.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2006/page_96.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2006/page_96.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2006/page_96.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2006/page_96.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2014/page_69.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2014/page_69.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2014/page_99.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2017/page_100.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2017/page_100.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2017/page_101.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2017/page_101.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2017/page_101.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STZ/2005/page_57.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SWKS/2008/page_105.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SWKS/2010/page_105.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TFX/2014/page_44.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TFX/2018/page_47.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TFX/2018/page_47.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2008/page_23.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2008/page_23.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2009/page_23.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2009/page_23.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2009/page_24.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2011/page_13.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2011/page_13.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2013/page_25.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "TROW/2013/page_25.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2005/page_32.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2005/page_32.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2005/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2005/page_33.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2007/page_42.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2007/page_42.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UAA/2017/page_52.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UAA/2017/page_52.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UAA/2017/page_86.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UAA/2017/page_86.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UAA/2017/page_86.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UAA/2017/page_86.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UAA/2018/page_40.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UAA/2018/page_40.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_24.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_24.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_24.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_25.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_27.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_27.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_30.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_30.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_33.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_55.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_55.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_79.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2010/page_79.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_20.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_20.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_20.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_23.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_23.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_23.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_29.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_29.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_30.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_30.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_34.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_34.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2012/page_39.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2016/page_21.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2016/page_21.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2016/page_21.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2016/page_21.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2016/page_24.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2017/page_20.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2017/page_20.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2017/page_20.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2017/page_20.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2017/page_23.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2017/page_23.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2017/page_23.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2017/page_74.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2018/page_21.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2018/page_21.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2018/page_21.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UNP/2018/page_21.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2007/page_32.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2007/page_32.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2007/page_32.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2009/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2009/page_33.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2009/page_33.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2010/page_33.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2012/page_51.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2013/page_56.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2014/page_35.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2014/page_35.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2014/page_35.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2014/page_61.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2014/page_61.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2015/page_108.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2015/page_35.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2015/page_35.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2016/page_34.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "V/2016/page_132.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "V/2016/page_132.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2011/page_25.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2012/page_27.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2012/page_27.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2013/page_24.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2013/page_24.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2014/page_23.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2016/page_23.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2016/page_23.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2017/page_28.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VLO/2017/page_28.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VNO/2005/page_69.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VNO/2005/page_69.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VNO/2006/page_95.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VRTX/2005/page_117.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VRTX/2006/page_112.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VRTX/2006/page_112.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WELL/2016/page_61.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WELL/2016/page_61.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WELL/2016/page_61.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WELL/2016/page_61.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WELL/2017/page_48.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WELL/2017/page_48.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WELL/2017/page_48.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WELL/2017/page_48.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2018/page_39.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2018/page_39.pdf-6": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2018/page_53.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2018/page_53.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2018/page_53.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2018/page_56.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2018/page_56.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2018/page_56.pdf-5": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2019/page_51.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2019/page_51.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2019/page_51.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WRK/2019/page_51.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2004/page_50.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2004/page_50.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2004/page_65.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2004/page_65.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2007/page_69.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2007/page_69.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2008/page_70.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2008/page_72.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2008/page_86.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2008/page_86.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2008/page_86.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2015/page_63.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2015/page_63.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2018/page_34.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2018/page_34.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2018/page_34.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2018/page_61.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2018/page_61.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2018/page_61.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2010/page_43.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AAPL/2017/page_23.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/2003/page_111.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/2003/page_111.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/2003/page_90.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/2003/page_90.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/2003/page_90.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ADBE/2013/page_84.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANET/2017/page_156.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ANET/2017/page_156.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2015/page_110.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2015/page_110.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2015/page_117.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2015/page_117.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2015/page_21.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "AWK/2015/page_21.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKNG/2015/page_38.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "BKNG/2015/page_38.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2007/page_41.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2007/page_41.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2007/page_42.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2007/page_49.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2007/page_49.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CAG/2007/page_73.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDNS/2016/page_32.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDNS/2016/page_32.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "CDNS/2016/page_32.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EMR/2017/page_53.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EMR/2017/page_53.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EMR/2017/page_54.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "EMR/2017/page_66.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "FRT/2011/page_115.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2006/page_43.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2006/page_45.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2006/page_45.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2006/page_45.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2017/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GIS/2017/page_86.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GPN/2008/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GPN/2008/page_39.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GPN/2008/page_92.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GPN/2008/page_95.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "GRMN/2004/page_91.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HUM/2007/page_96.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "HUM/2007/page_96.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2003/page_79.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ILMN/2003/page_79.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2018/page_48.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2018/page_48.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2018/page_48.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2018/page_48.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2018/page_50.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "INTC/2018/page_50.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2014/page_101.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2014/page_101.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2014/page_101.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2014/page_101.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2014/page_105.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2015/page_44.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2015/page_44.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2015/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2015/page_46.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2015/page_46.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2015/page_51.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "IP/2015/page_83.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2008/page_30.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2008/page_30.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "JKHY/2008/page_30.pdf-5": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "MSI/2018/page_32.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ORLY/2006/page_40.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ORLY/2017/page_30.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ORLY/2017/page_30.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2006/page_37.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2006/page_37.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "RCL/2006/page_37.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2012/page_42.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2013/page_107.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2013/page_71.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "STT/2013/page_71.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SWKS/2011/page_112.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SWKS/2011/page_82.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SWKS/2011/page_82.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "SWKS/2011/page_82.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2011/page_42.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2011/page_43.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2011/page_54.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2011/page_54.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UA/2011/page_70.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "UPS/2017/page_31.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VTR/2003/page_39.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VTR/2003/page_39.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "VTR/2006/page_48.pdf-4": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WMT/2018/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "WMT/2018/page_46.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2002/page_32.pdf-3": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2013/page_46.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2013/page_49.pdf-1": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    },
+    "ZBH/2013/page_57.pdf-2": {
+      "mas-3b-q4": "training_length_overflow",
+      "sas-7b-q4": "training_length_overflow"
+    }
+  },
+  "split_n": {
+    "train": 661,
+    "validation": 100
+  },
+  "profiles": {
+    "mas-3b-q4": {
+      "gguf_file": "qwen2.5-3b-instruct-q4_k_m.gguf",
+      "vocab_only": true,
+      "n_vocab": 151936,
+      "special_config": {
+        "add_bos": false,
+        "add_eos": false,
+        "cls": 151643,
+        "sep": -1
+      }
+    },
+    "sas-7b-q4": {
+      "gguf_file": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "vocab_only": true,
+      "n_vocab": 152064,
+      "special_config": {
+        "add_bos": false,
+        "add_eos": false,
+        "cls": 151643,
+        "sep": -1
+      }
+    }
+  },
+  "output_file": "research/tier8_v2/data/deployment-sft-1024-02.jsonl",
+  "output_sha256": "0b1052db3f7c6a5d85d321b500b9478ea453aa936d0b78e326215c3ce2933069",
+  "code_sha256": {
+    "tier8_v2_adaptation_prompts.py": "f190d39ee3eaa25d7e3eccef730af404fb84e709fd650492ed98c5358b682cd7",
+    "tier8_v2_adaptation_data.py": "774f795a7ae55d1e3bc0451714331bda5a0fc1dca87c0acdc1435941ff3334e3",
+    "evidence_cells.py": "805ed5c46359fc0ad8bb5f7cc8ac6abaf84500df3c30e7637d48ffc7947d196a",
+    "tier8_v2_financial_pipeline.py": "df9d78ca001b0bb279be28ce2564e90c7546bbb352eb75d7b10ac65aab6004af",
+    "tier8_v2_run.py": "f68801e97171c0fadf855811b8c9d01434e53f471c497fa2757a2765cdc29ca2",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7"
+  },
+  "configuration": "Actual reference/compact/question-unit/causal deployment draft; no analysis, demos, selector or repair.",
+  "limitations": [
+    "Not the stronger 128/256-analysis configuration; evaluate adapted no-analysis arms explicitly.",
+    "Cell metadata is retained in source corpus but absent from this unchanged deployment prompt.",
+    "Teacher reasoning and verifier labels were not synthesized.",
+    "Require exact HF tokenizer parity with recorded input IDs before training.",
+    "No model training, adapter application or measured inference gain yet."
+  ]
+}

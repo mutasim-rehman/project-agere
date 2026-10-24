@@ -1,0 +1,56 @@
+{
+  "source_sha256": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+  "bank_sha256": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a",
+  "code_sha256": {
+    "tier8_v2_adaptation_data.py": "774f795a7ae55d1e3bc0451714331bda5a0fc1dca87c0acdc1435941ff3334e3",
+    "evidence_cells.py": "805ed5c46359fc0ad8bb5f7cc8ac6abaf84500df3c30e7637d48ffc7947d196a",
+    "program_binding_domains.py": "1c9e2fd6799ffa8164df31f72d1c85458698d3d5d10f8d31daeb229788ca3151",
+    "tier8_v2_demos.py": "9cb3cb2eaad2f3eda5fc9a4e14c3fff9076c071d710b853fb0d700d336844918",
+    "tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52"
+  },
+  "source_n": 6251,
+  "eligible_n": 1851,
+  "skipped": {
+    "[<class 'decimal.ConversionSyntax'>]": 116,
+    "reported_execution_disagreement": 336,
+    "identity_only_program": 5,
+    "ambiguous_source_identity": 559,
+    "unsupported_program": 253,
+    "unretrieved_operand": 480,
+    "development_report_overlap": 2511,
+    "unsupported_reported_reference": 78,
+    "unsupported_constant": 11,
+    "target_unit_outside_deployment_grammar": 46,
+    "constant_only_step": 4,
+    "unexecutable_target": 1
+  },
+  "split_policy": "SHA256 agere-adapt-42:report-group modulo 10 == 0 validation; otherwise train",
+  "splits": {
+    "train": {
+      "n": 1653,
+      "report_groups": 422,
+      "file": "research/tier8_v2/data/finqa-cell-adaptation-train-02.jsonl",
+      "sha256": "30039625e42d53c75c690700fed57c4d9809fc9229023fdbf7e444669dab95a5"
+    },
+    "validation": {
+      "n": 198,
+      "report_groups": 50,
+      "file": "research/tier8_v2/data/finqa-cell-adaptation-validation-02.jsonl",
+      "sha256": "369bc8ef2ca5238d21866ffca97ae1d1813de13ca392ed23c19c84bb736cb2a5"
+    }
+  },
+  "development_answers_used": false,
+  "test_opened": false,
+  "tokenizer_fitted": false,
+  "model_trained": false,
+  "serialization_policy": "Evidence keys sorted before target construction; every persisted row reloaded and source/target bindings revalidated.",
+  "supersedes": "cell-adaptation-data-01.json (invalid persisted A-ID mappings; never used for training)",
+  "limitations": [
+    "Numeric uniqueness is not semantic adjudication.",
+    "Eligibility biases toward available, <=4-operation source-grounded programs; no 1800-character demo cap.",
+    "Bare percentage-point annotation issues are not resolved by this export.",
+    "Capture exact deployment prompts and fit tokenized examples before training; measure applied adapters."
+  ]
+}

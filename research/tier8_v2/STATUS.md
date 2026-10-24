@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 143 contract tests pass. They do not establish financial reasoning correctness.
+- 148 contract tests pass. They do not establish financial reasoning correctness.
 - Separate memory-monitored fixed-output repair harness is ready for plain versus
   proof feedback on the same algebraically flagged cohort. Original output tokens
   are debited; changed answers are reverified. Grammar/compatibility checks pass,
@@ -32,14 +32,28 @@ confirmation are not established. Historical results and raw runs remain preserv
 
 ## Adaptation data prepared; no training yet
 
+Revision 01 is superseded and must not be used: serialization changed evidence
+order after A-ID labelling. Revision 02 fixes the order before labelling and
+revalidates every saved row. The current exporter and prompt capture reject
+persisted source-ID mismatches. Existing live experiments/demos are unaffected.
+
+Actual no-analysis/no-demo deployment prompt capture is complete: 761 examples
+fit 1,024 training tokens for both GGUF tokenizers (661 train, 100 validation),
+without truncation. Full token-ID hashes agree. See evidence/deployment-sft-1024-02.json
+and data/ADAPTATION_README.md. HF tokenizer parity, training and actual adapter
+application remain pending. Manual historical prompt counts treat chat markers as
+ordinary text; generation recognizes them. Fix accounting after the frozen runs;
+keep historical counts explicitly labelled estimates, with no silent rescoring.
+
+
 A separate train-only exporter materialized 1,653 training examples (422 report
 groups) and 198 validation examples (50 report groups), excluding every development
 report group. It quarantines ambiguous bindings instead of producing first-match
 source targets (559 rejected), checks deployment unit admissibility, and preserves
 all rejection counts/IDs. Source uniqueness is numerical, not semantic adjudication.
-Audit: evidence/cell-adaptation-data-01.json; independent materialized hash, split,
-exclusion and total-count checks pass. Exact deployment-prompt/tokenizer fitting,
-training, verified adapter application and comparative inference remain pending.
+Audit: evidence/cell-adaptation-data-02.json; independent materialized hash, split,
+exclusion and total-count checks pass. Deployment prompt fitting is complete for the no-analysis baseline above;
+HF parity, training, adapter application and comparative inference remain pending.
 All 59 frozen live inputs remain unchanged. This is a baseline-enabling corpus,
 not a demonstrated reasoning gain or original method.
 

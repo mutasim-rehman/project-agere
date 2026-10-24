@@ -1,4 +1,4 @@
-...............................................................................................................{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
+....................................................................................................................{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
 {"role": "verifier", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": true}
 ..{"role": "drafter", "weights": "qwen2.5-3b-instruct-q4_k_m.gguf", "shared_instance": false}
 {"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
@@ -10,6 +10,6 @@
 {"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
 ...........................
 ----------------------------------------------------------------------
-Ran 143 tests in 0.323s
+Ran 148 tests in 0.327s
 
 OK

@@ -1,0 +1,7840 @@
+{
+  "source_sha256": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+  "bank_sha256": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a",
+  "code_sha256": {
+    "tier8_v2_adaptation_data.py": "774f795a7ae55d1e3bc0451714331bda5a0fc1dca87c0acdc1435941ff3334e3",
+    "evidence_cells.py": "805ed5c46359fc0ad8bb5f7cc8ac6abaf84500df3c30e7637d48ffc7947d196a",
+    "program_binding_domains.py": "1c9e2fd6799ffa8164df31f72d1c85458698d3d5d10f8d31daeb229788ca3151",
+    "tier8_v2_demos.py": "9cb3cb2eaad2f3eda5fc9a4e14c3fff9076c071d710b853fb0d700d336844918",
+    "tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52"
+  },
+  "source_n": 6251,
+  "eligible_n": 1851,
+  "skipped": {
+    "[<class 'decimal.ConversionSyntax'>]": 116,
+    "reported_execution_disagreement": 336,
+    "identity_only_program": 5,
+    "ambiguous_source_identity": 559,
+    "unsupported_program": 253,
+    "unretrieved_operand": 480,
+    "development_report_overlap": 2511,
+    "unsupported_reported_reference": 78,
+    "unsupported_constant": 11,
+    "target_unit_outside_deployment_grammar": 46,
+    "constant_only_step": 4,
+    "unexecutable_target": 1
+  },
+  "skipped_ids": [
+    {
+      "id": "AAL/2014/page_18.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AAL/2014/page_18.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AAL/2014/page_18.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAL/2014/page_219.pdf-2",
+      "reason": "identity_only_program"
+    },
+    {
+      "id": "AAL/2014/page_219.pdf-3",
+      "reason": "identity_only_program"
+    },
+    {
+      "id": "AAL/2014/page_59.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAL/2014/page_59.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAL/2014/page_59.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAL/2014/page_80.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAL/2016/page_37.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAL/2017/page_10.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AAL/2017/page_10.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AAL/2017/page_33.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAL/2017/page_33.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAL/2018/page_13.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AAL/2018/page_13.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AAL/2018/page_13.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AAL/2018/page_13.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAP/2006/page_85.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AAP/2007/page_83.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAP/2013/page_32.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAP/2013/page_32.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AAP/2013/page_68.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAP/2013/page_68.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAP/2013/page_68.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AAP/2013/page_68.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AAP/2016/page_26.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAP/2016/page_65.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AAP/2016/page_65.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAP/2016/page_96.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAP/2016/page_96.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAP/2016/page_96.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2002/page_23.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAPL/2002/page_23.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2002/page_23.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2002/page_26.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2002/page_63.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2006/page_103.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2006/page_79.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2006/page_79.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2006/page_93.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2006/page_93.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2006/page_93.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2007/page_117.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2007/page_117.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2007/page_48.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2007/page_51.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2007/page_70.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2007/page_70.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2007/page_72.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2007/page_79.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2007/page_79.pdf-2",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "AAPL/2007/page_83.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2007/page_83.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAPL/2007/page_84.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2007/page_84.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2007/page_84.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2007/page_84.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2010/page_42.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2010/page_42.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2010/page_42.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2010/page_42.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2010/page_43.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAPL/2010/page_43.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2010/page_73.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2010/page_73.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2011/page_24.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2011/page_24.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2011/page_24.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2011/page_24.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2011/page_37.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAPL/2011/page_37.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAPL/2011/page_38.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2011/page_38.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAPL/2011/page_65.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2011/page_65.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2012/page_24.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2012/page_24.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2012/page_36.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2012/page_36.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2012/page_64.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2012/page_64.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2012/page_64.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2012/page_64.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAPL/2012/page_71.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AAPL/2013/page_27.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2013/page_27.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2013/page_39.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2013/page_41.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2013/page_41.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2013/page_72.pdf-1",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "AAPL/2013/page_78.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AAPL/2013/page_78.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2013/page_78.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AAPL/2015/page_24.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2015/page_24.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2015/page_56.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2015/page_68.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2015/page_68.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2015/page_68.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AAPL/2016/page_23.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2016/page_23.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AAPL/2018/page_23.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2018/page_23.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AAPL/2018/page_23.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ABMD/2003/page_22.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ABMD/2003/page_22.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ABMD/2003/page_27.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ABMD/2003/page_27.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ABMD/2003/page_27.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ABMD/2003/page_27.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ABMD/2008/page_52.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ABMD/2011/page_33.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ABMD/2011/page_33.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ABMD/2011/page_33.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ABMD/2011/page_33.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ABMD/2012/page_75.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ABMD/2012/page_75.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ABMD/2015/page_53.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ABMD/2015/page_53.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ABMD/2015/page_53.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ABMD/2015/page_53.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ABMD/2015/page_93.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ABMD/2015/page_93.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ABMD/2018/page_112.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ABMD/2018/page_112.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADBE/2003/page_113.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2009/page_81.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2009/page_81.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADBE/2009/page_81.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2009/page_81.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_101.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_101.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADBE/2011/page_101.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_101.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_112.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_112.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADBE/2011/page_112.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_112.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_116.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_116.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_116.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADBE/2011/page_116.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2011/page_83.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADBE/2011/page_83.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "ADBE/2011/page_83.pdf-4",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "ADBE/2012/page_102.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADBE/2012/page_102.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ADBE/2012/page_102.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADBE/2012/page_113.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2012/page_113.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "ADBE/2012/page_113.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2012/page_87.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "ADBE/2013/page_68.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ADBE/2013/page_68.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2013/page_84.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2013/page_89.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2013/page_89.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2013/page_89.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADBE/2013/page_89.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2014/page_47.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2014/page_47.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2014/page_70.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2014/page_70.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADBE/2014/page_70.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADBE/2014/page_87.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADBE/2014/page_87.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADBE/2014/page_99.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADI/2009/page_49.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ADI/2009/page_49.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "ADI/2009/page_59.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ADI/2009/page_90.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADI/2009/page_90.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADI/2009/page_90.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "ADI/2010/page_50.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADI/2010/page_82.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADI/2010/page_82.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADI/2010/page_82.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADI/2010/page_82.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADI/2010/page_90.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADI/2012/page_65.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADI/2012/page_65.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "ADI/2015/page_72.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ADI/2015/page_72.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ADI/2015/page_72.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "ADI/2015/page_78.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ADI/2015/page_78.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ADI/2016/page_61.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADI/2016/page_61.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADI/2016/page_61.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "ADI/2019/page_71.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ADI/2019/page_85.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AES/2000/page_111.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AES/2000/page_111.pdf-3",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "AES/2010/page_225.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2011/page_131.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AES/2011/page_216.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AES/2011/page_216.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AES/2011/page_230.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2011/page_260.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2011/page_260.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2011/page_260.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2011/page_260.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AES/2011/page_261.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AES/2011/page_261.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AES/2011/page_261.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2011/page_269.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2011/page_270.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2012/page_223.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AES/2018/page_168.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2018/page_168.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AES/2018/page_168.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ALLE/2015/page_81.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ALLE/2015/page_81.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ALLE/2017/page_118.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ALLE/2017/page_44.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ALLE/2017/page_44.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ALLE/2018/page_121.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ALLE/2018/page_121.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ALXN/2015/page_59.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ALXN/2016/page_89.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMAT/2012/page_35.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMAT/2012/page_35.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMAT/2012/page_37.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMAT/2012/page_37.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AMAT/2015/page_31.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AMAT/2015/page_31.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AMAT/2015/page_33.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMAT/2015/page_33.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMAT/2016/page_30.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMAT/2016/page_32.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMAT/2016/page_32.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMAT/2017/page_31.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMAT/2017/page_33.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AMAT/2017/page_33.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AMT/2002/page_104.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMT/2002/page_104.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2002/page_104.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2002/page_104.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2002/page_74.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2002/page_88.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2002/page_88.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2003/page_85.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2003/page_85.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2003/page_92.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2003/page_92.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2006/page_107.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2006/page_107.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2006/page_116.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2006/page_116.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2006/page_31.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2006/page_31.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2006/page_96.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2006/page_96.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2007/page_111.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMT/2007/page_111.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2007/page_114.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2007/page_116.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2007/page_32.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2007/page_32.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2007/page_35.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMT/2007/page_35.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMT/2007/page_67.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2007/page_99.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2007/page_99.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2014/page_113.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2014/page_120.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AMT/2014/page_120.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2014/page_131.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2014/page_157.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "AMT/2014/page_157.pdf-4",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "AMT/2014/page_64.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "AMT/2014/page_64.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AMT/2014/page_88.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMT/2015/page_50.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2015/page_58.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2015/page_58.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2016/page_57.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AMT/2016/page_57.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AMT/2016/page_69.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMT/2016/page_69.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AMT/2016/page_69.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ANET/2015/page_155.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ANET/2015/page_155.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ANET/2017/page_156.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ANET/2017/page_156.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ANET/2017/page_157.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ANET/2017/page_157.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ANSS/2008/page_85.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ANSS/2008/page_85.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ANSS/2008/page_85.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ANSS/2008/page_89.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ANSS/2008/page_89.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ANSS/2012/page_92.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ANSS/2016/page_82.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ANSS/2016/page_85.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ANSS/2016/page_85.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2007/page_180.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AON/2007/page_180.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AON/2007/page_180.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AON/2007/page_180.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AON/2007/page_184.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2007/page_185.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2007/page_185.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2007/page_185.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2007/page_185.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2013/page_32.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2013/page_54.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AON/2015/page_43.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2015/page_43.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2015/page_45.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AON/2015/page_50.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AON/2015/page_77.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2015/page_77.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AON/2018/page_41.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AON/2018/page_41.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AON/2018/page_84.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AON/2018/page_84.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AON/2018/page_90.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AON/2018/page_90.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AOS/2007/page_17.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AOS/2007/page_17.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AOS/2010/page_23.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AOS/2016/page_19.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AOS/2016/page_19.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "APD/2015/page_100.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "APD/2015/page_105.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "APD/2015/page_105.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "APD/2015/page_39.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "APD/2015/page_54.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "APD/2015/page_54.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "APD/2017/page_37.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "APD/2017/page_37.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "APD/2017/page_42.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "APD/2017/page_42.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "APTV/2015/page_47.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2015/page_47.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2015/page_47.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "APTV/2015/page_47.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2015/page_50.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "APTV/2016/page_44.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2016/page_44.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2016/page_44.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2016/page_44.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "APTV/2016/page_47.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2018/page_34.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2018/page_34.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2018/page_34.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "APTV/2018/page_36.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "APTV/2018/page_36.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2012/page_118.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2012/page_118.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2012/page_12.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2012/page_12.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2014/page_122.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2014/page_122.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2014/page_122.pdf-3",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "AWK/2014/page_122.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2014/page_132.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "AWK/2014/page_132.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AWK/2014/page_132.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2014/page_45.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2015/page_106.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2015/page_106.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2015/page_106.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2015/page_110.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2015/page_110.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2015/page_112.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2015/page_115.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2015/page_115.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2015/page_81.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AWK/2015/page_81.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2015/page_81.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2015/page_81.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AWK/2017/page_128.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2017/page_128.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2017/page_136.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AWK/2017/page_140.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2017/page_140.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2017/page_143.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AWK/2017/page_154.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "AWK/2017/page_172.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2017/page_172.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_103.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AWK/2018/page_103.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_103.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AWK/2018/page_131.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_131.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_141.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_141.pdf-2",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "AWK/2018/page_142.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_148.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2018/page_148.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2018/page_150.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2018/page_150.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_150.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_152.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "AWK/2018/page_152.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_162.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_162.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "AWK/2018/page_172.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2018/page_172.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_172.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_178.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_178.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_97.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "AWK/2018/page_97.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "AWK/2018/page_97.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "AWK/2018/page_98.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "BDX/2016/page_21.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BDX/2016/page_62.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BDX/2017/page_28.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "BDX/2017/page_28.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BDX/2017/page_32.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BDX/2017/page_32.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "BKNG/2015/page_38.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "BKNG/2015/page_38.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "BKNG/2017/page_35.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "BKNG/2017/page_35.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "BKNG/2018/page_34.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "BKR/2018/page_105.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "BKR/2018/page_105.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "BKR/2018/page_105.pdf-3",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "BKR/2018/page_127.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "BKR/2018/page_127.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BKR/2018/page_51.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "BKR/2018/page_51.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "BKR/2018/page_51.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BKR/2018/page_51.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BKR/2018/page_52.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "BKR/2018/page_59.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BKR/2018/page_59.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BKR/2018/page_59.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BKR/2018/page_59.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BKR/2018/page_61.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BLK/2008/page_75.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLK/2008/page_75.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BLK/2009/page_98.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BLK/2009/page_98.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "BLK/2009/page_98.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "BLK/2009/page_98.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BLK/2010/page_126.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLK/2010/page_126.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLK/2010/page_46.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLK/2010/page_46.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLK/2015/page_123.pdf-2",
+      "reason": "constant_only_step"
+    },
+    {
+      "id": "BLK/2015/page_123.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BLK/2015/page_123.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BLK/2015/page_35.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLK/2015/page_35.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BLK/2015/page_35.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLK/2015/page_35.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "BLL/2006/page_108.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "BLL/2006/page_108.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "BLL/2006/page_45.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "BLL/2006/page_47.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLL/2006/page_47.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLL/2006/page_89.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLL/2011/page_29.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "BLL/2011/page_29.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "BLL/2011/page_29.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2009/page_141.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "C/2009/page_141.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2009/page_141.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2009/page_162.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "C/2009/page_194.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "C/2009/page_194.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "C/2009/page_195.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2009/page_195.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2009/page_200.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "C/2009/page_279.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "C/2009/page_38.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "C/2009/page_53.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2009/page_53.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "C/2015/page_314.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "C/2016/page_120.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2016/page_120.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "C/2016/page_207.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2016/page_207.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2016/page_207.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2016/page_207.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2016/page_333.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "C/2016/page_333.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "C/2016/page_333.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "C/2018/page_179.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "C/2018/page_179.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "C/2018/page_190.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "C/2018/page_190.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "C/2018/page_200.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CAG/2007/page_42.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CAT/2018/page_38.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CAT/2018/page_38.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CAT/2018/page_38.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CAT/2018/page_38.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CB/2008/page_144.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "CB/2008/page_144.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "CB/2008/page_216.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CB/2008/page_216.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CB/2008/page_216.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CB/2008/page_217.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "CB/2008/page_218.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CB/2008/page_83.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CB/2008/page_83.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CB/2009/page_220.pdf-3",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "CB/2009/page_81.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CB/2009/page_81.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CB/2009/page_81.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CCI/2003/page_21.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CCI/2004/page_32.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "CCI/2004/page_32.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "CDNS/2007/page_30.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDNS/2007/page_93.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CDNS/2007/page_93.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CDNS/2016/page_32.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDNS/2016/page_76.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CDW/2013/page_103.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CDW/2013/page_103.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDW/2013/page_103.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CDW/2013/page_106.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CDW/2013/page_36.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CDW/2014/page_55.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CDW/2014/page_55.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDW/2014/page_55.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CDW/2014/page_55.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CDW/2014/page_93.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CDW/2014/page_93.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CDW/2014/page_93.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CDW/2015/page_34.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDW/2015/page_35.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CDW/2015/page_35.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CDW/2015/page_53.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CDW/2015/page_53.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CDW/2015/page_53.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDW/2017/page_56.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDW/2017/page_56.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CDW/2017/page_56.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CDW/2017/page_73.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDW/2017/page_73.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "CDW/2017/page_73.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "CDW/2017/page_80.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CDW/2017/page_80.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CE/2005/page_167.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CE/2005/page_167.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CE/2005/page_167.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CE/2005/page_56.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CE/2005/page_57.pdf-1",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "CE/2005/page_57.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CE/2006/page_124.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CE/2006/page_124.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CE/2007/page_125.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CE/2007/page_125.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CE/2007/page_125.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CE/2009/page_121.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CE/2009/page_35.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "CE/2014/page_32.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "CE/2014/page_32.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CE/2014/page_90.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CE/2014/page_90.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CE/2016/page_88.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CE/2017/page_20.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CE/2017/page_20.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CE/2017/page_37.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CMCSA/2008/page_59.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "CMCSA/2008/page_59.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "CMCSA/2008/page_59.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CNC/2003/page_41.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CNC/2005/page_39.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CNC/2005/page_39.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CNC/2005/page_39.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "CNC/2006/page_37.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "CNC/2006/page_37.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "CNC/2006/page_37.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "D/2002/page_39.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "D/2002/page_39.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DG/2006/page_58.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DG/2008/page_73.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "DG/2008/page_73.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DG/2009/page_87.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DG/2009/page_87.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISCA/2008/page_141.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "DISCA/2008/page_141.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DISCA/2009/page_149.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "DISCA/2011/page_35.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISCA/2011/page_35.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISCA/2011/page_35.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISCA/2011/page_35.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISCA/2013/page_45.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISCA/2013/page_45.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISCA/2013/page_45.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "DISCA/2016/page_30.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "DISCA/2016/page_30.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "DISCA/2017/page_41.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "DISCA/2017/page_41.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISCA/2018/page_39.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "DISCA/2018/page_39.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "DISH/2002/page_94.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISH/2002/page_94.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "DISH/2008/page_120.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DISH/2011/page_130.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISH/2014/page_137.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISH/2014/page_137.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISH/2014/page_142.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DISH/2014/page_64.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "DISH/2014/page_64.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "DISH/2015/page_142.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DRE/2004/page_26.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DRE/2004/page_27.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DRE/2010/page_36.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DRE/2010/page_41.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "DRE/2010/page_59.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DRE/2012/page_31.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "DRE/2012/page_34.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "DRE/2012/page_34.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DRE/2012/page_34.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DRE/2016/page_59.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DVN/2004/page_50.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DVN/2004/page_50.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DVN/2004/page_50.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DVN/2011/page_26.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "DVN/2011/page_84.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DVN/2012/page_100.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DVN/2013/page_101.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "DVN/2013/page_78.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DVN/2015/page_117.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DVN/2015/page_117.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DVN/2015/page_117.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "DVN/2015/page_92.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DVN/2015/page_92.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DVN/2015/page_92.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "DVN/2017/page_31.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ECL/2015/page_70.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ECL/2015/page_70.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2015/page_70.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ECL/2016/page_31.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ECL/2016/page_64.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2016/page_64.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ECL/2016/page_64.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ECL/2016/page_64.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2017/page_57.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2017/page_68.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2017/page_68.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2017/page_68.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2017/page_68.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2017/page_85.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "ECL/2017/page_85.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "ECL/2017/page_85.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ECL/2017/page_95.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ECL/2017/page_95.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ECL/2017/page_95.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ECL/2017/page_96.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "EL/2013/page_117.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "EL/2013/page_137.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EL/2014/page_70.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EL/2014/page_70.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EMN/2004/page_82.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EMN/2006/page_108.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EMN/2006/page_108.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EMN/2006/page_108.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "EMN/2006/page_110.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EMN/2007/page_111.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "EMN/2007/page_129.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EMN/2016/page_104.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EMN/2016/page_104.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EMN/2016/page_104.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EMN/2016/page_104.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "EMR/2017/page_54.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EMR/2018/page_28.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "EMR/2018/page_28.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EMR/2018/page_28.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "EOG/2016/page_74.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EOG/2016/page_74.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EOG/2016/page_78.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EOG/2016/page_78.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "EOG/2017/page_102.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EOG/2017/page_103.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EOG/2017/page_78.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EOG/2017/page_78.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EOG/2017/page_93.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EOG/2018/page_89.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EOG/2018/page_98.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EOG/2018/page_98.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EOG/2018/page_99.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EOG/2018/page_99.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ETFC/2015/page_27.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ETR/2007/page_36.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ETR/2007/page_36.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ETR/2009/page_107.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ETR/2009/page_107.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ETR/2009/page_141.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ETR/2009/page_21.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ETR/2009/page_24.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ETR/2009/page_24.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EW/2004/page_51.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EW/2004/page_51.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EW/2004/page_83.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EW/2004/page_83.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EW/2004/page_94.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EW/2004/page_94.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "EW/2014/page_35.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EW/2014/page_88.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EW/2014/page_88.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EXPD/2017/page_30.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EXPD/2017/page_30.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EXPD/2018/page_27.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "EXPD/2018/page_27.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "EXR/2005/page_46.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "FIS/2006/page_88.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "FIS/2006/page_88.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "FIS/2010/page_89.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FIS/2010/page_89.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FIS/2010/page_93.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FIS/2010/page_93.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "FIS/2012/page_30.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "FIS/2012/page_46.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FIS/2012/page_46.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FIS/2012/page_46.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FIS/2016/page_93.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "FIS/2016/page_93.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "FIS/2017/page_92.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FIS/2017/page_92.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FIS/2017/page_92.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FITB/2008/page_69.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "FITB/2008/page_69.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FITB/2008/page_96.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "FITB/2008/page_96.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "FITB/2008/page_96.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "FITB/2008/page_96.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FITB/2013/page_163.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "FITB/2013/page_84.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "FITB/2013/page_84.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "FITB/2013/page_84.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FITB/2013/page_84.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "FRT/2004/page_53.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FRT/2006/page_133.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FRT/2006/page_133.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FRT/2009/page_124.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FRT/2010/page_123.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "FTV/2017/page_17.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "FTV/2017/page_17.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "GIS/2006/page_35.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GIS/2006/page_35.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GIS/2006/page_51.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GIS/2008/page_83.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GIS/2008/page_83.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GIS/2014/page_25.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GIS/2017/page_86.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GIS/2017/page_86.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "GIS/2017/page_86.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GIS/2018/page_39.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GIS/2018/page_43.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GIS/2018/page_83.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GPN/2007/page_39.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2007/page_39.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2007/page_97.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GPN/2007/page_97.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GPN/2008/page_39.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2008/page_88.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2008/page_88.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GPN/2008/page_92.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "GPN/2008/page_95.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GPN/2008/page_99.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "GPN/2008/page_99.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2008/page_99.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2010/page_41.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2010/page_92.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GPN/2010/page_92.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2013/page_71.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2013/page_71.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2013/page_71.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2013/page_98.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GPN/2013/page_98.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2013/page_98.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GPN/2014/page_71.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2014/page_71.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2015/page_80.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2015/page_80.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2015/page_80.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2015/page_80.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2015/page_82.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2015/page_82.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2015/page_83.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2015/page_83.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2016/page_29.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2016/page_69.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2016/page_83.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2016/page_83.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2016/page_84.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2016/page_84.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GPN/2016/page_84.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "GPN/2018/page_74.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2018/page_74.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2018/page_74.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2018/page_79.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2018/page_85.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2018/page_85.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GPN/2018/page_85.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GRMN/2004/page_91.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GRMN/2006/page_91.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GRMN/2006/page_91.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GRMN/2008/page_84.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GRMN/2008/page_84.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GRMN/2008/page_98.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "GRMN/2008/page_98.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2015/page_70.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GS/2015/page_74.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2015/page_74.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2015/page_76.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2015/page_76.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2015/page_76.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GS/2015/page_76.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GS/2018/page_108.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2018/page_108.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2018/page_134.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2018/page_134.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2018/page_175.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2018/page_212.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GS/2018/page_212.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "GS/2018/page_70.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "GS/2018/page_76.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "GS/2018/page_76.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HFC/2011/page_85.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HFC/2011/page_88.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HFC/2011/page_92.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HFC/2011/page_92.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HFC/2017/page_103.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HFC/2017/page_103.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HFC/2017/page_103.pdf-5",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HFC/2018/page_43.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HFC/2018/page_43.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HFC/2018/page_43.pdf-5",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HIG/2004/page_122.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HIG/2004/page_125.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HIG/2004/page_192.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HIG/2004/page_192.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HIG/2004/page_67.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HIG/2004/page_81.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "HIG/2004/page_81.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HIG/2012/page_132.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HIG/2013/page_124.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HIG/2013/page_212.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "HIG/2014/page_126.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HIG/2016/page_250.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "HIG/2016/page_250.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HIG/2016/page_253.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HIG/2016/page_253.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_100.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HII/2011/page_100.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "HII/2011/page_103.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_103.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_103.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HII/2011/page_114.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "HII/2011/page_114.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_114.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_60.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_60.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_69.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_69.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HII/2011/page_69.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HII/2011/page_72.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_72.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_72.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_86.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HII/2011/page_86.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HII/2011/page_90.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2011/page_90.pdf-2",
+      "reason": "identity_only_program"
+    },
+    {
+      "id": "HII/2011/page_90.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HII/2011/page_90.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HII/2012/page_127.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HII/2012/page_127.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2012/page_127.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2012/page_127.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2012/page_98.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2012/page_98.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2013/page_116.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2013/page_116.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HII/2013/page_127.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2013/page_127.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2013/page_127.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2013/page_127.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2015/page_101.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2015/page_101.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2015/page_120.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2015/page_120.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HII/2015/page_124.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2015/page_124.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2015/page_124.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_103.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_103.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_113.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "HII/2018/page_113.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "HII/2018/page_124.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_124.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_124.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_124.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_64.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_64.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HII/2018/page_64.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HOLX/2005/page_27.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "HOLX/2005/page_27.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "HOLX/2005/page_61.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HOLX/2009/page_141.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HOLX/2009/page_153.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HOLX/2009/page_153.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HOLX/2009/page_153.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "HOLX/2011/page_122.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HOLX/2011/page_122.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "HOLX/2011/page_127.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HOLX/2011/page_142.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HOLX/2011/page_142.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HST/2007/page_62.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HST/2017/page_168.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HST/2018/page_115.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HST/2018/page_160.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HUM/2004/page_78.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HUM/2004/page_78.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2005/page_18.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "HUM/2005/page_18.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2005/page_18.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2005/page_18.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2005/page_80.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HUM/2007/page_18.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2007/page_18.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2007/page_18.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2007/page_96.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2007/page_96.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2008/page_18.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "HUM/2008/page_18.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2010/page_101.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HUM/2012/page_109.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HUM/2013/page_52.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2013/page_52.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2013/page_52.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2013/page_52.pdf-4",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "HUM/2015/page_46.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2015/page_46.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2015/page_46.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2016/page_133.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2016/page_133.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2016/page_133.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2018/page_129.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2018/page_129.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2018/page_129.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HUM/2018/page_46.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HUM/2018/page_46.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HWM/2015/page_172.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HWM/2015/page_72.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HWM/2015/page_72.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HWM/2015/page_73.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "HWM/2015/page_89.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "HWM/2015/page_89.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "HWM/2015/page_92.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HWM/2015/page_94.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "HWM/2015/page_95.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "HWM/2018/page_41.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "HWM/2018/page_69.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "HWM/2018/page_69.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ILMN/2003/page_79.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ILMN/2003/page_88.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ILMN/2006/page_57.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ILMN/2006/page_57.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ILMN/2006/page_57.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ILMN/2006/page_57.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ILMN/2006/page_92.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ILMN/2006/page_92.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ILMN/2006/page_92.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ILMN/2008/page_77.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2015/page_122.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2015/page_122.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2016/page_100.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2016/page_100.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2016/page_33.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "INTC/2016/page_43.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "INTC/2017/page_45.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2017/page_46.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "INTC/2017/page_46.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2018/page_105.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2018/page_105.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "INTC/2018/page_50.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "INTC/2018/page_50.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IP/2013/page_105.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IP/2013/page_61.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2013/page_61.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2013/page_61.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "IP/2013/page_62.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2013/page_62.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IP/2013/page_64.pdf-1",
+      "reason": "constant_only_step"
+    },
+    {
+      "id": "IP/2013/page_64.pdf-2",
+      "reason": "constant_only_step"
+    },
+    {
+      "id": "IP/2013/page_64.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IP/2013/page_65.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IP/2013/page_65.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IP/2013/page_70.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2013/page_70.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2013/page_70.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2014/page_104.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IP/2014/page_65.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2014/page_65.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2014/page_65.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2014/page_65.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IP/2014/page_66.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2014/page_66.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2014/page_66.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "IP/2014/page_66.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IP/2014/page_71.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2014/page_71.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2014/page_71.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2015/page_44.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2015/page_46.pdf-2",
+      "reason": "constant_only_step"
+    },
+    {
+      "id": "IP/2015/page_51.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2015/page_51.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2016/page_52.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2016/page_52.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2016/page_52.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2018/page_45.pdf-1",
+      "reason": "identity_only_program"
+    },
+    {
+      "id": "IP/2018/page_45.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IP/2018/page_50.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "IP/2018/page_83.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2018/page_83.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IP/2018/page_83.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "IP/2018/page_83.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "IPG/2003/page_89.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "IPG/2003/page_89.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IPG/2006/page_41.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2012/page_21.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2012/page_21.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2012/page_44.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IPG/2012/page_89.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IPG/2013/page_22.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2013/page_22.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IPG/2013/page_35.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2013/page_35.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "IPG/2013/page_35.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "IPG/2013/page_36.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "IPG/2013/page_46.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "IPG/2013/page_46.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "IPG/2013/page_46.pdf-4",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "IPG/2014/page_23.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2014/page_23.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2014/page_36.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2014/page_36.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2014/page_36.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2014/page_37.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "IPG/2014/page_47.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "IPG/2014/page_95.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2014/page_95.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2014/page_95.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2016/page_24.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IPG/2016/page_37.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IPG/2016/page_37.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "IPG/2016/page_46.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "IPG/2016/page_46.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "IPG/2017/page_26.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "IPG/2017/page_38.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IPG/2017/page_40.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IPG/2017/page_40.pdf-3",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "IPG/2017/page_40.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2017/page_49.pdf-3",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "IPG/2017/page_49.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IPG/2018/page_100.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IPG/2018/page_100.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "IPG/2018/page_39.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2018/page_39.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2018/page_52.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "IPG/2018/page_52.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IPG/2018/page_78.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IPG/2018/page_78.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IQV/2016/page_57.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IQV/2016/page_57.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "IQV/2016/page_65.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "IQV/2016/page_79.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "IQV/2018/page_59.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JKHY/2008/page_30.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JKHY/2008/page_30.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JKHY/2009/page_28.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JKHY/2010/page_50.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JKHY/2010/page_50.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JKHY/2011/page_34.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JKHY/2011/page_55.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JKHY/2015/page_20.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JKHY/2015/page_20.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JKHY/2016/page_25.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JKHY/2016/page_25.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JKHY/2016/page_61.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JKHY/2016/page_61.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JKHY/2016/page_61.pdf-6",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JKHY/2017/page_61.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JKHY/2018/page_16.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JKHY/2018/page_16.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JKHY/2019/page_17.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JKHY/2019/page_17.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JKHY/2019/page_17.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2003/page_100.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2003/page_100.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2003/page_100.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2003/page_28.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "JPM/2003/page_28.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2003/page_28.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2003/page_44.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "JPM/2003/page_44.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "JPM/2003/page_44.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2003/page_67.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2004/page_31.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2004/page_31.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2010/page_128.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2010/page_128.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2010/page_132.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2010/page_132.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2010/page_197.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2010/page_197.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2010/page_219.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2010/page_219.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2010/page_236.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2010/page_236.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2010/page_236.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2012/page_109.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2012/page_109.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2012/page_109.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2012/page_109.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2012/page_110.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2012/page_110.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "JPM/2012/page_110.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2012/page_148.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2012/page_157.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2012/page_157.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2012/page_157.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2012/page_239.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2012/page_239.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2012/page_239.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2012/page_239.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2012/page_93.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2012/page_93.pdf-5",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2015/page_243.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2015/page_243.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2015/page_77.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2015/page_77.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2015/page_77.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2015/page_83.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2015/page_83.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2015/page_92.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "JPM/2015/page_92.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2015/page_92.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2016/page_141.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2016/page_141.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2016/page_73.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2016/page_87.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2016/page_87.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "JPM/2017/page_104.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2017/page_104.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2017/page_119.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2017/page_119.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "JPM/2017/page_144.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "JPM/2017/page_145.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2017/page_145.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2017/page_69.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2017/page_69.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "JPM/2017/page_69.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "JPM/2017/page_83.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2017/page_83.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "JPM/2017/page_83.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "K/2012/page_80.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "KHC/2017/page_21.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KHC/2018/page_27.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "KIM/2006/page_67.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "KIM/2006/page_67.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "KIM/2006/page_67.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "KIM/2008/page_126.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KIM/2009/page_25.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "KIM/2009/page_25.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KIM/2010/page_103.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "KIM/2010/page_103.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "KIM/2010/page_86.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KIM/2010/page_86.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KIM/2010/page_86.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KIM/2014/page_131.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KIM/2014/page_131.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "KIM/2014/page_131.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KIM/2014/page_131.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "KIM/2014/page_59.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "KMI/2010/page_164.pdf-1",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "KMI/2010/page_164.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "KMI/2010/page_164.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "KMI/2010/page_2.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "KMI/2014/page_114.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "KMI/2014/page_114.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "KMI/2014/page_18.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "KMI/2016/page_109.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "KMI/2018/page_14.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "L/2007/page_213.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "L/2007/page_213.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "L/2008/page_120.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "L/2009/page_41.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "L/2009/page_41.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "L/2009/page_52.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "L/2009/page_52.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "L/2010/page_41.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "L/2010/page_41.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "L/2016/page_62.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "L/2016/page_62.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LKQ/2007/page_76.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LKQ/2007/page_82.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LKQ/2009/page_66.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LKQ/2009/page_66.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LKQ/2012/page_25.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "LKQ/2012/page_25.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LLY/2008/page_43.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LLY/2008/page_45.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LLY/2008/page_45.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LMT/2002/page_33.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LMT/2002/page_33.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LMT/2007/page_37.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LMT/2007/page_37.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "LMT/2007/page_39.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "LMT/2007/page_39.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "LMT/2007/page_55.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LMT/2014/page_31.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "LMT/2014/page_31.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "LMT/2014/page_45.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LMT/2014/page_45.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LMT/2014/page_49.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LMT/2014/page_85.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LMT/2014/page_93.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "LMT/2018/page_85.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "LMT/2018/page_86.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LMT/2018/page_86.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "LMT/2018/page_86.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MA/2009/page_112.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MA/2009/page_120.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MA/2009/page_120.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MA/2009/page_120.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MA/2009/page_123.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MA/2009/page_123.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MA/2010/page_107.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MA/2010/page_125.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MA/2010/page_125.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MA/2018/page_34.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MAA/2015/page_56.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MAA/2015/page_57.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MAA/2017/page_18.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MAA/2017/page_89.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MAA/2018/page_19.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MAA/2018/page_88.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MAA/2018/page_88.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MAA/2018/page_88.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MAR/2018/page_42.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MAR/2018/page_42.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MAS/2010/page_29.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MAS/2010/page_29.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MAS/2010/page_29.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MAS/2010/page_86.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MAS/2010/page_89.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MAS/2010/page_89.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MAS/2010/page_89.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MAS/2013/page_27.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MAS/2013/page_27.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MAS/2017/page_37.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MAS/2017/page_37.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MAS/2017/page_37.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MKTX/2005/page_40.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MKTX/2005/page_40.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MKTX/2009/page_79.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MKTX/2011/page_43.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "MMM/2007/page_15.pdf-2",
+      "reason": "unexecutable_target"
+    },
+    {
+      "id": "MMM/2007/page_16.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MMM/2007/page_38.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MMM/2012/page_45.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MMM/2015/page_19.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MO/2014/page_11.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MO/2014/page_76.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MO/2014/page_76.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MO/2016/page_10.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MO/2016/page_10.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MO/2016/page_10.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MO/2016/page_10.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MO/2016/page_76.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MO/2016/page_76.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MO/2016/page_76.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MO/2017/page_10.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MO/2017/page_65.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MO/2017/page_79.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MO/2017/page_79.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MRO/2003/page_101.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MRO/2003/page_101.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MRO/2003/page_65.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MRO/2003/page_65.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MRO/2003/page_65.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MRO/2012/page_22.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MRO/2012/page_39.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "MRO/2012/page_40.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MRO/2012/page_40.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MRO/2013/page_23.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MRO/2013/page_23.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MRO/2013/page_23.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MRO/2013/page_40.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MRO/2013/page_40.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MRO/2013/page_49.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MRO/2013/page_49.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MRO/2013/page_54.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MRO/2013/page_54.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MRO/2018/page_111.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MRO/2018/page_111.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MRO/2018/page_93.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MRO/2018/page_96.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MRO/2018/page_96.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MRO/2018/page_96.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MRO/2018/page_96.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MS/2007/page_156.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MS/2012/page_150.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MS/2013/page_223.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MS/2013/page_223.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MS/2013/page_277.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MS/2013/page_298.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MS/2013/page_298.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "MS/2015/page_200.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MS/2015/page_200.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MSI/2005/page_43.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MSI/2005/page_43.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MSI/2005/page_64.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MSI/2007/page_102.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MSI/2007/page_102.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "MSI/2007/page_102.pdf-3",
+      "reason": "identity_only_program"
+    },
+    {
+      "id": "MSI/2007/page_42.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MSI/2007/page_42.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MSI/2007/page_42.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MSI/2007/page_68.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MSI/2007/page_68.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MSI/2007/page_68.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MSI/2008/page_110.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MSI/2008/page_110.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MSI/2008/page_110.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MSI/2008/page_71.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MSI/2008/page_71.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MSI/2008/page_73.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MSI/2008/page_73.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "MSI/2013/page_87.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MSI/2013/page_87.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "MSI/2016/page_88.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "MSI/2018/page_32.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "MSI/2018/page_32.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "NCLH/2016/page_84.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "NCLH/2016/page_84.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "NCLH/2017/page_57.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "NCLH/2017/page_57.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "NCLH/2017/page_57.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "NCLH/2018/page_69.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "NKE/2009/page_81.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "NKE/2014/page_36.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "NKE/2014/page_36.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "NKE/2015/page_37.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "NTAP/2014/page_33.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "NTAP/2014/page_33.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "NWS/2019/page_120.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ORLY/2006/page_40.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ORLY/2006/page_40.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ORLY/2006/page_40.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ORLY/2009/page_77.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ORLY/2009/page_77.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ORLY/2015/page_28.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ORLY/2015/page_28.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ORLY/2015/page_28.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ORLY/2016/page_29.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ORLY/2016/page_29.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ORLY/2016/page_29.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ORLY/2017/page_30.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ORLY/2017/page_30.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ORLY/2018/page_30.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ORLY/2018/page_30.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "ORLY/2018/page_30.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2001/page_78.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PKG/2001/page_78.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "PKG/2001/page_86.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2001/page_86.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2004/page_21.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PKG/2004/page_23.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2005/page_27.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2005/page_27.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2005/page_29.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2005/page_29.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2005/page_29.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PKG/2006/page_27.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2006/page_27.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2006/page_27.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2006/page_28.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2006/page_65.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PKG/2006/page_65.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2006/page_68.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2011/page_14.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PKG/2013/page_83.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2013/page_83.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2015/page_83.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2015/page_83.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2015/page_83.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2015/page_83.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PKG/2018/page_66.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2018/page_66.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2018/page_66.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PKG/2018/page_66.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2007/page_107.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2007/page_108.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2007/page_50.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2007/page_50.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2007/page_83.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2007/page_93.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2007/page_93.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "PNC/2008/page_144.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2008/page_32.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2008/page_62.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2008/page_62.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2012/page_110.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "PNC/2012/page_157.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2012/page_246.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PNC/2012/page_46.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2012/page_46.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2012/page_46.pdf-3",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "PNC/2012/page_46.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2012/page_58.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2012/page_96.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2012/page_96.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PNC/2012/page_96.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PNC/2012/page_98.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2014/page_107.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2014/page_110.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "PNC/2014/page_110.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2014/page_151.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2014/page_161.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "PNC/2014/page_161.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "PNC/2014/page_203.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2014/page_203.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2014/page_203.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PNC/2014/page_203.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2014/page_232.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2014/page_232.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2014/page_84.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2014/page_84.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PNC/2014/page_84.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2014/page_84.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PNC/2014/page_94.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PNC/2014/page_94.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2014/page_94.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2014/page_99.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PNC/2014/page_99.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PNC/2017/page_76.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PPG/2003/page_45.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2005/page_20.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PPG/2005/page_24.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2005/page_24.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "PPG/2006/page_21.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2006/page_22.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "PPG/2006/page_26.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2006/page_26.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2008/page_19.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PPG/2008/page_19.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PPG/2008/page_19.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PPG/2008/page_47.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PPG/2010/page_45.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2010/page_45.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2010/page_45.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2010/page_68.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PPG/2012/page_47.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "PPG/2012/page_47.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PPG/2012/page_47.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2012/page_47.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2012/page_70.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PPG/2012/page_70.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "PPG/2012/page_76.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PPG/2015/page_40.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "PPG/2015/page_40.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PPG/2016/page_42.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PPG/2016/page_42.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PPG/2016/page_52.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "PPG/2018/page_54.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PPG/2018/page_54.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "PPG/2018/page_60.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PPG/2018/page_60.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "PPG/2018/page_79.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RCL/2005/page_40.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RCL/2005/page_40.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RCL/2005/page_40.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RCL/2006/page_37.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "RCL/2009/page_90.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "RCL/2009/page_90.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RCL/2009/page_90.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RCL/2011/page_16.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RCL/2011/page_16.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RCL/2012/page_17.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RCL/2012/page_80.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RCL/2012/page_80.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RCL/2013/page_17.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "RCL/2013/page_18.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RCL/2016/page_37.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "RCL/2017/page_38.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RE/2006/page_122.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2006/page_122.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RE/2006/page_31.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RE/2006/page_39.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2006/page_39.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2006/page_39.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RE/2006/page_39.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "RE/2010/page_120.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2010/page_120.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2010/page_120.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2010/page_138.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2010/page_138.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2010/page_138.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2010/page_138.pdf-5",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2010/page_138.pdf-6",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RE/2010/page_42.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RE/2012/page_123.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2012/page_123.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2012/page_31.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RE/2013/page_40.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "RE/2014/page_125.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RE/2014/page_125.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RE/2014/page_40.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RE/2016/page_141.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RE/2018/page_38.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "REGN/2010/page_68.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RL/2009/page_20.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2009/page_22.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2009/page_22.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2010/page_11.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2010/page_11.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2013/page_13.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2013/page_13.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2014/page_11.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2014/page_11.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2015/page_11.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RL/2015/page_9.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2015/page_9.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2018/page_9.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RL/2018/page_9.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RSG/2005/page_26.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RSG/2008/page_127.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2008/page_131.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RSG/2008/page_56.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RSG/2010/page_114.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2010/page_132.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "RSG/2010/page_135.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2010/page_157.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2012/page_121.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2012/page_121.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2012/page_124.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RSG/2012/page_124.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2013/page_16.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "RSG/2013/page_92.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2014/page_123.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2014/page_128.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "RSG/2014/page_73.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2014/page_95.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "RSG/2018/page_13.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "RSG/2018/page_139.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "RSG/2018/page_56.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SLB/2003/page_57.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLB/2003/page_57.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLB/2006/page_45.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLB/2006/page_82.pdf-1",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "SLB/2006/page_82.pdf-2",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "SLB/2009/page_46.pdf-3",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "SLB/2009/page_46.pdf-4",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "SLB/2009/page_57.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLB/2009/page_65.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLB/2009/page_65.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLB/2009/page_65.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "SLB/2010/page_90.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "SLB/2010/page_90.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLB/2010/page_90.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLB/2011/page_41.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLB/2011/page_56.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SLG/2002/page_56.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLG/2009/page_79.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SLG/2009/page_84.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "SLG/2009/page_84.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "SLG/2009/page_99.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLG/2009/page_99.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLG/2010/page_50.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLG/2010/page_81.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLG/2010/page_81.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "SLG/2010/page_81.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SLG/2010/page_90.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "SLG/2011/page_58.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SLG/2011/page_58.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLG/2011/page_58.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLG/2011/page_58.pdf-5",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SLG/2012/page_61.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLG/2012/page_87.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "SLG/2012/page_87.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLG/2013/page_133.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SLG/2013/page_133.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SLG/2013/page_133.pdf-5",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SLG/2017/page_110.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SLG/2017/page_110.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SLG/2017/page_114.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SLG/2017/page_114.pdf-5",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SLG/2018/page_45.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SNA/2007/page_80.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNA/2007/page_80.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNA/2007/page_80.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "SNA/2013/page_111.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNA/2013/page_111.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNA/2013/page_33.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SNA/2013/page_56.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNA/2013/page_59.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNA/2013/page_59.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNA/2013/page_59.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNA/2013/page_59.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNA/2013/page_93.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNA/2013/page_93.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNA/2013/page_93.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNA/2013/page_93.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNA/2018/page_33.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNA/2018/page_33.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SNPS/2003/page_39.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNPS/2003/page_39.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SNPS/2009/page_39.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "SNPS/2012/page_61.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNPS/2012/page_61.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNPS/2012/page_61.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNPS/2012/page_62.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SNPS/2012/page_62.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SNPS/2012/page_62.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SNPS/2013/page_61.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SPGI/2017/page_81.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STT/2001/page_36.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "STT/2001/page_41.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "STT/2001/page_74.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2001/page_74.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STT/2006/page_92.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STT/2006/page_92.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "STT/2007/page_65.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STT/2007/page_65.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "STT/2007/page_65.pdf-3",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "STT/2007/page_65.pdf-4",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "STT/2007/page_95.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STT/2012/page_42.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2012/page_42.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2012/page_42.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "STT/2013/page_107.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STT/2013/page_107.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "STT/2013/page_107.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STT/2013/page_54.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2013/page_54.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2013/page_54.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2013/page_54.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "STT/2013/page_71.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "STT/2013/page_71.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "STT/2014/page_69.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2014/page_69.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2014/page_99.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2014/page_99.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2017/page_100.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "STT/2017/page_100.pdf-2",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "STT/2017/page_101.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STT/2017/page_63.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2017/page_63.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STT/2017/page_63.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "STZ/2005/page_57.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "STZ/2005/page_57.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STZ/2010/page_51.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STZ/2010/page_51.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "STZ/2010/page_51.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "STZ/2010/page_51.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SWKS/2007/page_93.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SWKS/2007/page_93.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SWKS/2008/page_105.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SWKS/2010/page_105.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SWKS/2010/page_105.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SWKS/2010/page_105.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SWKS/2010/page_139.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SWKS/2010/page_139.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SWKS/2011/page_112.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SWKS/2011/page_112.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SWKS/2012/page_116.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "SWKS/2012/page_116.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "SYY/2006/page_26.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "SYY/2006/page_26.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "SYY/2006/page_68.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SYY/2006/page_68.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "SYY/2011/page_35.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SYY/2011/page_35.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "SYY/2014/page_16.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "SYY/2014/page_16.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "TFX/2006/page_50.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "TFX/2006/page_50.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "TFX/2014/page_44.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2014/page_44.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2014/page_44.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2014/page_74.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2014/page_74.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2014/page_74.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "TFX/2017/page_48.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2017/page_48.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2018/page_47.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2018/page_47.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2018/page_74.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2018/page_74.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2018/page_74.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TFX/2018/page_74.pdf-4",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "TMUS/2016/page_32.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "TMUS/2016/page_32.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "TMUS/2017/page_52.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "TMUS/2017/page_52.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "TMUS/2017/page_52.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "TMUS/2018/page_35.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TMUS/2018/page_35.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "TROW/2008/page_23.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "TROW/2009/page_23.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TROW/2009/page_24.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "TROW/2009/page_24.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "TROW/2009/page_24.pdf-3",
+      "reason": "unsupported_constant"
+    },
+    {
+      "id": "TROW/2011/page_13.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "TROW/2011/page_13.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "TROW/2013/page_25.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TXN/2017/page_55.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "TXN/2017/page_55.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UA/2011/page_42.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UA/2011/page_43.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "UA/2011/page_70.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UA/2011/page_71.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UAA/2017/page_52.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UAA/2017/page_52.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UAA/2018/page_40.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UAA/2018/page_40.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UNP/2010/page_25.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "UNP/2010/page_30.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UNP/2010/page_55.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UNP/2010/page_79.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UNP/2012/page_20.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "UNP/2012/page_23.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UNP/2012/page_24.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "UNP/2012/page_24.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "UNP/2012/page_29.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UNP/2012/page_29.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "UNP/2012/page_30.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UNP/2012/page_30.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UNP/2012/page_31.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "UNP/2012/page_34.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UNP/2012/page_34.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "UNP/2012/page_39.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UNP/2012/page_39.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UNP/2012/page_40.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UNP/2012/page_40.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UNP/2012/page_40.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UNP/2012/page_47.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UNP/2012/page_47.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UNP/2012/page_47.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UNP/2012/page_55.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UNP/2012/page_79.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "UNP/2017/page_23.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "UNP/2018/page_50.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "UPS/2005/page_43.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2005/page_43.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2007/page_103.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UPS/2007/page_103.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UPS/2007/page_32.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2009/page_33.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2009/page_84.pdf-1",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "UPS/2009/page_84.pdf-2",
+      "reason": "[<class 'decimal.ConversionSyntax'>]"
+    },
+    {
+      "id": "UPS/2010/page_33.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2010/page_33.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "UPS/2010/page_33.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2013/page_34.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "UPS/2013/page_34.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2013/page_34.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "UPS/2014/page_35.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2014/page_61.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UPS/2014/page_61.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "UPS/2015/page_108.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UPS/2015/page_35.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2016/page_34.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2016/page_34.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2016/page_34.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "UPS/2017/page_31.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "UPS/2017/page_31.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "V/2009/page_89.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "V/2012/page_123.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "V/2012/page_123.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "V/2016/page_132.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "V/2019/page_49.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "V/2019/page_49.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VLO/2011/page_127.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "VLO/2012/page_27.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VLO/2014/page_23.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VLO/2014/page_23.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VLO/2015/page_24.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VLO/2015/page_24.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VLO/2015/page_24.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VLO/2016/page_23.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VLO/2017/page_28.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VNO/2003/page_102.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "VNO/2003/page_102.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "VNO/2003/page_97.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "VNO/2006/page_95.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VNO/2007/page_192.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "VNO/2008/page_183.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "VNO/2008/page_183.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "VNO/2010/page_173.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "VNO/2010/page_88.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VNO/2010/page_88.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "VNO/2011/page_177.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "VNO/2011/page_187.pdf-1",
+      "reason": "target_unit_outside_deployment_grammar"
+    },
+    {
+      "id": "VNO/2011/page_187.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "VNO/2011/page_85.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VNO/2011/page_85.pdf-2",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "VRTX/2005/page_103.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VRTX/2005/page_103.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VRTX/2005/page_117.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2005/page_48.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "VRTX/2006/page_101.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VRTX/2006/page_112.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2006/page_112.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2006/page_113.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2006/page_121.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "VRTX/2006/page_121.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2006/page_71.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2006/page_71.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2006/page_71.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2006/page_71.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VRTX/2006/page_8.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VTR/2003/page_39.pdf-1",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "VTR/2003/page_39.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "VTR/2006/page_48.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VTR/2006/page_48.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "VTR/2006/page_48.pdf-3",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "VTR/2006/page_88.pdf-4",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "WELL/2017/page_116.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WELL/2017/page_116.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WELL/2017/page_116.pdf-3",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "WELL/2017/page_116.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WMT/2018/page_15.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WMT/2018/page_46.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "WMT/2018/page_46.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "WRK/2018/page_106.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2018/page_106.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "WRK/2018/page_106.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2018/page_106.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "WRK/2018/page_39.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "WRK/2018/page_39.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2018/page_39.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "WRK/2018/page_56.pdf-2",
+      "reason": "unsupported_reported_reference"
+    },
+    {
+      "id": "WRK/2018/page_56.pdf-4",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "WRK/2018/page_86.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "WRK/2018/page_86.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "WRK/2018/page_86.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "WRK/2019/page_103.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2019/page_103.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2019/page_103.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2019/page_135.pdf-1",
+      "reason": "unsupported_program"
+    },
+    {
+      "id": "WRK/2019/page_135.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2019/page_38.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "WRK/2019/page_38.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2019/page_38.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "WRK/2019/page_49.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2019/page_49.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "WRK/2019/page_49.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "WRK/2019/page_49.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2002/page_32.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ZBH/2002/page_32.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2002/page_46.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2002/page_46.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2002/page_46.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2004/page_44.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ZBH/2004/page_50.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ZBH/2004/page_68.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2007/page_54.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2007/page_54.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2007/page_54.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2007/page_80.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2007/page_80.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ZBH/2007/page_80.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ZBH/2007/page_80.pdf-4",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ZBH/2007/page_81.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2007/page_81.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2007/page_81.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2008/page_83.pdf-1",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ZBH/2008/page_83.pdf-2",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ZBH/2008/page_83.pdf-3",
+      "reason": "unretrieved_operand"
+    },
+    {
+      "id": "ZBH/2008/page_84.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2008/page_84.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2008/page_84.pdf-3",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ZBH/2008/page_84.pdf-4",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2008/page_86.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ZBH/2009/page_71.pdf-2",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ZBH/2009/page_88.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2009/page_88.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2013/page_68.pdf-1",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2013/page_68.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2013/page_68.pdf-3",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2015/page_35.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ZBH/2015/page_35.pdf-2",
+      "reason": "ambiguous_source_identity"
+    },
+    {
+      "id": "ZBH/2018/page_34.pdf-1",
+      "reason": "reported_execution_disagreement"
+    },
+    {
+      "id": "ZBH/2018/page_61.pdf-2",
+      "reason": "unsupported_constant"
+    }
+  ],
+  "split_policy": "SHA256 agere-adapt-42:report-group modulo 10 == 0 validation; otherwise train",
+  "splits": {
+    "train": {
+      "n": 1653,
+      "report_groups": 422,
+      "file": "research/tier8_v2/data/finqa-cell-adaptation-train-02.jsonl",
+      "sha256": "30039625e42d53c75c690700fed57c4d9809fc9229023fdbf7e444669dab95a5"
+    },
+    "validation": {
+      "n": 198,
+      "report_groups": 50,
+      "file": "research/tier8_v2/data/finqa-cell-adaptation-validation-02.jsonl",
+      "sha256": "369bc8ef2ca5238d21866ffca97ae1d1813de13ca392ed23c19c84bb736cb2a5"
+    }
+  },
+  "excluded_development_report_groups": [
+    "AAL/2013",
+    "AAL/2015",
+    "AAP/2011",
+    "AAP/2012",
+    "AAPL/2003",
+    "AAPL/2004",
+    "AAPL/2005",
+    "AAPL/2008",
+    "AAPL/2014",
+    "ABMD/2004",
+    "ABMD/2006",
+    "ABMD/2007",
+    "ABMD/2009",
+    "ADBE/2018",
+    "ADI/2011",
+    "AES/2001",
+    "AES/2002",
+    "AES/2003",
+    "AES/2015",
+    "AES/2016",
+    "AES/2017",
+    "ALLE/2016",
+    "ALXN/2007",
+    "AMAT/2013",
+    "AMAT/2014",
+    "AMT/2004",
+    "AMT/2005",
+    "AMT/2008",
+    "AMT/2010",
+    "AMT/2012",
+    "ANSS/2013",
+    "AON/2009",
+    "AON/2010",
+    "AON/2011",
+    "AON/2014",
+    "AOS/2004",
+    "APD/2013",
+    "APD/2014",
+    "APD/2016",
+    "APD/2018",
+    "APD/2019",
+    "APTV/2014",
+    "AWK/2013",
+    "BDX/2018",
+    "BDX/2019",
+    "BKR/2017",
+    "BLK/2012",
+    "BLK/2013",
+    "BLK/2014",
+    "BLK/2016",
+    "BLK/2017",
+    "BLL/2007",
+    "BLL/2010",
+    "C/2008",
+    "C/2010",
+    "C/2017",
+    "CAG/2008",
+    "CAT/2017",
+    "CB/2010",
+    "CDNS/2006",
+    "CDNS/2012",
+    "CDNS/2018",
+    "CMCSA/2015",
+    "CME/2010",
+    "CME/2012",
+    "CME/2017",
+    "CNP/2010",
+    "DISCA/2012",
+    "DISH/2013",
+    "DRE/2002",
+    "DRE/2007",
+    "DRE/2009",
+    "DRE/2013",
+    "DVN/2007",
+    "DVN/2014",
+    "ETFC/2007",
+    "ETFC/2011",
+    "ETFC/2013",
+    "ETFC/2014",
+    "ETR/2002",
+    "ETR/2003",
+    "ETR/2004",
+    "ETR/2008",
+    "ETR/2011",
+    "ETR/2013",
+    "ETR/2015",
+    "ETR/2016",
+    "ETR/2017",
+    "EW/2016",
+    "EW/2017",
+    "FBHS/2017",
+    "FIS/2007",
+    "FRT/2005",
+    "GIS/2012",
+    "GIS/2019",
+    "GPN/2009",
+    "GPN/2017",
+    "GS/2012",
+    "GS/2013",
+    "GS/2014",
+    "GS/2016",
+    "GS/2017",
+    "HIG/2008",
+    "HIG/2011",
+    "HII/2014",
+    "HII/2017",
+    "HOLX/2007",
+    "HOLX/2008",
+    "HOLX/2010",
+    "HOLX/2012",
+    "HOLX/2015",
+    "HUM/2017",
+    "HWM/2016",
+    "HWM/2017",
+    "ILMN/2007",
+    "INTC/2013",
+    "IP/2005",
+    "IP/2006",
+    "IP/2007",
+    "IP/2009",
+    "IP/2012",
+    "IPG/2008",
+    "IPG/2009",
+    "IPG/2015",
+    "JKHY/2014",
+    "JPM/2005",
+    "JPM/2007",
+    "JPM/2008",
+    "JPM/2009",
+    "JPM/2013",
+    "JPM/2014",
+    "JPM/2018",
+    "K/2013",
+    "KHC/2016",
+    "L/2015",
+    "LKQ/2010",
+    "LKQ/2016",
+    "LKQ/2018",
+    "LLY/2018",
+    "LMT/2005",
+    "LMT/2006",
+    "LMT/2010",
+    "LMT/2012",
+    "LMT/2013",
+    "LMT/2015",
+    "LMT/2016",
+    "LMT/2017",
+    "MA/2008",
+    "MAS/2012",
+    "MAS/2018",
+    "MMM/2005",
+    "MO/2012",
+    "MRO/2004",
+    "MRO/2006",
+    "MRO/2007",
+    "MRO/2008",
+    "MRO/2009",
+    "MRO/2011",
+    "MRO/2014",
+    "MRO/2015",
+    "MRO/2017",
+    "MS/2014",
+    "MS/2017",
+    "MSI/2006",
+    "MSI/2009",
+    "NKE/2016",
+    "NWS/2016",
+    "OKE/2008",
+    "OKE/2012",
+    "PKG/2009",
+    "PM/2014",
+    "PM/2015",
+    "PM/2017",
+    "PM/2018",
+    "PNC/2009",
+    "PNC/2011",
+    "PNC/2013",
+    "PNC/2015",
+    "PNC/2016",
+    "PNC/2018",
+    "PPG/2011",
+    "PPG/2013",
+    "RCL/2014",
+    "RE/2015",
+    "RE/2017",
+    "RSG/2009",
+    "RSG/2015",
+    "RSG/2016",
+    "RSG/2017",
+    "SLB/2012",
+    "SNA/2012",
+    "SNPS/2006",
+    "SPGI/2015",
+    "SPGI/2018",
+    "STT/2008",
+    "STT/2009",
+    "STT/2011",
+    "STZ/2006",
+    "SWKS/2006",
+    "SYY/2019",
+    "TFX/2015",
+    "TROW/2010",
+    "TSCO/2017",
+    "TSCO/2018",
+    "UA/2009",
+    "UA/2015",
+    "UAA/2016",
+    "UNP/2006",
+    "UNP/2007",
+    "UNP/2008",
+    "UNP/2009",
+    "UNP/2011",
+    "UNP/2013",
+    "UNP/2014",
+    "UNP/2015",
+    "UPS/2006",
+    "V/2008",
+    "V/2013",
+    "VLO/2018",
+    "VNO/2012",
+    "VRTX/2003",
+    "VTR/2007",
+    "ZBH/2003",
+    "ZBH/2017"
+  ],
+  "development_answers_used": false,
+  "test_opened": false,
+  "tokenizer_fitted": false,
+  "model_trained": false,
+  "serialization_policy": "Evidence keys sorted before target construction; every persisted row reloaded and source/target bindings revalidated.",
+  "supersedes": "cell-adaptation-data-01.json (invalid persisted A-ID mappings; never used for training)",
+  "limitations": [
+    "Numeric uniqueness is not semantic adjudication.",
+    "Eligibility biases toward available, <=4-operation source-grounded programs; no 1800-character demo cap.",
+    "Bare percentage-point annotation issues are not resolved by this export.",
+    "Capture exact deployment prompts and fit tokenized examples before training; measure applied adapters."
+  ]
+}

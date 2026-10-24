@@ -9,7 +9,7 @@ from decimal import InvalidOperation
 import hashlib
 import json
 
-from evidence_atoms import atom_catalog
+from evidence_atoms import atom_catalog, compile_plan
 from evidence_cells import cell_catalog, compile_cells
 from program_binding_domains import binding_domains
 from tier8_v2_demo_retrieval import BANK, report_group
@@ -17,6 +17,7 @@ from tier8_v2_demos import target_plan
 from tier8_v2_financial_pipeline import question_units
 from tier8_v2_finqa import packet
 from tier8_v2_sequence import inside
+from evidence_calculator import execute
 
 
 def sha(path):
@@ -30,6 +31,9 @@ def adaptation_split(source_id):
 
 def prepare(row):
     public = packet(row)
+    # A-IDs follow evidence iteration order. Canonicalize BEFORE labelling so
+    # JSON sort_keys and reloading cannot silently reassign source identities.
+    public["evidence"] = dict(sorted(public["evidence"].items()))
     atoms = atom_catalog(public["evidence"])
     target = target_plan(row, public, atoms)
     partial = binding_domains(row["qa"]["program"], atoms)
@@ -49,6 +53,21 @@ def prepare(row):
             "quality_scope": "Unique numeric-to-source mapping plus checked gold arithmetic/units; not independently adjudicated semantic labels."}
 
 
+def validate_prepared(row):
+    atoms = atom_catalog(row["public"]["evidence"])
+    saved = row["cell_view"]["catalog"]
+    if set(atoms) != set(saved) or any(atoms[key][field] != saved[key][field]
+            for key in atoms for field in ("value", "span_id", "context")):
+        raise ValueError("Persisted quantity IDs differ from source catalog")
+    cell = compile_cells(row["target"], row["cell_view"])
+    compiled = compile_plan(row["target"], atoms)
+    execution = execute(compiled["steps"], row["public"]["evidence"])
+    if execution["issues"] or cell["execution"]["issues"] or execution["value"] != cell["execution"]["value"]:
+        raise ValueError("Persisted target loses source consistency")
+    if cell["bindings"] != row["bindings"]:
+        raise ValueError("Persisted source bindings differ")
+
+
 def main():
     source, bank_path = inside(".local/datasets/finqa/train.json"), inside(BANK)
     bank = json.loads(bank_path.read_text())
@@ -56,8 +75,8 @@ def main():
         raise ValueError("Pinned training source changed")
     excluded = set(bank["excluded_report_groups"])
     root = inside("research/tier8_v2")
-    outputs = {split: root / "data" / f"finqa-cell-adaptation-{split}-01.jsonl" for split in ("train", "validation")}
-    audit_path = root / "evidence/cell-adaptation-data-01.json"
+    outputs = {split: root / "data" / f"finqa-cell-adaptation-{split}-02.jsonl" for split in ("train", "validation")}
+    audit_path = root / "evidence/cell-adaptation-data-02.json"
     if audit_path.exists() or any(p.exists() for p in outputs.values()):
         raise ValueError("Refusing to overwrite adaptation data")
     rows = json.loads(source.read_text())
@@ -82,6 +101,8 @@ def main():
             for row in examples:
                 if row["split"] == split:
                     stream.write(json.dumps(row, sort_keys=True) + "\n")
+        for line in path.read_text().splitlines():
+            validate_prepared(json.loads(line))
     report = {"source_sha256": sha(source), "bank_sha256": sha(bank_path),
               "code_sha256": {name: sha(inside("scripts/" + name)) for name in
                   ("tier8_v2_adaptation_data.py", "evidence_cells.py", "program_binding_domains.py",
@@ -92,6 +113,8 @@ def main():
                                   "file": str(path.relative_to(inside("."))), "sha256": sha(path)} for split, path in outputs.items()},
               "excluded_development_report_groups": sorted(excluded), "development_answers_used": False,
               "test_opened": False, "tokenizer_fitted": False, "model_trained": False,
+              "serialization_policy": "Evidence keys sorted before target construction; every persisted row reloaded and source/target bindings revalidated.",
+              "supersedes": "cell-adaptation-data-01.json (invalid persisted A-ID mappings; never used for training)",
               "limitations": ["Numeric uniqueness is not semantic adjudication.",
                   "Eligibility biases toward available, <=4-operation source-grounded programs; no 1800-character demo cap.",
                   "Bare percentage-point annotation issues are not resolved by this export.",

@@ -2,9 +2,10 @@ from copy import deepcopy
 from pathlib import Path
 import sys
 import unittest
+import json
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from tier8_v2_adaptation_data import adaptation_split, prepare
+from tier8_v2_adaptation_data import adaptation_split, prepare, validate_prepared
 
 
 class AdaptationDataTests(unittest.TestCase):
@@ -40,6 +41,14 @@ class AdaptationDataTests(unittest.TestCase):
         row["qa"]["answer"] = "400%"
         with self.assertRaisesRegex(ValueError, "outside_deployment_grammar"):
             prepare(row)
+
+    def test_serialized_reload_preserves_target_source_identities(self):
+        result = prepare(self.row)
+        validate_prepared(json.loads(json.dumps(result, sort_keys=True)))
+        reversed_evidence = dict(reversed(list(result["public"]["evidence"].items())))
+        result["public"]["evidence"] = reversed_evidence
+        with self.assertRaisesRegex(ValueError, "Persisted quantity IDs"):
+            validate_prepared(result)
 
 
 if __name__ == "__main__":

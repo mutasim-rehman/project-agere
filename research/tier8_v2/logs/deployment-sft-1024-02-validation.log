@@ -1,0 +1,3 @@
+761 persisted examples: source/target identities, actual deployment prompts, hashes, mask boundaries and recorded tokenizer parity validated
+661 train / 100 validation; report groups disjoint; overflow examples not truncated; no model calls or training
+Manual legacy prompt counts exceed actual special-token counts by 21 on all kept rows for both tokenizers

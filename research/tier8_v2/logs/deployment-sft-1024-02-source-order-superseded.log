@@ -1,0 +1,59 @@
+llama_context: n_ctx_per_seq (4096) > n_ctx_train (0) -- possible training context overflow
+llama_context: n_ctx_per_seq (4096) > n_ctx_train (0) -- possible training context overflow
+{
+  "input_sha256": {
+    "research/tier8_v2/data/finqa-cell-adaptation-train-01.jsonl": "b1faaa7ca96e2659e485b31085cee065dc5e60250e99c0c6cf2c5fa278e24648",
+    "research/tier8_v2/data/finqa-cell-adaptation-validation-01.jsonl": "7c3606f4f1992f9f21901ede3756ec11f371dca3f5a92dc2c3a5aaee66d7a8be"
+  },
+  "max_training_tokens": 1024,
+  "deployment_context": 4096,
+  "target_budget": 768,
+  "model_calls": 0,
+  "tokenization_policy": "add_bos=False, special=True; pinned Qwen no-auto-BOS/EOS/CLS/SEP policy verified against llama-cpp-python completion source",
+  "input_n": 1851,
+  "kept_n": 761,
+  "split_n": {
+    "train": 661,
+    "validation": 100
+  },
+  "profiles": {
+    "mas-3b-q4": {
+      "gguf_file": "qwen2.5-3b-instruct-q4_k_m.gguf",
+      "vocab_only": true,
+      "n_vocab": 151936,
+      "special_config": {
+        "add_bos": false,
+        "add_eos": false,
+        "cls": 151643,
+        "sep": -1
+      }
+    },
+    "sas-7b-q4": {
+      "gguf_file": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "vocab_only": true,
+      "n_vocab": 152064,
+      "special_config": {
+        "add_bos": false,
+        "add_eos": false,
+        "cls": 151643,
+        "sep": -1
+      }
+    }
+  },
+  "output_file": "research/tier8_v2/data/deployment-sft-1024-02.jsonl",
+  "output_sha256": "65061f71b0c93266f594cb7f908844c5a1e6d1d5c2233b0552adc20f66761267",
+  "code_sha256": {
+    "tier8_v2_adaptation_prompts.py": "5fc02b8f897b40ee737e7ddfdba8c208ddbb60a7fdf26fd5ef123fbb037174e0",
+    "tier8_v2_financial_pipeline.py": "df9d78ca001b0bb279be28ce2564e90c7546bbb352eb75d7b10ac65aab6004af",
+    "tier8_v2_run.py": "f68801e97171c0fadf855811b8c9d01434e53f471c497fa2757a2765cdc29ca2",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7"
+  },
+  "configuration": "Actual reference/compact/question-unit/causal deployment draft; no analysis, demos, selector or repair.",
+  "limitations": [
+    "Not the stronger 128/256-analysis configuration; evaluate adapted no-analysis arms explicitly.",
+    "Cell metadata is retained in source corpus but absent from this unchanged deployment prompt.",
+    "Teacher reasoning and verifier labels were not synthesized.",
+    "Require exact HF tokenizer parity with recorded input IDs before training.",
+    "No model training, adapter application or measured inference gain yet."
+  ]
+}

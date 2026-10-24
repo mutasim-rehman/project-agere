@@ -1,0 +1,4 @@
+train 1653 persisted quantity/source bindings and hashes validated
+validation 198 persisted quantity/source bindings and hashes validated
+All 620 existing demonstration strings preserve their original source ID ordering; no analogous serialization change
+All 59 live frozen inputs unchanged
