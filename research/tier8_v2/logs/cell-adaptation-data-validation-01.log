@@ -1,0 +1,3 @@
+train 1653 examples 422 report groups; hash and exclusion validated
+validation 198 examples 50 report groups; hash and exclusion validated
+Materialized splits disjoint; eligibility counts account for every source record; all 59 live frozen inputs unchanged

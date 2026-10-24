@@ -2,6 +2,34 @@
 
 ## Redevelopment — 24 October 2026
 
+### Train-only adaptation corpus with explicit binding quarantine
+
+- Added a structured-data exporter over all 6,251 pinned FinQA training records,
+  replacing the demo bank's 1,800-character cap with no character-length selection.
+  It excludes the 2,511 training records whose annual-report groups appear anywhere
+  in development, using the existing bank's group-exclusion metadata only.
+- Eligibility requires the existing checked <=4-operation arithmetic/unit target,
+  a unique numeric-to-source assignment from the strict partial compiler, target
+  units admitted by current question grammar, and successful cell-level execution.
+  Final targets never choose the first of multiple numerically compatible cells.
+  Numeric uniqueness does not independently adjudicate the intended semantics.
+- Exported 1,851 examples: 1,653 train across 422 report groups and 198 validation
+  across 50 groups. Split is fixed by SHA256('agere-adapt-42:' + report-group) modulo
+  10; groups cannot cross the split. No development answers/programs or test split
+  enter this construction. Full materialized hash/group/count checks pass.
+- Quarantined 559 ambiguous-binding examples and 46 target-unit/grammar conflicts;
+  all other rejection counts and IDs are retained. Existing source/parser and
+  reported/execution disagreements remain explicit rejections, not corrected data.
+  This eligibility biases the corpus and is not a new benchmark or semantic gold.
+- Output is structured data, not deployment-prompt-fitted SFT messages. Tokenizer
+  fitting, cell-aware deployment integration, training in a separate environment,
+  actual adapter application and both-arm evaluation remain undone. Training and
+  synthetic/formula-derived labels are established methods, not a novelty claim.
+- Full suite now passes 143 tests. The 59 live frozen inputs remain unchanged;
+  MAS 256-token analysis continues, followed serially by SAS. CPU model training
+  must not overlap the timing study. Source/data/code hashes and validation logs
+  are retained; original demo banks and experiment outputs are unchanged.
+
 ### Preserve table-cell identity through source compilation
 
 - Added evidence_cells.py as an independent, unused-by-live-runs module. It

@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 139 contract tests pass. They do not establish financial reasoning correctness.
+- 143 contract tests pass. They do not establish financial reasoning correctness.
 - Separate memory-monitored fixed-output repair harness is ready for plain versus
   proof feedback on the same algebraically flagged cohort. Original output tokens
   are debited; changed answers are reverified. Grammar/compatibility checks pass,
@@ -29,6 +29,19 @@ confirmation are not established. Historical results and raw runs remain preserv
 - A dedicated paired replay evaluator now verifies shared snapshots/cohorts,
   recomputes scores and triggers, checks token debits and separates fresh repair
   costs from recorded baseline costs. Its integration fixture uses mocked replies.
+
+## Adaptation data prepared; no training yet
+
+A separate train-only exporter materialized 1,653 training examples (422 report
+groups) and 198 validation examples (50 report groups), excluding every development
+report group. It quarantines ambiguous bindings instead of producing first-match
+source targets (559 rejected), checks deployment unit admissibility, and preserves
+all rejection counts/IDs. Source uniqueness is numerical, not semantic adjudication.
+Audit: evidence/cell-adaptation-data-01.json; independent materialized hash, split,
+exclusion and total-count checks pass. Exact deployment-prompt/tokenizer fitting,
+training, verified adapter application and comparative inference remain pending.
+All 59 frozen live inputs remain unchanged. This is a baseline-enabling corpus,
+not a demonstrated reasoning gain or original method.
 
 ## Source-cell foundation (not used in the live sequence)
 
