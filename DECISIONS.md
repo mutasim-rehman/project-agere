@@ -2,6 +2,23 @@
 
 ## Redevelopment — 24 October 2026
 
+### Full original-MAS formula-analysis result
+
+- Original 1.5B MAS analysis completed 24/24, peak RSS 5,245,755,392 bytes:
+  1 correct and correctly delivered, 17 wrong deliveries, 6 withheld, 5692 output
+  tokens. All 24 programs execute with lexical source support, yet 23 are wrong.
+  Relative to its no-analysis baseline, correctness is unchanged at 1/24, with
+  one newly correct case and one regression; wrong deliveries increase 13 to 17.
+  This is a negative result, not evidence that longer reasoning helps this model.
+- Extended exact influence diagnostics: four programs have canceled source-value
+  influence, including three wrong deliveries, and no correct flagged case in
+  this development slice. This is an observed diagnostic association; annotated
+  training ambiguity and legitimate cancellation still prohibit a blanket gate.
+- The frozen controller has started the matched 3B full 24-case analysis after
+  valid completion of the 1.5B run. The SAS table-complete run remains next.
+  All 46 frozen inputs are unchanged; current diagnostics only add new offline
+  code/artifacts outside that execution path. No confirmatory claims are made.
+
 ### Exact functional-influence diagnostic
 
 - Added an offline bounded rational-polynomial audit of source-reference programs.

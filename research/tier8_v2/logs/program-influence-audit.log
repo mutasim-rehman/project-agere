@@ -7,7 +7,7 @@
       "cases_with_cancelled_source_value_influence": 2,
       "flagged_correct_cases": 0,
       "flagged_wrong_deliveries": 1,
-      "max_analysis_seconds": 0.0026584349980112165,
+      "max_analysis_seconds": 0.00018460800129105337,
       "case_file_sha256": "69131a242fcc19c6ba8456983c121385ef07813354392e83c2bd0b8182178254"
     },
     {
@@ -17,7 +17,7 @@
       "cases_with_cancelled_source_value_influence": 0,
       "flagged_correct_cases": 0,
       "flagged_wrong_deliveries": 0,
-      "max_analysis_seconds": 0.0014717459998792037,
+      "max_analysis_seconds": 0.00026954900022246875,
       "case_file_sha256": "2593086efab8da7647b89c5083f76f86c8d653abc4048bbd338c142596965860"
     },
     {
@@ -27,7 +27,7 @@
       "cases_with_cancelled_source_value_influence": 2,
       "flagged_correct_cases": 0,
       "flagged_wrong_deliveries": 2,
-      "max_analysis_seconds": 0.00020256300194887444,
+      "max_analysis_seconds": 0.0001837169984355569,
       "case_file_sha256": "14bb9ff350ddc55a7cacd8308ac4f0baf2c6335f71bb63d0a1cfeb8777e53354"
     },
     {
@@ -37,8 +37,18 @@
       "cases_with_cancelled_source_value_influence": 0,
       "flagged_correct_cases": 0,
       "flagged_wrong_deliveries": 0,
-      "max_analysis_seconds": 0.00011540799823706038,
+      "max_analysis_seconds": 7.897899922681972e-05,
       "case_file_sha256": "735deef51ce94bd9bc76e4ea176fe1191c17c6f37b7500a4b184f514ff5c231e"
+    },
+    {
+      "run": "finqa-mas-analysis-dev24-01",
+      "n": 24,
+      "analyzed": 24,
+      "cases_with_cancelled_source_value_influence": 4,
+      "flagged_correct_cases": 0,
+      "flagged_wrong_deliveries": 3,
+      "max_analysis_seconds": 0.001278761999856215,
+      "case_file_sha256": "6f341604054459dc2f701055f87631b5275e8851d73f8549cae975f12a6af090"
     }
   ],
   "training_cancelled_or_unknown_examples": 4
