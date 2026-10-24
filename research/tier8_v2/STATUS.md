@@ -1,106 +1,68 @@
 # Research checkpoint — 24 October 2026
 
-Goal remains active. A novel, useful repair method and publication-quality evidence
-are not established. Do not mark the goal complete from these development results.
+Goal remains active. Useful novelty, a validated repair gain and publication-quality
+confirmation are not established. Historical results and raw runs remain preserved.
 
-## Infrastructure and code
+## Current implementation
 
-- Local source-built llama-cpp-python 0.3.16, verified pinned GGUFs, CPU inference.
-- Nominal sampled process-tree RSS ceiling 6.40 decimal GB; output cap 2048/case.
-- Three MAS roles can share identical weights; each call resets KV state.
-- Bounded cited arithmetic, source-pointer plans, causal grammar, unit controls,
-  compact catalogs, graph-preserving patches, training-only demonstrations.
-- Optional 128/256-token formula/measure analysis is implemented. A two-case MAS
-  128-token smoke completed 0/2 correct, both wrongly delivered; both analysis
-  stages reached their token limit. Default zero preserves the common baseline.
-- Matching SAS analysis smoke completed 2/2 reported-answer matches (1/2 raw
-  execution matches), both correctly delivered, versus 0/2 in its baseline prefix.
-  Both analysis calls reached their allowance. Larger development testing remains.
-- 88 tests pass. These checks establish contracts, not financial correctness.
-- A separate endpoint selector offers KEEP or an earlier computed result, with
-  exact prefix preservation. The offline audit now uses this implementation.
-  It is not integrated into the frozen runner or real-model-tested yet; caller
-  token accounting and post-selection verification remain required for deployment.
-- Optional training-sketch planner chooses a retrieved formula and binds its
-  variables to current quantities. Preserves operations/constants/units and logs
-  choice versus bindings. All 24 schemas compile; real-model gains unmeasured.
-- Offline strict-shape diagnostic: retrieved top-two sketches match the annotated
-  program+unit shape in 10/24 cases; the full bank matches 15/24. Alternative
-  equivalent programs are not counted; this is not achieved accuracy. Five
-  unrepresentable/discordant references remain in the denominator with reasons.
-- Optional question-only BM25 demonstration retrieval uses 620 eligible training
-  examples, excluding all annual reports in development. MAS smoke remains 0/2
-  correct, one wrong delivery and one withheld; both demos fit each prompt. Fixed
-  demonstrations remain available. Proposed and fitted example IDs are logged.
-- Shared 1.5B-verifier MAS smoke also remains 0/2 correct, both wrongly delivered;
-  peak RSS 3.862 GB. Greater verifier size alone did not fix semantic checking.
-- A gold-free dependency-reconnection selector is implemented and unit-tested.
-  It offers KEEP plus at most seven single-edge alternatives and rechecks the
-  selected program. Actual model-selected repair gains remain unmeasured.
-- Use ignored .local/git-askpass with .env for milestone Git pushes. Do not expose
-  credentials or touch the user's unrelated .GITIGNORE.
+- Source-built llama-cpp-python 0.3.16; pinned official weights and training data.
+- CPU, F16 KV, context 4096 for FinQA, 2048 output tokens per case; nominal sampled
+  parent+worker RSS cap 6.40 decimal GB. This simulates an 8 GB tier on a larger host.
+- Source-pointer arithmetic, causal grammar, compact/full catalogs, unit controls,
+  deterministic execution, verification and full/patch/edge repair baselines.
+- Fixed or question-retrieved training demos; 620 retrieved examples exclude all
+  annual-report groups represented anywhere in development. Example IDs are logged.
+- Direct generation or retrieved-sketch/source-binding planner; optional budgeted
+  formula analysis. These are stronger known baselines, not originality claims.
+- Separate exact-prefix endpoint selector is implemented, with KEEP and immutable
+  retained calculations. Pipeline integration and real-model evaluation are pending.
+- Optional 3B Q4 drafter profile is implemented as a separately labelled model-
+  allocation control. Weights verified (2,104,932,768 bytes); no fit/quality claim yet.
+- 90 contract tests pass. They do not establish financial reasoning correctness.
 
-## Completed measurements
+## Completed development measurements
 
-- Original synthetic rules: 150/150; temporal KYC rules: 24/24. Treat as regression
-  suites, not the main argument that financial LLMs are useful.
-- Four-case temporal KYC: MAS 1/4 correct and 1 correct delivery after controls;
-  SAS 3/4 correct and 2 correct deliveries. Patch repair gained nothing in either.
-- MAS distinct-instance repeats breached 6.4 GB; shared setup fits near 5.14 GB.
-- Initial FinQA debug recipes (two cases) exposed source-supported wrong arithmetic,
-  format mistakes and false verifier accepts. Raw runs are preserved.
-- Full first-24 FinQA MAS baseline with compact causal references and two training
-  examples: 1/24 correct, 1 correct delivery, 13 wrong deliveries, 10 withheld.
-  All 24 programs were source-supported/executable; peak RSS 5.248 GB; no truncation.
-  Raw-execution and reported-answer metrics both have one match.
-- Matching SAS baseline completed: 7/24 reported-answer matches, 6/24 raw execution
-  matches, 7 correct deliveries, 6 incorrect deliveries, 11 withheld. Peak RSS
-  5.132 GB; 2059 generated tokens; no stage truncation. The paired success
-  difference is +6/24 for SAS, exploratory exact McNemar p=0.0703.
-- Completed graph audit finds only one oracle-correctable SAS error and zero MAS
-  errors under the bounded reconnection candidate set. This is a narrow mechanism,
-  not a promising general solution to the present semantic reasoning failures.
-- A separate completed prefix audit finds two potentially recoverable errors in
-  each arm by selecting an earlier result while retaining the original unit.
-  This is oracle candidate coverage only; no endpoint selector has been evaluated.
-- Post-hoc year-range operand flags occur in 9 MAS and 1 SAS baseline cases.
-  They are not date labels: 18 annotated training examples need quantities in
-  the same range. No blanket filter or source rewriting was introduced.
-- Shared retrieval includes all annotated evidence in 19/24 cases. Two reference
-  records disagree; all remain included with separate metrics.
-- Both selected training demonstration pages and annual-report groups are absent
-  from the entire development split; their IDs and source hashes are recorded.
+- Original synthetic rules: 150/150; temporal KYC rules: 24/24. Use as regression
+  suites, not main evidence of useful LLM reasoning. Four-case KYC repair gave no gain.
+- FinQA first-24 MAS direct baseline: 1 correct, 1 correct delivery, 13 wrong
+  deliveries, 10 withheld; all programs executable/source-supported; peak RSS 5.248 GB.
+- Matching SAS direct baseline: 7 reported-answer matches, 6 raw execution matches,
+  7 correct deliveries, 6 wrong deliveries, 11 withheld; peak RSS 5.132 GB.
+- Full SAS formula-analysis ablation: 13 reported-answer matches, 8 raw execution
+  matches, 13 correct deliveries, 5 wrong deliveries, 6 withheld; peak RSS 5.132 GB.
+  Primary metric gained six cases with zero losses; exploratory McNemar p=0.03125.
+  Output tokens 2059 to 5135; prompt tokens 73469 to 98085. All 24 analysis calls
+  reached the 128-token allowance. This is reused development data, not confirmation.
+- MAS two-case controls: analysis 0/2, larger 1.5B verifier 0/2, retrieved demos 0/2,
+  sketch planner 0/2. SAS sketch planner 1/2 plus one abstention. All fit the cap.
+- Shared retrieval includes all annotated evidence in 19/24. Two numerical
+  references disagree; retain all cases and report declared-unit and raw metrics.
+- The frozen serial sequence completed; its journal and all three run artifacts
+  are committed. Source edits may resume. No old worker needs restarting.
 
-## Live run
+## Mechanism diagnostics
 
-Full SAS formula-analysis ablation: research/tier8_v2/runs/finqa-sas-analysis-dev24-01
-Exec session: 14672. Revalidate its worker process before calling it stopped.
-24 development cases, 128 analysis tokens, fixed demonstrations; matches the
-no-analysis baseline otherwise. The debug prefix is reused development data.
-Partial output is not a final result. Do not launch competing inference here.
+- Strict sketch+unit shape matches: retrieved top two cover 10/24, whole bank 15/24.
+  Equivalent formulas are not counted. This is expressibility, not achieved accuracy.
+- Single-edge reconnection oracle coverage: zero MAS and one SAS error. Endpoint
+  prefixes contain a correct answer in two errors per arm with original units fixed.
+  These are oracle upper bounds; no model-selected repair gains are established.
+- Post-hoc year-range operands occur in nine MAS and one SAS baseline cases.
+  Eighteen annotated training examples require the same numeric range, so no
+  blanket numeric filter or source-number rewriting was introduced.
 
-Prepared serial follow-up plan: data/sketch-smokes-sequence-01.json. It identifies
-monitor PID 68882 and its creation time, then requires valid completion before MAS
-and SAS two-case sketch diagnostics. The source/data hashes are frozen: avoid code
-or data edits until completion or explicitly invalidate/replace this plan.
-Controller is now live: exec session 83583, PID 76671; journal/log prefix
-logs/sketch-smokes-sequence-01. It verified the dependency identity and is waiting.
-New offline prefix-audit code is not a deployment input; frozen inputs are unchanged.
+## Next measurements
 
-## Next steps
+1. Test the larger quantized MAS drafter under actual memory monitoring, with its
+   profile and changed precision explicitly separated from the original FP16 study.
+2. Integrate bounded endpoint selection with the shared token ledger and post-edit
+   verification; compare gains, regressions and costs against full regeneration.
+3. Broaden development evaluation after positive diagnostics, then freeze systems
+   and new confirmatory data. Stronger verification and KYC/credit coverage remain.
 
-1. Preserve the completed SAS run and paired analysis; do not infer a general
-   architecture winner from these development cases.
-2. Validate budgeted formula analysis in actual inference, then evaluate it in both
-   arms with the same recipe. Strong baselines must separate reasoning from syntax.
-3. Investigate stronger resident-model verification and FinMAN-style staged formula
-   planning. Current tiny-critic PASS decisions are not trustworthy.
-4. Evaluate whole-program retry, local repair, and independent re-extraction after
-   strong generation works. Measure false locks and harm as well as gains.
-5. Complete closer-prior review, develop a demonstrably useful distinction, freeze
-   new confirmatory systems/data, and evaluate beyond the current development slice.
+FinMAN, BudgetVerify, CoVe, BRA-Audit, ThinkBrake and program induction are close
+priors. Strict change preservation still needs a useful distinction against them.
+No new sealed confirmatory evaluation exists; the FinQA test split remains unopened.
 
-FinMAN, CoVe, BRA-Audit and financial program induction are close priors; do not
-claim those established concepts as novel. Read RELATED_WORK_MATRIX.md and
-NOVELTY_AUDIT.md. No new frozen confirmatory evaluation exists. The old test split
-has not been opened during redevelopment. Broader KYC/credit coverage is unfinished.
+Use .local/git-askpass with .env for milestone pushes; never expose credentials.
+Leave the unrelated user-owned .GITIGNORE untouched.

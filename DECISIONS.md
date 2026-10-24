@@ -2,6 +2,24 @@
 
 ## Redevelopment — 24 October 2026
 
+### Larger quantized drafter allocation control
+
+- Official Qwen 3B Q4_K_M weights downloaded and SHA-256 verified at revision
+  7dabda4d13d513e3e842b20f0d435c732f172cbe: 2,104,932,768 bytes,
+  hash 626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d.
+  Source/download log and a separate candidate manifest are preserved. Original
+  model manifests and historical configurations are unchanged.
+- Added optional MAS drafter-model 3b-q4; default remains 1.5b-f16. Verification
+  still selects the explicitly requested 0.5B or 1.5B checkpoint; selecting the
+  larger drafter cannot silently change verifier size. Per-case metadata records
+  actual drafter/verifier files and labels the model-allocation control separately.
+- This tests whether quantizing a larger drafter improves use of the same RAM
+  budget; it changes both model size and precision and is not a clean architecture
+  ablation or novelty claim. Memory fit and quality require actual inference.
+  Ninety contract tests pass, including distinct checkpoint loading and explicit
+  verifier identity. Next diagnostic uses the fixed first eight development cases,
+  128-token analysis, fixed training demos and the original 0.5B verifier; no repair.
+
 ### Completed reasoning and frozen sketch sequence
 
 - Full SAS 128-token analysis ablation completed 24/24 within peak RSS

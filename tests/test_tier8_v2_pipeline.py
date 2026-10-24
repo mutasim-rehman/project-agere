@@ -132,6 +132,23 @@ class PipelineTests(unittest.TestCase):
     def test_sas_file_selection_is_unaffected_by_mas_profile(self):
         self.assertEqual(model_files("sas"), model_files("sas", "1.5b", False))
 
+    def test_larger_quantized_drafter_does_not_silently_resize_verifier(self):
+        files = model_files("mas", "1.5b", False, "3b-q4")
+        self.assertEqual(files["drafter"], "qwen2.5-3b-instruct-q4_k_m.gguf")
+        self.assertEqual(files["verifier"], "qwen2.5-1.5b-instruct-native-f16.gguf")
+        self.assertNotIn("extractor", files)
+
+    def test_quantized_profile_loads_distinct_required_checkpoints(self):
+        calls = []
+        def fake_llama(**kwargs):
+            calls.append(kwargs)
+            return object()
+        with patch.dict(sys.modules, {"llama_cpp": SimpleNamespace(Llama=fake_llama, LlamaGrammar=object)}):
+            pair = Models("mas", 4096, "shared", use_selector=False, drafter_model="3b-q4")
+        self.assertEqual(len(calls), 2)
+        self.assertIsNot(pair.models["drafter"], pair.models["verifier"])
+        self.assertEqual(set(pair.models), {"drafter", "verifier"})
+
 
 if __name__ == "__main__":
     unittest.main()
