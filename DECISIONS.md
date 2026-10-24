@@ -19,6 +19,23 @@
   Eighty tests pass, including rejection of failed/partial/over-cap dependencies.
   This is execution plumbing, not a research contribution. Preserve frozen code
   and data until the queued experiments finish, or explicitly replace the plan.
+- Launched the sequence controller: exec session 83583, PID 76671. Its journal
+  confirms a verified-live wait on the identified monitor. No queued inference
+  has begun while the direct SAS run is active. Journal/log paths use the prefix
+  logs/sketch-smokes-sequence-01. Commit the completed journal with final results.
+- A new offline-only prefix auditor was added after freezing the plan; it is not
+  imported by deployment and none of the 38 frozen input files was changed.
+  Candidate prefixes use saved answer/evidence only; original declared unit is
+  fixed, and gold scores candidates afterward. The completed baseline audit finds
+  2/24 oracle-correctable errors in each arm: MAS Visa average payment volume and
+  PNC derivatives ratio; SAS Citi return and Devon amortization average. Correct
+  intermediates were followed by wrong extra operations. This exposes recovery
+  headroom missed by the earlier unused-edge-only audit, not achieved model gains.
+- Keep endpoint repair as a candidate for measurement after the frozen queue.
+  The phenomenon is not novel: ThinkBrake's published abstract studies correct
+  intermediate reasoning overwritten by later output and proposes a stopping
+  policy. A program-endpoint selector needs a useful measured distinction, rather
+  than calling intermediate-answer selection itself original.
 
 ### Training-sketch and source-binding baseline
 

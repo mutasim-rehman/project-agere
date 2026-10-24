@@ -56,6 +56,9 @@ are not established. Do not mark the goal complete from these development result
 - Completed graph audit finds only one oracle-correctable SAS error and zero MAS
   errors under the bounded reconnection candidate set. This is a narrow mechanism,
   not a promising general solution to the present semantic reasoning failures.
+- A separate completed prefix audit finds two potentially recoverable errors in
+  each arm by selecting an earlier result while retaining the original unit.
+  This is oracle candidate coverage only; no endpoint selector has been evaluated.
 - Shared retrieval includes all annotated evidence in 19/24 cases. Two reference
   records disagree; all remain included with separate metrics.
 - Both selected training demonstration pages and annual-report groups are absent
@@ -73,6 +76,9 @@ Prepared serial follow-up plan: data/sketch-smokes-sequence-01.json. It identifi
 monitor PID 68882 and its creation time, then requires valid completion before MAS
 and SAS two-case sketch diagnostics. The source/data hashes are frozen: avoid code
 or data edits until completion or explicitly invalidate/replace this plan.
+Controller is now live: exec session 83583, PID 76671; journal/log prefix
+logs/sketch-smokes-sequence-01. It verified the dependency identity and is waiting.
+New offline prefix-audit code is not a deployment input; frozen inputs are unchanged.
 
 ## Next steps
 
