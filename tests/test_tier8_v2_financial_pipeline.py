@@ -162,6 +162,36 @@ class FinancialTests(unittest.TestCase):
         self.assertFalse(result["repair_attempted"])
         self.assertEqual(len(result["stages"]), 2)
 
+    def test_endpoint_repair_overrides_false_pass_and_reverifies(self):
+        plan = {"decision": "ANSWER", "answer_unit": "number", "steps": [
+            {"op": "divide", "left": "A000", "right": "A001"},
+            {"op": "multiply", "left": "#0", "right": "A000"}]}
+        model = FakeModels([plan, self.passed, {"candidate_id": "P001"}, self.passed])
+        result = run_financial(self.public, model, "sas", "endpoint", representation="reference")
+        self.assertTrue(result["repair_accepted"])
+        self.assertEqual(result["plan"]["steps"], plan["steps"][:1])
+        self.assertEqual(result["execution"]["value"], "2")
+        self.assertEqual(result["repair_scope"], [1])
+        self.assertEqual(result["stages"][-1]["stage"], "verify_endpoint_repair")
+        self.assertFalse(result["endpoint_repair"]["gold_used"])
+
+    def test_endpoint_repair_does_not_spend_a_selection_call_on_one_step(self):
+        plan = {"decision": "ANSWER", "answer_unit": "number", "steps": [{"op": "divide", "left": "A000", "right": "A001"}]}
+        result = run_financial(self.public, FakeModels([plan, self.passed]), "sas", "endpoint", representation="reference")
+        self.assertFalse(result["repair_attempted"])
+        self.assertEqual(len(result["stages"]), 2)
+
+    def test_endpoint_selection_does_not_bypass_delivery_gate(self):
+        plan = {"decision": "ANSWER", "answer_unit": "number", "steps": [
+            {"op": "divide", "left": "A000", "right": "A001"},
+            {"op": "multiply", "left": "#0", "right": "A000"}]}
+        failed = deepcopy(self.passed)
+        failed["checks"]["operands"] = "FAIL"
+        failed["repair_kind"] = "REPLAN"
+        result = run_financial(self.public, FakeModels([plan, self.passed, {"candidate_id": "P001"}, failed]), "sas", "endpoint", representation="reference")
+        self.assertTrue(result["repair_accepted"])
+        self.assertFalse(result["delivered"])
+
 
 if __name__ == "__main__":
     unittest.main()

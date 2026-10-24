@@ -338,7 +338,7 @@ def worker(args, out):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--arm", choices=("sas", "mas"), required=True)
-    parser.add_argument("--repair", choices=("none", "full", "patch", "edge"), required=True)
+    parser.add_argument("--repair", choices=("none", "full", "patch", "edge", "endpoint"), required=True)
     parser.add_argument("--task", choices=("kyc", "finqa"), default="kyc")
     parser.add_argument("--data")
     parser.add_argument("--out", required=True)
@@ -375,8 +375,8 @@ def main():
         raise ValueError("Sketch baseline requires FinQA reference programs, retrieved demos and no repair")
     if args.analysis_tokens and args.task != "finqa":
         raise ValueError("Formula analysis is currently implemented for FinQA only")
-    if args.repair == "edge" and (args.task != "finqa" or args.program_mode != "reference"):
-        raise ValueError("Dependency reconnection requires FinQA reference programs")
+    if args.repair in ("edge", "endpoint") and (args.task != "finqa" or args.program_mode != "reference"):
+        raise ValueError("Bounded graph repair requires FinQA reference programs")
     if args.arm == "sas" and args.verifier_model != "0.5b":
         raise ValueError("SAS verification uses its own 7B checkpoint; verifier-model selects MAS only")
     if args.arm == "sas" and args.drafter_model != "1.5b-f16":
@@ -402,6 +402,7 @@ def main():
     sources.append(ROOT / "scripts/tier8_v2_sketches.py")
     sources.append(ROOT / "scripts/tier8_v2_candidate_model.py")
     sources.append(ROOT / "scripts/program_graph.py")
+    sources.append(ROOT / "scripts/program_endpoints.py")
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),
                 "code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                 "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),

@@ -14,11 +14,12 @@ confirmation are not established. Historical results and raw runs remain preserv
   annual-report groups represented anywhere in development. Example IDs are logged.
 - Direct generation or retrieved-sketch/source-binding planner; optional budgeted
   formula analysis. These are stronger known baselines, not originality claims.
-- Separate exact-prefix endpoint selector is implemented, with KEEP and immutable
-  retained calculations. Pipeline integration and real-model evaluation are pending.
+- Exact-prefix endpoint selector is integrated with KEEP, immutable retained
+  calculations, the shared output ledger and post-edit verification. Real-model
+  evaluation is pending; strong SAS has zero oracle prefix gains on these cases.
 - Optional 3B Q4 drafter profile is implemented as a separately labelled model-
   allocation control. Weights verified (2,104,932,768 bytes); no fit/quality claim yet.
-- 90 contract tests pass. They do not establish financial reasoning correctness.
+- 93 contract tests pass. They do not establish financial reasoning correctness.
 
 ## Completed development measurements
 
@@ -46,17 +47,23 @@ confirmation are not established. Historical results and raw runs remain preserv
   Equivalent formulas are not counted. This is expressibility, not achieved accuracy.
 - Single-edge reconnection oracle coverage: zero MAS and one SAS error. Endpoint
   prefixes contain a correct answer in two errors per arm with original units fixed.
-  These are oracle upper bounds; no model-selected repair gains are established.
+  The stronger SAS analysis baseline has zero oracle prefix gains. These are oracle
+  upper bounds; no model-selected repair gains are established. Endpoint repair is
+  currently a control, not a promising main contribution on the stronger system.
 - Post-hoc year-range operands occur in nine MAS and one SAS baseline cases.
   Eighteen annotated training examples require the same numeric range, so no
   blanket numeric filter or source-number rewriting was introduced.
 
-## Next measurements
+## Live run and next measurements
+
+Larger-drafter first-eight diagnostic: runs/finqa-mas-3b-analysis-dev8-01, exec
+session 40310, worker PID 117680. Validate its process/summary before any new model
+run. It loaded the pre-endpoint 5852a16 pipeline; manifest hashes remain preserved.
 
 1. Test the larger quantized MAS drafter under actual memory monitoring, with its
    profile and changed precision explicitly separated from the original FP16 study.
-2. Integrate bounded endpoint selection with the shared token ledger and post-edit
-   verification; compare gains, regressions and costs against full regeneration.
+2. Improve retrieval and measure binding. Endpoint selection is now integrated but
+   cannot improve the current stronger SAS slice even with oracle prefix selection.
 3. Broaden development evaluation after positive diagnostics, then freeze systems
    and new confirmatory data. Stronger verification and KYC/credit coverage remain.
 

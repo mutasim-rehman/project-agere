@@ -2,6 +2,29 @@
 
 ## Redevelopment — 24 October 2026
 
+### Endpoint integration and stronger-baseline falsification
+
+- Integrated optional endpoint repair in the financial pipeline: select with at
+  most 192 output tokens while reserving 192 for post-edit verification, all on
+  the existing shared ledger. A changed raw plan must compile to the exact
+  preserved prefix; it is reverified and remains subject to the delivery gate.
+  It can trigger despite an initial neural PASS, but cannot invent a new result.
+  Ninety-three tests pass, including false-PASS repair, no-call single-step KEEP
+  and rejection by the post-selection delivery gate. CLI restricts this primitive
+  to source-reference financial programs; sketch baseline remains no-repair only.
+- Extended the offline candidate audit to the stronger completed SAS analysis
+  baseline. Oracle prefix gains are 0/24 there, versus 2/24 in its weaker direct
+  baseline. Strong generation already eliminated the recoverable endpoint errors.
+  This rules out a positive endpoint-gain claim on the current strong SAS slice;
+  do not spend another full inference run pretending this is promising evidence.
+- Keep the implemented primitive as an explicit control, not the main candidate
+  contribution. New repair must survive strong generation; next priorities are
+  source retrieval and semantic binding errors. Broader task results are needed
+  before asserting the same failure pattern outside this development slice.
+- The larger-drafter first-eight run is live (exec 40310, worker PID 117680).
+  Its worker emitted stages before endpoint edits and retains its original
+  5852a16 code snapshot/hashes. No hot reload or competing inference occurs.
+
 ### Larger quantized drafter allocation control
 
 - Official Qwen 3B Q4_K_M weights downloaded and SHA-256 verified at revision

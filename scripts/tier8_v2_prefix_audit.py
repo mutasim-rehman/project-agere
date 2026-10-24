@@ -5,6 +5,7 @@ already constructed prefixes afterward, with the original declared unit fixed.
 This tests a possible answer-endpoint repair, not a claim of novel program slicing.
 """
 import hashlib
+import argparse
 import json
 from pathlib import Path
 
@@ -19,11 +20,16 @@ def prefixes(answer, evidence):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("runs", nargs="*", default=["finqa-mas-demos-dev24-01", "finqa-sas-demos-dev24-01", "finqa-sas-analysis-dev24-01"])
+    args = parser.parse_args()
     base = ROOT / "research/tier8_v2"
     public = {r["id"]: r for r in map(json.loads, (base / "data/finqa-development-public.jsonl").read_text().splitlines())}
     gold = {r["id"]: r for r in json.loads((base / "external/finqa/dataset-dev.json").read_text())}
     reports = []
-    for name in ("finqa-mas-demos-dev24-01", "finqa-sas-demos-dev24-01"):
+    for name in args.runs:
+        if Path(name).name != name:
+            raise ValueError("Run names must be directory basenames")
         path = base / "runs" / name
         summary = json.loads((path / "summary.json").read_text())
         if summary["status"] != "complete" or summary["peak_tree_rss_bytes"] > summary["cap_bytes"]:

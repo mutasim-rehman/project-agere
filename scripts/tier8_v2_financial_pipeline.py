@@ -13,6 +13,7 @@ from evidence_contract import TokenLedger
 from evidence_atoms import atom_catalog, reference_schema, reference_step_schema, compile_plan, patch_plan
 from program_graph import audit_graph, edge_candidates
 from tier8_v2_sketches import fit_sketches, choice_schema, instantiate_choice
+from program_endpoints import choose_endpoint
 
 
 def program_schema(evidence, units=("number", "percent", "fraction")):
@@ -190,7 +191,23 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
     accepted = False
     scope = set()
     edge_trace = None
-    if repair == "edge":
+    endpoint_trace = None
+    if repair == "endpoint":
+        candidate, endpoint_trace = choose_endpoint(answer, evidence, public["question"],
+            lambda prompt, output_schema: call(drafter, prompt, output_schema,
+                budget.allowance(192, reserve=192), "repair_endpoint_choice"))
+        needs_repair = endpoint_trace["attempted"]
+        accepted = endpoint_trace["accepted"]
+        if accepted:
+            length = len(candidate["steps"])
+            scope = set(range(length, len(plan["steps"])))
+            plan = deepcopy(plan)
+            plan["steps"] = plan["steps"][:length]
+            answer = decode(plan)
+            if answer != candidate:
+                raise ValueError("Endpoint repair changed more than the declared prefix")
+            review = verify(answer, "verify_endpoint_repair")
+    elif repair == "edge":
         pool = edge_candidates(answer, evidence) if not initial_execution["issues"] else []
         graph = audit_graph(answer["steps"]) if pool else {"unused_steps": []}
         # Rank structurally, never by gold: prefer reconnecting more dead work,
@@ -271,6 +288,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             "planner": planner, "sketch_choice": sketch_choice,
             "analysis_tokens_requested": analysis_tokens, "analysis_notes": notes,
             "edge_repair": edge_trace,
+            "endpoint_repair": endpoint_trace,
             "active_roles": sorted({s["role"] for s in stages}),
             "initial_verdict": initial_review, "final_verdict": review,
             "delivered": not execution["issues"] and good(review), "repair_attempted": repair != "none" and needs_repair,
