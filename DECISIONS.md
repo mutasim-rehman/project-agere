@@ -18,6 +18,20 @@
   is not necessarily the correct field value. Missing status needs explicit absence
   evidence. Neither limitation will be hidden by a success metric.
 - Credentials from .env are used only for Git authentication; never logged or committed.
+- Milestone 1: eight contract tests passed; commit 5db7756 pushed to origin/main.
+- Rule-only v1 development baseline scored 150/150 fully correct structured cases,
+  including 20 mismatch-positive cases and 51 missing fields, using zero generated
+  tokens. Deployment prediction was given neither labels nor calculator_inputs.
+  The original scorer was used only after prediction. Per-case evidence and a
+  SHA-256 summary are retained under research/tier8_v2/evidence/.
+- Consequence: v1 is a regression/smoke suite, not sufficient evidence for a useful
+  architecture contribution. Next data must include natural-language, multi-document
+  evidence selection, temporal precedence, and conflicts. Retain a rule-only baseline
+  and measure template/layout generalization; do not equate synthetic success with
+  financial deployment readiness.
+- Official pinned Qwen GGUF downloads are used for this reconstruction. Their F16
+  files may differ in size from the earlier locally converted weights; hashes and
+  actual fit must be recorded before claiming a reproduction of the old runtime.
 
 **Study:** `tier8-8gb-v1`  
 **SSD:** `H:\AGERE` (`AGERE_SSD_ROOT`)  

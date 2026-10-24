@@ -1,0 +1,11 @@
+{
+  "dataset": "agere-synth-v1/dev",
+  "n": 150,
+  "case_success": 1.0,
+  "mismatch_eligible": 20,
+  "missing_fields": 51,
+  "generated_tokens": 0,
+  "test_opened": false,
+  "cases_sha256": "9126e6ff5e2b4f131c55e335ea1ea0a76a5262e121116610f6fdc3e8c62d36a1",
+  "scope": "Structured facts only. Fixed templates; no prose quality or policy reasoning assessment."
+}
