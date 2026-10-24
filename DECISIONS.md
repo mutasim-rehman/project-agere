@@ -46,6 +46,12 @@
   token/call expenditure can differ across conditions and must be reported; only
   trigger policy and output ceilings are matched. No causal or novelty result is
   established by the plan or by unit tests.
+- Launched the pilot controller: exec session 19102, PID 146872. Its journal
+  confirms a verified-live wait on controller PID 121418 and matching creation
+  time. The SAS retrieval worker remains active; no repair inference has started.
+  All 53 frozen input hashes were revalidated after launch. Journal/log prefix:
+  logs/proof-feedback-pilot-01. Preserve completed journals/results at the next
+  measurement milestone; do not edit frozen code/data or start competing models.
 
 ### Full larger-drafter allocation result
 

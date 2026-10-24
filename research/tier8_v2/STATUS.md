@@ -91,10 +91,12 @@ analysis is now running. Journal/log prefix:
 logs/strong-baselines-sequence-02. Forty-six source/data hashes are frozen; do not
 edit those inputs or launch competing inference until completion/replanning.
 
-Prepared follow-up: data/proof-feedback-pilot-01.json, plain versus proof feedback
+Live waiting follow-up: data/proof-feedback-pilot-01.json, plain versus proof feedback
 on the better completed SAS baseline under a predefined aggregate selection rule.
 It waits for the baseline controller and retains all selected baseline cases.
 Fifty-three hashes freeze its inputs; actual repair results remain unmeasured.
+Controller exec session 19102, PID 146872; journal/log prefix
+logs/proof-feedback-pilot-01. Its dependency identity was verified live.
 
 1. Test the larger quantized MAS drafter under actual memory monitoring, with its
    profile and changed precision explicitly separated from the original FP16 study.
