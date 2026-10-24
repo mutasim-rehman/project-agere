@@ -2,6 +2,29 @@
 
 ## Redevelopment — 24 October 2026
 
+### Question-retrieved training demonstrations
+
+- Added a stronger known baseline: question-only BM25 retrieval over eligible
+  training demonstrations (k1=1.2, b=0.75, omit numeric tokens, deterministic ID
+  ties). Select up to two different annual-report groups; exact tokenizer fitting
+  still reserves 768 generation tokens. Both arms receive the same retrieval
+  policy and public question. The existing fixed examples remain an ablation.
+- Built 620 eligible examples from the pinned 6251-row training split. Excluded
+  all 2511 training rows whose company/year report group occurs anywhere in the
+  883-row development split before reading their training targets. Remaining
+  examples require executable <=4-operation targets, supported quantities, matching
+  training references, and <=1800 characters. Filtering shapes the demonstration
+  bank only; no evaluation cases are removed. Build counts/hashes are preserved.
+- Development IDs are used solely for source-group exclusion; development answers
+  and programs do not affect selection. Similar questions across different reports
+  remain eligible and are expected in a retrieval baseline. This is not evidence
+  of novel reasoning or proof against pretraining contamination.
+- Each case records proposed example IDs/scores separately from IDs that actually
+  fit the prompt. The bank and retrieval source code are hashed in run manifests.
+  Also added previously omitted program_graph.py to new-run code hashes. Historic
+  manifests are not rewritten. Seventy-three contract tests pass; model gains are
+  not yet measured. The existing SAS analysis worker is allowed to finish first.
+
 ### Bounded dependency-reconnection policy
 
 - Implemented actual gold-free selection among KEEP and at most seven executable

@@ -1,0 +1,21 @@
+{
+  "source_sha256": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+  "development_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "eligible_examples": 620,
+  "skipped": {
+    "[<class 'decimal.ConversionSyntax'>]": 116,
+    "example_longer_than_1800_chars": 1836,
+    "reported_execution_disagreement": 336,
+    "identity_only_program": 5,
+    "unsupported_program": 253,
+    "unretrieved_operand": 480,
+    "development_report_overlap": 2511,
+    "unsupported_reported_reference": 78,
+    "unsupported_constant": 11,
+    "constant_only_step": 4,
+    "unexecutable_target": 1
+  },
+  "development_answers_used": false,
+  "test_opened": false,
+  "selection": "question-only BM25, k1=1.2 b=0.75; numeric tokens omitted; stable IDs break ties; distinct report groups; <=1800 characters per example"
+}

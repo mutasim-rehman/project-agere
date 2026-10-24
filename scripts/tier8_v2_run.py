@@ -279,12 +279,22 @@ def worker(args, out):
         if len(gold) != len(gold_rows):
             raise ValueError("Duplicate financial evaluation IDs")
         demonstrations = []
+        demo_index = None
         if args.demos:
-            examples = json.loads(inside("research/tier8_v2/data/finqa-training-demos.json").read_text())["examples"][:args.demos]
+            from tier8_v2_demo_retrieval import BANK, DemoIndex, report_group
+            demo_path = BANK if args.demo_policy == "retrieved" else "research/tier8_v2/data/finqa-training-demos.json"
+            examples = json.loads(inside(demo_path).read_text())["examples"]
+            if args.demo_policy == "fixed":
+                examples = examples[:args.demos]
             dev_documents = {r["id"].rsplit("-", 1)[0] for r in gold_rows}
+            dev_groups = {report_group(r["id"]) for r in gold_rows}
             for example in examples:
                 if example["split"] != "train" or example["source_id"].rsplit("-", 1)[0] in dev_documents:
                     raise ValueError("Demonstration is not development-disjoint training data")
+                if args.demo_policy == "retrieved" and report_group(example["source_id"]) in dev_groups:
+                    raise ValueError("Retrieved demonstration overlaps a development report")
+            if args.demo_policy == "retrieved":
+                demo_index = DemoIndex(examples)
             demonstrations = examples
     for case in rows:
         if case.get("split") not in ("development", "dev"):
@@ -294,10 +304,14 @@ def worker(args, out):
         if args.task == "finqa":
             if public["question"] != gold[case["id"]]["qa"]["question"]:
                 raise ValueError("Public question differs from evaluation source")
+            selected_demos = demo_index.select(public["question"], args.demos) if demo_index else demonstrations
             result = run_financial(public, models, args.arm, args.repair, event_sink=sink,
                                    representation=args.program_mode, unit_mode=args.unit_mode, selector=args.selector,
-                                   causal_mode=args.causal_mode, catalog_style=args.catalog_style, demonstrations=demonstrations,
+                                   causal_mode=args.causal_mode, catalog_style=args.catalog_style, demonstrations=selected_demos,
                                    analysis_tokens=args.analysis_tokens)
+            result["demonstration_selection"] = {"policy": args.demo_policy,
+                "candidates": [{"source_id": e["source_id"], "score": e.get("retrieval_score")} for e in selected_demos],
+                "query_fields": ["question"] if demo_index else [], "development_answers_used": False}
             # Analysis output is budgeted by the same ledger inside run_financial.
             result["initial_score"] = evaluate_financial(gold[case["id"]], result["initial_answer"], result["initial_execution"])
             result["score"] = evaluate_financial(gold[case["id"]], result["answer"], result["execution"])
@@ -333,6 +347,7 @@ def main():
     parser.add_argument("--causal-mode", choices=("check", "grammar"), default="check")
     parser.add_argument("--catalog-style", choices=("full", "compact"), default="full")
     parser.add_argument("--demos", type=int, choices=(0, 1, 2), default=0)
+    parser.add_argument("--demo-policy", choices=("fixed", "retrieved"), default="fixed")
     parser.add_argument("--analysis-tokens", type=int, choices=(0, 128, 256), default=0)
     parser.add_argument("--verifier-model", choices=("0.5b", "1.5b"), default="0.5b")
     parser.add_argument("--worker", action="store_true")
@@ -345,6 +360,8 @@ def main():
         raise ValueError("Causal grammar and compact catalogs require reference programs")
     if args.demos and (args.task != "finqa" or args.program_mode != "reference"):
         raise ValueError("Training demonstrations require FinQA reference programs")
+    if args.demo_policy == "retrieved" and not args.demos:
+        raise ValueError("Retrieved demonstrations require --demos 1 or 2")
     if args.analysis_tokens and args.task != "finqa":
         raise ValueError("Formula analysis is currently implemented for FinQA only")
     if args.repair == "edge" and (args.task != "finqa" or args.program_mode != "reference"):
@@ -368,6 +385,8 @@ def main():
                ROOT / "scripts/tier8_v2_financial_pipeline.py", ROOT / "scripts/evidence_calculator.py", ROOT / "scripts/tier8_v2_finqa.py"]
     sources.append(ROOT / "scripts/evidence_atoms.py")
     sources.append(ROOT / "scripts/tier8_v2_demos.py")
+    sources.append(ROOT / "scripts/tier8_v2_demo_retrieval.py")
+    sources.append(ROOT / "scripts/program_graph.py")
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),
                 "code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                 "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
@@ -379,13 +398,16 @@ def main():
     if args.task == "finqa":
         manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()
         if args.demos:
-            demo_file = inside("research/tier8_v2/data/finqa-training-demos.json")
+            from tier8_v2_demo_retrieval import BANK
+            demo_file = inside(BANK if args.demo_policy == "retrieved" else "research/tier8_v2/data/finqa-training-demos.json")
             manifest["demonstrations_sha256"] = hashlib.sha256(demo_file.read_bytes()).hexdigest()
-            manifest["demonstration_source_ids"] = [e["source_id"] for e in json.loads(demo_file.read_text())["examples"][:args.demos]]
+            bank_ids = [e["source_id"] for e in json.loads(demo_file.read_text())["examples"]]
+            manifest["demonstration_source_ids"] = bank_ids if args.demo_policy == "retrieved" else bank_ids[:args.demos]
         manifest["task_policy"] = {"verification": "operand-operation-unit checks", "handoff": "fallible source-ID suggestion" if args.selector == "suggest" else "no selector; draft/verify pair",
                                    "selector": args.selector, "program_mode": args.program_mode, "unit_mode": args.unit_mode,
                                    "causal_mode": args.causal_mode, "catalog_style": args.catalog_style,
-                                   "demonstrations_requested": args.demos, "demonstration_policy": "training only; exact tokenizer fit reserves 768 generation tokens",
+                                   "demonstrations_requested": args.demos, "demonstration_policy": args.demo_policy,
+                                   "demonstration_fit": "training only; exact tokenizer fit reserves 768 generation tokens",
                                    "analysis_tokens": args.analysis_tokens,
                                    "verifier_checkpoint": model_files(args.arm, args.verifier_model).get("verifier", MODEL_FILES["sas"]["sas"]),
                                    "citations": "enumerated source and step IDs", "metric": "declared-unit reported answer with rounding; raw exe_ans separately"}

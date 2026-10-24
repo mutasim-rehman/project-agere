@@ -13,7 +13,10 @@ are not established. Do not mark the goal complete from these development result
 - Optional 128/256-token formula/measure analysis is implemented. A two-case MAS
   128-token smoke completed 0/2 correct, both wrongly delivered; both analysis
   stages reached their token limit. Default zero preserves the common baseline.
-- 68 tests pass. These checks establish contracts, not financial correctness.
+- 73 tests pass. These checks establish contracts, not financial correctness.
+- Optional question-only BM25 demonstration retrieval uses 620 eligible training
+  examples, excluding all annual reports in development. Model gains are untested;
+  fixed demonstrations remain available. Proposed and fitted example IDs are logged.
 - A gold-free dependency-reconnection selector is implemented and unit-tested.
   It offers KEEP plus at most seven single-edge alternatives and rechecks the
   selected program. Actual model-selected repair gains remain unmeasured.
