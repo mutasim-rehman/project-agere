@@ -1,0 +1,9 @@
+llama_context: n_ctx_per_seq (2048) < n_ctx_train (8192) -- the full capacity of the model will not be utilized
+{"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
+llama_context: n_ctx_per_seq (2048) < n_ctx_train (8192) -- the full capacity of the model will not be utilized
+{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
+{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": true}
+{"id": "EVIDENCE-DEV-0000", "success": false, "delivered": false, "tokens": 327}
+{"id": "EVIDENCE-DEV-0001", "success": false, "delivered": false, "tokens": 335}
+{"id": "EVIDENCE-DEV-0002", "success": true, "delivered": true, "tokens": 332}
+{"id": "EVIDENCE-DEV-0003", "success": false, "delivered": false, "tokens": 327}

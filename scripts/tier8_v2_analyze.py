@@ -49,6 +49,7 @@ def paired(left, right):
     return {"n": len(ids), "right_minus_left_success": sum(differences) / len(ids),
             "paired_bootstrap_95_interval": [boot[249], boot[9749]], "right_only_correct": wins,
             "left_only_correct": losses, "exact_mcnemar_p": exact_p,
+            "interval_caution": "No discordant cases; a degenerate bootstrap interval does not establish equivalence." if not discordant else "Development sample only; assess sampling and template dependence before generalizing.",
             "note": "Exploratory development comparison; no multiple-comparison adjustment or publication claim."}
 
 

@@ -31,6 +31,15 @@
   reset KV state before every call for both arms. Label shared versus distinct
   residency explicitly. Sharing weights is deployment engineering, not a novelty
   claim; role-specific fine-tuned weights would require separate instances.
+- Shared resident pilot `mas-shared-independent-field-smoke-04` completed under
+  peak RSS 5,144,936,448 bytes. Complete correct cases remain 1/4; correct delivered
+  cases improved from 0/4 to 1/4, with no incorrect deliveries in either run. All
+  four cases are the same, so no accuracy improvement is established. Inference
+  tokens rose from 1,222 to 1,321. This combined intervention needs ablations and
+  larger evaluation; it is not evidence of novelty.
+- Next run tests transactional patch repair on the same four development cases.
+  The 7B first shard has now passed the official SHA-256 check; second shard is
+  downloading. The SAS arm will receive the same compact schemas and field checks.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

@@ -37,6 +37,6 @@ ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 31 tests in 0.010s
+Ran 31 tests in 0.018s
 
 OK
