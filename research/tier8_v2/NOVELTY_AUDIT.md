@@ -4,6 +4,14 @@ This is a working research assessment, not a novelty certificate.
 
 ## Current falsification and next diagnostic
 
+The controlled real-model proof pilot is now complete. On the stronger SAS output,
+plain retry and symbolic feedback both made zero corrections and withheld the same
+one wrong answer. Proof has no demonstrated accuracy benefit over retry. Only two
+cases triggered; lower output tokens alongside higher prompt tokens cannot support
+a general efficiency claim. Table-complete retrieval also left aggregate accuracy
+unchanged (13/24). These are negative development findings, not contributions.
+
+
 Endpoint repair has zero oracle gains on the stronger SAS analysis baseline;
 its apparent headroom on weaker generation does not establish a useful method.
 Exact functional-influence diagnostics now identify two wrong deliveries in that

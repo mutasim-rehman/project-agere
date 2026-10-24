@@ -1,0 +1,2 @@
+llama_context: n_ctx_per_seq (4096) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+{"role": "sas", "weights": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf", "shared_instance": false}

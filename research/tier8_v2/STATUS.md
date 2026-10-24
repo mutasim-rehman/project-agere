@@ -83,30 +83,26 @@ confirmation are not established. Historical results and raw runs remain preserv
   Eighteen annotated training examples require the same numeric range, so no
   blanket numeric filter or source-number rewriting was introduced.
 
-## Live run and next measurements
+## Completed follow-up and next measurements
 
-Larger-drafter first-eight diagnostic completed; no restart is needed. It loaded
-the pre-endpoint 5852a16 pipeline; its manifest hashes remain preserved.
+Both frozen controllers completed successfully; no inference worker is active.
+Table-complete SAS: 13/24 reported matches, 8 raw matches, 13 correct deliveries,
+5 wrong deliveries, 6 withheld, peak RSS 5.133 GB. One win and one loss against
+original-packet SAS analysis; more available operands did not improve the total.
 
-Serial plan data/strong-baselines-sequence-02.json is live: exec session 3195,
-controller PID 121418. Both matched MAS analyses completed; SAS table-complete
-analysis is now running. Journal/log prefix:
-logs/strong-baselines-sequence-02. Forty-six source/data hashes are frozen; do not
-edit those inputs or launch competing inference until completion/replanning.
+The predeclared pilot selected original-packet SAS. Plain and proof feedback both
+made zero corrections, with zero regressions. Both withheld MRO and retained STT's
+wrong answer: correct deliveries 13, wrong deliveries 4, withheld 7. Only two cases
+triggered. Proof consumed 83 fresh output tokens versus 172 plain, with more prompt
+tokens (3582 versus 3239). This is component replay, not fresh end-to-end inference.
+Validated paired results are in evidence/finqa-proofpilot-paired-01.json and
+evidence/finqa-sas-table-analysis-dev24-paired.json. No proof-feedback gain exists.
 
-Live waiting follow-up: data/proof-feedback-pilot-01.json, plain versus proof feedback
-on the better completed SAS baseline under a predefined aggregate selection rule.
-It waits for the baseline controller and retains all selected baseline cases.
-Fifty-three hashes freeze its inputs; actual repair results remain unmeasured.
-Controller exec session 19102, PID 146872; journal/log prefix
-logs/proof-feedback-pilot-01. Its dependency identity was verified live.
-
-1. Test the larger quantized MAS drafter under actual memory monitoring, with its
-   profile and changed precision explicitly separated from the original FP16 study.
-2. Improve retrieval and measure binding. Endpoint selection is now integrated but
-   cannot improve the current stronger SAS slice even with oracle prefix selection.
-3. Broaden development evaluation after positive diagnostics, then freeze systems
-   and new confirmatory data. Stronger verification and KYC/credit coverage remain.
+Audit the scorer's ratio/percentage contract before selecting further baselines.
+Historical metric/output files remain immutable; any revised scores must be
+versioned separately. Next baseline work must address source binding, longer
+reasoning and model adaptation, rather than presenting this negative pilot as
+novelty. Broader evaluation and independently sourced confirmation remain open.
 
 FinMAN, BudgetVerify, CoVe, BRA-Audit, ThinkBrake and program induction are close
 priors. Strict change preservation still needs a useful distinction against them.

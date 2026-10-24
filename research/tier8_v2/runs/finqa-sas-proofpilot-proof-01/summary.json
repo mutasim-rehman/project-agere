@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "execution_mode": "fixed_output_repair_component",
+  "exit_code": 0,
+  "n": 24,
+  "expected": 24,
+  "peak_tree_rss_bytes": 5126033408,
+  "cap_bytes": 6400000000,
+  "fresh_wall_seconds": 85.63145885099948,
+  "eligible_cases": 2,
+  "correct": 13,
+  "initial_correct": 13,
+  "delivered_correct": 13,
+  "delivered_incorrect": 4,
+  "withheld": 7,
+  "fresh_tokens": 83,
+  "combined_output_tokens": 5218,
+  "max_case_combined_output_tokens": 304,
+  "baseline_recorded_inference_seconds": 2588.1080111839983,
+  "fresh_inference_seconds": 82.48500633000003,
+  "gains": 0,
+  "regressions": 0
+}

@@ -1,0 +1,109 @@
+{
+  "execution_mode": "fixed_output_repair_component",
+  "n": 24,
+  "eligible_ids": [
+    "MRO/2007/page_149.pdf-2",
+    "STT/2011/page_83.pdf-1"
+  ],
+  "analysis_code_sha256": {
+    "tier8_v2_replay_analyze.py": "7fa6b8ca5cb5f429baf7ae706a1227d3d40577625a84e6688ae96afec92011d1",
+    "tier8_v2_analyze.py": "fb9e4450aace52800d1e738f1896a36a530e837f463fa73f80a949870774ff13",
+    "tier8_v2_financial_pipeline.py": "df9d78ca001b0bb279be28ce2564e90c7546bbb352eb75d7b10ac65aab6004af",
+    "program_influence.py": "34accb8aaf09780a9ab238ab0b85fb173a3f7350484e62769244a0b4bb260546",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+    "tier8_v2_sequence.py": "c90929038c478c5cde60e04b964655dc85ebf3281c9f73e21cc94c7b8c66e39f"
+  },
+  "paired_all_cases": {
+    "n": 24,
+    "right_minus_left_success": 0.0,
+    "paired_bootstrap_95_interval": [
+      0.0,
+      0.0
+    ],
+    "right_only_correct": 0,
+    "left_only_correct": 0,
+    "exact_mcnemar_p": 1.0,
+    "interval_caution": "No discordant cases; a degenerate bootstrap interval does not establish equivalence.",
+    "note": "Exploratory development comparison; no multiple-comparison adjustment or publication claim."
+  },
+  "paired_eligible_cases": {
+    "n": 2,
+    "right_minus_left_success": 0.0,
+    "paired_bootstrap_95_interval": [
+      0.0,
+      0.0
+    ],
+    "right_only_correct": 0,
+    "left_only_correct": 0,
+    "exact_mcnemar_p": 1.0,
+    "interval_caution": "No discordant cases; a degenerate bootstrap interval does not establish equivalence.",
+    "note": "Exploratory development comparison; no multiple-comparison adjustment or publication claim."
+  },
+  "plain": {
+    "n": 24,
+    "eligible": 2,
+    "correct": 13,
+    "raw_execution_matches": 8,
+    "delivered_correct": 13,
+    "delivered_incorrect": 4,
+    "withheld": 7,
+    "gains": 0,
+    "regressions": 0,
+    "fresh_output_tokens": 172,
+    "baseline_recorded_output_tokens": 5135,
+    "baseline_recorded_inference_seconds": 2588.1080111839983,
+    "fresh_prompt_tokens": 3239,
+    "fresh_inference_seconds": 85.8298394529993,
+    "fresh_model_calls": 3,
+    "fresh_truncated_stages": 0,
+    "max_case_combined_output_tokens": 343
+  },
+  "proof": {
+    "n": 24,
+    "eligible": 2,
+    "correct": 13,
+    "raw_execution_matches": 8,
+    "delivered_correct": 13,
+    "delivered_incorrect": 4,
+    "withheld": 7,
+    "gains": 0,
+    "regressions": 0,
+    "fresh_output_tokens": 83,
+    "baseline_recorded_output_tokens": 5135,
+    "baseline_recorded_inference_seconds": 2588.1080111839983,
+    "fresh_prompt_tokens": 3582,
+    "fresh_inference_seconds": 82.48500633000003,
+    "fresh_model_calls": 3,
+    "fresh_truncated_stages": 0,
+    "max_case_combined_output_tokens": 304
+  },
+  "fresh_worker_wall_seconds": [
+    89.0325074579996,
+    85.63145885099948
+  ],
+  "fresh_peak_tree_rss_bytes": [
+    5145825280,
+    5126033408
+  ],
+  "artifact_sha256": [
+    {
+      "manifest.json": "870a797188f9ec5899fd1aa43950a240d123f9f07dc813421f08300e7ecfe9d1",
+      "cases.jsonl": "9386c0b98786cd184c909cce9e2f739d33d9cdde1b2257a7674ac0af33767f06",
+      "scored_cases.jsonl": "b78923091eb3195cb4aadd3d0d5f580fb656e98dccb664cf02f73b0a68a3960c",
+      "summary.json": "2620080c743e71b7f71ae2a4dc03017f664e7f67a0142d5189afbdbff7bf4580"
+    },
+    {
+      "manifest.json": "51e2342bcd5bd27f192136723eb2e01a4ad2aa069b5a8d2dbdb2dbc287474789",
+      "cases.jsonl": "3815901d9fc5eb020f441fad293bee5304cfa51d1d81814295bf12e52de853db",
+      "scored_cases.jsonl": "897b09bf97bf1a0ad8f140affc2879650385d7275870793fa1e5a6859b473db6",
+      "summary.json": "58dcb12c727a5ac9e4a52bdf328642eb050736d628d7955109050877b387bfd9"
+    }
+  ],
+  "cautions": [
+    "Development replay only; not fresh end-to-end generation or confirmatory evaluation.",
+    "Same trigger/output ceilings; actual prompts, tokens and post-repair verification calls can differ.",
+    "Retained unflagged cases remain in the primary denominator. Eligible-only results are secondary.",
+    "Neither unchanged outputs nor zero discordance establishes statistical equivalence or novelty."
+  ]
+}

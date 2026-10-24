@@ -2,6 +2,26 @@
 
 ## Redevelopment — 24 October 2026
 
+### Completed retrieval and controlled feedback experiments
+
+- The frozen stronger-baseline sequence and its dependent proof pilot both
+  completed. Table-complete SAS analysis obtained 13/24 reported-answer matches,
+  8 raw execution matches, 13 correct deliveries, 5 wrong deliveries and 6 withheld.
+  Against the original-packet SAS analysis there was one primary win and one loss.
+  Peak RSS was 5,132,591,104 bytes; 5,359 output tokens and 2,758.61 inference seconds.
+  Better operand availability did not produce an aggregate gain on this slice.
+- The predeclared selection rule chose the original-packet SAS baseline. Two of
+  its 24 cases triggered algebraic feedback. Plain retry and proof feedback both
+  retained 13 correct answers and reduced wrong deliveries from 5 to 4 by changing
+  MRO to INSUFFICIENT; neither corrected an answer. STT remained wrong. Proof used
+  83 fresh output tokens versus 172 plain, but 3,582 prompt tokens versus 3,239.
+  This tiny development component replay establishes no accuracy advantage or
+  general efficiency advantage for proof feedback. Both paired analyses validate.
+- Historical scores use the original declared-unit reported-answer metric. A
+  potential mismatch between its accepted unit labels and the deployment prompt
+  is under audit. Preserve completed outputs and the original selection decision;
+  any corrected evaluation must have a separate explicit version and sidecar.
+
 ### Additional prior and input-availability checks
 
 - Inspected DCRC's main method/setup (arXiv:2605.31064v1): source-labelled task
