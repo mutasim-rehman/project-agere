@@ -12,7 +12,10 @@ are not established. Do not mark the goal complete from these development result
   compact catalogs, graph-preserving patches, training-only demonstrations.
 - Optional 128/256-token formula/measure analysis is implemented but has not yet
   been evaluated with real models. Default zero preserves the common baseline.
-- 57 tests pass. These checks establish contracts, not financial correctness.
+- 68 tests pass. These checks establish contracts, not financial correctness.
+- A gold-free dependency-reconnection selector is implemented and unit-tested.
+  It offers KEEP plus at most seven single-edge alternatives and rechecks the
+  selected program. Actual model-selected repair gains remain unmeasured.
 - Use ignored .local/git-askpass with .env for milestone Git pushes. Do not expose
   credentials or touch the user's unrelated .GITIGNORE.
 

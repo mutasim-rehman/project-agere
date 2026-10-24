@@ -14,8 +14,11 @@ The remaining candidate is an empirically useful **transactional field-repair
 contract under simultaneous RAM and token constraints**, evaluated in both SAS
 and MAS. It must be distinguished from graph-localized recovery through its
 field-level preservation rules, rejection behavior, and treatment of derived
-dependencies. The current implementation preserves unrelated fact entries and
-recomputes name mismatch; it does not yet provide a general dependency graph.
+dependencies. The KYC implementation preserves unrelated fact entries and
+recomputes name mismatch. The financial implementation now audits arithmetic
+dependencies and enumerates bounded single-edge reconnections, preserving
+operations, quantities, units and other edges. This is a candidate mechanism,
+not demonstrated novelty.
 
 ## Falsifiable hypotheses
 

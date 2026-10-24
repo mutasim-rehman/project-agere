@@ -140,6 +140,28 @@ class FinancialTests(unittest.TestCase):
         self.assertIn("Use profit divided", models.prompts[1])
         self.assertNotIn("Preliminary reasoning", models.prompts[2])
 
+    def test_edge_repair_can_override_false_pass_without_changing_other_nodes(self):
+        public = {"id": "EDGE", "question": "What percentage was the gain?",
+                  "evidence": {"S": "index at end 193.5; index at start 100"}, "retrieval": {"gold_used": False}}
+        plan = {"decision": "ANSWER", "answer_unit": "percent", "steps": [
+            {"op": "subtract", "left": "A000", "right": "A001"},
+            {"op": "divide", "left": "#0", "right": "A001"},
+            {"op": "multiply", "left": "#0", "right": "A001"}]}
+        model = FakeModels([plan, self.passed, {"candidate_id": "E001"}, self.passed])
+        result = run_financial(public, model, "sas", "edge", representation="reference")
+        self.assertTrue(result["repair_accepted"])
+        self.assertEqual(result["plan"]["steps"][:2], plan["steps"][:2])
+        self.assertEqual(result["plan"]["steps"][-1]["left"], "#1")
+        self.assertTrue(evaluate_financial({"qa": {"exe_ans": 0.935, "answer": "93.5%"}}, result["answer"], result["execution"])["case_success"])
+        self.assertFalse(result["edge_repair"]["gold_used"])
+        self.assertEqual(result["stages"][-1]["stage"], "verify_edge_repair")
+
+    def test_edge_policy_does_not_regenerate_programs_without_unused_nodes(self):
+        plan = {"decision": "ANSWER", "answer_unit": "number", "steps": [{"op": "divide", "left": "A000", "right": "A001"}]}
+        result = run_financial(self.public, FakeModels([plan, self.passed]), "sas", "edge", representation="reference")
+        self.assertFalse(result["repair_attempted"])
+        self.assertEqual(len(result["stages"]), 2)
+
 
 if __name__ == "__main__":
     unittest.main()

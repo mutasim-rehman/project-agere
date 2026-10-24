@@ -1,79 +1,13 @@
-test_causal_step_allows_only_earlier_grounded_results (test_evidence_atoms.AtomTests.test_causal_step_allows_only_earlier_grounded_results) ... ok
-test_column_year_is_context_not_copied_as_cell_value (test_evidence_atoms.AtomTests.test_column_year_is_context_not_copied_as_cell_value) ... ok
-test_no_quantities_only_permits_empty_abstention (test_evidence_atoms.AtomTests.test_no_quantities_only_permits_empty_abstention) ... ok
-test_patch_cannot_modify_a_locked_step (test_evidence_atoms.AtomTests.test_patch_cannot_modify_a_locked_step) ... ok
-test_patch_recomputes_dependent_step_without_editing_it (test_evidence_atoms.AtomTests.test_patch_recomputes_dependent_step_without_editing_it) ... ok
-test_source_pointers_copy_values_with_citations (test_evidence_atoms.AtomTests.test_source_pointers_copy_values_with_citations) ... ok
-test_unknown_reference_cannot_invent_a_value (test_evidence_atoms.AtomTests.test_unknown_reference_cannot_invent_a_value) ... ok
-test_cited_multistep_result_has_transitive_lineage (test_evidence_calculator.CalculatorTests.test_cited_multistep_result_has_transitive_lineage) ... ok
-test_constants_cannot_replace_all_evidence (test_evidence_calculator.CalculatorTests.test_constants_cannot_replace_all_evidence) ... ok
-test_decimal_before_sentence_period_is_not_lost (test_evidence_calculator.CalculatorTests.test_decimal_before_sentence_period_is_not_lost) ... ok
-test_future_reference_rejected (test_evidence_calculator.CalculatorTests.test_future_reference_rejected) ... ok
-test_invented_operand_rejected_despite_valid_arithmetic (test_evidence_calculator.CalculatorTests.test_invented_operand_rejected_despite_valid_arithmetic) ... ok
-test_numeric_units_and_accounting_negatives (test_evidence_calculator.CalculatorTests.test_numeric_units_and_accounting_negatives) ... ok
-test_atomic_repair_preserves_good_claims (test_evidence_contract.ContractTests.test_atomic_repair_preserves_good_claims) ... ok
-test_batch_with_bad_claim_is_rejected_atomically (test_evidence_contract.ContractTests.test_batch_with_bad_claim_is_rejected_atomically) ... ok
-test_boolean_is_not_calculator_number (test_evidence_contract.ContractTests.test_boolean_is_not_calculator_number) ... ok
-test_checker_does_not_need_labels (test_evidence_contract.ContractTests.test_checker_does_not_need_labels) ... ok
-test_ledger_reserves_and_enforces_budget (test_evidence_contract.ContractTests.test_ledger_reserves_and_enforces_budget) ... ok
-test_missing_needs_absence_evidence (test_evidence_contract.ContractTests.test_missing_needs_absence_evidence) ... ok
-test_repair_cannot_change_locked_claim (test_evidence_contract.ContractTests.test_repair_cannot_change_locked_claim) ... ok
-test_substring_is_not_numeric_evidence (test_evidence_contract.ContractTests.test_substring_is_not_numeric_evidence) ... ok
-test_edge_candidates_preserve_operations_and_other_operands (test_program_graph.GraphTests.test_edge_candidates_preserve_operations_and_other_operands) ... ok
-test_future_edge_is_rejected (test_program_graph.GraphTests.test_future_edge_is_rejected) ... ok
-test_live_snapshot_ignores_only_incomplete_tail (test_program_graph.GraphTests.test_live_snapshot_ignores_only_incomplete_tail) ... ok
-test_no_dead_steps_leaves_only_keep (test_program_graph.GraphTests.test_no_dead_steps_leaves_only_keep) ... ok
-test_pruning_renumbers_references_and_preserves_value (test_program_graph.GraphTests.test_pruning_renumbers_references_and_preserves_value) ... ok
-test_unused_intermediate_is_identified_without_gold (test_program_graph.GraphTests.test_unused_intermediate_is_identified_without_gold) ... ok
-test_valid_branching_uses_both_parents (test_program_graph.GraphTests.test_valid_branching_uses_both_parents) ... ok
-test_false_accept_is_not_hidden_by_support_gate (test_tier8_v2_analyze.AnalysisTests.test_false_accept_is_not_hidden_by_support_gate) ... ok
-test_false_lock_is_visible_despite_no_regression (test_tier8_v2_analyze.AnalysisTests.test_false_lock_is_visible_despite_no_regression) ... ok
-test_paired_identity_has_zero_difference (test_tier8_v2_analyze.AnalysisTests.test_paired_identity_has_zero_difference) ... ok
-test_unpaired_cases_are_rejected (test_tier8_v2_analyze.AnalysisTests.test_unpaired_cases_are_rejected) ... ok
-test_all_latent_answers_are_source_supported (test_tier8_v2_data.DataTests.test_all_latent_answers_are_source_supported) ... ok
-test_document_ids_do_not_reveal_source_roles (test_tier8_v2_data.DataTests.test_document_ids_do_not_reveal_source_roles) ... ok
-test_supported_stale_owner_is_semantically_wrong (test_tier8_v2_data.DataTests.test_supported_stale_owner_is_semantically_wrong) ... ok
-test_analysis_is_an_extra_budgeted_stage_not_gold_input (test_tier8_v2_financial_pipeline.FinancialTests.test_analysis_is_an_extra_budgeted_stage_not_gold_input) ... ok
-test_contradictory_review_is_rejected (test_tier8_v2_financial_pipeline.FinancialTests.test_contradictory_review_is_rejected) ... ok
-test_demonstrations_are_omitted_when_output_reserve_would_not_fit (test_tier8_v2_financial_pipeline.FinancialTests.test_demonstrations_are_omitted_when_output_reserve_would_not_fit) ... ok
-test_deployment_rejects_gold_fields (test_tier8_v2_financial_pipeline.FinancialTests.test_deployment_rejects_gold_fields) ... ok
-test_explicit_percent_unit_can_match_reported_answer_without_raw_match (test_tier8_v2_financial_pipeline.FinancialTests.test_explicit_percent_unit_can_match_reported_answer_without_raw_match) ... ok
-test_gold_does_not_rescale_prediction (test_tier8_v2_financial_pipeline.FinancialTests.test_gold_does_not_rescale_prediction) ... ok
-test_incorrect_unit_is_not_rescued_by_gold (test_tier8_v2_financial_pipeline.FinancialTests.test_incorrect_unit_is_not_rescued_by_gold) ... ok
-test_integer_percentage_reference_allows_display_rounding (test_tier8_v2_financial_pipeline.FinancialTests.test_integer_percentage_reference_allows_display_rounding) ... ok
-test_non_numeric_prediction_is_a_failure_not_an_exception (test_tier8_v2_financial_pipeline.FinancialTests.test_non_numeric_prediction_is_a_failure_not_an_exception) ... ok
-test_numeric_scoring_happens_after_generation (test_tier8_v2_financial_pipeline.FinancialTests.test_numeric_scoring_happens_after_generation) ... ok
-test_reference_patch_is_followed_by_verification (test_tier8_v2_financial_pipeline.FinancialTests.test_reference_patch_is_followed_by_verification) ... ok
-test_reference_pipeline_executes_source_choices_without_generated_values (test_tier8_v2_financial_pipeline.FinancialTests.test_reference_pipeline_executes_source_choices_without_generated_values) ... ok
-test_repair_cannot_modify_locked_step (test_tier8_v2_financial_pipeline.FinancialTests.test_repair_cannot_modify_locked_step) ... ok
-test_repair_preserves_unrelated_step_and_recomputes_dependents (test_tier8_v2_financial_pipeline.FinancialTests.test_repair_preserves_unrelated_step_and_recomputes_dependents) ... ok
-test_reported_and_execution_disagreements_remain_visible (test_tier8_v2_financial_pipeline.FinancialTests.test_reported_and_execution_disagreements_remain_visible) ... ok
-test_training_example_is_identified_and_separate_from_actual_question (test_tier8_v2_financial_pipeline.FinancialTests.test_training_example_is_identified_and_separate_from_actual_question) ... ok
-test_unit_constraint_comes_from_question_only (test_tier8_v2_financial_pipeline.FinancialTests.test_unit_constraint_comes_from_question_only) ... ok
-test_wrong_units_can_block_arithmetically_correct_program (test_tier8_v2_financial_pipeline.FinancialTests.test_wrong_units_can_block_arithmetically_correct_program) ... ok
-test_gold_annotations_cannot_influence_packet (test_tier8_v2_finqa.FinQATests.test_gold_annotations_cannot_influence_packet) ... ok
-test_original_table_row_identifiers_are_preserved (test_tier8_v2_finqa.FinQATests.test_original_table_row_identifiers_are_preserved) ... ok
-test_changed_weight_fails_integrity_gate (test_tier8_v2_pipeline.PipelineTests.test_changed_weight_fails_integrity_gate) ... ok
-test_citation_schema_uses_only_public_span_ids (test_tier8_v2_pipeline.PipelineTests.test_citation_schema_uses_only_public_span_ids) ... ok
-test_contradictory_pass_is_not_delivery_authorization (test_tier8_v2_pipeline.PipelineTests.test_contradictory_pass_is_not_delivery_authorization) ... ok
-test_field_verifier_unknown_blocks_delivery (test_tier8_v2_pipeline.PipelineTests.test_field_verifier_unknown_blocks_delivery) ... ok
-test_independent_drafter_does_not_see_wrong_proposal (test_tier8_v2_pipeline.PipelineTests.test_independent_drafter_does_not_see_wrong_proposal) ... ok
-test_larger_verifier_reuses_drafter_without_unused_selector (test_tier8_v2_pipeline.PipelineTests.test_larger_verifier_reuses_drafter_without_unused_selector) ... {"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
+..............................................................{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
 {"role": "verifier", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": true}
-ok
-test_patch_repair_needs_fresh_verdict (test_tier8_v2_pipeline.PipelineTests.test_patch_repair_needs_fresh_verdict) ... ok
-test_sas_file_selection_is_unaffected_by_mas_profile (test_tier8_v2_pipeline.PipelineTests.test_sas_file_selection_is_unaffected_by_mas_profile) ... ok
-test_semantic_verifier_fail_blocks_supported_answer (test_tier8_v2_pipeline.PipelineTests.test_semantic_verifier_fail_blocks_supported_answer) ... ok
-test_shared_weights_keep_three_roles_with_two_instances (test_tier8_v2_pipeline.PipelineTests.test_shared_weights_keep_three_roles_with_two_instances) ... {"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
+....{"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
 {"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
 {"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": true}
 {"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
 {"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
 {"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
-ok
-test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
-
+..
 ----------------------------------------------------------------------
-Ran 66 tests in 0.021s
+Ran 68 tests in 0.017s
 
 OK

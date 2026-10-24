@@ -11,6 +11,7 @@ import re
 from evidence_calculator import CONSTANTS, OPERATIONS, execute
 from evidence_contract import TokenLedger
 from evidence_atoms import atom_catalog, reference_schema, reference_step_schema, compile_plan, patch_plan
+from program_graph import audit_graph, edge_candidates
 
 
 def program_schema(evidence, units=("number", "percent", "fraction")):
@@ -177,7 +178,46 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
     needs_repair = bool(initial_execution["issues"]) or not good(review)
     accepted = False
     scope = set()
-    if repair != "none" and needs_repair:
+    edge_trace = None
+    if repair == "edge":
+        pool = edge_candidates(answer, evidence) if not initial_execution["issues"] else []
+        graph = audit_graph(answer["steps"]) if pool else {"unused_steps": []}
+        # Rank structurally, never by gold: prefer reconnecting more dead work,
+        # then a shorter backward edge. KEEP is always retained.
+        alternatives = sorted(pool[1:], key=lambda c: (
+            len(audit_graph(c["answer"]["steps"])["unused_steps"]),
+            c["edit"]["step"] - int(c["edit"]["after"]["value"][1:]),
+            c["id"]))
+        shown = pool[:1] + alternatives[:7]
+        needs_repair = len(shown) > 1
+        edge_trace = {"unused_steps": graph["unused_steps"], "pool_size": len(pool),
+                      "shown": [{"id": c["id"], "value": c["execution"]["value"], "edit": c["edit"]} for c in shown],
+                      "selection": None, "gold_used": False}
+        if needs_repair:
+            scope = {c["edit"]["step"] for c in shown if c["edit"]}
+            selection_schema = {"type": "object", "properties": {"candidate_id": {"enum": [c["id"] for c in shown]}},
+                                "required": ["candidate_id"], "additionalProperties": False}
+            menu = [{"id": c["id"], "conditional_result": c["execution"]["value"],
+                     "edit": c["edit"]} for c in shown]
+            selection = call(drafter, source_context + "\nCurrent program:\n" + json.dumps(answer)
+                + "\nUnused computed steps: " + json.dumps(graph["unused_steps"])
+                + "\nCandidate single-edge reconnections (hypothetical calculations, not asserted answers):\n" + json.dumps(menu)
+                + "\nChoose the candidate whose calculation answers the question in the declared units. "
+                  "Check the source measures and formula. Choose KEEP if none improves the program. "
+                  "Do not select a number merely because it looks plausible. Return candidate_id.",
+                selection_schema, budget.allowance(192, reserve=192), "repair_edge_choice")
+            edge_trace["selection"] = selection
+            selected = next((c for c in shown if isinstance(selection, dict) and c["id"] == selection.get("candidate_id")), None)
+            if selected and selected["edit"]:
+                plan = deepcopy(plan)
+                edit = selected["edit"]
+                plan["steps"][edit["step"]][edit["side"]] = edit["after"]["value"]
+                answer = decode(plan)
+                if answer != selected["answer"]:
+                    raise ValueError("Selected edge repair changed more than its declared edge")
+                accepted = True
+                review = verify(answer, "verify_edge_repair")
+    elif repair != "none" and needs_repair:
         steps = plan.get("steps", []) if isinstance(plan, dict) else []
         scope = {e["step"] for e in initial_execution["issues"] if type(e.get("step")) is int}
         if isinstance(review, dict):
@@ -218,6 +258,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             "causal_mode": causal_mode, "catalog_style": catalog_style,
             "demonstrations_used": used_demos,
             "analysis_tokens_requested": analysis_tokens, "analysis_notes": notes,
+            "edge_repair": edge_trace,
             "active_roles": sorted({s["role"] for s in stages}),
             "initial_verdict": initial_review, "final_verdict": review,
             "delivered": not execution["issues"] and good(review), "repair_attempted": repair != "none" and needs_repair,

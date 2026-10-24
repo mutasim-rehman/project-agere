@@ -317,7 +317,7 @@ def worker(args, out):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--arm", choices=("sas", "mas"), required=True)
-    parser.add_argument("--repair", choices=("none", "full", "patch"), required=True)
+    parser.add_argument("--repair", choices=("none", "full", "patch", "edge"), required=True)
     parser.add_argument("--task", choices=("kyc", "finqa"), default="kyc")
     parser.add_argument("--data")
     parser.add_argument("--out", required=True)
@@ -347,6 +347,8 @@ def main():
         raise ValueError("Training demonstrations require FinQA reference programs")
     if args.analysis_tokens and args.task != "finqa":
         raise ValueError("Formula analysis is currently implemented for FinQA only")
+    if args.repair == "edge" and (args.task != "finqa" or args.program_mode != "reference"):
+        raise ValueError("Dependency reconnection requires FinQA reference programs")
     if args.arm == "sas" and args.verifier_model != "0.5b":
         raise ValueError("SAS verification uses its own 7B checkpoint; verifier-model selects MAS only")
     if args.task == "finqa" and (args.handoff != "independent" or args.verification != "field" or args.citations != "enum"):

@@ -2,6 +2,23 @@
 
 ## Redevelopment — 24 October 2026
 
+### Bounded dependency-reconnection policy
+
+- Implemented actual gold-free selection among KEEP and at most seven executable
+  single-edge reconnects. Rank candidates by remaining unused steps, backward-edge
+  distance and stable ID; never by correctness labels. A 192-token selection call
+  and post-selection verification share the existing per-case output ledger.
+- Reconnection can trigger despite a neural PASS because an unused intermediate
+  is a structural hint. It is not proof of an error. Programs without eligible
+  candidates are unchanged, including incorrect programs; this narrow policy
+  cannot solve general measure-selection or formula errors.
+- The selected raw plan is recompiled and asserted identical to the enumerated
+  candidate. Operations, source quantities, declared units and other edges stay
+  fixed. KEEP remains available. Unit tests exercise a false-PASS correction and
+  no-candidate preservation; 68 tests pass. No real-model repair gain is claimed.
+- Strong generation remains the priority. See REDEVELOPMENT_PLAN.md for the
+  staged optimization, matched-resource controls and confirmatory requirements.
+
 ### First resident MAS pilot
 
 - `mas-none-smoke-01` completed 4/4 cases inside the 6.40 GB cap, peak measured
