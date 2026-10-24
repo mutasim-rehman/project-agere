@@ -5,6 +5,7 @@ All inputs/outputs resolve inside ROOT. No gold is passed to model stages.
 """
 from __future__ import annotations
 import argparse
+from copy import deepcopy
 from dataclasses import asdict
 import hashlib
 import json
@@ -34,6 +35,30 @@ SCHEMA = {"type": "object", "properties": {
 VERIFY_SCHEMA = {"type": "object", "properties": {"verdict": {"enum": ["PASS", "FAIL"]},
     "unsupported_fields": {"type": "array", "items": {"enum": list(FIELDS) + ["identity_name_mismatch", "case_id"]}}},
     "required": ["verdict", "unsupported_fields"], "additionalProperties": False}
+FIELD_VERIFY_SCHEMA = {"type": "object", "properties": {"checks": {"type": "object",
+    "properties": {field: {"enum": ["PASS", "FAIL", "UNKNOWN"]} for field in FIELDS},
+    "required": list(FIELDS), "additionalProperties": False}},
+    "required": ["checks"], "additionalProperties": False}
+
+
+def answer_schema(public, citations="enum"):
+    schema = deepcopy(SCHEMA)
+    schema["properties"]["case_id"] = {"enum": [public["id"]]}
+    if citations == "enum":
+        ids = sorted(source_spans(public["case_documents"]))
+        for field in FIELDS:
+            schema["properties"]["facts"]["properties"][field]["properties"]["span_id"] = {"enum": ids}
+    return schema
+
+
+def normalize_verdict(raw, mode):
+    if mode == "joint":
+        return raw
+    checks = raw.get("checks") if isinstance(raw, dict) else None
+    if not isinstance(checks, dict) or set(checks) != set(FIELDS) or any(v not in ("PASS", "FAIL", "UNKNOWN") for v in checks.values()):
+        return None
+    failed = [f for f in FIELDS if checks[f] != "PASS"]
+    return {"verdict": "FAIL" if failed else "PASS", "unsupported_fields": failed, "checks": checks}
 
 
 def inside(value):
@@ -91,35 +116,45 @@ class Models:
             "finish_reason": choice["finish_reason"], "response": text, "seconds": time.monotonic() - start}
 
 
-def run_case(public, models, arm, repair):
+def run_case(public, models, arm, repair, *, verification="joint", handoff="proposal", citations="enum", event_sink=None):
     budget = TokenLedger()
     trace = []
     spans = source_spans(public["case_documents"])
     evidence = json.dumps(spans, sort_keys=True)
     task = public["task"] + "\nCase ID: " + public["id"]
-    schema_text = json.dumps(SCHEMA)
+    schema = answer_schema(public, citations)
+    schema_text = json.dumps(schema)
     def call(role, text, schema, requested, stage):
         answer, event = models.call(role, text, schema, budget, requested, stage)
         trace.append(event)
+        if event_sink:
+            event_sink({"case_id": public["id"], **event})
         return answer
     proposal = None
     if arm == "mas":
         proposal = call("extractor", task + "\nSelect the requested values from these sources.\n" + evidence
-                        + "\nRequired output schema:\n" + schema_text, SCHEMA, 384, "extract")
+                        + "\nRequired output schema:\n" + schema_text, schema, 384, "extract")
     draft_prompt = task + "\nEvidence:\n" + evidence + "\nRequired output schema:\n" + schema_text
-    if proposal is not None:
+    if proposal is not None and handoff == "proposal":
         draft_prompt += "\nUntrusted specialist proposal; recheck sources:\n" + json.dumps(proposal)
     drafter = "sas" if arm == "sas" else "drafter"
-    answer = call(drafter, draft_prompt, SCHEMA, 640, "draft")
+    answer = call(drafter, draft_prompt, schema, 640, "draft")
     # This comparison is deterministic and shared by every arm and ablation.
     answer = derive_mismatch(answer)
     initial = answer
     issues = validate(answer, case_id=public["id"], fields=FIELDS, spans=spans, calculations={})
-    verdict = call("sas" if arm == "sas" else "verifier", task + "\nEvidence:\n" + evidence
-        + "\nDraft:\n" + json.dumps(answer)
-        + "\nCheck source authority, date precedence, field identity, citations and the mismatch boolean. "
-        "PASS only if all are correct. On FAIL identify every wrong field. Return verdict and unsupported_fields.",
-        VERIFY_SCHEMA, 192, "verify")
+    def verify(candidate, stage):
+        instruction = ("Check source authority, date precedence, field identity, citations and the mismatch boolean. "
+            "PASS only if all are correct. On FAIL identify every wrong field. Return verdict and unsupported_fields.") if verification == "joint" else (
+            "Judge each fact independently against its authoritative source, including registry issue dates. "
+            "A value quoted from the wrong source FAILS. MISSING must cite the explicit absence statement. "
+            "Return checks with registered_owner, declared_applicant and identity_expiry_date, each PASS, FAIL or UNKNOWN. "
+            "Use UNKNOWN when evidence is insufficient. Name mismatch is checked separately by code.")
+        raw = call("sas" if arm == "sas" else "verifier", task + "\nEvidence:\n" + evidence
+            + "\nAnswer:\n" + json.dumps(candidate) + "\n" + instruction,
+            VERIFY_SCHEMA if verification == "joint" else FIELD_VERIFY_SCHEMA, budget.allowance(192), stage)
+        return normalize_verdict(raw, verification)
+    verdict = verify(answer, "verify")
     verifier_pass = passed(verdict)
     initial_verdict = verdict
     needs_repair = bool(issues) or not verifier_pass
@@ -132,7 +167,7 @@ def run_case(public, models, arm, repair):
         if not allowed and not verifier_pass:
             allowed = set(FIELDS)
         if repair == "patch" and isinstance(answer, dict) and isinstance(answer.get("facts"), dict):
-            patch_schema = {"type": "object", "properties": {f: SCHEMA["properties"]["facts"]["properties"][f] for f in sorted(allowed)},
+            patch_schema = {"type": "object", "properties": {f: schema["properties"]["facts"]["properties"][f] for f in sorted(allowed)},
                             "required": sorted(allowed), "additionalProperties": False}
             patch = call(drafter, task + "\nEvidence:\n" + evidence + "\nCurrent answer:\n" + json.dumps(answer)
                 + "\nRepair ONLY these facts; return a map of field to value/span_id: " + json.dumps(sorted(allowed))
@@ -143,23 +178,22 @@ def run_case(public, models, arm, repair):
         else:
             candidate = call(drafter, draft_prompt + "\nCorrect this previous answer:\n" + json.dumps(answer)
                 + "\nFeedback:\n" + json.dumps({"issues": [asdict(i) for i in issues], "verifier": verdict}),
-                SCHEMA, budget.allowance(768, reserve=192), "repair_full")
+                schema, budget.allowance(768, reserve=192), "repair_full")
             if candidate is not None:
                 answer, repair_accepted = candidate, True
     answer = derive_mismatch(answer)
     final_issues = validate(answer, case_id=public["id"], fields=FIELDS, spans=spans, calculations={})
     # Reverify after changing facts. No repair is released solely because it parses.
     if repair_accepted:
-        verdict = call("sas" if arm == "sas" else "verifier", task + "\nEvidence:\n" + evidence
-            + "\nRepaired answer:\n" + json.dumps(answer)
-            + "\nCheck all values, authority, dates and mismatch. Return verdict and unsupported_fields.",
-            VERIFY_SCHEMA, budget.allowance(192), "verify_repair")
+        verdict = verify(answer, "verify_repair")
         verifier_pass = passed(verdict)
     delivered = not final_issues and verifier_pass
     return {"case_id": public["id"], "arm": arm, "repair": repair, "initial_answer": initial,
             "answer": answer, "delivered": delivered, "repair_attempted": needs_repair and repair != "none",
             "repair_accepted": repair_accepted, "tokens": budget.spent, "stages": trace,
             "initial_verdict": initial_verdict, "final_verdict": verdict,
+            "specialist_agreement": {f: (proposal.get("facts", {}).get(f) == initial.get("facts", {}).get(f))
+                                      for f in FIELDS} if isinstance(proposal, dict) and isinstance(initial, dict) else None,
             "repair_scope": sorted(allowed), "initial_support_issues": [asdict(i) for i in issues],
             "final_support_issues": [asdict(i) for i in final_issues]}
 
@@ -208,7 +242,9 @@ def worker(args, out):
     rows = [json.loads(line) for line in inside(args.data).read_text().splitlines() if line][:args.limit]
     for case in rows:
         public = {k: v for k, v in case.items() if k != "gold"}
-        result = run_case(public, models, args.arm, args.repair)
+        result = run_case(public, models, args.arm, args.repair, verification=args.verification,
+                          handoff=args.handoff, citations=args.citations,
+                          event_sink=lambda event: append(out / "stages.jsonl", event))
         result["initial_score"] = evaluate(case, result["initial_answer"])
         result["score"] = evaluate(case, result["answer"])
         append(out / "cases.jsonl", result)
@@ -224,6 +260,9 @@ def main():
     parser.add_argument("--out", required=True)
     parser.add_argument("--limit", type=int, default=4)
     parser.add_argument("--context", type=int, default=2048)
+    parser.add_argument("--verification", choices=("joint", "field"), default="field")
+    parser.add_argument("--handoff", choices=("proposal", "independent"), default="independent")
+    parser.add_argument("--citations", choices=("free", "enum"), default="enum")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.limit <= 0:

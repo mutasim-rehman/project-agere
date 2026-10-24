@@ -21,12 +21,15 @@ test_supported_stale_owner_is_semantically_wrong (test_tier8_v2_data.DataTests.t
 test_gold_annotations_cannot_influence_packet (test_tier8_v2_finqa.FinQATests.test_gold_annotations_cannot_influence_packet) ... ok
 test_original_table_row_identifiers_are_preserved (test_tier8_v2_finqa.FinQATests.test_original_table_row_identifiers_are_preserved) ... ok
 test_changed_weight_fails_integrity_gate (test_tier8_v2_pipeline.PipelineTests.test_changed_weight_fails_integrity_gate) ... ok
+test_citation_schema_uses_only_public_span_ids (test_tier8_v2_pipeline.PipelineTests.test_citation_schema_uses_only_public_span_ids) ... ok
 test_contradictory_pass_is_not_delivery_authorization (test_tier8_v2_pipeline.PipelineTests.test_contradictory_pass_is_not_delivery_authorization) ... ok
+test_field_verifier_unknown_blocks_delivery (test_tier8_v2_pipeline.PipelineTests.test_field_verifier_unknown_blocks_delivery) ... ok
+test_independent_drafter_does_not_see_wrong_proposal (test_tier8_v2_pipeline.PipelineTests.test_independent_drafter_does_not_see_wrong_proposal) ... ok
 test_patch_repair_needs_fresh_verdict (test_tier8_v2_pipeline.PipelineTests.test_patch_repair_needs_fresh_verdict) ... ok
 test_semantic_verifier_fail_blocks_supported_answer (test_tier8_v2_pipeline.PipelineTests.test_semantic_verifier_fail_blocks_supported_answer) ... ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 0.038s
+Ran 30 tests in 0.009s
 
 OK

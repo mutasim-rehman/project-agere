@@ -16,6 +16,11 @@
   drafting rather than passing the extractor's proposed answer into the drafter.
   Record specialist disagreement for later ablation instead of assuming consensus
   is reliable. Broader experiments remain necessary.
+- Implemented configurable joint/field verification, proposal/independent handoff,
+  and free/enumerated citations so the combined intervention can later be ablated.
+  The default pilot uses field checks and independent drafting. Every model stage
+  now persists immediately, preserving partial-run evidence if a later stage fails.
+  Thirty tests pass. These are implementation checks, not model-performance results.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

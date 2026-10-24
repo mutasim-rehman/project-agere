@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from tier8_v2_data import generate
-from tier8_v2_run import run_case, verified_models
+from tier8_v2_run import run_case, verified_models, answer_schema, normalize_verdict
 
 
 class FakeModels:
@@ -78,6 +78,29 @@ class PipelineTests(unittest.TestCase):
                 (base / entries[0]["file"]).write_bytes(b"tampered-fixture")
                 with self.assertRaisesRegex(ValueError, "integrity mismatch"):
                     verified_models("mas")
+
+    def test_field_verifier_unknown_blocks_delivery(self):
+        checks = {f: "PASS" for f in self.good["facts"]}
+        checks["registered_owner"] = "UNKNOWN"
+        models = FakeModels([self.good, {"checks": checks}])
+        result = run_case(self.public, models, "sas", "none", verification="field")
+        self.assertFalse(result["delivered"])
+        self.assertEqual(result["initial_verdict"]["unsupported_fields"], ["registered_owner"])
+
+    def test_independent_drafter_does_not_see_wrong_proposal(self):
+        proposal = copy.deepcopy(self.good)
+        proposal["facts"]["registered_owner"]["value"] = "ANCHOR_SENTINEL"
+        models = FakeModels([proposal, self.good, {"verdict": "PASS", "unsupported_fields": []}])
+        result = run_case(self.public, models, "mas", "none", handoff="independent")
+        self.assertNotIn("ANCHOR_SENTINEL", models.prompts[1])
+        self.assertFalse(result["specialist_agreement"]["registered_owner"])
+
+    def test_citation_schema_uses_only_public_span_ids(self):
+        schema = answer_schema(self.public)
+        self.assertEqual(schema["properties"]["case_id"], {"enum": [self.public["id"]]})
+        spans = schema["properties"]["facts"]["properties"]["registered_owner"]["properties"]["span_id"]["enum"]
+        self.assertEqual(len(spans), 5)
+        self.assertTrue(all(s.endswith("#L01") for s in spans))
 
 
 if __name__ == "__main__":
