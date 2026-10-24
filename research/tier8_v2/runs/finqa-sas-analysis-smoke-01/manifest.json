@@ -1,0 +1,77 @@
+{
+  "config": {
+    "arm": "sas",
+    "repair": "none",
+    "task": "finqa",
+    "data": "research/tier8_v2/data/finqa-development-public.jsonl",
+    "out": "research/tier8_v2/runs/finqa-sas-analysis-smoke-01",
+    "limit": 2,
+    "context": 4096,
+    "verification": "field",
+    "handoff": "independent",
+    "citations": "enum",
+    "residency": "shared",
+    "program_mode": "reference",
+    "unit_mode": "question",
+    "selector": "none",
+    "causal_mode": "grammar",
+    "catalog_style": "compact",
+    "demos": 2,
+    "analysis_tokens": 128,
+    "verifier_model": "0.5b",
+    "worker": false
+  },
+  "data_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "code_sha256": {
+    "tier8_v2_run.py": "e2828c24abbf462fab2111310f698c28ae5aa3397dd7803581d9f881328d2b27",
+    "evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+    "tier8_v2_financial_pipeline.py": "b704b70af5c16716c771ebadcacacdfbeb9b6f61702b28bcf960325229cfef1c",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+    "tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "tier8_v2_demos.py": "9cb3cb2eaad2f3eda5fc9a4e14c3fff9076c071d710b853fb0d700d336844918"
+  },
+  "git_head": "7ea3df68bbc4914d6cd06713ed9efb27788df9eb",
+  "host_total_bytes": 15438409728,
+  "cap_bytes": 6400000000,
+  "started_utc": "2026-10-24T09:34:20Z",
+  "runtime": "0.3.16",
+  "models": [
+    {
+      "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "bytes": 3993201344,
+      "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "bytes": 689872288,
+      "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a"
+    }
+  ],
+  "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "demonstrations_sha256": "a094bfcfd12c52837ef1e37310b121e4e2a5714b5e15dc6e6112c55282e2e699",
+  "demonstration_source_ids": [
+    "AAL/2014/page_89.pdf-2",
+    "AAL/2014/page_92.pdf-1"
+  ],
+  "task_policy": {
+    "verification": "operand-operation-unit checks",
+    "handoff": "no selector; draft/verify pair",
+    "selector": "none",
+    "program_mode": "reference",
+    "unit_mode": "question",
+    "causal_mode": "grammar",
+    "catalog_style": "compact",
+    "demonstrations_requested": 2,
+    "demonstration_policy": "training only; exact tokenizer fit reserves 768 generation tokens",
+    "analysis_tokens": 128,
+    "verifier_checkpoint": "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+    "citations": "enumerated source and step IDs",
+    "metric": "declared-unit reported answer with rounding; raw exe_ans separately"
+  }
+}

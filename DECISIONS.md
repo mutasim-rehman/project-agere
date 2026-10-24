@@ -24,6 +24,22 @@
   Also added previously omitted program_graph.py to new-run code hashes. Historic
   manifests are not rewritten. Seventy-three contract tests pass; model gains are
   not yet measured. The existing SAS analysis worker is allowed to finish first.
+- Independent bank/selection audit confirms zero development report overlaps and
+  distinct selected report groups on all 24 public questions. Saved proposed IDs
+  and scores before inference; do not confuse relevance with achieved correctness.
+- SAS 128-token formula analysis completed on the same first two cases: 2/2
+  reported-answer matches, 1/2 raw executable-reference matches, both correctly
+  delivered, no wrong deliveries, 454 tokens, peak RSS 5,119,905,792 bytes. Both
+  analysis stages hit their 128-token allowance. The no-analysis SAS prefix had
+  0/2 correct. This motivates a larger development ablation, not a general gain
+  claim. MAS with analysis remains 0/2 on those cases.
+- Next isolated run measures MAS 1.5B verification with fixed demonstrations and
+  no analysis before combining improvements. It shares the drafter checkpoint,
+  resets KV between roles and omits the unused extractor. Label this homogeneous
+  two-role setup accurately; it is not independently trained specialist diversity.
+- Read Haque et al. setup/introduction (PDF pp. 1–3): failing tests plus traces
+  inform complete-function repair, with alternative/adaptive representations.
+  Our lack of deployment answer keys is a constraint, not proof of originality.
 
 ### Bounded dependency-reconnection policy
 

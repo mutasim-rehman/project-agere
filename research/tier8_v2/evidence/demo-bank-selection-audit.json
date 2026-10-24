@@ -1,0 +1,368 @@
+{
+  "bank_sha256": "b80061a086be18ce9b486ec8ed4f7062f2c51b06f5c8f39ec8314466e303544a",
+  "bank_examples": 620,
+  "development_report_overlap": 0,
+  "cases": [
+    {
+      "case_id": "V/2008/page_17.pdf-1",
+      "selected": [
+        {
+          "source_id": "V/2009/page_23.pdf-2",
+          "question": "what is the average payment volume per transaction of visa inc?",
+          "score": 20.89565430759719
+        },
+        {
+          "source_id": "HIG/2004/page_192.pdf-1",
+          "question": "what is the expected payment for all benefits in 2007?",
+          "score": 5.972436301802259
+        }
+      ]
+    },
+    {
+      "case_id": "C/2017/page_328.pdf-1",
+      "selected": [
+        {
+          "source_id": "AAPL/2018/page_23.pdf-2",
+          "question": "what was the percentage cumulative total return for apple inc . for the five year period ended september 2018?",
+          "score": 22.3253881746152
+        },
+        {
+          "source_id": "ETFC/2015/page_27.pdf-1",
+          "question": "what was the percentage cumulative total return for e*trade financial corporation for the five years ended 12/15?",
+          "score": 16.096319159121904
+        }
+      ]
+    },
+    {
+      "case_id": "DVN/2007/page_58.pdf-2",
+      "selected": [
+        {
+          "source_id": "DVN/2010/page_70.pdf-1",
+          "question": "what percentage of total mmboe have come from canada?",
+          "score": 14.73200462966226
+        },
+        {
+          "source_id": "RL/2011/page_12.pdf-2",
+          "question": "what percentage of total doors is the united states and canada geography?",
+          "score": 7.84788422646514
+        }
+      ]
+    },
+    {
+      "case_id": "ETR/2011/page_341.pdf-3",
+      "selected": [
+        {
+          "source_id": "IP/2015/page_46.pdf-4",
+          "question": "what was the change in net sales in 2015 in millions",
+          "score": 6.9799792548653725
+        },
+        {
+          "source_id": "UNP/2010/page_55.pdf-3",
+          "question": "in millions , what is the average for other revenue from 2008-2010?",
+          "score": 6.903094533975601
+        }
+      ]
+    },
+    {
+      "case_id": "ETR/2004/page_213.pdf-2",
+      "selected": [
+        {
+          "source_id": "RSG/2018/page_47.pdf-2",
+          "question": "what is the ratio of the acquisitions / divestitures net to the fuel recovery fees as part of the expected 2019 revenue to increase",
+          "score": 11.599649429835294
+        },
+        {
+          "source_id": "DVN/2013/page_101.pdf-2",
+          "question": "what percentage of total revisions were not related to prices?",
+          "score": 7.639878613333566
+        }
+      ]
+    },
+    {
+      "case_id": "PM/2017/page_38.pdf-1",
+      "selected": [
+        {
+          "source_id": "AWK/2015/page_109.pdf-4",
+          "question": "what was the operating income in 2014",
+          "score": 7.954180795837409
+        },
+        {
+          "source_id": "MO/2014/page_11.pdf-3",
+          "question": "how did the percentage of operating income related to smokeless product change from 2012 to 2013 relative the total operating income?",
+          "score": 7.906307349169479
+        }
+      ]
+    },
+    {
+      "case_id": "JPM/2008/page_85.pdf-3",
+      "selected": [
+        {
+          "source_id": "GS/2018/page_108.pdf-3",
+          "question": "what is the debt-to-equity ratio in 2017?",
+          "score": 8.983546217764896
+        },
+        {
+          "source_id": "PNC/2008/page_144.pdf-1",
+          "question": "in 2008 what was the debt to equity ratio",
+          "score": 8.983546217764896
+        }
+      ]
+    },
+    {
+      "case_id": "PNC/2013/page_207.pdf-1",
+      "selected": [
+        {
+          "source_id": "JPM/2017/page_144.pdf-3",
+          "question": "credit derivatives for 2017 were what percent of the foreign exchange derivatives?",
+          "score": 9.942340597029277
+        },
+        {
+          "source_id": "JPM/2016/page_140.pdf-4",
+          "question": "commodity derivatives were how much of the 2016 total derivatives?",
+          "score": 8.620318802928747
+        }
+      ]
+    },
+    {
+      "case_id": "CME/2017/page_97.pdf-5",
+      "selected": [
+        {
+          "source_id": "MS/2007/page_156.pdf-1",
+          "question": "what was the net change in common stock outstanding in millions between 2006 and 2007?",
+          "score": 14.93333125636853
+        },
+        {
+          "source_id": "AMT/2007/page_111.pdf-3",
+          "question": "assuming full exercise of the options and warrants assumed , what is the total millions of shares of class a common stock in the spectrasite deal?",
+          "score": 10.119626002456217
+        }
+      ]
+    },
+    {
+      "case_id": "PNC/2013/page_62.pdf-2",
+      "selected": [
+        {
+          "source_id": "RSG/2014/page_22.pdf-1",
+          "question": "what is the percent of the residential vehicles as part of the fleet",
+          "score": 5.576835597117462
+        },
+        {
+          "source_id": "RSG/2013/page_16.pdf-1",
+          "question": "as of december 31 , 2013 what was the ratio of the number of vehicles for the residential to the industrial",
+          "score": 5.23038659095065
+        }
+      ]
+    },
+    {
+      "case_id": "AAPL/2004/page_36.pdf-2",
+      "selected": [
+        {
+          "source_id": "FIS/2006/page_48.pdf-3",
+          "question": "what is the gross profit margin for 2006?",
+          "score": 12.115325209195486
+        },
+        {
+          "source_id": "AAPL/2012/page_36.pdf-2",
+          "question": "what was the increase in gross margin percentage between 2011 and 2012?",
+          "score": 10.510341598471362
+        }
+      ]
+    },
+    {
+      "case_id": "PKG/2009/page_65.pdf-4",
+      "selected": [
+        {
+          "source_id": "PKG/2013/page_83.pdf-2",
+          "question": "what percentage of total purchase commitments are due in 2016?",
+          "score": 13.628795472274243
+        },
+        {
+          "source_id": "AAPL/2002/page_63.pdf-4",
+          "question": "what percentage of total minimum lease payments is due after 2007?",
+          "score": 9.753092159166883
+        }
+      ]
+    },
+    {
+      "case_id": "LMT/2013/page_74.pdf-4",
+      "selected": [
+        {
+          "source_id": "BDX/2009/page_81.pdf-4",
+          "question": "what is the percentage decrease for average common shares outstanding from 2008-2009?",
+          "score": 16.48275428699987
+        },
+        {
+          "source_id": "STT/2007/page_95.pdf-2",
+          "question": "what is the diluted number of outstanding shares based on the eps , ( in millions ) ?",
+          "score": 15.557983718750599
+        }
+      ]
+    },
+    {
+      "case_id": "STT/2011/page_83.pdf-1",
+      "selected": [
+        {
+          "source_id": "RE/2016/page_40.pdf-2",
+          "question": "what was the change in the amount of pre-tax catastrophe losses from 2015 to 2016 in millions",
+          "score": 10.301821769567162
+        },
+        {
+          "source_id": "RE/2010/page_42.pdf-1",
+          "question": "in 2008 what was the ratio of the realized investment gains to the unrealized investment losses .",
+          "score": 9.079028675528678
+        }
+      ]
+    },
+    {
+      "case_id": "MRO/2007/page_149.pdf-2",
+      "selected": [
+        {
+          "source_id": "CE/2016/page_88.pdf-1",
+          "question": "if the tax controversy from softer is resolved favorably , what would the gross assets acquired be , in millions?",
+          "score": 12.088574735987388
+        },
+        {
+          "source_id": "GIS/2018/page_82.pdf-1",
+          "question": "what would be the gain/loss if all marketable securities are sold at fair value?",
+          "score": 10.852055668457735
+        }
+      ]
+    },
+    {
+      "case_id": "AOS/2004/page_11.pdf-2",
+      "selected": [
+        {
+          "source_id": "PKG/2013/page_83.pdf-2",
+          "question": "what percentage of total purchase commitments are due in 2016?",
+          "score": 9.295407140178112
+        },
+        {
+          "source_id": "PKG/2001/page_86.pdf-3",
+          "question": "what percentage of outstanding aggregate minimum rental commitments under noncancelable operating leases are due in 2001?",
+          "score": 8.147125679676995
+        }
+      ]
+    },
+    {
+      "case_id": "C/2010/page_223.pdf-3",
+      "selected": [
+        {
+          "source_id": "STT/2001/page_85.pdf-1",
+          "question": "what is the percentage change in the balance of loan commitments from 2000 to 2001?",
+          "score": 8.63392256899014
+        },
+        {
+          "source_id": "SLB/2010/page_90.pdf-1",
+          "question": "what was the net change in the allowance in doubtful accounts in 2009",
+          "score": 8.32236513050648
+        }
+      ]
+    },
+    {
+      "case_id": "MSI/2006/page_61.pdf-3",
+      "selected": [
+        {
+          "source_id": "FIS/2017/page_92.pdf-2",
+          "question": "what percent of total long-term debt is due in 2021?",
+          "score": 20.09506830141607
+        },
+        {
+          "source_id": "GIS/2006/page_43.pdf-1",
+          "question": "in 2006 what was the percent of the capital structure of total debt that was current portion of long-term debt",
+          "score": 17.870766847090003
+        }
+      ]
+    },
+    {
+      "case_id": "ABMD/2006/page_75.pdf-1",
+      "selected": [
+        {
+          "source_id": "DISH/2011/page_130.pdf-2",
+          "question": "what percentage of total future minimum lease payments under the capital lease obligation is due in 2016?",
+          "score": 16.119978099438306
+        },
+        {
+          "source_id": "ABMD/2008/page_87.pdf-2",
+          "question": "what percent of future minimum lease payments are due currently?",
+          "score": 12.44664466975167
+        }
+      ]
+    },
+    {
+      "case_id": "AMAT/2013/page_18.pdf-2",
+      "selected": [
+        {
+          "source_id": "IP/2015/page_46.pdf-4",
+          "question": "what was the change in net sales in 2015 in millions",
+          "score": 7.484395976308752
+        },
+        {
+          "source_id": "C/2016/page_120.pdf-2",
+          "question": "what was the change in billions of net outflows from december 31 , 2015 to december 31 , 2016?",
+          "score": 6.805423543221787
+        }
+      ]
+    },
+    {
+      "case_id": "DVN/2014/page_85.pdf-1",
+      "selected": [
+        {
+          "source_id": "AWK/2017/page_172.pdf-4",
+          "question": "what was the change in the rental amount from 2017 to 2018 in millions",
+          "score": 7.26220507067209
+        },
+        {
+          "source_id": "ADBE/2011/page_83.pdf-4",
+          "question": "what is the average yearly amortization rate related to trademarks?",
+          "score": 6.492843880743401
+        }
+      ]
+    },
+    {
+      "case_id": "SPGI/2018/page_74.pdf-1",
+      "selected": [
+        {
+          "source_id": "VNO/2010/page_88.pdf-1",
+          "question": "what was the percentage growth of the vornado realty trust from 2005 to 2006",
+          "score": 6.820282862138792
+        },
+        {
+          "source_id": "HUM/2010/page_101.pdf-1",
+          "question": "what is the ratio of total assets acquired to total liabilities assumed?",
+          "score": 5.361171518152437
+        }
+      ]
+    },
+    {
+      "case_id": "ZBH/2003/page_58.pdf-3",
+      "selected": [
+        {
+          "source_id": "AAPL/2007/page_51.pdf-1",
+          "question": "what was the percentage change in inventory between 2005 and 2006?",
+          "score": 6.684905892266361
+        },
+        {
+          "source_id": "GS/2015/page_80.pdf-1",
+          "question": "how is cash flow from operating activities affected by the change in inventory from 2014 to 2015?",
+          "score": 5.511918694549973
+        }
+      ]
+    },
+    {
+      "case_id": "AMT/2005/page_105.pdf-2",
+      "selected": [
+        {
+          "source_id": "LLY/2008/page_45.pdf-2",
+          "question": "at january 29 , 2007 what was the percent of the estimated fair value of tax benefit of net operating losses to the total purchase price",
+          "score": 6.64698047268984
+        },
+        {
+          "source_id": "SNPS/2017/page_99.pdf-1",
+          "question": "what is the variation between the federal research credit carryforward and federal net operating loss carryforward , in thousands?",
+          "score": 6.474734242494547
+        }
+      ]
+    }
+  ],
+  "note": "Pre-inference retrieval audit only. Exact tokenizer fitting may include fewer demonstrations. Development answer/program fields are never passed to retrieval."
+}

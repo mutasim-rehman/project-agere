@@ -13,6 +13,9 @@ are not established. Do not mark the goal complete from these development result
 - Optional 128/256-token formula/measure analysis is implemented. A two-case MAS
   128-token smoke completed 0/2 correct, both wrongly delivered; both analysis
   stages reached their token limit. Default zero preserves the common baseline.
+- Matching SAS analysis smoke completed 2/2 reported-answer matches (1/2 raw
+  execution matches), both correctly delivered, versus 0/2 in its baseline prefix.
+  Both analysis calls reached their allowance. Larger development testing remains.
 - 73 tests pass. These checks establish contracts, not financial correctness.
 - Optional question-only BM25 demonstration retrieval uses 620 eligible training
   examples, excluding all annual reports in development. Model gains are untested;
@@ -50,9 +53,9 @@ are not established. Do not mark the goal complete from these development result
 
 ## Live run
 
-SAS formula-analysis smoke: research/tier8_v2/runs/finqa-sas-analysis-smoke-01
-Exec session: 86455. Revalidate its worker process before calling it stopped.
-Two development cases, analysis_tokens=128, otherwise matching the baseline.
+MAS stronger-verifier smoke: research/tier8_v2/runs/finqa-mas-strong-verifier-smoke-01
+Exec session: 34434. Revalidate its worker process before calling it stopped.
+Two development cases, shared 1.5B verifier, no analysis and fixed demonstrations.
 Partial output is not a final result. Do not launch competing inference here.
 
 ## Next steps
