@@ -2,6 +2,23 @@
 
 ## Redevelopment — 24 October 2026
 
+### Temporary 1.5B cache reclamation and 3B base transfer
+
+- CUDA packages need more disk than the tokenizer-only environment. Also removed
+  the unused native 1.5B F16 cache after verifying its full SHA256 and ensuring all
+  active inference is SAS. Reclaimed 3,560,416,288 bytes; retained the native 0.5B
+  verifier and both Q4 inference profiles. This changes cache availability only;
+  prior runs/metrics are preserved. Future 1.5B use must restore its pinned source
+  and reproduce the recorded native conversion before claiming that profile ready.
+- Source/native hashes and complete conversion/recovery provenance are retained in
+  reclaimed-native-cache-02.json. Every one of the 59 frozen inputs still matches.
+  SAS does not use the removed file. Disk headroom now supports the separate CUDA
+  environment and a streamed 3B NF4 base transfer, which has been started. Verify
+  its full size/LFS SHA before any fit; a partial transfer is not a usable model.
+- Torch installer remains live. No training is running; successful installation,
+  base verification, real two-update fit, full training, adapter conversion and
+  measured applied-adapter reasoning remain separate required steps.
+
 ### Implemented guarded QLoRA fit/training path (execution pending)
 
 - Added a pinned prequantized training-base fetcher with config/blob checks,

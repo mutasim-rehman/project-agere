@@ -184,3 +184,10 @@ longest-example fit diagnostic before a separate full one-epoch run. Actual fit,
 training, conversion and applied-adapter inference are unexecuted. The guard was
 verified against the live SAS process. Training-base 3B metadata/config is pinned;
 weight download and the CUDA runtime installation are still pending completion.
+
+Additional temporary cache reclamation: unused native 1.5B F16 was hash-verified
+and removed to fit the training environment/base. Native 0.5B and Q4 3B/7B remain.
+Future 1.5B controls require restoration first; recovery provenance is recorded in
+evidence/reclaimed-native-cache-02.json. A resumable 3B NF4 weight download is now
+active (logs/training-base-3b-download-01.log), alongside CUDA package installation.
+No actual model fit/training is active. All frozen SAS inputs remain unchanged.

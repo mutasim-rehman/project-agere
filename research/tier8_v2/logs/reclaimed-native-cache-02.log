@@ -1,0 +1,43 @@
+{
+  "purpose": "Reclaim unused 1.5B native runtime cache to fit CUDA environment and 3B training base",
+  "file": "weights/tier8_v2/qwen2.5-1.5b-instruct-native-f16.gguf",
+  "bytes": 3560416288,
+  "sha256": "f5bff4cb44a4fd8538b6f20527eb2af472a435f53d55289c967f4cdeea7bc1a7",
+  "source_download": {
+    "repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+    "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+    "file": "weights/tier8_v2/qwen2.5-1.5b-instruct-fp16.gguf",
+    "bytes": 3560416288,
+    "sha256": "fc89e330deb3fd8fa560f1c0f35a1e2b8da96d59e13445559ed190307a6f5649"
+  },
+  "conversion_provenance": {
+    "file": "weights/tier8_v2/qwen2.5-1.5b-instruct-native-f16.gguf",
+    "bytes": 3560416288,
+    "sha256": "f5bff4cb44a4fd8538b6f20527eb2af472a435f53d55289c967f4cdeea7bc1a7",
+    "source_sha256": "fc89e330deb3fd8fa560f1c0f35a1e2b8da96d59e13445559ed190307a6f5649",
+    "source_file": "weights/tier8_v2/qwen2.5-1.5b-instruct-fp16.gguf",
+    "runtime": "0.3.16",
+    "transform": {
+      "ftype": "MOSTLY_F16",
+      "token_embedding_type": "F16",
+      "output_tensor_type": "F16",
+      "allow_requantize": false
+    },
+    "seconds": 5.055721089000144,
+    "integrity": {
+      "tensor_count": 339,
+      "required_bytes": 3560416288,
+      "actual_bytes": 3560416288
+    }
+  },
+  "before_free_bytes": 3299172352,
+  "removed": true,
+  "retained": [
+    "native 0.5B verifier",
+    "3B Q4 inference",
+    "7B Q4 inference"
+  ],
+  "recovery": "Download the pinned original 1.5B source and reproduce the recorded native-F16 conversion; verify SHA before future 1.5B use.",
+  "after_free_bytes": 6859591680,
+  "all_59_frozen_inputs_unchanged": true
+}
