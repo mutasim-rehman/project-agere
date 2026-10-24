@@ -1,0 +1,815 @@
+{
+  "policy": "Post-hoc diagnostic: flag source-quantity integer values in inclusive range 1900..2100.",
+  "cautions": [
+    "This is not a date classifier or proof that the flagged operand is the primary error.",
+    "Legitimate financial amounts can lie in the same range; no hard rejection is justified.",
+    "Some contexts suggest escaped punctuation artifacts; origin requires independent source verification.",
+    "No achieved repair gain or fresh held-out detector performance is measured."
+  ],
+  "packets_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "training_bank_sha256": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a",
+  "training_examples_requiring_year_range_slots": 18,
+  "training_caution": "Annotated executable examples contradict blanket range removal; not an estimated detector false-positive rate on unseen data.",
+  "training_counterexamples": [
+    {
+      "source_id": "AAPL/2011/page_65.pdf-4",
+      "question": "how many years does the irs have under examination?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2009",
+          "context": "the irs is currently examining the years 2007 through 2009 ."
+        },
+        "V1": {
+          "training_value": "2006",
+          "context": "the internal revenue service ( the 201cirs 201d ) has completed its field audit of the company 2019s federal income tax returns for the years 2004 through 2006 and proposed certain adjustments ."
+        }
+      }
+    },
+    {
+      "source_id": "ABMD/2018/page_112.pdf-3",
+      "question": "what is the expected growth rate in operating leases from 2020 to 2021?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "1901",
+          "context": "fiscal years ending march 31,: 2021 | operating leases ( in $ 000s ): 1901"
+        }
+      }
+    },
+    {
+      "source_id": "ABMD/2018/page_112.pdf-4",
+      "question": "what is the expected growth rate in operating leases from 2019 to 2020?",
+      "required_annotated_slots": {
+        "V1": {
+          "training_value": "2078",
+          "context": "fiscal years ending march 31,: 2019 | operating leases ( in $ 000s ): $ 2078"
+        }
+      }
+    },
+    {
+      "source_id": "AON/2013/page_54.pdf-1",
+      "question": "what is the total combined experience loss aon , ( in millions ) ?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2012",
+          "context": ": combined experience loss | u.k .: $ 2012"
+        }
+      }
+    },
+    {
+      "source_id": "AON/2013/page_54.pdf-4",
+      "question": "in 2014 what was the combined total experience loss",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2012",
+          "context": ": combined experience loss | u.k .: $ 2012"
+        }
+      }
+    },
+    {
+      "source_id": "AON/2015/page_29.pdf-1",
+      "question": "how many years are left till the lease expiration date for the building of aon's corporate headquarters?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2034",
+          "context": "we maintain our corporate headquarters at 122 leadenhall street , london , england , where we occupy approximately 190000 square feet of space under an operating lease agreement that expires in 2034 ."
+        },
+        "V1": {
+          "training_value": "2015",
+          "context": "see note 7 \"lease commitments\" of the notes to consolidated financial statements in part ii , item 8 of this report for information with respect to our lease commitments as of december 31 , 2015 ."
+        }
+      }
+    },
+    {
+      "source_id": "AWK/2018/page_142.pdf-1",
+      "question": "by how much did total regulatory liabilities increase from 2017 to 2018?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "1907",
+          "context": ": total regulatory liabilities | 2018: $ 1907"
+        }
+      }
+    },
+    {
+      "source_id": "GS/2018/page_108.pdf-3",
+      "question": "what is the debt-to-equity ratio in 2017?",
+      "required_annotated_slots": {
+        "V1": {
+          "training_value": "2096",
+          "context": "$ in millions: equity | as of december 2017: $ 2096"
+        }
+      }
+    },
+    {
+      "source_id": "GS/2018/page_108.pdf-4",
+      "question": "what is the debt-to-equity ratio in 2018?",
+      "required_annotated_slots": {
+        "V1": {
+          "training_value": "1923",
+          "context": "$ in millions: equity | as of december 2018: $ 1923"
+        }
+      }
+    },
+    {
+      "source_id": "HFC/2011/page_88.pdf-1",
+      "question": "what was the tax rate on the gain on sale of discontinued operations before income taxes",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "1978",
+          "context": ": income tax expense | year ended december 31 2009 ( in thousands ): -1978 ( 1978 )"
+        }
+      }
+    },
+    {
+      "source_id": "HII/2012/page_98.pdf-1",
+      "question": "how many years of tax examination is the company subject to in virginia?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2012",
+          "context": "jurisdiction united states: virginia | 2012: 2012"
+        },
+        "V1": {
+          "training_value": "2006",
+          "context": "jurisdiction united states: virginia | jurisdiction 2007: 2006"
+        }
+      }
+    },
+    {
+      "source_id": "HII/2012/page_98.pdf-2",
+      "question": "how many years of tax examination is the company subject to in mississippi?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2012",
+          "context": "jurisdiction united states: mississippi | 2012: 2012"
+        },
+        "V1": {
+          "training_value": "2009",
+          "context": "jurisdiction united states: mississippi | jurisdiction 2007: 2009"
+        }
+      }
+    },
+    {
+      "source_id": "HII/2015/page_101.pdf-2",
+      "question": "what is the current tax examination period in california , in years?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2014",
+          "context": "jurisdiction united states: california | 2014: 2014"
+        },
+        "V1": {
+          "training_value": "2010",
+          "context": "jurisdiction united states: california | jurisdiction 2007: 2010"
+        }
+      }
+    },
+    {
+      "source_id": "HII/2015/page_101.pdf-3",
+      "question": "what is the current tax examination period in virginia , in years?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2014",
+          "context": "jurisdiction united states: virginia | 2014: 2014"
+        },
+        "V1": {
+          "training_value": "2012",
+          "context": "jurisdiction united states: virginia | jurisdiction 2007: 2012"
+        }
+      }
+    },
+    {
+      "source_id": "HWM/2015/page_172.pdf-1",
+      "question": "taking the year 2015 , what is the increase to allowance as a percent of the balance at the end of the year?",
+      "required_annotated_slots": {
+        "V1": {
+          "training_value": "2037",
+          "context": "december 31,: balance at end of year | 2015: $ 2037"
+        }
+      }
+    },
+    {
+      "source_id": "MMM/2007/page_64.pdf-2",
+      "question": "what was the ratio of the cash income tax payments to the cash interest payments",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "1999",
+          "context": "( millions ): cash income tax payments | 2007: $ 1999"
+        }
+      }
+    },
+    {
+      "source_id": "PKG/2015/page_62.pdf-4",
+      "question": "how many federal examinations were concluded in february 2015?",
+      "required_annotated_slots": {
+        "V0": {
+          "training_value": "2012",
+          "context": "a federal examination of the tax years 2010 2014 2012 was concluded in february 2015 ."
+        },
+        "V1": {
+          "training_value": "2010",
+          "context": "a federal examination of the tax years 2010 2014 2012 was concluded in february 2015 ."
+        }
+      }
+    },
+    {
+      "source_id": "STT/2014/page_69.pdf-3",
+      "question": "what is the percent change in average u.s . short-duration advances between 2012 and 2013?",
+      "required_annotated_slots": {
+        "V1": {
+          "training_value": "1972",
+          "context": "( in millions ): average u.s . short-duration advances | 2012: $ 1972"
+        }
+      }
+    }
+  ],
+  "runs": [
+    {
+      "run": "finqa-mas-demos-dev24-01",
+      "n": 24,
+      "flagged_cases": 9,
+      "flagged_correct_cases": 0,
+      "flagged_wrong_deliveries": 5,
+      "case_file_sha256": "69131a242fcc19c6ba8456983c121385ef07813354392e83c2bd0b8182178254",
+      "cases": [
+        {
+          "case_id": "V/2008/page_17.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "C/2017/page_328.pdf-1",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 0,
+              "side": "right",
+              "quantity_id": "A001",
+              "value": "2012",
+              "span_id": "table_1",
+              "context": "date: 31-dec-2012"
+            },
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A001",
+              "value": "2012",
+              "span_id": "table_1",
+              "context": "date: 31-dec-2012"
+            }
+          ],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "DVN/2007/page_58.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "ETR/2011/page_341.pdf-3",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 0,
+              "side": "left",
+              "quantity_id": "A005",
+              "value": "2010",
+              "span_id": "table_4",
+              "context": ": 2010 net revenue"
+            },
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A005",
+              "value": "2010",
+              "span_id": "table_4",
+              "context": ": 2010 net revenue"
+            }
+          ],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "ETR/2004/page_213.pdf-2",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A006",
+              "value": "2022",
+              "span_id": "text_2",
+              "context": "the increase was partially offset by the following : 2022 a decrease of $ 31.9 million in the price applied to unbilled sales , as discussed above ; 2022 a decrease of $ 12.2 million in rate refund provisions , as discussed above ; and 2022 a decrease of $ 5.2 million in gross wholesale revenue due to decreased sales to affiliated systems ."
+            }
+          ],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "PM/2017/page_38.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "JPM/2008/page_85.pdf-3",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "PNC/2013/page_207.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "CME/2017/page_97.pdf-5",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "PNC/2013/page_62.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "AAPL/2004/page_36.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "PKG/2009/page_65.pdf-4",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 0,
+              "side": "left",
+              "quantity_id": "A002",
+              "value": "2014",
+              "span_id": "table_5",
+              "context": ": 2014"
+            },
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A002",
+              "value": "2014",
+              "span_id": "table_5",
+              "context": ": 2014"
+            }
+          ],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "LMT/2013/page_74.pdf-4",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "STT/2011/page_83.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "MRO/2007/page_149.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "AOS/2004/page_11.pdf-2",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A001",
+              "value": "2014",
+              "span_id": "table_2",
+              "context": "( dollars in millions ) contractual obligation: capital leases | ( dollars in millions ) less than 1 year: 2014"
+            }
+          ],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "C/2010/page_223.pdf-3",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "MSI/2006/page_61.pdf-3",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "ABMD/2006/page_75.pdf-1",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 0,
+              "side": "right",
+              "quantity_id": "A001",
+              "value": "2008",
+              "span_id": "text_19",
+              "context": "the company 2019s lease for its aachen location expires in august 2008 unless an option to extend for an additional four years is exercised by the company ."
+            },
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A001",
+              "value": "2008",
+              "span_id": "text_19",
+              "context": "the company 2019s lease for its aachen location expires in august 2008 unless an option to extend for an additional four years is exercised by the company ."
+            }
+          ],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "AMAT/2013/page_18.pdf-2",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 0,
+              "side": "left",
+              "quantity_id": "A002",
+              "value": "2013",
+              "span_id": "text_18",
+              "context": "applied 2019s investments in rd&e for product development and engineering programs to create or improve products and technologies over the last three years were as follows : $ 1.3 billion ( 18 percent of net sales ) in fiscal 2013 , $ 1.2 billion ( 14 percent of net sales ) in fiscal 2012 , and $ 1.1 billion ( 11 percent of net sales ) in fiscal 2011 ."
+            },
+            {
+              "step": 0,
+              "side": "right",
+              "quantity_id": "A005",
+              "value": "2012",
+              "span_id": "text_18",
+              "context": "applied 2019s investments in rd&e for product development and engineering programs to create or improve products and technologies over the last three years were as follows : $ 1.3 billion ( 18 percent of net sales ) in fiscal 2013 , $ 1.2 billion ( 14 percent of net sales ) in fiscal 2012 , and $ 1.1 billion ( 11 percent of net sales ) in fiscal 2011 ."
+            },
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A005",
+              "value": "2012",
+              "span_id": "text_18",
+              "context": "applied 2019s investments in rd&e for product development and engineering programs to create or improve products and technologies over the last three years were as follows : $ 1.3 billion ( 18 percent of net sales ) in fiscal 2013 , $ 1.2 billion ( 14 percent of net sales ) in fiscal 2012 , and $ 1.1 billion ( 11 percent of net sales ) in fiscal 2011 ."
+            }
+          ],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "DVN/2014/page_85.pdf-1",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 0,
+              "side": "right",
+              "quantity_id": "A002",
+              "value": "2016",
+              "span_id": "table_2",
+              "context": "year: 2016"
+            },
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A004",
+              "value": "2017",
+              "span_id": "table_3",
+              "context": "year: 2017"
+            },
+            {
+              "step": 2,
+              "side": "right",
+              "quantity_id": "A006",
+              "value": "2018",
+              "span_id": "table_4",
+              "context": "year: 2018"
+            },
+            {
+              "step": 3,
+              "side": "right",
+              "quantity_id": "A008",
+              "value": "2019",
+              "span_id": "table_5",
+              "context": "year: 2019"
+            },
+            {
+              "step": 5,
+              "side": "left",
+              "quantity_id": "A011",
+              "value": "2014",
+              "span_id": "text_5",
+              "context": "other intangible assets as of december 31 , 2014 , intangible assets associated with customer relationships had a gross carrying amount of $ 569 million and $ 36 million of accumulated amortization ."
+            },
+            {
+              "step": 7,
+              "side": "left",
+              "quantity_id": "A011",
+              "value": "2014",
+              "span_id": "text_5",
+              "context": "other intangible assets as of december 31 , 2014 , intangible assets associated with customer relationships had a gross carrying amount of $ 569 million and $ 36 million of accumulated amortization ."
+            }
+          ],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "SPGI/2018/page_74.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "ZBH/2003/page_58.pdf-3",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 0,
+              "side": "right",
+              "quantity_id": "A001",
+              "value": "2013",
+              "span_id": "table_3",
+              "context": ": inventory step-up | 2002: 2013"
+            },
+            {
+              "step": 1,
+              "side": "right",
+              "quantity_id": "A002",
+              "value": "2003",
+              "span_id": "text_14",
+              "context": "new capitalization method as if applied in years prior to 2003 on march 2 , 2004 , the company entered into an is included in earnings during the year ended december 31 , amended and restated merger agreement relating to the 2003 ."
+            }
+          ],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "AMT/2005/page_105.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": true,
+          "delivered": true,
+          "verifier_pass": true
+        }
+      ]
+    },
+    {
+      "run": "finqa-sas-demos-dev24-01",
+      "n": 24,
+      "flagged_cases": 1,
+      "flagged_correct_cases": 0,
+      "flagged_wrong_deliveries": 1,
+      "case_file_sha256": "2593086efab8da7647b89c5083f76f86c8d653abc4048bbd338c142596965860",
+      "cases": [
+        {
+          "case_id": "V/2008/page_17.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "C/2017/page_328.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "DVN/2007/page_58.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": true,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "ETR/2011/page_341.pdf-3",
+          "flagged": false,
+          "occurrences": [],
+          "correct": true,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "ETR/2004/page_213.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": true,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "PM/2017/page_38.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": true,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "JPM/2008/page_85.pdf-3",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "PNC/2013/page_207.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "CME/2017/page_97.pdf-5",
+          "flagged": false,
+          "occurrences": [],
+          "correct": true,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "PNC/2013/page_62.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "AAPL/2004/page_36.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "PKG/2009/page_65.pdf-4",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "LMT/2013/page_74.pdf-4",
+          "flagged": false,
+          "occurrences": [],
+          "correct": true,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "STT/2011/page_83.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "MRO/2007/page_149.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "AOS/2004/page_11.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": true,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "C/2010/page_223.pdf-3",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "MSI/2006/page_61.pdf-3",
+          "flagged": true,
+          "occurrences": [
+            {
+              "step": 0,
+              "side": "right",
+              "quantity_id": "A026",
+              "value": "2011",
+              "span_id": "text_6",
+              "context": "payments due by period ( 1 ) ( in millions ) total 2007 2008 2009 2010 2011 thereafter ."
+            }
+          ],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "ABMD/2006/page_75.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "AMAT/2013/page_18.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "DVN/2014/page_85.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "SPGI/2018/page_74.pdf-1",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": true,
+          "verifier_pass": true
+        },
+        {
+          "case_id": "ZBH/2003/page_58.pdf-3",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": false
+        },
+        {
+          "case_id": "AMT/2005/page_105.pdf-2",
+          "flagged": false,
+          "occurrences": [],
+          "correct": false,
+          "delivered": false,
+          "verifier_pass": true
+        }
+      ]
+    }
+  ]
+}

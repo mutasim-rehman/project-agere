@@ -2,6 +2,28 @@
 
 ## Redevelopment — 24 October 2026
 
+### Source-operand risk diagnostic
+
+- Audited completed source-reference baselines for source quantities with integer
+  values in 1900..2100. This post-hoc heuristic flags 9/24 MAS cases (five wrong
+  deliveries) and 1/24 SAS case (one wrong delivery); no flagged case is correct
+  in this small development slice. It does not identify the primary error or
+  prove that each flagged value is a date.
+- Preserved the exact quantity IDs, step/operand positions and source contexts.
+  Several are clear calendar contexts. Others look like escaped punctuation
+  (e.g. 2022 before bullet-like phrases, 2014 in an otherwise missing-looking
+  table cell); these are hypotheses requiring original-report verification, not
+  permission to globally rewrite source numbers or reinterpret missing evidence.
+- Countercheck against the training-only bank finds 18 annotated executable
+  examples requiring year-range slots, including legitimate monetary amounts
+  and valid duration calculations. Therefore reject a blanket numeric-range
+  mask despite its attractive post-hoc development appearance. This is not an
+  estimated held-out detector false-positive rate.
+- The finding motivates source-role-aware typing as a future baseline/control,
+  not a novelty claim. Withholding suspect outputs alone does not improve correct
+  answer coverage. Current packets, inference code and all frozen queue inputs
+  remain unchanged. Audit code/results/logs are preserved separately.
+
 ### Bounded answer-endpoint selector module
 
 - Implemented a separate gold-free endpoint module. For a source-supported,

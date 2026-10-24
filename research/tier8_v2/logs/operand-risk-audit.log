@@ -1,0 +1,18 @@
+[
+  {
+    "run": "finqa-mas-demos-dev24-01",
+    "n": 24,
+    "flagged_cases": 9,
+    "flagged_correct_cases": 0,
+    "flagged_wrong_deliveries": 5,
+    "case_file_sha256": "69131a242fcc19c6ba8456983c121385ef07813354392e83c2bd0b8182178254"
+  },
+  {
+    "run": "finqa-sas-demos-dev24-01",
+    "n": 24,
+    "flagged_cases": 1,
+    "flagged_correct_cases": 0,
+    "flagged_wrong_deliveries": 1,
+    "case_file_sha256": "2593086efab8da7647b89c5083f76f86c8d653abc4048bbd338c142596965860"
+  }
+]

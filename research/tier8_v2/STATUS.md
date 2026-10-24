@@ -63,6 +63,9 @@ are not established. Do not mark the goal complete from these development result
 - A separate completed prefix audit finds two potentially recoverable errors in
   each arm by selecting an earlier result while retaining the original unit.
   This is oracle candidate coverage only; no endpoint selector has been evaluated.
+- Post-hoc year-range operand flags occur in 9 MAS and 1 SAS baseline cases.
+  They are not date labels: 18 annotated training examples need quantities in
+  the same range. No blanket filter or source rewriting was introduced.
 - Shared retrieval includes all annotated evidence in 19/24 cases. Two reference
   records disagree; all remain included with separate metrics.
 - Both selected training demonstration pages and annual-report groups are absent
