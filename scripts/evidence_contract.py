@@ -47,8 +47,12 @@ def check_claim(claim, spans: dict[str, str], calculations: dict) -> str | None:
         return "claim_schema"
     value, span = claim["value"], claim["span_id"]
     if value == "MISSING":
-        # Null citation alone does not prove absence. Keep this explicitly unresolved.
-        return "absence_unverified" if span is None else "missing_with_citation"
+        # Explicit absence must itself be cited. This is lexical support only;
+        # the independent evaluator still checks which field the absence concerns.
+        if isinstance(span, str) and span in spans and re.search(
+                r"\b(not supplied|not provided|not recorded|unavailable)\b", spans[span], re.I):
+            return None
+        return "absence_unverified"
     if value is None or isinstance(value, (bool, list, dict)):
         return "invalid_value"
     if not isinstance(span, str):
@@ -59,7 +63,7 @@ def check_claim(claim, spans: dict[str, str], calculations: dict) -> str | None:
     if span not in spans:
         return "unknown_span"
     # Whole tokens prevent 12 being accepted merely because a line contains 1200.
-    pattern = r"(?<![\w.])" + re.escape(str(value)) + r"(?![\w.])"
+    pattern = r"(?<!\w)(?<!\d\.)" + re.escape(str(value)) + r"(?!\w|\.\d)"
     return None if re.search(pattern, spans[span]) else "unsupported_value"
 
 

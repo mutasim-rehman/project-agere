@@ -6,8 +6,13 @@ test_ledger_reserves_and_enforces_budget (test_evidence_contract.ContractTests.t
 test_missing_needs_absence_evidence (test_evidence_contract.ContractTests.test_missing_needs_absence_evidence) ... ok
 test_repair_cannot_change_locked_claim (test_evidence_contract.ContractTests.test_repair_cannot_change_locked_claim) ... ok
 test_substring_is_not_numeric_evidence (test_evidence_contract.ContractTests.test_substring_is_not_numeric_evidence) ... ok
+test_all_latent_answers_are_source_supported (test_tier8_v2_data.DataTests.test_all_latent_answers_are_source_supported) ... ok
+test_supported_stale_owner_is_semantically_wrong (test_tier8_v2_data.DataTests.test_supported_stale_owner_is_semantically_wrong) ... ok
+test_patch_repair_needs_fresh_verdict (test_tier8_v2_pipeline.PipelineTests.test_patch_repair_needs_fresh_verdict) ... ok
+test_semantic_verifier_fail_blocks_supported_answer (test_tier8_v2_pipeline.PipelineTests.test_semantic_verifier_fail_blocks_supported_answer) ... ok
+test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.000s
+Ran 13 tests in 0.002s
 
 OK

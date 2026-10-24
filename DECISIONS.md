@@ -32,6 +32,21 @@
 - Official pinned Qwen GGUF downloads are used for this reconstruction. Their F16
   files may differ in size from the earlier locally converted weights; hashes and
   actual fit must be recorded before claiming a reproduction of the old runtime.
+- Milestone 2 (9bb1262) pushed. New development probes now separate source support
+  from semantic correctness: a stale registry value passes lexical support but
+  fails gold evaluation. Missing values cite explicit absence statements, rather
+  than treating a null citation as proof of absence. This changes the v2 contract;
+  the historical v1 scorer is unchanged.
+- v2 pilot implements source-visible verifier calls, an actual delivery gate,
+  constrained JSON, full/patch/no-repair ablations, and process-tree RSS sampling
+  throughout load and generation. The nominal cap includes parent-monitor RSS.
+  Patch repairs cannot edit unrelated fact entries. Semantic verification is still
+  fallible: a supported-but-wrong claim can be locked, which must be measured.
+- The first v2 pilot covers temporal KYC reconciliation only; credit expansion,
+  role search, adaptive routing, full paired evaluations, new frozen confirmation,
+  and full-paper novelty review remain required work.
+- CPU wheel 0.3.19 installed but failed import because its shared object requires
+  musl on this glibc host. Preserve install evidence; build 0.3.16 locally instead.
 
 **Study:** `tier8-8gb-v1`  
 **SSD:** `H:\AGERE` (`AGERE_SSD_ROOT`)  
