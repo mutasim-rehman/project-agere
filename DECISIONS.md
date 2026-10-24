@@ -2,6 +2,24 @@
 
 ## Redevelopment — 24 October 2026
 
+### Additional prior and input-availability checks
+
+- Inspected DCRC's main method/setup (arXiv:2605.31064v1): source-labelled task
+  routing, conflict/missing symbol binding, deterministic execution and training
+  on Qwen2.5 1.5B/3B/7B. These compiler/auditing components are established. Our
+  untuned protocol should not be presented as the best attainable small-model
+  performance; training and less restrictive prompting controls remain open.
+- Inspected VerityMath's abstract and method: program-level unit assertions,
+  generated annotations and fine-tuning. Its reported checker-enhanced variants
+  slightly underperform their plain program baselines. This reinforces measuring
+  feedback/checker value against retry rather than claiming benefit from structure.
+- Offline literal-availability check: original packets contain every annotated
+  nonconstant operand value in 20/24 cases; table-complete packets do so in 24/24.
+  None of the missing original values appears only in the question. Equal-valued
+  wrong cells can still match, so this is not semantic source coverage or achieved
+  accuracy. Stored packet/helper/source hashes and all missing-value records;
+  no evidence selection or frozen inputs were changed.
+
 ### Paired repair-result validation
 
 - Added a dedicated component-replay evaluator rather than treating replay as a

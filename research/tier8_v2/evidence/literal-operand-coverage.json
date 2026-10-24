@@ -1,0 +1,244 @@
+{
+  "scope": "Offline value-availability diagnostic after packet construction; no packet edits or oracle retrieval.",
+  "method": "Parse annotated binary program operands; ignore const_ and # references; compare Decimal literals to atom_catalog values; report question numeric-token matches separately.",
+  "source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "helper_sha256": {
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52"
+  },
+  "caution": "Equal values can come from wrong cells/roles. Value availability does not certify semantic evidence coverage or achieved accuracy.",
+  "reports": [
+    {
+      "packet_file": "research/tier8_v2/data/finqa-development-public.jsonl",
+      "sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+      "n": 24,
+      "cases_with_all_literal_values_present": 20,
+      "cases": [
+        {
+          "id": "V/2008/page_17.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "C/2017/page_328.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "DVN/2007/page_58.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "ETR/2011/page_341.pdf-3",
+          "missing_values": []
+        },
+        {
+          "id": "ETR/2004/page_213.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "PM/2017/page_38.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "JPM/2008/page_85.pdf-3",
+          "missing_values": [
+            {
+              "value": "1244659",
+              "present_in_question": false
+            }
+          ]
+        },
+        {
+          "id": "PNC/2013/page_207.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "CME/2017/page_97.pdf-5",
+          "missing_values": []
+        },
+        {
+          "id": "PNC/2013/page_62.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "AAPL/2004/page_36.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "PKG/2009/page_65.pdf-4",
+          "missing_values": [
+            {
+              "value": "25048",
+              "present_in_question": false
+            }
+          ]
+        },
+        {
+          "id": "LMT/2013/page_74.pdf-4",
+          "missing_values": []
+        },
+        {
+          "id": "STT/2011/page_83.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "MRO/2007/page_149.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "AOS/2004/page_11.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "C/2010/page_223.pdf-3",
+          "missing_values": []
+        },
+        {
+          "id": "MSI/2006/page_61.pdf-3",
+          "missing_values": []
+        },
+        {
+          "id": "ABMD/2006/page_75.pdf-1",
+          "missing_values": [
+            {
+              "value": "1371",
+              "present_in_question": false
+            },
+            {
+              "value": "1703",
+              "present_in_question": false
+            }
+          ]
+        },
+        {
+          "id": "AMAT/2013/page_18.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "DVN/2014/page_85.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "SPGI/2018/page_74.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "ZBH/2003/page_58.pdf-3",
+          "missing_values": [
+            {
+              "value": "384.3",
+              "present_in_question": false
+            }
+          ]
+        },
+        {
+          "id": "AMT/2005/page_105.pdf-2",
+          "missing_values": []
+        }
+      ]
+    },
+    {
+      "packet_file": "research/tier8_v2/data/finqa-development-table-complete.jsonl",
+      "sha256": "20b967e2aa259690d5b23288c663e8d5fe198a0acc752c84f819c2dc9389e5ef",
+      "n": 24,
+      "cases_with_all_literal_values_present": 24,
+      "cases": [
+        {
+          "id": "V/2008/page_17.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "C/2017/page_328.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "DVN/2007/page_58.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "ETR/2011/page_341.pdf-3",
+          "missing_values": []
+        },
+        {
+          "id": "ETR/2004/page_213.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "PM/2017/page_38.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "JPM/2008/page_85.pdf-3",
+          "missing_values": []
+        },
+        {
+          "id": "PNC/2013/page_207.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "CME/2017/page_97.pdf-5",
+          "missing_values": []
+        },
+        {
+          "id": "PNC/2013/page_62.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "AAPL/2004/page_36.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "PKG/2009/page_65.pdf-4",
+          "missing_values": []
+        },
+        {
+          "id": "LMT/2013/page_74.pdf-4",
+          "missing_values": []
+        },
+        {
+          "id": "STT/2011/page_83.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "MRO/2007/page_149.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "AOS/2004/page_11.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "C/2010/page_223.pdf-3",
+          "missing_values": []
+        },
+        {
+          "id": "MSI/2006/page_61.pdf-3",
+          "missing_values": []
+        },
+        {
+          "id": "ABMD/2006/page_75.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "AMAT/2013/page_18.pdf-2",
+          "missing_values": []
+        },
+        {
+          "id": "DVN/2014/page_85.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "SPGI/2018/page_74.pdf-1",
+          "missing_values": []
+        },
+        {
+          "id": "ZBH/2003/page_58.pdf-3",
+          "missing_values": []
+        },
+        {
+          "id": "AMT/2005/page_105.pdf-2",
+          "missing_values": []
+        }
+      ]
+    }
+  ]
+}
