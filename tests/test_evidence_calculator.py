@@ -36,6 +36,10 @@ class CalculatorTests(unittest.TestCase):
         self.assertIn(5, values)
         self.assertNotIn(0.05, values)
 
+    def test_decimal_before_sentence_period_is_not_lost(self):
+        from decimal import Decimal
+        self.assertIn(Decimal("120.5"), numeric_tokens("The profit was 120.5."))
+
 
 if __name__ == "__main__":
     unittest.main()

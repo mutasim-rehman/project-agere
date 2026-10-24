@@ -8,6 +8,7 @@ import re
 
 CONSTANTS = {Decimal(str(n)) for n in (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 100, 1000, 1000000, 1000000000)}
 NUMBER = r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?"
+NUMBER_TOKEN = r"(?<![\w.])" + NUMBER + r"(?!\w|\.\d)"
 OPERATIONS = ("add", "subtract", "multiply", "divide")
 
 
@@ -15,7 +16,7 @@ def numeric_tokens(text):
     text = re.sub(r"(?<=\d),(?=\d)", "", text)
     text = re.sub(r"\((\d[\d.]*)\)", r"-\1", text)
     values = set()
-    for match in re.finditer(r"(?<![\w.])" + NUMBER + r"(?![\w.])", text):
+    for match in re.finditer(NUMBER_TOKEN, text):
         try:
             number = Decimal(match[0])
             if number.is_finite():

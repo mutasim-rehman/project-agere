@@ -1,5 +1,11 @@
+test_column_year_is_context_not_copied_as_cell_value (test_evidence_atoms.AtomTests.test_column_year_is_context_not_copied_as_cell_value) ... ok
+test_patch_cannot_modify_a_locked_step (test_evidence_atoms.AtomTests.test_patch_cannot_modify_a_locked_step) ... ok
+test_patch_recomputes_dependent_step_without_editing_it (test_evidence_atoms.AtomTests.test_patch_recomputes_dependent_step_without_editing_it) ... ok
+test_source_pointers_copy_values_with_citations (test_evidence_atoms.AtomTests.test_source_pointers_copy_values_with_citations) ... ok
+test_unknown_reference_cannot_invent_a_value (test_evidence_atoms.AtomTests.test_unknown_reference_cannot_invent_a_value) ... ok
 test_cited_multistep_result_has_transitive_lineage (test_evidence_calculator.CalculatorTests.test_cited_multistep_result_has_transitive_lineage) ... ok
 test_constants_cannot_replace_all_evidence (test_evidence_calculator.CalculatorTests.test_constants_cannot_replace_all_evidence) ... ok
+test_decimal_before_sentence_period_is_not_lost (test_evidence_calculator.CalculatorTests.test_decimal_before_sentence_period_is_not_lost) ... ok
 test_future_reference_rejected (test_evidence_calculator.CalculatorTests.test_future_reference_rejected) ... ok
 test_invented_operand_rejected_despite_valid_arithmetic (test_evidence_calculator.CalculatorTests.test_invented_operand_rejected_despite_valid_arithmetic) ... ok
 test_numeric_units_and_accounting_negatives (test_evidence_calculator.CalculatorTests.test_numeric_units_and_accounting_negatives) ... ok
@@ -26,9 +32,12 @@ test_incorrect_unit_is_not_rescued_by_gold (test_tier8_v2_financial_pipeline.Fin
 test_integer_percentage_reference_allows_display_rounding (test_tier8_v2_financial_pipeline.FinancialTests.test_integer_percentage_reference_allows_display_rounding) ... ok
 test_non_numeric_prediction_is_a_failure_not_an_exception (test_tier8_v2_financial_pipeline.FinancialTests.test_non_numeric_prediction_is_a_failure_not_an_exception) ... ok
 test_numeric_scoring_happens_after_generation (test_tier8_v2_financial_pipeline.FinancialTests.test_numeric_scoring_happens_after_generation) ... ok
+test_reference_patch_is_followed_by_verification (test_tier8_v2_financial_pipeline.FinancialTests.test_reference_patch_is_followed_by_verification) ... ok
+test_reference_pipeline_executes_source_choices_without_generated_values (test_tier8_v2_financial_pipeline.FinancialTests.test_reference_pipeline_executes_source_choices_without_generated_values) ... ok
 test_repair_cannot_modify_locked_step (test_tier8_v2_financial_pipeline.FinancialTests.test_repair_cannot_modify_locked_step) ... ok
 test_repair_preserves_unrelated_step_and_recomputes_dependents (test_tier8_v2_financial_pipeline.FinancialTests.test_repair_preserves_unrelated_step_and_recomputes_dependents) ... ok
 test_reported_and_execution_disagreements_remain_visible (test_tier8_v2_financial_pipeline.FinancialTests.test_reported_and_execution_disagreements_remain_visible) ... ok
+test_unit_constraint_comes_from_question_only (test_tier8_v2_financial_pipeline.FinancialTests.test_unit_constraint_comes_from_question_only) ... ok
 test_wrong_units_can_block_arithmetically_correct_program (test_tier8_v2_financial_pipeline.FinancialTests.test_wrong_units_can_block_arithmetically_correct_program) ... ok
 test_gold_annotations_cannot_influence_packet (test_tier8_v2_finqa.FinQATests.test_gold_annotations_cannot_influence_packet) ... ok
 test_original_table_row_identifiers_are_preserved (test_tier8_v2_finqa.FinQATests.test_original_table_row_identifiers_are_preserved) ... ok
@@ -49,6 +58,6 @@ ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 43 tests in 0.010s
+Ran 52 tests in 0.010s
 
 OK

@@ -100,6 +100,17 @@
   unit constraints, and optional removal of the weak source selector. Copying
   quantities is established numerical-QA practice. Keep literal mode available
   and do not call these baseline improvements a novel algorithm.
+- Added explicit literal/reference, free/question-derived unit, and selector
+  suggest/none switches. Reference mode generates atom IDs or prior-step IDs;
+  code resolves their numeric values and source citations. It cannot invent a
+  numeric literal, but can still select irrelevant quantities or wrong operations.
+- Selector-disabled MAS is explicitly a draft/verify pair (two active roles),
+  not a three-role team. The shared 0.5B instance still supplies verification.
+  Record active roles in each case. Both arms retain identical preprocessing and
+  token/memory ceilings. Fifty-two tests pass; reference grammar compiles.
+- Corrected numeric extraction for decimals immediately before sentence-final
+  punctuation. The prior boundary could drop such values. This is a parser fix,
+  not a model reasoning gain; old results remain immutable with their code hashes.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

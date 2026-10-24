@@ -3,7 +3,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from tier8_v2_financial_pipeline import checked, evaluate_financial, patch_program, run_financial, verdict
+from tier8_v2_financial_pipeline import checked, evaluate_financial, patch_program, run_financial, verdict, question_units
 
 
 def operand(value, span):
@@ -94,6 +94,29 @@ class FinancialTests(unittest.TestCase):
         review = deepcopy(self.passed)
         review["steps_to_repair"] = [0]
         self.assertEqual(verdict(review)["verdict"], "FAIL")
+
+    def test_reference_pipeline_executes_source_choices_without_generated_values(self):
+        plan = {"decision": "ANSWER", "answer_unit": "number", "steps": [{"op": "divide", "left": "A000", "right": "A001"}]}
+        models = FakeModels([plan, self.passed])
+        result = run_financial(self.public, models, "mas", "none", representation="reference", unit_mode="question", selector="none")
+        self.assertEqual(result["execution"]["value"], "2")
+        self.assertTrue(result["delivered"])
+        self.assertEqual(result["active_roles"], ["drafter", "verifier"])
+        self.assertEqual(len(models.prompts), 2)
+
+    def test_unit_constraint_comes_from_question_only(self):
+        self.assertEqual(question_units("Average payment volume per transaction?", "question"), ("number",))
+        self.assertEqual(question_units("What percentage came from Canada?", "question"), ("percent", "fraction"))
+
+    def test_reference_patch_is_followed_by_verification(self):
+        plan = {"decision": "ANSWER", "answer_unit": "number", "steps": [{"op": "multiply", "left": "A000", "right": "A001"}]}
+        failed = {"checks": {"operands": "PASS", "operations": "FAIL", "units": "PASS"}, "steps_to_repair": [0], "repair_kind": "PATCH"}
+        update = {"updates": [{"index": 0, "step": {"op": "divide", "left": "A000", "right": "A001"}}]}
+        model = FakeModels([plan, failed, update, self.passed])
+        result = run_financial(self.public, model, "sas", "patch", representation="reference")
+        self.assertEqual(result["execution"]["value"], "2")
+        self.assertTrue(result["repair_accepted"])
+        self.assertEqual(result["stages"][-1]["stage"], "verify_program_repair")
 
 
 if __name__ == "__main__":

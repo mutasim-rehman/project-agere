@@ -262,7 +262,8 @@ def worker(args, out):
         if args.task == "finqa":
             if public["question"] != gold[case["id"]]["qa"]["question"]:
                 raise ValueError("Public question differs from evaluation source")
-            result = run_financial(public, models, args.arm, args.repair, event_sink=sink)
+            result = run_financial(public, models, args.arm, args.repair, event_sink=sink,
+                                   representation=args.program_mode, unit_mode=args.unit_mode, selector=args.selector)
             result["initial_score"] = evaluate_financial(gold[case["id"]], result["initial_answer"], result["initial_execution"])
             result["score"] = evaluate_financial(gold[case["id"]], result["answer"], result["execution"])
             result["all_gold_evidence_retrieved"] = set(gold[case["id"]]["qa"]["gold_inds"]) <= set(public["evidence"])
@@ -290,6 +291,9 @@ def main():
     parser.add_argument("--handoff", choices=("proposal", "independent"), default="independent")
     parser.add_argument("--citations", choices=("free", "enum"), default="enum")
     parser.add_argument("--residency", choices=("distinct", "shared"), default="shared")
+    parser.add_argument("--program-mode", choices=("literal", "reference"), default="literal")
+    parser.add_argument("--unit-mode", choices=("free", "question"), default="free")
+    parser.add_argument("--selector", choices=("suggest", "none"), default="suggest")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.data is None:
@@ -311,6 +315,7 @@ def main():
     data = inside(args.data)
     sources = [Path(__file__), ROOT / "scripts/evidence_contract.py", ROOT / "scripts/tier8_v2_data.py",
                ROOT / "scripts/tier8_v2_financial_pipeline.py", ROOT / "scripts/evidence_calculator.py", ROOT / "scripts/tier8_v2_finqa.py"]
+    sources.append(ROOT / "scripts/evidence_atoms.py")
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),
                 "code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                 "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
@@ -321,8 +326,9 @@ def main():
     manifest["models"] = verified_models(args.arm)
     if args.task == "finqa":
         manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()
-        manifest["task_policy"] = {"verification": "operand-operation-unit checks", "handoff": "fallible source-ID suggestion",
-                                   "citations": "enumerated source and step IDs", "metric": "custom numeric execution tolerance 1e-5"}
+        manifest["task_policy"] = {"verification": "operand-operation-unit checks", "handoff": "fallible source-ID suggestion" if args.selector == "suggest" else "no selector; draft/verify pair",
+                                   "selector": args.selector, "program_mode": args.program_mode, "unit_mode": args.unit_mode,
+                                   "citations": "enumerated source and step IDs", "metric": "declared-unit reported answer with rounding; raw exe_ans separately"}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak = 0
     breached = False

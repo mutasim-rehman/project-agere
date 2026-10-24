@@ -10,16 +10,17 @@ import re
 
 from evidence_calculator import CONSTANTS, OPERATIONS, execute
 from evidence_contract import TokenLedger
+from evidence_atoms import atom_catalog, reference_schema, compile_plan, patch_plan
 
 
-def program_schema(evidence):
+def program_schema(evidence, units=("number", "percent", "fraction")):
     operand = {"type": "object", "properties": {"value": {"type": "string"},
         "span_id": {"enum": sorted(evidence) + ["CONST"] + [f"STEP#{i}" for i in range(8)]}},
         "required": ["value", "span_id"], "additionalProperties": False}
     step = {"type": "object", "properties": {"op": {"enum": list(OPERATIONS)},
         "left": operand, "right": operand}, "required": ["op", "left", "right"], "additionalProperties": False}
     return {"type": "object", "properties": {"decision": {"enum": ["ANSWER", "INSUFFICIENT"]},
-        "answer_unit": {"enum": ["number", "percent", "fraction"]},
+        "answer_unit": {"enum": list(units)},
         "steps": {"type": "array", "items": step, "minItems": 0, "maxItems": 8}},
         "required": ["decision", "answer_unit", "steps"], "additionalProperties": False}
 
@@ -70,11 +71,30 @@ def patch_program(answer, updates, allowed, evidence):
     return (candidate, True) if not checked(candidate, evidence)["issues"] else (original, False)
 
 
-def run_financial(public, models, arm, repair, *, event_sink=None):
+def question_units(question, mode):
+    if mode == "free":
+        return ("number", "percent", "fraction")
+    if "%" in question or re.search(r"\bpercent(?:age)?\b", question, re.I):
+        return ("percent", "fraction")
+    if re.search(r"\b(average|ratio|how many)\b|\bin (?:millions|billions)\b", question, re.I):
+        return ("number",)
+    return ("number", "percent", "fraction")
+
+
+def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest"):
     if set(public) & {"gold", "qa", "answer", "program", "model_input", "gold_inds"}:
         raise ValueError("Gold/annotated fields must not enter deployment")
     evidence = public["evidence"]
-    schema = program_schema(evidence)
+    units = question_units(public["question"], unit_mode)
+    atoms = atom_catalog(evidence) if representation == "reference" else {}
+    schema = reference_schema(atoms, units) if representation == "reference" else program_schema(evidence, units)
+    def decode(plan):
+        if representation == "literal":
+            return plan
+        try:
+            return compile_plan(plan, atoms)
+        except ValueError as exc:
+            return {"decision": "ANSWER", "steps": None, "compile_error": str(exc)}
     budget, stages = TokenLedger(), []
     def call(role, content, output_schema, limit, stage):
         result, event = models.call(role, content, output_schema, budget, limit, stage)
@@ -82,9 +102,12 @@ def run_financial(public, models, arm, repair, *, event_sink=None):
         if event_sink:
             event_sink({"case_id": public["id"], **event})
         return result
-    context = "Question: " + public["question"] + "\nFinancial report evidence by source ID:\n" + json.dumps(evidence)
+    source_context = "Question: " + public["question"] + "\nFinancial report evidence by source ID:\n" + json.dumps(evidence)
+    context = source_context
+    if representation == "reference":
+        context += "\nQuantity references (code copies these source values):\n" + json.dumps(atoms)
     selection = None
-    if arm == "mas":
+    if arm == "mas" and selector == "suggest":
         selection_schema = {"type": "object", "properties": {"source_ids": {"type": "array",
             "items": {"enum": sorted(evidence)}, "minItems": 0, "maxItems": 8}},
             "required": ["source_ids"], "additionalProperties": False}
@@ -98,15 +121,27 @@ def run_financial(public, models, arm, repair, *, event_sink=None):
           "Respect percentage scaling. Return decision ANSWER with steps and answer_unit; "
           "if evidence is insufficient return decision INSUFFICIENT and an empty steps array. "
           "The final step is the answer. Never insert gold answers or unexplained numbers.\nSchema:\n" + json.dumps(schema))
+    if representation == "reference":
+        instruction = ("Build a calculation using source-quantity references. Return JSON with decision ANSWER or INSUFFICIENT, "
+            "answer_unit, and steps. Each step has op (add/subtract/multiply/divide), left and right reference strings. "
+            "Use Axxx source IDs from the quantity catalog. For a prior step use #0, #1, etc. (earlier steps only). "
+            "For a counting or scaling constant use CONST:value. Allowed constants: "
+            + ", ".join(str(n) for n in sorted(CONSTANTS))
+            + ". The last step gives the answer. Do not copy numeric values into left/right. "
+            "Allowed answer_unit: " + ", ".join(units)
+            + ". Percent means percentage points; fraction means a dimensionless ratio; number means the requested amount/count/ratio. "
+              "If necessary evidence is missing, use INSUFFICIENT and empty steps. Check the row labels and years carefully.")
     draft_prompt = context + "\n" + instruction
     if isinstance(selection, dict):
         draft_prompt += "\nA fallible evidence selector suggests these IDs; recheck all report evidence: " + json.dumps(selection)
     drafter = "sas" if arm == "sas" else "drafter"
-    answer = call(drafter, draft_prompt, schema, 768, "program")
+    plan = call(drafter, draft_prompt, schema, 768, "program")
+    initial_plan = deepcopy(plan)
+    answer = decode(plan)
     initial = deepcopy(answer)
     initial_execution = checked(answer, evidence)
     def verify(candidate, stage):
-        content = context + "\nProposed program:\n" + json.dumps(candidate)
+        content = source_context + "\nProposed program:\n" + json.dumps(candidate)
         content += "\nDeterministic execution:\n" + json.dumps(checked(candidate, evidence))
         content += ("\nIndependently judge operand relevance (correct row/year), operations, and units for the question. "
                     "Arithmetic execution alone does not prove relevance. Return checks, steps_to_repair, repair_kind. "
@@ -120,7 +155,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None):
     accepted = False
     scope = set()
     if repair != "none" and needs_repair:
-        steps = answer.get("steps", []) if isinstance(answer, dict) else []
+        steps = plan.get("steps", []) if isinstance(plan, dict) else []
         scope = {e["step"] for e in initial_execution["issues"] if type(e.get("step")) is int}
         if isinstance(review, dict):
             scope |= {i for i in review.get("steps_to_repair", []) if type(i) is int and 0 <= i < len(steps)}
@@ -132,20 +167,27 @@ def run_financial(public, models, arm, repair, *, event_sink=None):
                 "maxItems": len(scope), "items": {"type": "object", "properties": {"index": {"enum": sorted(scope)},
                     "step": schema["properties"]["steps"]["items"]}, "required": ["index", "step"], "additionalProperties": False}}},
                 "required": ["updates"], "additionalProperties": False}
-            patch = call(drafter, context + "\n" + instruction + "\nCurrent program:\n" + json.dumps(answer)
+            patch = call(drafter, context + "\n" + instruction + "\nCurrent program:\n" + json.dumps(plan)
                 + "\nFeedback:\n" + json.dumps(feedback) + "\nReturn updates of index and corrected step only for these indices: " + json.dumps(sorted(scope)),
                 patch_schema, budget.allowance(768, reserve=192), "repair_program_patch")
-            answer, accepted = patch_program(answer, patch, scope, evidence)
+            if representation == "reference":
+                plan, accepted = patch_plan(plan, patch, scope, atoms, evidence)
+            else:
+                plan, accepted = patch_program(plan, patch, scope, evidence)
+            answer = decode(plan)
         else:
-            candidate = call(drafter, draft_prompt + "\nCorrect this program:\n" + json.dumps(answer)
+            candidate = call(drafter, draft_prompt + "\nCorrect this program:\n" + json.dumps(plan)
                 + "\nFeedback:\n" + json.dumps(feedback), schema, budget.allowance(768, reserve=192), "repair_program_full")
             if isinstance(candidate, dict):
-                answer, accepted = candidate, True
+                plan, accepted = candidate, True
+                answer = decode(plan)
         if accepted:
             review = verify(answer, "verify_program_repair")
     execution = checked(answer, evidence)
     return {"task": "finqa", "case_id": public["id"], "arm": arm, "repair": repair,
             "initial_answer": initial, "answer": answer, "initial_execution": initial_execution, "execution": execution,
+            "initial_plan": initial_plan, "plan": plan, "representation": representation, "unit_mode": unit_mode, "selector": selector,
+            "active_roles": sorted({s["role"] for s in stages}),
             "initial_verdict": initial_review, "final_verdict": review,
             "delivered": not execution["issues"] and good(review), "repair_attempted": repair != "none" and needs_repair,
             "repair_accepted": accepted, "repair_scope": sorted(scope), "tokens": budget.spent, "stages": stages,
