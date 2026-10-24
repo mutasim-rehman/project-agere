@@ -111,6 +111,15 @@
 - Corrected numeric extraction for decimals immediately before sentence-final
   punctuation. The prior boundary could drop such values. This is a parser fix,
   not a model reasoning gain; old results remain immutable with their code hashes.
+- MAS source-reference smoke completed: 0/2 correct, both withheld, peak RSS
+  5,252,325,376 bytes, 325 tokens. First plan contradicted its INSUFFICIENT decision
+  with a nonempty program; second referenced #0 in step 0 and every subsequent
+  step referenced itself. The checker rejected both despite model verifier PASS.
+- The second reference prompt reached 3,303 tokens because the quantity catalog
+  repeats source context. Neither run hit its output cap, but this is inefficient.
+  Next controls should compact the catalog and enforce causal references in the
+  generation grammar, not rely on tiny models learning protocol constraints.
+  A matching SAS reference smoke is live before those controls are changed.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside
