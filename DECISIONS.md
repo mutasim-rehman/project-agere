@@ -2,6 +2,32 @@
 
 ## Redevelopment — 24 October 2026
 
+### Preserve source-identity uncertainty in numeric training programs
+
+- Added a separate partial-binding compiler. A numeric operand keeps every
+  matching source-cell ID; annotated evidence spans are recorded as hints and
+  cannot silently narrow the domain. Repeated ambiguous occurrences keep separate
+  slots whose domains may overlap/alias. Only a unique numeric cell identity may
+  be automatically reused. An ambiguous result has no resolved training target;
+  resolution requires an explicit admissible assignment and preserves operations,
+  constants and prior-step references. Domain membership is not semantic truth.
+- A concrete training record (AWK/2018/page_172.pdf-2) asks about 2019 and 2020
+  values, both 65, but its annotated source points to the 2021 row, also 65.
+  The former compiler's first matching annotated cell creates a constant transfer
+  sketch. Numeric execution success alone cannot establish source-role identity.
+  No original report claims or all-annotation error rates are inferred from this.
+- Audited all 620 bank examples using training source only: 529 have unique
+  numeric-cell mapping in the available packet; 91 are ambiguous. Three of four
+  canceled legacy sketches are ambiguous by this conservative test. Unique numeric
+  mapping still does not prove that the right periods/roles were retrieved.
+  All uniquely mapped plans exactly match their historical compiled targets.
+- This exposes uncertainty rather than pretending to resolve it by splitting
+  equal values into independent causal variables. Future transfer must resolve
+  cell roles or explicitly abstain/exclude an ambiguous demonstration. The model-
+  facing bank, frozen jobs and their inputs are unchanged. One hundred eleven
+  tests pass, including no forced alias, annotation hints, constants, reference
+  preservation, explicit assignments and parser rejection. Novelty/gains unproven.
+
 ### Full original-MAS formula-analysis result
 
 - Original 1.5B MAS analysis completed 24/24, peak RSS 5,245,755,392 bytes:

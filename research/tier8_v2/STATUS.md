@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 105 contract tests pass. They do not establish financial reasoning correctness.
+- 111 contract tests pass. They do not establish financial reasoning correctness.
 
 ## Completed development measurements
 
@@ -56,6 +56,10 @@ confirmation are not established. Historical results and raw runs remain preserv
   stronger SAS, but is not a semantic correctness certificate or rejection rule.
   Four numeric training sketches also flag, exposing equal-value cell-binding
   ambiguity in transfer construction. No frozen bank/code input was modified.
+- A partial-binding compiler now preserves candidate source identities instead
+  of silently choosing the first equal-valued cell. Training-bank audit finds
+  529 unique numeric mappings and 91 ambiguous examples. These are not semantic
+  error counts; model-facing targets remain unchanged during the frozen sequence.
 
 - Strict sketch+unit shape matches: retrieved top two cover 10/24, whole bank 15/24.
   Equivalent formulas are not counted. This is expressibility, not achieved accuracy.

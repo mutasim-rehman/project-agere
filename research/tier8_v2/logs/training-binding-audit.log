@@ -1,0 +1,9 @@
+{
+  "training_bank_sha256": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a",
+  "training_source_sha256": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+  "n": 620,
+  "numeric_unique_examples": 529,
+  "numeric_ambiguous_examples": 91,
+  "legacy_cancelled_and_ambiguous": 3,
+  "caution": "Numeric compatibility/identity only, not semantic correctness. Annotation hints do not narrow domains. No model-facing bank was replaced and no development/test labels were read."
+}
