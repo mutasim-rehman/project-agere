@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "mode": "fit",
+  "optimizer_updates": 2,
+  "examples_processed": 2,
+  "changed_adapter_tensors": 504,
+  "trainable_parameters": 14966784,
+  "last_training_loss": 0.1664692610502243,
+  "validation_teacher_forced_loss": null,
+  "wall_seconds": 5.417017292995297,
+  "gpu_peak_allocated": 3946031616,
+  "gpu_peak_reserved": 4225761280,
+  "adapter_files": {
+    "adapter_model.safetensors": "49b9d25a4e0fdf9180577ca1fbd949140ec252c7398239c17abe9dde27bfa525",
+    "adapter_config.json": "fea07b90f9b7dc9c5e400bfcc43046aa87f44d975664f8d9afaa238770b91ad1",
+    "README.md": "8977964cf96faf020869bf64f9c1961403349144eb4d1540f942078eafcc1dae"
+  },
+  "deployment_adapter_applied": false,
+  "measured_reasoning_gain": false
+}

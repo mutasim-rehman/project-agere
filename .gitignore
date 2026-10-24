@@ -8,6 +8,8 @@ venv/
 *.gguf
 *.safetensors
 weights/
+research/tier8_v2/runs/*/adapter/
+research/tier8_v2/runs/*/*.gguf
 adapters/
 # Phase 2 onward logs and outputs are written to AGERE_SSD_ROOT.
 .DS_Store

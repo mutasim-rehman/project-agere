@@ -220,3 +220,10 @@ match exactly; this is software validation only. Sequence 02 has 42 frozen input
 and fresh -02 output directories for a real repeat fit, then conditional training
 and conversion. Sequence 01 remains failed and immutable. Completion-token helper
 is prepared/validated but not integrated. No trained adapter or task gain yet.
+
+Real fit 02 succeeded: full 1,024-token longest example, two finite nonzero-gradient
+updates, 504 changed adapter tensors, GPU peak allocated 3.946 GB / reserved 4.226 GB.
+This is feasibility only, not task accuracy. Full one-epoch training has started
+under sequence 02 (exec session 73451); launch identities are in
+evidence/adaptation-sequence-launch-02.json. Keep 42 inputs frozen. Local adapter
+and GGUF binaries are ignored by Git; manifests/hashes/logs remain versioned.

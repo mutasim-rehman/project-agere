@@ -1,0 +1,39 @@
+{
+  "controllers": [
+    {
+      "pid": 193123,
+      "create_time": 1792860915.71,
+      "command": [
+        ".venv/bin/python",
+        "-u",
+        "scripts/tier8_v2_adaptation_sequence.py",
+        "--plan",
+        "research/tier8_v2/data/adaptation-sequence-02.json",
+        "--journal",
+        "research/tier8_v2/logs/adaptation-sequence-02.jsonl"
+      ]
+    }
+  ],
+  "workers": [
+    {
+      "pid": 193236,
+      "create_time": 1792860927.01,
+      "command": [
+        "/home/mutasim/Desktop/project-agere/.venv-training/bin/python",
+        "-u",
+        "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py",
+        "--profile",
+        "3b",
+        "--mode",
+        "train",
+        "--out",
+        "/home/mutasim/Desktop/project-agere/research/tier8_v2/runs/adapter-3b-train-02"
+      ]
+    }
+  ],
+  "exec_session": 73451,
+  "plan_sha256": "cbd7dafc4961605c81f3cdf1f2cb062db34d32bc623d1ba4ab0cdc0d9f23b7c5",
+  "fit_complete": true,
+  "full_training_active": true,
+  "model_accuracy_gain_measured": false
+}

@@ -2,6 +2,23 @@
 
 ## Redevelopment — 24 October 2026
 
+### Real full-context fit succeeded; full training is active
+
+- Sequence 02's real 3B fit completed at 16:55:27 UTC. Same longest 1,024-token
+  training sequence, two optimizer updates, finite nonzero gradients, and 504 changed
+  adapter tensors (14,966,784 trainable parameters). Peak allocated GPU memory
+  3,946,031,616 bytes, peak reserved 4,225,761,280 bytes. The memory repair preserved
+  full context/targets and succeeded where the original full-logit path failed.
+- The two losses (0.9611 then 0.1665) are repeated-example fit diagnostics, not QA
+  accuracy or generalization. No deployment adapter has been applied. Adapter
+  files are retained locally with exact hashes; large adapter/GGUF binaries are
+  ignored by Git, consistent with base weights. Source/config/summary/log proof
+  remains versioned and pushed.
+- The controller immediately started the separate one-epoch 661-example training
+  job. Launch identities and plan SHA are recorded; exec session 73451. Keep all
+  42 frozen inputs unchanged until it completes or fails. Conversion follows only
+  if full training validates. Do not duplicate the live training job.
+
 ### Preserve the full training objective with supervised-suffix logits
 
 - Verified the installed Qwen2 forward API supports logits_to_keep. The new helper
