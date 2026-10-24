@@ -40,6 +40,19 @@
 - Read Haque et al. setup/introduction (PDF pp. 1–3): failing tests plus traces
   inform complete-function repair, with alternative/adaptive representations.
   Our lack of deployment answer keys is a constraint, not proof of originality.
+- Stronger-verifier smoke completed: 0/2 correct, both wrong answers still passed
+  the 1.5B critic, 219 tokens, peak RSS 3,861,532,672 bytes. This configuration fits
+  comfortably but does not establish better semantic verification. Original 0.5B
+  controls remain available; do not present checkpoint size as achieved quality.
+- Retrieved-demo MAS smoke completed: 0/2 correct, one wrong delivery and one
+  withheld, 218 tokens, peak RSS 5,243,023,360 bytes. Both selected examples fit
+  each prompt. More relevant training questions did not fix quantity/formula
+  selection. Keep this negative baseline; broad MAS testing is not justified as
+  a claimed gain from this smoke alone.
+- Started full first-24 SAS formula-analysis development ablation (session 14672),
+  128 analysis tokens, fixed demonstrations and otherwise matching its baseline.
+  This follows a positive 2-case diagnostic; all 24 cases are retained, including
+  the debug cases. It is development reuse, not a fresh confirmatory test.
 
 ### Bounded dependency-reconnection policy
 

@@ -18,8 +18,11 @@ are not established. Do not mark the goal complete from these development result
   Both analysis calls reached their allowance. Larger development testing remains.
 - 73 tests pass. These checks establish contracts, not financial correctness.
 - Optional question-only BM25 demonstration retrieval uses 620 eligible training
-  examples, excluding all annual reports in development. Model gains are untested;
-  fixed demonstrations remain available. Proposed and fitted example IDs are logged.
+  examples, excluding all annual reports in development. MAS smoke remains 0/2
+  correct, one wrong delivery and one withheld; both demos fit each prompt. Fixed
+  demonstrations remain available. Proposed and fitted example IDs are logged.
+- Shared 1.5B-verifier MAS smoke also remains 0/2 correct, both wrongly delivered;
+  peak RSS 3.862 GB. Greater verifier size alone did not fix semantic checking.
 - A gold-free dependency-reconnection selector is implemented and unit-tested.
   It offers KEEP plus at most seven single-edge alternatives and rechecks the
   selected program. Actual model-selected repair gains remain unmeasured.
@@ -53,9 +56,10 @@ are not established. Do not mark the goal complete from these development result
 
 ## Live run
 
-MAS stronger-verifier smoke: research/tier8_v2/runs/finqa-mas-strong-verifier-smoke-01
-Exec session: 34434. Revalidate its worker process before calling it stopped.
-Two development cases, shared 1.5B verifier, no analysis and fixed demonstrations.
+Full SAS formula-analysis ablation: research/tier8_v2/runs/finqa-sas-analysis-dev24-01
+Exec session: 14672. Revalidate its worker process before calling it stopped.
+24 development cases, 128 analysis tokens, fixed demonstrations; matches the
+no-analysis baseline otherwise. The debug prefix is reused development data.
 Partial output is not a final result. Do not launch competing inference here.
 
 ## Next steps
