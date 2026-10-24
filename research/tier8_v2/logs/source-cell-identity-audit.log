@@ -1,0 +1,21 @@
+{
+  "packets": [
+    {
+      "packet_file": "finqa-development-public.jsonl",
+      "packet_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+      "n": 24,
+      "cases_with_same_row_value_in_distinct_cells": 5,
+      "collision_groups": 12
+    },
+    {
+      "packet_file": "finqa-development-table-complete.jsonl",
+      "packet_sha256": "20b967e2aa259690d5b23288c663e8d5fe198a0acc752c84f819c2dc9389e5ef",
+      "n": 24,
+      "cases_with_same_row_value_in_distinct_cells": 7,
+      "collision_groups": 14
+    }
+  ],
+  "executable_programs_checked": 67,
+  "training_targets_checked": 620,
+  "training_collision_cases": 71
+}

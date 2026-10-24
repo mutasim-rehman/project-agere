@@ -2,6 +2,34 @@
 
 ## Redevelopment — 24 October 2026
 
+### Preserve table-cell identity through source compilation
+
+- Added evidence_cells.py as an independent, unused-by-live-runs module. It
+  preserves every legacy A-ID, quantity value and ordering, validates that selected
+  flattened rows exactly match the provided source table, and attaches row/column,
+  measure label, column label and within-cell occurrence metadata. Unselected rows
+  are not exposed. Ambiguous flattening is rejected. No QA fields are accepted.
+- compile_cells copies source values into cell-specific citations and records each
+  binding. Distinct equal-valued columns no longer collapse into one row citation
+  in the execution trace. Narrative quantities still have span-level identity;
+  this does not prove question relevance, intended period or formula correctness.
+  The legacy parser already excludes column-header years from copied cell values;
+  this change should not be described as fixing header-year extraction.
+- Real-data audit: 5/24 original packets have 12 within-row equal-value collision
+  groups; table-complete packets have 7/24 with 14 groups. These are representational
+  ambiguities, not counted errors. Across four completed development runs, all 67
+  executable reference plans retain their numeric values with cell-level support.
+  All 620 training targets remain executable; 71 training packets have same-row
+  equal-value collisions. No target was semantically adjudicated or replaced.
+- Six new tests cover equal-valued column identity, unchanged values/IDs including
+  negatives and narrative values, unselected-row isolation, source-table mismatch,
+  ambiguous flattening and invented references. Full suite: 139 tests pass.
+- Evidence and source/code hashes are retained in source-cell-identity-audit.json.
+  None of the 59 frozen inputs changed; live MAS/SAS ablations remain isolated.
+  Cell identity is a known grounding technique and an implementation foundation,
+  not a novelty or measured accuracy claim. Deployment integration and matched
+  metadata/control experiments remain pending after the frozen sequence ends.
+
 ### Running length ablation and closer semantic-verification prior
 
 - Frozen 59 inputs for data/analysis256-sequence-01.json; controller exec session

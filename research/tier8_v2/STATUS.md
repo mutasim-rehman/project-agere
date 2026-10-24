@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 133 contract tests pass. They do not establish financial reasoning correctness.
+- 139 contract tests pass. They do not establish financial reasoning correctness.
 - Separate memory-monitored fixed-output repair harness is ready for plain versus
   proof feedback on the same algebraically flagged cohort. Original output tokens
   are debited; changed answers are reverified. Grammar/compatibility checks pass,
@@ -29,6 +29,18 @@ confirmation are not established. Historical results and raw runs remain preserv
 - A dedicated paired replay evaluator now verifies shared snapshots/cohorts,
   recomputes scores and triggers, checks token debits and separates fresh repair
   costs from recorded baseline costs. Its integration fixture uses mocked replies.
+
+## Source-cell foundation (not used in the live sequence)
+
+A new independent cell catalog preserves legacy quantity IDs/values and selected
+source rows, adds exact table coordinates/labels, and compiles cell-specific
+citations. Narrative identity remains span-level; semantic correctness is not
+certified. All 67 executable plans across four completed development baselines
+retain their numeric outputs, and 620 training targets remain executable.
+Within-row equal-valued cell collisions occur in 5/24 original packets, 7/24
+table-complete packets and 71/620 training examples. These are not error rates.
+Audit: evidence/source-cell-identity-audit.json. Integration and accuracy testing
+are pending; all live frozen inputs remain unchanged.
 
 ## Completed development measurements
 
