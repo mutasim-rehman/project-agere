@@ -13,10 +13,10 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "127.4"
+            "P001": "127.4"
           },
           "oracle_correct_prefix_ids": [
-            "P1"
+            "P001"
           ],
           "oracle_potential_gain": true
         },
@@ -25,8 +25,8 @@
           "original_correct": false,
           "original_unit": "percent",
           "candidate_values": {
-            "P1": "-1981",
-            "P2": "-0.9845924453280318091451292247"
+            "P001": "-1981",
+            "P002": "-0.9845924453280318091451292247"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -36,7 +36,7 @@
           "original_correct": false,
           "original_unit": "percent",
           "candidate_values": {
-            "P1": "0.1010101010101010101010101010"
+            "P001": "0.1010101010101010101010101010"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -46,7 +46,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "1454.7"
+            "P001": "1454.7"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -56,7 +56,7 @@
           "original_correct": false,
           "original_unit": "fraction",
           "candidate_values": {
-            "P1": "1.852664576802507836990595611"
+            "P001": "1.852664576802507836990595611"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -66,7 +66,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "1041"
+            "P001": "1041"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -76,7 +76,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "47358"
+            "P001": "47358"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -86,10 +86,10 @@
           "original_correct": false,
           "original_unit": "fraction",
           "candidate_values": {
-            "P1": "30.44322960470984020185029437"
+            "P001": "30.44322960470984020185029437"
           },
           "oracle_correct_prefix_ids": [
-            "P1"
+            "P001"
           ],
           "oracle_potential_gain": true
         },
@@ -98,7 +98,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "-660765"
+            "P001": "-660765"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -108,7 +108,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "77"
+            "P001": "77"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -118,7 +118,7 @@
           "original_correct": false,
           "original_unit": "percent",
           "candidate_values": {
-            "P1": "105"
+            "P001": "105"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -128,7 +128,7 @@
           "original_correct": false,
           "original_unit": "fraction",
           "candidate_values": {
-            "P1": "0.2897424830959574161991080420"
+            "P001": "0.2897424830959574161991080420"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -138,7 +138,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "-2.8"
+            "P001": "-2.8"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -148,7 +148,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "629"
+            "P001": "629"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -158,8 +158,8 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "-3857",
-            "P2": "-6138"
+            "P001": "-3857",
+            "P002": "-6138"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -169,7 +169,7 @@
           "original_correct": false,
           "original_unit": "fraction",
           "candidate_values": {
-            "P1": "29.55"
+            "P001": "29.55"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -179,7 +179,7 @@
           "original_correct": false,
           "original_unit": "percent",
           "candidate_values": {
-            "P1": "25"
+            "P001": "25"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -189,7 +189,7 @@
           "original_correct": false,
           "original_unit": "fraction",
           "candidate_values": {
-            "P1": "3.085074626865671641791044776"
+            "P001": "3.085074626865671641791044776"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -199,7 +199,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "2811"
+            "P001": "2811"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -209,7 +209,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "1"
+            "P001": "1"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -219,13 +219,13 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "2061",
-            "P2": "2062",
-            "P3": "2063",
-            "P4": "2064",
-            "P5": "75",
-            "P6": "2583",
-            "P7": "49.7"
+            "P001": "2061",
+            "P002": "2062",
+            "P003": "2063",
+            "P004": "2064",
+            "P005": "75",
+            "P006": "2583",
+            "P007": "49.7"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -235,7 +235,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "-167"
+            "P001": "-167"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -245,7 +245,7 @@
           "original_correct": false,
           "original_unit": "fraction",
           "candidate_values": {
-            "P1": "0.02613015399900645802285146547"
+            "P001": "0.02613015399900645802285146547"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -279,11 +279,11 @@
           "original_correct": false,
           "original_unit": "percent",
           "candidate_values": {
-            "P1": "93.5",
-            "P2": "0.935"
+            "P001": "93.5",
+            "P002": "0.935"
           },
           "oracle_correct_prefix_ids": [
-            "P1"
+            "P001"
           ],
           "oracle_potential_gain": true
         },
@@ -292,7 +292,7 @@
           "original_correct": true,
           "original_unit": "percent",
           "candidate_values": {
-            "P1": "0.2469135802469135802469135802"
+            "P001": "0.2469135802469135802469135802"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -334,10 +334,10 @@
           "original_correct": false,
           "original_unit": "fraction",
           "candidate_values": {
-            "P1": "1553",
-            "P2": "2024",
-            "P3": "3577",
-            "P4": "10.11937377690802348336594912"
+            "P001": "1553",
+            "P002": "2024",
+            "P003": "3577",
+            "P004": "10.11937377690802348336594912"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -355,7 +355,7 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "43.74193548387096774193548387"
+            "P001": "43.74193548387096774193548387"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -421,8 +421,8 @@
           "original_correct": false,
           "original_unit": "percent",
           "candidate_values": {
-            "P1": "-1404",
-            "P2": "-0.3396226415094339622641509434"
+            "P001": "-1404",
+            "P002": "-0.3396226415094339622641509434"
           },
           "oracle_correct_prefix_ids": [],
           "oracle_potential_gain": false
@@ -448,14 +448,14 @@
           "original_correct": false,
           "original_unit": "number",
           "candidate_values": {
-            "P1": "90",
-            "P2": "135",
-            "P3": "180",
-            "P4": "224",
-            "P5": "44.8"
+            "P001": "90",
+            "P002": "135",
+            "P003": "180",
+            "P004": "224",
+            "P005": "44.8"
           },
           "oracle_correct_prefix_ids": [
-            "P5"
+            "P005"
           ],
           "oracle_potential_gain": true
         },

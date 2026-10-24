@@ -4,30 +4,18 @@ Candidate construction uses saved programs/evidence only. Gold evaluates the
 already constructed prefixes afterward, with the original declared unit fixed.
 This tests a possible answer-endpoint repair, not a claim of novel program slicing.
 """
-from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
 
-from evidence_calculator import execute
+from program_endpoints import endpoint_candidates
 from tier8_v2_financial_pipeline import evaluate_financial
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def prefixes(answer, evidence):
-    if not isinstance(answer, dict) or answer.get("decision") != "ANSWER" or not isinstance(answer.get("steps"), list):
-        return []
-    if execute(answer["steps"], evidence)["issues"]:
-        return []
-    output = []
-    for length in range(1, len(answer["steps"])):
-        candidate = deepcopy(answer)
-        candidate["steps"] = candidate["steps"][:length]
-        execution = execute(candidate["steps"], evidence)
-        if not execution["issues"]:
-            output.append({"id": f"P{length}", "answer": candidate, "execution": execution})
-    return output
+    return endpoint_candidates(answer, evidence)[1:]
 
 
 def main():

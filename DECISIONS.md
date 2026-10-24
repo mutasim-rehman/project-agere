@@ -2,6 +2,30 @@
 
 ## Redevelopment — 24 October 2026
 
+### Bounded answer-endpoint selector module
+
+- Implemented a separate gold-free endpoint module. For a source-supported,
+  executable ANSWER program it offers KEEP and every nonempty executable proper
+  prefix (at most eight choices total). Unit, retained operations, operands and
+  internal references stay fixed. Invalid/abstaining programs are outside this
+  primitive's scope; full regeneration remains a necessary comparator.
+- Selection accepts only a candidate ID. Application checks the exact expected
+  prefix and rejects tampered units, operands or drop scope. Equal-valued choices
+  are retained because different source lineages can yield the same number;
+  numerical equality alone does not prove that a measure is relevant.
+- Added a caller-budgeted model-choice callback with source/question/program and
+  a finite hypothetical-result menu. KEEP remains available; a missing/invalid
+  choice preserves the original. Caller integration must charge the shared case
+  ledger and reverify changed answers. It is not yet enabled in the frozen runner,
+  and no actual model-selected gains are claimed.
+- The offline prefix audit now uses this same candidate implementation and still
+  finds 2/24 oracle-potential corrections in each completed baseline. Eighty-eight
+  tests pass, including exact prefix preservation, tamper rejection, same-value
+  provenance, no model call without alternatives, and malformed-selection KEEP.
+- Only new/unfrozen offline code was added/edited. All 38 frozen sketch-sequence
+  inputs remain unchanged. Integrate and measure endpoint repair after that serial
+  sequence completes; preserve the positive/negative strong-baseline results first.
+
 ### Serial sketch diagnostic execution
 
 - Prepared a frozen two-job sequence: MAS then SAS, first two development records,
