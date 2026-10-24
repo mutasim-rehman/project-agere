@@ -2,6 +2,23 @@
 
 ## Redevelopment — 24 October 2026
 
+### Reclaimed reproducible model-download caches for adaptation
+
+- SHA256-verified both original 0.5B/1.5B public FP16 GGUF downloads and their native
+  runtime conversions, then removed only the redundant originals. Reclaimed
+  4,826,841,984 bytes; free disk became 6,839,160,832 bytes. Native 0.5B/1.5B runtime
+  weights, 3B/7B inference weights, datasets, logs and manifests remain present.
+  Removed download files can be restored at their pinned repository revisions and
+  hashes; conversion provenance is retained. No user-authored content was removed.
+- All 59 frozen input hashes still match. SAS remains active and uses its retained
+  7B shards. The source-download filenames in historical manifests are provenance,
+  not a claim that those redundant cached originals are still on disk.
+- Preparing Torch 2.6.0 from the official CUDA 12.4 wheel index in .venv-training,
+  following PyTorch's documented previous-version installation. No actual model
+  load/backward training is permitted until serial CPU inference is complete.
+  Dependency installation/offline preparation may add host load; current latency
+  measurements are exploratory, not a pristine isolated performance experiment.
+
 ### Official HF tokenizer parity verified before adaptation
 
 - Created .venv-training independently; the research .venv and all frozen inference

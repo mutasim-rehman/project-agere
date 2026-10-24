@@ -1,0 +1,36 @@
+{
+  "purpose": "Free disk for separate adaptation runtime; redundant public download caches only",
+  "before_free_bytes": 2012311552,
+  "records": [
+    {
+      "source": {
+        "repo": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+        "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+        "file": "weights/tier8_v2/qwen2.5-0.5b-instruct-fp16.gguf",
+        "bytes": 1266425696,
+        "sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc"
+      },
+      "retained_native": "weights/tier8_v2/qwen2.5-0.5b-instruct-native-f16.gguf",
+      "retained_native_sha256": "f044b7e19bf2a007973e9c84119c34afcab419546e76595b0367f963275b66e9",
+      "removed": true
+    },
+    {
+      "source": {
+        "repo": "Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+        "revision": "91cad51170dc346986eccefdc2dd33a9da36ead9",
+        "file": "weights/tier8_v2/qwen2.5-1.5b-instruct-fp16.gguf",
+        "bytes": 3560416288,
+        "sha256": "fc89e330deb3fd8fa560f1c0f35a1e2b8da96d59e13445559ed190307a6f5649"
+      },
+      "retained_native": "weights/tier8_v2/qwen2.5-1.5b-instruct-native-f16.gguf",
+      "retained_native_sha256": "f5bff4cb44a4fd8538b6f20527eb2af472a435f53d55289c967f4cdeea7bc1a7",
+      "removed": true
+    }
+  ],
+  "native_runtime_files_verified_and_retained": true,
+  "script_sha256": "f26402a70f83390eddb3c57701e82b06ec4cf361fbc179a5dfdc43008bfe4d1a",
+  "after_free_bytes": 6839160832,
+  "bytes_reclaimed": 4826841984,
+  "all_frozen_inputs_unchanged": true,
+  "status": "complete"
+}

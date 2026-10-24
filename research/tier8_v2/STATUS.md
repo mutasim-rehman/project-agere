@@ -171,3 +171,9 @@ Tokenizer runtime is isolated in .venv-training; exact package versions are in
 runtime-tokenizers-requirements.txt. Official pinned tokenizer assets and parity
 proof are in evidence/hf-tokenizer-snapshots-01.json and hf-tokenizer-parity-01.json.
 No GPU training has run; disk and backward-step feasibility must be addressed.
+
+Redundant original 0.5B/1.5B public FP16 download caches were hash-verified and
+removed, reclaiming 4.827 GB. Native inference files remain verified and retained;
+reclaimed-source-cache-01.json records pinned source hashes and recovery identity.
+The separate CUDA training stack is being installed. GPU model fit/training and
+adapter application remain untested; no training overlaps the active CPU sequence.
