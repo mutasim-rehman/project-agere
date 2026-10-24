@@ -1,0 +1,37 @@
+Using Python 3.12.15 environment at: .venv-training
+Resolved 58 packages in 26.87s
+Downloading pydantic-core (2.1MiB)
+Downloading tiktoken (1.1MiB)
+Downloading pillow (6.8MiB)
+Downloading sentencepiece (1.2MiB)
+Downloading mistral-common (6.2MiB)
+Downloading bitsandbytes (57.3MiB)
+Downloading pycountry (7.7MiB)
+ Downloaded tiktoken
+ Downloaded sentencepiece
+ Downloaded pydantic-core
+ Downloaded mistral-common
+ Downloaded pillow
+ Downloaded pycountry
+ Downloaded bitsandbytes
+Prepared 19 packages in 2m 35s
+Installed 19 packages in 28ms
+ + accelerate==1.10.1
+ + annotated-types==0.8.0
+ + attrs==26.1.0
+ + bitsandbytes==0.48.1
+ + jsonschema==4.26.0
+ + jsonschema-specifications==2025.9.1
+ + mistral-common==1.8.3
+ + peft==0.17.1
+ + pillow==13.0.0
+ + psutil==7.1.0
+ + pycountry==26.2.16
+ + pydantic==2.14.1
+ + pydantic-core==2.50.1
+ + pydantic-extra-types==2.11.1
+ + referencing==0.37.0
+ + rpds-py==2026.9.1
+ + sentencepiece==0.2.0
+ + tiktoken==0.14.0
+ + typing-inspection==0.4.4

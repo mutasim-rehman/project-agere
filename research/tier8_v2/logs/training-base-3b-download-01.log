@@ -1,0 +1,47 @@
+Transfer model.partial: offset=0, status=206, content_length=2054625552
+Transfer ended at 2054625552/2054625552 bytes
+{
+  "repo": "unsloth/Qwen2.5-3B-Instruct-bnb-4bit",
+  "revision": "2672b588848527e456d320c11926c794539f47d5",
+  "folder": "weights/hf-training/3b",
+  "weight_file": "model.safetensors",
+  "bytes": 2054625552,
+  "sha256": "f49f0825fce862ef2ee0d336751273b3c849b82a1854530c9399ff4e3df8abad",
+  "config_files": [
+    {
+      "file": "config.json",
+      "bytes": 1337,
+      "sha256": "bed11cba5f84170418b779657b75cb23d030fc00dda8aa0b879f95c11a6766b7"
+    },
+    {
+      "file": "generation_config.json",
+      "bytes": 271,
+      "sha256": "424e77633729a4c63a0810e0fa32e3344b03499cd3a0b2fc626bfae19e7eb923"
+    }
+  ],
+  "quantization_config": {
+    "_load_in_4bit": true,
+    "_load_in_8bit": false,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "llm_int8_skip_modules": [
+      "lm_head",
+      "multi_modal_projector",
+      "merger",
+      "modality_projection"
+    ],
+    "llm_int8_threshold": 6.0,
+    "load_in_4bit": true,
+    "load_in_8bit": false,
+    "quant_method": "bitsandbytes"
+  },
+  "weights_verified": true,
+  "script_sha256": "05d70fe6d43e24ceb0fc95d5ec1b6e96e94ba29f50dfc4c471777257be1fcb73",
+  "deployment_quantization": "Q4_K_M GGUF (different from this NF4 training base)",
+  "exact_original_fp16_equivalence_asserted": false,
+  "model_trained": false
+}

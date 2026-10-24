@@ -1,0 +1,12 @@
+{
+  "repo": "ggml-org/llama.cpp",
+  "revision": "4227c9be4268ac844921b90f31595f81236bd317",
+  "python_runtime_version": "0.3.16",
+  "submodule_source": "abetlen/llama-cpp-python v0.3.16 vendor/llama.cpp",
+  "folder": ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317",
+  "files": 22,
+  "source_hashes_verified": true,
+  "conversion_executed": false,
+  "adapter_applied": false,
+  "script_sha256": "2e104d725ac9d558c9905ec30f449e280ff52ec17d39767c1b07b007f8f3431e"
+}

@@ -78,7 +78,7 @@ def main():
     torch.manual_seed(42)
     torch.cuda.manual_seed_all(42)
     base = ROOT / "research/tier8_v2"
-    parity_path = base / "evidence/hf-tokenizer-parity-01.json"
+    parity_path = base / "evidence/hf-tokenizer-parity-02.json"
     parity = json.loads(parity_path.read_text())
     if not parity["pass"] or parity["transformers_version"] != transformers.__version__:
         raise ValueError("Successful parity under the current tokenizer runtime required")
@@ -97,6 +97,9 @@ def main():
             raise ValueError("Training model config changed")
     profile = "mas-3b-q4" if args.profile == "3b" else "sas-7b-q4"
     tokenizer_folder = ROOT / "weights/hf-tokenizers" / profile
+    from tier8_v2_adapter_convert import check_architecture
+    check_architecture(json.loads((folder / "config.json").read_text()),
+                       json.loads((tokenizer_folder / "config.json").read_text()))
     tokenizer = AutoTokenizer.from_pretrained(str(tokenizer_folder), local_files_only=True, trust_remote_code=False)
     rows = [json.loads(line) for line in data_path.read_text().splitlines()]
     examples = [encode_example(tokenizer, row, profile) for row in rows]

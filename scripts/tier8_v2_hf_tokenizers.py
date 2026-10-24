@@ -58,7 +58,7 @@ def fetch():
     print(json.dumps(report, indent=2), flush=True)
 
 
-def verify():
+def verify(output_name=None):
     # Prevent HF libraries from consulting caches or downloading outside ROOT.
     os.environ["HF_HOME"] = str(ROOT / ".local/hf-training")
     os.environ["HF_HUB_CACHE"] = str(ROOT / ".local/hf-training/hub")
@@ -69,7 +69,9 @@ def verify():
     base = ROOT / "research/tier8_v2"
     snapshots = base / "evidence/hf-tokenizer-snapshots-01.json"
     dataset_manifest = base / "evidence/deployment-sft-1024-02.json"
-    output = base / "evidence/hf-tokenizer-parity-01.json"
+    output = (ROOT / output_name).resolve() if output_name else base / "evidence/hf-tokenizer-parity-01.json"
+    if not output.is_relative_to(ROOT):
+        raise ValueError("Parity evidence must remain inside the repository")
     if output.exists():
         raise ValueError("Refusing to overwrite tokenizer parity evidence")
     manifest = json.loads(dataset_manifest.read_text())
@@ -116,5 +118,11 @@ def verify():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=("fetch", "verify"))
+    parser.add_argument("--out", help="New parity evidence file inside the repository; verify only")
     args = parser.parse_args()
-    {"fetch": fetch, "verify": verify}[args.mode]()
+    if args.mode == "fetch":
+        if args.out:
+            parser.error("--out applies to verify only")
+        fetch()
+    else:
+        verify(args.out)

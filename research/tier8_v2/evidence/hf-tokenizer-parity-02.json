@@ -1,0 +1,29 @@
+{
+  "profiles": {
+    "mas-3b-q4": {
+      "n": 761,
+      "mismatches": [],
+      "pass": true,
+      "tokenizer_class": "Qwen2TokenizerFast",
+      "repo": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+    },
+    "sas-7b-q4": {
+      "n": 761,
+      "mismatches": [],
+      "pass": true,
+      "tokenizer_class": "Qwen2TokenizerFast",
+      "repo": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+    }
+  },
+  "pass": true,
+  "transformers_version": "4.57.1",
+  "tokenizers_version": "0.22.2",
+  "snapshots_sha256": "79dcdd10e81f94cd9192aaf299c5c69a92b3c56ce8dfc5331d27ae9d0fd18f7b",
+  "dataset_manifest_sha256": "0ac749299078f46a67f9e57f6830b84e2418b425e96482c80dcd9494a2969a06",
+  "dataset_sha256": "0b1052db3f7c6a5d85d321b500b9478ea453aa936d0b78e326215c3ce2933069",
+  "script_sha256": "bab9dd139455c4b1ecc5cc8eb06de9ad44bdc7e2e01a92eab0a9bab7d363e26a",
+  "model_training_performed": false,
+  "model_calls": 0
+}

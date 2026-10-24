@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 151 contract tests pass. They do not establish financial reasoning correctness.
+- 153 contract tests pass. They do not establish financial reasoning correctness.
 - Separate memory-monitored fixed-output repair harness is ready for plain versus
   proof feedback on the same algebraically flagged cohort. Original output tokens
   are debited; changed answers are reverified. Grammar/compatibility checks pass,
@@ -191,3 +191,13 @@ Future 1.5B controls require restoration first; recovery provenance is recorded 
 evidence/reclaimed-native-cache-02.json. A resumable 3B NF4 weight download is now
 active (logs/training-base-3b-download-01.log), alongside CUDA package installation.
 No actual model fit/training is active. All frozen SAS inputs remain unchanged.
+
+GPU setup and 3B base verification are now complete. All training imports and the
+runtime-paired converter --help pass. HF parity revision 02 passes all 761 rows
+after dependency installation. Actual GPU fit remains unexecuted.
+
+Queued workflow: data/adaptation-sequence-01.json, 40 frozen inputs. It waits for
+the identified CPU controller and complete SAS/journal evidence, then runs the
+real longest-example fit, a full one-epoch 3B training run if fit succeeds, and
+conversion. No retries; failures stop the queue. Journal/log prefix is
+logs/adaptation-sequence-01. Applied-adapter inference is not included or claimed.

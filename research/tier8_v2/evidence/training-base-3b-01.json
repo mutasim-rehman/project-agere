@@ -37,7 +37,7 @@
     "load_in_8bit": false,
     "quant_method": "bitsandbytes"
   },
-  "weights_verified": false,
+  "weights_verified": true,
   "script_sha256": "05d70fe6d43e24ceb0fc95d5ec1b6e96e94ba29f50dfc4c471777257be1fcb73",
   "deployment_quantization": "Q4_K_M GGUF (different from this NF4 training base)",
   "exact_original_fp16_equivalence_asserted": false,

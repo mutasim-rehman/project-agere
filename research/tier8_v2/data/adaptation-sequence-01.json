@@ -1,0 +1,79 @@
+{
+  "profile": "3b",
+  "purpose": "Known-method adaptation baseline; fit two real updates before full one-epoch training and conversion. No inferred novelty or task gain.",
+  "dependency": {
+    "pid": 159981,
+    "create_time": 1792856477.47,
+    "command_arg": "research/tier8_v2/data/analysis256-sequence-01.json",
+    "run": "research/tier8_v2/runs/finqa-sas-analysis256-dev24-01",
+    "journal": "research/tier8_v2/logs/analysis256-sequence-01.jsonl"
+  },
+  "runtime_versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.1",
+    "tokenizers": "0.22.2",
+    "peft": "0.17.1",
+    "accelerate": "1.10.1",
+    "bitsandbytes": "0.48.1",
+    "psutil": "7.1.0"
+  },
+  "input_sha256": {
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/LICENSE": "e562a2ddfaf8280537795ac5ecd34e3012b6582a147ef69ba6a6a5c08c84757d",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/convert_hf_to_gguf.py": "a508782450d00f07135d178290bf65d8612440ebf05ae4b9cbb951dc468a94ab",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/convert_lora_to_gguf.py": "8fffe525944c35d64d7587dfbf7d5939e9bd76d997ca0c9f96d3461529e0d19c",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/README.md": "f759ed01b8899c392cee7f1bc9012356090dd46014898c2cface1cca5f1e18af",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/__init__.py": "3ccfc0104cd7ea88c6028743b7bf3f2c89b5f474425de03a217a6072320d7c2f",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/constants.py": "4e90e4d23c28ed300cc38876437eda3923814b86b0ce14842d1e17c71b5d8eee",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/gguf.py": "f0c0eeedad0911784b52ffed8e162a0eb5ae6d535ce35705bc16196e46597a72",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/gguf_reader.py": "eae238bda2de442d8c255fae52382c468519f9176cce2f2613f6c43f09e4e901",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/gguf_writer.py": "5edd264d4442de4dbbe1902ae357d26d1e6020fb66936fe8812967f5dc3a3365",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/lazy.py": "031cbfa656c7a02df89cc78afce45b6f11321059be173f01c4521ea9e8a94980",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/metadata.py": "43df7ab63abdeab0fa5c800a38a010b5017761096a90417dc3aeb9a0815820cc",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/quants.py": "46461f4f9db2fccaf9364c06566b281af2520fbcc1e01f223a3973aa122adc5b",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/scripts/gguf_convert_endian.py": "cb397f3004378f29fff4c98e595d4292c1ea96885dec39ab1bb444c1ab34ae5a",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/scripts/gguf_dump.py": "d8b8fc28e96d15d8a4d6f05cdff4a747f5a06f31172efee9dfc971998ed0203f",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/scripts/gguf_editor_gui.py": "7eb744ad2201f7437eb00bea5296cb7dd0ec69418c30e590fb48ae9b0cf39bf3",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/scripts/gguf_hash.py": "9f277c9338d12a73857a4e54683d7da4d5de01531751f14401267c9289e4197f",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/scripts/gguf_new_metadata.py": "7ce89f51534a001de616d56f4d9e484098d430a055516738cfda60b85fa34414",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/scripts/gguf_set_metadata.py": "c8612a7109428a677ea55976dd5eeed6088934ddef7ef01246a5bc7a6e585b3b",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/tensor_mapping.py": "369d0236f22add70f85d20d3c775cf75a1ca8b414b745581a4a3728e86448071",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/utility.py": "c077cdc7b29fddf530473168f43e390981711147722693da5b87705385141c4c",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/gguf/vocab.py": "006e2c86a66cb2223176d01ed0c2e90f9479bf5a93c88771c07d46f8eeafcf6c",
+    ".local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/gguf-py/pyproject.toml": "b947b3169c07e4905ba1fb02b8aef6a5a2b23b03c99107b09556f5d318ab1d6d",
+    "research/tier8_v2/data/deployment-sft-1024-02.jsonl": "0b1052db3f7c6a5d85d321b500b9478ea453aa936d0b78e326215c3ce2933069",
+    "research/tier8_v2/evidence/adapter-converter-source-01.json": "9b653e09050c8ffeaa69d0a5beb69ba105d083e81cb7670f5bd0ba1a17905777",
+    "research/tier8_v2/evidence/deployment-sft-1024-02.json": "0ac749299078f46a67f9e57f6830b84e2418b425e96482c80dcd9494a2969a06",
+    "research/tier8_v2/evidence/hf-tokenizer-parity-02.json": "2be2c99130c37fa66b2a64092314412261f70c8ae58d3cb46bced5382401b7ec",
+    "research/tier8_v2/evidence/training-base-3b-01.json": "771c582457fff67d7445bfd28e0fb793af858f3a152456865abb2972f638dc8a",
+    "research/tier8_v2/runtime-gpu-requirements.txt": "33e559b139f628c47dfb10d264cd7b2060f367547c17bd65444148df59d353ad",
+    "scripts/tier8_v2_adapt.py": "c65b693ed9fdf421aa2da68ab3305f9ba87bf1f9c9d7b85bb72721593eeb7a90",
+    "scripts/tier8_v2_adaptation_sequence.py": "baaaef5d12e3f3f6d74ab3270eefdff931a2ea4c3c2bf8b18b9068c208bdfe95",
+    "scripts/tier8_v2_adapter_convert.py": "dff6c2a1846a78acb5efdf69ff244c33bbd01ea68d0e6af72f18e0332bea5867",
+    "scripts/tier8_v2_sequence.py": "c90929038c478c5cde60e04b964655dc85ebf3281c9f73e21cc94c7b8c66e39f",
+    "weights/hf-tokenizers/mas-3b-q4/config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+    "weights/hf-tokenizers/mas-3b-q4/generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+    "weights/hf-tokenizers/mas-3b-q4/merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "weights/hf-tokenizers/mas-3b-q4/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "weights/hf-tokenizers/mas-3b-q4/tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "weights/hf-tokenizers/mas-3b-q4/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "weights/hf-training/3b/config.json": "bed11cba5f84170418b779657b75cb23d030fc00dda8aa0b879f95c11a6766b7",
+    "weights/hf-training/3b/generation_config.json": "424e77633729a4c63a0810e0fa32e3344b03499cd3a0b2fc626bfae19e7eb923"
+  },
+  "jobs": [
+    {
+      "kind": "fit",
+      "out": "research/tier8_v2/runs/adapter-3b-fit-01",
+      "log": "research/tier8_v2/logs/adapter-3b-fit-01.log"
+    },
+    {
+      "kind": "train",
+      "out": "research/tier8_v2/runs/adapter-3b-train-01",
+      "log": "research/tier8_v2/logs/adapter-3b-train-01.log"
+    },
+    {
+      "kind": "convert",
+      "out": "research/tier8_v2/runs/adapter-3b-converted-01",
+      "log": "research/tier8_v2/logs/adapter-3b-converted-01.log"
+    }
+  ]
+}

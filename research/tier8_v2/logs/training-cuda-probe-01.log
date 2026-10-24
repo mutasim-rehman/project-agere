@@ -1,0 +1,10 @@
+{
+  "torch": "2.6.0+cu124",
+  "cuda": "12.4",
+  "cuda_available": true,
+  "bf16_supported": true,
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "total_gpu_bytes": 6053232640,
+  "model_loaded": false,
+  "training_performed": false
+}

@@ -2,6 +2,40 @@
 
 ## Redevelopment — 24 October 2026
 
+### Runtime complete; frozen real adaptation sequence queued
+
+- Torch 2.6.0+cu124, PEFT 0.17.1, Accelerate 1.10.1 and bitsandbytes 0.48.1 import
+  successfully in the isolated environment; all package versions are recorded.
+  CUDA/BF16 is available. Torch reports 6,053,232,640 addressable device bytes;
+  do not substitute the larger NVML nominal figure for actual training headroom.
+  No model was loaded by these import/capability probes. An initial dependency
+  import used default /tmp compiler scratch; trainer/converter execution explicitly
+  roots TMPDIR and cache paths inside the repository for subsequent model work.
+- The complete 3B NF4 base is verified: 2,054,625,552 bytes, SHA256 recorded in its
+  manifest. Training/deployment architecture dimensions and RoPE settings agree;
+  weight equivalence across NF4 and Q4_K_M is not claimed. The 7B base is not fetched.
+- Repeated HF/GGUF token, prefix-mask and length parity after the GPU dependency
+  installation; all 761 examples still pass for both profiles (parity revision 02).
+  The trainer now requires this proof and verifies architecture before loading.
+- Fetched 22 converter/GGUF Python sources at llama.cpp commit 4227c9be..., the
+  submodule recorded by llama-cpp-python v0.3.16. Every Git blob/SHA256 validates.
+  A large recursive tree request failed with IncompleteRead; the successful fetch
+  uses small root/subtree requests. Both attempt logs remain. Converter --help
+  succeeds in the training environment. Sources support Qwen PEFT adapters and
+  the installed inference API exposes lora_path/lora_scale; application is untested.
+- Added conversion validation for completed changed adapters, exact file hashes,
+  compatible architecture, pinned converter files, LoRA metadata and finite paired
+  matrices. Diagnostic fit adapters retain their diagnostic label. No actual
+  conversion or applied-adapter inference has occurred. All 153 tests pass.
+- Froze 40 training/data/runtime/converter inputs for adaptation-sequence-01.json.
+  It waits on the identified CPU controller (PID plus creation time and command),
+  requires complete SAS/journal evidence, verifies package versions, then performs
+  fit -> full one-epoch training -> conversion. A failed fit or changed input stops
+  the sequence without retries. Initialized adapters cannot satisfy its gate.
+  This prevents idle handoffs while keeping training outside the CPU timing run.
+- The sequence is baseline optimization, not novelty. Correct delivered reasoning,
+  regressions, resource use and real adapter application still require evaluation.
+
 ### Temporary 1.5B cache reclamation and 3B base transfer
 
 - CUDA packages need more disk than the tokenizer-only environment. Also removed
