@@ -132,6 +132,23 @@
 - Prepare training-only demonstrations as a strong baseline, with fixed selection
   and no development/test answers in prompts. Stop optimizing only the first two
   records after protocol smoke; expand to the declared 24-case development slice.
+- Causal/compact smoke completed for both arms: MAS 0/2 correct (one abstention,
+  one wrong delivery), SAS 0/2 correct (two abstentions). No future/self references
+  remained in answered programs. The second prompt shrank from 3,303 to 1,318
+  tokens. This is a protocol/input-cost improvement, not an accuracy improvement.
+- Downloaded pinned FinQA training JSON (6,251 records) inside .local; retain its
+  SHA-256 manifest and selected examples in Git. Choose first eligible single-step
+  and multi-step examples from sorted training IDs, on distinct documents absent
+  from ALL development records. Skip identity-only programs and inconsistent
+  references. No development answers determine the demonstration targets.
+- Initial selection found duplicate training questions/documents and a numeric
+  constant that could be misbound to a calendar-day token. Before any demo-based
+  inference, added document diversity and preserved explicit constants. Selected
+  AAL/2014/page_89.pdf-2 and AAL/2014/page_92.pdf-1; audit logs retain selection rules.
+- Demonstrations are included only when exact model-tokenizer counts leave 768
+  tokens plus chat margin for generation. Record which examples fit each case.
+  Next run evaluates the entire declared 24-case slice, including the two reference
+  disagreements and incomplete retrieval cases. Fifty-six tests pass.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

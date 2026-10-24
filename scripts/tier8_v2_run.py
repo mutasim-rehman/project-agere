@@ -94,13 +94,20 @@ class Models:
             opened[filename] = self.models[role]
             print(json.dumps({"role": role, "weights": filename, "shared_instance": False}), flush=True)
 
+    @staticmethod
+    def prompt(content):
+        return ("<|im_start|>system\nYou reconcile financial evidence for human review. "
+                  "Use authoritative sources only. Return JSON only.<|im_end|>\n"
+                  f"<|im_start|>user\n{content}<|im_end|>\n<|im_start|>assistant\n")
+
+    def count_prompt_tokens(self, role, content):
+        return len(self.models[role].tokenize(self.prompt(content).encode(), add_bos=True))
+
     def call(self, role, content, schema, budget, requested, stage):
         model = self.models[role]
         # Roles never inherit conversational KV state, including when weights share.
         model.reset()
-        prompt = ("<|im_start|>system\nYou reconcile financial evidence for human review. "
-                  "Use authoritative sources only. Return JSON only.<|im_end|>\n"
-                  f"<|im_start|>user\n{content}<|im_end|>\n<|im_start|>assistant\n")
+        prompt = self.prompt(content)
         prompt_tokens = len(model.tokenize(prompt.encode(), add_bos=True))
         available = max(0, self.context - prompt_tokens - 8)
         limit = min(available, budget.allowance(requested))
@@ -254,6 +261,14 @@ def worker(args, out):
         gold = {r["id"]: r for r in gold_rows}
         if len(gold) != len(gold_rows):
             raise ValueError("Duplicate financial evaluation IDs")
+        demonstrations = []
+        if args.demos:
+            examples = json.loads(inside("research/tier8_v2/data/finqa-training-demos.json").read_text())["examples"][:args.demos]
+            dev_documents = {r["id"].rsplit("-", 1)[0] for r in gold_rows}
+            for example in examples:
+                if example["split"] != "train" or example["source_id"].rsplit("-", 1)[0] in dev_documents:
+                    raise ValueError("Demonstration is not development-disjoint training data")
+            demonstrations = examples
     for case in rows:
         if case.get("split") not in ("development", "dev"):
             raise ValueError("This runner accepts development data only")
@@ -264,7 +279,7 @@ def worker(args, out):
                 raise ValueError("Public question differs from evaluation source")
             result = run_financial(public, models, args.arm, args.repair, event_sink=sink,
                                    representation=args.program_mode, unit_mode=args.unit_mode, selector=args.selector,
-                                   causal_mode=args.causal_mode, catalog_style=args.catalog_style)
+                                   causal_mode=args.causal_mode, catalog_style=args.catalog_style, demonstrations=demonstrations)
             result["initial_score"] = evaluate_financial(gold[case["id"]], result["initial_answer"], result["initial_execution"])
             result["score"] = evaluate_financial(gold[case["id"]], result["answer"], result["execution"])
             result["all_gold_evidence_retrieved"] = set(gold[case["id"]]["qa"]["gold_inds"]) <= set(public["evidence"])
@@ -297,6 +312,7 @@ def main():
     parser.add_argument("--selector", choices=("suggest", "none"), default="suggest")
     parser.add_argument("--causal-mode", choices=("check", "grammar"), default="check")
     parser.add_argument("--catalog-style", choices=("full", "compact"), default="full")
+    parser.add_argument("--demos", type=int, choices=(0, 1, 2), default=0)
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.data is None:
@@ -305,6 +321,8 @@ def main():
         args.context = 4096 if args.task == "finqa" else 2048
     if args.program_mode != "reference" and (args.causal_mode != "check" or args.catalog_style != "full"):
         raise ValueError("Causal grammar and compact catalogs require reference programs")
+    if args.demos and (args.task != "finqa" or args.program_mode != "reference"):
+        raise ValueError("Training demonstrations require FinQA reference programs")
     if args.task == "finqa" and (args.handoff != "independent" or args.verification != "field" or args.citations != "enum"):
         raise ValueError("KYC-specific handoff/verification/citation overrides are not implemented for FinQA")
     if args.limit <= 0:
@@ -321,6 +339,7 @@ def main():
     sources = [Path(__file__), ROOT / "scripts/evidence_contract.py", ROOT / "scripts/tier8_v2_data.py",
                ROOT / "scripts/tier8_v2_financial_pipeline.py", ROOT / "scripts/evidence_calculator.py", ROOT / "scripts/tier8_v2_finqa.py"]
     sources.append(ROOT / "scripts/evidence_atoms.py")
+    sources.append(ROOT / "scripts/tier8_v2_demos.py")
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),
                 "code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                 "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
@@ -331,9 +350,14 @@ def main():
     manifest["models"] = verified_models(args.arm)
     if args.task == "finqa":
         manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()
+        if args.demos:
+            demo_file = inside("research/tier8_v2/data/finqa-training-demos.json")
+            manifest["demonstrations_sha256"] = hashlib.sha256(demo_file.read_bytes()).hexdigest()
+            manifest["demonstration_source_ids"] = [e["source_id"] for e in json.loads(demo_file.read_text())["examples"][:args.demos]]
         manifest["task_policy"] = {"verification": "operand-operation-unit checks", "handoff": "fallible source-ID suggestion" if args.selector == "suggest" else "no selector; draft/verify pair",
                                    "selector": args.selector, "program_mode": args.program_mode, "unit_mode": args.unit_mode,
                                    "causal_mode": args.causal_mode, "catalog_style": args.catalog_style,
+                                   "demonstrations_requested": args.demos, "demonstration_policy": "training only; exact tokenizer fit reserves 768 generation tokens",
                                    "citations": "enumerated source and step IDs", "metric": "declared-unit reported answer with rounding; raw exe_ans separately"}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak = 0
@@ -375,6 +399,12 @@ def main():
                "initial_case_successes": sum(r["initial_score"]["case_success"] for r in rows),
                "withheld": sum(not r["delivered"] for r in rows),
                "total_generated_tokens": sum(r["tokens"] for r in rows)}
+    if args.task == "finqa":
+        summary.update({"raw_execution_matches": sum(r["score"]["raw_execution_match"] for r in rows),
+                        "source_supported_programs": sum(r["score"]["source_supported_program"] for r in rows),
+                        "abstentions": sum(isinstance(r["answer"], dict) and r["answer"].get("decision") == "INSUFFICIENT" for r in rows),
+                        "all_annotated_evidence_retrieved_cases": sum(r["all_gold_evidence_retrieved"] for r in rows),
+                        "metric_note": "case_success uses declared-unit reported answer; raw executable answer matches are separate"})
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))
     if summary["status"] != "complete":

@@ -1,0 +1,64 @@
+{
+  "config": {
+    "arm": "sas",
+    "repair": "none",
+    "task": "finqa",
+    "data": "research/tier8_v2/data/finqa-development-public.jsonl",
+    "out": "research/tier8_v2/runs/finqa-sas-causal-smoke-03",
+    "limit": 2,
+    "context": 4096,
+    "verification": "field",
+    "handoff": "independent",
+    "citations": "enum",
+    "residency": "shared",
+    "program_mode": "reference",
+    "unit_mode": "question",
+    "selector": "none",
+    "causal_mode": "grammar",
+    "catalog_style": "compact",
+    "worker": false
+  },
+  "data_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "code_sha256": {
+    "tier8_v2_run.py": "8783511fe7fbb8136f5714d581144e1d2f6f62e0c5b8c2c5cbb7135401f721c5",
+    "evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+    "tier8_v2_financial_pipeline.py": "703ade7d2a33c2ede973964ee8aac95465232953c00029014a9cac1b3e506b1a",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+    "tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7"
+  },
+  "git_head": "efeeb54c6cb40956e42d86098f16190dee40123e",
+  "host_total_bytes": 15438409728,
+  "cap_bytes": 6400000000,
+  "started_utc": "2026-10-24T08:45:25Z",
+  "runtime": "0.3.16",
+  "models": [
+    {
+      "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "bytes": 3993201344,
+      "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "bytes": 689872288,
+      "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a"
+    }
+  ],
+  "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "task_policy": {
+    "verification": "operand-operation-unit checks",
+    "handoff": "no selector; draft/verify pair",
+    "selector": "none",
+    "program_mode": "reference",
+    "unit_mode": "question",
+    "causal_mode": "grammar",
+    "catalog_style": "compact",
+    "citations": "enumerated source and step IDs",
+    "metric": "declared-unit reported answer with rounding; raw exe_ans separately"
+  }
+}

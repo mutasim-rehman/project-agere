@@ -81,7 +81,21 @@ def question_units(question, mode):
     return ("number", "percent", "fraction")
 
 
-def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest", causal_mode="check", catalog_style="full"):
+def fit_demonstrations(prompt, demonstrations, models, role):
+    used = []
+    for example in demonstrations:
+        candidate = [*used, example]
+        text = ("Examples from separate training documents. Quantity IDs restart in each example.\n"
+                + "\n\n".join(e["text"] for e in candidate) + "\n\nNow solve the actual question using its own source IDs:\n" + prompt)
+        if models.count_prompt_tokens(role, text) + 768 + 8 <= models.context:
+            used = candidate
+    if not used:
+        return prompt, []
+    return ("Examples from separate training documents. Quantity IDs restart in each example.\n"
+            + "\n\n".join(e["text"] for e in used) + "\n\nNow solve the actual question using its own source IDs:\n" + prompt), [e["source_id"] for e in used]
+
+
+def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest", causal_mode="check", catalog_style="full", demonstrations=()):
     if set(public) & {"gold", "qa", "answer", "program", "model_input", "gold_inds"}:
         raise ValueError("Gold/annotated fields must not enter deployment")
     evidence = public["evidence"]
@@ -136,6 +150,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
     if isinstance(selection, dict):
         draft_prompt += "\nA fallible evidence selector suggests these IDs; recheck all report evidence: " + json.dumps(selection)
     drafter = "sas" if arm == "sas" else "drafter"
+    draft_prompt, used_demos = fit_demonstrations(draft_prompt, demonstrations, models, drafter)
     plan = call(drafter, draft_prompt, schema, 768, "program")
     initial_plan = deepcopy(plan)
     answer = decode(plan)
@@ -194,6 +209,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             "initial_answer": initial, "answer": answer, "initial_execution": initial_execution, "execution": execution,
             "initial_plan": initial_plan, "plan": plan, "representation": representation, "unit_mode": unit_mode, "selector": selector,
             "causal_mode": causal_mode, "catalog_style": catalog_style,
+            "demonstrations_used": used_demos,
             "active_roles": sorted({s["role"] for s in stages}),
             "initial_verdict": initial_review, "final_verdict": review,
             "delivered": not execution["issues"] and good(review), "repair_attempted": repair != "none" and needs_repair,

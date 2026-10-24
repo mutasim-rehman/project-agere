@@ -1,0 +1,15 @@
+{
+  "ids": [
+    "AAL/2014/page_89.pdf-2",
+    "AAL/2014/page_92.pdf-1"
+  ],
+  "skipped": {
+    "[<class 'decimal.ConversionSyntax'>]": 2,
+    "example_longer_than_1800_chars": 7,
+    "reported_execution_disagreement": 1,
+    "identity_only_program": 2,
+    "unsupported_program": 1,
+    "unretrieved_operand": 1,
+    "duplicate_demonstration_document": 2
+  }
+}

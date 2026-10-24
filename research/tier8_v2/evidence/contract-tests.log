@@ -27,6 +27,7 @@ test_all_latent_answers_are_source_supported (test_tier8_v2_data.DataTests.test_
 test_document_ids_do_not_reveal_source_roles (test_tier8_v2_data.DataTests.test_document_ids_do_not_reveal_source_roles) ... ok
 test_supported_stale_owner_is_semantically_wrong (test_tier8_v2_data.DataTests.test_supported_stale_owner_is_semantically_wrong) ... ok
 test_contradictory_review_is_rejected (test_tier8_v2_financial_pipeline.FinancialTests.test_contradictory_review_is_rejected) ... ok
+test_demonstrations_are_omitted_when_output_reserve_would_not_fit (test_tier8_v2_financial_pipeline.FinancialTests.test_demonstrations_are_omitted_when_output_reserve_would_not_fit) ... ok
 test_deployment_rejects_gold_fields (test_tier8_v2_financial_pipeline.FinancialTests.test_deployment_rejects_gold_fields) ... ok
 test_explicit_percent_unit_can_match_reported_answer_without_raw_match (test_tier8_v2_financial_pipeline.FinancialTests.test_explicit_percent_unit_can_match_reported_answer_without_raw_match) ... ok
 test_gold_does_not_rescale_prediction (test_tier8_v2_financial_pipeline.FinancialTests.test_gold_does_not_rescale_prediction) ... ok
@@ -39,6 +40,7 @@ test_reference_pipeline_executes_source_choices_without_generated_values (test_t
 test_repair_cannot_modify_locked_step (test_tier8_v2_financial_pipeline.FinancialTests.test_repair_cannot_modify_locked_step) ... ok
 test_repair_preserves_unrelated_step_and_recomputes_dependents (test_tier8_v2_financial_pipeline.FinancialTests.test_repair_preserves_unrelated_step_and_recomputes_dependents) ... ok
 test_reported_and_execution_disagreements_remain_visible (test_tier8_v2_financial_pipeline.FinancialTests.test_reported_and_execution_disagreements_remain_visible) ... ok
+test_training_example_is_identified_and_separate_from_actual_question (test_tier8_v2_financial_pipeline.FinancialTests.test_training_example_is_identified_and_separate_from_actual_question) ... ok
 test_unit_constraint_comes_from_question_only (test_tier8_v2_financial_pipeline.FinancialTests.test_unit_constraint_comes_from_question_only) ... ok
 test_wrong_units_can_block_arithmetically_correct_program (test_tier8_v2_financial_pipeline.FinancialTests.test_wrong_units_can_block_arithmetically_correct_program) ... ok
 test_gold_annotations_cannot_influence_packet (test_tier8_v2_finqa.FinQATests.test_gold_annotations_cannot_influence_packet) ... ok
@@ -60,6 +62,6 @@ ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 54 tests in 0.020s
+Ran 56 tests in 0.010s
 
 OK

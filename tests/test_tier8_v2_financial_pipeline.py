@@ -3,7 +3,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from tier8_v2_financial_pipeline import checked, evaluate_financial, patch_program, run_financial, verdict, question_units
+from tier8_v2_financial_pipeline import checked, evaluate_financial, patch_program, run_financial, verdict, question_units, fit_demonstrations
 
 
 def operand(value, span):
@@ -117,6 +117,20 @@ class FinancialTests(unittest.TestCase):
         self.assertEqual(result["execution"]["value"], "2")
         self.assertTrue(result["repair_accepted"])
         self.assertEqual(result["stages"][-1]["stage"], "verify_program_repair")
+
+    def test_demonstrations_are_omitted_when_output_reserve_would_not_fit(self):
+        from types import SimpleNamespace
+        model = SimpleNamespace(context=800, count_prompt_tokens=lambda role, text: len(text))
+        text, ids = fit_demonstrations("Q", [{"text": "x" * 100, "source_id": "TRAIN"}], model, "sas")
+        self.assertEqual(text, "Q")
+        self.assertEqual(ids, [])
+
+    def test_training_example_is_identified_and_separate_from_actual_question(self):
+        from types import SimpleNamespace
+        model = SimpleNamespace(context=4096, count_prompt_tokens=lambda role, text: len(text))
+        text, ids = fit_demonstrations("ACTUAL", [{"text": "TRAINING", "source_id": "TRAIN"}], model, "sas")
+        self.assertEqual(ids, ["TRAIN"])
+        self.assertLess(text.index("TRAINING"), text.index("ACTUAL"))
 
 
 if __name__ == "__main__":
