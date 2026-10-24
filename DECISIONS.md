@@ -91,6 +91,15 @@
   support, successful execution, or a verifier PASS with correct financial reasoning.
 - Matching first-two SAS real-report smoke is live. Wait for its actual completion
   before modifying the numerical pipeline or declaring a comparative result.
+- Matching SAS smoke completed at peak RSS 5,118,742,528 bytes: 0/2 correct,
+  both withheld, 209 tokens. It abstained on the first answerable packet; on the
+  second it used a computed literal with STEP#0 instead of the required #0 value
+  reference, so deterministic execution rejected it despite model verifier PASS.
+  These are concrete encoding/verification failures, not evidence of a capacity floor.
+- Next baseline ablation uses finite source-quantity references, question-only
+  unit constraints, and optional removal of the weak source selector. Copying
+  quantities is established numerical-QA practice. Keep literal mode available
+  and do not call these baseline improvements a novel algorithm.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

@@ -1,0 +1,53 @@
+{
+  "config": {
+    "arm": "sas",
+    "repair": "none",
+    "task": "finqa",
+    "data": "research/tier8_v2/data/finqa-development-public.jsonl",
+    "out": "research/tier8_v2/runs/finqa-sas-smoke-01",
+    "limit": 2,
+    "context": 4096,
+    "verification": "field",
+    "handoff": "independent",
+    "citations": "enum",
+    "residency": "shared",
+    "worker": false
+  },
+  "data_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "code_sha256": {
+    "tier8_v2_run.py": "1bf8c5d9aa882a4c06095eab8dcab475c43a0cb82ecec91b0f6f3c835af984c6",
+    "evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+    "tier8_v2_financial_pipeline.py": "9d606de56f7975b71b907da909d22bb5e9363cd40079939a25b60d3790ec1c2f",
+    "evidence_calculator.py": "c09aa24f1baaf6e3c0cd82a7283125b833bec2f63bedbca10eaeb64e3707ee25",
+    "tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5"
+  },
+  "git_head": "d377678f3e8abd131939f3efd0f7c12534905047",
+  "host_total_bytes": 15438409728,
+  "cap_bytes": 6400000000,
+  "started_utc": "2026-10-24T08:23:10Z",
+  "runtime": "0.3.16",
+  "models": [
+    {
+      "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+      "bytes": 3993201344,
+      "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+      "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+      "file": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+      "bytes": 689872288,
+      "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a"
+    }
+  ],
+  "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "task_policy": {
+    "verification": "operand-operation-unit checks",
+    "handoff": "fallible source-ID suggestion",
+    "citations": "enumerated source and step IDs",
+    "metric": "custom numeric execution tolerance 1e-5"
+  }
+}

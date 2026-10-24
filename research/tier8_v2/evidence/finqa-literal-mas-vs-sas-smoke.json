@@ -1,0 +1,51 @@
+{
+  "paired": {
+    "n": 2,
+    "right_minus_left_success": 0.0,
+    "paired_bootstrap_95_interval": [
+      0.0,
+      0.0
+    ],
+    "right_only_correct": 0,
+    "left_only_correct": 0,
+    "exact_mcnemar_p": 1.0,
+    "interval_caution": "No discordant cases; a degenerate bootstrap interval does not establish equivalence.",
+    "note": "Exploratory development comparison; no multiple-comparison adjustment or publication claim."
+  },
+  "left": {
+    "n": 2,
+    "field_repair_gains": 0,
+    "field_repair_regressions": 0,
+    "wrong_fields_left_locked": null,
+    "initial_verifier_true_accepts": 0,
+    "initial_verifier_false_accepts": 2,
+    "initial_verifier_true_rejects": 0,
+    "initial_verifier_false_rejects": 0,
+    "delivered_correct": 0,
+    "delivered_incorrect": 2,
+    "withheld": 0,
+    "generated_tokens": 309,
+    "prompt_tokens": 4780,
+    "inference_seconds": 28.0311967180005,
+    "truncated_stages": 0,
+    "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+  },
+  "right": {
+    "n": 2,
+    "field_repair_gains": 0,
+    "field_repair_regressions": 0,
+    "wrong_fields_left_locked": null,
+    "initial_verifier_true_accepts": 0,
+    "initial_verifier_false_accepts": 1,
+    "initial_verifier_true_rejects": 1,
+    "initial_verifier_false_rejects": 0,
+    "delivered_correct": 0,
+    "delivered_incorrect": 0,
+    "withheld": 2,
+    "generated_tokens": 209,
+    "prompt_tokens": 3649,
+    "inference_seconds": 95.65690732400071,
+    "truncated_stages": 0,
+    "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+  }
+}
