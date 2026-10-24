@@ -1,0 +1,437 @@
+{
+  "metric_version": "reported-units-v2-number-ratio",
+  "source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "code_sha256": {
+    "tier8_v2_unit_audit.py": "c5570f4ab1c625e1df12ae618ec5824fd39ecae53da9d1042fdebeb3a2206781",
+    "tier8_v2_financial_pipeline.py": "df9d78ca001b0bb279be28ce2564e90c7546bbb352eb75d7b10ac65aab6004af",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52"
+  },
+  "question_grammar_vs_legacy_percent_label_conflicts": [
+    "JPM/2008/page_85.pdf-3"
+  ],
+  "unresolved": [
+    {
+      "id": "AAPL/2004/page_36.pdf-2",
+      "issue": "Bare .2 gold for gross-margin decline; percent-point versus canonical-fraction annotation needs adjudication. No special-case rescoring."
+    }
+  ],
+  "scope": "Offline sensitivity audit of fixed outputs, not new inference or a performance improvement; historical metrics unchanged.",
+  "runs": [
+    {
+      "run": "research/tier8_v2/runs/finqa-sas-analysis-dev24-01",
+      "n": 24,
+      "legacy_correct": 13,
+      "v2_correct": 13,
+      "v2_delivered_correct": 13,
+      "v2_wrong_deliveries": 5,
+      "changed_cases": [],
+      "cases": [
+        {
+          "case_id": "V/2008/page_17.pdf-1",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "C/2017/page_328.pdf-1",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "DVN/2007/page_58.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "ETR/2011/page_341.pdf-3",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "ETR/2004/page_213.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "PM/2017/page_38.pdf-1",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "JPM/2008/page_85.pdf-3",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "PNC/2013/page_207.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "CME/2017/page_97.pdf-5",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "PNC/2013/page_62.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "AAPL/2004/page_36.pdf-2",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "PKG/2009/page_65.pdf-4",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "LMT/2013/page_74.pdf-4",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "STT/2011/page_83.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "MRO/2007/page_149.pdf-2",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "AOS/2004/page_11.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "C/2010/page_223.pdf-3",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "MSI/2006/page_61.pdf-3",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "ABMD/2006/page_75.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "AMAT/2013/page_18.pdf-2",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "DVN/2014/page_85.pdf-1",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "SPGI/2018/page_74.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "ZBH/2003/page_58.pdf-3",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "AMT/2005/page_105.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        }
+      ],
+      "artifact_sha256": {
+        "summary.json": "b82fb14d50ab97df5fc0ddd703c985914646ed265c95e49701516dcf00788e61",
+        "cases.jsonl": "14bb9ff350ddc55a7cacd8308ac4f0baf2c6335f71bb63d0a1cfeb8777e53354",
+        "manifest.json": "8fc432af9643dac291ec55038f740ca2440675661a4d47badba21861d3ddba27"
+      }
+    },
+    {
+      "run": "research/tier8_v2/runs/finqa-sas-analysis256-dev24-01",
+      "n": 24,
+      "legacy_correct": 11,
+      "v2_correct": 11,
+      "v2_delivered_correct": 11,
+      "v2_wrong_deliveries": 9,
+      "changed_cases": [],
+      "cases": [
+        {
+          "case_id": "V/2008/page_17.pdf-1",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "C/2017/page_328.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "DVN/2007/page_58.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "ETR/2011/page_341.pdf-3",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "ETR/2004/page_213.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "PM/2017/page_38.pdf-1",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "JPM/2008/page_85.pdf-3",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "PNC/2013/page_207.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "CME/2017/page_97.pdf-5",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "PNC/2013/page_62.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "AAPL/2004/page_36.pdf-2",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "PKG/2009/page_65.pdf-4",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "LMT/2013/page_74.pdf-4",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        },
+        {
+          "case_id": "STT/2011/page_83.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "MRO/2007/page_149.pdf-2",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "AOS/2004/page_11.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "C/2010/page_223.pdf-3",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "MSI/2006/page_61.pdf-3",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "percent"
+        },
+        {
+          "case_id": "ABMD/2006/page_75.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "AMAT/2013/page_18.pdf-2",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": false,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "DVN/2014/page_85.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "SPGI/2018/page_74.pdf-1",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "number"
+        },
+        {
+          "case_id": "ZBH/2003/page_58.pdf-3",
+          "legacy_correct": false,
+          "v2_correct": false,
+          "delivered": true,
+          "initial_v2_correct": false,
+          "unit": "percent"
+        },
+        {
+          "case_id": "AMT/2005/page_105.pdf-2",
+          "legacy_correct": true,
+          "v2_correct": true,
+          "delivered": true,
+          "initial_v2_correct": true,
+          "unit": "number"
+        }
+      ],
+      "artifact_sha256": {
+        "manifest.json": "02e9c1b3f038c3511d32559d6e61c25911342a34a6f412d6f3731699bbce0713",
+        "cases.jsonl": "51524dcd1e2d695153162f4ac4a8ea1640d794ecbe8aada6c00a92ea38197961",
+        "summary.json": "4098eab88059c35e16c621f16acd0ecb66e296e860909af2317a194f34609eaf"
+      }
+    }
+  ]
+}

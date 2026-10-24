@@ -206,3 +206,10 @@ Adaptation controller verified live: exec session 92859, PID 188824. It is waiti
 on CPU controller PID 159981 (verified command and creation time). Both freezes
 remain intact. Launch proof: evidence/adaptation-sequence-launch-01.json. No model
 training has begun at this checkpoint. Keep the controller; do not duplicate jobs.
+
+CPU sequence completed. SAS 256 tokens scores 11/24 (128 tokens: 13/24), with
+9 wrong deliveries versus 5. No longer-reasoning improvement in either arm.
+The queued longest-example fit ran and failed CUDA allocation before an optimizer
+update. Its sequence stopped; no full training/conversion occurred. Both input
+freezes are terminal. Preserve the old runs/journals; fix memory use with supervised
+logit selection and a new fit run. Current inference/training processes have exited.

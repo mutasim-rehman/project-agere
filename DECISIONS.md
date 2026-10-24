@@ -2,6 +2,24 @@
 
 ## Redevelopment — 24 October 2026
 
+### Completed SAS length ablation and first real GPU fit failure
+
+- The CPU sequence completed at 16:50:03 UTC. SAS 256-token analysis: 11/24 reported
+  matches, 7 raw matches, 11 correct deliveries, 9 wrong deliveries and 4 withheld;
+  7,844 generated tokens, peak RSS 5,124,149,248 bytes. The 128-token baseline has
+  13 matches/13 correct deliveries, 5 wrong deliveries and 6 withheld. Longer
+  reasoning did not improve either system on this fixed development slice.
+- The waiting adaptation controller verified the completed dependency and runtime,
+  then ran the real longest-example fit (WRK/2018/page_39.pdf-5, 1,024 full tokens).
+  CUDA ran out of memory before the first optimizer update, requesting 594 MiB
+  with 325 MiB free. Failed fit summary/events and the stopped sequence are retained.
+  Full training and conversion did not start. No fit success or trained adapter.
+- The 59-input CPU freeze and 40-input training freeze have both ended terminally.
+  Do not rerun the old journal/output. The next fit will use a new versioned run.
+  Preserve complete input context/labels and reduce unnecessary LM-head logits
+  using the existing HF logits_to_keep API, validating loss/gradient equivalence
+  before applying it. This is a known memory optimization, not a novelty claim.
+
 ### Verified queued adaptation controller is live
 
 - Started the frozen sequence after committing/pushing its source and plan. Exec

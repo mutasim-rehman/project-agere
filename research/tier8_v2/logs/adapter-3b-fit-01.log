@@ -1,0 +1,26 @@
+In file included from /home/mutasim/Desktop/project-agere/.local/python/cpython-3.12.15-linux-x86_64-gnu/include/python3.12/Python.h:12,
+                 from /home/mutasim/Desktop/project-agere/.local/tmp/tmppjv_wu92/main.c:5:
+/home/mutasim/Desktop/project-agere/.local/python/cpython-3.12.15-linux-x86_64-gnu/include/python3.12/pyconfig.h:1877:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1877 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/mutasim/Desktop/project-agere/.venv-training/lib/python3.12/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /home/mutasim/Desktop/project-agere/.local/tmp/tmppjv_wu92/main.c:1:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py", line 207, in <module>
+    main()
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py", line 167, in main
+    (loss / len(group)).backward()
+  File "/home/mutasim/Desktop/project-agere/.venv-training/lib/python3.12/site-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/home/mutasim/Desktop/project-agere/.venv-training/lib/python3.12/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/mutasim/Desktop/project-agere/.venv-training/lib/python3.12/site-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 594.00 MiB. GPU 0 has a total capacity of 5.64 GiB of which 325.25 MiB is free. Including non-PyTorch memory, this process has 5.30 GiB memory in use. Of the allocated memory 4.59 GiB is allocated by PyTorch, and 616.32 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
