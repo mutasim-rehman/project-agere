@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 122 contract tests pass. They do not establish financial reasoning correctness.
+- 124 contract tests pass. They do not establish financial reasoning correctness.
 - Separate memory-monitored fixed-output repair harness is ready for plain versus
   proof feedback on the same algebraically flagged cohort. Original output tokens
   are debited; changed answers are reverified. Grammar/compatibility checks pass,
@@ -90,6 +90,11 @@ controller PID 121418. Both matched MAS analyses completed; SAS table-complete
 analysis is now running. Journal/log prefix:
 logs/strong-baselines-sequence-02. Forty-six source/data hashes are frozen; do not
 edit those inputs or launch competing inference until completion/replanning.
+
+Prepared follow-up: data/proof-feedback-pilot-01.json, plain versus proof feedback
+on the better completed SAS baseline under a predefined aggregate selection rule.
+It waits for the baseline controller and retains all selected baseline cases.
+Fifty-three hashes freeze its inputs; actual repair results remain unmeasured.
 
 1. Test the larger quantized MAS drafter under actual memory monitoring, with its
    profile and changed precision explicitly separated from the original FP16 study.

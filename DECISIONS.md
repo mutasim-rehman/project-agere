@@ -35,6 +35,17 @@
   Aggregate development selection is disclosed; this is not a held-out test.
 - Only new files were added to the experiment path. The existing frozen SAS
   retrieval run and all 46 input hashes remain unchanged.
+- Prepared a prospective pilot controller and plan proof-feedback-pilot-01.json.
+  It verifies the live baseline controller's PID/creation time and requires its
+  journal to finish complete before baseline selection or any repair inference.
+  It then runs plain and proof serially on the selected full saved cohort.
+  Fifty-three hashes freeze baseline inputs plus new repair code and the old
+  completed candidate's artifacts. No retry/overwrite behavior is introduced.
+- Selection-rule tests bring the suite to 124 passing checks. The plan is recorded
+  before the table-complete baseline result is known. Prompt lengths and actual
+  token/call expenditure can differ across conditions and must be reported; only
+  trigger policy and output ceilings are matched. No causal or novelty result is
+  established by the plan or by unit tests.
 
 ### Full larger-drafter allocation result
 
