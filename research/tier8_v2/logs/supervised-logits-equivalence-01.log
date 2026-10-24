@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "torch": "2.6.0+cu124",
+  "transformers": "4.57.1",
+  "input_tokens": 20,
+  "supervised_tokens": 8,
+  "suffix_logit_positions": 9,
+  "loss_full": 4.1940789222717285,
+  "loss_suffix": 4.1940789222717285,
+  "max_absolute_parameter_gradient_difference": 0.0,
+  "parameter_tensors_checked": 15,
+  "helper_sha256": "01f2afbd5ed2de8a59eb89f012ac991b6a651ed58177b3be1e6a6cbe25607f61",
+  "script_sha256": "895c4e2c8c45a678b476e206267f11e413d117c438cbe114ee8eefb6b45c04d6",
+  "qwen_implementation_sha256": "a59fa06524227361fb401baf4d177124a27aec146bc01ec931235a9abbab17cb",
+  "scope": "Tiny random CPU Qwen software check; full input/target and causal-loss gradients preserved. Not real-model fit, task accuracy, or novelty."
+}

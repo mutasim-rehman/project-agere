@@ -21,7 +21,7 @@ confirmation are not established. Historical results and raw runs remain preserv
   allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
   2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
   remains necessary before claiming an allocation gain.
-- 153 contract tests pass. They do not establish financial reasoning correctness.
+- 159 contract tests pass. They do not establish financial reasoning correctness.
 - Separate memory-monitored fixed-output repair harness is ready for plain versus
   proof feedback on the same algebraically flagged cohort. Original output tokens
   are debited; changed answers are reverified. Grammar/compatibility checks pass,
@@ -213,3 +213,10 @@ The queued longest-example fit ran and failed CUDA allocation before an optimize
 update. Its sequence stopped; no full training/conversion occurred. Both input
 freezes are terminal. Preserve the old runs/journals; fix memory use with supervised
 logit selection and a new fit run. Current inference/training processes have exited.
+
+Fit-memory repair implemented: full context and targets retained, with HF
+supervised-suffix logits and matching shifted labels. Tiny-Qwen loss and gradients
+match exactly; this is software validation only. Sequence 02 has 42 frozen inputs
+and fresh -02 output directories for a real repeat fit, then conditional training
+and conversion. Sequence 01 remains failed and immutable. Completion-token helper
+is prepared/validated but not integrated. No trained adapter or task gain yet.

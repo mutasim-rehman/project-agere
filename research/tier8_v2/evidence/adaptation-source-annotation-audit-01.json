@@ -1,0 +1,301 @@
+{
+  "n": 761,
+  "missing_annotated_source_n": 75,
+  "binding_outside_annotated_span_n": 19,
+  "missing_ids": [
+    "AAPL/2011/page_65.pdf-4",
+    "AAPL/2016/page_23.pdf-1",
+    "ADBE/2012/page_102.pdf-1",
+    "ALXN/2016/page_89.pdf-2",
+    "AMAT/2017/page_31.pdf-3",
+    "AON/2013/page_32.pdf-2",
+    "AON/2015/page_29.pdf-1",
+    "AON/2015/page_62.pdf-4",
+    "CE/2007/page_125.pdf-1",
+    "CNC/2003/page_41.pdf-3",
+    "DRE/2010/page_59.pdf-2",
+    "DVN/2010/page_70.pdf-2",
+    "DVN/2013/page_101.pdf-2",
+    "ECL/2015/page_70.pdf-4",
+    "ECL/2016/page_95.pdf-1",
+    "ECL/2017/page_85.pdf-3",
+    "ETR/2009/page_21.pdf-1",
+    "ETR/2009/page_21.pdf-2",
+    "GS/2018/page_165.pdf-4",
+    "HFC/2011/page_88.pdf-3",
+    "HFC/2011/page_92.pdf-5",
+    "HOLX/2011/page_122.pdf-4",
+    "HUM/2005/page_80.pdf-1",
+    "HUM/2012/page_109.pdf-2",
+    "ILMN/2018/page_24.pdf-2",
+    "IPG/2013/page_36.pdf-2",
+    "IPG/2014/page_37.pdf-3",
+    "IQV/2016/page_79.pdf-1",
+    "JKHY/2016/page_61.pdf-1",
+    "JPM/2017/page_144.pdf-3",
+    "KHC/2017/page_21.pdf-1",
+    "KHC/2017/page_21.pdf-4",
+    "KHC/2018/page_27.pdf-4",
+    "L/2007/page_213.pdf-1",
+    "L/2007/page_213.pdf-4",
+    "LLY/2008/page_39.pdf-3",
+    "LLY/2008/page_43.pdf-2",
+    "MAA/2017/page_18.pdf-3",
+    "MAA/2017/page_89.pdf-2",
+    "MAA/2018/page_88.pdf-4",
+    "MMM/2007/page_64.pdf-1",
+    "MMM/2007/page_66.pdf-1",
+    "MMM/2007/page_66.pdf-2",
+    "MMM/2007/page_68.pdf-1",
+    "MO/2017/page_65.pdf-1",
+    "MRO/2012/page_22.pdf-3",
+    "PKG/2011/page_14.pdf-1",
+    "PKG/2012/page_13.pdf-1",
+    "PNC/2012/page_157.pdf-1",
+    "PNC/2014/page_151.pdf-3",
+    "PNC/2014/page_156.pdf-1",
+    "PNC/2017/page_76.pdf-2",
+    "RE/2010/page_42.pdf-2",
+    "RL/2011/page_14.pdf-1",
+    "RL/2011/page_14.pdf-2",
+    "RL/2015/page_11.pdf-1",
+    "RSG/2018/page_47.pdf-1",
+    "SLB/2011/page_56.pdf-2",
+    "SLG/2002/page_56.pdf-3",
+    "SNA/2013/page_33.pdf-2",
+    "STT/2001/page_85.pdf-2",
+    "VLO/2011/page_126.pdf-2",
+    "VLO/2012/page_130.pdf-1",
+    "WRK/2018/page_53.pdf-4",
+    "WRK/2019/page_136.pdf-2",
+    "WRK/2019/page_31.pdf-1",
+    "WRK/2019/page_31.pdf-2",
+    "ZBH/2004/page_68.pdf-2",
+    "ZBH/2008/page_70.pdf-2",
+    "AMAT/2018/page_31.pdf-2",
+    "MS/2013/page_277.pdf-2",
+    "RL/2008/page_21.pdf-1",
+    "RL/2008/page_21.pdf-2",
+    "STT/2013/page_175.pdf-1",
+    "UA/2011/page_66.pdf-2"
+  ],
+  "outside": [
+    {
+      "id": "AAPL/2011/page_65.pdf-4",
+      "split": "train",
+      "used_outside": [
+        "text_12"
+      ],
+      "gold": [
+        "table_0",
+        "text_10"
+      ]
+    },
+    {
+      "id": "AAPL/2016/page_23.pdf-1",
+      "split": "train",
+      "used_outside": [
+        "table_1"
+      ],
+      "gold": [
+        "table_2"
+      ]
+    },
+    {
+      "id": "ALXN/2016/page_89.pdf-2",
+      "split": "train",
+      "used_outside": [
+        "text_18"
+      ],
+      "gold": [
+        "table_1",
+        "table_4",
+        "table_7"
+      ]
+    },
+    {
+      "id": "AON/2015/page_29.pdf-1",
+      "split": "train",
+      "used_outside": [
+        "text_23"
+      ],
+      "gold": [
+        "table_2",
+        "text_14",
+        "text_18",
+        "text_9"
+      ]
+    },
+    {
+      "id": "CE/2007/page_125.pdf-1",
+      "split": "train",
+      "used_outside": [
+        "text_18"
+      ],
+      "gold": [
+        "table_1",
+        "table_6"
+      ]
+    },
+    {
+      "id": "HUM/2012/page_109.pdf-2",
+      "split": "train",
+      "used_outside": [
+        "table_4"
+      ],
+      "gold": [
+        "table_1",
+        "table_2",
+        "table_3",
+        "table_9"
+      ]
+    },
+    {
+      "id": "L/2007/page_213.pdf-1",
+      "split": "train",
+      "used_outside": [
+        "text_11"
+      ],
+      "gold": [
+        "table_0",
+        "table_6"
+      ]
+    },
+    {
+      "id": "L/2007/page_213.pdf-4",
+      "split": "train",
+      "used_outside": [
+        "text_11"
+      ],
+      "gold": [
+        "table_0",
+        "text_10"
+      ]
+    },
+    {
+      "id": "LLY/2008/page_43.pdf-2",
+      "split": "train",
+      "used_outside": [
+        "text_15"
+      ],
+      "gold": [
+        "table_10",
+        "table_3"
+      ]
+    },
+    {
+      "id": "MMM/2007/page_66.pdf-1",
+      "split": "train",
+      "used_outside": [
+        "text_17"
+      ],
+      "gold": [
+        "table_1",
+        "table_8"
+      ]
+    },
+    {
+      "id": "MRO/2012/page_22.pdf-3",
+      "split": "train",
+      "used_outside": [
+        "text_25"
+      ],
+      "gold": [
+        "table_4",
+        "table_6"
+      ]
+    },
+    {
+      "id": "PNC/2012/page_157.pdf-1",
+      "split": "train",
+      "used_outside": [
+        "text_14"
+      ],
+      "gold": [
+        "table_2",
+        "text_26",
+        "text_7"
+      ]
+    },
+    {
+      "id": "RL/2011/page_14.pdf-1",
+      "split": "train",
+      "used_outside": [
+        "text_6"
+      ],
+      "gold": [
+        "table_3",
+        "table_4"
+      ]
+    },
+    {
+      "id": "RL/2011/page_14.pdf-2",
+      "split": "train",
+      "used_outside": [
+        "text_6"
+      ],
+      "gold": [
+        "table_2",
+        "table_4"
+      ]
+    },
+    {
+      "id": "RL/2015/page_11.pdf-1",
+      "split": "train",
+      "used_outside": [
+        "text_0"
+      ],
+      "gold": [
+        "table_3",
+        "table_4"
+      ]
+    },
+    {
+      "id": "SLB/2011/page_56.pdf-2",
+      "split": "train",
+      "used_outside": [
+        "table_17"
+      ],
+      "gold": [
+        "table_12",
+        "table_7"
+      ]
+    },
+    {
+      "id": "MS/2013/page_277.pdf-2",
+      "split": "validation",
+      "used_outside": [
+        "text_5"
+      ],
+      "gold": [
+        "table_0",
+        "text_2",
+        "text_3",
+        "text_4"
+      ]
+    },
+    {
+      "id": "RL/2008/page_21.pdf-1",
+      "split": "validation",
+      "used_outside": [
+        "text_6"
+      ],
+      "gold": [
+        "table_2",
+        "table_4"
+      ]
+    },
+    {
+      "id": "RL/2008/page_21.pdf-2",
+      "split": "validation",
+      "used_outside": [
+        "text_6"
+      ],
+      "gold": [
+        "table_1",
+        "table_4"
+      ]
+    }
+  ],
+  "caution": "Annotation membership is a training-label consistency diagnostic, not independent semantic adjudication. No frozen training data changed."
+}

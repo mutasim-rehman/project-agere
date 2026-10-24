@@ -13,6 +13,8 @@ from pathlib import Path
 import random
 import time
 
+from supervised_logits import supervised_window
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -64,6 +66,7 @@ def main():
                        "TORCHINDUCTOR_CACHE_DIR": ".local/torchinductor-cache", "TMPDIR": ".local/tmp"}.items():
         os.environ[key] = str(ROOT / value)
     os.environ.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1", TOKENIZERS_PARALLELISM="false")
+    os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
     import torch
     import peft
     import transformers
@@ -122,6 +125,9 @@ def main():
                     "peft": peft.__version__, "bitsandbytes": bitsandbytes.__version__},
         "gpu": {"name": torch.cuda.get_device_name(), "total_bytes": torch.cuda.get_device_properties(0).total_memory},
         "training_n": len(training), "validation_n": len(validation),
+        "loss_policy": "Complete input; logits/shifted labels only for last prefix position plus all supervised target tokens",
+        "loss_helper_sha256": sha(ROOT / "scripts/supervised_logits.py"),
+        "cuda_allocator_policy": os.environ["PYTORCH_CUDA_ALLOC_CONF"],
         "scope": "Adaptation baseline; training resource use is separate from the 8 GB deployment study. No novelty claim."}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     model = None
@@ -146,7 +152,10 @@ def main():
         optimizer = torch.optim.AdamW(params, lr=2e-4, weight_decay=0)
         model.train()
         def batch(row):
-            return {name: torch.tensor([row[name]], dtype=torch.long, device="cuda") for name in ("input_ids", "labels")}
+            window = supervised_window(row)
+            return {"input_ids": torch.tensor([window["input_ids"]], dtype=torch.long, device="cuda"),
+                    "labels": torch.tensor([window["labels"]], dtype=torch.long, device="cuda"),
+                    "logits_to_keep": window["logits_to_keep"]}
         if args.mode == "fit":
             longest = max(training, key=lambda r: (len(r["input_ids"]), r["source_id"]))
             groups = [[longest], [longest]]

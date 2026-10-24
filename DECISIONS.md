@@ -2,6 +2,32 @@
 
 ## Redevelopment — 24 October 2026
 
+### Preserve the full training objective with supervised-suffix logits
+
+- Verified the installed Qwen2 forward API supports logits_to_keep. The new helper
+  keeps every input token and every supervised target token, computing LM-head
+  logits only for the last prefix position plus the complete target. Labels include
+  that last masked position so causal shifting still predicts the first target.
+  No example length, target or context was shortened to make the fit pass.
+- A real tiny random CPU Qwen software check gives identical loss (4.1940789223)
+  and zero maximum gradient difference across all 15 parameter tensors, versus
+  computing logits for the entire prompt. This is software validation, not a
+  trained-model gain or a novelty result. The optimization is an existing HF API.
+- Enabled the documented expandable-segment CUDA allocator policy in the new
+  trainer process. Actual fit/memory success still requires a new real-model run.
+  Failure of the first fit remains retained; no optimizer update succeeded there.
+- Added a versioned sequence 02 with 42 freshly frozen inputs and new fit/train/
+  conversion output directories. It uses exactly the same 761-row corpus/split,
+  full 1,024-token longest-example diagnostic, rank, optimizer and update counts.
+  Terminal CPU dependency evidence is reused; the failed sequence is not restarted.
+- Separately prepared a correct completion-token encoder for future inference
+  accounting. Four BOS/CLS/EOS/SEP tests and all 761 full sequences per tokenizer
+  pass. It is not yet integrated into the runner. All 159 tests pass.
+- Training annotation audit: 75/761 packets omit at least one annotated span and
+  19/761 targets use a span outside the supplied annotation set. These are label
+  consistency diagnostics, not proven semantic errors; alternative support may
+  be valid. The frozen corpus was not changed or silently declared adjudicated.
+
 ### Completed SAS length ablation and first real GPU fit failure
 
 - The CPU sequence completed at 16:50:03 UTC. SAS 256-token analysis: 11/24 reported

@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "mas-3b-q4": {
+      "n": 761,
+      "all_full_token_ids_match": true
+    },
+    "sas-7b-q4": {
+      "n": 761,
+      "all_full_token_ids_match": true
+    }
+  },
+  "helper_sha256": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+  "dataset_sha256": "0b1052db3f7c6a5d85d321b500b9478ea453aa936d0b78e326215c3ce2933069",
+  "scope": "Vocab-only encoding validation; no model generation, reasoning gain or inference runtime changes."
+}
