@@ -10,8 +10,9 @@ are not established. Do not mark the goal complete from these development result
 - Three MAS roles can share identical weights; each call resets KV state.
 - Bounded cited arithmetic, source-pointer plans, causal grammar, unit controls,
   compact catalogs, graph-preserving patches, training-only demonstrations.
-- Optional 128/256-token formula/measure analysis is implemented but has not yet
-  been evaluated with real models. Default zero preserves the common baseline.
+- Optional 128/256-token formula/measure analysis is implemented. A two-case MAS
+  128-token smoke completed 0/2 correct, both wrongly delivered; both analysis
+  stages reached their token limit. Default zero preserves the common baseline.
 - 68 tests pass. These checks establish contracts, not financial correctness.
 - A gold-free dependency-reconnection selector is implemented and unit-tested.
   It offers KEEP plus at most seven single-edge alternatives and rechecks the
@@ -46,8 +47,8 @@ are not established. Do not mark the goal complete from these development result
 
 ## Live run
 
-MAS formula-analysis smoke: research/tier8_v2/runs/finqa-mas-analysis-smoke-01
-Exec session: 7824. Revalidate its worker process before calling it stopped.
+SAS formula-analysis smoke: research/tier8_v2/runs/finqa-sas-analysis-smoke-01
+Exec session: 86455. Revalidate its worker process before calling it stopped.
 Two development cases, analysis_tokens=128, otherwise matching the baseline.
 Partial output is not a final result. Do not launch competing inference here.
 

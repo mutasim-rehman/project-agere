@@ -1,0 +1,103 @@
+{
+  "config": {
+    "arm": "mas",
+    "repair": "none",
+    "task": "finqa",
+    "data": "research/tier8_v2/data/finqa-development-public.jsonl",
+    "out": "research/tier8_v2/runs/finqa-mas-analysis-smoke-01",
+    "limit": 2,
+    "context": 4096,
+    "verification": "field",
+    "handoff": "independent",
+    "citations": "enum",
+    "residency": "shared",
+    "program_mode": "reference",
+    "unit_mode": "question",
+    "selector": "none",
+    "causal_mode": "grammar",
+    "catalog_style": "compact",
+    "demos": 2,
+    "analysis_tokens": 128,
+    "verifier_model": "0.5b",
+    "worker": false
+  },
+  "data_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "code_sha256": {
+    "tier8_v2_run.py": "e2828c24abbf462fab2111310f698c28ae5aa3397dd7803581d9f881328d2b27",
+    "evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+    "tier8_v2_financial_pipeline.py": "b704b70af5c16716c771ebadcacacdfbeb9b6f61702b28bcf960325229cfef1c",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+    "tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "tier8_v2_demos.py": "9cb3cb2eaad2f3eda5fc9a4e14c3fff9076c071d710b853fb0d700d336844918"
+  },
+  "git_head": "3b437669ac58d870345eb7fd45ddbffeebc705ec",
+  "host_total_bytes": 15438409728,
+  "cap_bytes": 6400000000,
+  "started_utc": "2026-10-24T09:33:01Z",
+  "runtime": "0.3.16",
+  "models": [
+    {
+      "file": "weights/tier8_v2/qwen2.5-0.5b-instruct-native-f16.gguf",
+      "bytes": 1266425696,
+      "sha256": "f044b7e19bf2a007973e9c84119c34afcab419546e76595b0367f963275b66e9",
+      "source_sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc",
+      "source_file": "weights/tier8_v2/qwen2.5-0.5b-instruct-fp16.gguf",
+      "runtime": "0.3.16",
+      "transform": {
+        "ftype": "MOSTLY_F16",
+        "token_embedding_type": "F16",
+        "output_tensor_type": "F16",
+        "allow_requantize": false
+      },
+      "seconds": 1.6169372720000865,
+      "integrity": {
+        "tensor_count": 291,
+        "required_bytes": 1266425696,
+        "actual_bytes": 1266425696
+      }
+    },
+    {
+      "file": "weights/tier8_v2/qwen2.5-1.5b-instruct-native-f16.gguf",
+      "bytes": 3560416288,
+      "sha256": "f5bff4cb44a4fd8538b6f20527eb2af472a435f53d55289c967f4cdeea7bc1a7",
+      "source_sha256": "fc89e330deb3fd8fa560f1c0f35a1e2b8da96d59e13445559ed190307a6f5649",
+      "source_file": "weights/tier8_v2/qwen2.5-1.5b-instruct-fp16.gguf",
+      "runtime": "0.3.16",
+      "transform": {
+        "ftype": "MOSTLY_F16",
+        "token_embedding_type": "F16",
+        "output_tensor_type": "F16",
+        "allow_requantize": false
+      },
+      "seconds": 5.055721089000144,
+      "integrity": {
+        "tensor_count": 339,
+        "required_bytes": 3560416288,
+        "actual_bytes": 3560416288
+      }
+    }
+  ],
+  "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "demonstrations_sha256": "a094bfcfd12c52837ef1e37310b121e4e2a5714b5e15dc6e6112c55282e2e699",
+  "demonstration_source_ids": [
+    "AAL/2014/page_89.pdf-2",
+    "AAL/2014/page_92.pdf-1"
+  ],
+  "task_policy": {
+    "verification": "operand-operation-unit checks",
+    "handoff": "no selector; draft/verify pair",
+    "selector": "none",
+    "program_mode": "reference",
+    "unit_mode": "question",
+    "causal_mode": "grammar",
+    "catalog_style": "compact",
+    "demonstrations_requested": 2,
+    "demonstration_policy": "training only; exact tokenizer fit reserves 768 generation tokens",
+    "analysis_tokens": 128,
+    "verifier_checkpoint": "qwen2.5-0.5b-instruct-native-f16.gguf",
+    "citations": "enumerated source and step IDs",
+    "metric": "declared-unit reported answer with rounding; raw exe_ans separately"
+  }
+}

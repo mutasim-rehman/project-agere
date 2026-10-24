@@ -27,6 +27,15 @@
   error. Do not expand this narrow mechanism into the main contribution without
   evidence. Prioritize measure/formula reasoning. A two-case MAS 128-token
   formula-analysis smoke is now running, otherwise matching the baseline.
+- MAS formula-analysis smoke completed inside peak RSS 5,237,657,600 bytes, with
+  0/2 correct and both wrongly delivered; 449 output tokens. Both 128-token
+  analysis calls ended at their allowance. The first analysis repeats the wrong
+  total-volume measure instead of payment volume, so more fluent reasoning did
+  not establish better grounding. Preserve the negative result. Matching SAS
+  analysis is live, session 86455; no concurrent inference is launched.
+- Added a close-prior warning from the published abstract of Haque et al. (2025),
+  https://aclanthology.org/2025.knowledgenlp-1.17/: execution-trace-based program
+  repair is established and not uniformly helpful. Full-method review is pending.
 
 ### First resident MAS pilot
 
