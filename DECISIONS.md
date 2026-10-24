@@ -2,6 +2,31 @@
 
 ## Redevelopment — 24 October 2026
 
+### Table-complete retrieval control and larger-drafter diagnostic
+
+- Added a shared non-oracle packet variant retaining all table rows and the four
+  highest-ranked text units. It uses the same lexical ranking as before, never
+  annotated evidence. On the fixed 24 IDs, post-selection annotation coverage
+  improves from 19 to 23 fully covered cases (34/41 to 40/41 evidence units).
+  ETR/2004/page_213.pdf-2 still lacks an annotated text unit. Maximum selected
+  source text is 2052 characters; actual token fitting/accuracy remain untested.
+- Kept old public packets immutable and wrote a new dataset plus provenance and
+  coverage audit. New run manifests hash the retrieval implementation. Paired
+  analysis keeps strict packet-hash equality by default; an explicit retrieval-
+  change flag permits different packets only for the same FinQA evaluation-source
+  hash and identical nonempty case sets. Ninety-seven tests pass, including gold-
+  independent evidence selection and refusal of different evaluation sources.
+- Larger 3B Q4 drafter diagnostic completed 8/8 within peak RSS 3,823,435,776 bytes:
+  2 reported-answer matches, 1 raw match, 1 correct delivery, 1 wrong delivery,
+  6 withheld, 5 abstentions, 1631 output tokens. This establishes sampled fit and
+  limited diagnostic performance, not a clean checkpoint gain: a full matching
+  1.5B analysis baseline is still required. Preserve all eight cases and traces.
+- Next sequence will run full 24-case MAS analysis with the original 1.5B and
+  then the 3B drafter on identical old packets, followed by the stronger SAS
+  table-complete retrieval control. All are development experiments. The completed
+  8-case result can authorize the serial sequence without inventing a live PID;
+  missing or failed completion evidence still stops execution.
+
 ### Endpoint integration and stronger-baseline falsification
 
 - Integrated optional endpoint repair in the financial pipeline: select with at

@@ -1,0 +1,11 @@
+{
+  "n": 24,
+  "source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "public_packets_sha256": "20b967e2aa259690d5b23288c663e8d5fe198a0acc752c84f819c2dc9389e5ef",
+  "policy": "All table rows plus four lexical-ranked text units; fixed first 24 development IDs; no gold selection",
+  "all_gold_retrieved_cases": 23,
+  "gold_units_retrieved": 40,
+  "gold_units_total": 41,
+  "tokenizer_fit_or_model_accuracy_tested": false,
+  "test_opened": false
+}

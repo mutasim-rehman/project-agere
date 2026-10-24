@@ -1,0 +1,205 @@
+{
+  "n": 24,
+  "source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "public_packets_sha256": "20b967e2aa259690d5b23288c663e8d5fe198a0acc752c84f819c2dc9389e5ef",
+  "policy": "All table rows plus four lexical-ranked text units; fixed first 24 development IDs; no gold selection",
+  "all_gold_retrieved_cases": 23,
+  "gold_units_retrieved": 40,
+  "gold_units_total": 41,
+  "tokenizer_fit_or_model_accuracy_tested": false,
+  "test_opened": false,
+  "cases": [
+    {
+      "id": "V/2008/page_17.pdf-1",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1423,
+      "selected_units": 10
+    },
+    {
+      "id": "C/2017/page_328.pdf-1",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 2,
+      "source_characters": 1154,
+      "selected_units": 9
+    },
+    {
+      "id": "DVN/2007/page_58.pdf-2",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 3,
+      "gold_units_total": 3,
+      "source_characters": 884,
+      "selected_units": 9
+    },
+    {
+      "id": "ETR/2011/page_341.pdf-3",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 2,
+      "source_characters": 778,
+      "selected_units": 8
+    },
+    {
+      "id": "ETR/2004/page_213.pdf-2",
+      "all_gold_retrieved": false,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 3,
+      "source_characters": 1368,
+      "selected_units": 11
+    },
+    {
+      "id": "PM/2017/page_38.pdf-1",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1069,
+      "selected_units": 7
+    },
+    {
+      "id": "JPM/2008/page_85.pdf-3",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 2,
+      "source_characters": 1080,
+      "selected_units": 9
+    },
+    {
+      "id": "PNC/2013/page_207.pdf-1",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1797,
+      "selected_units": 7
+    },
+    {
+      "id": "CME/2017/page_97.pdf-5",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1159,
+      "selected_units": 10
+    },
+    {
+      "id": "PNC/2013/page_62.pdf-2",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1275,
+      "selected_units": 12
+    },
+    {
+      "id": "AAPL/2004/page_36.pdf-2",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1139,
+      "selected_units": 8
+    },
+    {
+      "id": "PKG/2009/page_65.pdf-4",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 2,
+      "source_characters": 874,
+      "selected_units": 11
+    },
+    {
+      "id": "LMT/2013/page_74.pdf-4",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1118,
+      "selected_units": 7
+    },
+    {
+      "id": "STT/2011/page_83.pdf-1",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1253,
+      "selected_units": 8
+    },
+    {
+      "id": "MRO/2007/page_149.pdf-2",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 2052,
+      "selected_units": 15
+    },
+    {
+      "id": "AOS/2004/page_11.pdf-2",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 2,
+      "source_characters": 2038,
+      "selected_units": 9
+    },
+    {
+      "id": "C/2010/page_223.pdf-3",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 2,
+      "source_characters": 1914,
+      "selected_units": 12
+    },
+    {
+      "id": "MSI/2006/page_61.pdf-3",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 2031,
+      "selected_units": 8
+    },
+    {
+      "id": "ABMD/2006/page_75.pdf-1",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 2,
+      "source_characters": 977,
+      "selected_units": 9
+    },
+    {
+      "id": "AMAT/2013/page_18.pdf-2",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1349,
+      "selected_units": 9
+    },
+    {
+      "id": "DVN/2014/page_85.pdf-1",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 6,
+      "gold_units_total": 6,
+      "source_characters": 699,
+      "selected_units": 9
+    },
+    {
+      "id": "SPGI/2018/page_74.pdf-1",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1127,
+      "selected_units": 9
+    },
+    {
+      "id": "ZBH/2003/page_58.pdf-3",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 2,
+      "gold_units_total": 2,
+      "source_characters": 802,
+      "selected_units": 8
+    },
+    {
+      "id": "AMT/2005/page_105.pdf-2",
+      "all_gold_retrieved": true,
+      "gold_units_retrieved": 1,
+      "gold_units_total": 1,
+      "source_characters": 1549,
+      "selected_units": 9
+    }
+  ]
+}

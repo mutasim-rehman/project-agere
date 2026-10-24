@@ -8,8 +8,8 @@
 {"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
 {"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
 {"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
-.........
+.............
 ----------------------------------------------------------------------
-Ran 93 tests in 0.035s
+Ran 97 tests in 0.022s
 
 OK

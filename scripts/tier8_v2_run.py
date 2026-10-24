@@ -401,6 +401,7 @@ def main():
     sources.append(ROOT / "scripts/tier8_v2_demo_retrieval.py")
     sources.append(ROOT / "scripts/tier8_v2_sketches.py")
     sources.append(ROOT / "scripts/tier8_v2_candidate_model.py")
+    sources.append(ROOT / "scripts/tier8_v2_table_retrieval.py")
     sources.append(ROOT / "scripts/program_graph.py")
     sources.append(ROOT / "scripts/program_endpoints.py")
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),

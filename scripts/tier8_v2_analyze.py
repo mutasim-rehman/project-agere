@@ -8,6 +8,18 @@ import random
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def validate_sources(manifests, allow_retrieval_change=False):
+    identical = manifests[0]["data_sha256"] == manifests[1]["data_sha256"]
+    if not identical:
+        same_reference = (all(m.get("config", {}).get("task") == "finqa" for m in manifests)
+            and bool(manifests[0].get("evaluation_source_sha256"))
+            and manifests[0]["evaluation_source_sha256"] == manifests[1].get("evaluation_source_sha256"))
+        if not allow_retrieval_change or not same_reference:
+            raise ValueError("Dataset hashes differ; retrieval comparisons require explicit permission and identical FinQA evaluation-source hashes")
+    return {"public_packets_identical": identical, "retrieval_change_allowed": allow_retrieval_change,
+            "evaluation_source_sha256": manifests[0].get("evaluation_source_sha256")}
+
+
 def diagnostics(rows):
     def verifier_passed(row):
         verdict = row.get("initial_verdict")
@@ -62,6 +74,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("left")
     parser.add_argument("right")
+    parser.add_argument("--allow-retrieval-change", action="store_true")
     args = parser.parse_args()
     records, manifests = [], []
     for name in (args.left, args.right):
@@ -77,9 +90,8 @@ def main():
         if len(by_id) != len(rows):
             raise ValueError("Duplicate case IDs")
         records.append(by_id)
-    if manifests[0]["data_sha256"] != manifests[1]["data_sha256"]:
-        raise ValueError("Dataset hashes differ")
-    print(json.dumps({"paired": paired(*records), "left": diagnostics(list(records[0].values())),
+    source_validation = validate_sources(manifests, args.allow_retrieval_change)
+    print(json.dumps({"source_validation": source_validation, "paired": paired(*records), "left": diagnostics(list(records[0].values())),
                       "right": diagnostics(list(records[1].values()))}, indent=2))
 
 

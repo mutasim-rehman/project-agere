@@ -18,8 +18,10 @@ confirmation are not established. Historical results and raw runs remain preserv
   calculations, the shared output ledger and post-edit verification. Real-model
   evaluation is pending; strong SAS has zero oracle prefix gains on these cases.
 - Optional 3B Q4 drafter profile is implemented as a separately labelled model-
-  allocation control. Weights verified (2,104,932,768 bytes); no fit/quality claim yet.
-- 93 contract tests pass. They do not establish financial reasoning correctness.
+  allocation control. Eight-case diagnostic completed within peak RSS 3.823 GB:
+  2 correct, 1 correct delivery, 1 wrong delivery, 6 withheld. Full matched testing
+  remains necessary before claiming an allocation gain.
+- 97 contract tests pass. They do not establish financial reasoning correctness.
 
 ## Completed development measurements
 
@@ -38,6 +40,9 @@ confirmation are not established. Historical results and raw runs remain preserv
   sketch planner 0/2. SAS sketch planner 1/2 plus one abstention. All fit the cap.
 - Shared retrieval includes all annotated evidence in 19/24. Two numerical
   references disagree; retain all cases and report declared-unit and raw metrics.
+- New table-complete plus four-text-unit packets include all annotated evidence
+  in 23/24 (40/41 units). This is retrieval coverage, not model accuracy; actual
+  inference and token fitting remain untested. Original packets remain available.
 - The frozen serial sequence completed; its journal and all three run artifacts
   are committed. Source edits may resume. No old worker needs restarting.
 
@@ -56,9 +61,10 @@ confirmation are not established. Historical results and raw runs remain preserv
 
 ## Live run and next measurements
 
-Larger-drafter first-eight diagnostic: runs/finqa-mas-3b-analysis-dev8-01, exec
-session 40310, worker PID 117680. Validate its process/summary before any new model
-run. It loaded the pre-endpoint 5852a16 pipeline; manifest hashes remain preserved.
+Larger-drafter first-eight diagnostic completed; no restart is needed. It loaded
+the pre-endpoint 5852a16 pipeline; its manifest hashes remain preserved. Next serial
+plan pairs full MAS analysis across drafter allocations, then tests stronger SAS
+with table-complete retrieval. Check the eventual plan journal for live state.
 
 1. Test the larger quantized MAS drafter under actual memory monitoring, with its
    profile and changed precision explicitly separated from the original FP16 study.

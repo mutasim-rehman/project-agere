@@ -64,10 +64,12 @@ def main():
     try:
         check_inputs(plan)
         dependency = plan["dependency"]
-        try:
-            process = psutil.Process(dependency["pid"])
-        except psutil.NoSuchProcess:
-            process = None
+        process = None
+        if "pid" in dependency:
+            try:
+                process = psutil.Process(dependency["pid"])
+            except psutil.NoSuchProcess:
+                pass
         if process:
             if process.create_time() != dependency["create_time"] or dependency["run"] not in process.cmdline() or "--worker" in process.cmdline():
                 raise ValueError("Dependency PID does not identify the expected monitor")
