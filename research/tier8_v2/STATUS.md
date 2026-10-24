@@ -41,6 +41,10 @@ confirmation are not established. Historical results and raw runs remain preserv
 - Full original-MAS analysis completed: 1/24 correct, 1 correct delivery, 17 wrong
   deliveries, 6 withheld; peak RSS 5.246 GB, 5692 output tokens. Accuracy matches
   its direct baseline with one win/one loss, while wrong deliveries rose 13 to 17.
+- Matched full 3B Q4 analysis completed: 4/24 correct, 3 correct deliveries,
+  1 wrong delivery, 20 withheld (19 abstentions); peak RSS 3.830 GB. It gains four
+  cases and loses one versus 1.5B; exploratory McNemar p=0.375. Lower memory/output
+  tokens accompany longer inference time, and useful answer coverage remains low.
 - Shared retrieval includes all annotated evidence in 19/24. Two numerical
   references disagree; retain all cases and report declared-unit and raw metrics.
 - New table-complete plus four-text-unit packets include all annotated evidence
@@ -78,8 +82,8 @@ Larger-drafter first-eight diagnostic completed; no restart is needed. It loaded
 the pre-endpoint 5852a16 pipeline; its manifest hashes remain preserved.
 
 Serial plan data/strong-baselines-sequence-02.json is live: exec session 3195,
-controller PID 121418. MAS 1.5B analysis completed; matched MAS 3B analysis is now
-running and SAS table-complete analysis follows. Journal/log prefix:
+controller PID 121418. Both matched MAS analyses completed; SAS table-complete
+analysis is now running. Journal/log prefix:
 logs/strong-baselines-sequence-02. Forty-six source/data hashes are frozen; do not
 edit those inputs or launch competing inference until completion/replanning.
 

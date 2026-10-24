@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "exit_code": 0,
+  "n": 24,
+  "expected": 24,
+  "peak_tree_rss_bytes": 3829968896,
+  "cap_bytes": 6400000000,
+  "case_successes": 4,
+  "delivered_correct": 3,
+  "delivered_incorrect": 1,
+  "repair_regressions": 0,
+  "repair_gains": 0,
+  "initial_case_successes": 4,
+  "withheld": 20,
+  "total_generated_tokens": 4778,
+  "raw_execution_matches": 2,
+  "source_supported_programs": 5,
+  "abstentions": 19,
+  "all_annotated_evidence_retrieved_cases": 19,
+  "metric_note": "case_success uses declared-unit reported answer; raw executable answer matches are separate"
+}

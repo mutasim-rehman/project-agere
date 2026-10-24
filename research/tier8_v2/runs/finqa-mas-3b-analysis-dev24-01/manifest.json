@@ -1,0 +1,108 @@
+{
+  "config": {
+    "arm": "mas",
+    "repair": "none",
+    "task": "finqa",
+    "data": "research/tier8_v2/data/finqa-development-public.jsonl",
+    "out": "research/tier8_v2/runs/finqa-mas-3b-analysis-dev24-01",
+    "limit": 24,
+    "context": 4096,
+    "verification": "field",
+    "handoff": "independent",
+    "citations": "enum",
+    "residency": "shared",
+    "program_mode": "reference",
+    "unit_mode": "question",
+    "selector": "none",
+    "causal_mode": "grammar",
+    "catalog_style": "compact",
+    "demos": 2,
+    "demo_policy": "fixed",
+    "planner": "direct",
+    "analysis_tokens": 128,
+    "verifier_model": "0.5b",
+    "drafter_model": "3b-q4",
+    "worker": false
+  },
+  "data_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "code_sha256": {
+    "tier8_v2_run.py": "f68801e97171c0fadf855811b8c9d01434e53f471c497fa2757a2765cdc29ca2",
+    "evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+    "tier8_v2_financial_pipeline.py": "df9d78ca001b0bb279be28ce2564e90c7546bbb352eb75d7b10ac65aab6004af",
+    "evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+    "tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "tier8_v2_demos.py": "9cb3cb2eaad2f3eda5fc9a4e14c3fff9076c071d710b853fb0d700d336844918",
+    "tier8_v2_demo_retrieval.py": "0a77a581ba43062bb036c27a732fa6cd63b642387ce26ebec69a6e88175d6b5f",
+    "tier8_v2_sketches.py": "8bc41ee3d3ecae07ee8b3c3bfb4fb4e080c7dd542826526ed82ec7695f6124ad",
+    "tier8_v2_candidate_model.py": "6221f5fb765ec77f213b6a9ab665caa6b96ee8ea63fa95fd44da14bbc5cf5cf9",
+    "tier8_v2_table_retrieval.py": "325162ffd73294091278c3862c7cc9bd4c569d3b74525db5716935b06058387b",
+    "program_graph.py": "3c8bbfa7960ad49c269fe2435a8596d90d0c71b72d05c54de85c1b5205051cc0",
+    "program_endpoints.py": "16db164e13ecc7a628cbef97346223a1e74c598a57fdfb777120e5f00eb3183f"
+  },
+  "git_head": "738cdcb8cce6a770114e8d7cf7b6583ebcd33193",
+  "host_total_bytes": 15438409728,
+  "cap_bytes": 6400000000,
+  "started_utc": "2026-10-24T14:22:21Z",
+  "runtime": "0.3.16",
+  "models": [
+    {
+      "file": "weights/tier8_v2/qwen2.5-0.5b-instruct-native-f16.gguf",
+      "bytes": 1266425696,
+      "sha256": "f044b7e19bf2a007973e9c84119c34afcab419546e76595b0367f963275b66e9",
+      "source_sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc",
+      "source_file": "weights/tier8_v2/qwen2.5-0.5b-instruct-fp16.gguf",
+      "runtime": "0.3.16",
+      "transform": {
+        "ftype": "MOSTLY_F16",
+        "token_embedding_type": "F16",
+        "output_tensor_type": "F16",
+        "allow_requantize": false
+      },
+      "seconds": 1.6169372720000865,
+      "integrity": {
+        "tensor_count": 291,
+        "required_bytes": 1266425696,
+        "actual_bytes": 1266425696
+      }
+    },
+    {
+      "repo": "Qwen/Qwen2.5-3B-Instruct-GGUF",
+      "revision": "7dabda4d13d513e3e842b20f0d435c732f172cbe",
+      "file": "weights/tier8_v2/qwen2.5-3b-instruct-q4_k_m.gguf",
+      "bytes": 2104932768,
+      "sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+      "quantization": "Q4_K_M",
+      "license_metadata": "other",
+      "status": "download_verified_only",
+      "inference_or_memory_fit_tested": false,
+      "scope": "Prospective separately labelled model-allocation control; does not replace original FP16 MAS."
+    }
+  ],
+  "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "demonstrations_sha256": "a094bfcfd12c52837ef1e37310b121e4e2a5714b5e15dc6e6112c55282e2e699",
+  "demonstration_source_ids": [
+    "AAL/2014/page_89.pdf-2",
+    "AAL/2014/page_92.pdf-1"
+  ],
+  "task_policy": {
+    "verification": "operand-operation-unit checks",
+    "handoff": "no selector; draft/verify pair",
+    "selector": "none",
+    "program_mode": "reference",
+    "unit_mode": "question",
+    "causal_mode": "grammar",
+    "catalog_style": "compact",
+    "demonstrations_requested": 2,
+    "demonstration_policy": "fixed",
+    "demonstration_fit": "training only; exact tokenizer fit reserves 768 generation tokens",
+    "analysis_tokens": 128,
+    "planner": "direct",
+    "verifier_checkpoint": "qwen2.5-0.5b-instruct-native-f16.gguf",
+    "drafter_checkpoint": "qwen2.5-3b-instruct-q4_k_m.gguf",
+    "model_allocation": "larger_quantized_drafter_control",
+    "citations": "enumerated source and step IDs",
+    "metric": "declared-unit reported answer with rounding; raw exe_ans separately"
+  }
+}

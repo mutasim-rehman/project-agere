@@ -2,6 +2,27 @@
 
 ## Redevelopment — 24 October 2026
 
+### Full larger-drafter allocation result
+
+- Matched 3B Q4 analysis completed 24/24 within peak RSS 3,829,968,896 bytes:
+  4 reported-answer matches, 2 raw execution matches, 3 correct deliveries,
+  1 wrong delivery, 20 withheld (19 explicit abstentions), 4778 output tokens.
+  Compared with 1.5B analysis, primary accuracy gains four cases and loses one,
+  net +3/24. Exploratory exact McNemar p=0.375; this is not a general advantage.
+- Peak RSS decreases from 5.246 to 3.830 GB, output tokens 5692 to 4778,
+  prompt tokens 99479 to 96037; recorded inference time increases 770.29 to
+  980.64 seconds. Precision among delivered answers must not conceal low overall
+  coverage. The tiny critic also withheld one correct answer; executability gating
+  rejects many PASS judgments on abstaining outputs, so PASS counts alone mislead.
+- Functional-influence audit finds no canceled source value in its five executable
+  programs. The stronger 3B system's dominant issue is abstention/semantic binding,
+  not the cancellation pattern from weaker generation. Do not claim one diagnostic
+  explains all remaining errors. All 24 cases and negative outcomes are retained.
+- The controller has started SAS table-complete analysis after valid completion;
+  remaining code/data inputs stay frozen. Further baseline tuning should consider
+  the implemented 256-token analysis option because all 128-token notes truncate,
+  before treating either configuration as a capacity ceiling.
+
 ### Preserve source-identity uncertainty in numeric training programs
 
 - Added a separate partial-binding compiler. A numeric operand keeps every
