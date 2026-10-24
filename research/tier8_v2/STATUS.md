@@ -85,7 +85,8 @@ confirmation are not established. Historical results and raw runs remain preserv
 
 ## Completed follow-up and next measurements
 
-Both frozen controllers completed successfully; no inference worker is active.
+The earlier baseline and proof-pilot controllers completed successfully. A new
+analysis-length sequence is active (details below).
 Table-complete SAS: 13/24 reported matches, 8 raw matches, 13 correct deliveries,
 5 wrong deliveries, 6 withheld, peak RSS 5.133 GB. One win and one loss against
 original-packet SAS analysis; more available operands did not improve the total.
@@ -102,9 +103,11 @@ The separate v2 ratio-unit sensitivity audit reproduces legacy scores and change
 none of the six analysis/replay totals. AAPL percentage-point annotation remains
 unresolved; no historical result was overwritten. See evidence/finqa-unit-audit-v2.json.
 
-Next frozen experiment: 256-token analysis for MAS 3B and SAS on the same original
+Live frozen experiment: 256-token analysis for MAS 3B and SAS on the same original
 24 packets, fixed two demos and unchanged total token/RSS ceilings. Compare each
-against its own 128-token result. This is stronger-baseline tuning.
+against its own 128-token result. This is stronger-baseline tuning. Controller
+session 61231, PID 159981; plan data/analysis256-sequence-01.json, journal/log prefix
+logs/analysis256-sequence-01. First MAS case persisted; 59 inputs remain frozen.
 Historical metric/output files remain immutable; any revised scores must be
 versioned separately. Next baseline work must address source binding, longer
 reasoning and model adaptation, rather than presenting this negative pilot as

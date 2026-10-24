@@ -4,6 +4,13 @@ This is a working research assessment, not a novelty certificate.
 
 ## Current falsification and next diagnostic
 
+A further close prior, [VeriFin](https://arxiv.org/html/2608.10213v1), independently
+grounds financial facts and authorized formulas, then uses symbolic constraint
+feedback for repair. Read its method/setup; do not claim that formal financial
+verification or targeted solver feedback is new. Its XBRL-backed authority is
+stronger than our source-span membership checks; no replication has been run.
+
+
 The controlled real-model proof pilot is now complete. On the stronger SAS output,
 plain retry and symbolic feedback both made zero corrections and withheld the same
 one wrong answer. Proof has no demonstrated accuracy benefit over retry. Only two

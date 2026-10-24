@@ -2,6 +2,23 @@
 
 ## Redevelopment — 24 October 2026
 
+### Running length ablation and closer semantic-verification prior
+
+- Frozen 59 inputs for data/analysis256-sequence-01.json; controller exec session
+  61231, PID 159981. MAS 3B 256-token analysis started and persisted its first case;
+  SAS follows serially. No competing inference or changes to frozen scripts/data.
+- Read VeriFin's method and relevant setup from arXiv:2608.10213v1. It binds XBRL
+  facts and externally authorized formulas independently, then supplies symbolic
+  constraint feedback for financial repair. This is close prior work; our span
+  membership/algebra checks are not equivalent semantic guarantees. No replication.
+- Encore's ACL 2024 abstract establishes formula-derived training reasoning and
+  synthetic pretraining as prior work; full method review remains pending.
+- Added a concrete post-pilot implementation order: representation control,
+  structured source identity, ambiguity-aware training targets and verified adapter
+  application for both arms, then matched binding repair if useful headroom exists.
+  These remain proposals, not implemented methods or demonstrated novelty. Do not
+  keep expanding a zero-gain proof trigger merely because the checker is exact.
+
 ### Versioned scoring sensitivity audit and reasoning-length experiment
 
 - Confirmed a scorer/prompt mismatch: `number` is permitted for ratios, and the

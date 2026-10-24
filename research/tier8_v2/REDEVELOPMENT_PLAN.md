@@ -72,3 +72,32 @@ publication-quality generalization.
 All milestones retain manifests, raw stages, memory traces, decisions, tests and
 Git commits. A publishable claim requires a useful measured distinction that
 survives strong baselines and held-out evaluation; success is not guaranteed.
+
+## Updated implementation order after the negative proof pilot
+
+1. Finish the frozen 128-versus-256 analysis ablation for SAS and MAS 3B. Judge
+   correct deliveries, wrong deliveries, abstention, latency and total budget,
+   not longer reasoning by itself. No automatic increase beyond 256 is planned.
+2. Audit representation burden with a less restrictive program/literal control
+   before blaming model capacity. Keep evidence access, executor and model budgets
+   comparable; disclose any demonstrations or grammar changes explicitly.
+3. Improve source identity: expose table cell coordinates, row measure and column
+   period separately from the numerical token. Keep equal-valued cells distinct.
+   Existing partial binding domains are the starting implementation. Neither a
+   matching value nor a unique numeric mapping certifies the intended source.
+4. Replace silently chosen ambiguous training bindings with resolved, audited
+   targets or an explicitly ambiguous training subset. Capture exactly the prompts
+   used at deployment. Use train-only, report-group-disjoint adaptation and verify
+   that the resulting adapter is actually applied during measured inference.
+   Preserve unadapted controls for both systems. Training setup is not implemented.
+5. Only after binding improves, test a bounded source-binding repair against
+   whole-plan retry and blind independent rebinding. Preserve formula and unrelated
+   bindings only when the controller has evidence to do so; provide KEEP/abstain.
+   Count false locks and formula errors that this repair cannot solve. Retire it
+   if natural-error headroom or measured benefit remains absent.
+
+Items 2–5 are proposed work, not completed features. The possible contribution is
+an empirically useful treatment of uncertain source identity and safe revision;
+its originality is unestablished. Compare against VeriFin's independent fact/formula
+verification as well as existing local repair and compiler baselines. A simpler
+known method that wins should become the baseline, not be renamed as novelty.
