@@ -10,6 +10,6 @@
 {"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
 .............
 ----------------------------------------------------------------------
-Ran 97 tests in 0.022s
+Ran 97 tests in 0.014s
 
 OK

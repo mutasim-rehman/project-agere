@@ -26,6 +26,12 @@
   table-complete retrieval control. All are development experiments. The completed
   8-case result can authorize the serial sequence without inventing a live PID;
   missing or failed completion evidence still stops execution.
+- Frozen and launched strong-baselines-sequence-02: exec session 3195,
+  controller PID 121418, first worker PID 121451. Forty-six input hashes cover
+  code, both packet variants, demos, evaluation source and weight manifests.
+  The journal confirms valid completion of the eight-case dependency and starts
+  full MAS 1.5B analysis. Then it runs matched 3B analysis and SAS table-complete
+  analysis, serially. No code/data changes until completion or explicit replanning.
 
 ### Endpoint integration and stronger-baseline falsification
 

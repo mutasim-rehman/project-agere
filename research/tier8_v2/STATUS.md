@@ -62,9 +62,13 @@ confirmation are not established. Historical results and raw runs remain preserv
 ## Live run and next measurements
 
 Larger-drafter first-eight diagnostic completed; no restart is needed. It loaded
-the pre-endpoint 5852a16 pipeline; its manifest hashes remain preserved. Next serial
-plan pairs full MAS analysis across drafter allocations, then tests stronger SAS
-with table-complete retrieval. Check the eventual plan journal for live state.
+the pre-endpoint 5852a16 pipeline; its manifest hashes remain preserved.
+
+Serial plan data/strong-baselines-sequence-02.json is live: exec session 3195,
+controller PID 121418. First worker PID 121451 runs full MAS 1.5B analysis; then
+matched MAS 3B analysis and SAS table-complete analysis follow. Journal/log prefix:
+logs/strong-baselines-sequence-02. Forty-six source/data hashes are frozen; do not
+edit those inputs or launch competing inference until completion/replanning.
 
 1. Test the larger quantized MAS drafter under actual memory monitoring, with its
    profile and changed precision explicitly separated from the original FP16 study.
