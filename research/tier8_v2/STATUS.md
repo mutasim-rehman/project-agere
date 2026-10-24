@@ -201,3 +201,8 @@ the identified CPU controller and complete SAS/journal evidence, then runs the
 real longest-example fit, a full one-epoch 3B training run if fit succeeds, and
 conversion. No retries; failures stop the queue. Journal/log prefix is
 logs/adaptation-sequence-01. Applied-adapter inference is not included or claimed.
+
+Adaptation controller verified live: exec session 92859, PID 188824. It is waiting
+on CPU controller PID 159981 (verified command and creation time). Both freezes
+remain intact. Launch proof: evidence/adaptation-sequence-launch-01.json. No model
+training has begun at this checkpoint. Keep the controller; do not duplicate jobs.

@@ -1,0 +1,28 @@
+{
+  "pid": 188824,
+  "create_time": 1792860150.32,
+  "command": [
+    ".venv/bin/python",
+    "-u",
+    "scripts/tier8_v2_adaptation_sequence.py",
+    "--plan",
+    "research/tier8_v2/data/adaptation-sequence-01.json",
+    "--journal",
+    "research/tier8_v2/logs/adaptation-sequence-01.jsonl"
+  ],
+  "exec_session": 92859,
+  "plan_sha256": "9102c9eaf9c8eb7589a27b51d325e869288dc8a9e1436b0c20a72c2e2a25d213",
+  "verified_state": {
+    "state": "waiting",
+    "time_utc": "2026-10-24T16:42:30Z",
+    "dependency": {
+      "pid": 159981,
+      "create_time": 1792856477.47,
+      "command_arg": "research/tier8_v2/data/analysis256-sequence-01.json",
+      "run": "research/tier8_v2/runs/finqa-sas-analysis256-dev24-01",
+      "journal": "research/tier8_v2/logs/analysis256-sequence-01.jsonl"
+    },
+    "verified_live": true
+  },
+  "model_training_started": false
+}

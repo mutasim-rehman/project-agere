@@ -2,6 +2,16 @@
 
 ## Redevelopment — 24 October 2026
 
+### Verified queued adaptation controller is live
+
+- Started the frozen sequence after committing/pushing its source and plan. Exec
+  session 92859, controller PID 188824. It verified CPU controller PID 159981 by
+  creation time and command argument and is waiting for its terminal completion.
+  No training has started. Launch identity and plan SHA are saved separately.
+- Rechecked both freezes: 59 CPU-study inputs and 40 adaptation inputs remain
+  intact. The SAS worker is live; its partial case count is not used to select
+  conditions. Do not restart either controller because an observation times out.
+
 ### Runtime complete; frozen real adaptation sequence queued
 
 - Torch 2.6.0+cu124, PEFT 0.17.1, Accelerate 1.10.1 and bitsandbytes 0.48.1 import
