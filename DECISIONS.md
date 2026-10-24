@@ -84,6 +84,13 @@
 - False-lock correctness is not assessed per FinQA program step: numerical gold
   does not uniquely identify a valid alternative reasoning program. Do not reuse
   the KYC field-lock metric as if it provided such ground truth.
+- First real-report MAS smoke (fixed first two records) completed at peak RSS
+  5,251,465,216 bytes: 0/2 correct, both delivered incorrectly, 309 generated tokens.
+  All stages finished without truncation. Cited arithmetic was executable but
+  semantically wrong; the 0.5B verifier returned PASS on both. Do not equate source
+  support, successful execution, or a verifier PASS with correct financial reasoning.
+- Matching first-two SAS real-report smoke is live. Wait for its actual completion
+  before modifying the numerical pipeline or declaring a comparative result.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

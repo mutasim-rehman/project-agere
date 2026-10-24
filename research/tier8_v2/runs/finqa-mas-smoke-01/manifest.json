@@ -1,0 +1,79 @@
+{
+  "config": {
+    "arm": "mas",
+    "repair": "none",
+    "task": "finqa",
+    "data": "research/tier8_v2/data/finqa-development-public.jsonl",
+    "out": "research/tier8_v2/runs/finqa-mas-smoke-01",
+    "limit": 2,
+    "context": 4096,
+    "verification": "field",
+    "handoff": "independent",
+    "citations": "enum",
+    "residency": "shared",
+    "worker": false
+  },
+  "data_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "code_sha256": {
+    "tier8_v2_run.py": "1bf8c5d9aa882a4c06095eab8dcab475c43a0cb82ecec91b0f6f3c835af984c6",
+    "evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+    "tier8_v2_financial_pipeline.py": "9d606de56f7975b71b907da909d22bb5e9363cd40079939a25b60d3790ec1c2f",
+    "evidence_calculator.py": "c09aa24f1baaf6e3c0cd82a7283125b833bec2f63bedbca10eaeb64e3707ee25",
+    "tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5"
+  },
+  "git_head": "d377678f3e8abd131939f3efd0f7c12534905047",
+  "host_total_bytes": 15438409728,
+  "cap_bytes": 6400000000,
+  "started_utc": "2026-10-24T08:20:27Z",
+  "runtime": "0.3.16",
+  "models": [
+    {
+      "file": "weights/tier8_v2/qwen2.5-0.5b-instruct-native-f16.gguf",
+      "bytes": 1266425696,
+      "sha256": "f044b7e19bf2a007973e9c84119c34afcab419546e76595b0367f963275b66e9",
+      "source_sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc",
+      "source_file": "weights/tier8_v2/qwen2.5-0.5b-instruct-fp16.gguf",
+      "runtime": "0.3.16",
+      "transform": {
+        "ftype": "MOSTLY_F16",
+        "token_embedding_type": "F16",
+        "output_tensor_type": "F16",
+        "allow_requantize": false
+      },
+      "seconds": 1.6169372720000865,
+      "integrity": {
+        "tensor_count": 291,
+        "required_bytes": 1266425696,
+        "actual_bytes": 1266425696
+      }
+    },
+    {
+      "file": "weights/tier8_v2/qwen2.5-1.5b-instruct-native-f16.gguf",
+      "bytes": 3560416288,
+      "sha256": "f5bff4cb44a4fd8538b6f20527eb2af472a435f53d55289c967f4cdeea7bc1a7",
+      "source_sha256": "fc89e330deb3fd8fa560f1c0f35a1e2b8da96d59e13445559ed190307a6f5649",
+      "source_file": "weights/tier8_v2/qwen2.5-1.5b-instruct-fp16.gguf",
+      "runtime": "0.3.16",
+      "transform": {
+        "ftype": "MOSTLY_F16",
+        "token_embedding_type": "F16",
+        "output_tensor_type": "F16",
+        "allow_requantize": false
+      },
+      "seconds": 5.055721089000144,
+      "integrity": {
+        "tensor_count": 339,
+        "required_bytes": 3560416288,
+        "actual_bytes": 3560416288
+      }
+    }
+  ],
+  "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "task_policy": {
+    "verification": "operand-operation-unit checks",
+    "handoff": "fallible source-ID suggestion",
+    "citations": "enumerated source and step IDs",
+    "metric": "custom numeric execution tolerance 1e-5"
+  }
+}

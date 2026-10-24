@@ -1,0 +1,18 @@
+{
+  "n": 2,
+  "field_repair_gains": 0,
+  "field_repair_regressions": 0,
+  "wrong_fields_left_locked": null,
+  "initial_verifier_true_accepts": 0,
+  "initial_verifier_false_accepts": 2,
+  "initial_verifier_true_rejects": 0,
+  "initial_verifier_false_rejects": 0,
+  "delivered_correct": 0,
+  "delivered_incorrect": 2,
+  "withheld": 0,
+  "generated_tokens": 309,
+  "prompt_tokens": 4780,
+  "inference_seconds": 28.0311967180005,
+  "truncated_stages": 0,
+  "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+}
