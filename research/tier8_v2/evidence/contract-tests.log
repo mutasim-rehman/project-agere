@@ -1,0 +1,13 @@
+test_atomic_repair_preserves_good_claims (test_evidence_contract.ContractTests.test_atomic_repair_preserves_good_claims) ... ok
+test_batch_with_bad_claim_is_rejected_atomically (test_evidence_contract.ContractTests.test_batch_with_bad_claim_is_rejected_atomically) ... ok
+test_boolean_is_not_calculator_number (test_evidence_contract.ContractTests.test_boolean_is_not_calculator_number) ... ok
+test_checker_does_not_need_labels (test_evidence_contract.ContractTests.test_checker_does_not_need_labels) ... ok
+test_ledger_reserves_and_enforces_budget (test_evidence_contract.ContractTests.test_ledger_reserves_and_enforces_budget) ... ok
+test_missing_needs_absence_evidence (test_evidence_contract.ContractTests.test_missing_needs_absence_evidence) ... ok
+test_repair_cannot_change_locked_claim (test_evidence_contract.ContractTests.test_repair_cannot_change_locked_claim) ... ok
+test_substring_is_not_numeric_evidence (test_evidence_contract.ContractTests.test_substring_is_not_numeric_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK

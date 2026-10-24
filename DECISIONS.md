@@ -1,5 +1,24 @@
 # 8 GB tier study decisions
 
+## Redevelopment — 24 October 2026
+
+- User authorized iterative code changes, 8 GB research and evaluation, milestone
+  commits and pushes, and evidence retention. New files and artifacts stay inside
+  this directory; this overrides the historical external-SSD storage convention.
+- Preserve the historical runner and results. New code uses separate v2 modules.
+- Current checkout has no GGUF weights, no llama-cpp runtime, and no old raw traces.
+  Host reports 15.44 decimal GB RAM; 8 GB results here are simulated by a cap.
+- Runtime bootstrap initially failed: system Python 3.14 lacks ensurepip. Install
+  a project-local Python/runtime instead of changing the host installation.
+- Targeted repair, claim verification, and budgeted audits already have prior art
+  (Self-Refine, CRITIC, CLR, BRA-Audit). Candidate contribution is transactional
+  evidence repair and measured repair-induced regression under tight resources;
+  originality and effectiveness remain unproven.
+- First milestone isolates deployment checks from gold labels. A supported span
+  is not necessarily the correct field value. Missing status needs explicit absence
+  evidence. Neither limitation will be hidden by a success metric.
+- Credentials from .env are used only for Git authentication; never logged or committed.
+
 **Study:** `tier8-8gb-v1`  
 **SSD:** `H:\AGERE` (`AGERE_SSD_ROOT`)  
 **Repo:** `D:\project-agere`  
