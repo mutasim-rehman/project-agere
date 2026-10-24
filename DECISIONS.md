@@ -21,6 +21,16 @@
   The default pilot uses field checks and independent drafting. Every model stage
   now persists immediately, preserving partial-run evidence if a later stage fails.
   Thirty tests pass. These are implementation checks, not model-performance results.
+- The next distinct-instance run breached the cap at 6,410,784,768 bytes before
+  completing a case. A free-citation control also breached the cap before a case.
+  This does not support blaming citation enumeration alone. Both runs are invalid
+  and preserved, and cannot enter paired accuracy comparisons. The earlier fit
+  was an observed sampled peak, not a guarantee of stable repeated-load fit.
+- Optimize deployment by sharing the identical 0.5B checkpoint instance between
+  extractor and verifier, which are called serially. Keep three agent roles and
+  reset KV state before every call for both arms. Label shared versus distinct
+  residency explicitly. Sharing weights is deployment engineering, not a novelty
+  claim; role-specific fine-tuned weights would require separate instances.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

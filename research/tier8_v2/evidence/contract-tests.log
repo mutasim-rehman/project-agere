@@ -27,9 +27,16 @@ test_field_verifier_unknown_blocks_delivery (test_tier8_v2_pipeline.PipelineTest
 test_independent_drafter_does_not_see_wrong_proposal (test_tier8_v2_pipeline.PipelineTests.test_independent_drafter_does_not_see_wrong_proposal) ... ok
 test_patch_repair_needs_fresh_verdict (test_tier8_v2_pipeline.PipelineTests.test_patch_repair_needs_fresh_verdict) ... ok
 test_semantic_verifier_fail_blocks_supported_answer (test_tier8_v2_pipeline.PipelineTests.test_semantic_verifier_fail_blocks_supported_answer) ... ok
+test_shared_weights_keep_three_roles_with_two_instances (test_tier8_v2_pipeline.PipelineTests.test_shared_weights_keep_three_roles_with_two_instances) ... {"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
+{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
+{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": true}
+{"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
+{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
+{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
+ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 30 tests in 0.009s
+Ran 31 tests in 0.010s
 
 OK

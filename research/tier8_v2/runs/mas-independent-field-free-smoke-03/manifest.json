@@ -1,0 +1,67 @@
+{
+  "config": {
+    "arm": "mas",
+    "repair": "none",
+    "data": "research/tier8_v2/data/development.jsonl",
+    "out": "research/tier8_v2/runs/mas-independent-field-free-smoke-03",
+    "limit": 4,
+    "context": 2048,
+    "verification": "field",
+    "handoff": "independent",
+    "citations": "free",
+    "worker": false
+  },
+  "data_sha256": "d45359e106a5d9d6921d109e1f3241cbaa8b144651fe0cd914c821964e058b9b",
+  "code_sha256": {
+    "tier8_v2_run.py": "ab83a68a6f2a10fc748fe33e6fb3853cdeff8ed0dcd64a5ad85b5eabc3125453",
+    "evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33"
+  },
+  "git_head": "1818e75a30a523afaac031bfac94df4197546264",
+  "host_total_bytes": 15438409728,
+  "cap_bytes": 6400000000,
+  "started_utc": "2026-10-24T07:55:51Z",
+  "runtime": "0.3.16",
+  "models": [
+    {
+      "file": "weights/tier8_v2/qwen2.5-0.5b-instruct-native-f16.gguf",
+      "bytes": 1266425696,
+      "sha256": "f044b7e19bf2a007973e9c84119c34afcab419546e76595b0367f963275b66e9",
+      "source_sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc",
+      "source_file": "weights/tier8_v2/qwen2.5-0.5b-instruct-fp16.gguf",
+      "runtime": "0.3.16",
+      "transform": {
+        "ftype": "MOSTLY_F16",
+        "token_embedding_type": "F16",
+        "output_tensor_type": "F16",
+        "allow_requantize": false
+      },
+      "seconds": 1.6169372720000865,
+      "integrity": {
+        "tensor_count": 291,
+        "required_bytes": 1266425696,
+        "actual_bytes": 1266425696
+      }
+    },
+    {
+      "file": "weights/tier8_v2/qwen2.5-1.5b-instruct-native-f16.gguf",
+      "bytes": 3560416288,
+      "sha256": "f5bff4cb44a4fd8538b6f20527eb2af472a435f53d55289c967f4cdeea7bc1a7",
+      "source_sha256": "fc89e330deb3fd8fa560f1c0f35a1e2b8da96d59e13445559ed190307a6f5649",
+      "source_file": "weights/tier8_v2/qwen2.5-1.5b-instruct-fp16.gguf",
+      "runtime": "0.3.16",
+      "transform": {
+        "ftype": "MOSTLY_F16",
+        "token_embedding_type": "F16",
+        "output_tensor_type": "F16",
+        "allow_requantize": false
+      },
+      "seconds": 5.055721089000144,
+      "integrity": {
+        "tensor_count": 339,
+        "required_bytes": 3560416288,
+        "actual_bytes": 3560416288
+      }
+    }
+  ]
+}

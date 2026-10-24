@@ -76,20 +76,28 @@ def append(path, record):
 
 
 class Models:
-    def __init__(self, arm, context):
+    def __init__(self, arm, context, residency="distinct"):
         from llama_cpp import Llama, LlamaGrammar
         self.grammar = LlamaGrammar
         self.models = {}
         self.context = context
         files = MODEL_FILES[arm]
-        # Separate resident contexts for the two specialist instances.
+        opened = {}
         for role, filename in files.items():
+            if residency == "shared" and filename in opened:
+                self.models[role] = opened[filename]
+                print(json.dumps({"role": role, "weights": filename, "shared_instance": True}), flush=True)
+                continue
             self.models[role] = Llama(model_path=str(WEIGHTS / filename), n_ctx=context,
                 n_gpu_layers=0, n_threads=8, n_threads_batch=8, n_batch=64,
                 n_ubatch=64, seed=42, use_mmap=False, verbose=False)
+            opened[filename] = self.models[role]
+            print(json.dumps({"role": role, "weights": filename, "shared_instance": False}), flush=True)
 
     def call(self, role, content, schema, budget, requested, stage):
         model = self.models[role]
+        # Roles never inherit conversational KV state, including when weights share.
+        model.reset()
         prompt = ("<|im_start|>system\nYou reconcile financial evidence for human review. "
                   "Use authoritative sources only. Return JSON only.<|im_end|>\n"
                   f"<|im_start|>user\n{content}<|im_end|>\n<|im_start|>assistant\n")
@@ -238,7 +246,7 @@ def verified_models(arm):
 
 
 def worker(args, out):
-    models = Models(args.arm, args.context)
+    models = Models(args.arm, args.context, args.residency)
     rows = [json.loads(line) for line in inside(args.data).read_text().splitlines() if line][:args.limit]
     for case in rows:
         public = {k: v for k, v in case.items() if k != "gold"}
@@ -246,6 +254,7 @@ def worker(args, out):
                           handoff=args.handoff, citations=args.citations,
                           event_sink=lambda event: append(out / "stages.jsonl", event))
         result["initial_score"] = evaluate(case, result["initial_answer"])
+        result["residency"] = args.residency
         result["score"] = evaluate(case, result["answer"])
         append(out / "cases.jsonl", result)
         print(json.dumps({"id": case["id"], "success": result["score"]["case_success"],
@@ -263,6 +272,7 @@ def main():
     parser.add_argument("--verification", choices=("joint", "field"), default="field")
     parser.add_argument("--handoff", choices=("proposal", "independent"), default="independent")
     parser.add_argument("--citations", choices=("free", "enum"), default="enum")
+    parser.add_argument("--residency", choices=("distinct", "shared"), default="shared")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.limit <= 0:

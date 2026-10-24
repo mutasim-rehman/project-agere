@@ -4,12 +4,13 @@ import sys
 import hashlib
 import tempfile
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from tier8_v2_data import generate
-from tier8_v2_run import run_case, verified_models, answer_schema, normalize_verdict
+from tier8_v2_run import run_case, verified_models, answer_schema, normalize_verdict, Models
 
 
 class FakeModels:
@@ -101,6 +102,21 @@ class PipelineTests(unittest.TestCase):
         spans = schema["properties"]["facts"]["properties"]["registered_owner"]["properties"]["span_id"]["enum"]
         self.assertEqual(len(spans), 5)
         self.assertTrue(all(s.endswith("#L01") for s in spans))
+
+    def test_shared_weights_keep_three_roles_with_two_instances(self):
+        calls = []
+        def fake_llama(**kwargs):
+            calls.append(kwargs)
+            return object()
+        with patch.dict(sys.modules, {"llama_cpp": SimpleNamespace(Llama=fake_llama, LlamaGrammar=object)}):
+            shared = Models("mas", 2048, "shared")
+            self.assertEqual(len(calls), 2)
+            self.assertEqual(len(shared.models), 3)
+            self.assertIs(shared.models["extractor"], shared.models["verifier"])
+            self.assertIsNot(shared.models["drafter"], shared.models["verifier"])
+            calls.clear()
+            Models("mas", 2048, "distinct")
+            self.assertEqual(len(calls), 3)
 
 
 if __name__ == "__main__":
