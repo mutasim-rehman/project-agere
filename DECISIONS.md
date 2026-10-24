@@ -4,6 +4,20 @@
 
 ### Training-sketch and source-binding baseline
 
+- Added a separate offline shape audit, never imported by deployment. Retrieve
+  candidates from the public question first, then inspect development gold only
+  to compare strict variable-abstracted program+unit signatures. Ten of 24 cases
+  have a matching shape among the top-two unit-compatible candidates, compared
+  with 15/24 somewhere in the full bank. Nineteen references can be represented
+  by the current packet/target adapter; four lack required operands and one has
+  reported/execution disagreement. All 24 remain in the denominator.
+- These are candidate-expressibility diagnostics, not model gains or a complete
+  algebraic coverage test. Equivalent alternate programs can have different
+  shapes, and tokenizer fitting can further reduce candidates. No oracle shape
+  matches or bindings are written to public packets or the model-facing bank.
+  The result motivates checking both retrieval and binding, not expecting this
+  restricted sketch library to solve every development question.
+
 - Added optional `--planner sketch` for both SAS and MAS. It uses question-only
   retrieved training examples and abstracts their source operands into V slots,
   retaining repeated-variable identity, operations, constants, step dependencies

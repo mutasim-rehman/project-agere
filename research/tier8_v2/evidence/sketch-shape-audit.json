@@ -1,0 +1,373 @@
+{
+  "n": 24,
+  "bank_sha256": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a",
+  "public_packets_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "reference_shapes_available": 19,
+  "selected_shape_matched_cases": 10,
+  "whole_bank_shape_matched_cases": 15,
+  "cautions": [
+    "Offline development diagnostic only; oracle shape matches never enter deployment.",
+    "Strict full-program shape+unit equality; not complete coverage over equivalent formulas.",
+    "No exact tokenizer fit applied; model prompt may retain fewer sketches.",
+    "Unavailable references remain in the 24-case denominator, with reasons recorded.",
+    "Shape match does not establish correct variable binding or achieved model accuracy."
+  ],
+  "cases": [
+    {
+      "case_id": "V/2008/page_17.pdf-1",
+      "selected_source_ids": [
+        "V/2009/page_23.pdf-2",
+        "HIG/2004/page_192.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "V/2009/page_23.pdf-2",
+        "HIG/2004/page_192.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 4
+    },
+    {
+      "case_id": "C/2017/page_328.pdf-1",
+      "selected_source_ids": [
+        "AAPL/2018/page_23.pdf-2",
+        "ETFC/2015/page_27.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "AAPL/2018/page_23.pdf-2",
+        "ETFC/2015/page_27.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "ETFC/2015/page_27.pdf-1"
+      ],
+      "whole_bank_shape_matches": 1
+    },
+    {
+      "case_id": "DVN/2007/page_58.pdf-2",
+      "selected_source_ids": [
+        "DVN/2010/page_70.pdf-1",
+        "RL/2011/page_12.pdf-2"
+      ],
+      "unit_compatible_ids": [
+        "DVN/2010/page_70.pdf-1",
+        "RL/2011/page_12.pdf-2"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "DVN/2010/page_70.pdf-1"
+      ],
+      "whole_bank_shape_matches": 2
+    },
+    {
+      "case_id": "ETR/2011/page_341.pdf-3",
+      "selected_source_ids": [
+        "IP/2015/page_46.pdf-4",
+        "UNP/2010/page_55.pdf-3"
+      ],
+      "unit_compatible_ids": [
+        "IP/2015/page_46.pdf-4",
+        "UNP/2010/page_55.pdf-3"
+      ],
+      "reference_shape_available": false,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": null,
+      "reference_unavailable_reason": "reported_execution_disagreement"
+    },
+    {
+      "case_id": "ETR/2004/page_213.pdf-2",
+      "selected_source_ids": [
+        "RSG/2018/page_47.pdf-2",
+        "DVN/2013/page_101.pdf-2"
+      ],
+      "unit_compatible_ids": [
+        "DVN/2013/page_101.pdf-2"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 188
+    },
+    {
+      "case_id": "PM/2017/page_38.pdf-1",
+      "selected_source_ids": [
+        "AWK/2015/page_109.pdf-4",
+        "MO/2014/page_11.pdf-3"
+      ],
+      "unit_compatible_ids": [
+        "AWK/2015/page_109.pdf-4"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "AWK/2015/page_109.pdf-4"
+      ],
+      "whole_bank_shape_matches": 108
+    },
+    {
+      "case_id": "JPM/2008/page_85.pdf-3",
+      "selected_source_ids": [
+        "GS/2018/page_108.pdf-3",
+        "PNC/2008/page_144.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "GS/2018/page_108.pdf-3",
+        "PNC/2008/page_144.pdf-1"
+      ],
+      "reference_shape_available": false,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": null,
+      "reference_unavailable_reason": "unretrieved_operand"
+    },
+    {
+      "case_id": "PNC/2013/page_207.pdf-1",
+      "selected_source_ids": [
+        "JPM/2017/page_144.pdf-3",
+        "JPM/2016/page_140.pdf-4"
+      ],
+      "unit_compatible_ids": [
+        "JPM/2017/page_144.pdf-3",
+        "JPM/2016/page_140.pdf-4"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "JPM/2017/page_144.pdf-3",
+        "JPM/2016/page_140.pdf-4"
+      ],
+      "whole_bank_shape_matches": 188
+    },
+    {
+      "case_id": "CME/2017/page_97.pdf-5",
+      "selected_source_ids": [
+        "MS/2007/page_156.pdf-1",
+        "AMT/2007/page_111.pdf-3"
+      ],
+      "unit_compatible_ids": [
+        "MS/2007/page_156.pdf-1",
+        "AMT/2007/page_111.pdf-3"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "MS/2007/page_156.pdf-1"
+      ],
+      "whole_bank_shape_matches": 108
+    },
+    {
+      "case_id": "PNC/2013/page_62.pdf-2",
+      "selected_source_ids": [
+        "RSG/2014/page_22.pdf-1",
+        "RSG/2013/page_16.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "RSG/2013/page_16.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 23
+    },
+    {
+      "case_id": "AAPL/2004/page_36.pdf-2",
+      "selected_source_ids": [
+        "FIS/2006/page_48.pdf-3",
+        "AAPL/2012/page_36.pdf-2"
+      ],
+      "unit_compatible_ids": [
+        "FIS/2006/page_48.pdf-3",
+        "AAPL/2012/page_36.pdf-2"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "AAPL/2012/page_36.pdf-2"
+      ],
+      "whole_bank_shape_matches": 108
+    },
+    {
+      "case_id": "PKG/2009/page_65.pdf-4",
+      "selected_source_ids": [
+        "PKG/2013/page_83.pdf-2",
+        "AAPL/2002/page_63.pdf-4"
+      ],
+      "unit_compatible_ids": [
+        "PKG/2013/page_83.pdf-2",
+        "AAPL/2002/page_63.pdf-4"
+      ],
+      "reference_shape_available": false,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": null,
+      "reference_unavailable_reason": "unretrieved_operand"
+    },
+    {
+      "case_id": "LMT/2013/page_74.pdf-4",
+      "selected_source_ids": [
+        "BDX/2009/page_81.pdf-4",
+        "STT/2007/page_95.pdf-2"
+      ],
+      "unit_compatible_ids": [
+        "STT/2007/page_95.pdf-2"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 108
+    },
+    {
+      "case_id": "STT/2011/page_83.pdf-1",
+      "selected_source_ids": [
+        "RE/2016/page_40.pdf-2",
+        "RE/2010/page_42.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "RE/2016/page_40.pdf-2",
+        "RE/2010/page_42.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "RE/2016/page_40.pdf-2"
+      ],
+      "whole_bank_shape_matches": 108
+    },
+    {
+      "case_id": "MRO/2007/page_149.pdf-2",
+      "selected_source_ids": [
+        "CE/2016/page_88.pdf-1",
+        "GIS/2018/page_82.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "CE/2016/page_88.pdf-1",
+        "GIS/2018/page_82.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 0
+    },
+    {
+      "case_id": "AOS/2004/page_11.pdf-2",
+      "selected_source_ids": [
+        "PKG/2013/page_83.pdf-2",
+        "PKG/2001/page_86.pdf-3"
+      ],
+      "unit_compatible_ids": [
+        "PKG/2013/page_83.pdf-2",
+        "PKG/2001/page_86.pdf-3"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "PKG/2013/page_83.pdf-2",
+        "PKG/2001/page_86.pdf-3"
+      ],
+      "whole_bank_shape_matches": 188
+    },
+    {
+      "case_id": "C/2010/page_223.pdf-3",
+      "selected_source_ids": [
+        "STT/2001/page_85.pdf-1",
+        "SLB/2010/page_90.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "STT/2001/page_85.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 0
+    },
+    {
+      "case_id": "MSI/2006/page_61.pdf-3",
+      "selected_source_ids": [
+        "FIS/2017/page_92.pdf-2",
+        "GIS/2006/page_43.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "FIS/2017/page_92.pdf-2",
+        "GIS/2006/page_43.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "FIS/2017/page_92.pdf-2",
+        "GIS/2006/page_43.pdf-1"
+      ],
+      "whole_bank_shape_matches": 188
+    },
+    {
+      "case_id": "ABMD/2006/page_75.pdf-1",
+      "selected_source_ids": [
+        "DISH/2011/page_130.pdf-2",
+        "ABMD/2008/page_87.pdf-2"
+      ],
+      "unit_compatible_ids": [
+        "DISH/2011/page_130.pdf-2",
+        "ABMD/2008/page_87.pdf-2"
+      ],
+      "reference_shape_available": false,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": null,
+      "reference_unavailable_reason": "unretrieved_operand"
+    },
+    {
+      "case_id": "AMAT/2013/page_18.pdf-2",
+      "selected_source_ids": [
+        "IP/2015/page_46.pdf-4",
+        "C/2016/page_120.pdf-2"
+      ],
+      "unit_compatible_ids": [
+        "IP/2015/page_46.pdf-4",
+        "C/2016/page_120.pdf-2"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 0
+    },
+    {
+      "case_id": "DVN/2014/page_85.pdf-1",
+      "selected_source_ids": [
+        "AWK/2017/page_172.pdf-4",
+        "ADBE/2011/page_83.pdf-4"
+      ],
+      "unit_compatible_ids": [
+        "AWK/2017/page_172.pdf-4"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 0
+    },
+    {
+      "case_id": "SPGI/2018/page_74.pdf-1",
+      "selected_source_ids": [
+        "VNO/2010/page_88.pdf-1",
+        "HUM/2010/page_101.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "HUM/2010/page_101.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [
+        "HUM/2010/page_101.pdf-1"
+      ],
+      "whole_bank_shape_matches": 50
+    },
+    {
+      "case_id": "ZBH/2003/page_58.pdf-3",
+      "selected_source_ids": [
+        "AAPL/2007/page_51.pdf-1",
+        "GS/2015/page_80.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "AAPL/2007/page_51.pdf-1"
+      ],
+      "reference_shape_available": false,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": null,
+      "reference_unavailable_reason": "unretrieved_operand"
+    },
+    {
+      "case_id": "AMT/2005/page_105.pdf-2",
+      "selected_source_ids": [
+        "LLY/2008/page_45.pdf-2",
+        "SNPS/2017/page_99.pdf-1"
+      ],
+      "unit_compatible_ids": [
+        "LLY/2008/page_45.pdf-2",
+        "SNPS/2017/page_99.pdf-1"
+      ],
+      "reference_shape_available": true,
+      "selected_shape_matches": [],
+      "whole_bank_shape_matches": 23
+    }
+  ]
+}

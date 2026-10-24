@@ -20,6 +20,10 @@ are not established. Do not mark the goal complete from these development result
 - Optional training-sketch planner chooses a retrieved formula and binds its
   variables to current quantities. Preserves operations/constants/units and logs
   choice versus bindings. All 24 schemas compile; real-model gains unmeasured.
+- Offline strict-shape diagnostic: retrieved top-two sketches match the annotated
+  program+unit shape in 10/24 cases; the full bank matches 15/24. Alternative
+  equivalent programs are not counted; this is not achieved accuracy. Five
+  unrepresentable/discordant references remain in the denominator with reasons.
 - Optional question-only BM25 demonstration retrieval uses 620 eligible training
   examples, excluding all annual reports in development. MAS smoke remains 0/2
   correct, one wrong delivery and one withheld; both demos fit each prompt. Fixed

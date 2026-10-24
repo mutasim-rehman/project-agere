@@ -1,0 +1,15 @@
+{
+  "n": 24,
+  "bank_sha256": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a",
+  "public_packets_sha256": "7d2303e5ea11135934c8839784041f220d8f4b90fd46c16b3fc8a3d7ff0bde57",
+  "reference_shapes_available": 19,
+  "selected_shape_matched_cases": 10,
+  "whole_bank_shape_matched_cases": 15,
+  "cautions": [
+    "Offline development diagnostic only; oracle shape matches never enter deployment.",
+    "Strict full-program shape+unit equality; not complete coverage over equivalent formulas.",
+    "No exact tokenizer fit applied; model prompt may retain fewer sketches.",
+    "Unavailable references remain in the 24-case denominator, with reasons recorded.",
+    "Shape match does not establish correct variable binding or achieved model accuracy."
+  ]
+}
