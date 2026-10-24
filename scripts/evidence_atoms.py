@@ -28,11 +28,37 @@ def atom_catalog(evidence):
     return atoms
 
 
-def reference_schema(atoms, units=("number", "percent", "fraction")):
+def reference_step_schema(atoms, index=None):
+    constants = [f"CONST:{n}" for n in sorted(CONSTANTS)]
+    previous = [f"#{i}" for i in range(index)] if index is not None else [f"#{i}" for i in range(8)]
+    grounded = list(atoms) + previous
+    references = grounded + constants
+    def step(left, right):
+        return {"type": "object", "properties": {"op": {"enum": ["add", "subtract", "multiply", "divide"]},
+            "left": {"enum": left}, "right": {"enum": right}},
+            "required": ["op", "left", "right"], "additionalProperties": False}
+    if index is None:
+        return step(references, references)
+    # Every step depends on an input quantity or an earlier grounded result.
+    return {"oneOf": [step(grounded, references), step(constants, grounded)]}
+
+
+def reference_schema(atoms, units=("number", "percent", "fraction"), causal=False):
     references = list(atoms) + [f"CONST:{n}" for n in sorted(CONSTANTS)] + [f"#{i}" for i in range(8)]
     step = {"type": "object", "properties": {"op": {"enum": ["add", "subtract", "multiply", "divide"]},
         "left": {"enum": references}, "right": {"enum": references}},
         "required": ["op", "left", "right"], "additionalProperties": False}
+    if causal:
+        def output(decision, steps):
+            return {"type": "object", "properties": {"decision": {"const": decision},
+                "answer_unit": {"enum": list(units)}, "steps": steps},
+                "required": ["decision", "answer_unit", "steps"], "additionalProperties": False}
+        insufficient = output("INSUFFICIENT", {"const": []})
+        if not atoms:
+            return insufficient
+        lengths = [{"type": "array", "prefixItems": [reference_step_schema(atoms, i) for i in range(n)],
+                    "items": False, "minItems": n, "maxItems": n} for n in range(1, 9)]
+        return {"oneOf": [output("ANSWER", {"oneOf": lengths}), insufficient]}
     return {"type": "object", "properties": {"decision": {"enum": ["ANSWER", "INSUFFICIENT"]},
         "answer_unit": {"enum": list(units)}, "steps": {"type": "array", "items": step, "minItems": 0, "maxItems": 8}},
         "required": ["decision", "answer_unit", "steps"], "additionalProperties": False}

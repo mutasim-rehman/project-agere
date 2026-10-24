@@ -10,7 +10,7 @@ import re
 
 from evidence_calculator import CONSTANTS, OPERATIONS, execute
 from evidence_contract import TokenLedger
-from evidence_atoms import atom_catalog, reference_schema, compile_plan, patch_plan
+from evidence_atoms import atom_catalog, reference_schema, reference_step_schema, compile_plan, patch_plan
 
 
 def program_schema(evidence, units=("number", "percent", "fraction")):
@@ -81,13 +81,13 @@ def question_units(question, mode):
     return ("number", "percent", "fraction")
 
 
-def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest"):
+def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest", causal_mode="check", catalog_style="full"):
     if set(public) & {"gold", "qa", "answer", "program", "model_input", "gold_inds"}:
         raise ValueError("Gold/annotated fields must not enter deployment")
     evidence = public["evidence"]
     units = question_units(public["question"], unit_mode)
     atoms = atom_catalog(evidence) if representation == "reference" else {}
-    schema = reference_schema(atoms, units) if representation == "reference" else program_schema(evidence, units)
+    schema = reference_schema(atoms, units, causal=causal_mode == "grammar") if representation == "reference" else program_schema(evidence, units)
     def decode(plan):
         if representation == "literal":
             return plan
@@ -105,7 +105,8 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
     source_context = "Question: " + public["question"] + "\nFinancial report evidence by source ID:\n" + json.dumps(evidence)
     context = source_context
     if representation == "reference":
-        context += "\nQuantity references (code copies these source values):\n" + json.dumps(atoms)
+        catalog = json.dumps(atoms) if catalog_style == "full" else "\n".join(f"{key}={atom['value']}@{atom['span_id']}" for key, atom in atoms.items())
+        context += "\nQuantity references (code copies these source values):\n" + catalog
     selection = None
     if arm == "mas" and selector == "suggest":
         selection_schema = {"type": "object", "properties": {"source_ids": {"type": "array",
@@ -163,9 +164,14 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             scope = set(range(len(steps)))
         feedback = {"checker": initial_execution, "review": review}
         if repair == "patch" and steps and isinstance(review, dict) and review.get("repair_kind") != "REPLAN":
+            item_schema = {"type": "object", "properties": {"index": {"enum": sorted(scope)},
+                "step": reference_step_schema(atoms) if representation == "reference" else schema["properties"]["steps"]["items"]},
+                "required": ["index", "step"], "additionalProperties": False}
+            if representation == "reference" and causal_mode == "grammar":
+                item_schema = {"oneOf": [{"type": "object", "properties": {"index": {"const": i},
+                    "step": reference_step_schema(atoms, i)}, "required": ["index", "step"], "additionalProperties": False} for i in sorted(scope)]}
             patch_schema = {"type": "object", "properties": {"updates": {"type": "array", "minItems": 1,
-                "maxItems": len(scope), "items": {"type": "object", "properties": {"index": {"enum": sorted(scope)},
-                    "step": schema["properties"]["steps"]["items"]}, "required": ["index", "step"], "additionalProperties": False}}},
+                "maxItems": len(scope), "items": item_schema}},
                 "required": ["updates"], "additionalProperties": False}
             patch = call(drafter, context + "\n" + instruction + "\nCurrent program:\n" + json.dumps(plan)
                 + "\nFeedback:\n" + json.dumps(feedback) + "\nReturn updates of index and corrected step only for these indices: " + json.dumps(sorted(scope)),
@@ -187,6 +193,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
     return {"task": "finqa", "case_id": public["id"], "arm": arm, "repair": repair,
             "initial_answer": initial, "answer": answer, "initial_execution": initial_execution, "execution": execution,
             "initial_plan": initial_plan, "plan": plan, "representation": representation, "unit_mode": unit_mode, "selector": selector,
+            "causal_mode": causal_mode, "catalog_style": catalog_style,
             "active_roles": sorted({s["role"] for s in stages}),
             "initial_verdict": initial_review, "final_verdict": review,
             "delivered": not execution["issues"] and good(review), "repair_attempted": repair != "none" and needs_repair,

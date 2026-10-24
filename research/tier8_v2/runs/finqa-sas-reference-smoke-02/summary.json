@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "exit_code": 0,
+  "n": 2,
+  "expected": 2,
+  "peak_tree_rss_bytes": 5122637824,
+  "cap_bytes": 6400000000,
+  "case_successes": 0,
+  "delivered_correct": 0,
+  "delivered_incorrect": 2,
+  "repair_regressions": 0,
+  "repair_gains": 0,
+  "initial_case_successes": 0,
+  "withheld": 0,
+  "total_generated_tokens": 207
+}

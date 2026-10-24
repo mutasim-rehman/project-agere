@@ -263,7 +263,8 @@ def worker(args, out):
             if public["question"] != gold[case["id"]]["qa"]["question"]:
                 raise ValueError("Public question differs from evaluation source")
             result = run_financial(public, models, args.arm, args.repair, event_sink=sink,
-                                   representation=args.program_mode, unit_mode=args.unit_mode, selector=args.selector)
+                                   representation=args.program_mode, unit_mode=args.unit_mode, selector=args.selector,
+                                   causal_mode=args.causal_mode, catalog_style=args.catalog_style)
             result["initial_score"] = evaluate_financial(gold[case["id"]], result["initial_answer"], result["initial_execution"])
             result["score"] = evaluate_financial(gold[case["id"]], result["answer"], result["execution"])
             result["all_gold_evidence_retrieved"] = set(gold[case["id"]]["qa"]["gold_inds"]) <= set(public["evidence"])
@@ -294,12 +295,16 @@ def main():
     parser.add_argument("--program-mode", choices=("literal", "reference"), default="literal")
     parser.add_argument("--unit-mode", choices=("free", "question"), default="free")
     parser.add_argument("--selector", choices=("suggest", "none"), default="suggest")
+    parser.add_argument("--causal-mode", choices=("check", "grammar"), default="check")
+    parser.add_argument("--catalog-style", choices=("full", "compact"), default="full")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.data is None:
         args.data = "research/tier8_v2/data/finqa-development-public.jsonl" if args.task == "finqa" else "research/tier8_v2/data/development.jsonl"
     if args.context is None:
         args.context = 4096 if args.task == "finqa" else 2048
+    if args.program_mode != "reference" and (args.causal_mode != "check" or args.catalog_style != "full"):
+        raise ValueError("Causal grammar and compact catalogs require reference programs")
     if args.task == "finqa" and (args.handoff != "independent" or args.verification != "field" or args.citations != "enum"):
         raise ValueError("KYC-specific handoff/verification/citation overrides are not implemented for FinQA")
     if args.limit <= 0:
@@ -328,6 +333,7 @@ def main():
         manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()
         manifest["task_policy"] = {"verification": "operand-operation-unit checks", "handoff": "fallible source-ID suggestion" if args.selector == "suggest" else "no selector; draft/verify pair",
                                    "selector": args.selector, "program_mode": args.program_mode, "unit_mode": args.unit_mode,
+                                   "causal_mode": args.causal_mode, "catalog_style": args.catalog_style,
                                    "citations": "enumerated source and step IDs", "metric": "declared-unit reported answer with rounding; raw exe_ans separately"}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak = 0

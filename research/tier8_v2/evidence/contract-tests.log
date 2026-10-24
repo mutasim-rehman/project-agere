@@ -1,4 +1,6 @@
+test_causal_step_allows_only_earlier_grounded_results (test_evidence_atoms.AtomTests.test_causal_step_allows_only_earlier_grounded_results) ... ok
 test_column_year_is_context_not_copied_as_cell_value (test_evidence_atoms.AtomTests.test_column_year_is_context_not_copied_as_cell_value) ... ok
+test_no_quantities_only_permits_empty_abstention (test_evidence_atoms.AtomTests.test_no_quantities_only_permits_empty_abstention) ... ok
 test_patch_cannot_modify_a_locked_step (test_evidence_atoms.AtomTests.test_patch_cannot_modify_a_locked_step) ... ok
 test_patch_recomputes_dependent_step_without_editing_it (test_evidence_atoms.AtomTests.test_patch_recomputes_dependent_step_without_editing_it) ... ok
 test_source_pointers_copy_values_with_citations (test_evidence_atoms.AtomTests.test_source_pointers_copy_values_with_citations) ... ok
@@ -58,6 +60,6 @@ ok
 test_unsupported_patch_is_rejected_and_not_delivered (test_tier8_v2_pipeline.PipelineTests.test_unsupported_patch_is_rejected_and_not_delivered) ... ok
 
 ----------------------------------------------------------------------
-Ran 52 tests in 0.010s
+Ran 54 tests in 0.020s
 
 OK

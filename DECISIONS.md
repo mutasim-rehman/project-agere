@@ -120,6 +120,18 @@
   Next controls should compact the catalog and enforce causal references in the
   generation grammar, not rely on tiny models learning protocol constraints.
   A matching SAS reference smoke is live before those controls are changed.
+- Matching SAS reference smoke completed: 0/2 correct, both delivered incorrectly,
+  peak RSS 5,122,637,824 bytes, 207 tokens. The first program divided total volume
+  rather than payment volume by transaction count (129.4 instead of 127.4); this is
+  a semantic metric-selection error despite valid source references.
+- Added causal reference grammar and compact/full catalog controls. The grammar
+  permits only earlier results, forces empty abstention, and requires each step
+  to depend on source input or a prior grounded result. This restricts programs
+  with constant-only auxiliary steps and must be disclosed. Semantic relevance
+  is still unproven; syntax validity is not correctness. Fifty-four tests pass.
+- Prepare training-only demonstrations as a strong baseline, with fixed selection
+  and no development/test answers in prompts. Stop optimizing only the first two
+  records after protocol smoke; expand to the declared 24-case development slice.
 
 - User authorized iterative code changes, 8 GB research and evaluation, milestone
   commits and pushes, and evidence retention. New files and artifacts stay inside

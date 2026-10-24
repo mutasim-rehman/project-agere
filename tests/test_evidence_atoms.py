@@ -3,7 +3,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from evidence_atoms import atom_catalog, compile_plan, patch_plan
+from evidence_atoms import atom_catalog, compile_plan, patch_plan, reference_schema, reference_step_schema
 from evidence_calculator import execute
 
 
@@ -41,6 +41,22 @@ class AtomTests(unittest.TestCase):
         fixed, accepted = patch_plan(self.plan, {"updates": [{"index": 0, "step": self.plan["steps"][0]}]}, set(), self.atoms, self.evidence)
         self.assertFalse(accepted)
         self.assertEqual(fixed, self.plan)
+
+    def test_causal_step_allows_only_earlier_grounded_results(self):
+        first = reference_step_schema(self.atoms, 0)
+        for alternative in first["oneOf"]:
+            for side in ("left", "right"):
+                self.assertFalse(any(r.startswith("#") for r in alternative["properties"][side]["enum"]))
+        third = reference_step_schema(self.atoms, 2)
+        allowed = third["oneOf"][0]["properties"]["left"]["enum"]
+        self.assertIn("#0", allowed)
+        self.assertIn("#1", allowed)
+        self.assertNotIn("#2", allowed)
+
+    def test_no_quantities_only_permits_empty_abstention(self):
+        schema = reference_schema({}, causal=True)
+        self.assertEqual(schema["properties"]["decision"], {"const": "INSUFFICIENT"})
+        self.assertEqual(schema["properties"]["steps"], {"const": []})
 
 
 if __name__ == "__main__":
