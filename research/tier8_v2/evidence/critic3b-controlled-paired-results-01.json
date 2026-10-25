@@ -1,0 +1,48 @@
+{
+  "n_programs": 24,
+  "n_report_groups": 12,
+  "conditions": {
+    "plain": {
+      "reference_accepts": 0,
+      "incorrect_mutation_accepts": 0,
+      "reference_nonaccepts": 12,
+      "incorrect_mutation_nonaccepts": 12,
+      "complete_pair_discriminations": 0,
+      "verdict_counts": {
+        "UNKNOWN": 24
+      },
+      "gate_accuracy": 0.5,
+      "generated_tokens": 144,
+      "prompt_tokens": 15855
+    },
+    "adapted": {
+      "reference_accepts": 11,
+      "incorrect_mutation_accepts": 0,
+      "reference_nonaccepts": 1,
+      "incorrect_mutation_nonaccepts": 12,
+      "complete_pair_discriminations": 11,
+      "verdict_counts": {
+        "PASS": 11,
+        "FAIL": 13
+      },
+      "gate_accuracy": 0.9583333333333334,
+      "generated_tokens": 168,
+      "prompt_tokens": 15855
+    }
+  },
+  "delta_gate_accuracy": 0.4583333333333333,
+  "report_cluster_bootstrap_95_interval": [
+    0.375,
+    0.5
+  ],
+  "limits": "Controlled train-validation mutations; not natural errors or independently adjudicated semantics. UNKNOWN counts as nonaccept, not an explicit correct negative judgment. Degenerate intervals do not prove equivalence. Known-method adaptation, not novelty.",
+  "runs": {
+    "plain": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_probe/critic_binary_plain12_01",
+    "adapted": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_probe/critic_binary_adapted12_01"
+  },
+  "manifest_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_probe/critic_binary_plain12_01": "504c6f51e5b5ac1990751533d36bb5a169d1f06add3cabbeacfb1a006488afa2",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_probe/critic_binary_adapted12_01": "4d14ac425bdcb3f49a62624e869b51dbaf9481f895e69e7638732c263b3a3e3a"
+  },
+  "analysis_source_sha256": "c2bc3dced263ef2fdec5daec49433b0c84a7f9be9a1e534f01a96006953952ae"
+}

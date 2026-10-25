@@ -136,3 +136,14 @@ allocation. Full one-epoch critic training is now live (393 planned optimizer
 updates); subsequent conversion, applied-adapter proof and QA evaluation remain
 required. No new correctness/novelty result follows from training progress. SAS
 still needs comparable adaptation before an architecture comparison is defensible.
+
+## Completed role-critic result
+
+Full critic training completed393 updates over3140 examples. Conversion and actual
+reversible application proof passed. On the matched controlled training-validation
+probe, the trained critic accepted11/12 annotation-consistent references and0/12
+wrong mutations;11/12 pairs separated, versus0/12 for the plain critic, which
+returnedUNKNOWN throughout. This is23/24 gate decisions on constructed controls,
+not95.8% financial-QA accuracy. Fine-tuning is established; novelty remains unproven.
+The next running experiment measures whether this transfers to natural drafter
+errors with identical actor outputs and verifier prompts. That result is pending.

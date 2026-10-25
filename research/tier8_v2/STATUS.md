@@ -211,3 +211,20 @@ This is broader development, not a sealed test or confirmed generalization.
 User has freed memory and authorized continued scoped research with GitHub updates
 for remote checks. Recheck actual headroom after the current GPU job exits; keep
 model work serialized and source/data frozen. No new external accuracy claim yet.
+
+## Latest authoritative completed critic results
+
+Epoch complete393/393 updates,3140 examples;504 changed tensors, validation teacher-
+forced loss0.017987. Conversion and reversible application proof passed. Aggregate:
+evidence/critic3b-completed-and-applied-01.json. Complete proof tree peak4.580GB.
+
+Matched controlled binary probe complete:11/12 pairs separated after adaptation
+versus0/12 plain. Trained accepts11 references and0 incorrect mutations (23/24 gate
+classifications); plainUNKNOWN24/24. Report-cluster deltaCI[0.375,0.5]. Controlled
+train-validation evidence only, not natural QA or novelty. Aggregate:
+evidence/critic3b-controlled-paired-results-01.json.209 tests pass.
+
+Queue controller36374 has verified identity and moved into natural24 QA; source/
+inputs stay frozen. It will validate identical actor drafts/critic prompts, then
+report paired delivery/cost/unit outcomes before external recovery. Broad100-report
+selection remains uninferred. LIVE_STATUS.md provides the latest dated phone view.

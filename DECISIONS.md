@@ -1835,3 +1835,18 @@ The frozen queue is now executing matched plain/applied binary probes. The plain
 condition reproducedUNKNOWN24/24; applied condition is not interpreted until all
 24 outputs complete. No source/data/prompt was changed based on partial outcomes.
 All raw logs/weights/proof stay SSD; hash-bound aggregates are committed.
+
+## 2026-10-25 — Matched controlled critic discrimination improves
+
+Both24-program binary runs completed with identical frozen inputs/code/base model,
+prompt text, cap and token allowances; trained condition uses the proved adapter.
+Plain:UNKNOWN24/24,0 reference accepts/0 mutation accepts,0/12 pairs separated.
+Trained:11/12 references accepted,0/12 incorrect mutations accepted,11/12 pairs
+separated;23/24 delivery-gate classifications. Paired gate delta+0.4583, report-
+cluster bootstrap95%[0.375,0.5], only12 groups and controlled weak annotations.
+This is a genuine measured discrimination gain from known-method role fine-tuning,
+not novel methodology, natural-error QA improvement or a safety certification.
+
+Queue has moved to matched natural24 QA. Initial drafts/prompts must match before
+critic attribution. Do not extrapolate controlled95.8% to financial question-answer
+accuracy. Broad100-report packets remain uninferred. GitHub checkpoint updated.
