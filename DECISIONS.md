@@ -1898,3 +1898,28 @@ history; LIVE_STATUS.md carries the latest snapshot.
 Do not deploy a gold-specific fix or infer calibrated safety from mutation accuracy.
 Keep frozen external sources unchanged while the queue runs. Next corpus/control
 should use natural training-only drafter errors and complete-policy evaluation.
+
+## 2026-10-25 — Reserve training-source natural-error partitions before inference
+
+New independent selector excludes whole reports in all adaptation preparations,
+demonstration bank, development source and bank exclusions. Remaining174 cases
+span62 reports. SHA42 whole-report assignment freezes fitting73 cases/32 reports,
+model-selection52/15, diagnostic-audit49/15; no gold/performance selection. Same
+lexical8-unit retrieval; public packets explicitly say train and contain no gold
+answers/programs/retrieval labels. Full source copy, packets and selection live SSD.
+Code/tests plus small provenance manifest committed.216 tests pass. No model calls,
+natural-error labels, retraining or result gain follow from this preparation.
+
+This is training-source research, not pristine exposure-free confirmation. Known
+preparation/demo/dev exclusions are audited; all historical access and pretraining
+contamination are not.15 diagnostic reports cannot certify low risk. Do not fit
+on either reserved partition; future tuning invalidates any untouched-audit claim.
+Do not add inspected dev24 errors to the fitting corpus. Natural-error generation
+must wait for current external inference to finish; do not overlap workloads.
+
+Next comparison should retain naturally correct outputs and report numerical
+metric disagreements rather than force all syntactically valid programs positive
+or all disagreements negative. Natural-error labels remain weak numerical labels,
+not independently adjudicated semantic truth. Before a new epoch, freeze corpus,
+update-matched mutation-only control and complete delivery-policy evaluation.
+SAS comparable adaptation remains necessary; this preparation is not that result.

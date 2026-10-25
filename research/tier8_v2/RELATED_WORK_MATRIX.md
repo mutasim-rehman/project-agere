@@ -73,3 +73,17 @@ Current frozen runs retain KV reset on every model call. No cross-role cache reu
 or shared-backbone implementation was added during this screen. Exact same-policy
 prefix reuse may be a useful future baseline optimization; it is not automatically
 novel and needs measured output/cost controls. Keep active evaluation sources fixed.
+
+## 25 October2026 — Risk-selection prior-art screen (abstracts only)
+
+| Primary source | Relevant overlap | Consequence for this project |
+|---|---|---|
+| [SHIP](https://arxiv.org/abs/2608.21748),22Aug2026 | Replays complete verifier-guided image-generation policy on held-out prompts; candidate calibration need not control released-output risk | Whole-policy risk/coverage calibration alone is not a new principle; different image domain does not erase overlap |
+| [SAFER](https://arxiv.org/abs/2510.10193),v3,16Feb2026 | LLM sampling cap calibrated with held-out exact intervals, abstention and conformal filtering | Budget-aware sampling/filtering with risk control is established prior art |
+| [Audit-First VAPO](https://arxiv.org/abs/2609.33662),v2,16Oct2026 | Selective learning updates under imperfect verification; freeze action traces before labels, finite verification budgets and simultaneous risk/coverage/call bounds | Accept/appeal/abstain plus bounded secondary verification is not enough to claim originality |
+
+Primary abstracts read; full methods and assumptions have not been audited.
+These constrain novelty claims, not establish direct task equivalence or validate
+our weak numerical labels. Natural-error adaptation and risk/coverage accounting
+are useful baseline strengthening, not claimed new algorithms. Any proposed
+bounded repair mechanism needs a concrete distinction and a measured gain.

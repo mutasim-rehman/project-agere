@@ -97,3 +97,12 @@ coverage rather than claim a model contribution. If both strong systems already
 solve them, add realistic ambiguity and longer evidence; do not inject arbitrary
 errors solely to produce gains. Fault injection may measure mechanisms separately,
 but must be labeled and accompanied by naturally occurring error results.
+
+## 25 October2026 — Do not relabel risk selection as novelty
+
+Primary abstract screen added SHIP, SAFER and Audit-First VAPO to the related-work
+matrix. Whole-policy calibration, sampling caps with abstention and budgeted
+secondary verification have close prior art. Full method comparisons remain due.
+Natural24 now shows an actual tradeoff: trained critic recovers8 correct deliveries
+but adds4 wrong deliveries versus matched plain binary critic (reported metric).
+Neither that tradeoff nor preparing natural training errors establishes novelty.

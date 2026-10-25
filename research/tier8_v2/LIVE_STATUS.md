@@ -9,8 +9,8 @@
 | Natural24, plain critic |3 correct delivered,0 wrong,21 withheld |
 | Natural24, trained critic |11 correct delivered,4 wrong,9 withheld |
 | Attribution |All24 drafts and critic prompts identical; same adapted actor |
-| Current workload |External recovery running; controller40968, worker41022 verified |
-| Software checks |212 passed |
+| Current workload |External recovery running;4 new Mortar SAS cases saved (30/90 including26 preserved) |
+| Software checks |216 passed |
 | Novelty |No demonstrated useful original method yet |
 
 Natural counts above use the reported-answer metric. Raw execution gives plain
@@ -35,6 +35,10 @@ net adjustments, unit scaling and wrong entity/measure selection. These are manu
 diagnostic hypotheses, not independent labels. Next strengthen natural-error
 verification on training-only groups, retain correct reference controls, and give
 SAS comparable adaptation. No per-case gold-dependent production rules.
+
+Prepared174 training-source packets from62 eligible reports, reserved by report
+into fitting73/32, model-selection52/15 and diagnostic-audit49/15 cases/reports.
+No natural-error generation or training has run on them.
 
 The100-report broader development selection remains uninferred. Publication
 confirmation and a differentiated useful repair mechanism remain outstanding.
