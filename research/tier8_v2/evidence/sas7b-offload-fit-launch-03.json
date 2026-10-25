@@ -1,0 +1,9 @@
+{
+  "pid": 87789,
+  "create_time": 1792955207.2,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-03/plan.json",
+  "plan_sha256": "aa2faca52a49b20521b2ff693669d237f9295fd7b2b54104dc78bde7b4adde39",
+  "source_commit": "d3c8df8726b9b8e581dde393d641d10a93a9de39",
+  "created_utc": "2026-10-25T19:06:47.218024+00:00",
+  "scope": "One revised fit with conditional borrowed-storage copy; same cap/context/targets."
+}

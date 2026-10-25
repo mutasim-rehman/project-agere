@@ -1,10 +1,11 @@
-"""One serial, monitored SAS7B offload fit gate after the frozen evaluation.
+"""Serial monitored SAS7B fit/adaptation after the frozen evaluation.
 
-Two updates on the longest original training example, never full adaptation or
-QA. No retries, implicit resume, context shortening or concurrent model work.
+Full adaptation requires a successful measured fit; neither phase is QA.
+No retries, implicit resume, context shortening or concurrent model work.
 """
 import argparse
 import json
+import math
 import os
 from pathlib import Path
 import signal
@@ -70,7 +71,27 @@ def completed_dependency(root, plan):
     validate_job(plan['jobs'][-1], plan['cap_bytes'])
 
 
-def prepare(out, launch_file):
+def require_fit(root):
+    p = json.loads((root / 'plan.json').read_text())
+    state = json.loads((root / 'state.json').read_text())
+    s = json.loads((root / 'fit/summary.json').read_text())
+    if (state['state'] != 'complete' or s['status'] != 'complete' or s['mode'] != 'fit' or
+            s['optimizer_updates'] != 2 or s['changed_adapter_tensors'] <= 0 or p['policy'] != load_policy()):
+        raise ValueError('Require successful measured fit under identical model policy')
+    for name, digest in p['input_sha256'].items():
+        path = artifact_path(name)
+        if path == Path(__file__).resolve() and sha(path) != digest:
+            # Completed fit predates full-epoch loop support; preserve its exact
+            # driver snapshot and verify all shared loading/loss/data components.
+            path = root / 'driver-source-snapshot.py'
+        if sha(path) != digest:
+            raise ValueError('Fit component/data identity differs: ' + name)
+    for name, digest in s['adapter_files'].items():
+        if Path(name).name != name or sha(root / 'fit/adapter' / name) != digest:
+            raise ValueError('Fit adapter evidence differs')
+
+
+def prepare(out, launch_file, mode='fit', fit_proof=None, dataset_manifest=None, parity_manifest=None):
     if out.exists():
         raise ValueError('Require new fit/controller output directory')
     launch = json.loads(launch_file.read_text())
@@ -86,8 +107,10 @@ def prepare(out, launch_file):
             str(queue_plan) not in process.cmdline()):
         raise ValueError('Dependency controller identity differs')
     base = ROOT / 'research/tier8_v2'
-    corpus = base / 'evidence/deployment-sft-1024-02.json'
-    data = artifact_path(json.loads(corpus.read_text())['output_file'])
+    corpus = dataset_manifest or base / 'evidence/deployment-sft-1024-02.json'
+    corpus_info = json.loads(corpus.read_text())
+    data = artifact_path(corpus_info['output_file'])
+    parity_manifest = parity_manifest or base / 'evidence/hf-tokenizer-parity-02.json'
     tokenizer = ROOT / 'weights/hf-tokenizers/sas-7b-q4'
     source = artifact_path(Path(os.environ['AGERE_SSD_ROOT']) /
                            'weights/hf/Qwen--Qwen2.5-7B-Instruct')
@@ -96,14 +119,25 @@ def prepare(out, launch_file):
              ROOT / 'scripts/tier8_v2_adapt.py', ROOT / 'scripts/tier8_v2_adapter_convert.py',
              ROOT / 'scripts/tier8_v2_posttrain_queue.py', ROOT / 'scripts/tier8_artifact_paths.py',
              ROOT / 'scripts/supervised_logits.py', ROOT / 'manifests/hf_snapshots.json',
-             launch_file, queue_plan, corpus, data, base / 'evidence/hf-tokenizer-parity-02.json',
+             launch_file, queue_plan, corpus, data, parity_manifest,
              *tokenizer.glob('*'), source / 'config.json', source / 'model.safetensors.index.json']
     files = [p for p in files if p.is_file()]
     files += list((ROOT / '.venv-training').glob('lib/python*/site-packages/accelerate/hooks.py'))
     files += list((ROOT / '.venv-training').glob('lib/python*/site-packages/accelerate/big_modeling.py'))
     versions = training_runtime()
+    if mode == 'train':
+        if fit_proof is None:
+            raise ValueError('Full adaptation requires explicit successful fit')
+        require_fit(fit_proof)
+        files += [fit_proof / name for name in ['plan.json', 'state.json', 'fit/manifest.json', 'fit/summary.json']]
+        if (fit_proof / 'driver-source-snapshot.py').exists():
+            files.append(fit_proof / 'driver-source-snapshot.py')
     out.mkdir(parents=True)
-    plan = {'kind': 'sas7b_two_update_offload_fit', 'out': str(out),
+    plan = {'kind': 'sas7b_offload_adaptation', 'mode': mode, 'out': str(out),
+            'fit_proof': str(fit_proof) if fit_proof else None,
+            'dataset_manifest': str(corpus), 'parity_manifest': str(parity_manifest),
+            'training_n': corpus_info.get('training_n', 661),
+            'validation_n': corpus_info.get('validation_n', 100),
             'dependency': {'pid': launch['pid'], 'create_time': launch['create_time'],
                            'root': str(queue_plan.parent), 'plan': str(queue_plan)},
             'input_sha256': {str(p): sha(p) for p in files}, 'source_model': str(source),
@@ -112,7 +146,8 @@ def prepare(out, launch_file):
             'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
             'host_reserve_bytes': 1000000000, 'minimum_available_before_worker': 9000000000,
             'sampling_interval_seconds': .2,
-            'scope': 'Training feasibility only; training memory is separate from the simulated8GB deployment cap. No full epoch, QA gain or novelty claim.'}
+            'scope': ('Two-update feasibility only.' if mode == 'fit' else 'One full adaptation epoch after measured fit.') +
+                     ' Training memory is separate from the simulated8GB deployment cap. No QA gain or novelty claim.'}
     write(out / 'plan.json', plan)
     print(json.dumps({'plan': str(out / 'plan.json'), 'sha256': sha(out / 'plan.json')}))
 
@@ -125,6 +160,8 @@ def worker(plan):
     lock = artifact_path(Path(os.environ['AGERE_SSD_ROOT']) / 'runs/tier8_external.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     check_inputs(plan)
+    if plan.get('mode', 'fit') == 'train':
+        require_fit(artifact_path(plan['fit_proof']))
     if training_runtime() != plan['runtime_versions']:
         raise ValueError('Training runtime changed')
     dep = plan['dependency']
@@ -166,9 +203,9 @@ def worker(plan):
     if cfg.get('tie_word_embeddings') or cfg['vocab_size'] != 152064 or cfg['hidden_size'] != 3584:
         raise ValueError('Require pinned untied Qwen7B architecture')
     base = ROOT / 'research/tier8_v2/evidence'
-    data_path = base / 'deployment-sft-1024-02.json'
+    data_path = artifact_path(plan.get('dataset_manifest', base / 'deployment-sft-1024-02.json'))
     data = json.loads(data_path.read_text())
-    parity = json.loads((base / 'hf-tokenizer-parity-02.json').read_text())
+    parity = json.loads(artifact_path(plan.get('parity_manifest', base / 'hf-tokenizer-parity-02.json')).read_text())
     corpus = artifact_path(data['output_file'])
     if (not parity['pass'] or not parity['profiles']['sas-7b-q4']['pass'] or
             parity['transformers_version'] != transformers.__version__ or
@@ -176,21 +213,35 @@ def worker(plan):
             sha(data_path) != parity['dataset_manifest_sha256']):
         raise ValueError('Require unchanged corpus and current-runtime parity')
     tokenizer = AutoTokenizer.from_pretrained(str(tokenizer_dir), local_files_only=True)
-    rows = [encode_example(tokenizer, json.loads(s), 'sas-7b-q4') for s in corpus.read_text().splitlines()]
+    if data.get('purpose', 'drafter') != 'drafter':
+        raise ValueError('SAS policy dataset purpose differs')
+    rows = []
+    for line in corpus.read_text().splitlines():
+        original = json.loads(line)
+        row = encode_example(tokenizer, original, 'sas-7b-q4')
+        row['training_task'] = original.get('purpose', 'drafter')
+        rows.append(row)
+    task_weights = data.get('task_loss_weights', {'drafter': 1.})
+    if any(r['training_task'] not in task_weights for r in rows) or any(
+            not isinstance(w, (int, float)) or not math.isfinite(w) or w <= 0 for w in task_weights.values()):
+        raise ValueError('Invalid predeclared task weights')
     train = [r for r in rows if r['split'] == 'train']
-    if len(train) != 661 or sum(r['split'] == 'validation' for r in rows) != 100:
+    if len(train) != plan.get('training_n', 661) or sum(r['split'] == 'validation' for r in rows) != plan.get('validation_n', 100):
         raise ValueError('Comparable actor corpus/splits differ')
     longest = max(train, key=lambda r: (len(r['input_ids']), r['source_id']))
-    out = artifact_path(plan['out']) / 'fit'
+    mode = plan.get('mode', 'fit')
+    out = artifact_path(plan['out']) / mode
     out.mkdir(exist_ok=False)
     def event(state, **fields):
         with (out / 'events.jsonl').open('a') as f:
             f.write(json.dumps({'state': state, 'time': time.time(), **fields}) + '\n'); f.flush()
-    manifest = {'mode': 'fit', 'profile': '7b', 'purpose': 'drafter', 'seed': 42,
+    manifest = {'mode': mode, 'profile': '7b', 'purpose': 'drafter', 'seed': 42,
                 'source_commit': plan['source_commit'],
                 'input_sha256': plan['input_sha256'], 'policy': plan['policy'],
                 'training_base': {'folder': str(source), 'artifacts': entries},
-                'training_n': 661, 'validation_n': 100,
+                'training_n': len(train), 'validation_n': sum(r['split'] == 'validation' for r in rows),
+                'training_tasks': data.get('training_tasks', ['drafter']),
+                'task_loss_weights': task_weights,
                 'fit_source_id': longest['source_id'], 'fit_sequence_tokens': len(longest['input_ids']),
                 'lora': plan['policy']['lora'],
                 'runtime': {'torch': torch.__version__, 'transformers': transformers.__version__,
@@ -231,10 +282,9 @@ def worker(plan):
         before = [p.detach().cpu().clone() for p in params]
         optimizer = torch.optim.AdamW(params, lr=2e-4, weight_decay=0)
         model.train()
-        ids = torch.tensor([longest['input_ids']], device='cpu')
-        labels = torch.tensor([longest['labels']], device='cuda')
-        for step in [1, 2]:
-            optimizer.zero_grad(set_to_none=True)
+        def loss_for(row):
+            ids = torch.tensor([row['input_ids']], device='cpu')
+            labels = torch.tensor([row['labels']], device='cuda')
             embeddings = base_model.get_input_embeddings()(ids).to('cuda')
             with torch.autocast('cuda', dtype=torch.bfloat16):
                 hidden = base_model.model(inputs_embeds=embeddings, use_cache=False).last_hidden_state
@@ -242,24 +292,52 @@ def worker(plan):
                                               labels, plan['policy']['vocabulary_block_size'])
             if not torch.isfinite(loss).item():
                 raise ValueError('Nonfinite fit loss')
-            loss.backward()
+            return loss
+        if mode == 'fit':
+            longest_target = max(train, key=lambda r: (sum(v != -100 for v in r['labels']), r['source_id']))
+            groups = [[longest], [longest_target]]
+            event('fit_cases', source_ids=[longest['source_id'], longest_target['source_id']],
+                  tokens=[len(longest['input_ids']), len(longest_target['input_ids'])])
+        else:
+            random.Random(42).shuffle(train)
+            groups = [train[i:i + 8] for i in range(0, len(train), 8)]
+        for step, group in enumerate(groups, 1):
+            optimizer.zero_grad(set_to_none=True)
+            group_loss = 0.
+            for row in group:
+                loss = loss_for(row)
+                weight = task_weights[row['training_task']]
+                group_loss += weight * loss.detach().item() / len(group)
+                (weight * loss / len(group)).backward()
             norm = torch.nn.utils.clip_grad_norm_(params, 1.)
             if not torch.isfinite(norm).item() or norm.item() <= 0:
                 raise ValueError('No finite nonzero adapter gradient')
             optimizer.step()
             if any(not torch.isfinite(p).all().item() for p in params):
                 raise ValueError('Nonfinite adapter after update')
-            event('update', step=step, loss=loss.item(), gradient_norm=norm.item(),
+            event('update', step=step, examples=len(group), loss=group_loss, gradient_norm=norm.item(),
                   gpu_peak_allocated=torch.cuda.max_memory_allocated(),
                   gpu_peak_reserved=torch.cuda.max_memory_reserved(), host_rss=psutil.Process().memory_info().rss)
         changed = sum(not torch.equal(a, b.detach().cpu()) for a, b in zip(before, params))
         if not changed:
             raise ValueError('Adapter did not change')
         model.save_pretrained(str(out / 'adapter'), safe_serialization=True)
-        summary = {'status': 'complete', 'mode': 'fit', 'optimizer_updates': 2,
-                   'examples_processed': 2, 'changed_adapter_tensors': changed,
+        validation_loss = None
+        validation_by_task = {}
+        if mode == 'train':
+            model.eval()
+            with torch.no_grad():
+                values = [(row['training_task'], loss_for(row).item()) for row in rows if row['split'] == 'validation']
+            validation_loss = sum(task_weights[task] * value for task, value in values) / len(values)
+            validation_by_task = {task: sum(v for t, v in values if t == task) / sum(t == task for t, _ in values)
+                                  for task in task_weights if any(t == task for t, _ in values)}
+            if not math.isfinite(validation_loss):
+                raise ValueError('Nonfinite validation loss')
+        summary = {'status': 'complete', 'mode': mode, 'optimizer_updates': len(groups),
+                   'examples_processed': sum(map(len, groups)), 'changed_adapter_tensors': changed,
                    'trainable_parameters': sum(p.numel() for p in params),
-                   'last_training_loss': loss.item(), 'validation_teacher_forced_loss': None,
+                   'last_training_loss': group_loss, 'validation_teacher_forced_loss': validation_loss,
+                   'validation_teacher_forced_loss_by_task': validation_by_task,
                    'wall_seconds': time.monotonic() - started,
                    'gpu_peak_allocated': torch.cuda.max_memory_allocated(),
                    'gpu_peak_reserved': torch.cuda.max_memory_reserved(),
@@ -343,10 +421,16 @@ def controller(plan_path):
         record('worker_exited', exit_code=code, memory_breach=breach, peak_tree_rss_bytes=peak)
         if code or breach:
             raise RuntimeError('Offload fit failed; preserve evidence, no retry')
-        result = json.loads((root / 'fit/summary.json').read_text())
-        if result['status'] != 'complete' or result['optimizer_updates'] != 2 or result['changed_adapter_tensors'] <= 0:
+        mode = plan.get('mode', 'fit')
+        result = json.loads((root / mode / 'summary.json').read_text())
+        expected_examples = 2 if mode == 'fit' else plan['training_n']
+        expected_updates = 2 if mode == 'fit' else (expected_examples + 7) // 8
+        if (result['status'] != 'complete' or result['optimizer_updates'] != expected_updates or
+                result['examples_processed'] != expected_examples or result['changed_adapter_tensors'] <= 0 or
+                (mode == 'train' and (not isinstance(result['validation_teacher_forced_loss'], (float, int)) or
+                                      not math.isfinite(result['validation_teacher_forced_loss'])))):
             raise ValueError('Incomplete fit proof')
-        record('complete', peak_tree_rss_bytes=peak, fit_only=True, measured_reasoning_gain=False)
+        record('complete', peak_tree_rss_bytes=peak, fit_only=mode == 'fit', measured_reasoning_gain=False)
     except BaseException as exc:
         if child and child.poll() is None:
             os.killpg(child.pid, signal.SIGTERM)
@@ -360,13 +444,18 @@ def controller(plan_path):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--prepare', action='store_true'); p.add_argument('--out')
+    p.add_argument('--mode', choices=['fit', 'train'], default='fit'); p.add_argument('--fit-proof')
+    p.add_argument('--dataset-manifest'); p.add_argument('--parity-manifest')
     p.add_argument('--dependency-launch', default='research/tier8_v2/evidence/critic3b-posttrain-launch-02.json')
     p.add_argument('--plan'); p.add_argument('--worker', action='store_true')
     a = p.parse_args()
     if a.prepare:
         if not a.out or a.plan or a.worker:
             raise ValueError('Prepare requires only new out and dependency launch')
-        prepare(artifact_path(a.out), artifact_path(a.dependency_launch))
+        prepare(artifact_path(a.out), artifact_path(a.dependency_launch), a.mode,
+                artifact_path(a.fit_proof) if a.fit_proof else None,
+                artifact_path(a.dataset_manifest) if a.dataset_manifest else None,
+                artifact_path(a.parity_manifest) if a.parity_manifest else None)
     elif a.plan:
         plan_path = artifact_path(a.plan)
         worker(json.loads(plan_path.read_text())) if a.worker else controller(plan_path)

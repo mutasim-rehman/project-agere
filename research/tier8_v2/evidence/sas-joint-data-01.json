@@ -1,0 +1,64 @@
+{
+  "dataset": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_sas/sas_joint_extended_01",
+  "manifest": {
+    "purpose": "drafter",
+    "training_tasks": [
+      "drafter",
+      "critic"
+    ],
+    "profiles": [
+      "sas-7b-q4"
+    ],
+    "training_n": 3801,
+    "validation_n": 482,
+    "kept_n": 4283,
+    "max_training_tokens": 1024,
+    "task_loss_weights": {
+      "drafter": 2.8751891074130107,
+      "critic": 0.6052547770700637
+    },
+    "task_counts": {
+      "drafter|train": 661,
+      "drafter|validation": 100,
+      "critic|train": 3140,
+      "critic|validation": 382
+    },
+    "group_counts": {
+      "train": 414,
+      "validation": 49
+    },
+    "input_sha256": {
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/evidence/deployment-sft-1024-02.json": "0ac749299078f46a67f9e57f6830b84e2418b425e96482c80dcd9494a2969a06",
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/deployment-sft-1024-02.jsonl": "0b1052db3f7c6a5d85d321b500b9478ea453aa936d0b78e326215c3ce2933069",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/manifest.json": "4055a7f062bd1c4561b787f56777b2bd977a1afe06ee6d110c9d161a397bc529",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/examples.jsonl": "a39e0053075cd330416c85ba16c118bff693a3b1c91439942f29e7d8b2dbaea3"
+    },
+    "output_file": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_sas/sas_joint_extended_01/examples.jsonl",
+    "output_sha256": "094dc6334fd5fa240da4964e951b5efc960af442f8b782ec2354b6e0e033cbdc",
+    "script_sha256": "d4c5316d0215247dcbdb074c54c45b801a145ff43c49ab2cca09b9ba937b1143",
+    "model_calls": 0,
+    "test_opened": false,
+    "limits": "Matched drafting/verification row exposure with MAS actor+extended critic; SAS uses one shared adapter. Fixed equal total training loss mass per task, one shuffled epoch. Optimizer/parameter sharing differs; no causal architecture winner or novelty claim. No filtering/truncation permitted; whole build fails on any overflow."
+  },
+  "parity": {
+    "pass": true,
+    "n": 4283,
+    "profiles": {
+      "sas-7b-q4": {
+        "pass": true,
+        "n": 4283
+      }
+    },
+    "dataset_sha256": "094dc6334fd5fa240da4964e951b5efc960af442f8b782ec2354b6e0e033cbdc",
+    "dataset_manifest_sha256": "645b1ee636f628196029f4a3704faf0fa87700ca17052d434856139443f64dfb",
+    "transformers_version": "4.57.1",
+    "tokenizers_version": "0.22.2",
+    "script_sha256": "d4c5316d0215247dcbdb074c54c45b801a145ff43c49ab2cca09b9ba937b1143",
+    "model_calls": 0
+  },
+  "manifest_sha256": "645b1ee636f628196029f4a3704faf0fa87700ca17052d434856139443f64dfb",
+  "parity_sha256": "5de1055690d908314e8ab0d78786e8fd8d41631cad7039acdde9beabc3bb8914",
+  "planned_updates": 476,
+  "status": "prepared_not_trained",
+  "limits": "Same drafting/extended-critic row exposure as corresponding MAS adapters; one shared SAS adapter and equal aggregate task-loss mass. Different parameter/optimizer sharing and model sizes, not isolated architecture causation or novelty."
+}

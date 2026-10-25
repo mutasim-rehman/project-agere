@@ -2175,3 +2175,29 @@ matrices and retain owned dtype-converted storage. Real safetensors CPU unit tes
 confirms mapped storage non-resizable, float conversion owned/resizable. Distinct-
 storage/value preservation and no-redundant-copy tests pass. Keep same cap/context/
 targets; next attempt is a new explicitly revised plan03, not restarting01/02.
+
+## 2026-10-26 — Actual7B fit succeeds; prepare matched dual-task SAS adaptation
+
+Fit03 actually completed2 updates,392 changed tensors/20,185,088 trainable params;
+whole-controller tree peak5.919GB under unchanged10.5GB cap. GPU allocation4.698GB,
+reserved4.964GB. This is training feasibility, not QA/deployment gain. Both matrices
+were cloned (counts1,1), so do NOT attribute success specifically to redundant-copy
+skipping; transient loader/file-map effects are not isolated by one run. Preserve
+all failed/successful runs and exact pre-extension driver source snapshot.
+
+Strengthen SAS with the SAME661 drafting and3140 extended-critic training rows as
+corresponding MAS role adapters, using one shared SAS adapter.482 validation rows
+combine original100/382; all report groups remain disjoint across splits. All4283
+rows pass actual7B GGUF/HF tokenizer parity, no filters or truncation. Fixed equal
+total training-loss mass per task: weights3801/(2*661) and3801/(2*3140). One shuffled
+epoch, accumulation8,476 planned updates; same rank8/alpha16,AdamW2e-4,clip1 recipe.
+Different shared/separate optimizer/parameterization is explicit, not perfect
+architecture isolation. This is baseline strengthening, not the novel mechanism.
+
+Extended worker supports explicit corpus/parity manifests and full epoch only
+after measured fit. Same loading/loss/data component hashes required; old driver's
+exact completed-fit snapshot substitutes only for the driver expanded to epoch
+loop support. Changed model policy/components require new fit. The new joint
+corpus receives its own2-update fit before epoch. Actual evidence aggregates in
+sas7b-offload-fit-completed-03.json and sas-joint-data-01.json. No full training or
+new quality result claimed before terminal evidence.

@@ -1,0 +1,41 @@
+{
+  "status": "actual_fit_complete_not_QA",
+  "summary": {
+    "status": "complete",
+    "mode": "fit",
+    "optimizer_updates": 2,
+    "examples_processed": 2,
+    "changed_adapter_tensors": 392,
+    "trainable_parameters": 20185088,
+    "last_training_loss": 0.2890237271785736,
+    "validation_teacher_forced_loss": null,
+    "wall_seconds": 49.955400801001815,
+    "gpu_peak_allocated": 4697590272,
+    "gpu_peak_reserved": 4963958784,
+    "adapter_files": {
+      "adapter_config.json": "a75377918a17a39a25d25364a07c2f1c9be509f6cf858b99f112b046748a13ac",
+      "adapter_model.safetensors": "e03ff111bcbbd749b9cf52ca574aeef010cfade96c01ea903e1dfc3cbe594263",
+      "README.md": "e2ddf34397793e8ffb4be53f6c234d215b34c114dc034a8770b7a8b5e3e8ea34"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "controller_state": {
+    "state": "complete",
+    "time": 1792955301.2077389,
+    "peak_tree_rss_bytes": 5919010816,
+    "fit_only": true,
+    "measured_reasoning_gain": false
+  },
+  "source_snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-03/driver-source-snapshot.py",
+  "source_snapshot_sha256": "bec26f49af20a37dda9da5cdd312d84f1a88aa9a777bbfb3f9390b1d5d7f1e8a",
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-03/plan.json": "aa2faca52a49b20521b2ff693669d237f9295fd7b2b54104dc78bde7b4adde39",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-03/journal.jsonl": "ca6bd6b4bbdca6c16d4f0845c6e5c09ec26fe467b7afd9326ef0322a25689f25",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-03/memory.jsonl": "18958f32d5c8a433bb1597964aa5757a69d38f8d720cd40afa62c4f1ad59d365",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-03/fit/manifest.json": "f12f94f7c5f27f3ffa20f3d61048aa40449a5d871c5f7cc43bf8ed508c8d240a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-03/fit/events.jsonl": "342ea0883afbc77a9e03f874a6e27d690010774515f0c7106623d6f1f595a06a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-03/fit/summary.json": "9ee35586f8d973f7d22285d8c21c82051fc121f2580348be5fd2fd66f45df2fe"
+  },
+  "limits": "One measured fit, no full epoch or deployment result. Both matrices were cloned in this run, so success cannot be attributed specifically to skipping redundant copies. Transient mapped-page/loading effects are not isolated. Training RSS and GPU memory remain separate from deployment."
+}
