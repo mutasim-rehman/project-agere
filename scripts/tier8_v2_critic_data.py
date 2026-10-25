@@ -35,7 +35,7 @@ def rank(source,change):return hashlib.sha256(('42|'+source+'|'+json.dumps(chang
 
 def negative_candidates(row,gold):
     atoms=atom_catalog(row['public']['evidence']);evidence=row['public']['evidence'];target=row['target']
-    pool=[k for k,v in row['cell_view']['catalog'].items() if v['cell_role']=='data']
+    pool=[k for k,v in row['cell_view']['catalog'].items() if v.get('cell_role')=='data']
     for i,step in enumerate(target['steps']):
         edits=[({'kind':'operation','step':i,'before':step['op'],'after':op},'op',op) for op in OPERATIONS if op!=step['op']]
         for side in ['left','right']:

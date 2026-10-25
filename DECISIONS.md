@@ -1604,3 +1604,12 @@ actual HF/GGUF parity before training. Fit/train and applied-adapter evaluation
 remain separate gates. Controlled-negative training is established baseline work,
 not a new method; natural-error testing and comparable SAS adaptation remain needed.
 187 tests pass before corpus preparation.
+
+## 2026-10-25 — Mixed catalog build failure retained and fixed
+
+critic_binary_sft_01 build failed with KeyError cell_role: text-quantity catalog
+entries do not carry table cell metadata. No trained model or valid dataset is
+claimed from that run. Its directory/log are preserved on SSD. Use explicit
+get(cell_role)==data for operand-substitution pools; text-only examples may still
+supply operation mutations. Added a regression fixture for mixed catalogs.
+Start a new corpus ID02 rather than overwriting failed evidence.

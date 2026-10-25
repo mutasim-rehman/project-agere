@@ -16,6 +16,12 @@ class CriticDataTests(unittest.TestCase):
         rows=[{'split':'train','report_group':'same'},{'split':'validation','report_group':'same'}]
         with self.assertRaises(ValueError):validate_groups(rows,[])
         with self.assertRaises(ValueError):validate_groups([rows[0]],['same'])
+    def test_text_catalog_entries_without_cell_role_are_not_operand_cells(self):
+        evidence={'x':'value: 10 ; denominator: 2'};atoms=atom_catalog(evidence);refs={a['value']:k for k,a in atoms.items()}
+        row={'source_id':'text','public':{'evidence':evidence},'target':{'decision':'ANSWER','answer_unit':'number','steps':[{'left':refs['10'],'right':refs['2'],'op':'divide'}]},'cell_view':{'catalog':atoms}}
+        candidates=list(negative_candidates(row,{'qa':{'answer':'5','exe_ans':5}}))
+        self.assertTrue(candidates)
+        self.assertEqual({r[2]['kind'] for r in candidates},{'operation'})
     def test_deterministic_selection_and_label_free_prompt(self):
         self.assertEqual(rank('source',{'a':1,'b':2}),rank('source',{'b':2,'a':1}))
         public={'question':'calculate','evidence':{'x':'2'},'answer':'SECRET'}
