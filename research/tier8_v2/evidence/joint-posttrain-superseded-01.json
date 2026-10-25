@@ -1,0 +1,34 @@
+{
+  "status": "superseded_before_any_model_job",
+  "time_utc": "2026-10-25T20:57:47.394748+00:00",
+  "old_launch": {
+    "pid": 90812,
+    "create_time": 1792958611.72,
+    "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_joint_posttrain/joint03-01/plan.json",
+    "plan_sha256": "6546895c65b68dda5778bf12de543af1d418601e4ef322b9a0a5cd9c35c04f98",
+    "source_commit": "374eacdc69b59022d8aaf901a498916bcf06fe16",
+    "status": "launched_waiting_not_completed",
+    "jobs": 10,
+    "novelty_established": false
+  },
+  "before": {
+    "state": "waiting_for_full_sas",
+    "time_utc": "2026-10-25T20:03:31Z",
+    "pid": 89934,
+    "dependency_plan_sha256": "a252c39f444ae0d20cda35c393e25431eb266fbddffa1b410d60c5e7f36f3df3"
+  },
+  "after": {
+    "state": "failed",
+    "time_utc": "2026-10-25T20:57:47Z",
+    "error": "InterruptedError('Queue signal 15')"
+  },
+  "source_snapshots_sha256": {
+    "controller-source-snapshot.py": "5b53f6c0c34b4f9a0f7483f23162b9a29ee7910c7ecc542dab7afb6ff544b27a",
+    "plan-generator-source-snapshot.py": "096eaa782ee18dd0a02e3d37f9a71aa519fed371c4f60f79a3ce68c75bb9e5fe"
+  },
+  "old_plan_sha256": "6546895c65b68dda5778bf12de543af1d418601e4ef322b9a0a5cd9c35c04f98",
+  "no_job_outputs_created": true,
+  "no_model_child_was_running": true,
+  "reason": "Prioritize targeted crossed-question discovery after measured curriculum shortcuts and before long comparison-only jobs within shared-method development window. Preserve all baseline work; defer100-report jobs, do not select on their unseen outcomes. Active SAS trainer untouched.",
+  "replacement_plan": "pending_explicit_new_plan_not_resume"
+}

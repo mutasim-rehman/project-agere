@@ -22,7 +22,8 @@ from tier8_v2_posttrain_queue import sha, write, check_inputs, require_training,
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED = {'tier8_v2_adapter_convert.py', 'tier8_v2_last_logit_proof.py',
            'tier8_v2_adapter_proof.py', 'tier8_v2_adapt.py', 'tier8_v2_run.py',
-           'tier8_v2_delivery_analyze.py', 'tier8_v2_analyze.py', 'tier8_v2_unit_audit.py'}
+           'tier8_v2_delivery_analyze.py', 'tier8_v2_analyze.py', 'tier8_v2_unit_audit.py',
+           'tier8_v2_quartet_probe.py'}
 
 
 def complete_sas(root, expected_plan_sha):
@@ -61,6 +62,23 @@ def verify_result(job):
                 or proof['arm'] != 'sas' or not proof['pass'] or proof['logits_all']
                 or not proof['native_entry_points_equal'] or proof['actual_prefill_tokens'] <= 0):
             raise ValueError('Invalid SAS last-logit proof')
+        return summary
+    if kind == 'quartet_probe':
+        from tier8_v2_quartet_probe import selected_rows, analyze
+        summary = json.loads((root / 'summary.json').read_text())
+        if (summary['status'] != 'complete' or summary['exit_code'] != 0 or summary['n'] != 32
+                or summary['expected'] != 32 or summary['cap_bytes'] != 6400000000
+                or summary['peak_tree_rss_bytes'] > 6400000000):
+            raise ValueError('Invalid quartet probe coverage/resource gate')
+        _, rows = selected_rows(artifact_path(job['selection']))
+        responses = [json.loads(s) for s in (root / 'responses.jsonl').read_text().splitlines()]
+        replay = analyze(rows, responses)
+        if replay != summary['metrics'] or replay != json.loads((root / 'metrics.json').read_text()):
+            raise ValueError('Quartet response metric replay differs')
+        policy = json.loads((root / 'policy.json').read_text())
+        if (policy['arm'] != job['arm'] or artifact_path(policy['adapter']['conversion_manifest']) !=
+                artifact_path(job['adapter']) / 'manifest.json'):
+            raise ValueError('Wrong intended quartet policy')
         return summary
     return validate_job(job, 6400000000)
 

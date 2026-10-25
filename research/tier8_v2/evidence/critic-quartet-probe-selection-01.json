@@ -1,0 +1,110 @@
+{
+  "canonical_selection": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_pilot_train8_02/selection.json",
+  "selection": {
+    "status": "prepared_not_inferred",
+    "n": 32,
+    "n_quartets": 8,
+    "n_reports": 8,
+    "source_sha256": "c10ae6cb6671c7bca85aa19de0b32e24f99a98eeb8b5eb1f976d8991e70ad98f",
+    "source_dataset_sha256": "a719bab47cde160b2fd2f7c7eeb59007f512ddfa711c1c5ad1b8545e73444390",
+    "output_sha256": "7fe2ee9729ba762d7d7eff1d73ffa7174ee5e1c3c4744703492a9446ec777595",
+    "source_manifest": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_01/manifest.json",
+    "source_manifest_sha256": "12c87c99c0a76c57089e0ccb9065a1fb70bd76f0caca12f8122b4bed276b6189",
+    "source_audit": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_01/audit04.json",
+    "source_audit_sha256": "38ba0507a9d3a2c0d25223f8e0a9d633e01dfa4bf89fc2107094fbb2e941001d",
+    "quartet_ids": [
+      "0011e7d846e30c2f81d81a7784ca1b1693a035974de64c40eb7202faef12b432",
+      "009ca7c0a5f1af4cd4b0c584ce43ea0f9649a214a49fb640999785aba8e94c54",
+      "010247fc16658714a5d2ce7535ba1ff7d848d2b596b9fa812810161745e866d4",
+      "0154819b7b329a5d7ae8699f78070831cd0e970eecca0ea8887da4df7e9b95ca",
+      "015a43a9a1d9041c74696a5d3916aa1a26ee6ff95a6cd1fa76d08072a7bf20d1",
+      "0242381f1a94507383d8e79461165b32dcbf6abaf41e3bb88c4908f2def0608c",
+      "025214b613765b9afc214c3b6c8889964464f2d4fd37fcaf57ebc6e64c2b23f9",
+      "028a6c3df4e27cabea04fffd1864d44507df8008dfbdeb63ba3857f59228b884"
+    ],
+    "report_groups": [
+      "AAL/2014",
+      "AAPL/2012",
+      "DVN/2011",
+      "EMR/2018",
+      "PNC/2012",
+      "RE/2010",
+      "TROW/2011",
+      "UNP/2016"
+    ],
+    "selection": "Training split only; ascending existing seed42 quartet SHA, first8 distinct reports; keep all4 cells. Identical inputs for both arms. No neural outcome used.",
+    "inference": {
+      "context": 4096,
+      "maximum_generated_tokens_per_review": 192,
+      "temperature": 0,
+      "top_k": 1,
+      "repeat_penalty": 1,
+      "seed": 42,
+      "grammar": {
+        "type": "object",
+        "properties": {
+          "verdict": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          }
+        },
+        "required": [
+          "verdict"
+        ],
+        "additionalProperties": false
+      },
+      "forced_prefix": false
+    },
+    "decision_rule": "If BOTH current policies achieve at least30/32 exact PASS/FAIL labels AND at least6/8 completely exact quartets, do not add a continuation stage solely for this family. Otherwise investigate a small matched current-extended-mutation versus crossed-negative continuation; natural held-out-report utility must decide adoption.",
+    "limits": "Small training-source discovery probe. Models have seen original source positives; crossed inputs are new. Not untouched validation, natural errors, calibrated risk or useful novelty."
+  },
+  "prepared_not_inferred": true,
+  "previous_selection01_payload_identical": true,
+  "reason_for02": "Bind final reviewed probe source hash after adding independent raw-verdict/token-accounting replay guards; selection algorithm and all32 rows identical, no NN outcomes consumed.",
+  "pre_inference_shape_diagnostic": [
+    {
+      "quartet_id": "0011e7d846e30c2f81d81a7784ca1b1693a035974de64c40eb7202faef12b432",
+      "same_operation_reference_constant_topology": false,
+      "question_token_jaccard": 0.25
+    },
+    {
+      "quartet_id": "009ca7c0a5f1af4cd4b0c584ce43ea0f9649a214a49fb640999785aba8e94c54",
+      "same_operation_reference_constant_topology": true,
+      "question_token_jaccard": 0.8461538461538461
+    },
+    {
+      "quartet_id": "010247fc16658714a5d2ce7535ba1ff7d848d2b596b9fa812810161745e866d4",
+      "same_operation_reference_constant_topology": false,
+      "question_token_jaccard": 0.3076923076923077
+    },
+    {
+      "quartet_id": "0154819b7b329a5d7ae8699f78070831cd0e970eecca0ea8887da4df7e9b95ca",
+      "same_operation_reference_constant_topology": true,
+      "question_token_jaccard": 0.7692307692307693
+    },
+    {
+      "quartet_id": "015a43a9a1d9041c74696a5d3916aa1a26ee6ff95a6cd1fa76d08072a7bf20d1",
+      "same_operation_reference_constant_topology": true,
+      "question_token_jaccard": 0.8571428571428571
+    },
+    {
+      "quartet_id": "0242381f1a94507383d8e79461165b32dcbf6abaf41e3bb88c4908f2def0608c",
+      "same_operation_reference_constant_topology": false,
+      "question_token_jaccard": 0.17857142857142858
+    },
+    {
+      "quartet_id": "025214b613765b9afc214c3b6c8889964464f2d4fd37fcaf57ebc6e64c2b23f9",
+      "same_operation_reference_constant_topology": true,
+      "question_token_jaccard": 0.11538461538461539
+    },
+    {
+      "quartet_id": "028a6c3df4e27cabea04fffd1864d44507df8008dfbdeb63ba3857f59228b884",
+      "same_operation_reference_constant_topology": true,
+      "question_token_jaccard": 0.47058823529411764
+    }
+  ],
+  "same_topology_quartets": 5
+}

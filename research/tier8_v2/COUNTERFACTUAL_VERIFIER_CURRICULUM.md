@@ -106,3 +106,29 @@ the entire feature-development window while this targeted experiment is pending.
 [Prepared-data and audit evidence](evidence/critic-crossed-quartets-prepared-01.json).
 Raw data/logs/source snapshots are on the authorized SSD under
 `datasets/tier8_v2_critic/critic_quartets_01` and `runs/critic-quartets-*`.
+
+## Frozen discovery probe implementation
+
+`tier8_v2_quartet_probe.py` prepares the exact32-record training-only subset and
+runs monitored greedy JSON reviews with the existing binary grammar,192 output
+tokens per review,4096 context, eight CPU threads and6.4GB tree RSS cap. It does
+not impose a forced label prefix. UNKNOWN/unparsed count as incorrect exact labels;
+nonaccept gate accuracy is reported separately. Parent and queue independently
+replay raw response text, token counts and complete-quartet metrics.
+
+Five of the unchanged eight selected quartets have identical operation, step-
+reference and constant topology between the two programs. This pre-inference
+diagnostic does not alter selection; simple question-type/operator matching is
+insufficient for that stratum, though richer joint shortcuts remain possible.
+
+Predeclared stop rule: if BOTH joint SAS and extended MAS critic get at least30/32
+exact labels and6/8 fully exact quartets, do not add a continuation stage solely
+for this sampled family. The original trained MAS critic is an additional fixed
+control. Never use this small training-source probe as validation or paper proof.
+
+The old10-job queue was verified waiting with no child/model job or output,
+snapshotted and explicitly superseded. Revised order: SAS conversion/proof, joint
+SAS probe, original MAS critic probe, extended MAS critic training/conversion/proof,
+then extended MAS probe. This yields discovery data while preparing the stronger
+MAS baseline. All old100-report commands are preserved as deferred jobs, not
+selected or run based on any100-report outcomes. Active SAS training is unchanged.

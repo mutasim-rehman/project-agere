@@ -2415,3 +2415,39 @@ on SSD, source snapshots preserved. Goal turn makes concrete candidate-data prog
 actual useful novelty remains unproven and full goal stays active.
 
 Continuation-control clarification: use the CURRENT extended-corpus mutation negatives for the matched ordinary-rehearsal control, not a weaker operator/operand-only corpus. Positives/source IDs are byte-identical between the earlier corpora. Require all control/variant rows to fit jointly before selecting the fixed training subset.
+
+## 2026-10-26 — Freeze training-source probe; explicitly prioritize discovery
+
+Implement exact32-record/eight-report training-only probe, complete quartets,
+ascending existing SHA, one per report. Same source inputs for three policies:
+joint SAS, original trained MAS critic, extended trained MAS critic. Use deployed
+greedy binary JSON review,192 output allowance,4096 context, CPU8threads,6.4GB
+complete tree. No forced prefix or hidden gold in input. Parse raw response again
+in independent parent/queue metrics; verify prefix-token counts against saved
+tokenization and usage limits. UNKNOWN/unparsed incorrect for exact-label metric,
+nonaccept for separately labeled gate metric. No question-blind accuracy illusion.
+Five probe tests plus queue gate tests pass. Selection02 binds reviewed source;
+its32 rows and quartet IDs exactly match pre-outcome selection01. No NN inference
+yet. Pre-inference topology audit:5/8 fixed quartets share operation/reference/
+constant shape. Selection not changed to make them harder after model outcomes.
+
+Stop rule before outcomes: if BOTH joint SAS and extended MAS achieve30/32 exact
+labels and6/8 fully exact quartets, do not add a continuation stage only for this
+sampled family. Original critic is additional fixed control. Otherwise investigate
+a SMALL matched current-extended-mutation versus crossed-negative continuation,
+with equal initial checkpoint/updates/rehearsal and both systems' task exposure.
+Natural disjoint-report utility, not probe/training loss, decides adoption.
+
+Old joint03-01 PID90812 identity verified live, exactly one waiting journal record,
+no descendants and no job outputs. All frozen inputs rehashed, original controller
+and generator snapshotted against old plan hashes; then SIGTERM while waiting.
+Old journal records interruption; supersession metadata clarifies scientific
+reordering, not model/resource failure. Active SAS PID89934 was untouched. No NN
+cost discarded and no implicit resume. New discovery-first queue will require
+full SAS epoch first, then convert/prove SAS and probe it; probe original MAS;
+train/convert/prove extended MAS and probe it. Same10.5GB training/6.4GB inference
+caps, resource monitoring and fail-closed/no-retry policy. Preserve all five large
+100-report evaluation/analysis commands as deferred jobs. No100 outcomes consumed.
+This prioritizes the user's requested novel-method work within the12-hour window,
+without changing or abandoning the baseline weights/evidence. Future stage2 source
+work must use NEW modules while this queue's inputs are frozen.

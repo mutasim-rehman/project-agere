@@ -16,6 +16,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dependency-launch', required=True)
     parser.add_argument('--out', required=True)
+    parser.add_argument('--discovery-first', action='store_true')
+    parser.add_argument('--quartet-selection')
     args = parser.parse_args()
     launch_path, out = map(artifact_path, [args.dependency_launch, args.out])
     if out.exists():
@@ -79,6 +81,30 @@ def main():
     for name, qa, demos, analysis in [('direct', sas_qa, '0', '0'), ('analysis128-demos2', sas_reason, '2', '128')]:
         job('sas-' + name + '-report100', 'natural', [cpu, script('tier8_v2_run.py'), '--arm', 'sas', *common,
             '--demos', demos, '--analysis-tokens', analysis, '--adapter', sas_conversion, '--out', qa], qa, expected=100)
+    deferred = []
+    pilot_files = []
+    if args.discovery_first:
+        from tier8_v2_quartet_probe import selected_rows
+        if not args.quartet_selection:
+            parser.error('--discovery-first requires explicit --quartet-selection')
+        selection = artifact_path(args.quartet_selection)
+        selected_rows(selection)
+        deferred, jobs = jobs[5:], jobs[:5]
+        for name, arm, adapter, proof in [('mas-original', 'mas', old_conversion, old_proof),
+                ('mas-extended', 'mas', critic_conversion, critic_proof), ('sas-joint', 'sas', sas_conversion, sas_proof)]:
+            result = ssd / 'runs/tier8_quartet_probe' / (name + '-train8-01')
+            job('quartet-' + name, 'quartet_probe', [cpu, script('tier8_v2_quartet_probe.py'), '--arm', arm,
+                '--adapter', adapter, '--proof', proof, '--selection', selection, '--weights-root', weights, '--out', result],
+                result, expected=32, selection=str(selection), arm=arm, adapter=str(adapter))
+        by_name = {item['name']: item for item in jobs}
+        jobs = [by_name[name] for name in ('convert-sas', 'prove-sas-last-logit',
+            'quartet-sas-joint', 'quartet-mas-original', 'train-extended-critic',
+            'convert-extended-critic', 'prove-extended-critic', 'quartet-mas-extended')]
+        pilot_files = [selection / 'selection.json', selection / 'examples.jsonl']
+        source_selection = json.loads((selection / 'selection.json').read_text())
+        for key in ('source_manifest', 'source_audit'):
+            pilot_files.append(artifact_path(source_selection[key]))
+        pilot_files.append(artifact_path(json.loads(artifact_path(source_selection['source_manifest']).read_text())['output_file']))
     for item in jobs:
         if artifact_path(item['result']).exists():
             raise ValueError('Planned result exists: ' + item['result'])
@@ -87,7 +113,7 @@ def main():
         critic_data / 'manifest.json', critic_data / 'parity.json', critic_data / 'examples.jsonl',
         joint_data / 'manifest.json', joint_data / 'parity.json', joint_data / 'examples.jsonl',
         old_critic_data / 'training-base-3b.json', actor / 'manifest.json', old_conversion / 'manifest.json',
-        old_proof / 'proof.json', old_proof / 'summary.json']
+        old_proof / 'proof.json', old_proof / 'summary.json', *pilot_files]
     files += list((ROOT / 'research/tier8_v2/evidence').glob('*models.json'))
     files += [ROOT / 'research/tier8_v2/evidence/candidate-model-3b.json']
     versions = {}
@@ -99,7 +125,8 @@ def main():
     plan = {'kind': 'joint8gb_serial_posttrain', 'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
             'dependency': {k: launch[k] for k in ('pid', 'create_time', 'plan', 'plan_sha256')},
             'runtime_versions': versions, 'input_sha256': {str(p): sha(p) for p in files}, 'jobs': jobs,
-            'scope': 'Baseline strengthening and exploratory100-report validation. No repair-method novelty established. Serial NN work only; no implicit restart or higher-tier changes.',
+            'deferred_jobs': deferred, 'discovery_first': args.discovery_first,
+            'scope': ('Baseline adaptation/proof followed by fixed training-source crossed-question discovery.100-report jobs explicitly deferred for a controlled method decision; no outcomes consumed.' if args.discovery_first else 'Baseline strengthening and exploratory100-report validation.') + ' No useful novelty established. Serial NN work only; no implicit restart or higher-tier changes.',
             'evaluation_limits': 'Public development100, selected after reused24 diagnosis; not untouched confirmation. SAS direct and analysis+demos are distinct policies, both reported. No SAS/MAS causal architecture claim from unequal parameterization or optimizer exposure.'}
     write(out / 'plan.json', plan)
     print(json.dumps({'plan': str(out / 'plan.json'), 'sha256': sha(out / 'plan.json'), 'jobs': len(jobs)}))

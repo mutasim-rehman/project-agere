@@ -6,10 +6,18 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from tier8_v2_joint_posttrain import complete_sas, sha
+from tier8_v2_joint_posttrain import complete_sas, sha, verify_result
 
 
 class JointQueueGateTests(unittest.TestCase):
+    def test_partial_quartet_probe_cannot_release_queue(self):
+        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1] / '.local/tmp') as folder:
+            root = Path(folder)
+            (root / 'summary.json').write_text(json.dumps({'status': 'complete', 'exit_code': 0,
+                'n': 16, 'expected': 32, 'cap_bytes': 6400000000, 'peak_tree_rss_bytes': 3000000000}))
+            with self.assertRaisesRegex(ValueError, 'coverage'):
+                verify_result({'kind': 'quartet_probe', 'result': str(root)})
+
     def test_fit_success_cannot_release_full_training_queue(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
