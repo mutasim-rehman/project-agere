@@ -2344,3 +2344,34 @@ for training runtime; actual tiny training-runtime preparation3 tests separately
 pass. Future NN proof must wait; do not count these CPU checks as actual serving.
 No demonstrated useful original method. Keep goal active. Avoid further optional
 serving/cache extensions before the prepared proof and natural error evidence.
+
+## 2026-10-26 — Measured question-blind curriculum artifact control
+
+Train-only fixed CART-style Gini trees: depth1 steps-only and depth3 program-only
+features, minleaf32. No question/evidence, case ID, mutation/target metadata,
+tokenization or NN outputs in features. Existing weak labels used only for fitting;
+training reports disjoint from382 validation examples/49 reports. Audit motivated
+by known prior aggregate NN results; do not claim prospective blindness. No feature
+or hyperparameter selection from validation/natural replay. Both corpora share
+same rows/splits/labels and all3140 training examples. Original-trained depth3
+scores275/382=71.99% original validation; extended-trained295/382=77.23% extended.
+Extended root CONST100, rejects all73 scaling negatives but41 valid references;
+length stump also rejects all73 while rejecting77 valid references. These are
+shortcut opportunities, not proof of actual NN shortcut use or financial skill.
+
+Same old controlled24: original tree17/24,5/12 complete pairs; extended16/24,4/12;
+existing NN23/24,11/12. No fitting-report overlap. Offline unchanged-draft natural24
+replay: old tree5correct/8wrong/11withheld, extended5/5/14; raw4/9/11 and4/6/14.
+Existing NN11/4/9, raw9/6/9, descriptively improves on both shallow controls under
+both metrics. All24 feature-supported; none excluded. This is reused development
+component replay, not end-to-end inference or independent confirmation. Does not
+rule out richer shortcuts. Freeze ALL four fitted trees for100-report replay;
+no favorable classifier, feature/depth/threshold selection after100 outcomes.
+
+Canonical raw audit05 binds source/data hashes and matches02 fitted models/results.
+01–04 retained as development iterations, not independent replications;05 clarifies
+prior-outcome awareness and corrects controlled negative-family labeling only.
+Four targeted CPU tests and actual full-corpus/replay execution pass. New audit
+source is independent of live frozen training/queue; all queue hashes reverified.
+Goal turn makes progress via new measured artifact diagnosis and baseline controls;
+novel useful method still unproven. Both controllers verified live at checkpoint.

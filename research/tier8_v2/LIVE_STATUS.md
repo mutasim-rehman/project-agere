@@ -1,12 +1,12 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 01:18 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 01:31 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
 | External baseline queue | Complete:380 case–arm evaluations; Mortar SAS39/90,MAS26/90; FRAMES2/100,1/100 |
 | SAS7B compact joint fit | Complete:2 actual updates,392 changed tensors;8.490GB tree RSS under10.5GB training cap |
-| SAS7B full joint adaptation | **Running:56/476 updates**,448/3801 examples;482 validation pending |
+| SAS7B full joint adaptation | **Running:89/476 updates**,712/3801 examples;482 validation pending |
 | Training memory | Latest worker about4.07GB; whole tree about8.33GB including compiler workers |
 | Extended MAS critic | Dataset/parity/audit ready; training pending serial GPU availability |
 | Source-aware repair controls | Implemented;17 CPU checks pass; actual NN scorer/repair pilot pending |
@@ -45,3 +45,5 @@ raw weights/datasets/traces stay on the authorized SSD. Goal remains active.
 Serial follow-on controller is live and waiting for full SAS completion:10 frozen jobs covering conversion/proofs, extended MAS critic training, paired100-report critic evaluation, and both direct and analysis+demos SAS100 policies. [Frozen queue](evidence/joint-posttrain-plan-01.json). Model workloads remain serial. Full default suite274 tests with17 training-runtime skips.
 
 New separate serving experiment: [shared backbone with distinct role adapters](SHARED_ROLE_SERVING.md).3 CPU activation tests and real existing-adapter metadata preflight pass; native parity/memory proof prepared, not run or queued. This is known baseline engineering, not novelty. Stronger tiny CPU LoRA decoder test also matches old-versus-compact storage loss and every adapter gradient exactly; no actual7B GPU equivalence claim. [Current training checkpoint](evidence/sas7b-joint-train-progress-02.json). Frozen queue inputs reverified unchanged.
+
+New measured research diagnosis: [question-blind critic artifact audit](CRITIC_ARTIFACT_AUDIT.md). A fixed shallow tree gets72.0% original and77.2% extended synthetic validation accuracy without question/evidence. On reused natural24, extended tree5 correct/5 wrong/14 withheld versus existing neural11/4/9 (reported). Neural beats these simple controls; synthetic discrimination alone remains insufficient. Frozen fitted trees will also be reported on100, without tuning. No NN calls or queue changes.

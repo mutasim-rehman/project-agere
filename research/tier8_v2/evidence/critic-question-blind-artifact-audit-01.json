@@ -1,0 +1,806 @@
+{
+  "status": "complete",
+  "input_sha256": {
+    "original": "7b63467ad3da713c8a9accd17fe3311fffc9d0d0cdd4e61d02d573fc99fc69d0",
+    "extended": "a39e0053075cd330416c85ba16c118bff693a3b1c91439942f29e7d8b2dbaea3"
+  },
+  "source_sha256": "0ea9dde82a1e106a643ee2f0a6a2f937afc1e6314bfcf1db07aa73fba52eec70",
+  "minimum_leaf": 32,
+  "tree_depths": [
+    1,
+    3
+  ],
+  "results": {
+    "original": {
+      "length_stump": {
+        "tree": {
+          "n": 3140,
+          "positives": 1570,
+          "prediction": 1
+        },
+        "training": {
+          "n": 3140,
+          "n_reports": 414,
+          "accuracy": 0.5,
+          "reference_accepts": 1570,
+          "reference_nonaccepts": 0,
+          "mutation_accepts": 1570,
+          "mutation_nonaccepts": 0,
+          "by_family": {
+            "reference": {
+              "n": 1570,
+              "correct": 1570,
+              "accepted": 1570
+            },
+            "operation": {
+              "n": 851,
+              "correct": 0,
+              "accepted": 851
+            },
+            "operand": {
+              "n": 719,
+              "correct": 0,
+              "accepted": 719
+            }
+          }
+        },
+        "validation": {
+          "original": {
+            "n": 382,
+            "n_reports": 49,
+            "accuracy": 0.5,
+            "reference_accepts": 191,
+            "reference_nonaccepts": 0,
+            "mutation_accepts": 191,
+            "mutation_nonaccepts": 0,
+            "by_family": {
+              "reference": {
+                "n": 191,
+                "correct": 191,
+                "accepted": 191
+              },
+              "operation": {
+                "n": 108,
+                "correct": 0,
+                "accepted": 108
+              },
+              "operand": {
+                "n": 83,
+                "correct": 0,
+                "accepted": 83
+              }
+            }
+          },
+          "extended": {
+            "n": 382,
+            "n_reports": 49,
+            "accuracy": 0.5,
+            "reference_accepts": 191,
+            "reference_nonaccepts": 0,
+            "mutation_accepts": 191,
+            "mutation_nonaccepts": 0,
+            "by_family": {
+              "reference": {
+                "n": 191,
+                "correct": 191,
+                "accepted": 191
+              },
+              "output_scale": {
+                "n": 73,
+                "correct": 0,
+                "accepted": 73
+              },
+              "operand": {
+                "n": 41,
+                "correct": 0,
+                "accepted": 41
+              },
+              "operation": {
+                "n": 57,
+                "correct": 0,
+                "accepted": 57
+              },
+              "node_bypass": {
+                "n": 20,
+                "correct": 0,
+                "accepted": 20
+              }
+            }
+          }
+        }
+      },
+      "program_structure_tree_depth3": {
+        "tree": {
+          "n": 3140,
+          "positives": 1570,
+          "prediction": 1,
+          "feature": "count_divide",
+          "threshold": 0.5,
+          "left": {
+            "n": 1216,
+            "positives": 395,
+            "prediction": 0,
+            "feature": "last_subtract",
+            "threshold": 0.5,
+            "left": {
+              "n": 677,
+              "positives": 164,
+              "prediction": 0,
+              "feature": "count_add",
+              "threshold": 1.5,
+              "left": {
+                "n": 591,
+                "positives": 112,
+                "prediction": 0
+              },
+              "right": {
+                "n": 86,
+                "positives": 52,
+                "prediction": 1
+              }
+            },
+            "right": {
+              "n": 539,
+              "positives": 231,
+              "prediction": 0,
+              "feature": "step_references",
+              "threshold": 0.5,
+              "left": {
+                "n": 477,
+                "positives": 229,
+                "prediction": 0
+              },
+              "right": {
+                "n": 62,
+                "positives": 2,
+                "prediction": 0
+              }
+            }
+          },
+          "right": {
+            "n": 1924,
+            "positives": 1175,
+            "prediction": 1,
+            "feature": "distinct_source_operands",
+            "threshold": 2.5,
+            "left": {
+              "n": 1737,
+              "positives": 1130,
+              "prediction": 1,
+              "feature": "distinct_literal_values",
+              "threshold": 1.5,
+              "left": {
+                "n": 70,
+                "positives": 0,
+                "prediction": 0
+              },
+              "right": {
+                "n": 1667,
+                "positives": 1130,
+                "prediction": 1
+              }
+            },
+            "right": {
+              "n": 187,
+              "positives": 45,
+              "prediction": 0,
+              "feature": "count_add",
+              "threshold": 0.5,
+              "left": {
+                "n": 112,
+                "positives": 3,
+                "prediction": 0
+              },
+              "right": {
+                "n": 75,
+                "positives": 42,
+                "prediction": 1
+              }
+            }
+          }
+        },
+        "training": {
+          "n": 3140,
+          "n_reports": 414,
+          "accuracy": 0.697452229299363,
+          "reference_accepts": 1224,
+          "reference_nonaccepts": 346,
+          "mutation_accepts": 604,
+          "mutation_nonaccepts": 966,
+          "by_family": {
+            "reference": {
+              "n": 1570,
+              "correct": 1224,
+              "accepted": 1224
+            },
+            "operation": {
+              "n": 851,
+              "correct": 638,
+              "accepted": 213
+            },
+            "operand": {
+              "n": 719,
+              "correct": 328,
+              "accepted": 391
+            }
+          }
+        },
+        "validation": {
+          "original": {
+            "n": 382,
+            "n_reports": 49,
+            "accuracy": 0.7198952879581152,
+            "reference_accepts": 158,
+            "reference_nonaccepts": 33,
+            "mutation_accepts": 74,
+            "mutation_nonaccepts": 117,
+            "by_family": {
+              "reference": {
+                "n": 191,
+                "correct": 158,
+                "accepted": 158
+              },
+              "operation": {
+                "n": 108,
+                "correct": 82,
+                "accepted": 26
+              },
+              "operand": {
+                "n": 83,
+                "correct": 35,
+                "accepted": 48
+              }
+            }
+          },
+          "extended": {
+            "n": 382,
+            "n_reports": 49,
+            "accuracy": 0.6204188481675392,
+            "reference_accepts": 158,
+            "reference_nonaccepts": 33,
+            "mutation_accepts": 112,
+            "mutation_nonaccepts": 79,
+            "by_family": {
+              "reference": {
+                "n": 191,
+                "correct": 158,
+                "accepted": 158
+              },
+              "output_scale": {
+                "n": 73,
+                "correct": 7,
+                "accepted": 66
+              },
+              "operand": {
+                "n": 41,
+                "correct": 19,
+                "accepted": 22
+              },
+              "operation": {
+                "n": 57,
+                "correct": 47,
+                "accepted": 10
+              },
+              "node_bypass": {
+                "n": 20,
+                "correct": 6,
+                "accepted": 14
+              }
+            }
+          }
+        }
+      }
+    },
+    "extended": {
+      "length_stump": {
+        "tree": {
+          "n": 3140,
+          "positives": 1570,
+          "prediction": 1,
+          "feature": "steps",
+          "threshold": 1.5,
+          "left": {
+            "n": 1641,
+            "positives": 953,
+            "prediction": 1
+          },
+          "right": {
+            "n": 1499,
+            "positives": 617,
+            "prediction": 0
+          }
+        },
+        "training": {
+          "n": 3140,
+          "n_reports": 414,
+          "accuracy": 0.5843949044585988,
+          "reference_accepts": 953,
+          "reference_nonaccepts": 617,
+          "mutation_accepts": 688,
+          "mutation_nonaccepts": 882,
+          "by_family": {
+            "reference": {
+              "n": 1570,
+              "correct": 953,
+              "accepted": 953
+            },
+            "operation": {
+              "n": 463,
+              "correct": 167,
+              "accepted": 296
+            },
+            "operand": {
+              "n": 380,
+              "correct": 148,
+              "accepted": 232
+            },
+            "output_scale": {
+              "n": 553,
+              "correct": 553,
+              "accepted": 0
+            },
+            "node_bypass": {
+              "n": 174,
+              "correct": 14,
+              "accepted": 160
+            }
+          }
+        },
+        "validation": {
+          "original": {
+            "n": 382,
+            "n_reports": 49,
+            "accuracy": 0.5,
+            "reference_accepts": 114,
+            "reference_nonaccepts": 77,
+            "mutation_accepts": 114,
+            "mutation_nonaccepts": 77,
+            "by_family": {
+              "reference": {
+                "n": 191,
+                "correct": 114,
+                "accepted": 114
+              },
+              "operation": {
+                "n": 108,
+                "correct": 38,
+                "accepted": 70
+              },
+              "operand": {
+                "n": 83,
+                "correct": 39,
+                "accepted": 44
+              }
+            }
+          },
+          "extended": {
+            "n": 382,
+            "n_reports": 49,
+            "accuracy": 0.581151832460733,
+            "reference_accepts": 114,
+            "reference_nonaccepts": 77,
+            "mutation_accepts": 83,
+            "mutation_nonaccepts": 108,
+            "by_family": {
+              "reference": {
+                "n": 191,
+                "correct": 114,
+                "accepted": 114
+              },
+              "output_scale": {
+                "n": 73,
+                "correct": 73,
+                "accepted": 0
+              },
+              "operand": {
+                "n": 41,
+                "correct": 16,
+                "accepted": 25
+              },
+              "operation": {
+                "n": 57,
+                "correct": 18,
+                "accepted": 39
+              },
+              "node_bypass": {
+                "n": 20,
+                "correct": 1,
+                "accepted": 19
+              }
+            }
+          }
+        }
+      },
+      "program_structure_tree_depth3": {
+        "tree": {
+          "n": 3140,
+          "positives": 1570,
+          "prediction": 1,
+          "feature": "constant_100",
+          "threshold": 0.5,
+          "left": {
+            "n": 2457,
+            "positives": 1495,
+            "prediction": 1,
+            "feature": "distinct_literal_values",
+            "threshold": 1.5,
+            "left": {
+              "n": 111,
+              "positives": 1,
+              "prediction": 0,
+              "feature": "max_log_literal_magnitude",
+              "threshold": 3.1563974595209237,
+              "left": {
+                "n": 57,
+                "positives": 0,
+                "prediction": 0
+              },
+              "right": {
+                "n": 54,
+                "positives": 1,
+                "prediction": 0
+              }
+            },
+            "right": {
+              "n": 2346,
+              "positives": 1494,
+              "prediction": 1,
+              "feature": "count_divide",
+              "threshold": 0.5,
+              "left": {
+                "n": 823,
+                "positives": 380,
+                "prediction": 0
+              },
+              "right": {
+                "n": 1523,
+                "positives": 1114,
+                "prediction": 1
+              }
+            }
+          },
+          "right": {
+            "n": 683,
+            "positives": 75,
+            "prediction": 0,
+            "feature": "distinct_literal_values",
+            "threshold": 2.5,
+            "left": {
+              "n": 109,
+              "positives": 52,
+              "prediction": 0,
+              "feature": "count_subtract",
+              "threshold": 0.5,
+              "left": {
+                "n": 32,
+                "positives": 5,
+                "prediction": 0
+              },
+              "right": {
+                "n": 77,
+                "positives": 47,
+                "prediction": 1
+              }
+            },
+            "right": {
+              "n": 574,
+              "positives": 23,
+              "prediction": 0,
+              "feature": "last_multiply",
+              "threshold": 0.5,
+              "left": {
+                "n": 260,
+                "positives": 1,
+                "prediction": 0
+              },
+              "right": {
+                "n": 314,
+                "positives": 22,
+                "prediction": 0
+              }
+            }
+          }
+        },
+        "training": {
+          "n": 3140,
+          "n_reports": 414,
+          "accuracy": 0.729936305732484,
+          "reference_accepts": 1161,
+          "reference_nonaccepts": 409,
+          "mutation_accepts": 439,
+          "mutation_nonaccepts": 1131,
+          "by_family": {
+            "reference": {
+              "n": 1570,
+              "correct": 1161,
+              "accepted": 1161
+            },
+            "operation": {
+              "n": 463,
+              "correct": 370,
+              "accepted": 93
+            },
+            "operand": {
+              "n": 380,
+              "correct": 126,
+              "accepted": 254
+            },
+            "output_scale": {
+              "n": 553,
+              "correct": 537,
+              "accepted": 16
+            },
+            "node_bypass": {
+              "n": 174,
+              "correct": 98,
+              "accepted": 76
+            }
+          }
+        },
+        "validation": {
+          "original": {
+            "n": 382,
+            "n_reports": 49,
+            "accuracy": 0.675392670157068,
+            "reference_accepts": 150,
+            "reference_nonaccepts": 41,
+            "mutation_accepts": 83,
+            "mutation_nonaccepts": 108,
+            "by_family": {
+              "reference": {
+                "n": 191,
+                "correct": 150,
+                "accepted": 150
+              },
+              "operation": {
+                "n": 108,
+                "correct": 82,
+                "accepted": 26
+              },
+              "operand": {
+                "n": 83,
+                "correct": 26,
+                "accepted": 57
+              }
+            }
+          },
+          "extended": {
+            "n": 382,
+            "n_reports": 49,
+            "accuracy": 0.7722513089005235,
+            "reference_accepts": 150,
+            "reference_nonaccepts": 41,
+            "mutation_accepts": 46,
+            "mutation_nonaccepts": 145,
+            "by_family": {
+              "reference": {
+                "n": 191,
+                "correct": 150,
+                "accepted": 150
+              },
+              "output_scale": {
+                "n": 73,
+                "correct": 73,
+                "accepted": 0
+              },
+              "operand": {
+                "n": 41,
+                "correct": 16,
+                "accepted": 25
+              },
+              "operation": {
+                "n": 57,
+                "correct": 48,
+                "accepted": 9
+              },
+              "node_bypass": {
+                "n": 20,
+                "correct": 8,
+                "accepted": 12
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "novelty_established": false,
+  "neural_quality_gain": false,
+  "limits": "Fixed question-blind artifact controls on existing training/validation reports. Audit motivated by prior development results; aggregate neural outcomes were already known. No neural outputs enter features or fitting labels, and no hyperparameter search is performed. Validation is development, not fresh confirmation. Structural predictability is a shortcut opportunity, not proof that a neural critic uses it or that natural financial semantics are easy.",
+  "natural_component_replay": {
+    "n": 24,
+    "n_report_groups": 23,
+    "snapshots_sha256": "ab2673c8304345044f537febb1f8b81a55c8134784a1bd4303a701e56b4f7392",
+    "results": {
+      "original": {
+        "length_stump": {
+          "case_success": {
+            "correct_delivered": 11,
+            "wrong_delivered": 13,
+            "withheld": 0,
+            "candidate_correct": 11
+          },
+          "raw_execution_match": {
+            "correct_delivered": 9,
+            "wrong_delivered": 15,
+            "withheld": 0,
+            "candidate_correct": 9
+          },
+          "feature_rejections": 0
+        },
+        "program_structure_tree_depth3": {
+          "case_success": {
+            "correct_delivered": 5,
+            "wrong_delivered": 8,
+            "withheld": 11,
+            "candidate_correct": 11
+          },
+          "raw_execution_match": {
+            "correct_delivered": 4,
+            "wrong_delivered": 9,
+            "withheld": 11,
+            "candidate_correct": 9
+          },
+          "feature_rejections": 0
+        }
+      },
+      "extended": {
+        "length_stump": {
+          "case_success": {
+            "correct_delivered": 10,
+            "wrong_delivered": 8,
+            "withheld": 6,
+            "candidate_correct": 11
+          },
+          "raw_execution_match": {
+            "correct_delivered": 8,
+            "wrong_delivered": 10,
+            "withheld": 6,
+            "candidate_correct": 9
+          },
+          "feature_rejections": 0
+        },
+        "program_structure_tree_depth3": {
+          "case_success": {
+            "correct_delivered": 5,
+            "wrong_delivered": 5,
+            "withheld": 14,
+            "candidate_correct": 11
+          },
+          "raw_execution_match": {
+            "correct_delivered": 4,
+            "wrong_delivered": 6,
+            "withheld": 14,
+            "candidate_correct": 9
+          },
+          "feature_rejections": 0
+        }
+      }
+    },
+    "limits": "Offline gate-only component on already-used natural24 drafts; no fresh model calls, candidate changes, threshold tuning or end-to-end resource claim. Fitting labels come only from critic training reports. Does not establish neural shortcut use."
+  },
+  "controlled_probe_replay": {
+    "results": {
+      "original": {
+        "length_stump": {
+          "n": 24,
+          "n_reports": 12,
+          "accuracy": 0.5,
+          "reference_accepts": 12,
+          "reference_nonaccepts": 0,
+          "mutation_accepts": 12,
+          "mutation_nonaccepts": 0,
+          "by_family": {
+            "reference": {
+              "n": 12,
+              "correct": 12,
+              "accepted": 12
+            },
+            "mutation": {
+              "n": 12,
+              "correct": 0,
+              "accepted": 12
+            }
+          },
+          "complete_report_discriminations": 0
+        },
+        "program_structure_tree_depth3": {
+          "n": 24,
+          "n_reports": 12,
+          "accuracy": 0.7083333333333334,
+          "reference_accepts": 10,
+          "reference_nonaccepts": 2,
+          "mutation_accepts": 5,
+          "mutation_nonaccepts": 7,
+          "by_family": {
+            "reference": {
+              "n": 12,
+              "correct": 10,
+              "accepted": 10
+            },
+            "mutation": {
+              "n": 12,
+              "correct": 7,
+              "accepted": 5
+            }
+          },
+          "complete_report_discriminations": 5
+        }
+      },
+      "extended": {
+        "length_stump": {
+          "n": 24,
+          "n_reports": 12,
+          "accuracy": 0.5,
+          "reference_accepts": 6,
+          "reference_nonaccepts": 6,
+          "mutation_accepts": 6,
+          "mutation_nonaccepts": 6,
+          "by_family": {
+            "reference": {
+              "n": 12,
+              "correct": 6,
+              "accepted": 6
+            },
+            "mutation": {
+              "n": 12,
+              "correct": 6,
+              "accepted": 6
+            }
+          },
+          "complete_report_discriminations": 0
+        },
+        "program_structure_tree_depth3": {
+          "n": 24,
+          "n_reports": 12,
+          "accuracy": 0.6666666666666666,
+          "reference_accepts": 9,
+          "reference_nonaccepts": 3,
+          "mutation_accepts": 5,
+          "mutation_nonaccepts": 7,
+          "by_family": {
+            "reference": {
+              "n": 12,
+              "correct": 9,
+              "accepted": 9
+            },
+            "mutation": {
+              "n": 12,
+              "correct": 7,
+              "accepted": 5
+            }
+          },
+          "complete_report_discriminations": 4
+        }
+      }
+    },
+    "reports_overlapping_fitting": [],
+    "input_sha256": {
+      "public.jsonl": "938a52276b9a0f6c08f976fc267d5db49ade4a095792d7cacb4b37494d784fca",
+      "labels.jsonl": "3c8ac4b28a2936549642b84b1ef9cfb1453c2fb33f8a3234493f8475f36382c4"
+    },
+    "limits": "Previously selected controlled mutation probe, not natural errors or fresh confirmation. Model fits precede replay. Scope of report overlap is explicit."
+  },
+  "raw_file": "/run/media/mutasim/Data/AGERE/runs/critic-question-blind-artifact-audit-05.json",
+  "raw_sha256": "10742be72917bf73aef319bd610c060329f994b47da41990d406fedea976a0aa",
+  "existing_neural_natural24": {
+    "case_success": {
+      "correct_delivered": 11,
+      "wrong_delivered": 4,
+      "withheld": 9
+    },
+    "raw_execution_match": {
+      "correct_delivered": 9,
+      "wrong_delivered": 6,
+      "withheld": 9
+    }
+  },
+  "existing_neural_natural24_file_sha256": "ab2673c8304345044f537febb1f8b81a55c8134784a1bd4303a701e56b4f7392",
+  "canonical_run": "05",
+  "supersession_note": "01-04 preserved development outputs, not independent replications;05 clarifies known prior neural outcomes and fixes controlled family labeling. Validation trees/results exactly match02; no classifier/threshold selection from these comparisons.",
+  "existing_neural_controlled24": {
+    "correct": 23,
+    "n": 24,
+    "responses_sha256": "960282bd722076406771318622069d369494d650f9226a2fa1e63ce1df1359ff"
+  }
+}
