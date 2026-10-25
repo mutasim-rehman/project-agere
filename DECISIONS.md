@@ -2330,3 +2330,17 @@ PEFT LoRA, dropout/checkpointing and streamed head, comparing both initial adapt
 values and all adapter gradients exactly against the old CPU-FP32 storage policy.
 All3 preparation tests pass. This is stronger CPU fidelity evidence, not bitwise7B
 GPU equivalence or QA accuracy. Live worker and all frozen queue sources unchanged.
+
+## 2026-10-26 — Continuation audit and scope checkpoint
+
+Previous goal turn made progress: actual full SAS updates, source-aware controls
+and weak-savings diagnostic, frozen/live serial continuation. This turn also makes
+concrete progress with independently prepared role-switching backend/proof and
+stronger CPU numerical-fidelity evidence. Controller PID/create-time/plan identity
+verified live;56/476 updates,448/3801 examples at20:17UTC, finite gradients. Complete-
+tree peak8.329GB so far; not final peak or epoch. Queue inputs independently
+rehashed after new work and all unchanged. Full default suite278 tests,18 skips
+for training runtime; actual tiny training-runtime preparation3 tests separately
+pass. Future NN proof must wait; do not count these CPU checks as actual serving.
+No demonstrated useful original method. Keep goal active. Avoid further optional
+serving/cache extensions before the prepared proof and natural error evidence.

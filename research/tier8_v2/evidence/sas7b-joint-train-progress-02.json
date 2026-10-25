@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-10-25T20:17:36.434967+00:00",
+  "controller_live_identity_verified": true,
+  "last_update": {
+    "state": "update",
+    "time": 1792959441.1989036,
+    "step": 56,
+    "examples": 8,
+    "loss": 0.047841795402428756,
+    "gradient_norm": 0.4800889492034912,
+    "gpu_peak_allocated": 4751054848,
+    "gpu_peak_reserved": 4945084416,
+    "host_rss": 4072419328
+  },
+  "planned_updates": 476,
+  "processed_examples": 448,
+  "latest_update_age_seconds": 15.236080884933472,
+  "peak_complete_tree_rss_bytes_so_far": 8328884224,
+  "frozen_queue_inputs_verified": true,
+  "new_serving_backend_native_proof": "prepared_not_run_or_queued",
+  "novelty_established": false,
+  "full_training_complete": false
+}
