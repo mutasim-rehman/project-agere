@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 04:41 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 04:58 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
@@ -98,3 +98,12 @@ semantics (UNP2016 December shares); official scores/data preserved. Do not equa
 numeric-reference agreement with independently adjudicated semantic correctness.
 Extended critic is now training; stop-rule decision remains pending its result.
 [Original MAS/label audit](CRITIC_BASELINE_DISCOVERY.md).
+
+Frozen local-repair pool opportunity audit now complete (no inference): full pool
+contains correct programs for13/24 reported and12/24 raw versus11/9 initially,
+but zero initially wrong cases are rescuable within ANY four-check/8192-prefill
+representative allocation. Do not spend NN calls or claim quotient repair gains
+from this pool. [Opportunity evidence](evidence/local-repair-opportunity-01.json).
+Prepared shared3B serving proof dependency is corrected to active8-job queue;
+not yet run. Its capacity-allocation implications remain conditional on actual
+native parity/RSS and honest strong-baseline controls; known serving is not novelty.

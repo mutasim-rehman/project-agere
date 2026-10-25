@@ -1,0 +1,58 @@
+{
+  "status": "offline_opportunity_not_policy_success",
+  "n": 24,
+  "metrics": {
+    "case_success": {
+      "initial_numerically_correct_cases": 11,
+      "full_pool_contains_correct_cases": 13,
+      "initially_wrong_full_pool_rescuable": 2,
+      "bounded_representatives_contain_correct_cases": {
+        "bytes": 11,
+        "numeric": 11,
+        "numeric_sources": 11,
+        "source_symbolic": 11
+      },
+      "initially_wrong_bounded_rescuable": {
+        "bytes": 0,
+        "numeric": 0,
+        "numeric_sources": 0,
+        "source_symbolic": 0
+      }
+    },
+    "raw_execution_match": {
+      "initial_numerically_correct_cases": 9,
+      "full_pool_contains_correct_cases": 12,
+      "initially_wrong_full_pool_rescuable": 3,
+      "bounded_representatives_contain_correct_cases": {
+        "bytes": 9,
+        "numeric": 9,
+        "numeric_sources": 9,
+        "source_symbolic": 9
+      },
+      "initially_wrong_bounded_rescuable": {
+        "bytes": 0,
+        "numeric": 0,
+        "numeric_sources": 0,
+        "source_symbolic": 0
+      }
+    }
+  },
+  "input_sha256": {
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/evidence/source-quotient-diagnostic-01.json": "d69243dbf264e5dbfa87445c043d2773b1a31ab33be0f7d6867c192d5572c395",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-trained3b-binary-dev24-01/manifest.json": "3077834d85865834f9716888226e10b89d3b63a40f47dda6b8862b16de8b81bf",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_finqa/dev_report100_01/source-dev.json": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_repair_opportunity/frozen-dev24-01/gold-free-pools-and-allocations.jsonl": "80d56ba9e355aaa4ba1bccb9ff161b8758e5c8fc01703fd6826661fd7d600a01",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_repair_opportunity/frozen-dev24-01/pool-seal.json": "feb06004c52f4eceed2a556550ffae2c9ae4cec3afdc0f013b3d8c4b3b5c6d51"
+  },
+  "new_model_calls": 0,
+  "new_regeneration": false,
+  "actual_policy_gain": false,
+  "novelty_established": false,
+  "limits": "Reused24; original pool unchanged/sealed before reference answers. Numerical candidate-availability upper bound only, assuming a perfect selector over the budget-allocated representatives. No learned scoring, delivery safety or semantic adjudication. No candidate/order/budget tuning permitted from these oracle labels.3B vocab-only cost replay;7B model behavior/performance not evaluated.",
+  "raw_file": "/run/media/mutasim/Data/AGERE/runs/tier8_repair_opportunity/frozen-dev24-01/opportunity.json",
+  "raw_sha256": "3423df907386fe59b99c0314a7a4c1111928ee8a15fa43a4900627fe1d449a12",
+  "pool_seal": "/run/media/mutasim/Data/AGERE/runs/tier8_repair_opportunity/frozen-dev24-01/pool-seal.json",
+  "pool_seal_sha256": "feb06004c52f4eceed2a556550ffae2c9ae4cec3afdc0f013b3d8c4b3b5c6d51",
+  "interpretation": "Deprioritize this frozen local pool/source-quotient policy: no initially wrong case has a numerically correct candidate within any of the actual four-check/8192-prefill allocations. Classifier reranking alone cannot rescue these cases. Not a general repair impossibility result.",
+  "source_sha256": "a7e7a87fd40930d487c11328dc99f1534612d1b6a8e2141338e91a3703d181ec"
+}

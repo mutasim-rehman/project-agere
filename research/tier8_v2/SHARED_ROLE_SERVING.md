@@ -47,3 +47,24 @@ Adopt this backend into the cross-tier base only after measured proof. Predeclar
 per-tier backbone/adapter sizes and context budgets separately; do not add a new
 switching or cache method only after moving to16/32GB. Memory savings, if measured,
 are a known-method baseline improvement and cannot substitute for useful novelty.
+
+
+26October2026 priority update: both ordinary critics are near the fixed crossed-
+family ceiling, and the unchanged local pool has zero wrong-case rescue within
+its four-check allocation even with perfect numerical selection. This redirects
+attention from extra classifier/deduplication tuning to proposal quality and fair
+model capacity under RAM constraints. The prepared3B serving proof is now a
+next diagnostic AFTER the currently active8-job discovery queue completes.
+[Plan02](evidence/shared-role-serving-plan-02.json) corrects the old plan01 reference
+to a deliberately superseded10-job queue; the command, caps, source hashes,
+prompts and parity conditions are unchanged. It is still NOT launched or queued.
+
+If native3B parity/memory proof succeeds, investigate whether the saved backbone
+memory can support a stronger same-budget MAS actor, with an explicitly labelled
+role-adapter/shared-backbone variant. Such a7B experiment would require ACTUAL
+separate critic-purpose training, fit/conversion/native application and serving
+proofs before evaluation. It cannot reuse joint-SAS weights under a renamed critic
+label. A same-base role study must retain the classic3B MAS, single-policy7B SAS,
+matched task exposure/optimization controls, and trainable-capacity differences.
+This is a conditional next research direction, not an implemented7B role method
+or a new algorithm claim. LRAgent remains a close established serving prior.

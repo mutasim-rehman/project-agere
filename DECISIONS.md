@@ -2679,3 +2679,34 @@ model outputs. Do NOT rescore/exclude, silently relabel, estimate dataset preval
 or infer the binary FAIL rationale. Needs independent semantic adjudication;
 SAS acceptance does not establish semantic superiority. Preserve31/32 and30/32
 weak-label results. No new model/data/method change or novelty claim. Goal active.
+
+
+### 2026-10-26 — eliminate zero-opportunity local reranking pilot; next serving diagnostic
+
+Previous turn made progress through actual completed SAS/original-MAS NN probes,
+question-switch analysis and outcome-guided source-label audit, committed/pushed.
+Current extended critic remains live, advancing with frozen inputs and finite
+losses/gradients; no concurrent NN work. New offline analysis reproduces370 frozen
+pool candidates and grouping counts, seals gold-free pools and actual3B vocab-only
+allocation before loading reference answers. Reused24/known aggregate outcomes
+are not prospectively blind data. Initial11 reported/9 raw correct; entire pool
+can contain correct candidates for13/12 respectively, only2/3 initially wrong
+rescues. Under4 checks/8192 prefill/4096 context, ALL four fixed groupings have
+ZERO initially-wrong rescue opportunities. This is a perfect-selection numerical
+upper bound, not measured accuracy or semantic truth. Do not spend NN calls on
+this unchanged pool expecting gains. Do not tune its candidate/order/budget from
+these oracle labels. Limited nearby substitutions/64 cap and no regeneration mean
+this does NOT rule out all one-edit/global repairs. Keep full-regeneration controls
+and use training-source fitting partitions for any fresh proposal development.
+
+With synthetic-crossed critics already strong and this pool proposal-limited,
+prioritize the previously prepared3B shared-base native parity/RSS diagnostic after
+the active8-job queue. Plan02 preserves exact command/source/caps and replaces only
+old superseded10-job dependency language; no new NN job launched or queued. If it
+passes, stronger actor capacity within the same RAM via an explicitly labelled
+shared-backbone role-adapter MAS is a conditional next direction. It MUST retain
+classic MAS/SAS baselines and require genuine separate critic-role training/native
+proofs; never relabel joint SAS as independent critic. Same-task exposure/optimizer
+and trainable-capacity controls remain required. Known LRAgent serving is baseline
+engineering, not useful novelty. No7B specialist pair has been implemented/adopted
+or evaluated. Goal remains active; no novel useful method demonstrated yet.

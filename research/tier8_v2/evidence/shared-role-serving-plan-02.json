@@ -1,0 +1,50 @@
+{
+  "status": "prepared_not_run_or_queued",
+  "command": [
+    "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_shared_role_proof.py",
+    "--actor-adapter",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/runs/adapter-3b-converted-02",
+    "--critic-adapter",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-converted-01",
+    "--actor-dataset",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/deployment-sft-1024-02.jsonl",
+    "--critic-dataset",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/examples.jsonl",
+    "--weights-root",
+    "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+    "--out",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01"
+  ],
+  "required_prior_state": "Declared8-job discovery-first joint03-discovery02 queue COMPLETE, every job independently verified; shared hardware lock available. No NN overlap.",
+  "input_sha256": {
+    "scripts/shared_role_models.py": "bde95692aee9f1705e8380101406245cba8651623ba501e86eeb1a3262a3ad9d",
+    "scripts/tier8_v2_shared_role_proof.py": "fac3821af9e8de7592e59688c847414f7049201b7fb2b3056bbc50be6ec295fc",
+    "research/tier8_v2/evidence/shared-role-serving-plan-01.json": "0844025ba68164fc29373a43a82af2fb59711e3f450bd329884f8cf6c9e4f649",
+    "research/tier8_v2/evidence/joint-discovery-posttrain-launch-02.json": "d9d2d3c619366ffe836fd0c46411601612afa7378aab465b474b25b5704eafab",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_joint_posttrain/joint03-discovery02/plan.json": "ae579484b961c706a2b7478a9a130c3a54c395f9680449ee8694f55eee0ac99c"
+  },
+  "cap_bytes": 6400000000,
+  "context": 4096,
+  "validation_prompt_count": 2,
+  "shared_role_switches": 4,
+  "logit_tolerance": 1e-05,
+  "completion_tokens_per_observation": 32,
+  "measured_memory_gain": false,
+  "measured_reasoning_gain": false,
+  "novelty_established": false,
+  "supersedes_dependency_of": "research/tier8_v2/evidence/shared-role-serving-plan-01.json",
+  "dependency": {
+    "pid": 93146,
+    "create_time": 1792962551.45,
+    "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_joint_posttrain/joint03-discovery02/plan.json",
+    "plan_sha256": "ae579484b961c706a2b7478a9a130c3a54c395f9680449ee8694f55eee0ac99c",
+    "source_commit": "dc2e75e215be492243cbcc9f0b0285de98898999",
+    "status": "launched_waiting_not_completed",
+    "jobs": 8,
+    "deferred_jobs": 5,
+    "novelty_established": false,
+    "supersedes": "joint-posttrain-launch-01.json"
+  },
+  "priority_reason": "Ordinary trained critics already near crossed-family ceiling and frozen local repair pool has zero numerical rescue under4-check budget. Test known shared-base serving for stronger capacity allocation before higher-tier freeze; not a novelty claim.7B roles require real distinct separately trained artifacts, no relabelled joint SAS."
+}

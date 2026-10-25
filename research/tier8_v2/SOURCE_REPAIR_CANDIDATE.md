@@ -91,3 +91,40 @@ reported-answer and raw-execution correct/wrong/withheld. Natural training-sourc
 packets are available for development;100-report public dev remains exploratory,
 not an untouched confirmatory test. All methods carried to16/32GB must be frozen
 after8GB evidence, with failed candidates retained in the research record.
+
+
+## Offline opportunity ceiling26October2026: stop the frozen-pool NN pilot
+
+The next diagnostic reproduces the original370 candidates and all four grouping
+counts from unchanged pool/grouping source and public inputs. It seals all pools,
+first-representative groups and exact3B GGUF vocab-only prefill allocations BEFORE
+reading numerical reference answers in the analysis program. The reused24 cases
+and aggregate outcomes were already known to the researcher; this sequencing is
+not a claim of prospectively blind data selection. No generation/regeneration.
+
+| Numerical metric | Initial correct cases | Full370-candidate pool contains a correct candidate | Initially wrong cases repairable somewhere in pool | Repairable within each four-check/8192-prefill allocation |
+|---|---:|---:|---:|---:|
+| Reported-unit |11|13|2|0 for ALL four grouping controls|
+| Raw execution |9|12|3|0 for ALL four grouping controls|
+
+This is an UPPER BOUND assuming perfect selection among the representatives
+actually affordable under4096 context, four checks and8192 prefill tokens, not
+measured policy accuracy. No learned scorer can rescue an initially wrong case
+from those allocated representatives on these inputs. Do not spend NN calls on
+this unchanged pool expecting an accuracy gain. Even its unbudgeted candidate
+set offers little numerical headroom. The source-aware grouping itself contributes
+no affordable correct candidate beyond simpler grouping here.
+
+This does not rule out all one-edit repairs: the frozen proposal generator uses
+only nearby catalog alternatives and a64-case program cap, rather than exhaustive
+source substitutions. It does not include a fresh full regeneration. It diagnoses
+THIS proposal/allocation limit, not an inherent impossibility of local repair.
+Do not reorder or enlarge this pool using these oracle labels, or reinterpret
+candidate availability as financial semantic correctness. Any later proposal
+research must use the reserved fitting reports and retain strong full-regeneration
+controls. Existing quotient/pool prototype stays experimental and unadopted.
+
+[Aggregate opportunity evidence](evidence/local-repair-opportunity-01.json).
+Raw sealed pools, budgets and labelled opportunity rows remain on SSD at
+`runs/tier8_repair_opportunity/frozen-dev24-01`; retained logs identify vocab-only
+loading (no parameter inference). No actual method gain or novelty established.
