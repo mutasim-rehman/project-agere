@@ -1,0 +1,37 @@
+{
+  "status": "implemented_not_new_model_evaluated",
+  "observed_utc": "2026-10-25T22:36:42.120693+00:00",
+  "canonical_study": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-02/plan.json",
+  "canonical_study_sha256": "c9567ba02d0a8bd21b8a9e1bc6eb34b47f79adbd2d4ebcb5937dad0fa5b3ec55",
+  "training_source_weights_still_stream_verified": true,
+  "deployment_manifest_separates_large_hf_base_identities": true,
+  "new_continuation_fit": false,
+  "new_continuation_trained": false,
+  "tests": {
+    "continuation_worker": 4,
+    "trajectory_replay": 4
+  },
+  "existing_natural24_full_trace_replay": {
+    "pass": true,
+    "n": 24,
+    "reported_correct_delivered": 11,
+    "raw_correct_delivered": 9,
+    "tokenizer_only": true,
+    "nn_calls": 0,
+    "log": "/run/media/mutasim/Data/AGERE/runs/financial-trace-replay-natural24-01.log"
+  },
+  "existing_critic_application_effect_and_binding_replayed": true,
+  "critic_proof_verified_artifacts": 9,
+  "old_actor_proof03_rejected_for_old_role_metadata": true,
+  "baseline_actor_reproof04": "planned_not_run",
+  "input_sha256": {
+    "scripts/financial_trace_replay.py": "c309d4f9975abb80cbd812a1fba5643f1b73d5c8b9f6e4a15f43b8b1d28eb9d8",
+    "scripts/tier8_v2_method_analyze.py": "e32c9671afcb02ebb8f5bd6cce6138ec2bd6334fcdf02daceaefd3a04636c21c",
+    "scripts/tier8_v2_continue.py": "168e526173fd646c43454821f6cb91aba7053d5701cb286022b6f4943d5ca889",
+    "/run/media/mutasim/Data/AGERE/runs/continuation-worker-tests-02.log": "d4fea07540645475bec0055a96087edfee8ff8229bef2767dcad87df141aff68",
+    "/run/media/mutasim/Data/AGERE/runs/financial-trace-replay-tests-02.log": "c8add5b0f6c5920b3831337ee9936aeb1d65069ffdd0202ac632b43c4909c95c",
+    "/run/media/mutasim/Data/AGERE/runs/financial-trace-replay-natural24-01.log": "d768dc453bf2de2e14a28368294a5477de3bc15c2c8044fa2cfa88f98f5d0218"
+  },
+  "actual_new_qa_gain": false,
+  "novelty_established": false
+}

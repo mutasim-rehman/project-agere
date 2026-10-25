@@ -6,10 +6,25 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from tier8_v2_continue import identity, RECIPE, discovery_gate, restore_exact_adapter
+from tier8_v2_continue import identity, RECIPE, discovery_gate, restore_exact_adapter, deployment_input_hashes
 
 
 class ContinuationContract(unittest.TestCase):
+    def test_only_base_shards_leave_deployment_rehash_inputs(self):
+        for profile, base in [('3b', {'folder': '/source', 'weight_file': 'model.safetensors'}),
+                ('7b', {'folder': '/source', 'artifacts': [{'path': 'weights/source/model.safetensors'}]})]:
+            plan = {'profile': profile, 'training_base': base, 'input_sha256': {
+                '/source/model.safetensors': 'base', '/initializer/adapter_model.safetensors': 'adapter',
+                '/source/config.json': 'config', '/dataset.jsonl': 'data'}}
+            inputs, retained = deployment_input_hashes(plan)
+            self.assertEqual(retained, {'/source/model.safetensors': 'base'})
+            self.assertEqual(inputs['/initializer/adapter_model.safetensors'], 'adapter')
+            self.assertEqual(inputs['/source/config.json'], 'config')
+            self.assertEqual(plan['input_sha256']['/source/model.safetensors'], 'base')
+            del plan['input_sha256']['/source/model.safetensors']
+            with self.assertRaises(ValueError):
+                deployment_input_hashes(plan)
+
     def test_fit_identity_excludes_output_but_binds_initializer_and_optimizer(self):
         keys = ('profile', 'purpose', 'dataset_manifest', 'parity_manifest', 'initializer',
                 'recipe', 'input_sha256', 'runtime_versions', 'training_base', 'training_n', 'validation_n')

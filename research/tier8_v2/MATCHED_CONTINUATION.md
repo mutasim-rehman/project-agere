@@ -121,3 +121,15 @@ No continuation plan or worker has been launched; baseline inputs remain frozen.
 [Prepared data/audit evidence](evidence/matched-continuation-prepared-01.json).
 Raw data, manifests, source snapshots and logs stay on SSD at
 `datasets/tier8_v2_continuation/matched_01` and `runs/continuation-matched-*`.
+
+
+Deployment provenance correction before any real continuation: the monitored
+training plan/controller/worker still stream-check every HF source weight file.
+The saved manifest retains those hashes in training_base_artifact_sha256 rather
+than asking the legacy deployment input validator to read_bytes whole multi-GB
+shards. Configs, data, scripts, runtime and initializer-adapter inputs remain
+rehash-checked. Actual deployment weights are separately pinned GGUF files, not
+the NF4/BF16 training source. Four focused checks now pass. This is an allocation/
+provenance correction; no model recipe, data or method changed and no actual fit
+has run. Canonical natural evaluation preparation is now02;01 and changed-source
+snapshots are preserved as superseded, with zero study NN calls.

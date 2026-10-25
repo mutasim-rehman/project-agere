@@ -2,7 +2,7 @@
 
 Prepared before baseline discovery and continuation outcomes. This is an evaluation
 plan with zero model calls, not a positive finding. Canonical SSD plan:
-`runs/tier8_method_study/matched-natural-01/plan.json`.
+`runs/tier8_method_study/matched-natural-02/plan.json`.
 
 The existing research selection reserves52 cases/15 reports for model selection
 and49 cases/15 reports for diagnostic audit. Replayed the question-only lexical
@@ -63,3 +63,38 @@ jobs remain deferred. Revalidate full training/proofs/resources before activatio
 
 [Aggregate preparation evidence](evidence/matched-natural-evaluation-plan-01.json).
 No candidate training, natural-error gain or useful novelty is established here.
+
+
+## Trace audit and preparation-only supersession
+
+Canonical02 supersedes01 before any study NN calls. Original plan and the exact
+two changed source snapshots are preserved on SSD; the dataset, learning rate,
+method and reporting rules did not change. The correction keeps full HF source
+streaming checks in monitored training while retaining their identities separately
+from small deployment-rehashed inputs. This prevents legacy read_bytes validation
+from allocating a multi-gigabyte training shard during deployment. Proof03 of the
+baseline actor predates explicit role metadata and fails the strict identity
+check; plan02 requires a fresh proof04 of the same actual adapter instead of
+weakening the checker. Pinned deployment-model registries are now explicit inputs.
+
+The new analyzer replays actual recorded responses through the unchanged pipeline
+and recounts complete prompts with vocab-only GGUF tokenizers. It verifies all
+stages, contexts, token allowances, executions, repairs, delivery flags, both
+scores and aggregate counts; checks memory samples against the recorded peak/cap;
+and binds actual adapter handles, full epochs, common initializer/recipe, condition
+data and reversible native application proofs. Both old top-token and newer
+last-position label proofs are supported. MAS matched initial actor responses and
+work must be identical; SAS shared-policy drafting may change. Complete shared
+model-class AST identity and these replay checks are not a claim of model quality.
+
+Measured validation of this audit: all24 existing trained-critic natural cases
+replay exactly (11 reported/9 raw correct deliveries), no-repair full/prefix views
+agree, and the actual existing critic proof effect/binding replay passes. Four
+focused trajectory tests cover full repair/prefix costs, prompt/token/score
+tampering and the predeclared two-metric rule, including an unchanged metric.
+Four continuation checks cover actual tiny CPU exact restoration and retaining
+base identities without deployment shard rehash. Zero new inference calls. Full
+natural study/model results remain pending.
+
+[Trace audit](evidence/matched-policy-trace-audit-01.json) ·
+[Preserved preparation supersession](evidence/matched-natural-plan-superseded-01.json).

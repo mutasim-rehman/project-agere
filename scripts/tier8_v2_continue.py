@@ -47,6 +47,25 @@ def identity(plan):
                                 'training_base', 'training_n', 'validation_n')}
 
 
+def deployment_input_hashes(plan):
+    """Keep large training-base identities without asking inference to read them.
+
+The plan/controller/worker still STREAM-hash every source shard. The deployment
+runtime validates manifest/adapter identity; its legacy input helper read_bytes()
+must never allocate a full HF source shard under the deployment memory cap.
+"""
+    base = plan['training_base']; folder = Path(base['folder'])
+    if plan['profile'] == '3b':
+        weights = {str(folder / base['weight_file'])}
+    else:
+        weights = {str(folder / Path(row['path']).name) for row in base['artifacts']
+                   if row['path'].endswith('.safetensors')}
+    if not weights or not weights <= set(plan['input_sha256']):
+        raise ValueError('Source weight identities missing from monitored training plan')
+    return ({p: h for p, h in plan['input_sha256'].items() if p not in weights},
+            {p: plan['input_sha256'][p] for p in sorted(weights)})
+
+
 def require_fit(path, plan):
     fit_plan = json.loads((path / 'plan.json').read_text())
     state = json.loads((path / 'state.json').read_text())
@@ -211,8 +230,11 @@ def worker(plan):
     def event(state, **fields):
         with (out / 'events.jsonl').open('a') as stream:
             stream.write(json.dumps({'state': state, 'time': time.time(), **fields}) + '\n'); stream.flush()
+    deployment_inputs, source_weights = deployment_input_hashes(plan)
     write(out / 'manifest.json', {**{k: plan[k] for k in ('mode', 'profile', 'purpose', 'training_base',
-        'input_sha256', 'training_n', 'validation_n', 'source_commit', 'scope', 'initializer')},
+        'training_n', 'validation_n', 'source_commit', 'scope', 'initializer')},
+        'input_sha256': deployment_inputs, 'training_base_artifact_sha256': source_weights,
+        'training_base_hash_policy': 'All source weights stream-verified by monitored training controller/worker; their identities are retained here. Deployment validates this manifest and adapter without rereading HF source shards.',
         'lora': RECIPE['lora'], 'optimizer': RECIPE, 'seed': 42, 'task_loss_weights': weights,
         'runtime': plan['runtime_versions'], 'initializer_fit_updates_inherited': False})
     started = time.monotonic()

@@ -113,10 +113,19 @@ def prepare(out):
             'expected': part['n'], 'command': financial_command('sas', part['public_file'],
                 source, result, actor, None, ssd / 'weights/tier8_v2', part['n'], 128, 2)})
     files += list((ROOT / 'scripts').glob('*.py'))
+    files += list((ROOT / 'research/tier8_v2/evidence').glob('*models.json'))
+    files += [ROOT / 'research/tier8_v2/evidence/candidate-model-3b.json', ROOT / 'manifests/hf_snapshots.json']
     plan = {'kind': 'matched_continuation_natural_evaluation', 'status': 'prepared_not_launched',
         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'input_sha256': {str(p): sha(p) for p in files}, 'natural_report_overlap': overlap,
         'jobs': jobs, 'secondary_sas_prompt_jobs': secondary,
+        'baseline_actor_reproof': {'reason': 'Original application proof03 predates explicit drafter-purpose metadata. Reprove identical adapter under current metadata/proof source; do not weaken identity checks.',
+            'result': str(trained / 'baseline-actor-applied-proof-04'),
+            'command': list(map(str, [ROOT / '.venv/bin/python', ROOT / 'scripts/tier8_v2_adapter_proof.py',
+                '--arm', 'mas', '--purpose', 'drafter', '--adapter', actor_base,
+                '--dataset', ROOT / 'research/tier8_v2/data/deployment-sft-1024-02.jsonl',
+                '--model-path', ssd / 'weights/tier8_v2/qwen2.5-3b-instruct-q4_k_m.gguf',
+                '--out', trained / 'baseline-actor-applied-proof-04']))},
         'launch_gate': 'Frozen discovery complete; continuation ceiling rule permits training; each fitted/full adapter completes conversion and measured native application proof. Serial NN only. Do not launch nonexistent/partial adapters.',
         'primary': 'Within architecture, crossed minus current-mutation control on correct deliveries and wrong deliveries, both reported-unit and raw-execution metrics; withholding separately. Whole-policy effects, not necessarily pure-gate effects.',
         'policy': 'Identical reference/compact/question-unit grammar, direct0-analysis0-demos, binary review, one full regeneration after rejection. Generated ledger2048; per-call768/192/768/192; actual prefill/decode/time/RSS reported. Existing full-retry policy, no new mechanism.',

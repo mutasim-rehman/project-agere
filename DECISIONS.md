@@ -2562,3 +2562,38 @@ those flags and verify guards reach adapter validation. Original live queue and
 plans remain untouched; all five development jobs still deferred. Full raw plan,
 corrected command artifact and test logs stay on authorized SSD. No new quality
 or novelty outcome from this preparation; goal remains active.
+
+
+### 2026-10-26 — full trajectory audit and bounded deployment provenance
+
+Previous turn was progress: natural research runner/plan and actual source/packet
+and parser checks, committed/pushed6a2ff2c. This turn revalidates both live controller
+identities and frozen inputs before independent CPU-only analysis. Implement a
+recorded-response model substitute and replay the SAME financial pipeline, with
+exact GGUF vocab-only prompt counting and no generation. All24 existing trained-
+critic natural traces reproduce prompts, budgets, execution, review, delivery and
+both numerical scores;11 reported/9 raw correct deliveries, no-repair full/prefix
+views equal. New4-call repair/prefix-cost tests and tampered prompt/token/score
+rejections pass. Pure two-metric rule permits one unchanged metric if the other
+improves and neither regresses; reject conflicting directions, no selected lambda.
+General within-architecture analyzer verifies recorded handles, code/data/model
+identities, native application-effect math, full epoch counts/finite validation,
+actual condition corpora/common initializer/recipe and memory sample peak/cap.
+MAS actor responses/work must match; SAS shared adaptation can change drafting.
+No raw/gate-only comparison is passed off as an identical-candidate study.
+
+Found a potential allocation problem before any actual continuation: legacy
+adapter-runtime sha uses read_bytes, whereas the new plan included full HF source
+shards. Keep their STREAM checks in monitored controller/worker and retain source
+weight digests as explicit manifest training_base_artifact_sha256, outside the
+legacy small deployment-input rehash dictionary. Do not edit frozen runtime.
+Configs/data/source/init adapters stay rehash-bound; deployed GGUF is separately
+pinned.4 continuation checks pass including actual tiny CPU restoration. No full
+model feasibility/quality claim. New plan02 supersedes preparation01; preserve01,
+its exact2 changed source snapshots and supersession evidence. No data/LR/method
+change or study NN calls. Pin model registries explicitly in02. Older actor proof03
+fails exact current role metadata (missing purpose); preserve that diagnostic and
+require new current-source proof04 of SAME checkpoint, not permissive matching.
+Actual existing critic proof effect/binding replays successfully. Real new adapter
+fits, epochs, application proofs and natural utility remain pending; no useful
+novelty established, goal active. No extra optional feature development now.

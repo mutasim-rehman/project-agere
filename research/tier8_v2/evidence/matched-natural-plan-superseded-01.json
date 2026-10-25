@@ -1,0 +1,24 @@
+{
+  "status": "superseded_preparation_only",
+  "old_plan": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-01/plan.json",
+  "old_plan_sha256": "3a01ef2538db91583e691228e0d1fe93820823e3b5cb2653e78443a9d5d3a2eb",
+  "new_plan": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-02/plan.json",
+  "new_plan_sha256": "c9567ba02d0a8bd21b8a9e1bc6eb34b47f79adbd2d4ebcb5937dad0fa5b3ec55",
+  "changed_inputs": [
+    {
+      "path": "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_method_plan.py",
+      "original_sha256": "6e807968f835b9463683bd2268390b6516dc5eb9581a7d0fad20bbaa44ad3344",
+      "source_snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-01/input-source-snapshots/tier8_v2_method_plan.py",
+      "current_sha256": "0c2bb4dda1c966e9147344e2b1b315ac8c84b8172d14cc20c98e377281da0732"
+    },
+    {
+      "path": "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_continue.py",
+      "original_sha256": "8a470590719beb0c5d984eeed11ea80fe3f127dade1e04e11b30af51fcb51052",
+      "source_snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-01/input-source-snapshots/tier8_v2_continue.py",
+      "current_sha256": "168e526173fd646c43454821f6cb91aba7053d5701cb286022b6f4943d5ca889"
+    }
+  ],
+  "reason": "Avoid deployment read_bytes allocation of large HF source shards while retaining monitored streaming training checks and saved base identities; add current-metadata baseline actor reproof and explicit pinned model registries. No method/data/LR/outcome selection change. No study NN jobs launched.",
+  "original_plan_and_source_snapshots_preserved": true,
+  "model_calls": 0
+}
