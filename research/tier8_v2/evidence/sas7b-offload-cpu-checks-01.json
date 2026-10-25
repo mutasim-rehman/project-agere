@@ -44,5 +44,12 @@
     "Checkpointed all-linear tiny Qwen BF16 loss/adapter gradients match standard causal loss with unchanged tolerance",
     "4099-vocabulary BF16 gradient checks over many blocks plus previous FP64 finite differences/two-update tiny model test"
   ],
-  "limits": "CPU tests only; no full7B loading, CUDA transfer/backward, host/GPU fit, full epoch, adapter deployment, QA gain or novelty established. Ten inference-runtime skips are exercised in the15 targeted training-runtime tests. Training host budget is separate from8GB deployment."
+  "limits": "CPU tests only; no full7B loading, CUDA transfer/backward, host/GPU fit, full epoch, adapter deployment, QA gain or novelty established. Ten inference-runtime skips are exercised in the15 targeted training-runtime tests. Training host budget is separate from8GB deployment.",
+  "final_source_repeat": {
+    "log": "/run/media/mutasim/Data/AGERE/runs/sas-offload-gate-training-tests-05.log",
+    "sha256": "6005c95b5281f57c30a2a01c1927b611863c41e903ab206cb05d68d9192e263f",
+    "tests": 8,
+    "source_commit": "21be70333469c57a925c2c67808c6c1d554e5c1a",
+    "reason": "Repeat gate/integration tests after final runtime-version binding; prepare and actual waiting-controller startup also passed on this committed source."
+  }
 }
