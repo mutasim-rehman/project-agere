@@ -14,6 +14,11 @@ from tier8_v2_run import Models, model_files
 
 
 class AdapterRuntimeTests(unittest.TestCase):
+    def test_critic_purpose_cannot_silently_become_drafter(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / ".local") as temp:
+            folder = Path(temp); (folder / "manifest.json").write_text(json.dumps({"purpose": "critic"}))
+            with self.assertRaisesRegex(ValueError, "critic adapter"):
+                runtime.load_adapter(str(folder), "mas", "3b-q4")
     def test_fit_and_wrong_checkpoint_cannot_be_primary_systems(self):
         with tempfile.TemporaryDirectory(dir=ROOT / ".local") as temp:
             folder = Path(temp);(folder / "converted").mkdir()

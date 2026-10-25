@@ -14,6 +14,7 @@ import random
 import time
 
 from supervised_logits import supervised_window
+from tier8_artifact_paths import artifact_path
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -40,7 +41,9 @@ def encode_example(tokenizer, row, profile):
 
 def guard_no_inference():
     import psutil
-    names = {"tier8_v2_run.py", "tier8_v2_replay.py", "tier8_v2_adapt.py"}
+    names = {"tier8_v2_run.py", "tier8_v2_replay.py", "tier8_v2_adapt.py",
+             "tier8_external_eval.py", "tier8_external_recover.py", "tier8_v2_critic_probe.py",
+             "tier8_study.py", "phase3.py", "eval_checkpoints.py", "tier8_v2_adapter_proof.py"}
     for process in psutil.process_iter(["pid", "cmdline"]):
         if process.pid != os.getpid() and any(Path(x).name in names for x in (process.info["cmdline"] or [])):
             raise ValueError(f"Another inference/training process is active: {process.pid}")
@@ -56,11 +59,22 @@ def main():
     parser.add_argument("--profile", choices=("3b", "7b"), default="3b")
     parser.add_argument("--mode", choices=("fit", "train"), required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--purpose", choices=("drafter", "critic"), default="drafter")
+    parser.add_argument("--dataset-manifest")
+    parser.add_argument("--parity-manifest")
     args = parser.parse_args()
-    out = (ROOT / args.out).resolve()
-    if not out.is_relative_to(ROOT) or out.exists():
-        raise ValueError("Require a new output directory inside the project")
+    out = artifact_path(args.out)
+    if out.exists():
+        raise ValueError("Require a new output directory")
+    if args.purpose == "critic" and (args.profile != "3b" or not args.dataset_manifest or not args.parity_manifest):
+        raise ValueError("Critic requires explicit dataset/parity manifests and supported 3B profile")
     guard_no_inference()
+    artifact_lock = None
+    if os.environ.get("AGERE_SSD_ROOT"):
+        import fcntl
+        lock_path = artifact_path(Path(os.environ["AGERE_SSD_ROOT"]) / "runs/tier8_external.lock")
+        artifact_lock = lock_path.open("a")
+        fcntl.flock(artifact_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     for key, value in {"HF_HOME": ".local/hf-training", "HF_HUB_CACHE": ".local/hf-training/hub",
                        "TRITON_CACHE_DIR": ".local/triton-cache", "CUDA_CACHE_PATH": ".local/cuda-cache",
                        "TORCHINDUCTOR_CACHE_DIR": ".local/torchinductor-cache", "TMPDIR": ".local/tmp"}.items():
@@ -81,14 +95,16 @@ def main():
     torch.manual_seed(42)
     torch.cuda.manual_seed_all(42)
     base = ROOT / "research/tier8_v2"
-    parity_path = base / "evidence/hf-tokenizer-parity-02.json"
+    parity_path = artifact_path(args.parity_manifest) if args.parity_manifest else base / "evidence/hf-tokenizer-parity-02.json"
     parity = json.loads(parity_path.read_text())
     if not parity["pass"] or parity["transformers_version"] != transformers.__version__:
         raise ValueError("Successful parity under the current tokenizer runtime required")
-    data_manifest_path = base / "evidence/deployment-sft-1024-02.json"
+    data_manifest_path = artifact_path(args.dataset_manifest) if args.dataset_manifest else base / "evidence/deployment-sft-1024-02.json"
     data_manifest = json.loads(data_manifest_path.read_text())
-    data_path = (ROOT / data_manifest["output_file"]).resolve()
-    if not data_path.is_relative_to(ROOT) or sha(data_path) != data_manifest["output_sha256"] or sha(data_path) != parity["dataset_sha256"]:
+    if data_manifest.get("purpose", "drafter") != args.purpose:
+        raise ValueError("Training role differs from dataset purpose")
+    data_path = artifact_path(data_manifest["output_file"])
+    if sha(data_path) != data_manifest["output_sha256"] or sha(data_path) != parity["dataset_sha256"] or sha(data_manifest_path) != parity["dataset_manifest_sha256"]:
         raise ValueError("Training corpus identity differs")
     training_base_path = base / "evidence" / f"training-base-{args.profile}-01.json"
     training_base = json.loads(training_base_path.read_text())
@@ -108,15 +124,17 @@ def main():
     examples = [encode_example(tokenizer, row, profile) for row in rows]
     training = [r for r in examples if r["split"] == "train"]
     validation = [r for r in examples if r["split"] == "validation"]
-    if len(training) != 661 or len(validation) != 100:
+    expected_counts = ((data_manifest["training_n"], data_manifest["validation_n"])
+                       if args.purpose == "critic" else (661, 100))
+    if (len(training), len(validation)) != expected_counts or min(expected_counts) <= 0:
         raise ValueError("Training corpus/split changed")
     out.mkdir(parents=True)
     def event(state, **fields):
         with (out / "events.jsonl").open("a") as stream:
             stream.write(json.dumps({"state": state, "time": time.time(), **fields}) + "\n")
             stream.flush()
-    manifest = {"mode": args.mode, "profile": args.profile, "seed": 42,
-        "input_sha256": {str(p.relative_to(ROOT)): sha(p) for p in
+    manifest = {"mode": args.mode, "profile": args.profile, "purpose": args.purpose, "seed": 42,
+        "input_sha256": {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p): sha(p) for p in
                          (parity_path, data_manifest_path, data_path, training_base_path)},
         "script_sha256": sha(Path(__file__)), "training_base": training_base,
         "lora": {"r": 8, "lora_alpha": 16, "lora_dropout": .05, "target_modules": "all-linear"},
@@ -127,6 +145,7 @@ def main():
         "training_n": len(training), "validation_n": len(validation),
         "loss_policy": "Complete input; logits/shifted labels only for last prefix position plus all supervised target tokens",
         "loss_helper_sha256": sha(ROOT / "scripts/supervised_logits.py"),
+        "artifact_path_resolver_sha256": sha(ROOT / "scripts/tier8_artifact_paths.py"),
         "cuda_allocator_policy": os.environ["PYTORCH_CUDA_ALLOC_CONF"],
         "scope": "Adaptation baseline; training resource use is separate from the 8 GB deployment study. No novelty claim."}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")

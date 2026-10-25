@@ -9,10 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def inside(value):
-    path = (ROOT / value).resolve()
-    if not path.is_relative_to(ROOT):
-        raise ValueError("Adapter path outside repository")
-    return path
+    from tier8_artifact_paths import artifact_path
+    return artifact_path(ROOT / value)
 
 
 def sha(path):
@@ -26,6 +24,8 @@ def load_adapter(directory, arm, drafter_model):
         raise ValueError("Adapter profile requires SAS 7B or MAS 3B Q4 drafter")
     converted = inside(directory) / "manifest.json"
     info = json.loads(converted.read_text())
+    if info.get("purpose", "drafter") != "drafter":
+        raise ValueError("A critic adapter cannot be loaded as a drafter")
     if info["status"] != "complete" or info["training_mode"] != "train" or info["diagnostic_only"]:
         raise ValueError("Require full trained adapter; fit diagnostics are not QA systems")
     if info["profile"] != expected or info["tensor_count"] <= 0:
@@ -35,16 +35,18 @@ def load_adapter(directory, arm, drafter_model):
             raise ValueError("Converted adapter provenance changed")
     run = inside(info["run"])
     training, summary, _ = validate_adapter(run)
+    if training.get("purpose", "drafter") != info.get("purpose", "drafter"):
+        raise ValueError("Adapter training purpose differs from conversion metadata")
     if training["mode"] != "train" or training["profile"] != expected:
         raise ValueError("Adapter training provenance/profile differs")
     for name in ("manifest.json", "summary.json"):
-        relative = str((run / name).relative_to(ROOT))
+        relative = str((run / name).relative_to(ROOT)) if run.is_relative_to(ROOT) else str(run / name)
         if info["input_sha256"].get(relative) != sha(run / name):
             raise ValueError("Conversion does not bind this training run")
     path = inside(info["file"])
     if path.stat().st_size != info["bytes"] or sha(path) != info["sha256"]:
         raise ValueError("Converted adapter file integrity differs")
-    return {"role": role, "profile": expected, "file": str(path.relative_to(ROOT)),
-            "sha256": info["sha256"], "scale": 1.0, "training_run": str(run.relative_to(ROOT)),
-            "conversion_manifest": str(converted.relative_to(ROOT)), "conversion_manifest_sha256": sha(converted),
+    return {"role": role, "profile": expected, "file": str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path),
+            "sha256": info["sha256"], "scale": 1.0, "training_run": str(run.relative_to(ROOT)) if run.is_relative_to(ROOT) else str(run),
+            "conversion_manifest": str(converted.relative_to(ROOT)) if converted.is_relative_to(ROOT) else str(converted), "conversion_manifest_sha256": sha(converted),
             "optimizer_updates": summary["optimizer_updates"]}

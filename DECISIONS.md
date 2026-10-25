@@ -1613,3 +1613,23 @@ claimed from that run. Its directory/log are preserved on SSD. Use explicit
 get(cell_role)==data for operand-substitution pools; text-only examples may still
 supply operation mutations. Added a regression fixture for mixed catalogs.
 Start a new corpus ID02 rather than overwriting failed evidence.
+
+## 2026-10-25 — Explicit role training and authorized SSD artifacts
+
+Extend existing QLoRA trainer with explicit purpose/dataset/parity manifests while
+preserving legacy drafter defaults and661/100 split requirements. Critic mode is
+supported only for3B with explicit manifests, verified matching dataset purpose,
+full token-ID parity and declared split counts. Fit remains2 actual optimizer
+updates on the longest fitting train sequence; training remains one epoch with
+existing optimizer/memory/logit-window policy. Training loss is not QA evidence.
+
+Training/conversion artifacts may resolve only inside repo or the configured
+mounted AGERE SSD with expected datasets/weights directories; resolve symlinks
+before access. New data/model products stay SSD. Preserve repository-relative
+legacy manifests; use absolute SSD references where required. Explicitly record
+purpose through conversion, and refuse critic adapters in the drafter loader.
+Runtime also compares purpose against the bound training manifest. No trained
+critic is inferred from this interface change. Acquire the same SSD workload lock
+and reject overlap with CPU runs/proofs before any model work. Training resources
+remain separate from the8GB deployment cap.191 tests passed including path escape,
+missing-SSD-marker and wrong-role rejection tests. No novelty claim.

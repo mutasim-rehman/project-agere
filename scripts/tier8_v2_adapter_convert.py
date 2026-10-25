@@ -22,10 +22,8 @@ def sha(path):
 
 
 def inside(path):
-    path = (ROOT / path).resolve()
-    if not path.is_relative_to(ROOT):
-        raise ValueError("Path outside repository")
-    return path
+    from tier8_artifact_paths import artifact_path
+    return artifact_path(ROOT / path)
 
 
 def check_architecture(training, deployment):
@@ -104,10 +102,11 @@ def main():
             raise ValueError("Unexpected or unpaired adapter tensor")
     report = {"status": "complete", "training_mode": manifest["mode"],
               "diagnostic_only": manifest["mode"] == "fit", "profile": manifest["profile"],
-              "run": str(run.relative_to(ROOT)), "command": command,
-              "input_sha256": {str(p.relative_to(ROOT)): sha(p) for p in
+              "purpose": manifest.get("purpose", "drafter"),
+              "run": str(run.relative_to(ROOT)) if run.is_relative_to(ROOT) else str(run), "command": command,
+              "input_sha256": {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p): sha(p) for p in
                     (run / "manifest.json", run / "summary.json", source_manifest_path, model_config_path, training_config)},
-              "script_sha256": sha(Path(__file__)), "file": str(target.relative_to(ROOT)), "sha256": sha(target),
+              "script_sha256": sha(Path(__file__)), "file": str(target.relative_to(ROOT)) if target.is_relative_to(ROOT) else str(target), "sha256": sha(target),
               "bytes": target.stat().st_size, "tensor_count": len(tensors), "outtype": "f16",
               "runtime_adapter_applied": False, "measured_reasoning_gain": False}
     (out / "manifest.json").write_text(json.dumps(report, indent=2) + "\n")
