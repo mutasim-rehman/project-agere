@@ -2661,8 +2661,7 @@ probe, with extended baseline training/conversion/proof/probe still ahead.
 
 Original3B critic probe completes30/32 exact labels,6/8 whole quartets,15/16
 positive accepts and1/16 false accepts; all parsed/no truncation,14/16 correct
-question-switch pairs. Replayed318? memory count recorded in aggregate (do not
-infer from this note); actual sampled critic-only peak2.490GB,27814 prefill/224
+question-switch pairs. Replayed1453 memory samples; actual sampled critic-only peak2.490GB,27814 prefill/224
 generated tokens,294.97 recorded inference seconds. This is NOT full MAS RSS or
 an architecture efficiency estimate. SAS and original MAS false-accept IDs differ;
 do not manufacture a common-error claim. Both ordinary trained baselines are

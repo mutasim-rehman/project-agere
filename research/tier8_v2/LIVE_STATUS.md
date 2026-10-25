@@ -1,12 +1,12 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 04:34 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 04:41 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
 | SAS7B full joint adaptation |**Complete:476 updates,3801 training examples,482 validation examples** |
-| Training resources |Worker about4.07GB, complete tree about8.33GB including12 compiler workers;10.5GB training cap |
-| Discovery-first continuation |**Running deployment proof/probes** after completed SAS conversion |
+| Training resources |Completed SAS sampled peak8.339GB under10.5GB training cap; deployment probes separately below6.4GB |
+| Discovery-first continuation |**Extended3B critic training running**; SAS/original MAS probes complete; extended proof/probe pending |
 | Fixed probe |**SAS complete:31/32 labels,7/8 whole quartets**; original MAS30/32 and6/8; extended critic training running |
 | Crossed curriculum |403 audited quartets/1612 rows;1416 train,196 validation; both tokenizer parity and source/execution/prompt replay pass |
 | Useful novelty |Not established; no new quartet-trained model or quality gain yet |
