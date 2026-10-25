@@ -80,3 +80,9 @@ and plain critic have separate resident instances despite the same base file.
 The next actual trial measures fit and delivery changes over all 24 cases and
 checks draft identity against the completed 0.5B-critic condition. No new inference
 has been launched at this exact source checkpoint.
+
+Live verifier trial: data/verifier3b-sequence-01.json, 73 frozen inputs; session
+68919, controller PID 312283, monitor 312285, worker 312318. Four persisted cases
+were observed with 4.818 GB sampled peak so far; quality remains unassessed until
+all 24 finish. Launch evidence: evidence/verifier3b-launch-01.json. Do not duplicate
+or restart on observation timeout; keep its code/data frozen until terminal.

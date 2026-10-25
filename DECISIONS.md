@@ -2,6 +2,20 @@
 
 ## Continuation — 25 October 2026
 
+### Larger-verifier trial is live under the declared cap
+
+- Launched verifier3b-sequence-01 after its source/plan commits were pushed. Exec
+  session 68919; controller PID 312283, monitor 312285, worker 312318, verified live.
+  Four complete case records and peak sampled RSS 4,817,920,000 bytes were present
+  at observation. This is a partial resource check, not a final fit/quality result.
+- Seventy-three inputs remain frozen. The trial retains all 24 cases and the same
+  trained drafter; no partial quality result has selected a condition. Evaluate
+  draft identity and delivery changes only after complete terminal output.
+- Beyond this trial, literal/program-format controls, stronger SAS adaptation,
+  broader report-disjoint evaluation and an original useful mechanism remain open.
+  Improvement over the all-abstaining matched control alone is not publication
+  evidence. The present useful gain is from established supervised adaptation.
+
 ### Larger quantized verifier allocation control implemented
 
 - Added an explicit 3B Q4 verifier choice, using the already hash-pinned candidate
