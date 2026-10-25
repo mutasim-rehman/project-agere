@@ -35,7 +35,7 @@ def load_policy():
                              'bnb_4bit_use_double_quant': True,
                              'llm_int8_enable_fp32_cpu_offload': True},
             'projection_dtype': 'bfloat16', 'vocabulary_block_size': 1024,
-            'checkpoint_cpu_storage': 'clone CPU embedding/head on leaf assignment, avoiding retained checkpoint mmap ownership',
+            'checkpoint_cpu_storage': 'clone non-resizable borrowed CPU storage on leaf assignment; retain already-owned dtype-converted tensors',
             'cpu_matrices': 'Detach Accelerate offload hooks; CPU embedding lookup, explicit inputs_embeds transfer; streamed CPU frozen head',
             'lora': {'r': 8, 'lora_alpha': 16, 'lora_dropout': .05,
                      'target_modules': 'all-linear'}}
@@ -212,7 +212,9 @@ def worker(plan):
                   [model.get_input_embeddings(), model.get_output_embeddings()]]
         if counts != [1, 1]:
             raise ValueError('CPU checkpoint-storage hooks did not run exactly once')
-        event('cpu_checkpoint_storage_detached', counts=counts)
+        event('cpu_checkpoint_storage_detached', counts=counts,
+              clones=[getattr(m, '_cpu_storage_clone_count', 0) for m in
+                      [model.get_input_embeddings(), model.get_output_embeddings()]])
         restore_cpu_matrices(model)
         model.config.use_cache = False
         model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True,

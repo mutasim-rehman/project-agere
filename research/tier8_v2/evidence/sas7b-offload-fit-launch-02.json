@@ -1,0 +1,9 @@
+{
+  "pid": 87336,
+  "create_time": 1792954735.14,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-02/plan.json",
+  "plan_sha256": "a15a0d25a76678fdbe73d0ee308d30140946ab826076933fddcb6d8f8b453bdd",
+  "source_commit": "d2ae51236f9f6437dd0db9591b7a8bd784de7108",
+  "created_utc": "2026-10-25T18:58:55.154776+00:00",
+  "scope": "One revised actual fit after storage fix; same limits, no full epoch or quality claim."
+}

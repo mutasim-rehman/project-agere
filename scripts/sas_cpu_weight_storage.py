@@ -11,7 +11,12 @@ def detach_cpu_storage(module, incompatible_keys):
     if weight.device.type == 'cpu':
         if not weight.is_floating_point():
             raise ValueError('Expected unquantized CPU embedding/head')
-        weight.data = weight.detach().clone()
+        # safetensors/frombuffer storage is not resizable. Dtype-converted CPU
+        # tensors already have owned resizable storage; copying those again can
+        # double a multi-GB head's loading peak without releasing any mmap.
+        if not weight.untyped_storage().resizable():
+            weight.data = weight.detach().clone()
+            module._cpu_storage_clone_count = getattr(module, '_cpu_storage_clone_count', 0) + 1
         module._cpu_storage_detach_count = getattr(module, '_cpu_storage_detach_count', 0) + 1
 
 

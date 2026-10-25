@@ -2163,3 +2163,15 @@ unproven. Preserve old failed source snapshot/run. Same10.5GB RSS cap,1GB reserv
 9GB headroom and full sequence/targets. Add USS/PSS diagnostics without replacing
 RSS enforcement. Prepare now accepts a missing dependency PID only when all its
 frozen jobs and external outputs demonstrably completed. No blind restart.
+
+## 2026-10-26 — Refine CPU storage hook after measured second fit failure
+
+Fit02 reached fourth shard but was stopped at10.582GB RSS under unchanged10.5GB
+cap; USS6.083GB/PSS6.196GB, host available9.374GB. No optimizer update. Preserve
+raw run and exact driver/loader source snapshots. This is progress in diagnosis,
+not a successful fit. The unconditional copy also cloned already-owned FP32 tensors.
+Use non-resizable storage as borrowed-buffer indicator; clone only those CPU
+matrices and retain owned dtype-converted storage. Real safetensors CPU unit test
+confirms mapped storage non-resizable, float conversion owned/resizable. Distinct-
+storage/value preservation and no-redundant-copy tests pass. Keep same cap/context/
+targets; next attempt is a new explicitly revised plan03, not restarting01/02.

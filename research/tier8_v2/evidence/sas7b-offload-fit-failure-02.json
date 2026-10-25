@@ -1,0 +1,22 @@
+{
+  "status": "stopped_loading_fourth_shard",
+  "controller_state": {
+    "state": "failed",
+    "time": 1792954806.1525958,
+    "error": "RuntimeError('Offload fit failed; preserve evidence, no retry')"
+  },
+  "last_sample": {
+    "time": 1792954805.6695933,
+    "tree_rss_bytes": 10582470656,
+    "worker_uss_bytes": 6083072000,
+    "worker_pss_bytes": 6195554304,
+    "host_available_bytes": 9374130176
+  },
+  "peak_tree_rss_bytes": 10582470656,
+  "updates": 0,
+  "source_snapshots": [
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-02/sas_cpu_weight_storage.py.snapshot",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-02/tier8_v2_sas_offload_fit.py.snapshot"
+  ],
+  "scope": "Storage detachment alone improved shard progress but did not meet unchanged10.5GB RSS training cap. Private memory near6.1GB; no full7B fit or quality claim."
+}
