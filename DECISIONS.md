@@ -1781,3 +1781,12 @@ hash/memory gate stops later stages. All artifacts remain on SSD. Offline paired
 and unit-audit tools now accept authorized SSD paths without rescoring raw records.
 209 tests pass before queue freeze, including incomplete epoch, changed source,
 changed actor draft/prompt and always-accept-vs-pair-discrimination controls.
+
+## 2026-10-25 — Pre-launch queue freeze audit tightened
+
+First plan01 was prepared but NOT launched. Pre-launch inspection found that
+explicit converter/tokenizer metadata and two imported FinQA/data helpers should
+also be frozen. Add them and the training-base config files, and reverify actual
+training base/config hashes after the epoch before conversion. Keep plan01 as
+superseded evidence; build a new plan02 rather than silently replacing it. No
+model output or active training input is changed. No automatic retry is involved.

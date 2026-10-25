@@ -46,6 +46,10 @@ def require_training(directory):
         if sha(artifact_path(name))!=digest:raise ValueError('Training input changed')
     for name,digest in s['adapter_files'].items():
         if Path(name).name!=name or sha(root/'adapter'/name)!=digest:raise ValueError('Trained adapter changed')
+    base=m['training_base'];folder=artifact_path(base['folder'])
+    if sha(folder/base['weight_file'])!=base['sha256']:raise ValueError('Training base changed')
+    for item in base['config_files']:
+        if sha(folder/item['file'])!=item['sha256']:raise ValueError('Training configuration changed')
     return s
 
 def natural_pair(left,right):
