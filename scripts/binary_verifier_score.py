@@ -45,6 +45,8 @@ class VerificationBudget:
 def score(model, rendered_prompt, budget, *, context):
     if model._logits_all:
         raise ValueError('Require last-position-only logits allocation')
+    if context != model.n_ctx():
+        raise ValueError('Context differs from actual loaded model')
     prompt = rendered_prompt + PREFIX
     tokens = completion_tokens(model, prompt)
     label_ids = {}

@@ -2262,3 +2262,23 @@ hypothesis. Do not center paper on implemented feature without useful actual gai
 or alter pool to manufacture savings. Keep as diagnostic/strong-control candidate;
 small natural-source development pilot needed before100-case expansion. Numeric
 collisions are ambiguity, not proof of financial errors. Research novelty unproven.
+
+## 2026-10-26 — Compact fit passes; full SAS epoch advances; compiler RSS identified
+
+Compact joint fit03 completes2 updates,392 changed tensors,8.490GB complete-tree
+peak. Full compact train03 now has actual optimizer updates; record progressive
+checkpoint without marking epoch complete. Per-process trace identifies a Torch
+Inductor compile-worker controller plus12 compiler workers, around300MB RSS each;
+whole-tree cap must include them. This explains an additional transient footprint
+absent from worker-only figures; do not attribute all previous breaches solely to
+matrix storage. Do not change live worker environment or frozen sources. Tiny CPU
+checks prove retained values/lookup/head loss/gradient only; actual7B runs show
+small gradient differences, so no bitwise end-to-end training equivalence claim.
+
+Prepare low-memory reversible SAS adapter proof using actual last-label logits;
+legacy all-position4096*vocab logits allocation would add about2.5GB. Require full
+epoch counts, finite validation, exact pinned GGUF hashes, actual C adapter handle,
+0→1→0 conditional-label effect, repeat-zero stability and complete-tree6.4GB cap.
+This is feasibility/provenance, not QA or proof of parity with greedy JSON output.
+Copy existing pinned split7B GGUFs to authorized SSD with byte hashes and preserve
+original files. No new download, quantization or source model change.

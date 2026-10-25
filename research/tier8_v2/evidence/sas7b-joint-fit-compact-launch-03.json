@@ -1,0 +1,9 @@
+{
+  "pid": 89725,
+  "create_time": 1792957875.53,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-fit-compact-03/plan.json",
+  "plan_sha256": "e4e5216d401d8e9a776746f52e27bce48c298c9ada7b18fede139fd5eef06dd4",
+  "source_commit": "5d1d5d8fbdbefe6fc4f1e3dde6f6954339575cd7",
+  "status": "launched_not_completed",
+  "measured_reasoning_gain": false
+}

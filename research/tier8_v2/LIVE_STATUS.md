@@ -1,37 +1,43 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 00:53 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 00:59 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
-| External baseline queue | Complete: 380 case–arm evaluations; Mortar SAS39/90, MAS26/90; FRAMES2/100,1/100 |
-| SAS7B joint fit | Complete:2 actual updates,392 changed tensors;10.295GB tree RSS under unchanged10.5GB training cap |
-| SAS7B full joint adaptation | Second full run stopped during preparation at10.563GB RSS;0 updates; compact CPU storage fit prepared |
-| Shared SAS training exposure | Same drafting and extended verification examples as corresponding MAS adapters; fixed equal task-loss mass |
+| External baseline queue | Complete:380 case–arm evaluations; Mortar SAS39/90,MAS26/90; FRAMES2/100,1/100 |
+| SAS7B compact joint fit | Complete:2 actual updates,392 changed tensors;8.490GB tree RSS under10.5GB training cap |
+| SAS7B full joint adaptation | **Running:12/476 updates**,96/3801 examples;482 validation pending |
+| Training memory | Latest worker about4.07GB; whole tree about8.33GB including compiler workers |
 | Extended MAS critic | Dataset/parity/audit ready; training pending serial GPU availability |
-| Novel repair mechanism | Development/strong-control design underway; no measured gain yet |
-| Novelty | No demonstrated useful original method yet |
+| Source-aware repair controls | Implemented;17 CPU checks pass; actual NN scorer/repair pilot pending |
+| First redundancy diagnostic |370 candidates→368 source-symbolic classes; weak evidence for useful call savings |
+| Novelty |No demonstrated useful original method yet |
 
-Full SAS adaptation still requires a reliable loading fit and is expected to take several hours. The joint fit includes the
-longest input and longest supervised target; its RSS was close to the10.5GB cap.
-Do not turn a successful short fit or lower training loss into an accuracy claim.
-Runtime deployment still has a separate6.4GB process-tree limit.
+The successful full run has progressed beyond the two preserved failed full
+attempts, both0 updates. One failed during loading10.532GB; pread loading fixed
+that stage but the next stopped during preparation10.563GB. Current compact frozen
+CPU storage keeps BF16 weights, FP32 embedding lookup results and the existing
+BF16 streamed head projection. Tiny CPU loss/gradient preservation checks pass;
+actual7B training or QA equivalence is not asserted. New per-process traces show
+Torch Inductor launching12 compiler workers; their RSS counts in the cap.
 
-Earlier matched24-case FinQA evidence: trained MAS critic delivered11 correct,
-4 wrong,9 withheld versus plain3,0,21 (reported metric); raw9,6,9 versus2,1,21.
-This is a coverage–risk tradeoff. Best old SAS13,5,6 had different adaptation;
-matched shared SAS training is now addressing that baseline weakness.
+Full adaptation is provisionally several hours, followed by conversion, reversible
+application proof and actual QA. Training loss is not a QA result. Deployment has
+a separate6.4GB complete-tree cap. No overlapping NN model workloads.
+
+Earlier matched24-case FinQA: trained MAS critic delivered11 correct,4 wrong,
+9 withheld versus plain3,0,21 (reported metric); raw9,6,9 versus2,1,21. This remains
+a coverage–risk tradeoff. Best old SAS13,5,6 had different adaptation. Shared SAS
+training now uses the same drafting and extended verification examples as the MAS
+role adapters, with fixed equal task-loss mass; this is baseline strengthening.
+
+[Training checkpoint](evidence/sas7b-joint-train-progress-01.json) ·
+[Training launch](evidence/sas7b-joint-train-compact-launch-03.json) ·
+[Repair candidate and weak early diagnostic](SOURCE_REPAIR_CANDIDATE.md) ·
+[External audit](evidence/external-baselines-completed-01.json) ·
+[Cross-tier freeze](FEATURE_FREEZE.md).
 
 The100-report development packets and174 natural-training packets remain
-uninferred. Current research window ends approximately26October11:54PKT.
-Before16/32GB, freeze common methods, prompts, repair/acceptance/scoring and
-ablations. No new method may be introduced only at a later tier.
-
-[Joint fit evidence](evidence/sas7b-joint-fit-completed-01.json) ·
-[Full training launch](evidence/sas7b-joint-train-launch-01.json) ·
-[External audit](evidence/external-baselines-completed-01.json) ·
-[Feature freeze](FEATURE_FREEZE.md).
-
-Raw weights, datasets and traces stay on the authorized SSD. Full goal remains active.
-
-Pread fit passed at5.936GB, but full preparation did not. New compact CPU storage keeps exact BF16 weights and FP32 lookup results; CPU value/loss/gradient checks pass. Actual new fit still pending.
+uninferred. Window ends approximately26October11:54PKT. Common methods must be
+validated/frozen at8GB before16/32GB. Code and aggregate evidence are committed;
+raw weights/datasets/traces stay on the authorized SSD. Goal remains active.

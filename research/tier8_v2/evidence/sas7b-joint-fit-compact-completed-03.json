@@ -1,0 +1,32 @@
+{
+  "state": {
+    "state": "complete",
+    "time": 1792957952.6149435,
+    "peak_tree_rss_bytes": 8490201088,
+    "fit_only": true,
+    "measured_reasoning_gain": false
+  },
+  "summary": {
+    "status": "complete",
+    "mode": "fit",
+    "optimizer_updates": 2,
+    "examples_processed": 2,
+    "changed_adapter_tensors": 392,
+    "trainable_parameters": 20185088,
+    "last_training_loss": 0.764885997425049,
+    "validation_teacher_forced_loss": null,
+    "validation_teacher_forced_loss_by_task": {},
+    "wall_seconds": 39.2152675049947,
+    "gpu_peak_allocated": 4521421312,
+    "gpu_peak_reserved": 4942987264,
+    "adapter_files": {
+      "adapter_config.json": "65f9b80022456012431bf5aec9d6b04da656ba699fe6d227380320abf5789f29",
+      "adapter_model.safetensors": "28e869a544f0f33dd0a75dfe287956335a5e42490cfc9626ee9fc01732296f3e",
+      "README.md": "e2ddf34397793e8ffb4be53f6c234d215b34c114dc034a8770b7a8b5e3e8ea34"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "root": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-fit-compact-03",
+  "interpretation": "Successful measured fit under compact frozen CPU storage; no deployed gain."
+}

@@ -1,0 +1,95 @@
+{
+  "observed_utc": "2026-10-25T19:59:34.474672+00:00",
+  "raw_root": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03",
+  "state": {
+    "state": "starting_fit",
+    "time": 1792958003.784401,
+    "command": [
+      "/home/mutasim/Desktop/project-agere/.venv-training/bin/python",
+      "-u",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sas_offload_fit.py",
+      "--plan",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03/plan.json",
+      "--worker"
+    ],
+    "training_memory_separate_from_deployment": true
+  },
+  "last_update": {
+    "state": "update",
+    "time": 1792958367.383464,
+    "step": 12,
+    "examples": 8,
+    "loss": 0.1286986025989655,
+    "gradient_norm": 0.7963065505027771,
+    "gpu_peak_allocated": 4743854592,
+    "gpu_peak_reserved": 4942987264,
+    "host_rss": 4070879232
+  },
+  "planned_optimizer_updates": 476,
+  "examples_processed_so_far": 96,
+  "peak_tree_rss_bytes_so_far": 8327360512,
+  "latest_process_rss": [
+    {
+      "pid": 89934,
+      "rss": 26775552
+    },
+    {
+      "pid": 89942,
+      "rss": 4070903808
+    },
+    {
+      "pid": 89973,
+      "rss": 529596416
+    },
+    {
+      "pid": 89989,
+      "rss": 308686848
+    },
+    {
+      "pid": 89991,
+      "rss": 308297728
+    },
+    {
+      "pid": 89993,
+      "rss": 308301824
+    },
+    {
+      "pid": 89995,
+      "rss": 308310016
+    },
+    {
+      "pid": 89997,
+      "rss": 308310016
+    },
+    {
+      "pid": 89999,
+      "rss": 308310016
+    },
+    {
+      "pid": 90001,
+      "rss": 308310016
+    },
+    {
+      "pid": 90003,
+      "rss": 308310016
+    },
+    {
+      "pid": 90005,
+      "rss": 308310016
+    },
+    {
+      "pid": 90007,
+      "rss": 308310016
+    },
+    {
+      "pid": 90009,
+      "rss": 308314112
+    },
+    {
+      "pid": 90011,
+      "rss": 308314112
+    }
+  ],
+  "measured_reasoning_gain": false,
+  "complete": false
+}
