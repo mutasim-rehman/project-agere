@@ -1,0 +1,43 @@
+{
+  "status": "comparison_validation_implemented_no_new_model_results",
+  "source_sha256": {
+    "scripts/tier8_v2_critic_policy_pair.py": "72229746e3fa4ed3d4fba2e72ce50504c4e0c57aad191c7e0b220c64ec82d43d",
+    "scripts/tier8_v2_delivery_analyze.py": "687beab1758b11375c99bee6378c61d12d0f4a1a2478c1ffc8c03f8978c61d21",
+    "tests/test_tier8_v2_critic_policy_pair.py": "a32df1a16057e78bbc4c51b411beebbb80ce4a9612fb9f2e8d2dd995171c01cf"
+  },
+  "tests": {
+    "log": "/run/media/mutasim/Data/AGERE/runs/critic-policy-pair-regression-tests-03.log",
+    "sha256": "55cdb94e2f6bc135b431b00f5b5e373069b486ff5be40237f9bbc00c97561064",
+    "run": 248,
+    "inference_runtime_skips": 10,
+    "skip_note": "Unchanged Torch-dependent tests were passed separately in the training runtime; new guard tests are CPU/inference-runtime tests.",
+    "new_guard_test_cases": 10
+  },
+  "actual_existing_condition": {
+    "report": "/run/media/mutasim/Data/AGERE/runs/critic-policy-guard-actual-replay-02.json",
+    "sha256": "4a0f58a17d1ba420d1fffdb0dbed34f149686f5a26af3c5aa2f820399d9fdea9",
+    "n": 24,
+    "verified_artifact_count": 27,
+    "scope": "One existing actual trained condition/proof only, no new model or two-policy treatment result.",
+    "self_pair_refused": "Identical critic weights are not a policy contrast"
+  },
+  "legacy_analysis_reproduction": {
+    "original": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/reports/natural24-delivery-01.json",
+    "original_sha256": "a7d26d2326bcba20bb7aff142c3d7762b296425e7b7baf5b2766e117b99fd2b2",
+    "new": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/reports/natural24-delivery-guard-update-02.json",
+    "new_sha256": "ed7434bc6b050b4ebdeca0be0e134d69bdc1cd927645bf79dc7553fcb07b90b2",
+    "all_metric_values_identical": true,
+    "original_matching_guard_identical": true
+  },
+  "checks": [
+    "Two distinct full trained critic policies; unchanged actor, noncritic configuration, source/code/model/runtime/cap metadata",
+    "Current immutable adapters and model/source artifacts validated; each reversible proof recomputed and bound to its training-validation prompt",
+    "Complete input order, no repairs, intended per-role C adapter handles, actual prompt/token allowances matched",
+    "Original generated plans, source execution, both numerical scores, binary verdicts and delivery flags replayed",
+    "No-context failures remain in the denominator; explicit trained condition labels; duplicate/untrained labels refused"
+  ],
+  "new_critic_training_or_quality_result": false,
+  "model_calls": 0,
+  "novelty_established": false,
+  "limits": "Actual positive integration audit covers the existing one trained critic only. Successful two-distinct-policy pairing is unit-fixture tested; a real pair cannot be evaluated until the extended critic is trained, converted, proved and run. Numerical/source replay is not independent semantic truth or publication confirmation."
+}

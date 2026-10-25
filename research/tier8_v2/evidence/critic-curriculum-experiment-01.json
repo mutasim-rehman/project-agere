@@ -47,8 +47,29 @@
       "report-cluster bootstrap for paired delivery changes",
       "actual prompt/generated tokens, latency, complete-tree RSS under6.4GB"
     ],
-    "required_analysis_extension": "Current natural_pair/CLI assumes plain-versus-trained critic. Add an explicit trained-versus-trained guard and condition labels before using it for this comparison; do not silently label a trained control plain.",
-    "decision_rule": "Describe sample Pareto gain only if correct deliveries increase without more wrong deliveries under both existing metrics; uncertainty and all tradeoffs remain visible. No clinical safety, calibrated risk, answer-generation gain or novelty follows from a positive sample."
+    "decision_rule": "Describe sample Pareto gain only if correct deliveries increase without more wrong deliveries under both existing metrics; uncertainty and all tradeoffs remain visible. No clinical safety, calibrated risk, answer-generation gain or novelty follows from a positive sample.",
+    "analysis_contract": "Implemented explicit trained-variants mode with independent artifacts/proofs, fixed-actor/prompt/allowance guards and execution/score/delivery replay. Real paired inference remains pending.",
+    "analysis_command": [
+      "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_delivery_analyze.py",
+      "--comparison-kind",
+      "trained-variants",
+      "--left",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-original-critic-report100-01",
+      "--right",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-extended-critic-report100-01",
+      "--left-proof",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-applied-proof-01",
+      "--right-proof",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-extended-applied-proof-01",
+      "--left-label",
+      "original_trained",
+      "--right-label",
+      "extended_trained",
+      "--out",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic-extended-report100-01/reports/delivery-paired.json"
+    ],
+    "output_parent_created_by_queue": true
   },
   "after_training": [
     "convert to new GGUF output",

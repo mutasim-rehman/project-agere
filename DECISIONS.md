@@ -2068,3 +2068,40 @@ Current checkpoint: external controller40968/worker41022 verified;62/90 Mortar
 SAS cases saved. SAS fit47307 verified sleeping, zero children. Corpus feature
 committeda66e276; final test-log/source bindings and prepared training-base hash
 recorded. No additional neural job launched and no frozen source changed.
+
+## 2026-10-25 — Explicit trained-versus-trained delivery analysis implemented
+
+Previous turn is progress: fixed-source/positive/update critic corpus and full
+numerical/token audits completed. Current controllers revalidated live; no restart
+on a waiting state. Delivery analyzer is not among either live plan's frozen
+inputs; confirm this before editing. All frozen inference/training sources remain
+unchanged. New module adds strict two-trained-critic pairing; legacy plain-trained
+mode stays the default with unchanged metric values.
+
+Require distinct validated full critic adapters, same actor and noncritic config,
+identical model/source/code/runtime/cap metadata, and two real reversible application
+proofs bound to each training-validation prompt/dataset. Recompute proof effects
+from phase logprobs, not trusted summary scalars. Validate current model/source
+artifact hashes. Reconstruct recorded initial plans and source executions, both
+numerical scores, binary verdicts and delivery flags. Require exact public input
+coverage/order, no repairs, intended initialized C handles and matching actual
+actor outputs, prompts and critic allowances. No-context failures remain counted
+as withheld; do not discard them as incomplete candidate solutions.
+
+Explicit CLI comparison-kind trained-variants requires both proofs and named
+trained conditions; plain/untrained and duplicate condition labels rejected before
+input reads. Statistical deltas always right-minus-left. General study footer says
+development analysis (broader100 is not previously inferred, but still public dev).
+The old plain-trained natural24 replay reproduces ALL metric values and matching
+guard exactly. Actual current trained24 case execution/score/delivery replay and
+27 artifact checks pass; actual reversible proof effect recomputes. Self-comparing
+the same critic is correctly refused as a treatment contrast. This is verification
+infrastructure, not a model improvement or a newly evaluated second trained critic.
+
+248 inference-runtime tests run,10 unchanged training-runtime-dependent skips;
+all new10 guard tests pass. Earlier targeted15 training-runtime tests cover those
+unchanged skips. Successful two-distinct-trained pairing is tested with fixtures;
+real positive pairing awaits extended training/conversion/proof/QA. Raw diagnostic
+reports/logs remain SSD, small aggregate/source hashes committed. Prepared100-report
+experiment now has concrete analysis args; it remains not scheduled. Goal active,
+useful novelty and publication confirmation remain unproven.
