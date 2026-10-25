@@ -57,3 +57,24 @@ Validation before launch: 171 tests passed, including label isolation, nested
 JSON/XML rendering, invalid-versus-empty answers, ID-set comparison, and separate
 strict/normalized FRAMES scoring. The test log and full environment/launch metadata
 are saved on the SSD. Tests establish software behavior, not model quality.
+
+## Recovery after interruption
+
+The initial controller stopped after26 MortarBench SAS cases without a terminal
+summary; cause unknown. The interrupted run remains preserved. Recovery is an
+explicit new SSD run using `scripts/tier8_external_recover.py`. It imports and calls
+the unchanged original generation worker, validates the saved case prefix and
+original hashes, skips exactly that prefix, and writes remaining outputs into
+separate segments. Aggregates cite original and new case files and retain the
+maximum RSS across both segments. Do not interpret this as an uninterrupted
+latency measurement. All175 tests passed before launch. No raw case enters git.
+
+```bash
+AGERE_SSD_ROOT=/run/media/mutasim/Data/AGERE .venv/bin/python -u \
+  scripts/tier8_external_recover.py \
+  --original external_baselines_20261025_01 \
+  --recovery-id external_baselines_20261025_recovery01
+```
+
+Launch once in a detached session; inspect its process identity and SSD manifest
+before any further launch. A missing observation alone does not authorize restart.

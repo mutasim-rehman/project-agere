@@ -1455,3 +1455,22 @@ is currently stopped; previous ETA no longer represents a running queue.
 Supervisor update records real SAS prompting and MAS adaptation gains, negative
 critic/repair results, unequal best-system tuning, development reuse, and absence
 of demonstrated useful novelty. No claim that any implemented mechanism is first.
+
+## 2026-10-25 — Resume external evaluation without regenerating evidence
+
+The previous goal turn is progress: it established stopped-process evidence and
+corrected an inaccurate live status. There is no user-input blocker. Recovery
+uses a separate wrapper and separate SSD segment, calling the original generation
+worker unchanged. Its source SHA and prompt-token implementation SHA must match
+the interrupted run. Frozen model/data hashes are rechecked. Existing case IDs
+must be an exact prefix; labels/scores, final responses, role sequence and token
+ledger must reproduce. Partial JSON tails are refused without rewriting them.
+All 26 original cases passed these checks. Full suite:175 tests passed.
+
+The new controller preserves the original cap and original peak RSS, records new
+memory samples separately, rejects concurrent workloads and overwrites, and stops
+on any failed arm. A detached process session is used so launch does not depend on
+keeping an interactive tool session open. This improves lifecycle robustness;
+the original interruption's root cause remains unknown. Recovering infrastructure
+is not a novel research method. No generation prompt, retrieval, scoring, adapter,
+model or token allocation is changed. Raw outputs remain on the authorized SSD.
