@@ -163,3 +163,18 @@ Full external queue is still stopped for headroom, not restarted; memory after t
 probe was7.27–7.38GB available against7.4GB required. Original26 cases preserved.
 Goal remains active. Next verifier development must address actual discrimination,
 and SAS still needs comparably strong adaptation before architecture claims.
+
+## Latest critic adaptation milestone
+
+Corpus02 on SSD:3140 train /382 validation examples, balanced source/mutation
+pairs;414/49 distinct report groups. Full HF/GGUF parity passes all3522 rows.
+90 oversized pairs excluded together; operation959/operand802 retained mutations.
+Legacy pinned NF4 training base/configs now also hash-verified on SSD. Raw data
+and new weights/logs stay SSD; small provenance files are in evidence/critic-*.
+
+Actual2-update critic fit passed (1023 tokens,504 changed tensors, GPU allocated
+3.861GB/reserved4.226GB). Evidence: critic3b-fit-01.json. No trained critic quality
+or adaptation accuracy result yet.191 tests pass. Trainer supports explicit role,
+parity/data/base manifests and SSD artifacts; critic cannot silently load as actor.
+Full epoch and subsequent application/QA evaluation remain outstanding at this
+checkpoint. Goal remains active, novel useful contribution still unproven.

@@ -1650,3 +1650,20 @@ Trainer now accepts an explicit verified training-base manifest, resolving folde
 through the authorized artifact policy. New fit/train outputs use SSD.191 tests
 passed. Next gate is an actual2-update fit on the longest critic sequence, with
 optimizer/tensor/gradient/GPU-memory evidence. No automatic inference gain claim.
+
+## 2026-10-25 — Actual critic fit passed
+
+Actual3B NF4 critic fit completed2 optimizer updates on longest1023-token training
+sequence. Finite nonzero gradient norms39.39/35.89;504 changed adapter tensors,
+14,966,784 trainable parameters. Peak allocated GPU3,860,632,576 bytes/reserved
+4,225,761,280; host RSS1.818GB observed at second update. Runtime9.18s after load
+preflight. Raw events/weights/log/manifest on SSD; hash-bound aggregate in
+critic3b-fit-01.json. The repeated-example loss decrease is not validation or QA
+performance. This is an adaptation feasibility milestone, not novelty.
+
+Next: one full training epoch over3140 examples,382 train-validation examples,
+393 accumulation groups at existing optimizer settings, no prompt/data changes.
+Keep conversion, actual adapter application proof and useful natural-error
+verification improvements as distinct later requirements. CPU inference cannot
+overlap GPU training. Full external queue remains pending host headroom and
+serialized model-work availability. Do not call the fit adapter a deployed critic.

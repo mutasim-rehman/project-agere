@@ -1,0 +1,29 @@
+{
+  "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-fit-01",
+  "purpose": "critic",
+  "profile": "3b",
+  "longest_train_tokens": 1023,
+  "summary": {
+    "status": "complete",
+    "mode": "fit",
+    "optimizer_updates": 2,
+    "examples_processed": 2,
+    "changed_adapter_tensors": 504,
+    "trainable_parameters": 14966784,
+    "last_training_loss": 0.9558886289596558,
+    "validation_teacher_forced_loss": null,
+    "wall_seconds": 9.179215690999627,
+    "gpu_peak_allocated": 3860632576,
+    "gpu_peak_reserved": 4225761280,
+    "adapter_files": {
+      "adapter_config.json": "1f73ada3370411f33618193065b571ebb3baf0c5aa2d355c3df5acb759ffd5bc",
+      "adapter_model.safetensors": "a794edc8575195e9eff9183e140e634eb73dcd823e8ab8881f2ceb6ab3a612f3",
+      "README.md": "e476ffb56903087ad94fa3c37ad5123f89db19dfd37b33c9d3332137983cfc9a"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "manifest_sha256": "b1f2497bb6b97a8af96f11d28592973fde7dce622ad9ffddaf539482f5b9917b",
+  "summary_sha256": "5c2f25635d6193078b04de3e78ec9dc1191042e981723a19be9aefe3dc6b9743",
+  "scope": "Two-update fit only, not trained-system or QA evidence"
+}
