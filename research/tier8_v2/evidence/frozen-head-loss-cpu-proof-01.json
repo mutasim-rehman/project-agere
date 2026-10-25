@@ -1,0 +1,38 @@
+{
+  "status": "cpu_numerical_and_tiny_model_tests_pass",
+  "tests": 6,
+  "source_sha256": {
+    "scripts/frozen_head_loss.py": "2103f2ca92f0142ad86b46f5061135a6c906880d836afb3f153ebbd0dabb86f8",
+    "tests/test_frozen_head_loss.py": "690b74000f443f527adf5eccfce3f210581a9131a59b24162cf06b0164111683"
+  },
+  "test_log": "/run/media/mutasim/Data/AGERE/runs/frozen-head-loss-cpu-tests-02.log",
+  "test_log_sha256": "412d0c7ee998fef9e2945b274dc3cd459fec6134ef199f760bddd6284f8d9b8c",
+  "runtime": ".venv-training/bin/python; CPU only; torch threads1",
+  "checks": [
+    "FP64/FP32/BF16 loss and hidden gradient versus dense CE, blocks1/5/13/20, ignored labels, scaling1/8",
+    "FP64 finite-difference gradcheck",
+    "extreme logit numerical stability",
+    "invalid targets/trainable head rejection",
+    "causal shift preserves last-prefix-to-first-target prediction",
+    "two real tiny random Qwen2+LoRA optimizer updates versus dense causal loss, gradients and final parameters agree within stated test tolerances"
+  ],
+  "quantitative_limits": {
+    "full_7b_fit_measured": false,
+    "cuda_transfer_or_gradients_tested": false,
+    "full_7b_training_completed": false,
+    "deployment_accuracy_gain_measured": false,
+    "novel_method_claimed": false
+  },
+  "architecture_estimate": {
+    "config": "/run/media/mutasim/Data/AGERE/weights/hf/Qwen--Qwen2.5-7B-Instruct/config.json",
+    "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+    "vocab_size": 152064,
+    "hidden_size": 3584,
+    "untied": true,
+    "one_matrix_parameters": 544997376,
+    "two_frozen_matrices_fp32_bytes": 4359979008,
+    "note": "Shape arithmetic, not a measured model allocation or peak. Current PEFT preparation casts nonquantized BF16/FP16 parameters to FP32."
+  },
+  "prior_art": "https://arxiv.org/abs/2411.09009",
+  "limits": "Reference blocked implementation, not optimized CCE kernel. No gradient pruning, vocabulary sampling or target/context truncation. BF16 reduction order differs; not bitwise equivalent. Frozen head only, no bias/smoothing/higher-order gradients. Decoder offload integration and full 7B fit remain untested."
+}

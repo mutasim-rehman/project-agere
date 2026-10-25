@@ -1923,3 +1923,33 @@ or all disagreements negative. Natural-error labels remain weak numerical labels
 not independently adjudicated semantic truth. Before a new epoch, freeze corpus,
 update-matched mutation-only control and complete delivery-policy evaluation.
 SAS comparable adaptation remains necessary; this preparation is not that result.
+
+## 2026-10-25 — Prepare comparable SAS adaptation without shorter training inputs
+
+Current evidence confirms original full7B HF assets on SSD but no new comparable
+SAS adaptation run or fit. Local PEFT prepare_model_for_kbit_training casts
+nonquantized BF16/FP16 parameters to FP32. Qwen7B has untied152064x3584 input and
+output matrices: together4.36GB atFP32, before its quantized decoder/activations.
+That is a shape estimate, not a measured7B allocation or an observed7B OOM.
+
+Added independent frozen_head_loss.py. It streams frozen vocabulary blocks to
+hidden-state device, performs stable full-vocabulary mean CE, and recomputes blocks
+in backward. Causal wrapper uses full decoder context and ordinary next-token
+shift; no training target/context/vocabulary shortening or gradient pruning.
+Frozen CPU head and separate embedding offload are the intended integration path.
+The current trainer and all54 frozen queue inputs are unchanged.
+
+Six CPU tests pass in training runtime: dense loss/gradient comparisons across
+FP64/FP32/BF16 and block boundaries, finite differences, extreme logits, ignored
+labels, scaling, causal boundary, and two real tiny random Qwen2+LoRA optimizer
+updates matching dense-reference gradients/parameters within explicit tolerances.
+This is not full7B training, CUDA transfer validation, memory fit or QA gain.
+Evidence/log hashes: evidence/frozen-head-loss-cpu-proof-01.json; logs SSD.
+
+Memory-efficient cross entropy already has strong prior art (Cut Your Losses,
+arXiv2411.09009, abstract read). This reference helper is baseline engineering,
+not a novel algorithm or the paper's optimized kernel. Next measure actual serial
+7B fit with frozen CPU embedding/head and monitored host/GPU peaks after external
+queue completes. Only then attempt the same661/100 adaptation protocol and prove
+converted adapter application before paired QA. Do not claim both systems equally
+optimized yet. Keep old failed3B fit provenance and do not mislabel it as7B failure.

@@ -87,3 +87,13 @@ These constrain novelty claims, not establish direct task equivalence or validat
 our weak numerical labels. Natural-error adaptation and risk/coverage accounting
 are useful baseline strengthening, not claimed new algorithms. Any proposed
 bounded repair mechanism needs a concrete distinction and a measured gain.
+
+## SAS training memory engineering
+
+[Cut Your Losses in Large-Vocabulary Language Models](https://arxiv.org/abs/2411.09009),
+v2,10March2025: primary abstract read. Computes target logits and vocabulary
+log-sum-exp without materializing all-token/all-vocabulary logits; optimized CCE
+kernel also skips negligible gradient contributions. Our independent frozen-head
+CPU-offload helper uses ordinary PyTorch blocks with full backward recomputation
+and no pruning. It is a reference engineering aid, not a novelty claim, exact
+reimplementation or evidence of the paper's throughput/memory results.
