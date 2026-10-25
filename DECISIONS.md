@@ -2304,3 +2304,29 @@ Two queue-gate CPU tests reject fit-only, incomplete epoch, nonfinite validation
 and cap breach. Full default suite274 tests,17 training-runtime skips; new compact
 CPU preparation2 and pread2 tests passed separately in training runtime. NN proof
 and QA still pending; baseline training or passing tests do not establish novelty.
+
+## 2026-10-26 — Prepare shared-backbone role serving, preserving specialist identity
+
+Current same-base actor/critic adapters retain separate model instances by design.
+Prepare an independent experimental backend holding one pinned3B (optionally7B)
+backbone with distinct validated full-training native adapters. Reset token position
+and clear ALL adapters before every role activation; fresh full prefill, no cross-
+role KV reuse. Failed activation raises after clearing, no base fallback. Cleanup
+clears context references before native adapter free. Calls serial. Known LRAgent
+prior; not novelty or independent pretrained agents.7B needs an actual separate
+critic-purpose epoch, cannot relabel joint SAS. Existing frozen baseline unchanged.
+
+Three CPU activation-contract tests pass; metadata preflight verifies actual3B
+actor661 examples/83 updates and critic3140/393, finite validation. NN proof is
+prepared NOT RUN/QUEUED: simultaneous distinct-model reference then one-backbone
+phase, two bound validation prompts, full-vocab last-logit tolerance1e-5, identical
+32-token deterministic completions and usage over four alternating role switches;
+6.4GB whole-tree cap, phase RSS, all prefill/generation charged. Run only after
+frozen model queue terminal and hardware lock free. Then full-case replay before
+adopting. No memory/quality gain claimed from implementation or mocked native API.
+
+Expanded compact CPU precision test now runs an actual tiny Qwen decoder with
+PEFT LoRA, dropout/checkpointing and streamed head, comparing both initial adapter
+values and all adapter gradients exactly against the old CPU-FP32 storage policy.
+All3 preparation tests pass. This is stronger CPU fidelity evidence, not bitwise7B
+GPU equivalence or QA accuracy. Live worker and all frozen queue sources unchanged.

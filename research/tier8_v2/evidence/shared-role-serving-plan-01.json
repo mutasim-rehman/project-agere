@@ -1,0 +1,33 @@
+{
+  "status": "prepared_not_run_or_queued",
+  "command": [
+    "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_shared_role_proof.py",
+    "--actor-adapter",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/runs/adapter-3b-converted-02",
+    "--critic-adapter",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-converted-01",
+    "--actor-dataset",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/deployment-sft-1024-02.jsonl",
+    "--critic-dataset",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/examples.jsonl",
+    "--weights-root",
+    "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+    "--out",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01"
+  ],
+  "required_prior_state": "Frozen joint03-01 ten-job baseline queue terminal successfully; shared hardware lock available. Never overlap NN workloads.",
+  "input_sha256": {
+    "scripts/shared_role_models.py": "bde95692aee9f1705e8380101406245cba8651623ba501e86eeb1a3262a3ad9d",
+    "scripts/tier8_v2_shared_role_proof.py": "fac3821af9e8de7592e59688c847414f7049201b7fb2b3056bbc50be6ec295fc"
+  },
+  "cap_bytes": 6400000000,
+  "context": 4096,
+  "validation_prompt_count": 2,
+  "shared_role_switches": 4,
+  "logit_tolerance": 1e-05,
+  "completion_tokens_per_observation": 32,
+  "measured_memory_gain": false,
+  "measured_reasoning_gain": false,
+  "novelty_established": false
+}
