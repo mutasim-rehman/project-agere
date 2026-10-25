@@ -47,8 +47,11 @@ class _FrozenHeadLoss(torch.autograd.Function):
                 inside = (y >= start) & (y < start + len(w))
                 derivative[inside, y[inside] - start] -= 1
                 derivative *= grad_output / len(y)
-                # Match a low-precision linear layer's backward cast.
-                grad_h += (derivative.to(h.dtype) @ w).to(normalizer.dtype)
+                # Match the low-precision logits gradient, but accumulate matrix
+                # products in FP32/FP64 before the single final hidden cast.
+                # Rounding each block's partial hidden gradient to BF16 causes
+                # extra error that can amplify through a checkpointed decoder.
+                grad_h += derivative.to(h.dtype).to(normalizer.dtype) @ w.to(normalizer.dtype)
         gradient = torch.zeros_like(hidden).reshape(-1, hidden.shape[-1])
         gradient[active] = grad_h.to(hidden.dtype)
         return gradient.reshape_as(hidden), None, None, None

@@ -1,0 +1,48 @@
+{
+  "status": "CPU_checks_pass_GPU_fit_not_run",
+  "source_sha256": {
+    "scripts/tier8_v2_sas_offload_fit.py": "96600539b85fe2e870f8f63209734a29e78c07baa13c1af055d44b61ad027642",
+    "tests/test_tier8_v2_sas_offload_fit.py": "65cf701126ee3634d1d986bd5fb074385ea0e2f4823e617f2df0e9ef878771a8",
+    "scripts/frozen_head_loss.py": "464d4d227f3400dbf553a1245d2ee821d540389d12fa56c1698c9f70fd325943",
+    "tests/test_frozen_head_loss.py": "4695ef449b3fb23944ebf446631357a532a281e84179ed9721bdd204f559b9e2"
+  },
+  "logs": {
+    "/run/media/mutasim/Data/AGERE/runs/sas-offload-gate-training-tests-04.log": {
+      "sha256": "10f9df461f2464879a8baaf73e6f806496c07b2dc6fceef982bb08d1a7350e1e",
+      "tests_run": 8,
+      "skips": 0
+    },
+    "/run/media/mutasim/Data/AGERE/runs/frozen-head-loss-cpu-tests-04.log": {
+      "sha256": "e8c3ee9aa64e9b5353b2fba1112b6f0f7fabadb0c99577a5bddad0c94454a715",
+      "tests_run": 7,
+      "skips": 0
+    },
+    "/run/media/mutasim/Data/AGERE/runs/sas-offload-regression-tests-03.log": {
+      "sha256": "a769d47f86679016d51702ceb13540b243b7fdd78871414b655a7722c589562d",
+      "tests_run": 231,
+      "skips": 10
+    }
+  },
+  "preserved_failure": {
+    "log": "/run/media/mutasim/Data/AGERE/runs/sas-offload-gate-training-tests-03.log",
+    "sha256": "bb4681147b6699c12a5641fca021fae3d64c52b3beb79e9d5ca4903c6b7895d5",
+    "finding": "BF16 partial hidden gradients rounded per vocabulary block diverged through checkpointed all-linear Qwen LoRA; one gradient differed0.00048828125 (5.33%) exceeding original tolerance. FP32 product accumulation now passes unchanged tolerance."
+  },
+  "supersedes_helper_proof": "frozen-head-loss-cpu-proof-01.json",
+  "old_helper_source": {
+    "path": "/run/media/mutasim/Data/AGERE/runs/frozen-head-loss-before-fp32-backward-01.py",
+    "sha256": "2103f2ca92f0142ad86b46f5061135a6c906880d836afb3f153ebbd0dabb86f8"
+  },
+  "old_test_source": {
+    "path": "/run/media/mutasim/Data/AGERE/runs/frozen-head-loss-proof01-tests.py",
+    "sha256": "690b74000f443f527adf5eccfce3f210581a9131a59b24162cf06b0164111683"
+  },
+  "additional_checks": [
+    "Whole frozen-job completion ordering, stale/failed state refusal, actual external result validation gate",
+    "All-linear PEFT freezes head/embedding and creates only intended decoder adapter parameters",
+    "Actual Accelerate CPU offload hook: meta tensors restored to original CPU weights; input_ids and explicit inputs_embeds decoder outputs match",
+    "Checkpointed all-linear tiny Qwen BF16 loss/adapter gradients match standard causal loss with unchanged tolerance",
+    "4099-vocabulary BF16 gradient checks over many blocks plus previous FP64 finite differences/two-update tiny model test"
+  ],
+  "limits": "CPU tests only; no full7B loading, CUDA transfer/backward, host/GPU fit, full epoch, adapter deployment, QA gain or novelty established. Ten inference-runtime skips are exercised in the15 targeted training-runtime tests. Training host budget is separate from8GB deployment."
+}

@@ -1966,3 +1966,36 @@ not defensible originality. Full-method distinctions remain unverified.
 Primary FinAgent-RAG record2605.05409 is WITHDRAWN,5July2026, for fundamental
 experimental design errors; do not repeat search-snippet performance as reliable
 prior results. No external benchmark protocol or current code changed by this read.
+
+## 2026-10-25 — Queue a real comparable SAS7B fit after external completion
+
+Previous turn is progress: added a numerically tested frozen-head loss and verified
+ongoing external inference; useful novelty remains unproven. This turn implements
+an independent serial fit controller/worker, leaving all54 current queue inputs
+unchanged. A frozen new plan waits for original dependency PID/create-time/plan,
+requires every job complete in order plus external arm/original-byte validation,
+rechecks code/data/tokenizer/runtime, and makes only one fit attempt. No retries.
+
+Use the original661/100 actor corpus, longest complete training sequence, rank8/
+alpha16/all-linear LoRA, AdamW2e-4 and clip1; fit is two actual updates, not an epoch.
+All official7B source assets must match existing pinned snapshot hashes. NF4 decoder
+on GPU; actual frozen embedding/head on CPU. Local Accelerate source inspection
+shows CPU device_map hooks ordinarily reload whole matrices onto GPU. Detach the
+leaf hooks to restore CPU weights, explicitly compute CPU embeddings and transfer
+inputs_embeds; stream the frozen head instead of calling its forward.
+
+CPU tests verify actual hook meta→CPU restoration and exact original weights,
+input_ids versus explicit embeddings, all-linear frozen heads, and checkpointed
+BF16 LoRA gradients. The latter found a real precision defect in the earlier helper:
+BF16 per-block backward rounding yielded one5.33% gradient discrepancy. Preserve
+the failed log and old source; fix FP32 product accumulation before the final cast.
+The unchanged tolerance now passes. A4099-vocabulary multi-block gradient test also
+passes.15 targeted training-runtime CPU tests pass; general suite231 run with10
+runtime-dependent skips covered by those targeted tests. No GPU/full7B fit yet.
+
+Plan training resource policy:10.5GB controller-tree RSS cap,1GB host reserve,9GB
+available-memory preflight,0.2s sampling, plus recorded actual GPU peaks. This is
+separate training resource use, not8GB deployment fit; deployment remains6.4GB.
+Only start after the existing external queue succeeds and exits. Success still
+requires full SAS adaptation, conversion, reversible application proof and QA.
+Method novelty remains unproven. Details SAS_OFFLOAD_FIT.md and CPU evidence JSON.

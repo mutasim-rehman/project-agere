@@ -49,6 +49,20 @@ class FrozenHeadLossTests(unittest.TestCase):
         y = torch.tensor([4, 0])
         self.assertTrue(torch.autograd.gradcheck(lambda a: frozen_head_loss(a, w, y, 2), (h,)))
 
+    def test_many_bf16_vocabulary_blocks_match_dense_hidden_gradient(self):
+        w = torch.randn(4099, 16, dtype=torch.bfloat16)
+        targets = torch.tensor([0, 4098, 1024, -100])
+        initial = torch.randn(4, 16, dtype=torch.bfloat16)
+        for block in [17, 128, 1024]:
+            with self.subTest(block=block):
+                h = initial.clone().requires_grad_(True)
+                other = initial.clone().requires_grad_(True)
+                loss = frozen_head_loss(h, w, targets, block)
+                dense = torch.nn.functional.cross_entropy((other @ w.T).float(), targets)
+                loss.backward(); dense.backward()
+                torch.testing.assert_close(loss, dense, atol=2e-5, rtol=2e-5)
+                torch.testing.assert_close(h.grad, other.grad, atol=.001, rtol=.01)
+
     def test_extreme_logits_are_stable(self):
         h = torch.tensor([[1e4, -1e4]], requires_grad=True)
         w = torch.tensor([[1., -1.], [-1., 1.], [0., 0.]])
