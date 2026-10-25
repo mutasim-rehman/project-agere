@@ -1790,3 +1790,18 @@ also be frozen. Add them and the training-base config files, and reverify actual
 training base/config hashes after the epoch before conversion. Keep plan01 as
 superseded evidence; build a new plan02 rather than silently replacing it. No
 model output or active training input is changed. No automatic retry is involved.
+
+## 2026-10-25 — Plan02 frozen for automatic serial execution
+
+Plan02 contains10 explicit jobs and54 frozen inputs. Plan01 is marked superseded
+before launch on SSD, unchanged. Plan02 copied to repo as metadata only. The active
+epoch was still live at337/393 updates on this observation; no completion inferred.
+Queue will wait, then validate the full epoch before conversion/proof and matched
+binary critic/QA controls. Natural QA guard requires identical actor outputs and
+critic prompts, with only critic adaptation differing. Unit sidecars preserve raw
+primary scores. Original unadapted external recovery is last. Fresh100 report
+packets are deliberately not evaluated before these development gates.
+
+All model work remains serial and complete process-tree RSS monitored. Failures
+stop the queue without retries/overwrite; a queue-complete marker is not research
+completion or a novelty claim. See POSTTRAIN_QUEUE.md for precise limitations.
