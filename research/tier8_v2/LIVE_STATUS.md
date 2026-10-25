@@ -1,6 +1,6 @@
 # Live research checkpoint
 
-**Observed 25 October 2026, 16:44 PKT.** Committed snapshot, not a live monitor.
+**Observed 25 October 2026, 16:53 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
@@ -9,8 +9,8 @@
 | Natural24, plain critic |3 correct delivered,0 wrong,21 withheld |
 | Natural24, trained critic |11 correct delivered,4 wrong,9 withheld |
 | Attribution |All24 drafts and critic prompts identical; same adapted actor |
-| Current workload |External recovery running;5 new Mortar SAS cases saved (31/90 including26 preserved) |
-| Software checks |216 passed |
+| Current workload |External recovery running;10 new Mortar SAS cases saved (36/90 including26 preserved) |
+| Software checks |216 existing tests pass;6 additional CPU training tests pass |
 | Novelty |No demonstrated useful original method yet |
 
 Natural counts above use the reported-answer metric. Raw execution gives plain
@@ -56,3 +56,11 @@ complete-tree monitoring also applies; terminal external peak remains pending.
 [Frozen queue](POSTTRAIN_QUEUE.md) · [Decisions](../../DECISIONS.md)
 
 Raw logs, datasets and weights stay on the authorized SSD; aggregates are committed.
+
+## Latest preparation for SAS
+
+Independent frozen-head blockwise loss helper passes dense-gradient checks and
+two tiny Qwen2+LoRA updates against standard CE. It retains complete context,
+targets and vocabulary. This is established memory engineering; full7B CPU/GPU
+offload integration, real fit and comparable adaptation have NOT run. Current
+frozen evaluation sources are untouched. [Numerical proof](evidence/frozen-head-loss-cpu-proof-01.json).

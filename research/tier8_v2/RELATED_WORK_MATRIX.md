@@ -97,3 +97,15 @@ kernel also skips negligible gradient contributions. Our independent frozen-head
 CPU-offload helper uses ordinary PyTorch blocks with full backward recomputation
 and no pruning. It is a reference engineering aid, not a novelty claim, exact
 reimplementation or evidence of the paper's throughput/memory results.
+
+## Financial semantic verification screen —25October2026
+
+| Primary source | What was read / overlap | Consequence |
+|---|---|---|
+| [Same-Number Citation Swaps](https://arxiv.org/abs/2610.08675),v2,16October2026 | Abstract: fixed-number/arithmetic citation perturbations with wrong financial roles and equivalent-fact controls; explicit-column tradeoffs | Separating numerical correctness from cited-role support, and same-number swap evaluation, cannot by themselves be claimed new |
+| [Enhancing Arguments Recognition](https://aclanthology.org/2024.findings-emnlp.228/),EMNLP Findings2024 | Primary abstract: argument aggregator and argument-set loss to strengthen operand recognition | Training to select correct financial operands has direct prior art; new loss/contract claims need method-level comparison |
+| [FinAgent-RAG](https://arxiv.org/abs/2605.05409),v2,5July2026 | Primary record explicitly WITHDRAWN for fundamental experimental-design errors | Do not use its advertised accuracy/cost results as valid baseline evidence. Search snippets omit withdrawal status; primary source governs |
+
+Full methods not yet reviewed. No inference that these papers establish or refute
+our proposed repair mechanism; they constrain narrow originality claims. Keep
+source-support, financial role support and numerical QA outcomes separate.

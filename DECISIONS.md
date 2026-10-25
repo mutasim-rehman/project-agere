@@ -1953,3 +1953,16 @@ not a novel algorithm or the paper's optimized kernel. Next measure actual seria
 queue completes. Only then attempt the same661/100 adaptation protocol and prove
 converted adapter application before paired QA. Do not claim both systems equally
 optimized yet. Keep old failed3B fit provenance and do not mislabel it as7B failure.
+
+## 2026-10-25 — Primary-source check narrows semantic-verifier novelty
+
+Read primary abstracts of Same-Number Citation Swaps (2610.08675v2) and Enhancing
+Arguments Recognition (FindingsEMNLP2024). Fixed-number wrong-role citations with
+valid-equivalent controls, and financial-operand supervision, already exist.
+Record these before designing a claim from the four natural false accepts. A useful
+improvement may still be achievable, but same-number/source-role tests alone are
+not defensible originality. Full-method distinctions remain unverified.
+
+Primary FinAgent-RAG record2605.05409 is WITHDRAWN,5July2026, for fundamental
+experimental design errors; do not repeat search-snippet performance as reliable
+prior results. No external benchmark protocol or current code changed by this read.
