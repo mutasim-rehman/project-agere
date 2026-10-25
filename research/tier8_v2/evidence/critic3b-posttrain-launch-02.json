@@ -1,0 +1,12 @@
+{
+  "pid": 36374,
+  "create_time": 1792926351.41,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/plan.json",
+  "plan_sha256": "51e4c252920955b8948e54c917c8dc2d3c94df1f8ddd496a0235600829dc0630",
+  "root": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02",
+  "log": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/controller.log",
+  "created_utc": "2026-10-25T11:05:51Z",
+  "source_commit": "9072117e056914393048dc293c7183597d27e269",
+  "detached": true,
+  "scope": "Wait for existing epoch, then execute frozen10-job sequence; no duplicate training or novelty claim"
+}

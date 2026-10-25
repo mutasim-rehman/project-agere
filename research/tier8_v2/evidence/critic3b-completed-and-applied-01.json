@@ -1,0 +1,58 @@
+{
+  "training_run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-train-01",
+  "training_summary": {
+    "status": "complete",
+    "mode": "train",
+    "optimizer_updates": 393,
+    "examples_processed": 3140,
+    "changed_adapter_tensors": 504,
+    "trainable_parameters": 14966784,
+    "last_training_loss": 0.07498012558426126,
+    "validation_teacher_forced_loss": 0.0179870505374582,
+    "wall_seconds": 4651.407628428999,
+    "gpu_peak_allocated": 3920499712,
+    "gpu_peak_reserved": 4227858432,
+    "adapter_files": {
+      "adapter_config.json": "36f0fb179bb1b80a95ef365da73646da445ba41738915d9703bdda0488bdfb93",
+      "adapter_model.safetensors": "b736743a5e058e48483042d488b37b7dd2223cf49cf99bdea448e87f17be72dc",
+      "README.md": "e476ffb56903087ad94fa3c37ad5123f89db19dfd37b33c9d3332137983cfc9a"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "training_manifest_sha256": "46025a9669752cd06cad88257491aab8b95037d4a7eef57869e5a9c106281ac9",
+  "training_summary_sha256": "6e973755196cf01298df9886c2752585b465cdabbd8335dc4c922e3ee8417112",
+  "conversion": {
+    "directory": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-converted-01",
+    "status": "complete",
+    "purpose": "critic",
+    "profile": "3b",
+    "sha256": "0150e57abf60da3c51597b788be8e1053c543bcc301818023d000be3058c7692",
+    "bytes": 59902112,
+    "tensor_count": 504,
+    "manifest_sha256": "6bc5753fdb42f416f365807762f0c4546fdedd7848ec9eb0bf6567afda819141"
+  },
+  "application_proof": {
+    "directory": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-applied-proof-01",
+    "pass": true,
+    "adapter_sha256": "0150e57abf60da3c51597b788be8e1053c543bcc301818023d000be3058c7692",
+    "zero_repeat_max_logprob_drift": 0.0,
+    "max_common_token_logprob_effect": 12.483735918998718,
+    "common_tokens": 4,
+    "summary": {
+      "status": "complete",
+      "exit_code": 0,
+      "peak_tree_rss_bytes": 4528054272,
+      "cap_bytes": 6400000000,
+      "memory_breached": false,
+      "wall_seconds": 34.6007918030009,
+      "adapter_effect_proven": true,
+      "qa_gain_measured": false
+    },
+    "proof_sha256": "6093cfae5fcc75f4e523f8e970bced4338056b4b0d0d1c4d66eecac97fa85d29",
+    "full_queue_tree_peak_bytes": 4580130816
+  },
+  "quality_gain_measured": false,
+  "novelty_established": false,
+  "scope": "Completed known-method critic epoch, conversion and reversible application proof. Discrimination and QA must be measured separately."
+}

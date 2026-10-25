@@ -59,3 +59,17 @@ Primary abstracts inspected via web during the train-only critic probe:
 Our rich-versus-binary experiment changes instruction content as well as output
 format. It cannot identify a pure grammar, label-order or lexical-bias mechanism.
 Do not promote a protocol improvement into a first-use or novelty claim.
+
+## Role-cache optimization screen — 25 October 2026
+
+| Work | Inspected scope | Consequence |
+|---|---|---|
+| [LRAgent v2](https://arxiv.org/html/2602.01053v2) | Method§3.2 and AppendixC.2, extending the earlier abstract-only read: shared base/low-rank caches, approximate cross-role states, and shared-A training. | Backbone sharing, low-rank cache decomposition and shared-A role adapters are close priors. We have not replicated them; cached states across different adapters cannot simply be treated as exact. |
+| [ForkKV](https://arxiv.org/abs/2604.06370) | Primary abstract: copy-on-write disaggregated shared/agent-specific caches and specialized reconstruction kernel. | Copy-on-write multi-LoRA cache storage is established; no first-use claim for a shared-role runtime. Full method not inspected. |
+| [PReCache v2](https://arxiv.org/abs/2609.34054) | Primary abstract: precomputed role-specific low-rank states and adapter-neutral reconstruction; direct cross-role reuse can weaken specialization. | Role-specific cache correction/neutralization is close prior work. Full method not inspected. |
+| [Shared-Prefix KV Reuse Across Standard LoRA Adapters](https://arxiv.org/abs/2609.17109) | Primary abstract: takeover-boundary quality/cost sweep; reported latency benefit does not imply physically shared storage or quality equivalence. | Reuse boundaries and quality/serving tradeoffs already have direct investigation. Full method not inspected; no transfer of paper-reported gains to our models. |
+
+Current frozen runs retain KV reset on every model call. No cross-role cache reuse
+or shared-backbone implementation was added during this screen. Exact same-policy
+prefix reuse may be a useful future baseline optimization; it is not automatically
+novel and needs measured output/cost controls. Keep active evaluation sources fixed.

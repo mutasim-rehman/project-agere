@@ -1805,3 +1805,33 @@ packets are deliberately not evaluated before these development gates.
 All model work remains serial and complete process-tree RSS monitored. Failures
 stop the queue without retries/overwrite; a queue-complete marker is not research
 completion or a novelty claim. See POSTTRAIN_QUEUE.md for precise limitations.
+
+## 2026-10-25 — Cache prior-art screening during verified training wait
+
+Primary-source review now includes LRAgent§3.2/AppendixC.2 and abstracts ofForkKV,
+PReCachev2 and standard-LoRA shared-prefix tradeoffs. Scope/URLs are recorded in
+RELATED_WORK_MATRIX.md. Backbone/cache sharing and role-aware cache corrections
+have close prior work; do not label them a new contribution merely because they
+could save RAM here. No cache implementation or active study source changed.
+Current Models.call retains its per-call KV reset. Future exact-prefix efficiency
+work must distinguish identical-policy reuse from adapter-tainted states and
+measure real prefill work rather than only nominal input-token counts.
+
+## 2026-10-25 — Full critic epoch, conversion and application completed
+
+Actual epoch completed393 updates/3140 examples,504 changed tensors,14,966,784
+trainable parameters. Teacher-forced validation loss0.017987 (not QA accuracy),
+4651.4s recorded training walltime; GPU allocated3.920GB/reserved4.228GB.
+Queue independently verified full counts, data/base/config/adapter hashes.
+
+Conversion completed:504 tensors,59,902,112 bytes, critic purpose preserved;
+SHA0150e57abf60da3c51597b788be8e1053c543bcc301818023d000be3058c7692.
+Reversible application proof PASSED:zero-scale repeat drift0.0, maximum common-
+token logprob effect12.4837, runtime adapter handle initialized. Inner proof peak
+4.528GB; complete queue process-tree peak4.580GB, under6.4GB. This establishes
+real application/effect, not verifier quality, QA gains or novelty.
+
+The frozen queue is now executing matched plain/applied binary probes. The plain
+condition reproducedUNKNOWN24/24; applied condition is not interpreted until all
+24 outputs complete. No source/data/prompt was changed based on partial outcomes.
+All raw logs/weights/proof stay SSD; hash-bound aggregates are committed.
