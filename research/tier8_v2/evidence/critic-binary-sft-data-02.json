@@ -1,0 +1,53 @@
+{
+  "purpose": "critic",
+  "target_role": "verifier",
+  "profiles": [
+    "mas-3b-q4"
+  ],
+  "output_file": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/examples.jsonl",
+  "output_sha256": "7b63467ad3da713c8a9accd17fe3311fffc9d0d0cdd4e61d02d573fc99fc69d0",
+  "kept_n": 3522,
+  "training_n": 3140,
+  "validation_n": 382,
+  "kept_pairs": 1761,
+  "max_training_tokens": 1024,
+  "deployment_context": 4096,
+  "target_budget": 192,
+  "group_counts": {
+    "train": 414,
+    "validation": 49
+  },
+  "eligible_source_group_counts": {
+    "train": 422,
+    "validation": 50
+  },
+  "mutation_counts": {
+    "operation": 959,
+    "operand": 802
+  },
+  "rejected_pairs": {
+    "training_length_overflow": 90
+  },
+  "balance": "one annotation-positive and one executable numerically wrong single-edit negative per retained source; reject both on length overflow",
+  "selection": "seed42 source-ID SHA selects eligible mutation family, then minimum mutation SHA within family; at most8 hashed alternatives per source operand",
+  "input_sha256": {
+    "research/tier8_v2/data/finqa-cell-adaptation-train-02.jsonl": "30039625e42d53c75c690700fed57c4d9809fc9229023fdbf7e444669dab95a5",
+    "research/tier8_v2/data/finqa-cell-adaptation-validation-02.jsonl": "369bc8ef2ca5238d21866ffca97ae1d1813de13ca392ed23c19c84bb736cb2a5",
+    ".local/datasets/finqa/train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+    "research/tier8_v2/data/finqa-training-demo-bank.json": "d21493dab181b759fdc448d8f82e8e2fa6dec67a3b12f8463e40de86b35fc63a"
+  },
+  "source_sha256": {
+    "scripts/tier8_v2_critic_data.py": "878476d460c9f9a774d2d110d82a4a19214caf121233ec57997c7328620311b1",
+    "scripts/tier8_v2_critic_probe.py": "aff64abee0d6b987686368143501672ede73f5fddccafeb264b856ac9f6433f1",
+    "scripts/tier8_v2_adaptation_data.py": "774f795a7ae55d1e3bc0451714331bda5a0fc1dca87c0acdc1435941ff3334e3",
+    "scripts/tier8_v2_adaptation_prompts.py": "f190d39ee3eaa25d7e3eccef730af404fb84e709fd650492ed98c5358b682cd7",
+    "scripts/tier8_v2_financial_pipeline.py": "df9d78ca001b0bb279be28ce2564e90c7546bbb352eb75d7b10ac65aab6004af",
+    "scripts/tier8_v2_run.py": "d61ff7552f36788f77164cced8a6439f5362b6284e9868c40ae5c4698bc72812",
+    "scripts/evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "scripts/evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+    "scripts/evidence_cells.py": "805ed5c46359fc0ad8bb5f7cc8ac6abaf84500df3c30e7637d48ffc7947d196a"
+  },
+  "model_calls": 0,
+  "test_opened": false,
+  "limits": "Weakly supervised annotated-program discrimination. Controlled mutations differ from natural errors. No per-field semantic labels, novelty, trained adapter or QA gain claimed."
+}

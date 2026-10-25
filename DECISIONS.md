@@ -1633,3 +1633,20 @@ critic is inferred from this interface change. Acquire the same SSD workload loc
 and reject overlap with CPU runs/proofs before any model work. Training resources
 remain separate from the8GB deployment cap.191 tests passed including path escape,
 missing-SSD-marker and wrong-role rejection tests. No novelty claim.
+
+## 2026-10-25 — Critic corpus02 and actual tokenizer parity passed
+
+New corpus02 completed:3522 examples /1761 balanced pairs;3140 train across414
+report groups,382 validation across49;90 pairs rejected together for length.
+Mutations:959 operation and802 source-operand. All3522 full token sequences,
+prefix boundaries and target lengths agree under pinned GGUF and official HF
+training-environment tokenizer (Transformers4.57.1/tokenizers0.22.2). No model
+training or accuracy result follows from these checks. Raw rows remain SSD;
+small manifests/parity evidence copied into repo for provenance.
+
+Copied the pinned3B NF4 training checkpoint and configs to SSD with exact hashes;
+legacy repository copies and manifests remain untouched for previous actor proof.
+Trainer now accepts an explicit verified training-base manifest, resolving folder
+through the authorized artifact policy. New fit/train outputs use SSD.191 tests
+passed. Next gate is an actual2-update fit on the longest critic sequence, with
+optimizer/tensor/gradient/GPU-memory evidence. No automatic inference gain claim.

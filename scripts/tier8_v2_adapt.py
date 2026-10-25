@@ -62,6 +62,7 @@ def main():
     parser.add_argument("--purpose", choices=("drafter", "critic"), default="drafter")
     parser.add_argument("--dataset-manifest")
     parser.add_argument("--parity-manifest")
+    parser.add_argument("--training-base-manifest")
     args = parser.parse_args()
     out = artifact_path(args.out)
     if out.exists():
@@ -106,10 +107,11 @@ def main():
     data_path = artifact_path(data_manifest["output_file"])
     if sha(data_path) != data_manifest["output_sha256"] or sha(data_path) != parity["dataset_sha256"] or sha(data_manifest_path) != parity["dataset_manifest_sha256"]:
         raise ValueError("Training corpus identity differs")
-    training_base_path = base / "evidence" / f"training-base-{args.profile}-01.json"
+    training_base_path = (artifact_path(args.training_base_manifest) if args.training_base_manifest
+                          else base / "evidence" / f"training-base-{args.profile}-01.json")
     training_base = json.loads(training_base_path.read_text())
-    folder = (ROOT / training_base["folder"]).resolve()
-    if not folder.is_relative_to(ROOT) or not training_base["weights_verified"] or sha(folder / training_base["weight_file"]) != training_base["sha256"]:
+    folder = artifact_path(training_base["folder"])
+    if not training_base["weights_verified"] or sha(folder / training_base["weight_file"]) != training_base["sha256"]:
         raise ValueError("Pinned training base is not verified")
     for file in training_base["config_files"]:
         if sha(folder / file["file"]) != file["sha256"]:

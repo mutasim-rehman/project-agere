@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "n": 3522,
+  "failures": [],
+  "dataset_sha256": "7b63467ad3da713c8a9accd17fe3311fffc9d0d0cdd4e61d02d573fc99fc69d0",
+  "dataset_manifest_sha256": "2fa8a13d6f9d50a914a81bc05b899628bf8bff3d7a8a9b32bc412545842663e4",
+  "snapshots_sha256": "79dcdd10e81f94cd9192aaf299c5c69a92b3c56ce8dfc5331d27ae9d0fd18f7b",
+  "transformers_version": "4.57.1",
+  "tokenizers_version": "0.22.2",
+  "profile": "mas-3b-q4",
+  "model_calls": 0,
+  "script_sha256": "878476d460c9f9a774d2d110d82a4a19214caf121233ec57997c7328620311b1"
+}
