@@ -1,0 +1,9 @@
+{
+  "pid": 89237,
+  "create_time": 1792957517.84,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-fit-pread-02/plan.json",
+  "plan_sha256": "50126aeba214a38fe09bef3569afef434b580ce3ce482b9971f20e7d4ec2c382",
+  "source_commit": "c1b31113a11b9095e4bdb845ccd9b6850567d0b7",
+  "status": "launched_not_completed",
+  "measured_reasoning_gain": false
+}

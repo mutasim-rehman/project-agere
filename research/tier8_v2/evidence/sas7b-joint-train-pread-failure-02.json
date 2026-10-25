@@ -1,0 +1,38 @@
+{
+  "root": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-pread-02",
+  "state": {
+    "state": "failed",
+    "time": 1792957689.2661257,
+    "error": "RuntimeError('Offload fit failed; preserve evidence, no retry')"
+  },
+  "journal": [
+    {
+      "state": "starting_fit",
+      "time": 1792957620.151964,
+      "command": [
+        "/home/mutasim/Desktop/project-agere/.venv-training/bin/python",
+        "-u",
+        "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sas_offload_fit.py",
+        "--plan",
+        "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-pread-02/plan.json",
+        "--worker"
+      ],
+      "training_memory_separate_from_deployment": true
+    },
+    {
+      "state": "worker_exited",
+      "time": 1792957689.2627065,
+      "exit_code": -9,
+      "memory_breach": true,
+      "peak_tree_rss_bytes": 10562719744
+    },
+    {
+      "state": "failed",
+      "time": 1792957689.2661257,
+      "error": "RuntimeError('Offload fit failed; preserve evidence, no retry')"
+    }
+  ],
+  "optimizer_updates": 0,
+  "last_stage": "cpu_checkpoint_storage_detached; before preparation finished",
+  "interpretation": "Full run loading completed but transient preparation RSS breached; short fit not a reliable full-run guarantee."
+}

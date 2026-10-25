@@ -37,6 +37,7 @@ def load_policy():
                              'llm_int8_enable_fp32_cpu_offload': True},
             'projection_dtype': 'bfloat16', 'vocabulary_block_size': 1024,
             'checkpoint_backend': 'safetensors pread via scoped Transformers safe_open compatibility shim',
+            'frozen_cpu_storage': 'Keep original BF16 CPU embedding/head; FP32 lookup results before transfer; unchanged BF16 streamed head projection',
             'checkpoint_cpu_storage': 'clone non-resizable borrowed CPU storage on leaf assignment; retain already-owned dtype-converted tensors',
             'cpu_matrices': 'Detach Accelerate offload hooks; CPU embedding lookup, explicit inputs_embeds transfer; streamed CPU frozen head',
             'lora': {'r': 8, 'lora_alpha': 16, 'lora_dropout': .05,
@@ -118,6 +119,7 @@ def prepare(out, launch_file, mode='fit', fit_proof=None, dataset_manifest=None,
     files = [Path(__file__), ROOT / 'scripts/frozen_head_loss.py',
              ROOT / 'scripts/sas_cpu_weight_storage.py',
              ROOT / 'scripts/sas_safetensors_pread.py',
+             ROOT / 'scripts/sas_frozen_cpu_prepare.py',
              ROOT / 'scripts/tier8_v2_adapt.py', ROOT / 'scripts/tier8_v2_adapter_convert.py',
              ROOT / 'scripts/tier8_v2_posttrain_queue.py', ROOT / 'scripts/tier8_artifact_paths.py',
              ROOT / 'scripts/supervised_logits.py', ROOT / 'manifests/hf_snapshots.json',
@@ -186,7 +188,8 @@ def worker(plan):
     import accelerate
     from transformers import AutoTokenizer, BitsAndBytesConfig
     from sas_cpu_weight_storage import StorageDetachedQwen2ForCausalLM
-    from peft import prepare_model_for_kbit_training, get_peft_model, LoraConfig
+    from peft import get_peft_model, LoraConfig
+    from sas_frozen_cpu_prepare import prepare_frozen_cpu_model
     from frozen_head_loss import causal_frozen_head_loss
     torch.set_num_threads(2)
     random.seed(42); torch.manual_seed(42)
@@ -274,10 +277,12 @@ def worker(plan):
               clones=[getattr(m, '_cpu_storage_clone_count', 0) for m in
                       [model.get_input_embeddings(), model.get_output_embeddings()]])
         restore_cpu_matrices(model)
+        event('cpu_matrices_restored', host_rss=psutil.Process().memory_info().rss)
         model.config.use_cache = False
-        model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True,
-                                               gradient_checkpointing_kwargs={'use_reentrant': False})
+        model = prepare_frozen_cpu_model(model)
+        event('kbit_prepared', host_rss=psutil.Process().memory_info().rss)
         model = get_peft_model(model, LoraConfig(**plan['policy']['lora'], bias='none', task_type='CAUSAL_LM'))
+        event('lora_prepared', host_rss=psutil.Process().memory_info().rss)
         base_model = model.get_base_model()
         if (base_model.get_input_embeddings().weight.device.type != 'cpu' or
                 base_model.lm_head.weight.device.type != 'cpu' or base_model.lm_head.bias is not None):
@@ -292,7 +297,7 @@ def worker(plan):
         def loss_for(row):
             ids = torch.tensor([row['input_ids']], device='cpu')
             labels = torch.tensor([row['labels']], device='cuda')
-            embeddings = base_model.get_input_embeddings()(ids).to('cuda')
+            embeddings = base_model.get_input_embeddings()(ids).float().to('cuda')
             with torch.autocast('cuda', dtype=torch.bfloat16):
                 hidden = base_model.model(inputs_embeds=embeddings, use_cache=False).last_hidden_state
                 loss = causal_frozen_head_loss(hidden.to(torch.bfloat16), base_model.lm_head.weight,
@@ -412,12 +417,15 @@ def controller(plan_path):
             proc = psutil.Process(child.pid)
             while child.poll() is None:
                 try:
-                    rss = sum(p.memory_info().rss for p in [psutil.Process(), proc, *proc.children(recursive=True)] if p.is_running())
+                    members = [{'pid': p.pid, 'rss': p.memory_info().rss} for p in
+                               [psutil.Process(), proc, *proc.children(recursive=True)] if p.is_running()]
+                    rss = sum(p['rss'] for p in members)
                     detail = proc.memory_full_info()
                 except psutil.NoSuchProcess:
                     continue
                 available = psutil.virtual_memory().available; peak = max(peak, rss)
                 memory.write(json.dumps({'time': time.time(), 'tree_rss_bytes': rss,
+                                         'process_rss': members,
                                          'worker_uss_bytes': getattr(detail, 'uss', None),
                                          'worker_pss_bytes': getattr(detail, 'pss', None),
                                          'host_available_bytes': available}) + '\n'); memory.flush()

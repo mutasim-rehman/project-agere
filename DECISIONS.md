@@ -2224,3 +2224,21 @@ Actual tiny sharded meta-device loading compares every tensor exactly;2 tests pa
 New loader policy requires a new joint fit; preserve same10.5GB cap/reserve/contexts.
 Freeze safetensors version/Rust extension and Transformers loader source hashes.
 Engineering feasibility only; no QA gain. CPU borrowed-storage clone hook retained.
+
+## 2026-10-26 — Full pread run exposes post-load preparation transient
+
+Pread joint fit02 completed2 updates,392 changed tensors,5.936GB tree RSS. Full
+pread train02 then stopped at10.563GB after CPU-storage hooks completed, before
+preparation finished;0 updates. Thus pread alone does not establish reliable full
+adaptation. Preserve exact source, journals and both runs. PEFT preparation casts
+entire frozen BF16 CPU embedding/head to FP32, doubling resident matrix storage
+and introducing temporary old/new storage overlap. Avoid this unnecessary storage
+expansion: freeze all weights, retain exact original BF16 CPU matrices, upcast all
+other non-Params4bit half weights, and enable the same nonreentrant checkpointing.
+Convert embedding LOOKUP results to FP32 before CUDA transfer, preserving prior
+decoder input precision. Existing head loss explicitly projects BF16 blocks, so
+retaining original BF16 head storage preserves those exact projected values.
+Two tiny CPU tests compare all retained/upcast values, FP32 lookup, actual streamed
+loss AND hidden gradients exactly; no actual7B equivalence or QA claim. Add stage
+RSS events and per-process RSS members. New policy gets new measured fit03 under
+unchanged cap. No blind full-run restart and no resource-cap relaxation.

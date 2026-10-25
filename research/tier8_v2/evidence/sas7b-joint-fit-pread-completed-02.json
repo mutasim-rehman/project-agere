@@ -1,0 +1,32 @@
+{
+  "state": {
+    "state": "complete",
+    "time": 1792957599.3220806,
+    "peak_tree_rss_bytes": 5936111616,
+    "fit_only": true,
+    "measured_reasoning_gain": false
+  },
+  "summary": {
+    "status": "complete",
+    "mode": "fit",
+    "optimizer_updates": 2,
+    "examples_processed": 2,
+    "changed_adapter_tensors": 392,
+    "trainable_parameters": 20185088,
+    "last_training_loss": 0.7861984029029033,
+    "validation_teacher_forced_loss": null,
+    "validation_teacher_forced_loss_by_task": {},
+    "wall_seconds": 44.272429065000324,
+    "gpu_peak_allocated": 4521421312,
+    "gpu_peak_reserved": 4942987264,
+    "adapter_files": {
+      "adapter_config.json": "3e018067fcebbfbfdfd4fa8e1757a588857c8c3099c9d85b5734c2b4741df068",
+      "adapter_model.safetensors": "c63fb88e02183ff828616c7d958f2c765c269bb94acb8027469f95b3f45a3b1a",
+      "README.md": "e2ddf34397793e8ffb4be53f6c234d215b34c114dc034a8770b7a8b5e3e8ea34"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "root": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-fit-pread-02",
+  "interpretation": "Training feasibility only; no measured QA gain."
+}
