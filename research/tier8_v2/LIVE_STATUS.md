@@ -7,7 +7,7 @@
 | SAS7B full joint adaptation |**Complete:476 updates,3801 training examples,482 validation examples** |
 | Training resources |Worker about4.07GB, complete tree about8.33GB including12 compiler workers;10.5GB training cap |
 | Discovery-first continuation |**Running deployment proof/probes** after completed SAS conversion |
-| Fixed probe |**SAS complete:31/32 labels,7/8 whole quartets**; original MAS running; extended MAS pending |
+| Fixed probe |**SAS complete:31/32 labels,7/8 whole quartets**; original MAS30/32 and6/8; extended critic training running |
 | Crossed curriculum |403 audited quartets/1612 rows;1416 train,196 validation; both tokenizer parity and source/execution/prompt replay pass |
 | Useful novelty |Not established; no new quartet-trained model or quality gain yet |
 
@@ -90,3 +90,11 @@ This limits the earlier question-blind-artifact hypothesis for the actual7B mode
 Training-source discovery, not new natural QA accuracy or novelty. SAS ceiling
 component passes; extended MAS still determines the BOTH-policy stop rule.
 [Baseline discovery](CRITIC_BASELINE_DISCOVERY.md).
+
+Original3B MAS critic probe also strong:30/32 labels,6/8 whole quartets,
+15/16 positives accepted,1 false accept. Different false accept from SAS.
+One nominal false rejection has unresolved count-versus-fraction reference
+semantics (UNP2016 December shares); official scores/data preserved. Do not equate
+numeric-reference agreement with independently adjudicated semantic correctness.
+Extended critic is now training; stop-rule decision remains pending its result.
+[Original MAS/label audit](CRITIC_BASELINE_DISCOVERY.md).

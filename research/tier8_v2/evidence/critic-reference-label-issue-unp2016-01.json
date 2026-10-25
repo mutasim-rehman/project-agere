@@ -1,0 +1,86 @@
+{
+  "status": "unresolved_reference_semantics_issue",
+  "source_id": "UNP/2016/page_21.pdf-1",
+  "quartet_source_id": "028a6c3df4e27cabea04fffd1864d44507df8008dfbdeb63ba3857f59228b884::0",
+  "question": "for the fourth quarter of 2016 what was the total number of shares purchased in december",
+  "official_answer": "34%",
+  "official_program": "divide(3296652, 9699127)",
+  "official_exe_ans": 0.33989,
+  "source_table_header": [
+    "period",
+    "total number of shares purchased [a]",
+    "average price paid per share",
+    "total number of shares purchased as part of a publicly announcedplan or program [b]",
+    "maximum number of shares remaining under the plan or program [b]"
+  ],
+  "december_row": [
+    "dec . 1 through dec . 31",
+    "3296652",
+    "104.30",
+    "3296100",
+    "17597259"
+  ],
+  "quarter_total_row": [
+    "total",
+    "9699127",
+    "$ 97.60",
+    "9624667",
+    "n/a"
+  ],
+  "model_visible_evidence": {
+    "table_1": "period: oct . 1 through oct . 31 ; total number of shares purchased [a]: 3501308 ; average price paid per share: $ 92.89 ; total number of shares purchased as part of a publicly announcedplan or program [b]: 3452500 ; maximum number of shares remaining under the plan or program [b]: 23769426",
+    "table_2": "period: nov . 1 through nov . 30 ; total number of shares purchased [a]: 2901167 ; average price paid per share: 95.68 ; total number of shares purchased as part of a publicly announcedplan or program [b]: 2876067 ; maximum number of shares remaining under the plan or program [b]: 20893359",
+    "table_3": "period: dec . 1 through dec . 31 ; total number of shares purchased [a]: 3296652 ; average price paid per share: 104.30 ; total number of shares purchased as part of a publicly announcedplan or program [b]: 3296100 ; maximum number of shares remaining under the plan or program [b]: 17597259",
+    "table_4": "period: total ; total number of shares purchased [a]: 9699127 ; average price paid per share: $ 97.60 ; total number of shares purchased as part of a publicly announcedplan or program [b]: 9624667 ; maximum number of shares remaining under the plan or program [b]: n/a",
+    "text_0": "five-year performance comparison 2013 the following graph provides an indicator of cumulative total shareholder returns for the corporation as compared to the peer group index ( described above ) , the dj trans , and the s&p 500 .",
+    "text_10": "the new authorization was effective january 1 , 2017 , and replaces the previous authorization , which expired on december 31 , 2016. .",
+    "text_4": "the following table presents common stock repurchases during each month for the fourth quarter of 2016 : period total number of shares purchased [a] average price paid per share total number of shares purchased as part of a publicly announced plan or program [b] maximum number of shares remaining under the plan or program [b] .",
+    "text_5": "[a] total number of shares purchased during the quarter includes approximately 74460 shares delivered or attested to upc by employees to pay stock option exercise prices , satisfy excess tax withholding obligations for stock option exercises or vesting of retention units , and pay withholding obligations for vesting of retention shares .",
+    "text_9": "on november 17 , 2016 , our board of directors approved the early renewal of the share repurchase program , authorizing the repurchase of up to 120 million shares of our common stock by december 31 , 2020 ."
+  },
+  "candidate": {
+    "answer_unit": "fraction",
+    "decision": "ANSWER",
+    "steps": [
+      {
+        "left": {
+          "value": "3296652",
+          "span_id": "table_3"
+        },
+        "op": "divide",
+        "right": {
+          "value": "9699127",
+          "span_id": "table_4"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "value": "0.3398916211737406882083305023",
+    "issues": [],
+    "nodes": [
+      {
+        "step": 0,
+        "value": "0.3398916211737406882083305023",
+        "source_spans": [
+          "table_3",
+          "table_4"
+        ]
+      }
+    ]
+  },
+  "official_expected_verdict": "PASS",
+  "sas_joint_verdict": "PASS",
+  "original_mas_critic_verdict": "FAIL",
+  "assessment": "Question as written can reasonably request an absolute count3,296,652, whereas the official answer/program compute a fraction of the quarter3,296,652/9,699,127\u224834%. Requires independent semantic adjudication; no corrected label asserted.",
+  "selection_bias": "Inspected AFTER model disagreement, not a blind random annotation sample. A binary FAIL does not establish why the model rejected it.",
+  "policy": "No rescoring, exclusion, training-label rewrite or metric selection. Preserve31/32 SAS and30/32 original MAS under official weak labels.",
+  "input_sha256": {
+    ".local/datasets/finqa/train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_pilot_train8_02/selection.json": "8ac5d1df8550df6feecf3859afaeeedaaaabad45f51eaca52a192455883f16a9",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_pilot_train8_02/examples.jsonl": "7fe2ee9729ba762d7d7eff1d73ffa7174ee5e1c3c4744703492a9446ec777595",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/sas-joint-train8-01/responses.jsonl": "dfda18a63b3ff8629683dbd9717f9e6004c8fb345ccb8c9b4560030ab4a474c5",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-original-train8-01/responses.jsonl": "0573eec3cb001017fd091b7e84b9b65f9c269aecc83e78b67bed952105f4fa75"
+  },
+  "novelty_established": false
+}

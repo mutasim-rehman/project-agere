@@ -2655,3 +2655,28 @@ BOTH-policy stopping rule and fixed data/LR; no continuation decision yet. Need
 original/extended MAS and natural disjoint-report outcomes; no new QA gain or useful
 novelty established. Goal remains active. Frozen queue has moved to original MAS
 probe, with extended baseline training/conversion/proof/probe still ahead.
+
+
+### 2026-10-26 — original MAS near ceiling; inspect label ambiguity without rescoring
+
+Original3B critic probe completes30/32 exact labels,6/8 whole quartets,15/16
+positive accepts and1/16 false accepts; all parsed/no truncation,14/16 correct
+question-switch pairs. Replayed318? memory count recorded in aggregate (do not
+infer from this note); actual sampled critic-only peak2.490GB,27814 prefill/224
+generated tokens,294.97 recorded inference seconds. This is NOT full MAS RSS or
+an architecture efficiency estimate. SAS and original MAS false-accept IDs differ;
+do not manufacture a common-error claim. Both ordinary trained baselines are
+strong on this small family. Extended baseline training is now active serially.
+Wait for its predeclared target ceiling result; original baseline must remain a
+strong comparator even if the extension regresses. Beating a weakened extension
+alone would not establish useful novelty.
+
+Outcome-guided inspection of the3B rejected positive UNP/2016/page_21.pdf-1 finds
+an unresolved reference/question mismatch: wording asks total shares purchased in
+December; source table gives3,296,652; official34%/divide(3296652,9699127) instead
+compute December/quarter fraction. Both numerical metrics can agree with a
+question-inconsistent annotation. Record exact pinned source/table/program and
+model outputs. Do NOT rescore/exclude, silently relabel, estimate dataset prevalence
+or infer the binary FAIL rationale. Needs independent semantic adjudication;
+SAS acceptance does not establish semantic superiority. Preserve31/32 and30/32
+weak-label results. No new model/data/method change or novelty claim. Goal active.

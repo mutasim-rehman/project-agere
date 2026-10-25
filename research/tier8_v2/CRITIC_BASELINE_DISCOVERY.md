@@ -10,7 +10,7 @@ negatives are new combinations. This is NOT held-out-report natural QA.
 | Policy | Exact labels | Entirely exact quartets | Reference accepts | Crossed negatives accepted |
 |---|---:|---:|---:|---:|
 | Full joint7B SAS baseline |31/32|7/8|16/16|1/16|
-| Original3B MAS critic |Pending|Pending|Pending|Pending|
+| Original3B MAS critic |30/32|6/8|15/16|1/16|
 | Extended3B MAS critic |Pending|Pending|Pending|Pending|
 
 SAS metrics independently replay from raw responses and exact frozen inputs.
@@ -48,3 +48,33 @@ no natural QA gain follows, and useful novelty remains unestablished.
 [Audited SAS diagnostic and single error](evidence/sas7b-joint-quartet-probe-01.json).
 Raw responses, policy, source selection, memory and paired-switch diagnostic stay
 on SSD under `runs/tier8_quartet_probe/sas-joint-train8-01`.
+
+
+## Original3B critic and annotation caveat
+
+Original MAS critic completes the SAME32 inputs:30/32 exact labels,6/8 whole
+quartets,15/16 references accepted,15/16 crossed negatives rejected. All224 output
+tokens are parsed PASS/FAIL, no truncation;27814 prompt tokens,294.97 recorded
+inference seconds and2.490GB sampled critic-only resident tree. These are not full
+MAS pipeline costs. Correct question switches14/16; one unchanged PASS and one
+unchanged FAIL. Original3B and7B SAS false accepts occur on DIFFERENT cases; do not
+claim shared error correlation from this tiny diagnostic. No new training method.
+
+The3B false accept substitutes OTHER PURCHASE COMMITMENTS for NONCANCELABLE
+OPERATING LEASES. Its rejected positive is UNP/2016/page_21.pdf-1. Post-disagreement
+source inspection reveals a possible reference mismatch: the question asks total
+shares bought in December, table gives3,296,652 shares, but official answer34% and
+program divide(3296652,9699127) give the fraction of quarterly repurchases. The
+binary FAIL does not tell us the model's reason. Do not assert it independently
+caught an annotation error, or that SAS is semantically superior for accepting it.
+This is one outcome-guided inspected case, not a prevalence estimate. Preserve
+all official scores/data; independent adjudication remains needed. Agreement under
+both numerical metrics is NOT independent proof of question/program semantics.
+
+[Original MAS diagnostic](evidence/mas3b-original-quartet-probe-01.json) ·
+[Unresolved reference case](evidence/critic-reference-label-issue-unp2016-01.json).
+The original MAS also meets the numerical threshold, but the predefined target
+stop rule still awaits the extended MAS result. Even if that extension regresses,
+never claim novelty by beating only a weakened baseline; retain original MAS and
+natural-error comparisons. The strong original results are reason to be cautious
+about adding another curriculum solely for this small artificial family.

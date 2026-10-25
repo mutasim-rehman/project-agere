@@ -1,0 +1,99 @@
+{
+  "status": "completed_training_source_diagnostic",
+  "arm": "mas_critic_only",
+  "adapter": "original_3b_full_epoch_baseline",
+  "summary": {
+    "status": "complete",
+    "exit_code": 0,
+    "n": 32,
+    "expected": 32,
+    "cap_bytes": 6400000000,
+    "peak_tree_rss_bytes": 2489819136,
+    "memory_breach": false,
+    "metrics": {
+      "n": 32,
+      "n_quartets": 8,
+      "n_reports": 8,
+      "exact_label_correct": 30,
+      "exact_label_accuracy": 0.9375,
+      "gate_correct": 30,
+      "gate_accuracy": 0.9375,
+      "complete_exact_quartets": 6,
+      "complete_gate_quartets": 6,
+      "verdict_counts": {
+        "PASS": 16,
+        "FAIL": 16
+      },
+      "reference_accepts": 15,
+      "cross_negative_accepts": 1,
+      "prompt_tokens": 27814,
+      "generated_tokens": 224,
+      "truncated_reviews": 0,
+      "recorded_inference_seconds": 294.96770216199366,
+      "limits": "Exact label metric treats UNKNOWN/unparsed as incorrect; gate metric treats them as nonaccept, not explicit correct negative judgments. Training-source discovery, not natural QA or confirmation."
+    },
+    "actual_qa_gain": false,
+    "novelty_established": false
+  },
+  "label_confusion": {
+    "PASS -> PASS": 15,
+    "FAIL -> FAIL": 15,
+    "FAIL -> PASS": 1,
+    "PASS -> FAIL": 1
+  },
+  "question_switch_fixed_evidence_and_program": {
+    "pairs": 16,
+    "greedy_labels_changed": 14,
+    "both_exact_labels_correct": 14,
+    "unchanged_verdicts": {
+      "PASS": 1,
+      "FAIL": 1
+    }
+  },
+  "program_switch_fixed_evidence_and_question": {
+    "pairs": 16,
+    "greedy_labels_changed": 14,
+    "both_exact_labels_correct": 14,
+    "unchanged_verdicts": {
+      "PASS": 1,
+      "FAIL": 1
+    }
+  },
+  "errors": [
+    {
+      "source_id": "0154819b7b329a5d7ae8699f78070831cd0e970eecca0ea8887da4df7e9b95ca::2",
+      "question": "what percentage of total other purchase commitments is made up of noncancelable operating leases?",
+      "reference_question_for_same_program": "what percentage of total other purchase commitments is made up of other purchase commitments?",
+      "expected": "FAIL",
+      "observed": "PASS",
+      "execution_value": "0.4637681159420289855072463768"
+    },
+    {
+      "source_id": "028a6c3df4e27cabea04fffd1864d44507df8008dfbdeb63ba3857f59228b884::0",
+      "question": "for the fourth quarter of 2016 what was the total number of shares purchased in december",
+      "reference_question_for_same_program": "for the fourth quarter of 2016 what was the total number of shares purchased in december",
+      "expected": "PASS",
+      "observed": "FAIL",
+      "execution_value": "0.3398916211737406882083305023"
+    }
+  ],
+  "false_accept_ids_shared_with_sas": [],
+  "original_MAS_meets_same_numerical_ceiling": true,
+  "both_target_policy_stop_decision": "pending_extended_MAS_result",
+  "memory_samples_replayed": 1453,
+  "minimum_sampled_host_available_bytes": 9680060416,
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_joint_posttrain/joint03-discovery02/plan.json": "ae579484b961c706a2b7478a9a130c3a54c395f9680449ee8694f55eee0ac99c",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-original-train8-01/summary.json": "c7a27bae5bab812ba69109e188d7bfba59cf644131016cc83db217cf11f13f50",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-original-train8-01/metrics.json": "faef8ae315676360ea70f7e87879e9ab2274d354ac28d64f3fc028ed802cab68",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-original-train8-01/policy.json": "b7631b913adfd048dcb4786ac2aab668417d9e0f8c42e68dcf5f0de617fee8dd",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-original-train8-01/responses.jsonl": "0573eec3cb001017fd091b7e84b9b65f9c269aecc83e78b67bed952105f4fa75",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-original-train8-01/memory.jsonl": "e1d9ac1b73316d7d983aca0b365748e5dc91115b1514fb2a6c28e72d15d4a5d8",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_pilot_train8_02/selection.json": "8ac5d1df8550df6feecf3859afaeeedaaaabad45f51eaca52a192455883f16a9",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_pilot_train8_02/examples.jsonl": "7fe2ee9729ba762d7d7eff1d73ffa7174ee5e1c3c4744703492a9446ec777595"
+  },
+  "new_method_trained": false,
+  "new_qa_gain_proven": false,
+  "novelty_established": false,
+  "limits": "8 training-source reports, familiar positive Q/program combinations, new crossed negatives. Critic-only resident memory/time, NOT full MAS pipeline or architecture comparison. Both strong original and extended MAS references must be retained; extended-only gains do not establish superiority to original. One shared error on this tiny selected family is not a general correlation estimate."
+}
