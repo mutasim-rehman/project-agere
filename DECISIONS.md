@@ -1497,3 +1497,33 @@ model-size effect or incorrect semantic judgment in every rejected case. No raw
 verdicts or scores changed. Use a balanced, train-only program-discrimination
 validation before treating another critic as strong. This is a local diagnostic,
 not a novel method. Script/input hashes are in matched-critic-behavior-audit-01.json.
+
+## 2026-10-25 — Train-only critic protocol-discrimination experiment
+
+External recovery still cannot retain its original cap+reserve with available
+RAM6.32GB, so no new full-arm trial is claimed. Independent single-critic
+inference is feasible: use fixed min(6.4GB, available minus1GB) tree RSS ceiling,
+load only one critic at a time and stop on cap/reserve breach. This is a component
+diagnostic, not an 8GB SAS/MAS comparison. User's memory question remains pending.
+
+Construct12 distinct report-group examples from the existing training-validation
+corpus. Require annotated target correctness under BOTH existing numerical metrics.
+For each, select the first deterministic single-operation mutation that retains
+source operands and valid execution but fails BOTH metrics. Equal positives and
+negatives; no inference-dependent selection. Source binding is numerically unique,
+not independent semantic adjudication. Counterfactuals are controlled probes,
+not naturally occurring draft errors or publication confirmation. Labels stay
+separate from public inputs and are not read by workers.
+
+Compare original rich review schema/instruction to binary PASS/FAIL/UNKNOWN review
+on identical question/evidence/candidate/execution. Original rich instruction is
+AST-checked against deployed code. This changes output protocol AND instructions;
+do not attribute any effect solely to JSON grammar. Two profiles run serially:
+original native0.5B F16 and3B Q4, no adapters, context4096, greedy seed42,8threads,
+192 tokens/protocol (384 total/program). Use the existing Models.call prompt and
+verified runtime token accounting. Save all raw prompts/responses/timing/memory
+on SSD. Copy legacy pinned model binaries to SSD with exact byte/hash verification;
+no weights are changed. Freeze sources and labels before model evaluation.
+
+Full suite182 tests passed. This experiment assesses critic discrimination and
+protocol sensitivity; it is not a novel algorithm or an adaptation gain.
