@@ -86,3 +86,22 @@ Live verifier trial: data/verifier3b-sequence-01.json, 73 frozen inputs; session
 were observed with 4.818 GB sampled peak so far; quality remains unassessed until
 all 24 finish. Launch evidence: evidence/verifier3b-launch-01.json. Do not duplicate
 or restart on observation timeout; keep its code/data frozen until terminal.
+
+## External evaluation transition, 25 October 2026
+
+The 3B verifier trial completed: 11/24 draft successes, zero delivered answers,
+24 withheld; peak combined RSS 4,820,619,264 bytes. This is a negative delivery
+result, not improved reliability at useful coverage. The live-trial text above
+is historical. All 24 cases and terminal summary are preserved.
+
+User explicitly authorized the mounted SSD /run/media/mutasim/Data/AGERE.
+New external baseline queue: scripts/tier8_external_eval.py, all 90 prepared
+MortarBench questions and all 100 FRAMES control questions, original SAS 7B Q4
+and distinct resident MAS 1.5B/0.5B/0.5B F16, CPU, same fixed host-adjusted
+6.4 GB ceiling, 4096 context, maximum 2048 generated tokens per case.
+MortarBench uses shared label-blind lexical retrieval with a 1700-token source
+ceiling and local typed exact scoring, not official benchmark scoring.
+FRAMES is closed book with original strict exact match plus a separate
+punctuation-normalized sensitivity. These are exploratory external baselines,
+not an adapted-system confirmation or a publication novelty result.
+Outputs belong only on the SSD under runs/tier8_external/.

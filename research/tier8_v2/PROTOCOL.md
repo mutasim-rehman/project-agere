@@ -4,8 +4,12 @@ Status: development, not a finished experiment or established novelty claim.
 
 ## Scope and storage
 
-All new runtimes, weights, data, logs, and evidence stay inside this repository.
-Large downloads and environments are ignored; small manifests and results are committed.
+Storage update, 25 October 2026: code, environments and runtime builds remain
+in the repository. New external evaluations read weights and datasets from
+`AGERE_SSD_ROOT=/run/media/mutasim/Data/AGERE`; packets, case outputs, logs and
+reports stay on that SSD, following the original project storage policy and
+the user’s explicit authorization. Historical redevelopment artifacts remain
+at their recorded paths; do not rewrite their provenance.
 The historical 18–20 October experiment remains unchanged. Its existing test data
 is development evidence now; a new sealed evaluation is required for confirmation.
 

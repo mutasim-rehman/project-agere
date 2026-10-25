@@ -1415,3 +1415,29 @@ If more than one model is resident and the combined weight files plus the measur
 ## Runs that break the cap
 
 A run whose peak RSS exceeds the cap is invalid. It is not averaged into the result.
+
+
+## 2026-10-25 — SSD external evaluation authorization and baseline queue
+
+The user requested real evaluations and explicitly identified
+`/run/media/mutasim/Data/AGERE` as the documented dataset/model location.
+This supersedes the redevelopment repo-only storage assumption for these assets.
+Code/envs stay local; new packets, traces, labels, predictions, logs and reports
+stay on the SSD. Do not copy MortarBench customer-like fields into git.
+
+The larger 3B critic completed all 24 FinQA development cases, preserved 11
+correct drafts but withheld every answer (0 correct and 0 incorrect deliveries),
+peak tree RSS 4.821 GB. Coverage collapse is a negative result.
+
+Freeze an external exploratory baseline before further tuning: all 90 prepared
+MortarBench questions and documented FRAMES100, SAS7BQ4 versus resident distinct
+MAS1.5B F16 + two 0.5B F16 instances. Verify source data against committed
+manifests/test.sha256 and models against SSD phase2 SHA256 manifest.
+Use identical public evidence packets per arm, label-blind lexical retrieval,
+4096 context, CPU8 threads, greedy seed42, 2048 total generated-token ceiling,
+and fixed common cap min(6.4GB, availableRAM minus1GB). Sample parent+worker
+RSS every0.2seconds and fail closed on breach/incomplete output.
+MortarBench typed exact is a local exploratory metric; partial source retrieval
+and absence of paystub/PDF extraction limit interpretation. FRAMES remains a
+closed-book control. Original adapters are not silently applied.
+The new runner does not establish adapted-system performance or novelty.
