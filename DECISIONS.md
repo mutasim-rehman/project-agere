@@ -1850,3 +1850,22 @@ not novel methodology, natural-error QA improvement or a safety certification.
 Queue has moved to matched natural24 QA. Initial drafts/prompts must match before
 critic attribution. Do not extrapolate controlled95.8% to financial question-answer
 accuracy. Broad100-report packets remain uninferred. GitHub checkpoint updated.
+
+## 2026-10-25 — Delivery-effect analysis specified before adapted QA results
+
+With the actor fixed, critic adaptation cannot change candidate-answer accuracy.
+Add a separate offline analysis module, not an edit to any frozen queue input.
+Require completed paired no-repair runs and the existing strict draft/prompt/role
+identity guard. Report correct delivered coverage, incorrect-delivery rate,
+withholding and undefined precision for a zero-delivery control. Analyze BOTH
+existing reported-answer and raw executable-reference metrics; do not choose the
+more favorable convention after seeing results.
+
+Bootstrap complete annual-report clusters, preserving unequal cluster sizes, and
+show descriptive sample Pareto dominance separately from uncertainty. Report an
+illustrative penalty grid0/1/2/5/10 for wrong deliveries with nondelivery utility0;
+these are not validated financial costs and no penalty is selected as primary.
+A coverage gain with more wrong answers cannot automatically be called dominant.
+Tests cover that tradeoff, zero-delivery precision, cluster handling, changed
+candidate truth and missing cases.212 tests pass. No model workload or frozen
+source/data was changed. Natural QA results remain incomplete at specification.
