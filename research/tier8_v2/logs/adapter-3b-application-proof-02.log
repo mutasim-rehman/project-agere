@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "exit_code": 1,
+  "peak_tree_rss_bytes": 4467167232,
+  "cap_bytes": 6400000000,
+  "memory_breached": false,
+  "wall_seconds": 31.932198224996682,
+  "adapter_effect_proven": false,
+  "qa_gain_measured": false
+}
+Traceback (most recent call last):
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_proof.py", line 124, in <module>
+    main()
+  File "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_proof.py", line 120, in main
+    if not passed:raise RuntimeError("Adapter application proof failed; inspect retained logs")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Adapter application proof failed; inspect retained logs

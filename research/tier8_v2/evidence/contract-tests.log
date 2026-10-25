@@ -1,15 +1,17 @@
-...............................................................................................................................{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
+............................................................................{"role": "drafter", "weights": "qwen2.5-3b-instruct-q4_k_m.gguf", "shared_instance": false, "adapter": {"role": "drafter", "file": "weights/fixture.gguf", "sha256": "fixture", "scale": 1.0, "runtime_handle_initialized": true}}
+{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false, "adapter": null}
+.......................................................{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false, "adapter": null}
 {"role": "verifier", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": true}
-..{"role": "drafter", "weights": "qwen2.5-3b-instruct-q4_k_m.gguf", "shared_instance": false}
-{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
-...{"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
-{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
+..{"role": "drafter", "weights": "qwen2.5-3b-instruct-q4_k_m.gguf", "shared_instance": false, "adapter": null}
+{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false, "adapter": null}
+...{"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false, "adapter": null}
+{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false, "adapter": null}
 {"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": true}
-{"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
-{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false}
-{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false}
-...........................
+{"role": "extractor", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false, "adapter": null}
+{"role": "drafter", "weights": "qwen2.5-1.5b-instruct-native-f16.gguf", "shared_instance": false, "adapter": null}
+{"role": "verifier", "weights": "qwen2.5-0.5b-instruct-native-f16.gguf", "shared_instance": false, "adapter": null}
+..............................
 ----------------------------------------------------------------------
-Ran 159 tests in 0.190s
+Ran 166 tests in 0.210s
 
 OK

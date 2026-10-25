@@ -33,6 +33,7 @@ def diagnostics(rows):
               "withheld": sum(not r["delivered"] for r in rows),
               "generated_tokens": sum(r["tokens"] for r in rows),
               "prompt_tokens": sum(s.get("prompt_tokens", 0) for r in rows for s in r["stages"]),
+              "prompt_token_sources": sorted({s.get("prompt_tokens_source", "legacy_manual_estimate") for r in rows for s in r["stages"]}),
               "inference_seconds": sum(s.get("seconds", 0) for r in rows for s in r["stages"]),
               "truncated_stages": sum(s.get("finish_reason") == "length" for r in rows for s in r["stages"])}
     lock_assessed = all(r.get("task") != "finqa" for r in rows)

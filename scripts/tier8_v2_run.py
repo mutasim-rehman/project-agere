@@ -17,6 +17,8 @@ import time
 
 from evidence_contract import TokenLedger, commit_patch, source_spans, validate
 from tier8_v2_data import FIELDS, evaluate
+from completion_tokenization import completion_tokens
+from tier8_v2_adapter_runtime import load_adapter
 
 ROOT = Path(__file__).resolve().parents[1]
 WEIGHTS = ROOT / "weights/tier8_v2"
@@ -90,23 +92,33 @@ def append(path, record):
 
 
 class Models:
-    def __init__(self, arm, context, residency="distinct", verifier_model="0.5b", use_selector=True, drafter_model="1.5b-f16"):
+    def __init__(self, arm, context, residency="distinct", verifier_model="0.5b", use_selector=True, drafter_model="1.5b-f16", adapter=None):
         from llama_cpp import Llama, LlamaGrammar
         self.grammar = LlamaGrammar
         self.models = {}
         self.context = context
+        self.adapter_info = load_adapter(adapter, arm, drafter_model) if adapter else None
+        self.adapter_applications = {}
         files = model_files(arm, verifier_model, use_selector, drafter_model)
         opened = {}
         for role, filename in files.items():
-            if residency == "shared" and filename in opened:
-                self.models[role] = opened[filename]
+            attached = self.adapter_info if self.adapter_info and self.adapter_info["role"] == role else None
+            key = (filename, attached["sha256"] if attached else None)
+            if residency == "shared" and key in opened:
+                self.models[role] = opened[key]
                 print(json.dumps({"role": role, "weights": filename, "shared_instance": True}), flush=True)
                 continue
+            options = {"lora_path": str(ROOT / attached["file"]), "lora_scale": attached["scale"]} if attached else {}
             self.models[role] = Llama(model_path=str(WEIGHTS / filename), n_ctx=context,
                 n_gpu_layers=0, n_threads=8, n_threads_batch=8, n_batch=64,
-                n_ubatch=64, seed=42, use_mmap=False, verbose=False)
-            opened[filename] = self.models[role]
-            print(json.dumps({"role": role, "weights": filename, "shared_instance": False}), flush=True)
+                n_ubatch=64, seed=42, use_mmap=False, verbose=False, **options)
+            if attached:
+                if not getattr(self.models[role], "_lora_adapter", None):
+                    raise RuntimeError("Adapter was not initialized by the inference runtime")
+                self.adapter_applications[role] = {**attached, "runtime_handle_initialized": True}
+            opened[key] = self.models[role]
+            print(json.dumps({"role": role, "weights": filename, "shared_instance": False,
+                              "adapter": self.adapter_applications.get(role)}), flush=True)
 
     @staticmethod
     def prompt(content, structured=True):
@@ -116,25 +128,28 @@ class Models:
                   f"<|im_start|>user\n{content}<|im_end|>\n<|im_start|>assistant\n")
 
     def count_prompt_tokens(self, role, content):
-        return len(self.models[role].tokenize(self.prompt(content).encode(), add_bos=True))
+        return len(completion_tokens(self.models[role], self.prompt(content)))
 
     def call(self, role, content, schema, budget, requested, stage):
         model = self.models[role]
         # Roles never inherit conversational KV state, including when weights share.
         model.reset()
         prompt = self.prompt(content, structured=schema is not None)
-        prompt_tokens = len(model.tokenize(prompt.encode(), add_bos=True))
+        prompt_tokens = len(completion_tokens(model, prompt))
         available = max(0, self.context - prompt_tokens - 8)
         limit = min(available, budget.allowance(requested))
         start = time.monotonic()
         if limit == 0:
-            return None, {"stage": stage, "role": role, "prompt": content, "prompt_tokens": prompt_tokens,
+            return None, {"stage": stage, "role": role, "prompt": content, "prompt_tokens": 0,
+                          "prompt_tokens_required": prompt_tokens, "prompt_tokens_source": "not_executed",
                           "generated_tokens": 0, "finish_reason": "no_context_or_budget", "response": "", "seconds": 0}
         grammar = {"grammar": self.grammar.from_json_schema(json.dumps(schema), verbose=False)} if schema is not None else {}
         output = model.create_completion(prompt, max_tokens=limit, temperature=0,
             top_k=1, seed=42, repeat_penalty=1, stop=["<|im_end|>"],
             **grammar)
         choice = output["choices"][0]
+        if output["usage"]["prompt_tokens"] != prompt_tokens:
+            raise ValueError("Completion prompt-token accounting differs from runtime usage")
         used = output["usage"]["completion_tokens"]
         budget.charge(used)
         text = choice["text"]
@@ -145,6 +160,7 @@ class Models:
             except json.JSONDecodeError:
                 answer = None
         return answer, {"stage": stage, "role": role, "prompt": content, "prompt_tokens": prompt_tokens,
+            "prompt_tokens_source": "runtime_usage_verified",
             "requested_tokens": requested, "effective_limit": limit, "generated_tokens": used,
             "finish_reason": choice["finish_reason"], "response": text, "seconds": time.monotonic() - start}
 
@@ -274,7 +290,7 @@ def verified_models(arm, verifier_model="0.5b", use_selector=True, drafter_model
 
 def worker(args, out):
     models = Models(args.arm, args.context, args.residency, args.verifier_model,
-                    args.task == "kyc" or args.selector == "suggest", args.drafter_model)
+                    args.task == "kyc" or args.selector == "suggest", args.drafter_model, args.adapter)
     rows = [json.loads(line) for line in inside(args.data).read_text().splitlines() if line][:args.limit]
     if args.task == "finqa":
         from tier8_v2_financial_pipeline import run_financial, evaluate_financial
@@ -326,6 +342,7 @@ def worker(args, out):
             result["initial_score"] = evaluate(case, result["initial_answer"])
             result["score"] = evaluate(case, result["answer"])
         result["residency"] = args.residency
+        result["adapter_applications"] = models.adapter_applications
         allocation = model_files(args.arm, args.verifier_model, args.task == "kyc" or args.selector == "suggest", args.drafter_model)
         result["verifier_checkpoint"] = allocation.get("verifier", MODEL_FILES["sas"]["sas"])
         result["drafter_checkpoint"] = allocation.get("drafter", MODEL_FILES["sas"]["sas"])
@@ -359,6 +376,7 @@ def main():
     parser.add_argument("--analysis-tokens", type=int, choices=(0, 128, 256), default=0)
     parser.add_argument("--verifier-model", choices=("0.5b", "1.5b"), default="0.5b")
     parser.add_argument("--drafter-model", choices=("1.5b-f16", "3b-q4"), default="1.5b-f16")
+    parser.add_argument("--adapter", help="Validated full-training conversion directory; applied to SAS or MAS drafter only")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.data is None:
@@ -385,11 +403,16 @@ def main():
         raise ValueError("KYC-specific handoff/verification/citation overrides are not implemented for FinQA")
     if args.limit <= 0:
         raise ValueError("Positive case limit required")
+    adapter_info = load_adapter(args.adapter, args.arm, args.drafter_model) if args.adapter else None
     out = inside(args.out)
     if args.worker:
         worker(args, out)
         return
     import psutil
+    for process in psutil.process_iter(["pid", "cmdline"]):
+        if process.pid != os.getpid() and {Path(x).name for x in process.info["cmdline"] or []} & {
+                "tier8_v2_run.py", "tier8_v2_replay.py", "tier8_v2_adapt.py", "tier8_v2_adapter_proof.py"}:
+            raise ValueError("Another inference or training workload is active")
     if out.exists():
         raise ValueError("Use a new output directory; never mix runs")
     out.mkdir(parents=True)
@@ -404,6 +427,9 @@ def main():
     sources.append(ROOT / "scripts/tier8_v2_table_retrieval.py")
     sources.append(ROOT / "scripts/program_graph.py")
     sources.append(ROOT / "scripts/program_endpoints.py")
+    sources.append(ROOT / "scripts/completion_tokenization.py")
+    sources.append(ROOT / "scripts/tier8_v2_adapter_runtime.py")
+    sources.append(ROOT / "scripts/tier8_v2_adapter_convert.py")
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),
                 "code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                 "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
@@ -411,6 +437,8 @@ def main():
                 "cap_bytes": min(6_400_000_000, psutil.virtual_memory().available - 1_000_000_000),
                 "started_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                 "runtime": subprocess.check_output([sys.executable, "-c", "import llama_cpp;print(llama_cpp.__version__)"], text=True).strip()}
+    manifest["prompt_token_accounting"] = "completion encoder with special tokens/BOS/EOS; runtime usage asserted; skipped calls cost zero"
+    manifest["adapter"] = adapter_info
     manifest["models"] = verified_models(args.arm, args.verifier_model, args.task == "kyc" or args.selector == "suggest", args.drafter_model)
     if args.task == "finqa":
         manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()

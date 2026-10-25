@@ -1,0 +1,54 @@
+{
+  "adapter": {
+    "role": "drafter",
+    "profile": "3b",
+    "file": "research/tier8_v2/runs/adapter-3b-converted-02/adapter-f16.gguf",
+    "sha256": "a39e9e89f8b4339a111a40f48054eab9e6a17f29291fc6714653483d408f38cd",
+    "scale": 1.0,
+    "training_run": "research/tier8_v2/runs/adapter-3b-train-02",
+    "conversion_manifest": "research/tier8_v2/runs/adapter-3b-converted-02/manifest.json",
+    "conversion_manifest_sha256": "d4712fe2351c48cfaac7d3f0589c66f6c2da638b79598ddb2b6ded5a90b8e9a1",
+    "optimizer_updates": 83
+  },
+  "verified_models": [
+    {
+      "file": "weights/tier8_v2/qwen2.5-0.5b-instruct-native-f16.gguf",
+      "bytes": 1266425696,
+      "sha256": "f044b7e19bf2a007973e9c84119c34afcab419546e76595b0367f963275b66e9",
+      "source_sha256": "8e0ae26000627ed62de0e78e41860af70094558b9d2913385c842a6aa06cf3fc",
+      "source_file": "weights/tier8_v2/qwen2.5-0.5b-instruct-fp16.gguf",
+      "runtime": "0.3.16",
+      "transform": {
+        "ftype": "MOSTLY_F16",
+        "token_embedding_type": "F16",
+        "output_tensor_type": "F16",
+        "allow_requantize": false
+      },
+      "seconds": 1.6169372720000865,
+      "integrity": {
+        "tensor_count": 291,
+        "required_bytes": 1266425696,
+        "actual_bytes": 1266425696
+      }
+    },
+    {
+      "repo": "Qwen/Qwen2.5-3B-Instruct-GGUF",
+      "revision": "7dabda4d13d513e3e842b20f0d435c732f172cbe",
+      "file": "weights/tier8_v2/qwen2.5-3b-instruct-q4_k_m.gguf",
+      "bytes": 2104932768,
+      "sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+      "quantization": "Q4_K_M",
+      "license_metadata": "other",
+      "status": "download_verified_only",
+      "inference_or_memory_fit_tested": false,
+      "scope": "Prospective separately labelled model-allocation control; does not replace original FP16 MAS."
+    }
+  ],
+  "cap_bytes": 6400000000,
+  "code_sha256": {
+    "tier8_v2_adapter_proof.py": "23057be3801cf234b721cb93d1e9b53ab1a42357289a5313588405d76506e591",
+    "tier8_v2_run.py": "a9a3d8cebfd01f11438ef9e03573306a3a02109ac16b673ebb276949812e9e60",
+    "tier8_v2_adapter_runtime.py": "a5fcb70fd9ef03d5c54d549e879b8bc2cd8e848fc51c5e939ef0856859efb9c3",
+    "completion_tokenization.py": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b"
+  }
+}

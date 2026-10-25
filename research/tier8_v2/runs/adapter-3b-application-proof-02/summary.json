@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "exit_code": 1,
+  "peak_tree_rss_bytes": 4467167232,
+  "cap_bytes": 6400000000,
+  "memory_breached": false,
+  "wall_seconds": 31.932198224996682,
+  "adapter_effect_proven": false,
+  "qa_gain_measured": false
+}

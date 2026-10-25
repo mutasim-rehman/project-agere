@@ -2,6 +2,33 @@
 
 ## Continuation — 25 October 2026
 
+### Actual adapter effect proved; measured inference integration
+
+- Added strict runtime loading of full-training converted adapters. Fit-only,
+  wrong-profile, changed-provenance and changed-file artifacts are rejected. MAS
+  attaches the 3B adapter only to its drafter; its 0.5B critic remains unadapted.
+  SAS support requires a 7B adapter. Sharing keys include adapter identity so a
+  base and adapted role cannot accidentally share the same altered instance.
+  Each case records backend-handle initialization and artifact identity.
+- Real scale 0 -> 1 -> 0 CPU diagnostic passed on a fixed training-validation
+  prompt: zero-repeat logprob drift exactly 0, maximum common-token logprob effect
+  22.7471, peak parent+worker RSS 4,337,459,200 bytes under cap 6.40 GB. This proves
+  application/effect only; it is not QA gain or full-MAS memory measurement.
+- Two earlier diagnostic attempts failed on harness issues: logprobs requires
+  logits_all=True in this runtime; NumPy float logprobs needed conversion before
+  JSON serialization. Both failed outputs/logs remain immutable. The successful
+  third diagnostic uses the same full 4096 context and monitored memory ceiling.
+- Integrated the tested completion encoder into inference preflight and asserted
+  agreement with actual engine prompt-token usage. Skipped calls record zero
+  prefill cost plus a separate required-context count. Analyses identify historical
+  manual estimates versus verified usage. Old logs/scores are unchanged; old
+  replay guards intentionally require their original runtime behavior.
+- Added concurrency guards and adapter/token-accounting tests. All 166 tests pass.
+  Fresh unadapted and adapted runs will use identical new code, original 24 public
+  packets, no demos/analysis/repair, 3B Q4 drafter and native 0.5B verifier. This
+  matches the adaptation prompt configuration; comparison to the stronger 128-
+  analysis baseline is separate. No architecture or novelty claim is implied.
+
 ### Full 3B adaptation and conversion completed
 
 - Full train-only epoch completed: 661 examples, 83 optimizer updates, 504 changed
