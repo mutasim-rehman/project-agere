@@ -2282,3 +2282,25 @@ epoch counts, finite validation, exact pinned GGUF hashes, actual C adapter hand
 This is feasibility/provenance, not QA or proof of parity with greedy JSON output.
 Copy existing pinned split7B GGUFs to authorized SSD with byte hashes and preserve
 original files. No new download, quantization or source model change.
+
+## 2026-10-26 — Freeze serial full-adaptation continuation and stronger baseline QA
+
+Prepare a separate joint post-training queue, waiting on exact live SAS controller
+PID/create-time/plan hash. Require successful full3801-example476-update SAS epoch,
+finite validation, changed tensors, frozen inputs and memory cap before any job.
+Serial steps: SAS conversion and last-logit effect proof; same393-update extended
+MAS critic epoch, conversion, legacy critic effect proof; matched original/extended
+critic100-report runs with identical adapted actor/no repair; guarded paired both-
+metric delivery analysis; joint SAS100 direct/no demos and100 with128-token analysis
+and2 fixed demos. Report both SAS policies, no favorable-policy-only reporting.
+No full method freeze or novelty conclusion implied by this baseline queue.
+
+All code/data inputs and runtime versions pinned. New outputs only, fail closed,
+no retries/implicit resumes; per-job whole-tree RSS traces. Training cap10.5GB,
+deployment/conversion/proof/QA cap6.4GB, host reserve1GB. Legacy scoring/validation
+continues independently; new last-logit proof for SAS avoids all-position history.
+Stop entire descendant process tree on failure, including nested worker sessions.
+Two queue-gate CPU tests reject fit-only, incomplete epoch, nonfinite validation
+and cap breach. Full default suite274 tests,17 training-runtime skips; new compact
+CPU preparation2 and pread2 tests passed separately in training runtime. NN proof
+and QA still pending; baseline training or passing tests do not establish novelty.
