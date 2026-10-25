@@ -1,6 +1,6 @@
 """Analyze complete paired critic probes with report-group uncertainty."""
 import argparse
-from collections import defaultdict
+from collections import defaultdict,Counter
 import hashlib
 import json
 from pathlib import Path
@@ -29,7 +29,7 @@ def analyze(labels,responses):
                 a,b=accepted[pos],accepted[neg]
                 full_pairs+=int(a and not b);both_accepted+=int(a and b);both_rejected+=int(not a and not b);inverted+=int(not a and b)
             events=[keyed[(i,protocol)]['event'] for i in by_id]
-            summary[protocol]={'reference_accepts':tp,'incorrect_mutation_accepts':fp,'reference_rejects':len(groups)-tp,'incorrect_mutation_rejects':len(groups)-fp,'complete_pair_discriminations':full_pairs,'both_accepted_pairs':both_accepted,'both_rejected_pairs':both_rejected,'inverted_pairs':inverted,'gate_accuracy':(tp+len(groups)-fp)/len(labels),'generated_tokens':sum(e['generated_tokens'] for e in events),'prompt_tokens':sum(e['prompt_tokens'] for e in events),'inference_seconds':sum(e['seconds'] for e in events)}
+            summary[protocol]={'verdict_counts':dict(Counter(keyed[(i,protocol)]['verdict'] or 'UNPARSED' for i in by_id)),'reference_accepts':tp,'incorrect_mutation_accepts':fp,'reference_rejects':len(groups)-tp,'incorrect_mutation_rejects':len(groups)-fp,'complete_pair_discriminations':full_pairs,'both_accepted_pairs':both_accepted,'both_rejected_pairs':both_rejected,'inverted_pairs':inverted,'gate_accuracy':(tp+len(groups)-fp)/len(labels),'generated_tokens':sum(e['generated_tokens'] for e in events),'prompt_tokens':sum(e['prompt_tokens'] for e in events),'inference_seconds':sum(e['seconds'] for e in events)}
         deltas=[]
         for ids in groups.values():
             changes=[]
@@ -40,7 +40,7 @@ def analyze(labels,responses):
         rng=random.Random(42)
         sampled=sorted(sum(rng.choices(deltas,k=len(deltas)))/len(deltas) for _ in range(10000))
         out['profiles'][profile]={'protocols':summary,'binary_minus_rich_gate_accuracy':sum(deltas)/len(deltas),'report_cluster_bootstrap_95_interval':[sampled[249],sampled[9749]],'new_reference_accepts':summary['binary']['reference_accepts']-summary['rich']['reference_accepts'],'additional_incorrect_mutation_accepts':summary['binary']['incorrect_mutation_accepts']-summary['rich']['incorrect_mutation_accepts']}
-    out['limits']='Controlled train-validation mutations; reference labels not independently semantically adjudicated. UNKNOWN/unparsed count as nonaccept for gate metrics, not proof of a correct explicit rejection. Bootstrap resamples report pairs (10000,seed42); only12 groups in planned experiment. Protocol and instructions both change. This is not a novel method, natural-error QA improvement or full MAS memory measurement.'
+    out['limits']='Controlled train-validation mutations; reference labels not independently semantically adjudicated. UNKNOWN/unparsed count as nonaccept for gate metrics, not proof of a correct explicit rejection. Bootstrap resamples report pairs (10000,seed42); only12 groups in planned experiment. Degenerate bootstrap intervals do not establish equivalence. Protocol and instructions both change. This is not a novel method, natural-error QA improvement or full MAS memory measurement.'
     return out
 
 

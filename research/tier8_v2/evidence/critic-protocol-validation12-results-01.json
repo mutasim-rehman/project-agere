@@ -1,0 +1,116 @@
+{
+  "n_programs": 24,
+  "n_report_groups": 12,
+  "profiles": {
+    "0.5b": {
+      "protocols": {
+        "rich": {
+          "verdict_counts": {
+            "FAIL": 11,
+            "PASS": 13
+          },
+          "reference_accepts": 6,
+          "incorrect_mutation_accepts": 7,
+          "reference_rejects": 6,
+          "incorrect_mutation_rejects": 5,
+          "complete_pair_discriminations": 0,
+          "both_accepted_pairs": 6,
+          "both_rejected_pairs": 5,
+          "inverted_pairs": 1,
+          "gate_accuracy": 0.4583333333333333,
+          "generated_tokens": 1027,
+          "prompt_tokens": 16455,
+          "inference_seconds": 52.58092255099655
+        },
+        "binary": {
+          "verdict_counts": {
+            "PASS": 22,
+            "FAIL": 2
+          },
+          "reference_accepts": 11,
+          "incorrect_mutation_accepts": 11,
+          "reference_rejects": 1,
+          "incorrect_mutation_rejects": 1,
+          "complete_pair_discriminations": 0,
+          "both_accepted_pairs": 11,
+          "both_rejected_pairs": 1,
+          "inverted_pairs": 0,
+          "gate_accuracy": 0.5,
+          "generated_tokens": 216,
+          "prompt_tokens": 15855,
+          "inference_seconds": 28.839032239999142
+        }
+      },
+      "binary_minus_rich_gate_accuracy": 0.041666666666666664,
+      "report_cluster_bootstrap_95_interval": [
+        0.0,
+        0.125
+      ],
+      "new_reference_accepts": 5,
+      "additional_incorrect_mutation_accepts": 4
+    },
+    "3b": {
+      "protocols": {
+        "rich": {
+          "verdict_counts": {
+            "FAIL": 24
+          },
+          "reference_accepts": 0,
+          "incorrect_mutation_accepts": 0,
+          "reference_rejects": 12,
+          "incorrect_mutation_rejects": 12,
+          "complete_pair_discriminations": 0,
+          "both_accepted_pairs": 0,
+          "both_rejected_pairs": 12,
+          "inverted_pairs": 0,
+          "gate_accuracy": 0.5,
+          "generated_tokens": 864,
+          "prompt_tokens": 16455,
+          "inference_seconds": 192.96645856000032
+        },
+        "binary": {
+          "verdict_counts": {
+            "UNKNOWN": 24
+          },
+          "reference_accepts": 0,
+          "incorrect_mutation_accepts": 0,
+          "reference_rejects": 12,
+          "incorrect_mutation_rejects": 12,
+          "complete_pair_discriminations": 0,
+          "both_accepted_pairs": 0,
+          "both_rejected_pairs": 12,
+          "inverted_pairs": 0,
+          "gate_accuracy": 0.5,
+          "generated_tokens": 144,
+          "prompt_tokens": 15855,
+          "inference_seconds": 152.75243693800257
+        }
+      },
+      "binary_minus_rich_gate_accuracy": 0.0,
+      "report_cluster_bootstrap_95_interval": [
+        0.0,
+        0.0
+      ],
+      "new_reference_accepts": 0,
+      "additional_incorrect_mutation_accepts": 0
+    }
+  },
+  "limits": "Controlled train-validation mutations; reference labels not independently semantically adjudicated. UNKNOWN/unparsed count as nonaccept for gate metrics, not proof of a correct explicit rejection. Bootstrap resamples report pairs (10000,seed42); only12 groups in planned experiment. Degenerate bootstrap intervals do not establish equivalence. Protocol and instructions both change. This is not a novel method, natural-error QA improvement or full MAS memory measurement.",
+  "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_probe/critic_protocol_validation12_01",
+  "source_manifest_sha256": "333e8d5ed1a0e63e0474efa19f26924095095b73f3b81d1aaeb22288be636327",
+  "response_sha256": {
+    "0.5b": "d4b2e37e8dd1cb456182f8c08827b5b513fbd83eff4af7229c7a89c4b35edfc9",
+    "3b": "bf5152892d7974267a6bee445bbb5caa0e5fb5c842ec97f351123a2c061bda40"
+  },
+  "analysis_source_sha256": "66a73711046e8a1d445bbfb99777fe9ecf52bd10c350b924a49a3046be28f4a5",
+  "memory": {
+    "0.5b": {
+      "peak_tree_rss_bytes": 1471651840,
+      "cap_bytes": 5453092352
+    },
+    "3b": {
+      "peak_tree_rss_bytes": 2376196096,
+      "cap_bytes": 5453092352
+    }
+  }
+}

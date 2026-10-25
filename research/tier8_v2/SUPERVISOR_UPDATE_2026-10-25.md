@@ -102,3 +102,22 @@ Recovery code now preserves and validates completed prefixes in separate segment
 Its first launch was refused before model loading because available RAM was below
 7.4GB; inference remains stopped. Boot metadata confirms a host reboot after the
 last original sample, although the initial termination mechanism is unknown.
+
+## Completed follow-up: critic discrimination, not just acceptance
+
+A new96-review controlled probe used12 train-validation report groups, each with
+an annotation-consistent reference and an executable, source-supported but
+numerically incorrect operation mutation. Both0.5B and3B critics reviewed both
+members using the existing rich protocol and a simpler verdict-only protocol.
+Neither critic/protocol accepted the reference while rejecting its mutation for
+any of the12 pairs.0.5B binary accepted11/12 of each class;3B returnedFAIL for every
+rich review andUNKNOWN for every binary review. Simplifying the review protocol
+did not fix useful discrimination. This supports strengthening role-specific
+verification rather than assuming a bigger critic or easier format solves it.
+
+These are controlled training-validation probes, not natural errors, independently
+adjudicated semantic labels, or publication confirmation. Judge calibration,
+contrastive negatives and framing controls have prior work added to the audit.
+The probe is an informative negative result, not a new method. Both runs fit the
+component cap; raw evidence stays on SSD. Full external recovery remains stopped
+pending original7.4GB available-memory requirement.

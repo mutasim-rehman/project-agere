@@ -148,3 +148,18 @@ mutations; binary accepts11/12 references AND11/12 wrong mutations. Higher accep
 is not useful discrimination. 3B was still live at the last observation; do not
 interpret partial3B output or restart it. Full paired analysis waits for completion.
 184 tests pass, including report-cluster analysis and complete-pair discrimination.
+
+## Latest authoritative result — critic probe complete
+
+Detached critic probe finished96 calls, both profiles memory-valid.0.5B peak1.472GB,
+3B2.376GB. Neither protocol/critic correctly separates either member of any of the
+12 reference/mutation PAIRS (accept reference AND reject mutation).0.5B rich:
+6/12 reference accepts and7/12 mutation accepts; binary11/12 and11/12.3B rich
+FAIL24/24; binaryUNKNOWN24/24. Simpler protocol does not solve discrimination.
+Aggregate: evidence/critic-protocol-validation12-results-01.json. Raw SSD run and
+all hashes are preserved.184 tests pass. No new accuracy/novelty claim.
+
+Full external queue is still stopped for headroom, not restarted; memory after the
+probe was7.27–7.38GB available against7.4GB required. Original26 cases preserved.
+Goal remains active. Next verifier development must address actual discrimination,
+and SAS still needs comparably strong adaptation before architecture claims.

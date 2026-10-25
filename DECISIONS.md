@@ -1554,3 +1554,30 @@ explicit correct negative judgment. Only12 groups; this is exploratory. Current
 mutation-order recipe yields9 substitutions to add and3 to subtract; no broad
 operator-robustness claim. Full suite184 tests passed. Analysis code does not
 change the running worker or any frozen input.
+
+## 2026-10-25 — Completed critic protocol probe: no pair discrimination
+
+All96 actual model calls completed,48/profile. Full source/data hashes, labels,
+responses, timings and memory remain on SSD. Peaks:0.5B1.472GB;3B2.376GB, both
+below fixed5.453GB component cap. Analysis02 preserves explicit verdict histograms;
+analysis01 remains on SSD as an earlier aggregate, not overwritten.
+
+Neither critic/protocol separates the reference from the incorrect mutation on
+ANY of12 report pairs.0.5B rich accepts6 references/7 mutations; binary11/11.
+3B rich returnsFAIL24/24; binaryUNKNOWN24/24. UNKNOWN is not an explicit negative
+judgment; its nonacceptance cannot demonstrate semantic competence. Gate accuracy
+45.8/50/50/50percent reflects mostly acceptance bias, not useful paired reasoning.
+No degenerate bootstrap interval is interpreted as equivalence. Source selection
+is limited to reference-agreeing train-validation annotations and controlled
+operator substitutions; no external/natural-error accuracy gain is established.
+
+Decision: stop treating simpler review instructions as a sufficient verifier fix.
+The next strong controls should establish role-specific program discrimination
+(training labels from actual annotations, without invented per-field semantic
+claims) and/or independent solving before a delivery gate is trusted. Compare
+against known approaches; calibration/negative training/independent verification
+are prior art. Original repair contribution and publication novelty remain unproven.
+
+Full external recovery remains stopped. After the component run available RAM
+briefly approached7.38GB, then7.27GB, below its7.4GB preflight; do not restart or
+lower the frozen original cap to bypass that condition. All184 tests pass.
