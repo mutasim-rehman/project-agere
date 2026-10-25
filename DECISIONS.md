@@ -1667,3 +1667,21 @@ Keep conversion, actual adapter application proof and useful natural-error
 verification improvements as distinct later requirements. CPU inference cannot
 overlap GPU training. Full external queue remains pending host headroom and
 serialized model-work availability. Do not call the fit adapter a deployed critic.
+
+## 2026-10-25 — Full critic training actually running
+
+After successful fit and source milestoneb89d297, launched the full critic epoch
+in a detached processPID26043, exact identity/command/time in
+critic3b-training-launch-01.json. Actual optimizer events confirm live learning,
+not just a pending job. At the latest observation21/393 updates (168 examples)
+had completed; GPU allocated3.912GB/reserved4.228GB, host RSS1.807GB. Pace~11.27s
+per8-example update implies~70min training remaining at that observation, plus
+validation/save overhead. No completed validation or inference gain is claimed.
+
+The training dataset has no UNKNOWN targets; do not infer abstention calibration
+or semantic completeness from balanced PASS/FAIL supervision. Evaluate natural
+model errors and missing/ambiguous evidence separately before trusting the gate.
+Do not edit trainer/data while this identified job is live or launch competing
+model work. Full external recovery remains pending model-work serialization and
+host headroom. Novel contribution and publication-quality confirmation remain
+unproven; strong critic and comparably adapted SAS are still development needs.

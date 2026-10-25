@@ -1,0 +1,27 @@
+{
+  "observed_utc": "2026-10-25T09:59:15Z",
+  "pid": 26043,
+  "live": true,
+  "updates_completed": 27,
+  "expected_updates": 393,
+  "examples_processed": 216,
+  "last_update": {
+    "state": "update",
+    "time": 1792922349.2141607,
+    "step": 27,
+    "examples": 8,
+    "loss": 0.10155308584216982,
+    "gradient_norm": 1.0204901695251465,
+    "gpu_peak_allocated": 3912012288,
+    "gpu_peak_reserved": 4227858432,
+    "host_rss": 1806807040
+  },
+  "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-train-01",
+  "purpose": "critic",
+  "dataset_n": {
+    "train": 3140,
+    "validation": 382
+  },
+  "state": "training",
+  "scope": "Live optimizer evidence only; validation, conversion, application and QA gain unproven"
+}

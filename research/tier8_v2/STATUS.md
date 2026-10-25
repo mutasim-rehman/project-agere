@@ -178,3 +178,18 @@ or adaptation accuracy result yet.191 tests pass. Trainer supports explicit role
 parity/data/base manifests and SSD artifacts; critic cannot silently load as actor.
 Full epoch and subsequent application/QA evaluation remain outstanding at this
 checkpoint. Goal remains active, novel useful contribution still unproven.
+
+## Latest authoritative live state — full critic epoch
+
+Full critic training is ACTUALLY RUNNING, detachedPID26043, launched fromb89d297.
+Output SSD: runs/tier8_critic_training/critic3b-train-01; controller log:
+runs/critic3b-train-01.log. At an observed checkpoint21/393 optimizer updates,
+168 training examples had completed; GPU allocated3.912GB/reserved4.228GB.
+Launch/observation pointers are in evidence/critic3b-training-*.json. Revalidate
+PID/create-time and events; do not duplicate/restart on observation timeout.
+
+Keep trainer, encoded corpus and pinned weights frozen until terminal. CPU
+inference cannot overlap this training job. Validation loss, conversion,
+role-specific application proof and actual verification gains are still pending.
+This is established-method baseline strengthening, not a novelty claim.191 tests
+pass. Full external recovery still waits for headroom and serialized model work.

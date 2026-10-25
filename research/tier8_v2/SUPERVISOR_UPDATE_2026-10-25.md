@@ -121,3 +121,18 @@ contrastive negatives and framing controls have prior work added to the audit.
 The probe is an informative negative result, not a new method. Both runs fit the
 component cap; raw evidence stays on SSD. Full external recovery remains stopped
 pending original7.4GB available-memory requirement.
+
+## Critic baseline strengthening now underway
+
+Constructed3522 balanced training/validation examples from training-only annotated
+programs and valid-source executable single-edit negatives;3140 train and382
+validation across414/49 disjoint report groups. Mutations cover operations and
+source-operand substitution. All token sequences pass actual HF/GGUF parity;
+weights/data/new logs live on SSD. These are weak numerical annotation labels,
+not independently adjudicated semantic judgments or natural model errors.
+
+The real2-update fit passed with504 changed adapter tensors and3.861GB peak GPU
+allocation. Full one-epoch critic training is now live (393 planned optimizer
+updates); subsequent conversion, applied-adapter proof and QA evaluation remain
+required. No new correctness/novelty result follows from training progress. SAS
+still needs comparable adaptation before an architecture comparison is defensible.

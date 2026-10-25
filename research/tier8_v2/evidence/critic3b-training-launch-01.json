@@ -1,0 +1,33 @@
+{
+  "pid": 26043,
+  "create_time": 1792922033.1,
+  "command": [
+    "/home/mutasim/Desktop/project-agere/.venv-training/bin/python",
+    "-u",
+    "scripts/tier8_v2_adapt.py",
+    "--profile",
+    "3b",
+    "--purpose",
+    "critic",
+    "--mode",
+    "train",
+    "--dataset-manifest",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/manifest.json",
+    "--parity-manifest",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/parity.json",
+    "--training-base-manifest",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/training-base-3b.json",
+    "--out",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-train-01"
+  ],
+  "out": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-train-01",
+  "log": "/run/media/mutasim/Data/AGERE/runs/critic3b-train-01.log",
+  "source_commit": "b89d297c1c830ef0f1433f9577b7f5cef96b1859",
+  "created_utc": "2026-10-25T09:53:53Z",
+  "expected_training_examples": 3140,
+  "expected_validation_examples": 382,
+  "expected_optimizer_updates": 393,
+  "detached": true,
+  "fit_dependency_passed": true,
+  "scope": "Known-method critic adaptation; no deployed gain or novelty established"
+}
