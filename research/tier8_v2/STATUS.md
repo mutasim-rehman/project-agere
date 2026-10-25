@@ -266,3 +266,32 @@ for provenance-metadata clarification; identical example payload. No training/
 application/QA gain yet. Paired100-report dev experiment prepared, not scheduled;
 trained-versus-trained analysis guard still required. Current external queue live
 and SAS fit controller waiting. LIVE_STATUS.md has the dated phone checkpoint.
+
+## Latest authoritative terminal results — external complete, SAS fit stopped
+
+All380 original unadapted external case-arm evaluations completed. Mortar local
+exact:SAS39/90,MAS26/90; FRAMES closed-book strict2/100,1/100 (same punctuation
+sensitivity). Mortar9-case-cluster paired MAS−SAS−.144,95%[-.239,-.045]; FRAMES
+question-bootstrap[-.05,.02]. All original26 cases preserved; complete external
+queue-tree peak5.628GB under6.4GB. Partial-document/local scoring and unequal
+allowances896/1792 mean no full-benchmark/optimized-architecture claim.
+
+MAS returned empty transaction lists57/57: all11 correct matches are empty-gold;
+0/46 nonempty-gold matches. All required identifiers are literally retrieved in19
+of46, not semantic sufficiency. Final generations all stopped normally. SAS13/46
+nonempty matches. This is an observed unadapted-system capability/retrieval gap,
+not evidence that more agents or unused token budget helps. Corpus/critic FinQA
+experiments remain separate, not transferred performance claims.
+
+Queued7B fit started after external completion and was killed by its monitor
+while loading (first shard complete). Tree RSS10.547761GB exceeded separate10.5GB
+training cap, with host available11.643687GB at last sample. Zero updates, no
+adapter/fit summary, only loading event. No physical OOM or GPU fit result is
+established. Original failed source/logs preserved. Diagnose mapped checkpoint
+storage retention; test CPU-weight detachment before one new protocol attempt,
+without raising cap or shrinking context/targets. Neither controller remains live.
+
+Trained-versus-trained analysis guard is implemented/tested; actual second critic
+still untrained.248 tests covered across required runtimes. Broad100-report and
+174-case natural packets still uninferred. Useful novelty/publication confirmation
+and comparable full SAS adaptation remain outstanding. LIVE_STATUS.md is current.

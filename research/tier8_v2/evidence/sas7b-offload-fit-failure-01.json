@@ -1,0 +1,35 @@
+{
+  "status": "monitor_stopped_during_model_loading",
+  "state": {
+    "state": "failed",
+    "time": 1792938364.1807625,
+    "error": "RuntimeError('Offload fit failed; preserve evidence, no retry')"
+  },
+  "training_resource_cap_bytes": 10500000000,
+  "maximum_tree_rss_bytes": 10547761152,
+  "host_available_at_final_sample": 11643686912,
+  "minimum_host_available_bytes": 11582119936,
+  "fit_updates": 0,
+  "adapter_saved": false,
+  "summary_written": false,
+  "events": [
+    {
+      "state": "loading",
+      "time": 1792938350.363629
+    }
+  ],
+  "source_snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/controller-source-snapshot.py",
+  "source_snapshot_sha256": "96600539b85fe2e870f8f63209734a29e78c07baa13c1af055d44b61ad027642",
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/plan.json": "1b2ca7371810444610e7fc348df8a794e0e060f40a4b660284266b22647ad523",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/journal.jsonl": "011ccc365aa1642ec37610432882dbb683c7beb444b9efa81af6a505858dd622",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/state.json": "e2544359f091634d4f178e82bdad73fac678059e79c0db6b99a73604316a3575",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/worker.log": "27659e26fa1d190bea4b44424f8b5291df8387edf921dea6aa033608355613e5",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/memory.jsonl": "acebb245ae344cca1340a6aaeac8ad8d3fe90b01c1544dc094e16c2b4d0fc2ab",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/fit/manifest.json": "83c058fdc9f56e746efb5674ec5c80f5b994f0137a5262b443850c60256dc52a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/fit/events.jsonl": "120b68381e248d48aadce36bc8f8bf9805f1b192637dc3a702a583ad9ab83dee"
+  },
+  "diagnosis": "RSS training-cap breach, not observed host-reserve exhaustion; stopped after first checkpoint shard. GPU fit is unmeasured. Loader retaining mapped source shards through CPU weight views is a working hypothesis, not proven by the old trace, which lacks private/file-backed breakdown.",
+  "next_step": "Keep old failed run immutable. Test detaching CPU embedding/head tensors from checkpoint-backed storage during load, add private/shared memory diagnostics, then consider one explicitly revised new fit plan under the SAME10.5GB cap and full context/targets. Do not blindly restart or raise cap.",
+  "novelty_established": false
+}

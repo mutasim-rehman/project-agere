@@ -1,0 +1,216 @@
+{
+  "status": "complete_scores_replayed",
+  "case_arm_evaluations": 380,
+  "tasks": {
+    "mortar": {
+      "conditions": {
+        "sas": {
+          "n": 90,
+          "exact_matches": 39,
+          "typed_counts": {
+            "txn_id_list": {
+              "n": 57,
+              "correct": 21
+            },
+            "boolean": {
+              "n": 26,
+              "correct": 17
+            },
+            "account_id_list": {
+              "n": 7,
+              "correct": 1
+            }
+          },
+          "generated_tokens": 9519,
+          "recorded_seconds": 9655.454419369024,
+          "peak_tree_rss_bytes": 5202083840,
+          "final_finish_reasons": {
+            "stop": 90
+          },
+          "note": "Reported seconds sum saved case durations; SAS Mortar spans interruption/recovery.",
+          "identifier_prediction_shapes": {
+            "txn_id_list": {
+              "n": 57,
+              "empty_predictions": 30,
+              "nonempty_gold": 46,
+              "nonempty_gold_exact_matches": 13
+            },
+            "account_id_list": {
+              "n": 7,
+              "empty_predictions": 3,
+              "nonempty_gold": 6,
+              "nonempty_gold_exact_matches": 0
+            }
+          }
+        },
+        "mas": {
+          "n": 90,
+          "exact_matches": 26,
+          "typed_counts": {
+            "txn_id_list": {
+              "n": 57,
+              "correct": 11
+            },
+            "boolean": {
+              "n": 26,
+              "correct": 14
+            },
+            "account_id_list": {
+              "n": 7,
+              "correct": 1
+            }
+          },
+          "generated_tokens": 2735,
+          "recorded_seconds": 2479.5301962699887,
+          "peak_tree_rss_bytes": 5607260160,
+          "final_finish_reasons": {
+            "stop": 90
+          },
+          "note": "Reported seconds sum saved case durations; SAS Mortar spans interruption/recovery.",
+          "identifier_prediction_shapes": {
+            "txn_id_list": {
+              "n": 57,
+              "empty_predictions": 57,
+              "nonempty_gold": 46,
+              "nonempty_gold_exact_matches": 0
+            },
+            "account_id_list": {
+              "n": 7,
+              "empty_predictions": 4,
+              "nonempty_gold": 6,
+              "nonempty_gold_exact_matches": 0
+            }
+          }
+        }
+      },
+      "paired_exact": {
+        "n": 90,
+        "n_groups": 9,
+        "mas_minus_sas": -0.14444444444444443,
+        "group_bootstrap_95_interval": [
+          -0.2391304347826087,
+          -0.0449438202247191
+        ],
+        "mas_only_correct": 7,
+        "sas_only_correct": 20,
+        "both_correct": 19
+      },
+      "grouping": "explicit test_case_number (shared financial case)",
+      "retrieved_transaction_identifier_mentions": {
+        "nonempty_gold_cases": 46,
+        "all_gold_identifiers_mentioned": 19,
+        "any_gold_identifier_mentioned": 24
+      },
+      "mention_limit": "Offline gold-assisted literal-ID presence diagnostic only; mention does not prove relevance or sufficient evidence.",
+      "fixed_rule_diagnostics": {
+        "txn_id_list": {
+          "n": 57,
+          "constant_true_correct": 0,
+          "constant_false_correct": 0,
+          "constant_empty_list_correct": 11
+        },
+        "boolean": {
+          "n": 26,
+          "constant_true_correct": 17,
+          "constant_false_correct": 9,
+          "constant_empty_list_correct": 0
+        },
+        "account_id_list": {
+          "n": 7,
+          "constant_true_correct": 0,
+          "constant_false_correct": 0,
+          "constant_empty_list_correct": 1
+        }
+      }
+    },
+    "frames": {
+      "conditions": {
+        "sas": {
+          "n": 100,
+          "exact_matches": 2,
+          "typed_counts": {
+            "closed_book": {
+              "n": 100,
+              "correct": 2
+            }
+          },
+          "generated_tokens": 2065,
+          "recorded_seconds": 594.1588309119943,
+          "peak_tree_rss_bytes": 5076500480,
+          "final_finish_reasons": {
+            "stop": 100
+          },
+          "note": "Reported seconds sum saved case durations; SAS Mortar spans interruption/recovery.",
+          "punctuation_normalized_matches": 2
+        },
+        "mas": {
+          "n": 100,
+          "exact_matches": 1,
+          "typed_counts": {
+            "closed_book": {
+              "n": 100,
+              "correct": 1
+            }
+          },
+          "generated_tokens": 11507,
+          "recorded_seconds": 711.1777936069957,
+          "peak_tree_rss_bytes": 5541289984,
+          "final_finish_reasons": {
+            "stop": 100
+          },
+          "note": "Reported seconds sum saved case durations; SAS Mortar spans interruption/recovery.",
+          "punctuation_normalized_matches": 1
+        }
+      },
+      "paired_exact": {
+        "n": 100,
+        "n_groups": 100,
+        "mas_minus_sas": -0.01,
+        "group_bootstrap_95_interval": [
+          -0.05,
+          0.02
+        ],
+        "mas_only_correct": 1,
+        "sas_only_correct": 2,
+        "both_correct": 0
+      },
+      "grouping": "one group per question; cross-question dependence unassessed",
+      "paired_punctuation_normalized": {
+        "n": 100,
+        "n_groups": 100,
+        "mas_minus_sas": -0.01,
+        "group_bootstrap_95_interval": [
+          -0.05,
+          0.02
+        ],
+        "mas_only_correct": 1,
+        "sas_only_correct": 2,
+        "both_correct": 0
+      }
+    }
+  },
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/manifest.json": "6fdfd9b03918a097c42d685f0de92c4b7195dbfff9a108fc80943b311ff2c7d7",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01/mortar-packets.jsonl": "95a7f155b1d012d539ffee21b8406d71c0c9ef8e3240731944964a8bca8b1f30",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/mortar-sas/mortar-packets.jsonl": "0f5867d3b480c7a806ab9777d759fa62d6bc0e6451d2b613f8204548a558744e",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/mortar-sas/summary.json": "4717f28a90c7561d3aaae27b1d39554686e6a94f2d02373cb4b94e99602e2046",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01/mortar-sas/cases.jsonl": "3c66428ba751fb0f9008d8a4f2d26543c49eeb95efefa2be4ed82c805b65b07a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/mortar-sas/segment/cases.jsonl": "d956e696096810dd73eb360f85df8775f0075d2393062513b0a7982fc7ada8a2",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/mortar-mas/mortar-packets.jsonl": "95a7f155b1d012d539ffee21b8406d71c0c9ef8e3240731944964a8bca8b1f30",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/mortar-mas/summary.json": "cf6a9bc318d219f23924ad262e1c74f5df825d5b61246a96ddfc589103d46baa",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/mortar-mas/segment/cases.jsonl": "7cdb03be998bd57c0d2b88025e3fa2d6037d7ddeab373b48b7079f187ab38c4d",
+    "/run/media/mutasim/Data/AGERE/datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/data/questions.jsonl": "35430725e025ced03cbe0ec990eca7b67f7e3061db9d9834220ab56a825529ce",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01/frames-packets.jsonl": "7753bb1b8d244ef4600f1ab4cc054afc0495321243dd0f4f2b47b8505c822275",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/frames-sas/frames-packets.jsonl": "7753bb1b8d244ef4600f1ab4cc054afc0495321243dd0f4f2b47b8505c822275",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/frames-sas/summary.json": "ee7b5133158645a1a69ce4234fb5dd718c6a0f43c82e11de2e497cfa4578b072",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/frames-sas/segment/cases.jsonl": "5a8e134103d3213ec2ad63b7300fd5c24102715b0a31581d16babff8af42ba94",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/frames-mas/frames-packets.jsonl": "7753bb1b8d244ef4600f1ab4cc054afc0495321243dd0f4f2b47b8505c822275",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/frames-mas/summary.json": "f27c1c55f97c57125d4bebdcb4851b0ecebed1275d533f390b642510609432c4",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery02/frames-mas/segment/cases.jsonl": "8293cf9af4175d72f954e5f610a5ec4df16e9ba0f91820fa0da9d7afcc4a7bd5",
+    "/run/media/mutasim/Data/AGERE/datasets/external/FRAMES/58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef/frames_100.jsonl": "df9853ec0efc67c3cecff1db3bd874ca894585409f132d0ac1d4e30d25486e1d"
+  },
+  "source_sha256": "ed0aafb79693a5c6196ef6255070b33e6f4875127710c7dd74e813ae3814135c",
+  "limits": "Original unadapted systems; simulated8GB tier. Mortar uses partial JSON/XML evidence, no PDFs/paystubs, local typed exact scoring and forced boolean/ID lists. FRAMES is closed-book strict matching with separate punctuation sensitivity. SAS maximum896 generated tokens versus MAS1792 under ceiling2048; actual expenditure differs. Not optimized/adapted systems, official full benchmark replication, pristine confirmation, causal architecture winner or novelty. Group bootstrap is exploratory; no repeated-run latency claim. Constant rules are fixed diagnostics, not gold-selected deployable policies.",
+  "raw_report": "/run/media/mutasim/Data/AGERE/runs/external-baselines-completed-analysis-03.json",
+  "raw_report_sha256": "402a047d0883542b997f097dcde34fdf54c430e516c855a04be274dcbbfa7ce7"
+}
