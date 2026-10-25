@@ -1,0 +1,10 @@
+{
+  "pid": 90812,
+  "create_time": 1792958611.72,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_joint_posttrain/joint03-01/plan.json",
+  "plan_sha256": "6546895c65b68dda5778bf12de543af1d418601e4ef322b9a0a5cd9c35c04f98",
+  "source_commit": "374eacdc69b59022d8aaf901a498916bcf06fe16",
+  "status": "launched_waiting_not_completed",
+  "jobs": 10,
+  "novelty_established": false
+}

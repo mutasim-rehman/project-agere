@@ -1,12 +1,12 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 00:59 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 01:06 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
 | External baseline queue | Complete:380 case–arm evaluations; Mortar SAS39/90,MAS26/90; FRAMES2/100,1/100 |
 | SAS7B compact joint fit | Complete:2 actual updates,392 changed tensors;8.490GB tree RSS under10.5GB training cap |
-| SAS7B full joint adaptation | **Running:12/476 updates**,96/3801 examples;482 validation pending |
+| SAS7B full joint adaptation | **Running:29/476 updates**,232/3801 examples;482 validation pending |
 | Training memory | Latest worker about4.07GB; whole tree about8.33GB including compiler workers |
 | Extended MAS critic | Dataset/parity/audit ready; training pending serial GPU availability |
 | Source-aware repair controls | Implemented;17 CPU checks pass; actual NN scorer/repair pilot pending |
@@ -41,3 +41,5 @@ The100-report development packets and174 natural-training packets remain
 uninferred. Window ends approximately26October11:54PKT. Common methods must be
 validated/frozen at8GB before16/32GB. Code and aggregate evidence are committed;
 raw weights/datasets/traces stay on the authorized SSD. Goal remains active.
+
+Serial follow-on controller is live and waiting for full SAS completion:10 frozen jobs covering conversion/proofs, extended MAS critic training, paired100-report critic evaluation, and both direct and analysis+demos SAS100 policies. [Frozen queue](evidence/joint-posttrain-plan-01.json). Model workloads remain serial. Full default suite274 tests with17 training-runtime skips.
