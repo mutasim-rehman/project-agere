@@ -2242,3 +2242,23 @@ Two tiny CPU tests compare all retained/upcast values, FP32 lookup, actual strea
 loss AND hidden gradients exactly; no actual7B equivalence or QA claim. Add stage
 RSS events and per-process RSS members. New policy gets new measured fit03 under
 unchanged cap. No blind full-run restart and no resource-cap relaxation.
+
+## 2026-10-26 — Implement bounded source-aware repair controls; early savings weak
+
+Gold-free pool generator and rational-identity grouping implemented independently
+of frozen live training inputs. Distinct source IDs, units, division guards and
+observed Decimal results required before any symbolic merge. Unknown never merges
+but valid executable unknowns stay individually scoreable. Bounded total algebra
+work; no artificial rewrite duplicates inserted. Shared forced-prefix last-logit
+scorer includes explicit8192-prefill/4-check proposal; runtime parity still pending.
+17 targeted CPU tests pass. Actual vocab-only3B/7B labels each one token; not an
+actual NN scoring proof. Closest primary abstracts LEVER/ProbeGen read, generic
+execution reranking/semantic clustering already exist. Full method review pending.
+
+Diagnostic on already-used24 initial drafts (no model calls or reference-score
+consumption):370 candidates,370 byte/332 numeric/360 numeric+source/368 symbolic
+classes; first4 representatives change only1/24. This weakens verifier-saving
+hypothesis. Do not center paper on implemented feature without useful actual gain,
+or alter pool to manufacture savings. Keep as diagnostic/strong-control candidate;
+small natural-source development pilot needed before100-case expansion. Numeric
+collisions are ambiguity, not proof of financial errors. Research novelty unproven.
