@@ -253,3 +253,16 @@ preserving original26 cases. All FinQA queue stages1–9 passed. Broad100-report
 inference, comparable SAS adaptation, useful novelty and publication confirmation
 remain outstanding.212 tests pass. Earlier running/stopped statements are dated
 history; LIVE_STATUS.md carries the latest snapshot.
+
+## Latest preparation — controlled critic corpus extension
+
+Corpus critic_extended_sft_02 prepared/audited on SSD:820 negative replacements
+(626 scale,194 node bypass), same original source pairs/positives/splits/order and
+393 planned updates. Both numerical labels replay across all3522 rows per corpus;
+HF/GGUF token parity all3522. Training-token budget+1.798%, explicitly not equal
+compute. These are weak annotated mutations, not natural-error labels or novelty.
+238 tests covered across required runtimes.01 preserved/superseded before training
+for provenance-metadata clarification; identical example payload. No training/
+application/QA gain yet. Paired100-report dev experiment prepared, not scheduled;
+trained-versus-trained analysis guard still required. Current external queue live
+and SAS fit controller waiting. LIVE_STATUS.md has the dated phone checkpoint.

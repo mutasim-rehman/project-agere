@@ -2063,3 +2063,8 @@ Candidate accuracy must match, since only verifier changes. Corpus families are
 coupled; individual effects need later ablation only if combined gain warrants it.
 SAS fit remains queued first; comparable full SAS adaptation still outstanding.
 No premature novelty claim; publication confirmation remains outstanding.
+
+Current checkpoint: external controller40968/worker41022 verified;62/90 Mortar
+SAS cases saved. SAS fit47307 verified sleeping, zero children. Corpus feature
+committeda66e276; final test-log/source bindings and prepared training-base hash
+recorded. No additional neural job launched and no frozen source changed.

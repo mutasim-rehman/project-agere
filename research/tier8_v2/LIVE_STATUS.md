@@ -1,6 +1,6 @@
 # Live research checkpoint
 
-**Observed 25 October 2026, 17:11 PKT.** Committed snapshot, not a live monitor.
+**Observed 25 October 2026, 17:38 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
@@ -9,8 +9,8 @@
 | Natural24, plain critic |3 correct delivered,0 wrong,21 withheld |
 | Natural24, trained critic |11 correct delivered,4 wrong,9 withheld |
 | Attribution |All24 drafts and critic prompts identical; same adapted actor |
-| Current workload |External recovery running;20 new Mortar SAS cases saved (46/90 including26 preserved) |
-| Software checks |231 tests covered across inference/training runtimes; see CPU evidence |
+| Current workload |External recovery running;36 new Mortar SAS cases saved (62/90 including26 preserved) |
+| Software checks |238 tests covered across inference/training runtimes; see evidence |
 | Novelty |No demonstrated useful original method yet |
 
 Natural counts above use the reported-answer metric. Raw execution gives plain
@@ -82,3 +82,20 @@ checkpointed BF16 test exposed per-block backward rounding; FP32 accumulation
 fixed it without loosening tolerance. Old sources/failure logs preserved.
 [Updated CPU evidence](evidence/sas7b-offload-cpu-checks-01.json) supersedes the
 older helper checks. Actual7B CUDA fit, full adaptation and QA remain unproven.
+
+## Next controlled critic experiment prepared, not scheduled
+
+New counterexamples cover incorrect output scaling and omitted subexpressions:
+626 scale+194 node-bypass replacements. Same3522 rows,1761 byte-identical positive
+rows,3140/382 train/validation split,414/49 report groups and393 planned updates.
+Training tokens rise1.798%; compute is not perfectly matched. All3522 HF/GGUF
+parity checks pass; independent execution/label replay passes for both corpora.
+No critic training or new QA result yet. These are constructed training negatives,
+not the174-case natural-error packets (still uninferred).
+
+[Corpus evidence](evidence/critic-curriculum-prepared-02.json) ·
+[Prepared hypothesis/control/metrics](evidence/critic-curriculum-experiment-01.json).
+After existing serial work, train/convert/prove the extended critic and compare
+with the current trained critic on the preselected100-report development set.
+First add an explicit trained-versus-trained pairing guard/condition names;
+current analyzer assumes a plain control. No unsafe relabelling or novelty claim.

@@ -57,5 +57,6 @@
     "independent delivery and unit-sensitivity analysis",
     "only investigate family ablations if a useful combined effect warrants them"
   ],
-  "novelty_established": false
+  "novelty_established": false,
+  "training_base_manifest_sha256": "a48f9db56dcf9619bfc65ea8710815adee5e474d4068fe64ae7b27ed14b82748"
 }

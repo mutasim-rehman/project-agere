@@ -130,5 +130,17 @@
   },
   "model_calls": 0,
   "test_opened": false,
-  "limits": "Known training augmentation, inspired by reused-development failure analysis; not novel or independent confirmation. Weak numerical labels, not semantic adjudication or natural-error corpus. Same sources/positives/splits/update count; token expenditure can differ and is reported. No training, deployment or QA improvement follows from preparing this corpus."
+  "limits": "Known training augmentation, inspired by reused-development failure analysis; not novel or independent confirmation. Weak numerical labels, not semantic adjudication or natural-error corpus. Same sources/positives/splits/update count; token expenditure can differ and is reported. No training, deployment or QA improvement follows from preparing this corpus.",
+  "test_logs": {
+    "/run/media/mutasim/Data/AGERE/runs/critic-curriculum-tests-01.log": {
+      "sha256": "670a39115e7523a8984e4842e16547cb2094b03fad392b037b4b9dc8b2656e62",
+      "tests_run": 7,
+      "skips": 0
+    },
+    "/run/media/mutasim/Data/AGERE/runs/critic-curriculum-regression-tests-02.log": {
+      "sha256": "c6947e2956ddb7b12f700400433e553e9b340b0551e996875030e92c83520bce",
+      "tests_run": 238,
+      "skips": 10
+    }
+  }
 }
