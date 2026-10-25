@@ -2,13 +2,16 @@
 
 Goal remains active. A useful original method and publication-quality confirmation
 are unproven. Implementation, known-method tuning and real adaptation have advanced;
-there is no validated adapted QA gain yet.
+an adapted QA gain on the reused development slice is now observed. Confirmation
+and novelty remain unproven.
 
 ## Best completed development results
 
 - SAS 7B Q4, 128-token analysis + two fixed demos: 13/24 reported-answer matches,
   13 correct deliveries, 5 wrong deliveries, 6 withheld; 8 raw execution matches.
-- MAS 3B Q4 drafter + 0.5B F16 critic, matching 128 analysis/demos: 4/24 matches,
+- Trained MAS 3B + 0.5B critic, no analysis/demos: 11/24 matches, 10 correct
+  deliveries, 11 wrong deliveries, 3 withheld; 9 raw matches; peak RSS 3.899 GB.
+- Prior MAS 3B Q4 drafter + 0.5B F16 critic, 128 analysis/demos: 4/24 matches,
   3 correct deliveries, 1 wrong delivery, 20 withheld; 2 raw matches.
 - Longer 256 analysis did not help: SAS 11/24 with 9 wrong deliveries; MAS 4/24
   with 10 wrong deliveries. Both ablations are complete. More table coverage also
@@ -48,10 +51,13 @@ New prompt accounting matches completion special-token/BOS/EOS behavior and asse
 actual engine usage. Historical manual counts remain labelled estimates. Skipped
 calls cost zero prefill. All 166 contract tests pass; tests do not prove QA quality.
 
-Next: fresh matched unadapted/adapted no-analysis/no-demo MAS 3B runs on all 24
-original packets, then paired evaluation and v2 unit sensitivity. Both use the
-same new code and critic. The best existing analysis baseline is a separate control.
-No new inference worker has started at this exact file checkpoint.
+Matched no-analysis/no-demo evaluation completed: unadapted 0/24 (all abstained),
+adapted 11/24; V2 unit sensitivity unchanged. This establishes development
+adaptation benefit, not novelty or superiority over best SAS (13/24). All paired
+artifacts are in evidence/finqa-mas-3b-adaptation-*.
+
+The weak 0.5B critic accepts 11 wrong answers. Next, test a 3B Q4 verifier under the
+same caps and verify unchanged draft plans. No inference worker is currently live.
 
 ## Still required
 

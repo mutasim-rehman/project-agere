@@ -1,0 +1,62 @@
+{
+  "source_validation": {
+    "public_packets_identical": true,
+    "retrieval_change_allowed": false,
+    "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51"
+  },
+  "paired": {
+    "n": 24,
+    "right_minus_left_success": 0.4583333333333333,
+    "paired_bootstrap_95_interval": [
+      0.25,
+      0.6666666666666666
+    ],
+    "right_only_correct": 11,
+    "left_only_correct": 0,
+    "exact_mcnemar_p": 0.0009765625,
+    "interval_caution": "Development sample only; assess sampling and template dependence before generalizing.",
+    "note": "Exploratory development comparison; no multiple-comparison adjustment or publication claim."
+  },
+  "left": {
+    "n": 24,
+    "field_repair_gains": 0,
+    "field_repair_regressions": 0,
+    "wrong_fields_left_locked": null,
+    "initial_verifier_true_accepts": 0,
+    "initial_verifier_false_accepts": 23,
+    "initial_verifier_true_rejects": 1,
+    "initial_verifier_false_rejects": 0,
+    "delivered_correct": 0,
+    "delivered_incorrect": 0,
+    "withheld": 24,
+    "generated_tokens": 1428,
+    "prompt_tokens": 39715,
+    "prompt_token_sources": [
+      "runtime_usage_verified"
+    ],
+    "inference_seconds": 296.34188834094675,
+    "truncated_stages": 0,
+    "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+  },
+  "right": {
+    "n": 24,
+    "field_repair_gains": 0,
+    "field_repair_regressions": 0,
+    "wrong_fields_left_locked": null,
+    "initial_verifier_true_accepts": 10,
+    "initial_verifier_false_accepts": 11,
+    "initial_verifier_true_rejects": 2,
+    "initial_verifier_false_rejects": 1,
+    "delivered_correct": 10,
+    "delivered_incorrect": 11,
+    "withheld": 3,
+    "generated_tokens": 2276,
+    "prompt_tokens": 42492,
+    "prompt_token_sources": [
+      "runtime_usage_verified"
+    ],
+    "inference_seconds": 404.6592951550265,
+    "truncated_stages": 0,
+    "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+  }
+}

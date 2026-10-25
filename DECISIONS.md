@@ -2,6 +2,32 @@
 
 ## Continuation — 25 October 2026
 
+### First actual adapted QA gain, with a delivery-risk failure
+
+- Both matched 24-case jobs completed. Unadapted 3B, no analysis/demos: 0 correct,
+  24 abstentions/withheld. Same configuration with the applied trained adapter:
+  11 reported matches, 9 raw execution matches, 10 correct deliveries, 11 wrong
+  deliveries, 3 withheld; all 24 programs executable/source-supported, no abstentions
+  or truncated stages. V2 ratio-unit sensitivity leaves totals at 0 and 11.
+- Matched primary gain +11/24, paired bootstrap interval [.25, .6667], exploratory
+  exact McNemar p=.0009766. This is reused development data and an untuned matched
+  baseline that abstains everywhere; it does not establish novelty or generalization.
+- Compared separately with the previous stronger 3B analysis/demos configuration:
+  4 -> 11 reported matches (8 wins, 1 loss), but prompts, adaptation and accounting
+  differ. That comparison is explicitly exploratory, not isolated training effect.
+  Best SAS remains 13 correct with 5 wrong deliveries versus trained MAS 11 correct
+  and 11 wrong deliveries. No architecture win or optimized-system claim.
+- Adapted peak RSS 3,898,769,408 bytes under 6.40 GB; 2,276 generated tokens, 42,492
+  actual prompt tokens and 404.66 inference seconds. Matched unadapted peak 3.821 GB.
+  Source support/execution is not semantic correctness. The 0.5B verifier accepted
+  11 wrong answers and rejected one correct answer; stronger verification is now
+  an evidence-driven priority. Do not optimize only accepted-answer precision.
+- Next baseline intervention: a 3B Q4 verifier for the same trained 3B drafter.
+  Different adapter identity requires separate role instances; actual RSS fit must
+  be measured. Keep generation prompts/caps/data fixed, then check whether initial
+  plans stayed identical. Success requires fewer wrong deliveries without losing
+  correct delivery; no gain is assumed before the full trial.
+
 ### Role-adapter prior checks during the live paired evaluation
 
 - Read primary arXiv abstracts for LRAgent v2, MapCoder-Lite v2 and DAC v2.
