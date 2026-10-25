@@ -91,6 +91,14 @@ def append(path, record):
         os.fsync(out.fileno())
 
 
+def financial_source(value=None):
+    path = inside(value or "research/tier8_v2/external/finqa/dataset-dev.json")
+    pin = json.loads(inside("research/tier8_v2/evidence/finqa-development-manifest.json").read_text())
+    if hashlib.sha256(path.read_bytes()).hexdigest() != pin["source_sha256"]:
+        raise ValueError("Require the pinned FinQA development source or an identical SSD copy")
+    return path
+
+
 class Models:
     def __init__(self, arm, context, residency="distinct", verifier_model="0.5b", use_selector=True, drafter_model="1.5b-f16", adapter=None, verifier_adapter=None, weights_root=None):
         from llama_cpp import Llama, LlamaGrammar
@@ -304,7 +312,7 @@ def worker(args, out):
     rows = [json.loads(line) for line in inside(args.data).read_text().splitlines() if line][:args.limit]
     if args.task == "finqa":
         from tier8_v2_financial_pipeline import run_financial, evaluate_financial
-        gold_rows = json.loads(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_text())
+        gold_rows = json.loads(financial_source(args.evaluation_source).read_text())
         gold = {r["id"]: r for r in gold_rows}
         if len(gold) != len(gold_rows):
             raise ValueError("Duplicate financial evaluation IDs")
@@ -391,6 +399,7 @@ def main():
     parser.add_argument("--verifier-adapter", help="Validated critic-purpose 3B conversion; verifier role only")
     parser.add_argument("--critic-protocol", choices=("rich", "binary"), default="rich")
     parser.add_argument("--weights-root", help="Explicit directory containing exact pinned model filenames/hashes")
+    parser.add_argument("--evaluation-source", help="Identical pinned FinQA development source copy, optionally on SSD")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.data is None:
@@ -417,6 +426,8 @@ def main():
         raise ValueError("KYC-specific handoff/verification/citation overrides are not implemented for FinQA")
     if args.limit <= 0:
         raise ValueError("Positive case limit required")
+    if args.evaluation_source and args.task != "finqa":
+        raise ValueError("Evaluation-source override is supported for FinQA only")
     if args.critic_protocol == "binary" and (args.task != "finqa" or args.repair not in ("none", "full")):
         raise ValueError("Binary critic supports FinQA with no repair or full regeneration only")
     if args.verifier_adapter and (args.arm != "mas" or args.verifier_model != "3b" or args.critic_protocol != "binary"):
@@ -469,7 +480,9 @@ def main():
     manifest["verifier_adapter"] = verifier_adapter_info
     manifest["models"] = verified_models(args.arm, args.verifier_model, args.task == "kyc" or args.selector == "suggest", args.drafter_model, args.weights_root)
     if args.task == "finqa":
-        manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()
+        source = financial_source(args.evaluation_source)
+        manifest["evaluation_source"] = str(source)
+        manifest["evaluation_source_sha256"] = hashlib.sha256(source.read_bytes()).hexdigest()
         if args.demos:
             from tier8_v2_demo_retrieval import BANK
             demo_file = inside(BANK if args.demo_policy == "retrieved" else "research/tier8_v2/data/finqa-training-demos.json")

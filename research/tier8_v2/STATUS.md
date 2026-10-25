@@ -193,3 +193,21 @@ inference cannot overlap this training job. Validation loss, conversion,
 role-specific application proof and actual verification gains are still pending.
 This is established-method baseline strengthening, not a novelty claim.191 tests
 pass. Full external recovery still waits for headroom and serialized model work.
+
+## Prepared while critic trains
+
+Critic-specific runtime/proof and binary review control implemented,200 tests at
+that milestone. They have NOT yet been exercised with the unfinished adapter.
+Binary review preserves UNKNOWN and cannot claim localized repair feedback.
+
+Broader FinQA development packets are frozen on SSD at
+`datasets/tier8_v2_finqa/dev_report100_01`:100 questions/100 reports, excluding all23
+prior evaluated/planned reports and prepared SFT groups. Audit covers24 generation
+manifests and saved cases. Same lexical retrieval; no model calls or answer-based
+selection. Evidence: finqa-report100-development-selection-01.json. Explicit SSD
+evaluation-source copy must match the pinned development hash.204 tests now pass.
+This is broader development, not a sealed test or confirmed generalization.
+
+User has freed memory and authorized continued scoped research with GitHub updates
+for remote checks. Recheck actual headroom after the current GPU job exits; keep
+model work serialized and source/data frozen. No new external accuracy claim yet.

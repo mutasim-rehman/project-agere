@@ -1716,3 +1716,26 @@ controls must use current runtime; old strict replay compatibility is not silent
 relaxed after constructor changes.200 tests pass, including wrong-role/provenance
 rejection, separate role policies, unknown delivery gate, exact protocol alignment
 and refusal to invent patch scope. No accuracy or novelty claim.
+
+## 2026-10-25 — Broader report-disjoint development packets frozen
+
+Audited24 historical FinQA generation manifests plus persisted case files in repo
+and SSD run roots, including declared inputs of failed runs. Exact input hashes
+must reproduce; incomplete case tails abort selection. Audit found24 prior cases
+across23 annual-report groups. Freeze100 further questions, one first eligible
+record per distinct report, excluding those groups and prepared SFT train/validation
+report groups. Selection uses IDs/groups/source order only, not answers, programs,
+retrieval coverage or observed performance. No model inference on this set yet.
+
+Unchanged lexical8-unit packet recipe; source copy and all new raw data/selection
+ledger stay SSD. SHA public179237919324e7a31edb891d442a6e0e65dceb648b2ffb109dd901274874d3a8.
+Call this broader development/new inference cases relative to audited roots, not
+pristine unseen labels or a held-out test: the public dev source was accessible.
+The evaluation-source option accepts only a byte-identical copy of the pinned dev
+source, so SSD storage does not silently change labels or open test data.204 tests
+pass, including group exclusion, label-independent selection and source identity.
+
+User confirmed freeing memory and asked work to continue under the same scope,
+documentation and GitHub push requirements for remote phone checks. Authorization
+persists. Continue serialized model work; no CPU inference concurrent with the
+identified GPU epoch. Keep GitHub STATUS and milestone evidence truthful/current.

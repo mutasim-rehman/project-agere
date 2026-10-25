@@ -1,0 +1,30 @@
+{
+  "status": "frozen_development_selection",
+  "n": 100,
+  "distinct_report_groups": 100,
+  "source_split": "development",
+  "source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51",
+  "source_copy": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_finqa/dev_report100_01/source-dev.json",
+  "public_file": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_finqa/dev_report100_01/public.jsonl",
+  "public_sha256": "179237919324e7a31edb891d442a6e0e65dceb648b2ffb109dd901274874d3a8",
+  "excluded_prior_declared_or_persisted_cases": 24,
+  "excluded_prior_report_groups": 23,
+  "audited_generation_manifests": 24,
+  "training_source_sha256": {
+    "research/tier8_v2/data/finqa-cell-adaptation-train-02.jsonl": "30039625e42d53c75c690700fed57c4d9809fc9229023fdbf7e444669dab95a5",
+    "research/tier8_v2/data/finqa-cell-adaptation-validation-02.jsonl": "369bc8ef2ca5238d21866ffca97ae1d1813de13ca392ed23c19c84bb736cb2a5"
+  },
+  "selection": "first qualifying source record per distinct report group, source order; exclude all declared/persisted prior-case reports and prepared training/validation reports; never filter by answer/program/performance",
+  "retrieval": "unchanged non-oracle lexical packet(limit8); no gold units or supplied retrieval/model_input used",
+  "model_calls": 0,
+  "test_opened": false,
+  "code_sha256": {
+    "scripts/tier8_v2_fresh_development.py": "2f3a9a6a54e1344b8044182eb885592ddffab20a69b08a80824d025029b4bca9",
+    "scripts/tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "scripts/tier8_v2_demo_retrieval.py": "0a77a581ba43062bb036c27a732fa6cd63b642387ce26ebec69a6e88175d6b5f"
+  },
+  "limits": "Broader development and new inference cases relative to audited sources, not pristine unseen labels or publication confirmation. Audit covers declared inputs and saved cases in named run roots; public pretraining contamination unassessed.",
+  "selection_manifest": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_finqa/dev_report100_01/selection.json",
+  "selection_manifest_sha256": "1ad29a17876043a33a39626ef5d7d6aec153b801d9b6d558885f375fc0a6960d",
+  "audited_file_count": 52
+}

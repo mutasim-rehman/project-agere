@@ -16,7 +16,7 @@ active trainer/corpus/base frozen. CPU inference must wait for training to finis
 5. Broaden to report-disjoint development and later a genuinely frozen confirmation
    protocol. Comparable SAS adaptation remains required for architecture claims.
 
-Runtime options are explicit: --verifier-model3b --critic-protocol binary
+Runtime options are explicit: --verifier-model 3b --critic-protocol binary
 --verifier-adapter <converted critic directory>. Actor --adapter is separate.
 --weights-root may point to authorized SSD copies only when filenames, byte counts
 and hashes match the pinned deployment checkpoints. Shared residency does not merge
