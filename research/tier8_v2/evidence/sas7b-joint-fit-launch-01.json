@@ -1,0 +1,9 @@
+{
+  "pid": 88564,
+  "create_time": 1792956938.09,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-fit-01/plan.json",
+  "plan_sha256": "413dfe5d46572a01dc89a20589cec741468b366d59bb7dc70a464443f3330d0a",
+  "source_commit": "d04127f8a5281c42f6c3ccb4b637ec866f55f88c",
+  "created_utc": "2026-10-25T19:35:38.103838+00:00",
+  "scope": "Two-update joint-corpus fit before full adaptation; same memory/context limits."
+}

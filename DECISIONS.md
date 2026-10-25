@@ -2201,3 +2201,12 @@ loop support. Changed model policy/components require new fit. The new joint
 corpus receives its own2-update fit before epoch. Actual evidence aggregates in
 sas7b-offload-fit-completed-03.json and sas-joint-data-01.json. No full training or
 new quality result claimed before terminal evidence.
+
+## 2026-10-26 — Joint-corpus SAS fit passes; full shared adaptation launched
+
+Joint fit01 completed2 actual updates,392 changed tensors,10.295GB complete-tree
+RSS under unchanged10.5GB cap; allocated GPU4.521GB. Longest sequence and longest
+supervised response tested. Close headroom means full epoch still needs monitoring.
+Full joint train01 launched from d04127f,476 planned updates over3801 examples;
+482 validation. Do not modify its frozen inputs. No deployed gain claimed.
+Prior failed fits remain preserved. Deployment memory cap remains separate6.4GB.
