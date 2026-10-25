@@ -1,0 +1,47 @@
+{
+  "status": "prepared_not_launched",
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-01/plan.json",
+  "plan_sha256": "3a01ef2538db91583e691228e0d1fe93820823e3b5cb2653e78443a9d5d3a2eb",
+  "jobs": 10,
+  "secondary_sas_prompt_jobs": 3,
+  "case_arm_runs_primary": 508,
+  "natural_report_overlap": {
+    "model_selection": {
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/finqa-training-demo-bank.json": [],
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/finqa-training-demos.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_sas/sas_joint_extended_01/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/control_sas/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/crossed_sas/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/control_mas_critic/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/crossed_mas_critic/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/common_mas_actor/manifest.json": [],
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/evidence/deployment-sft-1024-02.json": []
+    },
+    "diagnostic_audit": {
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/finqa-training-demo-bank.json": [],
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/finqa-training-demos.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_sas/sas_joint_extended_01/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/control_sas/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/crossed_sas/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/control_mas_critic/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/crossed_mas_critic/manifest.json": [],
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/common_mas_actor/manifest.json": [],
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/evidence/deployment-sft-1024-02.json": []
+    }
+  },
+  "source_and_packet_replay_pass": true,
+  "model_inference_class_ast_identical_to_frozen_runner": true,
+  "tests_passed": 3,
+  "tests_log": "/run/media/mutasim/Data/AGERE/runs/natural-research-runner-tests-01.log",
+  "tests_log_sha256": "74111be41ea342cbcbe04168ba800c54a1266f903a83eff12d2233eb5f2acffc",
+  "deferred_correction": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/deferred-development-corrected-01.json",
+  "deferred_correction_sha256": "7fce405279d19632459a4312770eff076430e38fd7dcac732ad375411ffd6d29",
+  "corrected_sas_commands": 2,
+  "model_calls": 0,
+  "actual_qa_gain": false,
+  "novelty_established": false
+}

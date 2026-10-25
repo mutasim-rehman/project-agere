@@ -2533,3 +2533,32 @@ Worker preparation is not novelty evidence or completion of the research goal.
 ### 2026-10-26 — full-method prior constrains the proposed contribution
 
 Read Instance Bundles sections2/2.1/4.2 from the primary2021 PDF, beyond previous abstract review. Question/answer joint neighborhoods, all-members-correct metrics and constrained joint inference are already present. Do not add a generic contrastive loss or question-assignment inference step merely to claim novelty; our ordinary executable-finance verdict SFT differs but is not thereby an advance. VitaminC introduction likewise establishes contrastive verification/evidence sensitivity. Preserve the matched continuation as an empirical candidate, insist on natural-report utility, and keep useful novelty unestablished. No new NN calls or changes to live sources from this review.
+
+
+### 2026-10-26 — freeze actual natural comparisons and fix dormant command paths
+
+Previous goal turn made authoritative progress: fixed-recipe continuation worker,
+exact PEFT state test, primary prior audit, committed/pushed. This turn verifies
+both controllers live by PID/create-time/cmdline, with frozen hashes unchanged.
+Build a zero-NN natural evaluation plan before outcomes: six52-case selection
+conditions and four49-case reserved-audit conditions, plus all3 SAS secondary
+analysis128/demos2 policies. Full retry is an EXISTING common policy, not novelty.
+Both correctness metrics and correct/wrong/withheld outcomes primary; no scalar
+penalty selected. Prefix no-repair/ungated ablations use actual initial traces,
+with prefix-only work. Need general whole-policy analysis because SAS candidate
+and control drafts may differ; old pure-gate analyzer must not be relaxed or misused.
+Replay101 public packets against source and verify zero report overlap with nine
+training/validation corpora plus actual bank/fixed demos. Public pretraining and
+all historical exposure remain unassessed. Conditional launch still requires
+baseline ceiling gate, full continuations, conversion and native application proofs.
+
+Existing runner is dev-source-only, so create explicitly labelled research fork
+instead of changing frozen sources. Exact AST comparison verifies unchanged Models
+inference class. Research source/packet/split guards and demonstration overlap use
+actual evaluated reports. Three focused tests pass; no NN feasibility claim.
+Found two dormant deferred100-report SAS commands incorrectly inherit MAS model
+flags: reproduce actual parser rejection, save corrected commands removing only
+those flags and verify guards reach adapter validation. Original live queue and
+plans remain untouched; all five development jobs still deferred. Full raw plan,
+corrected command artifact and test logs stay on authorized SSD. No new quality
+or novelty outcome from this preparation; goal remains active.
