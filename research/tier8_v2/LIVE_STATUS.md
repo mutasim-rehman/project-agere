@@ -1,18 +1,18 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 00:43 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 00:49 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
 | External baseline queue | Complete: 380 case–arm evaluations; Mortar SAS39/90, MAS26/90; FRAMES2/100,1/100 |
 | SAS7B joint fit | Complete:2 actual updates,392 changed tensors;10.295GB tree RSS under unchanged10.5GB training cap |
-| SAS7B full joint adaptation | Launched:3801 training examples,482 validation,476 planned updates; completion unproven |
+| SAS7B full joint adaptation | Stopped during loading at10.532GB RSS;0 updates; new pread loading fit prepared |
 | Shared SAS training exposure | Same drafting and extended verification examples as corresponding MAS adapters; fixed equal task-loss mass |
 | Extended MAS critic | Dataset/parity/audit ready; training pending serial GPU availability |
 | Novel repair mechanism | Development/strong-control design underway; no measured gain yet |
 | Novelty | No demonstrated useful original method yet |
 
-Full SAS adaptation is expected to take several hours. The joint fit includes the
+Full SAS adaptation still requires a reliable loading fit and is expected to take several hours. The joint fit includes the
 longest input and longest supervised target; its RSS was close to the10.5GB cap.
 Do not turn a successful short fit or lower training loss into an accuracy claim.
 Runtime deployment still has a separate6.4GB process-tree limit.

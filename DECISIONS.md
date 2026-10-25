@@ -2210,3 +2210,17 @@ supervised response tested. Close headroom means full epoch still needs monitori
 Full joint train01 launched from d04127f,476 planned updates over3801 examples;
 482 validation. Do not modify its frozen inputs. No deployed gain claimed.
 Prior failed fits remain preserved. Deployment memory cap remains separate6.4GB.
+
+## 2026-10-26 — Preserve full SAS loading failure; test pread shard loading
+
+Joint train01 stopped at10.532GB tree RSS, cap10.5GB, during fourth-shard loading;
+0 updates. Short fit success did not replicate reliable loading. Raw evidence and
+exact driver/storage snapshots preserved; no unchanged retry. Installed safetensors
+supports public pread backend, avoiding whole-checkpoint file mappings retained
+while tensors are consumed. Transformers4.57.1 lacks a forwarded backend option:
+scoped module-local safe_open shim during synchronous loading, restored on success
+and exception. No library source edits or changes to values/dtypes/learning recipe.
+Actual tiny sharded meta-device loading compares every tensor exactly;2 tests pass.
+New loader policy requires a new joint fit; preserve same10.5GB cap/reserve/contexts.
+Freeze safetensors version/Rust extension and Transformers loader source hashes.
+Engineering feasibility only; no QA gain. CPU borrowed-storage clone hook retained.

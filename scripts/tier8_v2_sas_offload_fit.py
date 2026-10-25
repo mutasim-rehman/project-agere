@@ -24,7 +24,7 @@ MODEL = 'Qwen/Qwen2.5-7B-Instruct'
 def training_runtime():
     probe = ('import importlib.metadata as m,json;'
              'print(json.dumps({k:m.version(k) for k in '
-             '["torch","transformers","peft","bitsandbytes","accelerate","tokenizers"]}))')
+             '["torch","transformers","peft","bitsandbytes","accelerate","tokenizers","safetensors"]}))')
     return json.loads(subprocess.check_output(
         [str(ROOT / '.venv-training/bin/python'), '-c', probe], cwd=ROOT, text=True))
 
@@ -36,6 +36,7 @@ def load_policy():
                              'bnb_4bit_use_double_quant': True,
                              'llm_int8_enable_fp32_cpu_offload': True},
             'projection_dtype': 'bfloat16', 'vocabulary_block_size': 1024,
+            'checkpoint_backend': 'safetensors pread via scoped Transformers safe_open compatibility shim',
             'checkpoint_cpu_storage': 'clone non-resizable borrowed CPU storage on leaf assignment; retain already-owned dtype-converted tensors',
             'cpu_matrices': 'Detach Accelerate offload hooks; CPU embedding lookup, explicit inputs_embeds transfer; streamed CPU frozen head',
             'lora': {'r': 8, 'lora_alpha': 16, 'lora_dropout': .05,
@@ -116,6 +117,7 @@ def prepare(out, launch_file, mode='fit', fit_proof=None, dataset_manifest=None,
                            'weights/hf/Qwen--Qwen2.5-7B-Instruct')
     files = [Path(__file__), ROOT / 'scripts/frozen_head_loss.py',
              ROOT / 'scripts/sas_cpu_weight_storage.py',
+             ROOT / 'scripts/sas_safetensors_pread.py',
              ROOT / 'scripts/tier8_v2_adapt.py', ROOT / 'scripts/tier8_v2_adapter_convert.py',
              ROOT / 'scripts/tier8_v2_posttrain_queue.py', ROOT / 'scripts/tier8_artifact_paths.py',
              ROOT / 'scripts/supervised_logits.py', ROOT / 'manifests/hf_snapshots.json',
@@ -124,6 +126,9 @@ def prepare(out, launch_file, mode='fit', fit_proof=None, dataset_manifest=None,
     files = [p for p in files if p.is_file()]
     files += list((ROOT / '.venv-training').glob('lib/python*/site-packages/accelerate/hooks.py'))
     files += list((ROOT / '.venv-training').glob('lib/python*/site-packages/accelerate/big_modeling.py'))
+    files += list((ROOT / '.venv-training').glob('lib/python*/site-packages/transformers/modeling_utils.py'))
+    files += list((ROOT / '.venv-training').glob('lib/python*/site-packages/safetensors/torch.py'))
+    files += list((ROOT / '.venv-training').glob('lib/python*/site-packages/safetensors/_safetensors_rust*.so'))
     versions = training_runtime()
     if mode == 'train':
         if fit_proof is None:
@@ -255,10 +260,12 @@ def worker(plan):
         torch.cuda.reset_peak_memory_stats()
         event('loading')
         quant = BitsAndBytesConfig(**plan['policy']['quantization'], bnb_4bit_compute_dtype=torch.bfloat16)
-        model = StorageDetachedQwen2ForCausalLM.from_pretrained(str(source), local_files_only=True,
-            trust_remote_code=False, use_safetensors=True, low_cpu_mem_usage=True,
-            quantization_config=quant, device_map=plan['policy']['device_map'],
-            torch_dtype=torch.bfloat16, attn_implementation='sdpa')
+        from sas_safetensors_pread import pread_checkpoint_loading
+        with pread_checkpoint_loading():
+            model = StorageDetachedQwen2ForCausalLM.from_pretrained(str(source), local_files_only=True,
+                trust_remote_code=False, use_safetensors=True, low_cpu_mem_usage=True,
+                quantization_config=quant, device_map=plan['policy']['device_map'],
+                torch_dtype=torch.bfloat16, attn_implementation='sdpa')
         counts = [getattr(m, '_cpu_storage_detach_count', 0) for m in
                   [model.get_input_embeddings(), model.get_output_embeddings()]]
         if counts != [1, 1]:
