@@ -9,23 +9,46 @@ import sys
 import time
 
 from completion_tokenization import completion_tokens
-from tier8_v2_adapter_runtime import load_adapter
-from tier8_v2_run import MODEL_FILES, WEIGHTS, inside, verified_models
+from tier8_v2_adapter_runtime import load_adapter, load_critic_adapter
+from tier8_v2_run import MODEL_FILES, WEIGHTS, verified_models
+from tier8_artifact_paths import artifact_path as inside
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def adapter_info(args):
+    return (load_critic_adapter(args.adapter) if args.purpose == "critic"
+            else load_adapter(args.adapter, args.arm, "3b-q4"))
+
+
+def diagnostic_prompt(args, info):
+    dataset = inside(args.dataset or "research/tier8_v2/data/deployment-sft-1024-02.jsonl")
+    if args.purpose == "critic":
+        training = json.loads((inside(info["training_run"]) / "manifest.json").read_text())
+        name = str(dataset.relative_to(ROOT)) if dataset.is_relative_to(ROOT) else str(dataset)
+        if training["input_sha256"].get(name) != sha(dataset):
+            raise ValueError("Critic proof dataset is not bound to its training run")
+    row = next(r for r in map(json.loads, dataset.read_text().splitlines()) if r["split"] == "validation")
+    if args.purpose == "critic" and row.get("purpose") != "critic":
+        raise ValueError("Critic proof requires a critic validation prompt")
+    return dataset, row
+
+
 def sha(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(8 * 1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
 
 def worker(args, out):
     from llama_cpp import Llama, llama_cpp as api
-    info = load_adapter(args.adapter, args.arm, "3b-q4")
-    dataset = inside("research/tier8_v2/data/deployment-sft-1024-02.jsonl")
-    row = next(r for r in map(json.loads, dataset.read_text().splitlines()) if r["split"] == "validation")
+    info = adapter_info(args)
+    dataset, row = diagnostic_prompt(args, info)
     filename = "qwen2.5-3b-instruct-q4_k_m.gguf" if args.arm == "mas" else MODEL_FILES["sas"]["sas"]
-    model = Llama(model_path=str(WEIGHTS / filename), n_ctx=4096, n_gpu_layers=0,
+    model_path = inside(args.model_path) if args.model_path else WEIGHTS / filename
+    model = Llama(model_path=str(model_path), n_ctx=4096, n_gpu_layers=0,
         n_threads=8, n_threads_batch=8, n_batch=64, n_ubatch=64, seed=42,
         use_mmap=False, verbose=False, logits_all=True,
         lora_path=str(ROOT / info["file"]), lora_scale=0.0)
@@ -72,7 +95,12 @@ def main():
     parser.add_argument("--arm", choices=("mas", "sas"), default="mas")
     parser.add_argument("--out", required=True)
     parser.add_argument("--worker", action="store_true")
+    parser.add_argument("--purpose", choices=("drafter", "critic"), default="drafter")
+    parser.add_argument("--dataset")
+    parser.add_argument("--model-path")
     args = parser.parse_args()
+    if args.purpose == "critic" and (args.arm != "mas" or not args.dataset):
+        raise ValueError("Critic proof requires MAS 3B and explicit critic dataset")
     out = inside(args.out)
     if args.worker:
         worker(args, out)
@@ -82,17 +110,33 @@ def main():
         if p.pid == os.getpid():
             continue
         names = {Path(x).name for x in p.info["cmdline"] or []}
-        if names & {"tier8_v2_adapt.py", "tier8_v2_run.py", "tier8_v2_replay.py", "tier8_v2_adapter_proof.py"}:
+        if names & {"tier8_v2_adapt.py", "tier8_v2_run.py", "tier8_v2_replay.py", "tier8_v2_adapter_proof.py",
+                    "tier8_external_eval.py", "tier8_external_recover.py", "tier8_v2_critic_probe.py"}:
             raise ValueError("Another model workload is active")
+    workload_lock = None
+    if os.environ.get("AGERE_SSD_ROOT"):
+        import fcntl
+        workload_lock = inside(Path(os.environ["AGERE_SSD_ROOT"]) / "runs/tier8_external.lock").open("a")
+        fcntl.flock(workload_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     if out.exists():
         raise ValueError("Use a new proof directory")
-    info = load_adapter(args.adapter, args.arm, "3b-q4")
-    models = verified_models(args.arm, use_selector=False, drafter_model="3b-q4")
+    info = adapter_info(args)
+    dataset, _ = diagnostic_prompt(args, info)
+    models = verified_models(args.arm, use_selector=False, drafter_model="3b-q4",
+                             verifier_model="3b" if args.purpose == "critic" else "0.5b")
+    if args.model_path:
+        if args.arm != "mas":
+            raise ValueError("Explicit proof model path only supports pinned 3B checkpoint")
+        path = inside(args.model_path)
+        entry = next(e for e in models if Path(e["file"]).name == "qwen2.5-3b-instruct-q4_k_m.gguf")
+        if path.stat().st_size != entry["bytes"] or sha(path) != entry["sha256"]:
+            raise ValueError("Explicit proof model differs from pinned deployment checkpoint")
     out.mkdir(parents=True)
     cap = min(6_400_000_000, psutil.virtual_memory().available - 1_000_000_000)
-    manifest = {"adapter": info, "verified_models": models, "cap_bytes": cap,
+    manifest = {"adapter": info, "purpose": args.purpose, "dataset": str(dataset), "dataset_sha256": sha(dataset),
+                "model_path": args.model_path, "verified_models": models, "cap_bytes": cap,
                 "code_sha256": {name: sha(ROOT / "scripts" / name) for name in
-                    (Path(__file__).name, "tier8_v2_run.py", "tier8_v2_adapter_runtime.py", "completion_tokenization.py")}}
+                    (Path(__file__).name, "tier8_v2_run.py", "tier8_v2_adapter_runtime.py", "completion_tokenization.py", "tier8_artifact_paths.py")}}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak, breached = 0, False
     start = time.monotonic()

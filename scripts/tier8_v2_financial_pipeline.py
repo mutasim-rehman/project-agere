@@ -14,6 +14,7 @@ from evidence_atoms import atom_catalog, reference_schema, reference_step_schema
 from program_graph import audit_graph, edge_candidates
 from tier8_v2_sketches import fit_sketches, choice_schema, instantiate_choice
 from program_endpoints import choose_endpoint
+from financial_review_protocol import BINARY_INSTRUCTION, BINARY_SCHEMA, binary_review
 
 
 def program_schema(evidence, units=("number", "percent", "fraction")):
@@ -98,7 +99,11 @@ def fit_demonstrations(prompt, demonstrations, models, role):
             + "\n\n".join(e["text"] for e in used) + "\n\nNow solve the actual question using its own source IDs:\n" + prompt), [e["source_id"] for e in used]
 
 
-def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest", causal_mode="check", catalog_style="full", demonstrations=(), analysis_tokens=0, planner="direct"):
+def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest", causal_mode="check", catalog_style="full", demonstrations=(), analysis_tokens=0, planner="direct", critic_protocol="rich"):
+    if critic_protocol not in ("rich", "binary"):
+        raise ValueError("Unknown critic protocol")
+    if critic_protocol == "binary" and repair not in ("none", "full"):
+        raise ValueError("Binary review does not localize steps for bounded repair")
     if set(public) & {"gold", "qa", "answer", "program", "model_input", "gold_inds"}:
         raise ValueError("Gold/annotated fields must not enter deployment")
     evidence = public["evidence"]
@@ -179,6 +184,10 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
     def verify(candidate, stage):
         content = source_context + "\nProposed program:\n" + json.dumps(candidate)
         content += "\nDeterministic execution:\n" + json.dumps(checked(candidate, evidence))
+        if critic_protocol == "binary":
+            return binary_review(call("sas" if arm == "sas" else "verifier",
+                                      content + "\n" + BINARY_INSTRUCTION,
+                                      BINARY_SCHEMA, budget.allowance(192), stage))
         content += ("\nIndependently judge operand relevance (correct row/year), operations, and units for the question. "
                     "Arithmetic execution alone does not prove relevance. Return checks, steps_to_repair, repair_kind. "
                     "Use NONE only if all checks PASS and no steps need repair; PATCH for localized step corrections; "
@@ -280,7 +289,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
         if accepted:
             review = verify(answer, "verify_program_repair")
     execution = checked(answer, evidence)
-    return {"task": "finqa", "case_id": public["id"], "arm": arm, "repair": repair,
+    return {"task": "finqa", "case_id": public["id"], "arm": arm, "repair": repair, "critic_protocol": critic_protocol,
             "initial_answer": initial, "answer": answer, "initial_execution": initial_execution, "execution": execution,
             "initial_plan": initial_plan, "plan": plan, "representation": representation, "unit_mode": unit_mode, "selector": selector,
             "causal_mode": causal_mode, "catalog_style": catalog_style,

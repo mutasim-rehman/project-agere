@@ -1,7 +1,7 @@
 """Audited CPU development pilot: strong SAS/MAS and controlled repair ablations.
 
 Run through the parent monitor (default), never --worker directly for evidence.
-All inputs/outputs resolve inside ROOT. No gold is passed to model stages.
+Artifacts resolve inside ROOT or the configured AGERE SSD. No gold enters model stages.
 """
 from __future__ import annotations
 import argparse
@@ -18,7 +18,7 @@ import time
 from evidence_contract import TokenLedger, commit_patch, source_spans, validate
 from tier8_v2_data import FIELDS, evaluate
 from completion_tokenization import completion_tokens
-from tier8_v2_adapter_runtime import load_adapter
+from tier8_v2_adapter_runtime import load_adapter, load_critic_adapter
 
 ROOT = Path(__file__).resolve().parents[1]
 WEIGHTS = ROOT / "weights/tier8_v2"
@@ -80,10 +80,8 @@ def normalize_verdict(raw, mode):
 
 
 def inside(value):
-    path = (ROOT / value).resolve()
-    if not path.is_relative_to(ROOT):
-        raise ValueError("All paths must stay inside the project")
-    return path
+    from tier8_artifact_paths import artifact_path
+    return artifact_path(ROOT / value)
 
 
 def append(path, record):
@@ -94,24 +92,30 @@ def append(path, record):
 
 
 class Models:
-    def __init__(self, arm, context, residency="distinct", verifier_model="0.5b", use_selector=True, drafter_model="1.5b-f16", adapter=None):
+    def __init__(self, arm, context, residency="distinct", verifier_model="0.5b", use_selector=True, drafter_model="1.5b-f16", adapter=None, verifier_adapter=None, weights_root=None):
         from llama_cpp import Llama, LlamaGrammar
         self.grammar = LlamaGrammar
         self.models = {}
         self.context = context
         self.adapter_info = load_adapter(adapter, arm, drafter_model) if adapter else None
+        if verifier_adapter and (arm != "mas" or verifier_model != "3b"):
+            raise ValueError("Critic adapter requires the MAS 3B verifier")
+        self.verifier_adapter_info = load_critic_adapter(verifier_adapter, verifier_model) if verifier_adapter else None
+        weights = inside(weights_root) if weights_root else WEIGHTS
         self.adapter_applications = {}
         files = model_files(arm, verifier_model, use_selector, drafter_model)
         opened = {}
         for role, filename in files.items():
             attached = self.adapter_info if self.adapter_info and self.adapter_info["role"] == role else None
+            if role == "verifier" and self.verifier_adapter_info:
+                attached = self.verifier_adapter_info
             key = (filename, attached["sha256"] if attached else None)
             if residency == "shared" and key in opened:
                 self.models[role] = opened[key]
                 print(json.dumps({"role": role, "weights": filename, "shared_instance": True}), flush=True)
                 continue
             options = {"lora_path": str(ROOT / attached["file"]), "lora_scale": attached["scale"]} if attached else {}
-            self.models[role] = Llama(model_path=str(WEIGHTS / filename), n_ctx=context,
+            self.models[role] = Llama(model_path=str(weights / filename), n_ctx=context,
                 n_gpu_layers=0, n_threads=8, n_threads_batch=8, n_batch=64,
                 n_ubatch=64, seed=42, use_mmap=False, verbose=False, **options)
             if attached:
@@ -262,7 +266,7 @@ def passed(verdict):
     return isinstance(verdict, dict) and verdict.get("verdict") == "PASS" and verdict.get("unsupported_fields") == []
 
 
-def verified_models(arm, verifier_model="0.5b", use_selector=True, drafter_model="1.5b-f16"):
+def verified_models(arm, verifier_model="0.5b", use_selector=True, drafter_model="1.5b-f16", weights_root=None):
     manifest_path = ROOT / "research/tier8_v2/evidence/models.json"
     entries = json.loads(manifest_path.read_text())
     native = ROOT / "research/tier8_v2/evidence/native-models.json"
@@ -279,6 +283,9 @@ def verified_models(arm, verifier_model="0.5b", use_selector=True, drafter_model
         if len(matches) != 1:
             raise ValueError(f"One verified weight manifest entry required: {name}")
         entry = matches[0]
+        if weights_root:
+            deployed = inside(weights_root) / name
+            entry = {**entry, "file": str(deployed.relative_to(ROOT)) if deployed.is_relative_to(ROOT) else str(deployed)}
         path = inside(entry["file"])
         digest = hashlib.sha256()
         with path.open("rb") as stream:
@@ -292,7 +299,8 @@ def verified_models(arm, verifier_model="0.5b", use_selector=True, drafter_model
 
 def worker(args, out):
     models = Models(args.arm, args.context, args.residency, args.verifier_model,
-                    args.task == "kyc" or args.selector == "suggest", args.drafter_model, args.adapter)
+                    args.task == "kyc" or args.selector == "suggest", args.drafter_model, args.adapter,
+                    args.verifier_adapter, args.weights_root)
     rows = [json.loads(line) for line in inside(args.data).read_text().splitlines() if line][:args.limit]
     if args.task == "finqa":
         from tier8_v2_financial_pipeline import run_financial, evaluate_financial
@@ -330,7 +338,7 @@ def worker(args, out):
             result = run_financial(public, models, args.arm, args.repair, event_sink=sink,
                                    representation=args.program_mode, unit_mode=args.unit_mode, selector=args.selector,
                                    causal_mode=args.causal_mode, catalog_style=args.catalog_style, demonstrations=selected_demos,
-                                   analysis_tokens=args.analysis_tokens, planner=args.planner)
+                                   analysis_tokens=args.analysis_tokens, planner=args.planner, critic_protocol=args.critic_protocol)
             result["demonstration_selection"] = {"policy": args.demo_policy,
                 "candidates": [{"source_id": e["source_id"], "score": e.get("retrieval_score")} for e in selected_demos],
                 "query_fields": ["question"] if demo_index else [], "development_answers_used": False}
@@ -380,6 +388,9 @@ def main():
     parser.add_argument("--verifier-model", choices=("0.5b", "1.5b", "3b"), default="0.5b")
     parser.add_argument("--drafter-model", choices=("1.5b-f16", "3b-q4"), default="1.5b-f16")
     parser.add_argument("--adapter", help="Validated full-training conversion directory; applied to SAS or MAS drafter only")
+    parser.add_argument("--verifier-adapter", help="Validated critic-purpose 3B conversion; verifier role only")
+    parser.add_argument("--critic-protocol", choices=("rich", "binary"), default="rich")
+    parser.add_argument("--weights-root", help="Explicit directory containing exact pinned model filenames/hashes")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.data is None:
@@ -406,7 +417,12 @@ def main():
         raise ValueError("KYC-specific handoff/verification/citation overrides are not implemented for FinQA")
     if args.limit <= 0:
         raise ValueError("Positive case limit required")
+    if args.critic_protocol == "binary" and (args.task != "finqa" or args.repair not in ("none", "full")):
+        raise ValueError("Binary critic supports FinQA with no repair or full regeneration only")
+    if args.verifier_adapter and (args.arm != "mas" or args.verifier_model != "3b" or args.critic_protocol != "binary"):
+        raise ValueError("Trained critic requires MAS 3B verifier and binary protocol")
     adapter_info = load_adapter(args.adapter, args.arm, args.drafter_model) if args.adapter else None
+    verifier_adapter_info = load_critic_adapter(args.verifier_adapter, args.verifier_model) if args.verifier_adapter else None
     out = inside(args.out)
     if args.worker:
         worker(args, out)
@@ -414,8 +430,14 @@ def main():
     import psutil
     for process in psutil.process_iter(["pid", "cmdline"]):
         if process.pid != os.getpid() and {Path(x).name for x in process.info["cmdline"] or []} & {
-                "tier8_v2_run.py", "tier8_v2_replay.py", "tier8_v2_adapt.py", "tier8_v2_adapter_proof.py"}:
+                "tier8_v2_run.py", "tier8_v2_replay.py", "tier8_v2_adapt.py", "tier8_v2_adapter_proof.py",
+                "tier8_external_eval.py", "tier8_external_recover.py", "tier8_v2_critic_probe.py"}:
             raise ValueError("Another inference or training workload is active")
+    workload_lock = None
+    if os.environ.get("AGERE_SSD_ROOT"):
+        import fcntl
+        workload_lock = inside(Path(os.environ["AGERE_SSD_ROOT"]) / "runs/tier8_external.lock").open("a")
+        fcntl.flock(workload_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     if out.exists():
         raise ValueError("Use a new output directory; never mix runs")
     out.mkdir(parents=True)
@@ -433,6 +455,8 @@ def main():
     sources.append(ROOT / "scripts/completion_tokenization.py")
     sources.append(ROOT / "scripts/tier8_v2_adapter_runtime.py")
     sources.append(ROOT / "scripts/tier8_v2_adapter_convert.py")
+    sources.append(ROOT / "scripts/financial_review_protocol.py")
+    sources.append(ROOT / "scripts/tier8_artifact_paths.py")
     manifest = {"config": vars(args), "data_sha256": hashlib.sha256(data.read_bytes()).hexdigest(),
                 "code_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                 "git_head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
@@ -442,7 +466,8 @@ def main():
                 "runtime": subprocess.check_output([sys.executable, "-c", "import llama_cpp;print(llama_cpp.__version__)"], text=True).strip()}
     manifest["prompt_token_accounting"] = "completion encoder with special tokens/BOS/EOS; runtime usage asserted; skipped calls cost zero"
     manifest["adapter"] = adapter_info
-    manifest["models"] = verified_models(args.arm, args.verifier_model, args.task == "kyc" or args.selector == "suggest", args.drafter_model)
+    manifest["verifier_adapter"] = verifier_adapter_info
+    manifest["models"] = verified_models(args.arm, args.verifier_model, args.task == "kyc" or args.selector == "suggest", args.drafter_model, args.weights_root)
     if args.task == "finqa":
         manifest["evaluation_source_sha256"] = hashlib.sha256(inside("research/tier8_v2/external/finqa/dataset-dev.json").read_bytes()).hexdigest()
         if args.demos:

@@ -1685,3 +1685,34 @@ Do not edit trainer/data while this identified job is live or launch competing
 model work. Full external recovery remains pending model-work serialization and
 host headroom. Novel contribution and publication-quality confirmation remain
 unproven; strong critic and comparably adapted SAS are still development needs.
+
+## 2026-10-25 — Explicit critic deployment and proof interface prepared
+
+Previous turn is progress: actual fit plus live full-epoch learning, not a status
+restatement. TrainingPID26043 was revalidated this turn and continues; no trainer,
+encoded dataset, parity or checkpoint file was changed. Runtime work is independent
+of the active training inputs.
+
+Add load_critic_adapter for verifier-purpose3B only. Recheck conversion, bound
+training inputs, complete epoch counts, finite validation loss and tensor hashes;
+reject actor/critic purpose interchange. Separate actor/critic policies remain
+separate resident Llama instances even with identical base filenames. Application
+metadata records each role's actual initialized adapter handle and SHA. No trained
+critic has been loaded or evaluated yet.
+
+Expose verdict-only review as an explicit FinQA protocol, matching the exact
+training prompt/schema (tested). Preserve UNKNOWN separately and withhold; never
+invent operand/unit/step-level feedback from a single verdict. Binary protocol
+supports no repair or full regeneration; reject bounded/local repair modes because
+there is no localization. Rich review remains the default control. Source-supported
+execution alone still cannot authorize delivery.
+
+Allow explicit SSD model directory only with exact pinned filenames/bytes/SHA,
+SSD outputs through existing authorized artifact resolver, and shared workload
+locking. Extend reversible0->1->0 proof with explicit critic purpose, bound
+training-validation dataset and verified SSD model copy. Stream model hashing.
+No proof/CPU model workload launched while training is active. Future matched
+controls must use current runtime; old strict replay compatibility is not silently
+relaxed after constructor changes.200 tests pass, including wrong-role/provenance
+rejection, separate role policies, unknown delivery gate, exact protocol alignment
+and refusal to invent patch scope. No accuracy or novelty claim.
