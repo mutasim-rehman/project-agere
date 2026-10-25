@@ -91,6 +91,33 @@ and full resident memory. Any adoption must happen at8GB before cross-tier freez
 Contrastive bundles and rehearsal are established methods; measured usefulness
 and a defensible distinction from closest priors still remain unproven.
 
+## Fixed optimizer and worker, before baseline-probe outcomes
+
+The new `scripts/tier8_v2_continue.py` supports both original3B NF4 loading and the
+successful compact-CPU7B loading policy, without editing either live source set.
+Recipe: seed42, AdamW reset, learning rate1e-4, weight decay0, clip norm1,
+accumulation8, exactly one epoch. This learning rate is half the original2e-4:
+a fixed moderate continuation rate intended to allow learning new negatives while
+limiting forgetting. It is a judgment, not an optimized or empirically proven rate.
+No rate sweep or outcome-dependent checkpoint choice is planned.
+
+Preparation requires the declared discovery queue to complete and replays its
+results. It rejects continuation if BOTH target policies meet the ceiling rule.
+It requires a complete compatible full-epoch initializer with finite validation;
+all saved LoRA tensors are loaded and compared for exact dtype/value/key equality
+before any update. A fresh adapter with zero B matrices is rejected. Model/data/
+tokenizer/source/runtime identities are pinned. The fit covers the longest complete
+input and longest supervised target; its two updates are discarded. Full training
+requires that same measured fit, reloads the original full checkpoint, and resets
+AdamW. Losses are reported by validation family/task. Training keeps the10.5GB
+complete-tree cap,1GB host reserve and serial hardware lock, separately from6.4GB
+deployment. No retries/resume. Conversion and actual deployment effect proof remain
+required after training, and neither is implemented by this worker itself.
+
+Three checks pass, including a real tiny CPU PEFT save/restore and rejection of an
+untrained state. This is worker integrity testing, not a real3B/7B fit or result.
+No continuation plan or worker has been launched; baseline inputs remain frozen.
+
 [Prepared data/audit evidence](evidence/matched-continuation-prepared-01.json).
 Raw data, manifests, source snapshots and logs stay on SSD at
 `datasets/tier8_v2_continuation/matched_01` and `runs/continuation-matched-*`.

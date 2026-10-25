@@ -1,0 +1,43 @@
+{
+  "status": "implemented_not_full_model_tested",
+  "observed_utc": "2026-10-25T22:12:40.024012+00:00",
+  "script": "scripts/tier8_v2_continue.py",
+  "script_sha256": "8a470590719beb0c5d984eeed11ea80fe3f127dade1e04e11b30af51fcb51052",
+  "recipe": {
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0,
+    "clip_norm": 1.0,
+    "accumulation": 8,
+    "epochs": 1,
+    "seed": 42,
+    "optimizer_reset": true,
+    "lora": {
+      "r": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "target_modules": "all-linear"
+    }
+  },
+  "tests": {
+    "passed": 3,
+    "tiny_cpu_peft_exact_restore": true,
+    "log": "/run/media/mutasim/Data/AGERE/runs/continuation-worker-tests-01.log",
+    "log_sha256": "4769c81d669aff938d47439557c9238003af90514e7f78e71e95a11d87e9e97b"
+  },
+  "real_continuation_fit": false,
+  "real_continuation_training": false,
+  "actual_qa_gain": false,
+  "novelty_established": false,
+  "baseline_train_latest_event": {
+    "state": "update",
+    "time": 1792966336.64111,
+    "step": 338,
+    "examples": 8,
+    "loss": 0.02672861022692541,
+    "gradient_norm": 2.421863079071045,
+    "gpu_peak_allocated": 4763642880,
+    "gpu_peak_reserved": 4945084416,
+    "host_rss": 4073283584
+  },
+  "live_frozen_inputs_unchanged": true
+}

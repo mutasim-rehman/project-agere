@@ -1,10 +1,10 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 02:45 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 03:14 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
-| SAS7B full joint adaptation |**Running:272/476 updates**,2176/3801 examples;482 validation pending |
+| SAS7B full joint adaptation |**Running:338/476 updates**,2704/3801 examples;482 validation pending |
 | Training resources |Worker about4.07GB, complete tree about8.33GB including12 compiler workers;10.5GB training cap |
 | Discovery-first continuation |**Live, waiting for full SAS**;8 frozen serial jobs,5 broad comparison jobs explicitly deferred |
 | Fixed probe |32 greedy binary reviews from8 training reports, same inputs for joint SAS/original MAS critic/extended MAS critic |
@@ -54,3 +54,5 @@ before the targeted method experiment. Raw data/traces/weights stay on authorize
 SSD; code and aggregate provenance are pushed. Goal remains active.
 
 Conditional [matched continuation data](MATCHED_CONTINUATION.md) prepared and independently audited, not trained:512 SAS rows vs384 critic+128 common actor rows per condition; only127 new negative prompts differ. Positives/rehearsal/validation and exact task exposure match; both tokenizer profiles pass. Crossed tokens0.289% lower for SAS, so steps are not identical compute. Probe gate and actual fit/training/proof/natural utility remain required. Active source sets remain unchanged.
+
+Fixed-recipe continuation worker implemented, not full-model tested or launched. AdamW1e-4/reset/one epoch, exact full trained LoRA restoration, discarded fit updates, paired data/source/init/runtime identity, serial lock and full-tree cap. Three targeted checks pass including actual tiny CPU PEFT state restoration. Baseline queue completion and ceiling stop rule enforced before preparation. [Worker evidence](evidence/matched-continuation-worker-01.json).

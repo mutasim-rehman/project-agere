@@ -2508,3 +2508,23 @@ and BOTH correct/wrong/withheld metrics decide adoption, not teacher-forced loss
 Active trainer/discovery queue identities/hashes verified unchanged after new work.
 Previous goal turn made progress via implemented/frozen discovery queue; this one
 makes candidate/control preparation progress. Full novelty goal remains active.
+
+### 2026-10-26 — fixed matched continuation optimizer and guarded worker
+
+Before baseline32-review outcomes, implement a NEW continuation module; never edit
+live/frozen trainer or queue sources. Fixed seed42, fresh AdamW1e-4 (half original
+2e-4), weight decay0, clip1, accumulation8, one epoch. Moderate rate is an assumption
+to allow short adaptation with rehearsal while limiting forgetting; no empirical
+optimality claimed. Same recipe/control and candidate; no sweep or checkpoint
+selection. Actual full initializer must pass counts/finite-validation/provenance
+and compatible LoRA recipe. Load saved state into matching architecture, compare
+every key/dtype/value exactly, reject zero-B untrained initialization. Fit longest
+input and longest target, discard fit updates; full run reloads original trained
+initializer and resets optimizer. Fit identity binds all data/source/init/runtime
+inputs;10.5GB full-tree training cap and1GB reserve, serial lock, no retry/resume.
+Original3B loading and existing successful7B compact CPU policy retained. Worker
+preparation checks declared discovery queue complete, replays results, and enforces
+the30/32+6/8 BOTH-policy ceiling stop rule. No continuation launched now. Three
+targeted checks pass including tiny CPU actual PEFT restoration; full NN feasibility,
+training, conversion/effect, disjoint-report natural utility remain pending.
+Worker preparation is not novelty evidence or completion of the research goal.
