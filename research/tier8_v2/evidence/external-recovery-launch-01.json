@@ -1,0 +1,15 @@
+{
+  "controller_pid": 22646,
+  "create_time": 1792919946.67,
+  "detached": true,
+  "log": "/run/media/mutasim/Data/AGERE/runs/external_baselines_20261025_recovery01.log",
+  "launched_utc": "2026-10-25T09:19:06Z",
+  "source_commit": "563f259833066c8cb20b83a3a8499359699e6742",
+  "original_cases_preserved": 26,
+  "recovery_root": "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_recovery01",
+  "status": "preflight_refused",
+  "reason": "Host available RAM below original 6.4GB cap plus 1GB reserve",
+  "required_available_bytes": 7400000000,
+  "observed_available_bytes": 6490320896,
+  "controller_live": false
+}

@@ -1,0 +1,6 @@
+{
+  "boot_time_utc": "2026-10-25T06:41:45+00:00",
+  "last_original_memory_sample_utc": "2026-10-25T06:38:33.215764+00:00",
+  "host_rebooted_after_last_original_sample": true,
+  "interpretation": "Old evaluation cannot survive the observed host reboot. Initial process termination cause (shutdown/crash/other) is not established."
+}

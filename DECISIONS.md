@@ -1474,3 +1474,26 @@ keeping an interactive tool session open. This improves lifecycle robustness;
 the original interruption's root cause remains unknown. Recovering infrastructure
 is not a novel research method. No generation prompt, retrieval, scoring, adapter,
 model or token allocation is changed. Raw outputs remain on the authorized SSD.
+
+## 2026-10-25 — Matched critic diagnosis and resource refusal
+
+Recovery launch563f259 was refused before model loading: available RAM was about
+6.7GB, below the unchanged6.4GB cap plus1GB reserve (later6.49GB). No controller
+remains alive and no continuation case was generated. Preserve this failure log
+and launch metadata; do not report the recovery as live. Do not close user apps.
+Asked the user to free about1GB while independent work continues.
+
+Boot-time evidence shows this host booted at06:41:45UTC, after the last original
+sample06:38:33UTC. That reboot explains why old PIDs cannot still be live; it does
+not establish whether the initial termination was a crash, shutdown or other cause.
+
+A new offline audit proves all24 draft plans AND verifier prompts identical across
+0.5B and3B critic trials. Weak critic:21 unanimousPASS,3 unanimousUNKNOWN;10 true
+accepts,11 false accepts under the existing numerical answer metric. Larger critic:
+23 operandFAIL,1 operandUNKNOWN;23 operationFAIL;0 accepts,11 false rejects.
+All24 larger-critic outputs request repairNONE despite nonPASS checks, contrary
+to their prompt. This is observed protocol/calibration failure, not proof of a
+model-size effect or incorrect semantic judgment in every rejected case. No raw
+verdicts or scores changed. Use a balanced, train-only program-discrimination
+validation before treating another critic as strong. This is a local diagnostic,
+not a novel method. Script/input hashes are in matched-critic-behavior-audit-01.json.

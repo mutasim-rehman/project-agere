@@ -115,3 +115,19 @@ SAS matches, no completed arms or live evaluation process. Cause unknown; no
 terminal summary. Original running SSD manifest backed up, interruption observation
 saved. Do not repeat earlier live-status/ETA claims. See evidence/external-evaluation-
 interruption-01.json and SUPERVISOR_UPDATE_2026-10-25.md. Raw outputs remain on SSD.
+
+## Recovery and matched critic audit — latest
+
+Recovery563f259 is implemented and175 tests passed, but its actual launch was
+REFUSED by the original cap+reserve memory preflight. Available RAM6.5–6.7GB,
+required7.4GB. No continuation worker is live;26 original cases remain preserved.
+The host rebooted after the original run's last saved sample. Exact initial
+termination cause remains unknown. Recovery uses the unchanged original worker
+and separate immutable segments; no prompts/scoring/retrieval changed.
+
+Offline critic audit now proves24/24 identical draft plans and verifier prompts.
+0.5B critic is almost uniformly permissive;3B rejects all24 and emits repairNONE
+with nonPASS checks in all24. Next critic work must establish balanced train-only
+program discrimination and instruction consistency before renewed delivery gating.
+Audit: evidence/matched-critic-behavior-audit-01.json. No new novelty claim or
+accuracy gain follows from this diagnosis. Goal remains active.

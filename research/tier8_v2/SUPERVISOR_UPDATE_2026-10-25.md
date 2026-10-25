@@ -87,3 +87,18 @@ and coverage together. Test a specific repair hypothesis against strong plain-re
 independent-solving and full-regeneration controls at comparable expenditure.
 Freeze systems before fresh report-disjoint confirmation and assess prior art
 before claiming publication novelty.
+
+## Subsequent verified diagnosis
+
+A matched audit confirms identical initial plans and verifier prompts on all24
+cases. The0.5B critic returns unanimousPASS on21; the3B critic rejects every case
+and requests repairNONE on all24 despite failing checks. Thus the control exposes
+an uncalibrated/protocol-inconsistent verifier, not a validated strong-verifier
+baseline. Before further comparisons, assess balanced program discrimination on
+training-only validation examples. This is an informative local result, not a
+claim of new prior-art-free methodology.
+
+Recovery code now preserves and validates completed prefixes in separate segments.
+Its first launch was refused before model loading because available RAM was below
+7.4GB; inference remains stopped. Boot metadata confirms a host reboot after the
+last original sample, although the initial termination mechanism is unknown.

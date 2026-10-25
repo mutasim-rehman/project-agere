@@ -1,0 +1,70 @@
+{
+  "n": 24,
+  "identical_initial_plans": 24,
+  "identical_verifier_prompts": 24,
+  "arms": {
+    "left": {
+      "checks_signature_counts": {
+        "{\"operands\": \"PASS\", \"operations\": \"PASS\", \"units\": \"PASS\"}": 21,
+        "{\"operands\": \"UNKNOWN\", \"operations\": \"UNKNOWN\", \"units\": \"UNKNOWN\"}": 3
+      },
+      "dimension_counts": {
+        "operands": {
+          "PASS": 21,
+          "UNKNOWN": 3
+        },
+        "operations": {
+          "PASS": 21,
+          "UNKNOWN": 3
+        },
+        "units": {
+          "PASS": 21,
+          "UNKNOWN": 3
+        }
+      },
+      "repair_NONE_with_nonPASS_check": 3,
+      "unparsed": 0,
+      "true_accept": 10,
+      "false_accept": 11,
+      "true_reject": 2,
+      "false_reject": 1,
+      "delivered_correct": 10,
+      "delivered_incorrect": 11
+    },
+    "right": {
+      "checks_signature_counts": {
+        "{\"operands\": \"FAIL\", \"operations\": \"FAIL\", \"units\": \"FAIL\"}": 5,
+        "{\"operands\": \"FAIL\", \"operations\": \"FAIL\", \"units\": \"PASS\"}": 18,
+        "{\"operands\": \"UNKNOWN\", \"operations\": \"PASS\", \"units\": \"PASS\"}": 1
+      },
+      "dimension_counts": {
+        "operands": {
+          "FAIL": 23,
+          "UNKNOWN": 1
+        },
+        "operations": {
+          "FAIL": 23,
+          "PASS": 1
+        },
+        "units": {
+          "FAIL": 5,
+          "PASS": 19
+        }
+      },
+      "repair_NONE_with_nonPASS_check": 24,
+      "unparsed": 0,
+      "true_accept": 0,
+      "false_accept": 0,
+      "true_reject": 13,
+      "false_reject": 11,
+      "delivered_correct": 0,
+      "delivered_incorrect": 0
+    }
+  },
+  "interpretation": "Matched local development diagnostic. Numerical answer correctness is not semantic proof. Repair NONE with a nonPASS check violates the stated prompt, but is not itself evidence that the rejection is wrong. Do not infer larger-model verification capability from size alone.",
+  "input_sha256": {
+    "research/tier8_v2/runs/finqa-mas-3b-adapted-direct-dev24-01/cases.jsonl": "1451b5e79dc52c2a11dc87787e82f37b9323915116f0b6a3a65c450146edcb4a",
+    "research/tier8_v2/runs/finqa-mas-3b-adapted-critic3b-dev24-01/cases.jsonl": "d8d8c32861cbf9900e741650d351fba40805e88a8938851f26e700b5ae314ad5"
+  },
+  "audit_source_sha256": "cb78b0e61c2439e185de3254d4e8adc4b4325598138c872427e8ccba0a6998d2"
+}
