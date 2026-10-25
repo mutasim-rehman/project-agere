@@ -2528,3 +2528,8 @@ the30/32+6/8 BOTH-policy ceiling stop rule. No continuation launched now. Three
 targeted checks pass including tiny CPU actual PEFT restoration; full NN feasibility,
 training, conversion/effect, disjoint-report natural utility remain pending.
 Worker preparation is not novelty evidence or completion of the research goal.
+
+
+### 2026-10-26 — full-method prior constrains the proposed contribution
+
+Read Instance Bundles sections2/2.1/4.2 from the primary2021 PDF, beyond previous abstract review. Question/answer joint neighborhoods, all-members-correct metrics and constrained joint inference are already present. Do not add a generic contrastive loss or question-assignment inference step merely to claim novelty; our ordinary executable-finance verdict SFT differs but is not thereby an advance. VitaminC introduction likewise establishes contrastive verification/evidence sensitivity. Preserve the matched continuation as an empirical candidate, insist on natural-report utility, and keep useful novelty unestablished. No new NN calls or changes to live sources from this review.

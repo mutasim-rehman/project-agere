@@ -128,3 +128,10 @@ Output scaling/node projection are known program-mutation ideas; do not claim
 novelty from adding these error families. They are baseline strengthening motivated
 by natural dev failures. Same-source/positive/update controls isolate the corpus
 change partially; training-token expenditure is also reported, not assumed equal.
+
+
+## 26 October2026 — direct inspection of instance-bundle methods
+
+[Learning with Instance Bundles for Reading Comprehension, full paper](https://aclanthology.org/2021.emnlp-main.584.pdf), sections2,2.1 and4.2, now inspected beyond the abstract. It normalizes scores over alternative questions, answers or their combinations and combines that objective with MLE. It also evaluates all-members-correct consistency and performs constrained question–answer assignment at inference. Therefore neither a two-by-two question/program bundle, complete-quartet metric, nor adding a question-contrast inference score establishes first use. Our current candidate uses ordinary verdict SFT on executable financial programs, not their joint contrastive objective; that difference alone is not a methodological advance. This makes matched natural-error utility essential and rules out presenting a renamed bundle loss or assignment step as novelty. No replication or superiority comparison has been performed.
+
+[VitaminC primary paper](https://arxiv.org/pdf/2103.08541), introduction inspected: paired evidence changes are designed to expose and improve evidence sensitivity. Its existence also prevents claiming that label-flipping counterfactual verification is new. The narrower possible contribution remains a measured finding about executable-program verification, shared-versus-separate adaptation and resource-constrained deployment. It remains a hypothesis until real outcomes and closest-work comparisons support it.
