@@ -172,3 +172,18 @@ preserving original26 cases. All FinQA queue stages1–9 passed. Broad100-report
 inference, comparable SAS adaptation, useful novelty and publication confirmation
 remain outstanding.212 tests pass. Earlier running/stopped statements are dated
 history; LIVE_STATUS.md carries the latest snapshot.
+
+## Latest preparation — comparable SAS fit, not a new accuracy result
+
+Prepared and actually launched a gated controller for one7B training feasibility
+attempt after all frozen external evaluations finish successfully. It is currently
+waiting, with no model worker. Same actor corpus661/100, complete input/targets,
+rank8 all-linear LoRA; frozen CPU embedding/head and streamed-head loss address
+training memory.15 targeted CPU tests pass; full231-test coverage spans the two
+required runtimes. An end-to-end checkpointed BF16 test found and fixed partial-
+gradient rounding without relaxed tolerance. Failure/source evidence preserved.
+
+Actual7B CUDA fit, full SAS adaptation and QA have NOT run. Training resource cap
+is separate from8GB deployment. External Mortar SAS now46/90 saved; other arms
+still pending. Latest phone snapshot LIVE_STATUS.md; protocol SAS_OFFLOAD_FIT.md.
+No feature is yet both defensibly novel and responsible for a validated gain.

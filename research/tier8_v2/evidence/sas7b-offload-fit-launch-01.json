@@ -1,0 +1,10 @@
+{
+  "pid": 47307,
+  "create_time": 1792930227.21,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/plan.json",
+  "plan_sha256": "1b2ca7371810444610e7fc348df8a794e0e060f40a4b660284266b22647ad523",
+  "source_commit": "21be70333469c57a925c2c67808c6c1d554e5c1a",
+  "created_utc": "2026-10-25T12:10:27.229718+00:00",
+  "log": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01/controller.log",
+  "scope": "Detached controller only; must wait for frozen external evaluation success and process exit. One measured two-update7B fit; no full adaptation or accuracy claim."
+}

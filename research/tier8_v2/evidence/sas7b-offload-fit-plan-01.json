@@ -1,0 +1,73 @@
+{
+  "kind": "sas7b_two_update_offload_fit",
+  "out": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-offload-fit-01",
+  "dependency": {
+    "pid": 36374,
+    "create_time": 1792926351.41,
+    "root": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02",
+    "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/plan.json"
+  },
+  "input_sha256": {
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sas_offload_fit.py": "96600539b85fe2e870f8f63209734a29e78c07baa13c1af055d44b61ad027642",
+    "/home/mutasim/Desktop/project-agere/scripts/frozen_head_loss.py": "464d4d227f3400dbf553a1245d2ee821d540389d12fa56c1698c9f70fd325943",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py": "69c5867ef27c2bca34fd4883d9a15db69132fb2999556db264ed09404fb60e8f",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_convert.py": "d4bf0355e2da6136a3884485c3fa6ab0afeba0c68ac97faa02061deb8f1d8e25",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_posttrain_queue.py": "ee26d8c80de2c6c93bea70f1420406ef48b90d805431a20808f300cc25b56510",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_artifact_paths.py": "c4f342f83eb9f8e4cda870f1867dd86774d4822b03bc76721fb234d872184d89",
+    "/home/mutasim/Desktop/project-agere/scripts/supervised_logits.py": "01f2afbd5ed2de8a59eb89f012ac991b6a651ed58177b3be1e6a6cbe25607f61",
+    "/home/mutasim/Desktop/project-agere/manifests/hf_snapshots.json": "1f9da8ae6b787e81203a652a75a5539ff7230ebfc86d388b344302b5e8818442",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/evidence/critic3b-posttrain-launch-02.json": "580b2d2f0e4bb1417ffa231d658b3723ca79f35ea9c77809b509ccacefe5c98d",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/plan.json": "51e4c252920955b8948e54c917c8dc2d3c94df1f8ddd496a0235600829dc0630",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/evidence/deployment-sft-1024-02.json": "0ac749299078f46a67f9e57f6830b84e2418b425e96482c80dcd9494a2969a06",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/deployment-sft-1024-02.jsonl": "0b1052db3f7c6a5d85d321b500b9478ea453aa936d0b78e326215c3ce2933069",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/evidence/hf-tokenizer-parity-02.json": "2be2c99130c37fa66b2a64092314412261f70c8ae58d3cb46bced5382401b7ec",
+    "/home/mutasim/Desktop/project-agere/weights/hf-tokenizers/sas-7b-q4/tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "/home/mutasim/Desktop/project-agere/weights/hf-tokenizers/sas-7b-q4/generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+    "/home/mutasim/Desktop/project-agere/weights/hf-tokenizers/sas-7b-q4/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "/home/mutasim/Desktop/project-agere/weights/hf-tokenizers/sas-7b-q4/merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "/home/mutasim/Desktop/project-agere/weights/hf-tokenizers/sas-7b-q4/config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+    "/home/mutasim/Desktop/project-agere/weights/hf-tokenizers/sas-7b-q4/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/run/media/mutasim/Data/AGERE/weights/hf/Qwen--Qwen2.5-7B-Instruct/config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+    "/run/media/mutasim/Data/AGERE/weights/hf/Qwen--Qwen2.5-7B-Instruct/model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+    "/home/mutasim/Desktop/project-agere/.venv-training/lib/python3.12/site-packages/accelerate/hooks.py": "2353c22f7e9ea25b3b4c1d8eeb4ff29326f3fadcc5d132784841f263a620bd7f",
+    "/home/mutasim/Desktop/project-agere/.venv-training/lib/python3.12/site-packages/accelerate/big_modeling.py": "ba10386cfa94924e05e2d49efbc2496962db8e3b1c6b048e1c673186b9c3899e"
+  },
+  "source_model": "/run/media/mutasim/Data/AGERE/weights/hf/Qwen--Qwen2.5-7B-Instruct",
+  "policy": {
+    "device_map": {
+      "model.embed_tokens": "cpu",
+      "model.layers": 0,
+      "model.norm": 0,
+      "lm_head": "cpu"
+    },
+    "quantization": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "llm_int8_enable_fp32_cpu_offload": true
+    },
+    "projection_dtype": "bfloat16",
+    "vocabulary_block_size": 1024,
+    "cpu_matrices": "Detach Accelerate offload hooks; CPU embedding lookup, explicit inputs_embeds transfer; streamed CPU frozen head",
+    "lora": {
+      "r": 8,
+      "lora_alpha": 16,
+      "lora_dropout": 0.05,
+      "target_modules": "all-linear"
+    }
+  },
+  "host_tree_cap_bytes": 10500000000,
+  "runtime_versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.1",
+    "peft": "0.17.1",
+    "bitsandbytes": "0.48.1",
+    "accelerate": "1.10.1",
+    "tokenizers": "0.22.2"
+  },
+  "source_commit": "21be70333469c57a925c2c67808c6c1d554e5c1a",
+  "host_reserve_bytes": 1000000000,
+  "minimum_available_before_worker": 9000000000,
+  "sampling_interval_seconds": 0.2,
+  "scope": "Training feasibility only; training memory is separate from the simulated8GB deployment cap. No full epoch, QA gain or novelty claim."
+}

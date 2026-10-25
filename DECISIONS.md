@@ -1999,3 +1999,20 @@ separate training resource use, not8GB deployment fit; deployment remains6.4GB.
 Only start after the existing external queue succeeds and exits. Success still
 requires full SAS adaptation, conversion, reversible application proof and QA.
 Method novelty remains unproven. Details SAS_OFFLOAD_FIT.md and CPU evidence JSON.
+
+## 2026-10-25 — Actual waiting fit controller launched from21be703
+
+Prepared and launched SSD sas7b-offload-fit-01 with planSHA
+1b2ca7371810444610e7fc348df8a794e0e060f40a4b660284266b22647ad523.
+ControllerPID47307/create-time1792930227.21 verified live/sleeping; state
+waiting_for_frozen_evaluation on controller36374/create-time1792926351.41.
+Zero child workers and no fit directory confirm no7B model load or updates yet.
+Launch/plan evidence committed; controller logs/state/memory/weights stay SSD.
+Current external recovery controller40968/worker41022 also verified live;46/90
+Mortar SAS cases saved including26 preserved originals. All4 external arms still
+must complete; no final external result or novelty claim follows from this count.
+
+Queued process performs no Git operations and cannot complete this research goal.
+Later milestones still need agent inspection, commit/push, comparable adaptation
+and validated useful novelty. A future failed fit is evidence to diagnose, not a
+reason to retry implicitly, weaken memory checks or claim a trained SAS system.

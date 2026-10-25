@@ -1,6 +1,6 @@
 # Live research checkpoint
 
-**Observed 25 October 2026, 16:53 PKT.** Committed snapshot, not a live monitor.
+**Observed 25 October 2026, 17:11 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
@@ -9,8 +9,8 @@
 | Natural24, plain critic |3 correct delivered,0 wrong,21 withheld |
 | Natural24, trained critic |11 correct delivered,4 wrong,9 withheld |
 | Attribution |All24 drafts and critic prompts identical; same adapted actor |
-| Current workload |External recovery running;10 new Mortar SAS cases saved (36/90 including26 preserved) |
-| Software checks |216 existing tests pass;6 additional CPU training tests pass |
+| Current workload |External recovery running;20 new Mortar SAS cases saved (46/90 including26 preserved) |
+| Software checks |231 tests covered across inference/training runtimes; see CPU evidence |
 | Novelty |No demonstrated useful original method yet |
 
 Natural counts above use the reported-answer metric. Raw execution gives plain
@@ -64,3 +64,21 @@ two tiny Qwen2+LoRA updates against standard CE. It retains complete context,
 targets and vocabulary. This is established memory engineering; full7B CPU/GPU
 offload integration, real fit and comparable adaptation have NOT run. Current
 frozen evaluation sources are untouched. [Numerical proof](evidence/frozen-head-loss-cpu-proof-01.json).
+
+## Queued SAS fit gate
+
+Controller47307/create-time1792930227.21 is verified sleeping in
+`waiting_for_frozen_evaluation`; it has no model worker and no fit output yet.
+After the current controller exits successfully, it revalidates every frozen job,
+external arms/original preservation, source hashes and runtime, then permits ONE
+measured two-update7B fit on the same actor corpus. Failure stops; no retries.
+All new raw artifacts stay SSD. [Plan](evidence/sas7b-offload-fit-plan-01.json) ·
+[Launch](evidence/sas7b-offload-fit-launch-01.json) · [Protocol](SAS_OFFLOAD_FIT.md).
+
+Training has a separate10.5GB host-tree ceiling/1GB reserve/9GB preflight plus
+recorded GPU peaks. It does not establish8GB deployment fit. True CPU-resident
+embedding/head restore avoids Accelerate's full-matrix GPU reload hooks. A CPU
+checkpointed BF16 test exposed per-block backward rounding; FP32 accumulation
+fixed it without loosening tolerance. Old sources/failure logs preserved.
+[Updated CPU evidence](evidence/sas7b-offload-cpu-checks-01.json) supersedes the
+older helper checks. Actual7B CUDA fit, full adaptation and QA remain unproven.
