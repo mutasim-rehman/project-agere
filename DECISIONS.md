@@ -1581,3 +1581,26 @@ are prior art. Original repair contribution and publication novelty remain unpro
 Full external recovery remains stopped. After the component run available RAM
 briefly approached7.38GB, then7.27GB, below its7.4GB preflight; do not restart or
 lower the frozen original cap to bypass that condition. All184 tests pass.
+
+## 2026-10-25 — Weakly annotated role-verifier corpus
+
+Last turn is progress:96 actual reviews disproved the simpler-format fix on the
+controlled probe. Full recovery still lacks original7.4GB headroom (7.336GB at
+this turn's checks), but verifier baseline development is independent work.
+
+Prepare training and train-validation pairs from revision02 source-binding data,
+retaining existing report-group separation and excluded development groups. Both
+numerical metrics must accept a source-annotated reference and reject its single
+operation/source-operand mutation; compilation/execution/source support must pass
+for both. These are weak numerical annotation labels, not invented field-level
+semantic explanations or independently adjudicated semantic truth. Binary target
+PASS/FAIL only, original deployed binary critic prompt. Hash-select mutation family
+before selecting one eligible edit so operand candidate count does not determine
+family frequency. No test data or inference-dependent example selection.
+
+Retain a pair only if both complete prompt/target sequences fit1024; never truncate
+or keep one class alone. Save all rows/token-ID hashes/metadata on SSD; verify
+actual HF/GGUF parity before training. Fit/train and applied-adapter evaluation
+remain separate gates. Controlled-negative training is established baseline work,
+not a new method; natural-error testing and comparable SAS adaptation remain needed.
+187 tests pass before corpus preparation.
