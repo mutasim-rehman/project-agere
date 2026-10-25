@@ -1,51 +1,54 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 01:51 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 02:13 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
-| External baseline queue | Complete:380 case–arm evaluations; Mortar SAS39/90,MAS26/90; FRAMES2/100,1/100 |
-| SAS7B compact joint fit | Complete:2 actual updates,392 changed tensors;8.490GB tree RSS under10.5GB training cap |
-| SAS7B full joint adaptation | **Running:140/476 updates**,1120/3801 examples;482 validation pending |
-| Training memory | Latest worker about4.07GB; whole tree about8.33GB including compiler workers |
-| Extended MAS critic | Dataset/parity/audit ready; training pending serial GPU availability |
-| Source-aware repair controls | Implemented;17 CPU checks pass; actual NN scorer/repair pilot pending |
-| First redundancy diagnostic |370 candidates→368 source-symbolic classes; weak evidence for useful call savings |
-| Novelty |No demonstrated useful original method yet |
+| SAS7B full joint adaptation |**Running:193/476 updates**,1544/3801 examples;482 validation pending |
+| Training resources |Worker about4.07GB, complete tree about8.33GB including12 compiler workers;10.5GB training cap |
+| Discovery-first continuation |**Live, waiting for full SAS**;8 frozen serial jobs,5 broad comparison jobs explicitly deferred |
+| Fixed probe |32 greedy binary reviews from8 training reports, same inputs for joint SAS/original MAS critic/extended MAS critic |
+| Crossed curriculum |403 audited quartets/1612 rows;1416 train,196 validation; both tokenizer parity and source/execution/prompt replay pass |
+| Useful novelty |Not established; no new quartet-trained model or quality gain yet |
 
-The successful full run has progressed beyond the two preserved failed full
-attempts, both0 updates. One failed during loading10.532GB; pread loading fixed
-that stage but the next stopped during preparation10.563GB. Current compact frozen
-CPU storage keeps BF16 weights, FP32 embedding lookup results and the existing
-BF16 streamed head projection. Tiny CPU loss/gradient preservation checks pass;
-actual7B training or QA equivalence is not asserted. New per-process traces show
-Torch Inductor launching12 compiler workers; their RSS counts in the cap.
+The original10-job queue was deliberately superseded while waiting, with no model
+child, started job or result. Original plan/source snapshots/journal are preserved.
+This is a scientific priority change, not a failed model or memory run. Active SAS
+training and its source/data remain unchanged; both live identities and frozen
+input sets were reverified. New order: SAS conversion/proof, SAS quartet probe,
+original MAS critic probe, extended MAS critic training/conversion/proof, extended
+MAS probe. No concurrent NN workloads. All large100-report commands remain saved
+as deferred jobs; their outcomes have not been consumed.
 
-Full adaptation is provisionally several hours, followed by conversion, reversible
-application proof and actual QA. Training loss is not a QA result. Deployment has
-a separate6.4GB complete-tree cap. No overlapping NN model workloads.
+The probe uses actual deployed greedy JSON binary review,192 generated-token cap,
+4096 context,8 CPU threads and6.4GB complete-tree deployment cap. UNKNOWN/unparsed
+are wrong exact labels; gate nonaccept is separate. Five of the fixed8 quartet
+pairs have the same operation/reference/constant topology. Source questions and
+positive programs were already in training;16 crossed negatives are new question/
+program combinations relative to both critic fitting corpora. This is training-
+source discovery, not an independent generalization set. Canonical exposure audit
+also identifies2 exact repeated positive prompts. No labels enter model prompts.
 
-Earlier matched24-case FinQA: trained MAS critic delivered11 correct,4 wrong,
-9 withheld versus plain3,0,21 (reported metric); raw9,6,9 versus2,1,21. This remains
-a coverage–risk tradeoff. Best old SAS13,5,6 had different adaptation. Shared SAS
-training now uses the same drafting and extended verification examples as the MAS
-role adapters, with fixed equal task-loss mass; this is baseline strengthening.
+[Discovery launch](evidence/joint-discovery-posttrain-launch-02.json) ·
+[Frozen discovery/deferred plan](evidence/joint-discovery-posttrain-plan-02.json) ·
+[Old queue supersession](evidence/joint-posttrain-superseded-01.json) ·
+[Crossed curriculum](COUNTERFACTUAL_VERIFIER_CURRICULUM.md) ·
+[Question-blind artifact audit](CRITIC_ARTIFACT_AUDIT.md).
 
-[Training checkpoint](evidence/sas7b-joint-train-progress-01.json) ·
-[Training launch](evidence/sas7b-joint-train-compact-launch-03.json) ·
-[Repair candidate and weak early diagnostic](SOURCE_REPAIR_CANDIDATE.md) ·
-[External audit](evidence/external-baselines-completed-01.json) ·
-[Cross-tier freeze](FEATURE_FREEZE.md).
+Artifact audit: shallow program-only trees classify72–77% of earlier synthetic
+validation, but only5 correct/5 wrong/14 withheld on reused natural24 for the
+extended tree versus existing neural11/4/9 (reported); raw4/6/14 versus9/6/9.
+The new crossed data makes marginal-only accuracy exactly50%; this is a data
+construction property, not an NN result or a novel principle. Contrastive bundle
+training has established priors. Natural disjoint-report utility and matched
+continued-training controls must decide whether this intervention helps.
 
-The100-report development packets and174 natural-training packets remain
-uninferred. Window ends approximately26October11:54PKT. Common methods must be
-validated/frozen at8GB before16/32GB. Code and aggregate evidence are committed;
-raw weights/datasets/traces stay on the authorized SSD. Goal remains active.
+External original-unadapted baseline queue remains complete:380 case–arm runs;
+Mortar SAS39/90,MAS26/90; FRAMES2/100,1/100, with disclosed partial evidence/closed-
+book limitations. No optimized-architecture winner follows from these figures.
 
-Serial follow-on controller is live and waiting for full SAS completion:10 frozen jobs covering conversion/proofs, extended MAS critic training, paired100-report critic evaluation, and both direct and analysis+demos SAS100 policies. [Frozen queue](evidence/joint-posttrain-plan-01.json). Model workloads remain serial. Full default suite274 tests with17 training-runtime skips.
-
-New separate serving experiment: [shared backbone with distinct role adapters](SHARED_ROLE_SERVING.md).3 CPU activation tests and real existing-adapter metadata preflight pass; native parity/memory proof prepared, not run or queued. This is known baseline engineering, not novelty. Stronger tiny CPU LoRA decoder test also matches old-versus-compact storage loss and every adapter gradient exactly; no actual7B GPU equivalence claim. [Current training checkpoint](evidence/sas7b-joint-train-progress-02.json). Frozen queue inputs reverified unchanged.
-
-New measured research diagnosis: [question-blind critic artifact audit](CRITIC_ARTIFACT_AUDIT.md). A fixed shallow tree gets72.0% original and77.2% extended synthetic validation accuracy without question/evidence. On reused natural24, extended tree5 correct/5 wrong/14 withheld versus existing neural11/4/9 (reported). Neural beats these simple controls; synthetic discrimination alone remains insufficient. Frozen fitted trees will also be reported on100, without tuning. No NN calls or queue changes.
-
-Targeted response to artifact audit: [crossed-question verifier curriculum](COUNTERFACTUAL_VERIFIER_CURRICULUM.md),403 quartets/1612 records,1416 train/196 validation. Both3B/7B tokenizer parity and source/prompt/execution replay pass; question-blind tree is exactly50% on both splits. No new NN trained or quality gain yet; contrastive bundles have established priors. Next priority is small train-source NN probe, not more optional infrastructure. Active SAS trainer/queue remain unchanged and their sources reverified.
+[Cross-tier freeze](FEATURE_FREEZE.md): methods must be validated at8GB before
+16/32GB. Approximate window end26October11:54PKT. Shared-role memory experiment
+remains prepared, not native-tested or adopted; no extra optional serving work
+before the targeted method experiment. Raw data/traces/weights stay on authorized
+SSD; code and aggregate provenance are pushed. Goal remains active.

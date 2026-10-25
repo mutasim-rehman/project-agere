@@ -2451,3 +2451,24 @@ caps, resource monitoring and fail-closed/no-retry policy. Preserve all five lar
 This prioritizes the user's requested novel-method work within the12-hour window,
 without changing or abandoning the baseline weights/evidence. Future stage2 source
 work must use NEW modules while this queue's inputs are frozen.
+
+## 2026-10-26 — Discovery-first replacement queue actually launched
+
+New joint03-discovery02 launched from dc2e75e,8 serial jobs and5 explicitly deferred
+100-report jobs. PID93146/create_time1792962551.45, plan SHAae579484b961c706a2b7478a9a130c3a54c395f9680449ee8694f55eee0ac99c.
+Verified live identity and waiting state; all frozen new-queue and active SAS input
+hashes pass after the revision. Original waiting queue remains superseded, never
+resumed. New order provides SAS and original-MAS discovery outcomes before the
+extended critic epoch, allowing CPU-only preparation while that GPU job runs.
+The last probe tests extended MAS. No source/device/context/cap change to SAS.
+
+Pre-inference exposure audit on selected32 records versus3140 actually fitted rows
+in each original/extended critic corpus: all16 positive Q/program pairs previously
+seen;2 exact/canonical full positive prompts repeated. None of16 crossed negative
+Q/program pairs or full inputs seen, and no conflicting labels found. New union
+rendering is not new source material; call this training-source discovery. These
+are exact/dictionary-canonical overlap counts, not an audit of pretraining or
+semantically equivalent examples. Five fixed8 quartets share identical operator/
+reference/constant topology; no outcome-dependent reselection. Five probe unit
+checks and full default suite293 tests with18 runtime skips passed before final
+ordering-only change; compile/gate checks also pass. Actual new NN probe pending.

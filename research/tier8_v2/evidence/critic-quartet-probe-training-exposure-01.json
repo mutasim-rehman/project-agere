@@ -1,0 +1,43 @@
+{
+  "pilot": "critic_quartets_pilot_train8_02",
+  "before_neural_probe": true,
+  "training_input_exposure": {
+    "critic_binary_sft_02": {
+      "PASS": {
+        "n": 16,
+        "exact_prompt_seen": 2,
+        "qep_seen": 2,
+        "qep_contradictory_label": 0,
+        "qp_seen": 16,
+        "qp_contradictory_label": 0
+      },
+      "FAIL": {
+        "n": 16,
+        "exact_prompt_seen": 0,
+        "qep_seen": 0,
+        "qep_contradictory_label": 0,
+        "qp_seen": 0,
+        "qp_contradictory_label": 0
+      }
+    },
+    "critic_extended_sft_02": {
+      "PASS": {
+        "n": 16,
+        "exact_prompt_seen": 2,
+        "qep_seen": 2,
+        "qep_contradictory_label": 0,
+        "qp_seen": 16,
+        "qp_contradictory_label": 0
+      },
+      "FAIL": {
+        "n": 16,
+        "exact_prompt_seen": 0,
+        "qep_seen": 0,
+        "qep_contradictory_label": 0,
+        "qp_seen": 0,
+        "qp_contradictory_label": 0
+      }
+    }
+  },
+  "scope": "Exact text, canonical question/evidence/program and question/program overlap with actually fitted train rows. Source questions/positive programs are already seen; this is not an independent generalization set."
+}

@@ -1,0 +1,12 @@
+{
+  "pid": 93146,
+  "create_time": 1792962551.45,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_joint_posttrain/joint03-discovery02/plan.json",
+  "plan_sha256": "ae579484b961c706a2b7478a9a130c3a54c395f9680449ee8694f55eee0ac99c",
+  "source_commit": "dc2e75e215be492243cbcc9f0b0285de98898999",
+  "status": "launched_waiting_not_completed",
+  "jobs": 8,
+  "deferred_jobs": 5,
+  "novelty_established": false,
+  "supersedes": "joint-posttrain-launch-01.json"
+}
