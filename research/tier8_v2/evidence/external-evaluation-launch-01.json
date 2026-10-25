@@ -1,0 +1,21 @@
+{
+  "observed_utc": "2026-10-25T04:14:11Z",
+  "ssd_run": "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01",
+  "controller_pid": 321561,
+  "controller_live": true,
+  "exec_session": 46979,
+  "source_commit": "caf3a3a",
+  "weights_verified": true,
+  "dataset_counts": {
+    "mortar": 90,
+    "frames": 100
+  },
+  "queue_status": "running",
+  "current_arm": "mortar-sas",
+  "persisted_cases": 3,
+  "sampled_peak_tree_rss_bytes": 5180309504,
+  "cap_bytes": 6400000000,
+  "mean_case_seconds_so_far": 104.57902369466804,
+  "results_final": false,
+  "note": "Partial progress only; full outputs and launch/environment metadata on SSD. No adapted-system or novelty claim."
+}

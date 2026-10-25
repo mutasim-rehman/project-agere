@@ -1441,3 +1441,5 @@ MortarBench typed exact is a local exploratory metric; partial source retrieval
 and absence of paystub/PDF extraction limit interpretation. FRAMES remains a
 closed-book control. Original adapters are not silently applied.
 The new runner does not establish adapted-system performance or novelty.
+
+External queue is confirmed in actual inference, not merely planned: 3 MortarBench SAS cases persisted at this observation; sampled peak 5.18 GB under 6.4 GB. Run root: `/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01`. Controller321561 / session46979. Full queue remains active; do not restart or edit the frozen runner. Launch pointer: evidence/external-evaluation-launch-01.json.

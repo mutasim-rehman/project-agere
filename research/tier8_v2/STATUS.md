@@ -105,3 +105,5 @@ FRAMES is closed book with original strict exact match plus a separate
 punctuation-normalized sensitivity. These are exploratory external baselines,
 not an adapted-system confirmation or a publication novelty result.
 Outputs belong only on the SSD under runs/tier8_external/.
+
+External queue is confirmed in actual inference, not merely planned: 3 MortarBench SAS cases persisted at this observation; sampled peak 5.18 GB under 6.4 GB. Run root: `/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01`. Controller321561 / session46979. Full queue remains active; do not restart or edit the frozen runner. Launch pointer: evidence/external-evaluation-launch-01.json.
