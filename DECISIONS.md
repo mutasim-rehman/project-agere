@@ -2,6 +2,22 @@
 
 ## Continuation — 25 October 2026
 
+### Frozen matched applied-adapter evaluation
+
+- New 24-case sequence: unadapted 3B Q4 + native 0.5B critic first, then the same
+  configuration with the verified full-training adapter on the drafter only.
+  Original source packets, causal reference grammar, compact catalog, question-
+  derived units, zero demos/analysis/repair, 4096 context, 2048 output tokens/case,
+  seed 42, eight CPU threads and sampled 6.40 GB RSS ceiling are fixed in both.
+- Both use the new usage-verified token counter; the historical 128-analysis MAS
+  condition is a separate stronger-baseline control, not the matched training
+  ablation. Report correct answers/deliveries, wrong deliveries, withheld cases,
+  paired differences and actual resources; run the v2 unit sensitivity afterward.
+- The trained checkpoint has not seen development labels as training targets. This
+  slice has been repeatedly used for development and cannot establish independent
+  confirmation. Complete both jobs and retain all 24 cases before selecting a next
+  condition. No positive result or novelty is assumed from lower token loss.
+
 ### Actual adapter effect proved; measured inference integration
 
 - Added strict runtime loading of full-training converted adapters. Fit-only,
