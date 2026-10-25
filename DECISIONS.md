@@ -2,6 +2,23 @@
 
 ## Continuation — 25 October 2026
 
+### Larger quantized verifier allocation control implemented
+
+- Added an explicit 3B Q4 verifier choice, using the already hash-pinned candidate
+  checkpoint. With the trained 3B drafter, the same base filename has different
+  adapter policies, so two separate resident instances are required. This prevents
+  the trained drafter adapter from silently contaminating the plain verifier.
+- Tests check that equal base+adapter policies share only when requested, while
+  distinct adapter identities remain distinct even under shared residency. An
+  unadapted same-base shared pair is just a staged self-check control; do not call
+  it independent specialist weights. The current trial uses distinct policies.
+- All 168 tests pass. Actual pair RSS fit and verifier benefit remain unmeasured.
+  The full 24-case trial keeps the adapted drafter, data, prompts, token ceiling,
+  sampling and no-repair policy unchanged. Check initial plans for exact equality
+  afterward; do not attribute differences solely to verification if drafts differ.
+  Prefer a new gate only if it reduces wrong delivery without sacrificing correct
+  delivery, while reporting its extra latency/memory. No benefit is assumed.
+
 ### First actual adapted QA gain, with a delivery-risk failure
 
 - Both matched 24-case jobs completed. Unadapted 3B, no analysis/demos: 0 correct,

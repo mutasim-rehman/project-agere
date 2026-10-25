@@ -35,6 +35,8 @@ def model_files(arm, verifier_model="0.5b", use_selector=True, drafter_model="1.
             files["drafter"] = "qwen2.5-3b-instruct-q4_k_m.gguf"
         if verifier_model == "1.5b":
             files["verifier"] = MODEL_FILES["mas"]["drafter"]
+        if verifier_model == "3b":
+            files["verifier"] = "qwen2.5-3b-instruct-q4_k_m.gguf"
         if not use_selector:
             files.pop("extractor")
     return files
@@ -266,7 +268,7 @@ def verified_models(arm, verifier_model="0.5b", use_selector=True, drafter_model
     native = ROOT / "research/tier8_v2/evidence/native-models.json"
     if native.exists():
         entries += json.loads(native.read_text())
-    if arm == "mas" and drafter_model == "3b-q4":
+    if arm == "mas" and (drafter_model == "3b-q4" or verifier_model == "3b"):
         entries.append(json.loads(inside("research/tier8_v2/evidence/candidate-model-3b.json").read_text()))
     required = set(model_files(arm, verifier_model, use_selector, drafter_model).values())
     if arm == "sas":
@@ -346,7 +348,8 @@ def worker(args, out):
         allocation = model_files(args.arm, args.verifier_model, args.task == "kyc" or args.selector == "suggest", args.drafter_model)
         result["verifier_checkpoint"] = allocation.get("verifier", MODEL_FILES["sas"]["sas"])
         result["drafter_checkpoint"] = allocation.get("drafter", MODEL_FILES["sas"]["sas"])
-        result["model_allocation"] = "larger_quantized_drafter_control" if args.arm == "mas" and args.drafter_model == "3b-q4" else "original_checkpoints"
+        result["model_allocation"] = ("3b_q4_verifier_control" if args.arm == "mas" and args.verifier_model == "3b" else
+            "larger_quantized_drafter_control" if args.arm == "mas" and args.drafter_model == "3b-q4" else "original_checkpoints")
         append(out / "cases.jsonl", result)
         print(json.dumps({"id": case["id"], "success": result["score"]["case_success"],
                           "delivered": result["delivered"], "tokens": result["tokens"]}), flush=True)
@@ -374,7 +377,7 @@ def main():
     parser.add_argument("--demo-policy", choices=("fixed", "retrieved"), default="fixed")
     parser.add_argument("--planner", choices=("direct", "sketch"), default="direct")
     parser.add_argument("--analysis-tokens", type=int, choices=(0, 128, 256), default=0)
-    parser.add_argument("--verifier-model", choices=("0.5b", "1.5b"), default="0.5b")
+    parser.add_argument("--verifier-model", choices=("0.5b", "1.5b", "3b"), default="0.5b")
     parser.add_argument("--drafter-model", choices=("1.5b-f16", "3b-q4"), default="1.5b-f16")
     parser.add_argument("--adapter", help="Validated full-training conversion directory; applied to SAS or MAS drafter only")
     parser.add_argument("--worker", action="store_true")
@@ -457,7 +460,8 @@ def main():
                                    "planner": args.planner,
                                    "verifier_checkpoint": model_files(args.arm, args.verifier_model, True, args.drafter_model).get("verifier", MODEL_FILES["sas"]["sas"]),
                                    "drafter_checkpoint": model_files(args.arm, args.verifier_model, True, args.drafter_model).get("drafter", MODEL_FILES["sas"]["sas"]),
-                                   "model_allocation": "larger_quantized_drafter_control" if args.arm == "mas" and args.drafter_model == "3b-q4" else "original_checkpoints",
+                                   "model_allocation": ("3b_q4_verifier_control" if args.arm == "mas" and args.verifier_model == "3b" else
+                                       "larger_quantized_drafter_control" if args.arm == "mas" and args.drafter_model == "3b-q4" else "original_checkpoints"),
                                    "citations": "enumerated source and step IDs", "metric": "declared-unit reported answer with rounding; raw exe_ans separately"}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     peak = 0

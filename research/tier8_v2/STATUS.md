@@ -49,7 +49,7 @@ physical 8 GB validation is still absent. Training resources are separate.
 
 New prompt accounting matches completion special-token/BOS/EOS behavior and asserts
 actual engine usage. Historical manual counts remain labelled estimates. Skipped
-calls cost zero prefill. All 166 contract tests pass; tests do not prove QA quality.
+calls cost zero prefill. All 168 contract tests pass; tests do not prove QA quality.
 
 Matched no-analysis/no-demo evaluation completed: unadapted 0/24 (all abstained),
 adapted 11/24; V2 unit sensitivity unchanged. This establishes development
@@ -74,3 +74,9 @@ adapter binaries remain local/ignored with hashes. Redundant original F16 caches
 and unused native 1.5B were reclaimed; restore the pinned source/native conversion
 before any future 1.5B run. Native 0.5B and Q4 3B/7B remain available.
 Leave the user-owned .GITIGNORE untouched. Push through the local askpass helper.
+
+Larger-verifier control is implemented: optional 3B Q4 critic. A trained drafter
+and plain critic have separate resident instances despite the same base file.
+The next actual trial measures fit and delivery changes over all 24 cases and
+checks draft identity against the completed 0.5B-critic condition. No new inference
+has been launched at this exact source checkpoint.

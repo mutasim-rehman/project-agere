@@ -10,7 +10,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import tier8_v2_adapter_runtime as runtime
-from tier8_v2_run import Models
+from tier8_v2_run import Models, model_files
 
 
 class AdapterRuntimeTests(unittest.TestCase):
@@ -68,6 +68,26 @@ class AdapterRuntimeTests(unittest.TestCase):
         with patch.dict(sys.modules, {"llama_cpp": SimpleNamespace(Llama=lambda **kw: SimpleNamespace(), LlamaGrammar=object)}), patch("tier8_v2_run.load_adapter", return_value=info):
             with self.assertRaisesRegex(RuntimeError, "not initialized"):
                 Models("mas", 4096, use_selector=False, drafter_model="3b-q4", adapter="fixture")
+
+    def test_same_base_with_different_adapter_policies_has_distinct_instances(self):
+        calls = []
+        def fake_llama(**kwargs):
+            calls.append(kwargs)
+            return SimpleNamespace(_lora_adapter=object() if kwargs.get("lora_path") else None)
+        info = {"role": "drafter", "file": "weights/fixture.gguf", "sha256": "fixture", "scale": 1.0}
+        with patch.dict(sys.modules, {"llama_cpp": SimpleNamespace(Llama=fake_llama, LlamaGrammar=object)}), patch("tier8_v2_run.load_adapter", return_value=info):
+            models = Models("mas", 4096, residency="shared", verifier_model="3b", use_selector=False, drafter_model="3b-q4", adapter="fixture")
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[0]["model_path"], calls[1]["model_path"])
+        self.assertIsNot(models.models["drafter"], models.models["verifier"])
+        self.assertEqual(sum("lora_path" in x for x in calls), 1)
+
+    def test_unadapted_same_base_roles_are_explicitly_shared(self):
+        files = model_files("mas", verifier_model="3b", use_selector=False, drafter_model="3b-q4")
+        self.assertEqual(files["drafter"], files["verifier"])
+        with patch.dict(sys.modules, {"llama_cpp": SimpleNamespace(Llama=lambda **kw: object(), LlamaGrammar=object)}):
+            models = Models("mas", 4096, residency="shared", verifier_model="3b", use_selector=False, drafter_model="3b-q4")
+        self.assertIs(models.models["drafter"], models.models["verifier"])
 
 
 if __name__ == "__main__":
