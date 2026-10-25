@@ -35,6 +35,7 @@ def load_policy():
                              'bnb_4bit_use_double_quant': True,
                              'llm_int8_enable_fp32_cpu_offload': True},
             'projection_dtype': 'bfloat16', 'vocabulary_block_size': 1024,
+            'checkpoint_cpu_storage': 'clone CPU embedding/head on leaf assignment, avoiding retained checkpoint mmap ownership',
             'cpu_matrices': 'Detach Accelerate offload hooks; CPU embedding lookup, explicit inputs_embeds transfer; streamed CPU frozen head',
             'lora': {'r': 8, 'lora_alpha': 16, 'lora_dropout': .05,
                      'target_modules': 'all-linear'}}
@@ -76,8 +77,12 @@ def prepare(out, launch_file):
     queue_plan = artifact_path(launch['plan'])
     if sha(queue_plan) != launch['plan_sha256']:
         raise ValueError('Dependency plan differs from original launch')
-    process = psutil.Process(launch['pid'])
-    if (process.create_time() != launch['create_time'] or
+    try:
+        process = psutil.Process(launch['pid'])
+    except psutil.NoSuchProcess:
+        process = None
+        completed_dependency(queue_plan.parent, json.loads(queue_plan.read_text()))
+    if process and (process.create_time() != launch['create_time'] or
             str(queue_plan) not in process.cmdline()):
         raise ValueError('Dependency controller identity differs')
     base = ROOT / 'research/tier8_v2'
@@ -87,6 +92,7 @@ def prepare(out, launch_file):
     source = artifact_path(Path(os.environ['AGERE_SSD_ROOT']) /
                            'weights/hf/Qwen--Qwen2.5-7B-Instruct')
     files = [Path(__file__), ROOT / 'scripts/frozen_head_loss.py',
+             ROOT / 'scripts/sas_cpu_weight_storage.py',
              ROOT / 'scripts/tier8_v2_adapt.py', ROOT / 'scripts/tier8_v2_adapter_convert.py',
              ROOT / 'scripts/tier8_v2_posttrain_queue.py', ROOT / 'scripts/tier8_artifact_paths.py',
              ROOT / 'scripts/supervised_logits.py', ROOT / 'manifests/hf_snapshots.json',
@@ -136,7 +142,8 @@ def worker(plan):
     import peft
     import bitsandbytes
     import accelerate
-    from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+    from transformers import AutoTokenizer, BitsAndBytesConfig
+    from sas_cpu_weight_storage import StorageDetachedQwen2ForCausalLM
     from peft import prepare_model_for_kbit_training, get_peft_model, LoraConfig
     from frozen_head_loss import causal_frozen_head_loss
     torch.set_num_threads(2)
@@ -197,10 +204,15 @@ def worker(plan):
         torch.cuda.reset_peak_memory_stats()
         event('loading')
         quant = BitsAndBytesConfig(**plan['policy']['quantization'], bnb_4bit_compute_dtype=torch.bfloat16)
-        model = AutoModelForCausalLM.from_pretrained(str(source), local_files_only=True,
+        model = StorageDetachedQwen2ForCausalLM.from_pretrained(str(source), local_files_only=True,
             trust_remote_code=False, use_safetensors=True, low_cpu_mem_usage=True,
             quantization_config=quant, device_map=plan['policy']['device_map'],
             torch_dtype=torch.bfloat16, attn_implementation='sdpa')
+        counts = [getattr(m, '_cpu_storage_detach_count', 0) for m in
+                  [model.get_input_embeddings(), model.get_output_embeddings()]]
+        if counts != [1, 1]:
+            raise ValueError('CPU checkpoint-storage hooks did not run exactly once')
+        event('cpu_checkpoint_storage_detached', counts=counts)
         restore_cpu_matrices(model)
         model.config.use_cache = False
         model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True,
@@ -314,10 +326,13 @@ def controller(plan_path):
             while child.poll() is None:
                 try:
                     rss = sum(p.memory_info().rss for p in [psutil.Process(), proc, *proc.children(recursive=True)] if p.is_running())
+                    detail = proc.memory_full_info()
                 except psutil.NoSuchProcess:
                     continue
                 available = psutil.virtual_memory().available; peak = max(peak, rss)
                 memory.write(json.dumps({'time': time.time(), 'tree_rss_bytes': rss,
+                                         'worker_uss_bytes': getattr(detail, 'uss', None),
+                                         'worker_pss_bytes': getattr(detail, 'pss', None),
                                          'host_available_bytes': available}) + '\n'); memory.flush()
                 if rss > plan['host_tree_cap_bytes'] or available < plan['host_reserve_bytes']:
                     breach = True; os.killpg(child.pid, signal.SIGKILL); break

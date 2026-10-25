@@ -2145,3 +2145,21 @@ test_case_number, not guessed ID prefixes. Rule constants remain fixed diagnosti
 Current installed Transformers ignores offload_state_dict/low_cpu_mem_usage kwargs;
 do not claim those flags solve loading memory. Inspect actual CPU parameter
 assignment and safetensor storage ownership before modifying loader behavior.
+
+## 2026-10-25 — Twelve-hour contribution window and cross-tier method freeze
+
+User requires current8GB stage to establish the common feature/method base;
+16GB/32GB cannot introduce new methods. About12 hours allocated starting18:54UTC,
+approximate end06:54UTC26October (11:54PKT). Do not confuse deadline with achieved
+novelty. Prioritize one useful differentiated mechanism and strong controls, not
+more infrastructure or unrelated task expansion. Freeze shared policy before
+higher tiers, with tier-specific capacity/resource/training choices predeclared.
+
+First revised SAS fit addresses a concrete loading hypothesis: cloned CPU matrices
+can release checkpoint-mapped storage ownership between shards. Use public Torch
+leaf post-load hooks through a Qwen subclass, preserving exact weights/dtypes and
+normal forward. CPU test proves distinct storage/equal values; actual improvement
+unproven. Preserve old failed source snapshot/run. Same10.5GB RSS cap,1GB reserve,
+9GB headroom and full sequence/targets. Add USS/PSS diagnostics without replacing
+RSS enforcement. Prepare now accepts a missing dependency PID only when all its
+frozen jobs and external outputs demonstrably completed. No blind restart.
