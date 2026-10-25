@@ -57,7 +57,7 @@ Conditional [matched continuation data](MATCHED_CONTINUATION.md) prepared and in
 
 Fixed-recipe continuation worker implemented, not full-model tested or launched. AdamW1e-4/reset/one epoch, exact full trained LoRA restoration, discarded fit updates, paired data/source/init/runtime identity, serial lock and full-tree cap. Three targeted checks pass including actual tiny CPU PEFT state restoration. Baseline queue completion and ceiling stop rule enforced before preparation. [Worker evidence](evidence/matched-continuation-worker-01.json).
 
-Canonical natural study is now02, before any study inference.01/source snapshots
+Canonical natural study is now03, before any study inference.01/source snapshots
 preserved as preparation-only superseded. Complete pipeline/token/cost replay
 passes on existing24 cases; four repair/metric checks and four continuation checks
 pass. Training source shards remain stream-verified, separately retained in
@@ -74,3 +74,11 @@ under10.5GB TRAINING cap; not a deployment fit claim. Converted full adapter now
 exists; reversible native application proof and32-review probes are running next.
 No new greedy QA improvement or useful novelty inferred from these losses.
 [Full training evidence](evidence/sas7b-joint-training-completed-03.json).
+
+Native SAS application proof is now audited PASS:5.135GB sampled deployment peak
+under6.4GB,0 zero-repeat drift,3.64457 maximum conditional-label log-probability
+effect,2571 actual prefill tokens and0 generated tokens. One bound validation
+prompt, not accuracy/calibration. Greedy32-review SAS quartet probe is running.
+Analyzer normalizer-import/forced-prefix hash bugs corrected and covered by2
+regression checks; canonical natural study03 supersedes02 with identical jobs,
+data and metrics. [Native proof evidence](evidence/sas7b-joint-native-application-proven-03.json).

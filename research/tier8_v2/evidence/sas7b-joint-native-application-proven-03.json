@@ -1,0 +1,32 @@
+{
+  "status": "native_application_effect_proven",
+  "adapter_sha256": "c23a8c7504679e5d120f7ebd5aa430a2ca589e58bef5feb3b766b0809fbfc523",
+  "peak_deployment_tree_rss_bytes": 5135310848,
+  "cap_bytes": 6400000000,
+  "zero_repeat_max_label_logprob_drift": 0.0,
+  "max_label_logprob_effect": 3.644572282989035,
+  "actual_prefill_tokens": 2571,
+  "actual_generated_tokens": 0,
+  "native_entry_points_equal": true,
+  "logits_all": false,
+  "effect_math_dataset_validation_prompt_and_provenance_replayed": true,
+  "input_sha256": {
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_last_logit_proof.py": "567652b008dc1f9bc226de6fff8bb9f44167d4724326c6048dfc91b213f41c73",
+    "/home/mutasim/Desktop/project-agere/scripts/binary_verifier_score.py": "d9dd29663c2e2e738641ef471dbebb0024364230bfd3ddae7da027ce48ff89dc",
+    "/home/mutasim/Desktop/project-agere/scripts/completion_tokenization.py": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_runtime.py": "28243991d8ba9094f234f8bc0ceca44c476e1cb85662ca2475ccb44acf93035a",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_sas/sas_joint_extended_01/examples.jsonl": "094dc6334fd5fa240da4964e951b5efc960af442f8b782ec2354b6e0e033cbdc",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-last-logit-proof-03/proof.json": "feff8c9d5afdd60794603e1ab8d1dd35a63513ba3563cd3299abdd0b8d82e2ba",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-last-logit-proof-03/manifest.json": "d7c000c500cf09299b0e7e64a1e5d5524d74850db60d10038c9c95614251607f",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-last-logit-proof-03/summary.json": "f084bfb78c8fedc973b8f171b0e3e770eefafa4cfa1f7f5bf6e5f74d2f805236"
+  },
+  "actual_qa_gain": false,
+  "novelty_established": false,
+  "limits": "One bound validation prompt, conditional label scoring0\u21921\u21920; not financial accuracy or full greedy generation equivalence.",
+  "audit_script": "scripts/tier8_v2_method_analyze.py",
+  "audit_script_sha256": "0c874cc62c7a9d7f3a116dd9e22892615610dd6dfb7c21e41623a4a54467ade6",
+  "canonical_natural_study": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-03/plan.json",
+  "canonical_natural_study_sha256": "5a9e1b0b3d553b86919fb7c2c66a8b558a3d1b4445a52793edf9c8503058a630",
+  "regression_tests_passed": 2,
+  "regression_tests_log": "/run/media/mutasim/Data/AGERE/runs/native-application-audit-tests-01.log"
+}

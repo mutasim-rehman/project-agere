@@ -2614,3 +2614,21 @@ Full conversion verified; frozen queue remains live and has started native SAS
 last-logit proof. No new method/QA/novelty gain follows from teacher-forced loss.
 Proceed with actual greedy quartet probes, extended critic baseline training and
 then the predeclared conditional matched intervention. Goal remains active.
+
+
+### 2026-10-26 — native SAS effect proof and corrected independent audit
+
+Actual full joint SAS GGUF application proof passed: sampled RSS5.135GB below
+6.4GB deployment cap;0→1→0 conditional-label drift0 and maxeffect3.64457,2571
+prefill tokens, no generated tokens. Frozen queue has started the actual greedy
+32-review SAS probe. Independent analyzer initially failed due to MY analysis
+implementation: label_logprobs belongs to last-logit proof module, not the scoring
+module; native score prompt hash includes forced JSON prefix, not bare training
+prompt. Correct both without touching frozen inference/proof/training sources.
+Actual native proof math, original validation prompt+prefix, dataset binding and
+provenance now replay.2 small metadata regression checks pass; they are not NN
+experiments. Preserve diagnostic log and original02 source snapshot. Preparation03
+supersedes02 with IDENTICAL actual jobs/data/metrics; only analyzer correction,
+no natural study inference yet. Do not weaken checks or mislabel this as model
+failure, QA gain, calibration or novelty. Full training milestone b6333e5 pushed;
+continue the baseline probes and conditional matched experiment. Goal active.

@@ -1,0 +1,18 @@
+{
+  "status": "superseded_analysis_bugfix_only",
+  "old_plan": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-02/plan.json",
+  "old_plan_sha256": "c9567ba02d0a8bd21b8a9e1bc6eb34b47f79adbd2d4ebcb5937dad0fa5b3ec55",
+  "new_plan": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-03/plan.json",
+  "new_plan_sha256": "5a9e1b0b3d553b86919fb7c2c66a8b558a3d1b4445a52793edf9c8503058a630",
+  "changed_inputs": [
+    {
+      "path": "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_method_analyze.py",
+      "original_sha256": "e32c9671afcb02ebb8f5bd6cce6138ec2bd6334fcdf02daceaefd3a04636c21c",
+      "snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-02/input-source-snapshots/tier8_v2_method_analyze.py",
+      "corrected_sha256": "0c874cc62c7a9d7f3a116dd9e22892615610dd6dfb7c21e41623a4a54467ade6"
+    }
+  ],
+  "reason": "Correct native-proof normalizer import and bind the actual rendered validation prompt PLUS forced JSON prefix; no model/data/policy/metric changes. Actual native proof replay and2 regression tests pass.",
+  "natural_study_nn_calls": 0,
+  "old_source_snapshot_preserved": true
+}

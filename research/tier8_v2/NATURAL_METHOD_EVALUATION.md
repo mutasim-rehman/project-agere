@@ -2,7 +2,7 @@
 
 Prepared before baseline discovery and continuation outcomes. This is an evaluation
 plan with zero model calls, not a positive finding. Canonical SSD plan:
-`runs/tier8_method_study/matched-natural-02/plan.json`.
+`runs/tier8_method_study/matched-natural-03/plan.json`.
 
 The existing research selection reserves52 cases/15 reports for model selection
 and49 cases/15 reports for diagnostic audit. Replayed the question-only lexical
@@ -67,7 +67,7 @@ No candidate training, natural-error gain or useful novelty is established here.
 
 ## Trace audit and preparation-only supersession
 
-Canonical02 supersedes01 before any study NN calls. Original plan and the exact
+Canonical03 supersedes01 before any study NN calls. Original plan and the exact
 two changed source snapshots are preserved on SSD; the dataset, learning rate,
 method and reporting rules did not change. The correction keeps full HF source
 streaming checks in monitored training while retaining their identities separately
@@ -98,3 +98,14 @@ natural study/model results remain pending.
 
 [Trace audit](evidence/matched-policy-trace-audit-01.json) ·
 [Preserved preparation supersession](evidence/matched-natural-plan-superseded-01.json).
+
+
+Preparation03 adds one analysis-only correction to02: import the actual label
+normalizer from the last-logit proof module, and compare native prompt hashes
+against the rendered validation prompt PLUS the forced JSON prefix. Bare prompt
+hashing remains correct for older generated-token proofs. The actual completed
+SAS proof now independently replays and two focused fixtures test valid native
+metadata and changed bare hashes/prefixes/effect reports. Model/data/policy/metrics
+and all prepared job commands are identical.02 and its original analyzer source
+are preserved as superseded. No natural study NN call has run. The frozen baseline
+probe queue is a separate live experiment and remains unchanged.

@@ -106,7 +106,8 @@ class ArtifactChecks:
         if [p['scale'] for p in phases] != [0, 1, 0]:
             raise ValueError('Wrong effect proof phases')
         if 'conditional_label_logprobs' in phases[0]:
-            from binary_verifier_score import LABELS, label_logprobs
+            from binary_verifier_score import LABELS
+            from tier8_v2_last_logit_proof import label_logprobs
             maps = [p['conditional_label_logprobs'] for p in phases]
             if (proof['logits_all'] or not proof['native_entry_points_equal'] or any(
                     p['event']['status'] != 'scored' or set(p['conditional_label_logprobs']) != set(LABELS) or
@@ -147,7 +148,13 @@ class ArtifactChecks:
         if len(selected) != 1 or selected[0]['split'] != 'validation':
             raise ValueError('Proof example is not a unique validation record')
         import hashlib
-        expected = hashlib.sha256(selected[0]['prompt'].encode()).hexdigest()
+        rendered = selected[0]['prompt']
+        if 'event' in phases[0]:
+            from binary_verifier_score import PREFIX
+            if any(p['event']['prompt'] != rendered or p['event']['forced_prefix'] != PREFIX for p in phases):
+                raise ValueError('Native proof rendered prompt/prefix differs')
+            rendered += PREFIX
+        expected = hashlib.sha256(rendered.encode()).hexdigest()
         prompts = [p['event']['prompt_sha256'] for p in phases] if 'event' in phases[0] else [proof['prompt_sha256']]
         if any(p != expected for p in prompts):
             raise ValueError('Proof prompt differs from actual validation')
