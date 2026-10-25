@@ -1739,3 +1739,18 @@ User confirmed freeing memory and asked work to continue under the same scope,
 documentation and GitHub push requirements for remote phone checks. Authorization
 persists. Continue serialized model work; no CPU inference concurrent with the
 identified GPU epoch. Keep GitHub STATUS and milestone evidence truthful/current.
+
+## 2026-10-25 — Phone-friendly GitHub checkpoint
+
+User requested continued work and remote visibility after freeing memory. Actual
+available RAM now exceeds original7.4GB recovery requirement while GPU training
+continues; memory blockage is resolved at this observation, but model-work
+serialization still prevents concurrent CPU evaluation. Recheck after GPU exit.
+
+Added a short README-linked LIVE_STATUS.md with explicit Pakistan-time observation,
+verified process identity, actual update count, measured pace, pending gates and
+novelty limits. It is a committed snapshot, not an automatic live monitor or a
+promise that the job remains live after a later reboot. Replaced the stale front-
+page September lab-status assertion with current checkpoint links; historical lab
+guides remain preserved. No model sources or training inputs changed. No tests
+added for this documentation-only milestone;204 existing checks passed already.

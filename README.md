@@ -1,6 +1,6 @@
 # Project Agere: Local LLM Deployment for Regulated Finance
 
-> Ubuntu lab update: Phase 2 is still incomplete. The September 30 runs stopped during 1.5B conversion after source verification. Use the bounded launcher for Phase 2, checkpoint diagnostics, and Phase 3. See [lab recovery and commands](LAB_RECOVERY.md). Its default 4 GiB host reserve and whole-job cap may lower the nominal tier budgets further.
+> **Current 8 GB research:** [progress checkpoint](research/tier8_v2/LIVE_STATUS.md) · [supervisor update](research/tier8_v2/SUPERVISOR_UPDATE_2026-10-25.md). These dated research checkpoints supersede older lab-status notes. Historical setup/recovery commands remain in [LAB_RECOVERY.md](LAB_RECOVERY.md).
 
 **Working title:** *Spend It Together or Spend It Big? Multi-Agent Full-Precision Teams vs. Quantized Monoliths on Analyst RAM*
 

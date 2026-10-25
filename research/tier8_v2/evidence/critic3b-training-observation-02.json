@@ -1,0 +1,24 @@
+{
+  "observed_pkt": "25 October 2026, 15:26 PKT",
+  "pid": 26043,
+  "create_time": 1792922033.1,
+  "identity_verified": true,
+  "updates_completed": 169,
+  "expected_updates": 393,
+  "examples_processed": 1352,
+  "last_update": {
+    "state": "update",
+    "time": 1792923980.420392,
+    "step": 169,
+    "examples": 8,
+    "loss": 0.0032552287104863353,
+    "gradient_norm": 0.14565026760101318,
+    "gpu_peak_allocated": 3920499712,
+    "gpu_peak_reserved": 4227858432,
+    "host_rss": 1806270464
+  },
+  "remaining_training_minutes_at_measured_pace": 42.762092431386314,
+  "host_available_bytes": 9345753088,
+  "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-train-01",
+  "validation_and_qa_unproven": true
+}
