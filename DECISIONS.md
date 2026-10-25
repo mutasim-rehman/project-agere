@@ -2472,3 +2472,39 @@ semantically equivalent examples. Five fixed8 quartets share identical operator/
 reference/constant topology; no outcome-dependent reselection. Five probe unit
 checks and full default suite293 tests with18 runtime skips passed before final
 ordering-only change; compile/gate checks also pass. Actual new NN probe pending.
+
+## 2026-10-26 — Prepare conditional small matched continuation, not unbalanced extra SFT
+
+Prepare only, conditional on frozen NN discovery rule.64 jointly length-eligible
+training quartets, one per report by SHA, same sources/questions/common union E/
+labels/positive programs for both conditions. Control uses CURRENT extended-corpus
+negative for each question, candidate uses the other annotated reference program.
+Joint rejection under BOTH tokenizers:8 train candidates,1 validation quartet.
+Exactly127/128 new negative prompts differ; retain coincident case without effect-
+enlarging filtering. No neural outcome used.128 old critic rows (64 source pairs)
+and128 actor rows rehearsal shared, original splits and no training report leakage.
+
+SAS512train/448val,64 planned updates; MAS critic384/416,48 planned updates plus
+one common actor128/32,16 planned updates. Exact SAME task rows across SAS/MAS.
+SAS task weights2 actor,2/3 critic match established equal-task-loss convention;
+separate optimizer/parameterization differs. Share actor continuation across both
+MAS conditions since its data/init are identical, disclose amortized research cost.
+Common validation:192crossed+192mutation+32critic+32actor; positives repeat across
+families, not448 independent samples. Train/validation reports SAS190/38, critic
+115/33, actor128/32. New256 rows marginal-balanced; replay mixture not fully50%.
+
+All positives, rehearsal and validation byte-identical between conditions; only
+new negative programs change. Training tokens control→candidate409558→408376 SAS,
+296262→295080 critic, actor113296both.1182fewer tokens,−0.289%/−0.399%; no identical-
+compute claim. Independent audit replays source IDs, labels, source support,
+execution, actual prompts, no contradictory identical inputs, source-group splits,
+encoded-response/target binding, and complete BOTH-profile HF/GGUF IDs for all five
+corpora.3 construction tests and actual full data audit pass. Source snapshots and
+raw evidence saved. No NN calls, continuation, learning-rate selection, QA gain or
+novelty established. Must actually LOAD proven prior LoRA, not initialize fresh;
+freeze optimizer/fit/epoch before outcomes and require real fit+conversion/effect.
+Rehearsal protects forgetting only as a hypothesis. Natural disjoint-report utility
+and BOTH correct/wrong/withheld metrics decide adoption, not teacher-forced loss.
+Active trainer/discovery queue identities/hashes verified unchanged after new work.
+Previous goal turn made progress via implemented/frozen discovery queue; this one
+makes candidate/control preparation progress. Full novelty goal remains active.
