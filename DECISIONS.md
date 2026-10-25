@@ -2413,3 +2413,5 @@ and corrects an auditor assumption, not a claimed data improvement. Canonical au
 and source/data hashes in critic-crossed-quartets-prepared-01.json. All raw evidence
 on SSD, source snapshots preserved. Goal turn makes concrete candidate-data progress;
 actual useful novelty remains unproven and full goal stays active.
+
+Continuation-control clarification: use the CURRENT extended-corpus mutation negatives for the matched ordinary-rehearsal control, not a weaker operator/operand-only corpus. Positives/source IDs are byte-identical between the earlier corpora. Require all control/variant rows to fit jointly before selecting the fixed training subset.

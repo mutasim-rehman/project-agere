@@ -86,7 +86,7 @@ If both policies already solve the new family, do not add a training stage just
 because the data exists.
 
 If a meaningful gap exists, prepare a SMALL matched continuation experiment:
-crossed negatives versus original program-mutation negatives on the same selected
+crossed negatives versus the CURRENT EXTENDED-CORPUS mutation negatives on the same selected
 source questions, common evidence, positive programs, labels, update count and
 initial checkpoint. Select candidate64 training quartets by SHA with one per report
 and require all control/variant rows to fit BOTH tokenizers before inclusion.
