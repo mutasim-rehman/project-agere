@@ -1,0 +1,134 @@
+{
+  "status": "prepared_and_numerically_audited_not_trained",
+  "dataset": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02",
+  "dataset_sha256": "a39e0053075cd330416c85ba16c118bff693a3b1c91439942f29e7d8b2dbaea3",
+  "manifest_sha256": "4055a7f062bd1c4561b787f56777b2bd977a1afe06ee6d110c9d161a397bc529",
+  "training_n": 3140,
+  "validation_n": 382,
+  "group_counts": {
+    "train": 414,
+    "validation": 49
+  },
+  "replacement_counts": {
+    "output_scale": 626,
+    "node_bypass": 194
+  },
+  "mutation_counts": {
+    "operation": 520,
+    "operand": 421,
+    "output_scale": 626,
+    "node_bypass": 194
+  },
+  "fallback_counts": {
+    "not_nominated_or_no_valid_extension": 907,
+    "fallback_training_length_overflow": 34
+  },
+  "positive_rows_byte_identical": true,
+  "planned_updates_each_condition": 393,
+  "teacher_forced_total_tokens": {
+    "original": {
+      "train": 2271875,
+      "validation": 264358
+    },
+    "extended": {
+      "train": 2312723,
+      "validation": 270765
+    }
+  },
+  "training_token_increase_fraction": 0.017979862448418156,
+  "parity": {
+    "path": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/parity.json",
+    "sha256": "faf19d34fcaba5bd035bfd12dd2f8bd2fb0ab245712fd3d85eaa2ab13da067f9",
+    "pass": true,
+    "n": 3522,
+    "failures": [],
+    "dataset_sha256": "a39e0053075cd330416c85ba16c118bff693a3b1c91439942f29e7d8b2dbaea3",
+    "dataset_manifest_sha256": "4055a7f062bd1c4561b787f56777b2bd977a1afe06ee6d110c9d161a397bc529",
+    "snapshots_sha256": "79dcdd10e81f94cd9192aaf299c5c69a92b3c56ce8dfc5331d27ae9d0fd18f7b",
+    "transformers_version": "4.57.1",
+    "tokenizers_version": "0.22.2",
+    "profile": "mas-3b-q4",
+    "model_calls": 0,
+    "script_sha256": "878476d460c9f9a774d2d110d82a4a19214caf121233ec57997c7328620311b1"
+  },
+  "independent_audit": {
+    "path": "/run/media/mutasim/Data/AGERE/runs/critic-extended-sft-02-independent-audit.json",
+    "sha256": "15d3fcef1cc0c116f3e0f7e497583cd5925106f46871c07d3f8fce02e2ecb9fb",
+    "pass": true,
+    "rows_replayed_per_condition": 3522,
+    "source_order_and_positive_row_bytes_identical": true,
+    "labels": {
+      "original|train|PASS": 1570,
+      "extended|train|PASS": 1570,
+      "original|train|FAIL": 1570,
+      "extended|train|FAIL": 1570,
+      "original|validation|PASS": 191,
+      "extended|validation|PASS": 191,
+      "original|validation|FAIL": 191,
+      "extended|validation|FAIL": 191
+    },
+    "changed_negatives": {
+      "train|output_scale": 553,
+      "train|node_bypass": 174,
+      "validation|output_scale": 73,
+      "validation|node_bypass": 20
+    },
+    "group_counts": {
+      "train": 414,
+      "validation": 49
+    },
+    "teacher_forced_total_tokens": {
+      "original": {
+        "train": 2271875,
+        "validation": 264358
+      },
+      "extended": {
+        "train": 2312723,
+        "validation": 270765
+      }
+    },
+    "input_sha256": {
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/examples.jsonl": "7b63467ad3da713c8a9accd17fe3311fffc9d0d0cdd4e61d02d573fc99fc69d0",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/examples.jsonl": "a39e0053075cd330416c85ba16c118bff693a3b1c91439942f29e7d8b2dbaea3",
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/finqa-cell-adaptation-train-02.jsonl": "30039625e42d53c75c690700fed57c4d9809fc9229023fdbf7e444669dab95a5",
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/finqa-cell-adaptation-validation-02.jsonl": "369bc8ef2ca5238d21866ffca97ae1d1813de13ca392ed23c19c84bb736cb2a5",
+      "/home/mutasim/Desktop/project-agere/.local/datasets/finqa/train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/manifest.json": "2fa8a13d6f9d50a914a81bc05b899628bf8bff3d7a8a9b32bc412545842663e4",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/manifest.json": "4055a7f062bd1c4561b787f56777b2bd977a1afe06ee6d110c9d161a397bc529"
+    },
+    "code_sha256": {
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_curriculum_audit.py": "f0ee6f6fdfd57f19a213ba21fb48269b9140bf6f72bc1a700c545f28fb42217c",
+      "/home/mutasim/Desktop/project-agere/scripts/evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_financial_pipeline.py": "dd7a230fddc87146dea85ccd5d46957935ae0b03bfbbdb7abebc90f1feb4d9b2"
+    },
+    "model_calls": 0,
+    "test_opened": false,
+    "limits": "Full numerical replay and source-support checks using training annotations, not independent semantic adjudication. Tokenization parity is a separate check. No training or performance gain claimed."
+  },
+  "preparation_resource_observation": {
+    "exit_code": 0,
+    "memory_breach": false,
+    "peak_tree_rss_bytes": 359698432,
+    "cap_bytes": 3000000000,
+    "host_reserve_bytes": 1000000000,
+    "command": [
+      "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+      "-u",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_curriculum.py",
+      "build",
+      "--base",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02",
+      "--run-id",
+      "critic_extended_sft_01"
+    ]
+  },
+  "resource_note": "Measured359698432-byte peak belongs to01 preparation.02 corrects metadata and pins original corpus, with byte-identical example payload; no repeated memory measurement claimed. Both use vocabulary-only tokenization, zero model forwards.01 superseded before training.",
+  "source_sha256": {
+    "scripts/tier8_v2_critic_curriculum.py": "e54020de92cd552fba3aae363d5f9ba9f1ac63b6c3f1ba5baa44e64ae0aad6f3",
+    "scripts/tier8_v2_critic_curriculum_audit.py": "f0ee6f6fdfd57f19a213ba21fb48269b9140bf6f72bc1a700c545f28fb42217c",
+    "tests/test_tier8_v2_critic_curriculum.py": "5e226ef7272d89be383ee95caa7b868cebdd2e865197c35b1560dea3cb983544"
+  },
+  "model_calls": 0,
+  "test_opened": false,
+  "limits": "Known training augmentation, inspired by reused-development failure analysis; not novel or independent confirmation. Weak numerical labels, not semantic adjudication or natural-error corpus. Same sources/positives/splits/update count; token expenditure can differ and is reported. No training, deployment or QA improvement follows from preparing this corpus."
+}

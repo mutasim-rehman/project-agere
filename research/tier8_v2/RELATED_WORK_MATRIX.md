@@ -109,3 +109,22 @@ reimplementation or evidence of the paper's throughput/memory results.
 Full methods not yet reviewed. No inference that these papers establish or refute
 our proposed repair mechanism; they constrain narrow originality claims. Keep
 source-support, financial role support and numerical QA outcomes separate.
+
+## 25October2026 — Counterexample and verifier-audit constraints
+
+[VerifierBench](https://arxiv.org/abs/2610.28679),19October2026, primary abstract
+read: evaluates generated executable verifiers with valid alternatives and invalid
+outputs; finds excessive restrictions can masquerade as strong rejection. Our
+trained neural critic is a different component, but accept-none diagnosis and
+positive/negative acceptance evaluation are not original research principles.
+
+[Auditing and Decomposing Feedback-Driven Evolution](https://arxiv.org/abs/2608.19626),
+20August2026, primary abstract read: single-reference execution oracles can create
+apparent gains; agreement/disagreement is not semantic proof. Full methods not
+reviewed. Our extension uses the same weak FinQA numerical annotations and records
+that limitation. Execution replay does not establish independent financial truth.
+
+Output scaling/node projection are known program-mutation ideas; do not claim
+novelty from adding these error families. They are baseline strengthening motivated
+by natural dev failures. Same-source/positive/update controls isolate the corpus
+change partially; training-token expenditure is also reported, not assumed equal.

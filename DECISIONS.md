@@ -2016,3 +2016,50 @@ Queued process performs no Git operations and cannot complete this research goal
 Later milestones still need agent inspection, commit/push, comparable adaptation
 and validated useful novelty. A future failed fit is evidence to diagnose, not a
 reason to retry implicitly, weaken memory checks or claim a trained SAS system.
+
+## 2026-10-25 — Controlled critic negative-family extension prepared
+
+Previous turn is progress: implemented/measured CPU checks and launched a verified
+waiting SAS fit controller. Current external and waiting controllers revalidated.
+Do not classify this as a new user-input blocker; queued model work is live.
+
+Natural dev24 failures suggest training gaps beyond single-operator/source-operand
+edits: output scaling and omitted intermediate calculations. Add two established
+augmentation families: append multiply/divide100 without changing declared output
+units, or bypass one used nonfinal arithmetic node through a source/prior operand,
+rewiring all consumers and renumbering subsequent references. Keep only executable
+source-supported candidates wrong under BOTH existing numerical metrics. This is
+not semantic adjudication, a natural-error corpus, or a novel mutation algorithm.
+
+Control original dataset exactly: same3522 rows,3140/382 split,414/49 groups,
+1761 positive rows byte-identical, source order and planned393 epoch updates.
+Nominate half source IDs by SHA42; choose an eligible new family/candidate by SHA;
+otherwise retain old negative. Do not try another family when nominated candidate
+overflows1024. Final820 replacements:626 output scale,194 node bypass;34 length
+fallbacks. Negative totals:520 operation,421 operand,626 scale,194 bypass.
+Training tokens2271875→2312723 (+1.798%); validation264358→270765. Same updates is
+not identical compute. No training or QA gain follows from data preparation.
+
+Final corpus02 lives SSD datasets/tier8_v2_critic/critic_extended_sft_02.01 is
+preserved/superseded before training because inherited original selection metadata
+needed explicit base-versus-extension wording and original dataset pinning;02
+example bytes are identical. Preparation01 measured0.360GB whole-tree peak under
+3GB preparation cap;02 did not repeat memory measurement. Vocabulary tokenization
+only, zero model forwards. HF/GGUF parity all3522 passed. An independent auditor
+that never calls mutation generators replayed BOTH3522-row corpora, checked exact
+positive row bytes, source order, numerical labels and stored executions. All pass.
+
+Seven new unit tests pass; inference-runtime regression238 run with10 training-
+runtime skips already covered by the unchanged targeted training-runtime tests.
+Hashes/aggregates: evidence/critic-curriculum-prepared-02.json. Code/data/logs kept;
+all raw training rows on SSD. No inspected development cases enter the corpus.
+
+Prepared—not scheduled—one controlled new epoch and paired broader100-report dev
+comparison against the current trained critic, fixed actor/no repair. Before this
+comparison, extend analysis with explicit trained-versus-trained pairing/labels;
+existing natural_pair assumes untrained control. Report both numerical metrics,
+correct/wrong/withheld and cost; do not select favorable units or hide extra risk.
+Candidate accuracy must match, since only verifier changes. Corpus families are
+coupled; individual effects need later ablation only if combined gain warrants it.
+SAS fit remains queued first; comparable full SAS adaptation still outstanding.
+No premature novelty claim; publication confirmation remains outstanding.

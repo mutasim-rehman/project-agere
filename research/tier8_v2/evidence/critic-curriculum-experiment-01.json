@@ -1,0 +1,61 @@
+{
+  "status": "prepared_not_scheduled",
+  "hypothesis": "Adding executable scaling and omitted-subexpression counterexamples improves natural financial-program verification beyond operator/operand negatives, at fixed source cases, positive rows and optimizer update count.",
+  "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02",
+  "data_sha256": "a39e0053075cd330416c85ba16c118bff693a3b1c91439942f29e7d8b2dbaea3",
+  "dataset_manifest_sha256": "4055a7f062bd1c4561b787f56777b2bd977a1afe06ee6d110c9d161a397bc529",
+  "parity_sha256": "faf19d34fcaba5bd035bfd12dd2f8bd2fb0ab245712fd3d85eaa2ab13da067f9",
+  "training_command": [
+    "/home/mutasim/Desktop/project-agere/.venv-training/bin/python",
+    "-u",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py",
+    "--profile",
+    "3b",
+    "--mode",
+    "train",
+    "--purpose",
+    "critic",
+    "--dataset-manifest",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/manifest.json",
+    "--parity-manifest",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_extended_sft_02/parity.json",
+    "--training-base-manifest",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/training-base-3b.json",
+    "--out",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-extended-train-01"
+  ],
+  "required_prior_work": "External queue and current SAS fit must terminate successfully. Preserve comparable full SAS adaptation as outstanding; no concurrent GPU/CPU model work.",
+  "controlled_factors": [
+    "same original3140/382 examples and414/49 report groups",
+    "same1761 positive rows byte for byte, source order and labels",
+    "same base, LoRA configuration, seed42, one epoch and393 updates",
+    "only820 negative prompts/programs changed; same complete1024-token cap"
+  ],
+  "not_controlled": [
+    "teacher-forced training tokens are1.798% higher; validation tokens also differ",
+    "both new negative families introduced together; cannot isolate individual family effect",
+    "hypothesis informed by reused dev24 failures; broader dev100 remains exploratory, not pristine confirmation"
+  ],
+  "primary_exploratory_evaluation": {
+    "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_finqa/dev_report100_01/public.jsonl",
+    "expected": 100,
+    "design": "Current trained critic versus extended trained critic; same fixed adapted actor and all inference settings, no repair; require identical actor drafts and critic prompts and intended separate C adapter handles.",
+    "metrics": [
+      "reported-answer correct delivered, wrong delivered, withheld",
+      "raw-execution correct delivered, wrong delivered, withheld",
+      "both candidate accuracy metrics (must be identical)",
+      "report-cluster bootstrap for paired delivery changes",
+      "actual prompt/generated tokens, latency, complete-tree RSS under6.4GB"
+    ],
+    "required_analysis_extension": "Current natural_pair/CLI assumes plain-versus-trained critic. Add an explicit trained-versus-trained guard and condition labels before using it for this comparison; do not silently label a trained control plain.",
+    "decision_rule": "Describe sample Pareto gain only if correct deliveries increase without more wrong deliveries under both existing metrics; uncertainty and all tradeoffs remain visible. No clinical safety, calibrated risk, answer-generation gain or novelty follows from a positive sample."
+  },
+  "after_training": [
+    "convert to new GGUF output",
+    "reversible application/effect proof on training-validation data",
+    "paired100 inference with complete memory and source gates",
+    "independent delivery and unit-sensitivity analysis",
+    "only investigate family ablations if a useful combined effect warrants them"
+  ],
+  "novelty_established": false
+}
