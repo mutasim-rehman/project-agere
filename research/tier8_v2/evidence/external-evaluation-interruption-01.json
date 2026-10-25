@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-25T09:14:05Z",
+  "status": "interrupted",
+  "cause": "unknown: controller and worker absent, no terminal arm summary",
+  "completed_cases": 26,
+  "partial_exact_matches": 14,
+  "planned_case_arm_evaluations": 380,
+  "completed_arms": 0,
+  "raw_outputs": "/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01",
+  "remaining_arms_not_started": [
+    "mortar-mas",
+    "frames-sas",
+    "frames-mas"
+  ],
+  "note": "Incomplete exploratory baseline, not adapted-system confirmation. No architecture comparison available."
+}

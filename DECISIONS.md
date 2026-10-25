@@ -1443,3 +1443,15 @@ closed-book control. Original adapters are not silently applied.
 The new runner does not establish adapted-system performance or novelty.
 
 External queue is confirmed in actual inference, not merely planned: 3 MortarBench SAS cases persisted at this observation; sampled peak 5.18 GB under 6.4 GB. Run root: `/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01`. Controller321561 / session46979. Full queue remains active; do not restart or edit the frozen runner. Launch pointer: evidence/external-evaluation-launch-01.json.
+
+## 2026-10-25 — Supervisor progress audit and interrupted external queue
+
+Read actual raw outputs/process inventory before reporting status: 26 MortarBench
+SAS cases persisted (14 local exact matches), zero completed arms, no live
+controller/worker and no terminal summary. Root cause unknown. Backed up the stale
+SSD manifest and marked it interrupted with a separate observation; preserved
+all cases/logs. No silent restart or fabricated completion. External inference
+is currently stopped; previous ETA no longer represents a running queue.
+Supervisor update records real SAS prompting and MAS adaptation gains, negative
+critic/repair results, unequal best-system tuning, development reuse, and absence
+of demonstrated useful novelty. No claim that any implemented mechanism is first.

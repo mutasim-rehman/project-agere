@@ -107,3 +107,11 @@ not an adapted-system confirmation or a publication novelty result.
 Outputs belong only on the SSD under runs/tier8_external/.
 
 External queue is confirmed in actual inference, not merely planned: 3 MortarBench SAS cases persisted at this observation; sampled peak 5.18 GB under 6.4 GB. Run root: `/run/media/mutasim/Data/AGERE/runs/tier8_external/external_baselines_20261025_01`. Controller321561 / session46979. Full queue remains active; do not restart or edit the frozen runner. Launch pointer: evidence/external-evaluation-launch-01.json.
+
+## Latest authoritative observation — supervisor audit
+
+External queue INTERRUPTED: 26/380 case-arm evaluations saved, 14/26 local MortarBench
+SAS matches, no completed arms or live evaluation process. Cause unknown; no
+terminal summary. Original running SSD manifest backed up, interruption observation
+saved. Do not repeat earlier live-status/ETA claims. See evidence/external-evaluation-
+interruption-01.json and SUPERVISOR_UPDATE_2026-10-25.md. Raw outputs remain on SSD.
