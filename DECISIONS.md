@@ -2,6 +2,18 @@
 
 ## Continuation — 25 October 2026
 
+### Role-adapter prior checks during the live paired evaluation
+
+- Read primary arXiv abstracts for LRAgent v2, MapCoder-Lite v2 and DAC v2.
+  Shared-backbone role adapters, memory-efficient multi-agent serving, role-wise
+  fine-tuning and learned abstention/credit controls already exist. Their abstracts
+  constrain priority claims; full-method comparison/replication remains pending.
+- A stronger learned critic or shared larger-backbone role policies may be useful
+  baseline improvements under our RAM ceiling, but cannot be presented as novelty
+  by themselves. Do not mistake the current 0.5B critic for an optimized verifier.
+  The live matched drafter-adaptation ablation remains unchanged; finish it before
+  selecting further conditions. No partial accuracy was used to tune the run.
+
 ### Frozen matched applied-adapter evaluation
 
 - New 24-case sequence: unadapted 3B Q4 + native 0.5B critic first, then the same
