@@ -10,9 +10,17 @@ import json
 from pathlib import Path
 
 from tier8_v2_financial_pipeline import checked, evaluate_financial, question_units
-from tier8_v2_sequence import inside, require_complete
+from tier8_artifact_paths import artifact_path as inside
 
 VERSION = "reported-units-v2-number-ratio"
+
+
+def require_complete(directory):
+    result = json.loads((inside(directory) / "summary.json").read_text())
+    if (result["status"] != "complete" or result["exit_code"] != 0
+            or result["n"] != result["expected"] or result["peak_tree_rss_bytes"] > result["cap_bytes"]):
+        raise ValueError("Need complete memory-valid run")
+    return result
 
 
 def evaluate_v2(row, answer, execution):
@@ -46,7 +54,7 @@ def audit_run(run):
     config = manifest["baseline_config"] if replay else manifest["config"]
     if config.get("task") != "finqa":
         raise ValueError("Unit audit supports FinQA only")
-    source = inside("research/tier8_v2/external/finqa/dataset-dev.json")
+    source = inside(config.get("evaluation_source") or "research/tier8_v2/external/finqa/dataset-dev.json")
     packets_path = inside(config["data"])
     if sha(source) != manifest["evaluation_source_sha256"] or sha(packets_path) != manifest["data_sha256"]:
         raise ValueError("Evaluation source or public packet hash differs")
@@ -73,7 +81,7 @@ def audit_run(run):
                       "v2_correct": new["case_success"], "delivered": r["delivered"],
                       "initial_v2_correct": evaluate_v2(gold[case_id], r["initial_answer"], r["initial_execution"])["case_success"],
                       "unit": r["answer"].get("answer_unit") if isinstance(r["answer"], dict) else None})
-    return {"run": str(run.relative_to(inside("."))), "n": len(cases),
+    return {"run": str(run.relative_to(inside("."))) if run.is_relative_to(inside(".")) else str(run), "n": len(cases),
             "legacy_correct": sum(c["legacy_correct"] for c in cases),
             "v2_correct": sum(c["v2_correct"] for c in cases),
             "v2_delivered_correct": sum(c["delivered"] and c["v2_correct"] for c in cases),

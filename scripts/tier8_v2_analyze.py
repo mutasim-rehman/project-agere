@@ -4,6 +4,7 @@ import json
 import math
 from pathlib import Path
 import random
+from tier8_artifact_paths import artifact_path
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -79,9 +80,7 @@ def main():
     args = parser.parse_args()
     records, manifests = [], []
     for name in (args.left, args.right):
-        path = (ROOT / name).resolve()
-        if not path.is_relative_to(ROOT):
-            raise ValueError("Paths must remain in project")
+        path = artifact_path(ROOT / name)
         summary = json.loads((path / "summary.json").read_text())
         if summary["status"] != "complete" or summary["peak_tree_rss_bytes"] > summary["cap_bytes"]:
             raise ValueError("Cannot compare incomplete or memory-invalid runs")

@@ -21,6 +21,8 @@ from evidence_calculator import execute,OPERATIONS
 from evidence_contract import TokenLedger
 from tier8_v2_financial_pipeline import VERIFY,verdict,evaluate_financial
 from tier8_v2_run import Models
+from tier8_v2_adapter_runtime import load_critic_adapter
+from tier8_artifact_paths import artifact_path
 
 ROOT=Path(__file__).resolve().parents[1]
 RICH_INSTRUCTION=('Independently judge operand relevance (correct row/year), operations, and units for the question. '
@@ -79,25 +81,33 @@ def prepare(limit):
 def worker(root,profile):
     from llama_cpp import Llama,LlamaGrammar
     m=json.loads((root/'manifest.json').read_text());entry=m['models'][profile]
-    model=Llama(model_path=entry['ssd_file'],n_ctx=4096,n_gpu_layers=0,n_threads=8,n_threads_batch=8,n_batch=64,n_ubatch=64,seed=42,use_mmap=False,verbose=False)
+    adapter=load_critic_adapter(m['adapter_directory']) if m.get('adapter_directory') else None
+    if adapter and profile!='3b':raise ValueError('Trained critic supports 3B only')
+    options={'lora_path':str(artifact_path(adapter['file'])),'lora_scale':1.0} if adapter else {}
+    model=Llama(model_path=entry['ssd_file'],n_ctx=4096,n_gpu_layers=0,n_threads=8,n_threads_batch=8,n_batch=64,n_ubatch=64,seed=42,use_mmap=False,verbose=False,**options)
+    if adapter and not getattr(model,'_lora_adapter',None):raise ValueError('Critic adapter backend handle missing')
     runtime=Models.__new__(Models);runtime.models={'verifier':model};runtime.context=4096;runtime.grammar=LlamaGrammar
     for r in map(json.loads,(root/'public.jsonl').read_text().splitlines()):
         content='Question: '+r['question']+'\nFinancial report evidence by source ID:\n'+json.dumps(r['evidence'])+'\nProposed program:\n'+json.dumps(r['candidate'])+'\nDeterministic execution:\n'+json.dumps(r['execution'])
         budget=TokenLedger()
         for protocol,instruction,schema in [('rich',RICH_INSTRUCTION,VERIFY),('binary',BINARY_INSTRUCTION,BINARY)]:
+            if protocol not in m.get('protocols',['rich','binary']):continue
             raw,event=runtime.call('verifier',content+'\n'+instruction,schema,budget,192,'critic_probe_'+protocol)
             review=verdict(raw) if protocol=='rich' else raw
-            append(root/f'{profile}-responses.jsonl',{'id':r['id'],'protocol':protocol,'raw':raw,'verdict':review.get('verdict') if isinstance(review,dict) else None,'event':event})
+            append(root/f'{profile}-responses.jsonl',{'id':r['id'],'protocol':protocol,'raw':raw,'verdict':review.get('verdict') if isinstance(review,dict) else None,'adapter_application':{**adapter,'runtime_handle_initialized':True} if adapter else None,'event':event})
             print(profile,r['id'],protocol,review,flush=True)
     model.close()
 
 def main():
     import psutil
-    p=argparse.ArgumentParser();p.add_argument('--run-id',required=True);p.add_argument('--groups',type=int,default=12);p.add_argument('--worker',choices=['0.5b','3b']);args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--run-id',required=True);p.add_argument('--groups',type=int,default=12);p.add_argument('--worker',choices=['0.5b','3b'])
+    p.add_argument('--profile',choices=['all','0.5b','3b'],default='all');p.add_argument('--protocol',choices=['all','rich','binary'],default='all')
+    p.add_argument('--inputs');p.add_argument('--adapter');p.add_argument('--application-proof');args=p.parse_args()
     import re
     if not re.fullmatch('[a-zA-Z0-9_-]+',args.run_id):raise ValueError('Unsafe run ID')
     ssd=Path(os.environ['AGERE_SSD_ROOT']).resolve();root=ssd/'runs/tier8_critic_probe'/args.run_id
     if args.worker:worker(root,args.worker);return
+    if args.adapter and (args.profile!='3b' or args.protocol!='binary' or not args.application_proof):raise ValueError('Trained critic requires 3B binary protocol and application proof')
     import fcntl
     lock=(ssd/'runs/tier8_external.lock').open('w');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     names={'tier8_external_eval.py','tier8_external_recover.py','tier8_v2_run.py','tier8_v2_adapt.py','tier8_v2_critic_probe.py'}
@@ -106,14 +116,31 @@ def main():
     cap=min(6400000000,psutil.virtual_memory().available-1000000000)
     if cap<3400000000:raise MemoryError('Insufficient room for single-critic diagnostic')
     root.mkdir(parents=True,exist_ok=False)
-    public,labels,provenance=prepare(args.groups)
+    adapter=load_critic_adapter(args.adapter) if args.adapter else None
+    proof_sha=None
+    if adapter:
+        proof_root=artifact_path(args.application_proof)
+        proof_summary=json.loads((proof_root/'summary.json').read_text());proof=json.loads((proof_root/'proof.json').read_text())
+        if proof_summary['status']!='complete' or not proof['pass'] or proof['adapter']['sha256']!=adapter['sha256'] or proof['adapter']['purpose']!='critic':raise ValueError('Applied critic proof does not match adapter')
+        proof_sha=sha(proof_root/'proof.json')
+    if args.inputs:
+        source=artifact_path(args.inputs);original=json.loads((source/'manifest.json').read_text())
+        if original['status']!='complete' or sha(source/'public.jsonl')!=original['public_sha256'] or sha(source/'labels.jsonl')!=original['labels_sha256']:raise ValueError('Frozen probe inputs invalid')
+        public=[json.loads(s) for s in (source/'public.jsonl').read_text().splitlines()];labels=[json.loads(s) for s in (source/'labels.jsonl').read_text().splitlines()]
+        if len(public)!=2*args.groups or len(labels)!=len(public):raise ValueError('Frozen probe count differs')
+        provenance={**original['provenance'],'copied_from':str(source),'copied_manifest_sha256':sha(source/'manifest.json')}
+    else:public,labels,provenance=prepare(args.groups)
+    profiles=['0.5b','3b'] if args.profile=='all' else [args.profile]
+    protocols=['rich','binary'] if args.protocol=='all' else [args.protocol]
     for row in public:append(root/'public.jsonl',row)
     for row in labels:append(root/'labels.jsonl',row)
     sources=['scripts/tier8_v2_critic_probe.py','scripts/tier8_v2_run.py','scripts/tier8_v2_financial_pipeline.py','scripts/completion_tokenization.py','scripts/evidence_atoms.py','scripts/evidence_calculator.py','scripts/evidence_contract.py','scripts/tier8_v2_adaptation_data.py','scripts/evidence_cells.py']
-    manifest={'status':'preflight','cap_bytes':cap,'provenance':provenance,'public_sha256':sha(root/'public.jsonl'),'labels_sha256':sha(root/'labels.jsonl'),'source_sha256':{n:sha(ROOT/n) for n in sources},'models':{},'profiles':{},'n_programs':len(public),'n_calls_per_profile':2*len(public),'context':4096,'max_tokens_per_protocol':192,'max_tokens_per_program':384,'note':'No training or adapters; each critic loaded alone. Rich vs binary changes protocol/instructions, not an isolated JSON-schema effect.'}
+    sources+=['scripts/tier8_v2_adapter_runtime.py','scripts/tier8_v2_adapter_convert.py','scripts/tier8_artifact_paths.py','scripts/financial_review_protocol.py']
+    manifest={'status':'preflight','cap_bytes':cap,'provenance':provenance,'public_sha256':sha(root/'public.jsonl'),'labels_sha256':sha(root/'labels.jsonl'),'source_sha256':{n:sha(ROOT/n) for n in sources},'models':{},'profiles':{},'protocols':protocols,'adapter_directory':str(artifact_path(args.adapter)) if args.adapter else None,'adapter':adapter,'application_proof_sha256':proof_sha,'n_programs':len(public),'n_calls_per_profile':len(protocols)*len(public),'context':4096,'max_tokens_per_protocol':192,'max_tokens_per_program':192*len(protocols),'note':'Each critic loaded alone. Rich vs binary changes protocol/instructions, not an isolated JSON-schema effect. Applied adapter only when explicitly requested and validated.'}
     write(root/'manifest.json',manifest)
     entries=[json.loads((ROOT/'research/tier8_v2/evidence/candidate-model-3b.json').read_text())]+json.loads((ROOT/'research/tier8_v2/evidence/native-models.json').read_text())
     for profile,name in [('0.5b','qwen2.5-0.5b-instruct-native-f16.gguf'),('3b','qwen2.5-3b-instruct-q4_k_m.gguf')]:
+        if profile not in profiles:continue
         entry=next(e for e in entries if Path(e['file']).name==name);source=ROOT/entry['file']
         dest=ssd/'weights/tier8_v2'/name;dest.parent.mkdir(parents=True,exist_ok=True)
         if not dest.exists():
@@ -124,7 +151,7 @@ def main():
         if dest.stat().st_size!=entry['bytes'] or sha(dest)!=entry['sha256']:raise ValueError('SSD model identity differs')
         manifest['models'][profile]={**entry,'ssd_file':str(dest)};write(root/'manifest.json',manifest)
     manifest['status']='running';write(root/'manifest.json',manifest)
-    for profile in ['0.5b','3b']:
+    for profile in profiles:
         if sha(root/'public.jsonl')!=manifest['public_sha256'] or sha(root/'labels.jsonl')!=manifest['labels_sha256']:raise ValueError('Frozen diagnostic data changed')
         for n,digest in manifest['source_sha256'].items():
             if sha(ROOT/n)!=digest:raise ValueError('Frozen source changed')
@@ -140,14 +167,14 @@ def main():
                 time.sleep(.2)
             code=child.wait()
         responses=[json.loads(s) for s in (root/f'{profile}-responses.jsonl').read_text().splitlines()] if (root/f'{profile}-responses.jsonl').exists() else []
-        expected={(r['id'],protocol) for r in public for protocol in ['rich','binary']}
+        expected={(r['id'],protocol) for r in public for protocol in protocols}
         actual=[(r['id'],r['protocol']) for r in responses]
         if len(set(actual))!=len(actual) or not set(actual)<=expected:raise ValueError('Duplicate or unexpected responses')
         target={r['id']:r for r in labels};summary={}
-        for protocol in ['rich','binary']:
+        for protocol in protocols:
             rows=[r for r in responses if r['protocol']==protocol]
             summary[protocol]={'n':len(rows),'true_accept':sum(r['verdict']=='PASS' and target[r['id']]['expected_accept'] for r in rows),'false_accept':sum(r['verdict']=='PASS' and not target[r['id']]['expected_accept'] for r in rows),'false_reject':sum(r['verdict']!='PASS' and target[r['id']]['expected_accept'] for r in rows),'true_reject':sum(r['verdict']!='PASS' and not target[r['id']]['expected_accept'] for r in rows),'unknown':sum(r['verdict']=='UNKNOWN' for r in rows),'unparsed':sum(r['verdict'] is None for r in rows)}
-        manifest['profiles'][profile]={'status':'complete' if code==0 and not breach and len(responses)==2*len(public) else 'failed','exit_code':code,'peak_tree_rss_bytes':peak,'cap_bytes':cap,'protocols':summary};write(root/'manifest.json',manifest)
+        manifest['profiles'][profile]={'status':'complete' if code==0 and not breach and len(responses)==len(protocols)*len(public) else 'failed','exit_code':code,'peak_tree_rss_bytes':peak,'cap_bytes':cap,'protocols':summary};write(root/'manifest.json',manifest)
         if manifest['profiles'][profile]['status']!='complete':raise RuntimeError('Incomplete critic diagnostic')
     manifest['status']='complete';write(root/'manifest.json',manifest);print(json.dumps(manifest['profiles']),flush=True)
 

@@ -1754,3 +1754,30 @@ promise that the job remains live after a later reboot. Replaced the stale front
 page September lab-status assertion with current checkpoint links; historical lab
 guides remain preserved. No model sources or training inputs changed. No tests
 added for this documentation-only milestone;204 existing checks passed already.
+
+## 2026-10-25 — Frozen post-training evaluation queue
+
+Current epoch remains live; previous turn is progress (explicit role runtime and
+broader100-report development preparation). Prepare a serial fail-closed queue:
+full epoch verification -> critic conversion -> reversible application proof ->
+matched plain/applied binary controlled probes -> paired probe analysis -> matched
+plain/applied natural24 QA -> draft/prompt identity guard and paired analysis ->
+unit sensitivity -> original external baseline recovery. No report100 inference
+or new novelty claim is hidden in this queue. Original external worker is unchanged.
+
+Extend probe only through explicit profile/protocol/frozen-input/adapter arguments;
+legacy defaults retain both critics/protocols. Applied mode requires validated
+critic purpose and a matching successful application proof. New paired comparison
+requires identical public/label hashes, model bytes, source code, context, token
+limit, memory cap and actual prompts. UNKNOWN remains a nonaccept, not a proved
+negative judgment. Natural QA must preserve actor output and critic input exactly.
+
+Queue waits on the actual training PID/create-time/out identity, checks complete
+393-update epoch and all saved/input hashes, then freezes sources and runtime
+versions. It never retries or overwrites. Every job gets a separate process group;
+monitor queue controller plus complete subprocess tree under6.4GB and1GB host
+reserve, retaining inner runner evidence too. Any failed dependency/job/identity/
+hash/memory gate stops later stages. All artifacts remain on SSD. Offline paired
+and unit-audit tools now accept authorized SSD paths without rescoring raw records.
+209 tests pass before queue freeze, including incomplete epoch, changed source,
+changed actor draft/prompt and always-accept-vs-pair-discrimination controls.
