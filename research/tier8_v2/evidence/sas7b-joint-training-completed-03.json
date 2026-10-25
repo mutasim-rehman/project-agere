@@ -1,0 +1,52 @@
+{
+  "status": "full_epoch_and_validation_complete",
+  "observed_utc": "2026-10-25T23:17:10.648563+00:00",
+  "launch": "research/tier8_v2/evidence/sas7b-joint-train-compact-launch-03.json",
+  "run": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03/train",
+  "training_plan_sha256": "a252c39f444ae0d20cda35c393e25431eb266fbddffa1b410d60c5e7f36f3df3",
+  "source_commit": "5d1d5d8fbdbefe6fc4f1e3dde6f6954339575cd7",
+  "optimizer_updates": 476,
+  "training_examples": 3801,
+  "validation_examples": 482,
+  "changed_adapter_tensors": 392,
+  "trainable_parameters": 20185088,
+  "wall_seconds": 12087.142523673,
+  "validation_teacher_forced_loss": 0.0258888227150918,
+  "validation_teacher_forced_loss_by_task": {
+    "drafter": 0.03182938965968787,
+    "critic": 0.014389081775205922
+  },
+  "all_update_losses_gradients_finite": true,
+  "event_count_and_example_count_replayed": true,
+  "memory": {
+    "sampled_peak_tree_rss_bytes": 8338911232,
+    "training_cap_bytes": 10500000000,
+    "minimum_sampled_host_available_bytes": 7867514880,
+    "required_reserve_bytes": 1000000000,
+    "samples_replayed": 46846,
+    "training_not_deployment": true,
+    "gpu_peak_allocated": 4763642880,
+    "gpu_peak_reserved": 4945084416
+  },
+  "conversion": {
+    "adapter_sha256": "c23a8c7504679e5d120f7ebd5aa430a2ca589e58bef5feb3b766b0809fbfc523",
+    "tensor_count": 392
+  },
+  "adapter_files": {
+    "adapter_config.json": "933cdf5a4be32bf1acc20c87885df222bb77eebe965944dc935f5189221e4f8e",
+    "adapter_model.safetensors": "5da6c7d63a42b28fb58c9d738153235a530293e5330238050099b34c969310ca",
+    "README.md": "e2ddf34397793e8ffb4be53f6c234d215b34c114dc034a8770b7a8b5e3e8ea34"
+  },
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03/plan.json": "a252c39f444ae0d20cda35c393e25431eb266fbddffa1b410d60c5e7f36f3df3",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03/state.json": "f80133fa7ccf2a6b3a00522bd41451de8126fc168847f9583d0330aa2d9baf1c",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03/train/manifest.json": "0730ae12404231a3af77c08a3b991035b11bc10f5b90d127a7a03e2c8de70116",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03/train/summary.json": "8fd4fd8bd3a7e95383d1f849d61e3dedb553905e24402bdfb19a2f2ea1758aa5",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03/train/events.jsonl": "3094c5ad77b6701abaacf3280a68fe0f95464a2770fb0683db5875e37dd9929c",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-train-compact-03/memory.jsonl": "a3da03f0fb1d140356cf354489080dcb8d9beeddbd9250ee4895f20df4d5442b"
+  },
+  "native_application_proof": "queued_running_not_yet_audited",
+  "actual_new_qa_gain": false,
+  "novelty_established": false,
+  "limits": "One full joint SFT epoch and finite validation establish completed baseline adaptation, not greedy critic correctness, financial QA improvement or novel method utility. Deployment remains separately capped at6.4GB."
+}

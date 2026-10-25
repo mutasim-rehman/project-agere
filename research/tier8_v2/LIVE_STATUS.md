@@ -1,12 +1,12 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 03:37 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 04:17 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
-| SAS7B full joint adaptation |**Running:402/476 updates**,3216/3801 examples;482 validation pending |
+| SAS7B full joint adaptation |**Complete:476 updates,3801 training examples,482 validation examples** |
 | Training resources |Worker about4.07GB, complete tree about8.33GB including12 compiler workers;10.5GB training cap |
-| Discovery-first continuation |**Live, waiting for full SAS**;8 frozen serial jobs,5 broad comparison jobs explicitly deferred |
+| Discovery-first continuation |**Running deployment proof/probes** after completed SAS conversion |
 | Fixed probe |32 greedy binary reviews from8 training reports, same inputs for joint SAS/original MAS critic/extended MAS critic |
 | Crossed curriculum |403 audited quartets/1612 rows;1416 train,196 validation; both tokenizer parity and source/execution/prompt replay pass |
 | Useful novelty |Not established; no new quartet-trained model or quality gain yet |
@@ -65,3 +65,12 @@ manifest instead of multi-GB deployment read_bytes allocations. Strict current-r
 baseline actor reproof04 planned, not run. No new QA gain or novelty result.
 [Trajectory evidence](evidence/matched-policy-trace-audit-01.json) ·
 [Natural study details](NATURAL_METHOD_EVALUATION.md).
+
+Full SAS baseline adaptation is now audited complete:392 changed tensors,
+20,185,088 trainable parameters,12087 seconds (about3h21m), weighted teacher-forced
+validation loss0.025889 (drafter0.031829,critic0.014389). Replayed every476 update,
+3801 processed examples and all memory samples. Sampled whole-tree peak8.339GB
+under10.5GB TRAINING cap; not a deployment fit claim. Converted full adapter now
+exists; reversible native application proof and32-review probes are running next.
+No new greedy QA improvement or useful novelty inferred from these losses.
+[Full training evidence](evidence/sas7b-joint-training-completed-03.json).
