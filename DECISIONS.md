@@ -1,5 +1,24 @@
 # 8 GB tier study decisions
 
+## Continuation — 25 October 2026
+
+### Full 3B adaptation and conversion completed
+
+- Full train-only epoch completed: 661 examples, 83 optimizer updates, 504 changed
+  adapter tensors, 14,966,784 trainable parameters. Wall time 1,198.25 seconds;
+  peak allocated GPU memory 4,050,905,088 bytes, reserved 4,227,858,432 bytes.
+- Final training loss 0.0321 and 100-example teacher-forced validation loss 0.0347
+  are token losses, not QA accuracy or evidence of generalization. No primary
+  development/confirmation questions were used as training targets.
+- Runtime-paired conversion succeeded: 504 finite paired LoRA tensors, F16 GGUF
+  59,902,144 bytes; full SHA256 and source/training identities recorded. Sequence 02
+  completed terminally. No adapter has yet been applied by the measured CPU runner;
+  no reasoning gain, architecture win or novelty is established.
+- The next gate is actual application proof followed by matched fresh unadapted/
+  adapted no-analysis inference under the sampled RSS/output caps. Compare against
+  the best existing MAS analysis baseline separately. Historical scores and manual
+  prompt-token counts remain preserved; new inference will use verified accounting.
+
 ## Redevelopment — 24 October 2026
 
 ### Real full-context fit succeeded; full training is active

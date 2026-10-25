@@ -1,0 +1,80 @@
+{
+  "mode": "train",
+  "profile": "3b",
+  "seed": 42,
+  "input_sha256": {
+    "research/tier8_v2/evidence/hf-tokenizer-parity-02.json": "2be2c99130c37fa66b2a64092314412261f70c8ae58d3cb46bced5382401b7ec",
+    "research/tier8_v2/evidence/deployment-sft-1024-02.json": "0ac749299078f46a67f9e57f6830b84e2418b425e96482c80dcd9494a2969a06",
+    "research/tier8_v2/data/deployment-sft-1024-02.jsonl": "0b1052db3f7c6a5d85d321b500b9478ea453aa936d0b78e326215c3ce2933069",
+    "research/tier8_v2/evidence/training-base-3b-01.json": "771c582457fff67d7445bfd28e0fb793af858f3a152456865abb2972f638dc8a"
+  },
+  "script_sha256": "37b67d8a8396225034e97be650f0af863aae27fb119ea0b59554538caec165a3",
+  "training_base": {
+    "repo": "unsloth/Qwen2.5-3B-Instruct-bnb-4bit",
+    "revision": "2672b588848527e456d320c11926c794539f47d5",
+    "folder": "weights/hf-training/3b",
+    "weight_file": "model.safetensors",
+    "bytes": 2054625552,
+    "sha256": "f49f0825fce862ef2ee0d336751273b3c849b82a1854530c9399ff4e3df8abad",
+    "config_files": [
+      {
+        "file": "config.json",
+        "bytes": 1337,
+        "sha256": "bed11cba5f84170418b779657b75cb23d030fc00dda8aa0b879f95c11a6766b7"
+      },
+      {
+        "file": "generation_config.json",
+        "bytes": 271,
+        "sha256": "424e77633729a4c63a0810e0fa32e3344b03499cd3a0b2fc626bfae19e7eb923"
+      }
+    ],
+    "quantization_config": {
+      "_load_in_4bit": true,
+      "_load_in_8bit": false,
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_storage": "uint8",
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "llm_int8_enable_fp32_cpu_offload": false,
+      "llm_int8_has_fp16_weight": false,
+      "llm_int8_skip_modules": [
+        "lm_head",
+        "multi_modal_projector",
+        "merger",
+        "modality_projection"
+      ],
+      "llm_int8_threshold": 6.0,
+      "load_in_4bit": true,
+      "load_in_8bit": false,
+      "quant_method": "bitsandbytes"
+    },
+    "weights_verified": true,
+    "script_sha256": "05d70fe6d43e24ceb0fc95d5ec1b6e96e94ba29f50dfc4c471777257be1fcb73",
+    "deployment_quantization": "Q4_K_M GGUF (different from this NF4 training base)",
+    "exact_original_fp16_equivalence_asserted": false,
+    "model_trained": false
+  },
+  "lora": {
+    "r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": "all-linear"
+  },
+  "optimizer": "AdamW lr=2e-4 weight_decay=0; clip_norm=1; accumulation=8; one epoch",
+  "runtime": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.1",
+    "peft": "0.17.1",
+    "bitsandbytes": "0.48.1"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "total_bytes": 6053232640
+  },
+  "training_n": 661,
+  "validation_n": 100,
+  "loss_policy": "Complete input; logits/shifted labels only for last prefix position plus all supervised target tokens",
+  "loss_helper_sha256": "01f2afbd5ed2de8a59eb89f012ac991b6a651ed58177b3be1e6a6cbe25607f61",
+  "cuda_allocator_policy": "expandable_segments:True",
+  "scope": "Adaptation baseline; training resource use is separate from the 8 GB deployment study. No novelty claim."
+}

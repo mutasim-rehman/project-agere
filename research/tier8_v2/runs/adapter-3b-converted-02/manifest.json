@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "training_mode": "train",
+  "diagnostic_only": false,
+  "profile": "3b",
+  "run": "research/tier8_v2/runs/adapter-3b-train-02",
+  "command": [
+    "/home/mutasim/Desktop/project-agere/.venv-training/bin/python",
+    "/home/mutasim/Desktop/project-agere/.local/llama-adapter-converter/4227c9be4268ac844921b90f31595f81236bd317/convert_lora_to_gguf.py",
+    "--base",
+    "/home/mutasim/Desktop/project-agere/weights/hf-tokenizers/mas-3b-q4",
+    "--outfile",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/runs/adapter-3b-converted-02/adapter-f16.gguf",
+    "--outtype",
+    "f16",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/runs/adapter-3b-train-02/adapter"
+  ],
+  "input_sha256": {
+    "research/tier8_v2/runs/adapter-3b-train-02/manifest.json": "a7461dc804edc2c2b0c9e4a938056d493ecad75d2947f47c97e88622b6376744",
+    "research/tier8_v2/runs/adapter-3b-train-02/summary.json": "c62be10c706e9046c36c9199c3b7f12f3346b3657164d2048019d6e35fab552d",
+    "research/tier8_v2/evidence/adapter-converter-source-01.json": "9b653e09050c8ffeaa69d0a5beb69ba105d083e81cb7670f5bd0ba1a17905777",
+    "weights/hf-tokenizers/mas-3b-q4/config.json": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+    "weights/hf-training/3b/config.json": "bed11cba5f84170418b779657b75cb23d030fc00dda8aa0b879f95c11a6766b7"
+  },
+  "script_sha256": "dff6c2a1846a78acb5efdf69ff244c33bbd01ea68d0e6af72f18e0332bea5867",
+  "file": "research/tier8_v2/runs/adapter-3b-converted-02/adapter-f16.gguf",
+  "sha256": "a39e9e89f8b4339a111a40f48054eab9e6a17f29291fc6714653483d408f38cd",
+  "bytes": 59902144,
+  "tensor_count": 504,
+  "outtype": "f16",
+  "runtime_adapter_applied": false,
+  "measured_reasoning_gain": false
+}

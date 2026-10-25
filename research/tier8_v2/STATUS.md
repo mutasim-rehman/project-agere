@@ -227,3 +227,11 @@ This is feasibility only, not task accuracy. Full one-epoch training has started
 under sequence 02 (exec session 73451); launch identities are in
 evidence/adaptation-sequence-launch-02.json. Keep 42 inputs frozen. Local adapter
 and GGUF binaries are ignored by Git; manifests/hashes/logs remain versioned.
+
+## 25 October continuation
+
+Full 3B training and conversion completed. One epoch: 661 examples / 83 updates;
+GPU peak allocated 4.051 GB, reserved 4.228 GB; 100-example teacher-forced validation
+loss 0.03475. These are token losses, not QA scores. Converted F16 LoRA is 59.90 MB
+with 504 checked tensors. Sequence 02 is terminally complete; no inputs remain
+frozen by it. Real CPU adapter application and adapted-vs-base QA remain unmeasured.
