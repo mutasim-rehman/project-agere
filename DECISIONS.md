@@ -1869,3 +1869,32 @@ A coverage gain with more wrong answers cannot automatically be called dominant.
 Tests cover that tradeoff, zero-delivery precision, cluster handling, changed
 candidate truth and missing cases.212 tests pass. No model workload or frozen
 source/data was changed. Natural QA results remain incomplete at specification.
+
+## 2026-10-25 — Natural-error transfer is a coverage–risk tradeoff
+
+Matched24-case no-repair comparison passed strict identical draft/prompt/actor
+and separate critic-application guards. Plain binary3B:3 correct delivered,
+0 wrong,21 withheld. Trained binary3B:11 correct,4 wrong,9 withheld (reported-answer
+metric). Raw execution:2/1/21 versus9/6/9. Candidate accuracy remains11/24 reported
+and9/24 raw; this is a gate effect, not answer generation improvement. Correct
+coverage gains8/24 but wrong deliveries rise4/24; no Pareto dominance. Report-
+cluster95% intervals for those deltas:[.167,.52] and[.04,.333]. Illustrative error
+penalty break-even2, not a validated financial cost. Unit sidecar changes no cases.
+Complete inner process-tree peaks:plain4.842GB,trained4.908GB under6.4GB decimal.
+Evidence: `evidence/critic3b-natural24-delivery-results-01.json`.
+
+Manual error hypotheses: missing future-period evidence (one case lacks annotated
+row), missing net-of-allowance subtraction, inconsistent percent scaling, and wrong
+pension measure/entity. These guide training-only natural-error controls; they are
+not adjudicated semantic labels or license for gold-specific patches. Constructed
+single-edit validation performance does not establish reliable natural verification.
+
+External recovery02 is now genuinely running (controller40968/worker41022 observed),
+preserving original26 cases. All FinQA queue stages1–9 passed. Broad100-report
+inference, comparable SAS adaptation, useful novelty and publication confirmation
+remain outstanding.212 tests pass. Earlier running/stopped statements are dated
+history; LIVE_STATUS.md carries the latest snapshot.
+
+Do not deploy a gold-specific fix or infer calibrated safety from mutation accuracy.
+Keep frozen external sources unchanged while the queue runs. Next corpus/control
+should use natural training-only drafter errors and complete-policy evaluation.

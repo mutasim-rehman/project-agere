@@ -1,0 +1,255 @@
+{
+  "n": 24,
+  "n_report_groups": 23,
+  "metrics": {
+    "case_success": {
+      "conditions": {
+        "plain": {
+          "candidate_correct": 11,
+          "correct_delivered": 3,
+          "incorrect_delivered": 0,
+          "withheld": 21,
+          "correct_delivery_coverage": 0.125,
+          "incorrect_delivery_rate": 0.0,
+          "precision_when_delivered": 1.0,
+          "generated_tokens": 1343,
+          "prompt_tokens": 41892,
+          "recorded_inference_seconds": 510.6983506600045
+        },
+        "adapted": {
+          "candidate_correct": 11,
+          "correct_delivered": 11,
+          "incorrect_delivered": 4,
+          "withheld": 9,
+          "correct_delivery_coverage": 0.4583333333333333,
+          "incorrect_delivery_rate": 0.16666666666666666,
+          "precision_when_delivered": 0.7333333333333333,
+          "generated_tokens": 1367,
+          "prompt_tokens": 41892,
+          "recorded_inference_seconds": 530.832093380006
+        }
+      },
+      "delta_correct_delivery_coverage": 0.3333333333333333,
+      "delta_incorrect_delivery_rate": 0.16666666666666666,
+      "report_cluster_bootstrap_95_intervals": {
+        "correct_delivery": [
+          0.16666666666666666,
+          0.52
+        ],
+        "incorrect_delivery": [
+          0.04,
+          0.3333333333333333
+        ],
+        "withheld": [
+          -0.6956521739130435,
+          -0.30434782608695654
+        ]
+      },
+      "transitions": {
+        "withheld -> withheld": 9,
+        "withheld -> correct_delivery": 8,
+        "withheld -> incorrect_delivery": 4,
+        "correct_delivery -> correct_delivery": 3
+      },
+      "empirical_delivery_pareto_dominance": false,
+      "illustrative_utility_delta": {
+        "0": {
+          "per_case": 0.3333333333333333,
+          "report_cluster_bootstrap_95_interval": [
+            0.16666666666666666,
+            0.52
+          ]
+        },
+        "1": {
+          "per_case": 0.16666666666666666,
+          "report_cluster_bootstrap_95_interval": [
+            -0.12500000000000003,
+            0.43478260869565216
+          ]
+        },
+        "2": {
+          "per_case": 0.0,
+          "report_cluster_bootstrap_95_interval": [
+            -0.4347826086956522,
+            0.375
+          ]
+        },
+        "5": {
+          "per_case": -0.5,
+          "report_cluster_bootstrap_95_interval": [
+            -1.4166666666666665,
+            0.25
+          ]
+        },
+        "10": {
+          "per_case": -1.3333333333333333,
+          "report_cluster_bootstrap_95_interval": [
+            -3.08,
+            0.041666666666666685
+          ]
+        }
+      },
+      "break_even_penalty_ratio": 2.0,
+      "utility_expression_counts": "8 - lambda * (4)"
+    },
+    "raw_execution_match": {
+      "conditions": {
+        "plain": {
+          "candidate_correct": 9,
+          "correct_delivered": 2,
+          "incorrect_delivered": 1,
+          "withheld": 21,
+          "correct_delivery_coverage": 0.08333333333333333,
+          "incorrect_delivery_rate": 0.041666666666666664,
+          "precision_when_delivered": 0.6666666666666666,
+          "generated_tokens": 1343,
+          "prompt_tokens": 41892,
+          "recorded_inference_seconds": 510.6983506600045
+        },
+        "adapted": {
+          "candidate_correct": 9,
+          "correct_delivered": 9,
+          "incorrect_delivered": 6,
+          "withheld": 9,
+          "correct_delivery_coverage": 0.375,
+          "incorrect_delivery_rate": 0.25,
+          "precision_when_delivered": 0.6,
+          "generated_tokens": 1367,
+          "prompt_tokens": 41892,
+          "recorded_inference_seconds": 530.832093380006
+        }
+      },
+      "delta_correct_delivery_coverage": 0.2916666666666667,
+      "delta_incorrect_delivery_rate": 0.20833333333333334,
+      "report_cluster_bootstrap_95_intervals": {
+        "correct_delivery": [
+          0.125,
+          0.4782608695652174
+        ],
+        "incorrect_delivery": [
+          0.043478260869565216,
+          0.391304347826087
+        ],
+        "withheld": [
+          -0.6956521739130435,
+          -0.30434782608695654
+        ]
+      },
+      "transitions": {
+        "withheld -> withheld": 9,
+        "withheld -> correct_delivery": 7,
+        "withheld -> incorrect_delivery": 5,
+        "incorrect_delivery -> incorrect_delivery": 1,
+        "correct_delivery -> correct_delivery": 2
+      },
+      "empirical_delivery_pareto_dominance": false,
+      "illustrative_utility_delta": {
+        "0": {
+          "per_case": 0.2916666666666667,
+          "report_cluster_bootstrap_95_interval": [
+            0.125,
+            0.4782608695652174
+          ]
+        },
+        "1": {
+          "per_case": 0.08333333333333333,
+          "report_cluster_bootstrap_95_interval": [
+            -0.20833333333333334,
+            0.34782608695652173
+          ]
+        },
+        "2": {
+          "per_case": -0.125,
+          "report_cluster_bootstrap_95_interval": [
+            -0.5652173913043479,
+            0.27999999999999997
+          ]
+        },
+        "5": {
+          "per_case": -0.75,
+          "report_cluster_bootstrap_95_interval": [
+            -1.7391304347826086,
+            0.08333333333333337
+          ]
+        },
+        "10": {
+          "per_case": -1.7916666666666667,
+          "report_cluster_bootstrap_95_interval": [
+            -3.6521739130434785,
+            -0.1923076923076924
+          ]
+        }
+      },
+      "break_even_penalty_ratio": 1.4,
+      "utility_expression_counts": "7 - lambda * (5)"
+    }
+  },
+  "limits": "Reused development, not publication confirmation. Report bootstrap uses whole reports, including unequal cluster sizes. Candidate accuracy must be identical. Non-delivery has illustrative utility0; wrong-delivery penalties0/1/2/5/10 are not validated financial costs and none is selected as primary. Zero-delivery precision is undefined, not100%. Sample Pareto dominance is descriptive; intervals may be degenerate and do not establish equivalence.",
+  "matching_guard": {
+    "n": 24,
+    "identical_initial_drafts": true,
+    "identical_critic_prompts": true,
+    "same_actor_adapter": true,
+    "separate_critic_application_recorded": true
+  },
+  "runs": {
+    "plain": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-plain3b-binary-dev24-01",
+    "adapted": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-trained3b-binary-dev24-01"
+  },
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-plain3b-binary-dev24-01/manifest.json": "314dec121d71568966bb9c601368d31f2f26da0fe97627f04934263f8cb76e51",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-plain3b-binary-dev24-01/summary.json": "bc5b25c52c24a94b4051cff9b3af32f78989ec6726528a274e8d32659fa63d1e",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-plain3b-binary-dev24-01/cases.jsonl": "17a83205ff502800167bb2021258569afa03e89108eb52c65b3c68651f1e689a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-trained3b-binary-dev24-01/manifest.json": "3077834d85865834f9716888226e10b89d3b63a40f47dda6b8862b16de8b81bf",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-trained3b-binary-dev24-01/summary.json": "d35c6b83e51d6a150a89a101f0be4df1b805b99fdea1e44b307b7b638f47b69c",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-trained3b-binary-dev24-01/cases.jsonl": "ab2673c8304345044f537febb1f8b81a55c8134784a1bd4303a701e56b4f7392"
+  },
+  "analysis_source_sha256": "fdb81998a8892578f33fb8402ff16b901009d1e041417b227ab48466ca2033a0",
+  "report_sha256": "a7d26d2326bcba20bb7aff142c3d7762b296425e7b7baf5b2766e117b99fd2b2",
+  "report_path": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/reports/natural24-delivery-01.json",
+  "memory": {
+    "plain": {
+      "status": "complete",
+      "n": 24,
+      "peak_tree_rss_bytes": 4841512960,
+      "cap_bytes": 6400000000
+    },
+    "adapted": {
+      "status": "complete",
+      "n": 24,
+      "peak_tree_rss_bytes": 4907794432,
+      "cap_bytes": 6400000000
+    }
+  },
+  "unit_sensitivity": {
+    "path": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/reports/natural24-unit-sensitivity.json",
+    "sha256": "3714988193ba4077d4c8e6eb2642f6f2b5a200933b769109bb3dcc49e0ccaee7",
+    "version": "reported-units-v2-number-ratio",
+    "runs": [
+      {
+        "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-plain3b-binary-dev24-01",
+        "n": 24,
+        "legacy_correct": 11,
+        "v2_correct": 11,
+        "v2_delivered_correct": 3,
+        "v2_wrong_deliveries": 0,
+        "changed_cases": []
+      },
+      {
+        "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-trained3b-binary-dev24-01",
+        "n": 24,
+        "legacy_correct": 11,
+        "v2_correct": 11,
+        "v2_delivered_correct": 11,
+        "v2_wrong_deliveries": 4,
+        "changed_cases": []
+      }
+    ],
+    "unresolved": [
+      {
+        "id": "AAPL/2004/page_36.pdf-2",
+        "issue": "Bare .2 gold for gross-margin decline; percent-point versus canonical-fraction annotation needs adjudication. No special-case rescoring."
+      }
+    ]
+  }
+}
