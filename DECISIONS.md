@@ -2375,3 +2375,41 @@ Four targeted CPU tests and actual full-corpus/replay execution pass. New audit
 source is independent of live frozen training/queue; all queue hashes reverified.
 Goal turn makes progress via new measured artifact diagnosis and baseline controls;
 novel useful method still unproven. Both controllers verified live at checkpoint.
+
+## 2026-10-26 — Construct and audit artifact-balanced crossed-question quartets
+
+React to measured72–77% question-blind synthetic classification by same-page2x2
+question/program crossing, not more syntax mutations. Same union evidence/unit in
+all four records; original positives reproduce both numerical metrics, crossed
+negatives fail BOTH. All four rejected on ambiguity/conflict/1024-token overflow.
+Seed42 SHA greedy disjoint source cases; preserve original report splits. Both
+actual3B/7B GGUF tokenization complete; no NN calls or dev100 labels used.
+
+403quartets=1612rows;1416train/354quartets/219reports,196val/49quartets/27reports;
+806original sources.1197possible pairs:287unit mismatch,30ambiguous labels,78length,
+391already-used sources,8same question. Program-only depth3 tree exactly50% train
+AND validation. Full source/gold-label/execution/model-prompt/HF tokenization replay
+passes for all1612, both profiles. No contradictory identical full-input labels.
+Five construction tests pass. Exact marginal balance does not prove semantics,
+remove joint shortcuts or establish neural gain. Training ready in source manifest
+means nonempty data splits; actual fit/training/deployment gates are still required.
+
+Primary abstracts/project descriptions of Dua etal2021 Instance Bundles and
+Schuster etal2021 VitaminC constrain claims: contrasted instances/evidence training
+already exist. No first-use claim for question swapping or balanced bundles. Full
+method review and useful measured distinction remain due. Proposed use is a small
+matched continuation with original-mutation control and rehearsal, after an8-train-
+quartet baseline probe; no new training or queue revision launched at this step.
+Do not spend all remaining research window on comparison-only baselines. Any
+reordering must explicitly supersede the waiting queue before new jobs, preserving
+old plan/source/journal and avoiding overlapping model work. Frozen SAS continues.
+
+Initial basic parity/label audit passes. Expanded source audit02 incorrectly used
+only each row Q/P evidence; diagonal positives include the other source as intended,
+so auditor refused. Preserve failed log and exact source snapshot, fix reconstruction
+at quartet level. Audit03 passes stronger bindings; canonical04 additionally checks
+identical-input label consistency. Payload unchanged across audits. This diagnoses
+and corrects an auditor assumption, not a claimed data improvement. Canonical audit
+and source/data hashes in critic-crossed-quartets-prepared-01.json. All raw evidence
+on SSD, source snapshots preserved. Goal turn makes concrete candidate-data progress;
+actual useful novelty remains unproven and full goal stays active.

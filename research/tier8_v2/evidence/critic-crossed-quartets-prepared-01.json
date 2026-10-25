@@ -1,0 +1,119 @@
+{
+  "dataset_root": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_01",
+  "manifest": {
+    "purpose": "critic",
+    "profiles": [
+      "mas-3b-q4",
+      "sas-7b-q4"
+    ],
+    "kept_n": 1612,
+    "training_n": 1416,
+    "validation_n": 196,
+    "quartets": 403,
+    "group_counts": {
+      "train": 219,
+      "validation": 27
+    },
+    "max_training_tokens": 1024,
+    "deployment_context": 4096,
+    "output_file": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_01/examples.jsonl",
+    "output_sha256": "a719bab47cde160b2fd2f7c7eeb59007f512ddfa711c1c5ad1b8545e73444390",
+    "source_positive_cases": 1761,
+    "candidate_same_page_pairs": 1197,
+    "rejected_pairs": {
+      "Different units": 287,
+      "Cross program not wrong under both metrics": 30,
+      "training_length_overflow": 78,
+      "source_already_matched": 391,
+      "Same question": 8
+    },
+    "input_sha256": {
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/manifest.json": "2fa8a13d6f9d50a914a81bc05b899628bf8bff3d7a8a9b32bc412545842663e4",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/examples.jsonl": "7b63467ad3da713c8a9accd17fe3311fffc9d0d0cdd4e61d02d573fc99fc69d0",
+      "/home/mutasim/Desktop/project-agere/.local/datasets/finqa/train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6"
+    },
+    "source_sha256": {
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_quartets.py": "6061f01886ee36ad598af6738956a109023f93bbd5cc886b7e858bbe1b03cd63",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_data.py": "878476d460c9f9a774d2d110d82a4a19214caf121233ec57997c7328620311b1",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_financial_pipeline.py": "dd7a230fddc87146dea85ccd5d46957935ae0b03bfbbdb7abebc90f1feb4d9b2",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adaptation_prompts.py": "f190d39ee3eaa25d7e3eccef730af404fb84e709fd650492ed98c5358b682cd7"
+    },
+    "tokenizer_models": [
+      {
+        "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+        "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "file": "/run/media/mutasim/Data/AGERE/weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+        "bytes": 3993201344,
+        "sha256": "dfce12e3862a5283ccfb88221b48480e58745165de856439950d0f22590580db"
+      },
+      {
+        "repo": "Qwen/Qwen2.5-7B-Instruct-GGUF",
+        "revision": "bb5d59e06d9551d752d08b292a50eb208b07ab1f",
+        "file": "/run/media/mutasim/Data/AGERE/weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+        "bytes": 689872288,
+        "sha256": "539cf93f78e887edea1c04e2d7d8cdaca9d01dae9c9025bcb8accbe29df3d72a"
+      },
+      {
+        "repo": "Qwen/Qwen2.5-3B-Instruct-GGUF",
+        "revision": "7dabda4d13d513e3e842b20f0d435c732f172cbe",
+        "file": "/run/media/mutasim/Data/AGERE/weights/tier8_v2/qwen2.5-3b-instruct-q4_k_m.gguf",
+        "bytes": 2104932768,
+        "sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+        "quantization": "Q4_K_M",
+        "license_metadata": "other",
+        "status": "download_verified_only",
+        "inference_or_memory_fit_tested": false,
+        "scope": "Prospective separately labelled model-allocation control; does not replace original FP16 MAS."
+      }
+    ],
+    "marginal_balance_verified": true,
+    "training_ready": true,
+    "model_calls": 0,
+    "test_opened": false,
+    "actual_qa_gain": false,
+    "novelty_established": false,
+    "selection": "Seed42 SHA sorted eligible same-page pairs, greedily disjoint source cases. Same units and common conflict-free union evidence. Reject whole quartet on any numerical ambiguity or either-tokenizer overflow. Preserve original report split.",
+    "limits": "Known instance-bundle/counterfactual construction. Exact50% upper bound for deterministic evidence+program-only or evidence+question-only classifiers on complete balanced set, not proof of financial semantics or absence of joint shortcuts. No trained policy or natural QA improvement."
+  },
+  "audit": {
+    "pass": true,
+    "n": 1612,
+    "quartets": 403,
+    "profiles": {
+      "mas-3b-q4": {
+        "pass": true,
+        "n": 1612
+      },
+      "sas-7b-q4": {
+        "pass": true,
+        "n": 1612
+      }
+    },
+    "dataset_sha256": "a719bab47cde160b2fd2f7c7eeb59007f512ddfa711c1c5ad1b8545e73444390",
+    "dataset_manifest_sha256": "12c87c99c0a76c57089e0ccb9065a1fb70bd76f0caca12f8122b4bed276b6189",
+    "transformers_version": "4.57.1",
+    "tokenizers_version": "0.22.2",
+    "snapshots_sha256": "79dcdd10e81f94cd9192aaf299c5c69a92b3c56ce8dfc5331d27ae9d0fd18f7b",
+    "source_sha256": "ae4b68380e258afbc93baf4ca290f0233ade85c862dd95ac9ca038a36a1f01fc",
+    "question_blind_tree_train_validation_accuracy": {
+      "train": 0.5,
+      "validation": 0.5
+    },
+    "marginal_balance_verified_per_split": true,
+    "source_question_program_and_union_verified": true,
+    "actual_model_prompt_binding_verified": true,
+    "distinct_full_model_prompts": 1612,
+    "conflicting_identical_prompt_labels": 0,
+    "model_calls": 0,
+    "actual_qa_gain": false,
+    "novelty_established": false,
+    "limits": "Independent data/execution/tokenization replay under existing weak numerical labels. No independent financial semantics, trained improvement or new-algorithm priority follows. Exact50% bound applies only to complete balanced marginal views; joint shortcuts remain possible."
+  },
+  "manifest_sha256": "12c87c99c0a76c57089e0ccb9065a1fb70bd76f0caca12f8122b4bed276b6189",
+  "canonical_audit_sha256": "38ba0507a9d3a2c0d25223f8e0a9d633e01dfa4bf89fc2107094fbb2e941001d",
+  "preparation_only": true,
+  "trained": false,
+  "actual_qa_gain": false,
+  "novelty_established": false,
+  "audit_history": "Initial token/label/marginal audit passed. Extended source-union audit02 initially used only each row question/program, incorrectly omitting the other source on diagonal positives; failed before output. Source snapshots and failed log retained. Audit03 fixes union at quartet level and passes actual prompt/source binding. Canonical04 also verifies no contradictory full-input labels. Dataset payload unchanged throughout."
+}
