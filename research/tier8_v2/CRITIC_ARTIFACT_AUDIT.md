@@ -74,3 +74,11 @@ bind the exact datasets, source, saved neural files and canonical raw output.
 No NN calls, active trainer modifications, new training data or queue changes
 were involved. The fitted trees are additional cheap baselines, not a proposed
 novel verifier or a reason to replace the stronger neural gate.
+
+
+26October2026 NN qualification: the fully adapted shared7B SAS scores31/32 exact
+labels and7/8 exact quartets in the fixed8-report training-source crossed probe.
+Greedy question-switch decisions change correctly15/16 times with evidence/program
+held fixed. This directly limits the earlier artifact interpretation: program-only
+shortcut availability does not show this model relies only on that shortcut.
+No held-out natural QA inference follows. See [baseline discovery](CRITIC_BASELINE_DISCOVERY.md).

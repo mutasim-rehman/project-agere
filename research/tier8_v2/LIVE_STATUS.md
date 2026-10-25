@@ -1,13 +1,13 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 04:17 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 04:34 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
 | SAS7B full joint adaptation |**Complete:476 updates,3801 training examples,482 validation examples** |
 | Training resources |Worker about4.07GB, complete tree about8.33GB including12 compiler workers;10.5GB training cap |
 | Discovery-first continuation |**Running deployment proof/probes** after completed SAS conversion |
-| Fixed probe |32 greedy binary reviews from8 training reports, same inputs for joint SAS/original MAS critic/extended MAS critic |
+| Fixed probe |**SAS complete:31/32 labels,7/8 whole quartets**; original MAS running; extended MAS pending |
 | Crossed curriculum |403 audited quartets/1612 rows;1416 train,196 validation; both tokenizer parity and source/execution/prompt replay pass |
 | Useful novelty |Not established; no new quartet-trained model or quality gain yet |
 
@@ -82,3 +82,11 @@ prompt, not accuracy/calibration. Greedy32-review SAS quartet probe is running.
 Analyzer normalizer-import/forced-prefix hash bugs corrected and covered by2
 regression checks; canonical natural study03 supersedes02 with identical jobs,
 data and metrics. [Native proof evidence](evidence/sas7b-joint-native-application-proven-03.json).
+
+SAS crossed baseline result is strong:31/32 exact,16/16 positives accepted,
+15/16 crossed negatives rejected; correct greedy question switches15/16 with
+E/P fixed. One false accept confuses NON interest with NET interest income.
+This limits the earlier question-blind-artifact hypothesis for the actual7B model.
+Training-source discovery, not new natural QA accuracy or novelty. SAS ceiling
+component passes; extended MAS still determines the BOTH-policy stop rule.
+[Baseline discovery](CRITIC_BASELINE_DISCOVERY.md).

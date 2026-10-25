@@ -2632,3 +2632,26 @@ supersedes02 with IDENTICAL actual jobs/data/metrics; only analyzer correction,
 no natural study inference yet. Do not weaken checks or mislabel this as model
 failure, QA gain, calibration or novelty. Full training milestone b6333e5 pushed;
 continue the baseline probes and conditional matched experiment. Goal active.
+
+
+### 2026-10-26 — strong ordinary joint-SAS baseline on the fixed crossed probe
+
+Previous turn made authoritative progress: full SAS training/validation audited,
+native application proof independently replayed after correcting analyzer import/
+forced-prefix bugs, committed/pushed. Current frozen SAS32-review probe is COMPLETE
+and independently replayed:31/32 exact labels,7/8 whole quartets,16/16 references
+accepted and1/16 crossed negatives falsely accepted; no UNKNOWN/unparsed/truncation.
+Sampled full probe tree5.188GB under6.4GB;3185 memory samples replay, reserve kept.
+Actual27814 prefill/224 generated tokens,644.7 recorded inference seconds.
+Paired diagnostic holds evidence+program+execution fixed:15/16 question switches
+change greedy labels correctly; program switches15/16 too. This FALSIFIES the broad
+interpretation that the well-adapted7B baseline is simply question-blind on this
+family, despite exploitable synthetic program-only artifacts. Do not claim all
+critics use only artifacts. One near-name false accept: NON interest income Q,
+NET interest income program. Do not hand-tune that case. Familiar SFT positive
+Q/program combinations and training-source reports limit generalization claims.
+SAS component of ceiling rule passes; extended MAS result still pending. Preserve
+BOTH-policy stopping rule and fixed data/LR; no continuation decision yet. Need
+original/extended MAS and natural disjoint-report outcomes; no new QA gain or useful
+novelty established. Goal remains active. Frozen queue has moved to original MAS
+probe, with extended baseline training/conversion/proof/probe still ahead.

@@ -1,0 +1,88 @@
+{
+  "status": "completed_training_source_diagnostic",
+  "arm": "sas",
+  "adapter": "joint_full_epoch_baseline",
+  "summary": {
+    "status": "complete",
+    "exit_code": 0,
+    "n": 32,
+    "expected": 32,
+    "cap_bytes": 6400000000,
+    "peak_tree_rss_bytes": 5188001792,
+    "memory_breach": false,
+    "metrics": {
+      "n": 32,
+      "n_quartets": 8,
+      "n_reports": 8,
+      "exact_label_correct": 31,
+      "exact_label_accuracy": 0.96875,
+      "gate_correct": 31,
+      "gate_accuracy": 0.96875,
+      "complete_exact_quartets": 7,
+      "complete_gate_quartets": 7,
+      "verdict_counts": {
+        "PASS": 17,
+        "FAIL": 15
+      },
+      "reference_accepts": 16,
+      "cross_negative_accepts": 1,
+      "prompt_tokens": 27814,
+      "generated_tokens": 224,
+      "truncated_reviews": 0,
+      "recorded_inference_seconds": 644.7248569570074,
+      "limits": "Exact label metric treats UNKNOWN/unparsed as incorrect; gate metric treats them as nonaccept, not explicit correct negative judgments. Training-source discovery, not natural QA or confirmation."
+    },
+    "actual_qa_gain": false,
+    "novelty_established": false
+  },
+  "label_confusion": {
+    "PASS -> PASS": 16,
+    "FAIL -> FAIL": 15,
+    "FAIL -> PASS": 1
+  },
+  "question_switch_fixed_evidence_and_program": {
+    "pairs": 16,
+    "greedy_labels_changed": 15,
+    "both_exact_labels_correct": 15,
+    "unchanged_verdicts": {
+      "PASS": 1
+    }
+  },
+  "program_switch_fixed_evidence_and_question": {
+    "pairs": 16,
+    "greedy_labels_changed": 15,
+    "both_exact_labels_correct": 15,
+    "unchanged_verdicts": {
+      "PASS": 1
+    }
+  },
+  "errors": [
+    {
+      "source_id": "015a43a9a1d9041c74696a5d3916aa1a26ee6ff95a6cd1fa76d08072a7bf20d1::2",
+      "question": "what was the percentage change in the non interest income from from 2011 to 2012",
+      "reference_question_for_same_program": "what was the percentage change in the net interest income from 2011 to 2012",
+      "expected": "FAIL",
+      "observed": "PASS",
+      "execution_value": "0.1080459770114942528735632184",
+      "annotation": "Crossed program is numerically wrong for the requested question under both audited metrics; not independent human semantic annotation."
+    }
+  ],
+  "sas_component_of_ceiling_stop_rule_pass": true,
+  "both_policy_stop_decision": "pending_extended_MAS_result",
+  "memory_samples_replayed": 3185,
+  "minimum_sampled_host_available_bytes": 6775586816,
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_joint_posttrain/joint03-discovery02/plan.json": "ae579484b961c706a2b7478a9a130c3a54c395f9680449ee8694f55eee0ac99c",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/sas-joint-train8-01/summary.json": "bcecfb51ddfa67b5f6cd2d20a71ca34f95f69ff4ba87652e4fbc4e834e750c08",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/sas-joint-train8-01/metrics.json": "178495fc5119bd20bba30fd6cf8a6fa2fbfc0dadaae2c41166a2551421062e65",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/sas-joint-train8-01/policy.json": "0d07b5566ee8d6c110e62f54b11aab97dd80f18d093eda597b8069d4f78ffbcd",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/sas-joint-train8-01/responses.jsonl": "dfda18a63b3ff8629683dbd9717f9e6004c8fb345ccb8c9b4560030ab4a474c5",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/sas-joint-train8-01/memory.jsonl": "a66e7cf430d15cf7ef0fd534fec36058bd0a9eed45b9dfd31497c0bb7d8b61c1",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_pilot_train8_02/selection.json": "8ac5d1df8550df6feecf3859afaeeedaaaabad45f51eaca52a192455883f16a9",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_quartets_pilot_train8_02/examples.jsonl": "7fe2ee9729ba762d7d7eff1d73ffa7174ee5e1c3c4744703492a9446ec777595"
+  },
+  "new_method_trained": false,
+  "new_qa_gain_proven": false,
+  "novelty_established": false,
+  "limits": "8 training-source reports,16 reference positives already known as Q/program combinations; crossed negatives are new combinations. Does not establish held-out-report QA, absence of richer shortcuts, global question-attention behavior, calibration or publishing readiness. Only SAS ceiling component passes; do not decide continuation before extended MAS."
+}
