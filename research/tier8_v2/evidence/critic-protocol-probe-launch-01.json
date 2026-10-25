@@ -1,0 +1,10 @@
+{
+  "pid": 23678,
+  "create_time": 1792920499.02,
+  "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_probe/critic_protocol_validation12_01",
+  "log": "/run/media/mutasim/Data/AGERE/runs/critic_protocol_validation12_01.log",
+  "source_commit": "b6243fa0f669ad947eb1dfebca298637e1533ab5",
+  "launched_utc": "2026-10-25T09:28:19Z",
+  "detached": true,
+  "scope": "Train-only component diagnostic, not full-arm evaluation or novel method"
+}

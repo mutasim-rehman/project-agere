@@ -1527,3 +1527,30 @@ no weights are changed. Freeze sources and labels before model evaluation.
 
 Full suite182 tests passed. This experiment assesses critic discrimination and
 protocol sensitivity; it is not a novel algorithm or an adaptation gain.
+
+## 2026-10-25 — Prior-art check while critic experiment runs
+
+Read primary abstracts for CCL2024 judge calibration/contrastive negatives,
+EACL2026 code-judge biases, and arXiv2607.05552 balanced wording/order/label controls.
+Links/scopes are in RELATED_WORK_MATRIX.md. These constrain the next step:
+critic calibration, curated negatives and label remapping are not automatically
+novel. The current probe is necessary baseline strengthening, not the goal's
+original contribution. A useful system-level mechanism still needs evidence.
+
+## 2026-10-25 — Probe execution and uncertainty analysis
+
+Actual single-critic experiment launched detachedPID23678, sourceb6243fa. Both
+pinned model copies are verified on SSD, public/label data frozen before generation.
+0.5B completed48 calls at1.472GB;3B confirmed live with33 saved reviews at latest
+observation. 0.5B binary protocol accepts11/12 positives but also11/12 negatives;
+do not mistake improved reference acceptance for discrimination. Original rich
+format accepted6 positives and7 negatives. No full external queue restart occurred.
+
+Added offline analysis that refuses incomplete/duplicate case-protocol grids,
+reports complete pair separation versus both-accept/both-reject behavior, and
+bootstraps report groups rather than treating paired mutations as independent.
+UNKNOWN/unparsed are nonaccepts for delivery-gate metrics, not evidence of an
+explicit correct negative judgment. Only12 groups; this is exploratory. Current
+mutation-order recipe yields9 substitutions to add and3 to subtract; no broad
+operator-robustness claim. Full suite184 tests passed. Analysis code does not
+change the running worker or any frozen input.

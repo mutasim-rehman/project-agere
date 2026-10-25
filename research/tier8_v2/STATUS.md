@@ -131,3 +131,20 @@ with nonPASS checks in all24. Next critic work must establish balanced train-onl
 program discrimination and instruction consistency before renewed delivery gating.
 Audit: evidence/matched-critic-behavior-audit-01.json. No new novelty claim or
 accuracy gain follows from this diagnosis. Goal remains active.
+
+## Active independent experiment — critic protocol probe
+
+Full external queue remains stopped for insufficient host headroom; no user apps
+were closed. A separate train-only component experiment is running from unchanged
+source commitb6243fa, detached controllerPID23678 (verify identity/live state before
+acting). SSD root: runs/tier8_critic_probe/critic_protocol_validation12_01.
+12 report groups,24 reference/mutated programs, rich/binary protocols,96 calls
+across sequential native0.5B and3B Q4 critics. Single-critic fixed cap5.453GB;
+this is not a full MAS run or full-arm evaluation. Pinned legacy model copies are
+now also on SSD. Launch metadata: evidence/critic-protocol-probe-launch-01.json.
+
+0.5B completed48 calls at1.472GB peak: rich accepts6/12 references and7/12 wrong
+mutations; binary accepts11/12 references AND11/12 wrong mutations. Higher acceptance
+is not useful discrimination. 3B was still live at the last observation; do not
+interpret partial3B output or restart it. Full paired analysis waits for completion.
+184 tests pass, including report-cluster analysis and complete-pair discrimination.

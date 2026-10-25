@@ -45,3 +45,17 @@ BRA-Audit-style localized recovery. Merely combining known components is insuffi
   FinQA development slice contains mixed percentage conventions and disagreements.
 - Do not promote synthetic parser success, valid JSON, source support, or a verifier
   PASS into evidence of financial correctness.
+
+## Critic-calibration screening — 25 October 2026
+
+Primary abstracts inspected via web during the train-only critic probe:
+
+| Work | Inspected scope | Consequence |
+|---|---|---|
+| [Mitigating the Bias of Large Language Model Evaluation](https://aclanthology.org/2024.ccl-1.101/) | Published abstract: probability/prompt calibration and contrastive training with curated negatives for judge bias. | Calibrating a critic or training on negatives is established; our probe is baseline diagnosis, not an original method. Full method not yet inspected. |
+| [Don’t Judge Code by Its Cover](https://aclanthology.org/2026.findings-eacl.70/) | Published abstract: correctness judgments shift with superficial code variations; positive and negative judge biases persist across models. | Finding an unreliable program critic alone is not new. Financial counterfactuals and memory constraints still require a useful methodological distinction. Full method not yet inspected. |
+| [The yes-no bias of large language models reflects answer order and wording, not shifts in moral judgment](https://arxiv.org/abs/2607.05552) | arXivv1 abstract: balanced framing/label-order controls separate verdict, lexical label and option-order effects in moral judgments. | Label remapping, format robustness and balanced calibration batteries have close priors. Different domain; do not transfer reported results to our finance critics. Full method not yet inspected. |
+
+Our rich-versus-binary experiment changes instruction content as well as output
+format. It cannot identify a pure grammar, label-order or lexical-bias mechanism.
+Do not promote a protocol improvement into a first-use or novelty claim.
