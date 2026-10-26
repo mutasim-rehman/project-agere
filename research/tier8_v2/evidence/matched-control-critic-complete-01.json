@@ -48,5 +48,36 @@
     "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-train-01/train/events.jsonl": "b2583a61128bc08ba1cb4e8fff3353ec31a0275aee6f8b47816dbcf83036ea96",
     "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-train-01/memory.jsonl": "fdaefe2a38b9e08f5965a74f4820ab354cc5c090990a1ce5f66d655f38ab2825"
   },
-  "limits": "Teacher-forced validation has repeated positives across families, not416 independent observations. No natural QA, deployment utility or novelty established. Fit updates discarded."
+  "limits": "Teacher-forced validation has repeated positives across families, not416 independent observations. No natural QA, deployment utility or novelty established. Fit updates discarded.",
+  "native_application_proof": {
+    "status": "independently_replayed",
+    "result": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01",
+    "summary": {
+      "status": "complete",
+      "exit_code": 0,
+      "peak_tree_rss_bytes": 4281868288,
+      "cap_bytes": 6400000000,
+      "memory_breached": false,
+      "wall_seconds": 43.803662124999846,
+      "adapter_effect_proven": true,
+      "qa_gain_measured": false
+    },
+    "source_and_dataset_checks": {
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_proof.py": "524a931877551bc57ba90acd4f4a2eaffbe87ba80ba85f9592f996277a1354cd",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_run.py": "8bcd2429d213887c9e9a1ccdab37b18354d78a35b48ba75885406291c84790e2",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_runtime.py": "28243991d8ba9094f234f8bc0ceca44c476e1cb85662ca2475ccb44acf93035a",
+      "/home/mutasim/Desktop/project-agere/scripts/completion_tokenization.py": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_artifact_paths.py": "c4f342f83eb9f8e4cda870f1867dd86774d4822b03bc76721fb234d872184d89",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/control_mas_critic/examples.jsonl": "765c062371e2bdae1b1852734e767273520c563fb6894583941a760dbfd6ae02",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/proof.json": "de4f7b2375d95b1548ade194df13f8c2267462c18d1f84c45e55eb61a4e4a880",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/manifest.json": "b299c179ccdc2068fc5fc8c09abf6e67e03397d5291a6c7b8eead1d27c69e060",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/summary.json": "a33f36d10141385810539a25e84f6727ba045fe1d6d31437ec5933f9a4977f44"
+    },
+    "input_sha256": {
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/proof.json": "de4f7b2375d95b1548ade194df13f8c2267462c18d1f84c45e55eb61a4e4a880",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/summary.json": "a33f36d10141385810539a25e84f6727ba045fe1d6d31437ec5933f9a4977f44",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/manifest.json": "b299c179ccdc2068fc5fc8c09abf6e67e03397d5291a6c7b8eead1d27c69e060",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/memory.jsonl": "78d50206677b55f01e4e162776bd873d0da18f78c9cfbe6b1e26ea3f62558ed9"
+    }
+  }
 }

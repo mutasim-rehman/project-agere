@@ -2833,3 +2833,12 @@ are not416 independent examples. Do not retune from this gap or treat CE as QA.
 Full conversion completed; serial controller advanced to native application proof.
 Crossed critic will reload the same initializer with same optimizer/steps and
 fixed dataset; fit updates discarded. No useful novelty or natural gain yet.
+
+Control critic native application proof independently replayed with natural-study
+artifact auditor, including prompt/source/model/adapter identities and0→1→0 effect.
+Memory samples reproduce4,281,868,288 bytes below6.4GB deployment cap. Controller
+then completed crossed critic fit and launched its full epoch. Prepared control/
+crossed plans have identical initializer, base, optimizer recipe, training and
+validation counts, and runtime versions; crossed fit validated against its own
+full plan. These checks do not substitute for the worker's exact tensor restore
+or subsequent natural QA. All original natural comparisons remain queued.
