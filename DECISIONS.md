@@ -2763,3 +2763,21 @@ including absolute/relative base identities and actual tiny CPU PEFT restoration
 Canonical natural preparation04 supersedes03 with identical original jobs/data/
 metrics and exact old source retained; no natural study NN results consumed.
 A new fit output is required; never reuse failed01. No LR/data/threshold changes.
+
+### 2026-10-26 — verified continuation fit and serial natural study
+
+On resumption at18:05UTC, no research worker remained live. The original12-hour
+window elapsed while the chat was inactive; no full continuation or natural QA
+ran in that interval. Do not represent that interval as active experimentation.
+Common-actor fit02 and all frozen inputs independently revalidated:2 real updates,
+exact initializer restored, peak5.9996GB under10.5GB training cap. Fit updates are
+discarded; full training reloads the original trained adapter.
+
+Freeze a serial controller for existing matched recipes, full conversions/native
+proofs, real52-case selection and49-case reserved audit. Include strong original
+critic with identical continued actor and original actor. Prioritize matched MAS
+and strong-original comparison before7B continuations; retain every SAS/audit and
+secondary-prompt job. No retries, no automatic adoption, no overlapping NN work.
+Two freshness tests pass using unittest; runtime has no pytest installed. All
+natural prompts, labels and metrics remain unchanged. Training/serving proof is
+not QA improvement; novelty remains unestablished until real results support it.

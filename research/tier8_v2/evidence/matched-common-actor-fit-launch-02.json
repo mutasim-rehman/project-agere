@@ -1,0 +1,19 @@
+{
+  "status": "launched_new_fit_after_diagnosed_path_fix",
+  "pid": 102886,
+  "create_time": 1792988473.45,
+  "command": [
+    "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+    "-u",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_continue.py",
+    "--plan",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-fit-02/plan.json"
+  ],
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-fit-02/plan.json",
+  "plan_sha256": "33d8067fceb2eafcefb3bc26cb0019d26841250f917489a51f3eb6c6aa267093",
+  "source_commit": "889f42aa4594253c48f3c3328c4733ef48fbf8b4",
+  "optimizer_updates_not_yet_audited": true,
+  "fit_updates_discarded": true,
+  "actual_qa_gain": false,
+  "novelty_established": false
+}
