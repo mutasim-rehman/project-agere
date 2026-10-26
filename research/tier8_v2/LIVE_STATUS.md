@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed27 October2026,00:58PKT.** Committed snapshot; raw serial state on SSD
+**Observed27 October2026,01:30PKT.** Committed snapshot; raw serial state on SSD
 is authoritative. Goal active. Useful method novelty remains unestablished.
 
 | Item | Verified state |
@@ -10,7 +10,7 @@ is authoritative. Goal active. Useful method novelty remains unestablished.
 | Fixed32-review diagnostic | SAS31/32; original MAS30/32; extended MAS27/32. Training-source probe, not natural QA |
 | Shared3B role serving | Four switches exactly match distinct-backbone logits/completions; sampled4.831GB→2.571GB (~46.8% reduction) |
 | Matched common actor fit02 | Complete:2 updates, exact prior adapter loaded, peak5.9996GB under10.5GB training cap; fit updates discarded |
-| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; both critic continuations complete48 updates/384 examples each and converted. both native proofs passed. Natural MAS control complete52/52 and independently replayed; crossed critic evaluation complete52/52; paired replay passes. Strong-original/common-actor evaluation running; SAS continuations pending |
+| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; both critic continuations complete48 updates/384 examples each and converted. both native proofs passed. Natural MAS control complete52/52 and independently replayed; crossed critic evaluation complete52/52; paired replay passes. Strong-original/common-actor evaluation complete; candidate loses one correct delivery, so adoption rule fails. Control SAS fit preparation running |
 | Novel quality gain | Not demonstrated |
 
 [Study launch](evidence/matched-serial-study-launch-01.json) fixes matched recipes,
@@ -103,3 +103,13 @@ not successful correction. Crossed costs170007 prompt/4900 generated tokens and
 RSS (crossed5.067GB). No stronger-original superiority or novel method established.
 [Paired result](MATCHED_MAS_SELECTION.md). Both systems still require strengthening
 and full planned audits before cross-tier freeze.
+
+
+Strong-original comparison COMPLETE: original reported4 correct/22 wrong/26 withheld
+versus crossed3/15/34; raw6/20/26 versus5/13/34. Same52 initial actor responses,
+plans/prompts/usage verified across all three conditions. Candidate prevents10
+original wrong deliveries but introduces3 new wrong and withholds1 correct. Net7
+wrong reduction comes with1 correct loss; predefined no-loss rule FAILS. Do not
+adopt or claim novel superiority. Original1929.1s/153639 prompt/4492 generated;
+candidate2136.1s/170007/4900. SAS continuation fit preparation is now running.
+[Original comparison and uncertainty](MATCHED_MAS_SELECTION.md).

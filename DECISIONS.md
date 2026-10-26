@@ -2975,3 +2975,23 @@ Not token-matched, no NN calls, no QA result or novelty. Do not adopt the naive
 variant; record negative finding rather than claim information retention is free.
 Active study packets/model/scoring untouched; reserved audit unopened. Reproducible
 experiment source in repository; candidate packets/logs/results on SSD.
+
+### 2026-10-27PKT — strong-original reference rejects adoption of MAS candidate
+
+Original critic/common actor52/52 complete, full frozen auditor passes. Extra
+manual check verifies identical initial actor plans/responses/prompts/usage across
+all THREE conditions, not just matched pair. Original reported4 correct/22 wrong/
+26 withheld, raw6/20/26; crossed3/15/34, raw5/13/34. Ten original wrong prevented,
+THREE new wrong introduced, ONE correct withheld. Net7 wrong reduction costs1
+correct delivery under both metrics. The no-loss requirement FAILS against the
+original. Do not redefine success using a post-hoc scalar error penalty or claim
+useful novel superiority by beating only regressed-extension continuation.
+
+Report-cluster95% wrong-rate delta[-0.254902,-0.018519]; correct delta[-0.058824,0].
+One seed/15 exploratory public-training-source reports, no semantic adjudication.
+Original uses153639 prompt/4492 generated tokens and1929.080 seconds, sampledpeak
+5,056,499,712 bytes under6.4GB. Crossed costs more; all official metrics retained.
+No policy/threshold/data/scoring changes. Original classic actor reference and
+fixed reserved audits remain pending. Serial controller proceeded to7B control
+SAS fit preparation after both planned MAS analyses passed verification. Goal
+active; common method is not ready for cross-tier freeze or novel-method claim.
