@@ -2862,3 +2862,12 @@ Family means/counts recombine correctly; model forwards were not independently
 rerun in audit. Positives repeat across families; one seed, no semantic adjudication.
 Keep frozen natural comparisons/strong original controls and metric definitions.
 No tuning, policy changes or novelty claim based on this result.
+
+Crossed critic deployed0→1→0 application proof completed and independently replayed
+with full source/model/prompt/adapter binding; memory replay4,560,994,304 bytes below
+6.4GB. Serial controller advanced to model_selection-control_mas:52 report-disjoint
+public training-source natural cases with real draft/verify/full-repair, shared3B
+backbone, common continued actor and control critic. Candidate and strong-original
+critic with same actor follow. Selection is not untouched confirmation or a claim
+of absence from pretraining; no natural outcomes consumed for tuning. All raw
+traces/token usage/memory remain on SSD for post-completion full replay.

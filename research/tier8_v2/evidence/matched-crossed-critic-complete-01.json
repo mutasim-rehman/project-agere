@@ -88,5 +88,36 @@
     "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-train-01/memory.jsonl": "18af9510a17624c09101dbb6aac2cd507148e5c2471a2314f3ea68bb12eaca12",
     "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-train-01/train/summary.json": "493e8957ba58e4364e0622fc04f730c2cd2f0c9d86e33c804e42cbb138443313"
   },
-  "limits": "Recorded teacher losses, not independently recomputed model forwards. Repeated validation positives across families; one seed. Crossed-family improvement and mutation-family regression do not establish natural utility or novelty."
+  "limits": "Recorded teacher losses, not independently recomputed model forwards. Repeated validation positives across families; one seed. Crossed-family improvement and mutation-family regression do not establish natural utility or novelty.",
+  "native_application_proof": {
+    "status": "independently_replayed",
+    "result": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-applied-proof-01",
+    "summary": {
+      "status": "complete",
+      "exit_code": 0,
+      "peak_tree_rss_bytes": 4560994304,
+      "cap_bytes": 6400000000,
+      "memory_breached": false,
+      "wall_seconds": 34.914145884999925,
+      "adapter_effect_proven": true,
+      "qa_gain_measured": false
+    },
+    "source_and_dataset_checks": {
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_proof.py": "524a931877551bc57ba90acd4f4a2eaffbe87ba80ba85f9592f996277a1354cd",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_run.py": "8bcd2429d213887c9e9a1ccdab37b18354d78a35b48ba75885406291c84790e2",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_runtime.py": "28243991d8ba9094f234f8bc0ceca44c476e1cb85662ca2475ccb44acf93035a",
+      "/home/mutasim/Desktop/project-agere/scripts/completion_tokenization.py": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_artifact_paths.py": "c4f342f83eb9f8e4cda870f1867dd86774d4822b03bc76721fb234d872184d89",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/crossed_mas_critic/examples.jsonl": "dfbcfa28f6a0d945e35f396388d79aacfb17f6c80d2a3918056d7f40fe8093b9",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-applied-proof-01/proof.json": "7d45d25e6c852bcefe7367177b0baa15cb1cb4883d2203033089ce844d79cb30",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-applied-proof-01/manifest.json": "aa72fc8876737f4a827a352b713ed90ff138ff75a0e7a8c6c53d022008244add",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-applied-proof-01/summary.json": "e709301a8c987e2ecffafbf4329441966910dc801de0107c287c7c5300f31c9d"
+    },
+    "input_sha256": {
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-applied-proof-01/proof.json": "7d45d25e6c852bcefe7367177b0baa15cb1cb4883d2203033089ce844d79cb30",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-applied-proof-01/summary.json": "e709301a8c987e2ecffafbf4329441966910dc801de0107c287c7c5300f31c9d",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-applied-proof-01/manifest.json": "aa72fc8876737f4a827a352b713ed90ff138ff75a0e7a8c6c53d022008244add",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-applied-proof-01/memory.jsonl": "c73802d0df3a9b925ff8ca3c59028f7c736c3cf7ba14e052753a44f30feeeb9e"
+    }
+  }
 }
