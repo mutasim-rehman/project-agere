@@ -2883,3 +2883,26 @@ not the frozen natural runner. Do not claim its46.8% RSS saving applies to these
 natural runs or that full natural equivalence was proven. Both backends explicitly
 disable mmap; retain measured process-tree RSS scope, not PSS/USS claims. No code,
 method, data, scoring, jobs or model behavior changed. Case outcomes were not read.
+
+### 2026-10-27PKT — first full natural control completed and independently replayed
+
+52/52 cases complete; all prompts, tokenizer usage, execution, review/repair,
+delivery, both metrics and every memory sample replay through frozen auditor.
+Peak5,059,756,032 bytes below6.4GB; actual162851 prompt/4662 generated tokens,
+2050.728 inference seconds. Reported3 correct deliveries/19 wrong/30 withheld;
+raw-reference5/17/30. Initial candidate correctness4 reported/6 raw. Do not compare
+this new report slice directly with earlier reused24 development outcomes.
+
+Thirty full repairs change11 programs but ALL52 per-case delivery/both-correctness
+indicators equal their no-repair prefixes. Extra64025 prompt/1555 generated tokens
+and786.384 seconds yield no measured outcome gain. Prefix is measured trajectory,
+not a fresh generation policy. Detailed independent replay saved on SSD with SHA.
+38 cases contain all annotated evidence;34 have wrong initial reported answers.
+This suggests substantial drafting/program binding weakness beyond simply missing
+annotated retrieval, but coverage is not independently adjudicated sufficiency.
+No cause or universal repair failure is established. Pure critic work cannot be
+assumed to overcome weak candidate generation; measure candidate repairs next.
+
+Crossed-critic natural run started automatically and is live. Preserve all recipes,
+metrics, prompts, original-critic/common-actor reference and reserved audit. No
+outcome-driven edits or novelty claim; lower teacher CE is not natural utility.

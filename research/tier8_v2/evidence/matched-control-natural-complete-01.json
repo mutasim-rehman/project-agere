@@ -1,0 +1,152 @@
+{
+  "status": "independently_replayed_complete_natural_policy",
+  "condition": "control_mas",
+  "partition": "model_selection",
+  "n": 52,
+  "result": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01",
+  "summary": {
+    "status": "complete",
+    "exit_code": 0,
+    "n": 52,
+    "expected": 52,
+    "peak_tree_rss_bytes": 5059756032,
+    "cap_bytes": 6400000000,
+    "case_successes": 4,
+    "delivered_correct": 3,
+    "delivered_incorrect": 19,
+    "repair_regressions": 0,
+    "repair_gains": 0,
+    "initial_case_successes": 4,
+    "withheld": 30,
+    "total_generated_tokens": 4662,
+    "raw_execution_matches": 6,
+    "source_supported_programs": 43,
+    "abstentions": 9,
+    "all_annotated_evidence_retrieved_cases": 38,
+    "metric_note": "case_success uses declared-unit reported answer; raw executable answer matches are separate"
+  },
+  "replayed_policy_views": {
+    "full": {
+      "generated_tokens": 4662,
+      "prompt_tokens": 162851,
+      "inference_seconds": 2050.7283970439994,
+      "truncated_stages": 0,
+      "metrics": {
+        "case_success": {
+          "correct_delivered": 3,
+          "wrong_delivered": 19,
+          "withheld": 30,
+          "candidate_correct": 4,
+          "precision_when_delivered": 0.13636363636363635
+        },
+        "raw_execution_match": {
+          "correct_delivered": 5,
+          "wrong_delivered": 17,
+          "withheld": 30,
+          "candidate_correct": 6,
+          "precision_when_delivered": 0.22727272727272727
+        }
+      }
+    },
+    "no_repair_prefix": {
+      "generated_tokens": 3107,
+      "prompt_tokens": 98826,
+      "inference_seconds": 1264.3447916339996,
+      "truncated_stages": 0,
+      "metrics": {
+        "case_success": {
+          "correct_delivered": 3,
+          "wrong_delivered": 19,
+          "withheld": 30,
+          "candidate_correct": 4,
+          "precision_when_delivered": 0.13636363636363635
+        },
+        "raw_execution_match": {
+          "correct_delivered": 5,
+          "wrong_delivered": 17,
+          "withheld": 30,
+          "candidate_correct": 6,
+          "precision_when_delivered": 0.22727272727272727
+        }
+      }
+    },
+    "ungated_initial_prefix": {
+      "generated_tokens": 2743,
+      "prompt_tokens": 58547,
+      "inference_seconds": 833.1022401949999,
+      "truncated_stages": 0,
+      "metrics": {
+        "case_success": {
+          "correct_delivered": 4,
+          "wrong_delivered": 48,
+          "withheld": 0,
+          "candidate_correct": 4,
+          "precision_when_delivered": 0.07692307692307693
+        },
+        "raw_execution_match": {
+          "correct_delivered": 6,
+          "wrong_delivered": 46,
+          "withheld": 0,
+          "candidate_correct": 6,
+          "precision_when_delivered": 0.11538461538461539
+        }
+      }
+    }
+  },
+  "all_prompts_execution_delivery_scores_token_ledgers_and_memory_replayed": true,
+  "measured_new_generation_calls": 0,
+  "input_sha256": {
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_natural_run.py": "3d777a2f3c11780f4c7ed373b9c906b192753b04792623eb70b9cb67658df4ac",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_run.py": "8bcd2429d213887c9e9a1ccdab37b18354d78a35b48ba75885406291c84790e2",
+    "/home/mutasim/Desktop/project-agere/scripts/evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_financial_pipeline.py": "dd7a230fddc87146dea85ccd5d46957935ae0b03bfbbdb7abebc90f1feb4d9b2",
+    "/home/mutasim/Desktop/project-agere/scripts/evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "/home/mutasim/Desktop/project-agere/scripts/evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_demos.py": "9cb3cb2eaad2f3eda5fc9a4e14c3fff9076c071d710b853fb0d700d336844918",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_demo_retrieval.py": "0a77a581ba43062bb036c27a732fa6cd63b642387ce26ebec69a6e88175d6b5f",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sketches.py": "8bc41ee3d3ecae07ee8b3c3bfb4fb4e080c7dd542826526ed82ec7695f6124ad",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_candidate_model.py": "6221f5fb765ec77f213b6a9ab665caa6b96ee8ea63fa95fd44da14bbc5cf5cf9",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_table_retrieval.py": "325162ffd73294091278c3862c7cc9bd4c569d3b74525db5716935b06058387b",
+    "/home/mutasim/Desktop/project-agere/scripts/program_graph.py": "3c8bbfa7960ad49c269fe2435a8596d90d0c71b72d05c54de85c1b5205051cc0",
+    "/home/mutasim/Desktop/project-agere/scripts/program_endpoints.py": "16db164e13ecc7a628cbef97346223a1e74c598a57fdfb777120e5f00eb3183f",
+    "/home/mutasim/Desktop/project-agere/scripts/completion_tokenization.py": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_runtime.py": "28243991d8ba9094f234f8bc0ceca44c476e1cb85662ca2475ccb44acf93035a",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_convert.py": "d4bf0355e2da6136a3884485c3fa6ab0afeba0c68ac97faa02061deb8f1d8e25",
+    "/home/mutasim/Desktop/project-agere/scripts/financial_review_protocol.py": "e79e12b6865c1b135611958132728c8813c065acea596f11d135e0b4cd3b86df",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_artifact_paths.py": "c4f342f83eb9f8e4cda870f1867dd86774d4822b03bc76721fb234d872184d89",
+    "/run/media/mutasim/Data/AGERE/weights/tier8_v2/qwen2.5-3b-instruct-q4_k_m.gguf": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl": "16ce1948a5238c5b36a14d1ecdc89e1395319f734a2da4523e64dccfce808437",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_proof.py": "524a931877551bc57ba90acd4f4a2eaffbe87ba80ba85f9592f996277a1354cd",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/common_mas_actor/examples.jsonl": "3fe70b688364884e95e8ade2b42072295ce53e86748f6518247ba8c3194bebb7",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-applied-proof-01/proof.json": "3efbf79d831130dfdf2b0fd7758769921f95926e8d730e8bc47c6908d0b66b7f",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-applied-proof-01/manifest.json": "4f6ef10e4e23a5253474231e1994d2da61a2f1b76c32814c0d826ea811a1cb5a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-applied-proof-01/summary.json": "32b8f71dce6a3947da5cdb44ce4ea89bc9e64d5fac1819a2f224b5243fe71cc6",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/control_mas_critic/examples.jsonl": "765c062371e2bdae1b1852734e767273520c563fb6894583941a760dbfd6ae02",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/proof.json": "de4f7b2375d95b1548ade194df13f8c2267462c18d1f84c45e55eb61a4e4a880",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/manifest.json": "b299c179ccdc2068fc5fc8c09abf6e67e03397d5291a6c7b8eead1d27c69e060",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-applied-proof-01/summary.json": "a33f36d10141385810539a25e84f6727ba045fe1d6d31437ec5933f9a4977f44",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01/manifest.json": "42ab5f683a91ef87f88687a8e7e4cd07abfc880dcd4c52aa28b492e0aeae058a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01/summary.json": "5e74d327dbe7f64e6966824ee16998beac06acec3a3d4d6ad13fea366397968a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01/cases.jsonl": "2e0f0e40b503c67788cf35021fd41eb49847b1a6f2f35d0897eac8e99f7cee89",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01/memory.jsonl": "fb2287560bebdd931d7664ea3aba47b802619438be4104702bc47158fc05c35c"
+  },
+  "limits": "Single condition on public training-source report holdout. No paired gain, original-baseline superiority, novelty, semantic adjudication or confirmation established. Prefix ablations reuse the measured trajectory.",
+  "repair_diagnostic": {
+    "attempts": 30,
+    "changed_programs": 11,
+    "each_case_delivery_and_both_correctness_indicators_unchanged_by_repair": true,
+    "extra_prompt_tokens": 64025,
+    "extra_generated_tokens": 1555,
+    "extra_inference_seconds": 786.3836054099997,
+    "replay_file": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01/independent-prefix-replay-01.jsonl",
+    "replay_sha256": "c0222c47ae44c53da4890f47c5073b4bf688566614da21d07ca2bedaedd7adb1"
+  },
+  "annotated_evidence_diagnostic": {
+    "all_annotated_evidence_retrieved": 38,
+    "initial_reported_correct_with_all_annotated_evidence": 4,
+    "limits": "Annotation coverage is not independently adjudicated evidence sufficiency; association does not isolate a causal error source."
+  }
+}

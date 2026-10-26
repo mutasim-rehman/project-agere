@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed26 October2026,23:47PKT.** Committed snapshot; raw serial state on SSD
+**Observed27 October2026,00:23PKT.** Committed snapshot; raw serial state on SSD
 is authoritative. Goal active. Useful method novelty remains unestablished.
 
 | Item | Verified state |
@@ -10,7 +10,7 @@ is authoritative. Goal active. Useful method novelty remains unestablished.
 | Fixed32-review diagnostic | SAS31/32; original MAS30/32; extended MAS27/32. Training-source probe, not natural QA |
 | Shared3B role serving | Four switches exactly match distinct-backbone logits/completions; sampled4.831GB→2.571GB (~46.8% reduction) |
 | Matched common actor fit02 | Complete:2 updates, exact prior adapter loaded, peak5.9996GB under10.5GB training cap; fit updates discarded |
-| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; both critic continuations complete48 updates/384 examples each and converted. both native proofs passed. First52-case natural MAS control evaluation running; candidate and strong-original comparisons follow. SAS continuations pending |
+| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; both critic continuations complete48 updates/384 examples each and converted. both native proofs passed. Natural MAS control complete52/52 and independently replayed; crossed critic evaluation running. Strong-original comparison and SAS continuations pending |
 | Novel quality gain | Not demonstrated |
 
 [Study launch](evidence/matched-serial-study-launch-01.json) fixes matched recipes,
@@ -68,3 +68,21 @@ only identical weight+adapter keys. Actor/critic adapters differ, so the live MA
 uses two instances. The separately proven single-backbone switching backend is
 not adopted in this study. Do not apply its46.8% sampled-RSS saving to natural
 runs. [Actual initialization evidence](evidence/natural-residency-scope-01.json).
+
+
+First natural control completed and independently audited:52 cases, sampled
+peak5.060GB under6.4GB,162851 prompt/4662 generated tokens,2050.7 inference seconds.
+Reported metric3 correct deliveries/19 wrong/30 withheld; executable-reference
+metric5/17/30. Initial candidate correctness4/52 reported,6/52 raw. No truncation.
+
+Thirty full repairs changed11 programs, but EVERY case retained the same delivery
+and both correctness indicators as the no-repair prefix. Extra64025 prompt tokens,
+1555 generated tokens and786.4 seconds bought no measured outcome gain here.
+38 cases contain all annotated evidence; only4 have correct initial reported
+answers. Annotation coverage is not independently adjudicated evidence sufficiency.
+This identifies a real weakness to investigate, not a novel successful method.
+Do not compare accuracy directly with the earlier reused24-case slice.
+
+[Full control replay evidence](evidence/matched-control-natural-complete-01.json).
+Candidate and original-critic comparisons remain required; no hyperparameter,
+training data, prompt or scoring changes are made from these control outcomes.
