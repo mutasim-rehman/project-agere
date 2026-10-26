@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed26 October2026,23:31PKT.** Committed snapshot; raw serial state on SSD
+**Observed26 October2026,23:46PKT.** Committed snapshot; raw serial state on SSD
 is authoritative. Goal active. Useful method novelty remains unestablished.
 
 | Item | Verified state |
@@ -10,7 +10,7 @@ is authoritative. Goal active. Useful method novelty remains unestablished.
 | Fixed32-review diagnostic | SAS31/32; original MAS30/32; extended MAS27/32. Training-source probe, not natural QA |
 | Shared3B role serving | Four switches exactly match distinct-backbone logits/completions; sampled4.831GB→2.571GB (~46.8% reduction) |
 | Matched common actor fit02 | Complete:2 updates, exact prior adapter loaded, peak5.9996GB under10.5GB training cap; fit updates discarded |
-| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; control critic full continuation complete48 updates/384 examples and converted, native proof running. Crossed critic/SAS continuations and natural comparisons pending |
+| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; both critic continuations complete48 updates/384 examples each and converted. Control native proof passed; crossed native proof running. Natural comparisons next; SAS continuations pending |
 | Novel quality gain | Not demonstrated |
 
 [Study launch](evidence/matched-serial-study-launch-01.json) fixes matched recipes,
@@ -46,3 +46,19 @@ validation of the common method at8GB.
 [Common actor completed](evidence/matched-common-actor-complete-01.json): exact initializer restored, all504 tensors changed;1204 memory samples replay to5,990,891,520-byte peak. Validation CE0.03393 is not natural accuracy. No QA improvement follows from training completion.
 
 [Control critic completed](evidence/matched-control-critic-complete-01.json):48 updates/384 examples,416 teacher-validation rows,6.012GB sampled training peak. Validation CE0.04778 overall (crossed0.08538, mutation0.01443, replay0.02233). Families repeat positives; these are not416 independent observations. No natural gain or novelty follows.
+
+[Crossed critic completed](evidence/matched-crossed-critic-complete-01.json): all48
+updates/384 examples and3772 memory samples replay; peak6.017GB. Matched validation
+bytes, initializer/base/recipe/runtime/counts verified identical. Recorded CE:
+
+| Family | Control | Crossed |
+|---|---:|---:|
+| Crossed validation192 rows |0.085376|0.038352|
+| Mutation validation192 rows |0.014434|0.025361|
+| Replay32 rows |0.022335|0.016940|
+| Overall416 rows |0.047784|0.030709|
+
+This is a training/validation tradeoff, not natural QA or a novel method result.
+Validation repeats positives; one training seed. Losses are recorded teacher
+forwards, not independently recomputed by the metadata audit. Strong-original
+critic comparisons remain mandatory.

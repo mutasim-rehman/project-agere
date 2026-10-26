@@ -2848,3 +2848,17 @@ training. Related-work matrix now distinguishes cache reuse, training changes,
 hardware and memory scopes from our limited fresh-prefill serving parity proof.
 Do not promote backbone sharing to a novel algorithm or claim paper superiority.
 No policy, dataset, optimizer or evaluation changes follow from this review.
+
+### 2026-10-26 — crossed critic complete; record validation tradeoff before QA
+
+Completed48 updates/384 examples, exact initializer and all504 tensors changed.
+Independent event/memory audit:3772 samples, peak6,017,060,864 bytes below10.5GB;
+host reserve preserved. Full conversion completed and native proof running.
+Control/candidate validation rows verified byte-identical; initializer,base,recipe,
+counts and runtime identical. Recorded teacher CE drops overall0.047784→0.030709,
+crossed0.085376→0.038352 and replay0.022335→0.016940, while mutation worsens
+0.014434→0.025361. Do not hide this tradeoff or call it natural QA improvement.
+Family means/counts recombine correctly; model forwards were not independently
+rerun in audit. Positives repeat across families; one seed, no semantic adjudication.
+Keep frozen natural comparisons/strong original controls and metric definitions.
+No tuning, policy changes or novelty claim based on this result.

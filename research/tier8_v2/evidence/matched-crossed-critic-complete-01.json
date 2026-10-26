@@ -1,0 +1,92 @@
+{
+  "status": "audited_complete_training",
+  "result": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-train-01",
+  "summary": {
+    "status": "complete",
+    "mode": "train",
+    "optimizer_updates": 48,
+    "examples_processed": 384,
+    "initializer_exactly_loaded": true,
+    "initializer_tensor_count": 504,
+    "changed_adapter_tensors": 504,
+    "trainable_parameters": 14966784,
+    "last_training_loss": 0.07435287492262432,
+    "validation_teacher_forced_loss": 0.03070918698498942,
+    "validation_by_family_task": {
+      "crossed_validation|critic": {
+        "n": 192,
+        "mean": 0.038351854906901885
+      },
+      "mutation_validation|critic": {
+        "n": 192,
+        "mean": 0.02536135949055544
+      },
+      "replay_critic|critic": {
+        "n": 32,
+        "mean": 0.016940144420118486
+      }
+    },
+    "wall_seconds": 774.3076122030002,
+    "gpu_peak_allocated": 3917670400,
+    "gpu_peak_reserved": 4227858432,
+    "adapter_files": {
+      "adapter_config.json": "a37ff6a5d72b30fea4627b34bec86fb1722493b505b732fb8a61b8a52cda71d5",
+      "adapter_model.safetensors": "6c15bbb3a91409223caa419769598119d3391d88334685c5c9672887f35ca15e",
+      "README.md": "e476ffb56903087ad94fa3c37ad5123f89db19dfd37b33c9d3332137983cfc9a"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "sampled_peak_tree_rss_bytes": 6017060864,
+  "memory_samples": 3772,
+  "minimum_host_available_bytes": 9851801600,
+  "identical_initializer_recipe_base_counts_runtime": true,
+  "validation_bytes_identical": true,
+  "validation_sha256": "e5299087a448574f60fa1347c59d722b83799021ee718ff1796103e98f935c27",
+  "control_summary": {
+    "status": "complete",
+    "mode": "train",
+    "optimizer_updates": 48,
+    "examples_processed": 384,
+    "initializer_exactly_loaded": true,
+    "initializer_tensor_count": 504,
+    "changed_adapter_tensors": 504,
+    "trainable_parameters": 14966784,
+    "last_training_loss": 0.018511694086555508,
+    "validation_teacher_forced_loss": 0.047784256270605195,
+    "validation_by_family_task": {
+      "crossed_validation|critic": {
+        "n": 192,
+        "mean": 0.08537606276157324
+      },
+      "mutation_validation|critic": {
+        "n": 192,
+        "mean": 0.014434068226942523
+      },
+      "replay_critic|critic": {
+        "n": 32,
+        "mean": 0.022334545586772947
+      }
+    },
+    "wall_seconds": 776.0378884090001,
+    "gpu_peak_allocated": 3917670400,
+    "gpu_peak_reserved": 4227858432,
+    "adapter_files": {
+      "adapter_config.json": "ac7404ac4710c9ae389e4bd8e43e1551971894cc1ecacf835c4b932749e1831b",
+      "adapter_model.safetensors": "d685904e07f3121f584b977496bd0dbcbec3821f011bd47b13469661f7febf20",
+      "README.md": "e476ffb56903087ad94fa3c37ad5123f89db19dfd37b33c9d3332137983cfc9a"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-train-01/plan.json": "96c7b37454f3213b2d2f3b1a9c053f8c30c252eb8c1e38c34c12b74d6cd674d6",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-train-01/state.json": "9cdb8b37d144f4aba85c3337ce4f9a0e2db31313bd6a0e9fdfa3a026f3486118",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-train-01/train/manifest.json": "c310722027a14eb3f8b3e5532a0cfd65c8deb02fc234913c60a91d504fbd7eff",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-train-01/train/summary.json": "10e0a8e386ce2e101e47acbc4f1648dfac5becaa109d71441f6ef45810a50554",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-train-01/train/events.jsonl": "cdcebe60848867ca9c5283ac5b1ffe42618c96645bca770edb39e8639c0b535e",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-train-01/memory.jsonl": "18af9510a17624c09101dbb6aac2cd507148e5c2471a2314f3ea68bb12eaca12",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-train-01/train/summary.json": "493e8957ba58e4364e0622fc04f730c2cd2f0c9d86e33c804e42cbb138443313"
+  },
+  "limits": "Recorded teacher losses, not independently recomputed model forwards. Repeated validation positives across families; one seed. Crossed-family improvement and mutation-family regression do not establish natural utility or novelty."
+}
