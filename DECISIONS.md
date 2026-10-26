@@ -2927,3 +2927,12 @@ and outside its frozen dependency set. Counts, detailed-record hashes and source
 identities independently checked. Raw records/logs on SSD; aggregate evidence
 and code committed. Any later training revision must use fitting/training reports,
 never these selection labels or outcome-specific rules. Goal remains active.
+
+Reference audit clarification: current reported_reference treats bare integer
+answers as exact1e-5, while decimal/percent answers allow declared-place rounding.
+Post-outcome source-only sensitivity finds2 of12 selection and4 of31 fitting
+reference disagreements within0.5 of a bare reported integer. Do not label these
+annotation errors; retain possibility of rounding conventions. No model rescoring,
+new inference, case removal or active metric change. This limits interpretation
+of disagreement counts and potential source-binding training eligibility bias;
+it does not rescue weak control results or establish useful novelty.

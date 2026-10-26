@@ -1,0 +1,57 @@
+{
+  "status": "offline_reference_convention_clarification",
+  "partitions": {
+    "model-selection-01": {
+      "cases_sha256": "d9c7ebe1adbc9bbfc42cfec8932472696febe9763ad527ce60a6c78b69e41e9d",
+      "count": 2,
+      "cases": [
+        {
+          "id": "AAL/2018/page_13.pdf-1",
+          "reported_answer": "41932",
+          "executable_answer": 41932.20339,
+          "absolute_difference": "0.20339"
+        },
+        {
+          "id": "AAL/2018/page_13.pdf-2",
+          "reported_answer": "41932",
+          "executable_answer": 41932.20339,
+          "absolute_difference": "0.20339"
+        }
+      ]
+    },
+    "fitting-01": {
+      "cases_sha256": "2c1e2a9826d8c18054b9dd3a86721a2bc9b6676ede1d92c2c9e84c895b397b45",
+      "count": 4,
+      "cases": [
+        {
+          "id": "GRMN/2006/page_91.pdf-2",
+          "reported_answer": "400",
+          "executable_answer": 399.73289,
+          "absolute_difference": "0.26711"
+        },
+        {
+          "id": "HUM/2015/page_46.pdf-3",
+          "reported_answer": "148",
+          "executable_answer": 148.27586,
+          "absolute_difference": "0.27586"
+        },
+        {
+          "id": "HUM/2016/page_133.pdf-3",
+          "reported_answer": "148",
+          "executable_answer": 148.27586,
+          "absolute_difference": "0.27586"
+        },
+        {
+          "id": "V/2019/page_49.pdf-1",
+          "reported_answer": "659916070",
+          "executable_answer": 659916069.96,
+          "absolute_difference": "0.04"
+        }
+      ]
+    }
+  },
+  "criterion": "Among existing reported_execution_disagreement rows, bare finite integer reported answer and abs(raw_exe_ans-reported_integer)<=0.5. This flags compatibility with nearest-integer rounding, not correct semantics.",
+  "new_model_inference": false,
+  "model_scores_changed": false,
+  "limits": "Post-outcome reference audit only. Existing integer-exact metric and all scores remain frozen. These counts must not be interpreted as annotation errors or justify removing cases."
+}

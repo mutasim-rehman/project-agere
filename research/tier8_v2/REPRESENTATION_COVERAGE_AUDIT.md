@@ -40,3 +40,10 @@ rules. The current critic comparison, original controls and audit remain unchang
 
 [Source and count verification](evidence/representation-coverage-audit-01.json).
 Raw per-case diagnostic records remain on SSD under runs/tier8_representation_audit.
+
+Reference-convention clarification: the existing reported metric gives bare integer
+answers exact tolerance1e-5, rather than nearest-integer rounding. Two of12
+selection disagreements and four of31 fitting disagreements fall within0.5 of a
+bare integer reported answer. Those may reflect rounding conventions; they are
+not established annotation mistakes. No alternative model scores were computed,
+no cases removed and no active metric changed. [Sensitivity evidence](evidence/reference-integer-rounding-sensitivity-01.json).
