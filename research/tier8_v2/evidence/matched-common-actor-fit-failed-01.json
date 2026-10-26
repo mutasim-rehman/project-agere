@@ -1,0 +1,18 @@
+{
+  "status": "failed_before_model_loading",
+  "run": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-fit-01",
+  "model_loaded": false,
+  "optimizer_updates": 0,
+  "diagnosis": "Legacy actor training_base.folder is repository-relative; source weight hashes are keyed by resolved absolute path. Helper failed its identity check before event/loading/model construction.",
+  "fix": "Resolve training_base.folder with artifact_path, exactly as preparation does; do not remove any hash checks.",
+  "recipe_data_and_initializer_unchanged": true,
+  "regression_tests_passed": 4,
+  "original_source_snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-fit-01/input-source-snapshots/tier8_v2_continue.py",
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-fit-01/plan.json": "517d1e4eb92c53de77ca9738bad1bc931266d9d47c9e9ff7403d8f5c3548c9ae",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-fit-01/state.json": "58577d7155feafb4b4d19abecd9af3c56722f9f6c05e9bdb9ba90e1a4cbe0c90",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-fit-01/worker.log": "a8a19abc3abc2aefea46247febe465d8fe043fc9ecdde5f4b4571895deba8d5f",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-fit-01/input-source-snapshots/tier8_v2_continue.py": "168e526173fd646c43454821f6cb91aba7053d5701cb286022b6f4943d5ca889",
+    "/run/media/mutasim/Data/AGERE/runs/continuation-worker-tests-03.log": "a130289321c9c36d96a7d5716291c955cd34038e3fa5b7532cff1e2613e9c1fd"
+  }
+}

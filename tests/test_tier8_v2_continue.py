@@ -11,17 +11,20 @@ from tier8_v2_continue import identity, RECIPE, discovery_gate, restore_exact_ad
 
 class ContinuationContract(unittest.TestCase):
     def test_only_base_shards_leave_deployment_rehash_inputs(self):
-        for profile, base in [('3b', {'folder': '/source', 'weight_file': 'model.safetensors'}),
-                ('7b', {'folder': '/source', 'artifacts': [{'path': 'weights/source/model.safetensors'}]})]:
+        folder = Path(__file__).resolve().parents[1] / 'weights/provenance-test-source'
+        weight = str(folder / 'model.safetensors')
+        for profile, base in [('3b', {'folder': str(folder), 'weight_file': 'model.safetensors'}),
+                ('3b', {'folder': 'weights/provenance-test-source', 'weight_file': 'model.safetensors'}),
+                ('7b', {'folder': str(folder), 'artifacts': [{'path': 'weights/source/model.safetensors'}]})]:
             plan = {'profile': profile, 'training_base': base, 'input_sha256': {
-                '/source/model.safetensors': 'base', '/initializer/adapter_model.safetensors': 'adapter',
+                weight: 'base', '/initializer/adapter_model.safetensors': 'adapter',
                 '/source/config.json': 'config', '/dataset.jsonl': 'data'}}
             inputs, retained = deployment_input_hashes(plan)
-            self.assertEqual(retained, {'/source/model.safetensors': 'base'})
+            self.assertEqual(retained, {weight: 'base'})
             self.assertEqual(inputs['/initializer/adapter_model.safetensors'], 'adapter')
             self.assertEqual(inputs['/source/config.json'], 'config')
-            self.assertEqual(plan['input_sha256']['/source/model.safetensors'], 'base')
-            del plan['input_sha256']['/source/model.safetensors']
+            self.assertEqual(plan['input_sha256'][weight], 'base')
+            del plan['input_sha256'][weight]
             with self.assertRaises(ValueError):
                 deployment_input_hashes(plan)
 

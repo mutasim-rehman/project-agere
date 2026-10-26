@@ -54,7 +54,7 @@ The plan/controller/worker still STREAM-hash every source shard. The deployment
 runtime validates manifest/adapter identity; its legacy input helper read_bytes()
 must never allocate a full HF source shard under the deployment memory cap.
 """
-    base = plan['training_base']; folder = Path(base['folder'])
+    base = plan['training_base']; folder = artifact_path(base['folder'])
     if plan['profile'] == '3b':
         weights = {str(folder / base['weight_file'])}
     else:

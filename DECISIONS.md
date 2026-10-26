@@ -2740,3 +2740,26 @@ unchanged6.4GB serving parity proof; no restart or concurrency. On exec the PID/
 create-time stay fixed but cmdline changes to the saved proof command; final proof
 summary is authoritative. No memory savings, quality gain,7B role pair or useful
 novelty is established by launching this waiter. Goal active.
+
+
+### 2026-10-26 — completed jobs audited after inactive chat; continue real matched experiment
+
+Both original processes are terminal, not restarted:8-job discovery COMPLETE at
+00:57UTC; subsequent shared3B proof COMPLETE. Independent full-vocab logit/32-token
+replays give exact0 differences for4 role switches and identical completion/usage;
+RSS distinct4.831GB→shared2.571GB under6.4GB. Known-method serving result, not QA gain.
+Extended critic full393 updates/3140 examples/382 validation is complete; fixed
+probe27/32,4/8 quartets versus original30/32,6/8 andSAS31/32,7/8. This is a small
+training-source regression, not statistical proof of universal harm. Targeted
+ceiling condition fails; existing matched intervention is permitted. Prioritize
+that existing controlled study and natural QA over adding7B role-allocation
+features near the original time window. Preserve strong original critic controls.
+
+First common-actor continuation fit failed BEFORE model loading and0 updates:
+legacy actor training-base folder is relative, while prepared hash keys are
+absolute. Normalize with artifact_path (same resolver as prepare), retain all
+source weight checks and preserve original01 logs/source.4 regression checks pass,
+including absolute/relative base identities and actual tiny CPU PEFT restoration.
+Canonical natural preparation04 supersedes03 with identical original jobs/data/
+metrics and exact old source retained; no natural study NN results consumed.
+A new fit output is required; never reuse failed01. No LR/data/threshold changes.

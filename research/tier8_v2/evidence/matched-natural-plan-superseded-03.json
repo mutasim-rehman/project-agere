@@ -1,0 +1,18 @@
+{
+  "status": "superseded_path_normalization_bugfix_only",
+  "old_plan": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-03/plan.json",
+  "old_plan_sha256": "5a9e1b0b3d553b86919fb7c2c66a8b558a3d1b4445a52793edf9c8503058a630",
+  "new_plan": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-04/plan.json",
+  "new_plan_sha256": "234db3720402de66e27f8f181007b6f49d70594acdf4b5ac6422d4d672ced111",
+  "changed_inputs": [
+    {
+      "path": "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_continue.py",
+      "old_sha256": "168e526173fd646c43454821f6cb91aba7053d5701cb286022b6f4943d5ca889",
+      "snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_method_study/matched-natural-03/input-source-snapshots/tier8_v2_continue.py",
+      "corrected_sha256": "9a1db53c39f2af93f6a9a5b074f65c944b1f75a8bbeec310378a3d8eeaf7acde"
+    }
+  ],
+  "all_original_jobs_data_and_metrics_unchanged": true,
+  "natural_study_nn_calls": 0,
+  "reason": "Normalize legacy relative HF base folder with the same artifact resolver used during preparation. First common-actor fit failed before model load/updates; fresh fit required, no implicit resume."
+}
