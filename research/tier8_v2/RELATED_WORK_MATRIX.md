@@ -135,3 +135,16 @@ change partially; training-token expenditure is also reported, not assumed equal
 [Learning with Instance Bundles for Reading Comprehension, full paper](https://aclanthology.org/2021.emnlp-main.584.pdf), sections2,2.1 and4.2, now inspected beyond the abstract. It normalizes scores over alternative questions, answers or their combinations and combines that objective with MLE. It also evaluates all-members-correct consistency and performs constrained question–answer assignment at inference. Therefore neither a two-by-two question/program bundle, complete-quartet metric, nor adding a question-contrast inference score establishes first use. Our current candidate uses ordinary verdict SFT on executable financial programs, not their joint contrastive objective; that difference alone is not a methodological advance. This makes matched natural-error utility essential and rules out presenting a renamed bundle loss or assignment step as novelty. No replication or superiority comparison has been performed.
 
 [VitaminC primary paper](https://arxiv.org/pdf/2103.08541), introduction inspected: paired evidence changes are designed to expose and improve evidence sensitivity. Its existence also prevents claiming that label-flipping counterfactual verification is new. The narrower possible contribution remains a measured finding about executable-program verification, shared-versus-separate adaptation and resource-constrained deployment. It remains a hypothesis until real outcomes and closest-work comparisons support it.
+
+
+## 26 October2026 — LRAgent method-level check after serving proof
+
+[Primary v2 paper](https://arxiv.org/html/2602.01053v2), §§2.1,3.1–3.3,4.1 and
+AppendixD.7 inspected. BaseShared/BaseLRShared reuse base/low-rank caches;
+shared-A changes training. Experiments use8B models on a48GB A6000. Appendix
+memory includes model/adapters and cache growth. These are different measurement
+and execution scopes from our sampled CPU process-tree RSS with Q4 models and
+fresh prefill. Our46.8% saving compares duplicate versus shared backbone on two
+prompts, not their cache methods. No speed/accuracy superiority comparison, cache
+replication, full-program equivalence or first-use result follows. Keep cache
+reuse out of the frozen study; numerical closeness across roles is not equality.

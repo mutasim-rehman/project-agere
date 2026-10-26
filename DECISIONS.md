@@ -2842,3 +2842,9 @@ crossed plans have identical initializer, base, optimizer recipe, training and
 validation counts, and runtime versions; crossed fit validated against its own
 full plan. These checks do not substitute for the worker's exact tensor restore
 or subsequent natural QA. All original natural comparisons remain queued.
+
+Method-level LRAgent review completed while the sole NN job was crossed-critic
+training. Related-work matrix now distinguishes cache reuse, training changes,
+hardware and memory scopes from our limited fresh-prefill serving parity proof.
+Do not promote backbone sharing to a novel algorithm or claim paper superiority.
+No policy, dataset, optimizer or evaluation changes follow from this review.
