@@ -2710,3 +2710,19 @@ proofs; never relabel joint SAS as independent critic. Same-task exposure/optimi
 and trainable-capacity controls remain required. Known LRAgent serving is baseline
 engineering, not useful novelty. No7B specialist pair has been implemented/adopted
 or evaluated. Goal remains active; no novel useful method demonstrated yet.
+
+
+### 2026-10-26 — serial dispatcher for prepared shared-role proof
+
+Previous goal turn was progress: frozen repair opportunity ceiling measured with
+no inference, candidate ruled out under its actual allocation, and serving-proof
+dependency corrected/pushed628c6ca. Current queue revalidated by PID/create-time/
+command and full source/data checks; extended critic continues finite updates.
+Implement exact after-success dispatch rather than overlapping NN work: require
+all8 frozen discovery job completions in journal order and independently reverify
+every result. Recheck exact command/source/input hashes and fresh output before
+exec-replacing the waiting process with the unchanged shared3B proof runner.
+No residual waiter/controller sits outside its complete-tree RSS monitor; native
+runner owns hardware lock/cap. No retry/resume and no model work while waiting.
+Two completion-gate checks pass. Real serving parity/memory remains unmeasured,
+7B critic pair remains absent, and no novel-method claim follows from orchestration.

@@ -68,3 +68,13 @@ label. A same-base role study must retain the classic3B MAS, single-policy7B SAS
 matched task exposure/optimization controls, and trainable-capacity differences.
 This is a conditional next research direction, not an implemented7B role method
 or a new algorithm claim. LRAgent remains a close established serving prior.
+
+
+The new `tier8_v2_shared_role_dispatch.py` can wait on the exact declared discovery
+controller identity, then require its final successful state, ordered completion
+of every job and independent result verification. All command/source/data inputs
+are frozen and rechecked after waiting. It exec-replaces the waiter with the
+unchanged proof runner, leaving no extra controller outside that runner's complete-
+tree monitor. The proof retains its own hardware lock,6.4GB cap and fresh-output
+checks. No retries/resume. Two targeted completion-gate checks pass. This dispatcher
+adds no serving-policy feature or quality claim; launch status is recorded separately.
