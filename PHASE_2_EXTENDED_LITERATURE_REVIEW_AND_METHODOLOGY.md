@@ -3,6 +3,7 @@
 **Project Title:** Spend It Together or Spend It Big? Multi-Agent Full-Precision Teams vs. Quantized Monoliths on Analyst Workstation RAM for Regulated Finance  
 **Repository:** Project Agere (`/workspace`)  
 **Document Type:** Phase 2 / Milestone 02 Required Deliverable  
+**Project members:** Mutasim ur Rehman and Ahmad Raza  
 **Date:** October 2026  
 **Status:** Complete  
 
