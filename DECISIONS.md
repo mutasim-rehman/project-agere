@@ -2906,3 +2906,24 @@ assumed to overcome weak candidate generation; measure candidate repairs next.
 Crossed-critic natural run started automatically and is live. Preserve all recipes,
 metrics, prompts, original-critic/common-actor reference and reserved audit. No
 outcome-driven edits or novelty claim; lower teacher CE is not natural utility.
+
+### 2026-10-27PKT — offline representation/reference diagnostic, no model change
+
+New standalone audit reproduces existing binding parser and reference conventions
+on selection52 and fitting73 only; no held-out diagnostic-audit partition consumed.
+Selection23 directly mappable (5 unique/18 ambiguous),16 unretrieved operands,
+4 unsupported ops,9 numeric literal parse failures. Fitting41 (19/22),24,4,4.
+These classify exact annotated programs/parser behavior, NOT task solvability.
+Equivalent arithmetic remains possible; no first-match semantic bindings emitted.
+All nine selection literal failures contain percentages. Reported/executable
+rules disagree on12 selection/31 fitting; unsupported answer syntax7/2. One
+concrete MO2016 reference conflicts19.8 versus122.875, left unresolved. Do not
+normalize percent strings into certified semantic truth or remove difficult cases.
+
+Unique-only source-binding SFT may have an exposure gap for natural ambiguous
+bindings; record as a hypothesis, not proven cause or novel successful method.
+No source/prompt/training/scoring changes to active study. New script is offline
+and outside its frozen dependency set. Counts, detailed-record hashes and source
+identities independently checked. Raw records/logs on SSD; aggregate evidence
+and code committed. Any later training revision must use fitting/training reports,
+never these selection labels or outcome-specific rules. Goal remains active.

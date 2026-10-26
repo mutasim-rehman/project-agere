@@ -1,0 +1,119 @@
+{
+  "status": "verified_offline_diagnostic",
+  "partitions": {
+    "model-selection-01": {
+      "root": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/model-selection-01",
+      "summary": {
+        "status": "complete_offline_diagnostic",
+        "n": 52,
+        "n_reports": 15,
+        "counts": {
+          "binding_status": {
+            "existing_parser_numeric_literal_failure": 9,
+            "unretrieved_operand": 16,
+            "directly_mappable": 23,
+            "unsupported_operation": 4
+          },
+          "reference_convention": {
+            "reported_execution_disagreement": 12,
+            "unsupported_reference": 7,
+            "number": 11,
+            "fraction": 22
+          },
+          "contains_percentage_literal": {
+            "True": 9,
+            "False": 43
+          }
+        },
+        "directly_mappable_unique": 5,
+        "directly_mappable_ambiguous": 18,
+        "operation_counts": {
+          "divide": 36,
+          "add": 19,
+          "subtract": 15,
+          "table_average": 2,
+          "table_max": 1,
+          "multiply": 6,
+          "greater": 1
+        },
+        "cases_removed": 0,
+        "model_forward_calls": 0,
+        "metrics_or_labels_changed": false,
+        "input_sha256": {
+          "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl": "16ce1948a5238c5b36a14d1ecdc89e1395319f734a2da4523e64dccfce808437",
+          "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_representation_audit.py": "a18550647dd6977d01978d51710f54330dce1f34171bdc9a1f9725bcb44fcbcc",
+          "/home/mutasim/Desktop/project-agere/scripts/program_binding_domains.py": "1c9e2fd6799ffa8164df31f72d1c85458698d3d5d10f8d31daeb229788ca3151",
+          "/home/mutasim/Desktop/project-agere/scripts/evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+          "/home/mutasim/Desktop/project-agere/scripts/evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_financial_pipeline.py": "dd7a230fddc87146dea85ccd5d46957935ae0b03bfbbdb7abebc90f1feb4d9b2"
+        },
+        "details_sha256": "d9c7ebe1adbc9bbfc42cfec8932472696febe9763ad527ce60a6c78b69e41e9d",
+        "limits": "Outcome-guided exploratory diagnostic, not preregistered. Direct mapping tests this existing parser and exact annotated program only, not existence of equivalent arithmetic or a task-solvability ceiling. Ambiguous numeric cells are not resolved or semantically adjudicated. Percent literals are flagged, not normalized. Reference disagreement uses existing reported-answer rules; neither reference is independently certified. No held-out audit partition is opened or examples relabelled."
+      },
+      "summary_sha256": "2a2982ed63750a90bf87f60917924377431c172b8d7ad63503b4c73babeb85a8"
+    },
+    "fitting-01": {
+      "root": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/fitting-01",
+      "summary": {
+        "status": "complete_offline_diagnostic",
+        "n": 73,
+        "n_reports": 32,
+        "counts": {
+          "binding_status": {
+            "unretrieved_operand": 24,
+            "unsupported_operation": 4,
+            "directly_mappable": 41,
+            "existing_parser_numeric_literal_failure": 4
+          },
+          "reference_convention": {
+            "fraction": 20,
+            "number": 16,
+            "reported_execution_disagreement": 31,
+            "percentage_points": 4,
+            "unsupported_reference": 2
+          },
+          "contains_percentage_literal": {
+            "False": 68,
+            "True": 5
+          }
+        },
+        "directly_mappable_unique": 19,
+        "directly_mappable_ambiguous": 22,
+        "operation_counts": {
+          "subtract": 29,
+          "divide": 59,
+          "table_average": 1,
+          "multiply": 8,
+          "add": 29,
+          "exp": 1,
+          "greater": 1,
+          "table_sum": 2
+        },
+        "cases_removed": 0,
+        "model_forward_calls": 0,
+        "metrics_or_labels_changed": false,
+        "input_sha256": {
+          "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/fitting-public.jsonl": "ef4200d887cc4078ae9ed2f84de07224d3be76181637371180e51bf00b34aa6d",
+          "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_representation_audit.py": "a18550647dd6977d01978d51710f54330dce1f34171bdc9a1f9725bcb44fcbcc",
+          "/home/mutasim/Desktop/project-agere/scripts/program_binding_domains.py": "1c9e2fd6799ffa8164df31f72d1c85458698d3d5d10f8d31daeb229788ca3151",
+          "/home/mutasim/Desktop/project-agere/scripts/evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+          "/home/mutasim/Desktop/project-agere/scripts/evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_financial_pipeline.py": "dd7a230fddc87146dea85ccd5d46957935ae0b03bfbbdb7abebc90f1feb4d9b2"
+        },
+        "details_sha256": "2c1e2a9826d8c18054b9dd3a86721a2bc9b6676ede1d92c2c9e84c895b397b45",
+        "limits": "Outcome-guided exploratory diagnostic, not preregistered. Direct mapping tests this existing parser and exact annotated program only, not existence of equivalent arithmetic or a task-solvability ceiling. Ambiguous numeric cells are not resolved or semantically adjudicated. Percent literals are flagged, not normalized. Reference disagreement uses existing reported-answer rules; neither reference is independently certified. No held-out audit partition is opened or examples relabelled."
+      },
+      "summary_sha256": "0a15fd7d03159b2446b554651c7ab7cde6b992a1ce13b00e56f35896ce9d9ad2"
+    }
+  },
+  "additional_source_sha256": {
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_demo_retrieval.py": "0a77a581ba43062bb036c27a732fa6cd63b642387ce26ebec69a6e88175d6b5f",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_artifact_paths.py": "c4f342f83eb9f8e4cda870f1867dd86774d4822b03bc76721fb234d872184d89"
+  },
+  "diagnostic_audit_partition_opened": false,
+  "model_or_scoring_changes": false,
+  "novelty_established": false,
+  "interpretation": "Unique-only target construction may have an exposure gap for natural ambiguous bindings; this is a hypothesis. Existing-parser failures are not a solvability ceiling. Unsupported reference syntax and reported/executable disagreements are retained under unchanged metrics."
+}
