@@ -1,0 +1,39 @@
+{
+  "status": "audited_complete",
+  "result": "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-extended-train8-01",
+  "metrics": {
+    "n": 32,
+    "n_quartets": 8,
+    "n_reports": 8,
+    "exact_label_correct": 27,
+    "exact_label_accuracy": 0.84375,
+    "gate_correct": 27,
+    "gate_accuracy": 0.84375,
+    "complete_exact_quartets": 4,
+    "complete_gate_quartets": 4,
+    "verdict_counts": {
+      "PASS": 19,
+      "FAIL": 13
+    },
+    "reference_accepts": 15,
+    "cross_negative_accepts": 4,
+    "prompt_tokens": 27814,
+    "generated_tokens": 224,
+    "truncated_reviews": 0,
+    "recorded_inference_seconds": 293.47291595504066,
+    "limits": "Exact label metric treats UNKNOWN/unparsed as incorrect; gate metric treats them as nonaccept, not explicit correct negative judgments. Training-source discovery, not natural QA or confirmation."
+  },
+  "memory_peak_replayed_bytes": 2490101760,
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-extended-train8-01/responses.jsonl": "95c61ba238d0768db82613d8f7898a459d3473af2f2c1ca314b9537ac25fbbfa",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-extended-train8-01/metrics.json": "9a18321c3adaad8905d50fabbec6357a80aeddb6666fc5b1fa8f205d0ab239d0",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-extended-train8-01/summary.json": "4f8678d0e70660fb00dfa50892cd7b1df34f0e18cb9cecdac7432a05b364d8cf",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-extended-train8-01/memory.jsonl": "fc397381d68f53c60c126d62e533ca0b3fad5f4b9e131c5ff7ca68f4dda25396",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_quartet_probe/mas-extended-train8-01/policy.json": "ef4fd7513b9ce6dca4de0ceeb0bf9a37e7dcdbf6ffdf0e2fe3167ccb6de6e38d"
+  },
+  "strong_original_exact_labels": 30,
+  "strong_original_whole_quartets": 6,
+  "qa_gain_demonstrated": false,
+  "novelty_established": false,
+  "limits": "Training-source8-report probe. Extended policy regresses on this fixed probe; no universal-harm or natural QA conclusion."
+}

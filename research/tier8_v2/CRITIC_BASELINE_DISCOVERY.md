@@ -11,7 +11,7 @@ negatives are new combinations. This is NOT held-out-report natural QA.
 |---|---:|---:|---:|---:|
 | Full joint7B SAS baseline |31/32|7/8|16/16|1/16|
 | Original3B MAS critic |30/32|6/8|15/16|1/16|
-| Extended3B MAS critic |Pending|Pending|Pending|Pending|
+| Extended3B MAS critic |27/32|4/8|15/16|4/16|
 
 SAS metrics independently replay from raw responses and exact frozen inputs.
 All reviews parse as explicit PASS/FAIL, no truncation. Sampled process-tree peak
@@ -38,7 +38,7 @@ is wrong. This is a diagnostic example, not independent semantic adjudication or
 a reason to hand-code this exact case into the method.
 
 SAS meets its component of the predeclared ceiling rule (at least30/32 exact labels
-and6/8 exact quartets). Wait for the EXTENDED MAS result: if BOTH meet it, do not
+and6/8 exact quartets). The EXTENDED MAS result is now below this threshold. If BOTH had met it, do not
 add a continuation merely to manufacture a gain on this family. The original MAS
 critic is a separate strong reference, not the rule's target MAS policy. Otherwise
 only the already prepared matched continuation can be considered, and natural
@@ -74,7 +74,24 @@ both numerical metrics is NOT independent proof of question/program semantics.
 [Original MAS diagnostic](evidence/mas3b-original-quartet-probe-01.json) ·
 [Unresolved reference case](evidence/critic-reference-label-issue-unp2016-01.json).
 The original MAS also meets the numerical threshold, but the predefined target
-stop rule still awaits the extended MAS result. Even if that extension regresses,
+stop rule targets the extended MAS result, which now fails its ceiling. As that extension regresses,
 never claim novelty by beating only a weakened baseline; retain original MAS and
 natural-error comparisons. The strong original results are reason to be cautious
 about adding another curriculum solely for this small artificial family.
+
+
+## Completed extended critic
+
+Full393-update training/conversion/native application proof completed. The same
+fixed32 inputs yield27/32 labels,4/8 whole quartets,15/16 reference accepts and4/16
+crossed-negative accepts. All reviews parse with no truncation. Raw prompt hashes,
+verdicts, usage and every memory sample independently replay; sampled critic-only
+peak2,490,101,760 bytes,27814 prefill/224 generated tokens,293.47 inference seconds.
+
+This is worse than original30/32 on this tiny fixed training-source diagnostic.
+It permits the predeclared matched continuation; it does not prove universal harm
+or justify claiming a contribution against a weakened baseline. Natural studies
+retain the original critic with the same continued actor, plus original actor and
+critic. No natural matched result exists at this checkpoint.
+
+[Audited extended probe](evidence/mas3b-extended-quartet-probe-01.json).

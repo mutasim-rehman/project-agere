@@ -2794,3 +2794,11 @@ recomputed:distinct4,830,547,968 versus shared2,570,973,184 bytes (~46.8% reduct
 max4,830,547,968 below6.4GB. This is two validation prompts/four switches; it does
 not establish full natural QA equivalence or first-use novelty. Raw vectors and
 memory samples remain on SSD; repository evidence contains their hashes.
+
+Extended critic32-response metrics independently replayed from raw JSON and pinned
+prompts:27/32 labels,4/8 whole quartets,15/16 positives and4/16 crossed negatives
+accepted. Every memory sample reproduces2,490,101,760-byte critic-only peak.
+Preserve30/32 original and31/32 SAS comparators and official labels. No natural
+QA inference or broad degradation claim follows from eight training-source reports.
+Serial study original-actor reproof completed successfully (4.525GB sampled peak),
+then advanced to full common-actor epoch preparation without a new manual launch.
