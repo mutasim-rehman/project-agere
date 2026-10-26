@@ -2802,3 +2802,15 @@ Preserve30/32 original and31/32 SAS comparators and official labels. No natural
 QA inference or broad degradation claim follows from eight training-source reports.
 Serial study original-actor reproof completed successfully (4.525GB sampled peak),
 then advanced to full common-actor epoch preparation without a new manual launch.
+
+### 2026-10-26 — common matched actor full epoch completed
+
+Original-trained actor reloaded exactly, fit updates discarded. Completed16 updates
+on128 examples; all504 LoRA tensors changed with finite/nonzero gradients. All16
+update events,128-example ledger and1204 memory samples independently replayed:
+peak5,990,891,520 bytes under10.5GB training cap, host reserve preserved.32-example
+teacher validation CE0.0339279 is not natural QA accuracy or a novelty result.
+Full conversion SHA4e21beca69dcf7bf2b9e89df7d189c74740d98acebe08501fd7e848bb7155d3e
+verified from actual GGUF. Serial controller advanced to native application proof;
+all matched MAS conditions will share this identical actor. No outcome-driven
+hyperparameter/dataset edits. Raw proof/training logs retained on SSD.

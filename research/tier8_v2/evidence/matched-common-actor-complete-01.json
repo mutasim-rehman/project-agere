@@ -1,0 +1,48 @@
+{
+  "status": "audited_complete",
+  "training_root": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-train-01",
+  "summary": {
+    "status": "complete",
+    "mode": "train",
+    "optimizer_updates": 16,
+    "examples_processed": 128,
+    "initializer_exactly_loaded": true,
+    "initializer_tensor_count": 504,
+    "changed_adapter_tensors": 504,
+    "trainable_parameters": 14966784,
+    "last_training_loss": 0.048229389649350196,
+    "validation_teacher_forced_loss": 0.033927908349141944,
+    "validation_by_family_task": {
+      "replay_drafter|drafter": {
+        "n": 32,
+        "mean": 0.033927908349141944
+      }
+    },
+    "wall_seconds": 242.78713553499995,
+    "gpu_peak_allocated": 4033195520,
+    "gpu_peak_reserved": 4227858432,
+    "adapter_files": {
+      "adapter_config.json": "677698d8fe8d1ceb29279a679d73e7e4cf1640d411e6f1d99e6dd861832de35e",
+      "adapter_model.safetensors": "c4c03211befc4b11b384c692eca7be53bac6b6923130efcfbd5423127499a2a3",
+      "README.md": "8977964cf96faf020869bf64f9c1961403349144eb4d1540f942078eafcc1dae"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "sampled_peak_tree_rss_bytes": 5990891520,
+  "memory_samples": 1204,
+  "minimum_host_available_bytes": 9862434816,
+  "converted_adapter_sha256": "4e21beca69dcf7bf2b9e89df7d189c74740d98acebe08501fd7e848bb7155d3e",
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-train-01/plan.json": "0f7d4e2f7a7b6a23560e89b10899fcacc5863c0f9efd3eb2f0c673c605ea3d9b",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-train-01/state.json": "f12965b27b49e1b61f9878d3f198ccae49eb5c669f3b817788ead932e128b7d2",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-train-01/train/summary.json": "9bda98771ad4ded9e99a555d5027b0e2bea1990ed90f7867ce7b21c6be2321b3",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-train-01/train/manifest.json": "18b8e042b7e8e42736b11532be7bb6f2e97d24892d08e2e13c1add4d904e8684",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-train-01/train/events.jsonl": "471aad01de11554ee1eb8b983e54c2456c5d13aae22091d6713603051c93bc53",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-train-01/memory.jsonl": "44104e4ce0f9c93c97a646ceab29e20d2588e1131ef21e4513384c764d18a9ed",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-converted-01/manifest.json": "69a90088eea84fda5092e41d5d3dc77ced69364084ec0ec9aa2fdcced208eb0a"
+  },
+  "natural_qa_gain_measured": false,
+  "novelty_established": false,
+  "fit_updates_inherited": false
+}
