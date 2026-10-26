@@ -2957,3 +2957,21 @@ Gain is initial gating in these measured trajectories; correct candidates remain
 buys no outcome change. Prefixes are not fresh independent runs. Absolute quality
 remains weak. Preserve original reference, SAS continuations, reserved audit and
 all criteria; do not freeze tiers or adopt/promote novelty based on this pair alone.
+
+### 2026-10-27PKT — first-row preservation fitting test has zero net coverage gain
+
+All six changed-delivery cases inspected together, including introduced error.
+Found baseline information loss: FinQA first row can itself contain data; packet
+serializer assumes it is a header, and atom parser omits header-side numbers.
+GRMN2008 buildings39 and DISCA2011 subscriber213 illustrate this. Annotated span
+coverage does not certify downstream quantity catalog coverage or semantics.
+Do not attribute every model error to this gap.
+
+Generic candidate adds column-labelled first-row contents to the same lexical
+retrieval universe, retains eight units, and runs on fitting73 ONLY. Direct mapping
+41→41: recovers GRMN2008/page84-1, displaces evidence for SNA2018/page33-2. No
+case-specific rule added. All IDs/limits/source/detailed packet hashes verified.
+Not token-matched, no NN calls, no QA result or novelty. Do not adopt the naive
+variant; record negative finding rather than claim information retention is free.
+Active study packets/model/scoring untouched; reserved audit unopened. Reproducible
+experiment source in repository; candidate packets/logs/results on SSD.

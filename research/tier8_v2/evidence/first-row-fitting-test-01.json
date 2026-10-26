@@ -1,0 +1,49 @@
+{
+  "status": "verified_offline_fitting_test",
+  "result": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/first-row-fitting-01",
+  "summary": {
+    "status": "complete_offline_fitting_test",
+    "n": 73,
+    "transitions": {
+      "unretrieved_operand -> unretrieved_operand": 23,
+      "unsupported_operation -> unsupported_operation": 4,
+      "mappable -> mappable": 40,
+      "numeric_literal_failure -> numeric_literal_failure": 4,
+      "unretrieved_operand -> mappable": 1,
+      "mappable -> unretrieved_operand": 1
+    },
+    "mappable_before": 41,
+    "mappable_after": 41,
+    "changed_status_cases": [
+      {
+        "id": "GRMN/2008/page_84.pdf-1",
+        "before": "unretrieved_operand",
+        "after": "mappable"
+      },
+      {
+        "id": "SNA/2018/page_33.pdf-2",
+        "before": "mappable",
+        "after": "unretrieved_operand"
+      }
+    ],
+    "model_forward_calls": 0,
+    "selection_or_reserved_audit_packets_changed": false,
+    "input_sha256": {
+      "/home/mutasim/Desktop/project-agere/research/tier8_v2/experiments/first_row_preservation.py": "381f0c5824f4244820af1fb5fc41e9ceba569f801c45a95f52eb214617f9e700",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/fitting-public.jsonl": "ef4200d887cc4078ae9ed2f84de07224d3be76181637371180e51bf00b34aa6d",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/selection.json": "a8c8ccc7890e3d112b0e62572e64546ef4c380461b4b59c7ae1dded047e73eab",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+      "/home/mutasim/Desktop/project-agere/scripts/evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+      "/home/mutasim/Desktop/project-agere/scripts/program_binding_domains.py": "1c9e2fd6799ffa8164df31f72d1c85458698d3d5d10f8d31daeb229788ca3151"
+    },
+    "details_sha256": "dd015a9cedf7ba1dae3145e28157b0609920cc2f6d17b516c3345d06e5425b6c",
+    "candidate_packets_sha256": "0fc3bcc33b9823af4fb92433acdb2ddad1ad5fbe83dbf8c755431eb20dc75fe2",
+    "decision": "No net direct-reference coverage gain; do not adopt or claim a QA improvement. Preserve existing frozen study. More careful information retention/budget controls would be needed.",
+    "limits": "Motivated by selection-case inspection, assessed on fitting reports only. Fixed eight source units, not token-matched. Existing-parser mapping is not task solvability or financial semantic correctness. No first-use novelty."
+  },
+  "summary_sha256": "4a828fe70fe2a34711eb21f9e4879e7983790cfc259ad1155278b14075053e42",
+  "candidate_case_ids_and_eight_unit_budget_verified": true,
+  "new_inference": false,
+  "adopted": false
+}

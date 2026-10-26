@@ -47,3 +47,25 @@ selection disagreements and four of31 fitting disagreements fall within0.5 of a
 bare integer reported answer. Those may reflect rounding conventions; they are
 not established annotation mistakes. No alternative model scores were computed,
 no cases removed and no active metric changed. [Sensitivity evidence](evidence/reference-integer-rounding-sensitivity-01.json).
+
+## First-row data loss and a negative fitting experiment
+
+Inspection of all six changed natural deliveries identified a concrete pipeline
+limitation: some first table rows contain data, not just column names. GRMN2008
+has first row buildings/improvements39; DISCA2011 embeds subscriber213 inside a
+header string. The serializer omits the first row as a unit; the quantity parser
+also ignores numeric text on the header side of a colon. Therefore annotated
+span coverage can coexist with missing quantities in the catalog. This is a
+baseline limitation, not proof that every fully retrieved error has this cause.
+
+Tested a generic variant on fitting73 only: serialize all first-row cells as
+column-numbered content, add it to the candidate universe and rerun the same
+question-only lexical top-eight selection. Direct-reference mapping stays41/73:
+one unretrieved case becomes mappable, while one mappable case loses needed
+evidence through displacement. Both transitions and every packet/hash are saved.
+This is eight-unit matched, not token-matched; no model or QA gain was measured.
+Do not adopt this naive variant or alter the active study. Lossless retention and
+retrieval/context packing require a stronger controlled proposal.
+
+[Negative fitting test](evidence/first-row-fitting-test-01.json) ·
+[Reproducible offline experiment](experiments/first_row_preservation.py).
