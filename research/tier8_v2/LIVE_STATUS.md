@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed26 October2026,23:14PKT.** Committed snapshot; raw serial state on SSD
+**Observed26 October2026,23:16PKT.** Committed snapshot; raw serial state on SSD
 is authoritative. Goal active. Useful method novelty remains unestablished.
 
 | Item | Verified state |
@@ -10,7 +10,7 @@ is authoritative. Goal active. Useful method novelty remains unestablished.
 | Fixed32-review diagnostic | SAS31/32; original MAS30/32; extended MAS27/32. Training-source probe, not natural QA |
 | Shared3B role serving | Four switches exactly match distinct-backbone logits/completions; sampled4.831GB→2.571GB (~46.8% reduction) |
 | Matched common actor fit02 | Complete:2 updates, exact prior adapter loaded, peak5.9996GB under10.5GB training cap; fit updates discarded |
-| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof running. Critic/SAS continuations and natural comparisons pending |
+| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; control critic fit preparation running. Critic/SAS continuations and natural comparisons pending |
 | Novel quality gain | Not demonstrated |
 
 [Study launch](evidence/matched-serial-study-launch-01.json) fixes matched recipes,

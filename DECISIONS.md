@@ -2814,3 +2814,10 @@ Full conversion SHA4e21beca69dcf7bf2b9e89df7d189c74740d98acebe08501fd7e848bb7155
 verified from actual GGUF. Serial controller advanced to native application proof;
 all matched MAS conditions will share this identical actor. No outcome-driven
 hyperparameter/dataset edits. Raw proof/training logs retained on SSD.
+
+Common actor native0→1→0 application check completed and independently replayed
+using the natural-study artifact auditor: adapter/model/source/prompt identities,
+repeat stability and actual effect verified. Full memory replay4,644,163,584 bytes
+below6.4GB; enclosing serial sampler separately measured4,691,857,408 bytes.
+Different enclosing scopes are retained, not substituted. No QA gain measured.
+Controller automatically proceeded to fixed control-critic fit preparation.
