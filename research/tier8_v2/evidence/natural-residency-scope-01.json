@@ -1,0 +1,47 @@
+{
+  "status": "verified_runtime_residency_scope",
+  "natural_result": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01",
+  "role_initialization_events": [
+    {
+      "role": "drafter",
+      "weights": "qwen2.5-3b-instruct-q4_k_m.gguf",
+      "shared_instance": false,
+      "adapter": {
+        "role": "drafter",
+        "purpose": "drafter",
+        "profile": "3b",
+        "file": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-converted-01/adapter-f16.gguf",
+        "sha256": "4e21beca69dcf7bf2b9e89df7d189c74740d98acebe08501fd7e848bb7155d3e",
+        "scale": 1.0,
+        "training_run": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-train-01/train",
+        "conversion_manifest": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-converted-01/manifest.json",
+        "conversion_manifest_sha256": "69a90088eea84fda5092e41d5d3dc77ced69364084ec0ec9aa2fdcced208eb0a",
+        "optimizer_updates": 16,
+        "runtime_handle_initialized": true
+      }
+    },
+    {
+      "role": "verifier",
+      "weights": "qwen2.5-3b-instruct-q4_k_m.gguf",
+      "shared_instance": false,
+      "adapter": {
+        "role": "verifier",
+        "purpose": "critic",
+        "profile": "3b",
+        "file": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-converted-01/adapter-f16.gguf",
+        "sha256": "b25e76673814e5f2fc3257f106566bce27c38d614bd5e8febf1b2d107eb84fb3",
+        "scale": 1.0,
+        "training_run": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-train-01/train",
+        "conversion_manifest": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-converted-01/manifest.json",
+        "conversion_manifest_sha256": "3f9a9b5454f2b16e831e2c75d0c69f3dafca651a249819b0dca50cc895f95ac5",
+        "optimizer_updates": 48,
+        "runtime_handle_initialized": true
+      }
+    }
+  ],
+  "natural_runner_sha256": "3d777a2f3c11780f4c7ed373b9c906b192753b04792623eb70b9cb67658df4ac",
+  "manifest_sha256": "42ab5f683a91ef87f88687a8e7e4cd07abfc880dcd4c52aa28b492e0aeae058a",
+  "interpretation": "The shared CLI option deduplicates only identical weight+adapter keys. Distinct trained actor and critic use two actual instances. SharedRoleModels switching is separately proven and not adopted by this frozen natural runner. No full natural quality equivalence or memory gain from switching is established here. Both source implementations use use_mmap=False. All resource claims remain sampled process-tree RSS, not PSS/USS.",
+  "evaluation_outcomes_read": false,
+  "method_or_data_changed": false
+}

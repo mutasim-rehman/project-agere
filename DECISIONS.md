@@ -2866,8 +2866,20 @@ No tuning, policy changes or novelty claim based on this result.
 Crossed critic deployed0→1→0 application proof completed and independently replayed
 with full source/model/prompt/adapter binding; memory replay4,560,994,304 bytes below
 6.4GB. Serial controller advanced to model_selection-control_mas:52 report-disjoint
-public training-source natural cases with real draft/verify/full-repair, shared3B
-backbone, common continued actor and control critic. Candidate and strong-original
+public training-source natural cases with real draft/verify/full-repair, two3B
+instances with common continued actor and control critic. Candidate and strong-original
 critic with same actor follow. Selection is not untouched confirmation or a claim
 of absence from pretraining; no natural outcomes consumed for tuning. All raw
 traces/token usage/memory remain on SSD for post-completion full replay.
+
+
+### 2026-10-26 — correct natural residency wording from actual initialization
+
+Prior launch paragraph incorrectly called the natural deployment a shared3B
+backbone. Corrected from source and both worker initialization records: shared
+CLI mode deduplicates only identical filename+adapter SHA. Different actor/critic
+adapters instantiate two models. SharedRoleModels is a separate proof backend,
+not the frozen natural runner. Do not claim its46.8% RSS saving applies to these
+natural runs or that full natural equivalence was proven. Both backends explicitly
+disable mmap; retain measured process-tree RSS scope, not PSS/USS claims. No code,
+method, data, scoring, jobs or model behavior changed. Case outcomes were not read.

@@ -62,3 +62,9 @@ This is a training/validation tradeoff, not natural QA or a novel method result.
 Validation repeats positives; one training seed. Losses are recorded teacher
 forwards, not independently recomputed by the metadata audit. Strong-original
 critic comparisons remain mandatory.
+
+Natural residency clarification: the frozen runner's `shared` flag deduplicates
+only identical weight+adapter keys. Actor/critic adapters differ, so the live MAS
+uses two instances. The separately proven single-backbone switching backend is
+not adopted in this study. Do not apply its46.8% sampled-RSS saving to natural
+runs. [Actual initialization evidence](evidence/natural-residency-scope-01.json).
