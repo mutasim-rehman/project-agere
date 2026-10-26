@@ -2821,3 +2821,15 @@ repeat stability and actual effect verified. Full memory replay4,644,163,584 byt
 below6.4GB; enclosing serial sampler separately measured4,691,857,408 bytes.
 Different enclosing scopes are retained, not substituted. No QA gain measured.
 Controller automatically proceeded to fixed control-critic fit preparation.
+
+### 2026-10-26 — control critic continuation completed
+
+Completed48 updates/384 examples from exact extended-critic initializer, all504
+LoRA tensors changed. Independent48-event/384-example and3778-memory-sample replay
+passes; sampled peak6,012,051,456 bytes under10.5GB training cap, reserve preserved.
+416 teacher-validation rows finish with CE0.0477843; crossed-family0.0853761,
+mutation0.0144341, replay0.0223345. Repeated positives across families mean these
+are not416 independent examples. Do not retune from this gap or treat CE as QA.
+Full conversion completed; serial controller advanced to native application proof.
+Crossed critic will reload the same initializer with same optimizer/steps and
+fixed dataset; fit updates discarded. No useful novelty or natural gain yet.
