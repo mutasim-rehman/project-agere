@@ -2936,3 +2936,24 @@ annotation errors; retain possibility of rounding conventions. No model rescorin
 new inference, case removal or active metric change. This limits interpretation
 of disagreement counts and potential source-binding training eligibility bias;
 it does not rescue weak control results or establish useful novelty.
+
+### 2026-10-27PKT — first matched natural MAS pair passes exploratory sample rule
+
+Crossed run52/52 completed; independent full paired auditor passes, including exact
+same initial actor responses/plans/prompts/usage and fixed datasets/recipe/source.
+Control reported3 correct/19 wrong/30 withheld → crossed3/15/34; raw5/17/30→5/13/34.
+Five wrong deliveries prevented but ONE new wrong introduced; no observed correct
+delivery lost. Net4 wrong reductions under both metrics passes predefined sample
+rule. It is not statistically confirmed:15-report clustered95% interval for wrong
+rate change[-0.173913,+0.020408] includes zero/harm. No population equivalence follows
+from degenerate zero correct-delivery changes, nor novelty from known contrastive
+training. The strong original critic/common actor reference is now running.
+
+Crossed sampled RSS5,066,604,544 bytes below6.4GB;170007 prompt/4900 generated tokens,
+2136.122 inference seconds.34 repairs change12 programs but all52 per-case delivery/
+both correctness indicators equal no-repair prefix; no observed correction gain.
+Gain is initial gating in these measured trajectories; correct candidates remain
+4/52 reported and6/52 raw. Extra repair work71181 prompt/1793 generated/874.959s
+buys no outcome change. Prefixes are not fresh independent runs. Absolute quality
+remains weak. Preserve original reference, SAS continuations, reserved audit and
+all criteria; do not freeze tiers or adopt/promote novelty based on this pair alone.

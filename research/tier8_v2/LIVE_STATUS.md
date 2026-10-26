@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed27 October2026,00:23PKT.** Committed snapshot; raw serial state on SSD
+**Observed27 October2026,00:58PKT.** Committed snapshot; raw serial state on SSD
 is authoritative. Goal active. Useful method novelty remains unestablished.
 
 | Item | Verified state |
@@ -10,7 +10,7 @@ is authoritative. Goal active. Useful method novelty remains unestablished.
 | Fixed32-review diagnostic | SAS31/32; original MAS30/32; extended MAS27/32. Training-source probe, not natural QA |
 | Shared3B role serving | Four switches exactly match distinct-backbone logits/completions; sampled4.831GB→2.571GB (~46.8% reduction) |
 | Matched common actor fit02 | Complete:2 updates, exact prior adapter loaded, peak5.9996GB under10.5GB training cap; fit updates discarded |
-| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; both critic continuations complete48 updates/384 examples each and converted. both native proofs passed. Natural MAS control complete52/52 and independently replayed; crossed critic evaluation running. Strong-original comparison and SAS continuations pending |
+| Matched continuation/natural QA | Serial50-job study01 launched; common actor complete16 updates/128 examples and converted; native application proof passed; both critic continuations complete48 updates/384 examples each and converted. both native proofs passed. Natural MAS control complete52/52 and independently replayed; crossed critic evaluation complete52/52; paired replay passes. Strong-original/common-actor evaluation running; SAS continuations pending |
 | Novel quality gain | Not demonstrated |
 
 [Study launch](evidence/matched-serial-study-launch-01.json) fixes matched recipes,
@@ -86,3 +86,20 @@ Do not compare accuracy directly with the earlier reused24-case slice.
 [Full control replay evidence](evidence/matched-control-natural-complete-01.json).
 Candidate and original-critic comparisons remain required; no hyperparameter,
 training data, prompt or scoring changes are made from these control outcomes.
+
+
+First matched natural pair complete52/52 each,15 reports. Same initial actor
+outputs/prompts/usage exactly verified. Reported deliveries control3 correct/19
+wrong/30 withheld versus crossed3/15/34; raw5/17/30 versus5/13/34. Five wrong
+deliveries prevented, ONE new wrong delivery introduced: net4 fewer wrong, with
+all observed correct deliveries retained. Report-cluster95% interval for change
+in wrong deliveries per case is[-0.1739,+0.0204], including no benefit and harm.
+The predefined exploratory sample gate passes; it is not statistical confirmation.
+
+Crossed34 repairs change12 programs but every per-case delivery/both correctness
+indicator still equals its no-repair prefix. The observed gain is initial gating,
+not successful correction. Crossed costs170007 prompt/4900 generated tokens and
+2136.1 inference seconds versus control162851/4662/2050.7. Both below6.4GB sampled
+RSS (crossed5.067GB). No stronger-original superiority or novel method established.
+[Paired result](MATCHED_MAS_SELECTION.md). Both systems still require strengthening
+and full planned audits before cross-tier freeze.
