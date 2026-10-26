@@ -39,7 +39,7 @@ Three CPU activation-contract tests pass: no policy accumulation or cached prefi
 failure clears state without fallback, missing handles cannot alter active state.
 Metadata preflight verifies the actual actor661/83-update and critic3140/393-update
 epochs with finite validation. These are not native switching or memory results.
-The NN proof is **prepared, not run or queued**. The frozen baseline queue remains
+The NN proof is **queued behind the verified discovery sequence, not yet run**. The frozen baseline queue remains
 untouched. Run serving proof afterward, then a small full-case replay if it passes;
 short continuation parity does not prove full natural QA equivalence.
 
@@ -78,3 +78,11 @@ unchanged proof runner, leaving no extra controller outside that runner's comple
 tree monitor. The proof retains its own hardware lock,6.4GB cap and fresh-output
 checks. No retries/resume. Two targeted completion-gate checks pass. This dispatcher
 adds no serving-policy feature or quality claim; launch status is recorded separately.
+
+
+[Launch02](evidence/shared-role-serving-launch-02.json) records the live serial
+waiter. Its PID remains the same when exec switches to the proof command; use the
+saved before/after command lines and the target proof summary to distinguish the
+states. The dispatcher state is waiting, with zero child/model workers observed.
+All8 discovery jobs must succeed first. No serving memory/parity gain is measured
+yet. Original plan01/02 preparation snapshots are preserved as historical records.

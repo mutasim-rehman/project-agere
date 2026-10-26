@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed 26 October 2026, 04:58 PKT.** Committed snapshot, not a live monitor.
+**Observed 26 October 2026, 05:17 PKT.** Committed snapshot, not a live monitor.
 
 | Item | Verified state |
 |---|---|
@@ -107,3 +107,9 @@ from this pool. [Opportunity evidence](evidence/local-repair-opportunity-01.json
 Prepared shared3B serving proof dependency is corrected to active8-job queue;
 not yet run. Its capacity-allocation implications remain conditional on actual
 native parity/RSS and honest strong-baseline controls; known serving is not novelty.
+
+Shared3B parity proof now has a LIVE serial dispatcher waiting for all8 discovery
+jobs to pass. No model child while waiting; runtime/command/source inputs pinned.
+Proof remains unmeasured. [Dispatch launch](evidence/shared-role-serving-launch-02.json).
+Extended critic last checked226/393 updates, finite loss/gradients. No concurrent
+NN work and no new serving/curriculum quality result yet.

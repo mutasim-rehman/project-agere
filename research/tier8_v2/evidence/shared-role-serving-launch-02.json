@@ -1,0 +1,35 @@
+{
+  "status": "launched_waiting_not_proven",
+  "pid": 98492,
+  "create_time": 1792973203.28,
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/dispatch-after-discovery-02/plan.json",
+  "plan_sha256": "4ceae707ef0f819d8caa68980bed9508361b364a3d702a2f332b7a71e39e444a",
+  "command_before_dispatch": [
+    "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+    "-u",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_shared_role_dispatch.py",
+    "--plan",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/dispatch-after-discovery-02/plan.json"
+  ],
+  "command_after_dispatch": [
+    "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_shared_role_proof.py",
+    "--actor-adapter",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/runs/adapter-3b-converted-02",
+    "--critic-adapter",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-converted-01",
+    "--actor-dataset",
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/data/deployment-sft-1024-02.jsonl",
+    "--critic-dataset",
+    "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_critic/critic_binary_sft_02/examples.jsonl",
+    "--weights-root",
+    "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+    "--out",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01"
+  ],
+  "source_commit": "f101d19fe60245a487c9e15e6a3e506931112775",
+  "nn_work_concurrent": false,
+  "actual_serving_proof_complete": false,
+  "measured_memory_gain": false,
+  "novelty_established": false
+}

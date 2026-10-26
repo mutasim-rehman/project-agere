@@ -2726,3 +2726,17 @@ No residual waiter/controller sits outside its complete-tree RSS monitor; native
 runner owns hardware lock/cap. No retry/resume and no model work while waiting.
 Two completion-gate checks pass. Real serving parity/memory remains unmeasured,
 7B critic pair remains absent, and no novel-method claim follows from orchestration.
+
+
+### 2026-10-26 — shared3B proof dispatched to wait for successful discovery
+
+Feature f101d19 committed/pushed, then frozen dispatch plan prepared on SSD and
+waiter PID98492/create-time1792973203.28 launched. Exact before/after exec commands,
+plan/source hashes and CPU runtime/library inputs saved. Verified live waiter is
+in waiting_for_discovery with ZERO descendants/model workers, so current extended
+critic training remains the only NN workload. All original queue inputs unchanged.
+After all8 successful jobs it independently verifies results and execs the exact
+unchanged6.4GB serving parity proof; no restart or concurrency. On exec the PID/
+create-time stay fixed but cmdline changes to the saved proof command; final proof
+summary is authoritative. No memory savings, quality gain,7B role pair or useful
+novelty is established by launching this waiter. Goal active.
