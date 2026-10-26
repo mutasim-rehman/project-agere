@@ -1,0 +1,17 @@
+{
+  "status": "launched",
+  "pid": 11866,
+  "create_time": 1793038056.11,
+  "command": [
+    "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+    "-u",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_matched_sequence.py",
+    "--plan",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-01/plan.json"
+  ],
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-01/plan.json",
+  "plan_sha256": "bd77ac7f57ca643fae4a7af7d6b7715ee6e7c8f0417fac834bb85667bcfee1f6",
+  "source_commit": "ecf63e99c16874554838e3a7fbf6cf595e032af1",
+  "jobs": 50,
+  "novelty_established": false
+}

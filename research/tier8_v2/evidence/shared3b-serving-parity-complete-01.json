@@ -1,0 +1,40 @@
+{
+  "status": "audited_completed",
+  "proof_root": "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01",
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01/proof.json": "dffe11d05d915b7ecb6eefa1af583061c7366f3baf5f36dc527b2bd7b9c7cf4d",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01/summary.json": "2d4aed24c53c891ddea75ad17b2eb5ab0ff458fa4989406cebf0a37e273f537f",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01/memory.jsonl": "b5ecff29c6a5cda30f0088e0fda574451bfa76a8feb6b5a7ca62be1dc44c587a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01/manifest.json": "395eeb2773d9cb001910466ebc0a39adc5cd83d1b4e70e7b0360297e195156da"
+  },
+  "full_vocab_exact_differences": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "phase_memory_maxima": {
+    "setup": 31035392,
+    "distinct": 4830547968,
+    "shared": 2570973184
+  },
+  "summary": {
+    "status": "complete",
+    "exit_code": 0,
+    "memory_breach": false,
+    "peak_tree_rss_bytes": 4830547968,
+    "phase_peak_tree_rss_bytes": {
+      "setup": 31035392,
+      "distinct": 4830547968,
+      "shared": 2570973184
+    },
+    "cap_bytes": 6400000000,
+    "measured_reasoning_gain": false,
+    "novelty_established": false
+  },
+  "actual_prefill_tokens": 10044,
+  "actual_generated_tokens": 117,
+  "limits": "Two bound validation prompts, four role switches, full next-token vector and32-token deterministic completions. Not full-program/natural QA equivalence, calibrated independence or novelty.",
+  "qa_gain_demonstrated": false,
+  "novelty_established": false
+}

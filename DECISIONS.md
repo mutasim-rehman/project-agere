@@ -2781,3 +2781,16 @@ secondary-prompt job. No retries, no automatic adoption, no overlapping NN work.
 Two freshness tests pass using unittest; runtime has no pytest installed. All
 natural prompts, labels and metrics remain unchanged. Training/serving proof is
 not QA improvement; novelty remains unestablished until real results support it.
+
+Serial study01 prepared with50 fixed jobs and launched PID11866/create-time
+1793038056.11, plan SHA bd77ac7f57ca643fae4a7af7d6b7715ee6e7c8f0417fac834bb85667bcfee1f6.
+No automatic claim/promotion on completion. Remote contained one literature-review
+member addition; fetched and merged it before launch, preserving both histories.
+Feature push then succeeded. Exact launch command and identities retained.
+
+Shared3B serving proof independently replayed again: all4 full-vocabulary vectors
+and completions/usage exactly match distinct-backbone references. Memory samples
+recomputed:distinct4,830,547,968 versus shared2,570,973,184 bytes (~46.8% reduction),
+max4,830,547,968 below6.4GB. This is two validation prompts/four switches; it does
+not establish full natural QA equivalence or first-use novelty. Raw vectors and
+memory samples remain on SSD; repository evidence contains their hashes.
