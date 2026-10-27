@@ -3262,3 +3262,33 @@ NN workers, prepared study and original scientific obligations unchanged. No new
 model forwards, neural integration, SFT parity/eligibility, QA gain or novelty.
 Known baseline control, not a second adopted method. Preserve failed/warning logs;
 vocab-only context warning does not constitute a measured inference overflow.
+
+### 2026-10-27 — first natural SAS control completes and full trace audit passes
+
+All52 selection questions/15 reports complete. Independent single-condition
+wrapper reuses the full existing prompt/source/adapter/native-proof/execution/
+score/token/memory auditor, with vocab-only tokenization and ZERO new generation
+calls. Full reported8 correct/23 wrong/21 withheld; raw10/21/21. No truncation;
+sampled tree RSS5,355,872,256 below6.4GB. New CLI and immutable replay/evidence
+retain reproducibility; no active/frozen inference source changed.
+
+Measured no-repair prefix reported8/21/23, raw10/19/23. Initial candidate matches
+10 reported/13 raw; final8/10. No candidate rescues under either metric, two
+reported and three raw regressions. Exactly two delivery transitions change:
+EW/2004/page_83.pdf-1 and-2, BOTH numerically correct under BOTH initial metrics,
+initial reviewFAIL, repaired answer wrong under both, final reviewPASS/delivered.
+Two questions share ONE report. This is a concrete conditional failure trace,
+not independent replication or semantic financial adjudication. Do not alter
+labels, exclude cases or feed these selection outcomes into training targets.
+
+Repair adds45,486 prompt tokens,972 generation tokens and1,144.825 recorded stage
+seconds (19.1min) without correct-delivery gain, while wrong deliveries increase
+by2 under both metrics. This is descriptive for this control/sample; no universal
+repair/architecture claim or first-use novelty. Final-candidate acceptance rates
+must not conceal correct drafts erased by repair. Prefixes are recorded trajectory
+ablations, not fresh alternative model runs. SAS original baseline, crossed pair,
+reserved audit and secondary prompts remain required.
+
+Original serial controller advanced normally to crossed-SAS and actual inference
+child is live. No model retry, overlapping neural job, candidate adoption or
+cross-tier freeze. Completed single-condition result is not paired method gain.

@@ -1,30 +1,23 @@
 # Research checkpoint
 
-**Observed 27 October 2026, 10:02 PKT.** Committed snapshot, not a live monitor. Goal active;
-useful novel-method improvement remains unproven. No cross-tier freeze.
+**Observed 27 October 2026, 10:44 PKT.** Committed snapshot, not a live monitor.
+Goal active; useful novel-method improvement remains unproven. No cross-tier freeze.
 
 | Item | Verified state |
 |---|---|
-| Original joint7B SAS adaptation | Complete476 updates/3801 examples; converted/application-proven |
-| Matched common3B actor | Complete16 updates/128 examples; converted/application-proven |
-| Matched3B critics | Both complete48 updates/384 examples; converted/application-proven |
-| Natural MAS selection | All three52-case runs complete; full trace/token/memory replay passes |
-| Matched control7B SAS | Complete64 updates/512 examples,448 validation; converted/application-proven |
-| Matched crossed7B SAS | Complete64 updates/512 examples and448 validation; converted/application-proven |
-| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix02 ACTIVE as one-shot user service PID90142; natural control SAS evaluation running (22/52 complete cases at snapshot) |
+| Original joint 7B SAS | 476 updates / 3,801 examples; converted/application-proven |
+| Matched common 3B actor | 16 updates / 128 examples; converted/application-proven |
+| Matched 3B critics | Both 48 updates / 384 examples; converted/application-proven |
+| Matched 7B SAS policies | Both 64 updates / 512 examples; converted/application-proven |
+| Natural MAS selection | All three 52-case conditions audited |
+| Natural control SAS | 52/52 complete; independent trace replay passed |
+| Natural crossed SAS | Running under live one-shot service PID90142 |
 
-The original controller's last state file is stale. A running claim requires its
-matching live PID/create-time, not that state file alone. No observed failure/exit
-was logged; cause is unknown. Original plan/journal/logs/results are preserved.
-All30 completed jobs were reverified; completed model work is not repeated. Recovery retains all20 pending commands,
-recipe, dataset, metric and scientific obligation.
+Training used a separate 10.5 GB allowance; deployment cap is 6.4 GB.
+Neither completed training nor lower teacher loss proves better answers.
+[Training comparison](MATCHED_SAS_CONTINUATION.md).
 
-Training allowance10.5GB is DISTINCT from6.4GB deployment cap. Completed control
-SAS training sampled8.275GB and native application proof5.140GB. Fit updates are
-discarded; every full epoch reloads the trained original initializer. Teacher
-validation loss is not natural QA. [Control SAS evidence](evidence/matched-control-sas-complete-01.json).
-
-## Natural MAS result: candidate not adopted
+## Natural MAS: candidate not adopted
 
 | Critic with identical common actor | Reported correct/wrong/withheld | Raw correct/wrong/withheld |
 |---|---|---|
@@ -32,63 +25,53 @@ validation loss is not natural QA. [Control SAS evidence](evidence/matched-contr
 | Crossed |3 /15 /34|5 /13 /34|
 | Strong original |4 /22 /26|6 /20 /26|
 
-Same52 initial actor plans/responses/prompts/usage match across all three critics.
-Crossed prevents5 control wrong deliveries but introduces1 new wrong: net4 fewer
-wrong with observed correct retained.15-report uncertainty includes zero/harm.
-Against ORIGINAL, crossed prevents10 wrong but introduces3 wrong AND withholds1
-correct. It FAILS the predeclared no-correct-loss rule. Do not claim novel overall
-superiority from the matched-control result. [Detailed comparisons](MATCHED_MAS_SELECTION.md).
+Crossed prevents five control wrong deliveries and introduces one: net four fewer.
+Report-level uncertainty includes zero/harm. Against the original it loses one
+correct answer, failing the predeclared no-correct-loss rule. Post-hoc attribution
+places the net control error reduction in missing-catalog-operand cases; this is
+not semantic-mechanism proof or a deployment routing feature. Both matched MAS
+repairs add work with no per-case delivery/correctness change versus their recorded
+no-repair prefixes. [Complete MAS comparisons](MATCHED_MAS_SELECTION.md).
 
-Both matched policies spend substantial repair work with zero per-case delivery/
-correctness change versus measured no-repair prefixes. Correct generation remains
-weak. Prefixes are trajectory ablations, not fresh independent generation runs.
+## Natural SAS: control complete, comparison pending
 
-## Other measured findings and limits
+| Control trajectory | Reported correct/wrong/withheld | Raw correct/wrong/withheld |
+|---|---|---|
+| Full |8 /23 /21|10 /21 /21|
+| No-repair prefix |8 /21 /23|10 /19 /23|
 
-Shared3B role switching separately matches distinct-backbone logits/completions on
-two prompts/four switches:4.831→2.571GB sampled RSS. Known-method engineering,
-not novel QA improvement. Frozen natural MAS uses TWO specialist instances; its
-shared CLI flag only deduplicates identical weight+adapter pairs. Do not apply
-that separate memory saving to natural runs.
+All prompts, scores, tokens, source execution, adapter proofs and memory samples
+replay. Sampled peak 5.356 GB below6.4 GB. Repair adds two wrong deliveries with
+no correct-delivery increase and 19.1 minutes recorded inference work. Two correct
+initial drafts rejected then wrong revisions accepted share one EW report; no
+population or novel-mechanism claim. Initial candidate matches are10 reported/13
+raw. Prefixes are measured trajectory ablations, not fresh neural runs.
+[Complete control evidence and limits](MATCHED_SAS_SELECTION.md).
 
-[Representation audit](REPRESENTATION_COVERAGE_AUDIT.md): source/catalog coverage
-and reference conventions limit interpretation. First-row data can be lost, but a
-naive preservation variant recovers1 fitting case and loses1: net coverage41/73
-unchanged. Not adopted. All cases and both existing metrics are retained.
+## Baseline engineering and representation diagnostics
 
-Remaining: natural SAS comparisons,
-original-classic actor baseline,49-case reserved paired audits and secondary SAS
-prompt checks. Both architectures still require controlled strengthening before
-16/32GB tiers. Code/decisions/aggregate evidence are pushed; raw logs, datasets,
-weights and detailed replay stay on the authorized SSD.
+Separate shared-3B serving proof: RSS4.831→2.571 GB on two prompts/four switches.
+Known engineering, not natural QA improvement. Frozen natural MAS still uses two
+specialist instances; do not apply the separate memory saving to those runs.
 
+Header and catalog-only prototypes both improve direct reference mapping41→45/73
+fitting cases. All added header quantities were already visible in original source
+spans: this is catalog representability, not newly retrieved raw cell text.
+Catalog-only preserves source text/old IDs but adds5,597 prompt tokens versus5,418
+for header; no aggregate token saving. Neither has a neural QA gain or adoption.
+[Representation audit](REPRESENTATION_COVERAGE_AUDIT.md).
 
-[Explicit suffix launch](evidence/matched-serial-study-launch-02.json): original01
-snapshots preserved; suffix02 plan SHA868e84dfdd61f0a7f23805e94eaa496af658f884766c121283d4b663c18b0327.
-Systemd user service agere-matched-study-02-20261027, Restart=no, parent is the user
-service manager. No recurring timer or model retry. Remaining commands/recipes
-exactly match original jobs31–50. Metadata preparation passed. Current stage is natural control SAS evaluation. Both matched SAS full epochs and
-native deployment proofs are complete. Full training reloaded the original adapter and discarded fit
-updates. Verify live service/PID plus saved state before reporting progress.
+Remaining: crossed-SAS selection/pair, stronger original baselines,49-case reserved
+paired audits, secondary SAS prompts and unresolved trained MAS prompt coverage.
+No claim either architecture is optimized. Prepared representation tests follow
+current obligations; no concurrent neural jobs or silent packet substitutions.
 
-[Full crossed SAS launch](evidence/matched-crossed-sas-epoch-launch-01.json): initializer/base/recipe/counts/runtime/caps verified equal to control and validation rows byte-identical.64 updates now complete; fit updates discarded. No completed natural SAS result yet.
+Original controller01 disappeared during metadata preparation; cause unknown.
+Explicit suffix02 reverified all30 completed jobs and retained20 pending commands
+exactly. One-shot user service agere-matched-study-02-20261027 (Restart=no) is live;
+verify its PID/create-time and actual children before reporting progress.
+[Recovery evidence](evidence/matched-serial-study-launch-02.json).
 
-[Immutable crossed SAS progress prefix](evidence/crossed-sas-live-progress-01.json): 6/64 updates, 48 examples, finite losses/gradients; sampled training peak 8.252GB under10.5GB. Historical prefix only; full training is now complete. No natural SAS gain established.
-
-Post-hoc MAS coverage strata show the matched-control net error reduction only in missing-operand cases; this is not a semantic-mechanism proof or deployment routing feature. All52 cases and original adoption criterion retained. [Stratification](MATCHED_MAS_SELECTION.md).
-
-
-[Crossed SAS completion audit](evidence/matched-crossed-sas-complete-01.json):64
-updates/512 examples, all392 tensors changed,13013 memory samples replay to8.263GB
-under10.5GB training cap. Final controller source verification passed. Conversion
-SHA b152ef4060570a8150cfb2f1f5af7bb8ffd915ff70c691ff22aef7a089d23c04 verified.
-Recorded weighted validation loss0.033459(control)→0.017700(crossed); crossed-family
-loss improves while mutation/replay-critic worsen. Drafter replay loss falls.
-This is teacher forcing, not a generated-QA result. [SAS training comparison](MATCHED_SAS_CONTINUATION.md).
-
-Crossed SAS native proof independently replayed: complete, exit0, sampled tree RSS
-5,140,795,392 bytes below6.4GB, with source/prompt/application checks retained.
-The service and actual inference child are live; control SAS has22/52 complete
-cases at this snapshot. Partial outcomes are not used for model selection.
-
-[Immutable natural SAS progress snapshot](evidence/control-sas-natural-progress-01.json): 22/52 cases, matching live controller and inference child; sampled peak so far 5.351GB. No partial quality interpretation.
+[Supervisor checkpoint](SUPERVISOR_UPDATE_2026-10-27.md) is the earlier dated
+snapshot; the control-SAS result above was completed afterward. Code/decisions/
+aggregate evidence are pushed; weights, data and detailed raw proof remain on SSD.

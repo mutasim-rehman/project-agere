@@ -44,3 +44,9 @@ checks remain required. Header-materialization prototype is not used in this stu
 
 [Control evidence](evidence/matched-control-sas-complete-01.json) ·
 [Crossed evidence](evidence/matched-crossed-sas-complete-01.json).
+
+
+Natural control SAS is now complete and independently replayed; crossed SAS is
+running. Control repair adds two wrong deliveries without a correct-delivery gain
+versus its recorded no-repair prefix. This single condition does not establish a
+paired training improvement. [Natural results](MATCHED_SAS_SELECTION.md).
