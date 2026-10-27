@@ -98,3 +98,29 @@ closest work, credible tasks, strong baselines and reproducible cross-tier resul
 Do not force a method-win narrative or declare the novelty objective achieved.
 
 [Reconciled completed comparisons](evidence/research-direction-audit-20261027-01.json).
+
+
+## Newly added statistical PDF: historical, exploratory interpretation
+
+The remote commitfb98604 adds `TIER_8_V2_STATISTICAL_EVALUATION_REPORT.pdf`;
+it was merged without changing the live inference sources. Its snapshot cites
+head2e154cb and explicitly says crossed SAS is still running. Therefore it omits
+the later completed SAS/original and reserved comparisons above. Its broad
+executive statement that no candidate passed the sample Pareto/no-loss rules
+needs updating in light of those completed SAS comparisons; this does not imply
+overall method adoption or novelty is proven.
+
+Treat its many significance calculations as exploratory. The same questions are
+paired and clustered within reports: unpaired tests or bounds over hypothetical
+case overlap are not substitutes for the actual paired records, and ordinary
+case-wise McNemar/binomial tests do not themselves account for report clustering.
+Numerous post-hoc tests without a predeclared testing family need explicit
+multiplicity caution. Do not select whichever Wald/bootstrap/exact test gives
+the most favorable verdict. We have not recomputed every PDF p-value here.
+
+The PDF's post-hoc association cannot establish a learned semantic mechanism;
+a probe at50% with p=1 cannot prove absence of all shortcuts. Exact quartet label
+balance is a construction property, which should be distinguished from empirical
+proof that all models/feature classes lack shortcuts. Shared-task loss changes
+are consistent with transfer, not proof of improved generated QA. Preserve this
+report as a historical source and use the updated raw-result audit for decisions.

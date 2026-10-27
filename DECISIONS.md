@@ -3324,3 +3324,14 @@ configs or reinterpret Q4 MAS as FP16. A bounded empirical contribution can be
 worth pursuing; no guarantee of novel algorithm/publication. This is a direction
 recommendation, not a completed goal, adopted method, declared freeze or command
 to stop/restart the live current evaluation. Existing jobs remain unchanged.
+
+
+Direction-audit push initially rejected because remote advanced. Fetched and
+mergedfb98604 (new statistical PDF only), preserving both histories and its bytes;
+no active inference source changed. Read all6 extracted PDF pages using PDF skill.
+Report snapshot is2e154cb/crossed-SAS-still-running, so it omits later comparisons.
+Its broad no-Pareto-pass executive statement needs updating; current SAS sample
+gates pass, while overall adoption/novelty remains unproven. Do not turn the PDF's
+case-wise/unpaired tests, post-hoc significance, p=1 shortcut probe or association
+into clustered confirmatory/equivalence/mechanistic proof. Review did not recompute
+every p-value. PDF hash and interpretation limits retained, source PDF unmodified.

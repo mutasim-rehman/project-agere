@@ -474,5 +474,13 @@
   },
   "new_neural_calls": 0,
   "new_full_weight_rehash": false,
-  "limits": "Review of existing completed full-audit outputs and current source hashes. Exploratory public training-source partitions, not clean publication confirmation. No new significance test or equivalence margin selected. Source precision/task scope differs from original headline."
+  "limits": "Review of existing completed full-audit outputs and current source hashes. Exploratory public training-source partitions, not clean publication confirmation. No new significance test or equivalence margin selected. Source precision/task scope differs from original headline.",
+  "reviewed_statistical_pdf": {
+    "path": "/home/mutasim/Desktop/project-agere/TIER_8_V2_STATISTICAL_EVALUATION_REPORT.pdf",
+    "sha256": "c214909018c9adea51edc346ac37e0404e76b1c436d7be591038c1a19ac8531a",
+    "pages": 6,
+    "snapshot_head": "2e154cb",
+    "full_p_value_recalculation_performed": false,
+    "scope": "Read all extracted pages; reviewed snapshot completeness, pairing/clustering, multiplicity and null/mechanism interpretation. Original PDF preserved unchanged."
+  }
 }
