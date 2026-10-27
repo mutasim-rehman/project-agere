@@ -3031,3 +3031,16 @@ discarded. Full candidate directory absent at this audit. Recovery prefix audit
 is live, not a neural workload. Three recovery tests additionally exercise explicit
 overlap/duplicate-exit corruption. Rewrite LIVE_STATUS as current snapshot so old
 running claims do not masquerade as present process state.
+
+Explicit suffix preparation passed:30 original jobs independently reverified,
+20 pending commands exactly match original suffix and recipe; all old frozen
+input SHA entries retained. New plan SHA868e84dfdd61f0a7f23805e94eaa496af658f884766c121283d4b663c18b0327,
+root matched-study-02. Original plan/state/journal/controller and interrupted-stage
+logs/memory copied byte-for-byte into original-snapshot; no original result edited.
+Launch as transient ONE-SHOT systemd user service agere-matched-study-02-20261027:
+active PID90142 with recorded create-time, parent user systemd, Restart=no. This
+separates process lifecycle from interactive shell; cause of old disappearance
+remains unknown. No recurring timer and no automatic failed model retry. Verified
+live job_started prepare-crossed-sas-epoch with unchanged command. Full candidate
+training has not started at this launch; no partial NN epoch is replayed. Service
+logs, invocation identity and plan/source proof retained. Scientific goal active.

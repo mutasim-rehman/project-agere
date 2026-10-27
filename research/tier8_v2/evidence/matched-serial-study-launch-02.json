@@ -1,0 +1,37 @@
+{
+  "status": "explicit_suffix_launched_after_verified_interrupted_metadata",
+  "pid": 90142,
+  "create_time": 1793071505.0,
+  "parent_pid": 4214,
+  "parent_command": [
+    "/usr/lib/systemd/systemd",
+    "--user"
+  ],
+  "command": [
+    "/home/mutasim/Desktop/project-agere/.venv/bin/python",
+    "-u",
+    "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_matched_sequence.py",
+    "--plan",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-02/plan.json"
+  ],
+  "service": "agere-matched-study-02-20261027.service",
+  "service_properties": {
+    "ActiveState": "active",
+    "SubState": "running",
+    "InvocationID": "b092826b0117465c8c43c8dd1cb7a1f8",
+    "Restart": "no",
+    "MainPID": "90142",
+    "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/agere-matched-study-02-20261027.service"
+  },
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-02/plan.json",
+  "plan_sha256": "868e84dfdd61f0a7f23805e94eaa496af658f884766c121283d4b663c18b0327",
+  "recovery_audit": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-02/recovery-audit.json",
+  "recovery_audit_sha256": "6dec3a4214fde34efd8710c8d2b37d5d9ac63bb9813dbaf8dc4c5da935b9d241",
+  "source_commit": "e5d4e14e2f0a8056c3abdff74f3967db3a487379",
+  "completed_jobs_reverified": 30,
+  "remaining_jobs": 20,
+  "all_remaining_commands_unchanged": true,
+  "completed_nn_repeated": false,
+  "automatic_restarts": false,
+  "novelty_established": false
+}

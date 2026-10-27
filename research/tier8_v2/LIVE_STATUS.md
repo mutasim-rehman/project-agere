@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed 27 October 2026, 08:21 PKT.** Committed snapshot, not a live monitor. Goal active;
+**Observed 27 October 2026, 08:27 PKT.** Committed snapshot, not a live monitor. Goal active;
 useful novel-method improvement remains unproven. No cross-tier freeze.
 
 | Item | Verified state |
@@ -11,12 +11,12 @@ useful novel-method improvement remains unproven. No cross-tier freeze.
 | Natural MAS selection | All three52-case runs complete; full trace/token/memory replay passes |
 | Matched control7B SAS | Complete64 updates/512 examples,448 validation; converted/application-proven |
 | Matched crossed7B SAS | Fit complete2 updates; full epoch has NOT started |
-| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix recovery is being audited; no model worker live at this observation |
+| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix02 ACTIVE as one-shot user service PID90142; crossed full-epoch metadata preparation running |
 
 The original controller's last state file is stale. A running claim requires its
 matching live PID/create-time, not that state file alone. No observed failure/exit
 was logged; cause is unknown. Original plan/journal/logs/results are preserved.
-Completed model work will not be repeated. Recovery retains every pending command,
+All30 completed jobs were reverified; completed model work is not repeated. Recovery retains all20 pending commands,
 recipe, dataset, metric and scientific obligation.
 
 Training allowance10.5GB is DISTINCT from6.4GB deployment cap. Completed control
@@ -61,3 +61,12 @@ original-classic actor baseline,49-case reserved paired audits and secondary SAS
 prompt checks. Both architectures still require controlled strengthening before
 16/32GB tiers. Code/decisions/aggregate evidence are pushed; raw logs, datasets,
 weights and detailed replay stay on the authorized SSD.
+
+
+[Explicit suffix launch](evidence/matched-serial-study-launch-02.json): original01
+snapshots preserved; suffix02 plan SHA868e84dfdd61f0a7f23805e94eaa496af658f884766c121283d4b663c18b0327.
+Systemd user service agere-matched-study-02-20261027, Restart=no, parent is the user
+service manager. No recurring timer or model retry. Remaining commands/recipes
+exactly match original jobs31–50. Current stage is metadata preparation, not full
+candidate training yet. Full training reloads the original adapter and discards fit
+updates. Verify live service/PID plus saved state before reporting progress.
