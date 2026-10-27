@@ -20,3 +20,11 @@ quantization, context/resource budgets and training recipe rather than changing
 methods after seeing tier outcomes. Separate bug fixes from scientific changes
 and rerun affected controls if a fix alters behavior. No architecture winner or
 publication readiness follows from an unfinished8GB pilot.
+
+
+Prompt coverage gate: old unadapted MAS128/256-analysis results do not establish
+optimal prompts after actor adaptation. Current secondary prompt jobs cover SAS
+only. Before claiming both systems are optimized, require a matched trained MAS
+prompt control; otherwise state the limitation and avoid best-achievable
+architecture claims. Preserve current sequence; no parallel neural work or
+outcome-guided replacement of its commands.

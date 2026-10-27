@@ -3190,3 +3190,18 @@ These are selectable catalog occurrences, NOT2,105 source cells or adjudicated
 semantic facts. Add-zero is a support probe, not a proposed answer or full
 question-unit/context proof. No new SFT eligibility/parity/QA gain, adoption or
 novelty inferred. Prepared future study and current matched evaluation unchanged.
+
+### 2026-10-27 — trained MAS prompt optimality remains untested
+
+Reviewed STATUS/SUPERVISOR_UPDATE and the actual matched suffix: old128/256
+analysis MAS comparisons used the unadapted3B actor, whereas current trained
+MAS uses zero analysis/demos. Secondary128-analysis/two-demo jobs currently cover
+SAS only. Poor unadapted prompt results do not prove the trained MAS prompt is
+optimal. Existing matched pair still isolates critic data under its declared
+fixed policy; do not promote that result to best-achievable architecture ranking.
+
+Keep the active sequence unchanged. Before cross-tier freeze or best-system
+claims, explicitly measure a matched trained MAS prompt control or disclose the
+unresolved limitation. Any follow-up must hold the common actor/critic profiles
+and prompts matched, retain all cases, and be serial after existing obligations.
+This is a baseline-coverage gap, not evidence for a new method or quality gain.
