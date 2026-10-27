@@ -187,6 +187,34 @@ def monitor_job(ssd, out, code, job, cap, cache, spec):
             raise ValueError('An existing worker is still live; do not overlap/restart it: ' + str(attempt))
         if state.get('memory_breach') or state.get('swap_breach'):
             raise ValueError('A memory breach invalidated this run; preserve it and use a new run ID')
+        if state.get('status') in ('starting', 'running'):
+            # A killed controller cannot write its final peak. Recover only
+            # durable sampled evidence, retaining the original state verbatim.
+            samples = []
+            memory_path = attempt / 'memory.jsonl'
+            if not memory_path.exists():
+                memory_path.touch()
+            if memory_path.exists():
+                lines = memory_path.read_bytes().splitlines(keepends=True)
+                valid = []
+                for index, line in enumerate(lines):
+                    try:
+                        sample = json.loads(line)
+                    except (ValueError, UnicodeDecodeError):
+                        if index != len(lines)-1 or line.endswith(b'\n'):
+                            raise ValueError('Corrupted historical memory samples')
+                        memory_path.with_name('memory.jsonl.torn-' + str(time.time_ns())).write_bytes(line)
+                        memory_path.write_bytes(b''.join(valid))
+                        break
+                    if sample['tree_rss_bytes'] > cap or sample.get('tree_swap_bytes', 0):
+                        raise ValueError('Historical memory/swap breach invalidated this run')
+                    samples.append(sample)
+                    valid.append(line)
+            write(attempt / ('state-before-recovery-' + str(time.time_ns()) + '.json'), state)
+            state.update(status='controller_lost_recovered',
+                peak_tree_rss_bytes=max((s['tree_rss_bytes'] for s in samples), default=0),
+                recovery_time=time.time(), recovery_scope='Durable samples only; no claim about unsampled RSS')
+            write(attempt / 'state.json', state)
     prior = completed_cases(folder / 'cases.jsonl', spec['dataset']['ids'], repair_tail=True)
     verify_inputs(ssd, spec, [job['tier']], cache)
     if psutil.virtual_memory().available < cap + 1000000000:

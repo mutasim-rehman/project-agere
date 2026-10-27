@@ -3337,6 +3337,14 @@ into clustered confirmatory/equivalence/mechanistic proof. Review did not recomp
 every p-value. PDF hash and interpretation limits retained, source PDF unmodified.
 ### 2026-10-27 — prepare Ubuntu offline higher-tier handoff; execution still gated
 
+Follow-up review found an abrupt controller exit could leave its historical RSS
+peak unwritten, breaking final replay after a valid resume. Resume now reconstructs
+that peak from durable samples, preserves the original state and any torn trailing
+sample, and refuses historical cap/swap violations. Added a fixture-only regression
+test; all11 tests passed in SSD `runs/lab-tiers-tests-07.log`. Test06 failed because
+the fixture used a negative synthetic PID; replaced with an absent positive PID.
+This fixes evidence recovery, with no change to the research inference method.
+
 User confirmed Ubuntu,32GB RAM and10GB GPU, and requested closure of the current
 8GB checks, exclusion of unvalidated prototypes and a reconciled protocol before
 moving tiers. Inspected authorized SSD `/run/media/mutasim/Data/AGERE`: all six

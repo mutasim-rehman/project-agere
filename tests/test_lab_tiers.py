@@ -158,6 +158,21 @@ print('Fixture only: no neural calls')
             with self.assertRaisesRegex(ValueError, 'memory breach invalidated'):
                 runner.monitor_job(self.root, out, code, job, 1000000, {}, spec)
 
+    def test_resume_recovers_peak_after_controller_loss_and_preserves_torn_sample(self):
+        code = self.fixture_code()
+        out = self.root / 'run'
+        attempt = out / 'tier16-sas-primary/attempt-0001'
+        attempt.mkdir(parents=True)
+        write(attempt / 'state.json', {'status': 'running', 'worker': {'pid': 999999999, 'create_time': 0}})
+        (attempt / 'memory.jsonl').write_bytes(b'{"tree_rss_bytes":123,"tree_swap_bytes":0}\n{"tree_rss')
+        spec = {'dataset': {'ids': ['a'], 'n': 1}}
+        job = {'tier': 16, 'arm': 'sas', 'profile': 'primary'}
+        with patch.object(runner, 'verify_inputs'), patch.dict(os.environ, {'AGERE_PYTHON_LAUNCHER': sys.executable}):
+            runner.monitor_job(self.root, out, code, job, 512000000, {}, spec)
+        self.assertEqual(read(attempt / 'state.json')['peak_tree_rss_bytes'], 123)
+        self.assertEqual(len(list(attempt.glob('state-before-recovery-*'))), 1)
+        self.assertEqual(next(attempt.glob('memory.jsonl.torn-*')).read_bytes(), b'{"tree_rss')
+
 
 if __name__ == '__main__':
     unittest.main()
