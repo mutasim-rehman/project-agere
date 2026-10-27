@@ -3377,3 +3377,15 @@ smokes are still pending until the ORIGINAL serial8GB sequence and paired audits
 finish; no neural job was overlapped. Freeze creation requires both current smoke
 proofs and closure hashes. Code preparation is a milestone, NOT a ready lab
 handoff, completed16/32GB evaluation, publication claim or achieved novelty goal.
+### 2026-10-27 — one-paste lab workflow requested
+
+User requested one unified command with the explicit SSD mount path and no later
+CLI steps. Added `scripts/lab_tiers_all.sh`: one detached, locked shell workflow
+runs preflight, serial16/32GB evaluations with automatic analysis, then export.
+Workflow log/status and all existing evidence remain on SSD. Errors stop the
+chain and retain their exit status; existing archives are never overwritten.
+No extra downloads, method changes or premature freeze. Four fixture-only checks
+passed for success and failure at preflight/run/export, saved as SSD
+`runs/lab-unified-workflow-tests-01.json`; bash syntax passed. Real-model checks
+remain pending behind the live8GB job. The command explicitly refuses an unsealed
+handoff. One paste cannot guarantee recovery from power loss or failed hardware.

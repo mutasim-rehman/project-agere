@@ -109,7 +109,8 @@ def seal(ssd):
     if destination.exists():
         raise ValueError('Refuse freeze overwrite')
     files = [*sorted((ROOT / 'scripts').glob('*.py')),
-        ROOT / 'scripts/lab_tiers.sh', *sorted((ROOT / 'configs/lab_tiers').glob('*'))]
+        ROOT / 'scripts/lab_tiers.sh', ROOT / 'scripts/lab_tiers_all.sh',
+        *sorted((ROOT / 'configs/lab_tiers').glob('*'))]
     protocol_doc = ROOT / 'research/lab_tiers/PROTOCOL.md'
     if not protocol_doc.is_file():
         raise ValueError('Write/review the prospective lab protocol before sealing')

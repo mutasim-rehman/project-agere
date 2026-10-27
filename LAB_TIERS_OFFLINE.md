@@ -13,10 +13,21 @@ The GPU is unused in this CPU-primary protocol.
 From the cloned project directory on the32GB Ubuntu lab PC:
 
 ```bash
-git pull --ff-only
-bash scripts/lab_tiers.sh preflight --tiers 16,32
-bash scripts/lab_tiers.sh start --tiers 16,32 --run-id lab-main-v1
+(
+  set -e
+  export AGERE_SSD_ROOT="/run/media/mutasim/Data/AGERE"
+  git pull --ff-only
+  bash scripts/lab_tiers_all.sh
+)
 ```
+
+This single paste starts a detached workflow: preflight, all16/32GB jobs,
+automatic replay analysis, then portable export. No follow-up command is needed
+on success. It writes `workflow.log` and `workflow-status.txt` in the run folder.
+The same paste resumes interrupted evaluations, provided the frozen inputs and
+host still match. A failed check stops the chain and leaves its reason on SSD;
+it cannot promise unattended recovery from power loss or hardware failures.
+Keep the PC awake and SSD connected. Git access may require existing credentials.
 
 The launcher detects exactly one mounted `AGERE` directory under `/media/$USER`
 or `/run/media/$USER`. If needed, set its actual location once:
