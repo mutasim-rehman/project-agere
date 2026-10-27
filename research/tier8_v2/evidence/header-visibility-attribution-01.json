@@ -1,0 +1,23 @@
+{
+  "status": "complete_offline_source_visibility_attribution",
+  "result": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-visibility-attribution-01",
+  "n": 73,
+  "counts": {
+    "added_atom_occurrences": 183,
+    "added_occurrences_numeric_in_same_original_span": 183,
+    "first_row_cell_occurrences": 262,
+    "empty_first_row_cell_occurrences": 22,
+    "nonempty_cell_literals_in_same_original_span": 240
+  },
+  "per_case_counts_reconciled": true,
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-visibility-attribution-01/summary.json": "1258bd1bfc3291df9699ce567aeae827a5018bcd130b0db80715babc5c2589c3",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-visibility-attribution-01/cases.jsonl": "53186d007feb78905bd95e30e6ee7df9df2e87383412f8cc3fde2851c327d5b3",
+    "/run/media/mutasim/Data/AGERE/runs/header-visibility-attribution-01.log": "ee416020102eb1c26dbe51664abbea48fc7764a9a13c69d1cded3ad808af3ed7"
+  },
+  "interpretation": "Every added catalog occurrence is already numerically visible in the same baseline span; every nonempty first-row cell string is already present there. Prototype changes selectable program operands and repeats source text with explicit first-row cues. Four earlier coverage recoveries are catalog representability changes, not newly retrieved raw cell literals.",
+  "limits": "Fitting-only source visibility diagnostic. Numeric and substring presence are not semantic grounding or a strict information-equivalence proof: explicit structural cues, catalog/grammar options and token repetitions differ. No QA gain or novel mechanism demonstrated. Existing neural plan remains prepared and unexecuted.",
+  "neural_forward_calls": 0,
+  "novelty_established": false,
+  "adopted": false
+}

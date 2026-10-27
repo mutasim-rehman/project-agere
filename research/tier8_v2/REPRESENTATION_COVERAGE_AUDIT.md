@@ -117,3 +117,26 @@ with initial generation as primary and delivery/prefix/repair costs reported.
 Separate selection/source namespace passes the unchanged runner's checks. No
 model calls or active-sequence changes. No selected/reserved packets transformed.
 Source/content/checkpoint exclusion guards tested; neural results still pending.
+
+
+## Header recovery is catalog access, not newly retrieved raw cell text
+
+A further fitting-only attribution check finds that all 183 added quantity
+occurrences are already numeric tokens in the SAME original selected source
+span. All 240 nonempty first-row cell strings are also literally present there
+(262 appended cell occurrences total, 22 empty). All 73 cases retained. Thus the
+four reference-coverage recoveries concern selectable program operands; they
+must not be described as recovery of previously unseen raw cell text.
+
+The existing diagnostic enum `unretrieved_operand` means missing from the current
+quantity catalog, not necessarily absent from the raw model-visible evidence.
+Keep its frozen labels and all existing scores unchanged. Repeated source text,
+explicit first-row cues, catalog options and grammar still differ, so numeric/
+substring presence alone does not prove strict information equivalence or a
+semantic mechanism. The prepared neural test measures this bundled representation
+change. A positive result would require a catalog-only control before attributing
+the effect specifically to catalog access instead of repetition/structural cues.
+No new neural calls, adoption or novelty claim.
+
+[Attribution evidence](evidence/header-visibility-attribution-01.json) and
+[reproducible diagnostic](experiments/header_visibility_attribution.py).

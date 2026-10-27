@@ -3223,3 +3223,20 @@ no partial outcomes used, no novel-method adoption, architecture winner,8GB
 training claim or cross-tier freeze. Preliminary report is possible; a convincing
 new-method claim is not supported yet. This communication does not replace any
 remaining evaluation or the original novelty objective.
+
+### 2026-10-27 — distinguish catalog omission from raw evidence omission
+
+Completed fitting73 visibility attribution: all 183 new selectable quantity
+occurrences already exist numerically in their SAME baseline span; all 240
+nonempty first-row cell strings already appear there.262 appended cell occurrences
+include22 empty. Per-case counts/unique IDs and pinned inputs rechecked; raw
+proof/log retained on SSD. Four earlier reference-mapping recoveries are catalog
+representability changes, not newly retrieved raw cell literals.
+
+Do not relabel frozen `unretrieved_operand` categories, rescore/filter cases or
+claim semantic/information equivalence from numeric presence. First-row cues,
+repetition, selectable catalog and grammar still change. If the prepared neural
+test improves, require a catalog-only control before assigning the effect to
+catalog access alone. Current original neural study and prepared packets unchanged;
+no new model calls, adopted method or established novelty. This narrows causal
+interpretation and prevents an incorrect retrieval-improvement claim.
