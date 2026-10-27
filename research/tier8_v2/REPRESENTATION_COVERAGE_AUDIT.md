@@ -109,3 +109,11 @@ Only4/23 directly mappable initial drafts are reported-correct, so representatio
 repair alone cannot be assumed to solve generation. These reference-conditioned
 categories are unavailable at deployment and must never be used as routing rules
 or exclusions. All52 original cases remain in primary results. [Full strata](MATCHED_MAS_SELECTION.md).
+
+
+[Controlled neural test prepared](HEADER_MATERIALIZATION_STUDY.md): four proposed
+fitting73 full runs use identical frozen checkpoints/settings within architecture,
+with initial generation as primary and delivery/prefix/repair costs reported.
+Separate selection/source namespace passes the unchanged runner's checks. No
+model calls or active-sequence changes. No selected/reserved packets transformed.
+Source/content/checkpoint exclusion guards tested; neural results still pending.

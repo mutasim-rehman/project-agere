@@ -3135,3 +3135,29 @@ control selection has2/52 completed cases at09:39 PKT. Do not interpret partial
 quality, change the fixed sequence, or start concurrent neural work. Both matched
 SAS epochs/proofs are complete; natural comparisons, originals, reserved audits
 and secondary prompts remain. Candidate not adopted; novelty not established.
+
+### 2026-10-27 — prepare controlled source-retention neural test, without launching
+
+Created separate fitting73 source/selection namespace and four proposed commands
+(original/header × MAS/SAS), source hashes and source-only packet regeneration
+verified. Existing natural runner partition checks pass; original active files
+and sequence unchanged. All command settings/checkpoints within architecture
+match except input/output. MAS common actor + ORIGINAL critic; original joint7B
+SAS. No checkpoint chosen from future fitting outcomes.292 proposed case-arms,
+ZERO model calls; all four output directories absent. Run only after current
+matched sequence successfully completes; do not skip originals/reserved/secondary.
+
+Primary is initial-prefix reported/raw correctness without loss under either and
+at least one strict gain; separately per architecture. Full delivery risk/coverage,
+prefix/repair costs and uncertainty still reported. No threshold, metric, case or
+checkpoint changes after outcomes. Fitting was structurally explored; additional
+source information/tokens are explicit, not a token-matched algorithmic or novelty
+claim. Drop-in frozen policies, not materialization-aware SFT. No adopted method.
+
+New representation-specific auditor reuses full trace/source/proof/memory/token/
+score replay, permits only the declared packet transformation and refuses policy
+confounds. Six tests pass, including no exclusion, no invented source and unchanged
+checkpoint guards. Initial pytest attempt failed because package absent; retained
+log and used standard-library unittest without installing dependencies. Complete
+neural traces absent, so no success-path QA evidence yet. Prepared study/decisions
+are an additional baseline component, not completion of the novelty objective.

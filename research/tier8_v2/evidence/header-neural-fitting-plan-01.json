@@ -1,0 +1,40 @@
+{
+  "status": "prepared_and_metadata_checked_not_executed",
+  "plan": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-neural-fitting-plan-01/plan.json",
+  "n_fitting_cases": 73,
+  "architectures": [
+    "mas",
+    "sas"
+  ],
+  "representation_conditions": [
+    "control",
+    "header"
+  ],
+  "proposed_case_arms": 292,
+  "inference_commands_same_except_data_and_output": true,
+  "all_inputs_rehashed_and_native_partition_checks_pass": true,
+  "active_study_changed": false,
+  "all_run_output_paths_absent": true,
+  "neural_forward_calls": 0,
+  "novelty_established": false,
+  "adopted": false,
+  "tests": {
+    "passed": 6,
+    "runtime": "unittest",
+    "scope": "Existing materialization tests plus case-exclusion, invented-source and checkpoint-confound rejection. No completed neural trace available; no success-path quality claim.",
+    "initial_attempt": "pytest unavailable in inference environment; preserved log; used standard-library unittest without installing anything."
+  },
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-neural-fitting-plan-01/plan.json": "961446c708f6286e561e65dab73e3e6d2a8de484cd5dd4523d83897dab64547d",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-neural-fitting-plan-01/selection.json": "34d8a598d6acf44cc08843cd79ada86efaee93c631d3295742a5ec935f6dfaca",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-neural-fitting-plan-01/control-public.jsonl": "ef4200d887cc4078ae9ed2f84de07224d3be76181637371180e51bf00b34aa6d",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-neural-fitting-plan-01/header-public.jsonl": "56042cc9fd02e36a23962fb87211bae88e1355a16a9f357fc95989b0132f701e",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-neural-fitting-plan-01/source-train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+    "/run/media/mutasim/Data/AGERE/runs/header-neural-fitting-prepare-01.log": "0f969686367776f3a480f8d8fa01965cc8e8a085faa9d210e642034572317a0d",
+    "/run/media/mutasim/Data/AGERE/runs/header-study-audit-tests-01.log": "dbe8d46c7464fc3638f99f9a050ca3b4fa6307b61e6ffc41d49ff3dfae6e271c",
+    "/run/media/mutasim/Data/AGERE/runs/header-study-audit-tests-02.log": "ba7ccc824660f99f10c5378a4598ede6de9cccb44d4230bf847998033f779998",
+    "/home/mutasim/Desktop/project-agere/tests/test_header_study_audit.py": "994a3157ddeb36a629653a2bf6117e5acf71517ee53ef0831b9f535607fc44e3"
+  },
+  "execution_rule": "Only after the active matched sequence terminates successfully and all four full-trace audits are ready. Serial monitored jobs only;6.4GB cap. Never skip original study obligations.",
+  "limits": "Exploratory fitting study of known source-retention preprocessing. Drop-in frozen checkpoints, no training. Extra source content/tokens; no claim of token-matched algorithmic gain. Initial-prefix is a measured trajectory ablation, not an independent fresh generation. Does not establish publication confirmation or full cross-tier readiness."
+}
