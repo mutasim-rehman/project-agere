@@ -3240,3 +3240,25 @@ test improves, require a catalog-only control before assigning the effect to
 catalog access alone. Current original neural study and prepared packets unchanged;
 no new model calls, adopted method or established novelty. This narrows causal
 interpretation and prevents an incorrect retrieval-improvement claim.
+
+### 2026-10-27 — catalog-only baseline isolates selectability without raw-text rewrite
+
+New experimental function preserves every original quantity ID/fact and source
+packet, appending missing executable numeric span-value pairs using public text
+only. All eligible source spans retained; no first-match semantic source choice
+or fabricated cell coordinates.73 catalogs sealed before reference diagnostics.
+Same four fitting coverage recoveries41→45 as materialization; all per-case parser
+categories match.2,338 selectable entries versus1,922 original/2,105 header. Every
+quantity passes compiler/source/executor checks; serialized IDs/values rechecked.
+
+Both3B/7B vocab profiles add5,597 prompt tokens versus5,418 for header (179 MORE
+in total). Median31, max328;73/73 full draft reserves fit4096. Cheaper on38 cases,
+equal9, more26; do not claim aggregate cost saving. Additional source-span options
+may distract. New entries have span-level, not cell-level identity; do not infer
+unique financial bindings from singleton catalog IDs. Three tests pass.
+
+Capture-only temporary patch stays in the metadata process; active disk sources,
+NN workers, prepared study and original scientific obligations unchanged. No new
+model forwards, neural integration, SFT parity/eligibility, QA gain or novelty.
+Known baseline control, not a second adopted method. Preserve failed/warning logs;
+vocab-only context warning does not constitute a measured inference overflow.

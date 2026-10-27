@@ -1,0 +1,69 @@
+{
+  "status": "complete_offline_catalog_only_fitting_baseline",
+  "result": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/source-span-catalog-fitting-01",
+  "counts": {
+    "cases": 73,
+    "original_atoms": 1922,
+    "candidate_atoms": 2338,
+    "original_mappable": 41,
+    "candidate_mappable": 45,
+    "header_mappable": 45
+  },
+  "token_summary": {
+    "mas": {
+      "n": 73,
+      "catalog_only_extra_tokens_total": 5597,
+      "catalog_only_extra_tokens_median": 31,
+      "catalog_only_extra_tokens_max": 328,
+      "header_extra_tokens_total": 5418,
+      "catalog_only_full_draft_reserve_fits": 73
+    },
+    "sas": {
+      "n": 73,
+      "catalog_only_extra_tokens_total": 5597,
+      "catalog_only_extra_tokens_median": 31,
+      "catalog_only_extra_tokens_max": 328,
+      "header_extra_tokens_total": 5418,
+      "catalog_only_full_draft_reserve_fits": 73
+    }
+  },
+  "catalog_vs_header_cost": {
+    "mas": {
+      "total_catalog_minus_header_tokens": 179,
+      "catalog_fewer_cases": 38,
+      "equal_cases": 9,
+      "catalog_more_cases": 26
+    },
+    "sas": {
+      "total_catalog_minus_header_tokens": 179,
+      "catalog_fewer_cases": 38,
+      "equal_cases": 9,
+      "catalog_more_cases": 26
+    }
+  },
+  "same_per_case_parser_category_as_header": true,
+  "recovered_ids": [
+    "BLK/2009/page_98.pdf-1",
+    "GRMN/2008/page_84.pdf-1",
+    "IPG/2003/page_89.pdf-2",
+    "VNO/2008/page_183.pdf-2"
+  ],
+  "source_packets_and_old_quantity_ids_unchanged": true,
+  "all_candidate_quantities_execute_against_original_source": true,
+  "neural_forward_calls": 0,
+  "adopted": false,
+  "novelty_established": false,
+  "unit_tests_passed": 3,
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/source-span-catalog-fitting-01/summary.json": "473a8e71daa1add1e9c50e7467203d99aa1d9d72ac9d0b6af16b5bd5b6af92e6",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/source-span-catalog-fitting-01/catalogs.jsonl": "5e44fe30281955322032630d6da852ec566a0a92e437fb8bf99a0ff96a45d9a6",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/source-span-catalog-fitting-01/coverage.jsonl": "e52721383a7518ff4a3430f5c1adeb6ccca21f5f3df09a0f2a35bb0897a408da",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/source-span-catalog-fitting-01/tokens.jsonl": "6c6083817aa57a0bc106ba636bcc6ef30758de542165d7914268df144f3713bd",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/source-span-catalog-fitting-01/captured-prompts.jsonl": "19d79403695e96870956d42aa24c269b12ad58479d8bf3ed9d49fdbb46fe95f7",
+    "/run/media/mutasim/Data/AGERE/runs/source-span-catalog-fitting-01.log": "9cb29f80501269f3b50893532a28d3dcb33a2ba5435732d6edd474be8e41b148",
+    "/run/media/mutasim/Data/AGERE/runs/source-span-catalog-tests-01.log": "921b60a7fd52e978fbb551cacd29df2d6708879400278e1fcc70fceeb0c6f8e0",
+    "/home/mutasim/Desktop/project-agere/tests/test_source_span_catalog.py": "77c4fb08e849bd21b0c9a08f0c75723f1eaf221eb88f0ef164704e9d102320dd"
+  },
+  "limits": "Exploratory fitting73 only. New entries are span-value pairs, not localized cells; no unique-cell binding or semantic certification. Catalog/grammar/prompt tokens change although original source text/IDs remain. Direct compact first-draft capture only; no full-policy context or HF/SFT parity proof. Vocab-only counters use pinned model paths without full weight rehash here; future neural work requires normal full checks. Temporary patch is local to this metadata process; active workers/files and prepared neural study are unchanged.",
+  "serialized_original_ids_and_all_source_values_independently_rechecked": true
+}

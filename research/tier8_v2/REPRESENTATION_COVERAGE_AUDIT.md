@@ -140,3 +140,11 @@ No new neural calls, adoption or novelty claim.
 
 [Attribution evidence](evidence/header-visibility-attribution-01.json) and
 [reproducible diagnostic](experiments/header_visibility_attribution.py).
+
+
+[Catalog-only attribution baseline](SOURCE_SPAN_CATALOG_BASELINE.md) now measured
+without neural calls: same four mapping recoveries and every per-case parser
+category as header materialization, original source text/quantity IDs retained.
+It exposes 2,338 span-value entries versus 2,105 with headers. Prompt overhead
+5,597 versus 5,418 tokens over73 cases: NOT a total token saving. No neural gain,
+cell-level uniqueness, training readiness or adoption inferred.
