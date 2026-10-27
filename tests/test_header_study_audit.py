@@ -34,7 +34,7 @@ def fixture_plan(tmp_path, n=73):
 
 class HeaderStudyAudit(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory()
+        self.temp = tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[1] / '.local')
         self.addCleanup(self.temp.cleanup)
         self.directory = Path(self.temp.name)
 

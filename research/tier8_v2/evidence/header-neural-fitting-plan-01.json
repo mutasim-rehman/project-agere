@@ -22,7 +22,8 @@
     "passed": 6,
     "runtime": "unittest",
     "scope": "Existing materialization tests plus case-exclusion, invented-source and checkpoint-confound rejection. No completed neural trace available; no success-path quality claim.",
-    "initial_attempt": "pytest unavailable in inference environment; preserved log; used standard-library unittest without installing anything."
+    "initial_attempt": "pytest unavailable in inference environment; preserved log; used standard-library unittest without installing anything.",
+    "fixture_scope": "Temporary fixtures explicitly created under repository .local and removed after tests."
   },
   "input_sha256": {
     "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-neural-fitting-plan-01/plan.json": "961446c708f6286e561e65dab73e3e6d2a8de484cd5dd4523d83897dab64547d",
@@ -33,7 +34,8 @@
     "/run/media/mutasim/Data/AGERE/runs/header-neural-fitting-prepare-01.log": "0f969686367776f3a480f8d8fa01965cc8e8a085faa9d210e642034572317a0d",
     "/run/media/mutasim/Data/AGERE/runs/header-study-audit-tests-01.log": "dbe8d46c7464fc3638f99f9a050ca3b4fa6307b61e6ffc41d49ff3dfae6e271c",
     "/run/media/mutasim/Data/AGERE/runs/header-study-audit-tests-02.log": "ba7ccc824660f99f10c5378a4598ede6de9cccb44d4230bf847998033f779998",
-    "/home/mutasim/Desktop/project-agere/tests/test_header_study_audit.py": "994a3157ddeb36a629653a2bf6117e5acf71517ee53ef0831b9f535607fc44e3"
+    "/home/mutasim/Desktop/project-agere/tests/test_header_study_audit.py": "3669400f27a37c2d96f6e9bfc2e14560eaea02737a4b88b67065c981667fb012",
+    "/run/media/mutasim/Data/AGERE/runs/header-study-audit-tests-03.log": "8750d4b5acdce1e4d680a3a27eb5d68370ed8b7d37b619aa32e9e0049f881dae"
   },
   "execution_rule": "Only after the active matched sequence terminates successfully and all four full-trace audits are ready. Serial monitored jobs only;6.4GB cap. Never skip original study obligations.",
   "limits": "Exploratory fitting study of known source-retention preprocessing. Drop-in frozen checkpoints, no training. Extra source content/tokens; no claim of token-matched algorithmic gain. Initial-prefix is a measured trajectory ablation, not an independent fresh generation. Does not establish publication confirmation or full cross-tier readiness."

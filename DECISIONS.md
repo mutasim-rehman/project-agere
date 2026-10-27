@@ -3161,3 +3161,7 @@ checkpoint guards. Initial pytest attempt failed because package absent; retaine
 log and used standard-library unittest without installing dependencies. Complete
 neural traces absent, so no success-path QA evidence yet. Prepared study/decisions
 are an additional baseline component, not completion of the novelty objective.
+
+Source-retention audit fixtures now explicitly stay under repository .local; all
+six tests rerun and pass (log03). Preparation plan unchanged and all pinned
+inputs reverified. Current inference continues; no extra neural work launched.
