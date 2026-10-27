@@ -1,0 +1,23 @@
+{
+  "status": "complete_source_support_preflight",
+  "result": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-source-support-01",
+  "counts": {
+    "cases": 73,
+    "old_atoms": 1922,
+    "candidate_atoms": 2105,
+    "added_atoms": 183
+  },
+  "checked_quantity_executions": 2105,
+  "aggregate_counts_and_unique_case_quantity_ids_replayed": true,
+  "all_recorded_executions_issue_free": true,
+  "neural_forward_calls": 0,
+  "adopted": false,
+  "novelty_established": false,
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-source-support-01/summary.json": "353bc358699fc82960384c04f0c163b72550bab8448f83fb3be7e34c6ffc56f9",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-source-support-01/cases.jsonl": "9f294276eda6eceb48783be30c8f68ccfe20030c1366823c03be89156a5add91",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-source-support-01/quantities.jsonl": "e1f35b531edfaf3b263ada40addf87e5b3c19614df0ae4ef55e7213637611644",
+    "/run/media/mutasim/Data/AGERE/runs/header-source-support-audit-01.log": "005a920c2dbadead0a03fae20e638e4f5eac2866f8cb6bab53798a1147c92d6d"
+  },
+  "limits": "Every quantity tested with diagnostic add-zero execution, not a question answer. Source-span numeric support only, not per-cell semantic relevance, question-unit grammar, full-policy context, tokenizer/SFT parity, neural accuracy or independent financial truth. Old quantities also checked;183 added catalog occurrences need not be183 distinct values."
+}

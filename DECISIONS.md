@@ -3175,3 +3175,18 @@ its extra content is unlike a same-content serialization experiment. RSS differs
 from monetary budget, but resource labels alone establish no novel contribution.
 Do not add adaptive serialization/routing to the frozen study or imply replication
 or superiority. Natural SAS comparison remains in progress; no new model calls.
+
+### 2026-10-27 — serialized header catalogs pass actual source/executor preflight
+
+Replayed all73 saved candidate packets rather than assuming in-memory dict
+checks prove serialized ordering. Original span order and1,922 catalog facts
+retained,2,105 candidate quantities total (183 added occurrences). Every quantity
+compiles into a diagnostic add-zero program and executes with identical decimal
+value, no issues and correct source-span lineage. Raw-table-only regeneration and
+cell offset ledgers verified. Counts/unique case-quantity IDs independently
+recombined; full raw per-quantity proof retained on SSD. Zero neural calls.
+
+These are selectable catalog occurrences, NOT2,105 source cells or adjudicated
+semantic facts. Add-zero is a support probe, not a proposed answer or full
+question-unit/context proof. No new SFT eligibility/parity/QA gain, adoption or
+novelty inferred. Prepared future study and current matched evaluation unchanged.

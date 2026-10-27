@@ -51,3 +51,14 @@ the declared source transformation and refuses checkpoint/policy confounds.
 Six standard-library tests pass, including rejection of missing cases, invented
 source content and changed checkpoints. Completed neural traces are still absent;
 tests are not evidence of QA gains. [Pinned preparation evidence](evidence/header-neural-fitting-plan-01.json).
+
+
+Serialized-packet source-support preflight is complete:73 packets retain original
+span order and all1,922 original catalog facts; candidate catalogs contain2,105
+quantities (183 additional occurrences). Every candidate quantity compiles and
+passes diagnostic add-zero execution with matching value and source-span lineage.
+Raw-table-only regeneration and source offset ledgers also replay. No neural call,
+answer-generation result or cell-level semantic proof follows. This is source
+support readiness only; full-policy context and materialization-aware SFT parity
+are still unproven. [Reproducible audit](experiments/header_source_support_audit.py)
+and [pinned evidence](evidence/header-source-support-01.json).
