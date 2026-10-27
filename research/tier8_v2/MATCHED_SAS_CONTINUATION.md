@@ -33,7 +33,10 @@ memory samples: peak8,262,852,608 bytes under10.5GB TRAINING allowance; reserve 
 All392 LoRA tensors change,20,185,088 trainable parameters. Saved adapter SHA
 1cb77c6e8e5dc49d8c3156597a90c9f4f93010fd4f0e5822c8fe2f202be26c5c.
 Full converted GGUF SHA b152ef4060570a8150cfb2f1f5af7bb8ffd915ff70c691ff22aef7a089d23c04
-verified from bytes.6.4GB deployment application proof is running, not yet audited.
+verified from bytes. Native deployment application proof is complete and independently
+replayed: exit0, sampled tree RSS5,140,795,392 bytes below6.4GB, source and rendered
+prompt checks preserved. The fixed52-case natural control SAS evaluation is running;
+no completed natural SAS comparison is available yet.
 
 No candidate method adopted, natural SAS improvement or first-use novelty claimed.
 The fixed natural selection, original baseline, reserved audit and secondary prompt

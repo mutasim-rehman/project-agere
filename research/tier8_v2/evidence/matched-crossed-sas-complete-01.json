@@ -100,5 +100,34 @@
   },
   "natural_qa_gain_demonstrated": false,
   "novelty_established": false,
-  "limits": "Recorded teacher-forced family means/weighted aggregate, not independent model re-evaluation or natural QA. Shared SAS actor/critic policy; different critic negative examples can affect drafter probabilities. Repeated positives and one seed limit inference. Native application proof audited separately after completion."
+  "limits": "Recorded teacher-forced family means/weighted aggregate, not independent model re-evaluation or natural QA. Shared SAS actor/critic policy; different critic negative examples can affect drafter probabilities. Repeated positives and one seed limit inference. Native application proof audited separately after completion.",
+  "native_application_proof": {
+    "status": "independently_replayed",
+    "result": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-applied-proof-01",
+    "summary": {
+      "status": "complete",
+      "exit_code": 0,
+      "peak_tree_rss_bytes": 5140795392,
+      "cap_bytes": 6400000000,
+      "memory_breach": false,
+      "measured_reasoning_gain": false
+    },
+    "sampled_peak_tree_rss_bytes_replayed": 5140795392,
+    "source_and_prompt_checks": {
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_last_logit_proof.py": "567652b008dc1f9bc226de6fff8bb9f44167d4724326c6048dfc91b213f41c73",
+      "/home/mutasim/Desktop/project-agere/scripts/binary_verifier_score.py": "d9dd29663c2e2e738641ef471dbebb0024364230bfd3ddae7da027ce48ff89dc",
+      "/home/mutasim/Desktop/project-agere/scripts/completion_tokenization.py": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_runtime.py": "28243991d8ba9094f234f8bc0ceca44c476e1cb85662ca2475ccb44acf93035a",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/crossed_sas/examples.jsonl": "5b62d060d0bd5c2e93fe426c9128216dd9d05471887c2fe13247a63fab38c60d",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-applied-proof-01/proof.json": "7e42c06876f58bd939d35e3f48244ca0dfa9f5455687d5c7d54930e431d9b6ea",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-applied-proof-01/manifest.json": "0b0ff37add9203cd1ba56145104a5c0254fb3a80850f583a71a7eeaaa91cb727",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-applied-proof-01/summary.json": "7b87c3e6e5f7dda1a534db6b9dd11b9f81f025a63a0befe6151560d60cf05640"
+    },
+    "input_sha256": {
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-applied-proof-01/proof.json": "7e42c06876f58bd939d35e3f48244ca0dfa9f5455687d5c7d54930e431d9b6ea",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-applied-proof-01/summary.json": "7b87c3e6e5f7dda1a534db6b9dd11b9f81f025a63a0befe6151560d60cf05640",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-applied-proof-01/manifest.json": "0b0ff37add9203cd1ba56145104a5c0254fb3a80850f583a71a7eeaaa91cb727",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-applied-proof-01/memory.jsonl": "308fcf8f59bc472204dc851b5704a6b74c4dd6bf1c242ed17917715412d3f9df"
+    }
+  }
 }

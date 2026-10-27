@@ -3120,3 +3120,18 @@ Repeated positives, one seed, no independent forward rerun. Shared SAS probabili
 can transfer across tasks despite fixed drafter data; do not infer better generated
 answers, architectural causality or novelty. Keep actual natural/prefix comparisons,
 strong originals/reserved audit and secondary prompts; no new thresholds/metrics.
+
+### 2026-10-27 — crossed SAS native proof audited; natural SAS study proceeds
+
+Independent ArtifactChecks replay passes the completed crossed SAS native proof,
+including source/prompt/application invariants; all deployment memory samples
+recombine to5,140,795,392 bytes below6.4GB. Raw proof/manifest/summary/memory hashes
+pinned in existing completion evidence. Distinguish this native proof's measured
+inner process tree from the serial controller's outer measurement. No quality gain
+inferred from successful adapter application or memory fit.
+
+One-shot suffix service90142 is live with actual natural SAS inference child;
+control selection has2/52 completed cases at09:39 PKT. Do not interpret partial
+quality, change the fixed sequence, or start concurrent neural work. Both matched
+SAS epochs/proofs are complete; natural comparisons, originals, reserved audits
+and secondary prompts remain. Candidate not adopted; novelty not established.
