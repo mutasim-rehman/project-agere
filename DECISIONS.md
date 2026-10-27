@@ -2995,3 +2995,25 @@ No policy/threshold/data/scoring changes. Original classic actor reference and
 fixed reserved audits remain pending. Serial controller proceeded to7B control
 SAS fit preparation after both planned MAS analyses passed verification. Goal
 active; common method is not ready for cross-tier freeze or novel-method claim.
+
+### 2026-10-27 — explicit recovery after original controller disappears
+
+On resumption03:10UTC, original controller PID11866 and all model workers are
+absent. Journal shows control SAS full64 updates/512 examples, conversion/native
+proof complete; crossed SAS fit complete. Last event started crossed-epoch metadata
+preparation; no exit/failure event, no output directory or full candidate updates.
+Last sample76.4MB treeRSS/12.61GB host available. Boot predates this run; cause of
+abrupt disappearance is UNKNOWN. Do not invent a cap breach, reboot or success.
+Preserve original plan/state/journal/logs, never implicitly restart its controller.
+
+Implement explicit pending-metadata suffix preparation: require original launch
+identity, absent old controller/workers, free old lock, exact ordered successful
+prefix and reverify every completed job. Only an unexited metadata prepare with
+entirely absent output qualifies. Retain identical remaining commands, recipes,
+source/data/metrics and scientific obligations; completed NN work is never replayed.
+One read-only audit hashes unchanged files once using inode/size/mtime/ctime/race
+checks; actual training controllers/workers retain full byte checks unchanged.
+Three regression tests cover failed/overlapping/unobserved or changed journals,
+nonmetadata interruption and hash-cache mutation. No model/method/novelty claim.
+Use a transient one-shot user service for the new controller if available, so its
+process lifecycle is independent of the interactive shell; no recurring timer.
