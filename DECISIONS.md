@@ -3044,3 +3044,12 @@ remains unknown. No recurring timer and no automatic failed model retry. Verifie
 live job_started prepare-crossed-sas-epoch with unchanged command. Full candidate
 training has not started at this launch; no partial NN epoch is replayed. Service
 logs, invocation identity and plan/source proof retained. Scientific goal active.
+
+Recovered suffix metadata preparation exited0/no breach and parent verification
+completed; service advanced to train-crossed-sas full-epoch controller. Generated
+candidate/control plans independently match mode/profile/purpose, initializer,
+base, recipe,512 training/448 validation counts, runtime and caps. Actual validation
+rows byte-identical; own crossed fit validated, updates discarded.0 optimizer
+updates observed at this audit;64 planned. Full controller/worker source checks
+remain unchanged and are still preflight work. Do not report completed training
+or natural SAS improvement from this launch. Source/plan/service identity saved.
