@@ -1,77 +1,52 @@
-# Research checkpoint
+# Research checkpoint — latest direction review, 27 October 2026
 
-**Observed 27 October 2026, 10:44 PKT.** Committed snapshot, not a live monitor.
-Goal active; useful novel-method improvement remains unproven. No cross-tier freeze.
+**The original serial sequence has completed direct selection comparisons,
+original baselines and both49-case reserved audits. Two secondary SAS prompt
+jobs remain: control is running, crossed follows.** This is a committed snapshot,
+not a live monitor. Novel-method superiority remains unproven; no tier freeze.
 
-| Item | Verified state |
+| Completed result | Reported correct/wrong/withheld |
 |---|---|
-| Original joint 7B SAS | 476 updates / 3,801 examples; converted/application-proven |
-| Matched common 3B actor | 16 updates / 128 examples; converted/application-proven |
-| Matched 3B critics | Both 48 updates / 384 examples; converted/application-proven |
-| Matched 7B SAS policies | Both 64 updates / 512 examples; converted/application-proven |
-| Natural MAS selection | All three 52-case conditions audited |
-| Natural control SAS | 52/52 complete; independent trace replay passed |
-| Natural crossed SAS | Running under live one-shot service PID90142 |
+| SAS original, selection52 |8 /25 /19|
+| SAS matched control, selection52 |8 /23 /21|
+| SAS crossed, selection52 |10 /16 /26|
+| SAS control, reserved49 |8 /20 /21|
+| SAS crossed, reserved49 |9 /20 /20|
+| MAS control, reserved49 |4 /17 /28|
+| MAS crossed, reserved49 |4 /9 /36|
 
-Training used a separate 10.5 GB allowance; deployment cap is 6.4 GB.
-Neither completed training nor lower teacher loss proves better answers.
-[Training comparison](MATCHED_SAS_CONTINUATION.md).
+SAS selection versus original has an exploratory error-reduction interval excluding
+zero, but the large error reduction does not repeat in the reserved matched pair.
+MAS reserved raw results are8/13/28→7/6/36: one lost correct delivery, so candidate
+adoption still fails. Keep both metrics; no architecture winner/equivalence claim.
+[Latest direction and hypothesis audit](RESEARCH_DIRECTION_AUDIT_2026-10-27.md) ·
+[Reconciled completed evidence](evidence/research-direction-audit-20261027-01.json).
 
-## Natural MAS: candidate not adopted
+The control-SAS full replay also finds two rejected numerically correct drafts
+repaired into wrong accepted answers, both in one report;19.1 minutes extra
+recorded stage work and no correct-delivery gain. This is a conditional failure
+finding, not a universal or first-use claim. [SAS detail](MATCHED_SAS_SELECTION.md) ·
+[MAS detail](MATCHED_MAS_SELECTION.md).
 
-| Critic with identical common actor | Reported correct/wrong/withheld | Raw correct/wrong/withheld |
-|---|---|---|
-| Matched control |3 /19 /30|5 /17 /30|
-| Crossed |3 /15 /34|5 /13 /34|
-| Strong original |4 /22 /26|6 /20 /26|
+## Scope and next-step recommendation
 
-Crossed prevents five control wrong deliveries and introduces one: net four fewer.
-Report-level uncertainty includes zero/harm. Against the original it loses one
-correct answer, failing the predeclared no-correct-loss rule. Post-hoc attribution
-places the net control error reduction in missing-catalog-operand cases; this is
-not semantic-mechanism proof or a deployment routing feature. Both matched MAS
-repairs add work with no per-case delivery/correctness change versus their recorded
-no-repair prefixes. [Complete MAS comparisons](MATCHED_MAS_SELECTION.md).
+Original headline: smaller FP16 resident MAS versus larger Q4 SAS, **16 GB primary**.
+Current redevelopment uses Q4 MAS/Q4 SAS numerical QA and is supporting evidence,
+not a direct test of every original precision/task claim. Stop expanding8GB
+features, finish the two queued prompt checks, reconcile the prospective tier
+matrix/tasks/precision/adaptation/metrics, then freeze and prioritize16GB.
+The current host has15.44GB RAM;32GB validation needs suitable hardware.
+No live job stopped or restarted, no larger-tier job launched by this review.
 
-## Natural SAS: control complete, comparison pending
+Header/materialization and catalog-only variants remain unadopted offline fitting
+prototypes (41→45/73 reference mapping); no neural QA gain. Do not automatically
+launch them merely to force novelty before moving tiers. Training used10.5GB
+allowance, distinct from6.4GB deployment. Shared-backbone serving parity is a
+separate two-prompt engineering result, not used in current natural MAS.
 
-| Control trajectory | Reported correct/wrong/withheld | Raw correct/wrong/withheld |
-|---|---|---|
-| Full |8 /23 /21|10 /21 /21|
-| No-repair prefix |8 /21 /23|10 /19 /23|
-
-All prompts, scores, tokens, source execution, adapter proofs and memory samples
-replay. Sampled peak 5.356 GB below6.4 GB. Repair adds two wrong deliveries with
-no correct-delivery increase and 19.1 minutes recorded inference work. Two correct
-initial drafts rejected then wrong revisions accepted share one EW report; no
-population or novel-mechanism claim. Initial candidate matches are10 reported/13
-raw. Prefixes are measured trajectory ablations, not fresh neural runs.
-[Complete control evidence and limits](MATCHED_SAS_SELECTION.md).
-
-## Baseline engineering and representation diagnostics
-
-Separate shared-3B serving proof: RSS4.831→2.571 GB on two prompts/four switches.
-Known engineering, not natural QA improvement. Frozen natural MAS still uses two
-specialist instances; do not apply the separate memory saving to those runs.
-
-Header and catalog-only prototypes both improve direct reference mapping41→45/73
-fitting cases. All added header quantities were already visible in original source
-spans: this is catalog representability, not newly retrieved raw cell text.
-Catalog-only preserves source text/old IDs but adds5,597 prompt tokens versus5,418
-for header; no aggregate token saving. Neither has a neural QA gain or adoption.
-[Representation audit](REPRESENTATION_COVERAGE_AUDIT.md).
-
-Remaining: crossed-SAS selection/pair, stronger original baselines,49-case reserved
-paired audits, secondary SAS prompts and unresolved trained MAS prompt coverage.
-No claim either architecture is optimized. Prepared representation tests follow
-current obligations; no concurrent neural jobs or silent packet substitutions.
-
-Original controller01 disappeared during metadata preparation; cause unknown.
-Explicit suffix02 reverified all30 completed jobs and retained20 pending commands
-exactly. One-shot user service agere-matched-study-02-20261027 (Restart=no) is live;
-verify its PID/create-time and actual children before reporting progress.
-[Recovery evidence](evidence/matched-serial-study-launch-02.json).
-
-[Supervisor checkpoint](SUPERVISOR_UPDATE_2026-10-27.md) is the earlier dated
-snapshot; the control-SAS result above was completed afterward. Code/decisions/
-aggregate evidence are pushed; weights, data and detailed raw proof remain on SSD.
+One-shot user service agere-matched-study-02-20261027, PID90142/create-time
+1793071505.0, was verified live with actual inference children during this review.
+It recovered the original metadata-only interruption without repeating completed
+model jobs. Check real service/PID/state before reporting future progress.
+Raw datasets/weights/logs/full paired audits stay on the authorized SSD;
+code, aggregate evidence and decisions are pushed for remote inspection.

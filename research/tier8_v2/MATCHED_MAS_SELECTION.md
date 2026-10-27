@@ -102,3 +102,14 @@ are not independent financial semantic adjudication.
 The stronger-original adoption rule still fails. No metrics, criteria, thresholds
 or cases changed; report groups overlap across strata and no post-hoc significance
 tests are claimed. [Verified stratification](evidence/mas-representation-strata-01.json).
+
+
+## Later reserved diagnostic audit — 49 cases / 15 reports
+
+Full-trace paired analysis completed: reported control4/17/28 versus crossed4/9/36
+(correct/wrong/withheld), raw8/13/28 versus7/6/36. Crossed reduces wrong deliveries
+but loses one raw-correct delivery and withholds eight more. It FAILS the existing
+both-metric adoption criterion. Do not choose only the favorable reported metric
+or describe this as a general quality improvement. This is a reserved diagnostic
+from public training-source reports, not clean publication confirmation.
+[Direction review evidence](evidence/research-direction-audit-20261027-01.json).

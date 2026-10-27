@@ -3292,3 +3292,35 @@ reserved audit and secondary prompts remain required.
 Original serial controller advanced normally to crossed-SAS and actual inference
 child is live. No model retry, overlapping neural job, candidate adoption or
 cross-tier freeze. Completed single-condition result is not paired method gain.
+
+### 2026-10-27 — user-requested direction audit finds drift and bounds next work
+
+User asked alignment, null/alternative evidence and value of moving to16/32GB.
+Read original README/METHODOLOGY/PROTOCOL and frozen current recipes against
+actual completed results. Original headline is resident MAS-FP16 versus SAS-Q4,
+16GB primary, finance-grounding/invention/mismatch tasks. Current3B-Q4 MAS vs7B-Q4
+SAS numerical QA is supporting redevelopment, not that headline test. The agent
+allowed the8GB development/novelty loop to become too open-ended. No claim that
+more code or source/weight audits themselves establish scientific progress.
+
+While the user was away the serial service completed crossed-SAS, originals and
+reserved audits. Direct SAS original8/25/19 versus crossed10/16/26 reported; raw
+10/23/19 versus12/14/26. Selection error reduction versus original has report-CI
+excluding zero, but correct gain touches zero and reserved matched comparison
+8/20/21→9/20/20 has no net wrong reduction. Reserved MAS reported4/17/28→4/9/36,
+raw8/13/28→7/6/36: fails both-metric adoption due raw correct loss. Four existing
+full-audit outputs/counts/source identities reconciled, hashes retained. No new
+neural calls/full weight rehash, p-value, equivalence margin or post-hoc primary.
+Broad H1 unproven; no acceptance/proof of H0. Narrow exploratory effects and
+conditional negative findings are useful but not original-tier confirmation.
+
+Recommendation: finish the TWO existing secondary SAS jobs, then close feature
+expansion. Do not launch prepared source-representation experiments merely to
+manufacture novelty. Reconcile question/tasks/precision/model adaptation/prompt/
+repair/metrics and held-out design in one prospective tier matrix before freezing
+and prioritizing16GB.32GB requires appropriate hardware; current physical RAM is
+15.438GB, not enough for resident25.6GB validation. Do not silently reuse stale
+configs or reinterpret Q4 MAS as FP16. A bounded empirical contribution can be
+worth pursuing; no guarantee of novel algorithm/publication. This is a direction
+recommendation, not a completed goal, adopted method, declared freeze or command
+to stop/restart the live current evaluation. Existing jobs remain unchanged.

@@ -1,0 +1,478 @@
+{
+  "status": "completed_results_reconciled_for_direction_review",
+  "comparisons": {
+    "model_selection-crossed_sas-vs-control_sas.json": {
+      "path": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-01/model_selection-crossed_sas-vs-control_sas.json",
+      "sha256": "6c6d11344c46948042ba212aaa6fd50088b3ca4ac9f8a6d12b0f3f591f96aad6",
+      "n": 52,
+      "reports": 15,
+      "left": "control_sas",
+      "right": "crossed_sas",
+      "conditions": {
+        "left": {
+          "case_success": {
+            "correct_delivered": 8,
+            "wrong_delivered": 23,
+            "withheld": 21,
+            "candidate_correct": 8,
+            "precision_when_delivered": 0.25806451612903225
+          },
+          "raw_execution_match": {
+            "correct_delivered": 10,
+            "wrong_delivered": 21,
+            "withheld": 21,
+            "candidate_correct": 10,
+            "precision_when_delivered": 0.3225806451612903
+          }
+        },
+        "right": {
+          "case_success": {
+            "correct_delivered": 10,
+            "wrong_delivered": 16,
+            "withheld": 26,
+            "candidate_correct": 10,
+            "precision_when_delivered": 0.38461538461538464
+          },
+          "raw_execution_match": {
+            "correct_delivered": 12,
+            "wrong_delivered": 14,
+            "withheld": 26,
+            "candidate_correct": 12,
+            "precision_when_delivered": 0.46153846153846156
+          }
+        }
+      },
+      "full_comparison": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 2,
+            "wrong_delivered": -7,
+            "withheld": 5
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.038461538461538464,
+            "wrong_delivered": -0.1346153846153846,
+            "withheld": 0.09615384615384616
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.11764705882352941
+            ],
+            "wrong_delivered": [
+              -0.2653061224489796,
+              0.0
+            ],
+            "withheld": [
+              -0.03333333333333333,
+              0.22807017543859648
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 17,
+            "wrong_delivered -> withheld": 9,
+            "withheld -> wrong_delivered": 4,
+            "wrong_delivered -> wrong_delivered": 12,
+            "correct_delivered -> correct_delivered": 8,
+            "wrong_delivered -> correct_delivered": 2
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": 2,
+            "wrong_delivered": -7,
+            "withheld": 5
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.038461538461538464,
+            "wrong_delivered": -0.1346153846153846,
+            "withheld": 0.09615384615384616
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.11764705882352941
+            ],
+            "wrong_delivered": [
+              -0.2653061224489796,
+              0.0
+            ],
+            "withheld": [
+              -0.03333333333333333,
+              0.22807017543859648
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 17,
+            "wrong_delivered -> withheld": 9,
+            "withheld -> wrong_delivered": 4,
+            "correct_delivered -> correct_delivered": 10,
+            "wrong_delivered -> wrong_delivered": 10,
+            "wrong_delivered -> correct_delivered": 2
+          },
+          "sample_pareto_improvement": true
+        }
+      },
+      "promising_under_both_metrics": true,
+      "source_code_identity_rechecked": true,
+      "existing_full_trace_audit_passed": true
+    },
+    "model_selection-crossed_sas-vs-baseline_sas.json": {
+      "path": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-01/model_selection-crossed_sas-vs-baseline_sas.json",
+      "sha256": "1780e0c87e41e39da336a63649abbb4b705d61dbd35ab7ad08165a7dc95037ed",
+      "n": 52,
+      "reports": 15,
+      "left": "baseline_sas",
+      "right": "crossed_sas",
+      "conditions": {
+        "left": {
+          "case_success": {
+            "correct_delivered": 8,
+            "wrong_delivered": 25,
+            "withheld": 19,
+            "candidate_correct": 8,
+            "precision_when_delivered": 0.24242424242424243
+          },
+          "raw_execution_match": {
+            "correct_delivered": 10,
+            "wrong_delivered": 23,
+            "withheld": 19,
+            "candidate_correct": 10,
+            "precision_when_delivered": 0.30303030303030304
+          }
+        },
+        "right": {
+          "case_success": {
+            "correct_delivered": 10,
+            "wrong_delivered": 16,
+            "withheld": 26,
+            "candidate_correct": 10,
+            "precision_when_delivered": 0.38461538461538464
+          },
+          "raw_execution_match": {
+            "correct_delivered": 12,
+            "wrong_delivered": 14,
+            "withheld": 26,
+            "candidate_correct": 12,
+            "precision_when_delivered": 0.46153846153846156
+          }
+        }
+      },
+      "full_comparison": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 2,
+            "wrong_delivered": -9,
+            "withheld": 7
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.038461538461538464,
+            "wrong_delivered": -0.17307692307692307,
+            "withheld": 0.1346153846153846
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.0967741935483871
+            ],
+            "wrong_delivered": [
+              -0.28888888888888886,
+              -0.05555555555555555
+            ],
+            "withheld": [
+              -0.017241379310344827,
+              0.2711864406779661
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 14,
+            "wrong_delivered -> withheld": 12,
+            "wrong_delivered -> wrong_delivered": 12,
+            "withheld -> wrong_delivered": 4,
+            "correct_delivered -> correct_delivered": 8,
+            "wrong_delivered -> correct_delivered": 1,
+            "withheld -> correct_delivered": 1
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": 2,
+            "wrong_delivered": -9,
+            "withheld": 7
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.038461538461538464,
+            "wrong_delivered": -0.17307692307692307,
+            "withheld": 0.1346153846153846
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.0967741935483871
+            ],
+            "wrong_delivered": [
+              -0.28888888888888886,
+              -0.05555555555555555
+            ],
+            "withheld": [
+              -0.017241379310344827,
+              0.2711864406779661
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 14,
+            "wrong_delivered -> withheld": 12,
+            "wrong_delivered -> wrong_delivered": 10,
+            "correct_delivered -> correct_delivered": 10,
+            "withheld -> wrong_delivered": 4,
+            "wrong_delivered -> correct_delivered": 1,
+            "withheld -> correct_delivered": 1
+          },
+          "sample_pareto_improvement": true
+        }
+      },
+      "promising_under_both_metrics": true,
+      "source_code_identity_rechecked": true,
+      "existing_full_trace_audit_passed": true
+    },
+    "diagnostic_audit-crossed_sas-vs-control_sas.json": {
+      "path": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-01/diagnostic_audit-crossed_sas-vs-control_sas.json",
+      "sha256": "0cc1492cbed0f260a14459d05d0ac5b0cb4109fd8ec286f3b1cda6491cf62588",
+      "n": 49,
+      "reports": 15,
+      "left": "control_sas",
+      "right": "crossed_sas",
+      "conditions": {
+        "left": {
+          "case_success": {
+            "correct_delivered": 8,
+            "wrong_delivered": 20,
+            "withheld": 21,
+            "candidate_correct": 12,
+            "precision_when_delivered": 0.2857142857142857
+          },
+          "raw_execution_match": {
+            "correct_delivered": 14,
+            "wrong_delivered": 14,
+            "withheld": 21,
+            "candidate_correct": 18,
+            "precision_when_delivered": 0.5
+          }
+        },
+        "right": {
+          "case_success": {
+            "correct_delivered": 9,
+            "wrong_delivered": 20,
+            "withheld": 20,
+            "candidate_correct": 12,
+            "precision_when_delivered": 0.3103448275862069
+          },
+          "raw_execution_match": {
+            "correct_delivered": 15,
+            "wrong_delivered": 14,
+            "withheld": 20,
+            "candidate_correct": 18,
+            "precision_when_delivered": 0.5172413793103449
+          }
+        }
+      },
+      "full_comparison": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 1,
+            "wrong_delivered": 0,
+            "withheld": -1
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.02040816326530612,
+            "wrong_delivered": 0.0,
+            "withheld": -0.02040816326530612
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.05454545454545454
+            ],
+            "wrong_delivered": [
+              -0.10810810810810811,
+              0.08571428571428572
+            ],
+            "withheld": [
+              -0.12244897959183673,
+              0.10526315789473684
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 17,
+            "withheld -> wrong_delivered": 3,
+            "wrong_delivered -> wrong_delivered": 17,
+            "correct_delivered -> correct_delivered": 8,
+            "withheld -> correct_delivered": 1,
+            "wrong_delivered -> withheld": 3
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": 1,
+            "wrong_delivered": 0,
+            "withheld": -1
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.02040816326530612,
+            "wrong_delivered": 0.0,
+            "withheld": -0.02040816326530612
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.05454545454545454
+            ],
+            "wrong_delivered": [
+              -0.10810810810810811,
+              0.08571428571428572
+            ],
+            "withheld": [
+              -0.12244897959183673,
+              0.10526315789473684
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 17,
+            "withheld -> wrong_delivered": 3,
+            "wrong_delivered -> wrong_delivered": 11,
+            "correct_delivered -> correct_delivered": 14,
+            "withheld -> correct_delivered": 1,
+            "wrong_delivered -> withheld": 3
+          },
+          "sample_pareto_improvement": true
+        }
+      },
+      "promising_under_both_metrics": true,
+      "source_code_identity_rechecked": true,
+      "existing_full_trace_audit_passed": true
+    },
+    "diagnostic_audit-crossed_mas-vs-control_mas.json": {
+      "path": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-01/diagnostic_audit-crossed_mas-vs-control_mas.json",
+      "sha256": "3a67ee31841dd3f019192768307388381f8cb74e49394c5e048b7f62be2203eb",
+      "n": 49,
+      "reports": 15,
+      "left": "control_mas",
+      "right": "crossed_mas",
+      "conditions": {
+        "left": {
+          "case_success": {
+            "correct_delivered": 4,
+            "wrong_delivered": 17,
+            "withheld": 28,
+            "candidate_correct": 5,
+            "precision_when_delivered": 0.19047619047619047
+          },
+          "raw_execution_match": {
+            "correct_delivered": 8,
+            "wrong_delivered": 13,
+            "withheld": 28,
+            "candidate_correct": 8,
+            "precision_when_delivered": 0.38095238095238093
+          }
+        },
+        "right": {
+          "case_success": {
+            "correct_delivered": 4,
+            "wrong_delivered": 9,
+            "withheld": 36,
+            "candidate_correct": 5,
+            "precision_when_delivered": 0.3076923076923077
+          },
+          "raw_execution_match": {
+            "correct_delivered": 7,
+            "wrong_delivered": 6,
+            "withheld": 36,
+            "candidate_correct": 9,
+            "precision_when_delivered": 0.5384615384615384
+          }
+        }
+      },
+      "full_comparison": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 0,
+            "wrong_delivered": -8,
+            "withheld": 8
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.0,
+            "wrong_delivered": -0.16326530612244897,
+            "withheld": 0.16326530612244897
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.0
+            ],
+            "wrong_delivered": [
+              -0.2631578947368421,
+              -0.045454545454545456
+            ],
+            "withheld": [
+              0.045454545454545456,
+              0.2631578947368421
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 26,
+            "correct_delivered -> correct_delivered": 4,
+            "withheld -> wrong_delivered": 2,
+            "wrong_delivered -> withheld": 10,
+            "wrong_delivered -> wrong_delivered": 7
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": -1,
+            "wrong_delivered": -7,
+            "withheld": 8
+          },
+          "delta_per_case": {
+            "correct_delivered": -0.02040816326530612,
+            "wrong_delivered": -0.14285714285714285,
+            "withheld": 0.16326530612244897
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              -0.057692307692307696,
+              0.0
+            ],
+            "wrong_delivered": [
+              -0.2549019607843137,
+              -0.022222222222222223
+            ],
+            "withheld": [
+              0.045454545454545456,
+              0.2631578947368421
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 26,
+            "correct_delivered -> correct_delivered": 6,
+            "withheld -> correct_delivered": 1,
+            "correct_delivered -> withheld": 2,
+            "wrong_delivered -> withheld": 8,
+            "wrong_delivered -> wrong_delivered": 5,
+            "withheld -> wrong_delivered": 1
+          },
+          "sample_pareto_improvement": false
+        }
+      },
+      "promising_under_both_metrics": false,
+      "source_code_identity_rechecked": true,
+      "existing_full_trace_audit_passed": true
+    }
+  },
+  "new_neural_calls": 0,
+  "new_full_weight_rehash": false,
+  "limits": "Review of existing completed full-audit outputs and current source hashes. Exploratory public training-source partitions, not clean publication confirmation. No new significance test or equivalence margin selected. Source precision/task scope differs from original headline."
+}

@@ -2,6 +2,8 @@
 
 > **Current 8 GB research:** [progress checkpoint](research/tier8_v2/LIVE_STATUS.md) · [supervisor update](research/tier8_v2/SUPERVISOR_UPDATE_2026-10-25.md). These dated research checkpoints supersede older lab-status notes. Historical setup/recovery commands remain in [LAB_RECOVERY.md](LAB_RECOVERY.md).
 
+> **Scope audit, 27 October:** the current 8 GB redevelopment uses Q4 MAS and financial numerical QA; it does not by itself test the original FP16-MAS/quantized-SAS headline. See the [direction and hypothesis audit](research/tier8_v2/RESEARCH_DIRECTION_AUDIT_2026-10-27.md) before interpreting results or moving tiers.
+
 **Working title:** *Spend It Together or Spend It Big? Multi-Agent Full-Precision Teams vs. Quantized Monoliths on Analyst RAM*
 
 ## One-sentence pitch
