@@ -1,0 +1,38 @@
+{
+  "status": "live_partial_training_prefix_verified",
+  "full_training_complete": false,
+  "observed_optimizer_updates": 6,
+  "planned_optimizer_updates": 64,
+  "examples_processed_in_prefix": 48,
+  "initializer": {
+    "state": "initializer_exactly_loaded",
+    "time": 1793072991.3507462,
+    "tensors": 392,
+    "adapter_sha256": "5da6c7d63a42b28fb58c9d738153235a530293e5330238050099b34c969310ca"
+  },
+  "fit_updates_inherited": false,
+  "all_recorded_losses_and_gradients_finite": true,
+  "sampled_peak_tree_rss_bytes_in_prefix": 8252428288,
+  "minimum_host_available_bytes_in_prefix": 7759392768,
+  "last_update": {
+    "state": "update",
+    "time": 1793073146.471669,
+    "step": 6,
+    "examples": 8,
+    "loss": 0.012618419452337548,
+    "gradient_norm": 0.14421424269676208,
+    "gpu_peak_allocated": 4733040640,
+    "gpu_peak_reserved": 4880072704
+  },
+  "snapshot_root": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-live-progress-01",
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-live-progress-01/events-prefix.jsonl": "9249fe146d44949c6d3cd4dc0db332b3422a5c241d343527c3c69a1d15cc62df",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-live-progress-01/memory-prefix.jsonl": "23f8b383ae14c92761129541e3425580778f03335b3582840aebd1295a9a8e67",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-live-progress-01/plan.json": "191f6e782c0f95b014f2ef6f96c56c4babb9d0b33b732976b2a98f8933694dff",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-live-progress-01/training-manifest.json": "012a611868931a49bf13652e9d6cb492fa00a398d28d08d7479ec2d9d5fbff76"
+  },
+  "new_generation_or_audit_model_calls": 0,
+  "qa_gain_demonstrated": false,
+  "novelty_established": false,
+  "limits": "Immutable partial event/memory prefix only. No claim of completed epoch, changed saved adapter tensors, validation quality or natural SAS utility."
+}

@@ -3053,3 +3053,12 @@ rows byte-identical; own crossed fit validated, updates discarded.0 optimizer
 updates observed at this audit;64 planned. Full controller/worker source checks
 remain unchanged and are still preflight work. Do not report completed training
 or natural SAS improvement from this launch. Source/plan/service identity saved.
+
+Crossed SAS has begun actual learning after full worker source checks and all4
+checkpoint shards loaded. Exact392-tensor original initializer SHA5da6c7d63a42b28fb58c9d738153235a530293e5330238050099b34c969310ca
+restored, not fit weights. Immutable snapshot verifies6 ordered updates/48
+examples, finite losses/nonzero finite gradients, peak8252428288
+bytes below10.5GB training cap and sampled host reserve preserved. Snapshot cuts
+at the last complete update and excludes partial trailing records. All raw prefix
+bytes/hashes saved on SSD; aggregate evidence in repository. Not a completed epoch,
+validation result, saved-weight-change proof or natural QA/novelty claim.

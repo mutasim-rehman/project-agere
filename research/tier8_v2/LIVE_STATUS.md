@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed 27 October 2026, 08:37 PKT.** Committed snapshot, not a live monitor. Goal active;
+**Observed 27 October 2026, 08:52 PKT.** Committed snapshot, not a live monitor. Goal active;
 useful novel-method improvement remains unproven. No cross-tier freeze.
 
 | Item | Verified state |
@@ -10,8 +10,8 @@ useful novel-method improvement remains unproven. No cross-tier freeze.
 | Matched3B critics | Both complete48 updates/384 examples; converted/application-proven |
 | Natural MAS selection | All three52-case runs complete; full trace/token/memory replay passes |
 | Matched control7B SAS | Complete64 updates/512 examples,448 validation; converted/application-proven |
-| Matched crossed7B SAS | Fit complete2 updates; full epoch controller STARTED, preflight before updates |
-| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix02 ACTIVE as one-shot user service PID90142; crossed full-epoch controller preflight running |
+| Matched crossed7B SAS | Full epoch learning active: 6/64 updates observed; exact initializer restored |
+| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix02 ACTIVE as one-shot user service PID90142; crossed full-epoch learning active |
 
 The original controller's last state file is stale. A running claim requires its
 matching live PID/create-time, not that state file alone. No observed failure/exit
@@ -67,8 +67,10 @@ weights and detailed replay stay on the authorized SSD.
 snapshots preserved; suffix02 plan SHA868e84dfdd61f0a7f23805e94eaa496af658f884766c121283d4b663c18b0327.
 Systemd user service agere-matched-study-02-20261027, Restart=no, parent is the user
 service manager. No recurring timer or model retry. Remaining commands/recipes
-exactly match original jobs31–50. Metadata preparation passed. Current stage is full-epoch controller preflight;
-zero optimizer updates observed at this snapshot. Full training reloads the original adapter and discards fit
+exactly match original jobs31–50. Metadata preparation passed. Current stage is full-epoch learning;
+finite-gradient updates are now recorded. Full training reloads the original adapter and discards fit
 updates. Verify live service/PID plus saved state before reporting progress.
 
 [Full crossed SAS launch](evidence/matched-crossed-sas-epoch-launch-01.json): initializer/base/recipe/counts/runtime/caps verified equal to control and validation rows byte-identical.64 updates planned; fit updates discarded. No natural SAS result yet.
+
+[Immutable crossed SAS progress prefix](evidence/crossed-sas-live-progress-01.json): 6/64 updates, 48 examples, finite losses/gradients; sampled training peak 8.252GB under10.5GB. No completed training or natural SAS gain yet.
