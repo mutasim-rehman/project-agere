@@ -1,0 +1,330 @@
+{
+  "status": "complete_descriptive_posthoc_stratification",
+  "n": 52,
+  "reports": 15,
+  "reports_per_overlapping_stratum": {
+    "unsupported_operation": 2,
+    "existing_parser_numeric_literal_failure": 3,
+    "directly_mappable": 8,
+    "unretrieved_operand": 7
+  },
+  "policy_strata": {
+    "control_mas": {
+      "case_success": {
+        "existing_parser_numeric_literal_failure": {
+          "n": 9,
+          "wrong_delivered": 4,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 5
+        },
+        "unretrieved_operand": {
+          "n": 16,
+          "wrong_delivered": 6,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 10
+        },
+        "directly_mappable": {
+          "n": 23,
+          "wrong_delivered": 6,
+          "initial_candidate_correct": 4,
+          "final_candidate_correct": 4,
+          "withheld": 14,
+          "correct_delivered": 3
+        },
+        "unsupported_operation": {
+          "n": 4,
+          "wrong_delivered": 3,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 1
+        }
+      },
+      "raw_execution_match": {
+        "existing_parser_numeric_literal_failure": {
+          "n": 9,
+          "wrong_delivered": 4,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 5
+        },
+        "unretrieved_operand": {
+          "n": 16,
+          "wrong_delivered": 6,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 10
+        },
+        "directly_mappable": {
+          "n": 23,
+          "wrong_delivered": 5,
+          "initial_candidate_correct": 5,
+          "final_candidate_correct": 5,
+          "withheld": 14,
+          "correct_delivered": 4
+        },
+        "unsupported_operation": {
+          "n": 4,
+          "correct_delivered": 1,
+          "initial_candidate_correct": 1,
+          "final_candidate_correct": 1,
+          "withheld": 1,
+          "wrong_delivered": 2
+        }
+      }
+    },
+    "crossed_mas": {
+      "case_success": {
+        "existing_parser_numeric_literal_failure": {
+          "n": 9,
+          "wrong_delivered": 4,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 5
+        },
+        "unretrieved_operand": {
+          "n": 16,
+          "wrong_delivered": 2,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 14
+        },
+        "directly_mappable": {
+          "n": 23,
+          "wrong_delivered": 6,
+          "initial_candidate_correct": 4,
+          "final_candidate_correct": 4,
+          "withheld": 14,
+          "correct_delivered": 3
+        },
+        "unsupported_operation": {
+          "n": 4,
+          "wrong_delivered": 3,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 1
+        }
+      },
+      "raw_execution_match": {
+        "existing_parser_numeric_literal_failure": {
+          "n": 9,
+          "wrong_delivered": 4,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 5
+        },
+        "unretrieved_operand": {
+          "n": 16,
+          "wrong_delivered": 2,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 14
+        },
+        "directly_mappable": {
+          "n": 23,
+          "wrong_delivered": 5,
+          "initial_candidate_correct": 5,
+          "final_candidate_correct": 5,
+          "withheld": 14,
+          "correct_delivered": 4
+        },
+        "unsupported_operation": {
+          "n": 4,
+          "correct_delivered": 1,
+          "initial_candidate_correct": 1,
+          "final_candidate_correct": 1,
+          "withheld": 1,
+          "wrong_delivered": 2
+        }
+      }
+    },
+    "baseline_original_critic_common_actor": {
+      "case_success": {
+        "existing_parser_numeric_literal_failure": {
+          "n": 9,
+          "wrong_delivered": 4,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 5
+        },
+        "unretrieved_operand": {
+          "n": 16,
+          "wrong_delivered": 7,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 9
+        },
+        "directly_mappable": {
+          "n": 23,
+          "wrong_delivered": 9,
+          "initial_candidate_correct": 4,
+          "final_candidate_correct": 4,
+          "withheld": 10,
+          "correct_delivered": 4
+        },
+        "unsupported_operation": {
+          "n": 4,
+          "wrong_delivered": 2,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 2
+        }
+      },
+      "raw_execution_match": {
+        "existing_parser_numeric_literal_failure": {
+          "n": 9,
+          "wrong_delivered": 4,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 5
+        },
+        "unretrieved_operand": {
+          "n": 16,
+          "wrong_delivered": 7,
+          "initial_candidate_correct": 0,
+          "final_candidate_correct": 0,
+          "withheld": 9
+        },
+        "directly_mappable": {
+          "n": 23,
+          "wrong_delivered": 8,
+          "initial_candidate_correct": 5,
+          "final_candidate_correct": 5,
+          "withheld": 10,
+          "correct_delivered": 5
+        },
+        "unsupported_operation": {
+          "n": 4,
+          "correct_delivered": 1,
+          "initial_candidate_correct": 1,
+          "final_candidate_correct": 1,
+          "withheld": 2,
+          "wrong_delivered": 1
+        }
+      }
+    }
+  },
+  "transitions_by_stratum": {
+    "control_mas -> crossed_mas": {
+      "case_success": {
+        "existing_parser_numeric_literal_failure": {
+          "wrong_delivered -> wrong_delivered": 4,
+          "withheld -> withheld": 5
+        },
+        "unretrieved_operand": {
+          "wrong_delivered -> wrong_delivered": 2,
+          "withheld -> withheld": 10,
+          "wrong_delivered -> withheld": 4
+        },
+        "directly_mappable": {
+          "wrong_delivered -> wrong_delivered": 5,
+          "withheld -> withheld": 13,
+          "wrong_delivered -> withheld": 1,
+          "correct_delivered -> correct_delivered": 3,
+          "withheld -> wrong_delivered": 1
+        },
+        "unsupported_operation": {
+          "wrong_delivered -> wrong_delivered": 3,
+          "withheld -> withheld": 1
+        }
+      },
+      "raw_execution_match": {
+        "existing_parser_numeric_literal_failure": {
+          "wrong_delivered -> wrong_delivered": 4,
+          "withheld -> withheld": 5
+        },
+        "unretrieved_operand": {
+          "wrong_delivered -> wrong_delivered": 2,
+          "withheld -> withheld": 10,
+          "wrong_delivered -> withheld": 4
+        },
+        "directly_mappable": {
+          "wrong_delivered -> wrong_delivered": 4,
+          "withheld -> withheld": 13,
+          "wrong_delivered -> withheld": 1,
+          "correct_delivered -> correct_delivered": 4,
+          "withheld -> wrong_delivered": 1
+        },
+        "unsupported_operation": {
+          "correct_delivered -> correct_delivered": 1,
+          "withheld -> withheld": 1,
+          "wrong_delivered -> wrong_delivered": 2
+        }
+      }
+    },
+    "baseline_original_critic_common_actor -> crossed_mas": {
+      "case_success": {
+        "existing_parser_numeric_literal_failure": {
+          "wrong_delivered -> wrong_delivered": 4,
+          "withheld -> withheld": 5
+        },
+        "unretrieved_operand": {
+          "wrong_delivered -> wrong_delivered": 2,
+          "withheld -> withheld": 9,
+          "wrong_delivered -> withheld": 5
+        },
+        "directly_mappable": {
+          "wrong_delivered -> wrong_delivered": 4,
+          "withheld -> withheld": 8,
+          "wrong_delivered -> withheld": 5,
+          "correct_delivered -> withheld": 1,
+          "withheld -> wrong_delivered": 2,
+          "correct_delivered -> correct_delivered": 3
+        },
+        "unsupported_operation": {
+          "wrong_delivered -> wrong_delivered": 2,
+          "withheld -> withheld": 1,
+          "withheld -> wrong_delivered": 1
+        }
+      },
+      "raw_execution_match": {
+        "existing_parser_numeric_literal_failure": {
+          "wrong_delivered -> wrong_delivered": 4,
+          "withheld -> withheld": 5
+        },
+        "unretrieved_operand": {
+          "wrong_delivered -> wrong_delivered": 2,
+          "withheld -> withheld": 9,
+          "wrong_delivered -> withheld": 5
+        },
+        "directly_mappable": {
+          "wrong_delivered -> wrong_delivered": 3,
+          "withheld -> withheld": 8,
+          "wrong_delivered -> withheld": 5,
+          "correct_delivered -> withheld": 1,
+          "correct_delivered -> correct_delivered": 4,
+          "withheld -> wrong_delivered": 2
+        },
+        "unsupported_operation": {
+          "correct_delivered -> correct_delivered": 1,
+          "withheld -> withheld": 1,
+          "withheld -> wrong_delivered": 1,
+          "wrong_delivered -> wrong_delivered": 1
+        }
+      }
+    }
+  },
+  "input_sha256": {
+    "/home/mutasim/Desktop/project-agere/research/tier8_v2/experiments/mas_representation_strata.py": "ffa202a73b7294febced5e9cddaee8d109473911af49992959ef0390653cfb64",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/model-selection-01/cases.jsonl": "d9c7ebe1adbc9bbfc42cfec8932472696febe9763ad527ce60a6c78b69e41e9d",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/model-selection-01/summary.json": "2a2982ed63750a90bf87f60917924377431c172b8d7ad63503b4c73babeb85a8",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-01/independent-model-selection-mas-pair-01.json": "56344499fe79e1ebb6f57aba37facbb5547f00ddaba9acbdb6c99a04c049d678",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/matched-study-01/model_selection-crossed_mas-vs-baseline_original_critic_common_actor.json": "f154329dcb40ee7c2f3842212c4d0483e36be2f3758450d3a28b3bb7a47c6148",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01/cases.jsonl": "2e0f0e40b503c67788cf35021fd41eb49847b1a6f2f35d0897eac8e99f7cee89",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01/summary.json": "5e74d327dbe7f64e6966824ee16998beac06acec3a3d4d6ad13fea366397968a",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-crossed_mas-full-01/cases.jsonl": "de95302a9dc4a1ce7716ba7ab255db6d554a765613246872c81bb13bf01b1f22",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-crossed_mas-full-01/summary.json": "e824c53763b2c0bdaa39fa561496fa445b33c6931fbd672a4d60e59bfc4f1836",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-baseline_original_critic_common_actor-full-01/cases.jsonl": "68d8b5fe719a19086b2c29b4939f2511d01dd50505ff82873ddad650e408482c",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-baseline_original_critic_common_actor-full-01/summary.json": "31665ff9f15db4d131eb200a726c686f9666023f63191edd0eac8887578abebb"
+  },
+  "details_sha256": "77481159784f92d3c29aaac8893c285c535003205821af62009303452f8d4157",
+  "cases_excluded": 0,
+  "model_calls": 0,
+  "thresholds_or_scores_changed": false,
+  "limits": "Post-hoc, reference-dependent exploratory strata; not an inference-time feature, new training target, causal mechanism proof, significance test or novelty. Direct annotated-program mapping is not task solvability/semantic certification. Report groups overlap across strata. All52 cases and original full metrics retained; do not use these labels for routing or selection-specific rules.",
+  "raw_result": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/mas-policy-strata-01",
+  "raw_summary_sha256": "6727f503d906f1ebf49e45c2912be239385ea063ded46d7e222847be4159f39a",
+  "all_cases_and_pinned_completed_policy_hashes_rechecked": true,
+  "novelty_established": false
+}

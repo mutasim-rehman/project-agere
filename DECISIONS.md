@@ -3082,3 +3082,21 @@ as original row cells. AIDs can shift, so old targets/traces require regeneratio
 No HF/GGUF training parity/new SFT eligibility/full-policy context/QA improvement
 or first-use novelty established. Prototype not adopted. Active crossed SAS42/64
 updates at last check, finite gradients; no parallel model inference was run.
+
+### 2026-10-27 — descriptive MAS coverage strata narrow gain interpretation
+
+Join all52 completed/pinned/audited cases from all three critics with unchanged
+existing-parser reference categories. Counts recombine exactly to full policy
+metrics under BOTH score conventions; hashes/IDs/details verified, zero exclusions
+or model calls. All net4 wrong-delivery reductions versus matched control lie in
+16 cases missing an annotated operand from the current catalog. In23 directly
+mappable cases, one wrong prevented and one introduced; aggregate reported3/6/14
+unchanged. Original has4/9/10 there, so no-loss adoption still fails. Four reported
+initial correct among23 mappable shows coverage alone is insufficient. A raw match
+in unsupported-reference-operation group also refutes treating direct mapping as
+solvability ceiling; not independent semantic correctness.
+
+This is post-hoc/reference-dependent association, NOT learned-mechanism proof,
+new significance evidence or novelty. Categories are unavailable at deployment:
+never use them for routing, outcome-selected exclusions or selection-specific
+training targets. No score/criterion/prompt/data/threshold changes to active study.

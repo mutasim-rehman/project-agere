@@ -73,3 +73,32 @@ reference fidelity and critic calibration remain future controlled research;
 selection cases must not become training examples or ad-hoc rules.
 
 [Full original comparison](evidence/matched-mas-original-selection-01.json).
+
+## Post-hoc reference-coverage stratification
+
+All52 cases remain in the full metrics. Reference-dependent categories are only
+exploratory diagnostics, unavailable at deployment; they cannot become routing
+features, exclusions or selection-case training labels.
+
+| Existing-parser category | N | Control correct/wrong/withheld | Crossed | Original |
+|---|---:|---|---|---|
+| Directly mappable reference |23|3 /6 /14|3 /6 /14|4 /9 /10|
+| Missing annotated operand in catalog |16|0 /6 /10|0 /2 /14|0 /7 /9|
+| Numeric literal parser failure |9|0 /4 /5|0 /4 /5|0 /4 /5|
+| Unsupported annotated operation |4|0 /3 /1|0 /3 /1|0 /2 /2|
+
+Table uses the unchanged reported-answer metric. All net four wrong-delivery
+reductions versus matched control lie in the missing-operand category. Within
+directly mappable cases, one wrong delivery is prevented and one introduced,
+leaving aggregate outcomes unchanged. This does NOT establish a general semantic
+verification improvement or a causal explanation of the learned mechanism.
+
+All four initial reported-correct candidates occur in the directly mappable23,
+but19/23 are still initially wrong. Representation coverage alone is insufficient.
+One initial raw-reference match also occurs in the unsupported-operation group:
+exact reference-program mapping is not a task-solvability ceiling. Numeric matches
+are not independent financial semantic adjudication.
+
+The stronger-original adoption rule still fails. No metrics, criteria, thresholds
+or cases changed; report groups overlap across strata and no post-hoc significance
+tests are claimed. [Verified stratification](evidence/mas-representation-strata-01.json).

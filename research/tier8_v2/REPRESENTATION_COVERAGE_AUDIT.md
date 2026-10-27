@@ -100,3 +100,12 @@ Do not adopt or call this novel: known preprocessing made testable, with potenti
 coverage benefit requiring fresh controlled neural training/QA. The active SAS/
 MAS study and its packets remain unchanged. No selected or reserved-audit cases
 were transformed. [Verified fitting result](evidence/header-materialization-fitting-01.json).
+
+Completed MAS outcome join: the net four wrong-delivery reductions versus matched
+control are entirely in the16 missing-reference-operand cases; the23 directly
+mappable cases have equal aggregate outcomes but one prevented/one introduced
+wrong delivery. This is post-hoc association, not a mechanism or semantic proof.
+Only4/23 directly mappable initial drafts are reported-correct, so representation
+repair alone cannot be assumed to solve generation. These reference-conditioned
+categories are unavailable at deployment and must never be used as routing rules
+or exclusions. All52 original cases remain in primary results. [Full strata](MATCHED_MAS_SELECTION.md).
