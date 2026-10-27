@@ -3062,3 +3062,23 @@ bytes below10.5GB training cap and sampled host reserve preserved. Snapshot cuts
 at the last complete update and excludes partial trailing records. All raw prefix
 bytes/hashes saved on SSD; aggregate evidence in repository. Not a completed epoch,
 validation result, saved-weight-change proof or natural QA/novelty claim.
+
+### 2026-10-27 — source-traced header materialization, offline fitting prototype
+
+Following failed first-row reranking test, implement a separate raw-table-only
+transform retaining exact selected span keys/order and all old catalog facts.
+Materialize first-row cells in one selected table context group; ledger stores
+true row/column, normalized source strings and character offsets. No QA answer/
+program input to transform. Sealed73 fitting packets BEFORE reference diagnostics.
+Source origins/old facts/input hashes/counts independently verified;3 targeted
+regression tests pass. Do not edit frozen active study code or packets.
+
+Direct mapping41→45/73, unique numeric bindings19→22, four recovered and zero lost.
+Vocab-only3B/7B counting (NO neural forwards) gives5418 extra prompt tokens total,
+median72/max337; all73 retain full768+8 draft reserve under4096 context. Same
+retrieved units but additional source content/tokens, NOT information/token-matched
+QA gain. New spans are augmented context groups; origins are not falsely labelled
+as original row cells. AIDs can shift, so old targets/traces require regeneration.
+No HF/GGUF training parity/new SFT eligibility/full-policy context/QA improvement
+or first-use novelty established. Prototype not adopted. Active crossed SAS42/64
+updates at last check, finite gradients; no parallel model inference was run.

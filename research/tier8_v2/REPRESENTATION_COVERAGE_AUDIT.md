@@ -69,3 +69,34 @@ retrieval/context packing require a stronger controlled proposal.
 
 [Negative fitting test](evidence/first-row-fitting-test-01.json) ·
 [Reproducible offline experiment](experiments/first_row_preservation.py).
+
+## Source-traced materialization prototype, fitting only
+
+A separate prototype keeps the exact retrieved span keys/order, then materializes
+raw first-row cells inside one selected table context group. Each appended cell
+has its original row/column, normalized text and exact character offsets in a
+provenance ledger. No answer/program is an input to the transformation. All73
+candidate packets were sealed before reference-based coverage/token diagnostics.
+This is outcome-guided exploratory fitting work; it is not blinded confirmation.
+
+Direct reference mapping41→45/73; unique numeric bindings19→22. Four missing-operand
+cases recover; no previously mappable case, selected span or old catalog fact is
+lost. All source offsets and counts independently rechecked. This differs from
+the earlier top-eight reranking variant's one gain/one loss.
+
+Vocabulary-only counts, zero neural forwards: both3B/7B tokenizers show5418 extra
+prompt tokens total, median72 and max337 per case. All73 old and new prompts fit
+4096 context with the full768-token first-draft reserve plus8. This is NOT a
+full-policy context proof, HF/GGUF training parity or a ready SFT dataset.
+
+Eight selected span IDs are preserved, but spans are AUGMENTED CONTEXT GROUPS,
+not unmodified original rows. Source origins are explicit in the ledger. Extra
+source content/prompt tokens are not information/token matched. AIDs may renumber;
+old reference targets/traces cannot be assumed valid for transformed packets.
+Three tests cover real first-row recovery, original-fact/input preservation,
+colon parsing/provenance, no fabricated column numbers and no text-only injection.
+
+Do not adopt or call this novel: known preprocessing made testable, with potential
+coverage benefit requiring fresh controlled neural training/QA. The active SAS/
+MAS study and its packets remain unchanged. No selected or reserved-audit cases
+were transformed. [Verified fitting result](evidence/header-materialization-fitting-01.json).
