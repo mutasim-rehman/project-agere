@@ -1,0 +1,44 @@
+{
+  "status": "verified_completed_fit_only",
+  "result": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-fit-01",
+  "summary": {
+    "status": "complete",
+    "mode": "fit",
+    "optimizer_updates": 2,
+    "examples_processed": 2,
+    "initializer_exactly_loaded": true,
+    "initializer_tensor_count": 392,
+    "changed_adapter_tensors": 392,
+    "trainable_parameters": 20185088,
+    "last_training_loss": 0.16718177497386932,
+    "validation_teacher_forced_loss": null,
+    "validation_by_family_task": {},
+    "wall_seconds": 388.75556855899777,
+    "gpu_peak_allocated": 4521420800,
+    "gpu_peak_reserved": 4942987264,
+    "adapter_files": {
+      "adapter_config.json": "4fdfe5490b511b1035096814417f58b4b7ba469dfe54a1f1fffdeb1f29d954b9",
+      "adapter_model.safetensors": "fe39296c7449e0209ac7352353fd8cba620c7270be0e8fc3b4f65537a054f2c3",
+      "README.md": "e2ddf34397793e8ffb4be53f6c234d215b34c114dc034a8770b7a8b5e3e8ea34"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "state": {
+    "state": "complete",
+    "time": 1793055713.0598707,
+    "peak_tree_rss_bytes": 8382795776,
+    "fit_only": true,
+    "measured_reasoning_gain": false
+  },
+  "fit_updates_discarded": true,
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-fit-01/plan.json": "50df33ed23c90c44d60e3b04b48f6c8457f1dcac4cab4b1216dfc10ae475f4e6",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-fit-01/state.json": "eaa96d812b87f5dcc6a84391a9966359c5e1207f4bdd82ade193ec22d01f0ce5",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-fit-01/fit/summary.json": "9dd085f058affd0bf5299de84baa0ba09141947a6f202371e90bd3ca75360757",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-fit-01/fit/manifest.json": "f1b8cdea1a4c7a606dd3fba6252c0c0593df3ce5a3c552ffe75550dd6f564f19",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-fit-01/memory.jsonl": "7f40b96be465bf4163722de5420223f7cdf206f8d17164dc267bf9a4c9476da1"
+  },
+  "novelty_established": false,
+  "full_training_not_started_at_this_audit": true
+}

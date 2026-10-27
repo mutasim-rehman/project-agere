@@ -1,0 +1,83 @@
+{
+  "status": "audited_completed_control_sas_continuation",
+  "training_root": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-train-01",
+  "summary": {
+    "status": "complete",
+    "mode": "train",
+    "optimizer_updates": 64,
+    "examples_processed": 512,
+    "initializer_exactly_loaded": true,
+    "initializer_tensor_count": 392,
+    "changed_adapter_tensors": 392,
+    "trainable_parameters": 20185088,
+    "last_training_loss": 0.0043990085309815186,
+    "validation_teacher_forced_loss": 0.03345946249954154,
+    "validation_by_family_task": {
+      "crossed_validation|critic": {
+        "n": 192,
+        "mean": 0.0937997375925382
+      },
+      "mutation_validation|critic": {
+        "n": 192,
+        "mean": 0.00967165951927503
+      },
+      "replay_critic|critic": {
+        "n": 32,
+        "mean": 0.0045453086495399475
+      },
+      "replay_drafter|drafter": {
+        "n": 32,
+        "mean": 0.02575834038998437
+      }
+    },
+    "wall_seconds": 2438.1200666210007,
+    "gpu_peak_allocated": 4763642368,
+    "gpu_peak_reserved": 4945084416,
+    "adapter_files": {
+      "adapter_config.json": "4cb5e0f085b08ce9905b6b104759d8186a332c18700924ab94dbd5773b14d503",
+      "adapter_model.safetensors": "8d2ab36b87b2671e88e3988e5079c5ad234688fb9037a639bbf66890e5dff9ac",
+      "README.md": "e2ddf34397793e8ffb4be53f6c234d215b34c114dc034a8770b7a8b5e3e8ea34"
+    },
+    "deployment_adapter_applied": false,
+    "measured_reasoning_gain": false
+  },
+  "memory_samples": 13660,
+  "sampled_peak_training_tree_rss_bytes": 8275025920,
+  "minimum_host_available_bytes": 8012435456,
+  "converted_adapter_sha256": "54dec6848da3e7fd2a5437c9c9f5712625703864d43f125fa175ccfda78d4ff1",
+  "native_application_proof": {
+    "result": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-applied-proof-01",
+    "summary": {
+      "status": "complete",
+      "exit_code": 0,
+      "peak_tree_rss_bytes": 5140361216,
+      "cap_bytes": 6400000000,
+      "memory_breach": false,
+      "measured_reasoning_gain": false
+    },
+    "memory_peak_replayed": 5140361216,
+    "source_and_prompt_checks": {
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_last_logit_proof.py": "567652b008dc1f9bc226de6fff8bb9f44167d4724326c6048dfc91b213f41c73",
+      "/home/mutasim/Desktop/project-agere/scripts/binary_verifier_score.py": "d9dd29663c2e2e738641ef471dbebb0024364230bfd3ddae7da027ce48ff89dc",
+      "/home/mutasim/Desktop/project-agere/scripts/completion_tokenization.py": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+      "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_runtime.py": "28243991d8ba9094f234f8bc0ceca44c476e1cb85662ca2475ccb44acf93035a",
+      "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_continuation/matched_01/control_sas/examples.jsonl": "d2d80a986f5d84f7587b2f11800d9cc4135c02aeba0afca4b25b26bb59622731",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-applied-proof-01/proof.json": "9e0a93b33accbad70896e48e163c38539e1f7729f02ad42c5fc292b973de8141",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-applied-proof-01/manifest.json": "8b9c9e2ccf8f636d8597d351a1dcdb7ccd3d596b57ac6dbfcfea365954685422",
+      "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-applied-proof-01/summary.json": "76e40eceece109c6cfdccad06ce4bf47d470ff0efc9b840a9a59e24d7c191b27"
+    }
+  },
+  "input_sha256": {
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-train-01/plan.json": "e6c9e009e7bfcc54f8f50fbe4d34795c2d5fcd47124641bbff2e6e6a59ac8bd0",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-train-01/state.json": "0354e18fcf0479671fdd3008e4bc089adc4c54e31d311f66fddbf030a1da15b8",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-train-01/train/manifest.json": "c9746bef71a9cb82298c5b97e99c31204b3d73abac7f9ed9f8e978c0dc711872",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-train-01/train/summary.json": "628bd54d272a04aa648e89b4f1064d8e37c766eee20841b22d540cf03e7861d3",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-train-01/train/events.jsonl": "00226c2c52a5965c9d02aaada1c4af294fe066fcf8be0fd80364a5f19c634c23",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-train-01/memory.jsonl": "d261b4bf1250dba91d9086a41b2669dc3d19c91058c2a3d17def4c5c35b062b3",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-converted-01/manifest.json": "674704e63808a7b5cea3273623c00f1e26715126b20895fd8269d0a49501b764",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-applied-proof-01/proof.json": "9e0a93b33accbad70896e48e163c38539e1f7729f02ad42c5fc292b973de8141",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-applied-proof-01/summary.json": "76e40eceece109c6cfdccad06ce4bf47d470ff0efc9b840a9a59e24d7c191b27",
+    "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-applied-proof-01/memory.jsonl": "a5b9a0a8fea421ad871ce37d8f63bb88df2129724bbba55fb698e9b5254c8edf"
+  },
+  "limits": "64 real updates/512 examples; teacher validation with known repeated positives and task weights, not natural QA. Native last-logit application effect is not deployment accuracy. No novelty established."
+}

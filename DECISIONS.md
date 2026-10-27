@@ -3017,3 +3017,17 @@ Three regression tests cover failed/overlapping/unobserved or changed journals,
 nonmetadata interruption and hash-cache mutation. No model/method/novelty claim.
 Use a transient one-shot user service for the new controller if available, so its
 process lifecycle is independent of the interactive shell; no recurring timer.
+
+Completed control SAS continuation independently audited after inactive interval:
+64 ordered finite/nonzero-gradient updates/512 examples; exact392-tensor initializer
+and all392 changed,20,185,088 trainable parameters.448 teacher-validation rows and
+family/task-weighted mean reproduce0.03345946 from recorded family means. No new
+model forwards in audit. Memory samples replay8,275,025,920 bytes under10.5GB training
+allowance; host reserve retained. Conversion actual GGUF SHA54dec6848da3e7fd2a5437c9c9f5712625703864d43f125fa175ccfda78d4ff1.
+Native0→1→0 application/source/prompt checks replay, peak5,140,361,216 below6.4GB.
+Teacher/native checks do not establish natural QA improvement or novelty.
+Crossed SAS fit validated2 real updates from exact initializer; fit weights are
+discarded. Full candidate directory absent at this audit. Recovery prefix audit
+is live, not a neural workload. Three recovery tests additionally exercise explicit
+overlap/duplicate-exit corruption. Rewrite LIVE_STATUS as current snapshot so old
+running claims do not masquerade as present process state.

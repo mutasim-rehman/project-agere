@@ -26,6 +26,8 @@ class ExplicitRecovery(unittest.TestCase):
 
     def test_rejects_unobserved_exit_changed_command_and_terminal_failure(self):
         for events in [self.events[:1] + self.events[2:],
+                self.events[:1] + self.events[-1:],
+                self.events[:2] + [self.events[1]] + self.events[2:],
                 self.events + [{'state': 'failed'}],
                 [{'state': 'job_exited', 'job': None, 'exit_code': 0, 'memory_breach': False}],
                 [{'state': 'job_complete', 'job': None}]]:
