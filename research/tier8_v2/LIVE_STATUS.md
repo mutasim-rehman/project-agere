@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed 27 October 2026, 09:17 PKT.** Committed snapshot, not a live monitor. Goal active;
+**Observed 27 October 2026, 09:34 PKT.** Committed snapshot, not a live monitor. Goal active;
 useful novel-method improvement remains unproven. No cross-tier freeze.
 
 | Item | Verified state |
@@ -10,8 +10,8 @@ useful novel-method improvement remains unproven. No cross-tier freeze.
 | Matched3B critics | Both complete48 updates/384 examples; converted/application-proven |
 | Natural MAS selection | All three52-case runs complete; full trace/token/memory replay passes |
 | Matched control7B SAS | Complete64 updates/512 examples,448 validation; converted/application-proven |
-| Matched crossed7B SAS | Full epoch: 64/64 updates observed; independent completion audit pending |
-| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix02 ACTIVE as one-shot user service PID90142; crossed full-epoch learning active |
+| Matched crossed7B SAS | Complete64 updates/512 examples and448 validation; converted; native proof running |
+| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix02 ACTIVE as one-shot user service PID90142; crossed SAS native application proof running |
 
 The original controller's last state file is stale. A running claim requires its
 matching live PID/create-time, not that state file alone. No observed failure/exit
@@ -76,3 +76,12 @@ updates. Verify live service/PID plus saved state before reporting progress.
 [Immutable crossed SAS progress prefix](evidence/crossed-sas-live-progress-01.json): 6/64 updates, 48 examples, finite losses/gradients; sampled training peak 8.252GB under10.5GB. No completed training or natural SAS gain yet.
 
 Post-hoc MAS coverage strata show the matched-control net error reduction only in missing-operand cases; this is not a semantic-mechanism proof or deployment routing feature. All52 cases and original adoption criterion retained. [Stratification](MATCHED_MAS_SELECTION.md).
+
+
+[Crossed SAS completion audit](evidence/matched-crossed-sas-complete-01.json):64
+updates/512 examples, all392 tensors changed,13013 memory samples replay to8.263GB
+under10.5GB training cap. Final controller source verification passed. Conversion
+SHA b152ef4060570a8150cfb2f1f5af7bb8ffd915ff70c691ff22aef7a089d23c04 verified.
+Recorded weighted validation loss0.033459(control)→0.017700(crossed); crossed-family
+loss improves while mutation/replay-critic worsen. Drafter replay loss falls.
+This is teacher forcing, not a generated-QA result. [SAS training comparison](MATCHED_SAS_CONTINUATION.md).

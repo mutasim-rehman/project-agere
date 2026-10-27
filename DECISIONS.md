@@ -3100,3 +3100,23 @@ This is post-hoc/reference-dependent association, NOT learned-mechanism proof,
 new significance evidence or novelty. Categories are unavailable at deployment:
 never use them for routing, outcome-selected exclusions or selection-specific
 training targets. No score/criterion/prompt/data/threshold changes to active study.
+
+### 2026-10-27 — crossed SAS full epoch/source verification and conversion audited
+
+Worker finished64 updates/512 examples and448 teacher-validation rows, all392
+LoRA tensors changed from exact original initializer. Initial metadata audit01
+correctly refused completion while controller was still checking final source
+hashes; no completion artifact written, no model retry. Preserve log01. After
+controller state became complete, metadata audit02 passes; full actual conversion
+SHA b152ef4060570a8150cfb2f1f5af7bb8ffd915ff70c691ff22aef7a089d23c04 verified.
+64 events and13013 memory samples replay: peak8,262,852,608 under10.5GB training
+cap, host reserve preserved. Control/candidate base/init/recipe/counts/runtime and
+validation bytes match. Native6.4GB application proof is now running.
+
+Recorded weighted teacher loss0.033459→0.017700; crossed critic0.093800→0.030767,
+mutation critic0.009672→0.018942 worsens; critic replay0.004545→0.006232 worsens;
+drafter replay0.025758→0.022407 improves. Family means/weights/counts recombine.
+Repeated positives, one seed, no independent forward rerun. Shared SAS probabilities
+can transfer across tasks despite fixed drafter data; do not infer better generated
+answers, architectural causality or novelty. Keep actual natural/prefix comparisons,
+strong originals/reserved audit and secondary prompts; no new thresholds/metrics.
