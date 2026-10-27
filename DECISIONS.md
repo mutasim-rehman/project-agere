@@ -3165,3 +3165,13 @@ are an additional baseline component, not completion of the novelty objective.
 Source-retention audit fixtures now explicitly stay under repository .local; all
 six tests rerun and pass (log03). Preparation plan unchanged and all pinned
 inputs reverified. Current inference continues; no extra neural work launched.
+
+### 2026-10-27 — source-retention novelty screened against current primary work
+
+Inspected recent primary serialization and SemiBonsai methods, protocols and
+limits; snapshots/hashes retained on SSD, details in RELATED_WORK_MATRIX. These
+further narrow potential originality. Our first-row repair is a baseline fix;
+its extra content is unlike a same-content serialization experiment. RSS differs
+from monetary budget, but resource labels alone establish no novel contribution.
+Do not add adaptive serialization/routing to the frozen study or imply replication
+or superiority. Natural SAS comparison remains in progress; no new model calls.

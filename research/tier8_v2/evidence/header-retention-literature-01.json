@@ -1,0 +1,39 @@
+{
+  "accessed_utc": "2026-10-27T04:49:42.064867+00:00",
+  "kind": "primary_literature_snapshots",
+  "records": [
+    {
+      "url": "https://arxiv.org/html/2610.24798v1",
+      "resolved_url": "https://arxiv.org/html/2610.24798v1",
+      "snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_literature_audit/header-retention-20261027-01/serialization.html",
+      "sha256": "ec933d3c65c9450672ff2ce973b0e65346befdfa6a998dec6d1081231de328e1",
+      "bytes": 163252,
+      "sections_inspected_via_web": [
+        "2.1",
+        "2.2",
+        "4",
+        "Appendices A/B/E"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/html/2610.07749v1",
+      "resolved_url": "https://arxiv.org/html/2610.07749v1",
+      "snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_literature_audit/header-retention-20261027-01/semibonsai.html",
+      "sha256": "034144a98c8c715a132aefd36e3b0791019b15d4e0794c6290f474eaa67a6031",
+      "bytes": 491932,
+      "sections_inspected_via_web": [
+        "III",
+        "VI",
+        "VII-A",
+        "VII-F",
+        "Appendix D.3"
+      ]
+    }
+  ],
+  "limits": "Literature evidence only; author-reported results not reproduced. No training/inference calls, no claim of matching our setting or exhausting prior work.",
+  "manifest": "/run/media/mutasim/Data/AGERE/runs/tier8_literature_audit/header-retention-20261027-01/manifest.json",
+  "manifest_sha256": "baab478f9dbc67ad7708f73249c26c9bf43b7beaa43f8421ba8ef0f741e7d686",
+  "implication": "Source/header retention, table structuring and budget-aware routing have close primary prior work. Do not claim first-use novelty for the current preprocessing prototype. Differences in resource/task scope require new measured evidence, not a novelty assertion.",
+  "current_neural_study_changed": false,
+  "new_model_calls": 0
+}

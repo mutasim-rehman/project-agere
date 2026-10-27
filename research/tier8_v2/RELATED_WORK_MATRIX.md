@@ -148,3 +148,14 @@ fresh prefill. Our46.8% saving compares duplicate versus shared backbone on two
 prompts, not their cache methods. No speed/accuracy superiority comparison, cache
 replication, full-program equivalence or first-use result follows. Keep cache
 reuse out of the frozen study; numerical closeness across roles is not equality.
+
+
+## 27 October2026 — table representation and monetary-budget precedents
+
+[Table Serialization Determines Which Relations Language Models Preserve](https://arxiv.org/html/2610.24798v1), submitted17October2026. Sections2.1–2.2,4 and appendicesA/B/E inspected: paired synthetic tables show representation-dependent lookup errors; three models, BF16, RTX4090. The authors limit conclusions to narrow diagnostics and disclose protocol deviations. Our first-row source omission differs from their same-table serialization comparison, but header placement/serialization effects are not a new general principle. No reproduction or superiority claim.
+
+[Cost-Effective Numerical QA over Semi-Structured Table: Structuring, Resolution, Planning](https://arxiv.org/html/2610.07749v1), submitted6October2026. SectionsIII,VI,VII-A/VII-F and appendixD.3 inspected: SemiBonsai combines structural trees, question disambiguation, executable planning and contextual-bandit model routing under monetary budgets. Evaluation uses HiTab, MultiHiertt and RealHiTBench; the routing pool includes API models. Monetary cost differs from our deployment RSS cap; that distinction alone proves no novelty. Source structuring, planning and cost-aware routing cannot be claimed as first use. No benchmark replication.
+
+Primary HTML snapshots/hashes are retained on the SSD. The prepared header study
+remains a known preprocessing baseline test. A positive fitting result would show
+local utility, not establish a new method. [Snapshot evidence](evidence/header-retention-literature-01.json).
