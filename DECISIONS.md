@@ -3212,3 +3212,14 @@ Live controller/create-time and actual children verified. Immutable case/memory
 prefixes retained on SSD, with counts/hash/CPU-liveness metadata pushed. Live
 status snapshot refreshed; no partial success statistics used for selection and
 no new model calls added. This is verified waiting, not a completed result.
+
+### 2026-10-27 — supervisor checkpoint reconciles completed evidence and limits
+
+Created dated supervisor update from audited completed MAS counts, paired prefix
+results, both completed SAS training/native proofs and source-retention diagnostics.
+MAS full outcomes and recorded prefix aggregate equality checked under both
+metrics. Input evidence/report hashes retained. SAS natural results still pending;
+no partial outcomes used, no novel-method adoption, architecture winner,8GB
+training claim or cross-tier freeze. Preliminary report is possible; a convincing
+new-method claim is not supported yet. This communication does not replace any
+remaining evaluation or the original novelty objective.
