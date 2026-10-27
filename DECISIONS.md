@@ -3335,3 +3335,37 @@ gates pass, while overall adoption/novelty remains unproven. Do not turn the PDF
 case-wise/unpaired tests, post-hoc significance, p=1 shortcut probe or association
 into clustered confirmatory/equivalence/mechanistic proof. Review did not recompute
 every p-value. PDF hash and interpretation limits retained, source PDF unmodified.
+### 2026-10-27 — prepare Ubuntu offline higher-tier handoff; execution still gated
+
+User confirmed Ubuntu,32GB RAM and10GB GPU, and requested closure of the current
+8GB checks, exclusion of unvalidated prototypes and a reconciled protocol before
+moving tiers. Inspected authorized SSD `/run/media/mutasim/Data/AGERE`: all six
+required F16/Q4 GGUFs are present; their metadata/tensor extents match the recorded
+Phase2 artifacts. The old SSD environment points to a different lab installation
+and is not portable. Built a self-contained Python3.12/llama-cpp-python0.3.16 CPU
+runtime from cached local sources/packages, AVX2 without AVX512, with matching ELF
+loader/system libraries, licenses and checksum pins. No lab download/install is
+required. Its non-neural imports and actual shell bootstrap succeeded. Runtime
+and datasets/results remain on SSD; only ignored runtime cache is copied to lab
+host. This engineering work establishes neither novelty nor tier accuracy.
+
+The prospective protocol uses pretrained models in BOTH arms: no compatible
+14B/32B trained adapters exist.16GB primary uses14B Q4 SAS versus resident
+1.5B/3B/0.5B F16 MAS;32GB scaling uses32B Q4 SAS versus3B/7B/0.5B F16 MAS. GPU
+unused; nominal RSS ceilings12.8/25.6GB with a recorded common host-adjusted cap.
+Existing numerical financial QA is an explicit scope amendment, not KYC/credit
+safety evidence. Fixed reasoned/no-repair primary plus direct/repair controls;
+no new source/catalog/repair method. Sealed160 questions/50 reports selected by
+ID hash from existing FinQA dev after recorded earlier report exclusions; demos
+are report-disjoint. Public benchmark/pretraining/exposure limits remain.
+
+Added serial SSD logging, frozen code/input manifests, ordered case checkpoints,
+controller/worker identity and workload lock, sampled memory/no-swap enforcement,
+saved-response/token replay, report-cluster intervals and portable result export.
+Ten non-neural integrity tests pass, most recently `runs/lab-tiers-tests-05.log`
+on SSD. Attempt04 used unavailable system `python` and failed before tests;
+rerun05 used the existing repository environment. Real-model runtime/workflow
+smokes are still pending until the ORIGINAL serial8GB sequence and paired audits
+finish; no neural job was overlapped. Freeze creation requires both current smoke
+proofs and closure hashes. Code preparation is a milestone, NOT a ready lab
+handoff, completed16/32GB evaluation, publication claim or achieved novelty goal.
