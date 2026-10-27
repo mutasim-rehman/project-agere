@@ -1,6 +1,6 @@
 # Research checkpoint
 
-**Observed 27 October 2026, 09:39 PKT.** Committed snapshot, not a live monitor. Goal active;
+**Observed 27 October 2026, 10:02 PKT.** Committed snapshot, not a live monitor. Goal active;
 useful novel-method improvement remains unproven. No cross-tier freeze.
 
 | Item | Verified state |
@@ -11,7 +11,7 @@ useful novel-method improvement remains unproven. No cross-tier freeze.
 | Natural MAS selection | All three52-case runs complete; full trace/token/memory replay passes |
 | Matched control7B SAS | Complete64 updates/512 examples,448 validation; converted/application-proven |
 | Matched crossed7B SAS | Complete64 updates/512 examples and448 validation; converted/application-proven |
-| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix02 ACTIVE as one-shot user service PID90142; natural control SAS evaluation running (2/52 complete cases at snapshot) |
+| Controller status | Original01 process disappeared during crossed-epoch metadata preparation. No output created. Explicit suffix02 ACTIVE as one-shot user service PID90142; natural control SAS evaluation running (22/52 complete cases at snapshot) |
 
 The original controller's last state file is stale. A running claim requires its
 matching live PID/create-time, not that state file alone. No observed failure/exit
@@ -88,5 +88,7 @@ This is teacher forcing, not a generated-QA result. [SAS training comparison](MA
 
 Crossed SAS native proof independently replayed: complete, exit0, sampled tree RSS
 5,140,795,392 bytes below6.4GB, with source/prompt/application checks retained.
-The service and actual inference child are live; control SAS has2/52 complete
+The service and actual inference child are live; control SAS has22/52 complete
 cases at this snapshot. Partial outcomes are not used for model selection.
+
+[Immutable natural SAS progress snapshot](evidence/control-sas-natural-progress-01.json): 22/52 cases, matching live controller and inference child; sampled peak so far 5.351GB. No partial quality interpretation.

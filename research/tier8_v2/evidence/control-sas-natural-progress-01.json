@@ -1,0 +1,28 @@
+{
+  "status": "live_incomplete_snapshot",
+  "observed_utc": "2026-10-27T05:02:14.219216+00:00",
+  "completed_cases": 22,
+  "expected_cases": 52,
+  "controller": {
+    "pid": 90142,
+    "create_time": 1793071505.0
+  },
+  "children": [
+    {
+      "pid": 100698,
+      "status": "sleeping",
+      "cpu_seconds": 131.47
+    },
+    {
+      "pid": 100894,
+      "status": "running",
+      "cpu_seconds": 12364.82
+    }
+  ],
+  "peak_tree_rss_bytes_so_far": 5351251968,
+  "case_prefix_sha256": "0a57a603eff750d1f04016c06be21c2ab1331c02f6bee731c0bd0fe6ef93a821",
+  "memory_prefix_sha256": "9e901ac0a37a61413bd3728daddf473d6479bde6338e3dd51f34ccfd00eef42e",
+  "quality_interpreted": false,
+  "limits": "Incomplete snapshot only; no full trace replay or policy selection. Prefix hashes refer to captured bytes, not the later-growing files. All scientific obligations unchanged.",
+  "raw_snapshot": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-natural-progress-01"
+}

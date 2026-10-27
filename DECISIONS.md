@@ -3205,3 +3205,10 @@ claims, explicitly measure a matched trained MAS prompt control or disclose the
 unresolved limitation. Any follow-up must hold the common actor/critic profiles
 and prompts matched, retain all cases, and be serial after existing obligations.
 This is a baseline-coverage gap, not evidence for a new method or quality gain.
+
+### 2026-10-27 — retain outcome-blind natural SAS progress for remote inspection
+
+Live controller/create-time and actual children verified. Immutable case/memory
+prefixes retained on SSD, with counts/hash/CPU-liveness metadata pushed. Live
+status snapshot refreshed; no partial success statistics used for selection and
+no new model calls added. This is verified waiting, not a completed result.
