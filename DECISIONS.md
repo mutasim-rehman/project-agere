@@ -3421,3 +3421,55 @@ SHA256s/precisions/sizes, dataset IDs and demonstration report isolation verifie
 Proof: SSD runs/lab-tier16-preflight-final-01.log and timestamped preflight/report.json.
 Zero higher-tier model-generation calls; actual full-tier resident fit remains to
 be measured by the user launch.
+
+### 2026-10-28 — user authorizes11.5GB product-oriented ceiling and memory revision
+
+User explicitly requires maximum application RAM11.5GB, permitting model changes,
+new SSD weights or quantization only if needed. Revised the16GB process-tree cap
+to fixed11,500,000,000 bytes, including controller;1GB host reserve is outside
+application usage. Both SAS/MAS and all profiles share that cap. The cap cannot
+expand with host RAM or change on resume. Old laptop attempts actually selected
+12.494GB, then failed their reserve check before inference; preserve all old run
+IDs, code snapshots and cap files. The old freeze/protocol/doc were also copied
+to SSD runs/lab_handoff/protocol-v1-before-115gb before amendment. New protocol
+finance-deployment-lab-v2-115gb requires a new run ID. No higher-tier QA outcome
+was used to tune this resource change.
+
+First8192 probe v1 stopped on31.5MB process swap while loading MAS, peak10.35GB.
+Second8192 near-context probe v2 passed all resident MAS roles, peak11.228GB,
+then stopped during SAS load on56.6MB process swap (sampled peak8.61GB). These
+are failed no-swap attempts, not proof of their maximum memory requirement or a
+causal attribution to context alone; host memory state/order also differed. All
+traces and failures retained on SSD. No system swappiness/swap settings changed,
+no user applications killed, and no model substitution made.
+
+Reduced COMMON context8192→4096 for both arms and tiers, preserving original
+pretrained14B Q4 SAS and resident1.5B/3B/0.5B F16 MAS. Known configuration/memory
+adjustment, not a novel method. Full neutral-input v3 fit probes processed3422
+prompt tokens and one generated token per role (eight permitted); all three MAS
+instances remained resident throughout. SAS peak9,978,621,952 bytes, MAS peak
+10,847,145,984 bytes; every retained sample below11.5GB with zero process swap.
+Probes use no benchmark questions/gold and provide no QA/novelty/worst-case/product
+claim. Controller footprint differs from full evaluation; its real memory remains
+included in the full evaluation monitor. Code, model hashes, samples and worker
+outputs pinned in configs/lab_tiers/memory_fit.json, raw SSD runs/tier16_fit_115_v3_ctx4096.
+No new download, quantization, model downgrade, mmap or shared-backbone shortcut.
+
+Full evaluations retain context exhaustion/skipped-call/truncation reporting;
+context reduction may affect quality and must not be hidden.32GB remains25.6GB
+ceiling, with the same4096 context and otherwise fixed method. Added a250MB launch
+cushion only to host-adjusted cap selection to avoid the previous exact-boundary
+RAM race;16GB is fixed11.5GB instead. Wrapper now accepts AGERE_LAB_TIERS and
+AGERE_LAB_RUN_ID, so one16-only command includes preflight/eval/analysis/export.
+New default combined-run ID lab-main-v2; laptop ID lab-16-115gb-v2.
+
+All13 tests passed, including selected-tier propagation/fail-fast workflow and
+fixed-cap/OS-reserve separation: SSD runs/lab-tiers-tests-115-02.log. Test01 ran
+during the8192 memory probe and failed three fixture availability assumptions;
+retained that log, with no inference or scientific result attached to it. Sealed
+v2 only after matching fit proof/sample/model/context checks; old results remain
+unmodified. RSS guard is sampled, not claimed as a hard cgroup memory bound.
+
+Final v2 preflight passed: SSD runs/lab-tier16-115-preflight-01.log and
+timestamped preflight/report.json. It verified frozen source, CPU/runtime, all
+model hashes/precisions, packet IDs and demo isolation with zero generation.

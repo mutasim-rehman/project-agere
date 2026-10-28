@@ -1,6 +1,6 @@
 {
   "status": "sealed_for_lab",
-  "protocol_id": "finance-deployment-lab-v1",
+  "protocol_id": "finance-deployment-lab-v2-115gb",
   "code_sha256": {
     "scripts/binary_verifier_score.py": "d9dd29663c2e2e738641ef471dbebb0024364230bfd3ddae7da027ce48ff89dc",
     "scripts/cgroup_exec.py": "0891e6b93ebff13b915335af97e75ae45c70aa84c781340d45ec53567b6c5cd5",
@@ -20,11 +20,11 @@
     "scripts/lab_pipeline_smoke.py": "23b1e66ad6ca3a01b9c1b63e5e03eedab18e0abe6827382a8da2823808dc6c99",
     "scripts/lab_run.py": "b695d04ea73276f9ca2407dfbdf42018ed0143bd48b68f83e0eba7fa4f3d7a99",
     "scripts/lab_runtime_smoke.py": "e870288995039b0587e2ec6e5c35dd5a320327f08a38f15e493407458216db05",
-    "scripts/lab_tiers.py": "86009a833985fda904daa2cb6f4cb7662652dba12c3497c01d12efde52f8b7e1",
+    "scripts/lab_tiers.py": "17976c61e6cca12b4e247d6d5b46bf215e4ad469bd66bd8baf7848ee06771deb",
     "scripts/lab_tiers_analyze.py": "77593709b35a91d9a8de261c7e0906d5310d9255157bb89d0bd8bcd92b598375",
-    "scripts/lab_tiers_close8.py": "0f2ac3f3dec9002c9d7988687eeccf906bc7e02068ec79b8e3546f8077d56a7b",
+    "scripts/lab_tiers_close8.py": "49960187d14286b4c2999af42c3bc866452915827f3fc02440f42d928d328d54",
     "scripts/lab_tiers_common.py": "0d0c663a5c064a4dddfae44c9552321459b637a910371f67c238c0786cd2a4c1",
-    "scripts/lab_tiers_prepare.py": "c5d7967a69807e71a39bcd85e4babb3013810629e6faf1ade333b29c3f2ccde2",
+    "scripts/lab_tiers_prepare.py": "f96a760715fe641acb4ce04ed8ce2b7b70b5dff3c90e7f190b125baecebbbfe8",
     "scripts/phase2.py": "d0e26ccabfe29674237803f6ffa13e0ca945caa8f45300318d2fbcfd0fef365d",
     "scripts/phase3.py": "09b714c34209583f1e3e7fd4142cafd87925702af6ef1f5106c49ecf185f1103",
     "scripts/prepare_project_datasets.py": "eda9ef829b8afa9e80381edf58edafa383b958c279bf0b63e661e74fb108fd55",
@@ -40,6 +40,7 @@
     "scripts/source_repair_pool.py": "669fde3be06710e910ed6b0d9eeb6cbfa070db4551b729fd3d9abddba834f5f4",
     "scripts/supervised_logits.py": "01f2afbd5ed2de8a59eb89f012ac991b6a651ed58177b3be1e6a6cbe25607f61",
     "scripts/table_header_materialization.py": "fe23e421569cf2cdb507a79850f09d864c12975b3a3fa2089c85985b5f048f71",
+    "scripts/tier16_memory_fit.py": "1460f393c5b027ea79425ff7336ca22ad37049a0de24c6eaf93f2364fec1980f",
     "scripts/tier8_artifact_paths.py": "c4f342f83eb9f8e4cda870f1867dd86774d4822b03bc76721fb234d872184d89",
     "scripts/tier8_external_analyze.py": "ed0aafb79693a5c6196ef6255070b33e6f4875127710c7dd74e813ae3814135c",
     "scripts/tier8_external_eval.py": "387294f2db39d62d1d852f04bd9bfdda01ac4eeddc9fdc0844fd8ac3b8201387",
@@ -124,11 +125,12 @@
     "scripts/tier8_v2_verifier_audit.py": "cb78b0e61c2439e185de3254d4e8adc4b4325598138c872427e8ccba0a6998d2",
     "scripts/verify_phase1_download.py": "8abce8d12725d5f140828c128d6d655668521c1f048b4f0573fe24c3f7372c9b",
     "scripts/lab_tiers.sh": "56fdd13d56b5b38e1892a1de11635960b96238fb02d5d4d31eabff1dcf01927f",
-    "scripts/lab_tiers_all.sh": "57caa0953a68188d46611c13d3cafd88a3b13bbbfbc27b8a470ea8f6b3982973",
-    "configs/lab_tiers/protocol.json": "4fe365261e84fe34a522334ed9255d77b11d440cf64d7d15a97b8901f29a9bf8",
+    "scripts/lab_tiers_all.sh": "4f97d8275aedd530b1d8aedc4939a94e4357899d1119bb909e74810fe3b085bf",
+    "configs/lab_tiers/memory_fit.json": "ee288db628d417f0b8778c1d9869033c13803a724abc5064518b5dac3d86e3e6",
+    "configs/lab_tiers/protocol.json": "6c976796051b857ed10cc365c746f7591a48a7bb9d9e478819f62961770d30fa",
     "configs/lab_tiers/runtime_checksums.sha256": "aac9be055edabc47fae41326198335a1365b35a1515c4fbf4cb3f4f5a21a28da",
     "configs/lab_tiers/runtime_pin.json": "cf81f860967bcb8bfdaf535a99754eb172dc38c479e86cb0f68f6d56f334b605",
-    "research/lab_tiers/PROTOCOL.md": "3d1843ff910d59662d81e45e36b1703668b6194c43dbe8d8e2b45321d9155327"
+    "research/lab_tiers/PROTOCOL.md": "9fcaeb94c5af3bda02206878d7e33712ddab3a95ca118e58f8424b03741d0fed"
   },
   "closure_relative_to_ssd": "runs/lab_handoff/closure-v1",
   "closure_sha256": "a1fc97527619878ce5dba2374df415e4453642c87bca2372df20c55eadcfe761",
@@ -140,6 +142,10 @@
     "workflow": {
       "relative_to_ssd": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/engineering-summary.json",
       "sha256": "3827a020589622e9bb50eb2e1f2c9ba706998a308492f1ae1eb4a7ff3ae402f3"
+    },
+    "resident_fit": {
+      "config": "configs/lab_tiers/memory_fit.json",
+      "sha256": "ee288db628d417f0b8778c1d9869033c13803a724abc5064518b5dac3d86e3e6"
     }
   },
   "new_methods_after_tier_transition": false,

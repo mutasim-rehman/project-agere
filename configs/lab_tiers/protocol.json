@@ -1,5 +1,5 @@
 {
-  "protocol_id": "finance-deployment-lab-v1",
+  "protocol_id": "finance-deployment-lab-v2-115gb",
   "primary_tier": 16,
   "runtime_pin": "configs/lab_tiers/runtime_pin.json",
   "dataset": {
@@ -234,7 +234,7 @@
     "limits": "Public FinQA development-source reports not used in the recorded8GB research selections. No guarantee of pretraining cleanliness or complete coverage of unrecorded human exposure. Numerical QA, not KYC/credit invention or mismatch recall."
   },
   "common": {
-    "context": 8192,
+    "context": 4096,
     "threads": 8,
     "output_token_cap": 2048,
     "seed": 42,
@@ -268,7 +268,7 @@
   },
   "tiers": {
     "16": {
-      "nominal_cap_bytes": 12800000000,
+      "nominal_cap_bytes": 11500000000,
       "sas": {
         "sas": {
           "path": "weights/gguf/qwen2.5-14b-instruct-q4_k_m.gguf",
@@ -304,7 +304,8 @@
           "source_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
           "gguf_type": "F16"
         }
-      }
+      },
+      "cap_policy": "fixed_application_ceiling"
     },
     "32": {
       "nominal_cap_bytes": 25600000000,
@@ -370,5 +371,6 @@
     "new repair controllers",
     "8GB adapter applied to another model size"
   ],
-  "freeze_requires": "Both queued8GB secondary prompt jobs and their paired audits complete before sealing code for lab execution."
+  "freeze_requires": "Both queued8GB secondary prompt jobs and their paired audits complete before sealing code for lab execution.",
+  "revision": "User-directed28October2026: tier16 application tree maximum11.5 decimal GB including controller; common context4096 in BOTH arms/tiers to reduce KV memory. Host reserve is outside application usage. Previous higher-cap/context attempts retained under separate run IDs. Pretrained weights/precision unchanged."
 }

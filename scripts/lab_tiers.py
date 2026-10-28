@@ -29,7 +29,7 @@ def protocol():
 def freeze_check():
     path = ROOT / 'configs/lab_tiers/freeze.json'
     if not path.is_file():
-        raise ValueError('Lab execution is not sealed yet: the two8GB prompt evaluations/audits must finish first.')
+        raise ValueError('Lab execution is not sealed: complete the current engineering checks and protocol revision first.')
     frozen = read(path)
     if frozen.get('status') != 'sealed_for_lab':
         raise ValueError('Incomplete study freeze')
@@ -137,6 +137,25 @@ def snapshot(out, frozen):
 def job_config(spec, tier, arm, profile):
     return {**spec['common'], **spec['profiles'][profile], 'arm': arm,
         'tier': tier, 'profile': profile, 'models': spec['tiers'][str(tier)][arm]}
+
+
+def choose_cap(spec, tier, available):
+    configuration = spec['tiers'][str(tier)]
+    nominal = configuration['nominal_cap_bytes']
+    reserve = 1000000000
+    if configuration.get('cap_policy') == 'fixed_application_ceiling':
+        if available < nominal + reserve:
+            raise ValueError(f'Tier{tier} application cap is {nominal/1e9:.2f} GB, including controller. '
+                f'It needs {nominal/1e9+1:.2f} GB available before launch to retain1GB for host activity; '
+                'the reserve is NOT additional application usage. Free host RAM; models and cap are unchanged.')
+        return nominal
+    # Leave a small launch cushion rather than selecting the exact instantaneous
+    # available-minus-reserve boundary and failing on ordinary RAM fluctuations.
+    cap = min(nominal, available - reserve - 250000000)
+    minimum = max(sum(x['size_bytes'] for x in configuration[arm].values()) for arm in ('sas', 'mas')) + 500000000
+    if cap < minimum:
+        raise ValueError('Free more RAM before starting this tier; insufficient common resident budget')
+    return cap
 
 
 def kill_worker(process):
@@ -418,12 +437,13 @@ def run(ssd, identifier, tiers):
             cap_file = out / f'tier{tier}-cap.json'
             if cap_file.exists():
                 cap = read(cap_file)['cap_bytes']
+                if cap > spec['tiers'][str(tier)]['nominal_cap_bytes']:
+                    raise ValueError('Saved cap exceeds the protocol ceiling; preserve this run and use a new run ID')
+                if spec['tiers'][str(tier)].get('cap_policy') == 'fixed_application_ceiling' and cap != spec['tiers'][str(tier)]['nominal_cap_bytes']:
+                    raise ValueError('Saved cap differs from fixed application ceiling; preserve this run and use a new run ID')
             else:
                 available = psutil.virtual_memory().available
-                cap = min(spec['tiers'][str(tier)]['nominal_cap_bytes'], available - 1000000000)
-                minimum = max(sum(x['size_bytes'] for x in spec['tiers'][str(tier)][arm].values()) for arm in ('sas', 'mas')) + 500000000
-                if cap < minimum:
-                    raise ValueError('Free more RAM before starting this tier; insufficient common resident budget')
+                cap = choose_cap(spec, tier, available)
                 write(cap_file, {'cap_bytes': cap, 'nominal_cap_bytes': spec['tiers'][str(tier)]['nominal_cap_bytes'],
                     'physical_ram_bytes': environment['physical_ram_bytes'], 'available_before_tier': available,
                     'reserve_bytes': 1000000000, 'same_cap_all_arms_profiles': True})

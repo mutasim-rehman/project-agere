@@ -8,6 +8,13 @@ No novel-method superiority is established. The portable runtime and real
 SAS/MAS engineering workflow/replay passed; the higher-tier prospective protocol
 is sealed separately. These are not completed16/32GB model evaluations.
 
+User-directed RAM revision:16GB application tree ceiling is now fixed11.5GB,
+with common4096 context. Original pretrained F16 MAS/Q4 SAS weights remain.
+Neutral long-input engineering probes passed without process swap: SAS peak
+9.98GB, resident MAS10.85GB. Both prior8192 swap failures are preserved. This is
+engineering fit evidence, not full-benchmark or worst-case validation. Use new
+run ID `lab-16-115gb-v2`; old higher-cap runs must not be resumed as v2 evidence.
+
 [Offline tier commands and limits](../../LAB_TIERS_OFFLINE.md) ·
 [Prospective tier protocol](../lab_tiers/PROTOCOL.md).
 

@@ -1,4 +1,4 @@
-# Frozen higher-tier lab comparison: finance-deployment-lab-v1
+# Frozen higher-tier lab comparison: finance-deployment-lab-v2-115gb
 
 This prospective specification reconciles the original memory-allocation question
 with the actually available models/data. Execution is gated on completion and
@@ -35,7 +35,7 @@ checks file type (F16 versus Q4_K_M), size and full hashes. No silent model fall
 All declared MAS instances remain loaded; `use_mmap=False`, native KV state, CPU
 only. There is no role-backbone sharing or sequential swap-mode substitution.
 
-Both tiers use context8192, eight CPU threads, seed42, greedy decoding, and the
+Both tiers use context4096, eight CPU threads, seed42, greedy decoding, and the
 existing 2048 generated-token ledger. Same public evidence/retrieval, four-op
 executor, compact quantity references, question-unit rules and causal grammar.
 Fixed demonstrations are training-only. The existing MAS source-suggestion agent
@@ -72,10 +72,19 @@ subset becomes the primary test. A single benchmark limits generalization.
 
 ## Resources, execution and interruption
 
-Nominal caps are12.8/25.6 decimal GB. Effective cap is the smaller of nominal and
-available RAM minus1GB before a tier starts. That same cap is saved and reused by
-every arm/profile in that tier, including resume; a shortage later stops the run
-until RAM is freed. Physical-memory checks reject a 32 GB run on this laptop.
+On28October2026 the user required a maximum **11.5 decimal GB of application
+process-tree RSS for16GB PCs**, including the controller. Both16GB arms and all
+profiles use that same fixed cap; it does not expand with available host RAM.
+The32GB ceiling remains25.6GB, with a common host-adjusted cap and250MB launch
+cushion if host RAM is scarce. A separate1GB host reserve is outside application
+usage; needing12.5GB available before launch does not mean the application uses
+12.5GB. A shortage stops the run until RAM is freed. Physical-memory checks reject
+a32GB run on this laptop. Earlier attempted caps are preserved under old run IDs;
+the v2 configuration requires a new run ID, before any higher-tier accuracy run.
+The common context was reduced from8192 to4096 for both systems and tiers after
+the SAS8192 engineering load encountered process swap. Model weights and precision
+are unchanged. This known memory/configuration adjustment is not claimed as a
+novel algorithm; context exhaustion, truncation and skipped calls remain reported.
 
 Every0.2 seconds, the controller samples its own plus worker/descendant RSS and
 swap. It terminates the worker on observed cap violation or any swap usage; such

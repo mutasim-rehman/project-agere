@@ -26,6 +26,13 @@ class LabIntegrity(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
 
+    def test_fixed_application_ceiling_does_not_include_os_reserve_or_drift(self):
+        spec = {'tiers': {'16': {'nominal_cap_bytes': 11500000000, 'cap_policy': 'fixed_application_ceiling'}}}
+        self.assertEqual(runner.choose_cap(spec, 16, 12500000000), 11500000000)
+        self.assertEqual(runner.choose_cap(spec, 16, 14000000000), 11500000000)
+        with self.assertRaisesRegex(ValueError, 'NOT additional application usage'):
+            runner.choose_cap(spec, 16, 12499999999)
+
     def test_completed_prefix_rejects_duplicate_or_reordered_cases(self):
         p = self.root / 'cases.jsonl'
         for ids in [('b',), ('a', 'a')]:

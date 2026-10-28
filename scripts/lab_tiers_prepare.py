@@ -83,7 +83,7 @@ def prepare(ssd):
             raise ValueError('Missing/truncated staged model: ' + str(path))
         return {k: entry[k] for k in ('path', 'sha256', 'size_bytes', 'model', 'source_revision', 'gguf_type')}
     config = {
-        'protocol_id': 'finance-deployment-lab-v1', 'primary_tier': 16,
+        'protocol_id': 'finance-deployment-lab-v2-115gb', 'primary_tier': 16,
         'runtime_pin': 'configs/lab_tiers/runtime_pin.json',
         'dataset': {'public': str(data.relative_to(ssd)), 'public_sha256': sha(data),
             'gold': str(gold.relative_to(ssd)), 'gold_sha256': sha(gold),
@@ -93,7 +93,7 @@ def prepare(ssd):
             'exposure_manifests_sha256': exposures,
             'selection': 'First50 eligible whole reports by fixed ID hash; all their questions, no answer/difficulty/outcome filter.',
             'limits': 'Public FinQA development-source reports not used in the recorded8GB research selections. No guarantee of pretraining cleanliness or complete coverage of unrecorded human exposure. Numerical QA, not KYC/credit invention or mismatch recall.'},
-        'common': {'context': 8192, 'threads': 8, 'output_token_cap': 2048, 'seed': 42,
+        'common': {'context': 4096, 'threads': 8, 'output_token_cap': 2048, 'seed': 42,
             'temperature': 0, 'n_gpu_layers': 0, 'use_mmap': False,
             'program_mode': 'reference', 'unit_mode': 'question', 'selector': 'suggest',
             'causal_mode': 'grammar', 'catalog_style': 'compact', 'planner': 'direct', 'critic_protocol': 'binary'},
@@ -102,7 +102,7 @@ def prepare(ssd):
             'direct_control': {'analysis_tokens': 0, 'demos': 0, 'repair': 'none'},
             'repair_ablation': {'analysis_tokens': 128, 'demos': 2, 'repair': 'full'}},
         'tiers': {
-            '16': {'nominal_cap_bytes': 12800000000, 'sas': {'sas': model('14b', 'q4_k_m')},
+            '16': {'nominal_cap_bytes': 11500000000, 'cap_policy': 'fixed_application_ceiling', 'sas': {'sas': model('14b', 'q4_k_m')},
                 'mas': {'extractor': model('1.5b', 'f16'), 'drafter': model('3b', 'f16'), 'verifier': model('0.5b', 'f16')}},
             '32': {'nominal_cap_bytes': 25600000000, 'sas': {'sas': model('32b', 'q4_k_m')},
                 'mas': {'extractor': model('3b', 'f16'), 'drafter': model('7b', 'f16'), 'verifier': model('0.5b', 'f16')}}},

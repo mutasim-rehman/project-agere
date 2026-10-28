@@ -105,6 +105,19 @@ def seal(ssd):
         if proof.get('status') != 'passed' or proof.get('script_sha256') != sha(source):
             raise ValueError('Current ' + name + ' smoke has not passed')
         engineering[name] = {'relative_to_ssd': str(result.relative_to(ssd)), 'sha256': sha(result)}
+    spec = read(ROOT / 'configs/lab_tiers/protocol.json')
+    if spec['tiers']['16'].get('cap_policy') == 'fixed_application_ceiling':
+        proof = read(ROOT / 'configs/lab_tiers/memory_fit.json')
+        if proof.get('status') != 'passed' or proof.get('cap_bytes') != spec['tiers']['16']['nominal_cap_bytes'] or proof.get('context') != spec['common']['context']:
+            raise ValueError('Fixed-cap revision needs a matching resident fit proof')
+        for relative, digest in proof['evidence_sha256'].items():
+            if sha(ssd / relative) != digest:
+                raise ValueError('Resident fit evidence changed')
+        for arm in ('sas', 'mas'):
+            if proof['models'][arm] != spec['tiers']['16'][arm]:
+                raise ValueError('Resident fit models differ from protocol')
+        engineering['resident_fit'] = {'config': 'configs/lab_tiers/memory_fit.json',
+            'sha256': sha(ROOT / 'configs/lab_tiers/memory_fit.json')}
     destination = ROOT / 'configs/lab_tiers/freeze.json'
     if destination.exists():
         raise ValueError('Refuse freeze overwrite')
@@ -115,7 +128,7 @@ def seal(ssd):
     if not protocol_doc.is_file():
         raise ValueError('Write/review the prospective lab protocol before sealing')
     files.append(protocol_doc)
-    frozen = {'status': 'sealed_for_lab', 'protocol_id': 'finance-deployment-lab-v1',
+    frozen = {'status': 'sealed_for_lab', 'protocol_id': read(ROOT / 'configs/lab_tiers/protocol.json')['protocol_id'],
         'code_sha256': {str(p.relative_to(ROOT)): sha(p) for p in files if p.is_file()},
         'closure_relative_to_ssd': str(out.relative_to(ssd)), 'closure_sha256': sha(out / 'closure.json'),
         'engineering_checks': engineering,

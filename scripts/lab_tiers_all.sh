@@ -5,7 +5,11 @@ repo="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 export AGERE_SSD_ROOT="${AGERE_SSD_ROOT:?Set AGERE_SSD_ROOT to the mounted AGERE folder}"
 [[ -d "$AGERE_SSD_ROOT/weights" && -d "$AGERE_SSD_ROOT/datasets" ]] || { echo 'AGERE SSD assets are missing.' >&2; exit 2; }
 export AGERE_SSD_ROOT="$(cd -- "$AGERE_SSD_ROOT" && pwd)"
-identifier="lab-main-v1"
+tiers="${AGERE_LAB_TIERS:-16,32}"
+identifier="${AGERE_LAB_RUN_ID:-lab-main-v2}"
+case "$tiers" in 16|32|16,32|32,16) ;; *) echo 'AGERE_LAB_TIERS must be16,32 or16,32.' >&2; exit 2 ;; esac
+[[ "$identifier" =~ ^[A-Za-z0-9][A-Za-z0-9_.-]*$ ]] || { echo 'Invalid lab run ID.' >&2; exit 2; }
+export AGERE_LAB_TIERS="$tiers" AGERE_LAB_RUN_ID="$identifier"
 out="$AGERE_SSD_ROOT/runs/lab_tiers_v1/$identifier"
 mkdir -p "$out"
 if [[ "${1:-}" != _worker ]]; then
@@ -29,9 +33,9 @@ cd -- "$repo"
 trap 'rc=$?; printf "FAILED exit=%s at %s; inspect workflow.log and retained attempt logs.\n" "$rc" "$(date -u +%FT%TZ)" > "$out/workflow-status.txt"; exit "$rc"' ERR
 printf 'RUNNING since %s\n' "$(date -u +%FT%TZ)" > "$out/workflow-status.txt"
 echo "Preflight started: $(date -u +%FT%TZ)"
-bash scripts/lab_tiers.sh preflight --tiers 16,32
+bash scripts/lab_tiers.sh preflight --tiers "$tiers"
 echo "Evaluations and automatic replay analysis started: $(date -u +%FT%TZ)"
-bash scripts/lab_tiers.sh run --tiers 16,32 --run-id "$identifier"
+bash scripts/lab_tiers.sh run --tiers "$tiers" --run-id "$identifier"
 echo "Portable export started: $(date -u +%FT%TZ)"
 archive="$AGERE_SSD_ROOT/runs/lab_tiers_v1/exports/$identifier-results.tar.gz"
 if [[ -e "$archive" ]]; then

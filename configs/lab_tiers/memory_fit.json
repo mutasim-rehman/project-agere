@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "protocol_id": "finance-deployment-lab-v2-115gb",
+  "cap_bytes": 11500000000,
+  "context": 4096,
+  "models": {
+    "sas": {
+      "sas": {
+        "path": "weights/gguf/qwen2.5-14b-instruct-q4_k_m.gguf",
+        "sha256": "e9cdfe14956e0e4343333a3e0c2251addffd6b88800b89562aac3252aa75d2c1",
+        "size_bytes": 8988110336,
+        "model": "Qwen/Qwen2.5-14B-Instruct",
+        "source_revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "gguf_type": "Q4_K_M"
+      }
+    },
+    "mas": {
+      "extractor": {
+        "path": "weights/gguf/qwen2.5-1.5b-instruct-f16.gguf",
+        "sha256": "52690b6ca32956606a717dd1b9d5df6bc37c202e4c4ed4463ce202b5e2edf82c",
+        "size_bytes": 3093669024,
+        "model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "source_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "gguf_type": "F16"
+      },
+      "drafter": {
+        "path": "weights/gguf/qwen2.5-3b-instruct-f16.gguf",
+        "sha256": "7861b68729de6c1c00828a54688b76a7dbdd20f8f87b4147de222554a70708d4",
+        "size_bytes": 6178316832,
+        "model": "Qwen/Qwen2.5-3B-Instruct",
+        "source_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "gguf_type": "F16"
+      },
+      "verifier": {
+        "path": "weights/gguf/qwen2.5-0.5b-instruct-f16.gguf",
+        "sha256": "737ced3837e10d20b09c6a4dddad830775f5a2a77f786ab1adaf0a4b9048115b",
+        "size_bytes": 994156512,
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "source_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "gguf_type": "F16"
+      }
+    }
+  },
+  "measurements": {
+    "sas": {
+      "status": "passed",
+      "sampled_peak_tree_rss_bytes": 9978621952,
+      "cap_bytes": 11500000000,
+      "failure": null,
+      "exit_code": 0,
+      "scope": "Sampled engineering trajectory, not a hard limit or worst-case bound.",
+      "max_sampled_swap_bytes": 0,
+      "calls": [
+        {
+          "role": "sas",
+          "usage": {
+            "prompt_tokens": 3422,
+            "completion_tokens": 1,
+            "total_tokens": 3423
+          },
+          "text": "Ready"
+        }
+      ]
+    },
+    "mas": {
+      "status": "passed",
+      "sampled_peak_tree_rss_bytes": 10847145984,
+      "cap_bytes": 11500000000,
+      "failure": null,
+      "exit_code": 0,
+      "scope": "Sampled engineering trajectory, not a hard limit or worst-case bound.",
+      "max_sampled_swap_bytes": 0,
+      "calls": [
+        {
+          "role": "extractor",
+          "usage": {
+            "prompt_tokens": 3422,
+            "completion_tokens": 1,
+            "total_tokens": 3423
+          },
+          "text": "ready"
+        },
+        {
+          "role": "drafter",
+          "usage": {
+            "prompt_tokens": 3422,
+            "completion_tokens": 1,
+            "total_tokens": 3423
+          },
+          "text": "ready"
+        },
+        {
+          "role": "verifier",
+          "usage": {
+            "prompt_tokens": 3422,
+            "completion_tokens": 1,
+            "total_tokens": 3423
+          },
+          "text": "ready"
+        }
+      ]
+    }
+  },
+  "evidence_sha256": {
+    "runs/tier16_fit_115_v3_ctx4096/manifest.json": "1f3f4258cef21e6b05fe98350d09ee182433f800aacdf151bf794a55275be73b",
+    "runs/tier16_fit_115_v3_ctx4096/mas-memory.jsonl": "36e61b3444db9ba76c8e84b9f3aba6e9e7abdd94aeecd1558c55b2f73d9f6c15",
+    "runs/tier16_fit_115_v3_ctx4096/mas-summary.json": "6bb76611095681e2c1dbe30ac3e589a8ecc1e3ca320fc2d220e0681e21f3cada",
+    "runs/tier16_fit_115_v3_ctx4096/mas-worker-result.json": "4ad87c42291cb225e63cb91bdb4c8e8a3a625ecad49cb17bef52d1404fcb4e5d",
+    "runs/tier16_fit_115_v3_ctx4096/mas-worker.log": "4438b89470fbe600891b722239e402be35c07427b91fb6e98c8bb54a03e2a246",
+    "runs/tier16_fit_115_v3_ctx4096/probe-source.py": "1460f393c5b027ea79425ff7336ca22ad37049a0de24c6eaf93f2364fec1980f",
+    "runs/tier16_fit_115_v3_ctx4096/sas-memory.jsonl": "39a5197fdda83606ac05c5e368710e800b111870877f355447ffbcaec9b1f752",
+    "runs/tier16_fit_115_v3_ctx4096/sas-summary.json": "01070212d274e89eedfd218dad72e81897467f2a41a4356f64909c40e6140a30",
+    "runs/tier16_fit_115_v3_ctx4096/sas-worker-result.json": "100024acced00b8d4727be89ab292165bf47b03f3ff6b6d43ad6d51aeb23841d",
+    "runs/tier16_fit_115_v3_ctx4096/sas-worker.log": "21c42aea9edc7212a4e96f135f2c4b501a05a94796edf3495ab775aedf388c68",
+    "runs/tier16_fit_115_v3_ctx4096/summary.json": "3c06acc415dc75e4c9b5553b0a6555b3fd535b1816978dd7e32ff6634b433c9b"
+  },
+  "earlier_failed_attempts_preserved": [
+    "runs/tier16_fit_115_v1",
+    "runs/tier16_fit_115_v2"
+  ],
+  "limits": "Single neutral long-input engineering trajectory per role; all MAS models resident. Eight output tokens permitted per call (observed one). Sampled process-tree RSS/no swap, not worst-case, hard-cgroup, product compatibility or full benchmark validation. Controller footprint differs from full evaluation; actual full-run cap remains monitored. No novelty/accuracy claim."
+}
