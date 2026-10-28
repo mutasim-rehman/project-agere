@@ -1,0 +1,510 @@
+{
+  "crossed_sas-vs-control_sas.json": {
+    "sha256": "91ed86865e51fd248c9f75872f94db1a5c8556f85f809a0d5f432264d9d809f8",
+    "n": 52,
+    "reports": 15,
+    "full": {
+      "left": {
+        "case_success": {
+          "correct_delivered": 9,
+          "wrong_delivered": 20,
+          "withheld": 23,
+          "candidate_correct": 9,
+          "precision_when_delivered": 0.3103448275862069
+        },
+        "raw_execution_match": {
+          "correct_delivered": 11,
+          "wrong_delivered": 18,
+          "withheld": 23,
+          "candidate_correct": 12,
+          "precision_when_delivered": 0.3793103448275862
+        }
+      },
+      "right": {
+        "case_success": {
+          "correct_delivered": 9,
+          "wrong_delivered": 10,
+          "withheld": 33,
+          "candidate_correct": 10,
+          "precision_when_delivered": 0.47368421052631576
+        },
+        "raw_execution_match": {
+          "correct_delivered": 10,
+          "wrong_delivered": 9,
+          "withheld": 33,
+          "candidate_correct": 12,
+          "precision_when_delivered": 0.5263157894736842
+        }
+      }
+    },
+    "views": {
+      "full": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 0,
+            "wrong_delivered": -10,
+            "withheld": 10
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.0,
+            "wrong_delivered": -0.19230769230769232,
+            "withheld": 0.19230769230769232
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.0
+            ],
+            "wrong_delivered": [
+              -0.3829787234042553,
+              -0.020833333333333332
+            ],
+            "withheld": [
+              0.02040816326530612,
+              0.3829787234042553
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 20,
+            "wrong_delivered -> withheld": 12,
+            "withheld -> wrong_delivered": 3,
+            "correct_delivered -> correct_delivered": 8,
+            "wrong_delivered -> wrong_delivered": 7,
+            "wrong_delivered -> correct_delivered": 1,
+            "correct_delivered -> withheld": 1
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": -1,
+            "wrong_delivered": -9,
+            "withheld": 10
+          },
+          "delta_per_case": {
+            "correct_delivered": -0.019230769230769232,
+            "wrong_delivered": -0.17307692307692307,
+            "withheld": 0.19230769230769232
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              -0.06382978723404255,
+              0.0
+            ],
+            "wrong_delivered": [
+              -0.3469387755102041,
+              -0.018867924528301886
+            ],
+            "withheld": [
+              0.02040816326530612,
+              0.3829787234042553
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 20,
+            "wrong_delivered -> withheld": 11,
+            "correct_delivered -> withheld": 2,
+            "withheld -> wrong_delivered": 3,
+            "correct_delivered -> correct_delivered": 9,
+            "wrong_delivered -> wrong_delivered": 6,
+            "wrong_delivered -> correct_delivered": 1
+          },
+          "sample_pareto_improvement": false
+        }
+      },
+      "no_repair_prefix": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 1,
+            "wrong_delivered": -9,
+            "withheld": 8
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.019230769230769232,
+            "wrong_delivered": -0.17307692307692307,
+            "withheld": 0.15384615384615385
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.058823529411764705
+            ],
+            "wrong_delivered": [
+              -0.35185185185185186,
+              0.0
+            ],
+            "withheld": [
+              -0.02,
+              0.34615384615384615
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 23,
+            "wrong_delivered -> withheld": 11,
+            "withheld -> wrong_delivered": 2,
+            "correct_delivered -> correct_delivered": 7,
+            "wrong_delivered -> wrong_delivered": 6,
+            "withheld -> correct_delivered": 2,
+            "correct_delivered -> withheld": 1
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": 0,
+            "wrong_delivered": -8,
+            "withheld": 8
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.0,
+            "wrong_delivered": -0.15384615384615385,
+            "withheld": 0.15384615384615385
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              -0.057692307692307696,
+              0.05084745762711865
+            ],
+            "wrong_delivered": [
+              -0.3125,
+              0.0
+            ],
+            "withheld": [
+              -0.02,
+              0.34615384615384615
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 23,
+            "wrong_delivered -> withheld": 10,
+            "correct_delivered -> withheld": 2,
+            "withheld -> wrong_delivered": 2,
+            "correct_delivered -> correct_delivered": 8,
+            "wrong_delivered -> wrong_delivered": 5,
+            "withheld -> correct_delivered": 2
+          },
+          "sample_pareto_improvement": true
+        }
+      },
+      "ungated_initial_prefix": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 1,
+            "wrong_delivered": 1,
+            "withheld": -2
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.019230769230769232,
+            "wrong_delivered": 0.019230769230769232,
+            "withheld": -0.038461538461538464
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.058823529411764705
+            ],
+            "wrong_delivered": [
+              0.0,
+              0.0625
+            ],
+            "withheld": [
+              -0.09090909090909091,
+              0.0
+            ]
+          },
+          "transitions": {
+            "wrong_delivered -> wrong_delivered": 40,
+            "withheld -> wrong_delivered": 1,
+            "correct_delivered -> correct_delivered": 10,
+            "withheld -> correct_delivered": 1
+          },
+          "sample_pareto_improvement": false
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": 1,
+            "wrong_delivered": 1,
+            "withheld": -2
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.019230769230769232,
+            "wrong_delivered": 0.019230769230769232,
+            "withheld": -0.038461538461538464
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.058823529411764705
+            ],
+            "wrong_delivered": [
+              0.0,
+              0.0625
+            ],
+            "withheld": [
+              -0.09090909090909091,
+              0.0
+            ]
+          },
+          "transitions": {
+            "wrong_delivered -> wrong_delivered": 38,
+            "withheld -> wrong_delivered": 1,
+            "correct_delivered -> correct_delivered": 12,
+            "withheld -> correct_delivered": 1
+          },
+          "sample_pareto_improvement": false
+        }
+      }
+    },
+    "promising_under_both_metrics": false,
+    "limits": "Exploratory public training-source reports, not publication confirmation or financial safety. Whole-report resampling; small or degenerate intervals do not establish equivalence. Prefix outcomes/work are recorded trajectory ablations, not fresh generations. No scalar error penalty or outcome-selected metric. Novelty is not inferred from a positive result."
+  },
+  "crossed_sas-vs-baseline_sas.json": {
+    "sha256": "7421723d3566992734114c4addf87eae725a196f564b0115af60e24dee2b9b78",
+    "n": 52,
+    "reports": 15,
+    "full": {
+      "left": {
+        "case_success": {
+          "correct_delivered": 9,
+          "wrong_delivered": 24,
+          "withheld": 19,
+          "candidate_correct": 10,
+          "precision_when_delivered": 0.2727272727272727
+        },
+        "raw_execution_match": {
+          "correct_delivered": 10,
+          "wrong_delivered": 23,
+          "withheld": 19,
+          "candidate_correct": 11,
+          "precision_when_delivered": 0.30303030303030304
+        }
+      },
+      "right": {
+        "case_success": {
+          "correct_delivered": 9,
+          "wrong_delivered": 10,
+          "withheld": 33,
+          "candidate_correct": 10,
+          "precision_when_delivered": 0.47368421052631576
+        },
+        "raw_execution_match": {
+          "correct_delivered": 10,
+          "wrong_delivered": 9,
+          "withheld": 33,
+          "candidate_correct": 12,
+          "precision_when_delivered": 0.5263157894736842
+        }
+      }
+    },
+    "views": {
+      "full": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 0,
+            "wrong_delivered": -14,
+            "withheld": 14
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.0,
+            "wrong_delivered": -0.2692307692307692,
+            "withheld": 0.2692307692307692
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.0
+            ],
+            "wrong_delivered": [
+              -0.475,
+              -0.12195121951219512
+            ],
+            "withheld": [
+              0.12162162162162163,
+              0.4745762711864407
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 17,
+            "wrong_delivered -> withheld": 16,
+            "wrong_delivered -> wrong_delivered": 8,
+            "correct_delivered -> correct_delivered": 9,
+            "withheld -> wrong_delivered": 2
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": 0,
+            "wrong_delivered": -14,
+            "withheld": 14
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.0,
+            "wrong_delivered": -0.2692307692307692,
+            "withheld": 0.2692307692307692
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.0
+            ],
+            "wrong_delivered": [
+              -0.475,
+              -0.12195121951219512
+            ],
+            "withheld": [
+              0.12162162162162163,
+              0.4745762711864407
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 17,
+            "wrong_delivered -> withheld": 16,
+            "wrong_delivered -> wrong_delivered": 7,
+            "correct_delivered -> correct_delivered": 10,
+            "withheld -> wrong_delivered": 2
+          },
+          "sample_pareto_improvement": true
+        }
+      },
+      "no_repair_prefix": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 0,
+            "wrong_delivered": -16,
+            "withheld": 16
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.0,
+            "wrong_delivered": -0.3076923076923077,
+            "withheld": 0.3076923076923077
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.0
+            ],
+            "wrong_delivered": [
+              -0.5,
+              -0.15517241379310345
+            ],
+            "withheld": [
+              0.15517241379310345,
+              0.5
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 18,
+            "wrong_delivered -> withheld": 17,
+            "wrong_delivered -> wrong_delivered": 7,
+            "correct_delivered -> correct_delivered": 9,
+            "withheld -> wrong_delivered": 1
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": 0,
+            "wrong_delivered": -16,
+            "withheld": 16
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.0,
+            "wrong_delivered": -0.3076923076923077,
+            "withheld": 0.3076923076923077
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.0
+            ],
+            "wrong_delivered": [
+              -0.5,
+              -0.15517241379310345
+            ],
+            "withheld": [
+              0.15517241379310345,
+              0.5
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 18,
+            "wrong_delivered -> withheld": 17,
+            "wrong_delivered -> wrong_delivered": 6,
+            "correct_delivered -> correct_delivered": 10,
+            "withheld -> wrong_delivered": 1
+          },
+          "sample_pareto_improvement": true
+        }
+      },
+      "ungated_initial_prefix": {
+        "case_success": {
+          "delta_counts": {
+            "correct_delivered": 1,
+            "wrong_delivered": -1,
+            "withheld": 0
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.019230769230769232,
+            "wrong_delivered": -0.019230769230769232,
+            "withheld": 0.0
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.058823529411764705
+            ],
+            "wrong_delivered": [
+              -0.058823529411764705,
+              0.0
+            ],
+            "withheld": [
+              0.0,
+              0.0
+            ]
+          },
+          "transitions": {
+            "wrong_delivered -> wrong_delivered": 41,
+            "correct_delivered -> correct_delivered": 10,
+            "wrong_delivered -> correct_delivered": 1
+          },
+          "sample_pareto_improvement": true
+        },
+        "raw_execution_match": {
+          "delta_counts": {
+            "correct_delivered": 2,
+            "wrong_delivered": -2,
+            "withheld": 0
+          },
+          "delta_per_case": {
+            "correct_delivered": 0.038461538461538464,
+            "wrong_delivered": -0.038461538461538464,
+            "withheld": 0.0
+          },
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivered": [
+              0.0,
+              0.08928571428571429
+            ],
+            "wrong_delivered": [
+              -0.08928571428571429,
+              0.0
+            ],
+            "withheld": [
+              0.0,
+              0.0
+            ]
+          },
+          "transitions": {
+            "wrong_delivered -> wrong_delivered": 39,
+            "wrong_delivered -> correct_delivered": 2,
+            "correct_delivered -> correct_delivered": 11
+          },
+          "sample_pareto_improvement": true
+        }
+      }
+    },
+    "promising_under_both_metrics": true,
+    "limits": "Exploratory public training-source reports, not publication confirmation or financial safety. Whole-report resampling; small or degenerate intervals do not establish equivalence. Prefix outcomes/work are recorded trajectory ablations, not fresh generations. No scalar error penalty or outcome-selected metric. Novelty is not inferred from a positive result."
+  }
+}

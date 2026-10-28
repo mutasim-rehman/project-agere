@@ -3389,3 +3389,35 @@ passed for success and failure at preflight/run/export, saved as SSD
 `runs/lab-unified-workflow-tests-01.json`; bash syntax passed. Real-model checks
 remain pending behind the live8GB job. The command explicitly refuses an unsealed
 handoff. One paste cannot guarantee recovery from power loss or failed hardware.
+
+### 2026-10-28 — close8GB queue, verify real runtime/workflow, seal tier code
+
+All planned8GB jobs and secondary paired audits finished. Final reasoned/full
+repair crossed SAS9/10/33 reported versus control9/20/23 and original9/24/19;
+matched raw correct11→10 fails both-metric candidate adoption. Both original
+paired audit hashes and compact results are retained in research/lab_tiers.
+No new-method/novelty or architecture superiority claim.
+
+Portable CPU runtime smoke passed on0.5B F16 and7B Q4 with grammar, token ledger
+and reset checks. Then real SAS and three-resident-role MAS engineering fixtures
+passed, including exact saved-response replay. They are small engineering checks,
+not14B/32B accuracy/fit results. All11 integrity tests passed again. Logs/proofs
+are under authorized SSD runs/lab_handoff and runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY.
+Created configs/lab_tiers/freeze.json only after closure and both smoke proofs,
+with all code/config hashes and engineering/closure evidence pinned. Unvalidated
+source/catalog/controller prototypes excluded. User requests CLI to launch16GB
+on this laptop; no higher-tier research inference was started by the assistant.
+
+Laptop physical RAM15.438GB passes nominal16GB eligibility. At inspection only
+11.32GB was available, below11.77GB entry requirement including1GB reserve and
+500MB minimum weight headroom.13.8GB available permits nominal12.8GB cap; lower
+common cap is recorded, not hidden. Tell user to free memory before launching;
+minimum eligibility does not guarantee actual context8192 resident fit. Do not
+run32GB here or reduce models/context silently. Live viewer displays console and
+per-case worker logs, refresh5s; Ctrl+C stops only viewer.
+
+Sealed16GB preflight passed on this laptop: runtime/CPU, all four full model
+SHA256s/precisions/sizes, dataset IDs and demonstration report isolation verified.
+Proof: SSD runs/lab-tier16-preflight-final-01.log and timestamped preflight/report.json.
+Zero higher-tier model-generation calls; actual full-tier resident fit remains to
+be measured by the user launch.

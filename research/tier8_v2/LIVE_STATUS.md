@@ -1,9 +1,15 @@
-# Research checkpoint — latest direction review, 27 October 2026
+# Research checkpoint — 8GB closure and tier handoff, 28 October 2026
 
-**The original serial sequence has completed direct selection comparisons,
-original baselines and both49-case reserved audits. Two secondary SAS prompt
-jobs remain: control is running, crossed follows.** This is a committed snapshot,
-not a live monitor. Novel-method superiority remains unproven; no tier freeze.
+**All queued8GB evaluations and both secondary paired audits are complete.**
+The final reasoned/full-repair crossed SAS delivered9 correct/10wrong/33withheld
+on52 cases; matched control9/20/23, original9/24/19. Raw delivered correct changes
+11→10 versus matched control: the candidate still fails both-metric adoption.
+No novel-method superiority is established. The portable runtime and real
+SAS/MAS engineering workflow/replay passed; the higher-tier prospective protocol
+is sealed separately. These are not completed16/32GB model evaluations.
+
+[Offline tier commands and limits](../../LAB_TIERS_OFFLINE.md) ·
+[Prospective tier protocol](../lab_tiers/PROTOCOL.md).
 
 | Completed result | Reported correct/wrong/withheld |
 |---|---|

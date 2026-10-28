@@ -1,8 +1,10 @@
 # Ubuntu lab run: 16 GB and 32 GB, entirely offline after git pull
 
-Preparation is gated until the two current8GB prompt checks, closure audits and
-runtime/workflow smoke tests finish. The final handoff commit includes
-`configs/lab_tiers/freeze.json`; the launcher refuses evaluation without it.
+The8GB prompt checks and closure audits are complete. The portable runtime and
+real SAS/MAS workflow smoke tests passed on28 October2026, including saved-response
+replay. The sealed handoff includes `configs/lab_tiers/freeze.json`; code/input
+hashes are enforced before evaluation. Actual14B/32B accuracy and full-tier fit
+are evaluated by the tier runs, not established by the small engineering tests.
 
 The SSD already holds all six required GGUFs and the sealed160-question/50-report
 dataset. The prepared Linux x86_64 runtime includes Python, required packages,
@@ -67,6 +69,31 @@ fix host conditions and use a NEW run ID. Never overwrite failed evidence.
 To run only one tier, use `--tiers 16 --run-id lab-16-v1` or
 `--tiers 32 --run-id lab-32-v1` consistently on both preflight/start. Do not resume
 one run ID with a different tier list.16GB is primary;32GB is secondary.
+
+For this laptop, launch only16GB (the start command already includes input
+verification and automatic final analysis):
+
+```bash
+(
+  set -euo pipefail
+  cd /home/mutasim/Desktop/project-agere
+  export AGERE_SSD_ROOT="/run/media/mutasim/Data/AGERE"
+  bash scripts/lab_tiers.sh start --tiers 16 --run-id lab-16-laptop-v1
+)
+```
+
+Live console and per-case worker output, refreshing every5 seconds:
+
+```bash
+watch -n 5 'tail -n 8 /run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-laptop-v1/console.log; tail -n 5 /run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-laptop-v1/tier16-*/attempt-*/worker.log 2>/dev/null'
+```
+
+Ctrl+C exits the viewer only. This15.4GB physical host is eligible for the nominal
+16GB tier, with the same host-adjusted cap in all arms. Free RAM first: at least
+11.77 decimal GB available is needed to enter this model matrix, while13.8GB
+available allows the full12.8GB nominal cap and1GB reserve. Passing that minimum
+does not guarantee resident inference fits; the monitor records actual fit or
+failure. The laptop cannot run the32GB tier.
 
 ## Results for later inspection
 
