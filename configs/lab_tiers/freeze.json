@@ -125,7 +125,7 @@
     "scripts/tier8_v2_verifier_audit.py": "cb78b0e61c2439e185de3254d4e8adc4b4325598138c872427e8ccba0a6998d2",
     "scripts/verify_phase1_download.py": "8abce8d12725d5f140828c128d6d655668521c1f048b4f0573fe24c3f7372c9b",
     "scripts/lab_tiers.sh": "56fdd13d56b5b38e1892a1de11635960b96238fb02d5d4d31eabff1dcf01927f",
-    "scripts/lab_tiers_all.sh": "4f97d8275aedd530b1d8aedc4939a94e4357899d1119bb909e74810fe3b085bf",
+    "scripts/lab_tiers_all.sh": "f13657f562062ba46dd98d8a63d7098ca09cf1bb45169fdf5ff64a5efbe879dc",
     "configs/lab_tiers/memory_fit.json": "ee288db628d417f0b8778c1d9869033c13803a724abc5064518b5dac3d86e3e6",
     "configs/lab_tiers/protocol.json": "6c976796051b857ed10cc365c746f7591a48a7bb9d9e478819f62961770d30fa",
     "configs/lab_tiers/runtime_checksums.sha256": "aac9be055edabc47fae41326198335a1365b35a1515c4fbf4cb3f4f5a21a28da",

@@ -18,12 +18,13 @@ if [[ "${1:-}" != _worker ]]; then
         exit 2
     fi
     command -v flock >/dev/null || { echo 'Required Ubuntu utility flock is unavailable.' >&2; exit 2; }
+    command -v setsid >/dev/null || { echo 'Required Ubuntu utility setsid is unavailable.' >&2; exit 2; }
     exec 9>"$out/workflow.lock"
     if ! flock -n 9; then
         echo "This workflow is already running. Logs: $out/workflow.log"
         exit 0
     fi
-    nohup bash "$repo/scripts/lab_tiers_all.sh" _worker </dev/null >>"$out/workflow.log" 2>&1 &
+    nohup setsid bash "$repo/scripts/lab_tiers_all.sh" _worker </dev/null >>"$out/workflow.log" 2>&1 &
     echo "Started complete workflow, PID $!"
     echo "Logs, progress, analysis and final archive paths: $out/workflow.log"
     echo 'No further command is needed on success. Keep the PC awake and the SSD connected.'

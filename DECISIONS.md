@@ -3473,3 +3473,9 @@ unmodified. RSS guard is sampled, not claimed as a hard cgroup memory bound.
 Final v2 preflight passed: SSD runs/lab-tier16-115-preflight-01.log and
 timestamped preflight/report.json. It verified frozen source, CPU/runtime, all
 model hashes/precisions, packet IDs and demo isolation with zero generation.
+
+First automatic unified launch PID10638 exited before bootstrap/preflight and
+started no model job. Workflow log/status retained. Added setsid to nohup for a
+separate session;13 tests passed again in SSD runs/lab-tiers-tests-115-03.log.
+Archived the preceding v2 freeze on SSD before resealing the launcher-only fix;
+model/context/cap and all fit evidence remain unchanged.
