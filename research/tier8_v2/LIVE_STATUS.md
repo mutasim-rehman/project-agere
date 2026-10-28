@@ -15,6 +15,13 @@ Neutral long-input engineering probes passed without process swap: SAS peak
 engineering fit evidence, not full-benchmark or worst-case validation. Use new
 run ID `lab-16-115gb-v2`; old higher-cap runs must not be resumed as v2 evidence.
 
+The16GB-only workflow is now running under that new ID: preflight passed,
+controller10879 and worker10915 started the primary SAS job. Saved cap is exactly
+11,500,000,000 bytes for every arm/profile. This is a launch checkpoint, not a
+completed accuracy result. All six jobs, final analysis and export are queued;
+no32GB job is running. SSD workflow log and per-job worker/progress files are the
+live authority; this committed note is a dated snapshot.
+
 [Offline tier commands and limits](../../LAB_TIERS_OFFLINE.md) ·
 [Prospective tier protocol](../lab_tiers/PROTOCOL.md).
 

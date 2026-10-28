@@ -3479,3 +3479,10 @@ started no model job. Workflow log/status retained. Added setsid to nohup for a
 separate session;13 tests passed again in SSD runs/lab-tiers-tests-115-03.log.
 Archived the preceding v2 freeze on SSD before resealing the launcher-only fix;
 model/context/cap and all fit evidence remain unchanged.
+
+Verified replacement workflow PID10782 lives in its own session after launch;
+preflight passed and controller10879/worker10915 began tier16-sas-primary using
+archived frozen v2 code. Saved nominal/effective cap both11,500,000,000 bytes;
+common4096 context. New run lab-16-115gb-v2 is16GB only: six serial jobs, automatic
+replay analysis/export afterward. Initial sampled memory/no-swap is healthy; no
+quality inference from partial cases. All raw evidence remains on SSD.
