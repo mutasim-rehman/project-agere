@@ -1,5 +1,15 @@
 # Research checkpoint — 8GB closure and tier handoff, 28 October 2026
 
+**29October recovery:** original primary SAS stopped at145/160 on44MB process-tree
+swap, below11.5GB RSS. Original attempt remains a failed no-swap deployment.
+All145 saved cases passed independent vocabulary-only replay and predate the
+invalid sample. Qualified accuracy continuation `lab-16-115gb-recovery-01` retains
+the complete failure evidence, reuses every completed prefix case and starts at146.
+Its background workflow PID136629 runs in a separate session; preflight passed.
+It automatically waits for12.6GB available RAM before model launch. Closing the
+ChatGPT app can free memory; the detached workflow remains alive. Scores may be
+completed, but this continuation cannot claim an uninterrupted no-swap pass.
+
 **All queued8GB evaluations and both secondary paired audits are complete.**
 The final reasoned/full-repair crossed SAS delivered9 correct/10wrong/33withheld
 on52 cases; matched control9/20/23, original9/24/19. Raw delivered correct changes

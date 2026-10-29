@@ -3524,3 +3524,9 @@ user processes changed. Original source snapshots and pre-recovery freezes copie
 to SSD before resealing orchestration. All14 tests passed in
 runs/lab-recovery-tests-20261029-02.log, including required invalidity qualification
 and unchanged checkpoint prefix; actual145-case replay proof on SSD.
+
+Qualified continuation launched PID136629 in independent session SID136629;
+preflight passed with145 checkpoints intact. User can only close ChatGPT to free
+RAM; advised they may close it after confirmation, without killing it ourselves.
+Background continuation waits for12.6GB available, then starts case146 without
+a new CLI. Do not claim model inference resumed until its worker actually loads.
