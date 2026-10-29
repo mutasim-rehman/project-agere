@@ -1,5 +1,12 @@
 # Research checkpoint — 8GB closure and tier handoff, 28 October 2026
 
+**Current29October continuation:** both160-case primary jobs finished;7 direct
+SAS cases saved (327/960 total). Recovery01 stopped on another34MB swap event,
+below11.5GB RSS. Recovery02 retains every case/failure and runs under
+`agere-tier16-recovery02.service`, MemorySwapMax=0 for research only. It waits for
+host RAM, then continues direct-control at case8. Frozen inference is unchanged;
+the overall history remains invalid for uninterrupted no-swap deployment claims.
+
 **29October recovery:** original primary SAS stopped at145/160 on44MB process-tree
 swap, below11.5GB RSS. Original attempt remains a failed no-swap deployment.
 All145 saved cases passed independent vocabulary-only replay and predate the

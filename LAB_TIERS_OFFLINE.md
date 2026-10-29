@@ -173,3 +173,25 @@ continue serially. A later memory/swap violation still stops the worker.
 ```bash
 watch -n 5 'tail -n 8 /run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-01/workflow.log; tail -n 5 /run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-01/tier16-*/attempt-*/worker.log 2>/dev/null'
 ```
+
+## Second continuation: current run recovery02
+
+Recovery01 later stopped on34MB process-tree swap after both primary jobs160/160
+and SAS direct-control7/160. New run `lab-16-115gb-recovery-02` preserves all327
+completed cases and both original failures. It remains qualified accuracy evidence,
+not an uninterrupted no-swap deployment pass. Frozen inference code is unchanged.
+
+The active user-systemd service `agere-tier16-recovery02.service` has kernel
+MemorySwapMax=0 for this workflow only. Global swap settings are unchanged. It
+waits for the same host reserve and continues automatically after RAM is freed.
+The service survives closing ChatGPT. To ensure the existing service is started:
+
+```bash
+systemctl --user start agere-tier16-recovery02.service
+```
+
+Live output for the current run:
+
+```bash
+watch -n 5 'tail -n 8 /run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-02/workflow.log; tail -n 5 /run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-*/attempt-*/worker.log 2>/dev/null'
+```

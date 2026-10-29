@@ -3530,3 +3530,38 @@ preflight passed with145 checkpoints intact. User can only close ChatGPT to free
 RAM; advised they may close it after confirmation, without killing it ourselves.
 Background continuation waits for12.6GB available, then starts case146 without
 a new CLI. Do not claim model inference resumed until its worker actually loads.
+
+###2026-10-29 — second swap stop; preserve327 cases and block swap per service
+
+User asked how to resume. Recovery01 had completed both160-case primary jobs
+and7 SAS direct-control cases. Direct attempt stopped on34,430,976 bytes swap;
+RSS peak10,039,861,248 bytes, below11.5GB. Last direct checkpoint1793264517.1093032
+precedes clean sample1793264639.4586306 and first swap1793264639.6867266. Original
+run remains untouched and resource-invalid. No model worker was live.
+
+Added preparation-only lab_tiers_continue_qualified.py to clone an already
+qualified run into recovery02. Byte-checked all327 preserved cases against source,
+validated their ordered prefixes and completed-summary hashes, moved the whole
+second failed attempt into hashed recovery-history, and explicitly derived only
+its pre-breach samples. Existing first-failure evidence/qualification retained;
+additional source swap failure and completed-case provenance added. No frozen
+inference, monitor, model, prompt, score, seed, context or cap source modified.
+Preparation helper source is archived and hashed in recovery provenance. Old
+reports remain invalid as uninterrupted no-swap deployment results; scores may
+continue as explicitly qualified accuracy evidence.
+
+Verified user-systemd supports MemorySwapMax=0, including actual kernel
+memory.swap.max=0 and memory.swap.current=0. First shell probe failed to resolve
+its cgroup path; subsequent Python/kernel-path probe succeeded, retained log
+runs/swap-cgroup-probe-20261029.log. Launched ONLY the research workflow inside
+agere-tier16-recovery02.service with Restart=no and MemorySwapMax=0. This blocks
+swapping for its processes, preserves independent lifecycle after ChatGPT closes,
+and changes no global swap/swappiness setting. RSS monitoring remains11.5GB;
+resource pressure can still cause failure rather than silently using swap.
+
+Service active; initial preflight/input checks underway. It will skip both
+completed160-case jobs and start direct-control at8/160 once host RAM meets12.6GB
+reserve/cushion requirement. Available RAM at first check was11.07GB, so closing
+ChatGPT may be needed; don't kill unrelated applications. New run ID
+lab-16-115gb-recovery-02, copied cases327/960; systemd-swap-control.json and SSD
+runs/recovery02-verification.json pin the actual control and exact case counts.
