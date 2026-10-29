@@ -148,3 +148,28 @@ adapters do not match14B/32B; they are not silently reused. This is numerical
 financial QA, not proof of KYC/credit safety, a novel algorithm or globally
 optimal fine-tuning. Read the [prospective protocol](research/lab_tiers/PROTOCOL.md)
 and frozen JSON matrix before interpreting a winner.
+
+##29October: qualified checkpoint continuation after swap failure
+
+Original laptop run lab-16-115gb-v2 stopped after145/160 primary SAS cases on
+44,011,520 bytes of process-tree swap, despite RSS peak10,056,552,448 bytes
+under11.5GB. It remains invalid as a clean uninterrupted no-swap deployment.
+All145 checkpoints preceded the first bad sample and passed vocabulary-only
+full prompt/program/score/delivery/token replay.
+
+A NEW run lab-16-115gb-recovery-01 reuses that complete ordered prefix, starts
+at146 and retains the full failed source attempt in continuation-evidence. A
+derived pre-breach memory prefix is explicitly labelled, not an independent clean
+attempt. Models/context/prompt/score/monitor functions are unchanged. Final
+analysis is marked complete_accuracy_audited_resource_invalid, with the original
+failure visible in its report and export. It cannot prove no-swap deployability.
+The original run is never overwritten or relabelled as passing.
+
+Recovery waits for12.6GB available RAM (same11.5GB cap,1GB host reserve and100MB
+launch cushion), checking every5seconds. Close unused applications if needed;
+no second launch is necessary once waiting. All six jobs/analysis/export then
+continue serially. A later memory/swap violation still stops the worker.
+
+```bash
+watch -n 5 'tail -n 8 /run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-01/workflow.log; tail -n 5 /run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-01/tier16-*/attempt-*/worker.log 2>/dev/null'
+```

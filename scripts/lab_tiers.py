@@ -411,6 +411,12 @@ def run(ssd, identifier, tiers):
     write(state_path, state)
     cache = {}
     try:
+        from lab_tiers_recover import validate_recovery
+        continuation = validate_recovery(ssd, out)
+        if continuation:
+            state['resource_validity'] = continuation['resource_validity']
+            state['reused_cases'] = continuation['reused_cases']
+            write(state_path, state)
         environment = environment_check()
         for tier in tiers:
             if environment['physical_ram_bytes'] < tier * 1e9 * .9:
@@ -418,7 +424,7 @@ def run(ssd, identifier, tiers):
         verify_inputs(ssd, spec, tiers, cache)
         manifest_path = out / 'manifest.json'
         identity = {'protocol': spec, 'freeze': frozen, 'tiers': tiers, 'environment': environment,
-            'verified_inputs_at_start': dict(cache)}
+            'verified_inputs_at_start': dict(cache), 'continuation': continuation}
         if manifest_path.exists():
             previous = read(manifest_path)
             if any(previous[k] != identity[k] for k in ('protocol', 'freeze', 'tiers')):
@@ -450,6 +456,20 @@ def run(ssd, identifier, tiers):
             arms = ('sas', 'mas') if tier == 16 else ('mas', 'sas')
             for profile in spec['profiles']:
                 for arm in arms:
+                    # A qualified recovery may wait for its original host
+                    # reserve; it must never silently lower its paired cap.
+                    notice = 0
+                    while continuation and psutil.virtual_memory().available < cap + 1100000000:
+                        available = psutil.virtual_memory().available
+                        state.update(status='waiting_for_ram', current_job=f'tier{tier}-{arm}-{profile}',
+                            available_bytes=available, required_available_bytes=cap+1100000000, time=time.time())
+                        write(state_path, state)
+                        if time.time() >= notice:
+                            print(f'Waiting for RAM: {available/1e9:.2f} GB available; '
+                                f'{(cap+1100000000)/1e9:.2f} GB required including reserve/cushion. '
+                                f'Application cap stays {cap/1e9:.2f} GB.', flush=True)
+                            notice = time.time()+30
+                        time.sleep(5)
                     state.update(status='running', current_job=f'tier{tier}-{arm}-{profile}', time=time.time())
                     write(state_path, state)
                     monitor_job(ssd, out, code, job_config(spec, tier, arm, profile), cap, cache, spec)

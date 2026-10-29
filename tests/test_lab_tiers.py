@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import lab_tiers as runner
 from lab_tiers_common import completed_cases, gguf_file_type, inside, read, sha, verify, write
 from lab_tiers_analyze import paired
+from lab_tiers_recover import validate_recovery
 
 
 def row(identifier):
@@ -32,6 +33,30 @@ class LabIntegrity(unittest.TestCase):
         self.assertEqual(runner.choose_cap(spec, 16, 14000000000), 11500000000)
         with self.assertRaisesRegex(ValueError, 'NOT additional application usage'):
             runner.choose_cap(spec, 16, 12499999999)
+
+    def test_recovery_keeps_resource_failure_and_protects_reused_prefix(self):
+        case = self.root / 'tier16-sas-primary/cases.jsonl'
+        case.parent.mkdir()
+        case.write_text(json.dumps(row('a'))+'\n')
+        proof = {'resource_validity': 'invalid_for_uninterrupted_no_swap_deployment',
+            'evidence_sha256': {}, 'job': 'tier16-sas-primary', 'reused_cases': 1,
+            'prefix_sha256': sha(case)}
+        write(self.root / 'continuation.json', proof)
+        self.assertEqual(validate_recovery(self.root, self.root), proof)
+        with case.open('a') as stream:
+            stream.write(json.dumps(row('b'))+'\n')
+        validate_recovery(self.root, self.root)
+        write(self.root / 'manifest.json', {'continuation': proof})
+        (self.root / 'continuation.json').unlink()
+        with self.assertRaisesRegex(ValueError, 'qualification is missing'):
+            validate_recovery(self.root, self.root)
+        write(self.root / 'continuation.json', {**proof, 'resource_validity': 'clean'})
+        with self.assertRaises(ValueError):
+            validate_recovery(self.root, self.root)
+        write(self.root / 'continuation.json', proof)
+        case.write_text(json.dumps(row('changed'))+'\n')
+        with self.assertRaisesRegex(ValueError, 'prefix changed'):
+            validate_recovery(self.root, self.root)
 
     def test_completed_prefix_rejects_duplicate_or_reordered_cases(self):
         p = self.root / 'cases.jsonl'

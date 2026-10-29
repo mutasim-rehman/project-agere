@@ -47,6 +47,8 @@ def analyze(ssd, out):
     from tier8_v2_natural_run import Models
     from lab_tiers import counts, verify_inputs
     manifest = read(out / 'manifest.json')
+    from lab_tiers_recover import validate_recovery
+    continuation = validate_recovery(ssd, out)
     if read(out / 'state.json')['status'] != 'complete':
         raise ValueError('All requested jobs must finish before final paired analysis')
     spec = manifest['protocol']
@@ -128,9 +130,15 @@ def analyze(ssd, out):
             'note': 'Shows why wrong-delivery reduction alone is not utility. Not claimed to solve numerical QA.'},
         'limits': [spec['dataset']['limits'], spec['adaptation'], spec['statistics']['interpretation'],
             'One model family/checkpoint set/seed; actual prompts, model sizes and precision differ by deployment. Equal ceilings are not equal compute. Primary 16GB comparison; remaining profiles/32GB are secondary.']}
+    if continuation:
+        result.update(status='complete_accuracy_audited_resource_invalid', continuation=continuation,
+            uninterrupted_no_swap_deployment_pass=False)
+        result['limits'].insert(0, continuation['limits'])
     write(audit_dir / 'summary.json', result)
     lines = ['# Offline lab evaluation summary', '', 'All counts are over the complete paired dataset, including withheld cases.', '',
         '| Job | Correct reported | Wrong reported | Withheld | Correct raw | Peak RSS GB |', '|---|---:|---:|---:|---:|---:|']
+    if continuation:
+        lines[2:2] = ['**RESOURCE FAILURE RETAINED: accuracy continuation; NOT a clean uninterrupted no-swap deployment pass.**', '', continuation['limits'], '']
     for name, s in summaries.items():
         m, raw = s['full']['case_success'], s['full']['raw_execution_match']
         lines.append(f'| {name} | {m["correct_delivered"]} | {m["wrong_delivered"]} | {m["withheld"]} | {raw["correct_delivered"]} | {s["sampled_peak_tree_rss_bytes"]/1e9:.3f} |')

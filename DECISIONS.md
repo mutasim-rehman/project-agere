@@ -3486,3 +3486,41 @@ archived frozen v2 code. Saved nominal/effective cap both11,500,000,000 bytes;
 common4096 context. New run lab-16-115gb-v2 is16GB only: six serial jobs, automatic
 replay analysis/export afterward. Initial sampled memory/no-swap is healthy; no
 quality inference from partial cases. All raw evidence remains on SSD.
+
+###2026-10-29 — recover completed accuracy checkpoints without hiding swap failure
+
+User reported stop after145 and explicitly asked to check/resume. Source primary
+SAS attempt stopped on44,011,520 bytes aggregate process-tree swap; maximum RSS
+10,056,552,448 bytes, below11.5GB. No active research worker remained. Source
+completed case145 at1793242610.601642; last clean sample1793242632.1490643;
+first invalid sample1793242632.365765. All145 complete checkpoints precede the
+invalid sample. Swap's per-process origin is not identifiable from these aggregate
+samples; do not claim model-weight memory specifically swapped or infer its cause.
+The whole source attempt remains a FAILED uninterrupted no-swap deployment test.
+
+User authorization to resume does not justify deleting a breach flag or claiming
+a clean resource pass. Prepared explicit new qualified accuracy continuation
+lab-16-115gb-recovery-01, with untouched source ledger/evidence, exact ordered
+145-case prefix, derived pre-breach memory evidence labelled non-independent,
+and full original swap trace/state/worker/stage logs in continuation-evidence.
+Every reused prompt/program/score/delivery/token ledger was independently replayed
+using vocabulary-only models; all145 passed, zero generation. No quality-based
+selection or omitted completed case. Old source stays unmodified and invalid.
+
+New recovery requires exact protocol/model/data equality, byte-identical shared
+inference sources, and AST-identical worker/counts/job-config/monitor functions.
+Only orchestration/audit qualification changes; unchanged context4096, fixed
+11.5GB cap, same six jobs/seed/prompting. New report explicitly labels accuracy
+complete/resource invalid and uninterrupted_no_swap_deployment_pass=false. Removing
+or editing the required provenance cannot silently produce a clean result.
+Export includes full failed source evidence. This is evidence-preserving recovery,
+not a new research method or a scientific rescue of failed resource eligibility.
+
+Available RAM initially12.15–12.33GB, below the frozen cap+1GB reserve. Asked user
+asynchronously to free about0.5GB while validating checkpoints. Qualified recovery
+waits automatically for12.6GB available including100MB cushion rather than
+changing cap/host reserve or repeatedly crashing; no global swap settings or
+user processes changed. Original source snapshots and pre-recovery freezes copied
+to SSD before resealing orchestration. All14 tests passed in
+runs/lab-recovery-tests-20261029-02.log, including required invalidity qualification
+and unchanged checkpoint prefix; actual145-case replay proof on SSD.
