@@ -1,0 +1,1382 @@
+[
+  {
+    "source": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/workflow.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/workflow.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-115gb-v2/workflow.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_critic_training/critic3b-converted-01/adapter-f16.gguf",
+    "bytes": 59902112,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_critic_training/critic3b-extended-converted-01/adapter-f16.gguf",
+    "bytes": 59902112,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_critic_training/critic3b-extended-train-01/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_critic_training/critic3b-fit-01/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_critic_training/critic3b-train-01/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_external.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_joint_posttrain/joint03-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_joint_posttrain/joint03-discovery02/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/common-actor-converted-01/adapter-f16.gguf",
+    "bytes": 59902144,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/common-actor-fit-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/common-actor-fit-02/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/common-actor-fit-02/fit/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/common-actor-train-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/common-actor-train-01/train/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-critic-converted-01/adapter-f16.gguf",
+    "bytes": 59902112,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-critic-fit-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-critic-fit-01/fit/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-critic-train-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-critic-train-01/train/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-sas-converted-01/adapter-f16.gguf",
+    "bytes": 80767712,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-sas-fit-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-sas-fit-01/fit/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-sas-train-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/control-sas-train-01/train/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-critic-converted-01/adapter-f16.gguf",
+    "bytes": 59902112,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-critic-fit-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-critic-fit-01/fit/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-critic-train-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-critic-train-01/train/adapter/adapter_model.safetensors",
+    "bytes": 59933632,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-sas-converted-01/adapter-f16.gguf",
+    "bytes": 80767712,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-sas-fit-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-sas-fit-01/fit/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-sas-train-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/crossed-sas-train-01/train/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/matched-study-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_matched_continuation/matched-study-02/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_posttrain/critic3b-posttrain-02/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-converted-03/adapter-f16.gguf",
+    "bytes": 80767712,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-fit-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-fit-01/fit/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-fit-compact-03/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-fit-compact-03/fit/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-fit-pread-02/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-fit-pread-02/fit/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-train-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-train-compact-03/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-train-compact-03/train/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-joint-train-pread-02/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-offload-fit-01/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-offload-fit-02/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-offload-fit-03/controller.lock",
+    "bytes": 0,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/tier8_sas_training/sas7b-offload-fit-03/fit/adapter/adapter_model.safetensors",
+    "bytes": 80792096,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/adapters/tier8-7b-qlora/adapter_model.safetensors",
+    "bytes": 161533192,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/adapters/tier8-7b-qlora/tokenizer.json",
+    "bytes": 11421892,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/adapters/tier8-7b-qlora/tokenizer_config.json",
+    "bytes": 722,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/gguf/qwen2.5-0.5b-instruct-f16.gguf",
+    "bytes": 994156512,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/gguf/qwen2.5-1.5b-instruct-f16.gguf",
+    "bytes": 3093669024,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/gguf/qwen2.5-14b-instruct-q4_k_m.gguf",
+    "bytes": 8988110336,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/gguf/qwen2.5-32b-instruct-q4_k_m.gguf",
+    "bytes": 19851335936,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/gguf/qwen2.5-3b-instruct-f16.gguf",
+    "bytes": 6178316832,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/gguf/qwen2.5-7b-instruct-f16.gguf",
+    "bytes": 15237853248,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/gguf/qwen2.5-7b-instruct-q4_k_m.gguf",
+    "bytes": 4683073600,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/.gitignore",
+    "bytes": 1,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/CACHEDIR.TAG",
+    "bytes": 195,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/1_Pooling/config.json.metadata",
+    "bytes": 101,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/config_sentence_transformers.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/model.safetensors.metadata",
+    "bytes": 127,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/modules.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/pytorch_model.bin.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/sentence_bert_config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/special_tokens_map.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/tokenizer.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/tokenizer_config.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/download/vocab.txt.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/.cache/huggingface/trees/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a.json",
+    "bytes": 2161,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/model.safetensors",
+    "bytes": 133466304,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/pytorch_model.bin",
+    "bytes": 133508397,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/tokenizer.json",
+    "bytes": 711396,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/BAAI--bge-small-en-v1.5/tokenizer_config.json",
+    "bytes": 366,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/.gitignore",
+    "bytes": 1,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/CACHEDIR.TAG",
+    "bytes": 195,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/download/config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/download/generation_config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/download/merges.txt.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/download/model.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/download/tokenizer.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/download/tokenizer_config.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/download/vocab.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/.cache/huggingface/trees/7ae557604adf67be50417f59c2c2f167def9a775.json",
+    "bytes": 1298,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/merges.txt",
+    "bytes": 1671839,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/model.safetensors",
+    "bytes": 988097824,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/tokenizer.json",
+    "bytes": 7031645,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/tokenizer_config.json",
+    "bytes": 7305,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/vocab.json",
+    "bytes": 2776833,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/.gitignore",
+    "bytes": 1,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/CACHEDIR.TAG",
+    "bytes": 195,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/download/config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/download/generation_config.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/download/merges.txt.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/download/model.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/download/tokenizer.json.metadata",
+    "bytes": 102,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/download/tokenizer_config.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/download/vocab.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/.cache/huggingface/trees/989aa7980e4cf806f80c7fef2b1adb7bc71aa306.json",
+    "bytes": 1300,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/merges.txt",
+    "bytes": 1671839,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/model.safetensors",
+    "bytes": 3087467144,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/tokenizer.json",
+    "bytes": 7031645,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/tokenizer_config.json",
+    "bytes": 7305,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/vocab.json",
+    "bytes": 2776833,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/.gitignore",
+    "bytes": 1,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/CACHEDIR.TAG",
+    "bytes": 195,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/-vH6cOyDWwSz9eriTyl87vkLn44=.a77f603d8368749c19d3ac9cf2a300e476edcc794ea41af8e473ee12935eadb8.63c33270.incomplete",
+    "bytes": 31457280,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/-vH6cOyDWwSz9eriTyl87vkLn44=.a77f603d8368749c19d3ac9cf2a300e476edcc794ea41af8e473ee12935eadb8.9bc21c9c.incomplete",
+    "bytes": 20971520,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/-vH6cOyDWwSz9eriTyl87vkLn44=.a77f603d8368749c19d3ac9cf2a300e476edcc794ea41af8e473ee12935eadb8.ed76c289.incomplete",
+    "bytes": 408944640,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/0h2PhEN4wf4qC6Njm74VvfC6t1E=.eb356aacae443e30f52712b1e98fadf206976365e2f5ee886321b0bb38c7cea8.2b5ba58f.incomplete",
+    "bytes": 167772160,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/0h2PhEN4wf4qC6Njm74VvfC6t1E=.eb356aacae443e30f52712b1e98fadf206976365e2f5ee886321b0bb38c7cea8.4fc9c4cc.incomplete",
+    "bytes": 178257920,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/0h2PhEN4wf4qC6Njm74VvfC6t1E=.eb356aacae443e30f52712b1e98fadf206976365e2f5ee886321b0bb38c7cea8.5e2d6aef.incomplete",
+    "bytes": 104857600,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/0h2PhEN4wf4qC6Njm74VvfC6t1E=.eb356aacae443e30f52712b1e98fadf206976365e2f5ee886321b0bb38c7cea8.80828a21.incomplete",
+    "bytes": 7952618,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/0h2PhEN4wf4qC6Njm74VvfC6t1E=.eb356aacae443e30f52712b1e98fadf206976365e2f5ee886321b0bb38c7cea8.82bd2289.incomplete",
+    "bytes": 41943040,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/0h2PhEN4wf4qC6Njm74VvfC6t1E=.eb356aacae443e30f52712b1e98fadf206976365e2f5ee886321b0bb38c7cea8.d4f34527.incomplete",
+    "bytes": 503316480,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/6g1A1Sffu6ppCoytuuyE76A1WOI=.fbbda3cdee31895d0c57d617449af5579d219df34f3d63f7a23acbfe7fb0a647.62f680fb.incomplete",
+    "bytes": 41943040,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/6g1A1Sffu6ppCoytuuyE76A1WOI=.fbbda3cdee31895d0c57d617449af5579d219df34f3d63f7a23acbfe7fb0a647.947edc4f.incomplete",
+    "bytes": 41943040,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/6g1A1Sffu6ppCoytuuyE76A1WOI=.fbbda3cdee31895d0c57d617449af5579d219df34f3d63f7a23acbfe7fb0a647.aae74fbc.incomplete",
+    "bytes": 31457280,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/aESknW7TOKEmfryZ2OONv6DRGfk=.f7ac652aa101717c97cfeccf5109985cca5b04529b57d3f4d2ec7a802266296b.5e1b318b.incomplete",
+    "bytes": 314572800,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/aESknW7TOKEmfryZ2OONv6DRGfk=.f7ac652aa101717c97cfeccf5109985cca5b04529b57d3f4d2ec7a802266296b.79026996.incomplete",
+    "bytes": 146800640,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/aESknW7TOKEmfryZ2OONv6DRGfk=.f7ac652aa101717c97cfeccf5109985cca5b04529b57d3f4d2ec7a802266296b.e5386455.incomplete",
+    "bytes": 209715200,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/bUZ-Wph4eKxfWpbgEc4sIyI6tC8=.b1201a6edcac8ef96a37040524fe37a5a84e446513ed40491e764a37302385fa.116ae2c4.incomplete",
+    "bytes": 0,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/bUZ-Wph4eKxfWpbgEc4sIyI6tC8=.b1201a6edcac8ef96a37040524fe37a5a84e446513ed40491e764a37302385fa.32a2f25b.incomplete",
+    "bytes": 241172480,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/bUZ-Wph4eKxfWpbgEc4sIyI6tC8=.b1201a6edcac8ef96a37040524fe37a5a84e446513ed40491e764a37302385fa.5dd1e289.incomplete",
+    "bytes": 146800640,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/bUZ-Wph4eKxfWpbgEc4sIyI6tC8=.b1201a6edcac8ef96a37040524fe37a5a84e446513ed40491e764a37302385fa.61f0c247.incomplete",
+    "bytes": 125829120,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/bUZ-Wph4eKxfWpbgEc4sIyI6tC8=.b1201a6edcac8ef96a37040524fe37a5a84e446513ed40491e764a37302385fa.79309395.incomplete",
+    "bytes": 83886080,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/bUZ-Wph4eKxfWpbgEc4sIyI6tC8=.b1201a6edcac8ef96a37040524fe37a5a84e446513ed40491e764a37302385fa.c10d4b08.incomplete",
+    "bytes": 20971520,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/EHpm-K7rdV4CgBWL-uyhsBxgY_o=.cee9dbdf738ce61adb21c70ad5c5585747caaab6457c9ffc3bfa20d73127c2c6.0418d2fb.incomplete",
+    "bytes": 8291195,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/EHpm-K7rdV4CgBWL-uyhsBxgY_o=.cee9dbdf738ce61adb21c70ad5c5585747caaab6457c9ffc3bfa20d73127c2c6.39ebe0ba.incomplete",
+    "bytes": 52428800,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/EHpm-K7rdV4CgBWL-uyhsBxgY_o=.cee9dbdf738ce61adb21c70ad5c5585747caaab6457c9ffc3bfa20d73127c2c6.3a41c864.incomplete",
+    "bytes": 94371840,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/EHpm-K7rdV4CgBWL-uyhsBxgY_o=.cee9dbdf738ce61adb21c70ad5c5585747caaab6457c9ffc3bfa20d73127c2c6.7bae435e.incomplete",
+    "bytes": 31457280,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/EHpm-K7rdV4CgBWL-uyhsBxgY_o=.cee9dbdf738ce61adb21c70ad5c5585747caaab6457c9ffc3bfa20d73127c2c6.d606c5a9.incomplete",
+    "bytes": 377487360,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/EHpm-K7rdV4CgBWL-uyhsBxgY_o=.cee9dbdf738ce61adb21c70ad5c5585747caaab6457c9ffc3bfa20d73127c2c6.fda85cc1.incomplete",
+    "bytes": 325058560,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/generation_config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/kWKIu8gS4RO6oPIX4oh3Bgg-Q5A=.b477be7572f0ab3ae3cbba38d508cc33e70600b2045669c4ad848051c3432094.1a94610d.incomplete",
+    "bytes": 0,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/kWKIu8gS4RO6oPIX4oh3Bgg-Q5A=.b477be7572f0ab3ae3cbba38d508cc33e70600b2045669c4ad848051c3432094.38c36b36.incomplete",
+    "bytes": 10485760,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/kWKIu8gS4RO6oPIX4oh3Bgg-Q5A=.b477be7572f0ab3ae3cbba38d508cc33e70600b2045669c4ad848051c3432094.6a1320a7.incomplete",
+    "bytes": 31457280,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/kWKIu8gS4RO6oPIX4oh3Bgg-Q5A=.b477be7572f0ab3ae3cbba38d508cc33e70600b2045669c4ad848051c3432094.9a44ef33.incomplete",
+    "bytes": 304087040,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/kWKIu8gS4RO6oPIX4oh3Bgg-Q5A=.b477be7572f0ab3ae3cbba38d508cc33e70600b2045669c4ad848051c3432094.a02995f0.incomplete",
+    "bytes": 335544320,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/kWKIu8gS4RO6oPIX4oh3Bgg-Q5A=.b477be7572f0ab3ae3cbba38d508cc33e70600b2045669c4ad848051c3432094.b4efe844.incomplete",
+    "bytes": 387973120,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/merges.txt.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model-00001-of-00008.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model-00002-of-00008.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model-00003-of-00008.safetensors.metadata",
+    "bytes": 127,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model-00004-of-00008.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model-00005-of-00008.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model-00006-of-00008.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model-00007-of-00008.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model-00008-of-00008.safetensors.metadata",
+    "bytes": 127,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/model.safetensors.index.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/sXoMdGKE4Flr20prmlhvMqJ3A08=.e9115e615b575acb6e8b3a06524b32cbf7f680f07517125e4334f62c3f4acb0d.122af087.incomplete",
+    "bytes": 31457280,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/sXoMdGKE4Flr20prmlhvMqJ3A08=.e9115e615b575acb6e8b3a06524b32cbf7f680f07517125e4334f62c3f4acb0d.18975908.incomplete",
+    "bytes": 31457280,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/sXoMdGKE4Flr20prmlhvMqJ3A08=.e9115e615b575acb6e8b3a06524b32cbf7f680f07517125e4334f62c3f4acb0d.d37bbc0b.incomplete",
+    "bytes": 20971520,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/tokenizer.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/tokenizer_config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/download/vocab.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/.cache/huggingface/trees/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8.json",
+    "bytes": 3724,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/merges.txt",
+    "bytes": 1671839,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00001-of-00008.safetensors",
+    "bytes": 3885154816,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00002-of-00008.safetensors",
+    "bytes": 3995327992,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00003-of-00008.safetensors",
+    "bytes": 3995328080,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00004-of-00008.safetensors",
+    "bytes": 3995338432,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00005-of-00008.safetensors",
+    "bytes": 3979624824,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00006-of-00008.safetensors",
+    "bytes": 3995328080,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00007-of-00008.safetensors",
+    "bytes": 3995328080,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00008-of-00008.safetensors",
+    "bytes": 1698703696,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/tokenizer.json",
+    "bytes": 7031645,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/tokenizer_config.json",
+    "bytes": 7305,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-14B-Instruct/vocab.json",
+    "bytes": 2776833,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/.gitignore",
+    "bytes": 1,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/CACHEDIR.TAG",
+    "bytes": 195,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/generation_config.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/merges.txt.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00001-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00002-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00003-of-00017.safetensors.metadata",
+    "bytes": 127,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00004-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00005-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00006-of-00017.safetensors.metadata",
+    "bytes": 127,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00007-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00008-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00009-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00010-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00011-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00012-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00013-of-00017.safetensors.metadata",
+    "bytes": 127,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00014-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00015-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00016-of-00017.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model-00017-of-00017.safetensors.metadata",
+    "bytes": 125,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/model.safetensors.index.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/tokenizer.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/tokenizer_config.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/download/vocab.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/.cache/huggingface/trees/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd.json",
+    "bytes": 6667,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/merges.txt",
+    "bytes": 1671839,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00001-of-00017.safetensors",
+    "bytes": 3916539832,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00002-of-00017.safetensors",
+    "bytes": 3900847496,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00003-of-00017.safetensors",
+    "bytes": 3900847480,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00004-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00005-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00006-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00007-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00008-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00009-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00010-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00011-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00012-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00013-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00014-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00015-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00016-of-00017.safetensors",
+    "bytes": 3900847544,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00017-of-00017.safetensors",
+    "bytes": 3098588976,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/tokenizer.json",
+    "bytes": 7031645,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/tokenizer_config.json",
+    "bytes": 7305,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-32B-Instruct/vocab.json",
+    "bytes": 2776833,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/.gitignore",
+    "bytes": 1,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/CACHEDIR.TAG",
+    "bytes": 195,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/generation_config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/merges.txt.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/model-00001-of-00002.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/model-00002-of-00002.safetensors.metadata",
+    "bytes": 127,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/model.safetensors.index.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/tokenizer.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/tokenizer_config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/download/vocab.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/.cache/huggingface/trees/aa8e72537993ba99e69dfaafa59ed015b17504d1.json",
+    "bytes": 1761,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/merges.txt",
+    "bytes": 1671839,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/model-00001-of-00002.safetensors",
+    "bytes": 3968658944,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/model-00002-of-00002.safetensors",
+    "bytes": 2203268048,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/tokenizer.json",
+    "bytes": 7031645,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/tokenizer_config.json",
+    "bytes": 7305,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-3B-Instruct/vocab.json",
+    "bytes": 2776833,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/.gitignore",
+    "bytes": 1,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/CACHEDIR.TAG",
+    "bytes": 195,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/-dFtyT7kcgbTHt1cy9JKqruJCR4=.1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd.a0709c08.incomplete",
+    "bytes": 440401920,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/DaGOU-KRMVrY0aYktrsE34tL0Bs=.8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5.29a0e9ba.incomplete",
+    "bytes": 115343360,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/generation_config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/IO4xwqmZYzFmxznkwkiNSBwO1H0=.a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7.eb392d00.incomplete",
+    "bytes": 587202560,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/merges.txt.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/model-00001-of-00004.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/model-00002-of-00004.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/model-00003-of-00004.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/model-00004-of-00004.safetensors.metadata",
+    "bytes": 128,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/model.safetensors.index.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/t9msAuTjAZjuQnmzGOwTjiptvIU=.f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185.efe7e726.incomplete",
+    "bytes": 1635778560,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/tokenizer.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/tokenizer_config.json.metadata",
+    "bytes": 104,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/download/vocab.json.metadata",
+    "bytes": 103,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/.cache/huggingface/trees/a09a35458c702b33eeacc393d103063234e8bc28.json",
+    "bytes": 2416,
+    "reason": "temporary/cache files"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/merges.txt",
+    "bytes": 1671839,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model-00001-of-00004.safetensors",
+    "bytes": 3945441440,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model-00002-of-00004.safetensors",
+    "bytes": 3864726352,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model-00003-of-00004.safetensors",
+    "bytes": 3864726424,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model-00004-of-00004.safetensors",
+    "bytes": 3556377672,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/tokenizer.json",
+    "bytes": 7031645,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/tokenizer_config.json",
+    "bytes": 7305,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf/Qwen--Qwen2.5-7B-Instruct/vocab.json",
+    "bytes": 2776833,
+    "reason": "tokenizer assets unnecessary for dashboard"
+  },
+  {
+    "source": "weights/hf-training/3b/model.safetensors",
+    "bytes": 2054625552,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/tier8_v2/qwen2.5-0.5b-instruct-native-f16.gguf",
+    "bytes": 1266425696,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/tier8_v2/qwen2.5-3b-instruct-q4_k_m.gguf",
+    "bytes": 2104932768,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf",
+    "bytes": 3993201344,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
+    "bytes": 689872288,
+    "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  }
+]

@@ -1,0 +1,127 @@
+{
+  "source_root": "H:\\AGERE",
+  "prepared_date": "2026-10-30",
+  "source_files_preserved": 2598,
+  "unique_files_archived": 1629,
+  "source_bytes": 676686919,
+  "unique_source_bytes": 511742376,
+  "archive_bytes": 57273225,
+  "counts_by_category": {
+    "datasets": 128,
+    "phase2": 37,
+    "runs": 2405,
+    "weights": 28
+  },
+  "derived_tables_and_documents": 16,
+  "archives": [
+    {
+      "path": "evidence/datasets-001.zip",
+      "bytes": 3144968,
+      "sha256": "e67f7b2932c6537af4ab422f046fb1dedf9dbe4a415337ce17fb288608f48321",
+      "entries": 93
+    },
+    {
+      "path": "evidence/datasets-002.zip",
+      "bytes": 2499028,
+      "sha256": "9c78fbf72ba0d5ba98d778e8223c0e5b3667201445cac93cd02c7efa858cbf03",
+      "entries": 24
+    },
+    {
+      "path": "evidence/datasets-003.zip",
+      "bytes": 1907905,
+      "sha256": "5f2d41e53a14c56f069f7d9e989c0a3858cbd5fc36f3ad1571607cb5761d1d3f",
+      "entries": 5
+    },
+    {
+      "path": "evidence/datasets-004.zip",
+      "bytes": 13240052,
+      "sha256": "06100fe8d7b365a0a1ec28db06b3c61c05909b13a45e3b8897921e857c8a39d4",
+      "entries": 1
+    },
+    {
+      "path": "evidence/datasets-005.zip",
+      "bytes": 1315261,
+      "sha256": "a0f697443670f43e398308e63126f36152505ef2724607e834ffa4457001c317",
+      "entries": 3
+    },
+    {
+      "path": "evidence/phase2-001.zip",
+      "bytes": 161775,
+      "sha256": "9fba435b3a4a31b7e9ddc52c8562ed5db694fc5262b4a14578e39f7de9f12159",
+      "entries": 37
+    },
+    {
+      "path": "evidence/runs-001.zip",
+      "bytes": 2987911,
+      "sha256": "75d9d84bcbbc56445f10d3a2e1ad4f5fe888a07241a53f8ffe6e819c7b3549e6",
+      "entries": 464
+    },
+    {
+      "path": "evidence/runs-002.zip",
+      "bytes": 9529405,
+      "sha256": "cda8951d201636adbe6a671432a6e1365655fc7353f6dc5a73c7691a75ba1579",
+      "entries": 46
+    },
+    {
+      "path": "evidence/runs-003.zip",
+      "bytes": 2535119,
+      "sha256": "efb141ef70b8976b93000e8ea111ebb6e3eb135edf2d1436c17441b9466dac93",
+      "entries": 42
+    },
+    {
+      "path": "evidence/runs-004.zip",
+      "bytes": 5421746,
+      "sha256": "63ec9fda5ad073a7a881ae3dc4106a8f891220705712bfc08f5dca951d4415cf",
+      "entries": 261
+    },
+    {
+      "path": "evidence/runs-005.zip",
+      "bytes": 3140150,
+      "sha256": "35d1fd4c31c9a9cad2e17a23b2bd92d93c370aa497446fa9f1fa53b80a153bf6",
+      "entries": 211
+    },
+    {
+      "path": "evidence/runs-006.zip",
+      "bytes": 2384496,
+      "sha256": "44b25e00cef074c69ba5359dacfd381ead118c05f8a619accb9c3635503b50cd",
+      "entries": 138
+    },
+    {
+      "path": "evidence/runs-007.zip",
+      "bytes": 3151553,
+      "sha256": "5250c25ff832eaf84b5a809d78d33bf1841131d80add8f65a0c7d6a19ed49a72",
+      "entries": 54
+    },
+    {
+      "path": "evidence/runs-008.zip",
+      "bytes": 3015990,
+      "sha256": "a9697552f53d23a1d2bf54681a8fdc8cabd40dc76e375cd5f9961dac38cb4d95",
+      "entries": 63
+    },
+    {
+      "path": "evidence/runs-009.zip",
+      "bytes": 808567,
+      "sha256": "4e46b9b803466ed4fb83d81555c2cad8496b1bfb9bdc1785d2076b0610421a18",
+      "entries": 105
+    },
+    {
+      "path": "evidence/runs-010.zip",
+      "bytes": 1900215,
+      "sha256": "bf7e19ee6133b56654e027de876ef55072175ec1063d4e3cb7f55ba620c56643",
+      "entries": 57
+    },
+    {
+      "path": "evidence/weights-001.zip",
+      "bytes": 129084,
+      "sha256": "5edc54f26aa88e3ce1fb300acd1bd95277b1308369a0d5307d2d9df2ec752dc1",
+      "entries": 25
+    }
+  ],
+  "excluded_roots": [
+    ".venv",
+    "runtime",
+    "tmp"
+  ],
+  "verification": "Every unique archived file read back and SHA256 checked; CSV JSON round trips checked.",
+  "credential_check": "Recognizable GitHub/Hugging Face/OpenAI token and private-key signatures scanned; no matches. Not a general PII audit."
+}

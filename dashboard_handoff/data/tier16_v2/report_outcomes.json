@@ -1,0 +1,5402 @@
+[
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AAPL/2003",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AAPL/2003",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AAPL/2005",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AAPL/2005",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "ABMD/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "ABMD/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "ALLE/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "ALLE/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AMT/2004",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AMT/2004",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AON/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AON/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "APD/2014",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "APD/2014",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AWK/2013",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "AWK/2013",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "BDX/2019",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "BDX/2019",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "BLK/2017",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "BLK/2017",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "CAT/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "CAT/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "CME/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "CME/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "CME/2012",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "CME/2012",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "DRE/2002",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "DRE/2002",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "DRE/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "DRE/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "ETFC/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "ETFC/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "FIS/2007",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 6
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "FIS/2007",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 6
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HIG/2008",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HIG/2008",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HOLX/2008",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 6
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HOLX/2008",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 6
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HOLX/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HOLX/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HOLX/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HOLX/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HUM/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HUM/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HWM/2016",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "HWM/2016",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "IP/2009",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "IP/2009",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "JPM/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "JPM/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "JPM/2013",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "JPM/2013",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "LKQ/2016",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "LKQ/2016",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "LKQ/2018",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "LKQ/2018",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "LMT/2010",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "LMT/2010",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "MA/2008",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "MA/2008",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "MRO/2008",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "MRO/2008",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "MRO/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "MRO/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "MS/2017",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "MS/2017",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "PNC/2011",
+    "metric": "case_success",
+    "n": 8,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 7
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "PNC/2011",
+    "metric": "raw_execution_match",
+    "n": 8,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 7
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "PNC/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "PNC/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "PNC/2018",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "PNC/2018",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "RCL/2014",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "RCL/2014",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "RE/2015",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "RE/2015",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "RE/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "RE/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "SNA/2012",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "SNA/2012",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "SWKS/2006",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "SWKS/2006",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UA/2009",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UA/2009",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UNP/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UNP/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UNP/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UNP/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UNP/2013",
+    "metric": "case_success",
+    "n": 7,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 7
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UNP/2013",
+    "metric": "raw_execution_match",
+    "n": 7,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 7
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UNP/2014",
+    "metric": "case_success",
+    "n": 11,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 11
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UNP/2014",
+    "metric": "raw_execution_match",
+    "n": 11,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 11
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UPS/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "UPS/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "V/2013",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "V/2013",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "VNO/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "VNO/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "VTR/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-direct_control",
+    "report": "VTR/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AAPL/2003",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AAPL/2003",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AAPL/2005",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AAPL/2005",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "ABMD/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "ABMD/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "ALLE/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "ALLE/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AMT/2004",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AMT/2004",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AON/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AON/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "APD/2014",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "APD/2014",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AWK/2013",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "AWK/2013",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "BDX/2019",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "BDX/2019",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "BLK/2017",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "BLK/2017",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "CAT/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "CAT/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "CME/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "CME/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "CME/2012",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "CME/2012",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "DRE/2002",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "DRE/2002",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "DRE/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "DRE/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "ETFC/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "ETFC/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "FIS/2007",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 6
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "FIS/2007",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 6
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HIG/2008",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HIG/2008",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HOLX/2008",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HOLX/2008",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HOLX/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HOLX/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HOLX/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HOLX/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HUM/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HUM/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HWM/2016",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "HWM/2016",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "IP/2009",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "IP/2009",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "JPM/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "JPM/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "JPM/2013",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "JPM/2013",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "LKQ/2016",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "LKQ/2016",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "LKQ/2018",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "LKQ/2018",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "LMT/2010",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "LMT/2010",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "MA/2008",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "MA/2008",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "MRO/2008",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "MRO/2008",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "MRO/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "MRO/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "MS/2017",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "MS/2017",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "PNC/2011",
+    "metric": "case_success",
+    "n": 8,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 8
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "PNC/2011",
+    "metric": "raw_execution_match",
+    "n": 8,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 8
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "PNC/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "PNC/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "PNC/2018",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "PNC/2018",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "RCL/2014",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "RCL/2014",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "RE/2015",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "RE/2015",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "RE/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "RE/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "SNA/2012",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "SNA/2012",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "SWKS/2006",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "SWKS/2006",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UA/2009",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UA/2009",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UNP/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UNP/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UNP/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UNP/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UNP/2013",
+    "metric": "case_success",
+    "n": 7,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 7
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UNP/2013",
+    "metric": "raw_execution_match",
+    "n": 7,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 7
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UNP/2014",
+    "metric": "case_success",
+    "n": 11,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 11
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UNP/2014",
+    "metric": "raw_execution_match",
+    "n": 11,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 11
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UPS/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "UPS/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "V/2013",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "V/2013",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "VNO/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "VNO/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "VTR/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-primary",
+    "report": "VTR/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AAPL/2003",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AAPL/2003",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AAPL/2005",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AAPL/2005",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "ABMD/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "ABMD/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "ALLE/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "ALLE/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AMT/2004",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AMT/2004",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AON/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AON/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "APD/2014",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "APD/2014",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AWK/2013",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "AWK/2013",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "BDX/2019",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "BDX/2019",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "BLK/2017",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "BLK/2017",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "CAT/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "CAT/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "CME/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "CME/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "CME/2012",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "CME/2012",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "DRE/2002",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "DRE/2002",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "DRE/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "DRE/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "ETFC/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "ETFC/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "FIS/2007",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 6
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "FIS/2007",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 6
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HIG/2008",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HIG/2008",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HOLX/2008",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HOLX/2008",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HOLX/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HOLX/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HOLX/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HOLX/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HUM/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HUM/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HWM/2016",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "HWM/2016",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "IP/2009",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "IP/2009",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "JPM/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "JPM/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "JPM/2013",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "JPM/2013",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "LKQ/2016",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "LKQ/2016",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "LKQ/2018",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "LKQ/2018",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "LMT/2010",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "LMT/2010",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "MA/2008",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "MA/2008",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "MRO/2008",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "MRO/2008",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "MRO/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "MRO/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "MS/2017",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "MS/2017",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "PNC/2011",
+    "metric": "case_success",
+    "n": 8,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 8
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "PNC/2011",
+    "metric": "raw_execution_match",
+    "n": 8,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 8
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "PNC/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "PNC/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "PNC/2018",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "PNC/2018",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "RCL/2014",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "RCL/2014",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "RE/2015",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "RE/2015",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "RE/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "RE/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "SNA/2012",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "SNA/2012",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "SWKS/2006",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "SWKS/2006",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UA/2009",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UA/2009",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UNP/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UNP/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UNP/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UNP/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UNP/2013",
+    "metric": "case_success",
+    "n": 7,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 7
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UNP/2013",
+    "metric": "raw_execution_match",
+    "n": 7,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 7
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UNP/2014",
+    "metric": "case_success",
+    "n": 11,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 11
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UNP/2014",
+    "metric": "raw_execution_match",
+    "n": 11,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 11
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UPS/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "UPS/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "V/2013",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "V/2013",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "VNO/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "VNO/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "VTR/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-mas-repair_ablation",
+    "report": "VTR/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AAPL/2003",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AAPL/2003",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AAPL/2005",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AAPL/2005",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "ABMD/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "ABMD/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "ALLE/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "ALLE/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AMT/2004",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AMT/2004",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AON/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AON/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "APD/2014",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "APD/2014",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AWK/2013",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "AWK/2013",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "BDX/2019",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "BDX/2019",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "BLK/2017",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "BLK/2017",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "CAT/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "CAT/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "CME/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "CME/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "CME/2012",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "CME/2012",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "DRE/2002",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "DRE/2002",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "DRE/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "DRE/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "ETFC/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "ETFC/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "FIS/2007",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "FIS/2007",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HIG/2008",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 3,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HIG/2008",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HOLX/2008",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 4,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HOLX/2008",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 1,
+    "wrong": 5,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HOLX/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HOLX/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HOLX/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HOLX/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HUM/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HUM/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HWM/2016",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "HWM/2016",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "IP/2009",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "IP/2009",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "JPM/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "JPM/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "JPM/2013",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "JPM/2013",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "LKQ/2016",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 3,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "LKQ/2016",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "LKQ/2018",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "LKQ/2018",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "LMT/2010",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "LMT/2010",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "MA/2008",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "MA/2008",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "MRO/2008",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "MRO/2008",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "MRO/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "MRO/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "MS/2017",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "MS/2017",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "PNC/2011",
+    "metric": "case_success",
+    "n": 8,
+    "correct": 2,
+    "wrong": 4,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "PNC/2011",
+    "metric": "raw_execution_match",
+    "n": 8,
+    "correct": 1,
+    "wrong": 5,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "PNC/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "PNC/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "PNC/2018",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "PNC/2018",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "RCL/2014",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "RCL/2014",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "RE/2015",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "RE/2015",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "RE/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "RE/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "SNA/2012",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "SNA/2012",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "SWKS/2006",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "SWKS/2006",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UA/2009",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UA/2009",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UNP/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 3,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UNP/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UNP/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UNP/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UNP/2013",
+    "metric": "case_success",
+    "n": 7,
+    "correct": 2,
+    "wrong": 4,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UNP/2013",
+    "metric": "raw_execution_match",
+    "n": 7,
+    "correct": 1,
+    "wrong": 5,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UNP/2014",
+    "metric": "case_success",
+    "n": 11,
+    "correct": 4,
+    "wrong": 2,
+    "withheld": 5
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UNP/2014",
+    "metric": "raw_execution_match",
+    "n": 11,
+    "correct": 0,
+    "wrong": 6,
+    "withheld": 5
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UPS/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "UPS/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "V/2013",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "V/2013",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "VNO/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "VNO/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "VTR/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-direct_control",
+    "report": "VTR/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AAPL/2003",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AAPL/2003",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AAPL/2005",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AAPL/2005",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "ABMD/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 4,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "ABMD/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "ALLE/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "ALLE/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AMT/2004",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AMT/2004",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AON/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AON/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "APD/2014",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "APD/2014",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AWK/2013",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "AWK/2013",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "BDX/2019",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "BDX/2019",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "BLK/2017",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "BLK/2017",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "CAT/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "CAT/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "CME/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "CME/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "CME/2012",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "CME/2012",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "DRE/2002",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "DRE/2002",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "DRE/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "DRE/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "ETFC/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "ETFC/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "FIS/2007",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 4,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "FIS/2007",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 1,
+    "wrong": 4,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HIG/2008",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HIG/2008",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HOLX/2008",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 5,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HOLX/2008",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 4,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HOLX/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HOLX/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HOLX/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HOLX/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HUM/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HUM/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HWM/2016",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "HWM/2016",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "IP/2009",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "IP/2009",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "JPM/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "JPM/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "JPM/2013",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "JPM/2013",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "LKQ/2016",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "LKQ/2016",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 2,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "LKQ/2018",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "LKQ/2018",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "LMT/2010",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 4,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "LMT/2010",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "MA/2008",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "MA/2008",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "MRO/2008",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "MRO/2008",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "MRO/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "MRO/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "MS/2017",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "MS/2017",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "PNC/2011",
+    "metric": "case_success",
+    "n": 8,
+    "correct": 5,
+    "wrong": 1,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "PNC/2011",
+    "metric": "raw_execution_match",
+    "n": 8,
+    "correct": 4,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "PNC/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "PNC/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "PNC/2018",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "PNC/2018",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "RCL/2014",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "RCL/2014",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "RE/2015",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "RE/2015",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "RE/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 4,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "RE/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "SNA/2012",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "SNA/2012",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "SWKS/2006",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "SWKS/2006",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UA/2009",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UA/2009",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UNP/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UNP/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UNP/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UNP/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UNP/2013",
+    "metric": "case_success",
+    "n": 7,
+    "correct": 4,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UNP/2013",
+    "metric": "raw_execution_match",
+    "n": 7,
+    "correct": 2,
+    "wrong": 5,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UNP/2014",
+    "metric": "case_success",
+    "n": 11,
+    "correct": 6,
+    "wrong": 1,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UNP/2014",
+    "metric": "raw_execution_match",
+    "n": 11,
+    "correct": 0,
+    "wrong": 7,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UPS/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "UPS/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "V/2013",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "V/2013",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "VNO/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "VNO/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "VTR/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-primary",
+    "report": "VTR/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AAPL/2003",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AAPL/2003",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AAPL/2005",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AAPL/2005",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "ABMD/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 4,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "ABMD/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "ALLE/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "ALLE/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AMT/2004",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AMT/2004",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AON/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AON/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "APD/2014",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "APD/2014",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AWK/2013",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "AWK/2013",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "BDX/2019",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "BDX/2019",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "BLK/2017",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "BLK/2017",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "CAT/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "CAT/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "CME/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "CME/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "CME/2012",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "CME/2012",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "DRE/2002",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "DRE/2002",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "DRE/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "DRE/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "ETFC/2013",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "ETFC/2013",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "FIS/2007",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 4,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "FIS/2007",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 1,
+    "wrong": 4,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HIG/2008",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 2,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HIG/2008",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HOLX/2008",
+    "metric": "case_success",
+    "n": 6,
+    "correct": 5,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HOLX/2008",
+    "metric": "raw_execution_match",
+    "n": 6,
+    "correct": 4,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HOLX/2010",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HOLX/2010",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HOLX/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HOLX/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HUM/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HUM/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HWM/2016",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "HWM/2016",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "IP/2009",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "IP/2009",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 2,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "JPM/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "JPM/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "JPM/2013",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "JPM/2013",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "LKQ/2016",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "LKQ/2016",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 2,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "LKQ/2018",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "LKQ/2018",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "LMT/2010",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 4,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "LMT/2010",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "MA/2008",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "MA/2008",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "MRO/2008",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "MRO/2008",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 3,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "MRO/2011",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "MRO/2011",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 3
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "MS/2017",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "MS/2017",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "PNC/2011",
+    "metric": "case_success",
+    "n": 8,
+    "correct": 5,
+    "wrong": 1,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "PNC/2011",
+    "metric": "raw_execution_match",
+    "n": 8,
+    "correct": 4,
+    "wrong": 2,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "PNC/2016",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "PNC/2016",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "PNC/2018",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "PNC/2018",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "RCL/2014",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "RCL/2014",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 2
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "RE/2015",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 2,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "RE/2015",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 2,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "RE/2017",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 4,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "RE/2017",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "SNA/2012",
+    "metric": "case_success",
+    "n": 3,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "SNA/2012",
+    "metric": "raw_execution_match",
+    "n": 3,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "SWKS/2006",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "SWKS/2006",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 2,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UA/2009",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 1,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UA/2009",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UNP/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 3,
+    "wrong": 0,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UNP/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 3,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UNP/2009",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UNP/2009",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 1
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UNP/2013",
+    "metric": "case_success",
+    "n": 7,
+    "correct": 4,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UNP/2013",
+    "metric": "raw_execution_match",
+    "n": 7,
+    "correct": 2,
+    "wrong": 5,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UNP/2014",
+    "metric": "case_success",
+    "n": 11,
+    "correct": 6,
+    "wrong": 1,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UNP/2014",
+    "metric": "raw_execution_match",
+    "n": 11,
+    "correct": 0,
+    "wrong": 7,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UPS/2006",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 1,
+    "wrong": 3,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "UPS/2006",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 4,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "V/2013",
+    "metric": "case_success",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "V/2013",
+    "metric": "raw_execution_match",
+    "n": 1,
+    "correct": 0,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "VNO/2012",
+    "metric": "case_success",
+    "n": 2,
+    "correct": 1,
+    "wrong": 1,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "VNO/2012",
+    "metric": "raw_execution_match",
+    "n": 2,
+    "correct": 2,
+    "wrong": 0,
+    "withheld": 0
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "VTR/2007",
+    "metric": "case_success",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  },
+  {
+    "job": "tier16-sas-repair_ablation",
+    "report": "VTR/2007",
+    "metric": "raw_execution_match",
+    "n": 4,
+    "correct": 0,
+    "wrong": 0,
+    "withheld": 4
+  }
+]

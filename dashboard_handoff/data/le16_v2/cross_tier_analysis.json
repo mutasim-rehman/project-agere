@@ -1,0 +1,3413 @@
+{
+  "tier8_natural": {
+    "diagnostic_audit-control_mas-full-01": {
+      "n": 49,
+      "reports": 15,
+      "companies": 14,
+      "metrics": {
+        "case_success": {
+          "correct": 4,
+          "wrong": 17,
+          "withheld": 28,
+          "coverage": 0.42857142857142855,
+          "correct_rate": 0.08163265306122448,
+          "wrong_rate": 0.3469387755102041,
+          "withheld_rate": 0.5714285714285714,
+          "precision_when_delivered": 0.19047619047619047,
+          "valid_candidates": 35,
+          "correct_candidates": 5,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 13,
+          "invalid_or_insufficient_withheld": 14,
+          "candidate_validity_q": 0.7142857142857143,
+          "candidate_correctness_p": 0.14285714285714285,
+          "correct_acceptance_a": 0.8,
+          "wrong_acceptance_b": 0.5666666666666667
+        },
+        "raw_execution_match": {
+          "correct": 8,
+          "wrong": 13,
+          "withheld": 28,
+          "coverage": 0.42857142857142855,
+          "correct_rate": 0.16326530612244897,
+          "wrong_rate": 0.2653061224489796,
+          "withheld_rate": 0.5714285714285714,
+          "precision_when_delivered": 0.38095238095238093,
+          "valid_candidates": 35,
+          "correct_candidates": 8,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 14,
+          "invalid_or_insufficient_withheld": 14,
+          "candidate_validity_q": 0.7142857142857143,
+          "candidate_correctness_p": 0.22857142857142856,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.48148148148148145
+        }
+      },
+      "prompt_tokens": 165721,
+      "generated_tokens": 4284,
+      "inference_seconds": 2027.41915297597,
+      "repair_attempts": 28,
+      "repair_accepted": 28,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "INSUFFICIENT": 14,
+        "ANSWER": 35
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 14
+      },
+      "verdicts": {
+        "FAIL": 28,
+        "PASS": 21
+      },
+      "metric_concordance": {
+        "reported_yes / raw_yes": 4,
+        "reported_no / raw_yes": 4,
+        "reported_no / raw_no": 13
+      },
+      "case_latency_seconds": {
+        "mean": 41.375901081142246,
+        "median": 33.55710672499117,
+        "p90": 63.71008223519749,
+        "max": 92.08440896799584
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 49,
+        "decision_ANSWER": 47,
+        "decision_INSUFFICIENT": 2
+      },
+      "peak_rss_bytes": 5052461056,
+      "config": {
+        "arm": "mas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/diagnostic_audit-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/diagnostic_audit-control_mas-full-01",
+        "limit": 49,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "3b",
+        "drafter_model": "3b-q4",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-converted-01",
+        "verifier_adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-converted-01",
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "diagnostic_audit-control_sas-full-01": {
+      "n": 49,
+      "reports": 15,
+      "companies": 14,
+      "metrics": {
+        "case_success": {
+          "correct": 8,
+          "wrong": 20,
+          "withheld": 21,
+          "coverage": 0.5714285714285714,
+          "correct_rate": 0.16326530612244897,
+          "wrong_rate": 0.40816326530612246,
+          "withheld_rate": 0.42857142857142855,
+          "precision_when_delivered": 0.2857142857142857,
+          "valid_candidates": 43,
+          "correct_candidates": 12,
+          "correct_candidates_withheld": 4,
+          "wrong_candidates_withheld": 11,
+          "invalid_or_insufficient_withheld": 6,
+          "candidate_validity_q": 0.8775510204081632,
+          "candidate_correctness_p": 0.27906976744186046,
+          "correct_acceptance_a": 0.6666666666666666,
+          "wrong_acceptance_b": 0.6451612903225806
+        },
+        "raw_execution_match": {
+          "correct": 14,
+          "wrong": 14,
+          "withheld": 21,
+          "coverage": 0.5714285714285714,
+          "correct_rate": 0.2857142857142857,
+          "wrong_rate": 0.2857142857142857,
+          "withheld_rate": 0.42857142857142855,
+          "precision_when_delivered": 0.5,
+          "valid_candidates": 43,
+          "correct_candidates": 18,
+          "correct_candidates_withheld": 4,
+          "wrong_candidates_withheld": 11,
+          "invalid_or_insufficient_withheld": 6,
+          "candidate_validity_q": 0.8775510204081632,
+          "candidate_correctness_p": 0.4186046511627907,
+          "correct_acceptance_a": 0.7777777777777778,
+          "wrong_acceptance_b": 0.56
+        }
+      },
+      "prompt_tokens": 150570,
+      "generated_tokens": 4204,
+      "inference_seconds": 3890.2744304310036,
+      "repair_attempts": 23,
+      "repair_accepted": 23,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 44,
+        "INSUFFICIENT": 5
+      },
+      "execution_issues": {
+        "division_by_zero": 1,
+        "insufficient_or_invalid_answer": 5
+      },
+      "verdicts": {
+        "FAIL": 20,
+        "PASS": 29
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 14,
+        "reported_no / raw_yes": 6,
+        "reported_yes / raw_yes": 8
+      },
+      "case_latency_seconds": {
+        "mean": 79.39335572308171,
+        "median": 70.03853960100241,
+        "p90": 125.99748343579996,
+        "max": 205.1902357769941
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 49,
+        "decision_ANSWER": 47,
+        "decision_INSUFFICIENT": 2
+      },
+      "peak_rss_bytes": 5368115200,
+      "config": {
+        "arm": "sas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/diagnostic_audit-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/diagnostic_audit-control_sas-full-01",
+        "limit": 49,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "0.5b",
+        "drafter_model": "1.5b-f16",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-converted-01",
+        "verifier_adapter": null,
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "diagnostic_audit-crossed_mas-full-01": {
+      "n": 49,
+      "reports": 15,
+      "companies": 14,
+      "metrics": {
+        "case_success": {
+          "correct": 4,
+          "wrong": 9,
+          "withheld": 36,
+          "coverage": 0.2653061224489796,
+          "correct_rate": 0.08163265306122448,
+          "wrong_rate": 0.1836734693877551,
+          "withheld_rate": 0.7346938775510204,
+          "precision_when_delivered": 0.3076923076923077,
+          "valid_candidates": 36,
+          "correct_candidates": 5,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 22,
+          "invalid_or_insufficient_withheld": 13,
+          "candidate_validity_q": 0.7346938775510204,
+          "candidate_correctness_p": 0.1388888888888889,
+          "correct_acceptance_a": 0.8,
+          "wrong_acceptance_b": 0.2903225806451613
+        },
+        "raw_execution_match": {
+          "correct": 7,
+          "wrong": 6,
+          "withheld": 36,
+          "coverage": 0.2653061224489796,
+          "correct_rate": 0.14285714285714285,
+          "wrong_rate": 0.12244897959183673,
+          "withheld_rate": 0.7346938775510204,
+          "precision_when_delivered": 0.5384615384615384,
+          "valid_candidates": 36,
+          "correct_candidates": 9,
+          "correct_candidates_withheld": 2,
+          "wrong_candidates_withheld": 21,
+          "invalid_or_insufficient_withheld": 13,
+          "candidate_validity_q": 0.7346938775510204,
+          "candidate_correctness_p": 0.25,
+          "correct_acceptance_a": 0.7777777777777778,
+          "wrong_acceptance_b": 0.2222222222222222
+        }
+      },
+      "prompt_tokens": 179232,
+      "generated_tokens": 4863,
+      "inference_seconds": 2222.862708727007,
+      "repair_attempts": 36,
+      "repair_accepted": 36,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "INSUFFICIENT": 13,
+        "ANSWER": 36
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 13
+      },
+      "verdicts": {
+        "FAIL": 36,
+        "PASS": 13
+      },
+      "metric_concordance": {
+        "reported_yes / raw_yes": 4,
+        "reported_no / raw_yes": 3,
+        "reported_no / raw_no": 6
+      },
+      "case_latency_seconds": {
+        "mean": 45.36454507606137,
+        "median": 45.50074768200284,
+        "p90": 64.250434710407,
+        "max": 92.62216688799526
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 49,
+        "decision_ANSWER": 47,
+        "decision_INSUFFICIENT": 2
+      },
+      "peak_rss_bytes": 5063913472,
+      "config": {
+        "arm": "mas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/diagnostic_audit-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/diagnostic_audit-crossed_mas-full-01",
+        "limit": 49,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "3b",
+        "drafter_model": "3b-q4",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-converted-01",
+        "verifier_adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-converted-01",
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "diagnostic_audit-crossed_sas-full-01": {
+      "n": 49,
+      "reports": 15,
+      "companies": 14,
+      "metrics": {
+        "case_success": {
+          "correct": 9,
+          "wrong": 20,
+          "withheld": 20,
+          "coverage": 0.5918367346938775,
+          "correct_rate": 0.1836734693877551,
+          "wrong_rate": 0.40816326530612246,
+          "withheld_rate": 0.40816326530612246,
+          "precision_when_delivered": 0.3103448275862069,
+          "valid_candidates": 41,
+          "correct_candidates": 12,
+          "correct_candidates_withheld": 3,
+          "wrong_candidates_withheld": 9,
+          "invalid_or_insufficient_withheld": 8,
+          "candidate_validity_q": 0.8367346938775511,
+          "candidate_correctness_p": 0.2926829268292683,
+          "correct_acceptance_a": 0.75,
+          "wrong_acceptance_b": 0.6896551724137931
+        },
+        "raw_execution_match": {
+          "correct": 15,
+          "wrong": 14,
+          "withheld": 20,
+          "coverage": 0.5918367346938775,
+          "correct_rate": 0.30612244897959184,
+          "wrong_rate": 0.2857142857142857,
+          "withheld_rate": 0.40816326530612246,
+          "precision_when_delivered": 0.5172413793103449,
+          "valid_candidates": 41,
+          "correct_candidates": 18,
+          "correct_candidates_withheld": 3,
+          "wrong_candidates_withheld": 9,
+          "invalid_or_insufficient_withheld": 8,
+          "candidate_validity_q": 0.8367346938775511,
+          "candidate_correctness_p": 0.43902439024390244,
+          "correct_acceptance_a": 0.8333333333333334,
+          "wrong_acceptance_b": 0.6086956521739131
+        }
+      },
+      "prompt_tokens": 153031,
+      "generated_tokens": 4158,
+      "inference_seconds": 3931.751395979991,
+      "repair_attempts": 24,
+      "repair_accepted": 24,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 41,
+        "INSUFFICIENT": 8
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 8
+      },
+      "verdicts": {
+        "FAIL": 18,
+        "PASS": 31
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 14,
+        "reported_no / raw_yes": 6,
+        "reported_yes / raw_yes": 9
+      },
+      "case_latency_seconds": {
+        "mean": 80.23982440775491,
+        "median": 69.95451636899816,
+        "p90": 125.60153826739406,
+        "max": 204.07240493701102
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 49,
+        "decision_ANSWER": 48,
+        "decision_INSUFFICIENT": 1
+      },
+      "peak_rss_bytes": 5364441088,
+      "config": {
+        "arm": "sas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/diagnostic_audit-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/diagnostic_audit-crossed_sas-full-01",
+        "limit": 49,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "0.5b",
+        "drafter_model": "1.5b-f16",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-converted-01",
+        "verifier_adapter": null,
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-baseline_mas-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 2,
+          "wrong": 19,
+          "withheld": 31,
+          "coverage": 0.40384615384615385,
+          "correct_rate": 0.038461538461538464,
+          "wrong_rate": 0.36538461538461536,
+          "withheld_rate": 0.5961538461538461,
+          "precision_when_delivered": 0.09523809523809523,
+          "valid_candidates": 45,
+          "correct_candidates": 5,
+          "correct_candidates_withheld": 3,
+          "wrong_candidates_withheld": 21,
+          "invalid_or_insufficient_withheld": 7,
+          "candidate_validity_q": 0.8653846153846154,
+          "candidate_correctness_p": 0.1111111111111111,
+          "correct_acceptance_a": 0.4,
+          "wrong_acceptance_b": 0.475
+        },
+        "raw_execution_match": {
+          "correct": 3,
+          "wrong": 18,
+          "withheld": 31,
+          "coverage": 0.40384615384615385,
+          "correct_rate": 0.057692307692307696,
+          "wrong_rate": 0.34615384615384615,
+          "withheld_rate": 0.5961538461538461,
+          "precision_when_delivered": 0.14285714285714285,
+          "valid_candidates": 45,
+          "correct_candidates": 6,
+          "correct_candidates_withheld": 3,
+          "wrong_candidates_withheld": 21,
+          "invalid_or_insufficient_withheld": 7,
+          "candidate_validity_q": 0.8653846153846154,
+          "candidate_correctness_p": 0.13333333333333333,
+          "correct_acceptance_a": 0.5,
+          "wrong_acceptance_b": 0.46153846153846156
+        }
+      },
+      "prompt_tokens": 165616,
+      "generated_tokens": 4895,
+      "inference_seconds": 2070.7898081969906,
+      "repair_attempts": 31,
+      "repair_accepted": 31,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 45,
+        "INSUFFICIENT": 7
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 7
+      },
+      "verdicts": {
+        "PASS": 21,
+        "FAIL": 31
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 18,
+        "reported_no / raw_yes": 1,
+        "reported_yes / raw_yes": 2
+      },
+      "case_latency_seconds": {
+        "mean": 39.8228809268652,
+        "median": 36.92304385549869,
+        "p90": 66.55832821679287,
+        "max": 88.9882236360063
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5057949696,
+      "config": {
+        "arm": "mas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-baseline_mas-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "3b",
+        "drafter_model": "3b-q4",
+        "adapter": "/home/mutasim/Desktop/project-agere/research/tier8_v2/runs/adapter-3b-converted-02",
+        "verifier_adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-extended-converted-01",
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-baseline_original_classic_mas-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 4,
+          "wrong": 18,
+          "withheld": 30,
+          "coverage": 0.4230769230769231,
+          "correct_rate": 0.07692307692307693,
+          "wrong_rate": 0.34615384615384615,
+          "withheld_rate": 0.5769230769230769,
+          "precision_when_delivered": 0.18181818181818182,
+          "valid_candidates": 46,
+          "correct_candidates": 5,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 23,
+          "invalid_or_insufficient_withheld": 6,
+          "candidate_validity_q": 0.8846153846153846,
+          "candidate_correctness_p": 0.10869565217391304,
+          "correct_acceptance_a": 0.8,
+          "wrong_acceptance_b": 0.43902439024390244
+        },
+        "raw_execution_match": {
+          "correct": 6,
+          "wrong": 16,
+          "withheld": 30,
+          "coverage": 0.4230769230769231,
+          "correct_rate": 0.11538461538461539,
+          "wrong_rate": 0.3076923076923077,
+          "withheld_rate": 0.5769230769230769,
+          "precision_when_delivered": 0.2727272727272727,
+          "valid_candidates": 46,
+          "correct_candidates": 6,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 24,
+          "invalid_or_insufficient_withheld": 6,
+          "candidate_validity_q": 0.8846153846153846,
+          "candidate_correctness_p": 0.13043478260869565,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.4
+        }
+      },
+      "prompt_tokens": 160850,
+      "generated_tokens": 4848,
+      "inference_seconds": 2006.330097511971,
+      "repair_attempts": 31,
+      "repair_accepted": 31,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 46,
+        "INSUFFICIENT": 6
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 6
+      },
+      "verdicts": {
+        "PASS": 22,
+        "FAIL": 30
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 16,
+        "reported_no / raw_yes": 2,
+        "reported_yes / raw_yes": 4
+      },
+      "case_latency_seconds": {
+        "mean": 38.583271105999444,
+        "median": 40.17914555000243,
+        "p90": 59.48125271799872,
+        "max": 88.7120873949898
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5045706752,
+      "config": {
+        "arm": "mas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-baseline_original_classic_mas-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "3b",
+        "drafter_model": "3b-q4",
+        "adapter": "/home/mutasim/Desktop/project-agere/research/tier8_v2/runs/adapter-3b-converted-02",
+        "verifier_adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-converted-01",
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-baseline_original_critic_common_actor-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 4,
+          "wrong": 22,
+          "withheld": 26,
+          "coverage": 0.5,
+          "correct_rate": 0.07692307692307693,
+          "wrong_rate": 0.4230769230769231,
+          "withheld_rate": 0.5,
+          "precision_when_delivered": 0.15384615384615385,
+          "valid_candidates": 45,
+          "correct_candidates": 4,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 19,
+          "invalid_or_insufficient_withheld": 7,
+          "candidate_validity_q": 0.8653846153846154,
+          "candidate_correctness_p": 0.08888888888888889,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.5365853658536586
+        },
+        "raw_execution_match": {
+          "correct": 6,
+          "wrong": 20,
+          "withheld": 26,
+          "coverage": 0.5,
+          "correct_rate": 0.11538461538461539,
+          "wrong_rate": 0.38461538461538464,
+          "withheld_rate": 0.5,
+          "precision_when_delivered": 0.23076923076923078,
+          "valid_candidates": 45,
+          "correct_candidates": 6,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 19,
+          "invalid_or_insufficient_withheld": 7,
+          "candidate_validity_q": 0.8653846153846154,
+          "candidate_correctness_p": 0.13333333333333333,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.5128205128205128
+        }
+      },
+      "prompt_tokens": 153639,
+      "generated_tokens": 4492,
+      "inference_seconds": 1929.0804699240107,
+      "repair_attempts": 27,
+      "repair_accepted": 27,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 45,
+        "INSUFFICIENT": 7
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 7
+      },
+      "verdicts": {
+        "PASS": 26,
+        "FAIL": 26
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 20,
+        "reported_no / raw_yes": 2,
+        "reported_yes / raw_yes": 4
+      },
+      "case_latency_seconds": {
+        "mean": 37.09770134469251,
+        "median": 34.352981143999386,
+        "p90": 59.83799398690235,
+        "max": 89.76075621699965
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5056499712,
+      "config": {
+        "arm": "mas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-baseline_original_critic_common_actor-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "3b",
+        "drafter_model": "3b-q4",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-converted-01",
+        "verifier_adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_training/critic3b-converted-01",
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-baseline_sas-analysis128-demos2-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 9,
+          "wrong": 24,
+          "withheld": 19,
+          "coverage": 0.6346153846153846,
+          "correct_rate": 0.17307692307692307,
+          "wrong_rate": 0.46153846153846156,
+          "withheld_rate": 0.36538461538461536,
+          "precision_when_delivered": 0.2727272727272727,
+          "valid_candidates": 49,
+          "correct_candidates": 10,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 15,
+          "invalid_or_insufficient_withheld": 3,
+          "candidate_validity_q": 0.9423076923076923,
+          "candidate_correctness_p": 0.20408163265306123,
+          "correct_acceptance_a": 0.9,
+          "wrong_acceptance_b": 0.6153846153846154
+        },
+        "raw_execution_match": {
+          "correct": 10,
+          "wrong": 23,
+          "withheld": 19,
+          "coverage": 0.6346153846153846,
+          "correct_rate": 0.19230769230769232,
+          "wrong_rate": 0.4423076923076923,
+          "withheld_rate": 0.36538461538461536,
+          "precision_when_delivered": 0.30303030303030304,
+          "valid_candidates": 49,
+          "correct_candidates": 11,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 15,
+          "invalid_or_insufficient_withheld": 3,
+          "candidate_validity_q": 0.9423076923076923,
+          "candidate_correctness_p": 0.22448979591836735,
+          "correct_acceptance_a": 0.9090909090909091,
+          "wrong_acceptance_b": 0.6052631578947368
+        }
+      },
+      "prompt_tokens": 281975,
+      "generated_tokens": 10487,
+      "inference_seconds": 7532.3528455671185,
+      "repair_attempts": 19,
+      "repair_accepted": 19,
+      "truncated_stages": 46,
+      "cases_with_analysis_length_limit": 46,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 49,
+        "INSUFFICIENT": 3
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 3
+      },
+      "verdicts": {
+        "FAIL": 19,
+        "PASS": 33
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 23,
+        "reported_yes / raw_yes": 9,
+        "reported_no / raw_yes": 1
+      },
+      "case_latency_seconds": {
+        "mean": 144.8529393378292,
+        "median": 138.59360841049784,
+        "p90": 209.66985954099218,
+        "max": 235.85646391000773
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5368107008,
+      "config": {
+        "arm": "sas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-baseline_sas-analysis128-demos2-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 2,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 128,
+        "verifier_model": "0.5b",
+        "drafter_model": "1.5b-f16",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-converted-03",
+        "verifier_adapter": null,
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-baseline_sas-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 8,
+          "wrong": 25,
+          "withheld": 19,
+          "coverage": 0.6346153846153846,
+          "correct_rate": 0.15384615384615385,
+          "wrong_rate": 0.4807692307692308,
+          "withheld_rate": 0.36538461538461536,
+          "precision_when_delivered": 0.24242424242424243,
+          "valid_candidates": 39,
+          "correct_candidates": 8,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 6,
+          "invalid_or_insufficient_withheld": 13,
+          "candidate_validity_q": 0.75,
+          "candidate_correctness_p": 0.20512820512820512,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.8064516129032258
+        },
+        "raw_execution_match": {
+          "correct": 10,
+          "wrong": 23,
+          "withheld": 19,
+          "coverage": 0.6346153846153846,
+          "correct_rate": 0.19230769230769232,
+          "wrong_rate": 0.4423076923076923,
+          "withheld_rate": 0.36538461538461536,
+          "precision_when_delivered": 0.30303030303030304,
+          "valid_candidates": 39,
+          "correct_candidates": 10,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 6,
+          "invalid_or_insufficient_withheld": 13,
+          "candidate_validity_q": 0.75,
+          "candidate_correctness_p": 0.2564102564102564,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.7931034482758621
+        }
+      },
+      "prompt_tokens": 134492,
+      "generated_tokens": 3681,
+      "inference_seconds": 3439.6599330409954,
+      "repair_attempts": 19,
+      "repair_accepted": 19,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "INSUFFICIENT": 13,
+        "ANSWER": 39
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 13
+      },
+      "verdicts": {
+        "FAIL": 19,
+        "PASS": 33
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 23,
+        "reported_no / raw_yes": 2,
+        "reported_yes / raw_yes": 8
+      },
+      "case_latency_seconds": {
+        "mean": 66.14730640463452,
+        "median": 60.968224494503374,
+        "p90": 100.10792759949618,
+        "max": 166.77433812800882
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5348327424,
+      "config": {
+        "arm": "sas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-baseline_sas-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "0.5b",
+        "drafter_model": "1.5b-f16",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_sas_training/sas7b-joint-converted-03",
+        "verifier_adapter": null,
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-control_mas-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 3,
+          "wrong": 19,
+          "withheld": 30,
+          "coverage": 0.4230769230769231,
+          "correct_rate": 0.057692307692307696,
+          "wrong_rate": 0.36538461538461536,
+          "withheld_rate": 0.5769230769230769,
+          "precision_when_delivered": 0.13636363636363635,
+          "valid_candidates": 43,
+          "correct_candidates": 4,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 20,
+          "invalid_or_insufficient_withheld": 9,
+          "candidate_validity_q": 0.8269230769230769,
+          "candidate_correctness_p": 0.09302325581395349,
+          "correct_acceptance_a": 0.75,
+          "wrong_acceptance_b": 0.48717948717948717
+        },
+        "raw_execution_match": {
+          "correct": 5,
+          "wrong": 17,
+          "withheld": 30,
+          "coverage": 0.4230769230769231,
+          "correct_rate": 0.09615384615384616,
+          "wrong_rate": 0.3269230769230769,
+          "withheld_rate": 0.5769230769230769,
+          "precision_when_delivered": 0.22727272727272727,
+          "valid_candidates": 43,
+          "correct_candidates": 6,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 20,
+          "invalid_or_insufficient_withheld": 9,
+          "candidate_validity_q": 0.8269230769230769,
+          "candidate_correctness_p": 0.13953488372093023,
+          "correct_acceptance_a": 0.8333333333333334,
+          "wrong_acceptance_b": 0.4594594594594595
+        }
+      },
+      "prompt_tokens": 162851,
+      "generated_tokens": 4662,
+      "inference_seconds": 2050.7283970439994,
+      "repair_attempts": 30,
+      "repair_accepted": 30,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 43,
+        "INSUFFICIENT": 9
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 9
+      },
+      "verdicts": {
+        "PASS": 22,
+        "FAIL": 30
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 17,
+        "reported_no / raw_yes": 2,
+        "reported_yes / raw_yes": 3
+      },
+      "case_latency_seconds": {
+        "mean": 39.43708455853845,
+        "median": 34.371562111999765,
+        "p90": 67.7038116668994,
+        "max": 89.93824154399908
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5059756032,
+      "config": {
+        "arm": "mas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_mas-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "3b",
+        "drafter_model": "3b-q4",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-converted-01",
+        "verifier_adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-critic-converted-01",
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-control_sas-analysis128-demos2-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 9,
+          "wrong": 20,
+          "withheld": 23,
+          "coverage": 0.5576923076923077,
+          "correct_rate": 0.17307692307692307,
+          "wrong_rate": 0.38461538461538464,
+          "withheld_rate": 0.4423076923076923,
+          "precision_when_delivered": 0.3103448275862069,
+          "valid_candidates": 44,
+          "correct_candidates": 9,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 15,
+          "invalid_or_insufficient_withheld": 8,
+          "candidate_validity_q": 0.8461538461538461,
+          "candidate_correctness_p": 0.20454545454545456,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.5714285714285714
+        },
+        "raw_execution_match": {
+          "correct": 11,
+          "wrong": 18,
+          "withheld": 23,
+          "coverage": 0.5576923076923077,
+          "correct_rate": 0.21153846153846154,
+          "wrong_rate": 0.34615384615384615,
+          "withheld_rate": 0.4423076923076923,
+          "precision_when_delivered": 0.3793103448275862,
+          "valid_candidates": 44,
+          "correct_candidates": 12,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 14,
+          "invalid_or_insufficient_withheld": 8,
+          "candidate_validity_q": 0.8461538461538461,
+          "candidate_correctness_p": 0.2727272727272727,
+          "correct_acceptance_a": 0.9166666666666666,
+          "wrong_acceptance_b": 0.5625
+        }
+      },
+      "prompt_tokens": 310932,
+      "generated_tokens": 11130,
+      "inference_seconds": 8379.981854169062,
+      "repair_attempts": 27,
+      "repair_accepted": 27,
+      "truncated_stages": 50,
+      "cases_with_analysis_length_limit": 50,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 44,
+        "INSUFFICIENT": 8
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 8
+      },
+      "verdicts": {
+        "FAIL": 21,
+        "PASS": 31
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 18,
+        "reported_no / raw_yes": 2,
+        "reported_yes / raw_yes": 9
+      },
+      "case_latency_seconds": {
+        "mean": 161.15349719555888,
+        "median": 161.58388695701433,
+        "p90": 237.72426866779423,
+        "max": 301.6706388829916
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 51,
+        "decision_INSUFFICIENT": 1
+      },
+      "peak_rss_bytes": 5365456896,
+      "config": {
+        "arm": "sas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_sas-analysis128-demos2-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 2,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 128,
+        "verifier_model": "0.5b",
+        "drafter_model": "1.5b-f16",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-converted-01",
+        "verifier_adapter": null,
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-control_sas-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 8,
+          "wrong": 23,
+          "withheld": 21,
+          "coverage": 0.5961538461538461,
+          "correct_rate": 0.15384615384615385,
+          "wrong_rate": 0.4423076923076923,
+          "withheld_rate": 0.40384615384615385,
+          "precision_when_delivered": 0.25806451612903225,
+          "valid_candidates": 37,
+          "correct_candidates": 8,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 6,
+          "invalid_or_insufficient_withheld": 15,
+          "candidate_validity_q": 0.7115384615384616,
+          "candidate_correctness_p": 0.21621621621621623,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.7931034482758621
+        },
+        "raw_execution_match": {
+          "correct": 10,
+          "wrong": 21,
+          "withheld": 21,
+          "coverage": 0.5961538461538461,
+          "correct_rate": 0.19230769230769232,
+          "wrong_rate": 0.40384615384615385,
+          "withheld_rate": 0.40384615384615385,
+          "precision_when_delivered": 0.3225806451612903,
+          "valid_candidates": 37,
+          "correct_candidates": 10,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 6,
+          "invalid_or_insufficient_withheld": 15,
+          "candidate_validity_q": 0.7115384615384616,
+          "candidate_correctness_p": 0.2702702702702703,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.7777777777777778
+        }
+      },
+      "prompt_tokens": 144086,
+      "generated_tokens": 3998,
+      "inference_seconds": 3742.1682243359683,
+      "repair_attempts": 23,
+      "repair_accepted": 23,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "INSUFFICIENT": 14,
+        "ANSWER": 38
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 14,
+        "division_by_zero": 1
+      },
+      "verdicts": {
+        "FAIL": 19,
+        "PASS": 33
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 21,
+        "reported_no / raw_yes": 2,
+        "reported_yes / raw_yes": 8
+      },
+      "case_latency_seconds": {
+        "mean": 71.96477354492247,
+        "median": 66.16692916099419,
+        "p90": 104.58146672300208,
+        "max": 170.1242679410061
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5355872256,
+      "config": {
+        "arm": "sas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-control_sas-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "0.5b",
+        "drafter_model": "1.5b-f16",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/control-sas-converted-01",
+        "verifier_adapter": null,
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-crossed_mas-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 3,
+          "wrong": 15,
+          "withheld": 34,
+          "coverage": 0.34615384615384615,
+          "correct_rate": 0.057692307692307696,
+          "wrong_rate": 0.28846153846153844,
+          "withheld_rate": 0.6538461538461539,
+          "precision_when_delivered": 0.16666666666666666,
+          "valid_candidates": 43,
+          "correct_candidates": 4,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 24,
+          "invalid_or_insufficient_withheld": 9,
+          "candidate_validity_q": 0.8269230769230769,
+          "candidate_correctness_p": 0.09302325581395349,
+          "correct_acceptance_a": 0.75,
+          "wrong_acceptance_b": 0.38461538461538464
+        },
+        "raw_execution_match": {
+          "correct": 5,
+          "wrong": 13,
+          "withheld": 34,
+          "coverage": 0.34615384615384615,
+          "correct_rate": 0.09615384615384616,
+          "wrong_rate": 0.25,
+          "withheld_rate": 0.6538461538461539,
+          "precision_when_delivered": 0.2777777777777778,
+          "valid_candidates": 43,
+          "correct_candidates": 6,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 24,
+          "invalid_or_insufficient_withheld": 9,
+          "candidate_validity_q": 0.8269230769230769,
+          "candidate_correctness_p": 0.13953488372093023,
+          "correct_acceptance_a": 0.8333333333333334,
+          "wrong_acceptance_b": 0.35135135135135137
+        }
+      },
+      "prompt_tokens": 170007,
+      "generated_tokens": 4900,
+      "inference_seconds": 2136.1218662759984,
+      "repair_attempts": 34,
+      "repair_accepted": 34,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 43,
+        "INSUFFICIENT": 9
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 9
+      },
+      "verdicts": {
+        "PASS": 18,
+        "FAIL": 34
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 13,
+        "reported_no / raw_yes": 2,
+        "reported_yes / raw_yes": 3
+      },
+      "case_latency_seconds": {
+        "mean": 41.07926665915382,
+        "median": 38.72858698099935,
+        "p90": 67.59932962500034,
+        "max": 89.70965169400006
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5066604544,
+      "config": {
+        "arm": "mas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-crossed_mas-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "3b",
+        "drafter_model": "3b-q4",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/common-actor-converted-01",
+        "verifier_adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-critic-converted-01",
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-crossed_sas-analysis128-demos2-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 9,
+          "wrong": 10,
+          "withheld": 33,
+          "coverage": 0.36538461538461536,
+          "correct_rate": 0.17307692307692307,
+          "wrong_rate": 0.19230769230769232,
+          "withheld_rate": 0.6346153846153846,
+          "precision_when_delivered": 0.47368421052631576,
+          "valid_candidates": 41,
+          "correct_candidates": 10,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 21,
+          "invalid_or_insufficient_withheld": 11,
+          "candidate_validity_q": 0.7884615384615384,
+          "candidate_correctness_p": 0.24390243902439024,
+          "correct_acceptance_a": 0.9,
+          "wrong_acceptance_b": 0.3225806451612903
+        },
+        "raw_execution_match": {
+          "correct": 10,
+          "wrong": 9,
+          "withheld": 33,
+          "coverage": 0.36538461538461536,
+          "correct_rate": 0.19230769230769232,
+          "wrong_rate": 0.17307692307692307,
+          "withheld_rate": 0.6346153846153846,
+          "precision_when_delivered": 0.5263157894736842,
+          "valid_candidates": 41,
+          "correct_candidates": 12,
+          "correct_candidates_withheld": 2,
+          "wrong_candidates_withheld": 20,
+          "invalid_or_insufficient_withheld": 11,
+          "candidate_validity_q": 0.7884615384615384,
+          "candidate_correctness_p": 0.2926829268292683,
+          "correct_acceptance_a": 0.8333333333333334,
+          "wrong_acceptance_b": 0.3103448275862069
+        }
+      },
+      "prompt_tokens": 333296,
+      "generated_tokens": 11393,
+      "inference_seconds": 8853.92189003891,
+      "repair_attempts": 35,
+      "repair_accepted": 35,
+      "truncated_stages": 48,
+      "cases_with_analysis_length_limit": 48,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 41,
+        "INSUFFICIENT": 11
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 11
+      },
+      "verdicts": {
+        "FAIL": 28,
+        "PASS": 24
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 9,
+        "reported_yes / raw_yes": 9,
+        "reported_no / raw_yes": 1
+      },
+      "case_latency_seconds": {
+        "mean": 170.2677286545944,
+        "median": 171.8504751204964,
+        "p90": 227.20668853217504,
+        "max": 263.1360024979949
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5369651200,
+      "config": {
+        "arm": "sas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-crossed_sas-analysis128-demos2-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 2,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 128,
+        "verifier_model": "0.5b",
+        "drafter_model": "1.5b-f16",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-converted-01",
+        "verifier_adapter": null,
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    },
+    "model_selection-crossed_sas-full-01": {
+      "n": 52,
+      "reports": 15,
+      "companies": 15,
+      "metrics": {
+        "case_success": {
+          "correct": 10,
+          "wrong": 16,
+          "withheld": 26,
+          "coverage": 0.5,
+          "correct_rate": 0.19230769230769232,
+          "wrong_rate": 0.3076923076923077,
+          "withheld_rate": 0.5,
+          "precision_when_delivered": 0.38461538461538464,
+          "valid_candidates": 36,
+          "correct_candidates": 10,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 10,
+          "invalid_or_insufficient_withheld": 16,
+          "candidate_validity_q": 0.6923076923076923,
+          "candidate_correctness_p": 0.2777777777777778,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.6153846153846154
+        },
+        "raw_execution_match": {
+          "correct": 12,
+          "wrong": 14,
+          "withheld": 26,
+          "coverage": 0.5,
+          "correct_rate": 0.23076923076923078,
+          "wrong_rate": 0.2692307692307692,
+          "withheld_rate": 0.5,
+          "precision_when_delivered": 0.46153846153846156,
+          "valid_candidates": 36,
+          "correct_candidates": 12,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 10,
+          "invalid_or_insufficient_withheld": 16,
+          "candidate_validity_q": 0.6923076923076923,
+          "candidate_correctness_p": 0.3333333333333333,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.5833333333333334
+        }
+      },
+      "prompt_tokens": 152262,
+      "generated_tokens": 4257,
+      "inference_seconds": 3902.866728706067,
+      "repair_attempts": 28,
+      "repair_accepted": 28,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "INSUFFICIENT": 16,
+        "ANSWER": 36
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 16
+      },
+      "verdicts": {
+        "PASS": 32,
+        "FAIL": 20
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 14,
+        "reported_no / raw_yes": 2,
+        "reported_yes / raw_yes": 10
+      },
+      "case_latency_seconds": {
+        "mean": 75.0551293981936,
+        "median": 74.91579207649556,
+        "p90": 111.57429650540797,
+        "max": 167.4731109370041
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
+      "peak_rss_bytes": 5368168448,
+      "config": {
+        "arm": "sas",
+        "repair": "full",
+        "task": "finqa",
+        "data": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/model_selection-public.jsonl",
+        "out": "/run/media/mutasim/Data/AGERE/runs/tier8_method_qa/model_selection-crossed_sas-full-01",
+        "limit": 52,
+        "context": 4096,
+        "verification": "field",
+        "handoff": "independent",
+        "citations": "enum",
+        "residency": "shared",
+        "program_mode": "reference",
+        "unit_mode": "question",
+        "selector": "none",
+        "causal_mode": "grammar",
+        "catalog_style": "compact",
+        "demos": 0,
+        "demo_policy": "fixed",
+        "planner": "direct",
+        "analysis_tokens": 0,
+        "verifier_model": "0.5b",
+        "drafter_model": "1.5b-f16",
+        "adapter": "/run/media/mutasim/Data/AGERE/runs/tier8_matched_continuation/crossed-sas-converted-01",
+        "verifier_adapter": null,
+        "critic_protocol": "binary",
+        "weights_root": "/run/media/mutasim/Data/AGERE/weights/tier8_v2",
+        "evaluation_source": "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json",
+        "worker": false
+      }
+    }
+  },
+  "tier8_paired_architecture": {
+    "model_selection-control": {
+      "left": "model_selection-control_sas-full-01",
+      "right": "model_selection-control_mas-full-01",
+      "endpoints": {
+        "case_success/correct": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "correct",
+          "delta_count": -5,
+          "delta_rate": -0.09615384615384616,
+          "bootstrap95": [
+            -0.18334183673469387,
+            -0.02
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.20833333333333334,
+            0.0
+          ],
+          "cluster_equal_delta": -0.08888888888888888,
+          "cluster_equal_bootstrap95": [
+            -0.17777777777777776,
+            -0.016666666666666666
+          ],
+          "gain_events": 0,
+          "loss_events": 5,
+          "case_iid_exact_mcnemar_p": 0.0625,
+          "leave_one_cluster_out_range": [
+            -0.1111111111111111,
+            -0.06521739130434782
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.125,
+            "method": "exact_cluster_sign_flip",
+            "draws": 16,
+            "extreme_draws": 2,
+            "nonzero_clusters": 4,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "case_success/wrong": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "wrong",
+          "delta_count": -4,
+          "delta_rate": -0.07692307692307693,
+          "bootstrap95": [
+            -0.2181960227272727,
+            0.09302325581395349
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.2541044525154694,
+            0.13636363636363635
+          ],
+          "cluster_equal_delta": -0.06349206349206347,
+          "cluster_equal_bootstrap95": [
+            -0.2,
+            0.07301587301587302
+          ],
+          "gain_events": 4,
+          "loss_events": 8,
+          "case_iid_exact_mcnemar_p": 0.3876953125,
+          "leave_one_cluster_out_range": [
+            -0.125,
+            -0.043478260869565216
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.515625,
+            "method": "exact_cluster_sign_flip",
+            "draws": 256,
+            "extreme_draws": 132,
+            "nonzero_clusters": 8,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "case_success/withheld": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "withheld",
+          "delta_count": 9,
+          "delta_rate": 0.17307692307692307,
+          "bootstrap95": [
+            -0.02084441489361701,
+            0.34286780383795296
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.07547169811320754,
+            0.387430052666228
+          ],
+          "cluster_equal_delta": 0.15238095238095237,
+          "cluster_equal_bootstrap95": [
+            -0.005555555555555558,
+            0.3063690476190473
+          ],
+          "gain_events": 12,
+          "loss_events": 3,
+          "case_iid_exact_mcnemar_p": 0.03515625,
+          "leave_one_cluster_out_range": [
+            0.10869565217391304,
+            0.22916666666666666
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.171875,
+            "method": "exact_cluster_sign_flip",
+            "draws": 512,
+            "extreme_draws": 88,
+            "nonzero_clusters": 9,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/correct": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "correct",
+          "delta_count": -5,
+          "delta_rate": -0.09615384615384616,
+          "bootstrap95": [
+            -0.18334183673469387,
+            -0.02
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.20833333333333334,
+            0.0
+          ],
+          "cluster_equal_delta": -0.08888888888888888,
+          "cluster_equal_bootstrap95": [
+            -0.17777777777777776,
+            -0.016666666666666666
+          ],
+          "gain_events": 0,
+          "loss_events": 5,
+          "case_iid_exact_mcnemar_p": 0.0625,
+          "leave_one_cluster_out_range": [
+            -0.1111111111111111,
+            -0.06521739130434782
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.125,
+            "method": "exact_cluster_sign_flip",
+            "draws": 16,
+            "extreme_draws": 2,
+            "nonzero_clusters": 4,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/wrong": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "wrong",
+          "delta_count": -4,
+          "delta_rate": -0.07692307692307693,
+          "bootstrap95": [
+            -0.2181960227272727,
+            0.09302325581395349
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.2541044525154694,
+            0.13636363636363635
+          ],
+          "cluster_equal_delta": -0.06349206349206347,
+          "cluster_equal_bootstrap95": [
+            -0.2,
+            0.07301587301587302
+          ],
+          "gain_events": 4,
+          "loss_events": 8,
+          "case_iid_exact_mcnemar_p": 0.3876953125,
+          "leave_one_cluster_out_range": [
+            -0.125,
+            -0.043478260869565216
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.515625,
+            "method": "exact_cluster_sign_flip",
+            "draws": 256,
+            "extreme_draws": 132,
+            "nonzero_clusters": 8,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/withheld": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "withheld",
+          "delta_count": 9,
+          "delta_rate": 0.17307692307692307,
+          "bootstrap95": [
+            -0.02084441489361701,
+            0.34286780383795296
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.07547169811320754,
+            0.387430052666228
+          ],
+          "cluster_equal_delta": 0.15238095238095237,
+          "cluster_equal_bootstrap95": [
+            -0.005555555555555558,
+            0.3063690476190473
+          ],
+          "gain_events": 12,
+          "loss_events": 3,
+          "case_iid_exact_mcnemar_p": 0.03515625,
+          "leave_one_cluster_out_range": [
+            0.10869565217391304,
+            0.22916666666666666
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.171875,
+            "method": "exact_cluster_sign_flip",
+            "draws": 512,
+            "extreme_draws": 88,
+            "nonzero_clusters": 9,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        }
+      }
+    },
+    "model_selection-crossed": {
+      "left": "model_selection-crossed_sas-full-01",
+      "right": "model_selection-crossed_mas-full-01",
+      "endpoints": {
+        "case_success/correct": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "correct",
+          "delta_count": -7,
+          "delta_rate": -0.1346153846153846,
+          "bootstrap95": [
+            -0.28846153846153844,
+            -0.02
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.3333333333333333,
+            0.0
+          ],
+          "cluster_equal_delta": -0.1111111111111111,
+          "cluster_equal_bootstrap95": [
+            -0.22777777777777775,
+            -0.016666666666666666
+          ],
+          "gain_events": 0,
+          "loss_events": 7,
+          "case_iid_exact_mcnemar_p": 0.015625,
+          "leave_one_cluster_out_range": [
+            -0.15555555555555556,
+            -0.06521739130434782
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.125,
+            "method": "exact_cluster_sign_flip",
+            "draws": 16,
+            "extreme_draws": 2,
+            "nonzero_clusters": 4,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "case_success/wrong": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "wrong",
+          "delta_count": -1,
+          "delta_rate": -0.019230769230769232,
+          "bootstrap95": [
+            -0.1568627450980392,
+            0.1525749674054754
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.1875,
+            0.20754716981132076
+          ],
+          "cluster_equal_delta": 0.027777777777777783,
+          "cluster_equal_bootstrap95": [
+            -0.14444444444444443,
+            0.2277777777777778
+          ],
+          "gain_events": 6,
+          "loss_events": 7,
+          "case_iid_exact_mcnemar_p": 1.0,
+          "leave_one_cluster_out_range": [
+            -0.08333333333333333,
+            0.021739130434782608
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 1.0,
+            "method": "exact_cluster_sign_flip",
+            "draws": 64,
+            "extreme_draws": 64,
+            "nonzero_clusters": 6,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "case_success/withheld": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "withheld",
+          "delta_count": 8,
+          "delta_rate": 0.15384615384615385,
+          "bootstrap95": [
+            -0.06976744186046512,
+            0.3442622950819672
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.1346153846153846,
+            0.3877551020408163
+          ],
+          "cluster_equal_delta": 0.08333333333333333,
+          "cluster_equal_bootstrap95": [
+            -0.1501388888888888,
+            0.28888888888888886
+          ],
+          "gain_events": 13,
+          "loss_events": 5,
+          "case_iid_exact_mcnemar_p": 0.09625244140625,
+          "leave_one_cluster_out_range": [
+            0.08695652173913043,
+            0.22916666666666666
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.27734375,
+            "method": "exact_cluster_sign_flip",
+            "draws": 512,
+            "extreme_draws": 142,
+            "nonzero_clusters": 9,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/correct": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "correct",
+          "delta_count": -7,
+          "delta_rate": -0.1346153846153846,
+          "bootstrap95": [
+            -0.28846153846153844,
+            -0.02
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.3333333333333333,
+            0.0
+          ],
+          "cluster_equal_delta": -0.1111111111111111,
+          "cluster_equal_bootstrap95": [
+            -0.22777777777777775,
+            -0.016666666666666666
+          ],
+          "gain_events": 0,
+          "loss_events": 7,
+          "case_iid_exact_mcnemar_p": 0.015625,
+          "leave_one_cluster_out_range": [
+            -0.15555555555555556,
+            -0.06521739130434782
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.125,
+            "method": "exact_cluster_sign_flip",
+            "draws": 16,
+            "extreme_draws": 2,
+            "nonzero_clusters": 4,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/wrong": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "wrong",
+          "delta_count": -1,
+          "delta_rate": -0.019230769230769232,
+          "bootstrap95": [
+            -0.1568627450980392,
+            0.1525749674054754
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.1875,
+            0.20754716981132076
+          ],
+          "cluster_equal_delta": 0.027777777777777783,
+          "cluster_equal_bootstrap95": [
+            -0.14444444444444443,
+            0.2277777777777778
+          ],
+          "gain_events": 6,
+          "loss_events": 7,
+          "case_iid_exact_mcnemar_p": 1.0,
+          "leave_one_cluster_out_range": [
+            -0.08333333333333333,
+            0.021739130434782608
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 1.0,
+            "method": "exact_cluster_sign_flip",
+            "draws": 64,
+            "extreme_draws": 64,
+            "nonzero_clusters": 6,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/withheld": {
+          "n": 52,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "withheld",
+          "delta_count": 8,
+          "delta_rate": 0.15384615384615385,
+          "bootstrap95": [
+            -0.06976744186046512,
+            0.3442622950819672
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.1346153846153846,
+            0.3877551020408163
+          ],
+          "cluster_equal_delta": 0.08333333333333333,
+          "cluster_equal_bootstrap95": [
+            -0.1501388888888888,
+            0.28888888888888886
+          ],
+          "gain_events": 13,
+          "loss_events": 5,
+          "case_iid_exact_mcnemar_p": 0.09625244140625,
+          "leave_one_cluster_out_range": [
+            0.08695652173913043,
+            0.22916666666666666
+          ],
+          "effective_clusters_for_bounded_weights": 11.964601769911505,
+          "bounded_difference_halfwidth95": 0.785259330694085,
+          "bounded_difference_halfwidth95_family4": 0.9210672362699234,
+          "cluster_sign_flip": {
+            "p": 0.27734375,
+            "method": "exact_cluster_sign_flip",
+            "draws": 512,
+            "extreme_draws": 142,
+            "nonzero_clusters": 9,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        }
+      }
+    },
+    "diagnostic_audit-control": {
+      "left": "diagnostic_audit-control_sas-full-01",
+      "right": "diagnostic_audit-control_mas-full-01",
+      "endpoints": {
+        "case_success/correct": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "correct",
+          "delta_count": -4,
+          "delta_rate": -0.08163265306122448,
+          "bootstrap95": [
+            -0.16216216216216217,
+            0.0
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.1836734693877551,
+            0.0
+          ],
+          "cluster_equal_delta": -0.06666666666666667,
+          "cluster_equal_bootstrap95": [
+            -0.15,
+            0.0
+          ],
+          "gain_events": 1,
+          "loss_events": 5,
+          "case_iid_exact_mcnemar_p": 0.21875,
+          "leave_one_cluster_out_range": [
+            -0.09523809523809523,
+            -0.04878048780487805
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.25,
+            "method": "exact_cluster_sign_flip",
+            "draws": 8,
+            "extreme_draws": 2,
+            "nonzero_clusters": 3,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "case_success/wrong": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "wrong",
+          "delta_count": -3,
+          "delta_rate": -0.061224489795918366,
+          "bootstrap95": [
+            -0.2727272727272727,
+            0.10909090909090909
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.3333333333333333,
+            0.15320241199478535
+          ],
+          "cluster_equal_delta": -0.1811904761904762,
+          "cluster_equal_bootstrap95": [
+            -0.39666666666666667,
+            0.012621031746031713
+          ],
+          "gain_events": 6,
+          "loss_events": 9,
+          "case_iid_exact_mcnemar_p": 0.60723876953125,
+          "leave_one_cluster_out_range": [
+            -0.14634146341463414,
+            -0.02127659574468085
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.68359375,
+            "method": "exact_cluster_sign_flip",
+            "draws": 1024,
+            "extreme_draws": 700,
+            "nonzero_clusters": 10,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "case_success/withheld": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "withheld",
+          "delta_count": 7,
+          "delta_rate": 0.14285714285714285,
+          "bootstrap95": [
+            0.017241379310344827,
+            0.3170731707317073
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.01694915254237288,
+            0.38235294117647056
+          ],
+          "cluster_equal_delta": 0.24785714285714286,
+          "cluster_equal_bootstrap95": [
+            0.06943452380952382,
+            0.44563492063492066
+          ],
+          "gain_events": 12,
+          "loss_events": 5,
+          "case_iid_exact_mcnemar_p": 0.143463134765625,
+          "leave_one_cluster_out_range": [
+            0.10638297872340426,
+            0.1951219512195122
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.091796875,
+            "method": "exact_cluster_sign_flip",
+            "draws": 1024,
+            "extreme_draws": 94,
+            "nonzero_clusters": 10,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/correct": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "correct",
+          "delta_count": -6,
+          "delta_rate": -0.12244897959183673,
+          "bootstrap95": [
+            -0.2,
+            -0.043478260869565216
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.2222222222222222,
+            -0.023255813953488372
+          ],
+          "cluster_equal_delta": -0.10952380952380952,
+          "cluster_equal_bootstrap95": [
+            -0.20952380952380953,
+            -0.03333333333333333
+          ],
+          "gain_events": 1,
+          "loss_events": 7,
+          "case_iid_exact_mcnemar_p": 0.0703125,
+          "leave_one_cluster_out_range": [
+            -0.13636363636363635,
+            -0.0975609756097561
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.0625,
+            "method": "exact_cluster_sign_flip",
+            "draws": 32,
+            "extreme_draws": 2,
+            "nonzero_clusters": 5,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/wrong": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "wrong",
+          "delta_count": -1,
+          "delta_rate": -0.02040816326530612,
+          "bootstrap95": [
+            -0.225,
+            0.13725490196078433
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.2934092539454806,
+            0.17596104231166187
+          ],
+          "cluster_equal_delta": -0.13833333333333334,
+          "cluster_equal_bootstrap95": [
+            -0.3528194444444444,
+            0.04945833333333315
+          ],
+          "gain_events": 6,
+          "loss_events": 7,
+          "case_iid_exact_mcnemar_p": 1.0,
+          "leave_one_cluster_out_range": [
+            -0.0975609756097561,
+            0.02127659574468085
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 1.0,
+            "method": "exact_cluster_sign_flip",
+            "draws": 256,
+            "extreme_draws": 256,
+            "nonzero_clusters": 8,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/withheld": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "withheld",
+          "delta_count": 7,
+          "delta_rate": 0.14285714285714285,
+          "bootstrap95": [
+            0.017241379310344827,
+            0.3170731707317073
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.01694915254237288,
+            0.38235294117647056
+          ],
+          "cluster_equal_delta": 0.24785714285714286,
+          "cluster_equal_bootstrap95": [
+            0.06943452380952382,
+            0.44563492063492066
+          ],
+          "gain_events": 12,
+          "loss_events": 5,
+          "case_iid_exact_mcnemar_p": 0.143463134765625,
+          "leave_one_cluster_out_range": [
+            0.10638297872340426,
+            0.1951219512195122
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.091796875,
+            "method": "exact_cluster_sign_flip",
+            "draws": 1024,
+            "extreme_draws": 94,
+            "nonzero_clusters": 10,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        }
+      }
+    },
+    "diagnostic_audit-crossed": {
+      "left": "diagnostic_audit-crossed_sas-full-01",
+      "right": "diagnostic_audit-crossed_mas-full-01",
+      "endpoints": {
+        "case_success/correct": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "correct",
+          "delta_count": -5,
+          "delta_rate": -0.10204081632653061,
+          "bootstrap95": [
+            -0.20833333333333334,
+            0.0
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.23529411764705882,
+            0.0
+          ],
+          "cluster_equal_delta": -0.075,
+          "cluster_equal_bootstrap95": [
+            -0.16666666666666666,
+            0.0
+          ],
+          "gain_events": 1,
+          "loss_events": 6,
+          "case_iid_exact_mcnemar_p": 0.125,
+          "leave_one_cluster_out_range": [
+            -0.11904761904761904,
+            -0.04878048780487805
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.25,
+            "method": "exact_cluster_sign_flip",
+            "draws": 8,
+            "extreme_draws": 2,
+            "nonzero_clusters": 3,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "case_success/wrong": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "wrong",
+          "delta_count": -11,
+          "delta_rate": -0.22448979591836735,
+          "bootstrap95": [
+            -0.3870967741935484,
+            -0.07497685185185218
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.44,
+            -0.027777777777777776
+          ],
+          "cluster_equal_delta": -0.3113492063492064,
+          "cluster_equal_bootstrap95": [
+            -0.5252380952380953,
+            -0.10633928571428587
+          ],
+          "gain_events": 3,
+          "loss_events": 14,
+          "case_iid_exact_mcnemar_p": 0.012725830078125,
+          "leave_one_cluster_out_range": [
+            -0.26666666666666666,
+            -0.19047619047619047
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.02783203125,
+            "method": "exact_cluster_sign_flip",
+            "draws": 4096,
+            "extreme_draws": 114,
+            "nonzero_clusters": 12,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "case_success/withheld": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "case_success",
+          "event": "withheld",
+          "delta_count": 16,
+          "delta_rate": 0.32653061224489793,
+          "bootstrap95": [
+            0.17391304347826086,
+            0.46875
+          ],
+          "bonferroni4_bootstrap98_75": [
+            0.13043478260869565,
+            0.5142857142857142
+          ],
+          "cluster_equal_delta": 0.3863492063492064,
+          "cluster_equal_bootstrap95": [
+            0.19746031746031745,
+            0.5800039682539682
+          ],
+          "gain_events": 19,
+          "loss_events": 3,
+          "case_iid_exact_mcnemar_p": 0.0008554458618164062,
+          "leave_one_cluster_out_range": [
+            0.2926829268292683,
+            0.3695652173913043
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.0048828125,
+            "method": "exact_cluster_sign_flip",
+            "draws": 4096,
+            "extreme_draws": 20,
+            "nonzero_clusters": 12,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/correct": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "correct",
+          "delta_count": -8,
+          "delta_rate": -0.16326530612244897,
+          "bootstrap95": [
+            -0.26154761904761903,
+            -0.05
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.2857142857142857,
+            -0.024691310975609535
+          ],
+          "cluster_equal_delta": -0.12738095238095237,
+          "cluster_equal_bootstrap95": [
+            -0.23333333333333334,
+            -0.03571428571428571
+          ],
+          "gain_events": 1,
+          "loss_events": 9,
+          "case_iid_exact_mcnemar_p": 0.021484375,
+          "leave_one_cluster_out_range": [
+            -0.18181818181818182,
+            -0.12195121951219512
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.0625,
+            "method": "exact_cluster_sign_flip",
+            "draws": 32,
+            "extreme_draws": 2,
+            "nonzero_clusters": 5,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/wrong": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "wrong",
+          "delta_count": -8,
+          "delta_rate": -0.16326530612244897,
+          "bootstrap95": [
+            -0.3142857142857143,
+            -0.03773584905660377
+          ],
+          "bonferroni4_bootstrap98_75": [
+            -0.36940789473684205,
+            0.0
+          ],
+          "cluster_equal_delta": -0.25896825396825396,
+          "cluster_equal_bootstrap95": [
+            -0.4761904761904762,
+            -0.05674603174603175
+          ],
+          "gain_events": 3,
+          "loss_events": 11,
+          "case_iid_exact_mcnemar_p": 0.057373046875,
+          "leave_one_cluster_out_range": [
+            -0.2,
+            -0.1276595744680851
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.0556640625,
+            "method": "exact_cluster_sign_flip",
+            "draws": 2048,
+            "extreme_draws": 114,
+            "nonzero_clusters": 11,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        },
+        "raw_execution_match/withheld": {
+          "n": 49,
+          "clusters": 15,
+          "cluster_unit": "report",
+          "delta_direction": "right_minus_left",
+          "metric": "raw_execution_match",
+          "event": "withheld",
+          "delta_count": 16,
+          "delta_rate": 0.32653061224489793,
+          "bootstrap95": [
+            0.17391304347826086,
+            0.46875
+          ],
+          "bonferroni4_bootstrap98_75": [
+            0.13043478260869565,
+            0.5142857142857142
+          ],
+          "cluster_equal_delta": 0.3863492063492064,
+          "cluster_equal_bootstrap95": [
+            0.19746031746031745,
+            0.5800039682539682
+          ],
+          "gain_events": 19,
+          "loss_events": 3,
+          "case_iid_exact_mcnemar_p": 0.0008554458618164062,
+          "leave_one_cluster_out_range": [
+            0.2926829268292683,
+            0.3695652173913043
+          ],
+          "effective_clusters_for_bounded_weights": 10.766816143497758,
+          "bounded_difference_halfwidth95": 0.8277869606372701,
+          "bounded_difference_halfwidth95_family4": 0.9709498738213379,
+          "cluster_sign_flip": {
+            "p": 0.0048828125,
+            "method": "exact_cluster_sign_flip",
+            "draws": 4096,
+            "extreme_draws": 20,
+            "nonzero_clusters": 12,
+            "monte_carlo_resolution": null,
+            "assumption": "Independent clusters and sign-exchangeability/symmetry under null; NOT a randomized causal experiment."
+          },
+          "bootstrap_resamples": 10000,
+          "seed": 42,
+          "limits": "Intervals/tests conditional on independent resampling units; post-hoc supplemental tests. No equality, noninferiority or architecture-mechanism proof."
+        }
+      }
+    }
+  },
+  "legacy8_synthetic": {
+    "sas": {
+      "status": "complete",
+      "cases_completed": 175,
+      "cases_expected": 175,
+      "valid_json_rate": 1.0,
+      "structured_invention_rate_among_complete_claim_sets": 0.7142857142857143,
+      "complete_structured_claim_sets": 175,
+      "mismatch_recall": 0.0,
+      "mismatch_positive_cases": 20,
+      "grounding_accuracy": 0.84399375975039,
+      "refusal_correctness": 0.0,
+      "generated_tokens": 57312,
+      "generation_seconds": 16007.1,
+      "peak_rss_bytes": 5029531648,
+      "failure_tags": {
+        "S6": 125
+      },
+      "arm": "sas",
+      "mode": "naive",
+      "lora": false,
+      "split": "test",
+      "seed": 42,
+      "context": 2048,
+      "cap_bytes": 6400000000,
+      "residency": "resident",
+      "memory_within_cap": true
+    },
+    "mas": {
+      "status": "complete",
+      "cases_completed": 175,
+      "cases_expected": 175,
+      "valid_json_rate": 0.6342857142857142,
+      "structured_invention_rate_among_complete_claim_sets": 0.8018018018018018,
+      "complete_structured_claim_sets": 111,
+      "mismatch_recall": 0.0,
+      "mismatch_positive_cases": 20,
+      "grounding_accuracy": 0.36349453978159124,
+      "refusal_correctness": 0.0,
+      "generated_tokens": 118727,
+      "generation_seconds": 10601.4,
+      "peak_rss_bytes": 5539782656,
+      "failure_tags": {
+        "M2": 64,
+        "M3": 89,
+        "M7": 22
+      },
+      "arm": "mas",
+      "mode": "naive",
+      "lora": false,
+      "split": "test",
+      "seed": 42,
+      "context": 2048,
+      "cap_bytes": 6400000000,
+      "residency": "resident",
+      "memory_within_cap": true
+    }
+  },
+  "tier16": {
+    "tier16-mas-direct_control": {
+      "n": 160,
+      "reports": 50,
+      "companies": 36,
+      "metrics": {
+        "case_success": {
+          "correct": 0,
+          "wrong": 5,
+          "withheld": 155,
+          "coverage": 0.03125,
+          "correct_rate": 0.0,
+          "wrong_rate": 0.03125,
+          "withheld_rate": 0.96875,
+          "precision_when_delivered": 0.0,
+          "valid_candidates": 5,
+          "correct_candidates": 0,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 0,
+          "invalid_or_insufficient_withheld": 155,
+          "candidate_validity_q": 0.03125,
+          "candidate_correctness_p": 0.0,
+          "correct_acceptance_a": null,
+          "wrong_acceptance_b": 1.0
+        },
+        "raw_execution_match": {
+          "correct": 0,
+          "wrong": 5,
+          "withheld": 155,
+          "coverage": 0.03125,
+          "correct_rate": 0.0,
+          "wrong_rate": 0.03125,
+          "withheld_rate": 0.96875,
+          "precision_when_delivered": 0.0,
+          "valid_candidates": 5,
+          "correct_candidates": 0,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 0,
+          "invalid_or_insufficient_withheld": 155,
+          "candidate_validity_q": 0.03125,
+          "candidate_correctness_p": 0.0,
+          "correct_acceptance_a": null,
+          "wrong_acceptance_b": 1.0
+        }
+      },
+      "prompt_tokens": 391395,
+      "generated_tokens": 8392,
+      "inference_seconds": 2957.0180645719083,
+      "repair_attempts": 0,
+      "repair_accepted": 0,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "INSUFFICIENT": 155,
+        "ANSWER": 5
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 155
+      },
+      "verdicts": {
+        "FAIL": 139,
+        "PASS": 21
+      },
+      "metric_concordance": {
+        "reported_no / raw_no": 5
+      },
+      "case_latency_seconds": {
+        "mean": 18.48136290357443,
+        "median": 17.543824061503983,
+        "p90": 24.38658882719173,
+        "max": 41.43319904801319
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_INSUFFICIENT": 155,
+        "decision_ANSWER": 5
+      },
+      "peak_rss_bytes": 10900664320,
+      "cap_bytes": 11500000000,
+      "retrieval_strata": {
+        "all_annotated_evidence_retrieved": {
+          "n": 138,
+          "correct": 0,
+          "invalid_or_insufficient": 134
+        },
+        "some_annotated_evidence_missing": {
+          "n": 22,
+          "correct": 0,
+          "invalid_or_insufficient": 21
+        }
+      }
+    },
+    "tier16-mas-primary": {
+      "n": 160,
+      "reports": 50,
+      "companies": 36,
+      "metrics": {
+        "case_success": {
+          "correct": 5,
+          "wrong": 3,
+          "withheld": 152,
+          "coverage": 0.05,
+          "correct_rate": 0.03125,
+          "wrong_rate": 0.01875,
+          "withheld_rate": 0.95,
+          "precision_when_delivered": 0.625,
+          "valid_candidates": 10,
+          "correct_candidates": 5,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 2,
+          "invalid_or_insufficient_withheld": 150,
+          "candidate_validity_q": 0.0625,
+          "candidate_correctness_p": 0.5,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.6
+        },
+        "raw_execution_match": {
+          "correct": 5,
+          "wrong": 3,
+          "withheld": 152,
+          "coverage": 0.05,
+          "correct_rate": 0.03125,
+          "wrong_rate": 0.01875,
+          "withheld_rate": 0.95,
+          "precision_when_delivered": 0.625,
+          "valid_candidates": 10,
+          "correct_candidates": 5,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 2,
+          "invalid_or_insufficient_withheld": 150,
+          "candidate_validity_q": 0.0625,
+          "candidate_correctness_p": 0.5,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 0.6
+        }
+      },
+      "prompt_tokens": 746673,
+      "generated_tokens": 29509,
+      "inference_seconds": 8756.922751284888,
+      "repair_attempts": 0,
+      "repair_accepted": 0,
+      "truncated_stages": 157,
+      "cases_with_analysis_length_limit": 157,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "INSUFFICIENT": 150,
+        "ANSWER": 10
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 150
+      },
+      "verdicts": {
+        "FAIL": 137,
+        "PASS": 23
+      },
+      "metric_concordance": {
+        "reported_yes / raw_yes": 5,
+        "reported_no / raw_no": 3
+      },
+      "case_latency_seconds": {
+        "mean": 54.730767195530554,
+        "median": 53.78653927650521,
+        "p90": 62.97287904899349,
+        "max": 86.00500165399717
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_INSUFFICIENT": 150,
+        "decision_ANSWER": 10
+      },
+      "peak_rss_bytes": 10928750592,
+      "cap_bytes": 11500000000,
+      "retrieval_strata": {
+        "all_annotated_evidence_retrieved": {
+          "n": 138,
+          "correct": 5,
+          "invalid_or_insufficient": 128
+        },
+        "some_annotated_evidence_missing": {
+          "n": 22,
+          "correct": 0,
+          "invalid_or_insufficient": 22
+        }
+      }
+    },
+    "tier16-mas-repair_ablation": {
+      "n": 160,
+      "reports": 50,
+      "companies": 36,
+      "metrics": {
+        "case_success": {
+          "correct": 5,
+          "wrong": 3,
+          "withheld": 152,
+          "coverage": 0.05,
+          "correct_rate": 0.03125,
+          "wrong_rate": 0.01875,
+          "withheld_rate": 0.95,
+          "precision_when_delivered": 0.625,
+          "valid_candidates": 8,
+          "correct_candidates": 5,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 0,
+          "invalid_or_insufficient_withheld": 152,
+          "candidate_validity_q": 0.05,
+          "candidate_correctness_p": 0.625,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 1.0
+        },
+        "raw_execution_match": {
+          "correct": 5,
+          "wrong": 3,
+          "withheld": 152,
+          "coverage": 0.05,
+          "correct_rate": 0.03125,
+          "wrong_rate": 0.01875,
+          "withheld_rate": 0.95,
+          "precision_when_delivered": 0.625,
+          "valid_candidates": 8,
+          "correct_candidates": 5,
+          "correct_candidates_withheld": 0,
+          "wrong_candidates_withheld": 0,
+          "invalid_or_insufficient_withheld": 152,
+          "candidate_validity_q": 0.05,
+          "candidate_correctness_p": 0.625,
+          "correct_acceptance_a": 1.0,
+          "wrong_acceptance_b": 1.0
+        }
+      },
+      "prompt_tokens": 1223337,
+      "generated_tokens": 33917,
+      "inference_seconds": 13256.172011953458,
+      "repair_attempts": 152,
+      "repair_accepted": 152,
+      "truncated_stages": 157,
+      "cases_with_analysis_length_limit": 157,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "INSUFFICIENT": 152,
+        "ANSWER": 8
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 152
+      },
+      "verdicts": {
+        "FAIL": 137,
+        "PASS": 23
+      },
+      "metric_concordance": {
+        "reported_yes / raw_yes": 5,
+        "reported_no / raw_no": 3
+      },
+      "case_latency_seconds": {
+        "mean": 82.85107507470912,
+        "median": 81.94826693300274,
+        "p90": 94.84526067714323,
+        "max": 123.80968968296656
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_INSUFFICIENT": 150,
+        "decision_ANSWER": 10
+      },
+      "peak_rss_bytes": 10913439744,
+      "cap_bytes": 11500000000,
+      "retrieval_strata": {
+        "all_annotated_evidence_retrieved": {
+          "n": 138,
+          "correct": 5,
+          "invalid_or_insufficient": 130
+        },
+        "some_annotated_evidence_missing": {
+          "n": 22,
+          "correct": 0,
+          "invalid_or_insufficient": 22
+        }
+      }
+    },
+    "tier16-sas-direct_control": {
+      "n": 160,
+      "reports": 50,
+      "companies": 36,
+      "metrics": {
+        "case_success": {
+          "correct": 50,
+          "wrong": 66,
+          "withheld": 44,
+          "coverage": 0.725,
+          "correct_rate": 0.3125,
+          "wrong_rate": 0.4125,
+          "withheld_rate": 0.275,
+          "precision_when_delivered": 0.43103448275862066,
+          "valid_candidates": 132,
+          "correct_candidates": 52,
+          "correct_candidates_withheld": 2,
+          "wrong_candidates_withheld": 14,
+          "invalid_or_insufficient_withheld": 28,
+          "candidate_validity_q": 0.825,
+          "candidate_correctness_p": 0.3939393939393939,
+          "correct_acceptance_a": 0.9615384615384616,
+          "wrong_acceptance_b": 0.825
+        },
+        "raw_execution_match": {
+          "correct": 14,
+          "wrong": 102,
+          "withheld": 44,
+          "coverage": 0.725,
+          "correct_rate": 0.0875,
+          "wrong_rate": 0.6375,
+          "withheld_rate": 0.275,
+          "precision_when_delivered": 0.1206896551724138,
+          "valid_candidates": 132,
+          "correct_candidates": 15,
+          "correct_candidates_withheld": 1,
+          "wrong_candidates_withheld": 15,
+          "invalid_or_insufficient_withheld": 28,
+          "candidate_validity_q": 0.825,
+          "candidate_correctness_p": 0.11363636363636363,
+          "correct_acceptance_a": 0.9333333333333333,
+          "wrong_acceptance_b": 0.8717948717948718
+        }
+      },
+      "prompt_tokens": 295862,
+      "generated_tokens": 14449,
+      "inference_seconds": 18956.949391697977,
+      "repair_attempts": 0,
+      "repair_accepted": 0,
+      "truncated_stages": 0,
+      "cases_with_analysis_length_limit": 0,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 132,
+        "INSUFFICIENT": 28
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 28
+      },
+      "verdicts": {
+        "PASS": 120,
+        "FAIL": 20,
+        "UNKNOWN": 20
+      },
+      "metric_concordance": {
+        "reported_yes / raw_yes": 10,
+        "reported_no / raw_no": 62,
+        "reported_yes / raw_no": 40,
+        "reported_no / raw_yes": 4
+      },
+      "case_latency_seconds": {
+        "mean": 118.48093369811235,
+        "median": 112.23078802399687,
+        "p90": 164.4679671624137,
+        "max": 278.51221283199266
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_ANSWER": 132,
+        "decision_INSUFFICIENT": 28
+      },
+      "peak_rss_bytes": 10039861248,
+      "cap_bytes": 11500000000,
+      "retrieval_strata": {
+        "all_annotated_evidence_retrieved": {
+          "n": 138,
+          "correct": 49,
+          "invalid_or_insufficient": 19
+        },
+        "some_annotated_evidence_missing": {
+          "n": 22,
+          "correct": 1,
+          "invalid_or_insufficient": 9
+        }
+      }
+    },
+    "tier16-sas-primary": {
+      "n": 160,
+      "reports": 50,
+      "companies": 36,
+      "metrics": {
+        "case_success": {
+          "correct": 78,
+          "wrong": 48,
+          "withheld": 34,
+          "coverage": 0.7875,
+          "correct_rate": 0.4875,
+          "wrong_rate": 0.3,
+          "withheld_rate": 0.2125,
+          "precision_when_delivered": 0.6190476190476191,
+          "valid_candidates": 150,
+          "correct_candidates": 84,
+          "correct_candidates_withheld": 6,
+          "wrong_candidates_withheld": 18,
+          "invalid_or_insufficient_withheld": 10,
+          "candidate_validity_q": 0.9375,
+          "candidate_correctness_p": 0.56,
+          "correct_acceptance_a": 0.9285714285714286,
+          "wrong_acceptance_b": 0.7272727272727273
+        },
+        "raw_execution_match": {
+          "correct": 38,
+          "wrong": 88,
+          "withheld": 34,
+          "coverage": 0.7875,
+          "correct_rate": 0.2375,
+          "wrong_rate": 0.55,
+          "withheld_rate": 0.2125,
+          "precision_when_delivered": 0.30158730158730157,
+          "valid_candidates": 150,
+          "correct_candidates": 44,
+          "correct_candidates_withheld": 6,
+          "wrong_candidates_withheld": 18,
+          "invalid_or_insufficient_withheld": 10,
+          "candidate_validity_q": 0.9375,
+          "candidate_correctness_p": 0.29333333333333333,
+          "correct_acceptance_a": 0.8636363636363636,
+          "wrong_acceptance_b": 0.8301886792452831
+        }
+      },
+      "prompt_tokens": 642686,
+      "generated_tokens": 32657,
+      "inference_seconds": 41564.596106934,
+      "repair_attempts": 0,
+      "repair_accepted": 0,
+      "truncated_stages": 159,
+      "cases_with_analysis_length_limit": 159,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 150,
+        "INSUFFICIENT": 10
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 10
+      },
+      "verdicts": {
+        "PASS": 128,
+        "FAIL": 26,
+        "UNKNOWN": 6
+      },
+      "metric_concordance": {
+        "reported_yes / raw_yes": 34,
+        "reported_no / raw_no": 44,
+        "reported_yes / raw_no": 44,
+        "reported_no / raw_yes": 4
+      },
+      "case_latency_seconds": {
+        "mean": 259.7787256683375,
+        "median": 251.37247603500327,
+        "p90": 319.06773705669946,
+        "max": 427.4734470630028
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_ANSWER": 150,
+        "decision_INSUFFICIENT": 10
+      },
+      "peak_rss_bytes": 10062245888,
+      "cap_bytes": 11500000000,
+      "retrieval_strata": {
+        "all_annotated_evidence_retrieved": {
+          "n": 138,
+          "correct": 74,
+          "invalid_or_insufficient": 3
+        },
+        "some_annotated_evidence_missing": {
+          "n": 22,
+          "correct": 4,
+          "invalid_or_insufficient": 7
+        }
+      }
+    },
+    "tier16-sas-repair_ablation": {
+      "n": 160,
+      "reports": 50,
+      "companies": 36,
+      "metrics": {
+        "case_success": {
+          "correct": 79,
+          "wrong": 50,
+          "withheld": 31,
+          "coverage": 0.80625,
+          "correct_rate": 0.49375,
+          "wrong_rate": 0.3125,
+          "withheld_rate": 0.19375,
+          "precision_when_delivered": 0.6124031007751938,
+          "valid_candidates": 150,
+          "correct_candidates": 85,
+          "correct_candidates_withheld": 6,
+          "wrong_candidates_withheld": 15,
+          "invalid_or_insufficient_withheld": 10,
+          "candidate_validity_q": 0.9375,
+          "candidate_correctness_p": 0.5666666666666667,
+          "correct_acceptance_a": 0.9294117647058824,
+          "wrong_acceptance_b": 0.7692307692307693
+        },
+        "raw_execution_match": {
+          "correct": 38,
+          "wrong": 91,
+          "withheld": 31,
+          "coverage": 0.80625,
+          "correct_rate": 0.2375,
+          "wrong_rate": 0.56875,
+          "withheld_rate": 0.19375,
+          "precision_when_delivered": 0.29457364341085274,
+          "valid_candidates": 150,
+          "correct_candidates": 44,
+          "correct_candidates_withheld": 6,
+          "wrong_candidates_withheld": 15,
+          "invalid_or_insufficient_withheld": 10,
+          "candidate_validity_q": 0.9375,
+          "candidate_correctness_p": 0.29333333333333333,
+          "correct_acceptance_a": 0.8636363636363636,
+          "wrong_acceptance_b": 0.8584905660377359
+        }
+      },
+      "prompt_tokens": 759898,
+      "generated_tokens": 35244,
+      "inference_seconds": 48579.08550462214,
+      "repair_attempts": 34,
+      "repair_accepted": 34,
+      "truncated_stages": 159,
+      "cases_with_analysis_length_limit": 159,
+      "context_or_budget_skips": 0,
+      "decisions": {
+        "ANSWER": 150,
+        "INSUFFICIENT": 10
+      },
+      "execution_issues": {
+        "insufficient_or_invalid_answer": 10
+      },
+      "verdicts": {
+        "PASS": 131,
+        "FAIL": 23,
+        "UNKNOWN": 6
+      },
+      "metric_concordance": {
+        "reported_yes / raw_yes": 34,
+        "reported_no / raw_no": 46,
+        "reported_yes / raw_no": 45,
+        "reported_no / raw_yes": 4
+      },
+      "case_latency_seconds": {
+        "mean": 303.6192844038884,
+        "median": 259.9145869034983,
+        "p90": 450.21695039043846,
+        "max": 673.2810896200099
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_ANSWER": 150,
+        "decision_INSUFFICIENT": 10
+      },
+      "peak_rss_bytes": 10073591808,
+      "cap_bytes": 11500000000,
+      "retrieval_strata": {
+        "all_annotated_evidence_retrieved": {
+          "n": 138,
+          "correct": 75,
+          "invalid_or_insufficient": 3
+        },
+        "some_annotated_evidence_missing": {
+          "n": 22,
+          "correct": 4,
+          "invalid_or_insufficient": 7
+        }
+      }
+    }
+  },
+  "comparability": {
+    "overlapping_question_ids": [],
+    "overlapping_reports": [],
+    "unique_t8_finqa_questions": 101,
+    "unique_t8_finqa_reports": 30,
+    "unique_t16_finqa_questions": 160,
+    "unique_t16_finqa_reports": 50,
+    "pooling_permitted": false,
+    "causal_ram_effect_identified": false,
+    "confounders": [
+      "train-source versus dev-source questions",
+      "adapted versus pretrained checkpoints",
+      "Q4 shared MAS versus F16 resident MAS",
+      "7B versus14B SAS",
+      "selector none versus suggest",
+      "prompt/repair recipes",
+      "native versus portable CPU build",
+      "different deployment cap and memory-control history"
+    ]
+  }
+}

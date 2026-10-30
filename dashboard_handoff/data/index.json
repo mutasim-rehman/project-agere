@@ -1,0 +1,266 @@
+[
+  {
+    "id": "tier16_v2/case_outcomes",
+    "source": "research/tier16_v2/data/case_outcomes.csv",
+    "path": "data/tier16_v2/case_outcomes.csv",
+    "sha256": "3d4a970da64c8aa751d8cfbf2975704439210b6411dbd6f9df1e9e18714dff49",
+    "columns": [
+      "tier",
+      "job",
+      "arm",
+      "profile",
+      "case_id",
+      "report",
+      "company",
+      "delivered",
+      "reported_correct",
+      "raw_correct",
+      "reported_outcome",
+      "raw_outcome",
+      "execution_valid",
+      "initial_reported_correct",
+      "initial_raw_correct",
+      "repair_attempted",
+      "generated_tokens",
+      "prompt_tokens",
+      "inference_seconds",
+      "annotated_evidence_complete",
+      "attempt",
+      "completed_time"
+    ],
+    "rows": 960,
+    "browser_json": "data/tier16_v2/case_outcomes.json"
+  },
+  {
+    "id": "tier16_v2/document_index",
+    "source": "research/tier16_v2/data/document_index.json",
+    "path": "data/tier16_v2/document_index.json",
+    "sha256": "ab0aa01f43d15da84986dfba25a206b8805838c57301fbdf53de62663b1151a0",
+    "json_type": "dict"
+  },
+  {
+    "id": "tier16_v2/metric_disagreements",
+    "source": "research/tier16_v2/data/metric_disagreements.csv",
+    "path": "data/tier16_v2/metric_disagreements.csv",
+    "sha256": "1deb12b588b3661a9559c3e3ea064b942ae0a4a7f908d6a73b008213c277f3e8",
+    "columns": [
+      "case_id",
+      "reported_correct",
+      "raw_correct",
+      "predicted",
+      "declared_unit",
+      "gold_answer",
+      "gold_exe_ans"
+    ],
+    "rows": 48,
+    "browser_json": "data/tier16_v2/metric_disagreements.json"
+  },
+  {
+    "id": "tier16_v2/paired_effects",
+    "source": "research/tier16_v2/data/paired_effects.csv",
+    "path": "data/tier16_v2/paired_effects.csv",
+    "sha256": "e3c274b4e406a151a3695d419afa8f020902ad0d041cf79c1767423ece44f4d6",
+    "columns": [
+      "comparison",
+      "endpoint",
+      "n",
+      "reports",
+      "delta",
+      "ci_low",
+      "ci_high",
+      "cluster_signflip_p",
+      "holm_primary4_p",
+      "mcnemar_iid_only_p",
+      "company_ci_low",
+      "company_ci_high"
+    ],
+    "rows": 42,
+    "browser_json": "data/tier16_v2/paired_effects.json"
+  },
+  {
+    "id": "tier16_v2/report_outcomes",
+    "source": "research/tier16_v2/data/report_outcomes.csv",
+    "path": "data/tier16_v2/report_outcomes.csv",
+    "sha256": "08f5be86673612ef9c14e62eb810d6269800d717d6baf2f4c21fa1f0f25f0b4f",
+    "columns": [
+      "job",
+      "report",
+      "metric",
+      "n",
+      "correct",
+      "wrong",
+      "withheld"
+    ],
+    "rows": 600,
+    "browser_json": "data/tier16_v2/report_outcomes.json"
+  },
+  {
+    "id": "tier16_v2/resource_events",
+    "source": "research/tier16_v2/data/resource_events.csv",
+    "path": "data/tier16_v2/resource_events.csv",
+    "sha256": "64ee434edd7493593339692d3cc454c10daf11487ec4fd7f992c973f20bec6d0",
+    "columns": [
+      "relative",
+      "memory_breach",
+      "swap_breach",
+      "peak_rss_bytes",
+      "max_swap_bytes",
+      "first_invalid_sample_time"
+    ],
+    "rows": 2,
+    "browser_json": "data/tier16_v2/resource_events.json"
+  },
+  {
+    "id": "tier16_v2/stage_metrics",
+    "source": "research/tier16_v2/data/stage_metrics.csv",
+    "path": "data/tier16_v2/stage_metrics.csv",
+    "sha256": "7c83a8caaf829767db2b441be990d361dc7f2835a059a1756a8a456dbd8305f1",
+    "columns": [
+      "job",
+      "role",
+      "stage",
+      "calls",
+      "prompt_tokens",
+      "generated_tokens",
+      "inference_seconds",
+      "finish_length",
+      "context_or_budget_skips"
+    ],
+    "rows": 23,
+    "browser_json": "data/tier16_v2/stage_metrics.json"
+  },
+  {
+    "id": "tier16_v2/statistical_analysis",
+    "source": "research/tier16_v2/data/statistical_analysis.json",
+    "path": "data/tier16_v2/statistical_analysis.json",
+    "sha256": "ab84afabc1b6258501657789081214e5a971ac5312bc38d1dacb1c5eee7c10cb",
+    "json_type": "dict"
+  },
+  {
+    "id": "le16_v2/cross_tier_analysis",
+    "source": "research/le16_v2/data/cross_tier_analysis.json",
+    "path": "data/le16_v2/cross_tier_analysis.json",
+    "sha256": "48faeaf5e453b4e25b7aac308e3db4368a079271b3fe18cd2a9399bbfcc6924a",
+    "json_type": "dict"
+  },
+  {
+    "id": "le16_v2/historical_diagnostics",
+    "source": "research/le16_v2/data/historical_diagnostics.json",
+    "path": "data/le16_v2/historical_diagnostics.json",
+    "sha256": "c215a86f1716ec312ff540b4b74653b2f6cca265c1d4ee77208e4935aaea24ee",
+    "json_type": "dict"
+  },
+  {
+    "id": "le16_v2/tier8_case_outcomes",
+    "source": "research/le16_v2/data/tier8_case_outcomes.csv",
+    "path": "data/le16_v2/tier8_case_outcomes.csv",
+    "sha256": "1a55dfdd9ccc79b61d421b4e46f16216097bdcf7827133ae5e38bfdbf379f740",
+    "columns": [
+      "tier",
+      "condition",
+      "case_id",
+      "report",
+      "company",
+      "arm",
+      "cohort",
+      "delivered",
+      "reported_correct",
+      "raw_correct",
+      "reported_outcome",
+      "raw_outcome",
+      "generated_tokens",
+      "prompt_tokens",
+      "inference_seconds"
+    ],
+    "rows": 768,
+    "browser_json": "data/le16_v2/tier8_case_outcomes.json"
+  },
+  {
+    "id": "le16_v2/tier8_condition_inventory",
+    "source": "research/le16_v2/data/tier8_condition_inventory.csv",
+    "path": "data/le16_v2/tier8_condition_inventory.csv",
+    "sha256": "cc2dff005a206a2d613cad0d591c01eb1c4765d8f27ff3ac1c6db45ed0ef98da",
+    "columns": [
+      "job",
+      "metric",
+      "n",
+      "reports",
+      "correct",
+      "wrong",
+      "withheld",
+      "generated_tokens",
+      "prompt_tokens",
+      "inference_seconds",
+      "peak_rss_bytes"
+    ],
+    "rows": 30,
+    "browser_json": "data/le16_v2/tier8_condition_inventory.json"
+  },
+  {
+    "id": "le16_v2/tier8_evidence_catalog",
+    "source": "research/le16_v2/data/tier8_evidence_catalog.json",
+    "path": "data/le16_v2/tier8_evidence_catalog.json",
+    "sha256": "398cd429c952044f86cbc729f88590ff75fbcd8762c0760545b46a152a420548",
+    "json_type": "list"
+  },
+  {
+    "id": "paper/paper_statistical_tests",
+    "source": "research/paper/data/paper_statistical_tests.csv",
+    "path": "data/paper/paper_statistical_tests.csv",
+    "sha256": "d49bcac40b8d6c571dec7423566b0ba45ed0e1df3b8eaa9a50f95d55be3aef0f",
+    "columns": [
+      "tier",
+      "comparison",
+      "label",
+      "metric",
+      "event",
+      "n",
+      "left_events",
+      "right_events",
+      "b",
+      "c",
+      "delta",
+      "se_wald",
+      "wald95_low",
+      "wald95_high",
+      "boot95_low",
+      "boot95_high",
+      "exact_mcnemar_p",
+      "chi2",
+      "chi2_p",
+      "chi2_cc",
+      "chi2_cc_p",
+      "se_cr1_report",
+      "p_cr1_report",
+      "deff_report",
+      "durkalski_report_chi2",
+      "durkalski_report_p",
+      "durkalski_company_p",
+      "reports_right_higher",
+      "reports_left_higher",
+      "report_sign_test_p",
+      "bowker_q",
+      "bowker_df",
+      "bowker_p",
+      "stuart_maxwell_q",
+      "stuart_maxwell_df",
+      "stuart_maxwell_p"
+    ],
+    "rows": 126,
+    "browser_json": "data/paper/paper_statistical_tests.rows.json"
+  },
+  {
+    "id": "paper/paper_statistical_tests",
+    "source": "research/paper/data/paper_statistical_tests.json",
+    "path": "data/paper/paper_statistical_tests.json",
+    "sha256": "9c7dcf5bbddb2db672495fb8a7848c5f8641b6dd2fcd6dd941068fb6355771a4",
+    "json_type": "dict"
+  },
+  {
+    "id": "paper/paper_supplementary_analysis",
+    "source": "research/paper/data/paper_supplementary_analysis.json",
+    "path": "data/paper/paper_supplementary_analysis.json",
+    "sha256": "637efd990d0b5c7148300fffa3c78c1ce5cd0adefb5c154506af926660dabeed",
+    "json_type": "dict"
+  }
+]

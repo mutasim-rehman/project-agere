@@ -1,2 +1,4 @@
 *.pdf binary
 *.png binary
+dashboard_handoff/data/** -text whitespace=cr-at-eol
+dashboard_handoff/evidence/*.zip binary

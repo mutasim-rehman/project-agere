@@ -1,0 +1,832 @@
+{
+  "source": "research/tier16_v2/data/case_outcomes.csv + SSD lab-16-115gb-recovery-02 (read-only)",
+  "status": "post-hoc supplementary analyses for the paper; no new inference",
+  "wilson_case_iid": [
+    {
+      "job": "tier16-mas-direct_control",
+      "metric": "reported",
+      "state": "C",
+      "count": 0,
+      "n": 160,
+      "rate": 0.0,
+      "wilson95_low": 0.0,
+      "wilson95_high": 0.02344619553271408
+    },
+    {
+      "job": "tier16-mas-direct_control",
+      "metric": "reported",
+      "state": "W",
+      "count": 5,
+      "n": 160,
+      "rate": 0.03125,
+      "wilson95_low": 0.01342051660267917,
+      "wilson95_high": 0.0710602917092403
+    },
+    {
+      "job": "tier16-mas-direct_control",
+      "metric": "reported",
+      "state": "H",
+      "count": 155,
+      "n": 160,
+      "rate": 0.96875,
+      "wilson95_low": 0.9289397082907598,
+      "wilson95_high": 0.9865794833973209
+    },
+    {
+      "job": "tier16-mas-direct_control",
+      "metric": "reported",
+      "state": "precision",
+      "count": 0,
+      "n": 5,
+      "rate": 0.0,
+      "wilson95_low": 0.0,
+      "wilson95_high": 0.43448246865939283
+    },
+    {
+      "job": "tier16-mas-direct_control",
+      "metric": "raw",
+      "state": "C",
+      "count": 0,
+      "n": 160,
+      "rate": 0.0,
+      "wilson95_low": 0.0,
+      "wilson95_high": 0.02344619553271408
+    },
+    {
+      "job": "tier16-mas-direct_control",
+      "metric": "raw",
+      "state": "W",
+      "count": 5,
+      "n": 160,
+      "rate": 0.03125,
+      "wilson95_low": 0.01342051660267917,
+      "wilson95_high": 0.0710602917092403
+    },
+    {
+      "job": "tier16-mas-direct_control",
+      "metric": "raw",
+      "state": "H",
+      "count": 155,
+      "n": 160,
+      "rate": 0.96875,
+      "wilson95_low": 0.9289397082907598,
+      "wilson95_high": 0.9865794833973209
+    },
+    {
+      "job": "tier16-mas-direct_control",
+      "metric": "raw",
+      "state": "precision",
+      "count": 0,
+      "n": 5,
+      "rate": 0.0,
+      "wilson95_low": 0.0,
+      "wilson95_high": 0.43448246865939283
+    },
+    {
+      "job": "tier16-mas-primary",
+      "metric": "reported",
+      "state": "C",
+      "count": 5,
+      "n": 160,
+      "rate": 0.03125,
+      "wilson95_low": 0.01342051660267917,
+      "wilson95_high": 0.0710602917092403
+    },
+    {
+      "job": "tier16-mas-primary",
+      "metric": "reported",
+      "state": "W",
+      "count": 3,
+      "n": 160,
+      "rate": 0.01875,
+      "wilson95_low": 0.0063968507035285956,
+      "wilson95_high": 0.05367011249670871
+    },
+    {
+      "job": "tier16-mas-primary",
+      "metric": "reported",
+      "state": "H",
+      "count": 152,
+      "n": 160,
+      "rate": 0.95,
+      "wilson95_low": 0.9044490203678324,
+      "wilson95_high": 0.9744494036527249
+    },
+    {
+      "job": "tier16-mas-primary",
+      "metric": "reported",
+      "state": "precision",
+      "count": 5,
+      "n": 8,
+      "rate": 0.625,
+      "wilson95_low": 0.30574239265377096,
+      "wilson95_high": 0.8631557152608771
+    },
+    {
+      "job": "tier16-mas-primary",
+      "metric": "raw",
+      "state": "C",
+      "count": 5,
+      "n": 160,
+      "rate": 0.03125,
+      "wilson95_low": 0.01342051660267917,
+      "wilson95_high": 0.0710602917092403
+    },
+    {
+      "job": "tier16-mas-primary",
+      "metric": "raw",
+      "state": "W",
+      "count": 3,
+      "n": 160,
+      "rate": 0.01875,
+      "wilson95_low": 0.0063968507035285956,
+      "wilson95_high": 0.05367011249670871
+    },
+    {
+      "job": "tier16-mas-primary",
+      "metric": "raw",
+      "state": "H",
+      "count": 152,
+      "n": 160,
+      "rate": 0.95,
+      "wilson95_low": 0.9044490203678324,
+      "wilson95_high": 0.9744494036527249
+    },
+    {
+      "job": "tier16-mas-primary",
+      "metric": "raw",
+      "state": "precision",
+      "count": 5,
+      "n": 8,
+      "rate": 0.625,
+      "wilson95_low": 0.30574239265377096,
+      "wilson95_high": 0.8631557152608771
+    },
+    {
+      "job": "tier16-mas-repair_ablation",
+      "metric": "reported",
+      "state": "C",
+      "count": 5,
+      "n": 160,
+      "rate": 0.03125,
+      "wilson95_low": 0.01342051660267917,
+      "wilson95_high": 0.0710602917092403
+    },
+    {
+      "job": "tier16-mas-repair_ablation",
+      "metric": "reported",
+      "state": "W",
+      "count": 3,
+      "n": 160,
+      "rate": 0.01875,
+      "wilson95_low": 0.0063968507035285956,
+      "wilson95_high": 0.05367011249670871
+    },
+    {
+      "job": "tier16-mas-repair_ablation",
+      "metric": "reported",
+      "state": "H",
+      "count": 152,
+      "n": 160,
+      "rate": 0.95,
+      "wilson95_low": 0.9044490203678324,
+      "wilson95_high": 0.9744494036527249
+    },
+    {
+      "job": "tier16-mas-repair_ablation",
+      "metric": "reported",
+      "state": "precision",
+      "count": 5,
+      "n": 8,
+      "rate": 0.625,
+      "wilson95_low": 0.30574239265377096,
+      "wilson95_high": 0.8631557152608771
+    },
+    {
+      "job": "tier16-mas-repair_ablation",
+      "metric": "raw",
+      "state": "C",
+      "count": 5,
+      "n": 160,
+      "rate": 0.03125,
+      "wilson95_low": 0.01342051660267917,
+      "wilson95_high": 0.0710602917092403
+    },
+    {
+      "job": "tier16-mas-repair_ablation",
+      "metric": "raw",
+      "state": "W",
+      "count": 3,
+      "n": 160,
+      "rate": 0.01875,
+      "wilson95_low": 0.0063968507035285956,
+      "wilson95_high": 0.05367011249670871
+    },
+    {
+      "job": "tier16-mas-repair_ablation",
+      "metric": "raw",
+      "state": "H",
+      "count": 152,
+      "n": 160,
+      "rate": 0.95,
+      "wilson95_low": 0.9044490203678324,
+      "wilson95_high": 0.9744494036527249
+    },
+    {
+      "job": "tier16-mas-repair_ablation",
+      "metric": "raw",
+      "state": "precision",
+      "count": 5,
+      "n": 8,
+      "rate": 0.625,
+      "wilson95_low": 0.30574239265377096,
+      "wilson95_high": 0.8631557152608771
+    },
+    {
+      "job": "tier16-sas-direct_control",
+      "metric": "reported",
+      "state": "C",
+      "count": 50,
+      "n": 160,
+      "rate": 0.3125,
+      "wilson95_low": 0.24578642387040953,
+      "wilson95_high": 0.38800589945435837
+    },
+    {
+      "job": "tier16-sas-direct_control",
+      "metric": "reported",
+      "state": "W",
+      "count": 66,
+      "n": 160,
+      "rate": 0.4125,
+      "wilson95_low": 0.3391443291009616,
+      "wilson95_high": 0.4899587551172634
+    },
+    {
+      "job": "tier16-sas-direct_control",
+      "metric": "reported",
+      "state": "H",
+      "count": 44,
+      "n": 160,
+      "rate": 0.275,
+      "wilson95_low": 0.21170123693743942,
+      "wilson95_high": 0.34884955105228205
+    },
+    {
+      "job": "tier16-sas-direct_control",
+      "metric": "reported",
+      "state": "precision",
+      "count": 50,
+      "n": 116,
+      "rate": 0.43103448275862066,
+      "wilson95_low": 0.3445543568455597,
+      "wilson95_high": 0.5219359199805249
+    },
+    {
+      "job": "tier16-sas-direct_control",
+      "metric": "raw",
+      "state": "C",
+      "count": 14,
+      "n": 160,
+      "rate": 0.0875,
+      "wilson95_low": 0.05283679318583485,
+      "wilson95_high": 0.14150631812865427
+    },
+    {
+      "job": "tier16-sas-direct_control",
+      "metric": "raw",
+      "state": "W",
+      "count": 102,
+      "n": 160,
+      "rate": 0.6375,
+      "wilson95_low": 0.5605966905302726,
+      "wilson95_high": 0.707955605698231
+    },
+    {
+      "job": "tier16-sas-direct_control",
+      "metric": "raw",
+      "state": "H",
+      "count": 44,
+      "n": 160,
+      "rate": 0.275,
+      "wilson95_low": 0.21170123693743942,
+      "wilson95_high": 0.34884955105228205
+    },
+    {
+      "job": "tier16-sas-direct_control",
+      "metric": "raw",
+      "state": "precision",
+      "count": 14,
+      "n": 116,
+      "rate": 0.1206896551724138,
+      "wilson95_low": 0.07326996507755404,
+      "wilson95_high": 0.192426557465911
+    },
+    {
+      "job": "tier16-sas-primary",
+      "metric": "reported",
+      "state": "C",
+      "count": 78,
+      "n": 160,
+      "rate": 0.4875,
+      "wilson95_low": 0.41125569239923593,
+      "wilson95_high": 0.564330462489082
+    },
+    {
+      "job": "tier16-sas-primary",
+      "metric": "reported",
+      "state": "W",
+      "count": 48,
+      "n": 160,
+      "rate": 0.3,
+      "wilson95_low": 0.23436363903609703,
+      "wilson95_high": 0.37501483917698863
+    },
+    {
+      "job": "tier16-sas-primary",
+      "metric": "reported",
+      "state": "H",
+      "count": 34,
+      "n": 160,
+      "rate": 0.2125,
+      "wilson95_low": 0.15624068268339147,
+      "wilson95_high": 0.28224087974791917
+    },
+    {
+      "job": "tier16-sas-primary",
+      "metric": "reported",
+      "state": "precision",
+      "count": 78,
+      "n": 126,
+      "rate": 0.6190476190476191,
+      "wilson95_low": 0.5319219926614643,
+      "wilson95_high": 0.699129015687315
+    },
+    {
+      "job": "tier16-sas-primary",
+      "metric": "raw",
+      "state": "C",
+      "count": 38,
+      "n": 160,
+      "rate": 0.2375,
+      "wilson95_low": 0.17820358433806432,
+      "wilson95_high": 0.3091056683166106
+    },
+    {
+      "job": "tier16-sas-primary",
+      "metric": "raw",
+      "state": "W",
+      "count": 88,
+      "n": 160,
+      "rate": 0.55,
+      "wilson95_low": 0.4726416829480179,
+      "wilson95_high": 0.6250136974987107
+    },
+    {
+      "job": "tier16-sas-primary",
+      "metric": "raw",
+      "state": "H",
+      "count": 34,
+      "n": 160,
+      "rate": 0.2125,
+      "wilson95_low": 0.15624068268339147,
+      "wilson95_high": 0.28224087974791917
+    },
+    {
+      "job": "tier16-sas-primary",
+      "metric": "raw",
+      "state": "precision",
+      "count": 38,
+      "n": 126,
+      "rate": 0.30158730158730157,
+      "wilson95_low": 0.22829828729475432,
+      "wilson95_high": 0.38661669879061344
+    },
+    {
+      "job": "tier16-sas-repair_ablation",
+      "metric": "reported",
+      "state": "C",
+      "count": 79,
+      "n": 160,
+      "rate": 0.49375,
+      "wilson95_low": 0.4173416271241775,
+      "wilson95_high": 0.5704514503199816
+    },
+    {
+      "job": "tier16-sas-repair_ablation",
+      "metric": "reported",
+      "state": "W",
+      "count": 50,
+      "n": 160,
+      "rate": 0.3125,
+      "wilson95_low": 0.24578642387040953,
+      "wilson95_high": 0.38800589945435837
+    },
+    {
+      "job": "tier16-sas-repair_ablation",
+      "metric": "reported",
+      "state": "H",
+      "count": 31,
+      "n": 160,
+      "rate": 0.19375,
+      "wilson95_low": 0.1399868965673238,
+      "wilson95_high": 0.2618738981964636
+    },
+    {
+      "job": "tier16-sas-repair_ablation",
+      "metric": "reported",
+      "state": "precision",
+      "count": 79,
+      "n": 129,
+      "rate": 0.6124031007751938,
+      "wilson95_low": 0.5262393907997457,
+      "wilson95_high": 0.6920659503506682
+    },
+    {
+      "job": "tier16-sas-repair_ablation",
+      "metric": "raw",
+      "state": "C",
+      "count": 38,
+      "n": 160,
+      "rate": 0.2375,
+      "wilson95_low": 0.17820358433806432,
+      "wilson95_high": 0.3091056683166106
+    },
+    {
+      "job": "tier16-sas-repair_ablation",
+      "metric": "raw",
+      "state": "W",
+      "count": 91,
+      "n": 160,
+      "rate": 0.56875,
+      "wilson95_low": 0.4912873833559119,
+      "wilson95_high": 0.6429887647583399
+    },
+    {
+      "job": "tier16-sas-repair_ablation",
+      "metric": "raw",
+      "state": "H",
+      "count": 31,
+      "n": 160,
+      "rate": 0.19375,
+      "wilson95_low": 0.1399868965673238,
+      "wilson95_high": 0.2618738981964636
+    },
+    {
+      "job": "tier16-sas-repair_ablation",
+      "metric": "raw",
+      "state": "precision",
+      "count": 38,
+      "n": 129,
+      "rate": 0.29457364341085274,
+      "wilson95_low": 0.22276853374410258,
+      "wilson95_high": 0.37825963587755496
+    }
+  ],
+  "paired_transitions_sas_rows_mas_cols": {
+    "reported": [
+      [
+        5,
+        1,
+        72
+      ],
+      [
+        0,
+        2,
+        46
+      ],
+      [
+        0,
+        0,
+        34
+      ]
+    ],
+    "raw": [
+      [
+        4,
+        0,
+        34
+      ],
+      [
+        1,
+        3,
+        84
+      ],
+      [
+        0,
+        0,
+        34
+      ]
+    ]
+  },
+  "bootstrap_replication": {
+    "C": {
+      "point": -0.45625,
+      "ci95": [
+        -0.538961038961039,
+        -0.36551724137931035
+      ],
+      "sd": 0.044554429581891625
+    },
+    "W": {
+      "point": -0.28125,
+      "ci95": [
+        -0.3708609271523179,
+        -0.20125786163522014
+      ],
+      "sd": 0.04369631080836848
+    }
+  },
+  "report_level": {
+    "sas_higher": 33,
+    "mas_higher": 0,
+    "tied": 17,
+    "questions_per_report": {
+      "min": 1,
+      "median": 3.0,
+      "max": 11
+    }
+  },
+  "program_complexity_strata": {
+    "steps_bucket": {
+      "1 step": {
+        "SAS": {
+          "C": 52,
+          "W": 29,
+          "H": 23,
+          "n": 104
+        },
+        "MAS": {
+          "C": 5,
+          "W": 3,
+          "H": 96,
+          "n": 104
+        }
+      },
+      "2 steps": {
+        "SAS": {
+          "C": 26,
+          "W": 14,
+          "H": 9,
+          "n": 49
+        },
+        "MAS": {
+          "C": 0,
+          "W": 0,
+          "H": 49,
+          "n": 49
+        }
+      },
+      "3+ steps": {
+        "SAS": {
+          "C": 0,
+          "W": 5,
+          "H": 2,
+          "n": 7
+        },
+        "MAS": {
+          "C": 0,
+          "W": 0,
+          "H": 7,
+          "n": 7
+        }
+      }
+    },
+    "family": {
+      "single add/subtract": {
+        "SAS": {
+          "C": 16,
+          "W": 12,
+          "H": 12,
+          "n": 40
+        },
+        "MAS": {
+          "C": 1,
+          "W": 0,
+          "H": 39,
+          "n": 40
+        }
+      },
+      "single ratio/product": {
+        "SAS": {
+          "C": 34,
+          "W": 14,
+          "H": 11,
+          "n": 59
+        },
+        "MAS": {
+          "C": 4,
+          "W": 3,
+          "H": 52,
+          "n": 59
+        }
+      },
+      "multi-step arithmetic": {
+        "SAS": {
+          "C": 26,
+          "W": 19,
+          "H": 11,
+          "n": 56
+        },
+        "MAS": {
+          "C": 0,
+          "W": 0,
+          "H": 56,
+          "n": 56
+        }
+      },
+      "table aggregate": {
+        "SAS": {
+          "C": 2,
+          "W": 3,
+          "H": 0,
+          "n": 5
+        },
+        "MAS": {
+          "C": 0,
+          "W": 0,
+          "H": 5,
+          "n": 5
+        }
+      }
+    }
+  },
+  "gold_program_step_counts": {
+    "1": 104,
+    "2": 49,
+    "3": 4,
+    "5": 3
+  },
+  "latency": {
+    "SAS direct": {
+      "median": 112.23078802399687,
+      "p90": 164.4679671624137,
+      "max": 278.51221283199266
+    },
+    "SAS primary": {
+      "median": 251.37247603500327,
+      "p90": 319.06773705669946,
+      "max": 427.4734470630028
+    },
+    "SAS repair": {
+      "median": 259.9145869034983,
+      "p90": 450.21695039043846,
+      "max": 673.2810896200099
+    },
+    "MAS direct": {
+      "median": 17.543824061503983,
+      "p90": 24.38658882719173,
+      "max": 41.43319904801319
+    },
+    "MAS primary": {
+      "median": 53.78653927650521,
+      "p90": 62.97287904899349,
+      "max": 86.00500165399717
+    },
+    "MAS repair": {
+      "median": 81.94826693300274,
+      "p90": 94.84526067714323,
+      "max": 123.80968968296656
+    }
+  },
+  "memory": {
+    "SAS repair-ablation (complete 160-case attempt)": {
+      "hours": 13.502868307895131,
+      "peak_rss_gb_plotted_samples": 10.073591808,
+      "max_swap_mb": 0.0
+    },
+    "MAS primary (complete 160-case attempt)": {
+      "hours": 2.4400394768847358,
+      "peak_rss_gb_plotted_samples": 10.928750592,
+      "max_swap_mb": 0.0
+    },
+    "SAS primary, failed attempt (swap at case 146)": {
+      "hours": 10.354800488882594,
+      "peak_rss_gb_plotted_samples": 10.056552448,
+      "max_swap_mb": 44.01152
+    }
+  },
+  "stage_costs": {
+    "tier16-sas-primary": {
+      "sas/analyze_question/inference_seconds": 10627.73919413205,
+      "sas/program/inference_seconds": 23961.714257843963,
+      "sas/verify_program/inference_seconds": 6975.1426549579855,
+      "sas/analyze_question/generated_tokens": 20479.0,
+      "sas/program/generated_tokens": 11058.0,
+      "sas/verify_program/generated_tokens": 1120.0
+    },
+    "tier16-mas-primary": {
+      "extractor/select_evidence/inference_seconds": 854.772682045972,
+      "drafter/analyze_question/inference_seconds": 3456.4510845279874,
+      "drafter/program/inference_seconds": 4269.38946193202,
+      "verifier/verify_program/inference_seconds": 176.309522778909,
+      "extractor/select_evidence/generated_tokens": 4121.0,
+      "drafter/analyze_question/generated_tokens": 20441.0,
+      "drafter/program/generated_tokens": 3507.0,
+      "verifier/verify_program/generated_tokens": 1440.0
+    }
+  },
+  "tier8_inventory": [
+    {
+      "job": "diagnostic_audit-control_mas-full-01",
+      "C": 4,
+      "W": 17,
+      "H": 28
+    },
+    {
+      "job": "diagnostic_audit-crossed_mas-full-01",
+      "C": 4,
+      "W": 9,
+      "H": 36
+    },
+    {
+      "job": "diagnostic_audit-control_sas-full-01",
+      "C": 8,
+      "W": 20,
+      "H": 21
+    },
+    {
+      "job": "diagnostic_audit-crossed_sas-full-01",
+      "C": 9,
+      "W": 20,
+      "H": 20
+    },
+    {
+      "job": "model_selection-baseline_mas-full-01",
+      "C": 2,
+      "W": 19,
+      "H": 31
+    },
+    {
+      "job": "model_selection-baseline_original_classic_mas-full-01",
+      "C": 4,
+      "W": 18,
+      "H": 30
+    },
+    {
+      "job": "model_selection-baseline_original_critic_common_actor-full-01",
+      "C": 4,
+      "W": 22,
+      "H": 26
+    },
+    {
+      "job": "model_selection-control_mas-full-01",
+      "C": 3,
+      "W": 19,
+      "H": 30
+    },
+    {
+      "job": "model_selection-crossed_mas-full-01",
+      "C": 3,
+      "W": 15,
+      "H": 34
+    },
+    {
+      "job": "model_selection-baseline_sas-analysis128-demos2-full-01",
+      "C": 9,
+      "W": 24,
+      "H": 19
+    },
+    {
+      "job": "model_selection-baseline_sas-full-01",
+      "C": 8,
+      "W": 25,
+      "H": 19
+    },
+    {
+      "job": "model_selection-control_sas-analysis128-demos2-full-01",
+      "C": 9,
+      "W": 20,
+      "H": 23
+    },
+    {
+      "job": "model_selection-control_sas-full-01",
+      "C": 8,
+      "W": 23,
+      "H": 21
+    },
+    {
+      "job": "model_selection-crossed_sas-analysis128-demos2-full-01",
+      "C": 9,
+      "W": 10,
+      "H": 33
+    },
+    {
+      "job": "model_selection-crossed_sas-full-01",
+      "C": 10,
+      "W": 16,
+      "H": 26
+    }
+  ],
+  "utility_kappa": {
+    "0.0": {
+      "switch_lambda_reported": 1.6222222222222222
+    },
+    "0.1": {
+      "switch_lambda_reported": 1.8844444444444444
+    },
+    "0.25": {
+      "switch_lambda_reported": 2.2777777777777777
+    }
+  }
+}
