@@ -1,0 +1,572 @@
+{
+  "status": "complete_accuracy_audited_resource_invalid",
+  "protocol_id": "finance-deployment-lab-v2-115gb",
+  "tiers": [
+    16
+  ],
+  "primary_comparison": "tier16-primary",
+  "summaries": {
+    "tier16-mas-direct_control": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 0,
+          "wrong_delivered": 5,
+          "withheld": 155
+        },
+        "raw_execution_match": {
+          "correct_delivered": 0,
+          "wrong_delivered": 5,
+          "withheld": 155
+        }
+      },
+      "initial": {
+        "case_success": 0,
+        "raw_execution_match": 0
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 8392,
+      "prompt_tokens": 391395,
+      "inference_seconds": 2957.0180645719083,
+      "truncated_stages": 0,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 0,
+      "source_supported_final_programs": 5,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10900664320,
+      "cases_sha256": "734514cc36812071778932595851aaa7827691a354a70616ee6537a5456f0691",
+      "attempts": 1,
+      "resumed_cases": 0,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-mas-primary": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 5,
+          "wrong_delivered": 3,
+          "withheld": 152
+        },
+        "raw_execution_match": {
+          "correct_delivered": 5,
+          "wrong_delivered": 3,
+          "withheld": 152
+        }
+      },
+      "initial": {
+        "case_success": 5,
+        "raw_execution_match": 5
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 29509,
+      "prompt_tokens": 746673,
+      "inference_seconds": 8756.922751284888,
+      "truncated_stages": 157,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 0,
+      "source_supported_final_programs": 10,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10928750592,
+      "cases_sha256": "ad14c4c3607f57023ff09073b29d4c178c19765f990ec0b602dd392d56589e82",
+      "attempts": 1,
+      "resumed_cases": 0,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-mas-repair_ablation": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 5,
+          "wrong_delivered": 3,
+          "withheld": 152
+        },
+        "raw_execution_match": {
+          "correct_delivered": 5,
+          "wrong_delivered": 3,
+          "withheld": 152
+        }
+      },
+      "initial": {
+        "case_success": 5,
+        "raw_execution_match": 5
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 33917,
+      "prompt_tokens": 1223337,
+      "inference_seconds": 13256.172011953458,
+      "truncated_stages": 157,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 152,
+      "source_supported_final_programs": 8,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10913439744,
+      "cases_sha256": "0f8ca52326a7de8e7e755a96a5ba63e064792111e8265168b105d82e57f1b47c",
+      "attempts": 1,
+      "resumed_cases": 0,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-sas-direct_control": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 50,
+          "wrong_delivered": 66,
+          "withheld": 44
+        },
+        "raw_execution_match": {
+          "correct_delivered": 14,
+          "wrong_delivered": 102,
+          "withheld": 44
+        }
+      },
+      "initial": {
+        "case_success": 52,
+        "raw_execution_match": 15
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 14449,
+      "prompt_tokens": 295862,
+      "inference_seconds": 18956.949391697977,
+      "truncated_stages": 0,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 0,
+      "source_supported_final_programs": 132,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10039861248,
+      "cases_sha256": "e9c23fc6e92071089bfac7f547d969884b953acee5cdd752412aa521c91b020f",
+      "attempts": 2,
+      "resumed_cases": 7,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-sas-primary": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 78,
+          "wrong_delivered": 48,
+          "withheld": 34
+        },
+        "raw_execution_match": {
+          "correct_delivered": 38,
+          "wrong_delivered": 88,
+          "withheld": 34
+        }
+      },
+      "initial": {
+        "case_success": 84,
+        "raw_execution_match": 44
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 32657,
+      "prompt_tokens": 642686,
+      "inference_seconds": 41564.596106934,
+      "truncated_stages": 159,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 0,
+      "source_supported_final_programs": 150,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10062245888,
+      "cases_sha256": "494a0cbfe99d47cf58b11c597e8bbb7067807b6859180a426a198d0b0105bc71",
+      "attempts": 2,
+      "resumed_cases": 145,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-sas-repair_ablation": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 79,
+          "wrong_delivered": 50,
+          "withheld": 31
+        },
+        "raw_execution_match": {
+          "correct_delivered": 38,
+          "wrong_delivered": 91,
+          "withheld": 31
+        }
+      },
+      "initial": {
+        "case_success": 84,
+        "raw_execution_match": 44
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 1,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 35244,
+      "prompt_tokens": 759898,
+      "inference_seconds": 48579.08550462214,
+      "truncated_stages": 159,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 34,
+      "source_supported_final_programs": 150,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10073591808,
+      "cases_sha256": "bdb6f297b6cdba672e9d9461b8c31ac07d37041009f962f4d9a94065f40fa454",
+      "attempts": 1,
+      "resumed_cases": 0,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    }
+  },
+  "comparisons": {
+    "tier16-primary": {
+      "case_success": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -73,
+          "wrong_delivered": -45,
+          "withheld": 118
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.5403726708074534,
+            -0.3669064748201439
+          ],
+          "wrong_delivered": [
+            -0.3710691823899371,
+            -0.2
+          ],
+          "withheld": [
+            0.6453900709219859,
+            0.821656050955414
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      },
+      "raw_execution_match": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -33,
+          "wrong_delivered": -85,
+          "withheld": 118
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.28187919463087246,
+            -0.13513513513513514
+          ],
+          "wrong_delivered": [
+            -0.62,
+            -0.44242424242424244
+          ],
+          "withheld": [
+            0.6453900709219859,
+            0.821656050955414
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      }
+    },
+    "tier16-direct_control": {
+      "case_success": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -50,
+          "wrong_delivered": -61,
+          "withheld": 111
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.4,
+            -0.22857142857142856
+          ],
+          "wrong_delivered": [
+            -0.47701149425287354,
+            -0.28888888888888886
+          ],
+          "withheld": [
+            0.5968586387434555,
+            0.788235294117647
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      },
+      "raw_execution_match": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -14,
+          "wrong_delivered": -97,
+          "withheld": 111
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.13194444444444445,
+            -0.048484848484848485
+          ],
+          "wrong_delivered": [
+            -0.7023809523809523,
+            -0.50625
+          ],
+          "withheld": [
+            0.5968586387434555,
+            0.788235294117647
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      }
+    },
+    "tier16-repair_ablation": {
+      "case_success": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -74,
+          "wrong_delivered": -47,
+          "withheld": 121
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.5472972972972973,
+            -0.37254901960784315
+          ],
+          "wrong_delivered": [
+            -0.38405797101449274,
+            -0.21301775147928995
+          ],
+          "withheld": [
+            0.6666666666666666,
+            0.8397435897435898
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      },
+      "raw_execution_match": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -33,
+          "wrong_delivered": -88,
+          "withheld": 121
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.28187919463087246,
+            -0.13513513513513514
+          ],
+          "wrong_delivered": [
+            -0.639751552795031,
+            -0.46153846153846156
+          ],
+          "withheld": [
+            0.6666666666666666,
+            0.8397435897435898
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      }
+    }
+  },
+  "evidence_sha256": {
+    "tier16-mas-direct_control/attempt-0001/memory.jsonl": "10569c5a1d0852008e7ee25d6cc6f1a63d8db5f5ccbe87085f660d90b5239bf8",
+    "analysis/tier16-mas-direct_control-replayed.jsonl": "adbbf9699340fd06724f332afd6ddd187d0494df29118aa78f8539d3f30689be",
+    "tier16-mas-direct_control/manifest.json": "4ddd5579855c31537bf4af5627c14d3c70736efdfd6f5a2934982366ce06ec7a",
+    "tier16-mas-direct_control/summary.json": "5bb055825f087b6ca2c16088ae4f28807bcd2dcc32f630419ef9b7bbb66d173e",
+    "tier16-mas-direct_control/cases.jsonl": "734514cc36812071778932595851aaa7827691a354a70616ee6537a5456f0691",
+    "tier16-mas-primary/attempt-0001/memory.jsonl": "c021620d4e97d2d899ade529389b72ded0becb47b11a96d55d0fcdd42ad74602",
+    "analysis/tier16-mas-primary-replayed.jsonl": "c7ebbcb33e41a3cd5c6854bc5969ed3a9092b0b4109ce05195737e4dec65e93a",
+    "tier16-mas-primary/manifest.json": "4643318ce263ec477b2543cae02c6be15d75d9abb1c8bf9d56b9137aa6da5ee2",
+    "tier16-mas-primary/summary.json": "3b6ab3424acc785b9a18418f78e0c271c13eed1405380aba4cb304593d9465d2",
+    "tier16-mas-primary/cases.jsonl": "ad14c4c3607f57023ff09073b29d4c178c19765f990ec0b602dd392d56589e82",
+    "tier16-mas-repair_ablation/attempt-0001/memory.jsonl": "2de0ef0d4165f0f340b2b7423626018399277098919a34e048fc0d7d5f5c8932",
+    "analysis/tier16-mas-repair_ablation-replayed.jsonl": "dc96aaeeb748743df90233f0e0ca0997a403bb7ae26308f42cfd04fb2b9b65fe",
+    "tier16-mas-repair_ablation/manifest.json": "0ef943c09e6d42469411d2e35f1a89ef25a002b35405f862efe822a67638a9d2",
+    "tier16-mas-repair_ablation/summary.json": "73053289435574d87dcc770dbe4de1bcf29f3c8fd812cb35b7f21eac2ad1319f",
+    "tier16-mas-repair_ablation/cases.jsonl": "0f8ca52326a7de8e7e755a96a5ba63e064792111e8265168b105d82e57f1b47c",
+    "tier16-sas-direct_control/attempt-0001/memory.jsonl": "df2f81bafeb149eab046244908246156c72b95f00948c471f64f24ed8eeebe78",
+    "tier16-sas-direct_control/attempt-0002/memory.jsonl": "4af15412875c7520d963adfb3f7cd5ffbb7ae1b12678bb4645ffff6e1d88e8f5",
+    "analysis/tier16-sas-direct_control-replayed.jsonl": "a8a40a0ae29aa332b77c5ecf76d9fc8a1459c26a4dda8f68e526d2a2b96ee8fd",
+    "tier16-sas-direct_control/manifest.json": "43546e7b3db039cb5260c64ee4fdadd4425407016e9e3d5062743728eb8a3219",
+    "tier16-sas-direct_control/summary.json": "1676be4935ea1961da08b42926fac0f7303f9a68cb7823e64276d15caf0257a1",
+    "tier16-sas-direct_control/cases.jsonl": "e9c23fc6e92071089bfac7f547d969884b953acee5cdd752412aa521c91b020f",
+    "tier16-sas-primary/attempt-0001/memory.jsonl": "4a4f13e6558c758ff972b30c142ceabfc810db78f66255e2bd285838075bb722",
+    "tier16-sas-primary/attempt-0002/memory.jsonl": "e732944e86ea6a5756d1803f5fd721e77900d6d65d16113b70d7d269f7be74a0",
+    "analysis/tier16-sas-primary-replayed.jsonl": "ab981b4a833f46248153d9b2d268a1dfa102452b213c888c4379fdaf64dcb419",
+    "tier16-sas-primary/manifest.json": "598b1c36f183dc37162046fcea681fa62b80942a96c30d059acfe2ff6b792478",
+    "tier16-sas-primary/summary.json": "80293e8f8f72efdaff99c7af4232b712c3c12c97b57f17dc46f5406bfa918368",
+    "tier16-sas-primary/cases.jsonl": "494a0cbfe99d47cf58b11c597e8bbb7067807b6859180a426a198d0b0105bc71",
+    "tier16-sas-repair_ablation/attempt-0001/memory.jsonl": "2c117065bc3a7609127ad0db606cd980ec3a86aea64ec2547245d2948507a3d6",
+    "analysis/tier16-sas-repair_ablation-replayed.jsonl": "54c21e54b8a41e12225d0eddfa567007ce2c2f034585345785a5ab1140bc4d02",
+    "tier16-sas-repair_ablation/manifest.json": "459a8d0aa2068b9dc3da46c03da9786a45516a59cce68b4065a62b4b9ace99a1",
+    "tier16-sas-repair_ablation/summary.json": "028c73c9cfaee91bccc642ab1f06b34c7e3f7bce04019196129d16d9b0cbc1e4",
+    "tier16-sas-repair_ablation/cases.jsonl": "bdb6f297b6cdba672e9d9461b8c31ac07d37041009f962f4d9a94065f40fa454"
+  },
+  "manifest_sha256": "2bc2c447e1e2c09fde8883077105b74f52b847bbe80ad121b3b53303095c3ac8",
+  "new_generation_calls": 0,
+  "novelty_established": false,
+  "null_hypothesis_proven": false,
+  "non_neural_reference_control": {
+    "always_withhold": {
+      "correct_delivered": 0,
+      "wrong_delivered": 0,
+      "withheld": 160
+    },
+    "note": "Shows why wrong-delivery reduction alone is not utility. Not claimed to solve numerical QA."
+  },
+  "limits": [
+    "Accuracy continuation only; source swap failure forbids an uninterrupted no-swap deployment-pass claim. Every completed frozen prefix case is reused, without quality selection. Models/context/prompts/scores unchanged.",
+    "Public FinQA development-source reports not used in the recorded8GB research selections. No guarantee of pretraining cleanliness or complete coverage of unrecorded human exposure. Numerical QA, not KYC/credit invention or mismatch recall.",
+    "Pretrained models in BOTH main arms; no compatible14B/32B trained adapters exist on SSD.8GB SFT results remain a separate experiment. No claim of equally optimal fine-tuning.",
+    "Paired effect estimates/intervals; no automatic proof of H0/equivalence. Other profiles/32GB secondary; no favorable-metric selection or best-only reporting.",
+    "One model family/checkpoint set/seed; actual prompts, model sizes and precision differ by deployment. Equal ceilings are not equal compute. Primary 16GB comparison; remaining profiles/32GB are secondary."
+  ],
+  "continuation": {
+    "resource_validity": "invalid_for_uninterrupted_no_swap_deployment",
+    "source_run": "lab-16-115gb-v2",
+    "job": "tier16-sas-primary",
+    "reused_cases": 145,
+    "next_case_number": 146,
+    "prefix_sha256": "195a0344870d1bb1059e160bba9c6be75a9eeb1248db288f2641fbaf5e89d24c",
+    "last_completed_time": 1793242610.601642,
+    "last_clean_sample_time": 1793242632.1490643,
+    "first_invalid_sample": {
+      "time": 1793242632.365765,
+      "tree_rss_bytes": 10012540928,
+      "tree_swap_bytes": 44011520
+    },
+    "cap_bytes": 11500000000,
+    "source_peak_swap_bytes": 44011520,
+    "evidence_sha256": {
+      "continuation-evidence/checkpoint-replay.json": "90acea47e63511fad4189febdc501bf3e397b22cc686ddf716e0de8aa15fb758",
+      "continuation-evidence/code/configs/lab_tiers/freeze.json": "68fcef8ef64a3b00123189c6c8e2caa6b43a5e42cb99f366acd591fadc175030",
+      "continuation-evidence/manifest.json": "123f066376f93c55e6585f1047138cb056ab905dcbf2e3545988af74483bfbb5",
+      "continuation-evidence/state.json": "27b0158150673c4c1384aa2da1af0bf9fbd660ad0c7570e9af3f29f1a84a367d",
+      "continuation-evidence/tier16-cap.json": "bda3a1b41d0e65bcf7b493fa172519fc2e36b50bc610397fa993d8595571aea9",
+      "continuation-evidence/tier16-sas-primary/attempt-0001/memory.jsonl": "1e30c1caa49c797340ca89ab208100c45dde2ccdb0afdc321ed1b28df874a150",
+      "continuation-evidence/tier16-sas-primary/attempt-0001/progress.json": "f4b6c928ad2fb91a9c9991ebe7b957295f17ba2fa0bacaf3e2982f9b20595ef0",
+      "continuation-evidence/tier16-sas-primary/attempt-0001/stages.jsonl": "45be6c573a8b7f3da8d955f093a30070d319db4fccbe4b3832718771990dbadd",
+      "continuation-evidence/tier16-sas-primary/attempt-0001/state.json": "5672961f8bda3de041bdec66647142d093738403ca1016ae794d136c6c2f187c",
+      "continuation-evidence/tier16-sas-primary/attempt-0001/worker.log": "52273f9c1bd9d4e4788b7108c81634f346ccb8d2f898ff00fb9d520aad567edb",
+      "continuation-evidence/tier16-sas-primary/cases.jsonl": "195a0344870d1bb1059e160bba9c6be75a9eeb1248db288f2641fbaf5e89d24c",
+      "continuation-evidence/tier16-sas-primary/manifest.json": "598b1c36f183dc37162046fcea681fa62b80942a96c30d059acfe2ff6b792478",
+      "recovery-history/lab-16-115gb-recovery-01/continuation.json": "2e5b2cf77dfd825a8fd440cfa5bd0282a46d763fe8fdf16e49a4c09824ca2e53",
+      "recovery-history/lab-16-115gb-recovery-01/manifest.json": "ee1dfebfbf34c6db97c44c55e2a73a3ee1347336cd50f7cd98a9a5cc7dfb4a08",
+      "recovery-history/lab-16-115gb-recovery-01/preparation-source.py": "77bdb9218637a323492c0c207307ac3078eece9f83d3043b4efe800b67f79302",
+      "recovery-history/lab-16-115gb-recovery-01/state.json": "c2308a78c3497129bfc11dbd21e2ade46f0186ed499d800c3faca68c9952aab2",
+      "recovery-history/lab-16-115gb-recovery-01/tier16-sas-direct_control/attempt-0001/memory.jsonl": "843665c15f63ab3dd29e5951fe5fb678f03e8ea4f7188bbc4a1160300c0834c3",
+      "recovery-history/lab-16-115gb-recovery-01/tier16-sas-direct_control/attempt-0001/progress.json": "47aaa14d1d9aaa41e13746eef2231323040a66eaa789846db967bd149a13df29",
+      "recovery-history/lab-16-115gb-recovery-01/tier16-sas-direct_control/attempt-0001/stages.jsonl": "acb623b7e90a5399658b2679fb312cbfdccc471a44d0077c17702852bba0b6e1",
+      "recovery-history/lab-16-115gb-recovery-01/tier16-sas-direct_control/attempt-0001/state.json": "5e79b4e5bbd321b128d96c54ca9d4bf7fce05f61d3a8b0f908ae680395082c93",
+      "recovery-history/lab-16-115gb-recovery-01/tier16-sas-direct_control/attempt-0001/worker.log": "3af7c4f073d7432836152a49005c3236363c89721dfa9b6ce810553399bb4a99",
+      "recovery-history/lab-16-115gb-recovery-01/workflow-status.txt": "385cc62251bf360ba2ed6a08962c42aaf8a3b3a8ac24bcd927e2f1cdf9913575",
+      "recovery-history/lab-16-115gb-recovery-01/workflow.log": "7f059d3472ce4d9dbd772895db62ef085e622d09136c95ae9ba8e71e138810c2"
+    },
+    "limits": "Accuracy continuation only; source swap failure forbids an uninterrupted no-swap deployment-pass claim. Every completed frozen prefix case is reused, without quality selection. Models/context/prompts/scores unchanged.",
+    "continued_from_run": "lab-16-115gb-recovery-01",
+    "additional_checkpoint_prefixes": {
+      "tier16-mas-primary": {
+        "n": 160,
+        "sha256": "ad14c4c3607f57023ff09073b29d4c178c19765f990ec0b602dd392d56589e82"
+      },
+      "tier16-sas-direct_control": {
+        "n": 7,
+        "sha256": "93a827954553e39a4b8e79112204264483a3beab4c4bbe716408b8c211ff3e20"
+      },
+      "tier16-sas-primary": {
+        "n": 160,
+        "sha256": "494a0cbfe99d47cf58b11c597e8bbb7067807b6859180a426a198d0b0105bc71"
+      }
+    },
+    "total_completed_cases_reused": 327,
+    "additional_source_swap_failures": [
+      {
+        "job": "tier16-sas-direct_control",
+        "attempt": "attempt-0001",
+        "reused_cases": 7,
+        "peak_swap_bytes": 34430976
+      }
+    ],
+    "prospective_swap_control": "New workflow will use a user-systemd cgroup with MemorySwapMax=0; prior failures remain invalid."
+  },
+  "uninterrupted_no_swap_deployment_pass": false
+}

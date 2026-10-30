@@ -3565,3 +3565,56 @@ reserve/cushion requirement. Available RAM at first check was11.07GB, so closing
 ChatGPT may be needed; don't kill unrelated applications. New run ID
 lab-16-115gb-recovery-02, copied cases327/960; systemd-swap-control.json and SSD
 runs/recovery02-verification.json pin the actual control and exact case counts.
+
+###2026-10-30 — completed-tier documentation and statistical reconstruction
+
+User requested full16GB documentation/results, a matching empirical report,
+a<=16GB pre-paper research synthesis, a16GB statistical PDF and an integrated
+advanced statistical PDF with figures/framework/proofs. Read both original8GB
+reports and authoritative completed16GB audit/export. Original references remain
+unchanged. No new inference, training, model download, feature adoption, metric
+change or case filtering. Used PDF skill and bundled NumPy/ReportLab runtime;
+no new software installation. Raw responses/memory stay on authorized SSD.
+
+Verified source-audit input hashes, frozen code, historical recovery hashes and
+final archive checksum. Recomputed all960 output records on160 unique questions,
+50 report clusters and36 companies. Both metrics retained: primary SAS78/48/34
+reported and38/88/34 raw; MAS5/3/152 under both. SAS delivered scores include
+34 both-correct,44 reported-only,4 raw-only and44 wrong under both. This source
+rounding/unit-convention sensitivity must not be hidden. MAS has10 executable
+candidates,5 correct;150 invalid/insufficient. Of138 complete-gold-retrieval
+cases, MAS is insufficient/invalid on128. This identifies an observed candidate
+production/representation bottleneck, not a universal capacity floor or proof
+that the learned generator alone caused every failure.
+
+Added reproducible report/company cluster bootstrap estimates, weighted versus
+equal-cluster sensitivity, leave-one-cluster-out ranges, supplemental sign-flip
+tests (null sign symmetry assumption), exact case-IID McNemar diagnostics and
+Holm adjustment for4 primary correct/wrong contrasts. Extended testing/multiplicity
+plan is POST HOC; original comparison/profile/endpoints were frozen before runs.
+No fabricated equivalence margins, observed-power claim, causal RAM scaling
+slope, novel-algorithm proof, regulatory certification or no-swap pass. Theoretical
+propositions are conditional identities/bounds; assumptions and known antecedents
+are explicit. ReportBootstrap code uses NumPy seed42/linear quantiles, distinct
+from canonical source audit Python random42/indexed quantiles; original retained.
+
+Combined core ledger preserves separate regimes: legacy synthetic175 cases,
+8GB adapted FinQA15 conditions/768 outputs on101 questions/30 reports, and16GB
+960 outputs on160 questions/50 different reports. No overlapping question/report
+IDs across the two core FinQA cohorts; no pooled independence or RAM-causality
+claim.197 historical evidence files are catalogued, not treated as197 experiments.
+Supporting adaptation/critic/external/serving/catalog diagnostics remain separate;
+the older actor adaptation had11 correct candidates but10 delivered answers.
+No8GB historical overclaim or stale unfinished-SAS snapshot is copied as a new
+confirmed conclusion.32GB remains unmeasured; bounded manuscript may be drafted
+without extrapolating it. Clean primary deployment rerun and external replication
+remain publication-strengthening needs; not launched as part of documentation.
+
+Three known-value statistical tests passed and numerical identities/counts/
+lineage checks passed. Initial evidence catalogue pass failed on list-valued
+JSON; fixed metadata handling and catalogued all197 files, retaining failed log.
+Initial PDF rendering failed on deepcopy of ReportLab chart widgets; removed
+unsupported deepcopy, then successfully rendered. Visual review found spacing
+overlap in two figure labels and a heading at a page bottom; corrected renderer
+and re-rendered. Final page/graph review, PDF-boundary/link QA, bundle/export and
+documentation commit follow this analytical-code milestone.
