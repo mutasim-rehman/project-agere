@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="260" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="260"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-260)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="8" y="242" style="font-family: Bold; font-size: 11px;fill: rgb(9%,19%,30%); stroke:none;" transform="translate(0,484) scale(1,-1)">Speed per case is not cost per useful answer</text>
+			<text x="8" y="226.0" style="font-family: Sans; font-size: 7.5px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,452) scale(1,-1)">Primary MAS/SAS ratios; correct means reported-correct. Baseline SAS=1.</text>
+			<text x="8" y="197" style="font-family: Sans; font-size: 8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,394) scale(1,-1)">Peak process RSS</text>
+			<rect x="170" y="190" width="82.96707553750713" height="20" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,49%,52%); fill-rule: evenodd;"/>
+			<text x="257.9670755375071" y="195" style="font-family: Sans; font-size: 8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,390) scale(1,-1)">1.09x</text>
+			<text x="8" y="155" style="font-family: Sans; font-size: 8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,310) scale(1,-1)">Seconds per case</text>
+			<rect x="170" y="148" width="16.093783212412603" height="20" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,49%,52%); fill-rule: evenodd;"/>
+			<text x="191.0937832124126" y="153" style="font-family: Sans; font-size: 8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,306) scale(1,-1)">0.21x</text>
+			<text x="8" y="113" style="font-family: Sans; font-size: 8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,226) scale(1,-1)">Seconds per correct</text>
+			<rect x="170" y="106" width="251.0630181136366" height="20" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,49%,52%); fill-rule: evenodd;"/>
+			<text x="426.0630181136366" y="111" style="font-family: Sans; font-size: 8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,222) scale(1,-1)">3.29x</text>
+			<text x="8" y="71" style="font-family: Sans; font-size: 8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,142) scale(1,-1)">Prompt tokens</text>
+			<rect x="170" y="64" width="88.7486592726982" height="20" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,49%,52%); fill-rule: evenodd;"/>
+			<text x="263.7486592726982" y="69" style="font-family: Sans; font-size: 8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,138) scale(1,-1)">1.16x</text>
+			<path d="M 246.388889,42 L 246.388889,219 Z" style="stroke: rgb(82%,58%,15%); stroke-linecap: butt; stroke-width: 1.5; stroke-dasharray: 3, 2;"/>
+			<text x="167.773193359375" y="23" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,46) scale(1,-1)">0</text>
+			<text x="244.16208224826389" y="23" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,46) scale(1,-1)">1</text>
+			<text x="320.55097113715277" y="23" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,46) scale(1,-1)">2</text>
+			<text x="396.93986002604163" y="23" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,46) scale(1,-1)">3</text>
+			<text x="256.159423828125" y="9" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,18) scale(1,-1)">Ratio relative to SAS primary</text>
+		</g>
+	</g>
+</svg>

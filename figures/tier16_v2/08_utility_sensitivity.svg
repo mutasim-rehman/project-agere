@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="320" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="320"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-320)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="8" y="302" style="font-family: Bold; font-size: 11px;fill: rgb(9%,19%,30%); stroke:none;" transform="translate(0,604) scale(1,-1)">Utility depends on the chosen error penalty</text>
+			<text x="8" y="286.0" style="font-family: Sans; font-size: 7.5px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,572) scale(1,-1)">Primary recipes only. Correct benefit 1, wrong cost lambda, withhold 0.</text>
+			<path d="M 43,90 L 230,90 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.4;"/>
+			<text x="22.341796875" y="87.0" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,174) scale(1,-1)">-0.4</text>
+			<path d="M 43,152 L 230,152 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.4;"/>
+			<text x="31.54638671875" y="149.0" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,298) scale(1,-1)">0</text>
+			<path d="M 43,214 L 230,214 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.4;"/>
+			<text x="24.86767578125" y="211.0" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,422) scale(1,-1)">0.4</text>
+			<text x="40.773193359375" y="76" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,152) scale(1,-1)">0</text>
+			<text x="115.573193359375" y="76" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,152) scale(1,-1)">1</text>
+			<text x="190.373193359375" y="76" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,152) scale(1,-1)">2</text>
+			<path d="M 43,90 L 230,90 Z" style="stroke: rgb(14%,21%,29%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<path d="M 43,90 L 43,245 Z" style="stroke: rgb(14%,21%,29%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="78.7723388671875" y="60.0" style="font-family: Sans; font-size: 7.5px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,120) scale(1,-1)">Wrong-answer penalty lambda</text>
+			<text x="93.11279296875" y="265" style="font-family: Bold; font-size: 9px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,530) scale(1,-1)">Reported answer</text>
+			<polyline points="43 227.5625, 46.74 225.2375, 50.48 222.9125, 54.22 220.5875, 57.96 218.2625, 61.7 215.9375, 65.44 213.6125, 69.18 211.2875, 72.92 208.9625, 76.66 206.6375, 80.4 204.3125, 84.14 201.9875, 87.88 199.6625, 91.62 197.3375, 95.36 195.0125, 99.1 192.6875, 102.84 190.3625, 106.58 188.0375, 110.32 185.7125, 114.06 183.3875, 117.8 181.0625, 121.54 178.7375, 125.28 176.4125, 129.02 174.0875, 132.76 171.7625, 136.5 169.4375, 140.24 167.1125, 143.98 164.7875, 147.72 162.4625, 151.46 160.1375, 155.2 157.8125, 158.94 155.4875, 162.68 153.1625, 166.42 150.8375, 170.16 148.5125, 173.9 146.1875, 177.64 143.8625, 181.38 141.5375, 185.12 139.2125, 188.86 136.8875, 192.6 134.5625, 196.34 132.2375, 200.08 129.9125, 203.82 127.5875, 207.56 125.2625, 211.3 122.9375, 215.04 120.6125, 218.78 118.2875, 222.52 115.9625, 226.26 113.6375, 230 111.3125" style="stroke: rgb(0%,49%,52%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="43 156.8438, 46.74 156.6984, 50.48 156.5531, 54.22 156.4078, 57.96 156.2625, 61.7 156.1172, 65.44 155.9719, 69.18 155.8266, 72.92 155.6813, 76.66 155.5359, 80.4 155.3906, 84.14 155.2453, 87.88 155.1, 91.62 154.9547, 95.36 154.8094, 99.1 154.6641, 102.84 154.5188, 106.58 154.3734, 110.32 154.2281, 114.06 154.0828, 117.8 153.9375, 121.54 153.7922, 125.28 153.6469, 129.02 153.5016, 132.76 153.3562, 136.5 153.2109, 140.24 153.0656, 143.98 152.9203, 147.72 152.775, 151.46 152.6297, 155.2 152.4844, 158.94 152.3391, 162.68 152.1937, 166.42 152.0484, 170.16 151.9031, 173.9 151.7578, 177.64 151.6125, 181.38 151.4672, 185.12 151.3219, 188.86 151.1766, 192.6 151.0312, 196.34 150.8859, 200.08 150.7406, 203.82 150.5953, 207.56 150.45, 211.3 150.3047, 215.04 150.1594, 218.78 150.0141, 222.52 149.8688, 226.26 149.7234, 230 149.5781" style="stroke: rgb(82%,58%,15%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<path d="M 43,152 L 230,152 Z" style="stroke: rgb(9%,19%,30%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<path d="M 164.342222,90 L 164.342222,245 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.7; stroke-dasharray: 2, 3;"/>
+			<text x="48" y="40" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,80) scale(1,-1)">Primary switch: 1.622</text>
+			<path d="M 278,90 L 465,90 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.4;"/>
+			<text x="257.341796875" y="87.0" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,174) scale(1,-1)">-1.2</text>
+			<path d="M 278,141.666667 L 465,141.666667 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.4;"/>
+			<text x="257.341796875" y="138.66666666666669" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,277) scale(1,-1)">-0.6</text>
+			<path d="M 278,193.333333 L 465,193.333333 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.4;"/>
+			<text x="266.54638671875" y="190.33333333333334" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,380) scale(1,-1)">0</text>
+			<path d="M 278,245 L 465,245 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.4;"/>
+			<text x="259.86767578125" y="242.0" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,484) scale(1,-1)">0.6</text>
+			<text x="275.773193359375" y="76" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,152) scale(1,-1)">0</text>
+			<text x="350.573193359375" y="76" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,152) scale(1,-1)">1</text>
+			<text x="425.373193359375" y="76" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,152) scale(1,-1)">2</text>
+			<path d="M 278,90 L 465,90 Z" style="stroke: rgb(14%,21%,29%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<path d="M 278,90 L 278,245 Z" style="stroke: rgb(14%,21%,29%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="313.7723388671875" y="60.0" style="font-family: Sans; font-size: 7.5px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,120) scale(1,-1)">Wrong-answer penalty lambda</text>
+			<text x="334.407958984375" y="265" style="font-family: Bold; font-size: 9px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,530) scale(1,-1)">Raw execution</text>
+			<polyline points="278 213.7847, 281.74 211.4167, 285.48 209.0486, 289.22 206.6806, 292.96 204.3125, 296.7 201.9444, 300.44 199.5764, 304.18 197.2083, 307.92 194.8403, 311.66 192.4722, 315.4 190.1042, 319.14 187.7361, 322.88 185.3681, 326.62 183, 330.36 180.6319, 334.1 178.2639, 337.84 175.8958, 341.58 173.5278, 345.32 171.1597, 349.06 168.7917, 352.8 166.4236, 356.54 164.0556, 360.28 161.6875, 364.02 159.3194, 367.76 156.9514, 371.5 154.5833, 375.24 152.2153, 378.98 149.8472, 382.72 147.4792, 386.46 145.1111, 390.2 142.7431, 393.94 140.375, 397.68 138.0069, 401.42 135.6389, 405.16 133.2708, 408.9 130.9028, 412.64 128.5347, 416.38 126.1667, 420.12 123.7986, 423.86 121.4306, 427.6 119.0625, 431.34 116.6944, 435.08 114.3264, 438.82 111.9583, 442.56 109.5903, 446.3 107.2222, 450.04 104.8542, 453.78 102.4861, 457.52 100.1181, 461.26 97.75, 465 95.38194" style="stroke: rgb(0%,49%,52%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<polyline points="278 196.0243, 281.74 195.9436, 285.48 195.8628, 289.22 195.7821, 292.96 195.7014, 296.7 195.6207, 300.44 195.5399, 304.18 195.4592, 307.92 195.3785, 311.66 195.2977, 315.4 195.217, 319.14 195.1363, 322.88 195.0556, 326.62 194.9748, 330.36 194.8941, 334.1 194.8134, 337.84 194.7326, 341.58 194.6519, 345.32 194.5712, 349.06 194.4905, 352.8 194.4097, 356.54 194.329, 360.28 194.2483, 364.02 194.1675, 367.76 194.0868, 371.5 194.0061, 375.24 193.9253, 378.98 193.8446, 382.72 193.7639, 386.46 193.6832, 390.2 193.6024, 393.94 193.5217, 397.68 193.441, 401.42 193.3602, 405.16 193.2795, 408.9 193.1988, 412.64 193.1181, 416.38 193.0373, 420.12 192.9566, 423.86 192.8759, 427.6 192.7951, 431.34 192.7144, 435.08 192.6337, 438.82 192.553, 442.56 192.4722, 446.3 192.3915, 450.04 192.3108, 453.78 192.23, 457.52 192.1493, 461.26 192.0686, 465 191.9878" style="stroke: rgb(82%,58%,15%); stroke-linecap: butt; stroke-width: 2; fill: None; fill-rule: evenodd;"/>
+			<path d="M 278,193.333333 L 465,193.333333 Z" style="stroke: rgb(9%,19%,30%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 2;"/>
+			<path d="M 307.04,90 L 307.04,245 Z" style="stroke: rgb(79%,82%,85%); stroke-linecap: butt; stroke-width: 0.7; stroke-dasharray: 2, 3;"/>
+			<text x="283" y="40" style="font-family: Sans; font-size: 7px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,80) scale(1,-1)">Primary switch: 0.388</text>
+			<text x="8" y="15.0" style="font-family: Sans; font-size: 6.8px;fill: rgb(14%,21%,29%); stroke:none;" transform="translate(0,30) scale(1,-1)">SAS teal; MAS amber; dashed navy always-withhold. Illustrative preferences, not a tuned loss.</text>
+		</g>
+	</g>
+</svg>

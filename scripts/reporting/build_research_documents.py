@@ -24,7 +24,7 @@ def save(name,text):
     text=re.sub(r'^(#{1,6})(?=[^#\s])',r'\1 ',text,flags=re.M)
     for old,new in [('16GB','16 GB'),('8GB','8 GB'),('32GB','32 GB'),('11.5GB','11.5 GB'),('12.5GB','12.5 GB'),('12.6GB','12.6 GB'),('1GB','1 GB'),('100MB','100 MB'),('44MB','44 MB'),('34MB','34 MB'),('30October','30 October'),('28-30 October','28-30 October')]:
         text=text.replace(old,new)
-    text=re.sub(r'\b(The|the|Both|both|all|only|from|to|on|for|with|versus|about|same|first|and|within|over|under|at|of|has|delivers|Among|among)(?=\d)',r'\1 ',text)
+    text=re.sub(r'\b(The|the|Both|both|All|all|only|from|to|on|for|with|versus|about|same|first|and|within|over|under|at|of|has|delivers|Among|among|Trained|Shared|SAS|MAS)(?=\d)',r'\1 ',text)
     p=ROOT/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text.strip()+'\n')
 def summary_table():
     return table(['Profile / arm','Reported C / W / H','Raw C / W / H','Time (h)','Peak RSS (GB)'],[
@@ -95,7 +95,7 @@ def cost_table():
         s=S['tier16-'+arm+'-primary'];m=s['metrics']['case_success']
         values.append([arm.upper(),f"{s['inference_seconds']/160:.2f}",f"{s['inference_seconds']/m['correct']:.2f}",
             f"{s['generated_tokens']/160:.2f}",f"{s['prompt_tokens']/160:.2f}",f"{s['peak_rss_bytes']/1e9:.3f}",pct(m['precision_when_delivered'])])
-    return table(['Arm','Seconds/case','Seconds/correct','Generated/case','Prompt/case','Peak GB','Precision delivered'],values)
+    return table(['Arm','Seconds/case','Seconds/reported correct','Generated/case','Prompt/case','Peak GB','Reported precision'],values)
 
 
 def funnel_table():
@@ -155,7 +155,7 @@ REFERENCES='''## References and source hierarchy
 
 LIMITS='''Only one model family, one fixed greedy recipe and one financial numerical benchmark are evaluated at 16 GB. The public development-source sample is report-held-out relative to recorded project exposure, not a clean pretraining holdout or the official FinQA test set. Equal memory/token ceilings do not match actual compute, prompt context, role allocation, training effort or latency.
 
-MAS and SAS differ jointly in model size, precision, number of roles and internal prompts. The 8 GB redevelopment also differs in adaptation, serving mode, question source and CPU backend. Consequently neither the 16 GB recipe contrast nor the cross-tier inventory identifies a universal architecture law, a pure precision effect or a causal RAM-scaling slope.
+MAS and SAS differ jointly in model size, precision, number of roles and internal prompts. The 8 GB redevelopment also differs in adaptation, serving mode, question source and CPU backend. Its deployment-budget label does not establish that adaptation training ran on a physically8GB host. Neither arm is established as the best possible system under its memory ceiling. Consequently neither the 16 GB recipe contrast nor the cross-tier inventory identifies a universal architecture law, a pure precision effect or a causal RAM-scaling slope.
 
 The resource history contains two swap failures; recovered accuracy evidence cannot certify an uninterrupted no-swap product. No bank-client, KYC mismatch or regulatory-safety endpoint is measured in the 16 GB FinQA study. The older synthetic tests do not establish real-world regulatory readiness either. The analysis is not legal or deployment certification.
 
@@ -293,7 +293,9 @@ def build():
 
 Conditional precision among delivered primary answers is 61.90% for SAS (78/126) and 62.50% for MAS (5/8) under reported scoring. Similar conditional precision conceals radically different coverage: 78.75% versus5.00%. Under raw execution precision is30.16% for SAS and62.50% for MAS, again over different selected delivery sets. A small selected denominator is not evidence that MAS solves most questions more reliably.
 '''
-    mechanism='''Primary SAS produces150 executable candidates, of which84 are reported-correct; review delivers78 correct and48 wrong, withholding6 correct candidates and18 executable wrong ones, in addition to10 invalid/insufficient outputs. MAS produces10 executable candidates,5 correct; it delivers all5 correct and3 wrong, withholding2 wrong and150 invalid/insufficient outputs. Its final low coverage is therefore not primarily a gate that rejects many correct drafts.
+    mechanism='''All160 initial program-stage responses parse as JSON objects in both primary recipes. SAS emits150 ANSWER and10 INSUFFICIENT decisions; MAS emits10 ANSWER and150 INSUFFICIENT decisions. This is program-stage syntax, not the same whole-workflow metric as the older synthetic report. The known grammar constraint addresses format; it does not ensure useful semantic/program coverage.
+
+Primary SAS produces150 executable candidates, of which84 are reported-correct; review delivers78 correct and48 wrong, withholding6 correct candidates and18 executable wrong ones, in addition to10 invalid/insufficient outputs. MAS produces10 executable candidates,5 correct; it delivers all5 correct and3 wrong, withholding2 wrong and150 invalid/insufficient outputs. Its final low coverage is therefore not primarily a gate that rejects many correct drafts.
 
 All annotated gold evidence is present in the public retrieval packet on138/160 questions. Within that stratum SAS delivers74 correct and has3 invalid/insufficient outputs; MAS delivers5 correct and has128 invalid/insufficient outputs. Among22 incomplete-retrieval questions, SAS delivers4 correct and MAS0. These are post-hoc reference-dependent diagnostics, not deployment routing features or causal evidence. Gold retrieval completeness does not certify reference-program expressibility in the compact catalog.
 
@@ -705,7 +707,7 @@ Read the [pre-paper research draft](../../TIER_LE_16_RESEARCH_REPORT.md), [advan
 
 Supporting documents: [comparability](COMPARABILITY_MATRIX.md), [formal framework](THEORETICAL_FRAMEWORK.md), [claims](HYPOTHESES_AND_CLAIMS.md), [publication readiness](PUBLICATION_READINESS.md).
 
-`data/cross_tier_analysis.json` preserves the separate8GB synthetic,8GB adapted FinQA and16GB pretrained FinQA regimes. `tier8_condition_inventory.csv` contains15 completed numerical conditions. `tier8_evidence_catalog.json` indexes197 historical artifacts without treating them as independent experiments. No pooled causal RAM effect,32GB extrapolation or algorithmic-novelty proof is claimed.
+`data/cross_tier_analysis.json` preserves the separate8GB synthetic,8GB adapted FinQA and16GB pretrained FinQA regimes. `tier8_condition_inventory.csv` contains15 completed numerical conditions; `tier8_case_outcomes.csv` has768 repeated outputs on101 unique questions with selection/reserved cohort labels for independent re-analysis. `tier8_evidence_catalog.json` indexes197 historical artifacts without treating them as independent experiments. No pooled causal RAM effect,32GB extrapolation or algorithmic-novelty proof is claimed.
 ''')
     save('research/tier16_v2/REPRODUCIBILITY.md',f'''# Reproduce analysis and documents
 

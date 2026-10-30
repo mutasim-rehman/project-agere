@@ -147,7 +147,7 @@ def concordance():
 
 
 def cost_ratios():
-    d=base('Speed per case is not cost per useful answer','Primary MAS/SAS ratios. Baseline SAS=1 for each measure.',260)
+    d=base('Speed per case is not cost per useful answer','Primary MAS/SAS ratios; correct means reported-correct. Baseline SAS=1.',260)
     sas,mas=S['tier16-sas-primary'],S['tier16-mas-primary']
     metrics=[('Peak process RSS',mas['peak_rss_bytes']/sas['peak_rss_bytes']),
         ('Seconds per case',mas['inference_seconds']/sas['inference_seconds']),

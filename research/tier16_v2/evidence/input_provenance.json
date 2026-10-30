@@ -477,12 +477,12 @@
       "bytes": 420798
     },
     "scripts/reporting/analyze_completed_tiers.py": {
-      "sha256": "7a3a58b34bf6927fcd5c9dd1d176d1dc6686964e9c41d6b1eb7f7e1cbc390952",
-      "bytes": 25410
+      "sha256": "4f5a7cbb50df5a90fcb614cf10b0787fbacc9a6811850cb93fc6cfdde238306c",
+      "bytes": 26705
     }
   },
   "model_hashes": "Retained from frozen manifest; weights were not rehashed for document creation.",
   "source_audit_sha256": "6aea6b72e7c3c0c26ffc0a46389bc19270349f25e07c70f39490ab0e2339618c",
-  "report_source_hash": "7a3a58b34bf6927fcd5c9dd1d176d1dc6686964e9c41d6b1eb7f7e1cbc390952",
+  "report_source_hash": "4f5a7cbb50df5a90fcb614cf10b0787fbacc9a6811850cb93fc6cfdde238306c",
   "date": "2026-10-30"
 }

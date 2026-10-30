@@ -1,0 +1,17 @@
+# Supervisor update:30 October2026
+
+The primary reported-answer contrast is MAS minus SAS: -73 correct deliveries (-45.625 percentage points), -45 wrong deliveries (-28.125 points), and +118 withholdings (+73.75 points). Raw execution gives -33 correct, -85 wrong, and the same +118 withholdings. Both metrics therefore show a correctness-versus-withholding trade-off, not MAS Pareto superiority.
+
+Conditional precision among delivered primary answers is 61.90% for SAS (78/126) and 62.50% for MAS (5/8) under reported scoring. Similar conditional precision conceals radically different coverage: 78.75% versus 5.00%. Under raw execution precision is30.16% for SAS and 62.50% for MAS, again over different selected delivery sets. A small selected denominator is not evidence that MAS solves most questions more reliably.
+
+The prespecified goal that resident MAS should reduce wrong delivery without losing correct delivery is not supported by the primary16 GB result. Correct-delivery intervals favor SAS under both scoring conventions, while wrong-delivery counts favor a much more withholding MAS. This does not prove universal SAS superiority, accept a global null, establish equivalence, or validate regulatory safety.
+
+The useful research contribution is a reproducible comparison of constrained deployment recipes, a coverage-aware interpretation, candidate/gate decomposition, metric-convention sensitivity and an honest repair/resource audit. No newly invented inference algorithm or globally novel feature is established. Engineering resumability, checksums and process-swap prevention support the measurement; they are not themselves evidence of algorithmic originality.
+
+A <=16 GB manuscript can be drafted without32 GB if its claim is narrowed to the completed constrained deployment recipes and the documented development history. A third nominal tier is not logically required to report a reproducible negative/trade-off result. However, this package is a pre-paper research dossier, not a guarantee of acceptance or proof of a new algorithm.
+
+The strongest defensible claims are: the tested16 GB SAS recipe delivers substantially more correct answers than the tested resident F16 MAS recipe; MAS's lower wrong count accompanies95% withholding; the observed MAS bottleneck is candidate production under this representation/profile; and this repair policy adds cost without a Pareto improvement. The candidate-only gate bound is exact for these fixed candidates. The wider architecture/precision/RAM conclusions remain unestablished.
+
+Before claiming a clean product deployment, rerun the frozen primary pair from beginning to end under the same prospective no-swap service control, retaining the 11.5 GB ceiling, both metrics and all cases. No new method is required. For broader scientific claims, external report/benchmark or model-family replication and independent annotation/scoring review are more informative than retrospective significance hunting. Repeating a seed under deterministic greedy decoding is not an independent random replicate.
+
+If32 GB is unavailable, do not invent its results or extrapolate a scaling curve from these confounded tiers. Present the unmeasured32 GB matrix as planned future work. Keep all failed resource attempts in the appendix, and keep theory conditional. A credible contribution may be empirical measurement and diagnosis; algorithmic novelty has not been demonstrated.

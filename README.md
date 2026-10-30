@@ -1,5 +1,7 @@
 # Project Agere: Local LLM Deployment for Regulated Finance
 
+> **Completed 16 GB study, 30 October 2026:** [documentation index](RESEARCH_DOCUMENTATION_INDEX.md) · [16 GB research report](TIER_16_RESEARCH_REPORT.md) · [combined <=16 GB pre-paper draft](TIER_LE_16_RESEARCH_REPORT.md). Statistical PDFs, graphs and analysis-ready data are linked in the index. Accuracy auditing is complete; historical swap failures remain explicitly resource-invalid. No 32 GB results are claimed.
+
 > **Current 8 GB research:** [progress checkpoint](research/tier8_v2/LIVE_STATUS.md) · [supervisor update](research/tier8_v2/SUPERVISOR_UPDATE_2026-10-25.md). These dated research checkpoints supersede older lab-status notes. Historical setup/recovery commands remain in [LAB_RECOVERY.md](LAB_RECOVERY.md).
 
 > **Scope audit, 27 October:** the current 8 GB redevelopment uses Q4 MAS and financial numerical QA; it does not by itself test the original FP16-MAS/quantized-SAS headline. See the [direction and hypothesis audit](research/tier8_v2/RESEARCH_DIRECTION_AUDIT_2026-10-27.md) before interpreting results or moving tiers.

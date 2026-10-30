@@ -1,0 +1,10 @@
+# Derived data dictionary
+
+- `case_outcomes.csv`:960 rows, one model/profile output per row;160 unique question IDs. `reported_correct` and `raw_correct` describe the final candidate; use the outcome columns or delivered AND correct to count delivered correctness. `execution_valid` is deterministic support/format validity, not numerical correctness. `annotated_evidence_complete` is a post-hoc diagnostic from gold source IDs, not a generation input. Tokens and seconds sum stages; completed_time is Unix UTC. Some rows originate from explicitly qualified checkpoint prefixes.
+- `report_outcomes.csv`: company-year report totals by job and metric. Reports recur across recipes/metrics and are not independent duplicates. Company is the first ID component; report is company/year.
+- `paired_effects.csv`: right-minus-left event-rate contrasts, report-cluster95% intervals, company-cluster sensitivity, supplemental sign-flip tests, and case-IID McNemar sensitivity. Positive wrong/withheld changes are not correctness gains. Holm applies only to four primary correct/wrong tests. Other tests are exploratory/unadjusted.
+- `resource_events.csv`: two retained source swap failures with first invalid sample times and sampled resource peaks. They remain failures.
+- `stage_metrics.csv`: calls, tokens, seconds and finish reasons by job/role/stage for committed cases only; excludes aborted uncheckpointed work.
+- `metric_disagreements.csv`:48 primary SAS deliveries whose correctness label differs across metrics, including predicted scalar, declared unit and both source references. No metric is silently replaced.
+- `statistical_analysis.json`: complete numerical analysis, gates/funnels, retrieval strata, 3x3 transitions, MC resolution, effective cluster counts and all assumptions.
+- All sizes labelled GB are decimal10^9 bytes; GiB conversion divides by2^30. RSS is sampled controller-plus-worker memory; a disk file is not an RSS component measurement. Seconds/correct is undefined if C=0; zero is not substituted.

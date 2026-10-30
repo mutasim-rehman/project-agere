@@ -3618,3 +3618,37 @@ unsupported deepcopy, then successfully rendered. Visual review found spacing
 overlap in two figure labels and a heading at a page bottom; corrected renderer
 and re-rendered. Final page/graph review, PDF-boundary/link QA, bundle/export and
 documentation commit follow this analytical-code milestone.
+
+### 2026-10-30 — Final 16 GB / <=16 GB documentation release
+
+Published four editable root reports, a navigable documentation index, supporting
+protocol/results/methods/resource/failure/claims documents, derived case-level and
+report-level CSV/JSON, and twelve figures in PNG and SVG. Final statistical PDFs
+have 14 and 20 pages, respectively, with searchable text and vector graphics.
+All 34 final pages were visually reviewed using rendered contact sheets, with
+full-size inspection of the primary statistics and mathematical proof pages;
+figure labels and page flow were corrected before final release. Automated
+checks found no broken documentation links or text outside page boundaries.
+Three known-value statistical tests passed. Original 8 GB reports are unchanged.
+CSV outputs were normalized to LF endings; this is not a numerical alteration.
+
+The advanced dossier contains eight explicitly conditional, established
+identities/bounds and proofs, not a claim of a new theorem or algorithm. Its
+supplemental inference is post hoc; both scoring conventions, withholding,
+cluster dependence, candidate/gate transitions and historical swap failures
+remain visible. No neural calls, new weights, installations or 32 GB evaluations
+were performed for this release. The accuracy audit is complete; historical
+resource-invalid status is preserved. The <=16 GB manuscript is a bounded
+empirical draft, not a certification of deployment or publication acceptance.
+
+The portable documentation bundle and SHA256 sidecar are written under the SSD
+reporting directory tier16-le16-20261030. It includes derived analysis and source,
+not weights, credentials or raw prompts. Input hashes and a documentation file
+manifest support traceability; original SSD inputs remain necessary to replay
+the full raw-response audit. Final documentation is committed and pushed to the
+existing main branch after checks.
+
+Git attributes explicitly mark PDF/PNG artifacts as binary. ReportLab PDFs can
+contain an initial text-only byte window; without the attribute Git treated PDF
+xref whitespace as source formatting. Binary attributes prevent inappropriate
+text normalization and leave the reviewed artifact bytes unchanged.

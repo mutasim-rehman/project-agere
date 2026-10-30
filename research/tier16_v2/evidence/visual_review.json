@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "date": "2026-10-30",
+  "final_pdf_pages": {
+    "tier16": 14,
+    "le16": 20
+  },
+  "review": "All final pages inspected through rendered contact sheets; primary statistics and mathematical proofs also inspected at full page size. All twelve plots reviewed during rendering, with final corrected figures checked in final page renders.",
+  "remaining_layout_defects": 0,
+  "page_renders": ".local/reporting/qa16 and .local/reporting/qale16",
+  "reviewed_pdf_sha256": {
+    "TIER_LE_16_ADVANCED_STATISTICAL_EVALUATION_REPORT.pdf": "a9f21f1324a05ea2c282e9a99c05b75fa33ea274b1315477d17709a427554458",
+    "TIER_16_V2_STATISTICAL_EVALUATION_REPORT.pdf": "8de575d5e45a54852feb2a86158b6410c62b57ed024ddf1facb93e8125def4b3"
+  }
+}

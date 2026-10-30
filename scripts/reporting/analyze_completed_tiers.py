@@ -45,7 +45,7 @@ def csv_write(path, records):
         return
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('w', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(records[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(records[0]), lineterminator='\n')
         writer.writeheader(); writer.writerows(records)
 
 
@@ -160,6 +160,15 @@ def summarize(records):
         metric_concordance=dict(Counter(('reported_yes' if r['score']['case_success'] else 'reported_no')+' / '+('raw_yes' if r['score']['raw_execution_match'] else 'raw_no') for r in records if r['delivered'])))
     times = [sum(s['seconds'] for s in r['stages']) for r in records]
     result['case_latency_seconds'] = {'mean': float(np.mean(times)), 'median': float(np.median(times)), 'p90': float(np.quantile(times,.9)), 'max': max(times)}
+    syntax=Counter()
+    for row in records:
+        for stage in row['stages']:
+            if stage['stage']!='program':continue
+            try:
+                value=json.loads(stage['response']);syntax['valid_json']+=1
+                syntax['decision_'+str(value.get('decision','missing'))]+=1
+            except (ValueError,AttributeError):syntax['invalid_or_nonobject_json']+=1
+    result['initial_program_response_syntax']=dict(syntax)
     return result
 
 
@@ -312,7 +321,7 @@ def main(ssd):
                 'company_ci_low':e['company_sensitivity']['bootstrap95'][0],'company_ci_high':e['company_sensitivity']['bootstrap95'][1]})
     csv_write(output/'data/paired_effects.csv',flat)
     # Cross-tier evidence remains stratified. No pooled pseudo-random RAM effect.
-    natural=ssd/'runs/tier8_method_qa'; t8, t8data={},{}
+    natural=ssd/'runs/tier8_method_qa'; t8, t8data={},{};t8cases=[]
     paths=[p for p in sorted(natural.iterdir()) if p.is_dir() and (p/'summary.json').exists()]
     for p in paths:
         summary=read(p/'summary.json')
@@ -322,6 +331,15 @@ def main(ssd):
         for metric, old_key in [('case_success','delivered_correct')]:
             if s['metrics'][metric]['correct'] != summary[old_key]:raise ValueError('8GB mismatch')
         t8[p.name]=s;t8data[p.name]=rec
+        for r in rec:
+            t8cases.append({'tier':8,'condition':p.name,'case_id':r['case_id'],
+                'report':r['case_id'].rsplit('/',1)[0],'company':r['case_id'].split('/')[0],
+                'arm':r['arm'],'cohort':'reserved' if p.name.startswith('diagnostic_audit') else 'selection',
+                'delivered':r['delivered'],'reported_correct':r['score']['case_success'],
+                'raw_correct':r['score']['raw_execution_match'],'reported_outcome':outcome(r,'case_success'),
+                'raw_outcome':outcome(r,'raw_execution_match'),'generated_tokens':r['tokens'],
+                'prompt_tokens':sum(v['prompt_tokens'] for v in r['stages']),
+                'inference_seconds':sum(v['seconds'] for v in r['stages'])})
         for name in ['cases.jsonl','summary.json','manifest.json']:pin(p/name)
     cross={}
     for partition in ['model_selection','diagnostic_audit']:
@@ -351,6 +369,7 @@ def main(ssd):
                 **{k:d[k] for k in OUTCOMES},'generated_tokens':s['generated_tokens'],'prompt_tokens':s['prompt_tokens'],
                 'inference_seconds':s['inference_seconds'],'peak_rss_bytes':s['peak_rss_bytes']})
     csv_write(combined/'data/tier8_condition_inventory.csv',t8flat)
+    csv_write(combined/'data/tier8_case_outcomes.csv',t8cases)
     diagnostic_names=['finqa-mas-3b-adaptation-dev24-paired-01.json','critic3b-natural24-delivery-results-01.json',
         'external-baselines-completed-01.json','shared3b-serving-parity-complete-01.json',
         'header-materialization-fitting-01.json','source-span-catalog-fitting-01.json','header-visibility-attribution-01.json']

@@ -1,5 +1,12 @@
 # Research checkpoint — 8GB closure and tier handoff, 28 October 2026
 
+**30 October completion:** all six16GB jobs finished,960/960 outputs on160 unique
+questions,50 reports/36 companies. Saved-response analysis and result export are
+complete. Source remains accuracy-audited/resource-invalid due retained swap
+failures. [New documentation index](../../RESEARCH_DOCUMENTATION_INDEX.md) links
+the16GB and integrated<=16GB reports, statistical PDFs, graphs and derived data.
+32GB is unmeasured; no new inference method or universal architecture proof.
+
 **Current29October continuation:** both160-case primary jobs finished;7 direct
 SAS cases saved (327/960 total). Recovery01 stopped on another34MB swap event,
 below11.5GB RSS. Recovery02 retains every case/failure and runs under

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "pdf_pages": {
+    "TIER_16_V2_STATISTICAL_EVALUATION_REPORT.pdf": 14,
+    "TIER_LE_16_ADVANCED_STATISTICAL_EVALUATION_REPORT.pdf": 20
+  },
+  "case_outputs": 960,
+  "unique_questions": 160,
+  "historical_evidence_files": 197,
+  "old_reports_unchanged": true,
+  "broken_links": 0,
+  "out_of_page_text": 0,
+  "png_figures": 12,
+  "svg_figures": 12,
+  "new_neural_calls": 0,
+  "visual_review": "Separate mandatory human/model image review of rendered pages; this check alone does not prove layout quality."
+}

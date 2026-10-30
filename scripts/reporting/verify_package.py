@@ -30,11 +30,14 @@ def main():
     cross=json.loads((ROOT/'research/le16_v2/data/cross_tier_analysis.json').read_text())
     assert not cross['comparability']['overlapping_question_ids'] and not cross['comparability']['overlapping_reports']
     assert sum(v['n'] for v in cross['tier8_natural'].values())==768
+    oldcases=list(csv.DictReader((ROOT/'research/le16_v2/data/tier8_case_outcomes.csv').open()))
+    assert len(oldcases)==768 and len({v['case_id'] for v in oldcases})==101
     assert len(json.loads((ROOT/'research/le16_v2/data/tier8_evidence_catalog.json').read_text()))==197
     provenance=json.loads((ROOT/'research/tier16_v2/evidence/input_provenance.json').read_text())
     for name in ['TIER_8_RESEARCH_REPORT.md','TIER_8_V2_STATISTICAL_EVALUATION_REPORT.pdf']:
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==provenance['inputs'][name]['sha256']
     docs=[ROOT/n for n in json.loads((ROOT/'research/tier16_v2/data/document_index.json').read_text())['reports']]
+    docs+=[ROOT/'RESEARCH_DOCUMENTATION_INDEX.md']
     docs+=list((ROOT/'research/tier16_v2').glob('*.md'))+list((ROOT/'research/le16_v2').glob('*.md'))
     broken=[]
     for doc in docs:

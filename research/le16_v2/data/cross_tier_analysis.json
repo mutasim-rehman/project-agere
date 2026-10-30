@@ -74,6 +74,11 @@
         "p90": 63.71008223519749,
         "max": 92.08440896799584
       },
+      "initial_program_response_syntax": {
+        "valid_json": 49,
+        "decision_ANSWER": 47,
+        "decision_INSUFFICIENT": 2
+      },
       "peak_rss_bytes": 5052461056,
       "config": {
         "arm": "mas",
@@ -181,6 +186,11 @@
         "p90": 125.99748343579996,
         "max": 205.1902357769941
       },
+      "initial_program_response_syntax": {
+        "valid_json": 49,
+        "decision_ANSWER": 47,
+        "decision_INSUFFICIENT": 2
+      },
       "peak_rss_bytes": 5368115200,
       "config": {
         "arm": "sas",
@@ -286,6 +296,11 @@
         "median": 45.50074768200284,
         "p90": 64.250434710407,
         "max": 92.62216688799526
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 49,
+        "decision_ANSWER": 47,
+        "decision_INSUFFICIENT": 2
       },
       "peak_rss_bytes": 5063913472,
       "config": {
@@ -393,6 +408,11 @@
         "p90": 125.60153826739406,
         "max": 204.07240493701102
       },
+      "initial_program_response_syntax": {
+        "valid_json": 49,
+        "decision_ANSWER": 48,
+        "decision_INSUFFICIENT": 1
+      },
       "peak_rss_bytes": 5364441088,
       "config": {
         "arm": "sas",
@@ -498,6 +518,10 @@
         "median": 36.92304385549869,
         "p90": 66.55832821679287,
         "max": 88.9882236360063
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
       },
       "peak_rss_bytes": 5057949696,
       "config": {
@@ -605,6 +629,10 @@
         "p90": 59.48125271799872,
         "max": 88.7120873949898
       },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
       "peak_rss_bytes": 5045706752,
       "config": {
         "arm": "mas",
@@ -710,6 +738,10 @@
         "median": 34.352981143999386,
         "p90": 59.83799398690235,
         "max": 89.76075621699965
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
       },
       "peak_rss_bytes": 5056499712,
       "config": {
@@ -817,6 +849,10 @@
         "p90": 209.66985954099218,
         "max": 235.85646391000773
       },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
       "peak_rss_bytes": 5368107008,
       "config": {
         "arm": "sas",
@@ -922,6 +958,10 @@
         "median": 60.968224494503374,
         "p90": 100.10792759949618,
         "max": 166.77433812800882
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
       },
       "peak_rss_bytes": 5348327424,
       "config": {
@@ -1029,6 +1069,10 @@
         "p90": 67.7038116668994,
         "max": 89.93824154399908
       },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
       "peak_rss_bytes": 5059756032,
       "config": {
         "arm": "mas",
@@ -1134,6 +1178,11 @@
         "median": 161.58388695701433,
         "p90": 237.72426866779423,
         "max": 301.6706388829916
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 51,
+        "decision_INSUFFICIENT": 1
       },
       "peak_rss_bytes": 5365456896,
       "config": {
@@ -1242,6 +1291,10 @@
         "p90": 104.58146672300208,
         "max": 170.1242679410061
       },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
       "peak_rss_bytes": 5355872256,
       "config": {
         "arm": "sas",
@@ -1347,6 +1400,10 @@
         "median": 38.72858698099935,
         "p90": 67.59932962500034,
         "max": 89.70965169400006
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
       },
       "peak_rss_bytes": 5066604544,
       "config": {
@@ -1454,6 +1511,10 @@
         "p90": 227.20668853217504,
         "max": 263.1360024979949
       },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
+      },
       "peak_rss_bytes": 5369651200,
       "config": {
         "arm": "sas",
@@ -1559,6 +1620,10 @@
         "median": 74.91579207649556,
         "p90": 111.57429650540797,
         "max": 167.4731109370041
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 52,
+        "decision_ANSWER": 52
       },
       "peak_rss_bytes": 5368168448,
       "config": {
@@ -2830,6 +2895,11 @@
         "p90": 24.38658882719173,
         "max": 41.43319904801319
       },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_INSUFFICIENT": 155,
+        "decision_ANSWER": 5
+      },
       "peak_rss_bytes": 10900664320,
       "cap_bytes": 11500000000,
       "retrieval_strata": {
@@ -2918,6 +2988,11 @@
         "p90": 62.97287904899349,
         "max": 86.00500165399717
       },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_INSUFFICIENT": 150,
+        "decision_ANSWER": 10
+      },
       "peak_rss_bytes": 10928750592,
       "cap_bytes": 11500000000,
       "retrieval_strata": {
@@ -3005,6 +3080,11 @@
         "median": 81.94826693300274,
         "p90": 94.84526067714323,
         "max": 123.80968968296656
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_INSUFFICIENT": 150,
+        "decision_ANSWER": 10
       },
       "peak_rss_bytes": 10913439744,
       "cap_bytes": 11500000000,
@@ -3097,6 +3177,11 @@
         "p90": 164.4679671624137,
         "max": 278.51221283199266
       },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_ANSWER": 132,
+        "decision_INSUFFICIENT": 28
+      },
       "peak_rss_bytes": 10039861248,
       "cap_bytes": 11500000000,
       "retrieval_strata": {
@@ -3188,6 +3273,11 @@
         "p90": 319.06773705669946,
         "max": 427.4734470630028
       },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_ANSWER": 150,
+        "decision_INSUFFICIENT": 10
+      },
       "peak_rss_bytes": 10062245888,
       "cap_bytes": 11500000000,
       "retrieval_strata": {
@@ -3278,6 +3368,11 @@
         "median": 259.9145869034983,
         "p90": 450.21695039043846,
         "max": 673.2810896200099
+      },
+      "initial_program_response_syntax": {
+        "valid_json": 160,
+        "decision_ANSWER": 150,
+        "decision_INSUFFICIENT": 10
       },
       "peak_rss_bytes": 10073591808,
       "cap_bytes": 11500000000,
