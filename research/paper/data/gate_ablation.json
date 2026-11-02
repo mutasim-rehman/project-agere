@@ -1,0 +1,81 @@
+{
+  "analysis": "post_hoc_fixed_candidate_gate_removal",
+  "source": "research/tier16_v2/data/case_outcomes.csv",
+  "source_sha256": "3d4a970da64c8aa751d8cfbf2975704439210b6411dbd6f9df1e9e18714dff49",
+  "new_model_calls": 0,
+  "limitations": "Same saved executable candidates; no new draft generation, resource measurements, or inference-time no-review experiment.",
+  "results": [
+    {
+      "arm": "sas",
+      "metric": "reported",
+      "review_gate": "on",
+      "n": 160,
+      "correct": 78,
+      "wrong": 48,
+      "withheld": 34
+    },
+    {
+      "arm": "sas",
+      "metric": "reported",
+      "review_gate": "off",
+      "n": 160,
+      "correct": 84,
+      "wrong": 66,
+      "withheld": 10
+    },
+    {
+      "arm": "sas",
+      "metric": "raw",
+      "review_gate": "on",
+      "n": 160,
+      "correct": 38,
+      "wrong": 88,
+      "withheld": 34
+    },
+    {
+      "arm": "sas",
+      "metric": "raw",
+      "review_gate": "off",
+      "n": 160,
+      "correct": 44,
+      "wrong": 106,
+      "withheld": 10
+    },
+    {
+      "arm": "mas",
+      "metric": "reported",
+      "review_gate": "on",
+      "n": 160,
+      "correct": 5,
+      "wrong": 3,
+      "withheld": 152
+    },
+    {
+      "arm": "mas",
+      "metric": "reported",
+      "review_gate": "off",
+      "n": 160,
+      "correct": 5,
+      "wrong": 5,
+      "withheld": 150
+    },
+    {
+      "arm": "mas",
+      "metric": "raw",
+      "review_gate": "on",
+      "n": 160,
+      "correct": 5,
+      "wrong": 3,
+      "withheld": 152
+    },
+    {
+      "arm": "mas",
+      "metric": "raw",
+      "review_gate": "off",
+      "n": 160,
+      "correct": 5,
+      "wrong": 5,
+      "withheld": 150
+    }
+  ]
+}

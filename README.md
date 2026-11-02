@@ -1,5 +1,7 @@
 # Project Agere: Local LLM Deployment for Regulated Finance
 
+> **Phase 3 submission, 2 November 2026:** start with [submission contents and reproduction instructions](SUBMISSION.md) and the [final research paper PDF](output/pdf/RESEARCH_PAPER.pdf). The completed evaluation covers evidence through 16 GB. Earlier setup/status notes below are historical; the submission guide identifies the final scope and remaining limitations.
+
 > **Dashboard developer handoff:** [portable data and evidence package](dashboard_handoff/README.md) — browser-readable JSON/CSV, SSD evidence archives, checksums and restoration instructions. Your dashboard developer can work from a GitHub clone without the external SSD.
 
 > **Completed 16 GB study, 30 October 2026:** [documentation index](RESEARCH_DOCUMENTATION_INDEX.md) · [16 GB research report](TIER_16_RESEARCH_REPORT.md) · [combined <=16 GB pre-paper draft](TIER_LE_16_RESEARCH_REPORT.md). Statistical PDFs, graphs and analysis-ready data are linked in the index. Accuracy auditing is complete; historical swap failures remain explicitly resource-invalid. No 32 GB results are claimed.

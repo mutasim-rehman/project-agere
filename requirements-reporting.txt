@@ -1,0 +1,5 @@
+# Analysis and report generation only; inference uses configs/lab_tiers/runtime_pin.json.
+# Versions used locally for the numerical checks/figures; ReportLab from the bundled renderer.
+numpy==2.5.4
+reportlab==4.4.9
+matplotlib==3.11.2

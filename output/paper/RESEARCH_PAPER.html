@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Spend It Together or Spend It Big? (Project Agere)</title>
+<base href="../../">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<style>
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+  body { font-family: "Georgia", "Times New Roman", serif; font-size: 10.4pt; line-height: 1.45; color: #1b2733; max-width: 180mm; margin: 0 auto; }
+  h1 { font-size: 19pt; line-height: 1.2; color: #16324f; margin: 0 0 6pt; }
+  h2 { font-size: 14pt; color: #16324f; border-bottom: 1px solid #c9d2da; padding-bottom: 2pt; margin-top: 20pt; page-break-after: avoid; }
+  h3 { font-size: 11.5pt; color: #16324f; margin-top: 14pt; page-break-after: avoid; }
+  p, li { text-align: justify; }
+  table { border-collapse: collapse; width: 100%; margin: 8pt 0 10pt; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.2pt; page-break-inside: avoid; }
+  th { background: #16324f; color: white; font-weight: 600; }
+  th, td { border: 1px solid #c9d2da; padding: 3pt 4pt; vertical-align: top; text-align: left; }
+  tr:nth-child(even) td { background: #f3f6f8; }
+  img { display: block; max-width: 100%; margin: 8pt auto 2pt; page-break-inside: avoid; }
+  p:has(> img) { text-align: center; font-size: 8.5pt; color: #4a5866; page-break-inside: avoid; }
+  .caption { text-align: center; font-size: 8.6pt; color: #4a5866; font-style: italic; margin: 0 0 10pt; }
+  pre { background: #f3f6f8; border: 1px solid #d5dbe1; padding: 6pt; font-size: 7.4pt; line-height: 1.3; white-space: pre-wrap; word-break: break-word; page-break-inside: avoid; }
+  code { font-family: Consolas, "Courier New", monospace; font-size: 8.6pt; }
+  blockquote { border-left: 3px solid #007b7f; margin: 8pt 0; padding: 2pt 10pt; background: #eef6f6; }
+  hr { border: 0; border-top: 1px solid #c9d2da; margin: 14pt 0; }
+  .katex-display { margin: 6pt 0; }
+</style></head>
+<body><div id="content">Renderingâ€¦</div>
+<script id="md" type="text/markdown"># Quantized Monoliths and Full Precision Specialist Teams for Financial Document Reasoning under Fixed Memory Budgets
+
+**Mutasim ur Rehman and Ahmad Raza** — Project Agere
+
+**Manuscript date:** 2 November 2026 (Phase 3 submission revision; experiments completed 30 October 2026)
+
+---
+
+## Abstract
+
+Local financial document reasoning must balance answer quality against limited memory. We compare two CPU-only deployment recipes under common ceilings of 11.5 GB process-tree resident memory and 2,048 generated tokens per question: a Qwen2.5-14B-Instruct Q4_K_M single-agent system (SAS) and a resident 1.5B/3B/0.5B F16 multi-agent system (MAS). Both receive the same evidence packets and deterministic arithmetic executor. Evaluation covers 160 FinQA questions from 50 held-out company-year reports, with three prompt profiles and two numerical scoring conventions. Whole-report bootstrap intervals quantify paired differences; company clustering provides a sensitivity analysis.
+
+Under reported-answer scoring, the primary SAS delivered 78 correct and 48 wrong answers and withheld 34; MAS delivered 5 correct and 3 wrong and withheld 152. The MAS minus SAS correct-delivery difference was -45.6 percentage points (95% report-cluster interval -53.9 to -36.6). Raw-execution scoring also favoured SAS in correct delivery (38 versus 5), although absolute performance depended strongly on unit and rounding conventions. Coverage was 78.8% for SAS and 5.0% for MAS. Only 10 MAS drafts were executable and five were correct, bounding the benefit of any accept/reject-only reviewer. Repair added inference time without a Pareto improvement. MAS used more sampled peak memory (10.93 versus 10.06 GB) and more time per reported-correct answer despite lower latency per question.
+
+These results favour the tested quantized monolith for useful answer delivery, while the team's lower wrong-answer count accompanies extensive withholding. The comparison does not isolate architecture or precision effects. Two swap failures required audited checkpoint continuation, so the completed accuracy evaluation is not an uninterrupted no-swap deployment validation.
+
+**Keywords:** local LLM deployment · multi-agent systems · post-training quantization · resource parity · financial question answering · selective prediction · cluster bootstrap · regulated finance
+
+---
+
+## 1. Introduction
+
+### 1.1 Motivation
+
+Know-your-customer (KYC) onboarding, credit-memo drafting and mortgage origination checks are document-heavy, numerically exacting and legally sensitive. Confidentiality, records management and operational controls can motivate local deployment. FINRA Regulatory Notice 24-09, for example, reminds firms that existing obligations continue to apply when they use generative AI; it does not require all inference to remain on premises. We study a particular deployment scenario: an analyst workstation with 8–16 GB of system RAM, a commodity CPU and no datacenter GPU.
+
+Practitioners facing that envelope usually pick the largest open-weight model that fits after 4-bit post-training quantization and run it through a local runtime such as `llama.cpp` or Ollama. The multi-agent literature suggests an alternative: decompose the workflow into roles (extract, draft, verify) and serve each role with a smaller model kept at native 16-bit precision. The question is whether this alternative improves useful answer delivery under common memory and generated-token ceilings:
+
+> **Research question.** When both systems must fit the same host-adjusted process-tree RSS ceiling and the same generated-token budget, does a team of smaller full-precision specialist models outperform a single larger quantized model on local financial document reasoning?
+
+### 1.2 Status quo
+
+The current default, a quantized monolith, rests on three observations from prior work. Within a fixed GPU memory budget, larger quantized models can outperform smaller FP16 models, although the trade-offs vary by model family (Stuhlmann et al., 2025, Bench360). Multi-agent advantages often disappear once test-time compute is equalized (Tran & Kiela, 2026). Multi-agent pipelines fail in characteristic ways, grouped as system-design issues, inter-agent misalignment and task-verification failures (Cemri et al., 2025). Against that, quantization has been reported to amplify the failure modes an agent already shows at full precision, such as tool-name hallucination and wrong-entity arguments, while leaving headline scores flat (Jang et al., 2026). An independent full-precision verifier role is meant to catch exactly that kind of failure. No prior study we located holds physical process memory and generation budget equal while comparing these two deployment styles on financial documents (Section 3.7).
+
+### 1.3 Contributions
+
+1. **A resource-matched empirical comparison.** We report a completed, fully audited head-to-head comparison of a 14B Q4 monolith against a resident 1.5B/3B/0.5B F16 team under an 11.5 GB process-tree RSS ceiling and a 2,048-token generation budget, on 160 held-out financial numerical questions. We keep every case, including all withheld outputs, in every denominator.
+2. **A coverage-aware evaluation lens.** We show why "fewer wrong answers" is not an improvement on its own. We report correct, wrong and withheld outcomes jointly under two numerical scoring conventions, with dependence-aware uncertainty at report and company level. Explicit testing standards and a full numerical test battery accompany each test, with its theoretical justification, including sensitivity analyses showing how inference changes when within-report dependence is retained.
+3. **A stage decomposition that locates the bottleneck.** We use an exact identity, correct = executable × correct-given-executable × gate acceptance, together with a fixed-candidate gate bound. They show that the team's deficit arises at candidate production, so an accept/reject-only reviewer could not have closed the gap on these fixed drafts.
+4. **Negative ablations reported in full.** The prompt bundle increases observed correct delivery in both arms, with stronger inferential support for SAS. The tested repair policy costs 1.25–1.95 extra hours with no Pareto improvement.
+5. **A transparent resource audit.** It covers sampled RSS traces, two retained swap failures, checkpoint-replay continuation and kernel-level swap prevention. It also documents platform pitfalls at 8 GB (memory-mapped double counting on Windows and corrupted 4-bit KV caches on CPU).
+6. **Reproducible artefacts.** The accompanying local research package contains 960 case-level rows, report-level tables, paired contrasts, stage costs, scripts that re-verify input hashes, and supporting figures. Public availability is described separately in Section 11.
+
+### 1.4 Scope
+
+All results are for nominal tiers at or below 16 GB. A 32 GB configuration (Qwen2.5-32B Q4_K_M versus a resident 3B/7B/0.5B F16 team under a 25.6 GB ceiling) was specified and its weights staged, but it was not executed. We do not report or extrapolate it. We compare whole recipes. Model size, precision, number of roles and internal prompts differ jointly between arms, so the study is not a factorial isolation of architecture or precision.
+
+---
+
+## 2. Background
+
+### 2.1 Workstation memory as the binding constraint
+
+On a CPU-only workstation the resident set must hold all model weights, KV caches, runtime buffers and the controller process. Under the RAM Utilization Parity Protocol (RUPP) used throughout this project, at least 20% of physical RAM is reserved for the operating system and background compliance agents, giving nominal caps of 6.4, 12.8 and 25.6 GB on 8, 16 and 32 GB hosts. The cap is lowered further when measured idle memory plus a 1 GB margin requires it:
+
+$$M_{\text{job}} = \min\big(0.8\,M_{\text{tier}},\; M_{\text{host}} - M_{\text{idle}} - 1\,\text{GB}\big).$$
+
+The 16 GB evaluation host exposed 15.44 GB to Linux. After an earlier 12.49 GB attempt failed its pre-inference reserve check, the study adopted a fixed **11.5 GB application ceiling** that includes the controller, plus a separate 1 GB host reserve (Section 5.2).
+
+### 2.2 Quantization and storage arithmetic
+
+GGUF `Q4_K_M` stores most weights at roughly 4.5–5 effective bits per element, including block scales. F16 uses 16 bits. A 14B model at Q4_K_M occupies 8.99 GB on disk, while the 1.5B + 3B + 0.5B F16 team occupies 10.27 GB. Fewer total parameters therefore do not imply a smaller footprint when precision differs. Proposition 6 (Section 8) states this formally.
+
+### 2.3 Selective answering
+
+A system that may abstain trades **coverage**, the fraction of questions answered, against **risk**, the error rate among answers delivered (El-Yaniv & Wiener, 2010). In regulated workflows a withheld answer is routed to a human and a wrong delivered answer may propagate into a filing. Both matter, so neither accuracy alone nor precision alone is an adequate summary. We report all three delivery states.
+
+---
+
+## 3. Literature Review
+
+The review combines a 9-paper foundational corpus (Phase 1), a 10-paper extended corpus (Phase 2) and a later closest-work audit carried out during development to constrain novelty claims. It is organized by theme, and each theme ends with what remains unresolved for our setting.
+
+### 3.1 Test-time compute parity
+
+Tran & Kiela (2026) showed that on multi-hop reasoning (FRAMES and MuSiQue), single-agent systems consistently match or outperform multi-agent systems when reasoning tokens are held constant. They argued, via the data-processing inequality, that natural-language handoffs without fresh evidence are lossy. Wang et al. (2024) similarly argued for budget-aware evaluation, finding that complex reasoning strategies often beat simpler baselines because they are allocated more compute, not because of algorithmic ingenuity. *Gap:* compute is modelled as tokens only. Physical memory, quantization and tool-grounded document tasks are absent.
+
+### 3.2 When teams help: scaling and tool access
+
+Żywot et al. (2026) found that gains were driven primarily by orchestrator capacity rather than sub-agent capacity, and that an 8B multi-agent system matched a 32B single agent on GAIA (23.0 vs 23.0) and outperformed it on AIME (55.0 vs 45.0), even when the single agent had direct access to the same tools. Kim et al. (2025) related agent scaling to task structure: relative to a single-agent baseline, multi-agent performance ranged from +80.8% on decomposable financial reasoning to −70.0% on sequential planning, and independent (uncoordinated) agents amplified trace-level errors far more than centrally coordinated ones. MetaGPT (Hong et al., 2024) popularized role-specialized orchestration, and later work studied evolving orchestration (Dang et al., 2025), decentralized evolutionary coordination (AgentNet; Yang et al., 2025) and benchmarking of multi-agent collaboration against conventional methods on medical tasks (MedAgentBoard; Zhu et al., 2025). *Gap:* these studies assume elastic cloud memory, and none fixes resident RAM across arms.
+
+### 3.3 How multi-agent systems fail
+
+Cemri et al. (2025, MAST) catalogued 1,600+ traces into 14 failure modes in three categories: system design, inter-agent misalignment and task verification. Jamshidi et al. (2026) measured hallucination propagation through agent chains and found net attenuation of the hallucination score in 3-agent chains, alongside a small decline in factual accuracy. Singh & Pawar (2026) modelled propagation in a 4-agent financial-analysis pipeline on FinanceBench as a Markov process: detection fell from 72.0% at the first stage to 50.9% at the fourth, and boundary verification gates cut hallucination survival from 58.4% to 16.2% compared with end-of-pipeline checking. Wan et al. (2025, MAMM-Refine) found critique-guided reranking more effective than free revision for faithfulness. Estornell et al. (2025, ACC-Collab), Li et al. (2025) and Sun et al. (2025, Collab-Overcooked) studied learned actor–critic collaboration, role differentiation and shortcomings in active collaboration and adaptation. *Gap:* these studies use cloud or API models without memory ceilings, and only one (Singh & Pawar) uses financial documents. In our pipeline every role also sees the source evidence, not only the upstream message, so propagation estimates from message-only chains do not transfer directly (Section 8, "Nonidentification").
+
+### 3.4 Quantization in agentic settings
+
+AWQ (Lin et al., 2024) outperforms round-to-nearest and GPTQ 4-bit quantization across 7B–70B models, and SpinQuant (Liu et al., 2025) narrows the gap to full precision to 2.9 points on LLaMA-2 7B with 4-bit weights, activations and KV cache. MobileLLM (Liu et al., 2024) targets sub-billion-parameter on-device models, and BFCL (Patil et al., 2025) standardized function-calling evaluation. Jang et al. (2026) reported that quantization can look free on the standard metric while amplifying, by up to 2.5×, the failure an agent already shows at full precision, mainly tool-name hallucination and wrong-entity arguments. Malformed arguments were rare (≈0.1%). Quantigence (Alquwayfili, 2025) ran a multi-agent framework on consumer hardware (an 8 GB GPU) using 4-bit quantization and serialized execution. *Gap:* no study pits a quantized monolith against a native-precision specialist team under the same RSS budget on CPU.
+
+### 3.5 Local inference and financial reasoning
+
+Bench360 (Stuhlmann et al., 2025) profiled local inference across memory, latency, energy and quality on single 24 GB GPUs. It compared smaller FP16 models with larger quantized models from the same family (for Qwen2.5: 7B FP16, 14B INT8 and 32B INT4) and found that quantized larger models often scored higher but at a family-dependent system cost, with "no universal best option". It evaluated single models only, and did not test CPU inference. Liu et al. (2026) compared retrieval and structured memory for financial QA with one locally hosted 8B model: structured memory helped deterministic, operand-explicit tasks and retrieval helped conversational ones. MortarBench (Toles et al., 2026) introduced mortgage-origination agent tasks. FinQA (Chen et al., 2021) established numerical reasoning over financial reports with annotated gold programs, TAT-QA/TAGOP (Zhu et al., 2021) did so for hybrid tables and text with symbolic aggregation operators, and later work showed that small models fine-tuned on financial programs can improve substantially (Phogat et al., 2024).
+
+### 3.6 Closest prior work on financial agents and verification
+
+A development-time audit found that most individual components of our pipeline have close precedents:
+
+- financial specialist decomposition with formula planning, quantity extraction, code execution and staged checking (FinMAN / "David vs. Goliath", 2025);
+- independent concept/period/unit binding against XBRL facts with formal (Z3) checks whose named-constraint feedback can guide repair (VeriFin, 2026);
+- cost-aware routing between no verification, local revision and full re-solve (BudgetVerify, 2026);
+- source-labelled evidence with symbol binding and deterministic operators, using Qwen2.5 1.5B/3B/7B (DCRC, 2026);
+- role-specific LoRA agents sharing a backbone and KV caches (LRAgent, 2026; ForkKV, 2026);
+- execution-trace program repair, with limited gains (Haque et al., 2025);
+- risk/coverage-controlled abstention (SAFER, 2026).
+
+We therefore claim **no** novel inference algorithm. The contribution is measurement and diagnosis under a constraint those works do not impose.
+
+### 3.7 Synthesis table and remaining gap
+
+| Strand | Representative work | Controls compute? | Controls physical RAM? | Quantized vs native team? | Financial documents? |
+| --- | --- | --- | --- | --- | --- |
+| Token-parity SAS vs MAS | Tran & Kiela 2026; Wang et al. 2024 | Yes (tokens) | No | No | No |
+| Small-team vs large model | Żywot et al. 2026; Kim et al. 2025 | Partly | No | No | Kim includes financial reasoning |
+| MAS failure taxonomies | Cemri et al. 2025; Jamshidi et al. 2026; Singh & Pawar 2026 | No | No | No | Singh & Pawar only |
+| Quantized agents | Jang et al. 2026; Quantigence 2025 | No | Partly | All-quantized only | No |
+| Local inference profiling | Bench360 (Stuhlmann et al.) 2025 | n/a | Yes (GPU VRAM) | Single models only | No |
+| Financial agents/verification | FinMAN 2025; VeriFin 2026; DCRC 2026; BudgetVerify 2026 | Partly (tokens/cost) | Not located | No | Yes |
+| **This paper** | — | **Generated-token ceiling** | **Sampled process-tree RSS ceiling** | **Yes (Q4 monolith vs F16 team)** | **Yes (FinQA reports; synthetic KYC/credit)** |
+
+The gap addressed is the intersection of the columns, not any single column. Phase 2 also proposed four gaps: memory-parity, confounded baselines, quantization-hardening versus verification, and compliance-aligned metrics. Section 9.4 states how far the completed evidence closes each.
+
+---
+
+## 4. Research Questions and Hypotheses
+
+**RQ1 (primary).** Under equal RSS and token ceilings, how do the SAS and MAS recipes compare in correct deliveries, wrong deliveries and withholding?
+
+**RQ2.** Where in the pipeline (evidence, candidate generation, review) does any difference arise?
+
+**RQ3.** Do the shared reasoning-plus-demonstration prompt bundle and the shared repair policy improve either arm?
+
+**RQ4.** What are the memory, latency and cost-per-useful-answer consequences?
+
+**H1 (prespecified, primary).** The resident F16 MAS reduces wrong deliveries *without* losing correct deliveries relative to the Q4 SAS. This is the operational claim that would justify the team design.
+
+**H2.** The primary prompt bundle (128-token analysis + two training demonstrations) improves correct delivery over direct control in each arm.
+
+**H3.** Repair improves correct delivery without adding wrong deliveries.
+
+**H4.** The team uses no more resident memory than the monolith (the "fewer parameters" intuition).
+
+The primary endpoint set and the 16 GB primary pair were fixed before evaluation. The extended statistical battery, strata and utility analyses were added afterwards and are labelled post hoc.
+
+---
+
+## 5. Methodology
+
+### 5.1 Design overview: three evidence regimes
+
+The project ran in phases: literature and gap identification, synthetic data and baseline freeze, adaptation, then tier evaluations. It produced three evidence regimes with different tasks, models and adaptation. **We never pool them into a single statistical sample or a RAM-scaling curve.**
+
+| Dimension | Historical 8 GB | Redeveloped 8 GB FinQA | 16 GB FinQA (primary) |
+| --- | --- | --- | --- |
+| Task | Synthetic KYC/credit packs | Public FinQA train-source numerical QA | Public FinQA dev-source numerical QA |
+| Unique items | 175 test cases (+150 dev) | 52 selection + 49 reserved questions | 160 questions |
+| Clustering unit | Synthetic template | 15 + 15 company-year reports | 50 reports / 36 companies |
+| SAS | Qwen2.5-7B Q4_K_M | 7B Q4 + trained adapter | Qwen2.5-14B Q4_K_M, no task adaptation |
+| MAS | 1.5B + 0.5B + 0.5B F16 | Two resident 3B Q4 instances (same base checkpoint) + role adapters | 1.5B + 3B + 0.5B F16, distinct, resident |
+| Context | 2,048 | 4,096 | 4,096 |
+| Memory ceiling | 6.4 GB | 6.4 GB | 11.5 GB |
+| Host | Windows 11, 16.39 GB RAM (CPU model not recorded in run artefacts) | Native CPU backend | Linux 7.0, AMD Ryzen 5 8645HS, 15.44 GB |
+| Causal RAM comparison? | No | No | No |
+
+The redevelopment followed an internal audit of the historical study. That audit found the synthetic suites rule-solvable and its narrative language (e.g., "capacity floor", "Markov cascade") stronger than the evidence. The project therefore moved to a public, program-annotated benchmark with real report text and tables. The 16 GB study froze code, inputs and runtime by hash before execution.
+
+```text
+                 ┌───────────────────────────── shared, identical for both arms ─────────────────────────────┐
+ question ──►  public evidence packet (lexical IDF top-8 source units + quantity catalog A000…A0nn)
+                 │                                                                                           │
+   SAS (one 14B Q4 model)                                MAS (three resident F16 models)                     │
+   ───────────────────────                               ───────────────────────────────                     │
+   [analysis ≤128 tok]                                   [1.5B extractor: select source IDs]                 │
+   [program JSON: ANSWER/INSUFFICIENT + steps]           [3B drafter: analysis ≤128 tok]                     │
+                 │                                       [3B drafter: program JSON]                          │
+                 ▼                                                     ▼                                     │
+        deterministic executor (copies catalog values, applies add/subtract/multiply/divide, checks spans) ◄─┘
+                 ▼                                                     ▼
+   [14B review: PASS/FAIL/UNKNOWN]                       [0.5B verifier: PASS/FAIL/UNKNOWN]
+                 ▼                                                     ▼
+   deliver if ANSWER ∧ executable ∧ PASS, else withhold   (repair-ablation profile: one full re-plan + re-review)
+                 ▼
+   score: reported-answer convention and raw-execution convention  →  C / W / H
+```
+
+### 5.2 Resource parity protocol
+
+**Memory.** A controller samples the summed RSS and swap of the controller and all worker processes every 0.2 s. A run is invalid if RSS exceeds the ceiling or if any process-tree swap appears. The 16 GB ceiling is 11,500,000,000 bytes and includes the controller. A 1 GB host reserve plus a 100 MB launch cushion must be available before launch (12.6 GB available RAM). Sampling is not a hard cgroup RSS bound, and peaks between samples cannot be excluded.
+
+**Context.** Engineering probes at an 8,192-token context swapped. The common context was therefore reduced to 4,096 tokens for both arms before the accuracy run. Weights and precision did not change. Neutral long-input probes then peaked at 9.98 GB (SAS) and 10.85 GB (MAS) with no swap.
+
+**Tokens.** Each question has a 2,048 generated-token ceiling summed across all stages and roles. Equal ceilings do not imply equal FLOPs or equal actual token use. We measure tokens and inference time; FLOPs and energy are not measured. No context or budget skips occurred in any of the six jobs.
+
+**Runtime.** Both arms use `llama-cpp-python` 0.3.16 (portable AVX2 build), Python 3.12, 8 threads, `n_gpu_layers=0`, `use_mmap=False`, temperature 0 (greedy), seed 42, F16 KV cache, and a KV reset on every call.
+
+### 5.3 Systems under comparison
+
+| Arm | Role | Model | Precision | GGUF bytes |
+| --- | --- | --- | --- | --- |
+| SAS | All stages | Qwen2.5-14B-Instruct | Q4_K_M | 8,988,110,336 |
+| MAS | Extractor / evidence selector | Qwen2.5-1.5B-Instruct | F16 | 3,093,669,024 |
+| MAS | Drafter (analysis + program) | Qwen2.5-3B-Instruct | F16 | 6,178,316,832 |
+| MAS | Verifier | Qwen2.5-0.5B-Instruct | F16 | 994,156,512 |
+| | | **MAS total** | | **10,266,142,368** |
+
+Both arms use **instruction-tuned checkpoints without task-specific adaptation in this experiment**: the 8 GB adapters were trained for 7B/3B checkpoints and are incompatible with the 14B model. Reusing them only on one side would have confounded the comparison. All MAS models stay resident, with no backbone sharing. All arms receive the same tools: the evidence packet, quantity catalog and deterministic executor.
+
+### 5.4 Program representation and stages
+
+Models never write numbers into the program. They reference catalog IDs (`A013`), earlier steps (`#0`) or whitelisted constants (`CONST:100`), and choose a unit (`number`, `percent`, `fraction`). A grammar constrains program JSON to `{"decision": "ANSWER"|"INSUFFICIENT", "answer_unit", "steps":[{op,left,right}]}`. The deterministic executor resolves references to source values and records source spans. The review stage sees the question, the evidence, the resolved program and the execution trace, and must judge operand relevance (row/year), operations and units, returning PASS, FAIL or UNKNOWN. A case is delivered only if the decision is ANSWER, execution is valid and the verdict is PASS. Section 7 shows actual prompts and responses.
+
+### 5.5 Prompt profiles
+
+| Profile | Analysis stage | Training demonstrations | Repair | Role in design |
+| --- | --- | --- | --- | --- |
+| **Primary** | 128 tokens | 2 fixed | None | Prespecified primary comparison |
+| Direct control | None | None | None | Bundle ablation |
+| Repair ablation | 128 tokens | 2 fixed | One full re-plan + re-review after FAIL | Repair ablation |
+
+The primary profile adds the analysis allowance and demonstrations together, so the direct-control contrast cannot separate the two. The no-repair primary was chosen before results were seen.
+
+### 5.6 Data
+
+**16 GB cohort.** We took the first 50 eligible whole company-year reports, ordered by a fixed hash of report IDs, from the public FinQA development source. Reports exposed during 8 GB development were excluded, and every question in a selected report was kept (160 questions, 36 companies; 1–11 questions per report, median 3). Gold annotations were held in a separate scoring file sealed from the public packets (SHA-256 recorded). These are not the official FinQA test split, and pretraining contamination cannot be excluded. Gold reference programs comprise 104 one-step, 49 two-step and 7 three-or-more-step programs.
+
+**8 GB FinQA cohorts.** These are 52 model-selection questions and 49 reserved questions, each drawn from 15 reports in the FinQA training source. They have no ID or report overlap with the 16 GB set.
+
+**Synthetic KYC/credit (historical 8 GB).** *Agere-KYC-Synth* (100 test cases) and *Agere-Credit-Synth* (75 test cases) were generated from templates aligned with FATF and SBP practice. They include planted identity mismatches, omitted fields that require a `MISSING` refusal, and calculator targets (DSCR, current ratio). A 100-question FRAMES slice (Krishna et al., 2024) served as a closed-book negative control. MortarBench (90 questions) was run later, in the redeveloped 8 GB phase, as an external check (Section 6.2).
+
+### 5.7 Outcomes and metrics
+
+Every case receives exactly one state per metric: **C** (delivered and correct), **W** (delivered and wrong) or **H** (withheld). From these:
+
+$$\text{coverage}=\frac{C+W}{N},\qquad \text{precision}=\frac{C}{C+W},\qquad \text{withholding}=\frac{H}{N}.$$
+
+Two numerical conventions are kept side by side, and neither was chosen after seeing results:
+
+- **Reported-answer**: the prediction is normalized by its declared unit and compared to the rounded reference `qa.answer`.
+- **Raw-execution**: relative/absolute tolerance 10⁻⁵ against the reference program value `qa.exe_ans`, without unit normalization.
+
+For reproducibility, the reported-answer parser removes commas and dollar signs and accepts a signed numeric value with an optional percent sign. A percentage reference and a prediction declared as `percent` are each divided by 100. Decimal references use half a unit of the last stated decimal place as tolerance; integer percentages use half a percentage point before normalization. Integer non-percentage references use 10^-5. The final tolerance is at least 10^-5 after normalization. Percentage references permit prediction units `percent` or `fraction`; other references permit `number` or `fraction`. An unsupported reference format or incompatible declared unit does not match. Raw-execution matching requires absolute error no greater than max(10^-5, 10^-5 times the absolute reference value), without declared-unit normalization. These rules are implemented in `reported_reference` and `evaluate_financial` in `scripts/tier8_v2_financial_pipeline.py`.
+
+Neither is the official FinQA program-equivalence metric. Historical synthetic metrics (JSON validity, structured invention rate, claim-level citation grounding, planted-mismatch recall, refusal correctness) are reported only within that regime.
+
+### 5.8 Statistical analysis
+
+- **Primary estimand.** Paired MAS − SAS difference in event rates over all 160 questions, for C and W under both metrics (four endpoints). H follows from the identity $C+W+H=N$ and is not tested separately.
+- **Intervals.** Whole-report cluster bootstrap: 50 reports resampled with replacement, all questions in a report kept, question-weighted estimator, 10,000 draws, NumPy `default_rng(42)`, percentile intervals. Bonferroni-style 98.75% marginal intervals target 95% family coverage for the four primary endpoints; this is approximate because the percentile bootstrap is approximate. Sensitivity analyses use company-cluster bootstrap (36 companies), equal-report weighting and leave-one-report-out ranges.
+- **Tests (supplemental).** Cluster sign-flip tests with exact enumeration up to 18 non-zero clusters, otherwise 65,536 Monte Carlo draws with $p=(\text{extreme}+1)/(\text{draws}+1)$. Holm correction over the four primary endpoints. For this paper we added a cluster-score test for paired outcomes and cluster-robust (CR1) tests, a report-level sign test, and Bowker and Stuart–Maxwell tests on the full 3×3 transition tables. Exact and asymptotic McNemar tests are shown only as case-IID sensitivity diagnostics because they ignore clustering.
+- **Per-arm rates.** Wilson 95% intervals (case-IID, descriptive).
+- **Interpretation rules.** No equivalence margin was prespecified, so non-significance is never read as equality. Precision comparisons condition on different delivered sets. Secondary profiles are exploratory, and no post-hoc observed power is reported.
+
+### 5.9 Statistical reporting standards
+
+Appendix D specifies the estimands, formulas, assumptions and multiplicity rules. Report-cluster estimation is primary; post-hoc cluster tests are supplemental, and case-IID tests are sensitivity diagnostics. No equivalence claim follows from a non-significant result.
+
+### 5.10 Provenance and reproducibility
+
+Raw prompts, responses, stage traces, memory samples, failed attempts and manifests stay on the project SSD (`AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-02/`), with a checksum-protected export archive. Before computing any endpoint, the analysis script verifies the hashes of all inputs. A vocabulary-only replay reconstructs prompts, programs, delivery decisions, scores and token ledgers from the saved responses. The analysis package includes known-value tests for the reporting statistics. The raw SSD archive is required for full replay; derived case tables support re-analysis without model inference. A local file path is not a public release, and no persistent public archive identifier is supplied here. Paper-specific figures are reproduced by `scripts/reporting/paper_figures.py`, which makes no inference calls.
+
+### 5.11 Changes from the Phase 2 design and feedback record
+
+The original design in `EXPERIMENT_PROTOCOL.md` and `METHODOLOGY.md` targeted local KYC/credit document workflows across 8, 16 and 32 GB tiers, with a full-precision team versus a larger quantized monolith. The completed implementation retains that deployment question but narrows the empirical claim. The prospective amendment is preserved in `research/lab_tiers/PROTOCOL.md`; the executed settings and failures are recorded in `research/tier16_v2/PROTOCOL_SNAPSHOT.md` and `RESOURCE_AUDIT.md`.
+
+| Original plan | Implemented change | Reason and consequence |
+| --- | --- | --- |
+| Synthetic KYC/credit as the main outcome | Retain the 175-case synthetic evaluation as historical evidence; use 160 report-held-out FinQA questions for the primary study | Historical output-contract failures motivated financial numerical QA. This changes the construct; FinQA correctness does not establish KYC compliance. |
+| Nominal 12.8 GB cap at 16 GB | Fixed 11.5 decimal GB application cap; common context reduced from engineering probes at 8,192 to 4,096 | Host reserve constraints and observed swap required a common feasible setting. Historical swap failures remain invalid. |
+| Task adaptation and hardening | Keep 8 GB adaptation separate; use instruction-tuned checkpoints without task adaptation in both 16 GB arms | Existing 7B/3B adapters were incompatible with the larger SAS checkpoint. |
+| Thinking-token parity; three seeds (42, 123, 999) | Common 2,048 generated-output-token ceiling; greedy decoding at seed 42 | Generated tokens are observable; private reasoning/FLOPs are not equalized. Multi-seed robustness was not evaluated. |
+| 8/16/32 GB evaluation | Report completed evidence through 16 GB; retain 32 GB as unexecuted future work | No 32 GB result exists. This is a scope reduction, not a successful three-tier validation. |
+| Finance grounding and mismatch metrics | Preserve historical metrics; add correct/wrong/withheld outcomes and two numerical conventions | Withholding must not be mistaken for correctness; custom FinQA scoring is distinguished from the official metric. |
+
+**Class-feedback provenance.** No dated record of the previous class's feedback was available in the reviewed project materials. The changes above are supported by development records and measured engineering constraints; they are not attributed to an instructor. Incorporation of specific class feedback therefore remains unverified. This disclosure must be reconciled with the actual class comments before claiming that requirement is fully satisfied.
+
+### 5.12 Preprocessing, feature construction and split isolation
+
+The primary input is structured FinQA JSON, not newly OCR-processed PDFs. `packet()` in `scripts/tier8_v2_finqa.py` converts each non-header table row into header-labelled cell text and combines pre-table and post-table paragraphs into source-ID units. Retrieval lowercases alphanumeric tokens, removes a fixed stop-word set, and ranks units by corpus-local inverse-frequency weighting with square-root length normalization; term occurrences are capped at two. Up to eight units are retained, with source ID breaking ties. Both arms receive the same packet. Gold answers, programs, annotated evidence IDs and upstream model-input fields do not enter it.
+
+`atom_catalog()` in `scripts/evidence_atoms.py` constructs source-linked numeric features from those units. It removes commas between digits, converts parenthesized numeric values to negatives, and assigns finite decimal quantities deterministic `Axxx` references with source spans. Programs select these references, allowed constants and earlier steps; code resolves the values and performs arithmetic. This is deterministic feature construction, not a learned extractor or a guarantee of operand relevance.
+
+`scripts/lab_tiers_prepare.py` selects whole reports using the fixed salted report-ID hash, excludes recorded earlier report exposure, retains every question in each selected report, checks demonstration-report separation, and seals model-visible packets before writing the separate scoring payload. Section 5.6 gives the 52/49-question 8 GB selection/reserved cohorts and the separate 160-question 16 GB evaluation cohort. The two fixed demonstrations come from the training source. There is no 16 GB training split because neither arm is fitted on this cohort. The upstream development split is held out relative to recorded project development, not relabelled as the official test split. Exact IDs, exclusions and SHA-256 pins are in `configs/lab_tiers/protocol.json` and the archived selection manifest.
+
+---
+
+## 6. Results
+
+### 6.1 Historical 8 GB synthetic study (175 held-out cases)
+
+| Metric | SAS (7B Q4_K_M) | MAS (1.5B/0.5B/0.5B F16) |
+| --- | --- | --- |
+| Valid JSON | 175/175 (100%) | 111/175 (63.4%) |
+| Structured invention rate (lower better) | 125/175 (71.4%) | 89/111 (80.2%)* |
+| Claim-level citation grounding | 84.4% | 36.3% |
+| Planted identity-mismatch recall | 0/20 | 0/20 |
+| Missing-field refusal | 0/59 | 0/59 |
+| Mean generated tokens / case | 327.5 | 678.4 |
+| Mean latency / case | 91.5 s | 60.6 s |
+| Peak process-tree RSS (cap 6.40 GB) | 5.03 GB | 5.54 GB |
+| FRAMES closed-book control (exact) | 1/100 | 2/100 |
+
+\*The MAS invention denominator excludes the 64 malformed outputs, so the two rates are not on a common denominator.
+
+The monolith was far more reliable structurally. On credit packs alone, MAS JSON validity fell to 52% and grounding to 18.2%. Neither system flagged a single planted mismatch or correctly refused a missing field. Pre-registered hardening on the development set (staged prompts for SAS; typed handoffs and boundary gates for MAS) collapsed JSON validity (SAS 100%→19.3%, MAS 62%→0%). Both arms were therefore reverted to baselines before the test split was opened (commit `64cf45a`).
+
+Two engineering findings matter for practitioners. On Windows 11, `use_mmap=True` made a 4.68 GB model report 6.59 GB working-set RSS at context 4,096 (6.47 GB at 2,048) and breach the cap; direct loading fixed it. A Q4_0 KV cache combined with flash attention on CPU corrupted generations (0/150 valid JSON on dev), so F16 KV without flash attention was used; the two settings were not separated.
+
+Section 7.5 shows a measurement caveat. In the example credit case the SAS output copied the source sentinel `NOT_PROVIDED` rather than emitting the required token `MISSING`, and the verifier scored this as "invention". The historical invention rate therefore partly measures compliance with an output contract, not only fabrication.
+
+
+### 6.2 Redeveloped 8 GB FinQA programme (15 configurations)
+
+| 8 GB condition (reported metric) | N | C / W / H | Raw C / W / H | Peak RSS (GB) |
+| --- | --- | --- | --- | --- |
+| Reserved: control SAS | 49 | 8 / 20 / 21 | 14 / 14 / 21 | 5.368 |
+| Reserved: control MAS | 49 | 4 / 17 / 28 | 8 / 13 / 28 | 5.052 |
+| Reserved: crossed SAS | 49 | 9 / 20 / 20 | 15 / 14 / 20 | 5.364 |
+| Reserved: crossed MAS | 49 | 4 / 9 / 36 | 7 / 6 / 36 | 5.064 |
+| Selection: baseline SAS | 52 | 8 / 25 / 19 | 10 / 23 / 19 | 5.348 |
+| Selection: baseline SAS (analysis128 + 2 demos) | 52 | 9 / 24 / 19 | 10 / 23 / 19 | 5.368 |
+| Selection: control SAS | 52 | 8 / 23 / 21 | 10 / 21 / 21 | 5.356 |
+| Selection: control SAS (analysis128 + 2 demos) | 52 | 9 / 20 / 23 | 11 / 18 / 23 | 5.365 |
+| Selection: crossed SAS | 52 | 10 / 16 / 26 | 12 / 14 / 26 | 5.368 |
+| Selection: crossed SAS (analysis128 + 2 demos) | 52 | 9 / 10 / 33 | 10 / 9 / 33 | 5.370 |
+| Selection: baseline MAS | 52 | 2 / 19 / 31 | 3 / 18 / 31 | 5.058 |
+| Selection: baseline original classic MAS | 52 | 4 / 18 / 30 | 6 / 16 / 30 | 5.046 |
+| Selection: baseline original critic, common actor | 52 | 4 / 22 / 26 | 6 / 20 / 26 | 5.056 |
+| Selection: control MAS | 52 | 3 / 19 / 30 | 5 / 17 / 30 | 5.060 |
+| Selection: crossed MAS | 52 | 3 / 15 / 34 | 5 / 13 / 34 | 5.067 |
+
+In every matched SAS/MAS pair, SAS delivered at least as many correct answers. Adapted critics ("crossed" negative training) mostly shifted wrong deliveries into withholding rather than adding correct deliveries. The crossed critic withheld one previously correct answer relative to the stronger original critic, so it failed the project's predeclared no-correct-loss adoption rule and was not adopted.
+
+The supporting diagnostics follow the same pattern:
+
+- QLoRA adaptation of the 3B actor added 11 correct *candidates* (delivered states moved from 0/0/24 to 10/11/3).
+- A trained critic raised C from 3 to 11 while W rose from 0 to 4.
+- A shared-backbone serving proof cut sampled RSS from 4.83 to 2.57 GB with identical logits on a small probe.
+- MortarBench gave SAS 39 versus MAS 26 exact answers out of 90; a later FRAMES control gave 2 versus 1 out of 100.
+
+
+### 6.3 Primary 16 GB results
+
+| Profile / arm | Reported C / W / H | Raw C / W / H | Inference hours | Peak RSS (GB) |
+| --- | --- | --- | --- | --- |
+| **Primary / SAS** | **78 / 48 / 34** | **38 / 88 / 34** | 11.546 | 10.062 |
+| **Primary / MAS** | **5 / 3 / 152** | **5 / 3 / 152** | 2.432 | 10.929 |
+| Direct control / SAS | 50 / 66 / 44 | 14 / 102 / 44 | 5.266 | 10.040 |
+| Direct control / MAS | 0 / 5 / 155 | 0 / 5 / 155 | 0.821 | 10.901 |
+| Repair ablation / SAS | 79 / 50 / 31 | 38 / 91 / 31 | 13.494 | 10.074 |
+| Repair ablation / MAS | 5 / 3 / 152 | 5 / 3 / 152 | 3.682 | 10.913 |
+
+Across retained and replay-audited checkpoints, all six jobs completed 160/160 cases under the sampled 11.5 GB RSS ceiling. This completion includes continuation after the swap failures detailed in Section 6.11. The six jobs used 37.24 inference hours in total.
+
+**Per-arm rates, primary profile (Wilson 95%, case-IID, descriptive).**
+
+| Rate | SAS reported | SAS raw | MAS (both metrics) |
+| --- | --- | --- | --- |
+| Correct delivered | 48.8% [41.1, 56.4] | 23.8% [17.8, 30.9] | 3.1% [1.3, 7.1] |
+| Wrong delivered | 30.0% [23.4, 37.5] | 55.0% [47.3, 62.5] | 1.9% [0.6, 5.4] |
+| Withheld | 21.2% [15.6, 28.2] | 21.2% [15.6, 28.2] | 95.0% [90.4, 97.4] |
+| Coverage | 78.8% | 78.8% | 5.0% |
+| Precision among delivered | 61.9% [53.2, 69.9] (78/126) | 30.2% [22.8, 38.7] (38/126) | 62.5% [30.6, 86.3] (5/8) |
+
+![Figure 1. All six 16 GB jobs: correct, wrong and withheld (reported metric).](figures/tier16_v2/01_outcome_profiles.png)
+
+### 6.4 Paired transitions
+
+Because both arms answered the same questions, the 3×3 cross-tabulation shows exactly where they differ:
+
+| SAS state ↓ / MAS state → | MAS C | MAS W | MAS H |
+| --- | --- | --- | --- |
+| SAS C (78) | 5 | 1 | **72** |
+| SAS W (48) | 0 | 2 | **46** |
+| SAS H (34) | 0 | 0 | 34 |
+
+Under reported-answer scoring, there is **no question on which MAS delivered a correct answer that SAS did not**. Under raw-execution scoring there is one MAS-only correct delivery and 34 SAS-only correct deliveries; the set-inclusion claim therefore does not extend to that convention. MAS's 45 fewer wrong deliveries come from withholding 46 questions that SAS got wrong. The same withholding also cost 72 questions that SAS got right. At report level, SAS had a higher correct-delivery rate on 33 of 50 reports, the two tied on 17, and MAS was higher on none.
+
+![Figure 2. Paired per-question transitions, both metrics.](figures/paper/P01_paired_transitions.png)
+
+
+### 6.5 Statistical inference for the primary contrasts
+
+| Endpoint (MAS − SAS) | Difference (pp) | Report 95% CI | Company 95% CI | Holm p |
+| --- | --- | --- | --- | --- |
+| Reported / correct | −45.62 | [−53.90, −36.55] | [−53.47, −36.44] | 6.1×10⁻⁵ |
+| Reported / wrong | −28.12 | [−37.09, −20.13] | [−38.36, −19.76] | 6.1×10⁻⁵ |
+| Raw / correct | −20.62 | [−28.26, −13.37] | [−28.15, −14.07] | 6.1×10⁻⁵ |
+| Raw / wrong | −53.12 | [−61.90, −44.08] | [−61.99, −43.08] | 6.1×10⁻⁵ |
+| Withheld (identity) | +73.75 | [+64.71, +81.93] | [+66.03, +81.10] | — |
+
+Intervals are in percentage points; Holm p-values use report-cluster sign flips. The accompanying statistical tables retain the 98.75% intervals, equal-report weighting and leave-one-report-out sensitivities.
+
+All four primary contrasts exclude zero under every grouping and weighting. Three of the four sign-flip p-values sit at the Monte Carlo resolution floor of 1/65,537 ≈ 1.5×10⁻⁵ (no extreme draw). For raw-metric correct delivery one of 65,536 draws was as extreme, giving 2/65,537 ≈ 3.1×10⁻⁵; Holm adjustment over the four gives 6.1×10⁻⁵ for all four. We independently re-ran the report-cluster bootstrap from the case-level table, and the published intervals were reproduced to the stated precision. **Direction matters for interpretation.** The correct-delivery contrasts favour SAS. The wrong-delivery contrasts favour MAS, but only because MAS withholds almost everything. A small p-value does not resolve that trade-off; Section 6.12 frames it as a preference. Appendix E reports the complete battery of paired, cluster-adjusted and 3×3 symmetry tests behind these p-values.
+
+![Figure 3. Primary effects with report-cluster 95% and 98.75% intervals.](figures/tier16_v2/02_primary_effects.png)
+
+
+### 6.6 Where the team loses useful answers
+
+| Arm | Executable candidate | Correct candidate | C delivered | W delivered | Correct withheld | Wrong withheld | Invalid / INSUFFICIENT |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| SAS | 150 | 84 | 78 | 48 | 6 | 18 | 10 |
+| MAS | 10 | 5 | 5 | 3 | 0 | 2 | 150 |
+
+All 160 program-stage responses were valid JSON in both arms. The grammar solved format; it did not ensure useful content. The 14B model chose ANSWER on 150 questions. The 3B drafter chose INSUFFICIENT on 150. Writing $q$ for the executable fraction, $p$ for correctness given execution, and $a$ and $b$ for gate acceptance of correct and wrong candidates:
+
+| | $q$ | $p$ | $a$ | $b$ | $C/N=q\,p\,a$ | $W/N=q(1-p)b$ |
+| --- | --- | --- | --- | --- | --- | --- |
+| SAS | 0.9375 | 0.560 | 0.929 | 0.727 | 78/160 | 48/160 |
+| MAS | 0.0625 | 0.500 | 1.000 | 0.600 | 5/160 | 3/160 |
+
+The binding factor for MAS is $q$, a fifteen-fold gap in executable candidate production. The review gates behave similarly: neither is a strong error filter. The 14B reviewer accepted 73% of wrong executable candidates and the 0.5B verifier 60%.
+
+![Figure 4. Candidate production constrains the final gate.](figures/tier16_v2/03_candidate_funnel.png)
+
+### 6.7 Prompt bundle and repair ablations
+
+| Contrast (right − left) | Metric | ΔC | ΔW | C 95% CI (pp) | W 95% CI (pp) |
+| --- | --- | --- | --- | --- | --- |
+| SAS primary vs direct | Reported | +28 | −18 | [+9.76, +24.55] | [−17.98, −3.90] |
+| SAS primary vs direct | Raw | +24 | −14 | [+8.59, +21.62] | [−17.96, +0.72] |
+| MAS primary vs direct | Both | +5 | −2 | [0.00, +6.98] | [−5.26, +2.55] |
+| SAS repair vs primary | Reported | +1 | +2 | [0.00, +2.04] | [0.00, +3.40] |
+| SAS repair vs primary | Raw | 0 | +3 | [0.00, 0.00] | [0.00, +4.35] |
+| MAS repair vs primary | Both | 0 | 0 | [0.00, 0.00] | [0.00, 0.00] |
+
+**H2 has descriptive support in both arms, but inferential support is stronger for SAS**: the MAS correct-delivery interval includes zero and its two-sided exact case-level p-value is 0.0625. Direct-control MAS delivered no correct answer at all. The two components cannot be separated with this design. **H3 is not supported.** Primary and repair runs were identical on all 160 initial decisions in both arms. SAS repair released 3 previously withheld cases (one correct, two wrong under the reported metric; zero correct, three wrong under raw) at a cost of 1.95 extra inference hours. MAS attempted 152 repairs with no change to any delivery state; source-supported candidate programs actually fell from 10 to 8. That cost 1.25 extra hours.
+
+
+**Individual-component ablation: remove only the final review gate.** As a post-hoc deterministic replay, we keep the saved primary drafts and executor unchanged and deliver every executable candidate, irrespective of the saved PASS/FAIL/UNKNOWN verdict. Invalid and INSUFFICIENT cases remain withheld. This isolates the acceptance gate on fixed candidates; it does not regenerate drafts or measure the latency/memory of a fresh no-review run.
+
+| Arm / metric | Review on: C / W / H | Review off: C / W / H | Effect of removing review |
+| --- | --- | --- | --- |
+| SAS / reported | 78 / 48 / 34 | 84 / 66 / 10 | +6 correct, +18 wrong |
+| SAS / raw | 38 / 88 / 34 | 44 / 106 / 10 | +6 correct, +18 wrong |
+| MAS / reported | 5 / 3 / 152 | 5 / 5 / 150 | 0 correct, +2 wrong |
+| MAS / raw | 5 / 3 / 152 | 5 / 5 / 150 | 0 correct, +2 wrong |
+
+The MAS review gate removes two wrong deliveries without losing a correct one on these drafts, but removing it cannot recover the 150 non-executable/INSUFFICIENT cases. SAS review removes 18 wrong candidates at the cost of six correct candidates under either scoring convention. This supports a component-specific trade-off, not universal reviewer effectiveness. Reproduce with `python scripts/reporting/gate_ablation.py`; results and input SHA-256 are in `research/paper/data/gate_ablation.json`. No hypothesis test was prespecified for this replay. The direct-control experiment remains a bundle ablation: separate analysis-only and demonstration-only inference experiments were not conducted.
+
+### 6.8 Scoring-convention sensitivity
+
+| SAS primary deliveries | Raw correct | Raw incorrect | Total |
+| --- | --- | --- | --- |
+| Reported correct | 34 | 44 | 78 |
+| Reported incorrect | 4 | 44 | 48 |
+| Total | 38 | 88 | 126 |
+
+48 of 126 SAS deliveries change label between conventions. Most are percentage-versus-fraction conventions in the reference data. For example, `ABMD/2007/page_52.pdf-2` predicts 59.48 (percent) against reported answer "59.5%" but raw `exe_ans` 0.59482. All eight MAS deliveries are concordant. The ordering of arms is the same under both conventions, but SAS's absolute accuracy depends heavily on the convention. That is why both are reported and neither is called "official".
+
+![Figure 5. Scoring-convention concordance.](figures/tier16_v2/04_metric_concordance.png)
+
+### 6.9 Post-hoc strata: reasoning complexity and retrieval
+
+We stratified by the length and type of the *gold* reference program, which deployment never sees (exploratory):
+
+| Gold program | n | SAS C / W / H | MAS C / W / H |
+| --- | --- | --- | --- |
+| 1 step | 104 | 52 / 29 / 23 | 5 / 3 / 96 |
+| 2 steps | 49 | 26 / 14 / 9 | 0 / 0 / 49 |
+| 3+ steps | 7 | 0 / 5 / 2 | 0 / 0 / 7 |
+| Single add/subtract | 40 | 16 / 12 / 12 | 1 / 0 / 39 |
+| Single ratio/product | 59 | 34 / 14 / 11 | 4 / 3 / 52 |
+| Multi-step arithmetic | 56 | 26 / 19 / 11 | 0 / 0 / 56 |
+| Table aggregate (max/min/sum/avg) | 5 | 2 / 3 / 0 | 0 / 0 / 5 |
+
+MAS delivered nothing on any question whose reference solution needs more than one operation. SAS kept about 50% correct delivery on one- and two-step questions but none on the seven longest programs.
+
+Retrieval completeness tells a similar story. All annotated gold evidence was in the top-8 packet for 138/160 questions. In that stratum SAS delivered 74 correct with 3 non-executable or INSUFFICIENT candidates, whereas MAS delivered 5 correct with 128 such candidates. These are not malformed JSON responses. Missing evidence alone therefore cannot explain the MAS deficit, although the roles' ability to use the retrieved evidence remains unresolved.
+
+![Figure 6. Correct delivery by gold-program complexity.](figures/paper/P04_program_complexity.png)
+
+
+### 6.10 Memory, latency and cost per useful answer
+
+| Arm (primary) | Median s / case | s / reported-correct | Generated tok / case | Prompt tok / case | Peak RSS | Model bytes on disk |
+| --- | --- | --- | --- | --- | --- | --- |
+| SAS | 251.4 (mean 259.8) | 532.9 | 204.1 | 4,016.8 | 10.062 GB | 8.99 GB |
+| MAS | 53.8 (mean 54.7) | 1,751.4 | 184.4 | 4,666.7 | 10.929 GB | 10.27 GB |
+
+**H4 is not supported.** The three-model team used 0.87 GB *more* peak RSS than the monolith, despite having about a third of its parameters, because F16 storage costs about 3.3× more bytes per weight than Q4_K_M (≈4.9 effective bits). MAS was 4.75× faster per question. Because it answered so few, it needed 3.29× more inference time per correct answer.
+
+The analysis stage dominates generated tokens in both arms. It reached its 128-token allowance in 159 SAS and 157 MAS cases, which is by design and not a truncation of final JSON. In SAS, program generation dominates wall time, because a 14B model processes about 2,400-token prompts slowly on 8 CPU threads.
+
+
+![Figure 7. Model file size versus sampled resident memory.](figures/tier16_v2/12_disk_vs_resident.png)
+
+
+### 6.11 Resource validity chronology
+
+1. **Reserve-check stop.** A 12.49 GB-cap attempt stopped at its pre-inference reserve check.
+2. **Context reduction.** 8,192-context probes swapped, so context was reduced to 4,096 for both arms.
+3. **First swap failure.** The first SAS primary attempt completed 145 cases, then recorded 44,011,520 bytes of process-tree swap while sampled RSS peaked at 10.06 GB, below the ceiling.
+4. **First continuation.** A continuation reused the 145 checkpoints that preceded the first invalid sample, after each passed full replay of prompt, program, score, delivery and token ledger. It later swapped 34,430,976 bytes after seven direct-control SAS cases.
+5. **Final continuation.** The last run preserved 327 completed cases and ran under a user-systemd service with kernel `MemorySwapMax=0`. It completed all six jobs with no further incident.
+
+No case was selected or discarded by quality. The study status is therefore `complete_accuracy_audited_resource_invalid`: the accuracy evidence is complete, but it is not an uninterrupted no-swap deployment pass.
+
+### 6.12 Utility and decision analysis
+
+Assign +1 to a correct delivery, −λ to a wrong delivery and −κ to each withheld case (human review cost):
+
+$$U(\lambda,\kappa)=\frac{C-\lambda W-\kappa H}{N}.$$
+
+With κ = 0 and the reported metric, $U_{SAS}-U_{MAS}=(73-45\lambda)/160$, so MAS is preferred only when λ > 73/45 ≈ 1.62. Above λ = 5/3, MAS utility is itself negative and always-withhold beats both systems. Under the raw metric the switch point is λ = 33/85 ≈ 0.39, because SAS's raw wrong count is large. Pricing human review moves the switch point up: λ* = (73 + 118κ)/45, i.e. 1.88 at κ = 0.1 and 2.28 at κ = 0.25. The region in which the team is the best choice is narrow, and it depends on a loss function that would have to be fixed by the institution in advance rather than read off these data.
+
+
+![Figure 8. Utility with a cost for human review of withheld cases.](figures/paper/P09_utility_kappa.png)
+
+
+### 6.13 Supplemental inference
+
+Appendix E contains the full paired-test inventory. The four primary correct/wrong contrasts remain non-zero under the reported cluster-aware procedures, with report-level Holm-adjusted p-values no larger than 6.1×10^-5. These procedures analyse the same observations and are not independent replications. The SAS prompt-bundle contrast is clearer than the MAS contrast; repair does not improve the correct/wrong trade-off. The exploratory 8 GB contrasts do not survive adjustment across their 28 reported-metric endpoint tests.
+
+---
+
+### 6.14 Comparison with published research results
+
+The following are published reference results, not rerun baselines. The closest dataset-family comparison is FinQANet; the closest specialist-agent comparison is FinMAN. Only our SAS/MAS pair shares questions, scoring and resource ceilings. No cross-paper difference below estimates an architecture effect.
+
+| Approach / source | Evaluation set | Metric and result | Setting | Comparison limit |
+| --- | --- | --- | --- | --- |
+| FinQANet, RoBERTa-large (Chen et al., 2021; author correction, 2022) | FinQA public test | Execution 61.24%; program 58.86% | Supervised retriever and program generator | Official test and scoring; no matched RSS/token constraint |
+| FinMAN, 7B, ICL (Liu et al., 2025, Tables 1-2) | BizBench CodeFinQA, 795 test items | Test accuracy 82.64% | DeepSeek-R1 7B backbone; four-agent cascade | CodeFinQA differs from our FinQA cohort; inference budgets and acceptance differ |
+| This study: SAS primary | FinQA dev-source, 160 report-held-out questions | Correct delivery: reported 48.75%; raw 23.75% | Qwen2.5-14B Q4; 11.5 GB / 2,048 output tokens | Custom numerical scores; 21.25% withheld |
+| This study: MAS primary | Same 160 questions as SAS | Correct delivery: reported/raw 3.125% | Qwen2.5 F16 1.5B/3B/0.5B; same ceilings | Custom numerical scores; 95% withheld |
+
+FinQANet values use the [authors' corrected results](https://github.com/czyssrs/FinQA#updates), rather than the original 65.05% execution score; their correction identifies label leakage in table-row formatting. FinMAN values and configuration are from the [published paper](https://aclanthology.org/2025.findings-emnlp.225/), Tables 1-2 and Section 5.1. Sources were checked on 2 November 2026.
+
+Published scores establish that financial QA and specialist pipelines can work in other settings; they do not establish which recipe wins under our constraints. Differences in split, retrieval, training, backbone capacity, precision, abstention and scoring prevent a fair numerical ranking. An official-test evaluation with the official scorer, or rerunning these methods on the sealed cohort under the same resource limits, remains necessary for a matched external-baseline claim. We do not claim state-of-the-art benchmark performance.
+
+## 7. Example Outputs
+
+All examples come from saved responses in run `lab-16-115gb-recovery-02` (16 GB) or `tier8-8gb-v1` (8 GB). Text in quotation marks and JSON objects is copied verbatim, with "..." marking truncation. Unquoted lines (for example "eight chained subtractions" or `divide(A004=16944, ...)`) are our compact descriptions of the saved program, and timings, executor values and verdicts are taken from the saved trace. Evidence packets are abbreviated.
+
+### 7.1 Both arms correct: `ABMD/2007/page_52.pdf-1`
+
+*Question:* "What is the total possible purchase price for Impella including potential contingent payments, in millions?" Gold: 56.3 = add(11.2, 45.1). Relevant catalog entries: `A013=45.1@text_3`, `A017=11.2@text_4`.
+
+```text
+MAS extractor (1.5B, 5.3 s):  {"source_ids": ["text_3", "text_4", "text_5", "text_6"]}
+MAS drafter analysis (3B, 128 tok, 21.6 s, verbatim excerpt):
+  "Let's define the variables:
+   - \( P \): Total purchase price excluding contingent payment
+   - \( C \): Contingent payment ...
+   - \( P = 45.1 \) million (from text_3)
+   - \( C = 11.2 \) million (from text_4) ...
+   \[ T = P + C \] ..."
+MAS drafter program (3B, 30.1 s):
+  {"decision": "ANSWER", "answer_unit": "number", "steps": [{"op": "add", "left": "A013", "right": "A017"}]}
+Executor: 56.3, spans [text_3, text_4]      MAS verifier (0.5B, 1.3 s): {"verdict": "PASS"}  → delivered, correct
+
+SAS (14B Q4): identical program {"op":"add","left":"A013","right":"A017"}; program stage 144.1 s,
+              review 39.0 s → PASS → delivered, correct
+```
+
+The two arms produce identical programs; the team is about 4× faster on this question (58.3 s versus 249.3 s of total inference).
+
+### 7.2 SAS correct, MAS abstains: `AAPL/2003/page_24.pdf-1`
+
+*Question:* "What were capital expenditures associated with the retail segment since its inception, exclusive of the amount incurred during 2003, in millions?" Gold: 198 = 290 − 92, both values in one sentence (`text_16`).
+
+```text
+SAS program:  {"decision":"ANSWER","answer_unit":"number","steps":[{"op":"subtract","left":"A005","right":"A007"}]}
+              → 290 − 92 = 198, review PASS → delivered, correct
+MAS extractor: {"source_ids": ["text_16", "text_17", "text_18"]}   (correct sentence selected)
+MAS analysis:  "The requested financial measures are capital expenditures associated with the retail
+                segment since its inception, excluding the amount incurred during 2003 ..."
+MAS program:   {"decision": "INSUFFICIENT", "answer_unit": "number", "steps": []}
+MAS verifier:  {"verdict": "FAIL"} → withheld
+```
+
+The extractor found the right evidence and the analysis restated the task correctly, yet the 3B drafter declined to write a one-step program. This is the dominant MAS failure: 72 questions where SAS was correct and MAS withheld.
+
+### 7.3 SAS wrong (accepted by its reviewer), MAS operand error caught: `AAPL/2003/page_24.pdf-2`
+
+*Question:* "What was the greatest gross margin percentage in the three year period?" Gold: 27.9 (`table_max`).
+
+```text
+SAS program (180 tokens): eight chained subtractions over A003..A007 and #0..#5
+              → executes to 6.1; 14B review: {"verdict": "PASS"} → delivered, WRONG
+MAS program:  {"decision":"ANSWER","answer_unit":"percent","steps":[{"op":"divide","left":"A009","right":"A010"}]}
+              → 27 ÷ 2003 = 0.0135 (a year used as an operand)
+MAS verifier: {"verdict": "FAIL"} → withheld
+```
+
+The program grammar has no `max` operation, so this "table aggregate" question is hard to express. Here SAS's reviewer accepted a meaningless program. Section 6.6 shows that the 14B reviewer accepted 73% of wrong executable candidates.
+
+### 7.4 Team reviewer passes a nonsensical program: `PNC/2018/page_171.pdf-1`
+
+*Question:* "In 2018 what was the percent of the total commitments to extend credit and other commitments for home equity lines of credit?" Gold: 9.3% = 16944 / 181612.
+
+```text
+SAS:  divide(A004=16944, A000=181612) × CONST:100 → 9.33 (percent), PASS → delivered, correct
+MAS:  divide(31@text_4, 169278@table_6) × 100 ÷ 169278 → 1.08e-7 (fraction)
+      0.5B verifier: {"verdict": "PASS"} → delivered, WRONG
+```
+
+This is the single question where SAS was correct and MAS delivered a wrong answer. The 0.5B verifier's PASS on an implausible value illustrates the acquiescent verification also seen at 8 GB.
+
+### 7.5 Historical 8 GB credit pack: `CR-TEST-0001` (synthetic)
+
+Source lines (abridged): `L02 operating_profit_pkr=52852800`; `L03 annual_debt_service_pkr=13000000; current_assets_pkr=211000000; current_liabilities_pkr=70000000`; `L04 e-CIB status=ADVERSE_LINE_REVIEW_REQUIRED; last_review_date=NOT_PROVIDED`. The label requires `e_cib_last_review_date = MISSING`.
+
+```text
+SAS (7B Q4, 97.4 s, 364 tokens): valid JSON; DSCR 4.0656 [CALC#DSCR], current ratio 3.0143
+   [CALC#CURRENT_RATIO], e_cib_status from L04 — all verified; e_cib_last_review_date = "NOT_PROVIDED" [L04]
+   → scored as "invented field" (copied sentinel instead of MISSING); failure tag S6
+MAS (62.7 s, 735 tokens): extractor emitted fenced ```json ...```; drafter output also fenced and
+   cited non-existent spans (CALC#STATUS, CALC#LAST_REVIEW_DATE) → invalid JSON, failure tag M2
+```
+
+---
+
+## 8. Formal Framework (Conditional Propositions)
+
+The following are elementary identities and bounds applied to the audit. They are stated with their assumptions, are not claimed as new theorems, and do not prove universal architecture rankings.
+
+### 8.1 Decision and accounting propositions
+
+**P1. Accounting identity.** For each metric, $C+W+H=N$ and $\Delta C+\Delta W+\Delta H=0$. Fewer wrong answers can be bought by withholding; always-withhold gives $W=0$ and $C=0$. *Proof:* sum the mutually exclusive per-case indicators.
+
+**P2. Fixed-candidate gate bound.** If a gate can only accept or reject a fixed candidate, then with $A$ the set of correct candidates and $D$ the delivered set, $C_{\text{gate}}=|A\cap D|\le|A|$. For the primary MAS candidates, $|A|=5$. *No* reviewer, however good, could have delivered more than 5/160 correct answers from these drafts, against 78 delivered by SAS. The bound does not apply to a new generator or representation.
+
+**P3. Stage decomposition.** $C/N=q\,p\,a$, $W/N=q(1-p)b$ and $H/N=1-C/N-W/N$, by the chain rule and without any independence assumption. Substituting the observed values reproduces the counts exactly (Section 6.6).
+
+**P4. Utility switch points.** $U_{SAS}-U_{MAS}=(73-45\lambda+118\kappa)/160$ (reported), so $\lambda^*=(73+118\kappa)/45$; for raw, $\lambda^*=(33+118\kappa)/85$. These are preference statements, not discovered safety thresholds.
+
+**P5. Repair break-even.** SAS repair changes reported utility by $(1-2\lambda+3\kappa)/160$ and raw utility by $(-3\lambda+3\kappa)/160$, because it releases three previously withheld cases. At $\kappa=0$, the reported-answer improvement is positive only when $\lambda<1/2$. MAS repair changes neither delivery utility. Charging for extra inference reduces the net benefit in both arms; it does not establish that SAS repair is inferior under every possible loss function.
+
+**P6. Memory arithmetic.** For distinct, fully resident tensors with $n_j$ elements at $b_j$ effective bits, $M\ge\sum_j n_j b_j/8+M_{KV}+M_{\text{other}}$, and a genuinely shared tensor is counted once. The parameter count alone therefore does not order memory when precisions differ. Observed: 8.99 GB on disk / 10.06 GB RSS (SAS) versus 10.27 / 10.93 GB (MAS).
+
+**P7. Distribution-free cluster bound.** With independent report contributions $D_g\in[-1,1]$ and fixed weights $w_g=n_g/N$, Hoeffding's inequality gives
+$$\Pr\Big(\big|\textstyle\sum_g w_g(D_g-\mathbb{E}D_g)\big|\ge\varepsilon\Big)\le 2\exp\!\Big(-\frac{\varepsilon^2}{2\sum_g w_g^2}\Big),\quad G_{\text{eff}}=\frac{1}{\sum_g w_g^2}.$$
+Here $G_{\text{eff}}=36.99$ (reports) and $19.88$ (companies). The 95% half-width is 44.7 pp (52.4 pp for a four-contrast family; 60.9 pp with company grouping). The observed −45.6 pp correct-delivery contrast just exceeds the single-contrast half-width but not the family-wise or company-level ones. This deliberately assumption-light bound therefore gives only borderline support on its own, and the tighter intervals in Section 6.5 rely on the bootstrap's stronger assumptions.
+
+**P8. Metric disagreement.** $C_{\text{rep}}-C_{\text{raw}}=R_{\text{only}}-E_{\text{only}}$. For SAS, $78-38=44-4$.
+
+**Nonidentification.** RAM, checkpoint size, adaptation, serving backend, prompt profile and question source all change between regimes. Many response functions with different RAM slopes therefore reproduce the same observations, and no cross-tier regression can identify a RAM effect. Similarly, a Markov "error cascade" argument requires that downstream roles receive information only through the handoff, which is false here because every role sees the evidence packet.
+
+### 8.2 Statistical assumptions
+
+Appendix F gives the derivations and limitations of the supplemental tests. Their validity depends on the stated sampling or symmetry assumptions; repeated analyses of the same deterministic outputs do not create independent evidence.
+
+---
+
+## 9. Discussion
+
+### 9.1 Answer to the research question
+
+On these tasks, under matched ceilings, **spending the memory "big" on one quantized 14B model produced far more useful answers than spending it "together" on a resident full-precision team.** H1 is rejected in the operational sense. Under reported-answer scoring MAS reduced wrong deliveries while withholding 95% of questions, and lost 73 correct deliveries without gaining one. Under raw scoring it gained one and lost 34. The same ordering appears in the historical 8 GB synthetic study and in every matched 8 GB FinQA pair, although those regimes differ too much to pool.
+
+### 9.2 Why the team underperformed
+
+The decomposition rules out the most common explanation, a bad verifier, as the primary cause. The binding factor is the drafter's willingness and ability to produce an executable program:
+
+- The 3B drafter declared INSUFFICIENT on 150 of 160 questions.
+- It did so even when the extractor selected the right evidence and its own analysis restated the task correctly (Example 7.2).
+- It never succeeded on multi-step questions.
+
+Splitting memory gave each role a smaller model, and the role that matters most, program synthesis, received only 3B parameters. This agrees with Bench360's observation that, within a fixed memory budget, larger quantized models often score higher than smaller FP16 models. It is also consistent with Tran & Kiela's token-parity result, although a common generation ceiling does not equalize actual tokens, FLOPs or inference time. The 14B model's advantage came despite 4-bit quantization. Jang et al. report targeted error-repair prompting for quantized-agent failures. Our experiment did not test that intervention. Here, schema constraints ensured syntactic validity: all 160 program responses were valid JSON in every arm.
+
+### 9.3 What the tested allocation achieved
+
+The tested F16 team used more RSS and produced fewer correct candidates. Because model size and orchestration changed with precision, these observations do not identify an effect of precision alone. The team's high conditional precision (62.5%) rests on 8 deliveries, and its Wilson interval spans 30.6%–86.3%. It is not evidence of more reliable reasoning. Conversely, neither reviewer was a strong filter: the 14B reviewer accepted 73% of wrong executable candidates. Verification quality is an open problem for both designs.
+
+### 9.4 Status of the proposed research gaps
+
+| Gap (Phase 2) | Status after this study |
+| --- | --- |
+| G1. Memory-bounded MAS vs quantized monolith | **Addressed for ≤16 GB** on financial numerical QA and synthetic KYC/credit; 32 GB not run. |
+| G2. Confounded baselines | **Partially controlled** through common tools, packets, executor and acceptance rule. Checkpoint size, precision, role allocation and role-specific prompts remain confounded. No task-specific adapters were evaluated at 16 GB. |
+| G3. QLoRA hardening vs verifier gate | **Partially addressed at 8 GB**. On development questions, adaptation and trained critics added correct deliveries but also wrong ones (3B actor: 0/0/24 → 10/11/3 C/W/H; critic: C 3 → 11, W 0 → 4). The crossed critic passed the no-loss rule against its matched control but failed it against the original critic and on the reserved audit, so it was not adopted. |
+| G4. Compliance-aligned metrics | **Partially addressed**. C/W/H, coverage and dual numerical conventions are reported. Planted-mismatch recall and refusal correctness were 0 for both arms at 8 GB, and the invention metric partly measures output-contract compliance (Section 7.5). |
+
+### 9.5 Practical guidance for on-premise deployment
+
+The following holds within the measured scope.
+
+1. For the tested Qwen2.5 recipes and financial QA workload, the larger quantized model is the stronger baseline for correct delivery. Other families, allocations and workloads require their own comparison; this study does not identify the optimal use of all available memory.
+2. Report correct, wrong and withheld outcomes together. A configuration that "cuts errors by 94%" may simply answer 5% of questions.
+3. Constrain outputs with a grammar and execute arithmetic deterministically. Neither guarantees correct content, and model-based review should not be trusted as a strong error filter without measurement.
+4. Measure process-tree RSS and swap, not model file size. Validate memory accounting for the chosen operating system and runtime. The historical Windows mmap and CPU KV-cache observations concern the tested builds and settings, not every implementation.
+5. Treat every output as advisory. A human must approve any credit, KYC or filing decision.
+
+---
+
+## 10. Threats to Validity and Limitations
+
+- **Construct validity.** The 16 GB task is public financial numerical QA, not KYC mismatch detection, real-client data or regulatory compliance. Both scoring conventions are project-specific and neither is official FinQA program equivalence. The historical synthetic metrics have conditional denominators, and the invention metric is sensitive to the output contract.
+- **Internal validity.** The arms differ jointly in size, precision, role count and prompts; this is a recipe comparison, not a factorial. The prompt bundle confounds analysis with demonstrations. Neither arm is shown to be the best achievable system under its ceiling; in particular, MAS role allocation, a larger drafter with a smaller verifier, or shared-backbone adapters were not tested at 16 GB.
+- **External validity.** The study covers one model family (Qwen2.5), greedy decoding, one context length, CPU-only inference and two specific hosts. Report selection was deterministic, not random. Pretraining contamination of public FinQA reports cannot be excluded. Repeated greedy runs are not independent replicates.
+- **Statistical conclusion validity.** Bootstrap and sign-flip methods assume independent clusters, and the 16 GB question set is modest (effective clusters ≈ 37 reports, ≈ 20 companies). Extended analyses are post hoc. The conservative Hoeffding bound (Proposition 7) is offered as a check. Report-level design effects of 1.28–1.62 show that case-IID tests overstate precision (Proposition 10). Several secondary and 8 GB contrasts have too few discordant pairs to reach significance at all (Proposition 9), and none of the 28 8 GB endpoint tests survives multiplicity adjustment.
+- **Resource validity.** RSS was sampled every 0.2 s, not hard-capped. Two swap events occurred, and the continuation is audited but not an uninterrupted no-swap pass.
+- **Scope.** No 32 GB evidence exists; we make no claim about larger tiers or a RAM-scaling law.
+
+---
+
+## 11. Ethics and Responsible Use
+
+All client-like data are synthetic, and all real documents are public annual-report excerpts from FinQA; no personal data were processed. The systems are research prototypes whose outputs are advisory. Automated credit approval, account blocking or suspicious-activity filing without human sign-off would be inappropriate on this evidence. Failed runs, negative ablations and qualified claims are retained in full, to make the analysis auditable. Nothing here constitutes legal, compliance or deployment certification.
+
+---
+
+### 11.1 Data and code availability
+
+The submission repository is https://github.com/mutasim-rehman/project-agere. It contains derived case tables, analysis scripts, tests, figures and checksum-verifiable portable evidence archives under `dashboard_handoff/`; `SUBMISSION.md` gives access and restoration instructions. Repository access follows its hosting permissions; no archival DOI is claimed. Full model inference and vocabulary-level replay additionally require the omitted pinned model/tokenizer assets and runtime. Third-party attribution and usage terms continue to apply. FinQA is available through its original authors at https://github.com/czyssrs/FinQA.
+
+### 11.2 Author declarations
+
+Affiliations, corresponding-author details, contributions, funding, competing interests and any institutional ethics determination have not been supplied for this version. They must be completed and approved by the authors before submission; absence of information is not a declaration of no funding, no competing interests or ethics exemption. AI-assisted manuscript editing was used in preparing this revision; the authors must review the final text and adapt the disclosure to the selected venue's policy.
+
+## 12. Conclusion and Future Work
+
+Under equal process-memory and generation budgets on commodity CPUs, a 4-bit 14B monolith delivered 78 correct answers out of 160 on held-out financial report questions, where a resident 1.5B/3B/0.5B F16 team delivered 5 under reported-answer scoring. The team's lower error count was the by-product of withholding 95% of questions. A stage decomposition shows that the deficit arises at candidate generation, so no accept/reject-only reviewer could have closed it on the fixed drafts, and the tested repair policy added cost without a Pareto improvement in correct and wrong delivery. Earlier 8 GB evidence points the same way. The contribution is a reproducible, resource-audited measurement and a coverage-aware way to read it, not a new algorithm.
+
+**Future work.**
+
+1. Run the specified **32 GB** tier: Qwen2.5-32B Q4_K_M versus a 3B/7B/0.5B F16 team under a 25.6 GB ceiling, with an identical frozen protocol.
+2. Rerun the frozen 16 GB primary pair end to end under kernel swap prevention to obtain an uninterrupted deployment pass.
+3. Run factorial cells (SAS-F16 at small scale, MAS-Q4) to separate precision from architecture.
+4. Test MAS allocations that give the drafter the largest share, and shared-backbone role adapters.
+5. Extend the program grammar with aggregate operations.
+6. Evaluate on other model families and the official FinQA test split, with independent annotation review.
+7. Build realistic, privacy-safe KYC/credit evaluations with planted discrepancies.
+
+---
+
+## References
+
+**Literature**
+
+1. Tran, D., & Kiela, D. (2026). Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets. [arXiv:2604.02460](https://arxiv.org/abs/2604.02460).
+2. Żywot, A., Chen, X., Yuan, Y., Søgaard, A., & de Rijke, M. (2026). Can Small Agents Collaborate to Beat a Single Large Language Model? [arXiv:2601.11327](https://arxiv.org/abs/2601.11327).
+3. Kim, Y., Gu, K., Park, C., et al. (2025). Towards a Science of Scaling Agent Systems. [arXiv:2512.08296](https://arxiv.org/abs/2512.08296).
+4. Cemri, M., Pan, M. Z., Yang, S., et al. (2025). Why Do Multi-Agent LLM Systems Fail? [arXiv:2503.13657](https://arxiv.org/abs/2503.13657).
+5. Hong, S., Zhuge, M., Chen, J., et al. (2024). MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework. ICLR 2024. [arXiv:2308.00352](https://arxiv.org/abs/2308.00352).
+6. Wang, J., Jain, S., Zhang, D., Ray, B., Kumar, V., & Athiwaratkun, B. (2024). Reasoning in Token Economies: Budget-Aware Evaluation of LLM Reasoning Strategies. EMNLP 2024. [arXiv:2406.06461](https://arxiv.org/abs/2406.06461). https://aclanthology.org/2024.emnlp-main.1112/
+7. Stuhlmann, L., Fadel Argerich, M., & Fürst, J. (2025). Bench360: Benchmarking Local LLM Inference from 360 Degrees. [arXiv:2511.16682](https://arxiv.org/abs/2511.16682).
+8. Lin, J., Tang, J., Tang, H., et al. (2024). AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration. MLSys 2024. [arXiv:2306.00978](https://arxiv.org/abs/2306.00978).
+9. Liu, Z., Zhao, C., Iandola, F., et al. (2024). MobileLLM: Optimizing Sub-billion Parameter Language Models for On-Device Use Cases. ICML 2024. [arXiv:2402.14905](https://arxiv.org/abs/2402.14905).
+10. Patil, S. G., Mao, H., Yan, F., Ji, C. C.-J., Suresh, V., Stoica, I., & Gonzalez, J. E. (2025). The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models. ICML 2025, PMLR 267, 48371–48392. https://proceedings.mlr.press/v267/patil25a.html
+11. Jang, J., Yang, K., Lim, H., & Park, H. (2026). Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents. [arXiv:2607.27275](https://arxiv.org/abs/2607.27275).
+12. Jamshidi, S., Moradi Dakhel, A., Nafi, K. W., & Khomh, F. (2026). Hallucination Cascade: Analyzing Error Propagation in Multi-Agent LLM Systems. [arXiv:2606.07937](https://arxiv.org/abs/2606.07937).
+13. Singh, P., & Pawar, B. (2026). The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines. ICML 2026 FAGEN Workshop. [arXiv:2608.14588](https://arxiv.org/abs/2608.14588).
+14. Alquwayfili, A. (2025). Quantigence: A Multi-Agent AI Framework for Quantum Security Research. [arXiv:2512.12989v1](https://arxiv.org/abs/2512.12989v1) (version 1; later versions of this identifier carry a different paper).
+15. Liu, J., Yang, J., Li, X., et al. (2026). Architecture Matters More Than Scale: A Comparative Study of Retrieval and Memory Augmentation for Financial QA Under SME Compute Constraints. AIITA 2026 (IEEE). [arXiv:2604.17979](https://arxiv.org/abs/2604.17979).
+16. Toles, M., Lu, Y., Munjal, M., et al. (2026). MortarBench: Evaluating Mortgage Loan Origination Agents. [arXiv:2606.19416](https://arxiv.org/abs/2606.19416).
+17. Dang, Y., Qian, C., Luo, X., et al. (2025). Multi-Agent Collaboration via Evolving Orchestration. NeurIPS 2025. [arXiv:2505.19591](https://arxiv.org/abs/2505.19591).
+18. Estornell, A., Ton, J.-F., Yao, Y., & Liu, Y. (2025). ACC-Collab: An Actor-Critic Approach to Multi-Agent LLM Collaboration. ICLR 2025. [arXiv:2411.00053](https://arxiv.org/abs/2411.00053).
+19. Li, H., Su, Z., Xue, Y., Tian, Z., Song, Y., & Huang, M. (2025). Advancing Collaborative Debates with Role Differentiation through Multi-Agent Reinforcement Learning. ACL 2025 (Long Papers), 22655–22666. https://aclanthology.org/2025.acl-long.1105/
+20. Wan, D., Chen, J. C.-Y., Stengel-Eskin, E., & Bansal, M. (2025). MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration. NAACL 2025. [arXiv:2503.15272](https://arxiv.org/abs/2503.15272).
+21. Yang, Y., Chai, H., Shao, S., et al. (2025). AgentNet: Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems. [arXiv:2504.00587](https://arxiv.org/abs/2504.00587).
+22. Zhu, Y., He, Z., Hu, H., et al. (2025). MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks. NeurIPS 2025 Datasets & Benchmarks. [arXiv:2505.12371](https://arxiv.org/abs/2505.12371).
+23. Sun, H., et al. (2025). Collab-Overcooked: Benchmarking and Evaluating Large Language Models as Collaborative Agents. EMNLP 2025, 4922–4951. [arXiv:2502.20073](https://arxiv.org/abs/2502.20073).
+24. Liu, Z., Zhao, C., Fedorov, I., Soran, B., et al. (2025). SpinQuant: LLM Quantization with Learned Rotations. ICLR 2025. [arXiv:2405.16406](https://arxiv.org/abs/2405.16406).
+25. Chen, Z., et al. (2021). FinQA: A Dataset of Numerical Reasoning over Financial Data. EMNLP 2021. https://aclanthology.org/2021.emnlp-main.300/
+26. Zhu, F., et al. (2021). TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance. ACL 2021. https://aclanthology.org/2021.acl-long.254/
+27. Phogat, K. S., et al. (2024). Fine-tuning Smaller Language Models for Question Answering over Financial Documents. Findings of EMNLP 2024. https://aclanthology.org/2024.findings-emnlp.617/
+28. Liu, C., et al. (2025). David vs. Goliath: Cost-Efficient Financial QA via Cascaded Multi-Agent Reasoning (FinMAN). Findings of EMNLP 2025, 4212–4229. https://aclanthology.org/2025.findings-emnlp.225/
+29. Hall, B., et al. (2026). VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims. [arXiv:2608.10213](https://arxiv.org/abs/2608.10213).
+30. Jenq, J., & Shen, H. (2026). BudgetVerify: Budget-Tiered Verification for Financial QA. [arXiv:2609.33052](https://arxiv.org/abs/2609.33052).
+31. Chen, H., et al. (2026). Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA (DCRC). KDD 2026. [arXiv:2605.31064](https://arxiv.org/abs/2605.31064).
+32. Jeon, H., et al. (2026). LRAgent: Efficient KV Cache Sharing for Multi-LoRA LLM Agents. ICML 2026. [arXiv:2602.01053](https://arxiv.org/abs/2602.01053).
+33. Wang, S., et al. (2026). ForkKV: Scaling Multi-LoRA Agent Serving via Copy-on-Write Disaggregated KV Cache. [arXiv:2604.06370](https://arxiv.org/abs/2604.06370).
+34. Wang, Q., et al. (2026). SAFER: Risk-Constrained Sample-then-Filter in Large Language Models. [arXiv:2510.10193](https://arxiv.org/abs/2510.10193) (first version October 2025; version 3 February 2026).
+35. Haque, M., et al. (2025). Towards Effectively Leveraging Execution Traces for Program Repair with Code LLMs. KnowledgeNLP Workshop 2025. https://aclanthology.org/2025.knowledgenlp-1.17/
+36. Krishna, S., et al. (2024). Fact, Fetch, and Reason: A Unified Evaluation of Retrieval-Augmented Generation (FRAMES). NAACL 2025. [arXiv:2409.12941](https://arxiv.org/abs/2409.12941). Dataset revision `58d9fb63`.
+
+**Statistics and methodology**
+
+37. El-Yaniv, R., & Wiener, Y. (2010). On the Foundations of Noise-free Selective Classification. JMLR 11(53), 1605–1641.
+38. Cameron, A. C., & Miller, D. L. (2015). A Practitioner's Guide to Cluster-Robust Inference. Journal of Human Resources 50(2), 317–372.
+39. Holm, S. (1979). A Simple Sequentially Rejective Multiple Test Procedure. Scandinavian Journal of Statistics 6(2), 65–70.
+40. Hoeffding, W. (1963). Probability Inequalities for Sums of Bounded Random Variables. JASA 58(301), 13–30.
+41. Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. The American Statistician 70(2), 129–133.
+42. Lakens, D. (2017). Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses. Social Psychological and Personality Science 8(4), 355–362.
+43. Wilson, E. B. (1927). Probable Inference, the Law of Succession, and Statistical Inference. JASA 22(158), 209–212.
+44. McNemar, Q. (1947). Note on the Sampling Error of the Difference between Correlated Proportions or Percentages. Psychometrika 12(2), 153–157.
+45. Edwards, A. L. (1948). Note on the "Correction for Continuity" in Testing the Significance of the Difference between Correlated Proportions. Psychometrika 13(3), 185–187.
+46. Bowker, A. H. (1948). A Test for Symmetry in Contingency Tables. JASA 43(244), 572–574.
+47. Stuart, A. (1955). A Test for Homogeneity of the Marginal Distributions in a Two-Way Classification. Biometrika 42(3/4), 412–416.
+48. Maxwell, A. E. (1970). Comparing the Classification of Subjects by Two Independent Judges. British Journal of Psychiatry 116, 651–655.
+49. Durkalski, V. L., Palesch, Y. Y., Lipsitz, S. R., & Rust, P. F. (2003). Analysis of Clustered Matched-Pair Data. Statistics in Medicine 22(15), 2417–2428.
+50. Fagerland, M. W., Lydersen, S., & Laake, P. (2013). The McNemar Test for Binary Matched-Pairs Data: Mid-p and Asymptotic Are Better than Exact Conditional. BMC Medical Research Methodology 13, 91.
+51. Liang, K.-Y., & Zeger, S. L. (1986). Longitudinal Data Analysis Using Generalized Linear Models. Biometrika 73(1), 13–22.
+52. Davison, A. C., & Hinkley, D. V. (1997). Bootstrap Methods and Their Application. Cambridge University Press.
+53. Phipson, B., & Smyth, G. K. (2010). Permutation P-values Should Never Be Zero: Calculating Exact P-values When Permutations Are Randomly Drawn. Statistical Applications in Genetics and Molecular Biology 9(1), Article 39.
+54. Agresti, A. (2013). Categorical Data Analysis (3rd ed.). Wiley.
+
+**Regulatory context**
+
+55. FINRA. (2024). Regulatory Notice 24-09: Regulatory Obligations When Using Generative Artificial Intelligence and Large Language Models. https://www.finra.org/rules-guidance/notices/24-09
+
+*Bibliographic scope:* Several recent works are preprints, and some comparisons rely on abstracts rather than full-text experimental replication. They provide context rather than proof that every alternative deployment has been excluded. The related-work review is narrative, not a systematic review. Final venue metadata and the literature search should be refreshed at submission.
+
+---
+
+## Appendix A. Artefact and Provenance Map
+
+| Artefact | Location |
+| --- | --- |
+| Authoritative 16 GB run (raw prompts, responses, stages, memory, failures) | `AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-02/` (SSD) |
+| Export archive + SHA-256 | `AGERE/runs/lab_tiers_v1/exports/lab-16-115gb-recovery-02-results.tar.gz` |
+| 16 GB derived data (960 rows, report outcomes, paired effects, stage metrics, resource events, metric disagreements) | `research/tier16_v2/data/` |
+| 8 GB and cross-tier derived data (768 rows, 15-condition inventory, 197-file evidence catalog) | `research/le16_v2/data/` |
+| Paper supplementary analyses (Wilson, transitions, bootstrap replication, strata, latency, memory, utility) | `research/paper/data/paper_supplementary_analysis.json` |
+| Paper hypothesis-test battery (21 paired comparisons, 126 endpoint rows) | `research/paper/data/paper_statistical_tests.{json,csv}` |
+| Figures | `figures/tier16_v2/` (12), `figures/tier8/` (5), `figures/paper/` (9) |
+| Historical 8 GB synthetic run | `AGERE/runs/tier8/tier8-8gb-v1/` (SSD) |
+| Datasets | `AGERE/datasets/lab_tiers/finance_reports_v1/`, `tier8_v2_*`, `agere_synthetic/agere-synth-v1/` (SSD) |
+| Model weights (GGUF) | `AGERE/weights/` (SSD; not redistributed) |
+| Decisions log, protocols, earlier reports | `DECISIONS.md`, `EXPERIMENT_PROTOCOL.md`, `research/lab_tiers/PROTOCOL.md`, `TIER_*_REPORT.md` |
+
+## Appendix B. Reproduction
+
+```bash
+# Recompute 16 GB statistics from the audited run (verifies input hashes and the
+# export archive SHA-256 82391e38...f7b8 first; needs NumPy, plus ReportLab for rendering)
+export AGERE_SSD_ROOT=/path/to/AGERE
+python scripts/reporting/analyze_completed_tiers.py --ssd "$AGERE_SSD_ROOT"
+python scripts/reporting/build_research_documents.py
+python scripts/reporting/render_statistical_reports.py
+# Paper-specific figures and supplementary analyses (read-only, no inference)
+python scripts/reporting/paper_figures.py
+# Paired hypothesis-test battery of Appendix E (accompanying case tables only)
+python scripts/reporting/paper_statistical_tests.py
+# Post-hoc single-component ablation (fixed saved primary candidates)
+python scripts/reporting/gate_ablation.py
+# Known-value statistical tests
+python -m unittest tests.test_reporting_statistics tests.test_paper_statistical_tests
+```
+
+For the submission entry point, dependency installation, evidence verification, and separate analysis/inference workflows, see `SUBMISSION.md`. Portable evidence archives in `dashboard_handoff/` include raw research records but exclude model tensors and the runtime; a clone alone therefore supports result re-analysis, not fresh model inference. The submitted repository is https://github.com/mutasim-rehman/project-agere; no archival DOI is claimed.
+
+## Appendix C. Glossary
+
+**SAS**: single-agent system (one model performs all stages). **MAS**: multi-agent system (role-specialized models). **Q4_K_M**: GGUF 4-bit k-quant with mixed block scales. **F16**: 16-bit floating-point weights. **RSS**: resident set size, the physical memory held by a process tree. **RUPP**: RAM Utilization Parity Protocol. **C / W / H**: correct delivered / wrong delivered / withheld. **Coverage**: (C+W)/N. **Precision**: C/(C+W). **pp**: percentage points. **KYC / CDD / EDD**: know-your-customer, customer and enhanced due diligence. **DSCR**: debt-service coverage ratio. **e-CIB**: SBP electronic credit information bureau report.
+
+
+## Appendix D. Statistical definitions and reporting standards
+
+This subsection fixes the notation, the test statistics and the rules used to read them. Appendix E gives the numerical results and Appendix F the theoretical justification of each test.
+
+**Notation.** A paired comparison has a left arm $L$ and a right arm $R$ (for the primary contrast, $L$ = SAS and $R$ = MAS) evaluated on the same $N$ questions. For a fixed metric and a fixed event $e\in\{C,W,H\}$, let $y_{Li},y_{Ri}\in\{0,1\}$ indicate the event for question $i$, and $d_i=y_{Ri}-y_{Li}\in\{-1,0,1\}$. The discordant counts are $b=\#\{i:d_i=+1\}$ (event on the right only) and $c=\#\{i:d_i=-1\}$ (event on the left only), with $n_d=b+c$. Questions are nested in $G$ report clusters ($G=50$) of sizes $n_g$, with cluster sums $S_g=\sum_{i\in g}d_i$; the 36 companies form an alternative clustering. The 3×3 transition table $n_{ij}$ has left states in rows and right states in columns, ordered C, W, H.
+
+**T1. Paired risk difference (effect size).**
+$$\hat\Delta=\bar y_R-\bar y_L=\frac{b-c}{N},\qquad \widehat{\mathrm{SE}}=\frac{1}{N}\sqrt{(b+c)-\frac{(b-c)^2}{N}},\qquad \text{Wald 95\%: }\hat\Delta\pm1.96\,\widehat{\mathrm{SE}}.$$
+
+**T2. Exact McNemar test** of $H_0:\Pr(d_i=+1)=\Pr(d_i=-1)$:
+$$p_{\text{exact}}=\min\Big\{1,\;2\sum_{k=0}^{\min(b,c)}\binom{n_d}{k}2^{-n_d}\Big\}.$$
+
+**T3. Asymptotic McNemar and Edwards continuity correction** (1 df):
+$$\chi^2=\frac{(b-c)^2}{b+c},\qquad \chi^2_{cc}=\frac{\max(\lvert b-c\rvert-1,0)^2}{b+c}.$$
+
+**T4. Bowker test of symmetry** ($H_0:\pi_{ij}=\pi_{ji}$ for all $i<j$), with df equal to the number of pairs with $n_{ij}+n_{ji}>0$:
+$$Q_B=\sum_{i<j}\frac{(n_{ij}-n_{ji})^2}{n_{ij}+n_{ji}}.$$
+
+**T5. Stuart–Maxwell test of marginal homogeneity** ($H_0:\pi_{i\cdot}=\pi_{\cdot i}$). With $\delta_i=n_{i\cdot}-n_{\cdot i}$ for $i=1,\dots,k-1$, $V_{ii}=n_{i\cdot}+n_{\cdot i}-2n_{ii}$ and $V_{ij}=-(n_{ij}+n_{ji})$:
+$$Q_{SM}=\boldsymbol\delta^{\top}V^{-1}\boldsymbol\delta,\qquad \text{df}=\operatorname{rank}(V)\;(=k-1=2\text{ when }V\text{ is non-singular}).$$
+
+**T6. Whole-report cluster bootstrap.** Draw $G$ reports with replacement and compute the question-weighted ratio $\hat\Delta^*=\sum_g S_g^*/\sum_g n_g^*$. Use $B=10{,}000$ draws (NumPy `default_rng(42)`) and percentile 2.5/97.5 limits; 98.75% marginal intervals provide nominal Bonferroni family coverage for the four primary endpoints, subject to bootstrap approximation. Company resampling is a sensitivity analysis.
+
+**T7. Cluster-robust (CR1) z test and design effect.**
+$$\hat V_{CR}=\frac{G}{G-1}\cdot\frac{1}{N^2}\sum_g\big(S_g-\hat\Delta\,n_g\big)^2,\qquad z=\frac{\hat\Delta}{\sqrt{\hat V_{CR}}},\qquad \mathrm{DEFF}=\frac{\hat V_{CR}}{\widehat{\mathrm{SE}}^{\,2}}.$$
+
+**T8. Cluster-score test for paired outcomes** (1 df), at report level and, as sensitivity, at company level. We define the implemented statistic explicitly below; the analysis files retain the legacy key `durkalski_chi2`. Durkalski et al. (2003) provide background on clustered matched-pair testing; no identity with every published weighting variant is assumed:
+$$X^2_D=\frac{\big(\sum_g S_g\big)^2}{\sum_g S_g^2}.$$
+
+**T9. Cluster sign-flip test and report sign test.** With $T=\sum_g S_g$, the reference set is $T^{(r)}=\sum_g\varepsilon_g^{(r)}S_g$ with independent signs $\varepsilon_g^{(r)}\in\{-1,+1\}$. It is enumerated exactly up to 18 non-zero clusters; otherwise $R=65{,}536$ Monte Carlo draws give $p=\big(1+\#\{\lvert T^{(r)}\rvert\ge\lvert T\rvert\}\big)/(1+R)$. The sign test counts $K^{+}=\#\{S_g>0\}$ and $K^{-}=\#\{S_g<0\}$ and refers $\min(K^+,K^-)$ to $\mathrm{Bin}(K^++K^-,\tfrac12)$, two-sided.
+
+**T10. Holm step-down adjustment** over the $m=4$ primary endpoints:
+$$\tilde p_{(j)}=\max_{l\le j}\min\{1,(m-l+1)\,p_{(l)}\}.$$
+
+**T11. Wilson score interval** for a single-arm rate $\hat p=k/n$:
+$$\frac{\hat p+\frac{z^2}{2n}\pm z\sqrt{\frac{\hat p(1-\hat p)}{n}+\frac{z^2}{4n^2}}}{1+\frac{z^2}{n}},\qquad z=1.96.$$
+
+**T12. Distribution-free Hoeffding bound** for bounded independent cluster contributions (Proposition 7).
+
+**Inferential hierarchy.**
+
+| Level | Tests | Unit of independence | Role |
+| --- | --- | --- | --- |
+| Primary estimation (prespecified estimand) | T1 point estimate; T6 report bootstrap interval | Report | Direction and magnitude of each MAS − SAS contrast |
+| Supplemental testing (post hoc) | T9 sign-flip with T10 Holm; T8 cluster-score; T7 CR1; report sign test | Report (company as sensitivity) | Family-wise p-values for the four primary endpoints |
+| Sensitivity and structure (case-IID) | T2–T5, T1 Wald interval, T11 Wilson | Question | What ignoring clustering would imply; full 3×3 transition structure |
+| Assumption-light check | T12 Hoeffding | Report | How much precision depends on bootstrap assumptions |
+
+**Reporting and decision standards.**
+
+1. **Significance level.** All tests are two-sided at α = 0.05. The four primary correct/wrong endpoints form one Holm family. Withholding is not tested separately because $\Delta H=-(\Delta C+\Delta W)$ for each metric (Proposition 1). Secondary profiles and all 8 GB comparisons are exploratory and reported unadjusted.
+2. **Estimate first.** Every p-value is reported with its paired effect $\hat\Delta$ in percentage points and an interval. A p-value alone is never a result.
+3. **Clustering takes precedence.** When case-IID and cluster-aware results disagree, the cluster-aware result governs. Case-IID p-values are labelled as such.
+4. **Exact before asymptotic.** For case-IID tests, the exact McNemar p is the reference whenever $n_d<25$. Both χ² variants are shown for comparability.
+5. **No zero p-values.** p-values are given to three significant figures. Monte Carlo p-values are bounded below by $1/(R+1)$ and are reported at that floor, never as 0.
+6. **Degenerate tables.** If $n_d=0$, $\hat\Delta=0$, $p=1$ and the χ² statistics are undefined. If $V$ has rank 0, the Stuart–Maxwell test is "not defined". Bootstrap intervals that collapse to a point are reported as such.
+7. **No equivalence by default.** Non-significance is not evidence of equality, and no equivalence or non-inferiority test is claimed without a prespecified margin.
+8. **Attainable significance instead of post-hoc power.** For small discordant counts we report the minimum attainable p (Proposition 9) rather than observed power.
+9. **Determinism.** Seeds, draw counts and input hashes are fixed. Every number in Appendix E is regenerated by `scripts/reporting/paper_statistical_tests.py` from the accompanying case tables.
+10. **Pre-specification status.** The primary estimand, endpoints, metrics and resampling unit were frozen before evaluation. The extra tests in this subsection were added afterwards and are labelled supplemental.
+
+## Appendix E. Supplemental numerical tests
+
+This subsection applies the paired tests defined in Appendix D to the same case-level data. In all tables, b counts questions where the event occurs on the right arm only and c on the left arm only, and Δ is right minus left in percentage points. All values are regenerated by `scripts/reporting/paper_statistical_tests.py` (output: `research/paper/data/paper_statistical_tests.{json,csv}`, 126 endpoint rows). The recomputed report-cluster bootstrap intervals match the published audit values to every printed digit.
+
+**Table E1. Primary 16 GB contrast, case-level paired tests (N = 160; case-IID sensitivity).**
+
+| Endpoint (MAS − SAS) | SAS | MAS | b (MAS only) | c (SAS only) | Δ (pp) | Wald SE (pp) | Wald 95% CI (pp) | Exact McNemar p | χ² (p) | χ²cc (p) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Reported / correct | 78 | 5 | 0 | 73 | −45.62 | 3.94 | [−53.34, −37.91] | 2.12×10⁻²² | 73.00 (1.30×10⁻¹⁷) | 71.01 (3.55×10⁻¹⁷) |
+| Reported / wrong | 48 | 3 | 1 | 46 | −28.12 | 3.66 | [−35.30, −20.95] | 6.82×10⁻¹³ | 43.09 (5.24×10⁻¹¹) | 41.19 (1.38×10⁻¹⁰) |
+| Raw / correct | 38 | 5 | 1 | 34 | −20.62 | 3.32 | [−27.13, −14.12] | 2.10×10⁻⁹ | 31.11 (2.43×10⁻⁸) | 29.26 (6.34×10⁻⁸) |
+| Raw / wrong | 88 | 3 | 0 | 85 | −53.12 | 3.95 | [−60.86, −45.39] | 5.17×10⁻²⁶ | 85.00 (2.98×10⁻²⁰) | 83.01 (8.16×10⁻²⁰) |
+| Withheld (both metrics) | 34 | 152 | 118 | 0 | +73.75 | 3.48 | [+66.93, +80.57] | 6.02×10⁻³⁶ | 118.00 (1.73×10⁻²⁷) | 116.01 (4.73×10⁻²⁷) |
+
+**Table E2. Primary 16 GB contrast, cluster-aware tests (50 reports; 36 companies).** DEFF is the variance inflation of the CR1 estimator relative to the case-IID variance. The sign-flip Holm values are the published supplemental results; the cluster-score Holm values are added here.
+
+| Endpoint (MAS − SAS) | Report bootstrap 95% CI (pp) | CR1 SE, report (DEFF) | CR1 z (p) | Cluster-score χ², 50 reports (p) | Cluster-score χ², 36 companies (p) | Reports MAS > / < SAS (sign-test p) | Holm p, sign-flip | Holm p, cluster-score |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Reported / correct | [−53.90, −36.55] | 4.45 (1.28) | −10.25 (1.19×10⁻²⁴) | 24.79 (6.41×10⁻⁷) | 14.68 (1.27×10⁻⁴) | 0 / 33 (2.33×10⁻¹⁰) | 6.10×10⁻⁵ | 1.92×10⁻⁶ |
+| Reported / wrong | [−37.09, −20.13] | 4.40 (1.45) | −6.39 (1.71×10⁻¹⁰) | 22.75 (1.84×10⁻⁶) | 17.31 (3.18×10⁻⁵) | 1 / 29 (5.77×10⁻⁸) | 6.10×10⁻⁵ | 3.68×10⁻⁶ |
+| Raw / correct | [−28.26, −13.37] | 3.80 (1.31) | −5.42 (5.83×10⁻⁸) | 16.75 (4.26×10⁻⁵) | 14.92 (1.12×10⁻⁴) | 0 / 21 (9.54×10⁻⁷) | 6.10×10⁻⁵ | 4.26×10⁻⁵ |
+| Raw / wrong | [−61.90, −44.08] | 4.57 (1.34) | −11.63 (2.96×10⁻³¹) | 29.25 (6.36×10⁻⁸) | 16.16 (5.81×10⁻⁵) | 0 / 41 (9.09×10⁻¹³) | 6.10×10⁻⁵ | 2.54×10⁻⁷ |
+| Withheld (identity) | [+64.71, +81.93] | 4.42 (1.62) | 16.67 (2.04×10⁻⁶²) | 33.00 (9.24×10⁻⁹) | 19.39 (1.06×10⁻⁵) | 43 / 0 (2.27×10⁻¹³) | — | — |
+
+**Table E3. Bowker symmetry and Stuart–Maxwell marginal-homogeneity tests on the 3×3 C/W/H transition tables (16 GB, N = 160 each; case-IID).**
+
+| Paired comparison (rows → columns) | Metric | Bowker Q (df) | Bowker p | Stuart–Maxwell Q (df) | Stuart–Maxwell p |
+| --- | --- | --- | --- | --- | --- |
+| Primary: MAS vs SAS | Reported | 119.00 (3) | 1.27×10⁻²⁵ | 118.03 (2) | 2.34×10⁻²⁶ |
+| Primary: MAS vs SAS | Raw | 119.00 (3) | 1.27×10⁻²⁵ | 118.04 (2) | 2.33×10⁻²⁶ |
+| Direct control: MAS vs SAS | Reported | 110.06 (3) | 1.06×10⁻²³ | 109.16 (2) | 1.98×10⁻²⁴ |
+| Direct control: MAS vs SAS | Raw | 110.04 (3) | 1.08×10⁻²³ | 109.16 (2) | 1.98×10⁻²⁴ |
+| Repair ablation: MAS vs SAS | Reported | 122.00 (3) | 2.86×10⁻²⁶ | 121.03 (2) | 5.22×10⁻²⁷ |
+| Repair ablation: MAS vs SAS | Raw | 122.00 (3) | 2.86×10⁻²⁶ | 121.04 (2) | 5.21×10⁻²⁷ |
+| SAS: primary vs direct | Reported | 25.15 (3) | 1.44×10⁻⁵ | 22.35 (2) | 1.40×10⁻⁵ |
+| SAS: primary vs direct | Raw | 23.29 (3) | 3.52×10⁻⁵ | 23.15 (2) | 9.40×10⁻⁶ |
+| MAS: primary vs direct (metrics identical) | Both | 5.50 (2) | 0.064 | 5.50 (2) | 0.064 |
+| SAS: repair vs primary | Reported | 3.00 (2) | 0.22 | 3.00 (2) | 0.22 |
+| SAS: repair vs primary | Raw | 3.00 (1) | 0.083 | 3.00 (1) | 0.083 |
+| MAS: repair vs primary (metrics identical) | Both | 0 (0) | — | not defined (no discordant pairs) | — |
+
+**Table E4. Secondary 16 GB paired contrasts (exploratory, unadjusted).** "Both" means the two scoring conventions give identical tables.
+
+| Contrast (right − left) | Metric | Endpoint | Left → right | b / c | Δ (pp) | Wald 95% CI | Report bootstrap 95% CI | Exact p | Cluster-score p |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Direct control: MAS vs SAS | Reported | correct | 50 → 0 | 0 / 50 | −31.25 | [−38.43, −24.07] | [−40.12, −22.63] | 1.78×10⁻¹⁵ | 5.01×10⁻⁶ |
+| Direct control: MAS vs SAS | Reported | wrong | 66 → 5 | 2 / 63 | −38.12 | [−46.04, −30.21] | [−47.65, −29.05] | 1.16×10⁻¹⁶ | 4.87×10⁻⁷ |
+| Direct control: MAS vs SAS | Raw | correct | 14 → 0 | 0 / 14 | −8.75 | [−13.13, −4.37] | [−13.29, −4.74] | 1.22×10⁻⁴ | 4.65×10⁻⁴ |
+| Direct control: MAS vs SAS | Raw | wrong | 102 → 5 | 2 / 99 | −60.62 | [−68.58, −52.67] | [−70.18, −50.63] | 4.06×10⁻²⁷ | 4.19×10⁻⁸ |
+| Repair ablation: MAS vs SAS | Reported | correct | 79 → 5 | 0 / 74 | −46.25 | [−53.98, −38.52] | [−54.67, −37.06] | 1.06×10⁻²² | 6.07×10⁻⁷ |
+| Repair ablation: MAS vs SAS | Reported | wrong | 50 → 3 | 1 / 48 | −29.38 | [−36.64, −22.11] | [−38.41, −21.38] | 1.78×10⁻¹³ | 8.35×10⁻⁷ |
+| Repair ablation: MAS vs SAS | Raw | correct | 38 → 5 | 1 / 34 | −20.62 | [−27.13, −14.12] | [−28.26, −13.37] | 2.10×10⁻⁹ | 4.26×10⁻⁵ |
+| Repair ablation: MAS vs SAS | Raw | wrong | 91 → 3 | 0 / 88 | −55.00 | [−62.71, −47.29] | [−63.93, −45.86] | 6.46×10⁻²⁷ | 3.80×10⁻⁸ |
+| SAS: primary vs direct | Reported | correct | 50 → 78 | 32 / 4 | +17.50 | [+10.67, +24.33] | [+9.76, +24.55] | 1.94×10⁻⁶ | 4.65×10⁻⁴ |
+| SAS: primary vs direct | Reported | wrong | 66 → 48 | 9 / 27 | −11.25 | [−18.39, −4.11] | [−17.98, −3.90] | 0.004 | 0.007 |
+| SAS: primary vs direct | Raw | correct | 14 → 38 | 27 / 3 | +15.00 | [+8.71, +21.29] | [+8.59, +21.62] | 8.43×10⁻⁶ | 4.02×10⁻⁴ |
+| SAS: primary vs direct | Raw | wrong | 102 → 88 | 15 / 29 | −8.75 | [−16.76, −0.74] | [−17.96, +0.72] | 0.049 | 0.080 |
+| MAS: primary vs direct | Both | correct | 0 → 5 | 5 / 0 | +3.12 | [+0.43, +5.82] | [0.00, +6.98] | 0.0625 | 0.096 |
+| MAS: primary vs direct | Both | wrong | 5 → 3 | 3 / 5 | −1.25 | [−4.71, +2.21] | [−5.26, +2.55] | 0.73 | 0.53 |
+| SAS: repair vs primary | Reported | correct | 78 → 79 | 1 / 0 | +0.62 | [−0.60, +1.85] | [0.00, +2.04] | 1.00 | 0.32 |
+| SAS: repair vs primary | Reported | wrong | 48 → 50 | 2 / 0 | +1.25 | [−0.47, +2.97] | [0.00, +3.40] | 0.50 | 0.16 |
+| SAS: repair vs primary | Raw | correct | 38 → 38 | 0 / 0 | 0.00 | [0.00, 0.00] | [0.00, 0.00] | 1.00 | 1.00 |
+| SAS: repair vs primary | Raw | wrong | 88 → 91 | 3 / 0 | +1.88 | [−0.23, +3.98] | [0.00, +4.35] | 0.25 | 0.083 |
+| MAS: repair vs primary | Both | correct | 5 → 5 | 0 / 0 | 0.00 | [0.00, 0.00] | [0.00, 0.00] | 1.00 | 1.00 |
+| MAS: repair vs primary | Both | wrong | 3 → 3 | 0 / 0 | 0.00 | [0.00, 0.00] | [0.00, 0.00] | 1.00 | 1.00 |
+
+**Table E5. Redeveloped 8 GB paired contrasts, reported metric (exploratory, unadjusted).** Raw-metric rows are in the CSV.
+
+| 8 GB contrast (right − left) | N | Endpoint | Left → right | b / c | Δ (pp) | Report bootstrap 95% CI | Exact p | χ²cc p | Cluster-score p | Bowker p (df) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Selection52: baseline MAS vs SAS | 52 | correct | 8 → 2 | 0 / 6 | −11.54 | [−23.26, −2.00] | 0.031 | 0.041 | 0.083 | 0.027 (3) |
+| Selection52: baseline MAS vs SAS | 52 | wrong | 25 → 19 | 8 / 14 | −11.54 | [−32.56, +7.69] | 0.29 | 0.29 | 0.26 | 0.027 (3) |
+| Selection52: control MAS vs SAS | 52 | correct | 8 → 3 | 0 / 5 | −9.62 | [−18.33, −2.00] | 0.0625 | 0.074 | 0.059 | 0.064 (3) |
+| Selection52: control MAS vs SAS | 52 | wrong | 23 → 19 | 4 / 8 | −7.69 | [−21.82, +9.30] | 0.39 | 0.39 | 0.37 | 0.064 (3) |
+| Selection52: crossed MAS vs SAS | 52 | correct | 10 → 3 | 0 / 7 | −13.46 | [−28.85, −2.00] | 0.016 | 0.023 | 0.11 | 0.062 (3) |
+| Selection52: crossed MAS vs SAS | 52 | wrong | 16 → 15 | 6 / 7 | −1.92 | [−15.69, +15.26] | 1.00 | 1.00 | 0.81 | 0.062 (3) |
+| Reserved49: control MAS vs SAS | 49 | correct | 8 → 4 | 1 / 5 | −8.16 | [−16.22, 0.00] | 0.22 | 0.22 | 0.10 | 0.18 (3) |
+| Reserved49: control MAS vs SAS | 49 | wrong | 20 → 17 | 6 / 9 | −6.12 | [−27.27, +10.91] | 0.61 | 0.61 | 0.51 | 0.18 (3) |
+| Reserved49: crossed MAS vs SAS | 49 | correct | 9 → 4 | 1 / 6 | −10.20 | [−20.83, 0.00] | 0.12 | 0.13 | 0.13 | 0.005 (3) |
+| Reserved49: crossed MAS vs SAS | 49 | wrong | 20 → 9 | 3 / 14 | −22.45 | [−38.71, −7.50] | 0.013 | 0.015 | 0.022 | 0.005 (3) |
+| Selection52: crossed vs control MAS | 52 | correct | 3 → 3 | 0 / 0 | 0.00 | [0.00, 0.00] | 1.00 | 1.00 | 1.00 | 0.10 (1) |
+| Selection52: crossed vs control MAS | 52 | wrong | 19 → 15 | 1 / 5 | −7.69 | [−17.74, +2.08] | 0.22 | 0.22 | 0.16 | 0.10 (1) |
+| Selection52: crossed vs original-critic MAS | 52 | correct | 4 → 3 | 0 / 1 | −1.92 | [−5.77, 0.00] | 1.00 | 1.00 | 0.32 | 0.092 (2) |
+| Selection52: crossed vs original-critic MAS | 52 | wrong | 22 → 15 | 3 / 10 | −13.46 | [−25.00, −1.85] | 0.092 | 0.096 | 0.052 | 0.092 (2) |
+| Reserved49: crossed vs control MAS | 49 | correct | 4 → 4 | 0 / 0 | 0.00 | [0.00, 0.00] | 1.00 | 1.00 | 1.00 | 0.021 (1) |
+| Reserved49: crossed vs control MAS | 49 | wrong | 17 → 9 | 2 / 10 | −16.33 | [−26.23, −4.26] | 0.039 | 0.043 | 0.046 | 0.021 (1) |
+| Selection52: crossed vs control SAS | 52 | correct | 8 → 10 | 2 / 0 | +3.85 | [0.00, +11.54] | 0.50 | 0.48 | 0.32 | 0.14 (2) |
+| Selection52: crossed vs control SAS | 52 | wrong | 23 → 16 | 4 / 11 | −13.46 | [−26.79, 0.00] | 0.12 | 0.12 | 0.11 | 0.14 (2) |
+| Selection52: crossed vs control SAS (analysis128+demos) | 52 | correct | 9 → 9 | 1 / 1 | 0.00 | [0.00, 0.00] | 1.00 | 1.00 | 1.00 | 0.060 (3) |
+| Selection52: crossed vs control SAS (analysis128+demos) | 52 | wrong | 20 → 10 | 3 / 13 | −19.23 | [−38.03, −2.08] | 0.021 | 0.024 | 0.068 | 0.060 (3) |
+| Reserved49: crossed vs control SAS | 49 | correct | 8 → 9 | 1 / 0 | +2.04 | [0.00, +5.56] | 1.00 | 1.00 | 0.32 | 0.61 (2) |
+| Reserved49: crossed vs control SAS | 49 | wrong | 20 → 20 | 3 / 3 | 0.00 | [−10.64, +8.62] | 1.00 | 1.00 | 1.00 | 0.61 (2) |
+| Selection52: baseline SAS, analysis128+demos vs direct | 52 | correct | 8 → 9 | 2 / 1 | +1.92 | [−4.26, +8.77] | 1.00 | 1.00 | 0.56 | 0.80 (3) |
+| Selection52: baseline SAS, analysis128+demos vs direct | 52 | wrong | 25 → 24 | 5 / 6 | −1.92 | [−12.07, +12.50] | 1.00 | 1.00 | 0.76 | 0.80 (3) |
+| Selection52: control SAS, analysis128+demos vs direct | 52 | correct | 8 → 9 | 2 / 1 | +1.92 | [−5.41, +10.53] | 1.00 | 1.00 | 0.65 | 0.37 (3) |
+| Selection52: control SAS, analysis128+demos vs direct | 52 | wrong | 23 → 20 | 4 / 7 | −5.77 | [−18.75, +6.82] | 0.55 | 0.55 | 0.41 | 0.37 (3) |
+| Selection52: crossed SAS, analysis128+demos vs direct | 52 | correct | 10 → 9 | 0 / 1 | −1.92 | [−6.25, 0.00] | 1.00 | 1.00 | 0.32 | 0.040 (2) |
+| Selection52: crossed SAS, analysis128+demos vs direct | 52 | wrong | 16 → 10 | 2 / 8 | −11.54 | [−27.27, 0.00] | 0.11 | 0.11 | 0.13 | 0.040 (2) |
+
+**Reading the battery.**
+
+1. **The primary pattern persists across the tabulated tests.** All four prespecified endpoints reject the null under the tabulated procedures (excluding the separate conservative Hoeffding bounds): case-IID exact and asymptotic, report- and company-clustered, sign-based, and Holm-adjusted under two different cluster tests. The largest report-level Holm-adjusted p-value in Table E2 is 6.1×10⁻⁵, well below 0.05. The direction is unambiguous: MAS was higher on 0 of 33 discordant reports for reported-correct delivery and on 0 of 21 for raw-correct delivery.
+2. **Ignoring clustering overstates the evidence by many orders of magnitude, but does not change the conclusion.** For reported-correct delivery the case-IID exact McNemar gives p = 2.1×10⁻²², the report-level cluster-score test 6.4×10⁻⁷ and the company-level test 1.3×10⁻⁴. The report-level design effects of 1.28–1.62 mean that the 160 questions carry roughly the information of 99–125 independent questions (160/DEFF). Proposition 10 shows that, with 50 reports, the T8 statistic cannot reach the case-IID exact p-value. Case-IID p-values are therefore reported only as sensitivity diagnostics.
+3. **The 3×3 tables locate the asymmetry.** The reported-metric Bowker statistic decomposes exactly as 1 (C↔W) + 72 (C↔H) + 46 (W↔H) = 119, and the raw-metric statistic as 1 + 34 + 84 = 119. Almost all asymmetry runs from a SAS delivery to a MAS withholding, and none runs the other way. Stuart–Maxwell confirms that the marginal C/W/H distributions differ (Q ≈ 118, 2 df).
+4. **Architecture contrasts replicate across profiles.** Direct-control and repair-ablation MAS-versus-SAS contrasts reproduce the primary pattern, with all cluster-adjusted p-values below 5×10⁻⁴.
+5. **The prompt bundle effect is robust for SAS correct delivery, but not for every endpoint.** SAS primary versus direct gives +17.5 pp reported-correct (32 versus 4 discordant; Cluster-score p = 4.7×10⁻⁴). The SAS raw wrong-delivery reduction is a boundary case: the case-IID exact p = 0.049, but the cluster-adjusted p = 0.080 and the bootstrap interval crosses zero. Under standard 3 it is not claimed.
+6. **Some "non-significant" results are structurally non-significant.** The MAS bundle moved 5 questions to correct and none away (5/0). Its exact p = 0.0625 is the smallest value attainable with five discordant pairs (Proposition 9), so this two-sided exact conditional McNemar test cannot reach α = 0.05 with only five discordant pairs. This is not a bound on every possible test. The Wald interval [+0.43, +5.82] excludes zero there, which illustrates why Wald intervals are descriptive only. The MAS repair contrast has no discordant pair at all: the observed outcomes are identical, leaving no discordant-pair information for these tests; this does not establish population equivalence.
+7. **The 8 GB evidence is consistent in direction but individually weak.** In all five 8 GB SAS/MAS architecture pairs, MAS gained at most one correct delivery that SAS missed (b ≤ 1). Five of 28 reported-metric endpoint tests reach unadjusted exact p < 0.05, and two do so under the cluster-adjusted test. None survives Holm adjustment over the 28: the smallest adjusted value is 0.36. The sole MAS critic result that is significant under both tests (reserved crossed versus control, wrong deliveries 17 → 9, exact p = 0.039, Cluster-score p = 0.046) left correct deliveries unchanged at 4 → 4. By Proposition 1 it is therefore a shift into withholding, not an accuracy gain. These overlapping-condition pairs share questions and models and are not independent replications.
+
+## Appendix F. Statistical derivations and assumptions
+
+Each argument below explains why a test in Appendix D answers the question we ask of it, what it assumes, and where it fails. All are standard results (McNemar, 1947; Bowker, 1948; Stuart, 1955; Maxwell, 1970; Durkalski et al., 2003; Agresti, 2013) applied to this design. Two short propositions (P9, P10) make the consequences for this study explicit.
+
+**J1. Why the tests must be paired.** Both arms answer the same questions, so the per-question outcomes are correlated. For the paired difference,
+$$\operatorname{Var}(\hat\Delta)=\frac{1}{N}\Big[\pi_R(1-\pi_R)+\pi_L(1-\pi_L)-2\operatorname{Cov}(y_{L},y_{R})\Big].$$
+Unpaired procedures (two-proportion z, Pearson χ² or Fisher on the arm × outcome table) drop the covariance term and use the wrong sampling model. For primary reported-correct delivery the unpaired SE is 4.18 pp against the paired 3.94 pp; the gap would be larger for arms that agree more often. Unpaired tests are therefore not used.
+
+**J2. Exactness of the conditional McNemar test.** Write the four cell probabilities of $(y_L,y_R)$ as $\pi_{11},\pi_{10},\pi_{01},\pi_{00}$, with $\pi_b=\pi_{01}$ (right only) and $\pi_c=\pi_{10}$ (left only). Marginal equality $\pi_R=\pi_L$ holds if and only if $\pi_b=\pi_c$. The multinomial likelihood factorises as
+$$L=\underbrace{f\big(n_d,\,n_{11},\,n_{00};\boldsymbol\pi\big)}_{\text{free of }\theta}\cdot\binom{n_d}{b}\theta^{\,b}(1-\theta)^{c},\qquad \theta=\frac{\pi_b}{\pi_b+\pi_c}.$$
+Conditional on $n_d$, $b\sim\mathrm{Bin}(n_d,\theta)$, and $H_0$ is $\theta=\tfrac12$. The concordant questions carry no information about $\theta$, and the binomial tail is exact whatever the nuisance parameters. Because $\mathrm{Bin}(n_d,\tfrac12)$ is symmetric, doubling the smaller tail gives a valid two-sided p-value (T2). Discreteness makes the test conservative; Fagerland et al. (2013) show that the asymptotic and mid-p versions have size closer to nominal. We still use the exact version as the case-IID reference as a conservative diagnostic under independent-pair assumptions. It can still overstate evidence when within-report dependence is ignored.
+
+**P9. Minimum attainable significance.** The most extreme table with $n_d$ discordant pairs has $\min(b,c)=0$, so $p_{\text{exact}}\ge\min\{1,2^{1-n_d}\}$. Significance at α = 0.05 therefore requires $n_d\ge6$, and at the Bonferroni level 0.0125 it requires $n_d\ge8$. *Consequence:* the MAS prompt-bundle contrast (5/0, p = 0.0625) and the 8 GB selection control-pair correct contrast (0/5, p = 0.0625) could not have been significant under this two-sided exact conditional test with the observed discordant counts. Their non-significance is a sample-size property, not evidence of no effect, which is why standard 8 replaces post-hoc power with this bound.
+
+**J3. The χ² approximation and the continuity correction.** Given $n_d$ under $H_0$, $b-c=2b-n_d$ has mean 0 and variance $n_d$. By the central limit theorem, $(b-c)/\sqrt{n_d}\to N(0,1)$, so its square is asymptotically $\chi^2_1$ (T3). Because $b-c$ moves in steps of 2, half a step equals 1, and subtracting 1 from $\lvert b-c\rvert$ (Edwards, 1948) aligns the continuous approximation with the discrete distribution. The usual adequacy rule, $n_d\ge25$, holds for every primary endpoint ($n_d\ge35$), and all three p-values fall below $10^{-7}$. Their absolute values still differ by several orders of magnitude (for example $2.1\times10^{-22}$ exact versus $1.3\times10^{-17}$ asymptotic), because normal approximations are inaccurate this far into the tail. Extreme p-values are therefore read as "far beyond any threshold", not compared numerically.
+
+**J4. The Wald variance and its failure at the boundary.** Under the multinomial model, $\operatorname{Var}(b-c)=N\big[(\pi_b+\pi_c)-(\pi_b-\pi_c)^2\big]$. Dividing by $N^2$ and substituting $\hat\pi_b=b/N$, $\hat\pi_c=c/N$ gives the standard error in T1, which equals the case-IID variance $\frac{1}{N^2}\sum_i(d_i-\hat\Delta)^2$. When one discordant count is zero, the plug-in variance shrinks as the estimate approaches its boundary. With 5/0 the Wald interval is [+0.43, +5.82] pp, although $p_{\text{exact}}=0.0625$ and the bootstrap interval touches zero. Wald intervals are therefore shown but never used for decisions.
+
+**J5. Bowker and Stuart–Maxwell on C/W/H tables.** Under symmetry, $\pi_{ij}=\pi_{ji}$. Conditional on the pair totals $m_{ij}=n_{ij}+n_{ji}$, the multinomial factorises into independent $n_{ij}\sim\mathrm{Bin}(m_{ij},\tfrac12)$. Each standardized term $(n_{ij}-n_{ji})^2/m_{ij}$ is asymptotically $\chi^2_1$, and the independent terms add to $\chi^2$ with one df per non-empty pair (T4). For $k=2$, $Q_B$ is the McNemar χ². Marginal homogeneity is implied by symmetry but is weaker: it asks only whether the two arms' C/W/H distributions differ, not whether movements between states balance. Under it, the vector $\boldsymbol\delta$ of marginal differences is asymptotically normal with null covariance estimated by $V$ (T5), and $Q_{SM}$ is its squared Mahalanobis length. One category is dropped because $\sum_i\delta_i=0$ makes the full covariance singular; the statistic does not depend on which one. When a category has no discordant movement, $V$ loses rank; we then use the Moore–Penrose inverse with df = rank, and report the test as "not defined" at rank 0. Both tests treat questions as independent, so they describe structure; they are not confirmatory.
+
+**J6. Why clustering matters, and the design effect.** Questions from one report share tables, narrative and accounting conventions, so the $d_i$ within a report are correlated. If reports are independent and $n_g$ is fixed, then exactly
+$$\operatorname{Var}(\hat\Delta)=\frac{1}{N^2}\sum_g\operatorname{Var}(S_g).$$
+With a common within-report correlation $\rho$, this inflates the IID variance by approximately $1+(\bar n_w-1)\rho$, where $\bar n_w=\sum_g n_g^2/N=N/G_{\text{eff}}=4.33$. Under this simplifying common-correlation approximation, design effects of 1.28–1.62 correspond to $\rho\approx0.08$–$0.19$, (not a directly estimated intraclass correlation), and case-IID standard errors are smaller by a factor $\sqrt{\mathrm{DEFF}}$ of 1.13–1.27. The CR1 estimator (T7) is the sandwich estimator for a mean of independent cluster totals. It is consistent as $G\to\infty$ for any within-cluster correlation, and $G/(G-1)$ is the usual small-sample factor (Liang & Zeger, 1986; Cameron & Miller, 2015). The cluster-score statistic (T8) is a score-type test of $\mathbb{E}S_g=0$ that estimates the variance under the null. Its chi-square approximation requires independent clusters, zero-mean cluster contributions under the null, a suitable central limit theorem and no dominating cluster as $G\to\infty$; and it reduces exactly to McNemar's χ² when every cluster holds one question ($\sum_gS_g=b-c$, $\sum_gS_g^2=b+c$).
+
+**P10. Ceiling on cluster-adjusted evidence.** Let $G'$ be the number of clusters with $S_g\neq0$. By the Cauchy–Schwarz inequality, $\big(\sum_gS_g\big)^2\le G'\sum_gS_g^2$, so
+$$X^2_D\le G'\qquad\text{and}\qquad p_D\ge\Pr\big(\chi^2_1\ge G'\big).$$
+For primary reported-correct delivery, $G'=33$ gives $p_D\ge9.2\times10^{-9}$, and even $G'=50$ would give $p_D\ge1.5\times10^{-12}$. *Consequence:* with 50 reports, this particular cluster-adjusted statistic cannot yield the $10^{-22}$ p-value obtained from case-IID McNemar. The bound does not apply to all cluster-level procedures. That value reflects an assumption of 160 independent units, not the strength of the data. The sign-flip and sign tests have analogous floors of $2^{1-G'}$.
+
+**J7. Whole-report bootstrap.** If reports are independent draws from a population of reports, then $(S_g,n_g)$ are i.i.d. The estimator $\hat\Delta=\sum_gS_g/\sum_gn_g$ is a smooth function of two means, so the nonparametric bootstrap over clusters is consistent and the percentile interval is first-order accurate (Davison & Hinkley, 1997). Resampling whole reports keeps within-report dependence intact. The ratio form keeps the question weighting of the point estimate, and equal-report weighting is reported separately as a sensitivity analysis. When every discordant report moves the same way, no resample can reverse the sign. The interval may touch zero if enough resamples omit all discordant reports, as in [0.00, +6.98] pp; it need not do so. This support restriction does not rule out an opposite effect in a new population. With $G=50$ the percentile interval can under-cover; the company analysis and the Hoeffding bound (P7) indicate how much the conclusions rely on it.
+
+**J8. Exactness of the sign-flip and sign tests.** Suppose that under $H_0$ the cluster sums are independent and each is symmetric about zero. Then $(S_1,\dots,S_G)$ has the same distribution as $(\varepsilon_1S_1,\dots,\varepsilon_GS_G)$ for any fixed signs. Conditional on the magnitudes $\lvert S_g\rvert$, all $2^{G'}$ sign patterns are equally likely. The resulting p-value is exact at any $G$ and needs no central limit theorem. With $R$ random sign patterns, $\hat p=(1+E)/(1+R)$ is itself a valid p-value and can never be zero (Phipson & Smyth, 2010); $1/65{,}537\approx1.5\times10^{-5}$ is a resolution floor. The report sign test needs only that each non-zero $S_g$ is equally likely to be positive or negative, so $K^+\sim\mathrm{Bin}(G',\tfrac12)$. It discards magnitudes and so cannot be inflated by one large report. Symmetry is stronger than a zero mean, so the sign-flip result is supplemental.
+
+**J9. Holm controls the family-wise error under any dependence.** Let $I_0$ be the set of true nulls, with $m_0=\lvert I_0\rvert$. Holm first rejects a true null at a step $j\le m-m_0+1$, where the threshold is $\alpha/(m-j+1)\le\alpha/m_0$. Hence
+$$\mathrm{FWER}\le\Pr\Big(\min_{i\in I_0}p_i\le\frac{\alpha}{m_0}\Big)\le m_0\cdot\frac{\alpha}{m_0}=\alpha$$
+by the union bound, without any independence assumption. This matters because the four primary endpoints share the same 160 questions. Withholding is excluded from the family because, by P1, $\Delta H=-(\Delta C+\Delta W)$ for each metric, so testing it would count the same evidence twice.
+
+**J10. Wilson intervals for single-arm rates.** Inverting the score test $\lvert\hat p-p\rvert\le z\sqrt{p(1-p)/n}$ gives a quadratic in $p$ whose roots are T11. Unlike the Wald interval, it stays inside [0, 1] and keeps near-nominal coverage at small counts. For MAS correct delivery (5/160), Wilson gives [1.3%, 7.1%] while Wald gives [0.4%, 5.8%].
+
+**J11. Why risk differences rather than odds ratios or mixed models.** The conditional odds ratio for paired data is $b/c$. For primary reported-correct delivery $b=0$, so the log odds ratio is $-\infty$. Conditional logistic and random-intercept logistic estimates diverge under this separation and need distributional assumptions on the random effects. Risk differences stay finite, need no parametric model, and are the quantity that enters the utility analysis (P4) linearly. We use paired risk differences and explicit cluster-aware uncertainty rather than an unpaired analysis. Binary outcomes do not by themselves invalidate linear-model or large-sample t procedures, provided pairing, clustering and the estimand are handled correctly.
+
+**J12. What the tests do not establish.** All p-values are conditional on the reports and questions selected; deterministic ID-hash selection is not random sampling, and greedy decoding gives no within-question run-to-run variance. The tests therefore quantify how surprising the observed paired differences would be if reports were exchangeable draws, not how a different model family, task or tier would behave. Non-significance is not evidence of no effect or of equivalence (Lakens, 2017), and a small p-value is not a large or important effect (Wasserstein & Lazar, 2016). The effect sizes and the coverage trade-off in Section 6 carry the substantive conclusion.
+
+
+## Appendix G. Supporting diagnostic figures
+
+These figures provide historical, cluster-sensitivity, resource and utility diagnostics supporting the main results. They analyse the same observations and do not constitute additional independent experiments.
+
+![Figure 9. Historical 8 GB synthetic metrics. The embedded original figure label is retained. Invention rates have different denominators (SAS 175; MAS 111 valid outputs) and are not directly comparable; neither rate isolates fabricated content.](figures/tier8/figure1_headline_metrics.png)
+
+![Figure 10. All 15 completed 8 GB FinQA configurations, reported metric.](figures/paper/P08_tier8_inventory.png)
+
+![Figure 11. Report-level correct-delivery rates; MAS is above parity on no report.](figures/paper/P03_report_scatter.png)
+
+![Figure 12. Bootstrap distributions for the reported-metric primary contrasts.](figures/paper/P02_bootstrap_distributions.png)
+
+![Figure 13. Report- versus company-cluster interval sensitivity.](figures/tier16_v2/11_cluster_sensitivity.png)
+
+![Figure 14. Repair cost relative to primary.](figures/tier16_v2/06_repair_cost.png)
+
+![Figure 15. Correct delivery by annotated retrieval completeness.](figures/tier16_v2/10_retrieval_strata.png)
+
+![Figure 16. Per-case latency, all six jobs (log scale).](figures/paper/P05_latency_distributions.png)
+
+![Figure 17. Compute by stage.](figures/paper/P07_stage_costs.png)
+
+![Figure 18. Sampled process-tree RSS over complete attempts and the retained failed attempt.](figures/paper/P06_memory_timelines.png)
+
+![Figure 19. Utility versus the wrong-answer penalty.](figures/tier16_v2/08_utility_sensitivity.png)
+
+![Figure 20. Risk–coverage operating points of the six recipes.](figures/tier16_v2/07_risk_coverage.png)
+</script>
+<script>
+(function () {
+  let src = document.getElementById('md').textContent;
+  const keep = [];
+  const stash = (s) => { keep.push(s); return 'QQKEEP' + (keep.length - 1) + 'QQ'; };
+  src = src.replace(/```[\s\S]*?```/g, stash);
+  src = src.replace(/`[^`\n]+`/g, stash);
+  const math = [];
+  const mstash = (tex, display) => { math.push([tex, display]); return 'QQMATH' + (math.length - 1) + 'QQ'; };
+  src = src.replace(/\$\$([\s\S]+?)\$\$/g, (_, t) => mstash(t, true));
+  src = src.replace(/\$([^$\n]+?)\$/g, (_, t) => mstash(t, false));
+  src = src.replace(/QQKEEP(\d+)QQ/g, (_, i) => keep[+i]);
+  let out = marked.parse(src, { gfm: true });
+  out = out.replace(/QQMATH(\d+)QQ/g, (_, i) => {
+    const [tex, display] = math[+i];
+    try { return katex.renderToString(tex, { displayMode: display, throwOnError: false }); }
+    catch (e) { return tex; }
+  });
+  const root = document.getElementById('content');
+  root.innerHTML = out;
+  root.querySelectorAll('p > img').forEach((img) => {
+    if (img.alt) {
+      const cap = document.createElement('div');
+      cap.className = 'caption';
+      cap.textContent = img.alt;
+      img.parentElement.after(cap);
+    }
+  });
+  document.title = 'Spend It Together or Spend It Big? (Project Agere)';
+  window.__rendered = true;
+})();
+</script></body></html>
