@@ -1,217 +1,185 @@
 /**
- * Executive Overview Page - Minimal, Plain, Publication-Grade
+ * Overview: the research story in one screen.
  */
 
 window.App.registerPage('overview', {
     async render(container, app) {
-        const aggr = app.state.data.aggregates || await app.fetchJson('data/derived_aggregates.json');
-        const kpis = aggr ? aggr.kpis : {};
-        const jobs = aggr ? aggr.jobs_16gb : {};
+        const jobs = await Data.jobs16();
+        const { mas, sas } = await Data.pair('primary');
+        const effects = (await app.fetchJson('data/tier16_v2/paired_effects.json')) || [];
+        const primaryC = effects.find(e => e.comparison === 'primary' && e.endpoint === 'case_success/correct') || {};
+        const tr = await Data.transitions('primary');
+        const cases = await Data.cases16();
+        const tier8 = await Data.tier8Conditions();
 
-        const mas = jobs['tier16-mas-primary'] || {};
-        const sas = jobs['tier16-sas-primary'] || {};
+        const masRescues = tr.wrong.correct + tr.withheld.correct;
+        const sasCorrectMasWithheld = tr.correct.withheld;
+        const ratio = mas.C ? sas.C / mas.C : Infinity;
+        const speed = sas.secPerCase / mas.secPerCase;
+        const costPerCorrect = mas.secPerCorrect / sas.secPerCorrect;
+        const repair = jobs['tier16-mas-repair_ablation'];
+        const repairExtraH = repair.hours - mas.hours;
+
+        const waffle = (arm) => {
+            const rows = cases.filter(c => c.job === `tier16-${arm}-primary`);
+            const order = { correct: 0, wrong: 1, withheld: 2 };
+            rows.sort((a, b) => order[a.reported_outcome] - order[b.reported_outcome] || a.case_id.localeCompare(b.case_id));
+            return `<div class="waffle">${rows.map((r, i) =>
+                `<i class="w-${r.reported_outcome}" style="--d:${i}" title="${UI.esc(r.case_id)} · ${r.reported_outcome}" onclick="App.pages.cases.openByKey('${r.job}','${UI.esc(r.case_id)}')"></i>`
+            ).join('')}</div>`;
+        };
+
+        const ctrl8 = { sas: tier8.find(c => c.job === 'diagnostic_audit-control_sas-full-01'), mas: tier8.find(c => c.job === 'diagnostic_audit-control_mas-full-01') };
 
         container.innerHTML = `
-            <!-- Research Context Box (Plain, Crisp, Professional) -->
-            <div class="card p-5 border border-slate-700 bg-slate-900/40">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-                    <div>
-                        <div class="text-xs uppercase tracking-wider font-mono text-slate-400">Research Question & Framing</div>
-                        <h2 class="text-base font-semibold text-white mt-1">
-                            Multi-Agent Full-Precision Teams vs. Quantized Monoliths on Analyst RAM
-                        </h2>
-                        <p class="text-xs text-slate-300 mt-1 max-w-4xl leading-relaxed">
-                            We evaluate whether a specialized team of smaller full-precision LLMs outperforms a single larger quantized generalist under identical host-adjusted process RSS limits (12.8 GB / 6.4 GB) and thinking-token budgets on regulated financial document tasks.
-                        </p>
-                    </div>
-                    <div class="shrink-0 flex items-center gap-2">
-                        <span class="badge badge-sas">RUPP Protocol</span>
-                        <span class="badge badge-mas">16 GB Primary Cohort</span>
-                    </div>
-                </div>
+            ${UI.hero({
+                eyebrow: 'Headline finding · 16 GB tier',
+                title: `One quantized 14B model answers <span class="grad-text">${ratio.toFixed(1)}×</span> more questions correctly than a three-model full-precision team`,
+                sub: `Same 160 FinQA questions, same memory ceiling, same token budget. The team rarely gets answers wrong, but only because it declines to answer ${UI.pct(mas.H, mas.n, 0)}% of the time.`,
+                right: `
+                    <div class="flex flex-col gap-2 items-start lg:items-end">
+                        <span class="badge badge-correct"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Holm p = ${UI.fmtP(primaryC.holm_primary4_p)}</span>
+                        <span class="badge">Δ correct ${(primaryC.delta * 100).toFixed(1)} pp · 95% CI [${(primaryC.ci_low * 100).toFixed(1)}, ${(primaryC.ci_high * 100).toFixed(1)}]</span>
+                        <span class="badge">50 report clusters · 36 companies</span>
+                    </div>`
+            })}
+
+            <div class="grid grid-cols-2 xl:grid-cols-4 gap-4">
+                ${UI.kpi({ label: 'SAS correct answers', value: 100 * sas.acc, decimals: 1, suffix: '%', foot: `${sas.C} of ${sas.n} · Qwen2.5-14B Q4`, tone: 'sas', icon: 'target', i: 1 })}
+                ${UI.kpi({ label: 'MAS correct answers', value: 100 * mas.acc, decimals: 1, suffix: '%', foot: `${mas.C} of ${mas.n} · 1.5B + 3B + 0.5B F16`, tone: 'mas', icon: 'users', i: 2 })}
+                ${UI.kpi({ label: 'MAS declines to answer', value: 100 * mas.withheldRate, decimals: 1, suffix: '%', foot: `${mas.H} withheld vs ${sas.H} for SAS`, tone: 'withheld', icon: 'shield-off', i: 3 })}
+                ${UI.kpi({ label: 'MAS precision when it answers', value: 100 * mas.precision, decimals: 1, suffix: '%', foot: `MAS ${UI.pct(mas.C, mas.C + mas.W)}% vs SAS ${UI.pct(sas.C, sas.C + sas.W)}%: a near tie`, tone: 'correct', icon: 'crosshair', i: 4 })}
             </div>
 
-            <!-- Primary 4 Metrics (High Data-to-Ink Ratio) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-medium">16 GB Accuracy Delta (MAS - SAS)</div>
-                    <div class="text-2xl font-bold font-mono text-rose-400 mt-2">-45.6%</div>
-                    <div class="text-xs text-slate-400 font-mono mt-1">Holm p = 6.10e-5 (Sig)</div>
-                </div>
-                <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-medium">SAS 14B Monolith Accuracy</div>
-                    <div class="text-2xl font-bold font-mono text-slate-200 mt-2">50.6%</div>
-                    <div class="text-xs text-slate-400 font-mono mt-1">81 of 160 questions correct</div>
-                </div>
-                <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-medium">MAS 3-Agent Team Accuracy</div>
-                    <div class="text-2xl font-bold font-mono text-slate-200 mt-2">5.0%</div>
-                    <div class="text-xs text-slate-400 font-mono mt-1">8 of 160 questions correct</div>
-                </div>
-                <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-medium">MAS Policy Withholding Rate</div>
-                    <div class="text-2xl font-bold font-mono text-amber-400 mt-2">73.8%</div>
-                    <div class="text-xs text-slate-400 font-mono mt-1">118 of 160 withheld</div>
-                </div>
+            <div class="grid grid-cols-1 xl:grid-cols-5 gap-6">
+                ${UI.card({
+                    cls: 'xl:col-span-3', i: 5,
+                    title: 'Every question, one square',
+                    sub: 'Primary profile. Click any square to inspect that case.',
+                    right: UI.outcomeLegend(),
+                    body: `
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <div class="flex items-baseline justify-between mb-3">
+                                    <span class="text-sm font-semibold c-sas">SAS · single 14B</span>
+                                    <span class="font-mono text-xs t-secondary">${sas.C} / ${sas.W} / ${sas.H}</span>
+                                </div>
+                                ${waffle('sas')}
+                            </div>
+                            <div>
+                                <div class="flex items-baseline justify-between mb-3">
+                                    <span class="text-sm font-semibold c-mas">MAS · 3-agent team</span>
+                                    <span class="font-mono text-xs t-secondary">${mas.C} / ${mas.W} / ${mas.H}</span>
+                                </div>
+                                ${waffle('mas')}
+                            </div>
+                        </div>`
+                })}
+
+                <section class="xl:col-span-2 space-y-3">
+                    <div class="eyebrow reveal" style="--i:5">What the data says</div>
+                    ${UI.insight({ i: 6, tone: 'sas', icon: 'trophy', title: `SAS wins on useful answers by ${Math.abs(primaryC.delta * 100).toFixed(1)} points`, body: `The interval stays far from zero under both report- and company-level clustering, and under both scoring metrics.` })}
+                    ${UI.insight({ i: 7, tone: 'warn', icon: 'scale', title: 'MAS is not more careful, just quieter', body: `When it does answer, MAS is right ${UI.pct(mas.C, mas.C + mas.W)}% of the time vs ${UI.pct(sas.C, sas.C + sas.W)}% for SAS. The gap is coverage: ${UI.pct(mas.C + mas.W, mas.n)}% vs ${UI.pct(sas.C + sas.W, sas.n)}%.` })}
+                    ${UI.insight({ i: 8, tone: 'bad', icon: 'life-buoy', title: `MAS rescued ${masRescues} questions SAS missed`, body: `Of SAS's ${sas.C} correct answers, MAS withheld ${sasCorrectMasWithheld}. The team adds no complementary coverage.` })}
+                    ${UI.insight({ i: 9, tone: 'mas', icon: 'timer', title: `${speed.toFixed(1)}× faster per question, ${costPerCorrect.toFixed(1)}× costlier per correct answer`, body: `MAS spends ${Math.round(mas.secPerCorrect / 60)} CPU-minutes per correct answer vs ${Math.round(sas.secPerCorrect / 60)} for SAS.` })}
+                    ${UI.insight({ i: 10, tone: 'bad', icon: 'wrench', title: `${repair.repairs} repair attempts changed nothing`, body: `The repair loop added ${repairExtraH.toFixed(2)} h of MAS inference, and every final delivery state was identical to the primary profile.` })}
+                </section>
             </div>
 
-            <!-- Minimalist Charts Row -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Chart 1: Outcome Breakdown -->
-                <div class="card">
-                    <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
-                        <div>
-                            <h3 class="text-sm font-semibold text-white">16 GB Evaluation Outcome Breakdown</h3>
-                            <p class="text-xs text-slate-400">Reported Correct vs Wrong vs Withheld by Policy (n = 160 per arm)</p>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <div class="w-full h-64">
-                            <canvas id="overview-outcome-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chart 2: Cross Tier Comparison -->
-                <div class="card">
-                    <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
-                        <div>
-                            <h3 class="text-sm font-semibold text-white">Accuracy by Hardware RAM Tier</h3>
-                            <p class="text-xs text-slate-400">8 GB Adapted FinQA vs 16 GB Pretrained FinQA</p>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <div class="w-full h-64">
-                            <canvas id="overview-tier-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                ${UI.card({
+                    i: 11,
+                    title: 'Coverage vs precision',
+                    sub: 'Each bubble is one 16 GB job. Bubble size is CPU inference hours. Up and to the right is better.',
+                    body: `<div class="h-80"><canvas id="ov-bubble"></canvas></div>`
+                })}
+                ${UI.card({
+                    i: 12,
+                    title: 'All six 16 GB jobs at a glance',
+                    sub: 'Reported-answer outcomes for 160 questions per job',
+                    right: UI.outcomeLegend(),
+                    body: `
+                        <div class="space-y-4 mt-2">
+                            ${Data.PROFILES.map(p => ['sas', 'mas'].map(arm => {
+                                const j = jobs[`tier16-${arm}-${p}`];
+                                return `
+                                    <div>
+                                        <div class="flex items-center justify-between text-xs mb-1.5">
+                                            <span class="flex items-center gap-2">${UI.armBadge(arm)}<span class="t-secondary">${Data.PROFILE_LABEL[p]}</span></span>
+                                            <span class="font-mono t-muted">${UI.pct(j.C, j.n)}% correct · ${j.hours.toFixed(1)} h</span>
+                                        </div>
+                                        ${UI.stackbar(j.C, j.W, j.H, j.n)}
+                                    </div>`;
+                            }).join('')).join('')}
+                        </div>`
+                })}
             </div>
 
-            <!-- Plain Comparative Architecture Table -->
-            <div class="card">
-                <div class="pb-3 border-b border-[var(--border-color)]">
-                    <h3 class="text-sm font-semibold text-white">Deployment Specifications (16 GB Analyst Workstation)</h3>
-                    <p class="text-xs text-slate-400">Both arms tested under identical 12.8 GB process-tree RSS limits with 20% host OS reservation</p>
-                </div>
-                <div class="table-container mt-4">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Deployment Arm</th>
-                                <th>Architecture Role</th>
-                                <th>Models & Quantization</th>
-                                <th>Process RSS Cap</th>
-                                <th>Reported Correct</th>
-                                <th>Wrong Delivery</th>
-                                <th>Withheld Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="badge badge-mas">MAS-FP16</span></td>
-                                <td class="font-medium text-white">Specialized Team (Extractor + Drafter + Verifier)</td>
-                                <td class="font-mono text-xs">Qwen2.5 1.5B + 7B + 3B (F16)</td>
-                                <td class="font-mono text-xs">12.8 GB</td>
-                                <td class="font-mono text-xs text-white">5.0% (8/160)</td>
-                                <td class="font-mono text-xs text-rose-400">21.3% (34/160)</td>
-                                <td class="font-mono text-xs text-amber-400 font-semibold">73.8% (118/160)</td>
-                            </tr>
-                            <tr>
-                                <td><span class="badge badge-sas">SAS-Quant</span></td>
-                                <td class="font-medium text-white">Single Monolith (Standard Baseline)</td>
-                                <td class="font-mono text-xs">Qwen2.5-14B (GGUF Q4_K_M)</td>
-                                <td class="font-mono text-xs">12.8 GB</td>
-                                <td class="font-mono text-xs text-white font-semibold">50.6% (81/160)</td>
-                                <td class="font-mono text-xs text-rose-400">36.3% (58/160)</td>
-                                <td class="font-mono text-xs text-slate-400">13.1% (21/160)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            ${UI.card({
+                i: 13,
+                title: 'Does the gap hold at 8 GB?',
+                sub: 'Correct-answer rate by tier. Different questions, adaptation and backends per tier, so this is descriptive, not a RAM-scaling law.',
+                body: `
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                        <div class="lg:col-span-2 h-64"><canvas id="ov-tier"></canvas></div>
+                        <div class="space-y-3">
+                            ${UI.insight({ tone: 'sas', icon: 'trending-up', title: 'SAS leads in both tiers', body: `8 GB reserved control: SAS ${ctrl8.sas.reported.C}/${ctrl8.sas.n} vs MAS ${ctrl8.mas.reported.C}/${ctrl8.mas.n}. At 16 GB the gap widens to ${sas.C} vs ${mas.C}.` })}
+                            ${UI.insight({ tone: 'warn', icon: 'alert-circle', title: 'Not a causal RAM effect', body: 'Recipes, question sources and adaptation differ between tiers.' })}
+                        </div>
+                    </div>`
+            })}
         `;
 
-        this.renderCharts(mas, sas);
+        this.renderCharts(jobs, sas, mas, ctrl8);
     },
 
-    renderCharts(mas, sas) {
-        // Chart 1: Outcome Breakdown (Clean, Flat, Plain Tones)
-        const ctx1 = document.getElementById('overview-outcome-chart');
-        if (ctx1) {
-            new Chart(ctx1, {
-                type: 'bar',
-                data: {
-                    labels: ['MAS-FP16 (Team)', 'SAS-Quant (Monolith)'],
-                    datasets: [
-                        {
-                            label: 'Reported Correct',
-                            data: [mas.reported_correct || 8, sas.reported_correct || 81],
-                            backgroundColor: '#3fb950',
-                            borderRadius: 4
-                        },
-                        {
-                            label: 'Reported Wrong',
-                            data: [mas.wrong || 34, sas.wrong || 58],
-                            backgroundColor: '#f85149',
-                            borderRadius: 4
-                        },
-                        {
-                            label: 'Withheld by Policy',
-                            data: [mas.withheld || 118, sas.withheld || 21],
-                            backgroundColor: '#d29922',
-                            borderRadius: 4
-                        }
-                    ]
+    renderCharts(jobs, sas, mas, ctrl8) {
+        const k = UI.colors();
+        const pts = Object.values(jobs).map(j => ({
+            x: 100 * j.coverage, y: j.precision == null ? 0 : 100 * j.precision, r: 6 + 2.2 * Math.sqrt(j.hours * 4),
+            label: `${j.arm.toUpperCase()} · ${Data.PROFILE_LABEL[j.profile]}`, j
+        }));
+        UI.chart('ov-bubble', {
+            type: 'bubble',
+            data: {
+                datasets: ['sas', 'mas'].map(arm => ({
+                    label: arm === 'sas' ? 'SAS (14B Q4)' : 'MAS (3-agent F16)',
+                    data: pts.filter(p => p.j.arm === arm),
+                    backgroundColor: UI.alpha(arm, 0.35), borderColor: k[arm], borderWidth: 2, hoverBorderWidth: 3
+                }))
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                animation: { duration: 1400, easing: 'easeOutElastic', delay: ctx => ctx.dataIndex * 120 },
+                plugins: {
+                    legend: { position: 'top', align: 'end' },
+                    tooltip: { callbacks: { label: ctx => {
+                        const j = ctx.raw.j;
+                        return [`${ctx.raw.label}`, `Coverage ${(100 * j.coverage).toFixed(1)}% · Precision ${j.precision == null ? '—' : (100 * j.precision).toFixed(1) + '%'}`, `${j.C} correct / ${j.W} wrong / ${j.H} withheld · ${j.hours.toFixed(1)} h`];
+                    } } }
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { position: 'top', labels: { color: '#8b949e', font: { size: 11, family: 'Inter' }, boxWidth: 12 } }
-                    },
-                    scales: {
-                        x: { stacked: true, grid: { display: false }, ticks: { color: '#8b949e', font: { size: 11 } } },
-                        y: { stacked: true, max: 160, grid: { color: '#242c38' }, ticks: { color: '#8b949e', font: { size: 11 } } }
-                    }
+                scales: {
+                    x: { min: -5, max: 100, title: { display: true, text: 'Coverage: share of questions answered (%)' }, grid: { color: k.grid } },
+                    y: { min: -5, max: 100, title: { display: true, text: 'Precision: correct when answered (%)' }, grid: { color: k.grid } }
                 }
-            });
-        }
+            }
+        });
 
-        // Chart 2: Cross Tier (Clean Academic Bars)
-        const ctx2 = document.getElementById('overview-tier-chart');
-        if (ctx2) {
-            new Chart(ctx2, {
-                type: 'bar',
-                data: {
-                    labels: ['8 GB Tier (Adapted)', '16 GB Tier (Pretrained)'],
-                    datasets: [
-                        {
-                            label: 'MAS-FP16 Accuracy %',
-                            data: [15.4, 5.0],
-                            backgroundColor: '#388bfd',
-                            borderRadius: 4
-                        },
-                        {
-                            label: 'SAS-Quant Accuracy %',
-                            data: [19.2, 50.6],
-                            backgroundColor: '#6e7681',
-                            borderRadius: 4
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { position: 'top', labels: { color: '#8b949e', font: { size: 11, family: 'Inter' }, boxWidth: 12 } }
-                    },
-                    scales: {
-                        x: { grid: { display: false }, ticks: { color: '#8b949e', font: { size: 11 } } },
-                        y: { max: 60, grid: { color: '#242c38' }, ticks: { color: '#8b949e', callback: v => v + '%', font: { size: 11 } } }
-                    }
-                }
-            });
-        }
+        UI.chart('ov-tier', {
+            type: 'bar',
+            data: {
+                labels: ['8 GB · reserved control (n=49)', '16 GB · primary (n=160)'],
+                datasets: [
+                    { label: 'SAS', data: [100 * ctrl8.sas.reported.C / ctrl8.sas.n, 100 * sas.acc], backgroundColor: UI.alpha('sas', 0.85), borderRadius: 8, barPercentage: 0.7, categoryPercentage: 0.6 },
+                    { label: 'MAS', data: [100 * ctrl8.mas.reported.C / ctrl8.mas.n, 100 * mas.acc], backgroundColor: UI.alpha('mas', 0.85), borderRadius: 8, barPercentage: 0.7, categoryPercentage: 0.6 }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                animation: { delay: ctx => ctx.type === 'data' ? ctx.dataIndex * 200 + ctx.datasetIndex * 120 : 0 },
+                plugins: { legend: { position: 'top', align: 'end' }, tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}% correct` } } },
+                scales: { x: { grid: { display: false } }, y: { beginAtZero: true, suggestedMax: 60, ticks: { callback: v => v + '%' } } }
+            }
+        });
     }
 });
