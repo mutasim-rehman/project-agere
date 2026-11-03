@@ -1,5 +1,5 @@
 /**
- * Experiment Runs, Logs & Evidence Catalog Page
+ * Experiment Runs, Logs & Evidence Catalog Page - Minimal, Plain, Publication-Grade
  */
 
 window.App.registerPage('runs', {
@@ -20,59 +20,50 @@ window.App.registerPage('runs', {
         const stats = this.state.archiveStats;
 
         container.innerHTML = `
-            <!-- Top Header -->
-            <div class="card bg-gradient-to-r from-slate-900 to-indigo-950/20 border-indigo-500/30 p-5">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <!-- Top Header (Plain, Structured) -->
+            <div class="card p-5 border border-slate-700 bg-slate-900/40">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
                     <div>
-                        <div class="flex items-center gap-2">
-                            <span class="badge badge-sas">Lab Chronology</span>
-                            <span class="text-xs text-slate-400 font-mono">17 Managed Archives • 2,598 Evidence Files</span>
-                        </div>
-                        <h2 class="text-lg font-bold text-white mt-1">
-                            Complete Lab Execution History & Historical Evidence Catalog
+                        <div class="text-xs uppercase tracking-wider font-mono text-slate-400">Execution Provenance</div>
+                        <h2 class="text-base font-semibold text-white mt-1">
+                            Complete Lab Execution History & Evidence Catalog
                         </h2>
-                        <p class="text-xs text-slate-300 mt-1 max-w-3xl leading-relaxed">
+                        <p class="text-xs text-slate-300 mt-1 max-w-4xl leading-relaxed">
                             Chronicles the developmental arc of Project Agere: early naive attempts at 8 GB (with invalid KV caches), iterative counterfactual verifier curricula, 16 GB recovery jobs, and full audit logs.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Archive Overview Cards -->
+            <!-- Archive Overview Row -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-mono">Total Source Files</div>
-                    <div class="text-2xl font-bold font-mono text-white mt-1">${stats.total_files ?? '2,598'}</div>
-                    <div class="text-[10px] text-slate-500 mt-0.5">1,629 unique content hashes</div>
+                    <div class="text-xs text-slate-400 font-medium">Total Source Files</div>
+                    <div class="text-xl font-bold font-mono text-white mt-1">${stats.total_files ?? '2,598'}</div>
+                    <div class="text-xs text-slate-400 font-mono mt-0.5">1,629 unique content hashes</div>
                 </div>
                 <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-mono">Total Archive Volume</div>
-                    <div class="text-2xl font-bold font-mono text-cyan-400 mt-1">${stats.total_mb ? stats.total_mb + ' MB' : '645 MB'}</div>
-                    <div class="text-[10px] text-slate-500 mt-0.5">Compressed into 57 MB Git files</div>
+                    <div class="text-xs text-slate-400 font-medium">Total Evidence Size</div>
+                    <div class="text-xl font-bold font-mono text-white mt-1">${stats.total_mb ? stats.total_mb + ' MB' : '645 MB'}</div>
+                    <div class="text-xs text-slate-400 font-mono mt-0.5">17 managed archives</div>
                 </div>
                 <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-mono">Evidence Catalog Items</div>
-                    <div class="text-2xl font-bold font-mono text-emerald-400 mt-1">197 Items</div>
-                    <div class="text-[10px] text-slate-500 mt-0.5">Annotated lab artifacts</div>
+                    <div class="text-xs text-slate-400 font-medium">Cataloged Artifacts</div>
+                    <div class="text-xl font-bold font-mono text-white mt-1">197 Items</div>
+                    <div class="text-xs text-slate-400 font-mono mt-0.5">Indexed research outputs</div>
                 </div>
                 <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-mono">8 GB Experimental Conditions</div>
-                    <div class="text-2xl font-bold font-mono text-purple-400 mt-1">15 Conditions</div>
-                    <div class="text-[10px] text-slate-500 mt-0.5">30 recorded condition evaluations</div>
+                    <div class="text-xs text-slate-400 font-medium">8 GB Experimental Conditions</div>
+                    <div class="text-xl font-bold font-mono text-white mt-1">15 Conditions</div>
+                    <div class="text-xs text-slate-400 font-mono mt-0.5">30 recorded evaluations</div>
                 </div>
             </div>
 
-            <!-- 8 GB Experimental Condition Inventory (30 Rows) -->
+            <!-- 8 GB Experimental Condition Inventory -->
             <div class="card">
-                <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)]">
-                    <div>
-                        <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                            <i data-lucide="layers" class="w-4 h-4 text-purple-400"></i>
-                            8 GB Experimental Condition Inventory
-                        </h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Evaluations across control, crossed, baseline, and analysis conditions</p>
-                    </div>
-                    <span class="badge badge-sas">8 GB Natural Regime</span>
+                <div class="pb-3 border-b border-[var(--border-color)]">
+                    <h3 class="text-sm font-semibold text-white">8 GB Experimental Condition Inventory (30 Evaluations)</h3>
+                    <p class="text-xs text-slate-400">Evaluations across control, crossed, baseline, and analysis conditions</p>
                 </div>
 
                 <div class="table-container max-h-72 overflow-y-auto mt-4">
@@ -95,15 +86,15 @@ window.App.registerPage('runs', {
                             ${this.state.conditions.map(c => `
                                 <tr>
                                     <td class="font-mono text-xs text-white">${c.job}</td>
-                                    <td class="text-xs text-slate-300 font-mono">${c.metric}</td>
+                                    <td class="text-xs text-slate-400 font-mono">${c.metric}</td>
                                     <td class="font-mono text-xs">${c.n}</td>
                                     <td class="font-mono text-xs">${c.reports}</td>
-                                    <td class="font-mono text-xs font-bold text-emerald-400">${c.correct}</td>
+                                    <td class="font-mono text-xs font-semibold text-emerald-400">${c.correct}</td>
                                     <td class="font-mono text-xs text-rose-400">${c.wrong}</td>
                                     <td class="font-mono text-xs text-amber-400">${c.withheld}</td>
                                     <td class="font-mono text-xs text-slate-300">${c.generated_tokens.toLocaleString()}</td>
-                                    <td class="font-mono text-xs text-slate-300">${c.inference_seconds.toFixed(1)}s</td>
-                                    <td class="font-mono text-xs text-cyan-400">${(c.peak_rss_bytes / (1024**3)).toFixed(2)} GB</td>
+                                    <td class="font-mono text-xs text-slate-400">${c.inference_seconds.toFixed(1)}s</td>
+                                    <td class="font-mono text-xs text-white">${(c.peak_rss_bytes / (1024**3)).toFixed(2)} GB</td>
                                 </tr>
                             `).join('')}
                         </tbody>
@@ -115,20 +106,17 @@ window.App.registerPage('runs', {
             <div class="card">
                 <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-3 border-b border-[var(--border-color)] gap-3">
                     <div>
-                        <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                            <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
-                            Historical Evidence Catalog (197 Artifacts)
-                        </h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Search cataloged checkpoint logs, diagnostic runs, and traces</p>
+                        <h3 class="text-sm font-semibold text-white">Historical Evidence Catalog (197 Artifacts)</h3>
+                        <p class="text-xs text-slate-400">Search cataloged checkpoint logs, diagnostic runs, and traces</p>
                     </div>
-                    <input id="evidence-search" type="text" placeholder="Search artifact name or path..." class="input-search text-xs w-full md:w-64">
+                    <input id="evidence-search" type="text" placeholder="Filter artifact path..." class="input-search text-xs w-full md:w-64">
                 </div>
 
-                <div class="table-container max-h-80 overflow-y-auto mt-4">
+                <div class="table-container max-h-72 overflow-y-auto mt-4">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Artifact Path / Description</th>
+                                <th>Artifact Path / Filename</th>
                                 <th>Category</th>
                                 <th>Archive Location</th>
                             </tr>
@@ -173,11 +161,10 @@ window.App.registerPage('runs', {
             return `
                 <tr>
                     <td class="font-mono text-xs text-white">${pathStr}</td>
-                    <td><span class="badge ${cat === 'Runs' ? 'badge-mas' : 'badge-sas'}">${cat}</span></td>
-                    <td class="font-mono text-xs text-slate-400">dashboard_handoff/evidence/</td>
+                    <td><span class="badge badge-sas">${cat}</span></td>
+                    <td class="font-mono text-xs text-slate-400">evidence/</td>
                 </tr>
             `;
         }).join('');
     }
 });
-

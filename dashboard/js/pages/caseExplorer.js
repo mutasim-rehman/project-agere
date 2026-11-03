@@ -1,5 +1,5 @@
 /**
- * Case & Failure Explorer Page
+ * Case & Failure Explorer Page - Minimal, Plain, Publication-Grade
  */
 
 window.App.registerPage('cases', {
@@ -18,28 +18,25 @@ window.App.registerPage('cases', {
     },
 
     async render(container, app) {
-        // Load data if not cached
         if (this.state.allCases.length === 0) {
             const cases16 = await app.fetchJson('data/tier16_v2/case_outcomes.json') || [];
             this.state.allCases = cases16;
             this.state.predictions = await app.fetchJson('data/case_predictions_sample.json') || {};
         }
 
-        // Get unique companies
         const companies = Array.from(new Set(this.state.allCases.map(c => c.company).filter(Boolean))).sort();
 
         container.innerHTML = `
-            <!-- Filter Toolbar -->
-            <div class="card p-4 space-y-4">
-                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+            <!-- Filter Toolbar (Clean, Uncluttered) -->
+            <div class="card p-4 space-y-3">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
                     <div class="flex items-center gap-2">
-                        <i data-lucide="filter" class="w-4 h-4 text-emerald-400"></i>
-                        <span class="text-sm font-bold text-white">Filter Cases</span>
-                        <span id="case-count-badge" class="badge badge-mas font-mono">0 matches</span>
+                        <span class="text-xs font-semibold text-white uppercase font-mono">Case Filters</span>
+                        <span id="case-count-badge" class="badge badge-sas">0 matches</span>
                     </div>
                     <div class="flex items-center gap-2 w-full lg:w-auto">
                         <input id="case-search-input" type="text" placeholder="Search Case ID or Company..." class="input-search w-full lg:w-64 text-xs">
-                        <button id="case-reset-btn" class="btn btn-secondary text-xs">Reset</button>
+                        <button id="case-reset-btn" class="btn text-xs">Reset</button>
                     </div>
                 </div>
 
@@ -89,7 +86,7 @@ window.App.registerPage('cases', {
 
             <!-- Table of Filtered Cases -->
             <div class="card p-0 overflow-hidden">
-                <div class="table-container max-h-[600px] overflow-y-auto">
+                <div class="table-container max-h-[560px] overflow-y-auto">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -102,8 +99,8 @@ window.App.registerPage('cases', {
                                 <th>Raw Exec</th>
                                 <th>Delivered</th>
                                 <th>Tokens</th>
-                                <th>Latency (s)</th>
-                                <th>Actions</th>
+                                <th>Latency</th>
+                                <th>Inspect</th>
                             </tr>
                         </thead>
                         <tbody id="case-table-body">
@@ -118,15 +115,14 @@ window.App.registerPage('cases', {
                         Showing 0 to 0 of 0 entries
                     </div>
                     <div class="flex items-center gap-2">
-                        <button id="case-prev-btn" class="btn btn-secondary text-xs py-1 px-3">Previous</button>
+                        <button id="case-prev-btn" class="btn text-xs py-1 px-3">Previous</button>
                         <span id="case-page-num" class="font-mono text-white px-2">Page 1</span>
-                        <button id="case-next-btn" class="btn btn-secondary text-xs py-1 px-3">Next</button>
+                        <button id="case-next-btn" class="btn text-xs py-1 px-3">Next</button>
                     </div>
                 </div>
             </div>
         `;
 
-        // Apply filters & bind listeners
         this.bindEvents(app);
         await this.applyFilters();
     },
@@ -250,7 +246,7 @@ window.App.registerPage('cases', {
         if (pageItems.length === 0) {
             tbody.innerHTML = `
                 <tr>
-                    <td colspan="11" class="text-center py-10 text-slate-500 text-xs">
+                    <td colspan="11" class="text-center py-8 text-slate-500 text-xs">
                         No cases match the selected filters.
                     </td>
                 </tr>
@@ -272,17 +268,17 @@ window.App.registerPage('cases', {
             return `
                 <tr class="cursor-pointer" onclick='window.App.pages.cases.openCaseDetail(${JSON.stringify(c).replace(/'/g, "&apos;")})'>
                     <td class="font-mono text-xs text-white">${c.case_id}</td>
-                    <td class="font-medium text-slate-300">${c.company || '—'}</td>
+                    <td class="font-medium text-slate-200">${c.company || '—'}</td>
                     <td class="text-xs text-slate-400 font-mono">${c.report || '—'}</td>
                     <td>${armBadge}</td>
                     <td class="text-xs text-slate-300 font-mono">${c.profile || c.condition || '—'}</td>
                     <td>${repBadge}</td>
                     <td>${rawBadge}</td>
-                    <td class="text-xs">${c.delivered ? '<span class="text-emerald-400">Yes</span>' : '<span class="text-slate-500">No</span>'}</td>
+                    <td class="text-xs">${c.delivered ? '<span class="text-slate-300">Delivered</span>' : '<span class="text-slate-500">Withheld</span>'}</td>
                     <td class="font-mono text-xs text-slate-300">${c.generated_tokens ?? '—'}</td>
-                    <td class="font-mono text-xs text-slate-300">${c.inference_seconds ? c.inference_seconds.toFixed(1) : '—'}</td>
+                    <td class="font-mono text-xs text-slate-400">${c.inference_seconds ? c.inference_seconds.toFixed(1) + 's' : '—'}</td>
                     <td>
-                        <button class="btn btn-secondary text-[10px] py-1 px-2" title="Inspect Prediction & Math Formula">
+                        <button class="btn text-[10px] py-0.5 px-2">
                             View
                         </button>
                     </td>
@@ -290,7 +286,6 @@ window.App.registerPage('cases', {
             `;
         }).join('');
 
-        // Update pagination labels
         const total = this.state.filteredCases.length;
         const end = Math.min(start + this.state.pageSize, total);
         const infoEl = document.getElementById('case-pagination-info');
@@ -318,7 +313,7 @@ window.App.registerPage('cases', {
             : (c.raw_outcome === 'withheld' ? '<span class="badge badge-withheld">Withheld</span>' : '<span class="badge badge-wrong">Raw Wrong</span>');
 
         bodyEl.innerHTML = `
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-[var(--bg-surface-elevated)] p-4 rounded-lg">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-[var(--bg-surface-elevated)] p-4 rounded-lg border border-[var(--border-color)]">
                 <div>
                     <div class="text-[10px] text-slate-400 uppercase font-mono">Reported Answer</div>
                     <div class="mt-1">${repBadge}</div>
@@ -329,34 +324,34 @@ window.App.registerPage('cases', {
                 </div>
                 <div>
                     <div class="text-[10px] text-slate-400 uppercase font-mono">Tokens (Prompt + Gen)</div>
-                    <div class="text-sm font-bold font-mono text-white mt-1">${c.prompt_tokens ?? 0} + ${c.generated_tokens ?? 0}</div>
+                    <div class="text-sm font-semibold font-mono text-white mt-1">${c.prompt_tokens ?? 0} + ${c.generated_tokens ?? 0}</div>
                 </div>
                 <div>
                     <div class="text-[10px] text-slate-400 uppercase font-mono">Inference Latency</div>
-                    <div class="text-sm font-bold font-mono text-white mt-1">${c.inference_seconds ? c.inference_seconds.toFixed(2) + 's' : 'N/A'}</div>
+                    <div class="text-sm font-semibold font-mono text-white mt-1">${c.inference_seconds ? c.inference_seconds.toFixed(2) + 's' : 'N/A'}</div>
                 </div>
             </div>
 
             ${rich && rich.formula ? `
-                <div class="card p-4 border-indigo-500/30">
-                    <div class="text-xs font-bold text-indigo-400 uppercase font-mono mb-2">Model Calculation Program</div>
-                    <pre class="bg-slate-950 p-3 rounded font-mono text-xs text-emerald-400 overflow-x-auto">${rich.formula}</pre>
-                    <div class="text-[11px] text-slate-400 mt-2">
-                        Decision: <span class="font-bold text-white">${rich.decision}</span> • Declared Unit: <span class="font-bold text-white">${rich.answer_unit || 'unspecified'}</span>
+                <div class="card p-4">
+                    <div class="text-xs font-semibold text-white uppercase font-mono mb-2">Calculation Program</div>
+                    <pre class="bg-black/50 p-3 rounded font-mono text-xs text-slate-200 overflow-x-auto border border-slate-800">${rich.formula}</pre>
+                    <div class="text-xs text-slate-400 mt-2">
+                        Decision: <span class="font-semibold text-white">${rich.decision}</span> • Declared Unit: <span class="font-semibold text-white">${rich.answer_unit || 'unspecified'}</span>
                     </div>
                 </div>
             ` : `
                 <div class="card p-4">
-                    <div class="text-xs font-bold text-slate-400 uppercase font-mono mb-1">Execution Audit</div>
+                    <div class="text-xs font-semibold text-white uppercase font-mono mb-1">Execution Audit</div>
                     <p class="text-xs text-slate-300">
-                        Execution Valid: <span class="font-bold text-white">${c.execution_valid ? 'True' : 'False'}</span> • 
-                        Repair Attempted: <span class="font-bold text-white">${c.repair_attempted ? 'Yes' : 'No'}</span>
+                        Execution Valid: <span class="font-semibold text-white">${c.execution_valid ? 'True' : 'False'}</span> • 
+                        Repair Attempted: <span class="font-semibold text-white">${c.repair_attempted ? 'Yes' : 'No'}</span>
                     </p>
                 </div>
             `}
 
             <div class="card p-4">
-                <div class="text-xs font-bold text-slate-400 uppercase font-mono mb-2">Protocol Reference</div>
+                <div class="text-xs font-semibold text-white uppercase font-mono mb-1">Protocol Reference</div>
                 <p class="text-xs text-slate-400 leading-relaxed">
                     Evaluated under strict process RSS parity cap. Dual correctness requires both human-formatted output matching and direct code-block execution arithmetic matching gold values.
                 </p>
@@ -366,4 +361,3 @@ window.App.registerPage('cases', {
         window.App.openModal('case-modal');
     }
 });
-
