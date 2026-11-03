@@ -1,5 +1,5 @@
 /**
- * Case & Failure Explorer Page - Academic Light Theme
+ * Case & Failure Explorer Page - Visual Research Dashboard
  */
 
 window.App.registerPage('cases', {
@@ -27,20 +27,29 @@ window.App.registerPage('cases', {
         const companies = Array.from(new Set(this.state.allCases.map(c => c.company).filter(Boolean))).sort();
 
         container.innerHTML = `
-            <!-- Filter Toolbar (Clean White Surface) -->
+            <!-- Visual Distribution Strip (Live Dynamic Segment Bar) -->
             <div class="card p-4 space-y-3">
-                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs font-bold text-[#172033] uppercase font-mono">Case Filters</span>
-                        <span id="case-count-badge" class="badge badge-sas">0 matches</span>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-[#172033] uppercase font-mono">Cohort Outcome Distribution</span>
+                        <span id="case-count-badge" class="badge badge-sas ml-2">0 cases</span>
                     </div>
-                    <div class="flex items-center gap-2 w-full lg:w-auto">
-                        <input id="case-search-input" type="text" placeholder="Search Case ID or Company..." class="input-search w-full lg:w-64 text-xs">
-                        <button id="case-reset-btn" class="btn text-xs">Reset</button>
+                    <div class="flex items-center gap-3 text-xs font-mono">
+                        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#15803D]"></span> <span id="dist-correct">0% Correct</span></span>
+                        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#DC2626]"></span> <span id="dist-wrong">0% Wrong</span></span>
+                        <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#D97706]"></span> <span id="dist-withheld">0% Withheld</span></span>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-3 pt-3 border-t border-[#E2E8F0]">
+                <!-- Visual Segment Bar -->
+                <div class="segment-bar">
+                    <div id="segment-correct" class="segment-slice bg-[#15803D]" style="width: 30%;"></div>
+                    <div id="segment-wrong" class="segment-slice bg-[#DC2626]" style="width: 40%;"></div>
+                    <div id="segment-withheld" class="segment-slice bg-[#D97706]" style="width: 30%;"></div>
+                </div>
+
+                <!-- Filter Controls Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-3 pt-3 border-t border-[#E2E8F0]">
                     <div>
                         <label class="block text-[11px] text-[#64748B] font-mono mb-1">RAM Tier</label>
                         <select id="filter-tier" class="select-filter w-full text-xs">
@@ -81,12 +90,16 @@ window.App.registerPage('cases', {
                             ${companies.map(comp => `<option value="${comp}">${comp}</option>`).join('')}
                         </select>
                     </div>
+                    <div>
+                        <label class="block text-[11px] text-[#64748B] font-mono mb-1">Search Case</label>
+                        <input id="case-search-input" type="text" placeholder="Search ID..." class="input-search w-full text-xs">
+                    </div>
                 </div>
             </div>
 
             <!-- Table of Filtered Cases -->
             <div class="card p-0 overflow-hidden">
-                <div class="table-container max-h-[580px] overflow-y-auto">
+                <div class="table-container max-h-[540px] overflow-y-auto">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -97,7 +110,6 @@ window.App.registerPage('cases', {
                                 <th>Profile</th>
                                 <th>Reported</th>
                                 <th>Raw Exec</th>
-                                <th>Delivered</th>
                                 <th>Tokens</th>
                                 <th>Latency</th>
                                 <th>Inspect</th>
@@ -170,20 +182,6 @@ window.App.registerPage('cases', {
             update();
         });
 
-        document.getElementById('case-reset-btn')?.addEventListener('click', () => {
-            this.state.arm = 'all';
-            this.state.profile = 'all';
-            this.state.outcome = 'all';
-            this.state.company = 'all';
-            this.state.search = '';
-            document.getElementById('filter-arm').value = 'all';
-            document.getElementById('filter-profile').value = 'all';
-            document.getElementById('filter-outcome').value = 'all';
-            document.getElementById('filter-company').value = 'all';
-            document.getElementById('case-search-input').value = '';
-            update();
-        });
-
         document.getElementById('case-prev-btn')?.addEventListener('click', () => {
             if (this.state.page > 1) {
                 this.state.page--;
@@ -230,8 +228,33 @@ window.App.registerPage('cases', {
 
         this.state.filteredCases = list;
 
+        // Update distribution bar
+        const total = list.length;
+        const correctCount = list.filter(c => c.reported_correct === true).length;
+        const withheldCount = list.filter(c => c.reported_outcome === 'withheld').length;
+        const wrongCount = list.filter(c => c.reported_correct === false && c.reported_outcome !== 'withheld').length;
+
+        const correctPct = total > 0 ? ((correctCount / total) * 100).toFixed(1) : 0;
+        const wrongPct = total > 0 ? ((wrongCount / total) * 100).toFixed(1) : 0;
+        const withheldPct = total > 0 ? ((withheldCount / total) * 100).toFixed(1) : 0;
+
+        const segCorrect = document.getElementById('segment-correct');
+        const segWrong = document.getElementById('segment-wrong');
+        const segWithheld = document.getElementById('segment-withheld');
+
+        if (segCorrect) segCorrect.style.width = `${correctPct}%`;
+        if (segWrong) segWrong.style.width = `${wrongPct}%`;
+        if (segWithheld) segWithheld.style.width = `${withheldPct}%`;
+
+        const distC = document.getElementById('dist-correct');
+        const distW = document.getElementById('dist-wrong');
+        const distWh = document.getElementById('dist-withheld');
+        if (distC) distC.innerText = `${correctPct}% (${correctCount}) Correct`;
+        if (distW) distW.innerText = `${wrongPct}% (${wrongCount}) Wrong`;
+        if (distWh) distWh.innerText = `${withheldPct}% (${withheldCount}) Withheld`;
+
         const badge = document.getElementById('case-count-badge');
-        if (badge) badge.innerText = `${list.length} matches`;
+        if (badge) badge.innerText = `${total} cases`;
 
         this.renderTableRows();
     },
@@ -246,7 +269,7 @@ window.App.registerPage('cases', {
         if (pageItems.length === 0) {
             tbody.innerHTML = `
                 <tr>
-                    <td colspan="11" class="text-center py-8 text-[#64748B] text-xs">
+                    <td colspan="10" class="text-center py-8 text-[#64748B] text-xs">
                         No cases match the selected filters.
                     </td>
                 </tr>
@@ -274,7 +297,6 @@ window.App.registerPage('cases', {
                     <td class="text-xs text-[#64748B] font-mono">${c.profile || c.condition || '—'}</td>
                     <td>${repBadge}</td>
                     <td>${rawBadge}</td>
-                    <td class="text-xs">${c.delivered ? '<span class="text-[#172033] font-medium">Delivered</span>' : '<span class="text-[#94A3B8]">Withheld</span>'}</td>
                     <td class="font-mono text-xs text-[#172033]">${c.generated_tokens ?? '—'}</td>
                     <td class="font-mono text-xs text-[#64748B]">${c.inference_seconds ? c.inference_seconds.toFixed(1) + 's' : '—'}</td>
                     <td>

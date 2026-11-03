@@ -1,5 +1,5 @@
 /**
- * Models & Configurations Page - Academic Light Theme
+ * Models & Configurations Page - Visual Research Dashboard
  */
 
 window.App.registerPage('models', {
@@ -7,101 +7,60 @@ window.App.registerPage('models', {
         const models = await app.fetchJson('data/model_architectures.json') || [];
 
         container.innerHTML = `
-            <!-- Top Summary Card (Clean White Surface) -->
-            <div class="card bg-white border border-[#E2E8F0]">
-                <div class="space-y-1 max-w-4xl">
-                    <div class="text-[11px] font-bold uppercase tracking-wider font-mono text-[#2563EB]">
-                        Architecture Specification & Serving Recipes
-                    </div>
-                    <h2 class="text-base font-bold text-[#172033]">
-                        Model Ecosystem & Physical Tier Resource Limits
-                    </h2>
-                    <p class="text-xs text-[#64748B] leading-relaxed">
-                        To ensure strict fairness across parameter scales, all models originate from the single unified Qwen2.5-Instruct architecture. Monolithic baselines use GGUF Q4_K_M post-training quantization, while multi-agent teams utilize native FP16/BF16 weights.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Tier Configuration Comparison Cards (Clean White Cards) -->
+            <!-- Tier Configuration Comparison Cards Strip -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- 8 GB Tier -->
-                <div class="card p-5 border-t-4 border-t-[#64748B]">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-[#64748B] font-mono">Tier 1</span>
-                        <span class="badge badge-sas">8 GB RAM</span>
+                <div class="stat-card border-t-4 border-t-[#64748B]">
+                    <div class="stat-card-label">
+                        <span>Tier 1: 8 GB Hardware</span>
+                        <span class="badge badge-sas">Adapted</span>
                     </div>
-                    <div class="font-bold text-base text-[#172033] mt-2">8 GB Tier (Nominal)</div>
-                    <div class="space-y-2 mt-4 text-xs font-mono">
-                        <div class="flex justify-between text-[#172033]">
-                            <span>Process RSS Cap:</span>
-                            <span class="text-[#2563EB] font-bold">6.4 GB</span>
-                        </div>
-                        <div class="flex justify-between text-[#64748B]">
-                            <span>OS Reserve (20%):</span>
-                            <span>1.6 GB</span>
-                        </div>
-                        <div class="flex justify-between text-[#172033]">
-                            <span>SAS Model:</span>
-                            <span class="font-semibold">Qwen2.5-7B (Q4_K_M)</span>
-                        </div>
-                        <div class="flex justify-between text-[#172033]">
-                            <span>MAS Team:</span>
-                            <span>0.5B + 1.5B + 3B (FP16)</span>
-                        </div>
+                    <div class="stat-card-value text-[#172033]">6.4 GB Cap</div>
+                    <div class="stat-card-meta">SAS: 7B Q4_K_M • MAS: 0.5B+1.5B+3B</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#64748B]" style="width: 50%;"></div>
                     </div>
                 </div>
 
                 <!-- 16 GB Tier (Primary) -->
-                <div class="card p-5 border-t-4 border-t-[#2563EB] bg-[#F8FAFC]">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-[#2563EB] font-mono">Tier 2 (Primary)</span>
-                        <span class="badge badge-mas">Completed Study</span>
+                <div class="stat-card border-t-4 border-t-[#2563EB] bg-[#EFF6FF]">
+                    <div class="stat-card-label">
+                        <span>Tier 2: 16 GB Hardware</span>
+                        <span class="badge badge-mas">Primary Study</span>
                     </div>
-                    <div class="font-bold text-base text-[#172033] mt-2">16 GB Tier (Analyst Workstation)</div>
-                    <div class="space-y-2 mt-4 text-xs font-mono">
-                        <div class="flex justify-between text-[#172033]">
-                            <span>Process RSS Cap:</span>
-                            <span class="text-[#2563EB] font-bold">12.8 GB</span>
-                        </div>
-                        <div class="flex justify-between text-[#64748B]">
-                            <span>OS Reserve (20%):</span>
-                            <span>3.2 GB</span>
-                        </div>
-                        <div class="flex justify-between text-[#172033]">
-                            <span>SAS Model:</span>
-                            <span class="font-semibold">Qwen2.5-14B (Q4_K_M)</span>
-                        </div>
-                        <div class="flex justify-between text-[#172033]">
-                            <span>MAS Team:</span>
-                            <span>1.5B + 7B + 3B (FP16)</span>
-                        </div>
+                    <div class="stat-card-value text-[#2563EB]">12.8 GB Cap</div>
+                    <div class="stat-card-meta">SAS: 14B Q4_K_M • MAS: 1.5B+7B+3B</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#2563EB]" style="width: 80%;"></div>
                     </div>
                 </div>
 
                 <!-- 32 GB Tier -->
-                <div class="card p-5 border-t-4 border-t-[#CBD5E1]">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-[#94A3B8] font-mono">Tier 3</span>
-                        <span class="badge badge-withheld">Unevaluated</span>
+                <div class="stat-card border-t-4 border-t-[#94A3B8]">
+                    <div class="stat-card-label">
+                        <span>Tier 3: 32 GB Server</span>
+                        <span class="badge badge-withheld">Projected</span>
                     </div>
-                    <div class="font-bold text-base text-[#172033] mt-2">32 GB Tier (Server RAM)</div>
-                    <div class="space-y-2 mt-4 text-xs font-mono">
-                        <div class="flex justify-between text-[#172033]">
-                            <span>Process RSS Cap:</span>
-                            <span>25.6 GB</span>
-                        </div>
-                        <div class="flex justify-between text-[#64748B]">
-                            <span>OS Reserve (20%):</span>
-                            <span>6.4 GB</span>
-                        </div>
-                        <div class="flex justify-between text-[#172033]">
-                            <span>SAS Model:</span>
-                            <span>Qwen2.5-32B (Q4_K_M)</span>
-                        </div>
-                        <div class="flex justify-between text-[#172033]">
-                            <span>MAS Team:</span>
-                            <span>3B + 14B + 7B (FP16)</span>
-                        </div>
+                    <div class="stat-card-value text-[#172033]">25.6 GB Cap</div>
+                    <div class="stat-card-meta">SAS: 32B Q4_K_M • MAS: 3B+14B+7B</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#94A3B8]" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Parameter & Memory Chart -->
+            <div class="card">
+                <div class="card-header-clean">
+                    <div>
+                        <h3 class="text-sm font-bold text-[#172033]">Qwen2.5 Memory Footprint: Native FP16 vs GGUF Q4_K_M</h3>
+                        <p class="text-xs text-[#64748B]">RAM footprint in Gigabytes across parameter scales</p>
+                    </div>
+                    <span class="badge badge-mas">Quantization Savings</span>
+                </div>
+                <div class="pt-4">
+                    <div class="w-full h-64">
+                        <canvas id="models-footprint-chart"></canvas>
                     </div>
                 </div>
             </div>
@@ -110,12 +69,12 @@ window.App.registerPage('models', {
             <div class="card">
                 <div class="card-header-clean">
                     <div>
-                        <h3 class="text-sm font-bold text-[#172033]">Qwen2.5 Model Specifications</h3>
-                        <p class="text-xs text-[#64748B]">Parameters, hidden dimensions, attention heads, and context window lengths</p>
+                        <h3 class="text-sm font-bold text-[#172033]">Qwen2.5 Architectural Specifications</h3>
+                        <p class="text-xs text-[#64748B]">Hidden dimensions, attention heads, layers, and context length</p>
                     </div>
                 </div>
 
-                <div class="table-container max-h-80 overflow-y-auto mt-4">
+                <div class="table-container max-h-72 overflow-y-auto mt-4">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -149,5 +108,59 @@ window.App.registerPage('models', {
                 </div>
             </div>
         `;
+
+        this.renderChart();
+    },
+
+    renderChart() {
+        const ctx = document.getElementById('models-footprint-chart');
+        if (!ctx) return;
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['0.5B', '1.5B', '3B', '7B', '14B', '32B'],
+                datasets: [
+                    {
+                        label: 'Native FP16 RAM (GB)',
+                        data: [1.2, 3.4, 6.8, 15.2, 29.8, 68.0],
+                        backgroundColor: '#2563EB',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'GGUF Q4_K_M RAM (GB)',
+                        data: [0.4, 1.1, 2.3, 4.8, 9.4, 20.2],
+                        backgroundColor: '#64748B',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#64748B', font: { size: 11, family: 'Inter' }, boxWidth: 12 }
+                    },
+                    tooltip: {
+                        backgroundColor: '#172033',
+                        titleColor: '#FFFFFF',
+                        bodyColor: '#F8FAFC',
+                        padding: 10
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#64748B', font: { size: 11, family: 'Inter' } }
+                    },
+                    y: {
+                        grid: { color: '#E9EEF5' },
+                        ticks: { color: '#64748B', callback: v => v + ' GB', font: { size: 11, family: 'JetBrains Mono' } }
+                    }
+                }
+            }
+        });
     }
 });

@@ -107,19 +107,9 @@
             </div>
 
             <!-- Sidebar Metadata Footer -->
-            <div class="sidebar-footer p-4 border-t border-[#E2E8F0] text-[11px] text-[#64748B] space-y-1">
-                <div class="flex justify-between items-center font-mono">
-                    <span>Protocol:</span>
-                    <span class="text-[#172033] font-medium">RUPP Parity</span>
-                </div>
-                <div class="flex justify-between items-center font-mono">
-                    <span>Cohort:</span>
-                    <span class="text-[#172033] font-medium">16 GB + 8 GB</span>
-                </div>
-                <div class="flex justify-between items-center font-mono">
-                    <span>Total Cases:</span>
-                    <span class="text-[#2563EB] font-semibold">1,728</span>
-                </div>
+            <div class="sidebar-footer p-3.5 border-t border-[#E2E8F0] text-xs text-[#64748B] flex items-center justify-between">
+                <span class="font-medium text-[#172033]">1,728 Cases</span>
+                <span class="badge badge-mas">Phase 3 Final</span>
             </div>
         </aside>
 
@@ -127,19 +117,13 @@
         <main class="main-content">
             <!-- Header Bar -->
             <header class="top-header">
-                <div>
-                    <div class="flex items-center gap-3">
-                        <h1 id="page-title" class="text-base font-bold text-[#172033] tracking-tight">
-                            Executive Overview
-                        </h1>
-                        <span class="text-[#CBD5E1]">/</span>
-                        <span class="badge badge-mas">Phase 3 Final</span>
-                        <span class="badge badge-sas">RUPP Protocol</span>
-                        <span class="badge badge-sas">16 GB Primary Cohort</span>
-                    </div>
-                    <div class="text-xs text-[#64748B] mt-0.5 hidden lg:block">
-                        Experimental evaluation of multi-agent full-precision teams versus quantized monolithic language models under constrained RAM conditions.
-                    </div>
+                <div class="flex items-center gap-3">
+                    <h1 id="page-title" class="text-base font-bold text-[#172033] tracking-tight">
+                        Executive Overview
+                    </h1>
+                    <span class="text-[#CBD5E1]">/</span>
+                    <span class="badge badge-mas">Phase 3 Final</span>
+                    <span class="badge badge-sas">16 GB RUPP Parity</span>
                 </div>
 
                 <div class="flex items-center gap-2">
@@ -147,7 +131,7 @@
                         <i data-lucide="download" class="w-3.5 h-3.5 text-[#64748B]"></i> Export JSON
                     </button>
                     <button class="btn btn-primary text-xs" onclick="window.App.showReproduceModal()">
-                        <i data-lucide="play" class="w-3.5 h-3.5"></i> Reproduce Experiment
+                        <i data-lucide="play" class="w-3.5 h-3.5"></i> Reproduce
                     </button>
                 </div>
             </header>

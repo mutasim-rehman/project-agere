@@ -1,5 +1,5 @@
 /**
- * Statistical Tests Page - Academic Light Theme
+ * Statistical Tests Page - Visual Research Dashboard
  */
 
 window.App.registerPage('statistics', {
@@ -8,8 +8,42 @@ window.App.registerPage('statistics', {
         filtered: [],
         tierFilter: 'all',
         metricFilter: 'all',
-        search: ''
+        search: '',
+        activeFigureIndex: 0
     },
+
+    figures: [
+        {
+            src: 'figures/paper/P01_paired_transitions.png',
+            title: 'Figure P01: Paired Outcome State Transitions',
+            desc: 'State transitions between MAS and SAS across Correct, Wrong, and Policy Withheld.'
+        },
+        {
+            src: 'figures/paper/P02_bootstrap_distributions.png',
+            title: 'Figure P02: Bootstrap Difference Distributions',
+            desc: 'Non-parametric bootstrap distributions for paired performance contrasts across 16 GB cases.'
+        },
+        {
+            src: 'figures/paper/P03_report_scatter.png',
+            title: 'Figure P03: Report-Level Accuracy Dispersion',
+            desc: 'Corporate 10-K report-level performance clusters illustrating intra-cluster correlation.'
+        },
+        {
+            src: 'figures/paper/P05_latency_distributions.png',
+            title: 'Figure P05: Inference Latency Distributions',
+            desc: 'Boxplots of per-case wall-clock inference latency across MAS and SAS architectures.'
+        },
+        {
+            src: 'figures/paper/P06_memory_timelines.png',
+            title: 'Figure P06: Process Memory Timelines',
+            desc: 'Sub-second cgroup RSS telemetry over elapsed execution time proving RUPP adherence.'
+        },
+        {
+            src: 'figures/paper/P07_stage_costs.png',
+            title: 'Figure P07: Stage Breakdown & Token Costs',
+            desc: 'Token consumption and latency across Extractor, Drafter, and Verifier components.'
+        }
+    ],
 
     async render(container, app) {
         if (this.state.tests.length === 0) {
@@ -18,90 +52,84 @@ window.App.registerPage('statistics', {
             this.state.filtered = raw;
         }
 
+        const activeFig = this.figures[this.state.activeFigureIndex];
+
         container.innerHTML = `
-            <!-- Top Summary Card (Clean White Surface) -->
-            <div class="card bg-white border border-[#E2E8F0]">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                    <div class="space-y-1 max-w-4xl">
-                        <div class="text-[11px] font-bold uppercase tracking-wider font-mono text-[#2563EB]">
-                            Statistical Inference & Hypothesis Battery
-                        </div>
-                        <h2 class="text-base font-bold text-[#172033]">
-                            Cluster-Robust & Nonparametric Hypothesis Battery
-                        </h2>
-                        <p class="text-xs text-[#64748B] leading-relaxed">
-                            Following regulated finance reporting standards, we report exact McNemar tests, Durkalski cluster-adjusted tests (accounting for 50 report / company clusters), CR1 standard errors, and Stuart–Maxwell tests of marginal homogeneity across 21 paired experimental comparisons.
-                        </p>
+            <!-- Top Metric Strip -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="stat-card border-l-4 border-l-[#2563EB]">
+                    <div class="stat-card-label">
+                        <span>Hypothesis Battery</span>
+                        <span class="badge badge-mas">Inference</span>
                     </div>
-                    <div class="shrink-0 text-right font-mono">
-                        <div class="text-[11px] text-[#64748B]">Hypothesis Battery</div>
-                        <div class="text-base font-bold text-[#2563EB]">126 Tests Evaluated</div>
+                    <div class="stat-card-value text-[#2563EB]">126 Tests</div>
+                    <div class="stat-card-meta">21 paired contrasts × 6 endpoints</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#2563EB]" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card border-l-4 border-l-[#15803D]">
+                    <div class="stat-card-label">
+                        <span>Clustered Significance</span>
+                        <span class="badge badge-correct">Report-Adjusted</span>
+                    </div>
+                    <div class="stat-card-value text-[#15803D]">p &lt; 0.001</div>
+                    <div class="stat-card-meta">Durkalski cluster-adjusted p = 1.53e-5</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#15803D]" style="width: 95%;"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card border-l-4 border-l-[#7C3AED]">
+                    <div class="stat-card-label">
+                        <span>Intra-Cluster Design Effect</span>
+                        <span class="badge badge-sas">DEFF</span>
+                    </div>
+                    <div class="stat-card-value text-[#172033]">1.24 – 1.86</div>
+                    <div class="stat-card-meta">Corporate 10-K clustering penalty accounted</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#7C3AED]" style="width: 65%;"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Stats Overview Row -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="card p-4">
-                    <div class="text-xs text-[#64748B] font-semibold">Total Statistical Tests</div>
-                    <div class="text-xl font-bold font-mono text-[#172033] mt-1">126 Tests</div>
-                    <div class="text-[11px] text-[#94A3B8] font-mono mt-0.5">21 paired contrasts × 6 endpoints</div>
-                </div>
-                <div class="card p-4">
-                    <div class="text-xs text-[#64748B] font-semibold">Clustered Significance</div>
-                    <div class="text-xl font-bold font-mono text-[#15803D] mt-1">p < 0.001</div>
-                    <div class="text-[11px] text-[#94A3B8] font-mono mt-0.5">Report-level intra-cluster adjusted</div>
-                </div>
-                <div class="card p-4">
-                    <div class="text-xs text-[#64748B] font-semibold">Design Effect (DEFF)</div>
-                    <div class="text-xl font-bold font-mono text-[#172033] mt-1">1.24 – 1.86</div>
-                    <div class="text-[11px] text-[#94A3B8] font-mono mt-0.5">Corporate report correlation penalty</div>
-                </div>
-                <div class="card p-4">
-                    <div class="text-xs text-[#64748B] font-semibold">Publication Figures</div>
-                    <div class="text-xl font-bold font-mono text-[#2563EB] mt-1">9 Figures</div>
-                    <div class="text-[11px] text-[#94A3B8] font-mono mt-0.5">P01 through P09 verified</div>
-                </div>
-            </div>
-
-            <!-- Publication Figures Gallery -->
+            <!-- Publication Figures Visual Showcase (Eye Magnet) -->
             <div class="card">
                 <div class="card-header-clean">
                     <div>
-                        <h3 class="text-sm font-bold text-[#172033]">Publication Figures Gallery (P01 – P09)</h3>
-                        <p class="text-xs text-[#64748B]">Click any figure thumbnail to view full-resolution vector graphics and formal manuscript captions</p>
+                        <h3 class="text-sm font-bold text-[#172033]">Publication Graphics Showcase</h3>
+                        <p class="text-xs text-[#64748B]">Click thumbnails below to preview full-resolution vector figures from the manuscript</p>
                     </div>
+                    <button id="active-fig-enlarge" class="btn btn-primary text-xs">
+                        <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Enlarge Fullscreen
+                    </button>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mt-4">
-                    <div class="card p-2 hover:border-[#2563EB] cursor-pointer transition" onclick="window.App.showFigure('figures/paper/P01_paired_transitions.png', 'Figure P01: Paired Transitions', 'State transitions between MAS and SAS across Correct, Wrong, and Withheld.')">
-                        <img src="figures/paper/P01_paired_transitions.png" alt="P01" class="rounded h-24 w-full object-cover border border-[#E2E8F0]">
-                        <div class="font-bold text-xs text-[#172033] mt-1.5 truncate">P01: Transitions</div>
+                <!-- Active Main Figure Preview -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4 items-center">
+                    <div class="lg:col-span-8 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-3 text-center flex items-center justify-center">
+                        <img id="active-fig-img" src="${activeFig.src}" alt="${activeFig.title}" class="max-h-72 mx-auto rounded object-contain cursor-pointer transition hover:scale-[1.01]">
                     </div>
 
-                    <div class="card p-2 hover:border-[#2563EB] cursor-pointer transition" onclick="window.App.showFigure('figures/paper/P02_bootstrap_distributions.png', 'Figure P02: Bootstrap Distributions', 'Non-parametric bootstrap distributions for paired differences.')">
-                        <img src="figures/paper/P02_bootstrap_distributions.png" alt="P02" class="rounded h-24 w-full object-cover border border-[#E2E8F0]">
-                        <div class="font-bold text-xs text-[#172033] mt-1.5 truncate">P02: Bootstrap CIs</div>
-                    </div>
+                    <div class="lg:col-span-4 space-y-4">
+                        <div>
+                            <span class="badge badge-mas mb-2">Figure Preview</span>
+                            <h4 id="active-fig-title" class="font-bold text-base text-[#172033] mt-1">${activeFig.title}</h4>
+                            <p id="active-fig-desc" class="text-xs text-[#64748B] mt-2 leading-relaxed">${activeFig.desc}</p>
+                        </div>
 
-                    <div class="card p-2 hover:border-[#2563EB] cursor-pointer transition" onclick="window.App.showFigure('figures/paper/P03_report_scatter.png', 'Figure P03: Report-Level Scatter', 'Accuracy dispersion grouped by corporate 10-K report.')">
-                        <img src="figures/paper/P03_report_scatter.png" alt="P03" class="rounded h-24 w-full object-cover border border-[#E2E8F0]">
-                        <div class="font-bold text-xs text-[#172033] mt-1.5 truncate">P03: Report Scatter</div>
-                    </div>
-
-                    <div class="card p-2 hover:border-[#2563EB] cursor-pointer transition" onclick="window.App.showFigure('figures/paper/P05_latency_distributions.png', 'Figure P05: Latency Distributions', 'Per-case inference latency distributions across deployment arms.')">
-                        <img src="figures/paper/P05_latency_distributions.png" alt="P05" class="rounded h-24 w-full object-cover border border-[#E2E8F0]">
-                        <div class="font-bold text-xs text-[#172033] mt-1.5 truncate">P05: Latency Boxplots</div>
-                    </div>
-
-                    <div class="card p-2 hover:border-[#2563EB] cursor-pointer transition" onclick="window.App.showFigure('figures/paper/P06_memory_timelines.png', 'Figure P06: Process Memory Timelines', 'Continuous process-tree RSS timelines showing RUPP cap adherence.')">
-                        <img src="figures/paper/P06_memory_timelines.png" alt="P06" class="rounded h-24 w-full object-cover border border-[#E2E8F0]">
-                        <div class="font-bold text-xs text-[#172033] mt-1.5 truncate">P06: Memory Timelines</div>
-                    </div>
-
-                    <div class="card p-2 hover:border-[#2563EB] cursor-pointer transition" onclick="window.App.showFigure('figures/paper/P07_stage_costs.png', 'Figure P07: Stage Breakdown Costs', 'Token consumption and latency across extractor, drafter, and verifier.')">
-                        <img src="figures/paper/P07_stage_costs.png" alt="P07" class="rounded h-24 w-full object-cover border border-[#E2E8F0]">
-                        <div class="font-bold text-xs text-[#172033] mt-1.5 truncate">P07: Stage Costs</div>
+                        <!-- Thumbnail Strip -->
+                        <div class="pt-2 border-t border-[#E2E8F0]">
+                            <div class="text-[11px] font-bold text-[#64748B] uppercase font-mono mb-2">Select Figure (P01 – P07)</div>
+                            <div class="grid grid-cols-6 gap-2">
+                                ${this.figures.map((fig, idx) => `
+                                    <div class="fig-thumb cursor-pointer border-2 rounded p-0.5 transition ${idx === this.state.activeFigureIndex ? 'border-[#2563EB] bg-[#EFF6FF]' : 'border-[#E2E8F0] hover:border-[#94A3B8]'}" data-index="${idx}">
+                                        <img src="${fig.src}" alt="Thumb" class="h-10 w-full object-cover rounded">
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,7 +157,7 @@ window.App.registerPage('statistics', {
                     </div>
                 </div>
 
-                <div class="table-container max-h-[480px] overflow-y-auto mt-4">
+                <div class="table-container max-h-[420px] overflow-y-auto mt-4">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -142,7 +170,6 @@ window.App.registerPage('statistics', {
                                 <th>Bootstrap 95% CI</th>
                                 <th>Exact McNemar p</th>
                                 <th>Durkalski Clustered p</th>
-                                <th>Bowker Homogeneity</th>
                             </tr>
                         </thead>
                         <tbody id="stat-table-body">
@@ -187,6 +214,38 @@ window.App.registerPage('statistics', {
             this.state.search = e.target.value.toLowerCase().trim();
             update();
         });
+
+        // Figure thumbnails
+        document.querySelectorAll('.fig-thumb').forEach(el => {
+            el.addEventListener('click', () => {
+                const idx = parseInt(el.getAttribute('data-index'), 10);
+                this.state.activeFigureIndex = idx;
+                const fig = this.figures[idx];
+                document.getElementById('active-fig-img').src = fig.src;
+                document.getElementById('active-fig-title').innerText = fig.title;
+                document.getElementById('active-fig-desc').innerText = fig.desc;
+
+                document.querySelectorAll('.fig-thumb').forEach((t, i) => {
+                    if (i === idx) {
+                        t.classList.add('border-[#2563EB]', 'bg-[#EFF6FF]');
+                        t.classList.remove('border-[#E2E8F0]');
+                    } else {
+                        t.classList.remove('border-[#2563EB]', 'bg-[#EFF6FF]');
+                        t.classList.add('border-[#E2E8F0]');
+                    }
+                });
+            });
+        });
+
+        // Enlarge fullscreen
+        const enlargeBtn = document.getElementById('active-fig-enlarge');
+        const activeImg = document.getElementById('active-fig-img');
+        const openLightbox = () => {
+            const fig = this.figures[this.state.activeFigureIndex];
+            window.App.showFigure(fig.src, fig.title, fig.desc);
+        };
+        enlargeBtn?.addEventListener('click', openLightbox);
+        activeImg?.addEventListener('click', openLightbox);
     },
 
     renderTable() {
@@ -195,7 +254,7 @@ window.App.registerPage('statistics', {
 
         const items = this.state.filtered.slice(0, 30);
         if (items.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="10" class="text-center py-6 text-[#64748B] text-xs">No matching tests.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="9" class="text-center py-6 text-[#64748B] text-xs">No matching tests.</td></tr>`;
             return;
         }
 
@@ -216,7 +275,6 @@ window.App.registerPage('statistics', {
                     <td class="font-mono text-[11px] text-[#64748B]">[${(t.boot95_low*100).toFixed(1)}%, ${(t.boot95_high*100).toFixed(1)}%]</td>
                     <td class="font-mono text-xs ${isSig ? 'text-[#15803D] font-bold' : 'text-[#64748B]'}">${pVal}</td>
                     <td class="font-mono text-xs ${durkP !== 'N/A' && parseFloat(durkP) < 0.05 ? 'text-[#15803D] font-bold' : 'text-[#64748B]'}">${durkP}</td>
-                    <td class="font-mono text-xs text-[#64748B]">${t.bowker_p != null ? (t.bowker_p < 0.001 ? '<0.001' : t.bowker_p.toFixed(3)) : '—'}</td>
                 </tr>
             `;
         }).join('');

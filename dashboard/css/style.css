@@ -247,6 +247,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+    box-shadow: var(--shadow-md);
 }
 
 .stat-card-label {
@@ -254,15 +259,18 @@ body {
     font-weight: 600;
     color: var(--text-secondary);
     letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .stat-card-value {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
     font-family: var(--font-mono);
-    letter-spacing: -0.02em;
-    margin-top: 8px;
+    letter-spacing: -0.03em;
+    margin-top: 6px;
     line-height: 1.1;
 }
 
@@ -270,7 +278,83 @@ body {
     font-size: 0.725rem;
     color: var(--text-muted);
     font-family: var(--font-mono);
-    margin-top: 8px;
+    margin-top: 6px;
+}
+
+/* Progress & Gauges */
+.progress-track {
+    width: 100%;
+    height: 6px;
+    background-color: #F1F5F9;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.5s ease-out;
+}
+
+/* Visual Segment Bar */
+.segment-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #E2E8F0;
+}
+
+.segment-slice {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+/* Connected Visual Stepper */
+.stepper-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.stepper-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.stepper-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    border: 2px solid var(--border-color);
+    background: #FFFFFF;
+}
+
+.stepper-step.completed .stepper-icon {
+    background-color: #EFF6FF;
+    border-color: #2563EB;
+    color: #2563EB;
+}
+
+.stepper-line {
+    position: absolute;
+    top: 18px;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background-color: #E2E8F0;
+    z-index: 1;
 }
 
 /* Scientific Badges */

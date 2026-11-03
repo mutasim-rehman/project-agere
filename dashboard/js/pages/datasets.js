@@ -1,5 +1,5 @@
 /**
- * Datasets Page - Academic Light Theme
+ * Datasets Page - Visual Research Dashboard
  */
 
 window.App.registerPage('datasets', {
@@ -8,100 +8,79 @@ window.App.registerPage('datasets', {
         const companies = aggr ? aggr.company_breakdown : [];
 
         container.innerHTML = `
-            <!-- Top Summary Card (Clean White Surface) -->
-            <div class="card bg-white border border-[#E2E8F0]">
-                <div class="space-y-1 max-w-4xl">
-                    <div class="text-[11px] font-bold uppercase tracking-wider font-mono text-[#2563EB]">
-                        Benchmark Suite & Financial Corpora
-                    </div>
-                    <h2 class="text-base font-bold text-[#172033]">
-                        Regulated Financial Workflows & Document Splits
-                    </h2>
-                    <p class="text-xs text-[#64748B] leading-relaxed">
-                        Evaluations test complex numerical reasoning and grounding over real corporate financial filings (SEC 10-K), synthetic KYC compliance packs, credit memo spreading, and negative control multi-hop tasks.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Dataset Profiles Cards (Plain, Clean Borders) -->
+            <!-- Dataset Profiles Cards Strip -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="card p-4 border-t-4 border-t-[#2563EB]">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-[#64748B] font-mono">SEC 10-K Filings</span>
-                        <span class="badge badge-mas">Benchmark 1</span>
+                <div class="stat-card border-l-4 border-l-[#2563EB]">
+                    <div class="stat-card-label">
+                        <span>FinQA Benchmark</span>
+                        <span class="badge badge-mas">SEC 10-K</span>
                     </div>
-                    <div class="font-bold text-sm text-[#2563EB] mt-2">FinQA Benchmark</div>
-                    <p class="text-xs text-[#64748B] mt-1 leading-relaxed">
-                        Numerical reasoning over earnings reports requiring multi-step arithmetic over tables and narrative text.
-                    </p>
-                    <div class="mt-3 pt-2 border-t border-[#E2E8F0] text-xs text-[#64748B] font-mono">
-                        160 Unique Questions • 50 10-Ks
+                    <div class="stat-card-value text-[#2563EB]">160 Cases</div>
+                    <div class="stat-card-meta">50 Corporate 10-K Annual Filings</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#2563EB]" style="width: 100%;"></div>
                     </div>
                 </div>
 
-                <div class="card p-4 border-t-4 border-t-[#3B82F6]">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-[#64748B] font-mono">Synthetic PII</span>
-                        <span class="badge badge-sas">Benchmark 2</span>
+                <div class="stat-card border-l-4 border-l-[#3B82F6]">
+                    <div class="stat-card-label">
+                        <span>Agere-KYC-Synth</span>
+                        <span class="badge badge-sas">Compliance</span>
                     </div>
-                    <div class="font-bold text-sm text-[#3B82F6] mt-2">Agere-KYC-Synth</div>
-                    <p class="text-xs text-[#64748B] mt-1 leading-relaxed">
-                        Customer Due Diligence (CDD/EDD) case-file assembly, sanctions screening summaries, and discrepancy registers.
-                    </p>
-                    <div class="mt-3 pt-2 border-t border-[#E2E8F0] text-xs text-[#64748B] font-mono">
-                        100 Synthetic Cases • JSONL
+                    <div class="stat-card-value text-[#3B82F6]">100 Cases</div>
+                    <div class="stat-card-meta">CDD/EDD sanctions screening packs</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#3B82F6]" style="width: 62.5%;"></div>
                     </div>
                 </div>
 
-                <div class="card p-4 border-t-4 border-t-[#7C3AED]">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-[#64748B] font-mono">Underwriting Spreads</span>
-                        <span class="badge" style="background:#F5F3FF; color:#7C3AED; border:1px solid #DDD6FE;">Benchmark 3</span>
+                <div class="stat-card border-l-4 border-l-[#7C3AED]">
+                    <div class="stat-card-label">
+                        <span>Agere-Credit-Synth</span>
+                        <span class="badge" style="background:#F5F3FF; color:#7C3AED; border:1px solid #DDD6FE;">Spreads</span>
                     </div>
-                    <div class="font-bold text-sm text-[#7C3AED] mt-2">Agere-Credit-Synth</div>
-                    <p class="text-xs text-[#64748B] mt-1 leading-relaxed">
-                        Borrower financials spreading, debt-service coverage (DSCR) calculations, and loan covenant checks.
-                    </p>
-                    <div class="mt-3 pt-2 border-t border-[#E2E8F0] text-xs text-[#64748B] font-mono">
-                        75 Synthetic Files • Spreads
+                    <div class="stat-card-value text-[#7C3AED]">75 Files</div>
+                    <div class="stat-card-meta">DSCR spreading & covenant audits</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#7C3AED]" style="width: 46.8%;"></div>
                     </div>
                 </div>
 
-                <div class="card p-4 border-t-4 border-t-[#D97706]">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold text-[#64748B] font-mono">Multi-Hop Control</span>
+                <div class="stat-card border-l-4 border-l-[#D97706]">
+                    <div class="stat-card-label">
+                        <span>FRAMES / MortarBench</span>
                         <span class="badge badge-withheld">Control</span>
                     </div>
-                    <div class="font-bold text-sm text-[#D97706] mt-2">FRAMES & MortarBench</div>
-                    <p class="text-xs text-[#64748B] mt-1 leading-relaxed">
-                        Multi-hop document retrieval and origination validation where large monolithic models are expected to excel.
-                    </p>
-                    <div class="mt-3 pt-2 border-t border-[#E2E8F0] text-xs text-[#64748B] font-mono">
-                        100 Question Slice • Public
+                    <div class="stat-card-value text-[#D97706]">100 Qs</div>
+                    <div class="stat-card-meta">Multi-hop retrieval negative control</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#D97706]" style="width: 62.5%;"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Company Representation Chart & Table -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="card">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="card lg:col-span-6">
                     <div class="card-header-clean">
                         <div>
-                            <h3 class="text-sm font-bold text-[#172033]">Company Evaluation Coverage (Top 8)</h3>
-                            <p class="text-xs text-[#64748B]">Total cases tested across corporate reports</p>
+                            <h3 class="text-sm font-bold text-[#172033]">Company Evaluation Coverage (Top 8 Corpora)</h3>
+                            <p class="text-xs text-[#64748B]">Case frequency per company report</p>
                         </div>
+                        <span class="badge badge-mas">Representation</span>
                     </div>
                     <div class="h-64 mt-4">
                         <canvas id="company-coverage-chart"></canvas>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card lg:col-span-6">
                     <div class="card-header-clean">
                         <div>
-                            <h3 class="text-sm font-bold text-[#172033]">Per-Company Accuracy Breakdown</h3>
-                            <p class="text-xs text-[#64748B]">MAS accuracy vs SAS accuracy by corporation</p>
+                            <h3 class="text-sm font-bold text-[#172033]">Corporate Accuracy & Withholding</h3>
+                            <p class="text-xs text-[#64748B]">Comparative outcome rates by company</p>
                         </div>
+                        <span class="badge badge-sas">Per-Company</span>
                     </div>
                     <div class="table-container max-h-64 overflow-y-auto mt-4">
                         <table class="data-table">
@@ -120,7 +99,7 @@ window.App.registerPage('datasets', {
                                         <td class="font-mono text-xs font-bold text-[#172033]">${c.company}</td>
                                         <td class="font-mono text-xs text-[#64748B]">${c.sas_total}</td>
                                         <td class="font-mono text-xs text-[#2563EB] font-semibold">${c.mas_correct_pct}%</td>
-                                        <td class="font-mono text-xs text-[#172033] font-semibold">${c.sas_correct_pct}%</td>
+                                        <td class="font-mono text-xs text-[#15803D] font-semibold">${c.sas_correct_pct}%</td>
                                         <td class="font-mono text-xs text-[#D97706] font-semibold">${c.mas_withheld_pct}%</td>
                                     </tr>
                                 `).join('')}
@@ -157,11 +136,11 @@ window.App.registerPage('datasets', {
                 maintainAspectRatio: false,
                 plugins: { 
                     legend: { display: false },
-                    tooltip: { backgroundColor: '#172033', titleColor: '#FFFFFF', bodyColor: '#F8FAFC' }
+                    tooltip: { backgroundColor: '#172033', titleColor: '#FFFFFF', bodyColor: '#F8FAFC', padding: 10 }
                 },
                 scales: {
-                    x: { grid: { display: false }, ticks: { color: '#64748B', font: { size: 11, family: 'Inter' } } },
-                    y: { grid: { color: '#E9EEF5' }, ticks: { color: '#64748B', font: { size: 11, family: 'JetBrains Mono' } } }
+                    x: { grid: { display: false }, ticks: { color: '#64748B', font: { size: 10, family: 'Inter' } } },
+                    y: { grid: { color: '#E9EEF5' }, ticks: { color: '#64748B', font: { size: 10, family: 'JetBrains Mono' } } }
                 }
             }
         });

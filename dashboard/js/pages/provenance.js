@@ -1,5 +1,5 @@
 /**
- * Provenance & Audit Page - Academic Light Theme
+ * Provenance & Audit Page - Visual Research Dashboard
  */
 
 window.App.registerPage('provenance', {
@@ -9,78 +9,100 @@ window.App.registerPage('provenance', {
         const hf = manifests.hf_snapshots || {};
 
         container.innerHTML = `
-            <!-- Top Summary Card (Clean White Surface) -->
-            <div class="card bg-white border border-[#E2E8F0]">
-                <div class="space-y-1 max-w-4xl">
-                    <div class="text-[11px] font-bold uppercase tracking-wider font-mono text-[#2563EB]">
-                        Research Audit Trail & Verification Package
-                    </div>
-                    <h2 class="text-base font-bold text-[#172033]">
-                        Methodology Decisions, Documentation & Snapshot Hashes
-                    </h2>
-                    <p class="text-xs text-[#64748B] leading-relaxed">
-                        Full audit trail supporting the Phase 3 submission. Includes decision milestones from DECISIONS.md, model snapshot commit hashes, weights checksums, and documentation index.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Milestone Timeline -->
-            <div class="card">
-                <div class="card-header-clean">
+            <!-- Visual Phase Progression Stepper (Top) -->
+            <div class="card p-5">
+                <div class="card-header-clean pb-3">
                     <div>
-                        <h3 class="text-sm font-bold text-[#172033]">Methodology & Execution Milestones</h3>
+                        <h3 class="text-sm font-bold text-[#172033]">Research Execution Progression</h3>
+                        <p class="text-xs text-[#64748B]">Methodology milestones from protocol lock to final submission</p>
                     </div>
+                    <span class="badge badge-correct">All Phases Complete</span>
                 </div>
 
-                <div class="space-y-4 mt-4 text-xs">
-                    <div class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">
-                            1
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+                    <div class="p-3.5 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] border-t-4 border-t-[#2563EB]">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-[#2563EB] font-mono">Phase 1</span>
+                            <span class="badge badge-correct">Oct 2026</span>
                         </div>
-                        <div>
-                            <div class="font-bold text-[#172033]">Phase 1: Protocol Definition & Lock (Oct 2026)</div>
-                            <div class="text-[#64748B] mt-0.5">Established the Host-Adjusted Process-Tree RSS Cap protocol and equalized thinking-token budgets following Tran & Kiela (2026).</div>
-                        </div>
+                        <div class="font-bold text-sm text-[#172033] mt-2">Protocol Lock</div>
+                        <p class="text-xs text-[#64748B] mt-1">Host-adjusted RSS cap (12.8 GB) & token matching.</p>
                     </div>
 
-                    <div class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">
-                            2
+                    <div class="p-3.5 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] border-t-4 border-t-[#3B82F6]">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-[#3B82F6] font-mono">Phase 2</span>
+                            <span class="badge badge-correct">Oct 15</span>
                         </div>
-                        <div>
-                            <div class="font-bold text-[#172033]">Phase 2: Offline Conversion & Runtime Hardening (Oct 15, 2026)</div>
-                            <div class="text-[#64748B] mt-0.5">Quantized Qwen2.5 weights to GGUF Q4_K_M on dedicated lab PC. Validated memory limits and recorded conversion footprints.</div>
-                        </div>
+                        <div class="font-bold text-sm text-[#172033] mt-2">Offline Quantization</div>
+                        <p class="text-xs text-[#64748B] mt-1">GGUF Q4_K_M conversion benchmarks across 0.5B–32B.</p>
                     </div>
 
-                    <div class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">
-                            3
+                    <div class="p-3.5 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] border-t-4 border-t-[#7C3AED]">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-[#7C3AED] font-mono">Phase 3</span>
+                            <span class="badge badge-correct">Oct 30</span>
                         </div>
-                        <div>
-                            <div class="font-bold text-[#172033]">Phase 3: 16 GB Study & Swap Breach Recovery (Oct 28–30, 2026)</div>
-                            <div class="text-[#64748B] mt-0.5">Executed 6 evaluation jobs (960 case evaluations). Caught 44 MB swap failure in attempt-0001, invalidated run, and completed verified clean recovery in attempt-0002.</div>
-                        </div>
+                        <div class="font-bold text-sm text-[#172033] mt-2">16 GB Evaluation</div>
+                        <p class="text-xs text-[#64748B] mt-1">6 jobs, 960 evaluations, swap breach recovery.</p>
                     </div>
 
-                    <div class="flex items-start gap-3">
-                        <div class="w-6 h-6 rounded bg-[#EFF6FF] text-[#2563EB] border border-[#BFDBFE] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">
-                            4
+                    <div class="p-3.5 rounded-lg bg-[#F0FDF4] border border-[#BBF7D0] border-t-4 border-t-[#15803D]">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-[#15803D] font-mono">Phase 4</span>
+                            <span class="badge badge-correct">Nov 2026</span>
                         </div>
-                        <div>
-                            <div class="font-bold text-[#172033]">Submission Lock & Portable Handoff (Nov 2, 2026)</div>
-                            <div class="text-[#64748B] mt-0.5">Packaged all derived data, 17 evidence archives, statistical reports, and portable browser-ready JSON handoff.</div>
-                        </div>
+                        <div class="font-bold text-sm text-[#15803D] mt-2">Submission Lock</div>
+                        <p class="text-xs text-[#166534] mt-1">17 archives packaged, browser JSON handoff verified.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Documentation Index (Plain Cards) -->
+            <!-- Integrity Verification Cards Strip -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="stat-card border-l-4 border-l-[#15803D]">
+                    <div class="stat-card-label">
+                        <span>Content Integrity</span>
+                        <span class="badge badge-correct">SHA-256</span>
+                    </div>
+                    <div class="stat-card-value text-[#15803D]">1,629 Hashes</div>
+                    <div class="stat-card-meta">Cryptographically verified checksums</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#15803D]" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card border-l-4 border-l-[#2563EB]">
+                    <div class="stat-card-label">
+                        <span>Swap Telemetry Audit</span>
+                        <span class="badge badge-mas">0 MB Clean</span>
+                    </div>
+                    <div class="stat-card-value text-[#2563EB]">Zero Swap</div>
+                    <div class="stat-card-meta">Attempt 2 fully audited & compliant</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#2563EB]" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <div class="stat-card border-l-4 border-l-[#7C3AED]">
+                    <div class="stat-card-label">
+                        <span>Codebase Status</span>
+                        <span class="badge badge-sas">Freeze Locked</span>
+                    </div>
+                    <div class="stat-card-value text-[#172033]">v3.0 Final</div>
+                    <div class="stat-card-meta">Artifacts archived for defense & peer review</div>
+                    <div class="progress-track">
+                        <div class="progress-fill bg-[#7C3AED]" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documentation Index -->
             <div class="card">
                 <div class="card-header-clean">
                     <div>
-                        <h3 class="text-sm font-bold text-[#172033]">Documentation Index</h3>
-                        <p class="text-xs text-[#64748B]">Editable markdown reports and research specifications in repository root</p>
+                        <h3 class="text-sm font-bold text-[#172033]">Core Documentation Index</h3>
+                        <p class="text-xs text-[#64748B]">Reports, specifications, and audit records in repository root</p>
                     </div>
                 </div>
 
