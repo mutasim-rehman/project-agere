@@ -1,0 +1,1053 @@
+{
+  "downloaded_datasets": {
+    "generated_utc": "2026-09-29T18:48:48.8530911Z",
+    "ssd_subdir": "datasets/",
+    "policy": "Dataset files are on the SSD; this manifest stays in the repository.",
+    "datasets": [
+      {
+        "id": "mortarbench",
+        "repo": "ManavMunjal/MortarBench",
+        "revision": "ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/data/questions.jsonl",
+            "upstream_path": "data/questions.jsonl",
+            "sha256": "35430725e025ced03cbe0ec990eca7b67f7e3061db9d9834220ab56a825529ce",
+            "bytes": 4303842
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/data/test_cases.jsonl",
+            "upstream_path": "data/test_cases.jsonl",
+            "sha256": "e002031fab78d81db38d96f87f0730e7ff7e264d03ca37a24b6ca8c9846541da",
+            "bytes": 423242
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Labeled Questions and Answers.xlsx",
+            "upstream_path": "raw/Labeled Questions and Answers.xlsx",
+            "sha256": "77df01071d976930ab66b03c501fcdf938e4a666c72ef8a500af2c1f7f976000",
+            "bytes": 188541
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/case_1a.pdf",
+            "upstream_path": "raw/Test Case 1 Docs/case_1a.pdf",
+            "sha256": "96f6b7d25d43e82ef59f4cde58df1e7a5481f627ef7b273cbbf650156e3094ea",
+            "bytes": 45137
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/case_1b.pdf",
+            "upstream_path": "raw/Test Case 1 Docs/case_1b.pdf",
+            "sha256": "b4052a3748a387d7f8f57cffdc0a67711a553702aa3f2f407e6c1b454c9986de",
+            "bytes": 2855
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/plaid.json",
+            "upstream_path": "raw/Test Case 1 Docs/plaid.json",
+            "sha256": "2ed760b486387ac02799997bba2a28e184b980316fdf2d6a2c0e601454c7ee07",
+            "bytes": 17820
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 1 Docs/plaid_with_ids.json",
+            "sha256": "75244f720738adca5638042afb55776b2973bdb4798701a8f48c7b8f851057f2",
+            "bytes": 19848
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/test_case_1_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 1 Docs/test_case_1_bank_statement_solo.json",
+            "sha256": "89b249d7fa60efad7223d74198e3528b355725efc7de677f28a1baa8787472ce",
+            "bytes": 174979
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 1 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 1 Docs/ulad.xml",
+            "sha256": "96cedd493c20b648b0f21dfcc46133edc4241d080beaf29aeb456d1dd12909d2",
+            "bytes": 22493
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/plaid.json",
+            "upstream_path": "raw/Test Case 10 Docs/plaid.json",
+            "sha256": "fa69a39a8ac5fc4b7b9f17fa9a494f7d96ad9e226ac30b9603d9f01396a400fb",
+            "bytes": 14761
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 10 Docs/plaid_with_ids.json",
+            "sha256": "ec0f88c85941643d0cd55e7c52f5cb5b574d0fc778f4c8e12cb078d4d0d92c04",
+            "bytes": 17440
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/test_case_10_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 10 Docs/test_case_10_bank_statement_solo.json",
+            "sha256": "fd54d566116f78c5d328d1dbfcc4ef9ba8557fc2cc3a70d0769452185fb9484d",
+            "bytes": 176791
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/test_case_10a.pdf",
+            "upstream_path": "raw/Test Case 10 Docs/test_case_10a.pdf",
+            "sha256": "0bbd1ed1bb1e2c86d8839a03f58f9680a1476bf0a5290f13ef6530b05bdbf7f0",
+            "bytes": 23612
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/test_case_10b.pdf",
+            "upstream_path": "raw/Test Case 10 Docs/test_case_10b.pdf",
+            "sha256": "c2586dbd3d1fb2be7c9431621958036138c5c835f5ff14e95241162de36551ed",
+            "bytes": 46746
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 10 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 10 Docs/ulad.xml",
+            "sha256": "395bcec77f5f346de737e433fa79b10ac304e853ee5ac95314c9de7081627f5f",
+            "bytes": 30952
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/case_2.pdf",
+            "upstream_path": "raw/Test Case 2 Docs/case_2.pdf",
+            "sha256": "ee18cb04a97c8fb2902108fbd256461943720df74b78ece1270cb5b0f67bbac8",
+            "bytes": 43751
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/plaid.json",
+            "upstream_path": "raw/Test Case 2 Docs/plaid.json",
+            "sha256": "8dff15757aba92470129660048f7d64b4b245fbd92e6615a0f3f6cb3608478d0",
+            "bytes": 14727
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 2 Docs/plaid_with_ids.json",
+            "sha256": "703cb6f2e453dae33f40ef51a9b72cf072b2952781c88a8f15d468a9621b104e",
+            "bytes": 17855
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/test_case_2_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 2 Docs/test_case_2_bank_statement_solo.json",
+            "sha256": "364b6155631898aeb388e2da1f17ab1e4ee7f0bc64ed386e151dae50a10970e5",
+            "bytes": 167464
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 2 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 2 Docs/ulad.xml",
+            "sha256": "7100004e87a2e84c5ee697f5c7809d32def324689f12ea1b0bea0d79c7c9debf",
+            "bytes": 34207
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/case_3.pdf",
+            "upstream_path": "raw/Test Case 3 Docs/case_3.pdf",
+            "sha256": "c7b35ccbbf3eb977912ffb1af7d5e434aa5fe327256e3329d17362ec4b3f9c21",
+            "bytes": 271386
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/plaid.json",
+            "upstream_path": "raw/Test Case 3 Docs/plaid.json",
+            "sha256": "bcfacafc7a67018d53b222973ed5099a562f9bf6a8e0417de001179cb2dc6093",
+            "bytes": 9943
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 3 Docs/plaid_with_ids.json",
+            "sha256": "e249511ab7f0ec30b2e31e2132c69e45e7d5e51cb06f75d8cb481bd9cdae75d9",
+            "bytes": 11921
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/test_case_3_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 3 Docs/test_case_3_bank_statement_solo.json",
+            "sha256": "b86b542f256045b6b1783baf4712b59c22266c4f1c2d983f47da5dcc555b3151",
+            "bytes": 144742
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 3 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 3 Docs/ulad.xml",
+            "sha256": "fd0c13da2e5b50799575a1ce61163328d3c0c3f3e335e325bebe4c0d507060da",
+            "bytes": 20927
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/case_4a.pdf",
+            "upstream_path": "raw/Test Case 4 Docs/case_4a.pdf",
+            "sha256": "55b66ae7b798dc6c9b520f9a52c34f4ad6083c1586bb7ac66007eb3582d50943",
+            "bytes": 34252
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/case_4b.pdf",
+            "upstream_path": "raw/Test Case 4 Docs/case_4b.pdf",
+            "sha256": "c982a0b48bee6fabddf63e287fd3305ead79218a70dadfdfc3e8d0f4977e7a96",
+            "bytes": 42731
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/plaid1.json",
+            "upstream_path": "raw/Test Case 4 Docs/plaid1.json",
+            "sha256": "983fb39e4503cccbc45d079eca44f1578d0690fdd0dac7741f0f0b19879590f2",
+            "bytes": 11525
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/plaid2.json",
+            "upstream_path": "raw/Test Case 4 Docs/plaid2.json",
+            "sha256": "36d5e279bd92ece35eeeba6b069d99980910a723efae972eac0cd8c8fd3429fc",
+            "bytes": 9409
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 4 Docs/plaid_with_ids.json",
+            "sha256": "7ba4dc9e4d53e17dc51a3e098eaf45f1c195a62826fee386ed348c7653a38967",
+            "bytes": 26166
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/test_case_4_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 4 Docs/test_case_4_bank_statement_solo.json",
+            "sha256": "a4bb8ea8322b6964aa5fb98b5ec4e740d8d541d5900019d902a4dc3544bde3f1",
+            "bytes": 200610
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 4 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 4 Docs/ulad.xml",
+            "sha256": "b6880a3f413ff6278b9bde99a198bbf386fa05674085a2e50f61bfd0e1edf6e1",
+            "bytes": 37831
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/case_5.pdf",
+            "upstream_path": "raw/Test Case 5 Docs/case_5.pdf",
+            "sha256": "398b718ebeb0816e072562c19eddbf0d7ee8828afe1bf906b1dbc45e3f47fa48",
+            "bytes": 44864
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/case_5b.pdf",
+            "upstream_path": "raw/Test Case 5 Docs/case_5b.pdf",
+            "sha256": "95440bc8aea69ae6963afdb25d4256c61af13cc94e53bf14e79cb5a0d7ffb14d",
+            "bytes": 2557
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/plaid.json",
+            "upstream_path": "raw/Test Case 5 Docs/plaid.json",
+            "sha256": "bcf5785e60894d4324e4803d3deede62bf94f0a75891b8db3601d3540d23b15f",
+            "bytes": 14528
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 5 Docs/plaid_with_ids.json",
+            "sha256": "b4ce10ba71ac64b3e63614898754933a6a7fa71108f3fd5f3a55a266e581033e",
+            "bytes": 16114
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/test_case_5_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 5 Docs/test_case_5_bank_statement_solo.json",
+            "sha256": "eaa08df63502a0af5d116ef3f8c95cb9b8bbef9f8249f431a2f468bab87bd04d",
+            "bytes": 137999
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 5 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 5 Docs/ulad.xml",
+            "sha256": "4930c911e06e9eee5c86dd4299753a113ffb4ffec6c952fc661b40755f866bf5",
+            "bytes": 29191
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/plaid.json",
+            "upstream_path": "raw/Test Case 6 Docs/plaid.json",
+            "sha256": "6efb5abaadf9d5a44def30acf2d372abf5c3a752bf8380cdc60df560363c9379",
+            "bytes": 15407
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 6 Docs/plaid_with_ids.json",
+            "sha256": "fea332c2d11866cae7d7806a0587e30c406046b66b8b8e1dc86bd4cb9e565d1d",
+            "bytes": 18535
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/test_case_6.pdf",
+            "upstream_path": "raw/Test Case 6 Docs/test_case_6.pdf",
+            "sha256": "0443f5886025db80740a301d2fd531512588942d3846ac5f8ab388a5efc511b8",
+            "bytes": 47384
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/test_case_6_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 6 Docs/test_case_6_bank_statement_solo.json",
+            "sha256": "63a5deb32fa23140be38c535fece3c51dd11562db5e3da018ab9627ee37ef537",
+            "bytes": 166062
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 6 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 6 Docs/ulad.xml",
+            "sha256": "fd906c54882e54c28adb7f32bfb9e7e7be23619c6acb68e73f7850a766e82830",
+            "bytes": 28755
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/plaid.json",
+            "upstream_path": "raw/Test Case 7 Docs/plaid.json",
+            "sha256": "37299f45da69ce24a2ce13ab435b8a624bea01b10bc525528e5cb171941b6591",
+            "bytes": 15292
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 7 Docs/plaid_with_ids.json",
+            "sha256": "e9b75fb7a677487310b2fe79cc9e77c0b2e1683ddd907e3eae147a2c931314b5",
+            "bytes": 18420
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/test_case_7.pdf",
+            "upstream_path": "raw/Test Case 7 Docs/test_case_7.pdf",
+            "sha256": "03c0e0c0d921c7ae60aedfd7112ec8fde9dc6f19bcde115f216916147221e722",
+            "bytes": 45199
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/test_case_7_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 7 Docs/test_case_7_bank_statement_solo.json",
+            "sha256": "e0ffbadbc92a64f0947ff0d41bd6c217740e9b36112acc5ae52119ba0ee97947",
+            "bytes": 172736
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 7 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 7 Docs/ulad.xml",
+            "sha256": "b699be55693dfb5c1f95cfc4e48486ef2a73a3f8e9c44e15234be81c6e84b1fa",
+            "bytes": 43574
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/plaid1.json",
+            "upstream_path": "raw/Test Case 9 Docs/plaid1.json",
+            "sha256": "49f5f211ac3dd842ae3cb2e5976dd7e0b18c0bcb14f991671ce6ffbc93eb1481",
+            "bytes": 11153
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/plaid2.json",
+            "upstream_path": "raw/Test Case 9 Docs/plaid2.json",
+            "sha256": "4e083788ddeabdc8cdf87e38853cf7395324bb8bc5467e5f35d864a2b18a045e",
+            "bytes": 9043
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/plaid_with_ids.json",
+            "upstream_path": "raw/Test Case 9 Docs/plaid_with_ids.json",
+            "sha256": "47197f775d0f730ae68edc78b948c43b5453445438e14bb5e51de2f53cabcc62",
+            "bytes": 26718
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/test_case_9_bank_statement_solo.json",
+            "upstream_path": "raw/Test Case 9 Docs/test_case_9_bank_statement_solo.json",
+            "sha256": "a0ceafe54b4ad78f62bea99bab49c0740b3a482caa4b1457a6caf62251b533ca",
+            "bytes": 219690
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/test_case_9a.pdf",
+            "upstream_path": "raw/Test Case 9 Docs/test_case_9a.pdf",
+            "sha256": "e01c3daa504943474b3fed189fe640a2f610c1114eb226dc185ac17bf1648dd7",
+            "bytes": 43913
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/test_case_9b.pdf",
+            "upstream_path": "raw/Test Case 9 Docs/test_case_9b.pdf",
+            "sha256": "3a205504ec0e47c49b20cb8c8ea65d5ddc89fb0f1e772e28a0ffb1c196cd73a8",
+            "bytes": 34605
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/Test Case 9 Docs/ulad.xml",
+            "upstream_path": "raw/Test Case 9 Docs/ulad.xml",
+            "sha256": "94af3060e787fd6440786b995c21b1a20930e3b1f5e362bb42324c68733adb7b",
+            "bytes": 46056
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/benchmark_dataset_metadata.json",
+            "upstream_path": "raw/benchmark_dataset_metadata.json",
+            "sha256": "464b0824071c4e91c969676df656ac54a9fd795ab4cd38fbcab3f1a58173b215",
+            "bytes": 28827
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/benchmark_dataset_test_cases.jsonl",
+            "upstream_path": "raw/benchmark_dataset_test_cases.jsonl",
+            "sha256": "3a65c334fe10306f0e9c5a0d13a8961d5fe8b330d6fba4bf2137f59a03d7ec87",
+            "bytes": 410074
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/questions_unique_generated.csv",
+            "upstream_path": "raw/questions_unique_generated.csv",
+            "sha256": "d3981acb18bddfcdbff0037e637a86a8d8f3536760aba337d8d8c0a53d87b7ae",
+            "bytes": 12303
+          },
+          {
+            "path": "datasets/external/MortarBench/ab3421d6b1a9f0cedbb9f98d34a4e1eb4473532f/raw/ulad_template.json",
+            "upstream_path": "raw/ulad_template.json",
+            "sha256": "c35653731d8f7b26b8381a69c80901859730a1e644d3e85190298dc3c177e2bf",
+            "bytes": 15147
+          }
+        ]
+      },
+      {
+        "id": "frames-benchmark",
+        "repo": "google/frames-benchmark",
+        "revision": "58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef",
+        "license": "Apache-2.0",
+        "files": [
+          {
+            "path": "datasets/external/FRAMES/58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef/test.tsv",
+            "upstream_path": "test.tsv",
+            "sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+            "bytes": 484887
+          }
+        ]
+      }
+    ]
+  },
+  "hf_snapshots": {
+    "generated_at_utc": "2026-09-30T08:25:09.371166+00:00",
+    "ssd_root_at_download": "H:\\AGERE",
+    "artifacts": [
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/config.json",
+        "size_bytes": 663,
+        "sha256": "0f2085dbbe2ee251bd6a6a0797d84a6ce34436044d629aa3cba793b43d311a9e"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/generation_config.json",
+        "size_bytes": 242,
+        "sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/merges.txt",
+        "size_bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00001-of-00008.safetensors",
+        "size_bytes": 3885154816,
+        "sha256": "b477be7572f0ab3ae3cbba38d508cc33e70600b2045669c4ad848051c3432094"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00002-of-00008.safetensors",
+        "size_bytes": 3995327992,
+        "sha256": "eb356aacae443e30f52712b1e98fadf206976365e2f5ee886321b0bb38c7cea8"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00003-of-00008.safetensors",
+        "size_bytes": 3995328080,
+        "sha256": "cee9dbdf738ce61adb21c70ad5c5585747caaab6457c9ffc3bfa20d73127c2c6"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00004-of-00008.safetensors",
+        "size_bytes": 3995338432,
+        "sha256": "b1201a6edcac8ef96a37040524fe37a5a84e446513ed40491e764a37302385fa"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00005-of-00008.safetensors",
+        "size_bytes": 3979624824,
+        "sha256": "fbbda3cdee31895d0c57d617449af5579d219df34f3d63f7a23acbfe7fb0a647"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00006-of-00008.safetensors",
+        "size_bytes": 3995328080,
+        "sha256": "f7ac652aa101717c97cfeccf5109985cca5b04529b57d3f4d2ec7a802266296b"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00007-of-00008.safetensors",
+        "size_bytes": 3995328080,
+        "sha256": "e9115e615b575acb6e8b3a06524b32cbf7f680f07517125e4334f62c3f4acb0d"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model-00008-of-00008.safetensors",
+        "size_bytes": 1698703696,
+        "sha256": "a77f603d8368749c19d3ac9cf2a300e476edcc794ea41af8e473ee12935eadb8"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/model.safetensors.index.json",
+        "size_bytes": 47472,
+        "sha256": "46627f7a9e851d9cede6a7a4c49999082148ced9c22d2b9cfaaa5ba8b65dc68f"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/tokenizer.json",
+        "size_bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/tokenizer_config.json",
+        "size_bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-14B-Instruct",
+        "revision": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+        "path": "weights/hf/Qwen--Qwen2.5-14B-Instruct/vocab.json",
+        "size_bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/config.json",
+        "size_bytes": 661,
+        "sha256": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/generation_config.json",
+        "size_bytes": 242,
+        "sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/merges.txt",
+        "size_bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/model-00001-of-00002.safetensors",
+        "size_bytes": 3968658944,
+        "sha256": "67347b23fb4165b652eb6611f5e1f2a06dfcddba8e909df1b2b0b1857bee06c2"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/model-00002-of-00002.safetensors",
+        "size_bytes": 2203268048,
+        "sha256": "a40d941d0e7e0b966ad8b62bb6d6b7c88cce1299197b599d9d0a4ce59aabfc1d"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/model.safetensors.index.json",
+        "size_bytes": 35581,
+        "sha256": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/tokenizer.json",
+        "size_bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/tokenizer_config.json",
+        "size_bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "path": "weights/hf/Qwen--Qwen2.5-3B-Instruct/vocab.json",
+        "size_bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "path": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/config.json",
+        "size_bytes": 660,
+        "sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "path": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/generation_config.json",
+        "size_bytes": 242,
+        "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "path": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/merges.txt",
+        "size_bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "path": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/model.safetensors",
+        "size_bytes": 3087467144,
+        "sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "path": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/tokenizer.json",
+        "size_bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "path": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/tokenizer_config.json",
+        "size_bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-1.5B-Instruct",
+        "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+        "path": "weights/hf/Qwen--Qwen2.5-1.5B-Instruct/vocab.json",
+        "size_bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "path": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/config.json",
+        "size_bytes": 659,
+        "sha256": "18e18afcaccafade98daf13a54092927904649e1dd4eba8299ab717d5d94ff45"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "path": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/generation_config.json",
+        "size_bytes": 242,
+        "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "path": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/merges.txt",
+        "size_bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "path": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/model.safetensors",
+        "size_bytes": 988097824,
+        "sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "path": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/tokenizer.json",
+        "size_bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "path": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/tokenizer_config.json",
+        "size_bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+        "path": "weights/hf/Qwen--Qwen2.5-0.5B-Instruct/vocab.json",
+        "size_bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/1_Pooling/config.json",
+        "size_bytes": 190,
+        "sha256": "d1caf60c96f5fba2157c0c26b76d80818fad6cf0b8eb5e73ec372ff9818eba5c"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/config.json",
+        "size_bytes": 743,
+        "sha256": "094f8e891b932f2000c92cfc663bac4c62069f5d8af5b5278c4306aef3084750"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/config_sentence_transformers.json",
+        "size_bytes": 124,
+        "sha256": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/model.safetensors",
+        "size_bytes": 133466304,
+        "sha256": "3c9f31665447c8911517620762200d2245a2518d6e7208acc78cd9db317e21ad"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/modules.json",
+        "size_bytes": 349,
+        "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/pytorch_model.bin",
+        "size_bytes": 133508397,
+        "sha256": "84868a67d847f7f37d1df745b73a4c20b5bc0a797c87a23b265f8a0131728b88"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/sentence_bert_config.json",
+        "size_bytes": 52,
+        "sha256": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/special_tokens_map.json",
+        "size_bytes": 125,
+        "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/tokenizer.json",
+        "size_bytes": 711396,
+        "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/tokenizer_config.json",
+        "size_bytes": 366,
+        "sha256": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3"
+      },
+      {
+        "repo_id": "BAAI/bge-small-en-v1.5",
+        "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+        "path": "weights/hf/BAAI--bge-small-en-v1.5/vocab.txt",
+        "size_bytes": 231508,
+        "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/config.json",
+        "size_bytes": 663,
+        "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/generation_config.json",
+        "size_bytes": 243,
+        "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/merges.txt",
+        "size_bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model-00001-of-00004.safetensors",
+        "size_bytes": 3945441440,
+        "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model-00002-of-00004.safetensors",
+        "size_bytes": 3864726352,
+        "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model-00003-of-00004.safetensors",
+        "size_bytes": 3864726424,
+        "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model-00004-of-00004.safetensors",
+        "size_bytes": 3556377672,
+        "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/model.safetensors.index.json",
+        "size_bytes": 27752,
+        "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/tokenizer.json",
+        "size_bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/tokenizer_config.json",
+        "size_bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+        "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "path": "weights/hf/Qwen--Qwen2.5-7B-Instruct/vocab.json",
+        "size_bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/config.json",
+        "size_bytes": 663,
+        "sha256": "9c6772f138ef9e5b3d1c18f2c87e451bbc01f5f1a4eabb36f9bf4f53829b903e"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/generation_config.json",
+        "size_bytes": 242,
+        "sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/merges.txt",
+        "size_bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00001-of-00017.safetensors",
+        "size_bytes": 3916539832,
+        "sha256": "fa006a0382517a4e9a8781d8e7d3405cd6bdd1b9100fb344d73f925b7da9341c"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00002-of-00017.safetensors",
+        "size_bytes": 3900847496,
+        "sha256": "0d7f28a4ba7135c2c8365016170cfa25723f65ec41e32ec9a3c81746e4395615"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00003-of-00017.safetensors",
+        "size_bytes": 3900847480,
+        "sha256": "8f4b7b811a7ecf117c179ac9413b7a746f2fc0707a41ae4b2efd0282e73bed85"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00004-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "de8ab9cb81e6798031d2cf9ef6d15a0034b77fceeba3d4e011647943c8b99afb"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00005-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "fa86494f0074cc36c610aa54e7bde03edefc57a9be7636216277bd5ed8b8bfda"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00006-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "c8fa152bd8a23bab2c0cfca43ff9f586bccd82b1cb67f2f84231f31d0f3cab47"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00007-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "5e33e16319d18d1e180187d9f858deddbbaf06d950abc88941bf027d1439c7bc"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00008-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "8561b86737884397772bb990b38c0efe896f66ed27815ca207ddc8ec7965ffe4"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00009-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "47f562bf77d986b53c5390b01a30a77576c3eed69191b484cf88b53bb64bce19"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00010-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "359450e2c9e261751b5803fcdd1d0a040029a6119a271dd8592d7bb37fa722b5"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00011-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "836f0570f5694ce1d55f505064190e2688926dad4f033384ae519d96faaad670"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00012-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "5307431e385a177375a5aa887eb1c546f3413dd2e2269c291672f11f752842b4"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00013-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "9b2657db02572dd4370186b35c0e0fa70218d7e2ec1190e4dc4a755c5cbd430e"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00014-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "b5f1f8af3b6bbf734790985590752fb815dd69566cf05ee578d70af74ace1d4c"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00015-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "8cdfcbf8913e10056c981db2db817f92c8601998deb9eabcae14fade98d76c14"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00016-of-00017.safetensors",
+        "size_bytes": 3900847544,
+        "sha256": "977b3d2ca7f97dc3b518ed5087ddc43ccf7afb371190828f2334d7e4c81224ee"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model-00017-of-00017.safetensors",
+        "size_bytes": 3098588976,
+        "sha256": "2853695483f9c61a8bd8b109025b3c591214a0362992fa844537f09acc81bd03"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/model.safetensors.index.json",
+        "size_bytes": 63248,
+        "sha256": "0183543f2e6e40d3d1e863ed0b2a8c9cdaf2ee4045ce724a45cea30e9995a0af"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/tokenizer.json",
+        "size_bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/tokenizer_config.json",
+        "size_bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+      },
+      {
+        "repo_id": "Qwen/Qwen2.5-32B-Instruct",
+        "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+        "path": "weights/hf/Qwen--Qwen2.5-32B-Instruct/vocab.json",
+        "size_bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ]
+  },
+  "synthetic_datasets": {
+    "generator": "agere-synth-v1",
+    "seed": 20260929,
+    "ssd_subdir": "datasets/agere_synthetic/agere-synth-v1/",
+    "train_mix": {
+      "missing_data": 240,
+      "tool_calls": 180,
+      "citations": 180
+    },
+    "dev_mix": {
+      "missing_data": 24,
+      "tool_calls": 18,
+      "citations": 18
+    },
+    "evaluation_slices": [
+      {
+        "dataset": "FRAMES",
+        "path": "datasets/external/FRAMES/58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef/frames_100.jsonl",
+        "rows": 100,
+        "sha256": "df9853ec0efc67c3cecff1db3bd874ca894585409f132d0ac1d4e30d25486e1d"
+      }
+    ],
+    "files": [
+      {
+        "path": "datasets/agere_synthetic/agere-synth-v1/train/kyc.jsonl",
+        "rows": 400,
+        "sha256": "1884fa8f354c981cf90bc8994ac7c310d9e99f757690e8b97e3bca1addd3d866",
+        "dataset": "Agere-KYC-Synth/train"
+      },
+      {
+        "path": "datasets/agere_synthetic/agere-synth-v1/train/credit.jsonl",
+        "rows": 200,
+        "sha256": "1ddaf4d477d8fb99a92a678b58b216babb0052b2d4524ae07053f1d4d4001d06",
+        "dataset": "Agere-Credit-Synth/train"
+      },
+      {
+        "path": "datasets/agere_synthetic/agere-synth-v1/dev/kyc.jsonl",
+        "rows": 100,
+        "sha256": "564adc70878e20435be2a63dbe28cdcd1b7179ca3d78aefd276b81c1f1c6baa9",
+        "dataset": "Agere-KYC-Synth/dev"
+      },
+      {
+        "path": "datasets/agere_synthetic/agere-synth-v1/dev/credit.jsonl",
+        "rows": 50,
+        "sha256": "5ed7e960a6c10693f99e4ef733e07a7c15b18be5845faf6d37d1988340d0011f",
+        "dataset": "Agere-Credit-Synth/dev"
+      },
+      {
+        "path": "datasets/agere_synthetic/agere-synth-v1/test/kyc.jsonl",
+        "rows": 100,
+        "sha256": "b96c08057398cc27d90bd073a06207798dadb1a06a3475730a6176c07a1e8aef",
+        "dataset": "Agere-KYC-Synth/test"
+      },
+      {
+        "path": "datasets/agere_synthetic/agere-synth-v1/test/credit.jsonl",
+        "rows": 75,
+        "sha256": "c650054221a2d3b1c4aff0b3bf32a80ad9c7b49420a2163ee2053e0c79e2bc79",
+        "dataset": "Agere-Credit-Synth/test"
+      },
+      {
+        "path": "datasets/agere_synthetic/agere-synth-v1/finetune/train.jsonl",
+        "rows": 600,
+        "sha256": "1f07b42fbf665feb97744a3594c2a4a0305ad5a877bddf7b267cdb5c98fe565b",
+        "dataset": "Agere-SFT/train"
+      },
+      {
+        "path": "datasets/agere_synthetic/agere-synth-v1/finetune/dev.jsonl",
+        "rows": 60,
+        "sha256": "56cfba8aced6af280fa13efebe617ca4029b12de77d5c309c25eecb3f84d0e32",
+        "dataset": "Agere-SFT/dev"
+      }
+    ],
+    "note": "Synthetic starter corpus; validate content, labels, diversity, and coverage before using it for scientific claims or training. Test files are frozen in manifests/test.sha256."
+  }
+}

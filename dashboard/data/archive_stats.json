@@ -1,0 +1,27 @@
+{
+  "total_files": 2598,
+  "total_bytes": 676686919,
+  "total_mb": 645.34,
+  "by_category": [
+    {
+      "category": "datasets",
+      "count": 128,
+      "mb": 170.97
+    },
+    {
+      "category": "phase2",
+      "count": 37,
+      "mb": 1.62
+    },
+    {
+      "category": "runs",
+      "count": 2405,
+      "mb": 472.34
+    },
+    {
+      "category": "weights",
+      "count": 28,
+      "mb": 0.4
+    }
+  ]
+}

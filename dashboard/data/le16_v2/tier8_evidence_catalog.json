@@ -1,0 +1,1381 @@
+[
+  {
+    "file": "research/tier8_v2/evidence/adaptation-sequence-launch-01.json",
+    "sha256": "621fbfb938e4c3a06335648e09c5869f93880f6dde4a24f5e08487456047f10a",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/adaptation-sequence-launch-02.json",
+    "sha256": "3addbd9e913aa2eb1f275ae919d04669874043817a3e0118340705df45b0f5be",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/adaptation-source-annotation-audit-01.json",
+    "sha256": "bfa8dc6a3046bc5c528f1b3baea49269f4398b738d29caad909062b3dbf0b83f",
+    "n": 761,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/adapted-eval-launch-01.json",
+    "sha256": "0b2328234efcf6c0b5cbd3c57900037914d074e932ec1046732dd5d43a319329",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/adapter-converter-source-01.json",
+    "sha256": "9b653e09050c8ffeaa69d0a5beb69ba105d083e81cb7670f5bd0ba1a17905777",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/candidate-model-3b.json",
+    "sha256": "06a7b518b67dac4aacf9d0b22432f593b41a2dede5045e7f40e8a96cf3dc90a4",
+    "n": null,
+    "status": "download_verified_only",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/capacity-05/memory.jsonl",
+    "sha256": "63b4ea1eeedba84e6ae6b64cc71db4d05af5620610b486b3b18defeed28a6334",
+    "n": null,
+    "status": "non_json_evidence_jsonl",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/capacity-05/probes.jsonl",
+    "sha256": "118ad72248627f86e8291e7cbae462ff651891fa21b883562377fd0f0dc46817",
+    "n": null,
+    "status": "non_json_evidence_jsonl",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/capacity-05/summary.json",
+    "sha256": "5007e2503d699647bdb4f7cf8768937773371456f1b11c1e13ac6f07ec9366b2",
+    "n": 3,
+    "status": "complete",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/causal-schema-compile.log",
+    "sha256": "de7cd7f0272fc961562dc8b3bb23103786155b02165f0bcc8f7b9b324e322a5c",
+    "n": null,
+    "status": "non_json_evidence_log",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/cell-adaptation-data-01-superseded.json",
+    "sha256": "1fe82bc6f4f34de9f61c2c0f784f11b27dc406185b65bdaf2581678f6f10c4d2",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/cell-adaptation-data-01.json",
+    "sha256": "7dcb7df3cef12badd5d09c64868311816a1d98011df744fa790450a281e30f35",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/cell-adaptation-data-02.json",
+    "sha256": "d0d274dab7c1fa1a09f076af6778b43c9c24bccf0032c98b618eb7813edef2eb",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/completion-encoder-validation-01.json",
+    "sha256": "9b8c50c85ffb506d7f277249472a4250ca4dcead92c1a2270ad4ae5a8cef8b7c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/contract-tests.log",
+    "sha256": "bea8f5d87e8cce3bf286c3b280094863cebe0725f4cf8322e648559741375497",
+    "n": null,
+    "status": "non_json_evidence_log",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/control-sas-natural-progress-01.json",
+    "sha256": "2ae9571f412eb7ea513c665ad3883ec7f659b83ba00b100d5aa1a725c15abb14",
+    "n": null,
+    "status": "live_incomplete_snapshot",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-binary-sft-data-02.json",
+    "sha256": "2fa8a13d6f9d50a914a81bc05b899628bf8bff3d7a8a9b32bc412545842663e4",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-binary-sft-parity-02.json",
+    "sha256": "3512fa43bbe37db81bff9a355ccda7ee02375ba94bb9795ad7e51be8892d3ad7",
+    "n": 3522,
+    "status": "True",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-crossed-quartets-prepared-01.json",
+    "sha256": "033ce8afe9d511e3229ea9634ef34a368be7522e003ac8accfa610b2234aba03",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-curriculum-experiment-01.json",
+    "sha256": "87bca68f90e1859b4a6db933e4aed88fd6b89026d2c80a3c1b21bdd32aa880f9",
+    "n": null,
+    "status": "prepared_not_scheduled",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-curriculum-prepared-02.json",
+    "sha256": "302644945d773eec7d0a5ef698f5b04ea45d2db9ba15eba11a4761fef7fb3a7c",
+    "n": null,
+    "status": "prepared_and_numerically_audited_not_trained",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-protocol-probe-launch-01.json",
+    "sha256": "c2f0f5038a5eb1059ba045d856b7362a8418efb28ac6da073e29e46f29ccfb4f",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-protocol-validation12-results-01.json",
+    "sha256": "580302c632f51dcfbc52e00ee4a132d35f3b48df8a7d47ba5ff9cb2c802db684",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-quartet-probe-selection-01.json",
+    "sha256": "5b02b1030a540c599c8565c9daf191c00d9e7e721e53fe6d59a1d3116b1e680c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-quartet-probe-training-exposure-01.json",
+    "sha256": "5abbe37f075bba1a58192f737eff29d301016c4c66d21d33dcc0ea488d21abba",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-question-blind-artifact-audit-01.json",
+    "sha256": "b2492b785975574b6c6840b29ac1a9d724d84bdc424938a72ea1c8cce80fe810",
+    "n": null,
+    "status": "complete",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-reference-label-issue-unp2016-01.json",
+    "sha256": "aee609c090f732f4234239d34ed2a8aa6672476cf5ee820541f0f89bee3740e6",
+    "n": null,
+    "status": "unresolved_reference_semantics_issue",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-trained-policy-guard-checks-01.json",
+    "sha256": "e5cbfeff3ab0b9e21d510509d6c30ccf2cfc1cbc21a02c71ded5cbe2e43a33e2",
+    "n": null,
+    "status": "comparison_validation_implemented_no_new_model_results",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic-training-base-3b-ssd-01.json",
+    "sha256": "a48f9db56dcf9619bfc65ea8710815adee5e474d4068fe64ae7b27ed14b82748",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-completed-and-applied-01.json",
+    "sha256": "61b8c66004d98acd490294f48a9d9cbeb4b1058c8a3190b68e2e6ee7a288968e",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-controlled-paired-results-01.json",
+    "sha256": "bf01d3247ca43cdc272978cdd0c4b9b86665476c202e3ab68b2f03ad4669f06d",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-fit-01.json",
+    "sha256": "01cc3310c4490150a4cf7af149c1348c071078a85dcac2bb26dfb283ec425ee4",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-natural24-delivery-results-01.json",
+    "sha256": "837f40b64f69fdf29d05e2ae43410eab7a8a90e271585bad66de7ffb75b19ba0",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-posttrain-launch-02.json",
+    "sha256": "580b2d2f0e4bb1417ffa231d658b3723ca79f35ea9c77809b509ccacefe5c98d",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-posttrain-plan-02.json",
+    "sha256": "51e4c252920955b8948e54c917c8dc2d3c94df1f8ddd496a0235600829dc0630",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-training-launch-01.json",
+    "sha256": "ffacf1b8b527087d7ef7ac3acc031b0e07e931f016fc2b2b31d11ed60a1f01a1",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-training-observation-01.json",
+    "sha256": "39ffd8b269c455c9c7c5bc6001fe8d71bf29f9e49cbbdc2519a870873a930497",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/critic3b-training-observation-02.json",
+    "sha256": "d72b29d1a88d5f1a803e3095e9ed69c1a86bf9c9db5a8970b70f9d58a95b25eb",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/crossed-sas-live-progress-01.json",
+    "sha256": "4f651a3200dd7bb88212cdcf563d98dd77285d84f47e162520b98a8184969363",
+    "n": null,
+    "status": "live_partial_training_prefix_verified",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/demo-bank-build.json",
+    "sha256": "d7b508496ea2e8f6877ec3b1dc7210f4349da867f16070535511f8519bf23e6b",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/demo-bank-selection-audit.json",
+    "sha256": "899bba51b2cc6c32ca6859cf8a6c3bb752809aadb713cc10fb1c40ebfdfcf232",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/demo-source-overlap-audit.json",
+    "sha256": "0e560e6318ae914dc73eaa408c29134e0a699f29319b01ce6eea96b025d366b9",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/deployment-sft-1024-02.json",
+    "sha256": "0ac749299078f46a67f9e57f6830b84e2418b425e96482c80dcd9494a2969a06",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/deterministic-dev-cases.jsonl",
+    "sha256": "9126e6ff5e2b4f131c55e335ea1ea0a76a5262e121116610f6fdc3e8c62d36a1",
+    "n": null,
+    "status": "non_json_evidence_jsonl",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/deterministic-dev-summary.json",
+    "sha256": "2f95d9e361c4463688b202fe00eaa4e34042c94f3cb85396c31b230b10d4b112",
+    "n": 150,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/development-manifest.json",
+    "sha256": "3524f145ae0cc3b5c35abd145104f5b396bfc33da1f1cdf9399e8e3a40b492be",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/external-baselines-completed-01.json",
+    "sha256": "70112d2876ae0a8d5bdd4dd314c7276ceeb6a31be7c6f15604027d5a2962f4a9",
+    "n": null,
+    "status": "complete_scores_replayed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/external-evaluation-interruption-01.json",
+    "sha256": "5f624686aeac7ac0c3e3f76bf89aaa52fb5cbe9abe35f68e269b8bccf0db1ab4",
+    "n": null,
+    "status": "interrupted",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/external-evaluation-launch-01.json",
+    "sha256": "175879b5e465b45ac2719ad435d1584b2579341475bdb1850d941c95526554a2",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/external-interruption-boot-evidence-01.json",
+    "sha256": "8f9374ee7435c2affd711fc0e93058424313d471717575cb3f8186c768eb9ea1",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/external-recovery-launch-01.json",
+    "sha256": "ac6d2c7b0372508158825806aa1f1875b3e76c7be75a13b62746a1ad75f1bf0c",
+    "n": null,
+    "status": "preflight_refused",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/financial-schema-compile.log",
+    "sha256": "9c2a90d1ef602e7600d7c64cb54775483e809f0770ddbc973e6ce8a62e44929b",
+    "n": null,
+    "status": "non_json_evidence_log",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-causal-mas-vs-sas-smoke.json",
+    "sha256": "c7bea8cba9ea456aafa6ca1cd9b753abb7d4a60399354fc8720c63e12e072ae8",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-demos-dev24-paired.json",
+    "sha256": "1be87dbe0a026a3b165d305f2dc5e0c310c93483af7cdf6274991632be0e28e5",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-development-manifest.json",
+    "sha256": "e831a87d08929d0b20b9626c91c31da74054bea751e78f021f389e702abc228f",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-literal-mas-vs-sas-smoke.json",
+    "sha256": "1d12f1b80b49c3a65b7a1bd5865c835ee4123176130b4a2701dca7f2c2a02488",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-3b-adaptation-dev24-paired-01.json",
+    "sha256": "0ff984d535854c2f0167a4e339d1f7ca288bbc9bbc1f46f5f7ae9b543957f279",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-3b-adaptation-unit-v2-01.json",
+    "sha256": "a36cb882461b9263c42667d7394b1048852619480d90532c87985cda0647ff15",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-3b-adapted-vs-analysis-dev24-exploratory-01.json",
+    "sha256": "b86b3d00eda1c01c95e6575dfb5aca897051d4fe07d9866b4d4bc4748fbd7c1c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-3b-analysis256-dev24-paired.json",
+    "sha256": "3899c1e93ef2eda9cc9923ef01b4bda4beaf06b5b6fbec957e9ab43b1ca237e0",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-3b-analysis256-unit-v2.json",
+    "sha256": "5471dc96fca6de38e9c7cd0faa5876448d7c69eecbee6e73ae4df83086a5438b",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-analysis-dev24-paired.json",
+    "sha256": "5df0555c697615ac4a00f6cf482fe6e54eb2d2640d1bd1ec0234193f565e3f1b",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-demos-dev24-01-diagnostics.json",
+    "sha256": "dd578238c71ca73bc4aeec5928fba1ab249c59bf910c51d2f9910751b720521f",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-drafter-dev24-paired.json",
+    "sha256": "c04677b16388064aafec37ce27d494e985e2ca88ec6f3554f306e110f0540bf4",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-literal-vs-reference.json",
+    "sha256": "d38c50dbc0c4b8ada98170a24b4cd7df4b1c95522ec8ffe6215b1bc850f4d18d",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-mas-smoke-01-diagnostics.json",
+    "sha256": "d7fc5f6d3f5a9c10f56c4c9d18e2aba266dfaed0aa1f4d1e2c2d576e75eff392",
+    "n": 2,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-proofpilot-paired-01.json",
+    "sha256": "b06e5bd600b3ed45720780e833ac2e0a87e2a2f43449396ad0aea7bd6c5c3fd8",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-reference-audit.json",
+    "sha256": "48764927868906d72a8ab512b2945caa1cf38005c3d23df62d4e1a95b1969ce7",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-reference-mas-vs-sas-smoke.json",
+    "sha256": "84a9ff11c76e2e597e7fc2b48c75b13a96af57989584b56d358497315efc4a13",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-report100-development-selection-01.json",
+    "sha256": "b6fc430428d56152ce8c84eb7da6d14563a561baf8ec726d767d8409a8d05a78",
+    "n": 100,
+    "status": "frozen_development_selection",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-retrieval.json",
+    "sha256": "b25f83961535643333dcb9f22ddbed8988899896bf6e844e32fcb3562a432595",
+    "n": 24,
+    "status": "list_artifact",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-sas-analysis-dev24-paired.json",
+    "sha256": "cb0e1e3c98229be173384142d60b2bb418183ebd9a30686b1705c2f7a1a0f78c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-sas-analysis256-dev24-paired.json",
+    "sha256": "a7877c8ef84747b551abbaad51049d9ad64cd4423ca3afb488b0887c343bfc3c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-sas-analysis256-unit-v2.json",
+    "sha256": "5874a8fc266104da5d64622d1d4f50b973d7e4569d54d679e8f7d7909e7b66a4",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-sas-table-analysis-dev24-paired.json",
+    "sha256": "cd210c527e569a922e24fa171a3d08242e522cb74c817dcea182f6ecc4201b0e",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-train-source.json",
+    "sha256": "0f59d91f605c14fd98bdee4fa38407e42780a7ead1ed5cd1e88251ed620e0e6a",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/finqa-unit-audit-v2.json",
+    "sha256": "1e5a192290f81fe8f597fea89fb0876d29a7c16af017975017ff744232079d9d",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/first-row-fitting-test-01.json",
+    "sha256": "a975a6837cb9b832c74481cf82f3f9ae4ac8d13d6023409e0d160d415c2aeb84",
+    "n": null,
+    "status": "verified_offline_fitting_test",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/frozen-head-loss-cpu-proof-01.json",
+    "sha256": "915a80c78fe3ad861303ada1a008f1c58dad7e5c5457e6ba62326c7cfe42cf43",
+    "n": null,
+    "status": "cpu_numerical_and_tiny_model_tests_pass",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/header-materialization-fitting-01.json",
+    "sha256": "04394803af58889bf8ef8d53b0324e113acbfdf8888acb66983fa82ac7b71e01",
+    "n": null,
+    "status": "verified_offline_preprocessing_prototype",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/header-neural-fitting-plan-01.json",
+    "sha256": "04c6a8931bdc6c0a128901e3936843374f7e368c42021b0f3f9599eefca254cf",
+    "n": null,
+    "status": "prepared_and_metadata_checked_not_executed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/header-retention-literature-01.json",
+    "sha256": "43b3d2e78ed10a511429ac31f1593076fcb614734702ec658c25c11ccb092181",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/header-source-support-01.json",
+    "sha256": "a3d9f9a6e3baf33b82500a3de994c42b5412b66336722707084a1f35d5ff8fdb",
+    "n": null,
+    "status": "complete_source_support_preflight",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/header-visibility-attribution-01.json",
+    "sha256": "976adc03016ef18f2b0ba4cb88a4f15fccc774ed057680b6fbe35f16048e995f",
+    "n": 73,
+    "status": "complete_offline_source_visibility_attribution",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/hf-tokenizer-parity-01.json",
+    "sha256": "14c74addf0a42200d85c29d8335f5202cd6033f7decc2c6655d438a92c346d9a",
+    "n": null,
+    "status": "True",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/hf-tokenizer-parity-02.json",
+    "sha256": "2be2c99130c37fa66b2a64092314412261f70c8ae58d3cb46bced5382401b7ec",
+    "n": null,
+    "status": "True",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/hf-tokenizer-snapshots-01.json",
+    "sha256": "79dcdd10e81f94cd9192aaf299c5c69a92b3c56ce8dfc5331d27ae9d0fd18f7b",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/joint-discovery-posttrain-launch-02.json",
+    "sha256": "d9d2d3c619366ffe836fd0c46411601612afa7378aab465b474b25b5704eafab",
+    "n": null,
+    "status": "launched_waiting_not_completed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/joint-discovery-posttrain-plan-02.json",
+    "sha256": "ae579484b961c706a2b7478a9a130c3a54c395f9680449ee8694f55eee0ac99c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/joint-posttrain-launch-01.json",
+    "sha256": "8220c7dfffdc16ec340034badbc391ac73b47a1854b290cf22a2cdb57134a36a",
+    "n": null,
+    "status": "launched_waiting_not_completed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/joint-posttrain-plan-01.json",
+    "sha256": "6546895c65b68dda5778bf12de543af1d418601e4ef322b9a0a5cd9c35c04f98",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/joint-posttrain-superseded-01.json",
+    "sha256": "2be3f76a10f01b81e1a5c85baaf14c61deee622c0c29f325aa8c1fc6c50f3d87",
+    "n": null,
+    "status": "superseded_before_any_model_job",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/literal-operand-coverage.json",
+    "sha256": "e09b4f036e3e1c01dfa79148736100101f7e60bdae2b25960da8cee5b1556b1c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/local-repair-opportunity-01.json",
+    "sha256": "51584122fa6e7179865ac352d8a354526608298c1eba5c3b0f9a940e15a1a40c",
+    "n": 24,
+    "status": "offline_opportunity_not_policy_success",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/mas-representation-strata-01.json",
+    "sha256": "5374408239fb2d82783931e89b6f902e23c9585a4e1714f6859be3c200e65619",
+    "n": 52,
+    "status": "complete_descriptive_posthoc_stratification",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/mas-smoke-01-vs-04.json",
+    "sha256": "f1f0f566f20019842f096cf6c6ee91c5ea8c6c33b681580afd591486ca9efe0c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/mas-smoke-04-vs-05.json",
+    "sha256": "d8a28d9bc28b3b3b811d965ea2a157fb53c3cb1c835656e700dc9757535ff16c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/mas-vs-sas-smoke.json",
+    "sha256": "27b91015560bc32b73a1b37c058b4edb18772e438374a58a2ddc74fbce9ceded",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/mas3b-extended-quartet-probe-01.json",
+    "sha256": "2d8c9c44389759b5f977446a9074adc2925087f8778eaf6ff71fb2c759fcde0d",
+    "n": null,
+    "status": "audited_complete",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/mas3b-original-quartet-probe-01.json",
+    "sha256": "f7df280b337b2bf1cbca8c0a7df9f12a82fe3ee26bd8c651f7c57852f693eb3b",
+    "n": null,
+    "status": "completed_training_source_diagnostic",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-common-actor-complete-01.json",
+    "sha256": "b95251cbd1e7e03275d7d3e974dd6c84ce39689ff5944743a04cc7844c029a6f",
+    "n": null,
+    "status": "audited_complete",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-common-actor-fit-failed-01.json",
+    "sha256": "2883160e9dec6e257ed9cf0c46b6a3cd46b79bdac1ba388fca60b0e3a1cd550d",
+    "n": null,
+    "status": "failed_before_model_loading",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-common-actor-fit-launch-01.json",
+    "sha256": "bf1a98c427aa57a3b588271b471876ecc5c04238da7a00660ffc54a52f501ed7",
+    "n": null,
+    "status": "launched_fit_not_training_gain",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-common-actor-fit-launch-02.json",
+    "sha256": "ba2d1cc6478b8820689cb901e966f06d29ea9e7942909ba17559d9b4f9ed13f0",
+    "n": null,
+    "status": "launched_new_fit_after_diagnosed_path_fix",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-continuation-prepared-01.json",
+    "sha256": "51fbab8012f86a8137839d79e3a6807fbb0b1fa1ab8c03a0bc01ff9c72b88c1f",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-continuation-worker-01.json",
+    "sha256": "52d922da60609143b832e919694058b0a7a9103ca709aa868bdd23ea9f710a18",
+    "n": null,
+    "status": "implemented_not_full_model_tested",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-control-critic-complete-01.json",
+    "sha256": "4d7a0451f81d1517c03ed4f1ea2bef09a926713037f8ed410087698c1ee54ffa",
+    "n": null,
+    "status": "audited_complete_training",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-control-natural-complete-01.json",
+    "sha256": "d2837a1c87a24dac288f273fbedb749bfe4a28ab49ad0f8d5edab9b70f581c37",
+    "n": 52,
+    "status": "independently_replayed_complete_natural_policy",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-control-sas-complete-01.json",
+    "sha256": "56a898ea46afbaf699f1315501508f20dc33e8253a2a221a1f53878cf65a1b73",
+    "n": null,
+    "status": "audited_completed_control_sas_continuation",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-control-sas-natural-complete-01.json",
+    "sha256": "7c898efbef9252329d1b4e976258c04f2bb15c4304ab39406f2e17e289b9f7cf",
+    "n": 52,
+    "status": "complete_independent_natural_trace_replay",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-critic-behavior-audit-01.json",
+    "sha256": "3fdb3406832062600b425c88b2d3054045fb21ec20d67ff9150a7c94978a9b9b",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-crossed-critic-complete-01.json",
+    "sha256": "5db8ffb5e4816db2128bda0abf9266d691fb2227caecdea101ed2e7f57eb5bfa",
+    "n": null,
+    "status": "audited_complete_training",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-crossed-natural-complete-01.json",
+    "sha256": "5c62c350e7d900ffef90c01d991da36b7e7328a06c52b3d2d5a232cb092d9b33",
+    "n": 52,
+    "status": "independently_replayed_complete_natural_policy",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-crossed-sas-complete-01.json",
+    "sha256": "2fb529cf4e589ee6d35640dd3f1247c044ed691ccfdf7c66662ca70cb06cebbb",
+    "n": null,
+    "status": "audited_completed_crossed_sas_continuation_and_conversion",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-crossed-sas-epoch-launch-01.json",
+    "sha256": "f4fe680f9a619337a2ed804f25765698b27656f605d7b08a58ecdb7b26c95e34",
+    "n": null,
+    "status": "full_epoch_controller_started_preflight",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-crossed-sas-fit-complete-01.json",
+    "sha256": "b4406e08b76dd90bd8637db7c7372199a7eb2cb4eeb65467e3c49ff04a8e4b11",
+    "n": null,
+    "status": "verified_completed_fit_only",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-mas-original-selection-01.json",
+    "sha256": "a20fd65bfeaac086b825dfa0b2118c77c6616b2af7cd025420151e9326b8da7a",
+    "n": 52,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-mas-selection-paired-01.json",
+    "sha256": "282f5e49b9eb1d6116784a0231db2d64365cce9cc70a4f92f188819387f68199",
+    "n": 52,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-natural-evaluation-plan-01.json",
+    "sha256": "72297d007472f30cf838691d30ad8d838afcdd53016ac3b55af5daa2ee5dede1",
+    "n": null,
+    "status": "prepared_not_launched",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-natural-plan-superseded-01.json",
+    "sha256": "1b283484302aa286ab09fb2be9be6770492257f1db1932ec4ba5a5a1557f4eec",
+    "n": null,
+    "status": "superseded_preparation_only",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-natural-plan-superseded-02.json",
+    "sha256": "5c79017ac467db45595079db59d5d1a6d05b4b00dca9b2c691c033c519dafecf",
+    "n": null,
+    "status": "superseded_analysis_bugfix_only",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-natural-plan-superseded-03.json",
+    "sha256": "b14da7c80a1b8180e3a29b76776acf749efc0fb89b55df190d209798ab5aeeb9",
+    "n": null,
+    "status": "superseded_path_normalization_bugfix_only",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-policy-trace-audit-01.json",
+    "sha256": "05713c6e6ed70b00bc8be5da3d10fddbc0af8472bb6e7184743a47d124472363",
+    "n": null,
+    "status": "implemented_not_new_model_evaluated",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-serial-study-launch-01.json",
+    "sha256": "6316aac595f025efa49b09e14b96408007252df367965e20747c694b09c8c9c3",
+    "n": null,
+    "status": "launched",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/matched-serial-study-launch-02.json",
+    "sha256": "f4eb0f3d6d639734b87b24f7c2891ed3e688c432e6dd71e24c7812d77dd14160",
+    "n": null,
+    "status": "explicit_suffix_launched_after_verified_interrupted_metadata",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/models.json",
+    "sha256": "afea0c363a706e24430b28470cb5d4e014d748550e21fa9c4411dafe44ffc332",
+    "n": 4,
+    "status": "list_artifact",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/native-models.json",
+    "sha256": "0d23676fa347d101aee40753286da4d20903ccd9ff1c6dec603eb63ac2c823c3",
+    "n": 2,
+    "status": "list_artifact",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/natural-error-input-selection-01.json",
+    "sha256": "c3c2a53c2ad39d8037ed84b77ad4d688dd02a39d1df6c256a8ec2e0e9520c0bc",
+    "n": null,
+    "status": "frozen_inputs_only",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/natural-residency-scope-01.json",
+    "sha256": "0673b7ca059d665f10b05070a3738a820b84534fea1669d81996b92863e9f234",
+    "n": null,
+    "status": "verified_runtime_residency_scope",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/operand-risk-audit.json",
+    "sha256": "dfec2e7ab258040f392e14df69b6afff1f4cd9067815722ee51e84ed443c0ad8",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/program-graph-audit.json",
+    "sha256": "456eda546b020167e398995c0a68cbb4ff264acf9ff8aa41ff9f8190fd749e4a",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/program-influence-audit.json",
+    "sha256": "aabc782036123cd3db732df3f3542d975f0e8d261b6f9c1b63abfa705406ae8b",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/program-prefix-audit.json",
+    "sha256": "0266fb9bb1ac51db6194b44b49f9045f793406dadecf0968883d1366480e80a2",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/reclaimed-native-cache-02.json",
+    "sha256": "9e20e1b30aba792c1435b32fe2780c0bfe69e3a0b3b47c792e909265e90ea131",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/reclaimed-source-cache-01.json",
+    "sha256": "c69d9786d3dc6853e94c9a8e66fb2770c689c541ddf6714bdb9ddc32b204f5cf",
+    "n": null,
+    "status": "complete",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/reference-integer-rounding-sensitivity-01.json",
+    "sha256": "c35b9a0b03839f4a942e0ca4941f4b5e2b330b3cfb1f91e23fc098ba1610e517",
+    "n": null,
+    "status": "offline_reference_convention_clarification",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/reference-schema-compile.log",
+    "sha256": "b8bb5fc7c1729e21d96e09dc17b762e876858136fcb10246cd440a09982fb93f",
+    "n": null,
+    "status": "non_json_evidence_log",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/rejected-download.json",
+    "sha256": "e293c12493a117488d78f75e972757dc757c2a6f22e263b02fa8ee6ca09122da",
+    "n": null,
+    "status": "rejected_integrity",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/replay-compatibility-check.json",
+    "sha256": "81d7300c4549a67e993241eb166afbf73e861e093752c6656d714c5dd778f8a6",
+    "n": 24,
+    "status": "compatible",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/replay-grammar-check.json",
+    "sha256": "8dca9fb9778aff2079546aea51d5a067436973b681d57ecead7ba81ff9e50569",
+    "n": 2,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/representation-coverage-audit-01.json",
+    "sha256": "3409f30efa44e9c307c60ed3864f98b06a575f6dac623bb3609da2515c2bb606",
+    "n": null,
+    "status": "verified_offline_diagnostic",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/research-direction-audit-20261027-01.json",
+    "sha256": "5dcb5173f3941bdc341374b079be44e0fd25817f193fc464cf066001dc302121",
+    "n": null,
+    "status": "completed_results_reconciled_for_direction_review",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/runtime-import.log",
+    "sha256": "7a687f452a6280bccd45b1a7c615bf0b29ae8e6ffc168505e988f02f3653be0f",
+    "n": null,
+    "status": "non_json_evidence_log",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/runtime-packages-before-build.txt",
+    "sha256": "70de4fe39ee3078cc7c9ee516a8fbd731005068308ce5b1c56afca393dc8b553",
+    "n": null,
+    "status": "non_json_evidence_txt",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/runtime-packages.txt",
+    "sha256": "acb0e09a8a65b226d418de810fbb118d5b4f879521bddfa51bc8cdbba858644b",
+    "n": null,
+    "status": "non_json_evidence_txt",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas-joint-data-01.json",
+    "sha256": "82213bf6e9f215a1c956220ca6bb4ebad13462e22e8092b52d229ccac04da218",
+    "n": null,
+    "status": "prepared_not_trained",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas-smoke-01-vs-02.json",
+    "sha256": "588c7b1020197cc44ef050ab2d5e66804de667354f490b257e16f9e4ddb53a92",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-compact-completed-03.json",
+    "sha256": "f6c39406ba786724d45065bbb2faa53df706b4fd03e177b082fdd2877b7e7b97",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-compact-launch-03.json",
+    "sha256": "fa5e6017d3abcf1331d5e1a7b4cc851cb7efd1f1976976a1889364658ea9a585",
+    "n": null,
+    "status": "launched_not_completed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-compact-plan-03.json",
+    "sha256": "e4e5216d401d8e9a776746f52e27bce48c298c9ada7b18fede139fd5eef06dd4",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-completed-01.json",
+    "sha256": "d8c7d21533ea349f8d210ef524528b61e593c370ba48ffaac251c825ebbcec06",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-launch-01.json",
+    "sha256": "e0698375b88734d15147b9436dd835ba67640dd47ac015c6b934ff0076b99140",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-plan-01.json",
+    "sha256": "413dfe5d46572a01dc89a20589cec741468b366d59bb7dc70a464443f3330d0a",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-pread-completed-02.json",
+    "sha256": "62825eb5bd046672e71bfaefa5b66ad9ac7bba4d6c247ca23526814eb9f12c22",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-pread-launch-02.json",
+    "sha256": "528378c487601a7677583892255230eeb4d1f2b089d04a09d6df0784e7711bde",
+    "n": null,
+    "status": "launched_not_completed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-fit-pread-plan-02.json",
+    "sha256": "50126aeba214a38fe09bef3569afef434b580ce3ce482b9971f20e7d4ec2c382",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-native-application-proven-03.json",
+    "sha256": "6aeaaa13acd817304cf25f5bb2bf77b655eca4e8641d0832767d87657c3daf65",
+    "n": null,
+    "status": "native_application_effect_proven",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-quartet-probe-01.json",
+    "sha256": "25a6e65866ba49b34b87682af3b1c3168cda70c70c839dd7dadd9dbc595d278b",
+    "n": null,
+    "status": "completed_training_source_diagnostic",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-compact-launch-03.json",
+    "sha256": "793ad598348f102a072b9de6d1c25b5a9488410133bdb526d0bd85c99089ace7",
+    "n": null,
+    "status": "launched_not_completed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-compact-plan-03.json",
+    "sha256": "a252c39f444ae0d20cda35c393e25431eb266fbddffa1b410d60c5e7f36f3df3",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-failure-01.json",
+    "sha256": "4a3466373ecbb71fc1c04e965f5ba2dbb531901e1128e7ee1d9fa9417f7e9b9e",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-launch-01.json",
+    "sha256": "ac9a8d6266be429ebc88d036179b93c795de36739287256f8b9448f0bc14a878",
+    "n": null,
+    "status": "launched_not_completed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-plan-01.json",
+    "sha256": "e80a761b2a9cd8dd2d0a615a21fc04b0f58f11a9a959a19f0ed0944a018a336e",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-pread-failure-02.json",
+    "sha256": "4a4d80947a3a2008f6b62f1885769d2cc670d40e241f25bedcc0a65838c3c9ba",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-pread-launch-02.json",
+    "sha256": "b3beaac53eb290eb4f93eec4b4e09d842717cd19cbfdacb4ad9934ea72079709",
+    "n": null,
+    "status": "launched_not_completed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-pread-plan-02.json",
+    "sha256": "02adbe78e4d0640da04c00508563a3b747f9e2964927414bb46b7afaa3bcfc9d",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-progress-01.json",
+    "sha256": "15a1f8eb16d119850415a582d092bb1790618a6fa5eed7f50add5dcfcdb87885",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-train-progress-02.json",
+    "sha256": "cf350ab7fd5a8cdca1eec4323a06f65ded3cb2362665eda54eddfb8f9eb130e1",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-joint-training-completed-03.json",
+    "sha256": "3b1174675696d531acb051afe90201713f55cbe4634350fee5995b0671e5d9ba",
+    "n": null,
+    "status": "full_epoch_and_validation_complete",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-cpu-checks-01.json",
+    "sha256": "a1d5d70c761a02a7aff7a06b0db2ec5ee9b3a93690a82ec973b885f36755d1c1",
+    "n": null,
+    "status": "CPU_checks_pass_GPU_fit_not_run",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-completed-03.json",
+    "sha256": "6f57a516a849ff398c74021cc53fafe01d1c9976ed756ba26d39facc26015d4d",
+    "n": null,
+    "status": "actual_fit_complete_not_QA",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-failure-01.json",
+    "sha256": "b480a356149025a8e8a7b29816008317c4a4f7a365aa5d85c3703e2bac653b64",
+    "n": null,
+    "status": "monitor_stopped_during_model_loading",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-failure-02.json",
+    "sha256": "54acf86de9b540629aa9d66ca835ebe713123f4839fd945d3453fef1769128cd",
+    "n": null,
+    "status": "stopped_loading_fourth_shard",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-launch-01.json",
+    "sha256": "a523fdc48d894feb05792817dc2b7cb22d01377801d520a7f3cb49341b28e2e2",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-launch-02.json",
+    "sha256": "a69b0b7757e3e9bfc12bbda00334ef7182a2d501cd59ed58bd85219e28ebcfde",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-launch-03.json",
+    "sha256": "003e59aeaa3c76fcc7188c60b3dedb18b5e859698874e73c184872f86cfff72c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-plan-01.json",
+    "sha256": "1b2ca7371810444610e7fc348df8a794e0e060f40a4b660284266b22647ad523",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-plan-02.json",
+    "sha256": "a15a0d25a76678fdbe73d0ee308d30140946ab826076933fddcb6d8f8b453bdd",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-offload-fit-plan-03.json",
+    "sha256": "aa2faca52a49b20521b2ff693669d237f9295fd7b2b54104dc78bde7b4adde39",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sas7b-ssd-deployment-copy-01.json",
+    "sha256": "1fcbcd01d150faa32d0531ad8e45a96ddb30e950ea3072d9d0ff0c458ed4139c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/shared-role-serving-launch-02.json",
+    "sha256": "163fd5d7321b1ce3c5fa9da5599c7f59dcaf010f8bb0723acd2770455ff8c41f",
+    "n": null,
+    "status": "launched_waiting_not_proven",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/shared-role-serving-plan-01.json",
+    "sha256": "0844025ba68164fc29373a43a82af2fb59711e3f450bd329884f8cf6c9e4f649",
+    "n": null,
+    "status": "prepared_not_run_or_queued",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/shared-role-serving-plan-02.json",
+    "sha256": "b517c0302fdedc0400fd12f298548d673da91356029279c9c4bc74c636d470c1",
+    "n": null,
+    "status": "prepared_not_run_or_queued",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/shared3b-serving-parity-complete-01.json",
+    "sha256": "54047606066f36d76c26857fc6078b8d095ca61795d5cbfbbb5121d47c743da3",
+    "n": null,
+    "status": "audited_completed",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sketch-grammar-audit.json",
+    "sha256": "4f46317a4b5ffa032503c7b16ffa83902362e27de3d7a08dcaec1e697cbfa00c",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/sketch-shape-audit.json",
+    "sha256": "b80a25b08965aa591f56dcdc0813af74402ebdf354a04cc9a9a12dce5cff71a6",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/source-cell-identity-audit.json",
+    "sha256": "9fc28261f25ff1bc74ba065864481a65518312962f2be87f064f68c1999291f8",
+    "n": 48,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/source-quotient-diagnostic-01.json",
+    "sha256": "d69243dbf264e5dbfa87445c043d2773b1a31ab33be0f7d6867c192d5572c395",
+    "n": 24,
+    "status": "complete",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/source-span-catalog-fitting-01.json",
+    "sha256": "7123fc0805f6bd43dfcd6f70f76aa580477679991773b62c87cac174a6234f05",
+    "n": null,
+    "status": "complete_offline_catalog_only_fitting_baseline",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/supervised-logits-equivalence-01.json",
+    "sha256": "3eb0267739ed44397310ad1c815e840790a76b62359d408fb0311bdde1071fbb",
+    "n": null,
+    "status": "True",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/supervisor-update-20261027-01.json",
+    "sha256": "463a9a268e50ed31dcdf53ce3df2581993c9039c2fb273bba8627cf51eaf5cbf",
+    "n": null,
+    "status": "supervisor_checkpoint_facts_reconciled",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/table-complete-retrieval.json",
+    "sha256": "3428e08b76a6f5ebc767db70a8f5b64ac56ff40f40814c40d8d319fd00c4ae30",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/temporal-rules-cases.jsonl",
+    "sha256": "0a3d3b97acfceb141038470d4fbed435809492fdc33c575086fca0e300d865f7",
+    "n": null,
+    "status": "non_json_evidence_jsonl",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/temporal-rules-summary.json",
+    "sha256": "ffaeb524e734c581ea818e4e6454621e95d73b89e0d73f78d3a01ab8e6c521c5",
+    "n": 24,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/training-base-3b-01.json",
+    "sha256": "771c582457fff67d7445bfd28e0fb793af858f3a152456865abb2972f638dc8a",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/training-binding-audit.json",
+    "sha256": "b6e08d7de109347a7aa5ec8258710318eece9a093944d2b614b036df38525f67",
+    "n": 620,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  },
+  {
+    "file": "research/tier8_v2/evidence/verifier3b-launch-01.json",
+    "sha256": "606aaf45e50774ef6b6214ea143524b435fe70eb676e94d51c4d97aa958088e4",
+    "n": null,
+    "status": "not_uniformly_encoded",
+    "interpretation": "Historical diagnostic/exploratory artifact; not automatically a confirmatory independent experiment."
+  }
+]

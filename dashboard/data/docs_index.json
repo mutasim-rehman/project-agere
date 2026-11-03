@@ -1,0 +1,56 @@
+[
+  {
+    "filename": "RESEARCH_PAPER.md",
+    "title": "Final Research Paper (<=16 GB)",
+    "description": "Full formal manuscript covering hypothesis, setup, results and proof",
+    "size_kb": 124.2
+  },
+  {
+    "filename": "METHODOLOGY.md",
+    "title": "Master Methodology Specification",
+    "description": "Tiers, models, Q4_K_M, fine-tune, judgement, and storage policy",
+    "size_kb": 47.8
+  },
+  {
+    "filename": "APPLICATION.md",
+    "title": "Application & Beneficiary Framing",
+    "description": "Why regulated banks & funds require local LLMs under strict RAM caps",
+    "size_kb": 3.8
+  },
+  {
+    "filename": "DEVELOPMENT_START.md",
+    "title": "Locked Spec for Coding",
+    "description": "Model families, quant recipes, prompt templates, and problem sets",
+    "size_kb": 23.4
+  },
+  {
+    "filename": "DECISIONS.md",
+    "title": "Project Decision Log",
+    "description": "Chronological record of every methodology and experimental decision",
+    "size_kb": 253.9
+  },
+  {
+    "filename": "FINANCE_DOMAIN_CONTEXT.md",
+    "title": "Domain Glossary & Context",
+    "description": "KYC / CDD / EDD workflows, credit memo drafting, mortgage origination",
+    "size_kb": 28.9
+  },
+  {
+    "filename": "EXPERIMENT_PROTOCOL.md",
+    "title": "RAM & Token Parity Study Spec",
+    "description": "RUPP protocol, cgroup monitoring, thinking-token caps",
+    "size_kb": 5.9
+  },
+  {
+    "filename": "TIER_16_RESEARCH_REPORT.md",
+    "title": "16 GB Empirical Research Report",
+    "description": "Primary 16 GB evaluation, audit results, and failure analysis",
+    "size_kb": 24.2
+  },
+  {
+    "filename": "TIER_LE_16_RESEARCH_REPORT.md",
+    "title": "Combined <=16 GB Research Report",
+    "description": "Integrated pre-paper dossier combining 8 GB and 16 GB results",
+    "size_kb": 41.1
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "file": "phase2/logs/convert_1.5b.memory.json",
+    "operation": "convert",
+    "model_size": "1.5b",
+    "peak_rss_bytes": 1837064192,
+    "peak_rss_gb": 1.711,
+    "cap_bytes": 23232106496,
+    "cap_gb": 21.64,
+    "recorded_at_utc": "2026-10-01T04:47:49.505444+00:00",
+    "oom_events": 0
+  },
+  {
+    "file": "phase2/logs/convert_14b.memory.json",
+    "operation": "convert",
+    "model_size": "14b",
+    "peak_rss_bytes": 5111001088,
+    "peak_rss_gb": 4.76,
+    "cap_bytes": 22962184192,
+    "cap_gb": 21.39,
+    "recorded_at_utc": "2026-10-01T06:10:55.591443+00:00",
+    "oom_events": 0
+  },
+  {
+    "file": "phase2/logs/convert_32b.memory.json",
+    "operation": "convert",
+    "model_size": "32b",
+    "peak_rss_bytes": 5113008128,
+    "peak_rss_gb": 4.762,
+    "cap_bytes": 22962184192,
+    "cap_gb": 21.39,
+    "recorded_at_utc": "2026-10-01T07:44:56.864010+00:00",
+    "oom_events": 0
+  },
+  {
+    "file": "phase2/logs/convert_3b.memory.json",
+    "operation": "convert",
+    "model_size": "3b",
+    "peak_rss_bytes": 2306154496,
+    "peak_rss_gb": 2.148,
+    "cap_bytes": 22962184192,
+    "cap_gb": 21.39,
+    "recorded_at_utc": "2026-10-01T05:48:00.629840+00:00",
+    "oom_events": 0
+  },
+  {
+    "file": "phase2/logs/convert_7b.memory.json",
+    "operation": "convert",
+    "model_size": "7b",
+    "peak_rss_bytes": 3719700480,
+    "peak_rss_gb": 3.464,
+    "cap_bytes": 22962184192,
+    "cap_gb": 21.39,
+    "recorded_at_utc": "2026-10-01T06:44:08.668265+00:00",
+    "oom_events": 0
+  },
+  {
+    "file": "phase2/logs/quantize_14b.memory.json",
+    "operation": "quantize",
+    "model_size": "14b",
+    "peak_rss_bytes": 2389430272,
+    "peak_rss_gb": 2.225,
+    "cap_bytes": 22962184192,
+    "cap_gb": 21.39,
+    "recorded_at_utc": "2026-10-01T06:28:51.287778+00:00",
+    "oom_events": 0
+  },
+  {
+    "file": "phase2/logs/quantize_32b.memory.json",
+    "operation": "quantize",
+    "model_size": "32b",
+    "peak_rss_bytes": 2389368832,
+    "peak_rss_gb": 2.225,
+    "cap_bytes": 22962184192,
+    "cap_gb": 21.39,
+    "recorded_at_utc": "2026-10-01T08:24:52.623427+00:00",
+    "oom_events": 0
+  },
+  {
+    "file": "phase2/logs/quantize_7b.memory.json",
+    "operation": "quantize",
+    "model_size": "7b",
+    "peak_rss_bytes": 1922109440,
+    "peak_rss_gb": 1.79,
+    "cap_bytes": 22962184192,
+    "cap_gb": 21.39,
+    "recorded_at_utc": "2026-10-01T06:53:56.636207+00:00",
+    "oom_events": 0
+  }
+]

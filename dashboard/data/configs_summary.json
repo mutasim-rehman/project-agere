@@ -1,0 +1,50 @@
+{
+  "tiers": {
+    "t1_8gb": {
+      "name": "8 GB Tier",
+      "physical_ram_gb": 8,
+      "nominal_cap_gb": 6.4,
+      "os_reserve_gb": 1.6,
+      "sas_model": "Qwen2.5-7B-Instruct (GGUF Q4_K_M)",
+      "mas_models": [
+        "Qwen2.5-0.5B-Instruct (F16)",
+        "Qwen2.5-1.5B-Instruct (F16)",
+        "Qwen2.5-3B-Instruct (F16)"
+      ]
+    },
+    "t2_16gb": {
+      "name": "16 GB Tier (Primary)",
+      "physical_ram_gb": 16,
+      "nominal_cap_gb": 12.8,
+      "os_reserve_gb": 3.2,
+      "sas_model": "Qwen2.5-14B-Instruct (GGUF Q4_K_M)",
+      "mas_models": [
+        "Qwen2.5-1.5B-Instruct (F16 - Extractor)",
+        "Qwen2.5-7B-Instruct (F16 - Drafter)",
+        "Qwen2.5-3B-Instruct (F16 - Verifier)"
+      ]
+    },
+    "t3_32gb": {
+      "name": "32 GB Tier (Unevaluated)",
+      "physical_ram_gb": 32,
+      "nominal_cap_gb": 25.6,
+      "os_reserve_gb": 6.4,
+      "sas_model": "Qwen2.5-32B-Instruct (GGUF Q4_K_M)",
+      "mas_models": [
+        "Qwen2.5-3B-Instruct (F16)",
+        "Qwen2.5-14B-Instruct (F16)",
+        "Qwen2.5-7B-Instruct (F16)"
+      ]
+    }
+  },
+  "profiles": {
+    "primary": "Standard deployment: Drafter generates program, Verifier audits, conditional repair.",
+    "direct_control": "Negative control: No verifier audit, program drafted directly without repair step.",
+    "repair_ablation": "Ablation: Verifier audits and flags errors, but Drafter repair is disabled."
+  },
+  "protocol": {
+    "ram_parity": "Strict host-adjusted process-tree RSS cap (RUPP protocol).",
+    "token_parity": "Matched thinking-token budget per task instance (Tran & Kiela 2026 cap).",
+    "eval_framework": "Dual correctness (Reported-answer match + Raw execution match)."
+  }
+}

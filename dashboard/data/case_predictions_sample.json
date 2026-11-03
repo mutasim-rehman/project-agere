@@ -1,0 +1,3210 @@
+{
+  "tier16-sas-direct_control/AAPL/2003/page_24.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AAPL/2003/page_24.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "290 subtract 92 -> #0 divide 1000000 -> #1 multiply 1000000",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_16",
+          "value": "290"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "text_16",
+          "value": "92"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1000000"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "1000000"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AAPL/2003/page_24.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AAPL/2003/page_24.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "27.5 divide 100 -> #0 divide 1 -> 27.9 divide 100 -> #2 divide 1 -> 23.0 divide 100 -> #4 divide 1 -> #1 subtract #2 -> #5 subtract #2",
+    "steps_count": 8,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "27.5"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "27.9"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#2",
+          "value": "#2"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AAPL/2005/page_83.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AAPL/2005/page_83.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "636 multiply 26 -> 134 multiply 26 -> 32 multiply 26 -> #0 add #1 -> #2 add #3 -> #3 divide 3 -> #4 multiply 100",
+    "steps_count": 7,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "636"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "table_8",
+          "value": "26"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "134"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "table_8",
+          "value": "26"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "32"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "table_8",
+          "value": "26"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AAPL/2005/page_83.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AAPL/2005/page_83.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "-26 subtract -7 -> #0 subtract -5 -> #1 subtract 5 -> #2 subtract 7 -> #3 divide 1000000 -> #4 multiply 1000000 -> #5 multiply 1000000 -> #6 multiply 1000000",
+    "steps_count": 8,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_5",
+          "value": "-26"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_5",
+          "value": "-7"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_5",
+          "value": "-5"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_5",
+          "value": "5"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#2",
+          "value": "#2"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_5",
+          "value": "7"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/ABMD/2007/page_52.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "ABMD/2007/page_52.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "45.1 add 5.6 -> #0 add 11.2 -> #1 divide 1000",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_3",
+          "value": "45.1"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "text_3",
+          "value": "5.6"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "text_4",
+          "value": "11.2"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1000"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/ABMD/2007/page_52.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "ABMD/2007/page_52.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "8381 divide 14090 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_3",
+          "value": "8381"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_3",
+          "value": "14090"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/ABMD/2007/page_52.pdf-3": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "ABMD/2007/page_52.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "7669 divide 14090 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "7669"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_3",
+          "value": "14090"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/ABMD/2007/page_52.pdf-4": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "ABMD/2007/page_52.pdf-4",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "6421 divide 14090 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "6421"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_3",
+          "value": "14090"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/ALLE/2016/page_43.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "ALLE/2016/page_43.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "137.71 subtract 115.11 -> 119.22 subtract 117.59 -> 99.90 subtract 105.72 -> #2 divide 105.72 -> #1 divide 117.59 -> #0 divide 115.11 -> #3 multiply 100 -> #4 multiply 1000000000",
+    "steps_count": 8,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "137.71"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_1",
+          "value": "115.11"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "119.22"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_2",
+          "value": "117.59"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_3",
+          "value": "99.90"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_3",
+          "value": "105.72"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#2",
+          "value": "#2"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_3",
+          "value": "105.72"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AMT/2004/page_81.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AMT/2004/page_81.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "90.5 subtract 88.8 -> #0 divide 90.5 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_12",
+          "value": "90.5"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "text_12",
+          "value": "88.8"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "text_12",
+          "value": "90.5"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AMT/2004/page_81.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AMT/2004/page_81.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "1019749 subtract 985303 -> #0 divide 985303 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_6",
+          "value": "1019749"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_6",
+          "value": "985303"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_6",
+          "value": "985303"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AMT/2004/page_81.pdf-3": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AMT/2004/page_81.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "90.5 subtract 92.0 -> #0 divide 92.0 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_12",
+          "value": "90.5"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "text_12",
+          "value": "92.0"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "text_12",
+          "value": "92.0"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AON/2011/page_134.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AON/2011/page_134.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "6817 subtract 6423 -> #0 add 100 -> #1 divide 6423 -> #2 multiply 1",
+    "steps_count": 4,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "6817"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_1",
+          "value": "6423"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "6423"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#2",
+          "value": "#2"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "1"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AON/2011/page_134.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AON/2011/page_134.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "6817 divide 11287 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "6817"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_6",
+          "value": "11287"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AON/2011/page_134.pdf-3": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AON/2011/page_134.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "11287 subtract 8512 -> #0 subtract 7546 -> #1 divide 2 -> 11287 add #0",
+    "steps_count": 4,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "11287"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "8512"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "7546"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "2"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "11287"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AON/2011/page_134.pdf-4": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AON/2011/page_134.pdf-4",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "11287 subtract 8512 -> #0 divide 8512 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_6",
+          "value": "11287"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_6",
+          "value": "8512"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_6",
+          "value": "8512"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/APD/2014/page_39.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "APD/2014/page_39.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "88.2 divide 450.4 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "88.2"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "450.4"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/APD/2014/page_39.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "APD/2014/page_39.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "44.6 divide 420.1 -> #0 multiply 100 -> #1 subtract 85.9 -> #2 divide 420.1 -> #3 multiply 100 -> 17.4 subtract #4",
+    "steps_count": 6,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "44.6"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "420.1"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "text_15",
+          "value": "85.9"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#2",
+          "value": "#2"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "420.1"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/APD/2014/page_44.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "APD/2014/page_44.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "1682.2 subtract 1885.1",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_9",
+          "value": "1682.2"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_7",
+          "value": "1885.1"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/APD/2014/page_44.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "APD/2014/page_44.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "2778.3 subtract 2559.8 -> #0 divide 2559.8 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_7",
+          "value": "2778.3"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "2559.8"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_4",
+          "value": "2559.8"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AWK/2013/page_132.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AWK/2013/page_132.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "fraction",
+    "formula": "72238 divide 7367 -> #0 divide 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "72238"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "7367"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AWK/2013/page_132.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AWK/2013/page_132.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "7367 divide 72238 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "7367"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_2",
+          "value": "72238"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AWK/2013/page_132.pdf-3": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AWK/2013/page_132.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "7367 divide 72238 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "7367"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_2",
+          "value": "72238"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/AWK/2013/page_132.pdf-4": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "AWK/2013/page_132.pdf-4",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "7367 subtract -5974 -> #0 divide 2 -> #1 add #0 -> #2 divide 1000",
+    "steps_count": 4,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "7367"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_1",
+          "value": "-5974"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "2"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#2",
+          "value": "#2"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1000"
+        }
+      }
+    ],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/BDX/2019/page_45.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "BDX/2019/page_45.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/BLK/2017/page_122.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "BLK/2017/page_122.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/BLK/2017/page_122.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "BLK/2017/page_122.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/BLK/2017/page_122.pdf-3": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "BLK/2017/page_122.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/CAT/2017/page_85.pdf-1": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "CAT/2017/page_85.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-sas-direct_control/CAT/2017/page_85.pdf-2": {
+    "job": "tier16-sas-direct_control",
+    "case_id": "CAT/2017/page_85.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-sas-repair_ablation/AAPL/2003/page_24.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AAPL/2003/page_24.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "290 subtract 92",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_16",
+          "value": "290"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "text_16",
+          "value": "92"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measure is the capital expenditures associated with the retail segment since its inception, exclusive of the amount incurred during 2003, in millions.\n\nFrom the provided evidence:\n- Total capital expenditures associated with the retail segment since its inception through the end of fiscal 2003 is $290 million (A005 from text_16).\n- Capital expenditures incurred during 2003 alone is $92 million (A007 from text_16).\n\nThe formula to find the capital expenditures since inception exclusive of 2003 is:\n\\[ \\text{Total Capital Ex"
+  },
+  "tier16-sas-repair_ablation/AAPL/2003/page_24.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AAPL/2003/page_24.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "27.9 subtract 27.5 -> 27.9 subtract 27.9 -> 23.0 subtract 27.9 -> #0 subtract #1 -> #2 subtract #3 -> #4 subtract #0 -> #5 subtract #4 -> #0 subtract #5",
+    "steps_count": 8,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "27.9"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "27.5"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "27.9"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "27.9"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "23.0"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "27.9"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        }
+      }
+    ],
+    "analysis_notes": "The greatest gross margin percentage in the three-year period (2001, 2002, 2003) is required. From the provided data:\n\n- **Gross Margin Percentages:**\n  - 2003: 27.5%\n  - 2002: 27.9%\n  - 2001: 23.0%\n\nThe formula to determine the greatest gross margin percentage is:\n\\[ \\text{Greatest Gross Margin Percentage} = \\max(\\text{Gross Margin Percentage}_{2003}, \\text{G"
+  },
+  "tier16-sas-repair_ablation/AAPL/2005/page_83.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AAPL/2005/page_83.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "26 add 28 -> #0 add 26 -> #1 divide 3",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_8",
+          "value": "26"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "table_8",
+          "value": "28"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "table_8",
+          "value": "26"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "3"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measure is the average effective tax rate for the three-year period (2003, 2004, and 2005).\n\nFrom the provided evidence, the effective tax rates for each year are directly stated in **table_8**:\n- 2005: 26%\n- 2004: 28%\n- 2003: 26%\n\nThe formula to calculate the average effective tax rate over these three years is:\n\\[ \\text{Average Effective Tax Rate} = \\frac{\\text{Effective Tax Rate}_{2005}"
+  },
+  "tier16-sas-repair_ablation/AAPL/2005/page_83.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AAPL/2005/page_83.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "-26 subtract -5 -> #0 subtract -7 -> #1 subtract 26 -> #2 multiply 1000000 -> #3 divide 1000000 -> #4 multiply 1",
+    "steps_count": 6,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_5",
+          "value": "-26"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_5",
+          "value": "-5"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_5",
+          "value": "-7"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_5",
+          "value": "26"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#2",
+          "value": "#2"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "1000000"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measure is the \"research and development credit net\" for the years 2005, 2004, and 2003. The relevant data is provided in `table_5`.\n\nFrom `table_5`:\n- 2005: -26 (26)\n- 2004: -5 (5)\n- 2003: -7 (7)\n\nThe lowest amount of research and development credit net in the three-year period is -26 (26) million in 2005.\n\n**Formula:**\n\\[ \\text"
+  },
+  "tier16-sas-repair_ablation/ABMD/2007/page_52.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "ABMD/2007/page_52.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "45.1 add 11.2",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_3",
+          "value": "45.1"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "text_4",
+          "value": "11.2"
+        }
+      }
+    ],
+    "analysis_notes": "The total possible purchase price for Impella, including potential contingent payments, needs to be calculated based on the provided financial report evidence. The relevant information is found in the text sources:\n\n- The initial purchase price excluding the contingent payment was approximately $45.1 million (text_3).\n- A contingent payment of up to $11.2 million could be made based on additional milestone payments related to FDA approvals (text_4).\n\nThe formula to calculate the total possible purchase price is:\n\\[ \\text{Total Possible Purchase Price} = \\text{Initial Purchase Price} + \\text{Contingent Payment} \\]\n\nMapping"
+  },
+  "tier16-sas-repair_ablation/ABMD/2007/page_52.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "ABMD/2007/page_52.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "8381 divide 14090 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_3",
+          "value": "8381"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_3",
+          "value": "14090"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "To determine how much of the total contractual commitments are current, we need to identify the total obligations and the portion due within the next fiscal year.\n\n**Identified Measures:**\n- Total contractual obligations\n- Current obligations (due within less than 1 year)\n\n**Formula:**\n\\[ \\text{Current Obligations Percentage} = \\left( \\frac{\\text{Current Obligations}}{\\text{Total Obligations}} \\right) \\times 100 \\]\n\n**Mapping Variables to Source IDs:**\n- Total Obligations: A010 (from table_3)\n- Current Obligations"
+  },
+  "tier16-sas-repair_ablation/ABMD/2007/page_52.pdf-3": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "ABMD/2007/page_52.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "fraction",
+    "formula": "7669 divide 14090",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "7669"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_3",
+          "value": "14090"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the portion of total future obligations related to operating lease obligations as of March 31, 2007, we need to identify the total operating lease obligations and the total contractual obligations.\n\n1. **Total Operating Lease Obligations (A000)**: This is given in Table 1 as $7669.\n2. **Total Contractual Obligations (A010)**: This is given in Table 3 as $14090.\n\nThe formula to calculate the portion of total future obligations related to operating lease obligations is:\n\n\\[\n\\text{Portion of Total"
+  },
+  "tier16-sas-repair_ablation/ABMD/2007/page_52.pdf-4": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "ABMD/2007/page_52.pdf-4",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "fraction",
+    "formula": "6421 divide 14090",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "6421"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_3",
+          "value": "14090"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the portion of total future obligations related to purchase obligations as of March 31, 2007, we need to identify the total obligations and the total purchase obligations from the provided financial report evidence.\n\n**Identified Measures:**\n- Total future obligations (Total obligations)\n- Purchase obligations\n\n**Row Labels and Dates:**\n- The data is provided for March 31, 2007.\n\n**Formula:**\n\\[ \\text{Portion of total future obligations related to purchase obligations} = \\frac{\\text{Total purchase obligations}}{\\text{Total obligations}} \\]\n\n**Mapping Variables to Source"
+  },
+  "tier16-sas-repair_ablation/ALLE/2016/page_43.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "ALLE/2016/page_43.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "137.71 subtract 119.22 -> 99.90 subtract 119.22 -> #0 divide 1 -> #1 divide 1 -> #2 divide 1 -> #3 divide 1 -> #4 divide 1 -> #5 divide 1",
+    "steps_count": 8,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "137.71"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_2",
+          "value": "119.22"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_3",
+          "value": "99.90"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_2",
+          "value": "119.22"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the lowest return for the investment in 2015, we need to examine the returns for Allegion plc, S&P 500, and S&P 400 Capital Goods for the year 2015.\n\nFrom the provided data:\n- Allegion plc's return on December 31, 2015: 137.71\n- S&P 500's return on December 31, 2015: 119.22\n- S&P 400 Capital Goods' return on December 31,"
+  },
+  "tier16-sas-repair_ablation/AMT/2004/page_81.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AMT/2004/page_81.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "90.5 subtract 88.8 -> #0 divide 90.5 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_12",
+          "value": "90.5"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "text_12",
+          "value": "88.8"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "text_12",
+          "value": "90.5"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the percentage change in amortization expense from 2008 to 2009, we need to identify the amortization expenses for these years from the provided financial report evidence.\n\nFrom the text evidence:\n- The amortization expense for 2008 is $90.5 million.\n- The amortization expense for 2009 is $88.8 million.\n\nThe formula for percentage change is:\n\\[ \\text{Percentage Change} = \\left( \\frac{\\text{New Value} - \\text{Old Value}}{\\text{Old Value}} \\right) \\times "
+  },
+  "tier16-sas-repair_ablation/AMT/2004/page_81.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AMT/2004/page_81.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "1019749 subtract 985303 -> #0 divide 1019749 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_6",
+          "value": "1019749"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_6",
+          "value": "985303"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_6",
+          "value": "1019749"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measure is the percent decrease in \"other intangible assets net\" from 2003 to 2004.\n\n**Formula:**\n\\[\n\\text{Percent Decrease} = \\left( \\frac{\\text{Value in 2003} - \\text{Value in 2004}}{\\text{Value in 2003}} \\right) \\times 100\n\\]\n\n**Mapping to Source IDs:**\n- Value in 2003: A007 (1,019,749)\n- Value in"
+  },
+  "tier16-sas-repair_ablation/AMT/2004/page_81.pdf-3": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AMT/2004/page_81.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "90.5 subtract 92.0 -> #0 divide 92.0 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_12",
+          "value": "90.5"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "text_12",
+          "value": "92.0"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "text_12",
+          "value": "92.0"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the percentage change in amortization expense from 2007 to 2008, we need to identify the amortization expenses for these two years from the provided evidence.\n\nFrom the text evidence:\n- The amortization expense for 2007 is $92.0 million (A019).\n- The amortization expense for 2008 is $90.5 million (A020).\n\nThe formula for percentage change is:\n\\[ \\text{Percentage Change} = \\left( \\frac{\\text{New Value} - \\text{Old Value}}{\\text{"
+  },
+  "tier16-sas-repair_ablation/AON/2011/page_134.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AON/2011/page_134.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "6817 subtract 6423 -> #0 divide 6423 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "6817"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_1",
+          "value": "6423"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "6423"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the percentage increase in Aon's revenues for risk solutions from 2010 to 2011, we need to use the following financial measures:\n\n- Revenue for Risk Solutions in 2011: \\( A000 = 6817 \\)\n- Revenue for Risk Solutions in 2010: \\( A001 = 6423 \\)\n\nThe formula to calculate the percentage increase is:\n\\[ \\text{Percentage Increase} = \\left( \\frac{\\text{Revenue in 2011} - \\text{Revenue in 201"
+  },
+  "tier16-sas-repair_ablation/AON/2011/page_134.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AON/2011/page_134.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "6817 divide 11287 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "6817"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_6",
+          "value": "11287"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the percentage of risk solutions revenues to the total revenues of Aon in 2011, we need to use the following financial measures:\n\n1. **Risk Solutions Revenues in 2011**: From `table_1`, the revenue for risk solutions in 2011 is $6817 million.\n2. **Total Revenues in 2011**: From `table_6`, the total revenue for Aon in 2011 is $11287 million.\n\nThe formula to calculate the percentage is:\n\\[ \\text{Percentage} = \\left("
+  },
+  "tier16-sas-repair_ablation/AON/2011/page_134.pdf-3": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AON/2011/page_134.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "11287 subtract 8512 -> 11287 subtract 7546 -> 8512 subtract 7546 -> #0 divide 1 -> #1 divide 1 -> #2 divide 1 -> #3 multiply 1 -> #4 multiply 1",
+    "steps_count": 8,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "11287"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "8512"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "11287"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "7546"
+        }
+      },
+      {
+        "left": {
+          "span_id": "table_4",
+          "value": "8512"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "7546"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1"
+        }
+      }
+    ],
+    "analysis_notes": "The highest value for total operating segments during the period is from 2011, which is $11,287 million.\n\n**Reasoning:**\n- The financial report evidence provided includes data on total operating segments for the years 2011, 2010, and 2009.\n- The values are:\n  - 2011: 11287\n  - 2010: 8512\n  - 2009: 7546\n\n**Formula:**\n\\[ \\text{Highest Total Operating Seg"
+  },
+  "tier16-sas-repair_ablation/AON/2011/page_134.pdf-4": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AON/2011/page_134.pdf-4",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "11287 subtract 8512",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_6",
+          "value": "11287"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_6",
+          "value": "8512"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the increase in total revenue from 2010 to 2011, we need to identify the total revenue figures for these years from the provided financial report evidence.\n\nThe relevant data is found in **table_6**:\n- Total revenue for 2011: $11,287 million (A009)\n- Total revenue for 2010: $8,512 million (A010)\n\nThe formula to calculate the increase in total revenue from 2010 to 2011 is:\n\\[ \\text{Increase in Total Revenue"
+  },
+  "tier16-sas-repair_ablation/APD/2014/page_39.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "APD/2014/page_39.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "88.2 divide 450.4 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "88.2"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "450.4"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "The operating margin for 2014 can be calculated using the formula:\n\n\\[ \\text{Operating Margin} = \\left( \\frac{\\text{Operating Income}}{\\text{Sales}} \\right) \\times 100 \\]\n\nFrom the provided evidence:\n- Operating Income for 2014 is 88.2 (A003 from table_2).\n- Sales for 2014 is 450.4 (A000 from table_1).\n\nSubstituting these values into the formula:\n\n\\[ \\text{Operating Margin}_{2014} ="
+  },
+  "tier16-sas-repair_ablation/APD/2014/page_39.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "APD/2014/page_39.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "44.6 divide 420.1 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "44.6"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "420.1"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "The operating margin for 2012 can be calculated using the formula:\n\n\\[ \\text{Operating Margin} = \\left( \\frac{\\text{Operating Income}}{\\text{Sales}} \\right) \\times 100 \\]\n\nFrom the provided evidence:\n- Operating Income for 2012 is $44.6 million (A005 from table_2).\n- Sales for 2012 is $420.1 million (A002 from table_1).\n\nSubstituting these values into the formula:\n\n\\[ \\text{Operating Margin} = \\left("
+  },
+  "tier16-sas-repair_ablation/APD/2014/page_44.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "APD/2014/page_44.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "1885.1 subtract 1682.2",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_7",
+          "value": "1885.1"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "1682.2"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the variation between the capital expenditures on a GAAP basis and the non-GAAP basis for the year 2014, we need to identify the relevant financial measures from the provided evidence.\n\n### Financial Measures:\n- **GAAP Basis Capital Expenditures (2014):** $1682.2\n- **Non-GAAP Basis Capital Expenditures (2014):** $1885.1\n\n### Formula:\n\\[ \\text{Variation} = \\text{Non-GAAP Basis Capital Expenditures} - \\text{GAAP Basis Capital Expenditures"
+  },
+  "tier16-sas-repair_ablation/APD/2014/page_44.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "APD/2014/page_44.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "2778.3 subtract 2559.8",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_7",
+          "value": "2778.3"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_4",
+          "value": "2559.8"
+        }
+      }
+    ],
+    "analysis_notes": "To determine how much larger the capital expenditures on a non-GAAP basis are compared to the GAAP basis for the year 2012, we need to identify the relevant financial measures and dates from the provided evidence.\n\n### Financial Measures and Dates:\n- **GAAP Basis Capital Expenditures for 2012**: A002 (from table_4)\n- **Non-GAAP Basis Capital Expenditures for 2012**: A005 (from table_7)\n\n### Formula:\n\\[ \\text{Difference} = \\text{Non-GAAP Basis Capital Expenditures} - \\"
+  },
+  "tier16-sas-repair_ablation/AWK/2013/page_132.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AWK/2013/page_132.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "fraction",
+    "formula": "72238 divide 7367",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "72238"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "7367"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measures are the post-retirement benefit obligation (PRBO) and the service and interest cost components for a one-percentage-point increase.\n\n**Formula:**\n\\[ \\text{Ratio} = \\frac{\\text{PRBO Increase}}{\\text{Service and Interest Increase}} \\]\n\n**Mapping to Source IDs:**\n- PRBO Increase: A003 (from table_2)\n- Service and Interest Increase: A000 (from table_1)\n\n**Calculation:**\n\\[ \\text{Ratio} = \\frac{72238}{7367} \\]\n\n**Result"
+  },
+  "tier16-sas-repair_ablation/AWK/2013/page_132.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AWK/2013/page_132.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "7367 divide 72238 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "7367"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_2",
+          "value": "72238"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measures are:\n\n1. **Effect on total of service and interest cost components for a one-percentage-point increase**: $7367 (A000)\n2. **Effect on other postretirement benefit obligation for a one-percentage-point increase**: $72238 (A003)\n\nThe formula to find the one-percentage-point increase of the effect on total of service and interest cost components as a percentage of the effect on other postretirement benefit obligation is:\n\n\\[\n\\text{Percentage} = \\left( \\frac{\\text{Effect on total of service and interest cost"
+  },
+  "tier16-sas-repair_ablation/AWK/2013/page_132.pdf-3": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AWK/2013/page_132.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "7367 divide 72238 -> #0 multiply 100",
+    "steps_count": 2,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "7367"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_2",
+          "value": "72238"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measures are:\n\n1. **Effect on total of service and interest cost components for a one-percentage-point increase**: $7367 (A000)\n2. **Effect on other postretirement benefit obligation for a one-percentage-point increase**: $72238 (A003)\n\nThe formula to find the one-percentage-point increase of the effect on total of service and interest cost components as a percentage of the effect on other postretirement benefit obligation is:\n\n\\[\n\\text{Percentage} = \\left( \\frac{\\text{Effect on total of service and interest cost"
+  },
+  "tier16-sas-repair_ablation/AWK/2013/page_132.pdf-4": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "AWK/2013/page_132.pdf-4",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "fraction",
+    "formula": "7367 add -5974",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "7367"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "table_1",
+          "value": "-5974"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measures are the net effects of a one-percentage-point increase and decrease on the total service and interest cost components. The relevant values are provided in `table_1`.\n\nThe formula for the net effect is:\n\\[ \\text{Net Effect} = (\\text{Increase}) + (\\text{Decrease}) \\]\n\nMapping the variables to the source or quantity IDs:\n- Increase: \\( A000 = 7367 \\)\n- Decrease: \\( A001 = -5974 \\)\n\nThus, the net effect is:\n\\[ \\text{Net Effect} = 73"
+  },
+  "tier16-sas-repair_ablation/BDX/2019/page_45.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "BDX/2019/page_45.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "To determine the percentage of the financing structure that was based on equity in 2019, we need to identify the total equity and total debt figures for that year. The total debt for 2019 is provided in the financial report evidence:\n\n\\[ \\text{Total Debt (2019)} = 19390 \\text{ million dollars} \\]\n\nHowever, the equity figure is not directly provided in the given evidence. The evidence mentions equity but does not specify the exact amount. Therefore, we cannot calculate the equity percentage of the financing structure without this information.\n\nGiven the available data:\n- Total"
+  },
+  "tier16-sas-repair_ablation/BLK/2017/page_122.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "BLK/2017/page_122.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "141 subtract 132 -> #0 divide 132 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_1",
+          "value": "141"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_2",
+          "value": "132"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_2",
+          "value": "132"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the growth rate in base rent for the Hudson Yards, New York facility in the second period, we need to identify the base rent amounts for the years 2018 and 2019.\n\nFrom the provided evidence:\n- The base rent amount for 2018 is $141 million (A001 from table_1).\n- The base rent amount for 2019 is $132 million (A003 from table_2).\n\nThe formula for the growth rate is:\n\\[ \\text{Growth Rate} = \\frac{\\text{Amount in"
+  },
+  "tier16-sas-repair_ablation/BLK/2017/page_122.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "BLK/2017/page_122.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The question asks for the percentage of commitments due after 2022. However, the provided financial report evidence does not specify exact amounts or dates for commitments due after 2022. The evidence only mentions that the timing of funding for these commitments is unknown and they are callable on demand at any time prior to the expiration of the commitment.\n\nGiven the lack of specific data on commitments due after 2022, it is not possible to calculate the exact percentage. The relevant text states:\n\n- \"text_38\": \"generally, the timing of the funding of these commitments is unknown and the commitments are callable"
+  },
+  "tier16-sas-repair_ablation/BLK/2017/page_122.pdf-3": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "BLK/2017/page_122.pdf-3",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "132 subtract 141 -> #0 divide 141 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "132"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_1",
+          "value": "141"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_1",
+          "value": "141"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "To determine the growth rate in base rent for the Hudson Yards, New York facility in the third period, we need to identify the base rent amounts for the relevant years and calculate the growth rate.\n\nFrom the provided evidence:\n- The base rent payments are specified as $51 million per year for the first five years, increasing to $58 million, $66 million, and $74 million every five years.\n- The financial report evidence provides rent expense amounts for 2018 and 2019.\n\nThe base rent for the third period (years 11-15) is $66"
+  },
+  "tier16-sas-repair_ablation/CAT/2017/page_85.pdf-1": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "CAT/2017/page_85.pdf-1",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "192 divide 1",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_10",
+          "value": "192"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "CONST",
+          "value": "1"
+        }
+      }
+    ],
+    "analysis_notes": "The question asks for the number of countries where cat products are distributed. The relevant financial report evidence is:\n\n- **text_10**: \"our machines are distributed principally through a worldwide organization of dealers (dealer network), 48 located in the United States and 123 located outside the United States, serving 192 countries.\"\n\nFrom this, the exact number of countries where cat products are distributed is clearly stated as 192.\n\n**Formula:**\n\\[ \\text{Number of Countries} = A002 \\]\n\n**Mapping:**\n\\[ A002 = 192 \\text{"
+  },
+  "tier16-sas-repair_ablation/CAT/2017/page_85.pdf-2": {
+    "job": "tier16-sas-repair_ablation",
+    "case_id": "CAT/2017/page_85.pdf-2",
+    "active_roles": [
+      "sas"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "percent",
+    "formula": "259 subtract 210 -> #0 divide 210 -> #1 multiply 100",
+    "steps_count": 3,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_5",
+          "value": "259"
+        },
+        "op": "subtract",
+        "right": {
+          "span_id": "table_5",
+          "value": "210"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#0",
+          "value": "#0"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_5",
+          "value": "210"
+        }
+      },
+      {
+        "left": {
+          "span_id": "STEP#1",
+          "value": "#1"
+        },
+        "op": "multiply",
+        "right": {
+          "span_id": "CONST",
+          "value": "100"
+        }
+      }
+    ],
+    "analysis_notes": "The requested financial measure is the \"maximum exposure to loss from VIEs (Variable Interest Entities) for which we are not the primary beneficiary.\" The relevant dates are December 31, 2017, and December 31, 2016.\n\nFrom the provided evidence, the relevant values are:\n- December 31, 2017: $259 million (from table_5)\n- December 31, 2016: $210 million (from table_5)\n\nThe growth rate formula is:\n\\[ \\text{Growth Rate} = \\"
+  },
+  "tier16-mas-direct_control/AAPL/2003/page_24.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AAPL/2003/page_24.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AAPL/2003/page_24.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AAPL/2003/page_24.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AAPL/2005/page_83.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AAPL/2005/page_83.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AAPL/2005/page_83.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AAPL/2005/page_83.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/ABMD/2007/page_52.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "ABMD/2007/page_52.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/ABMD/2007/page_52.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "ABMD/2007/page_52.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/ABMD/2007/page_52.pdf-3": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "ABMD/2007/page_52.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/ABMD/2007/page_52.pdf-4": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "ABMD/2007/page_52.pdf-4",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/ALLE/2016/page_43.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "ALLE/2016/page_43.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AMT/2004/page_81.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AMT/2004/page_81.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AMT/2004/page_81.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AMT/2004/page_81.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AMT/2004/page_81.pdf-3": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AMT/2004/page_81.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AON/2011/page_134.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AON/2011/page_134.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AON/2011/page_134.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AON/2011/page_134.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AON/2011/page_134.pdf-3": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AON/2011/page_134.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AON/2011/page_134.pdf-4": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AON/2011/page_134.pdf-4",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/APD/2014/page_39.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "APD/2014/page_39.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/APD/2014/page_39.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "APD/2014/page_39.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/APD/2014/page_44.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "APD/2014/page_44.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/APD/2014/page_44.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "APD/2014/page_44.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AWK/2013/page_132.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AWK/2013/page_132.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AWK/2013/page_132.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AWK/2013/page_132.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AWK/2013/page_132.pdf-3": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AWK/2013/page_132.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/AWK/2013/page_132.pdf-4": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "AWK/2013/page_132.pdf-4",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/BDX/2019/page_45.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "BDX/2019/page_45.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/BLK/2017/page_122.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "BLK/2017/page_122.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/BLK/2017/page_122.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "BLK/2017/page_122.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/BLK/2017/page_122.pdf-3": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "BLK/2017/page_122.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/CAT/2017/page_85.pdf-1": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "CAT/2017/page_85.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-direct_control/CAT/2017/page_85.pdf-2": {
+    "job": "tier16-mas-direct_control",
+    "case_id": "CAT/2017/page_85.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": null
+  },
+  "tier16-mas-repair_ablation/AAPL/2003/page_24.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AAPL/2003/page_24.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The requested financial measures are capital expenditures associated with the retail segment since its inception, excluding the amount incurred during 2003. The dates are from the inception of the retail segment to the end of fiscal 2003.\n\nLet's define the variables:\n- \\( \\text{Total Capital Expenditures} \\) = Total capital expenditures associated with the retail segment since its inception, excluding 2003.\n- \\( \\text{Capital Expenditures in 2003} \\) = Capital expenditures associated with the retail segment in 2003.\n\nFrom the provided sources:\n- \\( \\"
+  },
+  "tier16-mas-repair_ablation/AAPL/2003/page_24.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AAPL/2003/page_24.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- A009: greatest gross margin percentage in the three-year period\n- A010: year for the greatest gross margin percentage\n\nFrom the provided text and tables, the greatest gross margin percentage is 27.9% in 2002. \n\nMapping to source IDs:\n- A009 = A004@table_4 (27.9% in 2002)\n- A010 = A011@text_23 (2002)"
+  },
+  "tier16-mas-repair_ablation/AAPL/2005/page_83.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AAPL/2005/page_83.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( \\text{tax\\_amounts} \\) as the tax amounts for the three years.\n- \\( \\text{tax\\_rates} \\) as the effective tax rates for the three years.\n- \\( \\text{year\\_labels} \\) as the year labels for the three years.\n\nThe formula for the average effective tax rate over the three-year period is:\n\\[ \\text{Average\\_Tax\\_Rate} = \\frac{\\text{tax\\_rates}_{2003} + \\text{tax\\_rates}_{2004} + \\text{tax\\_rates"
+  },
+  "tier16-mas-repair_ablation/AAPL/2005/page_83.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AAPL/2005/page_83.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "To identify the lowest amount of research and development credit net in the three-year period, we use the following variables:\n- Let \\( RDC_{min} \\) represent the lowest amount of research and development credit net.\n- Let \\( RDC_{2003} \\), \\( RDC_{2004} \\), and \\( RDC_{2005} \\) represent the research and development credit net for 2003, 2004, and 2005 respectively.\n\nFrom the provided data:\n- \\( RDC_{2003} = -7 \\)"
+  },
+  "tier16-mas-repair_ablation/ABMD/2007/page_52.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "ABMD/2007/page_52.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "number",
+    "formula": "45.1 add 11.2",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "text_3",
+          "value": "45.1"
+        },
+        "op": "add",
+        "right": {
+          "span_id": "text_4",
+          "value": "11.2"
+        }
+      }
+    ],
+    "analysis_notes": "Let's define the variables:\n- \\( P \\): Total purchase price excluding contingent payment\n- \\( C \\): Contingent payment\n- \\( T \\): Total purchase price including contingent payment\n\nFrom the given text, we have:\n- \\( P = 45.1 \\) million (from text_3)\n- \\( C = 11.2 \\) million (from text_4)\n\nThe total purchase price including contingent payments is calculated as:\n\\[ T = P + C \\]\n\nMapping to source IDs:\n- \\( P \\) is directly stated as \\( A013 = 45.1"
+  },
+  "tier16-mas-repair_ablation/ABMD/2007/page_52.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "ABMD/2007/page_52.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( T \\) = Total contractual commitments (sum of all payments due by fiscal year)\n- \\( C \\) = Current contractual commitments (payments due by fiscal year less than 1 year)\n- \\( D \\) = Date of the financial report (March 31, 2007)\n\nThe formula to calculate the percentage of current commitments is:\n\\[ \\text{Percentage of current commitments} = \\left( \\frac{C}{T} \\right) \\times 100 \\]\n\nMapping to source IDs:\n- \\( T = A010@table_3"
+  },
+  "tier16-mas-repair_ablation/ABMD/2007/page_52.pdf-3": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "ABMD/2007/page_52.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( OLO \\) for operating lease obligations\n- \\( TO \\) for total obligations\n- \\( FY1-3 \\) for payments due by fiscal year 1-3 years\n\nThe formula to find the portion of total future obligations related to operating lease obligations is:\n\\[ \\text{Portion} = \\frac{OLO}{TO} \\]\n\nFrom the source data:\n- \\( OLO \\) is given by \\( A000 = 7669 \\) from table_1\n- \\( TO \\) is given by \\( A010 = "
+  },
+  "tier16-mas-repair_ablation/ABMD/2007/page_52.pdf-4": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "ABMD/2007/page_52.pdf-4",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "ANSWER",
+    "answer_unit": "fraction",
+    "formula": "6421 divide 14090",
+    "steps_count": 1,
+    "steps": [
+      {
+        "left": {
+          "span_id": "table_2",
+          "value": "6421"
+        },
+        "op": "divide",
+        "right": {
+          "span_id": "table_3",
+          "value": "14090"
+        }
+      }
+    ],
+    "analysis_notes": "Let's define the variables:\n- \\( P_{purchase} \\) as the total purchase obligations as of March 31, 2007.\n- \\( P_{total} \\) as the total future obligations as of March 31, 2007.\n\nFrom the provided data:\n- \\( P_{purchase} = A005 = 6421 \\) (from table_2)\n- \\( P_{total} = A010 = 14090 \\) (from table_3)\n\nThe portion of total future obligations related to purchase obligations is calculated as:\n"
+  },
+  "tier16-mas-repair_ablation/ALLE/2016/page_43.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "ALLE/2016/page_43.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The lowest return for the investment in 2015 was for Allegion plc. The formula for the lowest return in 2015 can be represented as:\n\n\\[ \\text{Lowest Return}_{2015} = \\min(\\text{Return}_{2015}) \\]\n\nMapping to source IDs:\n- \\(\\text{Return}_{2015}\\) for Allegion plc is represented by \\(A001 = 91.16@table_1\\).\n\nThus, the lowest return for the investment in 2015 for Allegion plc is 91"
+  },
+  "tier16-mas-repair_ablation/AMT/2004/page_81.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AMT/2004/page_81.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( \\text{intangible\\_2004} \\) as the total amortization expense in 2004\n- \\( \\text{intangible\\_2003} \\) as the total amortization expense in 2003\n- \\( \\text{percentage\\_change} \\) as the percentage change from 2003 to 2004\n\nFrom the text, we have:\n- \\( \\text{intangible\\_2004} = 97.8 \\) million\n- \\( \\text{intangible\\_"
+  },
+  "tier16-mas-repair_ablation/AMT/2004/page_81.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AMT/2004/page_81.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- Let \\( A006 \\) represent the other intangible assets net in 2004.\n- Let \\( A007 \\) represent the other intangible assets net in 2003.\n- Let \\( \\Delta \\) represent the percent decrease in other intangible assets net from 2003 to 2004.\n\nFrom the given data:\n- \\( A006 = 985303 \\) (from table_6)\n- \\( A007 = 1019749 \\) (from"
+  },
+  "tier16-mas-repair_ablation/AMT/2004/page_81.pdf-3": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AMT/2004/page_81.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( \\text{intangible\\_2004} \\) as the total amortization expense in 2004\n- \\( \\text{intangible\\_2003} \\) as the total amortization expense in 2003\n- \\( \\text{percentage\\_change} \\) as the percentage change from 2003 to 2004\n\nFrom the text, we have:\n- \\( \\text{intangible\\_2004} = 97.8 \\) million\n- \\( \\text{intangible\\_"
+  },
+  "tier16-mas-repair_ablation/AON/2011/page_134.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AON/2011/page_134.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- R2011 = $6817 (A000 from table_1)\n- R2010 = $6423 (A001 from table_1)\n- R2009 = $6305 (A002 from table_1)\n\nThe percent increase in revenues for risk solutions from 2010 to 2011 can be calculated using the formula:\n\\[ \\text{Percent Increase} = \\left( \\frac{R2011 - R2010}{R20"
+  },
+  "tier16-mas-repair_ablation/AON/2011/page_134.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AON/2011/page_134.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "To find the percentage of Risk Solutions revenues to the total revenues in 2011, we use the following variables:\n\n- RISK_2011 = $6817 (from table_1)\n- TOTAL_2011 = $11287 (from table_4)\n\nThe formula is:\n\\[ \\text{Percentage} = \\left( \\frac{\\text{RISK_2011}}{\\text{TOTAL_2011}} \\right) \\times 100 \\]\n\nMapping to source IDs:\n- RISK_2011 = A"
+  },
+  "tier16-mas-repair_ablation/AON/2011/page_134.pdf-3": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AON/2011/page_134.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The highest value for total operating segments during the period is 11287, which occurred in 2011.\n\nLet's define the variables:\n- A000 = highest total operating segments value (11287)\n- A003 = 2018 (year of codm, consistent with the period of 2011)\n- A004 = 2019 (year of codm, consistent with the period of 2011)\n\nMapping to source IDs:\n- A000 = 11287@table_4"
+  },
+  "tier16-mas-repair_ablation/AON/2011/page_134.pdf-4": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AON/2011/page_134.pdf-4",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( R_{2011} \\) as the total revenue in 2011\n- \\( R_{2010} \\) as the total revenue in 2010\n\nFrom the provided tables:\n- \\( R_{2011} = 11287 \\) (from table_6, A009)\n- \\( R_{2010} = 8512 \\) (from table_6, A010)\n\nThe increase in total revenue from 2010 to 201"
+  },
+  "tier16-mas-repair_ablation/APD/2014/page_39.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "APD/2014/page_39.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The operating margin for 2014 was sought. Let's define the variables:\n\n- \\( \\text{Operating Margin}_{2014} \\) is the operating margin for the year 2014.\n- \\( \\text{Operating Income}_{2014} \\) is the operating income for the year 2014.\n\nThe formula for operating margin is:\n\\[ \\text{Operating Margin}_{2014} = \\frac{\\text{Operating Income}_{2014}}{\\text{Sales}_{2014}} \\times 100 \\]\n\nFrom the provided"
+  },
+  "tier16-mas-repair_ablation/APD/2014/page_39.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "APD/2014/page_39.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "percent",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The operating margin for 2012 can be calculated using the formula: \n\\[ \\text{Operating Margin} = \\frac{\\text{Operating Income}}{\\text{Sales}} \\times 100 \\]\n\nFrom the provided sources:\n- Sales in 2012 = A002 = $420.1\n- Operating Income in 2012 = A005 = $44.6\n\nUsing these values:\n\\[ \\text{Operating Margin} = \\frac{44.6}{420.1} \\times 100 \\approx "
+  },
+  "tier16-mas-repair_ablation/APD/2014/page_44.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "APD/2014/page_44.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The variation between capital expenditures on a GAAP basis and non-GAAP basis in 2014 can be calculated using the following formula:\n\n\\[ \\text{Variation} = \\text{GAAP Expenditures (2014)} - \\text{Non-GAAP Expenditures (2014)} \\]\n\nFrom the provided data:\n- GAAP Expenditures (2014) = $1682.2 (A022)\n- Non-GAAP Expenditures (2014) = $1885.1 (A010)\n\nMapping"
+  },
+  "tier16-mas-repair_ablation/APD/2014/page_44.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "APD/2014/page_44.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- GAAP Capital Expenditures: \\( GAAP_{CE} \\)\n- Non-GAAP Capital Expenditures: \\( Non-GAAP_{CE} \\)\n\nFrom the provided data:\n- \\( GAAP_{CE} = 2559.8 \\) for 2012 (from table_4)\n- \\( Non-GAAP_{CE} = 2778.3 \\) for 2012 (from table_7)\n\nThe formula to determine how much bigger the Non-GAAP Capital Expenditures are compared to GAAP Capital Expenditures"
+  },
+  "tier16-mas-repair_ablation/AWK/2013/page_132.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AWK/2013/page_132.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The requested financial measures are the ratio of the post-retirement benefit obligation to the service and interest one-point percentage increase.\n\nLet's define the variables:\n- \\( PBO \\) = Post-retirement benefit obligation\n- \\( S \\) = Service and interest cost\n- \\( \\Delta S \\) = Change in service and interest cost due to one percentage point\n\nThe ratio can be expressed as:\n\\[ \\text{Ratio} = \\frac{PBO}{\\Delta S} \\]\n\nFrom the provided sources:\n- \\( \\Delta S \\) for a one-percentage-point increase is \\( A000 = 7"
+  },
+  "tier16-mas-repair_ablation/AWK/2013/page_132.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AWK/2013/page_132.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( S \\): One-percentage-point increase in the effect on total of service and interest cost components\n- \\( O \\): One-percentage-point increase in the effect on other postretirement benefit obligation\n\nFrom the provided data:\n- \\( S = 7367 \\) (from table_1)\n- \\( O = 72238 \\) (from table_2)\n\nThe requested measure is the ratio of \\( S \\) to \\( O \\) expressed as a percentage:\n\\[ \\text{Percentage} = \\left( \\frac{S}{O} \\"
+  },
+  "tier16-mas-repair_ablation/AWK/2013/page_132.pdf-3": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AWK/2013/page_132.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( S \\): One-percentage-point increase in the effect on total of service and interest cost components\n- \\( O \\): One-percentage-point increase in the effect on other postretirement benefit obligation\n\nFrom the provided data:\n- \\( S = 7367 \\) (from table_1)\n- \\( O = 72238 \\) (from table_2)\n\nThe requested measure is the ratio of \\( S \\) to \\( O \\) expressed as a percentage:\n\\[ \\text{Percentage} = \\left( \\frac{S}{O} \\"
+  },
+  "tier16-mas-repair_ablation/AWK/2013/page_132.pdf-4": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "AWK/2013/page_132.pdf-4",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( \\Delta_{\\text{increase}} = 7367 \\) (from table_1)\n- \\( \\Delta_{\\text{decrease}} = -5974 \\) (from table_1)\n\nThe formula for the net effect of a one-percentage-point change can be expressed as:\n\\[ \\text{Net Effect} = \\Delta_{\\text{increase}} + \\Delta_{\\text{decrease}} \\]\n\nMapping these to the source IDs:\n- \\( \\Delta_{\\text{increase}} \\) corresponds to \\( A000 ="
+  },
+  "tier16-mas-repair_ablation/BDX/2019/page_45.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "BDX/2019/page_45.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- D2019: Total debt in 2019 (A000)\n- E2019: Equity in 2019 (A003)\n- T2019: Total financing structure in 2019 (D2019 + E2019)\n\nThe formula to find the percentage of equity in the financing structure is:\n\\[ \\text{Equity Percentage} = \\left( \\frac{E2019}{D2019 + E2019} \\right) \\times"
+  },
+  "tier16-mas-repair_ablation/BLK/2017/page_122.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "BLK/2017/page_122.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( R_{2018} \\) as the base rent in 2018\n- \\( R_{2019} \\) as the base rent in 2019\n- \\( R_{2020} \\) as the base rent in 2020\n\nFrom the provided data:\n- \\( R_{2018} = 141 \\) (from table_1)\n- \\( R_{2019} = 132 \\) (from table_2)\n- \\( R_{202"
+  },
+  "tier16-mas-repair_ablation/BLK/2017/page_122.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "BLK/2017/page_122.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "fraction",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "The exact requested financial measures are the percent of commitments due after 2022. The row labels are \"commitments\" and the date is \"2022\".\n\nThe formula can be represented as:\n\\[ \\text{Percent Due After 2022} = \\frac{\\text{Amount Due After 2022}}{\\text{Total Amount of Commitments}} \\times 100 \\]\n\nFrom the provided sources:\n- Total Amount of Commitments = 109 (A001)\n- Amount Due After 2022 = 0 (as no specific amount is"
+  },
+  "tier16-mas-repair_ablation/BLK/2017/page_122.pdf-3": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "BLK/2017/page_122.pdf-3",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( R_{2018} \\) as the base rent in 2018\n- \\( R_{2019} \\) as the base rent in 2019\n- \\( G \\) as the growth rate from 2018 to 2019\n\nThe growth rate \\( G \\) can be calculated using the formula:\n\\[ G = \\frac{R_{2019} - R_{2018}}{R_{2018}} \\times 100 \\]\n\nFrom the provided data:\n"
+  },
+  "tier16-mas-repair_ablation/CAT/2017/page_85.pdf-1": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "CAT/2017/page_85.pdf-1",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( \\text{total_countries} \\) = Total number of countries distributed to\n- \\( \\text{US_dealers} \\) = Number of dealers in the US\n- \\( \\text{non_US_dealers} \\) = Number of dealers outside the US\n- \\( \\text{total_dealers} \\) = Total number of dealers\n- \\( \\text{total_countries_A000} \\) = Number of countries for A000 products\n- \\( \\text{total_countries_A001} \\) = Number of countries for A001"
+  },
+  "tier16-mas-repair_ablation/CAT/2017/page_85.pdf-2": {
+    "job": "tier16-mas-repair_ablation",
+    "case_id": "CAT/2017/page_85.pdf-2",
+    "active_roles": [
+      "drafter",
+      "extractor",
+      "verifier"
+    ],
+    "decision": "INSUFFICIENT",
+    "answer_unit": "number",
+    "formula": "",
+    "steps_count": 0,
+    "steps": [],
+    "analysis_notes": "Let's define the variables:\n- \\( VIES_{max\\_loss\\_2017} \\) as the maximum exposure to loss from VIES in 2017.\n- \\( VIES_{max\\_loss\\_2016} \\) as the maximum exposure to loss from VIES in 2016.\n\nFrom the provided data:\n- \\( VIES_{max\\_loss\\_2017} = 412 \\) million dollars (from table_6).\n- \\( VIES_{max\\_loss\\_2016} = 716 \\) million dollars ("
+  }
+}

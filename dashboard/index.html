@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Agere — Research & Hardware Analytics Dashboard</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- CDNs with graceful fallbacks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: ['class', '[data-theme="dark"]'],
+            theme: {
+                extend: {
+                    colors: {
+                        mas: '#10b981',
+                        sas: '#8b5cf6',
+                        accent: '#38bdf8'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Chart.js & Plotly for interactive visual analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="p-5 border-b border-[var(--border-color)] flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-500 flex items-center justify-center font-bold text-slate-950 text-lg">
+                        A
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm tracking-wide text-white">PROJECT AGERE</div>
+                        <div class="text-[10px] text-slate-400 font-mono tracking-wider">LOCAL LLM // FINANCE</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-1 overflow-y-auto py-2">
+                <div class="nav-group-title">Primary Synthesis</div>
+                <a class="nav-item active" data-tab="overview">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                    <span class="nav-label">Executive Overview</span>
+                </a>
+                <a class="nav-item" data-tab="comparison">
+                    <i data-lucide="swords" class="w-4 h-4"></i>
+                    <span class="nav-label">MAS vs SAS Comparison</span>
+                    <span class="nav-badge bg-emerald-500/10 text-emerald-400">Headline</span>
+                </a>
+                <a class="nav-item" data-tab="cases">
+                    <i data-lucide="microscope" class="w-4 h-4"></i>
+                    <span class="nav-label">Case Explorer</span>
+                    <span class="nav-badge">1,728</span>
+                </a>
+
+                <div class="nav-group-title">Statistical Rigour</div>
+                <a class="nav-item" data-tab="statistics">
+                    <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+                    <span class="nav-label">Statistical Battery</span>
+                    <span class="nav-badge">126 tests</span>
+                </a>
+                <a class="nav-item" data-tab="pipeline">
+                    <i data-lucide="git-merge" class="w-4 h-4"></i>
+                    <span class="nav-label">Pipeline & Cost Analysis</span>
+                </a>
+
+                <div class="nav-group-title">Hardware & Telemetry</div>
+                <a class="nav-item" data-tab="hardware">
+                    <i data-lucide="cpu" class="w-4 h-4"></i>
+                    <span class="nav-label">Hardware & Memory</span>
+                    <span class="nav-badge bg-rose-500/10 text-rose-400">Swap Audit</span>
+                </a>
+                <a class="nav-item" data-tab="runs">
+                    <i data-lucide="flask-conical" class="w-4 h-4"></i>
+                    <span class="nav-label">Experiment Runs & Logs</span>
+                    <span class="nav-badge">17 archives</span>
+                </a>
+
+                <div class="nav-group-title">Context & Provenance</div>
+                <a class="nav-item" data-tab="datasets">
+                    <i data-lucide="database" class="w-4 h-4"></i>
+                    <span class="nav-label">Datasets & Benchmarks</span>
+                </a>
+                <a class="nav-item" data-tab="models">
+                    <i data-lucide="sliders" class="w-4 h-4"></i>
+                    <span class="nav-label">Models & Configurations</span>
+                </a>
+                <a class="nav-item" data-tab="provenance">
+                    <i data-lucide="file-check" class="w-4 h-4"></i>
+                    <span class="nav-label">Provenance & Audit</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer p-4 border-t border-[var(--border-color)] text-xs text-slate-500 flex items-center justify-between">
+                <div>
+                    <div>Phase 3 Submission</div>
+                    <div class="font-mono text-[10px]">RUPP RAM Parity Protocol</div>
+                </div>
+                <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" title="Telemetry verified"></div>
+            </div>
+        </aside>
+
+        <!-- Main Content View -->
+        <main class="main-content">
+            <!-- Header Bar -->
+            <header class="top-header">
+                <div class="flex items-center gap-4">
+                    <h1 id="page-title" class="text-lg font-bold text-white tracking-tight flex items-center gap-2">
+                        Executive Overview
+                    </h1>
+                    <span id="tier-badge" class="badge badge-mas">16 GB + 8 GB Tiers</span>
+                    <span class="text-xs text-slate-400 border-l border-slate-700 pl-4 hidden md:inline">
+                        Comparing Multi-Agent Teams vs Quantized Monoliths under Identical Host RAM Caps
+                    </span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" class="btn btn-secondary text-xs" title="Toggle Dark/Light Mode">
+                        <i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
+                    </button>
+                    <button id="export-btn" class="btn btn-secondary text-xs" onclick="window.App.exportData()">
+                        <i data-lucide="download" class="w-4 h-4"></i> Export Data
+                    </button>
+                    <button class="btn btn-primary text-xs" onclick="window.App.showReproduceModal()">
+                        <i data-lucide="play" class="w-4 h-4"></i> Reproduce
+                    </button>
+                </div>
+            </header>
+
+            <!-- Page Container (Dynamic) -->
+            <div id="content-container" class="p-6 space-y-6">
+                <!-- Dynamically injected by page modules -->
+                <div class="flex items-center justify-center p-20 text-slate-500">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-500"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Case Detail Slide-over / Modal -->
+    <div id="case-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modal-case-title" class="text-base font-bold text-white">Case Inspection</h3>
+                    <div id="modal-case-subtitle" class="text-xs text-slate-400 font-mono mt-1"></div>
+                </div>
+                <button class="btn btn-secondary text-xs" onclick="window.App.closeModal('case-modal')">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <div id="modal-case-body" class="modal-body space-y-4">
+                <!-- Injected by case drilldown -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Publication Figure Lightbox Modal -->
+    <div id="figure-modal" class="modal-overlay">
+        <div class="modal-card max-w-5xl">
+            <div class="modal-header">
+                <div>
+                    <h3 id="figure-modal-title" class="text-base font-bold text-white">Publication Figure</h3>
+                    <div id="figure-modal-caption" class="text-xs text-slate-400 mt-1"></div>
+                </div>
+                <button class="btn btn-secondary text-xs" onclick="window.App.closeModal('figure-modal')">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <div class="modal-body text-center p-4">
+                <img id="figure-modal-img" src="" alt="Figure" class="max-h-[70vh] mx-auto rounded shadow-lg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/pages/overview.js"></script>
+    <script src="js/pages/comparison.js"></script>
+    <script src="js/pages/caseExplorer.js"></script>
+    <script src="js/pages/statistics.js"></script>
+    <script src="js/pages/pipeline.js"></script>
+    <script src="js/pages/hardware.js"></script>
+    <script src="js/pages/runs.js"></script>
+    <script src="js/pages/datasets.js"></script>
+    <script src="js/pages/models.js"></script>
+    <script src="js/pages/provenance.js"></script>
+
+    <script>
+        // Initialize App on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            window.App.init();
+        });
+    </script>
+</body>
+</html>
+

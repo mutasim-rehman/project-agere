@@ -1,0 +1,865 @@
+{
+  "finqa-mas-3b-adaptation-dev24-paired-01.json": {
+    "source_sha256": "0ff984d535854c2f0167a4e339d1f7ca288bbc9bbc1f46f5f7ae9b543957f279",
+    "data": {
+      "source_validation": {
+        "public_packets_identical": true,
+        "retrieval_change_allowed": false,
+        "evaluation_source_sha256": "a847fb7e0d61a3125a1e2909852df6b89f1ee64d2c5ff1bf689e332214deee51"
+      },
+      "paired": {
+        "n": 24,
+        "right_minus_left_success": 0.4583333333333333,
+        "paired_bootstrap_95_interval": [
+          0.25,
+          0.6666666666666666
+        ],
+        "right_only_correct": 11,
+        "left_only_correct": 0,
+        "exact_mcnemar_p": 0.0009765625,
+        "interval_caution": "Development sample only; assess sampling and template dependence before generalizing.",
+        "note": "Exploratory development comparison; no multiple-comparison adjustment or publication claim."
+      },
+      "left": {
+        "n": 24,
+        "field_repair_gains": 0,
+        "field_repair_regressions": 0,
+        "wrong_fields_left_locked": null,
+        "initial_verifier_true_accepts": 0,
+        "initial_verifier_false_accepts": 23,
+        "initial_verifier_true_rejects": 1,
+        "initial_verifier_false_rejects": 0,
+        "delivered_correct": 0,
+        "delivered_incorrect": 0,
+        "withheld": 24,
+        "generated_tokens": 1428,
+        "prompt_tokens": 39715,
+        "prompt_token_sources": [
+          "runtime_usage_verified"
+        ],
+        "inference_seconds": 296.34188834094675,
+        "truncated_stages": 0,
+        "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+      },
+      "right": {
+        "n": 24,
+        "field_repair_gains": 0,
+        "field_repair_regressions": 0,
+        "wrong_fields_left_locked": null,
+        "initial_verifier_true_accepts": 10,
+        "initial_verifier_false_accepts": 11,
+        "initial_verifier_true_rejects": 2,
+        "initial_verifier_false_rejects": 1,
+        "delivered_correct": 10,
+        "delivered_incorrect": 11,
+        "withheld": 3,
+        "generated_tokens": 2276,
+        "prompt_tokens": 42492,
+        "prompt_token_sources": [
+          "runtime_usage_verified"
+        ],
+        "inference_seconds": 404.6592951550265,
+        "truncated_stages": 0,
+        "lock_scope_note": "FinQA numerical gold does not identify correctness of each alternative program step; false locks not assessed."
+      }
+    }
+  },
+  "critic3b-natural24-delivery-results-01.json": {
+    "source_sha256": "837f40b64f69fdf29d05e2ae43410eab7a8a90e271585bad66de7ffb75b19ba0",
+    "data": {
+      "n": 24,
+      "n_report_groups": 23,
+      "metrics": {
+        "case_success": {
+          "conditions": {
+            "plain": {
+              "candidate_correct": 11,
+              "correct_delivered": 3,
+              "incorrect_delivered": 0,
+              "withheld": 21,
+              "correct_delivery_coverage": 0.125,
+              "incorrect_delivery_rate": 0.0,
+              "precision_when_delivered": 1.0,
+              "generated_tokens": 1343,
+              "prompt_tokens": 41892,
+              "recorded_inference_seconds": 510.6983506600045
+            },
+            "adapted": {
+              "candidate_correct": 11,
+              "correct_delivered": 11,
+              "incorrect_delivered": 4,
+              "withheld": 9,
+              "correct_delivery_coverage": 0.4583333333333333,
+              "incorrect_delivery_rate": 0.16666666666666666,
+              "precision_when_delivered": 0.7333333333333333,
+              "generated_tokens": 1367,
+              "prompt_tokens": 41892,
+              "recorded_inference_seconds": 530.832093380006
+            }
+          },
+          "delta_correct_delivery_coverage": 0.3333333333333333,
+          "delta_incorrect_delivery_rate": 0.16666666666666666,
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivery": [
+              0.16666666666666666,
+              0.52
+            ],
+            "incorrect_delivery": [
+              0.04,
+              0.3333333333333333
+            ],
+            "withheld": [
+              -0.6956521739130435,
+              -0.30434782608695654
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 9,
+            "withheld -> correct_delivery": 8,
+            "withheld -> incorrect_delivery": 4,
+            "correct_delivery -> correct_delivery": 3
+          },
+          "empirical_delivery_pareto_dominance": false,
+          "illustrative_utility_delta": {
+            "0": {
+              "per_case": 0.3333333333333333,
+              "report_cluster_bootstrap_95_interval": [
+                0.16666666666666666,
+                0.52
+              ]
+            },
+            "1": {
+              "per_case": 0.16666666666666666,
+              "report_cluster_bootstrap_95_interval": [
+                -0.12500000000000003,
+                0.43478260869565216
+              ]
+            },
+            "2": {
+              "per_case": 0.0,
+              "report_cluster_bootstrap_95_interval": [
+                -0.4347826086956522,
+                0.375
+              ]
+            },
+            "5": {
+              "per_case": -0.5,
+              "report_cluster_bootstrap_95_interval": [
+                -1.4166666666666665,
+                0.25
+              ]
+            },
+            "10": {
+              "per_case": -1.3333333333333333,
+              "report_cluster_bootstrap_95_interval": [
+                -3.08,
+                0.041666666666666685
+              ]
+            }
+          },
+          "break_even_penalty_ratio": 2.0,
+          "utility_expression_counts": "8 - lambda * (4)"
+        },
+        "raw_execution_match": {
+          "conditions": {
+            "plain": {
+              "candidate_correct": 9,
+              "correct_delivered": 2,
+              "incorrect_delivered": 1,
+              "withheld": 21,
+              "correct_delivery_coverage": 0.08333333333333333,
+              "incorrect_delivery_rate": 0.041666666666666664,
+              "precision_when_delivered": 0.6666666666666666,
+              "generated_tokens": 1343,
+              "prompt_tokens": 41892,
+              "recorded_inference_seconds": 510.6983506600045
+            },
+            "adapted": {
+              "candidate_correct": 9,
+              "correct_delivered": 9,
+              "incorrect_delivered": 6,
+              "withheld": 9,
+              "correct_delivery_coverage": 0.375,
+              "incorrect_delivery_rate": 0.25,
+              "precision_when_delivered": 0.6,
+              "generated_tokens": 1367,
+              "prompt_tokens": 41892,
+              "recorded_inference_seconds": 530.832093380006
+            }
+          },
+          "delta_correct_delivery_coverage": 0.2916666666666667,
+          "delta_incorrect_delivery_rate": 0.20833333333333334,
+          "report_cluster_bootstrap_95_intervals": {
+            "correct_delivery": [
+              0.125,
+              0.4782608695652174
+            ],
+            "incorrect_delivery": [
+              0.043478260869565216,
+              0.391304347826087
+            ],
+            "withheld": [
+              -0.6956521739130435,
+              -0.30434782608695654
+            ]
+          },
+          "transitions": {
+            "withheld -> withheld": 9,
+            "withheld -> correct_delivery": 7,
+            "withheld -> incorrect_delivery": 5,
+            "incorrect_delivery -> incorrect_delivery": 1,
+            "correct_delivery -> correct_delivery": 2
+          },
+          "empirical_delivery_pareto_dominance": false,
+          "illustrative_utility_delta": {
+            "0": {
+              "per_case": 0.2916666666666667,
+              "report_cluster_bootstrap_95_interval": [
+                0.125,
+                0.4782608695652174
+              ]
+            },
+            "1": {
+              "per_case": 0.08333333333333333,
+              "report_cluster_bootstrap_95_interval": [
+                -0.20833333333333334,
+                0.34782608695652173
+              ]
+            },
+            "2": {
+              "per_case": -0.125,
+              "report_cluster_bootstrap_95_interval": [
+                -0.5652173913043479,
+                0.27999999999999997
+              ]
+            },
+            "5": {
+              "per_case": -0.75,
+              "report_cluster_bootstrap_95_interval": [
+                -1.7391304347826086,
+                0.08333333333333337
+              ]
+            },
+            "10": {
+              "per_case": -1.7916666666666667,
+              "report_cluster_bootstrap_95_interval": [
+                -3.6521739130434785,
+                -0.1923076923076924
+              ]
+            }
+          },
+          "break_even_penalty_ratio": 1.4,
+          "utility_expression_counts": "7 - lambda * (5)"
+        }
+      },
+      "limits": "Reused development, not publication confirmation. Report bootstrap uses whole reports, including unequal cluster sizes. Candidate accuracy must be identical. Non-delivery has illustrative utility0; wrong-delivery penalties0/1/2/5/10 are not validated financial costs and none is selected as primary. Zero-delivery precision is undefined, not100%. Sample Pareto dominance is descriptive; intervals may be degenerate and do not establish equivalence.",
+      "matching_guard": {
+        "n": 24,
+        "identical_initial_drafts": true,
+        "identical_critic_prompts": true,
+        "same_actor_adapter": true,
+        "separate_critic_application_recorded": true
+      },
+      "runs": {
+        "plain": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-plain3b-binary-dev24-01",
+        "adapted": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-trained3b-binary-dev24-01"
+      },
+      "analysis_source_sha256": "fdb81998a8892578f33fb8402ff16b901009d1e041417b227ab48466ca2033a0",
+      "report_sha256": "a7d26d2326bcba20bb7aff142c3d7762b296425e7b7baf5b2766e117b99fd2b2",
+      "report_path": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/reports/natural24-delivery-01.json",
+      "memory": {
+        "plain": {
+          "status": "complete",
+          "n": 24,
+          "peak_tree_rss_bytes": 4841512960,
+          "cap_bytes": 6400000000
+        },
+        "adapted": {
+          "status": "complete",
+          "n": 24,
+          "peak_tree_rss_bytes": 4907794432,
+          "cap_bytes": 6400000000
+        }
+      },
+      "unit_sensitivity": {
+        "path": "/run/media/mutasim/Data/AGERE/runs/tier8_posttrain/critic3b-posttrain-02/reports/natural24-unit-sensitivity.json",
+        "sha256": "3714988193ba4077d4c8e6eb2642f6f2b5a200933b769109bb3dcc49e0ccaee7",
+        "version": "reported-units-v2-number-ratio",
+        "runs": [
+          {
+            "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-plain3b-binary-dev24-01",
+            "n": 24,
+            "legacy_correct": 11,
+            "v2_correct": 11,
+            "v2_delivered_correct": 3,
+            "v2_wrong_deliveries": 0,
+            "changed_cases": []
+          },
+          {
+            "run": "/run/media/mutasim/Data/AGERE/runs/tier8_critic_qa/finqa-adapted-actor-trained3b-binary-dev24-01",
+            "n": 24,
+            "legacy_correct": 11,
+            "v2_correct": 11,
+            "v2_delivered_correct": 11,
+            "v2_wrong_deliveries": 4,
+            "changed_cases": []
+          }
+        ],
+        "unresolved": [
+          {
+            "id": "AAPL/2004/page_36.pdf-2",
+            "issue": "Bare .2 gold for gross-margin decline; percent-point versus canonical-fraction annotation needs adjudication. No special-case rescoring."
+          }
+        ]
+      }
+    }
+  },
+  "external-baselines-completed-01.json": {
+    "source_sha256": "70112d2876ae0a8d5bdd4dd314c7276ceeb6a31be7c6f15604027d5a2962f4a9",
+    "data": {
+      "status": "complete_scores_replayed",
+      "case_arm_evaluations": 380,
+      "tasks": {
+        "mortar": {
+          "conditions": {
+            "sas": {
+              "n": 90,
+              "exact_matches": 39,
+              "typed_counts": {
+                "txn_id_list": {
+                  "n": 57,
+                  "correct": 21
+                },
+                "boolean": {
+                  "n": 26,
+                  "correct": 17
+                },
+                "account_id_list": {
+                  "n": 7,
+                  "correct": 1
+                }
+              },
+              "generated_tokens": 9519,
+              "recorded_seconds": 9655.454419369024,
+              "peak_tree_rss_bytes": 5202083840,
+              "final_finish_reasons": {
+                "stop": 90
+              },
+              "note": "Reported seconds sum saved case durations; SAS Mortar spans interruption/recovery.",
+              "identifier_prediction_shapes": {
+                "txn_id_list": {
+                  "n": 57,
+                  "empty_predictions": 30,
+                  "nonempty_gold": 46,
+                  "nonempty_gold_exact_matches": 13
+                },
+                "account_id_list": {
+                  "n": 7,
+                  "empty_predictions": 3,
+                  "nonempty_gold": 6,
+                  "nonempty_gold_exact_matches": 0
+                }
+              }
+            },
+            "mas": {
+              "n": 90,
+              "exact_matches": 26,
+              "typed_counts": {
+                "txn_id_list": {
+                  "n": 57,
+                  "correct": 11
+                },
+                "boolean": {
+                  "n": 26,
+                  "correct": 14
+                },
+                "account_id_list": {
+                  "n": 7,
+                  "correct": 1
+                }
+              },
+              "generated_tokens": 2735,
+              "recorded_seconds": 2479.5301962699887,
+              "peak_tree_rss_bytes": 5607260160,
+              "final_finish_reasons": {
+                "stop": 90
+              },
+              "note": "Reported seconds sum saved case durations; SAS Mortar spans interruption/recovery.",
+              "identifier_prediction_shapes": {
+                "txn_id_list": {
+                  "n": 57,
+                  "empty_predictions": 57,
+                  "nonempty_gold": 46,
+                  "nonempty_gold_exact_matches": 0
+                },
+                "account_id_list": {
+                  "n": 7,
+                  "empty_predictions": 4,
+                  "nonempty_gold": 6,
+                  "nonempty_gold_exact_matches": 0
+                }
+              }
+            }
+          },
+          "paired_exact": {
+            "n": 90,
+            "n_groups": 9,
+            "mas_minus_sas": -0.14444444444444443,
+            "group_bootstrap_95_interval": [
+              -0.2391304347826087,
+              -0.0449438202247191
+            ],
+            "mas_only_correct": 7,
+            "sas_only_correct": 20,
+            "both_correct": 19
+          },
+          "grouping": "explicit test_case_number (shared financial case)",
+          "retrieved_transaction_identifier_mentions": {
+            "nonempty_gold_cases": 46,
+            "all_gold_identifiers_mentioned": 19,
+            "any_gold_identifier_mentioned": 24
+          },
+          "mention_limit": "Offline gold-assisted literal-ID presence diagnostic only; mention does not prove relevance or sufficient evidence.",
+          "fixed_rule_diagnostics": {
+            "txn_id_list": {
+              "n": 57,
+              "constant_true_correct": 0,
+              "constant_false_correct": 0,
+              "constant_empty_list_correct": 11
+            },
+            "boolean": {
+              "n": 26,
+              "constant_true_correct": 17,
+              "constant_false_correct": 9,
+              "constant_empty_list_correct": 0
+            },
+            "account_id_list": {
+              "n": 7,
+              "constant_true_correct": 0,
+              "constant_false_correct": 0,
+              "constant_empty_list_correct": 1
+            }
+          }
+        },
+        "frames": {
+          "conditions": {
+            "sas": {
+              "n": 100,
+              "exact_matches": 2,
+              "typed_counts": {
+                "closed_book": {
+                  "n": 100,
+                  "correct": 2
+                }
+              },
+              "generated_tokens": 2065,
+              "recorded_seconds": 594.1588309119943,
+              "peak_tree_rss_bytes": 5076500480,
+              "final_finish_reasons": {
+                "stop": 100
+              },
+              "note": "Reported seconds sum saved case durations; SAS Mortar spans interruption/recovery.",
+              "punctuation_normalized_matches": 2
+            },
+            "mas": {
+              "n": 100,
+              "exact_matches": 1,
+              "typed_counts": {
+                "closed_book": {
+                  "n": 100,
+                  "correct": 1
+                }
+              },
+              "generated_tokens": 11507,
+              "recorded_seconds": 711.1777936069957,
+              "peak_tree_rss_bytes": 5541289984,
+              "final_finish_reasons": {
+                "stop": 100
+              },
+              "note": "Reported seconds sum saved case durations; SAS Mortar spans interruption/recovery.",
+              "punctuation_normalized_matches": 1
+            }
+          },
+          "paired_exact": {
+            "n": 100,
+            "n_groups": 100,
+            "mas_minus_sas": -0.01,
+            "group_bootstrap_95_interval": [
+              -0.05,
+              0.02
+            ],
+            "mas_only_correct": 1,
+            "sas_only_correct": 2,
+            "both_correct": 0
+          },
+          "grouping": "one group per question; cross-question dependence unassessed",
+          "paired_punctuation_normalized": {
+            "n": 100,
+            "n_groups": 100,
+            "mas_minus_sas": -0.01,
+            "group_bootstrap_95_interval": [
+              -0.05,
+              0.02
+            ],
+            "mas_only_correct": 1,
+            "sas_only_correct": 2,
+            "both_correct": 0
+          }
+        }
+      },
+      "limits": "Original unadapted systems; simulated8GB tier. Mortar uses partial JSON/XML evidence, no PDFs/paystubs, local typed exact scoring and forced boolean/ID lists. FRAMES is closed-book strict matching with separate punctuation sensitivity. SAS maximum896 generated tokens versus MAS1792 under ceiling2048; actual expenditure differs. Not optimized/adapted systems, official full benchmark replication, pristine confirmation, causal architecture winner or novelty. Group bootstrap is exploratory; no repeated-run latency claim. Constant rules are fixed diagnostics, not gold-selected deployable policies.",
+      "raw_report": "/run/media/mutasim/Data/AGERE/runs/external-baselines-completed-analysis-03.json",
+      "raw_report_sha256": "402a047d0883542b997f097dcde34fdf54c430e516c855a04be274dcbbfa7ce7"
+    }
+  },
+  "shared3b-serving-parity-complete-01.json": {
+    "source_sha256": "54047606066f36d76c26857fc6078b8d095ca61795d5cbfbbb5121d47c743da3",
+    "data": {
+      "status": "audited_completed",
+      "proof_root": "/run/media/mutasim/Data/AGERE/runs/tier8_shared_serving/shared3b-policy-parity-01",
+      "full_vocab_exact_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_memory_maxima": {
+        "setup": 31035392,
+        "distinct": 4830547968,
+        "shared": 2570973184
+      },
+      "summary": {
+        "status": "complete",
+        "exit_code": 0,
+        "memory_breach": false,
+        "peak_tree_rss_bytes": 4830547968,
+        "phase_peak_tree_rss_bytes": {
+          "setup": 31035392,
+          "distinct": 4830547968,
+          "shared": 2570973184
+        },
+        "cap_bytes": 6400000000,
+        "measured_reasoning_gain": false,
+        "novelty_established": false
+      },
+      "actual_prefill_tokens": 10044,
+      "actual_generated_tokens": 117,
+      "limits": "Two bound validation prompts, four role switches, full next-token vector and32-token deterministic completions. Not full-program/natural QA equivalence, calibrated independence or novelty.",
+      "qa_gain_demonstrated": false,
+      "novelty_established": false
+    }
+  },
+  "header-materialization-fitting-01.json": {
+    "source_sha256": "04394803af58889bf8ef8d53b0324e113acbfdf8888acb66983fa82ac7b71e01",
+    "data": {
+      "status": "verified_offline_preprocessing_prototype",
+      "result": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-materialization-fitting-01",
+      "summary": {
+        "status": "complete_offline_fitting_prototype",
+        "n": 73,
+        "counts": {
+          "mappable_before": 41,
+          "mappable_after": 45,
+          "unique_before": 19,
+          "unique_after": 22
+        },
+        "transitions": {
+          "unretrieved_operand -> unretrieved_operand": 20,
+          "unsupported_operation -> unsupported_operation": 4,
+          "mappable -> mappable": 41,
+          "unretrieved_operand -> mappable": 4,
+          "numeric_literal_failure -> numeric_literal_failure": 4
+        },
+        "changed_cases": [
+          {
+            "id": "BLK/2009/page_98.pdf-1",
+            "before": "unretrieved_operand",
+            "after": "mappable",
+            "unique_before": false,
+            "unique_after": true,
+            "appended_cells": 2,
+            "extra_evidence_characters": 65
+          },
+          {
+            "id": "GRMN/2008/page_84.pdf-1",
+            "before": "unretrieved_operand",
+            "after": "mappable",
+            "unique_before": false,
+            "unique_after": false,
+            "appended_cells": 2,
+            "extra_evidence_characters": 84
+          },
+          {
+            "id": "IPG/2003/page_89.pdf-2",
+            "before": "unretrieved_operand",
+            "after": "mappable",
+            "unique_before": false,
+            "unique_after": true,
+            "appended_cells": 2,
+            "extra_evidence_characters": 67
+          },
+          {
+            "id": "VNO/2008/page_183.pdf-2",
+            "before": "unretrieved_operand",
+            "after": "mappable",
+            "unique_before": false,
+            "unique_after": true,
+            "appended_cells": 2,
+            "extra_evidence_characters": 69
+          }
+        ],
+        "all_old_span_keys_order_and_catalog_facts_retained": true,
+        "packet_sealed_before_reference_scoring": true,
+        "tokenizer_only": true,
+        "neural_forward_calls": 0,
+        "token_summary": {
+          "mas": {
+            "n": 73,
+            "total_extra_prompt_tokens": 5418,
+            "median_extra_prompt_tokens": 72,
+            "max_extra_prompt_tokens": 337,
+            "before_full_draft_reserve_fits": 73,
+            "after_full_draft_reserve_fits": 73,
+            "new_reserve_failures": 0
+          },
+          "sas": {
+            "n": 73,
+            "total_extra_prompt_tokens": 5418,
+            "median_extra_prompt_tokens": 72,
+            "max_extra_prompt_tokens": 337,
+            "before_full_draft_reserve_fits": 73,
+            "after_full_draft_reserve_fits": 73,
+            "new_reserve_failures": 0
+          }
+        },
+        "candidate_public_sha256": "56042cc9fd02e36a23962fb87211bae88e1355a16a9f357fc95989b0132f701e",
+        "coverage_sha256": "72b531e95cb78944aed7c34411b37f532b0c7d207ef0e2401fceb48244f877d0",
+        "tokens_sha256": "ddac29b6b8397c17ca695f58c5a6af2449f0c0960b858e860057010c8e990894",
+        "input_sha256": {
+          "/home/mutasim/Desktop/project-agere/research/tier8_v2/experiments/header_materialization_fitting.py": "67a1a1a493a1f174bef878e0fc251e74b230f5c19bc10924f768b42616d08445",
+          "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/fitting-public.jsonl": "ef4200d887cc4078ae9ed2f84de07224d3be76181637371180e51bf00b34aa6d",
+          "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/source-train.json": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+          "/run/media/mutasim/Data/AGERE/datasets/tier8_v2_natural/natural_reports62_01/selection.json": "a8c8ccc7890e3d112b0e62572e64546ef4c380461b4b59c7ae1dded047e73eab",
+          "/home/mutasim/Desktop/project-agere/scripts/binary_verifier_score.py": "d9dd29663c2e2e738641ef471dbebb0024364230bfd3ddae7da027ce48ff89dc",
+          "/home/mutasim/Desktop/project-agere/scripts/cgroup_exec.py": "0891e6b93ebff13b915335af97e75ae45c70aa84c781340d45ec53567b6c5cd5",
+          "/home/mutasim/Desktop/project-agere/scripts/completion_tokenization.py": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+          "/home/mutasim/Desktop/project-agere/scripts/download_hf_snapshots.py": "83035310a6f908ace207e9c8d3e1348e7c589011f0f9c24f246e4d7db179e3f7",
+          "/home/mutasim/Desktop/project-agere/scripts/eval_checkpoints.py": "70dc66c29ae475b25b8123255d247beb16524d260ea547cd26db0f6b3521050d",
+          "/home/mutasim/Desktop/project-agere/scripts/evidence_atoms.py": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+          "/home/mutasim/Desktop/project-agere/scripts/evidence_calculator.py": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+          "/home/mutasim/Desktop/project-agere/scripts/evidence_cells.py": "805ed5c46359fc0ad8bb5f7cc8ac6abaf84500df3c30e7637d48ffc7947d196a",
+          "/home/mutasim/Desktop/project-agere/scripts/evidence_contract.py": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+          "/home/mutasim/Desktop/project-agere/scripts/financial_review_protocol.py": "e79e12b6865c1b135611958132728c8813c065acea596f11d135e0b4cd3b86df",
+          "/home/mutasim/Desktop/project-agere/scripts/financial_trace_replay.py": "c309d4f9975abb80cbd812a1fba5643f1b73d5c8b9f6e4a15f43b8b1d28eb9d8",
+          "/home/mutasim/Desktop/project-agere/scripts/frozen_head_loss.py": "464d4d227f3400dbf553a1245d2ee821d540389d12fa56c1698c9f70fd325943",
+          "/home/mutasim/Desktop/project-agere/scripts/generate_tier8_visualizations.py": "54e71ffa816b03a6281503f2e956b470eb6dd905e6aefd9b12672d71c750449e",
+          "/home/mutasim/Desktop/project-agere/scripts/gguf_integrity.py": "7b3de148498dc6ee925a0f839d8035c34735cc2746f8128c46d3bba867d7d930",
+          "/home/mutasim/Desktop/project-agere/scripts/lab_run.py": "b695d04ea73276f9ca2407dfbdf42018ed0143bd48b68f83e0eba7fa4f3d7a99",
+          "/home/mutasim/Desktop/project-agere/scripts/phase2.py": "d0e26ccabfe29674237803f6ffa13e0ca945caa8f45300318d2fbcfd0fef365d",
+          "/home/mutasim/Desktop/project-agere/scripts/phase3.py": "09b714c34209583f1e3e7fd4142cafd87925702af6ef1f5106c49ecf185f1103",
+          "/home/mutasim/Desktop/project-agere/scripts/prepare_project_datasets.py": "eda9ef829b8afa9e80381edf58edafa383b958c279bf0b63e661e74fb108fd55",
+          "/home/mutasim/Desktop/project-agere/scripts/program_binding_domains.py": "1c9e2fd6799ffa8164df31f72d1c85458698d3d5d10f8d31daeb229788ca3151",
+          "/home/mutasim/Desktop/project-agere/scripts/program_endpoints.py": "16db164e13ecc7a628cbef97346223a1e74c598a57fdfb777120e5f00eb3183f",
+          "/home/mutasim/Desktop/project-agere/scripts/program_graph.py": "3c8bbfa7960ad49c269fe2435a8596d90d0c71b72d05c54de85c1b5205051cc0",
+          "/home/mutasim/Desktop/project-agere/scripts/program_influence.py": "34accb8aaf09780a9ab238ab0b85fb173a3f7350484e62769244a0b4bb260546",
+          "/home/mutasim/Desktop/project-agere/scripts/sas_cpu_weight_storage.py": "0de563b143f81460fe46807040e8657121921957956653d1cdf0282e4a35738e",
+          "/home/mutasim/Desktop/project-agere/scripts/sas_frozen_cpu_prepare.py": "2371f6766c19635720158bd70f1066839126c1c193a3413341e8ae178633e487",
+          "/home/mutasim/Desktop/project-agere/scripts/sas_safetensors_pread.py": "40929c8192ed450abd705102fb8e0e8d238e2c65de584fe0f9cded6c0ba012b7",
+          "/home/mutasim/Desktop/project-agere/scripts/shared_role_models.py": "bde95692aee9f1705e8380101406245cba8651623ba501e86eeb1a3262a3ad9d",
+          "/home/mutasim/Desktop/project-agere/scripts/source_program_quotient.py": "5f881dfb816baede0c3eb6b836f7d50469de501dbf3b7b00adfbe815f234a357",
+          "/home/mutasim/Desktop/project-agere/scripts/source_repair_pool.py": "669fde3be06710e910ed6b0d9eeb6cbfa070db4551b729fd3d9abddba834f5f4",
+          "/home/mutasim/Desktop/project-agere/scripts/supervised_logits.py": "01f2afbd5ed2de8a59eb89f012ac991b6a651ed58177b3be1e6a6cbe25607f61",
+          "/home/mutasim/Desktop/project-agere/scripts/table_header_materialization.py": "fe23e421569cf2cdb507a79850f09d864c12975b3a3fa2089c85985b5f048f71",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_artifact_paths.py": "c4f342f83eb9f8e4cda870f1867dd86774d4822b03bc76721fb234d872184d89",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_external_analyze.py": "ed0aafb79693a5c6196ef6255070b33e6f4875127710c7dd74e813ae3814135c",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_external_eval.py": "387294f2db39d62d1d852f04bd9bfdda01ac4eeddc9fdc0844fd8ac3b8201387",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_external_recover.py": "60f5670edd488500375622c7248a0a5db9423227dbd355a00d873403b2564cb6",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_finetune.py": "475d55437adcd4b9353b19745753ccaab681f466e0a7dc40130e49ba6026b5fc",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_study.py": "5c457ed4c379dc5e54d59d82683da66fdedc909d4611fdff2aa0f50a415e580d",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapt.py": "69c5867ef27c2bca34fd4883d9a15db69132fb2999556db264ed09404fb60e8f",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adaptation_data.py": "774f795a7ae55d1e3bc0451714331bda5a0fc1dca87c0acdc1435941ff3334e3",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adaptation_prompts.py": "f190d39ee3eaa25d7e3eccef730af404fb84e709fd650492ed98c5358b682cd7",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adaptation_sequence.py": "baaaef5d12e3f3f6d74ab3270eefdff931a2ea4c3c2bf8b18b9068c208bdfe95",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_convert.py": "d4bf0355e2da6136a3884485c3fa6ab0afeba0c68ac97faa02061deb8f1d8e25",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_proof.py": "524a931877551bc57ba90acd4f4a2eaffbe87ba80ba85f9592f996277a1354cd",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_adapter_runtime.py": "28243991d8ba9094f234f8bc0ceca44c476e1cb85662ca2475ccb44acf93035a",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_analyze.py": "dd4bbe0e712e2027622b3bde0183dd6ebf95c4f333159362b80a7ac325631e4e",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_baseline.py": "df3134b17169132a9e34fa91ccbae86537a88ce2ce7cb628534e4e5cd93408c4",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_binding_audit.py": "eae0091fc79d10509944cb122bddc5b40a8e3a20376465f25fcb06234ccc6225",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_candidate_model.py": "6221f5fb765ec77f213b6a9ab665caa6b96ee8ea63fa95fd44da14bbc5cf5cf9",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_capacity.py": "4ceb81ea6bd3da0217de8293aaa1b0e6f7d7221f5fca59d6bac74f0506ba3995",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_cell_audit.py": "141bac54231b03222076f512317c53ec41d4c7f941d037d8cfa48e91dfe5bc63",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_continuation_audit.py": "3e5b8dae4127f109cba31998156bf8fa9181492339a52844d6d4d47ab8f9438e",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_continuation_data.py": "c2532e6139b57ae71a7c1b9d922dca3ccd7b390d9eb3900cfd87aa45b3ac9d68",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_continue.py": "9a1db53c39f2af93f6a9a5b074f65c944b1f75a8bbeec310378a3d8eeaf7acde",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_convert.py": "48232bdf463ec6d0ce3a38fd77b6542d0933078de534d4609d6fcf68fc2f6f44",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_converter_source.py": "2e104d725ac9d558c9905ec30f449e280ff52ec17d39767c1b07b007f8f3431e",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_artifact_audit.py": "0ea9dde82a1e106a643ee2f0a6a2f937afc1e6314bfcf1db07aa73fba52eec70",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_compare.py": "c2bc3dced263ef2fdec5daec49433b0c84a7f9be9a1e534f01a96006953952ae",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_curriculum.py": "e54020de92cd552fba3aae363d5f9ba9f1ac63b6c3f1ba5baa44e64ae0aad6f3",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_curriculum_audit.py": "f0ee6f6fdfd57f19a213ba21fb48269b9140bf6f72bc1a700c545f28fb42217c",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_data.py": "878476d460c9f9a774d2d110d82a4a19214caf121233ec57997c7328620311b1",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_policy_pair.py": "72229746e3fa4ed3d4fba2e72ce50504c4e0c57aad191c7e0b220c64ec82d43d",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_probe.py": "9ad00d0e0b2e22c892fbe7fb7da986a2214fee0c3e7fb4d3943d1d63eaddcc09",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_probe_analyze.py": "66a73711046e8a1d445bbfb99777fe9ecf52bd10c350b924a49a3046be28f4a5",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_quartet_audit.py": "ae4b68380e258afbc93baf4ca290f0233ade85c862dd95ac9ca038a36a1f01fc",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_critic_quartets.py": "6061f01886ee36ad598af6738956a109023f93bbd5cc886b7e858bbe1b03cd63",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_data.py": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_delivery_analyze.py": "687beab1758b11375c99bee6378c61d12d0f4a1a2478c1ffc8c03f8978c61d21",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_demo_retrieval.py": "0a77a581ba43062bb036c27a732fa6cd63b642387ce26ebec69a6e88175d6b5f",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_demos.py": "9cb3cb2eaad2f3eda5fc9a4e14c3fff9076c071d710b853fb0d700d336844918",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_download.py": "f470d826c507fd37ba251833478e3d61702793850b9c5373e13ba1d9ec8bbb43",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_financial_pipeline.py": "dd7a230fddc87146dea85ccd5d46957935ae0b03bfbbdb7abebc90f1feb4d9b2",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_finqa.py": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_finqa_audit.py": "8dcef9fa460af1ead7b06f28edebd57e89237f042b7007154bdc3556ee6834a2",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_fresh_development.py": "2f3a9a6a54e1344b8044182eb885592ddffab20a69b08a80824d025029b4bca9",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_graph_audit.py": "8da390f37e949e850446833eb607b4154c980610fead6be16103eb75b4493900",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_hf_tokenizers.py": "bab9dd139455c4b1ecc5cc8eb06de9ad44bdc7e2e01a92eab0a9bab7d363e26a",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_influence_audit.py": "c2aba5b0a43ab70316a7df128e21c751ee5689952b0c5ccade1bf21787bd9994",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_influence_repair.py": "da13963292d77e2dedf1b09edddac5bf8596cb126208fc669025c89fb752f059",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_joint_posttrain.py": "ea3d2ec0ed7f2128074a22707eea71f0ffab7e51ec72f43656b3d0248bda9fe8",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_joint_posttrain_plan.py": "5a8ab65c4a04d63f77b53adbb5ef344c35c600efb3ad8f6717de30c25b4a938a",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_last_logit_proof.py": "567652b008dc1f9bc226de6fff8bb9f44167d4724326c6048dfc91b213f41c73",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_loss_check.py": "895c4e2c8c45a678b476e206267f11e413d117c438cbe114ee8eefb6b45c04d6",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_matched_sequence.py": "ccf173fb3656e7e14860f63828a680d4d1a4739b7f6f635069ce3327b24f5e5f",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_method_analyze.py": "0c874cc62c7a9d7f3a116dd9e22892615610dd6dfb7c21e41623a4a54467ade6",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_method_plan.py": "0c2bb4dda1c966e9147344e2b1b315ac8c84b8172d14cc20c98e377281da0732",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_natural_run.py": "3d777a2f3c11780f4c7ed373b9c906b192753b04792623eb70b9cb67658df4ac",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_natural_selection.py": "7a36629704c4755d620c3737fca65469aead341d9d3805b0b1e200305e46fc44",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_operand_risk_audit.py": "1d4b106d7dfda8d302bbb5c61cba434b385cc2788170bac5bee73aefe1983451",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_posttrain_plan.py": "ff82239aa445a3102b0d36a8ccc03eb6b8b722b783566d8cf76ff03ccf72c7d8",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_posttrain_queue.py": "ee26d8c80de2c6c93bea70f1420406ef48b90d805431a20808f300cc25b56510",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_prefix_audit.py": "a2c0353f9aa63058149424bc0b6439759205ddabf4802f8c77d400d409317641",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_proof_pilot.py": "3fd9bcb0a7da324770d11a6d5878c194b51031097254d2862f7acff267738d00",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_quartet_probe.py": "c10ae6cb6671c7bca85aa19de0b32e24f99a98eeb8b5eb1f976d8991e70ad98f",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_quotient_diagnostic.py": "1763054dc5022019e1ea87027f0bbb5e342c81b29e1d045f9c1b0da2a9625752",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_reclaim_cache.py": "f26402a70f83390eddb3c57701e82b06ec4cf361fbc179a5dfdc43008bfe4d1a",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_repair_opportunity.py": "a7e7a87fd40930d487c11328dc99f1534612d1b6a8e2141338e91a3703d181ec",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_replay.py": "127e26685c71c5dfb9e53b013b831389079627be9c143d5e133637f7e30e8992",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_replay_analyze.py": "7fa6b8ca5cb5f429baf7ae706a1227d3d40577625a84e6688ae96afec92011d1",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_representation_audit.py": "a18550647dd6977d01978d51710f54330dce1f34171bdc9a1f9725bcb44fcbcc",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_rules.py": "0c7eaf8550f9471a7e8387a9e38d75ed2db368b2e26351fd34b78242d0ac5275",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_run.py": "8bcd2429d213887c9e9a1ccdab37b18354d78a35b48ba75885406291c84790e2",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sas_joint_data.py": "d4c5316d0215247dcbdb074c54c45b801a145ff43c49ab2cca09b9ba937b1143",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sas_offload_fit.py": "457a1b9f889631a9871a3c939529766251945c96e2e3c227ac1b94f305da2346",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sequence.py": "c90929038c478c5cde60e04b964655dc85ebf3281c9f73e21cc94c7b8c66e39f",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sequence_recover.py": "3cf2f530bd3971000830866a077375c3359eaa1c7f1f67162556c0fecfd6f862",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_shared_role_dispatch.py": "ba9dc4b8432b904c25bbe6b386c5da9d55ecef920a2cb0c0be338b3f6e4caa8d",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_shared_role_proof.py": "fac3821af9e8de7592e59688c847414f7049201b7fb2b3056bbc50be6ec295fc",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sketch_audit.py": "cafcb9e6783fbe6789beb343f040530bd066b6752b7d5ed9ef952c44f1f1adae",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_sketches.py": "8bc41ee3d3ecae07ee8b3c3bfb4fb4e080c7dd542826526ed82ec7695f6124ad",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_table_retrieval.py": "325162ffd73294091278c3862c7cc9bd4c569d3b74525db5716935b06058387b",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_training_base.py": "05d70fe6d43e24ceb0fc95d5ec1b6e96e94ba29f50dfc4c471777257be1fcb73",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_unit_audit.py": "712e1bdf1e620ee7d46b3d2e67bdca9b086b91e5c56d43859c6b04ca58777769",
+          "/home/mutasim/Desktop/project-agere/scripts/tier8_v2_verifier_audit.py": "cb78b0e61c2439e185de3254d4e8adc4b4325598138c872427e8ccba0a6998d2",
+          "/home/mutasim/Desktop/project-agere/scripts/verify_phase1_download.py": "8abce8d12725d5f140828c128d6d655668521c1f048b4f0573fe24c3f7372c9b"
+        },
+        "adopted": false,
+        "natural_qa_gain_demonstrated": false,
+        "limits": "Outcome-guided exploratory fitting73 only; no selection/reserved packets modified. Same eight selected span IDs but extra source content/prompt tokens, not information/token-matched. Augmented spans are context groups with source row/column/offset ledger. Existing-parser mapping/unique numeric identities are not semantic certification. No trainable SFT corpus, HF/GGUF parity or full-policy context proof. Vocab-only counters use existing pinned model paths without full weight rehash here; future training/evaluation still requires normal full checks. Known preprocessing baseline candidate, no first-use novelty."
+      },
+      "summary_sha256": "db78ddc2e71877f962d60215db70a6c78eec4a30ed022661b9c0470b8600e298",
+      "all_source_origin_offsets_original_catalog_facts_and_token_counts_rechecked": true,
+      "tests_log": "/run/media/mutasim/Data/AGERE/runs/header-materialization-tests-01.log",
+      "adopted": false,
+      "limits": "AIDs can renumber; old SFT targets/traces must not be reused against transformed packets. Only first-draft reserve checked, not full-policy context or new SFT eligibility. Extra source content and tokens, not a matched-budget QA gain. No neural forward, training change, held-out confirmation or novelty established."
+    }
+  },
+  "source-span-catalog-fitting-01.json": {
+    "source_sha256": "7123fc0805f6bd43dfcd6f70f76aa580477679991773b62c87cac174a6234f05",
+    "data": {
+      "status": "complete_offline_catalog_only_fitting_baseline",
+      "result": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/source-span-catalog-fitting-01",
+      "counts": {
+        "cases": 73,
+        "original_atoms": 1922,
+        "candidate_atoms": 2338,
+        "original_mappable": 41,
+        "candidate_mappable": 45,
+        "header_mappable": 45
+      },
+      "token_summary": {
+        "mas": {
+          "n": 73,
+          "catalog_only_extra_tokens_total": 5597,
+          "catalog_only_extra_tokens_median": 31,
+          "catalog_only_extra_tokens_max": 328,
+          "header_extra_tokens_total": 5418,
+          "catalog_only_full_draft_reserve_fits": 73
+        },
+        "sas": {
+          "n": 73,
+          "catalog_only_extra_tokens_total": 5597,
+          "catalog_only_extra_tokens_median": 31,
+          "catalog_only_extra_tokens_max": 328,
+          "header_extra_tokens_total": 5418,
+          "catalog_only_full_draft_reserve_fits": 73
+        }
+      },
+      "catalog_vs_header_cost": {
+        "mas": {
+          "total_catalog_minus_header_tokens": 179,
+          "catalog_fewer_cases": 38,
+          "equal_cases": 9,
+          "catalog_more_cases": 26
+        },
+        "sas": {
+          "total_catalog_minus_header_tokens": 179,
+          "catalog_fewer_cases": 38,
+          "equal_cases": 9,
+          "catalog_more_cases": 26
+        }
+      },
+      "same_per_case_parser_category_as_header": true,
+      "recovered_ids": [
+        "BLK/2009/page_98.pdf-1",
+        "GRMN/2008/page_84.pdf-1",
+        "IPG/2003/page_89.pdf-2",
+        "VNO/2008/page_183.pdf-2"
+      ],
+      "source_packets_and_old_quantity_ids_unchanged": true,
+      "all_candidate_quantities_execute_against_original_source": true,
+      "neural_forward_calls": 0,
+      "adopted": false,
+      "novelty_established": false,
+      "unit_tests_passed": 3,
+      "limits": "Exploratory fitting73 only. New entries are span-value pairs, not localized cells; no unique-cell binding or semantic certification. Catalog/grammar/prompt tokens change although original source text/IDs remain. Direct compact first-draft capture only; no full-policy context or HF/SFT parity proof. Vocab-only counters use pinned model paths without full weight rehash here; future neural work requires normal full checks. Temporary patch is local to this metadata process; active workers/files and prepared neural study are unchanged.",
+      "serialized_original_ids_and_all_source_values_independently_rechecked": true
+    }
+  },
+  "header-visibility-attribution-01.json": {
+    "source_sha256": "976adc03016ef18f2b0ba4cb88a4f15fccc774ed057680b6fbe35f16048e995f",
+    "data": {
+      "status": "complete_offline_source_visibility_attribution",
+      "result": "/run/media/mutasim/Data/AGERE/runs/tier8_representation_audit/header-visibility-attribution-01",
+      "n": 73,
+      "counts": {
+        "added_atom_occurrences": 183,
+        "added_occurrences_numeric_in_same_original_span": 183,
+        "first_row_cell_occurrences": 262,
+        "empty_first_row_cell_occurrences": 22,
+        "nonempty_cell_literals_in_same_original_span": 240
+      },
+      "per_case_counts_reconciled": true,
+      "interpretation": "Every added catalog occurrence is already numerically visible in the same baseline span; every nonempty first-row cell string is already present there. Prototype changes selectable program operands and repeats source text with explicit first-row cues. Four earlier coverage recoveries are catalog representability changes, not newly retrieved raw cell literals.",
+      "limits": "Fitting-only source visibility diagnostic. Numeric and substring presence are not semantic grounding or a strict information-equivalence proof: explicit structural cues, catalog/grammar options and token repetitions differ. No QA gain or novel mechanism demonstrated. Existing neural plan remains prepared and unexecuted.",
+      "neural_forward_calls": 0,
+      "novelty_established": false,
+      "adopted": false
+    }
+  },
+  "legacy_frames": {
+    "data": {
+      "sas": {
+        "n": 100,
+        "exact_match": 0.01
+      },
+      "mas": {
+        "n": 100,
+        "exact_match": 0.02
+      },
+      "note": "Closed-book control. A team win here does not override the KYC and credit invention result."
+    },
+    "source_sha256": "4eddb127371633b7d3a8826b7904ac3d514ebbf04021a91d8ce2f8822fbc0a04"
+  }
+}

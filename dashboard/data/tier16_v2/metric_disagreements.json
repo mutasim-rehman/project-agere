@@ -1,0 +1,434 @@
+[
+  {
+    "case_id": "AAPL/2005/page_83.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 26.666666666666668,
+    "declared_unit": "number",
+    "gold_answer": 26.7,
+    "gold_exe_ans": 0.26667
+  },
+  {
+    "case_id": "ABMD/2007/page_52.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 59.481902058197306,
+    "declared_unit": "percent",
+    "gold_answer": "59.5%",
+    "gold_exe_ans": 0.59482
+  },
+  {
+    "case_id": "AON/2011/page_134.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 6.134205200062276,
+    "declared_unit": "percent",
+    "gold_answer": "6.1%",
+    "gold_exe_ans": 0.06134
+  },
+  {
+    "case_id": "AWK/2013/page_132.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 10.198233616656054,
+    "declared_unit": "percent",
+    "gold_answer": "10.2%",
+    "gold_exe_ans": 0.10198
+  },
+  {
+    "case_id": "AWK/2013/page_132.pdf-3",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 10.198233616656054,
+    "declared_unit": "percent",
+    "gold_answer": "10.2%",
+    "gold_exe_ans": 0.10198
+  },
+  {
+    "case_id": "AWK/2013/page_132.pdf-4",
+    "reported_correct": false,
+    "raw_correct": true,
+    "predicted": 1393,
+    "declared_unit": "fraction",
+    "gold_answer": null,
+    "gold_exe_ans": 1393.0
+  },
+  {
+    "case_id": "CME/2012/page_70.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 40.0,
+    "declared_unit": "percent",
+    "gold_answer": "40%",
+    "gold_exe_ans": 0.4
+  },
+  {
+    "case_id": "CME/2012/page_70.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 40.0,
+    "declared_unit": "percent",
+    "gold_answer": "40.0%",
+    "gold_exe_ans": 0.4
+  },
+  {
+    "case_id": "DRE/2013/page_39.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 47.10412622878968,
+    "declared_unit": "percent",
+    "gold_answer": "47.1%",
+    "gold_exe_ans": 0.47104
+  },
+  {
+    "case_id": "DRE/2013/page_39.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 72.09302325581395,
+    "declared_unit": "percent",
+    "gold_answer": "72.1%",
+    "gold_exe_ans": 0.72093
+  },
+  {
+    "case_id": "FIS/2007/page_94.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 25.321436889149446,
+    "declared_unit": "percent",
+    "gold_answer": "25%",
+    "gold_exe_ans": 0.25321
+  },
+  {
+    "case_id": "FIS/2007/page_94.pdf-3",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 30.552147239263803,
+    "declared_unit": "percent",
+    "gold_answer": "30.6%",
+    "gold_exe_ans": 0.30552
+  },
+  {
+    "case_id": "FIS/2007/page_94.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 14.162095744424546,
+    "declared_unit": "percent",
+    "gold_answer": "14%",
+    "gold_exe_ans": 0.14162
+  },
+  {
+    "case_id": "HIG/2008/page_318.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 43.891993902881616,
+    "declared_unit": "percent",
+    "gold_answer": "43.9%",
+    "gold_exe_ans": 0.43892
+  },
+  {
+    "case_id": "HOLX/2008/page_142.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 18.53035143769968,
+    "declared_unit": "percent",
+    "gold_answer": "18.5%",
+    "gold_exe_ans": 0.1853
+  },
+  {
+    "case_id": "HOLX/2012/page_113.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 0.99933160061387,
+    "declared_unit": "fraction",
+    "gold_answer": "99.9%",
+    "gold_exe_ans": 0.99891
+  },
+  {
+    "case_id": "HUM/2017/page_133.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 66.66666666666667,
+    "declared_unit": "percent",
+    "gold_answer": "66.67%",
+    "gold_exe_ans": 0.66667
+  },
+  {
+    "case_id": "HUM/2017/page_133.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 28.448275862068964,
+    "declared_unit": "percent",
+    "gold_answer": "28.45%",
+    "gold_exe_ans": 0.28448
+  },
+  {
+    "case_id": "HWM/2016/page_40.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 12.524461839530332,
+    "declared_unit": "percent",
+    "gold_answer": "12.52%",
+    "gold_exe_ans": 0.12524
+  },
+  {
+    "case_id": "JPM/2013/page_209.pdf-3",
+    "reported_correct": false,
+    "raw_correct": true,
+    "predicted": 9582,
+    "declared_unit": "number",
+    "gold_answer": null,
+    "gold_exe_ans": 9582.0
+  },
+  {
+    "case_id": "LKQ/2016/page_26.pdf-2",
+    "reported_correct": false,
+    "raw_correct": true,
+    "predicted": 0.26,
+    "declared_unit": "percent",
+    "gold_answer": "26%",
+    "gold_exe_ans": 0.26
+  },
+  {
+    "case_id": "LKQ/2018/page_83.pdf-3",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 49.523809523809526,
+    "declared_unit": "percent",
+    "gold_answer": "49.5%",
+    "gold_exe_ans": 0.49524
+  },
+  {
+    "case_id": "LMT/2010/page_42.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": -3.755868544600939,
+    "declared_unit": "percent",
+    "gold_answer": "-4%",
+    "gold_exe_ans": -0.03756
+  },
+  {
+    "case_id": "LMT/2010/page_42.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 11.786952410967539,
+    "declared_unit": "percent",
+    "gold_answer": "11.8%",
+    "gold_exe_ans": 0.11787
+  },
+  {
+    "case_id": "LMT/2010/page_42.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": -7.991360691144709,
+    "declared_unit": "percent",
+    "gold_answer": "-8%",
+    "gold_exe_ans": -0.07991
+  },
+  {
+    "case_id": "MS/2017/page_74.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 57.59312320916906,
+    "declared_unit": "percent",
+    "gold_answer": "58%",
+    "gold_exe_ans": 0.57593
+  },
+  {
+    "case_id": "MS/2017/page_74.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 62.69956458635704,
+    "declared_unit": "percent",
+    "gold_answer": "63%",
+    "gold_exe_ans": 0.627
+  },
+  {
+    "case_id": "PNC/2011/page_87.pdf-3",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 33.849557522123895,
+    "declared_unit": "percent",
+    "gold_answer": "33.8%",
+    "gold_exe_ans": 0.3385
+  },
+  {
+    "case_id": "PNC/2016/page_177.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 66.05123949797739,
+    "declared_unit": "percent",
+    "gold_answer": "66.05%",
+    "gold_exe_ans": 0.66051
+  },
+  {
+    "case_id": "PNC/2018/page_171.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 9.329779970486532,
+    "declared_unit": "percent",
+    "gold_answer": "9.3%",
+    "gold_exe_ans": 0.0933
+  },
+  {
+    "case_id": "PNC/2018/page_171.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 5.26950342277172,
+    "declared_unit": "percent",
+    "gold_answer": "5.3%",
+    "gold_exe_ans": 0.0527
+  },
+  {
+    "case_id": "RE/2015/page_33.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 3.55812475121644,
+    "declared_unit": "percent",
+    "gold_answer": "3.6%",
+    "gold_exe_ans": 0.03558
+  },
+  {
+    "case_id": "RE/2017/page_159.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 36.163175,
+    "declared_unit": "percent",
+    "gold_answer": "36.2%",
+    "gold_exe_ans": 1446527.0
+  },
+  {
+    "case_id": "RE/2017/page_159.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 1.724748966331955,
+    "declared_unit": "percent",
+    "gold_answer": "1.7%",
+    "gold_exe_ans": 0.01725
+  },
+  {
+    "case_id": "RE/2017/page_159.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": -1.2893581876633882,
+    "declared_unit": "percent",
+    "gold_answer": "-1.3%",
+    "gold_exe_ans": -0.01289
+  },
+  {
+    "case_id": "UA/2009/page_50.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": -75.0,
+    "declared_unit": "percent",
+    "gold_answer": "-75%",
+    "gold_exe_ans": -0.75
+  },
+  {
+    "case_id": "UNP/2006/page_37.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 66.32471008028546,
+    "declared_unit": "percent",
+    "gold_answer": "66.3%",
+    "gold_exe_ans": 0.66325
+  },
+  {
+    "case_id": "UNP/2006/page_37.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 1.0190217391304348,
+    "declared_unit": "percent",
+    "gold_answer": "1%",
+    "gold_exe_ans": 0.01019
+  },
+  {
+    "case_id": "UNP/2013/page_54.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 16.66158691455857,
+    "declared_unit": "percent",
+    "gold_answer": "16.7%",
+    "gold_exe_ans": 0.16662
+  },
+  {
+    "case_id": "UNP/2013/page_54.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 8.158634104171169,
+    "declared_unit": "percent",
+    "gold_answer": "8%",
+    "gold_exe_ans": 0.07721
+  },
+  {
+    "case_id": "UNP/2014/page_25.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 7.6923076923076925,
+    "declared_unit": "percent",
+    "gold_answer": "8%",
+    "gold_exe_ans": 0.07692
+  },
+  {
+    "case_id": "UNP/2014/page_35.pdf-3",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 10.745008927122221,
+    "declared_unit": "percent",
+    "gold_answer": "11%",
+    "gold_exe_ans": 0.10745
+  },
+  {
+    "case_id": "UNP/2014/page_35.pdf-4",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 8.236845962186722,
+    "declared_unit": "percent",
+    "gold_answer": "8%",
+    "gold_exe_ans": 0.08237
+  },
+  {
+    "case_id": "UNP/2014/page_75.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 7.031756318859365,
+    "declared_unit": "percent",
+    "gold_answer": "7.03%",
+    "gold_exe_ans": 0.07032
+  },
+  {
+    "case_id": "UNP/2014/page_75.pdf-2",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 4.3478260869565215,
+    "declared_unit": "percent",
+    "gold_answer": "4%",
+    "gold_exe_ans": 0.04348
+  },
+  {
+    "case_id": "UNP/2014/page_75.pdf-3",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 9.523809523809524,
+    "declared_unit": "percent",
+    "gold_answer": "10%",
+    "gold_exe_ans": 0.09524
+  },
+  {
+    "case_id": "UPS/2006/page_32.pdf-1",
+    "reported_correct": true,
+    "raw_correct": false,
+    "predicted": 48.92,
+    "declared_unit": "percent",
+    "gold_answer": "48.92%",
+    "gold_exe_ans": 0.4892
+  },
+  {
+    "case_id": "VNO/2012/page_84.pdf-2",
+    "reported_correct": false,
+    "raw_correct": true,
+    "predicted": 9.0,
+    "declared_unit": "percent",
+    "gold_answer": 9,
+    "gold_exe_ans": 9.0
+  }
+]
