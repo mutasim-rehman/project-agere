@@ -1,5 +1,5 @@
 /**
- * Experiment Runs, Logs & Evidence Catalog Page - Minimal, Plain, Publication-Grade
+ * Runs & Evidence Page - Academic Light Theme
  */
 
 window.App.registerPage('runs', {
@@ -20,50 +20,53 @@ window.App.registerPage('runs', {
         const stats = this.state.archiveStats;
 
         container.innerHTML = `
-            <!-- Top Header (Plain, Structured) -->
-            <div class="card p-5 border border-slate-700 bg-slate-900/40">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-                    <div>
-                        <div class="text-xs uppercase tracking-wider font-mono text-slate-400">Execution Provenance</div>
-                        <h2 class="text-base font-semibold text-white mt-1">
-                            Complete Lab Execution History & Evidence Catalog
-                        </h2>
-                        <p class="text-xs text-slate-300 mt-1 max-w-4xl leading-relaxed">
-                            Chronicles the developmental arc of Project Agere: early naive attempts at 8 GB (with invalid KV caches), iterative counterfactual verifier curricula, 16 GB recovery jobs, and full audit logs.
-                        </p>
+            <!-- Top Summary Card (Clean White Surface) -->
+            <div class="card bg-white border border-[#E2E8F0]">
+                <div class="space-y-1 max-w-4xl">
+                    <div class="text-[11px] font-bold uppercase tracking-wider font-mono text-[#2563EB]">
+                        Execution Provenance & Archive Telemetry
                     </div>
+                    <h2 class="text-base font-bold text-[#172033]">
+                        Lab Execution History & Historical Evidence Catalog
+                    </h2>
+                    <p class="text-xs text-[#64748B] leading-relaxed">
+                        Complete chronicle of experimental iterations: initial 8 GB naive baselines (with invalid KV caches), iterative counterfactual verifier curricula, 16 GB recovery jobs, and full audit logs.
+                    </p>
                 </div>
             </div>
 
             <!-- Archive Overview Row -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-medium">Total Source Files</div>
-                    <div class="text-xl font-bold font-mono text-white mt-1">${stats.total_files ?? '2,598'}</div>
-                    <div class="text-xs text-slate-400 font-mono mt-0.5">1,629 unique content hashes</div>
+                    <div class="text-xs text-[#64748B] font-semibold">Total Source Files</div>
+                    <div class="text-xl font-bold font-mono text-[#172033] mt-1">${stats.total_files ?? '2,598'}</div>
+                    <div class="text-[11px] text-[#94A3B8] font-mono mt-0.5">1,629 unique content hashes</div>
                 </div>
                 <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-medium">Total Evidence Size</div>
-                    <div class="text-xl font-bold font-mono text-white mt-1">${stats.total_mb ? stats.total_mb + ' MB' : '645 MB'}</div>
-                    <div class="text-xs text-slate-400 font-mono mt-0.5">17 managed archives</div>
+                    <div class="text-xs text-[#64748B] font-semibold">Total Evidence Volume</div>
+                    <div class="text-xl font-bold font-mono text-[#172033] mt-1">${stats.total_mb ? stats.total_mb + ' MB' : '645 MB'}</div>
+                    <div class="text-[11px] text-[#94A3B8] font-mono mt-0.5">17 managed archives</div>
                 </div>
                 <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-medium">Cataloged Artifacts</div>
-                    <div class="text-xl font-bold font-mono text-white mt-1">197 Items</div>
-                    <div class="text-xs text-slate-400 font-mono mt-0.5">Indexed research outputs</div>
+                    <div class="text-xs text-[#64748B] font-semibold">Cataloged Artifacts</div>
+                    <div class="text-xl font-bold font-mono text-[#172033] mt-1">197 Items</div>
+                    <div class="text-[11px] text-[#94A3B8] font-mono mt-0.5">Indexed research outputs</div>
                 </div>
                 <div class="card p-4">
-                    <div class="text-xs text-slate-400 font-medium">8 GB Experimental Conditions</div>
-                    <div class="text-xl font-bold font-mono text-white mt-1">15 Conditions</div>
-                    <div class="text-xs text-slate-400 font-mono mt-0.5">30 recorded evaluations</div>
+                    <div class="text-xs text-[#64748B] font-semibold">8 GB Experimental Conditions</div>
+                    <div class="text-xl font-bold font-mono text-[#172033] mt-1">15 Conditions</div>
+                    <div class="text-[11px] text-[#94A3B8] font-mono mt-0.5">30 recorded evaluations</div>
                 </div>
             </div>
 
             <!-- 8 GB Experimental Condition Inventory -->
             <div class="card">
-                <div class="pb-3 border-b border-[var(--border-color)]">
-                    <h3 class="text-sm font-semibold text-white">8 GB Experimental Condition Inventory (30 Evaluations)</h3>
-                    <p class="text-xs text-slate-400">Evaluations across control, crossed, baseline, and analysis conditions</p>
+                <div class="card-header-clean">
+                    <div>
+                        <h3 class="text-sm font-bold text-[#172033]">8 GB Experimental Condition Inventory (30 Evaluations)</h3>
+                        <p class="text-xs text-[#64748B]">Evaluations across control, crossed, baseline, and analysis conditions</p>
+                    </div>
+                    <span class="badge badge-sas">8 GB Natural Regime</span>
                 </div>
 
                 <div class="table-container max-h-72 overflow-y-auto mt-4">
@@ -78,23 +81,23 @@ window.App.registerPage('runs', {
                                 <th>Wrong</th>
                                 <th>Withheld</th>
                                 <th>Gen Tokens</th>
-                                <th>Latency (s)</th>
-                                <th>Peak RSS (GB)</th>
+                                <th>Latency</th>
+                                <th>Peak RSS</th>
                             </tr>
                         </thead>
                         <tbody>
                             ${this.state.conditions.map(c => `
                                 <tr>
-                                    <td class="font-mono text-xs text-white">${c.job}</td>
-                                    <td class="text-xs text-slate-400 font-mono">${c.metric}</td>
-                                    <td class="font-mono text-xs">${c.n}</td>
-                                    <td class="font-mono text-xs">${c.reports}</td>
-                                    <td class="font-mono text-xs font-semibold text-emerald-400">${c.correct}</td>
-                                    <td class="font-mono text-xs text-rose-400">${c.wrong}</td>
-                                    <td class="font-mono text-xs text-amber-400">${c.withheld}</td>
-                                    <td class="font-mono text-xs text-slate-300">${c.generated_tokens.toLocaleString()}</td>
-                                    <td class="font-mono text-xs text-slate-400">${c.inference_seconds.toFixed(1)}s</td>
-                                    <td class="font-mono text-xs text-white">${(c.peak_rss_bytes / (1024**3)).toFixed(2)} GB</td>
+                                    <td class="font-mono text-xs text-[#172033] font-medium">${c.job}</td>
+                                    <td class="text-xs text-[#64748B] font-mono">${c.metric}</td>
+                                    <td class="font-mono text-xs text-[#172033]">${c.n}</td>
+                                    <td class="font-mono text-xs text-[#64748B]">${c.reports}</td>
+                                    <td class="font-mono text-xs font-bold text-[#15803D]">${c.correct}</td>
+                                    <td class="font-mono text-xs font-bold text-[#DC2626]">${c.wrong}</td>
+                                    <td class="font-mono text-xs font-bold text-[#D97706]">${c.withheld}</td>
+                                    <td class="font-mono text-xs text-[#64748B]">${c.generated_tokens.toLocaleString()}</td>
+                                    <td class="font-mono text-xs text-[#64748B]">${c.inference_seconds.toFixed(1)}s</td>
+                                    <td class="font-mono text-xs text-[#172033] font-semibold">${(c.peak_rss_bytes / (1024**3)).toFixed(2)} GB</td>
                                 </tr>
                             `).join('')}
                         </tbody>
@@ -104,10 +107,10 @@ window.App.registerPage('runs', {
 
             <!-- Historical Evidence Catalog Browser -->
             <div class="card">
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-3 border-b border-[var(--border-color)] gap-3">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-3 border-b border-[#E2E8F0] gap-3">
                     <div>
-                        <h3 class="text-sm font-semibold text-white">Historical Evidence Catalog (197 Artifacts)</h3>
-                        <p class="text-xs text-slate-400">Search cataloged checkpoint logs, diagnostic runs, and traces</p>
+                        <h3 class="text-sm font-bold text-[#172033]">Historical Evidence Catalog (197 Artifacts)</h3>
+                        <p class="text-xs text-[#64748B]">Search cataloged checkpoint logs, diagnostic runs, and traces</p>
                     </div>
                     <input id="evidence-search" type="text" placeholder="Filter artifact path..." class="input-search text-xs w-full md:w-64">
                 </div>
@@ -151,7 +154,7 @@ window.App.registerPage('runs', {
 
         const displayItems = items.slice(0, 25);
         if (displayItems.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="3" class="text-center py-6 text-slate-500 text-xs">No matching evidence artifacts.</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="3" class="text-center py-6 text-[#64748B] text-xs">No matching evidence artifacts.</td></tr>`;
             return;
         }
 
@@ -160,9 +163,9 @@ window.App.registerPage('runs', {
             const cat = pathStr.includes('runs') ? 'Runs' : (pathStr.includes('datasets') ? 'Datasets' : (pathStr.includes('weights') ? 'Weights' : 'Phase 2'));
             return `
                 <tr>
-                    <td class="font-mono text-xs text-white">${pathStr}</td>
-                    <td><span class="badge badge-sas">${cat}</span></td>
-                    <td class="font-mono text-xs text-slate-400">evidence/</td>
+                    <td class="font-mono text-xs text-[#172033] font-medium">${pathStr}</td>
+                    <td><span class="badge ${cat === 'Runs' ? 'badge-mas' : 'badge-sas'}">${cat}</span></td>
+                    <td class="font-mono text-xs text-[#64748B]">dashboard_handoff/evidence/</td>
                 </tr>
             `;
         }).join('');

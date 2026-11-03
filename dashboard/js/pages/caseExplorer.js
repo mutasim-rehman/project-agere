@@ -1,5 +1,5 @@
 /**
- * Case & Failure Explorer Page - Minimal, Plain, Publication-Grade
+ * Case & Failure Explorer Page - Academic Light Theme
  */
 
 window.App.registerPage('cases', {
@@ -27,11 +27,11 @@ window.App.registerPage('cases', {
         const companies = Array.from(new Set(this.state.allCases.map(c => c.company).filter(Boolean))).sort();
 
         container.innerHTML = `
-            <!-- Filter Toolbar (Clean, Uncluttered) -->
+            <!-- Filter Toolbar (Clean White Surface) -->
             <div class="card p-4 space-y-3">
                 <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
                     <div class="flex items-center gap-2">
-                        <span class="text-xs font-semibold text-white uppercase font-mono">Case Filters</span>
+                        <span class="text-xs font-bold text-[#172033] uppercase font-mono">Case Filters</span>
                         <span id="case-count-badge" class="badge badge-sas">0 matches</span>
                     </div>
                     <div class="flex items-center gap-2 w-full lg:w-auto">
@@ -40,16 +40,16 @@ window.App.registerPage('cases', {
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-3 pt-2 border-t border-[var(--border-color)]">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-3 pt-3 border-t border-[#E2E8F0]">
                     <div>
-                        <label class="block text-[11px] text-slate-400 font-mono mb-1">RAM Tier</label>
+                        <label class="block text-[11px] text-[#64748B] font-mono mb-1">RAM Tier</label>
                         <select id="filter-tier" class="select-filter w-full text-xs">
                             <option value="16" selected>16 GB Tier (960 rows)</option>
                             <option value="8">8 GB Tier (768 rows)</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[11px] text-slate-400 font-mono mb-1">Deployment Arm</label>
+                        <label class="block text-[11px] text-[#64748B] font-mono mb-1">Deployment Arm</label>
                         <select id="filter-arm" class="select-filter w-full text-xs">
                             <option value="all">All Arms (MAS & SAS)</option>
                             <option value="mas">MAS-FP16 (Specialists)</option>
@@ -57,7 +57,7 @@ window.App.registerPage('cases', {
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[11px] text-slate-400 font-mono mb-1">Profile / Role</label>
+                        <label class="block text-[11px] text-[#64748B] font-mono mb-1">Profile / Role</label>
                         <select id="filter-profile" class="select-filter w-full text-xs">
                             <option value="all">All Profiles</option>
                             <option value="primary">Primary (Verifier + Repair)</option>
@@ -66,7 +66,7 @@ window.App.registerPage('cases', {
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[11px] text-slate-400 font-mono mb-1">Outcome</label>
+                        <label class="block text-[11px] text-[#64748B] font-mono mb-1">Outcome</label>
                         <select id="filter-outcome" class="select-filter w-full text-xs">
                             <option value="all">All Outcomes</option>
                             <option value="correct">Reported Correct</option>
@@ -75,7 +75,7 @@ window.App.registerPage('cases', {
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[11px] text-slate-400 font-mono mb-1">Company</label>
+                        <label class="block text-[11px] text-[#64748B] font-mono mb-1">Company</label>
                         <select id="filter-company" class="select-filter w-full text-xs">
                             <option value="all">All Companies (${companies.length})</option>
                             ${companies.map(comp => `<option value="${comp}">${comp}</option>`).join('')}
@@ -86,7 +86,7 @@ window.App.registerPage('cases', {
 
             <!-- Table of Filtered Cases -->
             <div class="card p-0 overflow-hidden">
-                <div class="table-container max-h-[560px] overflow-y-auto">
+                <div class="table-container max-h-[580px] overflow-y-auto">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -110,13 +110,13 @@ window.App.registerPage('cases', {
                 </div>
 
                 <!-- Pagination Footer -->
-                <div class="p-3 bg-[var(--bg-surface-elevated)] border-t border-[var(--border-color)] flex items-center justify-between text-xs">
-                    <div id="case-pagination-info" class="text-slate-400 font-mono">
+                <div class="p-3 bg-[#F8FAFC] border-t border-[#E2E8F0] flex items-center justify-between text-xs">
+                    <div id="case-pagination-info" class="text-[#64748B] font-mono">
                         Showing 0 to 0 of 0 entries
                     </div>
                     <div class="flex items-center gap-2">
                         <button id="case-prev-btn" class="btn text-xs py-1 px-3">Previous</button>
-                        <span id="case-page-num" class="font-mono text-white px-2">Page 1</span>
+                        <span id="case-page-num" class="font-mono text-[#172033] px-2 font-semibold">Page 1</span>
                         <button id="case-next-btn" class="btn text-xs py-1 px-3">Next</button>
                     </div>
                 </div>
@@ -246,7 +246,7 @@ window.App.registerPage('cases', {
         if (pageItems.length === 0) {
             tbody.innerHTML = `
                 <tr>
-                    <td colspan="11" class="text-center py-8 text-slate-500 text-xs">
+                    <td colspan="11" class="text-center py-8 text-[#64748B] text-xs">
                         No cases match the selected filters.
                     </td>
                 </tr>
@@ -267,16 +267,16 @@ window.App.registerPage('cases', {
 
             return `
                 <tr class="cursor-pointer" onclick='window.App.pages.cases.openCaseDetail(${JSON.stringify(c).replace(/'/g, "&apos;")})'>
-                    <td class="font-mono text-xs text-white">${c.case_id}</td>
-                    <td class="font-medium text-slate-200">${c.company || '—'}</td>
-                    <td class="text-xs text-slate-400 font-mono">${c.report || '—'}</td>
+                    <td class="font-mono text-xs text-[#172033] font-medium">${c.case_id}</td>
+                    <td class="font-medium text-[#172033]">${c.company || '—'}</td>
+                    <td class="text-xs text-[#64748B] font-mono">${c.report || '—'}</td>
                     <td>${armBadge}</td>
-                    <td class="text-xs text-slate-300 font-mono">${c.profile || c.condition || '—'}</td>
+                    <td class="text-xs text-[#64748B] font-mono">${c.profile || c.condition || '—'}</td>
                     <td>${repBadge}</td>
                     <td>${rawBadge}</td>
-                    <td class="text-xs">${c.delivered ? '<span class="text-slate-300">Delivered</span>' : '<span class="text-slate-500">Withheld</span>'}</td>
-                    <td class="font-mono text-xs text-slate-300">${c.generated_tokens ?? '—'}</td>
-                    <td class="font-mono text-xs text-slate-400">${c.inference_seconds ? c.inference_seconds.toFixed(1) + 's' : '—'}</td>
+                    <td class="text-xs">${c.delivered ? '<span class="text-[#172033] font-medium">Delivered</span>' : '<span class="text-[#94A3B8]">Withheld</span>'}</td>
+                    <td class="font-mono text-xs text-[#172033]">${c.generated_tokens ?? '—'}</td>
+                    <td class="font-mono text-xs text-[#64748B]">${c.inference_seconds ? c.inference_seconds.toFixed(1) + 's' : '—'}</td>
                     <td>
                         <button class="btn text-[10px] py-0.5 px-2">
                             View
@@ -313,46 +313,46 @@ window.App.registerPage('cases', {
             : (c.raw_outcome === 'withheld' ? '<span class="badge badge-withheld">Withheld</span>' : '<span class="badge badge-wrong">Raw Wrong</span>');
 
         bodyEl.innerHTML = `
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-[var(--bg-surface-elevated)] p-4 rounded-lg border border-[var(--border-color)]">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-[#F8FAFC] p-4 rounded-lg border border-[#E2E8F0]">
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-mono">Reported Answer</div>
+                    <div class="text-[10px] text-[#64748B] uppercase font-mono">Reported Answer</div>
                     <div class="mt-1">${repBadge}</div>
                 </div>
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-mono">Raw Execution Match</div>
+                    <div class="text-[10px] text-[#64748B] uppercase font-mono">Raw Execution Match</div>
                     <div class="mt-1">${rawBadge}</div>
                 </div>
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-mono">Tokens (Prompt + Gen)</div>
-                    <div class="text-sm font-semibold font-mono text-white mt-1">${c.prompt_tokens ?? 0} + ${c.generated_tokens ?? 0}</div>
+                    <div class="text-[10px] text-[#64748B] uppercase font-mono">Tokens (Prompt + Gen)</div>
+                    <div class="text-sm font-bold font-mono text-[#172033] mt-1">${c.prompt_tokens ?? 0} + ${c.generated_tokens ?? 0}</div>
                 </div>
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-mono">Inference Latency</div>
-                    <div class="text-sm font-semibold font-mono text-white mt-1">${c.inference_seconds ? c.inference_seconds.toFixed(2) + 's' : 'N/A'}</div>
+                    <div class="text-[10px] text-[#64748B] uppercase font-mono">Inference Latency</div>
+                    <div class="text-sm font-bold font-mono text-[#172033] mt-1">${c.inference_seconds ? c.inference_seconds.toFixed(2) + 's' : 'N/A'}</div>
                 </div>
             </div>
 
             ${rich && rich.formula ? `
                 <div class="card p-4">
-                    <div class="text-xs font-semibold text-white uppercase font-mono mb-2">Calculation Program</div>
-                    <pre class="bg-black/50 p-3 rounded font-mono text-xs text-slate-200 overflow-x-auto border border-slate-800">${rich.formula}</pre>
-                    <div class="text-xs text-slate-400 mt-2">
-                        Decision: <span class="font-semibold text-white">${rich.decision}</span> • Declared Unit: <span class="font-semibold text-white">${rich.answer_unit || 'unspecified'}</span>
+                    <div class="text-xs font-bold text-[#172033] uppercase font-mono mb-2">Calculation Program</div>
+                    <pre class="bg-[#F8FAFC] p-3 rounded font-mono text-xs text-[#2563EB] overflow-x-auto border border-[#E2E8F0]">${rich.formula}</pre>
+                    <div class="text-xs text-[#64748B] mt-2">
+                        Decision: <span class="font-bold text-[#172033]">${rich.decision}</span> • Declared Unit: <span class="font-bold text-[#172033]">${rich.answer_unit || 'unspecified'}</span>
                     </div>
                 </div>
             ` : `
                 <div class="card p-4">
-                    <div class="text-xs font-semibold text-white uppercase font-mono mb-1">Execution Audit</div>
-                    <p class="text-xs text-slate-300">
-                        Execution Valid: <span class="font-semibold text-white">${c.execution_valid ? 'True' : 'False'}</span> • 
-                        Repair Attempted: <span class="font-semibold text-white">${c.repair_attempted ? 'Yes' : 'No'}</span>
+                    <div class="text-xs font-bold text-[#172033] uppercase font-mono mb-1">Execution Audit</div>
+                    <p class="text-xs text-[#64748B]">
+                        Execution Valid: <span class="font-bold text-[#172033]">${c.execution_valid ? 'True' : 'False'}</span> • 
+                        Repair Attempted: <span class="font-bold text-[#172033]">${c.repair_attempted ? 'Yes' : 'No'}</span>
                     </p>
                 </div>
             `}
 
             <div class="card p-4">
-                <div class="text-xs font-semibold text-white uppercase font-mono mb-1">Protocol Reference</div>
-                <p class="text-xs text-slate-400 leading-relaxed">
+                <div class="text-xs font-bold text-[#172033] uppercase font-mono mb-1">Protocol Reference</div>
+                <p class="text-xs text-[#64748B] leading-relaxed">
                     Evaluated under strict process RSS parity cap. Dual correctness requires both human-formatted output matching and direct code-block execution arithmetic matching gold values.
                 </p>
             </div>

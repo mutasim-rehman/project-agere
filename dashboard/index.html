@@ -1,58 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Agere — Research Analytics & Hardware Telemetry</title>
+    <title>Project Agere — Research Analytics Platform</title>
     
-    <!-- Clean Stylesheet -->
+    <!-- Light-Theme Research Design System -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- Lightweight Styling Engine -->
+    <!-- Tailwind CSS (Light-Theme Configuration) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: ['class', '[data-theme="dark"]'],
             theme: {
                 extend: {
                     colors: {
-                        base: '#0b0e14',
-                        surface: '#11151c',
-                        border: '#242c38'
+                        background: '#F5F7FA',
+                        surface: '#FFFFFF',
+                        border: '#E2E8F0',
+                        primary: '#2563EB',
+                        secondary: '#64748B',
+                        dark: '#172033'
                     }
                 }
             }
         }
     </script>
     
-    <!-- Minimal Visualization Libraries -->
+    <!-- Charting & Icon Engines -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
+<body class="bg-[#F5F7FA] text-[#172033]">
     <div class="app-container">
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar Navigation (Clean White, Subtle Divider) -->
         <aside class="sidebar">
-            <div class="p-4 border-b border-[var(--border-color)] flex items-center justify-between">
-                <div>
-                    <div class="font-bold text-sm tracking-tight text-white">Project Agere</div>
-                    <div class="text-[11px] text-slate-400 font-mono">Local LLM Research</div>
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <!-- Geometric Interconnected Analytical Network Logo -->
+                    <svg class="w-5 h-5 text-[#2563EB]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="5" r="2.5" fill="#EFF6FF"/>
+                        <circle cx="5" cy="18" r="2.5" fill="#EFF6FF"/>
+                        <circle cx="19" cy="18" r="2.5" fill="#EFF6FF"/>
+                        <line x1="12" y1="7.5" x2="5" y2="15.5"/>
+                        <line x1="12" y1="7.5" x2="19" y2="15.5"/>
+                        <line x1="7.5" y1="18" x2="16.5" y2="18"/>
+                    </svg>
+                </div>
+                <div class="sidebar-brand-text">
+                    <div class="font-bold text-sm tracking-tight text-[#172033]">PROJECT AGERE</div>
+                    <div class="text-[11px] text-[#64748B] font-medium tracking-tight">Research Analytics</div>
                 </div>
             </div>
 
-            <div class="flex-1 overflow-y-auto py-2">
+            <div class="sidebar-nav">
                 <div class="nav-group-title">Evaluation</div>
                 <a class="nav-item active" data-tab="overview">
-                    <i data-lucide="layout" class="w-4 h-4"></i>
+                    <i data-lucide="layout-grid" class="w-4 h-4"></i>
                     <span class="nav-label">Executive Overview</span>
                 </a>
                 <a class="nav-item" data-tab="comparison">
-                    <i data-lucide="split" class="w-4 h-4"></i>
+                    <i data-lucide="git-compare" class="w-4 h-4"></i>
                     <span class="nav-label">MAS vs SAS Comparison</span>
                 </a>
                 <a class="nav-item" data-tab="cases">
-                    <i data-lucide="table" class="w-4 h-4"></i>
+                    <i data-lucide="list-filter" class="w-4 h-4"></i>
                     <span class="nav-label">Case Explorer</span>
                     <span class="nav-badge">1,728</span>
                 </a>
@@ -64,7 +77,7 @@
                     <span class="nav-badge">126</span>
                 </a>
                 <a class="nav-item" data-tab="pipeline">
-                    <i data-lucide="git-commit" class="w-4 h-4"></i>
+                    <i data-lucide="workflow" class="w-4 h-4"></i>
                     <span class="nav-label">Pipeline & Costs</span>
                 </a>
 
@@ -74,7 +87,7 @@
                     <span class="nav-label">Hardware & RAM</span>
                 </a>
                 <a class="nav-item" data-tab="runs">
-                    <i data-lucide="terminal" class="w-4 h-4"></i>
+                    <i data-lucide="history" class="w-4 h-4"></i>
                     <span class="nav-label">Runs & Evidence</span>
                 </a>
 
@@ -88,13 +101,25 @@
                     <span class="nav-label">Models & Config</span>
                 </a>
                 <a class="nav-item" data-tab="provenance">
-                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    <i data-lucide="file-check-2" class="w-4 h-4"></i>
                     <span class="nav-label">Provenance</span>
                 </a>
             </div>
 
-            <div class="sidebar-footer p-3 border-t border-[var(--border-color)] text-[11px] text-slate-400 font-mono">
-                12.8 GB / 6.4 GB RAM Parity
+            <!-- Sidebar Metadata Footer -->
+            <div class="sidebar-footer p-4 border-t border-[#E2E8F0] text-[11px] text-[#64748B] space-y-1">
+                <div class="flex justify-between items-center font-mono">
+                    <span>Protocol:</span>
+                    <span class="text-[#172033] font-medium">RUPP Parity</span>
+                </div>
+                <div class="flex justify-between items-center font-mono">
+                    <span>Cohort:</span>
+                    <span class="text-[#172033] font-medium">16 GB + 8 GB</span>
+                </div>
+                <div class="flex justify-between items-center font-mono">
+                    <span>Total Cases:</span>
+                    <span class="text-[#2563EB] font-semibold">1,728</span>
+                </div>
             </div>
         </aside>
 
@@ -102,28 +127,32 @@
         <main class="main-content">
             <!-- Header Bar -->
             <header class="top-header">
-                <div class="flex items-center gap-3">
-                    <h1 id="page-title" class="text-base font-semibold text-white tracking-tight">
-                        Executive Overview
-                    </h1>
-                    <span class="text-slate-600">/</span>
-                    <span id="tier-badge" class="badge badge-sas">Phase 3 Final</span>
+                <div>
+                    <div class="flex items-center gap-3">
+                        <h1 id="page-title" class="text-base font-bold text-[#172033] tracking-tight">
+                            Executive Overview
+                        </h1>
+                        <span class="text-[#CBD5E1]">/</span>
+                        <span class="badge badge-mas">Phase 3 Final</span>
+                        <span class="badge badge-sas">RUPP Protocol</span>
+                        <span class="badge badge-sas">16 GB Primary Cohort</span>
+                    </div>
+                    <div class="text-xs text-[#64748B] mt-0.5 hidden lg:block">
+                        Experimental evaluation of multi-agent full-precision teams versus quantized monolithic language models under constrained RAM conditions.
+                    </div>
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <button id="theme-toggle" class="btn text-xs" title="Toggle Theme">
-                        <i data-lucide="sun" class="w-3.5 h-3.5 text-slate-400"></i>
-                    </button>
                     <button id="export-btn" class="btn text-xs" onclick="window.App.exportData()">
-                        <i data-lucide="download" class="w-3.5 h-3.5"></i> Export JSON
+                        <i data-lucide="download" class="w-3.5 h-3.5 text-[#64748B]"></i> Export JSON
                     </button>
                     <button class="btn btn-primary text-xs" onclick="window.App.showReproduceModal()">
-                        Reproduce
+                        <i data-lucide="play" class="w-3.5 h-3.5"></i> Reproduce Experiment
                     </button>
                 </div>
             </header>
 
-            <!-- Page Container (Dynamic) -->
+            <!-- Dynamic Page Content -->
             <div id="content-container" class="p-6 space-y-6">
                 <!-- Dynamically loaded -->
             </div>
@@ -135,8 +164,8 @@
         <div class="modal-card">
             <div class="modal-header">
                 <div>
-                    <h3 id="modal-case-title" class="text-sm font-semibold text-white">Case Inspection</h3>
-                    <div id="modal-case-subtitle" class="text-xs text-slate-400 font-mono mt-0.5"></div>
+                    <h3 id="modal-case-title" class="text-sm font-bold text-[#172033]">Case Inspection</h3>
+                    <div id="modal-case-subtitle" class="text-xs text-[#64748B] font-mono mt-0.5"></div>
                 </div>
                 <button class="btn text-xs p-1" onclick="window.App.closeModal('case-modal')">
                     <i data-lucide="x" class="w-4 h-4"></i>
@@ -153,20 +182,20 @@
         <div class="modal-card max-w-5xl">
             <div class="modal-header">
                 <div>
-                    <h3 id="figure-modal-title" class="text-sm font-semibold text-white">Publication Figure</h3>
-                    <div id="figure-modal-caption" class="text-xs text-slate-400 mt-0.5"></div>
+                    <h3 id="figure-modal-title" class="text-sm font-bold text-[#172033]">Publication Figure</h3>
+                    <div id="figure-modal-caption" class="text-xs text-[#64748B] mt-0.5"></div>
                 </div>
                 <button class="btn text-xs p-1" onclick="window.App.closeModal('figure-modal')">
                     <i data-lucide="x" class="w-4 h-4"></i>
                 </button>
             </div>
             <div class="modal-body text-center p-4">
-                <img id="figure-modal-img" src="" alt="Figure" class="max-h-[75vh] mx-auto rounded border border-[var(--border-color)]">
+                <img id="figure-modal-img" src="" alt="Figure" class="max-h-[75vh] mx-auto rounded border border-[#E2E8F0]">
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Application Scripts -->
     <script src="js/app.js"></script>
     <script src="js/pages/overview.js"></script>
     <script src="js/pages/comparison.js"></script>

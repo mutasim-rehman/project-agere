@@ -1,5 +1,5 @@
 /**
- * Hardware & Memory Telemetry Page - Minimal, Plain, Publication-Grade
+ * Hardware & Memory Telemetry Page - Academic Light Theme
  */
 
 window.App.registerPage('hardware', {
@@ -8,45 +8,46 @@ window.App.registerPage('hardware', {
         const benchmarks = await app.fetchJson('data/hardware_benchmarks.json') || [];
 
         container.innerHTML = `
-            <!-- Technical Overview Box (Plain, Structured) -->
-            <div class="card p-5 border border-slate-700 bg-slate-900/40">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
-                    <div>
-                        <div class="text-xs uppercase tracking-wider font-mono text-slate-400">RUPP Protocol Telemetry</div>
-                        <h2 class="text-base font-semibold text-white mt-1">
-                            Process-Tree RSS & Swap Breach Audit
+            <!-- Top Hardware Header (Clean White Surface) -->
+            <div class="card bg-white border border-[#E2E8F0]">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div class="space-y-1 max-w-4xl">
+                        <div class="text-[11px] font-bold uppercase tracking-wider font-mono text-[#2563EB]">
+                            RUPP Protocol Telemetry • Linux cgroup Audits
+                        </div>
+                        <h2 class="text-base font-bold text-[#172033]">
+                            Process-Tree RSS Constraints & Swap Breach Audit
                         </h2>
-                        <p class="text-xs text-slate-300 mt-1 max-w-4xl leading-relaxed">
-                            Continuous sub-second cgroup monitoring ensures that model inference remains strictly within host physical RAM caps (12.8 GB on 16 GB machines). Any swap allocation automatically invalidates the run to prevent disk paging from masking memory overflow.
+                        <p class="text-xs text-[#64748B] leading-relaxed">
+                            Continuous sub-second cgroup monitoring ensures model inference remains strictly within physical RAM allocations (12.8 GB on 16 GB workstations; 6.4 GB on 8 GB workstations after reserving 20% for host OS and background processes). Any nonzero swap usage automatically invalidates the deployment.
                         </p>
                     </div>
-                    <div class="shrink-0 text-right">
-                        <div class="text-[11px] text-slate-400 font-mono">Process RSS Cap</div>
-                        <div class="text-base font-bold font-mono text-white">12.8 GB Nominal</div>
+                    <div class="shrink-0 text-right font-mono">
+                        <div class="text-[11px] text-[#64748B]">Process Cap (16 GB)</div>
+                        <div class="text-base font-bold text-[#172033]">12.8 GB Nominal Limit</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Invalidation Incident Note (Clean, Muted) -->
-            <div class="card p-4 border border-amber-900/40 bg-amber-950/10 flex items-start gap-3">
-                <div class="p-1 rounded bg-amber-900/30 text-amber-400 mt-0.5">
-                    <i data-lucide="info" class="w-4 h-4"></i>
+            <!-- Invalidation Incident Card (Clean Academic Notice) -->
+            <div class="card p-4 border border-[#FDE68A] bg-[#FFFBEB] flex items-start gap-3">
+                <div class="p-1 rounded bg-[#FEF3C7] text-[#D97706] mt-0.5 shrink-0">
+                    <i data-lucide="alert-triangle" class="w-4 h-4"></i>
                 </div>
-                <div class="text-xs text-slate-300 leading-relaxed">
-                    <span class="font-semibold text-white">Audited Swap Failure & Invalidation:</span> 
-                    During <span class="font-mono text-slate-200">tier16-sas-primary</span> (attempt-0001), transient host memory pressure induced a <span class="font-mono text-rose-400 font-bold">41.97 MB</span> swap breach. Under Section §6.2 of the protocol, this attempt was marked <span class="badge badge-wrong font-mono">INVALID</span>. A clean second run (attempt-0002) completed under strict 0 MB swap isolation.
+                <div class="text-xs text-[#92400E] leading-relaxed">
+                    <strong class="text-[#78350F]">Audited Invalidation Incident:</strong> During <span class="font-mono text-[#172033]">tier16-sas-primary</span> (attempt-0001), transient host memory pressure induced a <span class="font-mono text-[#DC2626] font-bold">41.97 MB</span> swap breach. In accordance with Section §6.2 of the specification, the run was marked <span class="badge badge-wrong font-mono">RESOURCE-INVALID</span>. A second attempt (attempt-0002) was executed with zero swap, establishing strict compliance.
                 </div>
             </div>
 
-            <!-- Memory Timeline Chart -->
+            <!-- Continuous Memory Timeline Chart -->
             <div class="card">
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-3 border-b border-[var(--border-color)] gap-2">
+                <div class="card-header-clean">
                     <div>
-                        <h3 class="text-sm font-semibold text-white">Continuous Process-Tree Memory Timeline</h3>
-                        <p class="text-xs text-slate-400">Process RSS in GB over elapsed inference time (recorded at sub-second polling)</p>
+                        <h3 class="text-sm font-bold text-[#172033]">Continuous Process-Tree Memory Timeline</h3>
+                        <p class="text-xs text-[#64748B]">Process RSS in GB over elapsed inference seconds (downsampled from 500,000 telemetry samples)</p>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="text-xs text-slate-400">Job:</span>
+                        <span class="text-xs text-[#64748B]">Job Filter:</span>
                         <select id="memory-job-select" class="select-filter text-xs">
                             <option value="all" selected>Key 16 GB Runs Overlay</option>
                             <option value="tier16-mas-primary/attempt-0001">MAS Primary (10.18 GB Peak, 0 MB Swap)</option>
@@ -56,16 +57,18 @@ window.App.registerPage('hardware', {
                     </div>
                 </div>
 
-                <div class="p-2">
-                    <div id="memory-timeline-chart" class="w-full h-72"></div>
+                <div class="pt-3">
+                    <div id="memory-timeline-chart" class="w-full h-80"></div>
                 </div>
             </div>
 
             <!-- Phase 2 Conversion Benchmarks -->
             <div class="card">
-                <div class="pb-3 border-b border-[var(--border-color)]">
-                    <h3 class="text-sm font-semibold text-white">Model Conversion & Quantization Peak RSS (Phase 2 Audits)</h3>
-                    <p class="text-xs text-slate-400">Peak resident set size measured during conversion and GGUF quantization (0.5B to 32B)</p>
+                <div class="card-header-clean">
+                    <div>
+                        <h3 class="text-sm font-bold text-[#172033]">Model Conversion & Quantization Peak RSS (Phase 2 Benchmarks)</h3>
+                        <p class="text-xs text-[#64748B]">Peak resident set size measured during conversion and GGUF quantization (0.5B to 32B)</p>
+                    </div>
                 </div>
 
                 <div class="table-container max-h-64 overflow-y-auto mt-4">
@@ -85,12 +88,12 @@ window.App.registerPage('hardware', {
                                 const headroom = (b.cap_gb - b.peak_rss_gb).toFixed(2);
                                 return `
                                     <tr>
-                                        <td class="font-mono text-xs font-semibold text-white">${b.model_size.toUpperCase()}</td>
-                                        <td><span class="badge ${b.operation === 'quantize' ? 'badge-sas' : 'badge-mas'}">${b.operation}</span></td>
-                                        <td class="font-mono text-xs text-slate-200">${b.peak_rss_gb} GB</td>
-                                        <td class="font-mono text-xs text-slate-400">${b.cap_gb} GB</td>
-                                        <td class="font-mono text-xs text-emerald-400">+${headroom} GB</td>
-                                        <td class="font-mono text-xs text-slate-400">0</td>
+                                        <td class="font-mono text-xs font-bold text-[#172033]">${b.model_size.toUpperCase()}</td>
+                                        <td><span class="badge ${b.operation === 'quantize' ? 'badge-mas' : 'badge-sas'}">${b.operation}</span></td>
+                                        <td class="font-mono text-xs text-[#172033] font-semibold">${b.peak_rss_gb} GB</td>
+                                        <td class="font-mono text-xs text-[#64748B]">${b.cap_gb} GB</td>
+                                        <td class="font-mono text-xs text-[#15803D] font-medium">+${headroom} GB</td>
+                                        <td class="font-mono text-xs text-[#64748B]">0</td>
                                     </tr>
                                 `;
                             }).join('')}
@@ -114,10 +117,10 @@ window.App.registerPage('hardware', {
         const traces = [];
 
         const colorMap = {
-            'tier16-mas-primary/attempt-0001': '#388bfd',
-            'tier16-sas-primary/attempt-0001': '#f85149',
-            'tier16-sas-primary/attempt-0002': '#8b949e',
-            'tier16-sas-direct_control/attempt-0002': '#6e7681'
+            'tier16-mas-primary/attempt-0001': '#2563EB',
+            'tier16-sas-primary/attempt-0001': '#DC2626',
+            'tier16-sas-primary/attempt-0002': '#64748B',
+            'tier16-sas-direct_control/attempt-0002': '#94A3B8'
         };
 
         const keys = filterKey === 'all' 
@@ -135,7 +138,7 @@ window.App.registerPage('hardware', {
                 mode: 'lines',
                 name: `${name} (Peak: ${series.peak_rss_gb} GB${series.swap_breach ? ', Swap Breach' : ''})`,
                 line: {
-                    color: colorMap[k] || '#8b949e',
+                    color: colorMap[k] || '#64748B',
                     width: series.swap_breach ? 2 : 1.5,
                     dash: series.swap_breach ? 'dash' : 'solid'
                 }
@@ -147,29 +150,29 @@ window.App.registerPage('hardware', {
             x: [0, 4000],
             y: [12.8, 12.8],
             mode: 'lines',
-            name: '12.8 GB RUPP Cap',
-            line: { color: '#f85149', width: 1.5, dash: 'dot' }
+            name: '12.8 GB RUPP Process Cap',
+            line: { color: '#DC2626', width: 1.5, dash: 'dot' }
         });
 
         const layout = {
             margin: { l: 50, r: 20, t: 10, b: 40 },
-            paper_bgcolor: 'transparent',
-            plot_bgcolor: 'transparent',
+            paper_bgcolor: '#FFFFFF',
+            plot_bgcolor: '#FFFFFF',
             xaxis: {
                 title: 'Elapsed Inference Time (Seconds)',
-                titlefont: { color: '#8b949e', size: 11, family: 'Inter' },
-                tickfont: { color: '#8b949e', size: 10, family: 'JetBrains Mono' },
-                gridcolor: '#242c38'
+                titlefont: { color: '#64748B', size: 11, family: 'Inter' },
+                tickfont: { color: '#64748B', size: 10, family: 'JetBrains Mono' },
+                gridcolor: '#E9EEF5'
             },
             yaxis: {
                 title: 'Process RSS (GB)',
-                titlefont: { color: '#8b949e', size: 11, family: 'Inter' },
-                tickfont: { color: '#8b949e', size: 10, family: 'JetBrains Mono' },
-                gridcolor: '#242c38',
+                titlefont: { color: '#64748B', size: 11, family: 'Inter' },
+                tickfont: { color: '#64748B', size: 10, family: 'JetBrains Mono' },
+                gridcolor: '#E9EEF5',
                 range: [0, 14]
             },
             legend: {
-                font: { color: '#8b949e', size: 10, family: 'Inter' },
+                font: { color: '#172033', size: 10, family: 'Inter' },
                 orientation: 'h',
                 y: -0.2
             }

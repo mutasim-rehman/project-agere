@@ -1,11 +1,11 @@
 /**
- * Project Agere Dashboard - Core Application Manager
+ * Project Agere Dashboard - Core Application Manager (Academic Light Theme)
  */
 
 window.App = {
     state: {
         activeTab: 'overview',
-        theme: 'dark',
+        theme: 'light',
         data: {},
         activeCase: null,
         loading: false
@@ -18,10 +18,10 @@ window.App = {
     },
 
     async init() {
-        console.log("[App] Initializing Project Agere Dashboard...");
+        console.log("[App] Initializing Project Agere Dashboard (Academic Light Theme)...");
         
-        // Theme init
-        this.initTheme();
+        // Force clean light theme
+        this.setTheme('light');
 
         // Bind nav click events
         document.querySelectorAll('.nav-item').forEach(el => {
@@ -32,7 +32,7 @@ window.App = {
             });
         });
 
-        // Theme toggle button
+        // Theme toggle button (if present)
         const themeBtn = document.getElementById('theme-toggle');
         if (themeBtn) {
             themeBtn.addEventListener('click', () => this.toggleTheme());
@@ -49,26 +49,15 @@ window.App = {
         this.navigate(initialTab);
     },
 
-    initTheme() {
-        const savedTheme = localStorage.getItem('agere_theme') || 'dark';
-        this.setTheme(savedTheme);
-    },
-
-    toggleTheme() {
-        const newTheme = this.state.theme === 'dark' ? 'light' : 'dark';
-        this.setTheme(newTheme);
-    },
-
     setTheme(theme) {
         this.state.theme = theme;
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('agere_theme', theme);
-        
-        const icon = document.querySelector('#theme-toggle i');
-        if (icon) {
-            icon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
-            if (window.lucide) lucide.createIcons();
-        }
+    },
+
+    toggleTheme() {
+        const newTheme = this.state.theme === 'light' ? 'dark' : 'light';
+        this.setTheme(newTheme);
     },
 
     async loadCoreData() {
@@ -142,8 +131,8 @@ window.App = {
 
         const container = document.getElementById('content-container');
         container.innerHTML = `
-            <div class="flex items-center justify-center p-24 text-slate-500">
-                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-500"></div>
+            <div class="flex items-center justify-center p-24 text-[#64748B]">
+                <div class="animate-spin rounded-full h-7 w-7 border-2 border-[#2563EB] border-t-transparent"></div>
             </div>
         `;
 
@@ -155,7 +144,7 @@ window.App = {
         } catch (err) {
             console.error(`[App] Error rendering page ${tabId}:`, err);
             container.innerHTML = `
-                <div class="p-6 bg-rose-500/10 border border-rose-500/30 rounded-lg text-rose-400">
+                <div class="p-6 bg-[#FEF2F2] border border-[#FECACA] rounded-lg text-[#DC2626]">
                     <h3 class="font-bold text-sm">Failed to render ${tabId}</h3>
                     <p class="text-xs mt-1 font-mono">${err.message}</p>
                 </div>
@@ -186,43 +175,43 @@ window.App = {
         const bodyEl = document.getElementById('modal-case-body');
 
         titleEl.innerText = `Case: ${caseObj.case_id}`;
-        subEl.innerText = `${caseObj.company} • ${caseObj.report} • ${caseObj.arm.toUpperCase()} (${caseObj.profile})`;
+        subEl.innerText = `${caseObj.company} • ${caseObj.report} • ${caseObj.arm.toUpperCase()} (${caseObj.profile || caseObj.condition || 'standard'})`;
 
         const repBadge = caseObj.reported_correct ? '<span class="badge badge-correct">Reported Correct</span>' : (caseObj.reported_outcome === 'withheld' ? '<span class="badge badge-withheld">Withheld</span>' : '<span class="badge badge-wrong">Reported Wrong</span>');
         const rawBadge = caseObj.raw_correct ? '<span class="badge badge-correct">Raw Correct</span>' : (caseObj.raw_outcome === 'withheld' ? '<span class="badge badge-withheld">Withheld</span>' : '<span class="badge badge-wrong">Raw Wrong</span>');
 
         bodyEl.innerHTML = `
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-[var(--bg-surface-elevated)] p-4 rounded-lg">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-[#F8FAFC] p-4 rounded-lg border border-[#E2E8F0]">
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-mono">Reported Match</div>
+                    <div class="text-[10px] text-[#64748B] uppercase font-mono">Reported Answer</div>
                     <div class="mt-1">${repBadge}</div>
                 </div>
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-mono">Raw Match</div>
+                    <div class="text-[10px] text-[#64748B] uppercase font-mono">Raw Execution Match</div>
                     <div class="mt-1">${rawBadge}</div>
                 </div>
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-mono">Tokens Generated</div>
-                    <div class="text-sm font-bold font-mono text-white mt-1">${caseObj.generated_tokens ?? 'N/A'}</div>
+                    <div class="text-[10px] text-[#64748B] uppercase font-mono">Tokens Generated</div>
+                    <div class="text-sm font-bold font-mono text-[#172033] mt-1">${caseObj.generated_tokens ?? 'N/A'}</div>
                 </div>
                 <div>
-                    <div class="text-[10px] text-slate-400 uppercase font-mono">Inference Time</div>
-                    <div class="text-sm font-bold font-mono text-white mt-1">${caseObj.inference_seconds ? caseObj.inference_seconds.toFixed(2) + 's' : 'N/A'}</div>
+                    <div class="text-[10px] text-[#64748B] uppercase font-mono">Inference Time</div>
+                    <div class="text-sm font-bold font-mono text-[#172033] mt-1">${caseObj.inference_seconds ? caseObj.inference_seconds.toFixed(2) + 's' : 'N/A'}</div>
                 </div>
             </div>
 
             <div class="card p-4">
-                <div class="text-xs font-bold text-slate-400 uppercase font-mono mb-2">Dual Verification Audit</div>
-                <p class="text-xs text-slate-300 leading-relaxed">
-                    Execution Valid: <span class="font-bold text-white">${caseObj.execution_valid ? 'True' : 'False'}</span> • 
-                    Repair Attempted: <span class="font-bold text-white">${caseObj.repair_attempted ? 'Yes' : 'No'}</span> • 
-                    Evidence Annotated Complete: <span class="font-bold text-white">${caseObj.annotated_evidence_complete ? 'Yes' : 'No'}</span>
+                <div class="text-xs font-bold text-[#172033] uppercase font-mono mb-2">Dual Verification Audit</div>
+                <p class="text-xs text-[#64748B] leading-relaxed">
+                    Execution Valid: <strong class="text-[#172033]">${caseObj.execution_valid ? 'True' : 'False'}</strong> • 
+                    Repair Attempted: <strong class="text-[#172033]">${caseObj.repair_attempted ? 'Yes' : 'No'}</strong> • 
+                    Evidence Annotated Complete: <strong class="text-[#172033]">${caseObj.annotated_evidence_complete ? 'Yes' : 'No'}</strong>
                 </p>
             </div>
 
             <div class="card p-4">
-                <div class="text-xs font-bold text-slate-400 uppercase font-mono mb-2">Protocol Reference</div>
-                <p class="text-xs text-slate-400 leading-relaxed">
+                <div class="text-xs font-bold text-[#172033] uppercase font-mono mb-2">Protocol Reference</div>
+                <p class="text-xs text-[#64748B] leading-relaxed">
                     Case is part of the 16 GB FinQA Evaluation cohort under 12.8 GB host-adjusted process-tree RSS cap. Denominator is 160 instances.
                 </p>
             </div>
@@ -238,26 +227,26 @@ window.App = {
 
         bodyEl.innerHTML = `
             <div class="space-y-4">
-                <div class="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-lg">
-                    <h4 class="font-bold text-emerald-400 text-sm">Standalone Re-analysis (Zero Setup)</h4>
-                    <p class="text-xs text-slate-300 mt-1">
+                <div class="bg-[#EFF6FF] border border-[#BFDBFE] p-4 rounded-lg">
+                    <h4 class="font-bold text-[#2563EB] text-sm">Standalone Re-analysis (Zero Setup)</h4>
+                    <p class="text-xs text-[#1E40AF] mt-1">
                         All statistical evaluation tables, p-values, bootstrap intervals, and figures can be verified without model downloads or GPUs.
                     </p>
                 </div>
 
                 <div class="card p-3">
-                    <div class="text-xs font-mono text-slate-400 mb-2">1. Verify and unpack SSD Evidence Archives:</div>
-                    <pre class="bg-slate-950 p-2 rounded text-xs font-mono text-emerald-400 overflow-x-auto">python dashboard_handoff/restore_evidence.py</pre>
+                    <div class="text-xs font-mono text-[#64748B] mb-1">1. Verify and unpack SSD Evidence Archives:</div>
+                    <pre class="bg-[#F8FAFC] p-2.5 rounded text-xs font-mono text-[#2563EB] border border-[#E2E8F0] overflow-x-auto">python dashboard_handoff/restore_evidence.py</pre>
                 </div>
 
                 <div class="card p-3">
-                    <div class="text-xs font-mono text-slate-400 mb-2">2. Recompute Statistical Hypothesis Tests:</div>
-                    <pre class="bg-slate-950 p-2 rounded text-xs font-mono text-cyan-400 overflow-x-auto">python scripts/reporting/paper_statistical_tests.py</pre>
+                    <div class="text-xs font-mono text-[#64748B] mb-1">2. Recompute Statistical Hypothesis Tests:</div>
+                    <pre class="bg-[#F8FAFC] p-2.5 rounded text-xs font-mono text-[#2563EB] border border-[#E2E8F0] overflow-x-auto">python scripts/reporting/paper_statistical_tests.py</pre>
                 </div>
 
                 <div class="card p-3">
-                    <div class="text-xs font-mono text-slate-400 mb-2">3. Regenerate High-Res Publication Figures:</div>
-                    <pre class="bg-slate-950 p-2 rounded text-xs font-mono text-cyan-400 overflow-x-auto">python scripts/reporting/paper_figures.py</pre>
+                    <div class="text-xs font-mono text-[#64748B] mb-1">3. Regenerate High-Res Publication Figures:</div>
+                    <pre class="bg-[#F8FAFC] p-2.5 rounded text-xs font-mono text-[#2563EB] border border-[#E2E8F0] overflow-x-auto">python scripts/reporting/paper_figures.py</pre>
                 </div>
             </div>
         `;
@@ -272,4 +261,3 @@ window.App = {
         dlAnchorElem.click();
     }
 };
-
