@@ -1,0 +1,273 @@
+\begin{thebibliography}{54}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Agresti(2013)}]{source54}
+Agresti, A. 2013.
+\newblock {Categorical Data Analysis (3rd ed.)}.
+\newblock Wiley.
+
+\bibitem[{Alquwayfili(2025)}]{source14}
+Alquwayfili, A. 2025.
+\newblock {Quantigence: A Multi-Agent AI Framework for Quantum Security Research}.
+\newblock ArXiv:2512.12989v1 (version 1; later versions of this identifier carry a different paper).
+
+\bibitem[{Bowker(1948)}]{source46}
+Bowker, A.~H. 1948.
+\newblock {A Test for Symmetry in Contingency Tables}.
+\newblock JASA 43(244), 572–574.
+
+\bibitem[{Cameron and Miller(2015)}]{source38}
+Cameron, A.~C.; and Miller, D.~L. 2015.
+\newblock {A Practitioner's Guide to Cluster-Robust Inference}.
+\newblock Journal of Human Resources 50(2), 317–372.
+
+\bibitem[{Cemri et~al.(2025)Cemri, Pan, Yang et~al.}]{source04}
+Cemri, M.; Pan, M.~Z.; Yang, S.; et~al. 2025.
+\newblock {Why Do Multi-Agent LLM Systems Fail?}
+\newblock ArXiv:2503.13657.
+
+\bibitem[{Chen et~al.(2026)}]{source31}
+Chen, H.; et~al. 2026.
+\newblock {Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA (DCRC)}.
+\newblock KDD 2026. arXiv:2605.31064.
+
+\bibitem[{Chen et~al.(2021)}]{source25}
+Chen, Z.; et~al. 2021.
+\newblock {FinQA: A Dataset of Numerical Reasoning over Financial Data}.
+\newblock EMNLP 2021. \url{https://aclanthology.org/2021.emnlp-main.300/}.
+
+\bibitem[{Dang et~al.(2025)Dang, Qian, Luo et~al.}]{source17}
+Dang, Y.; Qian, C.; Luo, X.; et~al. 2025.
+\newblock {Multi-Agent Collaboration via Evolving Orchestration}.
+\newblock NeurIPS 2025. arXiv:2505.19591.
+
+\bibitem[{Davison and Hinkley(1997)}]{source52}
+Davison, A.~C.; and Hinkley, D.~V. 1997.
+\newblock {Bootstrap Methods and Their Application}.
+\newblock Cambridge University Press.
+
+\bibitem[{Durkalski et~al.(2003)Durkalski, Palesch, Lipsitz, and Rust}]{source49}
+Durkalski, V.~L.; Palesch, Y.~Y.; Lipsitz, S.~R.; and Rust, P.~F. 2003.
+\newblock {Analysis of Clustered Matched-Pair Data}.
+\newblock Statistics in Medicine 22(15), 2417–2428.
+
+\bibitem[{Edwards(1948)}]{source45}
+Edwards, A.~L. 1948.
+\newblock {Note on the "Correction for Continuity" in Testing the Significance of the Difference between Correlated Proportions}.
+\newblock Psychometrika 13(3), 185–187.
+
+\bibitem[{El-Yaniv and Wiener(2010)}]{source37}
+El-Yaniv, R.; and Wiener, Y. 2010.
+\newblock {On the Foundations of Noise-free Selective Classification}.
+\newblock JMLR 11(53), 1605–1641.
+
+\bibitem[{Estornell et~al.(2025)Estornell, Ton, Yao, and Liu}]{source18}
+Estornell, A.; Ton, J.-F.; Yao, Y.; and Liu, Y. 2025.
+\newblock {ACC-Collab: An Actor-Critic Approach to Multi-Agent LLM Collaboration}.
+\newblock ICLR 2025. arXiv:2411.00053.
+
+\bibitem[{Fagerland, Lydersen, and Laake(2013)}]{source50}
+Fagerland, M.~W.; Lydersen, S.; and Laake, P. 2013.
+\newblock {The McNemar Test for Binary Matched-Pairs Data: Mid-p and Asymptotic Are Better than Exact Conditional}.
+\newblock BMC Medical Research Methodology 13, 91.
+
+\bibitem[{Hall et~al.(2026)}]{source29}
+Hall, B.; et~al. 2026.
+\newblock {VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims}.
+\newblock ArXiv:2608.10213.
+
+\bibitem[{Haque et~al.(2025)}]{source35}
+Haque, M.; et~al. 2025.
+\newblock {Towards Effectively Leveraging Execution Traces for Program Repair with Code LLMs}.
+\newblock KnowledgeNLP Workshop 2025. \url{https://aclanthology.org/2025.knowledgenlp-1.17/}.
+
+\bibitem[{Hoeffding(1963)}]{source40}
+Hoeffding, W. 1963.
+\newblock {Probability Inequalities for Sums of Bounded Random Variables}.
+\newblock JASA 58(301), 13–30.
+
+\bibitem[{Holm(1979)}]{source39}
+Holm, S. 1979.
+\newblock {A Simple Sequentially Rejective Multiple Test Procedure}.
+\newblock Scandinavian Journal of Statistics 6(2), 65–70.
+
+\bibitem[{Hong et~al.(2024)Hong, Zhuge, Chen et~al.}]{source05}
+Hong, S.; Zhuge, M.; Chen, J.; et~al. 2024.
+\newblock {MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework}.
+\newblock ICLR 2024. arXiv:2308.00352.
+
+\bibitem[{Jamshidi et~al.(2026)Jamshidi, Moradi~Dakhel, Nafi, and Khomh}]{source12}
+Jamshidi, S.; Moradi~Dakhel, A.; Nafi, K.~W.; and Khomh, F. 2026.
+\newblock {Hallucination Cascade: Analyzing Error Propagation in Multi-Agent LLM Systems}.
+\newblock ArXiv:2606.07937.
+
+\bibitem[{Jang et~al.(2026)Jang, Yang, Lim, and Park}]{source11}
+Jang, J.; Yang, K.; Lim, H.; and Park, H. 2026.
+\newblock {Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents}.
+\newblock ArXiv:2607.27275.
+
+\bibitem[{Jenq and Shen(2026)}]{source30}
+Jenq, J.; and Shen, H. 2026.
+\newblock {BudgetVerify: Budget-Tiered Verification for Financial QA}.
+\newblock ArXiv:2609.33052.
+
+\bibitem[{Jeon et~al.(2026)}]{source32}
+Jeon, H.; et~al. 2026.
+\newblock {LRAgent: Efficient KV Cache Sharing for Multi-LoRA LLM Agents}.
+\newblock ICML 2026. arXiv:2602.01053.
+
+\bibitem[{Kim et~al.(2025)Kim, Gu, Park et~al.}]{source03}
+Kim, Y.; Gu, K.; Park, C.; et~al. 2025.
+\newblock {Towards a Science of Scaling Agent Systems}.
+\newblock ArXiv:2512.08296.
+
+\bibitem[{Krishna et~al.(2024)}]{source36}
+Krishna, S.; et~al. 2024.
+\newblock {Fact, Fetch, and Reason: A Unified Evaluation of Retrieval-Augmented Generation (FRAMES)}.
+\newblock NAACL 2025. arXiv:2409.12941. Dataset revision 58d9fb63.
+
+\bibitem[{Lakens(2017)}]{source42}
+Lakens, D. 2017.
+\newblock {Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses}.
+\newblock Social Psychological and Personality Science 8(4), 355–362.
+
+\bibitem[{Li et~al.(2025)Li, Su, Xue, Tian, Song, and Huang}]{source19}
+Li, H.; Su, Z.; Xue, Y.; Tian, Z.; Song, Y.; and Huang, M. 2025.
+\newblock {Advancing Collaborative Debates with Role Differentiation through Multi-Agent Reinforcement Learning}.
+\newblock ACL 2025 (Long Papers), 22655–22666. \url{https://aclanthology.org/2025.acl-long.1105/}.
+
+\bibitem[{Liang and Zeger(1986)}]{source51}
+Liang, K.-Y.; and Zeger, S.~L. 1986.
+\newblock {Longitudinal Data Analysis Using Generalized Linear Models}.
+\newblock Biometrika 73(1), 13–22.
+
+\bibitem[{Lin et~al.(2024)Lin, Tang, Tang et~al.}]{source08}
+Lin, J.; Tang, J.; Tang, H.; et~al. 2024.
+\newblock {AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration}.
+\newblock MLSys 2024. arXiv:2306.00978.
+
+\bibitem[{Liu et~al.(2025{\natexlab{a}})}]{source28}
+Liu, C.; et~al. 2025{\natexlab{a}}.
+\newblock {David vs. Goliath: Cost-Efficient Financial QA via Cascaded Multi-Agent Reasoning (FinMAN)}.
+\newblock Findings of EMNLP 2025, 4212–4229. \url{https://aclanthology.org/2025.findings-emnlp.225/}.
+
+\bibitem[{Liu et~al.(2026)Liu, Yang, Li et~al.}]{source15}
+Liu, J.; Yang, J.; Li, X.; et~al. 2026.
+\newblock {Architecture Matters More Than Scale: A Comparative Study of Retrieval and Memory Augmentation for Financial QA Under SME Compute Constraints}.
+\newblock AIITA 2026 (IEEE). arXiv:2604.17979.
+
+\bibitem[{Liu et~al.(2025{\natexlab{b}})Liu, Zhao, Fedorov, Soran et~al.}]{source24}
+Liu, Z.; Zhao, C.; Fedorov, I.; Soran, B.; et~al. 2025{\natexlab{b}}.
+\newblock {SpinQuant: LLM Quantization with Learned Rotations}.
+\newblock ICLR 2025. arXiv:2405.16406.
+
+\bibitem[{Liu et~al.(2024)Liu, Zhao, Iandola et~al.}]{source09}
+Liu, Z.; Zhao, C.; Iandola, F.; et~al. 2024.
+\newblock {MobileLLM: Optimizing Sub-billion Parameter Language Models for On-Device Use Cases}.
+\newblock ICML 2024. arXiv:2402.14905.
+
+\bibitem[{Maxwell(1970)}]{source48}
+Maxwell, A.~E. 1970.
+\newblock {Comparing the Classification of Subjects by Two Independent Judges}.
+\newblock British Journal of Psychiatry 116, 651–655.
+
+\bibitem[{McNemar(1947)}]{source44}
+McNemar, Q. 1947.
+\newblock {Note on the Sampling Error of the Difference between Correlated Proportions or Percentages}.
+\newblock Psychometrika 12(2), 153–157.
+
+\bibitem[{Patil et~al.(2025)Patil, Mao, Yan, Ji, Suresh, Stoica, and Gonzalez}]{source10}
+Patil, S.~G.; Mao, H.; Yan, F.; Ji, C. C.-J.; Suresh, V.; Stoica, I.; and Gonzalez, J.~E. 2025.
+\newblock {The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models}.
+\newblock ICML 2025, PMLR 267, 48371–48392. \url{https://proceedings.mlr.press/v267/patil25a.html}.
+
+\bibitem[{Phipson and Smyth(2010)}]{source53}
+Phipson, B.; and Smyth, G.~K. 2010.
+\newblock {Permutation P-values Should Never Be Zero: Calculating Exact P-values When Permutations Are Randomly Drawn. Statistical Applications in Genetics and Molecular Biology 9(1), Article 39}.
+
+\bibitem[{Phogat et~al.(2024)}]{source27}
+Phogat, K.~S.; et~al. 2024.
+\newblock {Fine-tuning Smaller Language Models for Question Answering over Financial Documents}.
+\newblock Findings of EMNLP 2024. \url{https://aclanthology.org/2024.findings-emnlp.617/}.
+
+\bibitem[{Singh and Pawar(2026)}]{source13}
+Singh, P.; and Pawar, B. 2026.
+\newblock {The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines}.
+\newblock ICML 2026 FAGEN Workshop. arXiv:2608.14588.
+
+\bibitem[{Stuart(1955)}]{source47}
+Stuart, A. 1955.
+\newblock {A Test for Homogeneity of the Marginal Distributions in a Two-Way Classification}.
+\newblock Biometrika 42(3/4), 412–416.
+
+\bibitem[{Stuhlmann, Fadel~Argerich, and Fürst(2025)}]{source07}
+Stuhlmann, L.; Fadel~Argerich, M.; and Fürst, J. 2025.
+\newblock {Bench360: Benchmarking Local LLM Inference from 360 Degrees}.
+\newblock ArXiv:2511.16682.
+
+\bibitem[{Sun et~al.(2025)}]{source23}
+Sun, H.; et~al. 2025.
+\newblock {Collab-Overcooked: Benchmarking and Evaluating Large Language Models as Collaborative Agents}.
+\newblock EMNLP 2025, 4922–4951. arXiv:2502.20073.
+
+\bibitem[{Toles et~al.(2026)Toles, Lu, Munjal et~al.}]{source16}
+Toles, M.; Lu, Y.; Munjal, M.; et~al. 2026.
+\newblock {MortarBench: Evaluating Mortgage Loan Origination Agents}.
+\newblock ArXiv:2606.19416.
+
+\bibitem[{Tran and Kiela(2026)}]{source01}
+Tran, D.; and Kiela, D. 2026.
+\newblock {Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets}.
+\newblock ArXiv:2604.02460.
+
+\bibitem[{Wan et~al.(2025)Wan, Chen, Stengel-Eskin, and Bansal}]{source20}
+Wan, D.; Chen, J. C.-Y.; Stengel-Eskin, E.; and Bansal, M. 2025.
+\newblock {MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration}.
+\newblock NAACL 2025. arXiv:2503.15272.
+
+\bibitem[{Wang et~al.(2024)Wang, Jain, Zhang, Ray, Kumar, and Athiwaratkun}]{source06}
+Wang, J.; Jain, S.; Zhang, D.; Ray, B.; Kumar, V.; and Athiwaratkun, B. 2024.
+\newblock {Reasoning in Token Economies: Budget-Aware Evaluation of LLM Reasoning Strategies}.
+\newblock EMNLP 2024. arXiv:2406.06461. \url{https://aclanthology.org/2024.emnlp-main.1112/}.
+
+\bibitem[{Wang et~al.(2026{\natexlab{a}})}]{source34}
+Wang, Q.; et~al. 2026{\natexlab{a}}.
+\newblock {SAFER: Risk-Constrained Sample-then-Filter in Large Language Models}.
+\newblock ArXiv:2510.10193 (first version October 2025; version 3 February 2026).
+
+\bibitem[{Wang et~al.(2026{\natexlab{b}})}]{source33}
+Wang, S.; et~al. 2026{\natexlab{b}}.
+\newblock {ForkKV: Scaling Multi-LoRA Agent Serving via Copy-on-Write Disaggregated KV Cache}.
+\newblock ArXiv:2604.06370.
+
+\bibitem[{Wasserstein and Lazar(2016)}]{source41}
+Wasserstein, R.~L.; and Lazar, N.~A. 2016.
+\newblock {The ASA Statement on p-Values: Context, Process, and Purpose}.
+\newblock The American Statistician 70(2), 129–133.
+
+\bibitem[{Wilson(1927)}]{source43}
+Wilson, E.~B. 1927.
+\newblock {Probable Inference, the Law of Succession, and Statistical Inference}.
+\newblock JASA 22(158), 209–212.
+
+\bibitem[{Yang et~al.(2025)Yang, Chai, Shao et~al.}]{source21}
+Yang, Y.; Chai, H.; Shao, S.; et~al. 2025.
+\newblock {AgentNet: Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems}.
+\newblock ArXiv:2504.00587.
+
+\bibitem[{Zhu et~al.(2021)}]{source26}
+Zhu, F.; et~al. 2021.
+\newblock {TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance}.
+\newblock ACL 2021. \url{https://aclanthology.org/2021.acl-long.254/}.
+
+\bibitem[{Zhu et~al.(2025)Zhu, He, Hu et~al.}]{source22}
+Zhu, Y.; He, Z.; Hu, H.; et~al. 2025.
+\newblock {MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks}.
+\newblock NeurIPS 2025 Datasets \& Benchmarks. arXiv:2505.12371.
+
+\bibitem[{Żywot et~al.(2026)Żywot, Chen, Yuan, Søgaard, and de~Rijke}]{source02}
+Żywot, A.; Chen, X.; Yuan, Y.; Søgaard, A.; and de~Rijke, M. 2026.
+\newblock {Can Small Agents Collaborate to Beat a Single Large Language Model?}
+\newblock ArXiv:2601.11327.
+
+\end{thebibliography}

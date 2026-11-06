@@ -1,0 +1,23 @@
+{
+  "report_date": "2026-11-06",
+  "evidence_completed_through": "2026-10-30",
+  "new_model_calls": 0,
+  "inputs": {
+    "configs/lab_tiers/protocol.json": "4b4d9afa0b664fdc9a94ffb63595d3aa0118df4a733a861096dc2c5aea45fd86",
+    "figures/tier16_v2/01_outcome_profiles.png": "db23bb21fcdc2602d0d52872123414e5af09078efd85c4817500889460f9243e",
+    "figures/tier16_v2/02_primary_effects.png": "913f200a0148b21c5cd32fc7712638e205527d450c5a46576bd2400ad3b5d249",
+    "figures/tier16_v2/03_candidate_funnel.png": "dc2fa940e024ee472a9c2025fcf4b833728a9a67e50929ae280f1415599f4dd1",
+    "figures/tier16_v2/04_metric_concordance.png": "c3facd801e8b393504cb0cb13ae1625062f5713cf326c5ba6e479f32b3726330",
+    "figures/tier16_v2/06_repair_cost.png": "361ea73b4cf20979cbe356b06236d873be8626c5c9529c4fa0abbb0c2d998217",
+    "figures/tier16_v2/12_disk_vs_resident.png": "25530f8827771133d03c97f76535df021e8d4873c49001f6e944e1abacaf03af",
+    "research/paper/data/gate_ablation.json": "dd235929aad77fb611992b841bc5baca1ce608b36a53066eeefa07f88c91a226",
+    "research/tier16_v2/data/case_outcomes.csv": "3d4a970da64c8aa751d8cfbf2975704439210b6411dbd6f9df1e9e18714dff49",
+    "research/tier16_v2/RESOURCE_AUDIT.md": "8432fd4270f4e4a70299e2f507c9f52dcba37757f6ccf7108a8772e639965e91",
+    "research/tier16_v2/RESULTS.md": "5946b9c60f5523c3f3778622417e0d4cc519fce53e89fdbfdea2f4a75a961901",
+    "RESEARCH_PAPER.md": "e422bd02cd8a883181f3a5a9621f3af16757c84ae7900d7165dc06f5a3e24970"
+  },
+  "outputs": {
+    "output/pdf/PHASE_3_RESEARCH_IMPLEMENTATION_AND_EVALUATION.pdf": "3b9eedd401859a4aceb863bd05b2bdc9ed1e786c960fd8203839f9e5fbfe5a5a",
+    "PHASE_3_RESEARCH_IMPLEMENTATION_AND_EVALUATION.md": "b9fc403f83bdcac7d89cf5a34eca7e693dda763ac72f8eb118409fff264cf31d"
+  }
+}

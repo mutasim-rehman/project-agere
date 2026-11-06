@@ -2,3 +2,9 @@
 *.png binary
 dashboard_handoff/data/** -text whitespace=cr-at-eol
 dashboard_handoff/evidence/*.zip binary
+
+# Preserve the exact source/template bytes pinned in the LaTeX conversion audit.
+output/paper/pre_supervisor_review/RESEARCH_PAPER.md -text whitespace=cr-at-eol
+output/aaai/aaai2027.sty -text whitespace=-blank-at-eol
+output/aaai/aaai2027.bst -text whitespace=-blank-at-eol
+output/aaai/*.zip binary

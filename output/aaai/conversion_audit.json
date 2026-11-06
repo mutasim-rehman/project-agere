@@ -1,0 +1,2141 @@
+{
+  "source_markdown": "output\\paper\\pre_supervisor_review\\RESEARCH_PAPER.md",
+  "source_markdown_sha256": "ef6ecf8988c83cb80176b9ed0fc6886fa5b4458ab9c5fcff9f695d6c6f582aa4",
+  "source_pdf": "output\\paper\\pre_supervisor_review\\RESEARCH_PAPER.pdf",
+  "source_pdf_sha256": "0c5e26ed57df44019ce77a9d6a85fdaf1517f01fb1db01f7fb73f1c01991e9a2",
+  "new_research_claims": 0,
+  "new_experiments": 0,
+  "figures": [
+    {
+      "path": "figures/tier8/figure1_headline_metrics.png",
+      "sha256": "b00318487a56c37adb7ccfa640eecc0636df3fddf692b3d84f2aba63b3df6d0f",
+      "caption": "Historical 8 GB synthetic headline metrics."
+    },
+    {
+      "path": "figures/paper/P08_tier8_inventory.png",
+      "sha256": "2824d074a33b4d0b2563e5e0ff6d0e83542ff71efcee9780283571ba9e405635",
+      "caption": "All 15 completed 8 GB FinQA configurations, reported metric."
+    },
+    {
+      "path": "figures/tier16_v2/01_outcome_profiles.png",
+      "sha256": "db23bb21fcdc2602d0d52872123414e5af09078efd85c4817500889460f9243e",
+      "caption": "All six 16 GB jobs: correct, wrong and withheld (reported metric)."
+    },
+    {
+      "path": "figures/paper/P01_paired_transitions.png",
+      "sha256": "2f6f617058b3e3fd39a3f9073ceb710fe2fd2badf3a961edadaa0e44589e3e3e",
+      "caption": "Paired per-question transitions, both metrics."
+    },
+    {
+      "path": "figures/paper/P03_report_scatter.png",
+      "sha256": "f59642359ae3eafd42ea51a56583c110a4a7a5490bc23ec31ddc709ab15d92ee",
+      "caption": "Report-level correct-delivery rates; MAS is above parity on no report."
+    },
+    {
+      "path": "figures/tier16_v2/02_primary_effects.png",
+      "sha256": "913f200a0148b21c5cd32fc7712638e205527d450c5a46576bd2400ad3b5d249",
+      "caption": "Primary effects with report-cluster 95% and 98.75% intervals."
+    },
+    {
+      "path": "figures/paper/P02_bootstrap_distributions.png",
+      "sha256": "298cb88a7f685ea681b3378d9c0ff20b9b609a26a5393554937c6f041d52042d",
+      "caption": "Bootstrap distributions for the reported-metric primary contrasts."
+    },
+    {
+      "path": "figures/tier16_v2/11_cluster_sensitivity.png",
+      "sha256": "74a963d4129003b496a341a8d6e4f3248a0b5c7bbe1f1c795c70e36fafb47688",
+      "caption": "Report- versus company-cluster interval sensitivity."
+    },
+    {
+      "path": "figures/tier16_v2/03_candidate_funnel.png",
+      "sha256": "dc2fa940e024ee472a9c2025fcf4b833728a9a67e50929ae280f1415599f4dd1",
+      "caption": "Candidate production constrains the final gate."
+    },
+    {
+      "path": "figures/tier16_v2/06_repair_cost.png",
+      "sha256": "361ea73b4cf20979cbe356b06236d873be8626c5c9529c4fa0abbb0c2d998217",
+      "caption": "Repair cost relative to primary."
+    },
+    {
+      "path": "figures/tier16_v2/04_metric_concordance.png",
+      "sha256": "c3facd801e8b393504cb0cb13ae1625062f5713cf326c5ba6e479f32b3726330",
+      "caption": "Scoring-convention concordance."
+    },
+    {
+      "path": "figures/paper/P04_program_complexity.png",
+      "sha256": "51dde73bf327fb20ce7caec5f3838b2d244cf91a3c745371e8fd9a4630458449",
+      "caption": "Correct delivery by gold-program complexity."
+    },
+    {
+      "path": "figures/tier16_v2/10_retrieval_strata.png",
+      "sha256": "881b0a06fc839b8ba28cba300114db75f9b65a7ca55feb4de4aa0b9a5cc0504f",
+      "caption": "Correct delivery by annotated retrieval completeness."
+    },
+    {
+      "path": "figures/paper/P05_latency_distributions.png",
+      "sha256": "0b813ff9d0508adc223af66b6ea3a4d9620cd9dde7609b906ba9e767e2e224db",
+      "caption": "Per-case latency, all six jobs (log scale)."
+    },
+    {
+      "path": "figures/paper/P07_stage_costs.png",
+      "sha256": "a5c93a56e93bceade14dc94c40f776ebba5bcd4de752982b3d87981d0cf97e93",
+      "caption": "Compute by stage."
+    },
+    {
+      "path": "figures/tier16_v2/12_disk_vs_resident.png",
+      "sha256": "25530f8827771133d03c97f76535df021e8d4873c49001f6e944e1abacaf03af",
+      "caption": "Model file size versus sampled resident memory."
+    },
+    {
+      "path": "figures/paper/P06_memory_timelines.png",
+      "sha256": "158a08fd609dbe9f5051b66b4de15721da91d4d2ca4055f8eb4110fdebb26934",
+      "caption": "Sampled process-tree RSS over complete attempts and the retained failed attempt."
+    },
+    {
+      "path": "figures/tier16_v2/08_utility_sensitivity.png",
+      "sha256": "cb338855b7fc018e7af54b4d58d150fd30b726656afd90b8fa3f11ab90550a53",
+      "caption": "Utility versus the wrong-answer penalty."
+    },
+    {
+      "path": "figures/paper/P09_utility_kappa.png",
+      "sha256": "60b2467d315cc19c0908e19e8c63138402aee0912207a7fc798ef9e3802de324",
+      "caption": "Utility with a cost for human review of withheld cases."
+    },
+    {
+      "path": "figures/tier16_v2/07_risk_coverage.png",
+      "sha256": "234501a0d3e150937ce34bdbcfdb3a7ff56b0df30fc752a413eda72b62efcb5b",
+      "caption": "Risk\u2013coverage operating points of the six recipes."
+    }
+  ],
+  "original_table_count": 24,
+  "tables": [
+    {
+      "source_table": 1,
+      "columns": 6,
+      "rows": 7,
+      "source_cells": [
+        [
+          "Token-parity SAS vs MAS",
+          "Tran & Kiela 2026; Wang et al.\u00a02024",
+          "Yes (tokens)",
+          "No",
+          "No",
+          "No"
+        ],
+        [
+          "Small-team vs large model",
+          "\u017bywot et al.\u00a02026; Kim et al.\u00a02025",
+          "Partly",
+          "No",
+          "No",
+          "No"
+        ],
+        [
+          "MAS failure taxonomies",
+          "Cemri et al.\u00a02025; Jamshidi et al.\u00a02026; Singh & Pawar 2026",
+          "No",
+          "No",
+          "No",
+          "Singh & Pawar only"
+        ],
+        [
+          "Quantized agents",
+          "Jang et al.\u00a02026; Quantigence 2025",
+          "No",
+          "Partly",
+          "All-quantized only",
+          "No"
+        ],
+        [
+          "Local inference profiling",
+          "Bench360 (Stuhlmann et al.) 2025",
+          "n/a",
+          "Yes (GPU VRAM)",
+          "Single models only",
+          "No"
+        ],
+        [
+          "Financial agents/verification",
+          "FinMAN 2025; VeriFin 2026; DCRC 2026; BudgetVerify 2026",
+          "Partly (tokens/cost)",
+          "Not located",
+          "No",
+          "Yes"
+        ],
+        [
+          "This paper",
+          "\u2014",
+          "Generated-token ceiling",
+          "Sampled process-tree RSS ceiling",
+          "Yes (Q4 monolith vs F16 team)",
+          "Yes (FinQA reports; synthetic KYC/credit)"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "source_table": 2,
+      "columns": 4,
+      "rows": 9,
+      "source_cells": [
+        [
+          "Task",
+          "Synthetic KYC/credit packs",
+          "Public FinQA train-source numerical QA",
+          "Public FinQA dev-source numerical QA"
+        ],
+        [
+          "Unique items",
+          "175 test cases (+150 dev)",
+          "52 selection + 49 reserved questions",
+          "160 questions"
+        ],
+        [
+          "Clustering unit",
+          "Synthetic template",
+          "15 + 15 company-year reports",
+          "50 reports / 36 companies"
+        ],
+        [
+          "SAS",
+          "Qwen2.5-7B Q4_K_M",
+          "7B Q4 + trained adapter",
+          "Qwen2.5-14B Q4_K_M, pretrained"
+        ],
+        [
+          "MAS",
+          "1.5B + 0.5B + 0.5B F16",
+          "Two resident 3B Q4 instances (same base checkpoint) + role adapters",
+          "1.5B + 3B + 0.5B F16, distinct, resident"
+        ],
+        [
+          "Context",
+          "2,048",
+          "4,096",
+          "4,096"
+        ],
+        [
+          "Memory ceiling",
+          "6.4 GB",
+          "6.4 GB",
+          "11.5 GB"
+        ],
+        [
+          "Host",
+          "Windows 11, 16.39 GB RAM (CPU model not recorded in run artefacts)",
+          "Native CPU backend",
+          "Linux 7.0, AMD Ryzen 5 8645HS, 15.44 GB"
+        ],
+        [
+          "Causal RAM comparison?",
+          "No",
+          "No",
+          "No"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "source_table": 3,
+      "columns": 5,
+      "rows": 5,
+      "source_cells": [
+        [
+          "SAS",
+          "All stages",
+          "Qwen2.5-14B-Instruct",
+          "Q4_K_M",
+          "8,988,110,336"
+        ],
+        [
+          "MAS",
+          "Extractor / evidence selector",
+          "Qwen2.5-1.5B-Instruct",
+          "F16",
+          "3,093,669,024"
+        ],
+        [
+          "MAS",
+          "Drafter (analysis + program)",
+          "Qwen2.5-3B-Instruct",
+          "F16",
+          "6,178,316,832"
+        ],
+        [
+          "MAS",
+          "Verifier",
+          "Qwen2.5-0.5B-Instruct",
+          "F16",
+          "994,156,512"
+        ],
+        [
+          "",
+          "",
+          "MAS total",
+          "",
+          "10,266,142,368"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "source_table": 4,
+      "columns": 5,
+      "rows": 3,
+      "source_cells": [
+        [
+          "Primary",
+          "128 tokens",
+          "2 fixed",
+          "None",
+          "Prespecified primary comparison"
+        ],
+        [
+          "Direct control",
+          "None",
+          "None",
+          "None",
+          "Bundle ablation"
+        ],
+        [
+          "Repair ablation",
+          "128 tokens",
+          "2 fixed",
+          "One full re-plan + re-review after FAIL",
+          "Repair ablation"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "source_table": 5,
+      "columns": 4,
+      "rows": 4,
+      "source_cells": [
+        [
+          "Primary estimation (prespecified estimand)",
+          "T1 point estimate; T6 report bootstrap interval",
+          "Report",
+          "Direction and magnitude of each MAS \u2212 SAS contrast"
+        ],
+        [
+          "Supplemental confirmatory testing (post hoc)",
+          "T9 sign-flip with T10 Holm; T8 Durkalski; T7 CR1; report sign test",
+          "Report (company as sensitivity)",
+          "Family-wise p-values for the four primary endpoints"
+        ],
+        [
+          "Sensitivity and structure (case-IID)",
+          "T2\u2013T5, T1 Wald interval, T11 Wilson",
+          "Question",
+          "What ignoring clustering would imply; full 3\u00d73 transition structure"
+        ],
+        [
+          "Assumption-light check",
+          "T12 Hoeffding",
+          "Report",
+          "How much precision depends on bootstrap assumptions"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "source_table": 6,
+      "columns": 3,
+      "rows": 9,
+      "source_cells": [
+        [
+          "Valid JSON",
+          "175/175 (100%)",
+          "111/175 (63.4%)"
+        ],
+        [
+          "Structured invention rate (lower better)",
+          "125/175 (71.4%)",
+          "89/111 (80.2%)*"
+        ],
+        [
+          "Claim-level citation grounding",
+          "84.4%",
+          "36.3%"
+        ],
+        [
+          "Planted identity-mismatch recall",
+          "0/20",
+          "0/20"
+        ],
+        [
+          "Missing-field refusal",
+          "0/59",
+          "0/59"
+        ],
+        [
+          "Mean generated tokens / case",
+          "327.5",
+          "678.4"
+        ],
+        [
+          "Mean latency / case",
+          "91.5 s",
+          "60.6 s"
+        ],
+        [
+          "Peak process-tree RSS (cap 6.40 GB)",
+          "5.03 GB",
+          "5.54 GB"
+        ],
+        [
+          "FRAMES closed-book control (exact)",
+          "1/100",
+          "2/100"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "source_table": 7,
+      "columns": 5,
+      "rows": 15,
+      "source_cells": [
+        [
+          "Reserved: control SAS",
+          "49",
+          "8 / 20 / 21",
+          "14 / 14 / 21",
+          "5.368"
+        ],
+        [
+          "Reserved: control MAS",
+          "49",
+          "4 / 17 / 28",
+          "8 / 13 / 28",
+          "5.052"
+        ],
+        [
+          "Reserved: crossed SAS",
+          "49",
+          "9 / 20 / 20",
+          "15 / 14 / 20",
+          "5.364"
+        ],
+        [
+          "Reserved: crossed MAS",
+          "49",
+          "4 / 9 / 36",
+          "7 / 6 / 36",
+          "5.064"
+        ],
+        [
+          "Selection: baseline SAS",
+          "52",
+          "8 / 25 / 19",
+          "10 / 23 / 19",
+          "5.348"
+        ],
+        [
+          "Selection: baseline SAS (analysis128 + 2 demos)",
+          "52",
+          "9 / 24 / 19",
+          "10 / 23 / 19",
+          "5.368"
+        ],
+        [
+          "Selection: control SAS",
+          "52",
+          "8 / 23 / 21",
+          "10 / 21 / 21",
+          "5.356"
+        ],
+        [
+          "Selection: control SAS (analysis128 + 2 demos)",
+          "52",
+          "9 / 20 / 23",
+          "11 / 18 / 23",
+          "5.365"
+        ],
+        [
+          "Selection: crossed SAS",
+          "52",
+          "10 / 16 / 26",
+          "12 / 14 / 26",
+          "5.368"
+        ],
+        [
+          "Selection: crossed SAS (analysis128 + 2 demos)",
+          "52",
+          "9 / 10 / 33",
+          "10 / 9 / 33",
+          "5.370"
+        ],
+        [
+          "Selection: baseline MAS",
+          "52",
+          "2 / 19 / 31",
+          "3 / 18 / 31",
+          "5.058"
+        ],
+        [
+          "Selection: baseline original classic MAS",
+          "52",
+          "4 / 18 / 30",
+          "6 / 16 / 30",
+          "5.046"
+        ],
+        [
+          "Selection: baseline original critic, common actor",
+          "52",
+          "4 / 22 / 26",
+          "6 / 20 / 26",
+          "5.056"
+        ],
+        [
+          "Selection: control MAS",
+          "52",
+          "3 / 19 / 30",
+          "5 / 17 / 30",
+          "5.060"
+        ],
+        [
+          "Selection: crossed MAS",
+          "52",
+          "3 / 15 / 34",
+          "5 / 13 / 34",
+          "5.067"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "source_table": 8,
+      "columns": 5,
+      "rows": 6,
+      "source_cells": [
+        [
+          "Primary / SAS",
+          "78 / 48 / 34",
+          "38 / 88 / 34",
+          "11.546",
+          "10.062"
+        ],
+        [
+          "Primary / MAS",
+          "5 / 3 / 152",
+          "5 / 3 / 152",
+          "2.432",
+          "10.929"
+        ],
+        [
+          "Direct control / SAS",
+          "50 / 66 / 44",
+          "14 / 102 / 44",
+          "5.266",
+          "10.040"
+        ],
+        [
+          "Direct control / MAS",
+          "0 / 5 / 155",
+          "0 / 5 / 155",
+          "0.821",
+          "10.901"
+        ],
+        [
+          "Repair ablation / SAS",
+          "79 / 50 / 31",
+          "38 / 91 / 31",
+          "13.494",
+          "10.074"
+        ],
+        [
+          "Repair ablation / MAS",
+          "5 / 3 / 152",
+          "5 / 3 / 152",
+          "3.682",
+          "10.913"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "source_table": 9,
+      "columns": 4,
+      "rows": 5,
+      "source_cells": [
+        [
+          "Correct delivered",
+          "48.8% [41.1, 56.4]",
+          "23.8% [17.8, 30.9]",
+          "3.1% [1.3, 7.1]"
+        ],
+        [
+          "Wrong delivered",
+          "30.0% [23.4, 37.5]",
+          "55.0% [47.3, 62.5]",
+          "1.9% [0.6, 5.4]"
+        ],
+        [
+          "Withheld",
+          "21.2% [15.6, 28.2]",
+          "21.2% [15.6, 28.2]",
+          "95.0% [90.4, 97.4]"
+        ],
+        [
+          "Coverage",
+          "78.8%",
+          "78.8%",
+          "5.0%"
+        ],
+        [
+          "Precision among delivered",
+          "61.9% [53.2, 69.9] (78/126)",
+          "30.2% [22.8, 38.7] (38/126)",
+          "62.5% [30.6, 86.3] (5/8)"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "source_table": 10,
+      "columns": 4,
+      "rows": 3,
+      "source_cells": [
+        [
+          "SAS C (78)",
+          "5",
+          "1",
+          "72"
+        ],
+        [
+          "SAS W (48)",
+          "0",
+          "2",
+          "46"
+        ],
+        [
+          "SAS H (34)",
+          "0",
+          "0",
+          "34"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "source_table": 11,
+      "columns": 9,
+      "rows": 5,
+      "source_cells": [
+        [
+          "Reported / correct",
+          "\u221245.62",
+          "[\u221253.90, \u221236.55]",
+          "[\u221256.25, \u221234.09]",
+          "[\u221253.47, \u221236.44]",
+          "\u221242.48 [\u221252.66, \u221232.31]",
+          "[\u221246.79, \u221244.23]",
+          "6.1\u00d710\u207b\u2075",
+          "2.1\u00d710\u207b\u00b2\u00b2"
+        ],
+        [
+          "Reported / wrong",
+          "\u221228.12",
+          "[\u221237.09, \u221220.13]",
+          "[\u221239.34, \u221218.08]",
+          "[\u221238.36, \u221219.76]",
+          "\u221230.62 [\u221240.75, \u221220.71]",
+          "[\u221229.53, \u221226.75]",
+          "6.1\u00d710\u207b\u2075",
+          "6.8\u00d710\u207b\u00b9\u00b3"
+        ],
+        [
+          "Raw / correct",
+          "\u221220.62",
+          "[\u221228.26, \u221213.37]",
+          "[\u221230.29, \u221211.76]",
+          "[\u221228.15, \u221214.07]",
+          "\u221218.74 [\u221226.17, \u221211.83]",
+          "[\u221222.15, \u221219.08]",
+          "6.1\u00d710\u207b\u2075",
+          "2.1\u00d710\u207b\u2079"
+        ],
+        [
+          "Raw / wrong",
+          "\u221253.12",
+          "[\u221261.90, \u221244.08]",
+          "[\u221264.49, \u221241.26]",
+          "[\u221261.99, \u221243.08]",
+          "\u221254.37 [\u221264.00, \u221244.50]",
+          "[\u221254.61, \u221251.92]",
+          "6.1\u00d710\u207b\u2075",
+          "5.2\u00d710\u207b\u00b2\u2076"
+        ],
+        [
+          "Withheld (identity)",
+          "+73.75",
+          "[+64.71, +81.93]",
+          "[+62.09, +84.38]",
+          "[+66.03, +81.10]",
+          "+73.11 [+63.11, +82.27]",
+          "[+72.55, +75.64]",
+          "\u2014",
+          "\u2014"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          5,
+          6,
+          7,
+          8
+        ]
+      ]
+    },
+    {
+      "source_table": 12,
+      "columns": 8,
+      "rows": 2,
+      "source_cells": [
+        [
+          "SAS",
+          "150",
+          "84",
+          "78",
+          "48",
+          "6",
+          "18",
+          "10"
+        ],
+        [
+          "MAS",
+          "10",
+          "5",
+          "5",
+          "3",
+          "0",
+          "2",
+          "150"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "source_table": 13,
+      "columns": 7,
+      "rows": 2,
+      "source_cells": [
+        [
+          "SAS",
+          "0.9375",
+          "0.560",
+          "0.929",
+          "0.727",
+          "78/160",
+          "48/160"
+        ],
+        [
+          "MAS",
+          "0.0625",
+          "0.500",
+          "1.000",
+          "0.600",
+          "5/160",
+          "3/160"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      ]
+    },
+    {
+      "source_table": 14,
+      "columns": 6,
+      "rows": 6,
+      "source_cells": [
+        [
+          "SAS primary vs direct",
+          "Reported",
+          "+28",
+          "\u221218",
+          "[+9.76, +24.55]",
+          "[\u221217.98, \u22123.90]"
+        ],
+        [
+          "SAS primary vs direct",
+          "Raw",
+          "+24",
+          "\u221214",
+          "[+8.59, +21.62]",
+          "[\u221217.96, +0.72]"
+        ],
+        [
+          "MAS primary vs direct",
+          "Both",
+          "+5",
+          "\u22122",
+          "[0.00, +6.98]",
+          "[\u22125.26, +2.55]"
+        ],
+        [
+          "SAS repair vs primary",
+          "Reported",
+          "+1",
+          "+2",
+          "[0.00, +2.04]",
+          "[0.00, +3.40]"
+        ],
+        [
+          "SAS repair vs primary",
+          "Raw",
+          "0",
+          "+3",
+          "[0.00, 0.00]",
+          "[0.00, +4.35]"
+        ],
+        [
+          "MAS repair vs primary",
+          "Both",
+          "0",
+          "0",
+          "[0.00, 0.00]",
+          "[0.00, 0.00]"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "source_table": 15,
+      "columns": 4,
+      "rows": 3,
+      "source_cells": [
+        [
+          "Reported correct",
+          "34",
+          "44",
+          "78"
+        ],
+        [
+          "Reported incorrect",
+          "4",
+          "44",
+          "48"
+        ],
+        [
+          "Total",
+          "38",
+          "88",
+          "126"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "source_table": 16,
+      "columns": 4,
+      "rows": 7,
+      "source_cells": [
+        [
+          "1 step",
+          "104",
+          "52 / 29 / 23",
+          "5 / 3 / 96"
+        ],
+        [
+          "2 steps",
+          "49",
+          "26 / 14 / 9",
+          "0 / 0 / 49"
+        ],
+        [
+          "3+ steps",
+          "7",
+          "0 / 5 / 2",
+          "0 / 0 / 7"
+        ],
+        [
+          "Single add/subtract",
+          "40",
+          "16 / 12 / 12",
+          "1 / 0 / 39"
+        ],
+        [
+          "Single ratio/product",
+          "59",
+          "34 / 14 / 11",
+          "4 / 3 / 52"
+        ],
+        [
+          "Multi-step arithmetic",
+          "56",
+          "26 / 19 / 11",
+          "0 / 0 / 56"
+        ],
+        [
+          "Table aggregate (max/min/sum/avg)",
+          "5",
+          "2 / 3 / 0",
+          "0 / 0 / 5"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "source_table": 17,
+      "columns": 7,
+      "rows": 2,
+      "source_cells": [
+        [
+          "SAS",
+          "251.4 (mean 259.8)",
+          "532.9",
+          "204.1",
+          "4,016.8",
+          "10.062 GB",
+          "8.99 GB"
+        ],
+        [
+          "MAS",
+          "53.8 (mean 54.7)",
+          "1,751.4",
+          "184.4",
+          "4,666.7",
+          "10.929 GB",
+          "10.27 GB"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      ]
+    },
+    {
+      "source_table": 18,
+      "columns": 11,
+      "rows": 5,
+      "source_cells": [
+        [
+          "Reported / correct",
+          "78",
+          "5",
+          "0",
+          "73",
+          "\u221245.62",
+          "3.94",
+          "[\u221253.34, \u221237.91]",
+          "2.12\u00d710\u207b\u00b2\u00b2",
+          "73.00 (1.30\u00d710\u207b\u00b9\u2077)",
+          "71.01 (3.55\u00d710\u207b\u00b9\u2077)"
+        ],
+        [
+          "Reported / wrong",
+          "48",
+          "3",
+          "1",
+          "46",
+          "\u221228.12",
+          "3.66",
+          "[\u221235.30, \u221220.95]",
+          "6.82\u00d710\u207b\u00b9\u00b3",
+          "43.09 (5.24\u00d710\u207b\u00b9\u00b9)",
+          "41.19 (1.38\u00d710\u207b\u00b9\u2070)"
+        ],
+        [
+          "Raw / correct",
+          "38",
+          "5",
+          "1",
+          "34",
+          "\u221220.62",
+          "3.32",
+          "[\u221227.13, \u221214.12]",
+          "2.10\u00d710\u207b\u2079",
+          "31.11 (2.43\u00d710\u207b\u2078)",
+          "29.26 (6.34\u00d710\u207b\u2078)"
+        ],
+        [
+          "Raw / wrong",
+          "88",
+          "3",
+          "0",
+          "85",
+          "\u221253.12",
+          "3.95",
+          "[\u221260.86, \u221245.39]",
+          "5.17\u00d710\u207b\u00b2\u2076",
+          "85.00 (2.98\u00d710\u207b\u00b2\u2070)",
+          "83.01 (8.16\u00d710\u207b\u00b2\u2070)"
+        ],
+        [
+          "Withheld (both metrics)",
+          "34",
+          "152",
+          "118",
+          "0",
+          "+73.75",
+          "3.48",
+          "[+66.93, +80.57]",
+          "6.02\u00d710\u207b\u00b3\u2076",
+          "118.00 (1.73\u00d710\u207b\u00b2\u2077)",
+          "116.01 (4.73\u00d710\u207b\u00b2\u2077)"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          2,
+          7,
+          8,
+          9,
+          10
+        ]
+      ]
+    },
+    {
+      "source_table": 19,
+      "columns": 9,
+      "rows": 5,
+      "source_cells": [
+        [
+          "Reported / correct",
+          "[\u221253.90, \u221236.55]",
+          "4.45 (1.28)",
+          "\u221210.25 (1.19\u00d710\u207b\u00b2\u2074)",
+          "24.79 (6.41\u00d710\u207b\u2077)",
+          "14.68 (1.27\u00d710\u207b\u2074)",
+          "0 / 33 (2.33\u00d710\u207b\u00b9\u2070)",
+          "6.10\u00d710\u207b\u2075",
+          "1.92\u00d710\u207b\u2076"
+        ],
+        [
+          "Reported / wrong",
+          "[\u221237.09, \u221220.13]",
+          "4.40 (1.45)",
+          "\u22126.39 (1.71\u00d710\u207b\u00b9\u2070)",
+          "22.75 (1.84\u00d710\u207b\u2076)",
+          "17.31 (3.18\u00d710\u207b\u2075)",
+          "1 / 29 (5.77\u00d710\u207b\u2078)",
+          "6.10\u00d710\u207b\u2075",
+          "3.68\u00d710\u207b\u2076"
+        ],
+        [
+          "Raw / correct",
+          "[\u221228.26, \u221213.37]",
+          "3.80 (1.31)",
+          "\u22125.42 (5.83\u00d710\u207b\u2078)",
+          "16.75 (4.26\u00d710\u207b\u2075)",
+          "14.92 (1.12\u00d710\u207b\u2074)",
+          "0 / 21 (9.54\u00d710\u207b\u2077)",
+          "6.10\u00d710\u207b\u2075",
+          "4.26\u00d710\u207b\u2075"
+        ],
+        [
+          "Raw / wrong",
+          "[\u221261.90, \u221244.08]",
+          "4.57 (1.34)",
+          "\u221211.63 (2.96\u00d710\u207b\u00b3\u00b9)",
+          "29.25 (6.36\u00d710\u207b\u2078)",
+          "16.16 (5.81\u00d710\u207b\u2075)",
+          "0 / 41 (9.09\u00d710\u207b\u00b9\u00b3)",
+          "6.10\u00d710\u207b\u2075",
+          "2.54\u00d710\u207b\u2077"
+        ],
+        [
+          "Withheld (identity)",
+          "[+64.71, +81.93]",
+          "4.42 (1.62)",
+          "16.67 (2.04\u00d710\u207b\u2076\u00b2)",
+          "33.00 (9.24\u00d710\u207b\u2079)",
+          "19.39 (1.06\u00d710\u207b\u2075)",
+          "43 / 0 (2.27\u00d710\u207b\u00b9\u00b3)",
+          "\u2014",
+          "\u2014"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          5,
+          6,
+          7,
+          8
+        ]
+      ]
+    },
+    {
+      "source_table": 20,
+      "columns": 6,
+      "rows": 12,
+      "source_cells": [
+        [
+          "Primary: MAS vs SAS",
+          "Reported",
+          "119.00 (3)",
+          "1.27\u00d710\u207b\u00b2\u2075",
+          "118.03 (2)",
+          "2.34\u00d710\u207b\u00b2\u2076"
+        ],
+        [
+          "Primary: MAS vs SAS",
+          "Raw",
+          "119.00 (3)",
+          "1.27\u00d710\u207b\u00b2\u2075",
+          "118.04 (2)",
+          "2.33\u00d710\u207b\u00b2\u2076"
+        ],
+        [
+          "Direct control: MAS vs SAS",
+          "Reported",
+          "110.06 (3)",
+          "1.06\u00d710\u207b\u00b2\u00b3",
+          "109.16 (2)",
+          "1.98\u00d710\u207b\u00b2\u2074"
+        ],
+        [
+          "Direct control: MAS vs SAS",
+          "Raw",
+          "110.04 (3)",
+          "1.08\u00d710\u207b\u00b2\u00b3",
+          "109.16 (2)",
+          "1.98\u00d710\u207b\u00b2\u2074"
+        ],
+        [
+          "Repair ablation: MAS vs SAS",
+          "Reported",
+          "122.00 (3)",
+          "2.86\u00d710\u207b\u00b2\u2076",
+          "121.03 (2)",
+          "5.22\u00d710\u207b\u00b2\u2077"
+        ],
+        [
+          "Repair ablation: MAS vs SAS",
+          "Raw",
+          "122.00 (3)",
+          "2.86\u00d710\u207b\u00b2\u2076",
+          "121.04 (2)",
+          "5.21\u00d710\u207b\u00b2\u2077"
+        ],
+        [
+          "SAS: primary vs direct",
+          "Reported",
+          "25.15 (3)",
+          "1.44\u00d710\u207b\u2075",
+          "22.35 (2)",
+          "1.40\u00d710\u207b\u2075"
+        ],
+        [
+          "SAS: primary vs direct",
+          "Raw",
+          "23.29 (3)",
+          "3.52\u00d710\u207b\u2075",
+          "23.15 (2)",
+          "9.40\u00d710\u207b\u2076"
+        ],
+        [
+          "MAS: primary vs direct (metrics identical)",
+          "Both",
+          "5.50 (2)",
+          "0.064",
+          "5.50 (2)",
+          "0.064"
+        ],
+        [
+          "SAS: repair vs primary",
+          "Reported",
+          "3.00 (2)",
+          "0.22",
+          "3.00 (2)",
+          "0.22"
+        ],
+        [
+          "SAS: repair vs primary",
+          "Raw",
+          "3.00 (1)",
+          "0.083",
+          "3.00 (1)",
+          "0.083"
+        ],
+        [
+          "MAS: repair vs primary (metrics identical)",
+          "Both",
+          "0 (0)",
+          "\u2014",
+          "not defined (no discordant pairs)",
+          "\u2014"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "source_table": 21,
+      "columns": 10,
+      "rows": 20,
+      "source_cells": [
+        [
+          "Direct control: MAS vs SAS",
+          "Reported",
+          "correct",
+          "50 \u2192 0",
+          "0 / 50",
+          "\u221231.25",
+          "[\u221238.43, \u221224.07]",
+          "[\u221240.12, \u221222.63]",
+          "1.78\u00d710\u207b\u00b9\u2075",
+          "5.01\u00d710\u207b\u2076"
+        ],
+        [
+          "Direct control: MAS vs SAS",
+          "Reported",
+          "wrong",
+          "66 \u2192 5",
+          "2 / 63",
+          "\u221238.12",
+          "[\u221246.04, \u221230.21]",
+          "[\u221247.65, \u221229.05]",
+          "1.16\u00d710\u207b\u00b9\u2076",
+          "4.87\u00d710\u207b\u2077"
+        ],
+        [
+          "Direct control: MAS vs SAS",
+          "Raw",
+          "correct",
+          "14 \u2192 0",
+          "0 / 14",
+          "\u22128.75",
+          "[\u221213.13, \u22124.37]",
+          "[\u221213.29, \u22124.74]",
+          "1.22\u00d710\u207b\u2074",
+          "4.65\u00d710\u207b\u2074"
+        ],
+        [
+          "Direct control: MAS vs SAS",
+          "Raw",
+          "wrong",
+          "102 \u2192 5",
+          "2 / 99",
+          "\u221260.62",
+          "[\u221268.58, \u221252.67]",
+          "[\u221270.18, \u221250.63]",
+          "4.06\u00d710\u207b\u00b2\u2077",
+          "4.19\u00d710\u207b\u2078"
+        ],
+        [
+          "Repair ablation: MAS vs SAS",
+          "Reported",
+          "correct",
+          "79 \u2192 5",
+          "0 / 74",
+          "\u221246.25",
+          "[\u221253.98, \u221238.52]",
+          "[\u221254.67, \u221237.06]",
+          "1.06\u00d710\u207b\u00b2\u00b2",
+          "6.07\u00d710\u207b\u2077"
+        ],
+        [
+          "Repair ablation: MAS vs SAS",
+          "Reported",
+          "wrong",
+          "50 \u2192 3",
+          "1 / 48",
+          "\u221229.38",
+          "[\u221236.64, \u221222.11]",
+          "[\u221238.41, \u221221.38]",
+          "1.78\u00d710\u207b\u00b9\u00b3",
+          "8.35\u00d710\u207b\u2077"
+        ],
+        [
+          "Repair ablation: MAS vs SAS",
+          "Raw",
+          "correct",
+          "38 \u2192 5",
+          "1 / 34",
+          "\u221220.62",
+          "[\u221227.13, \u221214.12]",
+          "[\u221228.26, \u221213.37]",
+          "2.10\u00d710\u207b\u2079",
+          "4.26\u00d710\u207b\u2075"
+        ],
+        [
+          "Repair ablation: MAS vs SAS",
+          "Raw",
+          "wrong",
+          "91 \u2192 3",
+          "0 / 88",
+          "\u221255.00",
+          "[\u221262.71, \u221247.29]",
+          "[\u221263.93, \u221245.86]",
+          "6.46\u00d710\u207b\u00b2\u2077",
+          "3.80\u00d710\u207b\u2078"
+        ],
+        [
+          "SAS: primary vs direct",
+          "Reported",
+          "correct",
+          "50 \u2192 78",
+          "32 / 4",
+          "+17.50",
+          "[+10.67, +24.33]",
+          "[+9.76, +24.55]",
+          "1.94\u00d710\u207b\u2076",
+          "4.65\u00d710\u207b\u2074"
+        ],
+        [
+          "SAS: primary vs direct",
+          "Reported",
+          "wrong",
+          "66 \u2192 48",
+          "9 / 27",
+          "\u221211.25",
+          "[\u221218.39, \u22124.11]",
+          "[\u221217.98, \u22123.90]",
+          "0.004",
+          "0.007"
+        ],
+        [
+          "SAS: primary vs direct",
+          "Raw",
+          "correct",
+          "14 \u2192 38",
+          "27 / 3",
+          "+15.00",
+          "[+8.71, +21.29]",
+          "[+8.59, +21.62]",
+          "8.43\u00d710\u207b\u2076",
+          "4.02\u00d710\u207b\u2074"
+        ],
+        [
+          "SAS: primary vs direct",
+          "Raw",
+          "wrong",
+          "102 \u2192 88",
+          "15 / 29",
+          "\u22128.75",
+          "[\u221216.76, \u22120.74]",
+          "[\u221217.96, +0.72]",
+          "0.049",
+          "0.080"
+        ],
+        [
+          "MAS: primary vs direct",
+          "Both",
+          "correct",
+          "0 \u2192 5",
+          "5 / 0",
+          "+3.12",
+          "[+0.43, +5.82]",
+          "[0.00, +6.98]",
+          "0.0625",
+          "0.096"
+        ],
+        [
+          "MAS: primary vs direct",
+          "Both",
+          "wrong",
+          "5 \u2192 3",
+          "3 / 5",
+          "\u22121.25",
+          "[\u22124.71, +2.21]",
+          "[\u22125.26, +2.55]",
+          "0.73",
+          "0.53"
+        ],
+        [
+          "SAS: repair vs primary",
+          "Reported",
+          "correct",
+          "78 \u2192 79",
+          "1 / 0",
+          "+0.62",
+          "[\u22120.60, +1.85]",
+          "[0.00, +2.04]",
+          "1.00",
+          "0.32"
+        ],
+        [
+          "SAS: repair vs primary",
+          "Reported",
+          "wrong",
+          "48 \u2192 50",
+          "2 / 0",
+          "+1.25",
+          "[\u22120.47, +2.97]",
+          "[0.00, +3.40]",
+          "0.50",
+          "0.16"
+        ],
+        [
+          "SAS: repair vs primary",
+          "Raw",
+          "correct",
+          "38 \u2192 38",
+          "0 / 0",
+          "0.00",
+          "[0.00, 0.00]",
+          "[0.00, 0.00]",
+          "1.00",
+          "1.00"
+        ],
+        [
+          "SAS: repair vs primary",
+          "Raw",
+          "wrong",
+          "88 \u2192 91",
+          "3 / 0",
+          "+1.88",
+          "[\u22120.23, +3.98]",
+          "[0.00, +4.35]",
+          "0.25",
+          "0.083"
+        ],
+        [
+          "MAS: repair vs primary",
+          "Both",
+          "correct",
+          "5 \u2192 5",
+          "0 / 0",
+          "0.00",
+          "[0.00, 0.00]",
+          "[0.00, 0.00]",
+          "1.00",
+          "1.00"
+        ],
+        [
+          "MAS: repair vs primary",
+          "Both",
+          "wrong",
+          "3 \u2192 3",
+          "0 / 0",
+          "0.00",
+          "[0.00, 0.00]",
+          "[0.00, 0.00]",
+          "1.00",
+          "1.00"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          2,
+          7,
+          8,
+          9
+        ]
+      ]
+    },
+    {
+      "source_table": 22,
+      "columns": 11,
+      "rows": 28,
+      "source_cells": [
+        [
+          "Selection52: baseline MAS vs SAS",
+          "52",
+          "correct",
+          "8 \u2192 2",
+          "0 / 6",
+          "\u221211.54",
+          "[\u221223.26, \u22122.00]",
+          "0.031",
+          "0.041",
+          "0.083",
+          "0.027 (3)"
+        ],
+        [
+          "Selection52: baseline MAS vs SAS",
+          "52",
+          "wrong",
+          "25 \u2192 19",
+          "8 / 14",
+          "\u221211.54",
+          "[\u221232.56, +7.69]",
+          "0.29",
+          "0.29",
+          "0.26",
+          "0.027 (3)"
+        ],
+        [
+          "Selection52: control MAS vs SAS",
+          "52",
+          "correct",
+          "8 \u2192 3",
+          "0 / 5",
+          "\u22129.62",
+          "[\u221218.33, \u22122.00]",
+          "0.0625",
+          "0.074",
+          "0.059",
+          "0.064 (3)"
+        ],
+        [
+          "Selection52: control MAS vs SAS",
+          "52",
+          "wrong",
+          "23 \u2192 19",
+          "4 / 8",
+          "\u22127.69",
+          "[\u221221.82, +9.30]",
+          "0.39",
+          "0.39",
+          "0.37",
+          "0.064 (3)"
+        ],
+        [
+          "Selection52: crossed MAS vs SAS",
+          "52",
+          "correct",
+          "10 \u2192 3",
+          "0 / 7",
+          "\u221213.46",
+          "[\u221228.85, \u22122.00]",
+          "0.016",
+          "0.023",
+          "0.11",
+          "0.062 (3)"
+        ],
+        [
+          "Selection52: crossed MAS vs SAS",
+          "52",
+          "wrong",
+          "16 \u2192 15",
+          "6 / 7",
+          "\u22121.92",
+          "[\u221215.69, +15.26]",
+          "1.00",
+          "1.00",
+          "0.81",
+          "0.062 (3)"
+        ],
+        [
+          "Reserved49: control MAS vs SAS",
+          "49",
+          "correct",
+          "8 \u2192 4",
+          "1 / 5",
+          "\u22128.16",
+          "[\u221216.22, 0.00]",
+          "0.22",
+          "0.22",
+          "0.10",
+          "0.18 (3)"
+        ],
+        [
+          "Reserved49: control MAS vs SAS",
+          "49",
+          "wrong",
+          "20 \u2192 17",
+          "6 / 9",
+          "\u22126.12",
+          "[\u221227.27, +10.91]",
+          "0.61",
+          "0.61",
+          "0.51",
+          "0.18 (3)"
+        ],
+        [
+          "Reserved49: crossed MAS vs SAS",
+          "49",
+          "correct",
+          "9 \u2192 4",
+          "1 / 6",
+          "\u221210.20",
+          "[\u221220.83, 0.00]",
+          "0.12",
+          "0.13",
+          "0.13",
+          "0.005 (3)"
+        ],
+        [
+          "Reserved49: crossed MAS vs SAS",
+          "49",
+          "wrong",
+          "20 \u2192 9",
+          "3 / 14",
+          "\u221222.45",
+          "[\u221238.71, \u22127.50]",
+          "0.013",
+          "0.015",
+          "0.022",
+          "0.005 (3)"
+        ],
+        [
+          "Selection52: crossed vs control MAS",
+          "52",
+          "correct",
+          "3 \u2192 3",
+          "0 / 0",
+          "0.00",
+          "[0.00, 0.00]",
+          "1.00",
+          "1.00",
+          "1.00",
+          "0.10 (1)"
+        ],
+        [
+          "Selection52: crossed vs control MAS",
+          "52",
+          "wrong",
+          "19 \u2192 15",
+          "1 / 5",
+          "\u22127.69",
+          "[\u221217.74, +2.08]",
+          "0.22",
+          "0.22",
+          "0.16",
+          "0.10 (1)"
+        ],
+        [
+          "Selection52: crossed vs original-critic MAS",
+          "52",
+          "correct",
+          "4 \u2192 3",
+          "0 / 1",
+          "\u22121.92",
+          "[\u22125.77, 0.00]",
+          "1.00",
+          "1.00",
+          "0.32",
+          "0.092 (2)"
+        ],
+        [
+          "Selection52: crossed vs original-critic MAS",
+          "52",
+          "wrong",
+          "22 \u2192 15",
+          "3 / 10",
+          "\u221213.46",
+          "[\u221225.00, \u22121.85]",
+          "0.092",
+          "0.096",
+          "0.052",
+          "0.092 (2)"
+        ],
+        [
+          "Reserved49: crossed vs control MAS",
+          "49",
+          "correct",
+          "4 \u2192 4",
+          "0 / 0",
+          "0.00",
+          "[0.00, 0.00]",
+          "1.00",
+          "1.00",
+          "1.00",
+          "0.021 (1)"
+        ],
+        [
+          "Reserved49: crossed vs control MAS",
+          "49",
+          "wrong",
+          "17 \u2192 9",
+          "2 / 10",
+          "\u221216.33",
+          "[\u221226.23, \u22124.26]",
+          "0.039",
+          "0.043",
+          "0.046",
+          "0.021 (1)"
+        ],
+        [
+          "Selection52: crossed vs control SAS",
+          "52",
+          "correct",
+          "8 \u2192 10",
+          "2 / 0",
+          "+3.85",
+          "[0.00, +11.54]",
+          "0.50",
+          "0.48",
+          "0.32",
+          "0.14 (2)"
+        ],
+        [
+          "Selection52: crossed vs control SAS",
+          "52",
+          "wrong",
+          "23 \u2192 16",
+          "4 / 11",
+          "\u221213.46",
+          "[\u221226.79, 0.00]",
+          "0.12",
+          "0.12",
+          "0.11",
+          "0.14 (2)"
+        ],
+        [
+          "Selection52: crossed vs control SAS (analysis128+demos)",
+          "52",
+          "correct",
+          "9 \u2192 9",
+          "1 / 1",
+          "0.00",
+          "[0.00, 0.00]",
+          "1.00",
+          "1.00",
+          "1.00",
+          "0.060 (3)"
+        ],
+        [
+          "Selection52: crossed vs control SAS (analysis128+demos)",
+          "52",
+          "wrong",
+          "20 \u2192 10",
+          "3 / 13",
+          "\u221219.23",
+          "[\u221238.03, \u22122.08]",
+          "0.021",
+          "0.024",
+          "0.068",
+          "0.060 (3)"
+        ],
+        [
+          "Reserved49: crossed vs control SAS",
+          "49",
+          "correct",
+          "8 \u2192 9",
+          "1 / 0",
+          "+2.04",
+          "[0.00, +5.56]",
+          "1.00",
+          "1.00",
+          "0.32",
+          "0.61 (2)"
+        ],
+        [
+          "Reserved49: crossed vs control SAS",
+          "49",
+          "wrong",
+          "20 \u2192 20",
+          "3 / 3",
+          "0.00",
+          "[\u221210.64, +8.62]",
+          "1.00",
+          "1.00",
+          "1.00",
+          "0.61 (2)"
+        ],
+        [
+          "Selection52: baseline SAS, analysis128+demos vs direct",
+          "52",
+          "correct",
+          "8 \u2192 9",
+          "2 / 1",
+          "+1.92",
+          "[\u22124.26, +8.77]",
+          "1.00",
+          "1.00",
+          "0.56",
+          "0.80 (3)"
+        ],
+        [
+          "Selection52: baseline SAS, analysis128+demos vs direct",
+          "52",
+          "wrong",
+          "25 \u2192 24",
+          "5 / 6",
+          "\u22121.92",
+          "[\u221212.07, +12.50]",
+          "1.00",
+          "1.00",
+          "0.76",
+          "0.80 (3)"
+        ],
+        [
+          "Selection52: control SAS, analysis128+demos vs direct",
+          "52",
+          "correct",
+          "8 \u2192 9",
+          "2 / 1",
+          "+1.92",
+          "[\u22125.41, +10.53]",
+          "1.00",
+          "1.00",
+          "0.65",
+          "0.37 (3)"
+        ],
+        [
+          "Selection52: control SAS, analysis128+demos vs direct",
+          "52",
+          "wrong",
+          "23 \u2192 20",
+          "4 / 7",
+          "\u22125.77",
+          "[\u221218.75, +6.82]",
+          "0.55",
+          "0.55",
+          "0.41",
+          "0.37 (3)"
+        ],
+        [
+          "Selection52: crossed SAS, analysis128+demos vs direct",
+          "52",
+          "correct",
+          "10 \u2192 9",
+          "0 / 1",
+          "\u22121.92",
+          "[\u22126.25, 0.00]",
+          "1.00",
+          "1.00",
+          "0.32",
+          "0.040 (2)"
+        ],
+        [
+          "Selection52: crossed SAS, analysis128+demos vs direct",
+          "52",
+          "wrong",
+          "16 \u2192 10",
+          "2 / 8",
+          "\u221211.54",
+          "[\u221227.27, 0.00]",
+          "0.11",
+          "0.11",
+          "0.13",
+          "0.040 (2)"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          2,
+          7,
+          8,
+          9,
+          10
+        ]
+      ]
+    },
+    {
+      "source_table": 23,
+      "columns": 2,
+      "rows": 4,
+      "source_cells": [
+        [
+          "G1. Memory-bounded MAS vs quantized monolith",
+          "Addressed for \u226416 GB on financial numerical QA and synthetic KYC/credit; 32 GB not run."
+        ],
+        [
+          "G2. Confounded baselines",
+          "Addressed by identical tools, packets, executor and gate, and by improving both arms in the same way. Adapter optimization at 16 GB was not possible (pretrained only)."
+        ],
+        [
+          "G3. QLoRA hardening vs verifier gate",
+          "Partially addressed at 8 GB. On development questions, adaptation and trained critics added correct deliveries but also wrong ones (3B actor: 0/0/24 \u2192 10/11/3 C/W/H; critic: C 3 \u2192 11, W 0 \u2192 4). The crossed critic passed the no-loss rule against its matched control but failed it against the original critic and on the reserved audit, so it was not adopted."
+        ],
+        [
+          "G4. Compliance-aligned metrics",
+          "Partially addressed. C/W/H, coverage and dual numerical conventions are reported. Planted-mismatch recall and refusal correctness were 0 for both arms at 8 GB, and the invention metric partly measures output-contract compliance (Section 7.5)."
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "source_table": 24,
+      "columns": 2,
+      "rows": 11,
+      "source_cells": [
+        [
+          "Authoritative 16 GB run (raw prompts, responses, stages, memory, failures)",
+          "AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-02/ (SSD)"
+        ],
+        [
+          "Export archive + SHA-256",
+          "AGERE/runs/lab_tiers_v1/exports/lab-16-115gb-recovery-02-results.tar.gz"
+        ],
+        [
+          "16 GB derived data (960 rows, report outcomes, paired effects, stage metrics, resource events, metric disagreements)",
+          "research/tier16_v2/data/"
+        ],
+        [
+          "8 GB and cross-tier derived data (768 rows, 15-condition inventory, 197-file evidence catalog)",
+          "research/le16_v2/data/"
+        ],
+        [
+          "Paper supplementary analyses (Wilson, transitions, bootstrap replication, strata, latency, memory, utility)",
+          "research/paper/data/paper_supplementary_analysis.json"
+        ],
+        [
+          "Paper hypothesis-test battery (21 paired comparisons, 126 endpoint rows)",
+          "research/paper/data/paper_statistical_tests.{json,csv}"
+        ],
+        [
+          "Figures",
+          "figures/tier16_v2/ (12), figures/tier8/ (5), figures/paper/ (9)"
+        ],
+        [
+          "Historical 8 GB synthetic run",
+          "AGERE/runs/tier8/tier8-8gb-v1/ (SSD)"
+        ],
+        [
+          "Datasets",
+          "AGERE/datasets/lab_tiers/finance_reports_v1/, tier8_v2_*, agere_synthetic/agere-synth-v1/ (SSD)"
+        ],
+        [
+          "Model weights (GGUF)",
+          "AGERE/weights/ (SSD; not redistributed)"
+        ],
+        [
+          "Decisions log, protocols, earlier reports",
+          "DECISIONS.md, EXPERIMENT_PROTOCOL.md, research/lab_tiers/PROTOCOL.md, TIER_*_REPORT.md"
+        ]
+      ],
+      "panels": [
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "original_reference_count": 55,
+  "bibtex_reference_count": 54,
+  "undated_regulatory_context_entries_preserved": 1,
+  "original_reference_entries": [
+    "Tran, D., & Kiela, D. (2026). Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets. arXiv:2604.02460.",
+    "\u017bywot, A., Chen, X., Yuan, Y., S\u00f8gaard, A., & de Rijke, M. (2026). Can Small Agents Collaborate to Beat a Single Large Language Model? arXiv:2601.11327.",
+    "Kim, Y., Gu, K., Park, C., et al. (2025). Towards a Science of Scaling Agent Systems. arXiv:2512.08296.",
+    "Cemri, M., Pan, M. Z., Yang, S., et al. (2025). Why Do Multi-Agent LLM Systems Fail? arXiv:2503.13657.",
+    "Hong, S., Zhuge, M., Chen, J., et al. (2024). MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework. ICLR 2024. arXiv:2308.00352.",
+    "Wang, J., Jain, S., Zhang, D., Ray, B., Kumar, V., & Athiwaratkun, B. (2024). Reasoning in Token Economies: Budget-Aware Evaluation of LLM Reasoning Strategies. EMNLP 2024. arXiv:2406.06461. https://aclanthology.org/2024.emnlp-main.1112/",
+    "Stuhlmann, L., Fadel Argerich, M., & F\u00fcrst, J. (2025). Bench360: Benchmarking Local LLM Inference from 360 Degrees. arXiv:2511.16682.",
+    "Lin, J., Tang, J., Tang, H., et al. (2024). AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration. MLSys 2024. arXiv:2306.00978.",
+    "Liu, Z., Zhao, C., Iandola, F., et al. (2024). MobileLLM: Optimizing Sub-billion Parameter Language Models for On-Device Use Cases. ICML 2024. arXiv:2402.14905.",
+    "Patil, S. G., Mao, H., Yan, F., Ji, C. C.-J., Suresh, V., Stoica, I., & Gonzalez, J. E. (2025). The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models. ICML 2025, PMLR 267, 48371\u201348392. https://proceedings.mlr.press/v267/patil25a.html",
+    "Jang, J., Yang, K., Lim, H., & Park, H. (2026). Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents. arXiv:2607.27275.",
+    "Jamshidi, S., Moradi Dakhel, A., Nafi, K. W., & Khomh, F. (2026). Hallucination Cascade: Analyzing Error Propagation in Multi-Agent LLM Systems. arXiv:2606.07937.",
+    "Singh, P., & Pawar, B. (2026). The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines. ICML 2026 FAGEN Workshop. arXiv:2608.14588.",
+    "Alquwayfili, A. (2025). Quantigence: A Multi-Agent AI Framework for Quantum Security Research. arXiv:2512.12989v1 (version 1; later versions of this identifier carry a different paper).",
+    "Liu, J., Yang, J., Li, X., et al. (2026). Architecture Matters More Than Scale: A Comparative Study of Retrieval and Memory Augmentation for Financial QA Under SME Compute Constraints. AIITA 2026 (IEEE). arXiv:2604.17979.",
+    "Toles, M., Lu, Y., Munjal, M., et al. (2026). MortarBench: Evaluating Mortgage Loan Origination Agents. arXiv:2606.19416.",
+    "Dang, Y., Qian, C., Luo, X., et al. (2025). Multi-Agent Collaboration via Evolving Orchestration. NeurIPS 2025. arXiv:2505.19591.",
+    "Estornell, A., Ton, J.-F., Yao, Y., & Liu, Y. (2025). ACC-Collab: An Actor-Critic Approach to Multi-Agent LLM Collaboration. ICLR 2025. arXiv:2411.00053.",
+    "Li, H., Su, Z., Xue, Y., Tian, Z., Song, Y., & Huang, M. (2025). Advancing Collaborative Debates with Role Differentiation through Multi-Agent Reinforcement Learning. ACL 2025 (Long Papers), 22655\u201322666. https://aclanthology.org/2025.acl-long.1105/",
+    "Wan, D., Chen, J. C.-Y., Stengel-Eskin, E., & Bansal, M. (2025). MAMM-Refine: A Recipe for Improving Faithfulness in Generation with Multi-Agent Collaboration. NAACL 2025. arXiv:2503.15272.",
+    "Yang, Y., Chai, H., Shao, S., et al. (2025). AgentNet: Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems. arXiv:2504.00587.",
+    "Zhu, Y., He, Z., Hu, H., et al. (2025). MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks. NeurIPS 2025 Datasets & Benchmarks. arXiv:2505.12371.",
+    "Sun, H., et al. (2025). Collab-Overcooked: Benchmarking and Evaluating Large Language Models as Collaborative Agents. EMNLP 2025, 4922\u20134951. arXiv:2502.20073.",
+    "Liu, Z., Zhao, C., Fedorov, I., Soran, B., et al. (2025). SpinQuant: LLM Quantization with Learned Rotations. ICLR 2025. arXiv:2405.16406.",
+    "Chen, Z., et al. (2021). FinQA: A Dataset of Numerical Reasoning over Financial Data. EMNLP 2021. https://aclanthology.org/2021.emnlp-main.300/",
+    "Zhu, F., et al. (2021). TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance. ACL 2021. https://aclanthology.org/2021.acl-long.254/",
+    "Phogat, K. S., et al. (2024). Fine-tuning Smaller Language Models for Question Answering over Financial Documents. Findings of EMNLP 2024. https://aclanthology.org/2024.findings-emnlp.617/",
+    "Liu, C., et al. (2025). David vs. Goliath: Cost-Efficient Financial QA via Cascaded Multi-Agent Reasoning (FinMAN). Findings of EMNLP 2025, 4212\u20134229. https://aclanthology.org/2025.findings-emnlp.225/",
+    "Hall, B., et al. (2026). VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims. arXiv:2608.10213.",
+    "Jenq, J., & Shen, H. (2026). BudgetVerify: Budget-Tiered Verification for Financial QA. arXiv:2609.33052.",
+    "Chen, H., et al. (2026). Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA (DCRC). KDD 2026. arXiv:2605.31064.",
+    "Jeon, H., et al. (2026). LRAgent: Efficient KV Cache Sharing for Multi-LoRA LLM Agents. ICML 2026. arXiv:2602.01053.",
+    "Wang, S., et al. (2026). ForkKV: Scaling Multi-LoRA Agent Serving via Copy-on-Write Disaggregated KV Cache. arXiv:2604.06370.",
+    "Wang, Q., et al. (2026). SAFER: Risk-Constrained Sample-then-Filter in Large Language Models. arXiv:2510.10193 (first version October 2025; version 3 February 2026).",
+    "Haque, M., et al. (2025). Towards Effectively Leveraging Execution Traces for Program Repair with Code LLMs. KnowledgeNLP Workshop 2025. https://aclanthology.org/2025.knowledgenlp-1.17/",
+    "Krishna, S., et al. (2024). Fact, Fetch, and Reason: A Unified Evaluation of Retrieval-Augmented Generation (FRAMES). NAACL 2025. arXiv:2409.12941. Dataset revision `58d9fb63`.",
+    "El-Yaniv, R., & Wiener, Y. (2010). On the Foundations of Noise-free Selective Classification. JMLR 11(53), 1605\u20131641.",
+    "Cameron, A. C., & Miller, D. L. (2015). A Practitioner's Guide to Cluster-Robust Inference. Journal of Human Resources 50(2), 317\u2013372.",
+    "Holm, S. (1979). A Simple Sequentially Rejective Multiple Test Procedure. Scandinavian Journal of Statistics 6(2), 65\u201370.",
+    "Hoeffding, W. (1963). Probability Inequalities for Sums of Bounded Random Variables. JASA 58(301), 13\u201330.",
+    "Wasserstein, R. L., & Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. The American Statistician 70(2), 129\u2013133.",
+    "Lakens, D. (2017). Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses. Social Psychological and Personality Science 8(4), 355\u2013362.",
+    "Wilson, E. B. (1927). Probable Inference, the Law of Succession, and Statistical Inference. JASA 22(158), 209\u2013212.",
+    "McNemar, Q. (1947). Note on the Sampling Error of the Difference between Correlated Proportions or Percentages. Psychometrika 12(2), 153\u2013157.",
+    "Edwards, A. L. (1948). Note on the \"Correction for Continuity\" in Testing the Significance of the Difference between Correlated Proportions. Psychometrika 13(3), 185\u2013187.",
+    "Bowker, A. H. (1948). A Test for Symmetry in Contingency Tables. JASA 43(244), 572\u2013574.",
+    "Stuart, A. (1955). A Test for Homogeneity of the Marginal Distributions in a Two-Way Classification. Biometrika 42(3/4), 412\u2013416.",
+    "Maxwell, A. E. (1970). Comparing the Classification of Subjects by Two Independent Judges. British Journal of Psychiatry 116, 651\u2013655.",
+    "Durkalski, V. L., Palesch, Y. Y., Lipsitz, S. R., & Rust, P. F. (2003). Analysis of Clustered Matched-Pair Data. Statistics in Medicine 22(15), 2417\u20132428.",
+    "Fagerland, M. W., Lydersen, S., & Laake, P. (2013). The McNemar Test for Binary Matched-Pairs Data: Mid-p and Asymptotic Are Better than Exact Conditional. BMC Medical Research Methodology 13, 91.",
+    "Liang, K.-Y., & Zeger, S. L. (1986). Longitudinal Data Analysis Using Generalized Linear Models. Biometrika 73(1), 13\u201322.",
+    "Davison, A. C., & Hinkley, D. V. (1997). Bootstrap Methods and Their Application. Cambridge University Press.",
+    "Phipson, B., & Smyth, G. K. (2010). Permutation P-values Should Never Be Zero: Calculating Exact P-values When Permutations Are Randomly Drawn. Statistical Applications in Genetics and Molecular Biology 9(1), Article 39.",
+    "Agresti, A. (2013). Categorical Data Analysis (3rd ed.). Wiley.",
+    "FINRA Regulatory Notice 24-09; SEC Rule 17a-4; EU GDPR; EU DORA (Regulation 2022/2554); State Bank of Pakistan AML/CFT/CPF Regulations; FATF Recommendations."
+  ],
+  "style_source": "https://github.com/tabbycat7/aaai_2027_latex",
+  "style_download_note": "aaai.org author-kit URLs returned 403; style and bst retrieved from a mirror; not edited.",
+  "style_sha256": "391bce82815bf698b8e382dd3ae7e30c75d7ab46df140cb295b1266016bc8623",
+  "bst_sha256": "5db7765ba99de5c1e4686f9b3940a0add9c5e702f2164514462bec130ccb6e3c",
+  "layout_only_changes": [
+    "Author/project moved to template fields; no new affiliation or email",
+    "AAAI-27 preprint option preserves named authors without asserting AAAI copyright/acceptance",
+    "All original prose and abstract retained; no conference page-limit condensation",
+    "Horizontal statistical panels and row chunks preserve all original cells",
+    "Existing references reformatted via AAAI bst; missing metadata not invented",
+    "Long equations placed at full width where required; code examples soft-wrap in columns",
+    "Original box-drawing architecture reflowed with the same stage/model/decision labels in native LaTeX"
+  ]
+}
