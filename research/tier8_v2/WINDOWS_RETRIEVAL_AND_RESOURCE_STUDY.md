@@ -20,6 +20,20 @@ gain was +6.6 to +10.9 percentage points. This is a larger
 input budget and an annotated-evidence retrieval result.
 It does not measure answer correctness.
 
+A second offline screen added local BGE-small-en-v1.5 and a
+BGE/lexical rank fusion at the original token allowance. Dense
+retrieval covered 728 questions and hybrid covered 748, versus
+750 for lexical8. The hybrid recovered 18 complete packets and
+lost 20, and its report-cluster difference interval ran from
+−1.9 to +1.4 points. We did not adopt either method.
+[BGE model card](https://huggingface.co/BAAI/bge-small-en-v1.5)
+
+The annotated arithmetic program's numeric operands could be
+bound to retrieved source values on 703 lexical8 questions and
+767 wider lexical questions. This is numerical bindability under
+the current arithmetic operator and constant set. It does not
+prove the source identity is unique or that the model finds it.
+
 ## Candidate-generation test
 
 The wider lexical packet was selected using the development
