@@ -16,28 +16,32 @@ from tier8_windows_pilot import Models, jsonl
 
 
 def freeze(args):
+    if args.count < 1:
+        raise ValueError("Cohort count must be positive")
     excluded = {report_group(row["id"]) for path in args.exclude
                 for row in json.loads(path.read_text(encoding="utf-8"))}
     for path in args.exclude_cohort:
         excluded.update(row["report_group"] for row in jsonl(path))
     source = json.loads(args.source.read_text(encoding="utf-8"))
     source.sort(key=lambda row: hashlib.sha256(("windows-natural-v1|" + row["id"]).encode()).digest())
+    selected = []
+    for row in source:
+        group = report_group(row["id"])
+        if group in excluded:
+            continue
+        public = packet(row)
+        if not atom_catalog(public["evidence"]):
+            continue
+        selected.append({**public, "report_group": group})
+        excluded.add(group)
+        if len(selected) == args.count:
+            break
+    if len(selected) != args.count:
+        raise ValueError(f"Only {len(selected)} eligible reports for a {args.count}-report cohort")
     with args.output.open("x", encoding="utf-8") as out:
-        selected = 0
-        for row in source:
-            group = report_group(row["id"])
-            if group in excluded:
-                continue
-            public = packet(row)
-            if not atom_catalog(public["evidence"]):
-                continue
-            out.write(json.dumps({**public, "report_group": group}) + "\n")
-            excluded.add(group)
-            selected += 1
-            print(row["id"], flush=True)
-            if selected == 6:
-                return
-    raise ValueError("Insufficient eligible reports")
+        for public in selected:
+            out.write(json.dumps(public) + "\n")
+            print(public["id"], flush=True)
 
 
 def review(model, context, drafts, budget):
@@ -61,10 +65,12 @@ def review(model, context, drafts, budget):
 def run(args):
     if args.capacity_control and not args.adapter:
         raise ValueError("Capacity comparison requires the matched 3B adapter")
+    if args.planned_length and (not args.adapter or args.capacity_control):
+        raise ValueError("Length planning requires the adapter and excludes capacity control")
     model = Models(args)
     public = jsonl(args.cohort)
-    if len(public) != 6 or len({case["report_group"] for case in public}) != 6:
-        raise ValueError("Expected six separate reports")
+    if not public or len({case["report_group"] for case in public}) != len(public):
+        raise ValueError("Expected one question per report")
     args.output.mkdir(parents=True, exist_ok=False)
     with (args.output / "cases.jsonl").open("x", encoding="utf-8") as out:
         for case_index, case in enumerate(public):
@@ -88,10 +94,27 @@ def run(args):
             order = (1, 0) if args.adapter and case_index % 2 else (0, 1)
             for index in order:
                 model.forced = True
-                model.adapter = args.adapter if index == int(not args.capacity_control) else None
+                model.adapter = args.adapter if args.planned_length or index == int(not args.capacity_control) else None
                 model.drafter_weights = args.capacity_control if index == 1 else None
+                schema = reference_schema(atoms, units, causal=True)
+                planner_event, steps = None, None
+                limit = 768
+                if args.planned_length and index == 1:
+                    count_schema = {"type": "object", "properties": {"steps": {"enum": list(range(1, 9))}},
+                                    "required": ["steps"], "additionalProperties": False}
+                    selection, planner_event = model.call(
+                        "drafter", context + "\nHow many primitive arithmetic operations are necessary"
+                        " to compute the requested quantity? Count add, subtract, multiply and divide,"
+                        " including any necessary scale conversion. Retrieving or reading a source value"
+                        " does not count. Choose the smallest sufficient operation count from 1 to 8.",
+                        count_schema, budget, 96, "length_plan")
+                    steps = (selection or {}).get("steps")
+                    if type(steps) is int and 1 <= steps <= 8:
+                        lengths = schema["oneOf"][0]["properties"]["steps"]["oneOf"]
+                        lengths[:] = [lengths[steps - 1]]
+                    limit -= 96
                 plan, event = model.call("drafter", prompt + "\n" + instructions[index],
-                                         reference_schema(atoms, units, causal=True), budget, 768, "program")
+                                         schema, budget, limit, "program")
                 try:
                     program = compile_plan(plan, atoms)
                 except (ValueError, TypeError, AttributeError):
@@ -99,13 +122,15 @@ def run(args):
                 execution = checked(program, case["evidence"])
                 drafts[index] = dict(plan=plan, candidate=dict(program=program, execution=execution),
                                      adapter_applied=model.adapter is not None,
-                                     weights_override=model.drafter_weights, event=event)
+                                     weights_override=model.drafter_weights, event=event,
+                                     planned_steps=steps, planner_event=planner_event)
             model.adapter = None
             model.drafter_weights = None
             executable = all(not draft["candidate"]["execution"]["issues"] for draft in drafts)
-            reviews = review(model, context, drafts, budget) if executable and not args.capacity_control else []
+            review_enabled = not (args.capacity_control or args.planned_length)
+            reviews = review(model, context, drafts, budget) if executable and review_enabled else []
             out.write(json.dumps(dict(case_id=case["id"], drafts=drafts, reviews=reviews,
-                                      review_enabled=not bool(args.capacity_control),
+                                      review_enabled=review_enabled,
                                       reserved_tokens=budget.spent)) + "\n")
             out.flush()
             print(case["id"], [draft["candidate"]["execution"]["value"] for draft in drafts],
@@ -114,8 +139,11 @@ def run(args):
 
 def summarize(args):
     rows = jsonl(args.ledger)
-    if len(rows) != 6 or len({row["case_id"] for row in rows}) != 6:
-        raise ValueError("Expected six distinct completed questions")
+    ids = {row["case_id"] for row in rows}
+    if not rows or len(ids) != len(rows):
+        raise ValueError("Expected distinct completed questions")
+    if args.cohort and ids != {row["id"] for row in jsonl(args.cohort)}:
+        raise ValueError("Completed question IDs differ from frozen cohort")
     evaluate = official_evaluator(args.evaluator)
     gold = {row["id"]: row for row in json.loads(args.source.read_text(encoding="utf-8"))}
     result = dict(questions=len(rows), official=Counter(), reported=Counter(), cases=[])
@@ -126,6 +154,8 @@ def summarize(args):
         complete_evidence = set(annotation["qa"]["gold_inds"]) <= evidence.keys()
         candidates = [draft["candidate"] for draft in row["drafts"]]
         peaks.extend(item["event"]["peak_sampled_rss"] for item in row["drafts"] + row["reviews"])
+        peaks.extend(draft["planner_event"]["peak_sampled_rss"] for draft in row["drafts"]
+                     if draft.get("planner_event"))
         indices = [review["index"] for review in row["reviews"]]
         equivalent = candidates[0] == candidates[1]
         agreed = (len(indices) == 2 and None not in indices
@@ -157,6 +187,7 @@ def summarize(args):
                 except ValueError:
                     continue
         result["cases"].append(dict(case_id=row["case_id"], official=official, reported=reported,
+                                    planned_steps=[draft.get("planned_steps") for draft in row["drafts"]],
                                     duplicate_program=equivalent, selected_indices=indices,
                                     delivered=delivered, complete_annotated_evidence=complete_evidence,
                                     correct_prefix_of_wrong_draft=any(correct_prefix_lengths),
@@ -185,7 +216,8 @@ def summarize(args):
         result["draft_resources"].append(dict(
             executable=sum(not draft["candidate"]["execution"]["issues"] for draft in drafts),
             median_steps=median(len((draft["plan"] or {}).get("steps", [])) for draft in drafts),
-            median_seconds=median(draft["event"]["elapsed_seconds"] for draft in drafts),
+            median_seconds=median(draft["event"]["elapsed_seconds"] +
+                                  (draft.get("planner_event") or {}).get("elapsed_seconds", 0) for draft in drafts),
             peak_sampled_rss=max(draft["event"]["peak_sampled_rss"] for draft in drafts)))
     print(json.dumps(result, indent=2))
 
@@ -198,6 +230,7 @@ if __name__ == "__main__":
         build.add_argument(f"--{name}", type=Path, required=True)
     build.add_argument("--exclude", type=Path, action="append", required=True)
     build.add_argument("--exclude-cohort", type=Path, action="append", required=True)
+    build.add_argument("--count", type=int, default=6)
     build.set_defaults(run=freeze)
     inference = commands.add_parser("run")
     for name in ("cli", "weights", "cohort", "output"):
@@ -206,10 +239,13 @@ if __name__ == "__main__":
                            help="Compare base vs. adapted under the same prompt")
     inference.add_argument("--capacity-control",
                            help="Compare adapted 3B vs. this larger GGUF filename, without review")
+    inference.add_argument("--planned-length", action="store_true",
+                           help="Compare adapted drafting with and without a separate length prediction")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):
         report.add_argument(f"--{name}", type=Path, required=True)
+    report.add_argument("--cohort", type=Path)
     report.set_defaults(run=summarize)
     args = parser.parse_args()
     args.run(args)
