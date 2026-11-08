@@ -4,6 +4,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+from statistics import median
 
 from evidence_atoms import atom_catalog, compile_plan, reference_schema
 from evidence_contract import TokenLedger
@@ -170,6 +171,14 @@ def summarize(args):
                            else "correct" if labels[selection] else "wrong")
                 counts[f"single_order_{order + 1}_{outcome}"] += 1
     result["peak_sampled_rss"] = max(peaks)
+    result["draft_resources"] = []
+    for index in range(2):
+        drafts = [row["drafts"][index] for row in rows]
+        result["draft_resources"].append(dict(
+            executable=sum(not draft["candidate"]["execution"]["issues"] for draft in drafts),
+            median_steps=median(len((draft["plan"] or {}).get("steps", [])) for draft in drafts),
+            median_seconds=median(draft["event"]["elapsed_seconds"] for draft in drafts),
+            peak_sampled_rss=max(draft["event"]["peak_sampled_rss"] for draft in drafts)))
     print(json.dumps(result, indent=2))
 
 
