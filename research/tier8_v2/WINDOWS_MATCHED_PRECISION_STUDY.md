@@ -67,3 +67,23 @@ after backward slicing. The two extra Q8 execution matches
 therefore did not translate into a higher symbolic-match count.
 This secondary diagnostic distinguishes numerical result
 agreement from expression equivalence.
+
+## 96-report replication on main
+
+The same unadapted quantizations were compared on 96 additional
+reports from 59 companies. Q4 produced 2/96 official matches
+and Q8 produced 2/96. Neither correct Q4 report was correct
+with Q8, so the paired result was two gains, two losses and
+92 ties. The descriptive company-cluster 95% interval was
+−4.35 to +4.00 percentage points. Reported-answer scoring also
+tied at 2/96 with one discordance each way. These low
+absolute accuracies limit conclusions about equivalence on
+stronger models or prompts.
+
+Q4 produced 95 executable drafts and Q8 produced 96. Both
+consumed 86,773 prompt-evaluation tokens. Peak sampled RSS
+rose from 2.29 to 3.64 GB and peak job commit from 2.59 to
+3.94 GB. Median elapsed time rose from 20.6 to 32.2 seconds.
+This replication did not support paying the higher memory
+and time cost for a candidate-accuracy gain in this setup.
+See `evidence/windows-extended/precision96-summary.json`.
