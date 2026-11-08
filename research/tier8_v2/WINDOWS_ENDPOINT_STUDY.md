@@ -109,3 +109,24 @@ Dead-operation pruning cleans up redundant work and cannot recover
 a correct intermediate value that the final output still depends on.
 The symbolic audit does not certify the source identity or semantic
 meaning of any matching expression.
+
+### Gold-informed diagnostic
+
+The planned count matched only three annotated operation counts.
+To separate count prediction from operand binding, we freeze a
+separate oracle diagnostic on the same 16 questions. Both arms
+use the same adapted checkpoint, lexical evidence and 768-token
+draft allowance. The second arm's grammar enforces the count
+from the annotated reference program. It never sees the target
+operands, operations, or answer. This intervention is gold
+informed and does not qualify as a deployable candidate policy.
+A valid alternative calculation can require a different number
+of operations, so it is a diagnostic rather than a mathematical
+upper bound.
+
+The immutable case-to-count map is
+`evidence/windows-endpoint-study/oracle-annotated-lengths.json`.
+Use `run --oracle-lengths` with the same frozen cohort, adapter
+and a 6.1 GB worker commit limit. Compare paired outcomes with
+unrestricted drafting and report the previous predicted-count
+result separately.

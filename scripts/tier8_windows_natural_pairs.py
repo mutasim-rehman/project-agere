@@ -89,6 +89,9 @@ def run(args):
     if args.complete_catalog and (not args.adapter or args.capacity_control or args.planned_length
                                   or args.retrieval_cohort):
         raise ValueError("Catalog comparison requires an adapter and no other intervention")
+    if args.oracle_lengths and (not args.adapter or args.capacity_control or args.planned_length
+                                or args.retrieval_cohort or args.precision_control or args.complete_catalog):
+        raise ValueError("Oracle-length diagnostic requires only the adapted model")
     if args.complete_catalog:
         from tier8_windows_catalog_audit import load_prototype
         expanded_catalog = load_prototype()
@@ -96,6 +99,9 @@ def run(args):
     public = jsonl(args.cohort)
     if not public or len({case["report_group"] for case in public}) != len(public):
         raise ValueError("Expected one question per report")
+    oracle = json.loads(args.oracle_lengths.read_bytes()) if args.oracle_lengths else {}
+    if args.oracle_lengths and set(oracle) != {case["id"] for case in public}:
+        raise ValueError("Oracle length diagnostic must cover the entire frozen cohort")
     alternative = {case["id"]: case for case in jsonl(args.retrieval_cohort)} if args.retrieval_cohort else {}
     if args.retrieval_cohort and set(alternative) != {case["id"] for case in public}:
         raise ValueError("Retrieval case IDs differ")
@@ -128,7 +134,7 @@ def run(args):
                           + "\nAllowed units: " + ", ".join(units))
                 model.forced = True
                 use_adapter = (args.planned_length or args.retrieval_cohort or args.complete_catalog
-                               or index == int(not args.capacity_control))
+                               or args.oracle_lengths or index == int(not args.capacity_control))
                 model.adapter = args.adapter if use_adapter else None
                 model.drafter_weights = (str(args.precision_control[index].resolve())
                                          if args.precision_control else
@@ -146,10 +152,12 @@ def run(args):
                         " does not count. Choose the smallest sufficient operation count from 1 to 8.",
                         count_schema, budget, 96, "length_plan")
                     steps = (selection or {}).get("steps")
-                    if type(steps) is int and 1 <= steps <= 8:
-                        lengths = schema["oneOf"][0]["properties"]["steps"]["oneOf"]
-                        lengths[:] = [lengths[steps - 1]]
                     limit -= 96
+                elif oracle and index == 1:
+                    steps = oracle[case["id"]]
+                if type(steps) is int and 1 <= steps <= 8:
+                    lengths = schema["oneOf"][0]["properties"]["steps"]["oneOf"]
+                    lengths[:] = [lengths[steps - 1]]
                 plan, event = model.call("drafter", prompt + "\n" + instructions[index],
                                          schema, budget, limit, "program")
                 try:
@@ -167,10 +175,12 @@ def run(args):
             model.drafter_weights = None
             executable = all(not draft["candidate"]["execution"]["issues"] for draft in drafts)
             review_enabled = not (args.capacity_control or args.planned_length
-                                  or args.retrieval_cohort or args.precision_control or args.complete_catalog)
+                                  or args.retrieval_cohort or args.precision_control or args.complete_catalog
+                                  or args.oracle_lengths)
             reviews = review(model, context, drafts, budget) if executable and review_enabled else []
             out.write(json.dumps(dict(case_id=case["id"], drafts=drafts, reviews=reviews,
                                       review_enabled=review_enabled,
+                                      oracle_diagnostic=bool(args.oracle_lengths),
                                       reserved_tokens=budget.spent)) + "\n")
             out.flush()
             print(case["id"], [draft["candidate"]["execution"]["value"] for draft in drafts],
@@ -316,6 +326,8 @@ if __name__ == "__main__":
     inference.add_argument("--job-commit-limit", type=int)
     inference.add_argument("--complete-catalog", action="store_true",
                            help="Compare original and span-complete source quantity catalogs")
+    inference.add_argument("--oracle-lengths", type=Path,
+                           help="Gold-informed diagnostic only: compare against exact annotated lengths")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):
