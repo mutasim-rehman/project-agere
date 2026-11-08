@@ -1,210 +1,144 @@
 /**
- * Runs & Evidence Page - Visual Research Dashboard
+ * 8 GB tier & runs: the development inventory and evidence catalog.
  */
 
 window.App.registerPage('runs', {
-    state: {
-        evidence: [],
-        conditions: [],
-        archiveStats: {},
-        search: ''
-    },
+    state: { search: '', metric: 'reported' },
 
     async render(container, app) {
-        if (this.state.evidence.length === 0) {
-            this.state.evidence = await app.fetchJson('data/le16_v2/tier8_evidence_catalog.json') || [];
-            this.state.conditions = await app.fetchJson('data/le16_v2/tier8_condition_inventory.json') || [];
-            this.state.archiveStats = await app.fetchJson('data/archive_stats.json') || {};
-        }
+        const evidence = (await app.fetchJson('data/le16_v2/tier8_evidence_catalog.json')) || [];
+        const archive = (await app.fetchJson('data/archive_stats.json')) || {};
+        const conds = await Data.tier8Conditions();
+        this.evidence = evidence;
+        this.conds = conds;
 
-        const stats = this.state.archiveStats;
+        const pairs = conds.filter(c => c.arm === 'mas').map(m => {
+            const s = conds.find(c => c.arm === 'sas' && c.cohort === m.cohort && c.name === m.name.replace(/mas$/, 'sas'));
+            return s ? { cohort: m.cohort, name: m.name.replace(/_mas$/, ''), mas: m, sas: s } : null;
+        }).filter(Boolean);
+        const sasWins = pairs.filter(p => p.sas.reported.C > p.mas.reported.C).length;
+        const avgPeak = arm => conds.filter(c => c.arm === arm).reduce((a, c) => a + c.peakGb, 0) / conds.filter(c => c.arm === arm).length;
+        const totalOutputs = conds.reduce((a, c) => a + c.n, 0);
 
         container.innerHTML = `
-            <!-- Archive Stat Strip -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="stat-card border-l-4 border-l-[#2563EB]">
-                    <div class="stat-card-label">
-                        <span>Evidence Volume</span>
-                        <span class="badge badge-mas">17 Archives</span>
-                    </div>
-                    <div class="stat-card-value text-[#2563EB]">${stats.total_mb ? stats.total_mb + ' MB' : '645 MB'}</div>
-                    <div class="stat-card-meta">17 verified SSD archives</div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#2563EB]" style="width: 100%;"></div>
-                    </div>
-                </div>
+            ${UI.hero({
+                eyebrow: '8 GB development tier',
+                title: `SAS leads in <span class="grad-text">${sasWins} of ${pairs.length}</span> matched 8 GB pairs`,
+                sub: '15 completed configurations on 101 FinQA questions from 30 reports, all within a 6.4 GB nominal budget. These are development runs with repeated questions, not independent replications.'
+            })}
 
-                <div class="stat-card border-l-4 border-l-[#15803D]">
-                    <div class="stat-card-label">
-                        <span>Source Files</span>
-                        <span class="badge badge-correct">Hashed</span>
-                    </div>
-                    <div class="stat-card-value text-[#172033]">${stats.total_files ?? '2,598'}</div>
-                    <div class="stat-card-meta">1,629 unique content hashes</div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#15803D]" style="width: 85%;"></div>
-                    </div>
-                </div>
-
-                <div class="stat-card border-l-4 border-l-[#7C3AED]">
-                    <div class="stat-card-label">
-                        <span>Cataloged Artifacts</span>
-                        <span class="badge badge-sas">Indexed</span>
-                    </div>
-                    <div class="stat-card-value text-[#172033]">197 Items</div>
-                    <div class="stat-card-meta">Indexed research outputs</div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#7C3AED]" style="width: 70%;"></div>
-                    </div>
-                </div>
-
-                <div class="stat-card border-l-4 border-l-[#D97706]">
-                    <div class="stat-card-label">
-                        <span>Experimental Conditions</span>
-                        <span class="badge badge-withheld">Evaluations</span>
-                    </div>
-                    <div class="stat-card-value text-[#172033]">15 Conditions</div>
-                    <div class="stat-card-meta">30 recorded evaluations</div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#D97706]" style="width: 60%;"></div>
-                    </div>
-                </div>
+            <div class="grid grid-cols-2 xl:grid-cols-4 gap-4">
+                ${UI.kpi({ label: 'Configurations', value: conds.length, foot: `${totalOutputs} case outputs`, icon: 'layers', i: 1 })}
+                ${UI.kpi({ label: 'Avg SAS peak RSS', value: avgPeak('sas'), decimals: 2, suffix: ' GB', foot: '7B Q4 + trained adapter', tone: 'sas', icon: 'memory-stick', i: 2 })}
+                ${UI.kpi({ label: 'Avg MAS peak RSS', value: avgPeak('mas'), decimals: 2, suffix: ' GB', foot: 'Shared 3B Q4 role backbone', tone: 'mas', icon: 'memory-stick', i: 3 })}
+                ${UI.kpi({ label: 'Evidence on SSD', value: archive.total_mb || 645, decimals: 0, suffix: ' MB', foot: `${UI.num(archive.total_files || 2598)} files · ${evidence.length} cataloged artifacts`, tone: 'withheld', icon: 'archive', i: 4 })}
             </div>
 
-            <!-- Visual Archive Breakdown Chart -->
-            <div class="card">
-                <div class="card-header-clean">
-                    <div>
-                        <h3 class="text-sm font-bold text-[#172033]">Archive Storage & Artifact Distribution</h3>
-                        <p class="text-xs text-[#64748B]">Volume in Megabytes across experimental cohorts</p>
-                    </div>
-                    <span class="badge badge-mas">Archive Telemetry</span>
-                </div>
-                <div class="pt-4">
-                    <div class="w-full h-56">
-                        <canvas id="runs-archive-chart"></canvas>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 xl:grid-cols-5 gap-6">
+                ${UI.card({
+                    cls: 'xl:col-span-3', i: 5,
+                    title: 'Matched MAS vs SAS pairs',
+                    sub: 'Correct answers on the same questions. Each row is one configuration pair.',
+                    body: `<div class="h-72"><canvas id="runs-pairs"></canvas></div>`
+                })}
+                ${UI.card({
+                    cls: 'xl:col-span-2', i: 6,
+                    title: 'Evidence archive',
+                    sub: 'Files by category',
+                    body: `<div class="h-56"><canvas id="runs-archive"></canvas></div>`
+                })}
             </div>
 
-            <!-- 8 GB Experimental Condition Inventory -->
-            <div class="card">
-                <div class="card-header-clean">
-                    <div>
-                        <h3 class="text-sm font-bold text-[#172033]">8 GB Experimental Condition Inventory (30 Evaluations)</h3>
-                        <p class="text-xs text-[#64748B]">Evaluations across control, crossed, baseline, and analysis conditions</p>
-                    </div>
-                    <span class="badge badge-sas">8 GB Natural Regime</span>
-                </div>
+            ${UI.card({
+                i: 7,
+                title: 'Every 8 GB configuration',
+                sub: 'Outcome mix per configuration, sorted by correct answers',
+                right: `<div class="flex items-center gap-3">${UI.outcomeLegend()}<div class="seg" id="runs-metric"><button data-v="reported" class="on">Reported</button><button data-v="raw">Raw</button></div></div>`,
+                body: `<div id="runs-bars" class="space-y-2.5"></div>`
+            })}
 
-                <div class="table-container max-h-64 overflow-y-auto mt-4">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Job Name</th>
-                                <th>Metric</th>
-                                <th>n</th>
-                                <th>Reports</th>
-                                <th>Correct</th>
-                                <th>Wrong</th>
-                                <th>Withheld</th>
-                                <th>Peak RSS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${this.state.conditions.map(c => `
-                                <tr>
-                                    <td class="font-mono text-xs text-[#172033] font-medium">${c.job}</td>
-                                    <td class="text-xs text-[#64748B] font-mono">${c.metric}</td>
-                                    <td class="font-mono text-xs text-[#172033]">${c.n}</td>
-                                    <td class="font-mono text-xs text-[#64748B]">${c.reports}</td>
-                                    <td class="font-mono text-xs font-bold text-[#15803D]">${c.correct}</td>
-                                    <td class="font-mono text-xs font-bold text-[#DC2626]">${c.wrong}</td>
-                                    <td class="font-mono text-xs font-bold text-[#D97706]">${c.withheld}</td>
-                                    <td class="font-mono text-xs text-[#172033] font-semibold">${(c.peak_rss_bytes / (1024**3)).toFixed(2)} GB</td>
-                                </tr>
-                            `).join('')}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Historical Evidence Catalog Browser -->
-            <div class="card">
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-3 border-b border-[#E2E8F0] gap-3">
-                    <div>
-                        <h3 class="text-sm font-bold text-[#172033]">Historical Evidence Catalog (197 Artifacts)</h3>
-                        <p class="text-xs text-[#64748B]">Search cataloged checkpoint logs, diagnostic runs, and traces</p>
-                    </div>
-                    <input id="evidence-search" type="text" placeholder="Filter artifact path..." class="input-search text-xs w-full md:w-64">
-                </div>
-
-                <div class="table-container max-h-64 overflow-y-auto mt-4">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Artifact Path / Filename</th>
-                                <th>Category</th>
-                                <th>Archive Location</th>
-                            </tr>
-                        </thead>
-                        <tbody id="evidence-table-body">
-                            <!-- Populated dynamically -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            ${UI.disclosure({
+                i: 8,
+                title: 'Historical evidence catalog',
+                meta: `${evidence.length} artifacts`,
+                body: `
+                    <input id="evidence-search" type="text" placeholder="Filter by file or status…" class="input-search w-full md:w-80 mb-3">
+                    <div class="table-container max-h-96">
+                        <table class="data-table">
+                            <thead><tr><th>Artifact</th><th>Status</th><th>SHA-256</th></tr></thead>
+                            <tbody id="evidence-table-body"></tbody>
+                        </table>
+                    </div>`
+            })}
         `;
 
-        this.renderArchiveChart();
+        this.renderBars();
         this.renderEvidenceRows();
+        this.renderCharts(pairs, archive);
 
-        document.getElementById('evidence-search')?.addEventListener('input', (e) => {
+        document.getElementById('runs-metric').addEventListener('click', e => {
+            const b = e.target.closest('button');
+            if (!b) return;
+            b.parentElement.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+            this.state.metric = b.dataset.v;
+            this.renderBars();
+        });
+        document.getElementById('evidence-search')?.addEventListener('input', e => {
             this.state.search = e.target.value.toLowerCase().trim();
             this.renderEvidenceRows();
         });
     },
 
-    renderArchiveChart() {
-        const ctx = document.getElementById('runs-archive-chart');
-        if (!ctx) return;
+    renderBars() {
+        const m = this.state.metric;
+        const rows = [...this.conds].sort((a, b) => b[m].C / b.n - a[m].C / a.n);
+        const box = document.getElementById('runs-bars');
+        box.innerHTML = rows.map(c => `
+            <div class="grid grid-cols-12 items-center gap-3">
+                <div class="col-span-12 md:col-span-4 flex items-center gap-2 min-w-0 text-xs">
+                    ${UI.armBadge(c.arm)}
+                    <span class="truncate" title="${c.job}">${c.name.replace(/_/g, ' ')}</span>
+                    <span class="badge py-0 ${c.cohort === 'reserved' ? 'badge-withheld' : ''}">${c.cohort}</span>
+                </div>
+                <div class="col-span-9 md:col-span-6">${UI.stackbar(c[m].C, c[m].W, c[m].H, c.n)}</div>
+                <div class="col-span-3 md:col-span-2 text-right font-mono text-xs"><span class="t-primary">${UI.pct(c[m].C, c.n)}%</span> <span class="t-muted">· ${c.peakGb.toFixed(2)} GB</span></div>
+            </div>`).join('');
+        UI.animateIn(box);
+    },
 
-        new Chart(ctx, {
+    renderCharts(pairs, archive) {
+        UI.chart('runs-pairs', {
             type: 'bar',
             data: {
-                labels: ['16 GB Primary & Ablation Runs', '8 GB Iterative Curricula', 'Model Checkpoints & Weights', 'Diagnostic Traces & OOM Audits'],
-                datasets: [{
-                    label: 'Volume (MB)',
-                    data: [310, 195, 98, 42],
-                    backgroundColor: ['#2563EB', '#3B82F6', '#7C3AED', '#64748B'],
-                    borderRadius: 4
-                }]
+                labels: pairs.map(p => `${p.cohort} · ${p.name.replace(/_/g, ' ')}`),
+                datasets: ['sas', 'mas'].map(arm => ({
+                    label: arm.toUpperCase(),
+                    data: pairs.map(p => 100 * p[arm].reported.C / p[arm].n),
+                    backgroundColor: UI.alpha(arm, 0.85), borderRadius: 6, barPercentage: 0.8, categoryPercentage: 0.7
+                }))
             },
             options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
+                responsive: true, maintainAspectRatio: false,
+                animation: { delay: ctx => ctx.type === 'data' ? ctx.dataIndex * 110 + ctx.datasetIndex * 60 : 0 },
                 plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: '#172033',
-                        titleColor: '#FFFFFF',
-                        bodyColor: '#F8FAFC',
-                        padding: 10,
-                        callbacks: {
-                            label: (c) => ` ${c.raw} MB archive storage`
-                        }
-                    }
+                    legend: { position: 'top', align: 'end' },
+                    tooltip: { callbacks: { label: c => { const p = pairs[c.dataIndex][c.dataset.label.toLowerCase()]; return `${c.dataset.label}: ${p.reported.C}/${p.n} correct (${c.parsed.y.toFixed(1)}%)`; } } }
                 },
-                scales: {
-                    x: {
-                        grid: { color: '#E9EEF5' },
-                        ticks: { color: '#64748B', callback: v => v + ' MB', font: { size: 10, family: 'JetBrains Mono' } }
-                    },
-                    y: {
-                        grid: { display: false },
-                        ticks: { color: '#172033', font: { size: 11, family: 'Inter' } }
-                    }
+                scales: { x: { grid: { display: false } }, y: { beginAtZero: true, ticks: { callback: v => v + '%' } } }
+            }
+        });
+
+        const cats = archive.by_category || [];
+        const palette = [UI.css('--color-sas'), UI.css('--color-mas'), UI.css('--color-withheld'), UI.css('--color-correct')];
+        UI.chart('runs-archive', {
+            type: 'doughnut',
+            data: { labels: cats.map(c => c.category), datasets: [{ data: cats.map(c => c.count), backgroundColor: palette, borderWidth: 0, hoverOffset: 8 }] },
+            options: {
+                responsive: true, maintainAspectRatio: false, cutout: '68%',
+                animation: { animateRotate: true, duration: 1300 },
+                plugins: {
+                    legend: { position: 'right' },
+                    tooltip: { callbacks: { label: c => `${c.label}: ${UI.num(c.parsed)} files · ${cats[c.dataIndex].mb} MB` } }
                 }
             }
         });
@@ -213,31 +147,14 @@ window.App.registerPage('runs', {
     renderEvidenceRows() {
         const tbody = document.getElementById('evidence-table-body');
         if (!tbody) return;
-
-        let items = this.state.evidence;
-        if (this.state.search) {
-            items = items.filter(it => {
-                const s = JSON.stringify(it).toLowerCase();
-                return s.includes(this.state.search);
-            });
-        }
-
-        const displayItems = items.slice(0, 20);
-        if (displayItems.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="3" class="text-center py-6 text-[#64748B] text-xs">No matching evidence artifacts.</td></tr>`;
-            return;
-        }
-
-        tbody.innerHTML = displayItems.map(it => {
-            const pathStr = typeof it === 'string' ? it : (it.path || it.source || it.name || JSON.stringify(it));
-            const cat = pathStr.includes('runs') ? 'Runs' : (pathStr.includes('datasets') ? 'Datasets' : (pathStr.includes('weights') ? 'Weights' : 'Phase 2'));
-            return `
-                <tr>
-                    <td class="font-mono text-xs text-[#172033] font-medium">${pathStr}</td>
-                    <td><span class="badge ${cat === 'Runs' ? 'badge-mas' : 'badge-sas'}">${cat}</span></td>
-                    <td class="font-mono text-xs text-[#64748B]">dashboard_handoff/evidence/</td>
-                </tr>
-            `;
-        }).join('');
+        const q = this.state.search;
+        const items = q ? this.evidence.filter(it => `${it.file} ${it.status}`.toLowerCase().includes(q)) : this.evidence;
+        const tone = s => /complete|verified|pass|proven|True/i.test(s) ? 'badge-correct' : /fail|refused|rejected|interrupted|stopped/i.test(s) ? 'badge-wrong' : /launched|prepared|superseded/i.test(s) ? 'badge-withheld' : '';
+        tbody.innerHTML = items.length ? items.map(it => `
+            <tr>
+                <td class="font-mono text-xs">${UI.esc(it.file.split('/').pop())}<div class="text-[10px] t-muted">${UI.esc(it.file.split('/').slice(0, -1).join('/'))}</div></td>
+                <td><span class="badge ${tone(it.status)}">${UI.esc(String(it.status).replace(/_/g, ' '))}</span></td>
+                <td class="font-mono text-[11px] t-muted">${UI.esc((it.sha256 || '').slice(0, 12))}…</td>
+            </tr>`).join('') : `<tr><td colspan="3" class="text-center py-6 t-muted text-xs">No matching artifacts.</td></tr>`;
     }
 });

@@ -1,0 +1,28 @@
+{
+  "reports": 6,
+  "peak_sampled_rss": 2459185152,
+  "one_correct": {
+    "presentations": 12,
+    "correct": 8,
+    "wrong_accepts": 1,
+    "withheld": 3,
+    "reports_correct_both_orders": 3,
+    "order_agreement_gate": {
+      "correct_delivery": 3,
+      "wrong_delivery": 0,
+      "withheld": 3
+    }
+  },
+  "both_wrong": {
+    "presentations": 12,
+    "correct": 7,
+    "wrong_accepts": 5,
+    "withheld": 7,
+    "reports_correct_both_orders": 3,
+    "order_agreement_gate": {
+      "correct_delivery": 0,
+      "wrong_delivery": 0,
+      "withheld": 6
+    }
+  }
+}

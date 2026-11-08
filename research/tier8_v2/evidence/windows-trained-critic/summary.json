@@ -1,0 +1,207 @@
+{
+  "reports": 16,
+  "totals": {
+    "accept_executable": {
+      "official": {
+        "wrong": 12,
+        "correct": 4,
+        "coverage": 1.0,
+        "accepted_error": 0.75
+      },
+      "reported": {
+        "wrong": 13,
+        "correct": 3,
+        "coverage": 1.0,
+        "accepted_error": 0.8125
+      }
+    },
+    "control": {
+      "official": {
+        "withheld": 13,
+        "correct": 3,
+        "coverage": 0.1875,
+        "accepted_error": 0.0
+      },
+      "reported": {
+        "withheld": 13,
+        "correct": 3,
+        "coverage": 0.1875,
+        "accepted_error": 0.0
+      }
+    },
+    "crossed": {
+      "official": {
+        "withheld": 14,
+        "correct": 2,
+        "coverage": 0.125,
+        "accepted_error": 0.0
+      },
+      "reported": {
+        "withheld": 14,
+        "correct": 2,
+        "coverage": 0.125,
+        "accepted_error": 0.0
+      }
+    }
+  },
+  "resources": {
+    "control": {
+      "calls": 16,
+      "peak_sampled_rss": 2511413248,
+      "peak_job_commit": 2924216320,
+      "median_seconds": 17.117499999998472
+    },
+    "crossed": {
+      "calls": 16,
+      "peak_sampled_rss": 2515492864,
+      "peak_job_commit": 2924146688,
+      "median_seconds": 17.60149999999885
+    }
+  },
+  "cases": [
+    {
+      "case_id": "DISCA/2011/page_49.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "CDW/2017/page_38.pdf-1",
+      "official": true,
+      "reported": true,
+      "verdicts": {
+        "crossed": "PASS",
+        "control": "PASS"
+      }
+    },
+    {
+      "case_id": "ALLE/2015/page_24.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "MO/2016/page_19.pdf-4",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "DG/2009/page_77.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "TFX/2017/page_78.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "GRMN/2006/page_68.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "TMUS/2017/page_29.pdf-2",
+      "official": true,
+      "reported": true,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "PASS"
+      }
+    },
+    {
+      "case_id": "NCLH/2018/page_64.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "L/2009/page_84.pdf-1",
+      "official": true,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "GPN/2013/page_87.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "NKE/2009/page_43.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "MAR/2018/page_43.pdf-2",
+      "official": true,
+      "reported": true,
+      "verdicts": {
+        "control": "PASS",
+        "crossed": "PASS"
+      }
+    },
+    {
+      "case_id": "SNA/2018/page_31.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "MS/2007/page_179.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "GRMN/2008/page_73.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    }
+  ]
+}

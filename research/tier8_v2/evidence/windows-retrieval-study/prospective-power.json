@@ -1,0 +1,30 @@
+[
+  {
+    "gain_probability": 0.1875,
+    "loss_probability": 0,
+    "power_n21": 0.18679724840137366,
+    "power_n40": 0.7867170775036002,
+    "smallest_n_80_percent": 41
+  },
+  {
+    "gain_probability": 0.15,
+    "loss_probability": 0.05,
+    "power_n21": 0.037477680113630986,
+    "power_n40": 0.17242718864372417,
+    "smallest_n_80_percent": 168
+  },
+  {
+    "gain_probability": 0.125,
+    "loss_probability": 0.025,
+    "power_n21": 0.026318036580127213,
+    "power_n40": 0.1959689069361119,
+    "smallest_n_80_percent": 122
+  },
+  {
+    "gain_probability": 0.1,
+    "loss_probability": 0.05,
+    "power_n21": 0.006538915158056601,
+    "power_n40": 0.04563994789816678,
+    "smallest_n_80_percent": 498
+  }
+]

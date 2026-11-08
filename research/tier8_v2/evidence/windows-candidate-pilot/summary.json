@@ -1,0 +1,74 @@
+{
+  "pairs": 5,
+  "baseline": {
+    "refused": 5,
+    "attempted": 0,
+    "parse_failure": 0,
+    "executable": 0,
+    "withheld": 5,
+    "case_success_candidate_correct": 0,
+    "case_success_correct_withheld": 0,
+    "case_success_correct_delivered": 0,
+    "case_success_wrong_delivered": 0,
+    "raw_execution_match_candidate_correct": 0,
+    "raw_execution_match_correct_withheld": 0,
+    "raw_execution_match_correct_delivered": 0,
+    "raw_execution_match_wrong_delivered": 0,
+    "peak_sampled_rss": 2478153728
+  },
+  "forced": {
+    "refused": 0,
+    "attempted": 5,
+    "parse_failure": 0,
+    "executable": 5,
+    "withheld": 5,
+    "case_success_candidate_correct": 0,
+    "case_success_correct_withheld": 0,
+    "case_success_correct_delivered": 0,
+    "case_success_wrong_delivered": 0,
+    "raw_execution_match_candidate_correct": 1,
+    "raw_execution_match_correct_withheld": 1,
+    "raw_execution_match_correct_delivered": 0,
+    "raw_execution_match_wrong_delivered": 0,
+    "peak_sampled_rss": 2478895104
+  },
+  "step_limit_contrast": {
+    "pairs": 5,
+    "unrestricted_forced": {
+      "refused": 0,
+      "attempted": 5,
+      "parse_failure": 0,
+      "executable": 5,
+      "withheld": 5,
+      "case_success_candidate_correct": 0,
+      "case_success_correct_withheld": 0,
+      "case_success_correct_delivered": 0,
+      "case_success_wrong_delivered": 0,
+      "raw_execution_match_candidate_correct": 1,
+      "raw_execution_match_correct_withheld": 1,
+      "raw_execution_match_correct_delivered": 0,
+      "raw_execution_match_wrong_delivered": 0,
+      "peak_sampled_rss": 2478895104
+    },
+    "one_step_forced": {
+      "refused": 0,
+      "attempted": 5,
+      "parse_failure": 0,
+      "executable": 5,
+      "withheld": 5,
+      "case_success_candidate_correct": 2,
+      "case_success_correct_withheld": 2,
+      "case_success_correct_delivered": 0,
+      "case_success_wrong_delivered": 0,
+      "raw_execution_match_candidate_correct": 1,
+      "raw_execution_match_correct_withheld": 1,
+      "raw_execution_match_correct_delivered": 0,
+      "raw_execution_match_wrong_delivered": 0,
+      "peak_sampled_rss": 2478448640
+    }
+  },
+  "oracle_prefix_diagnostic": {
+    "forced_multistep": 5,
+    "wrong_final_with_correct_prefix": 2
+  }
+}

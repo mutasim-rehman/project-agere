@@ -1,0 +1,752 @@
+{
+  "questions": 24,
+  "official": {
+    "first_draft_correct": 3,
+    "second_draft_correct": 5,
+    "first_only_correct": 1,
+    "second_only_correct": 3,
+    "oracle_correct_available": 6,
+    "paired_accuracy_delta": 0.08333333333333333,
+    "exact_mcnemar_p": 0.625,
+    "companies": 22,
+    "company_cluster_delta_95": [
+      -0.08,
+      0.25
+    ]
+  },
+  "reported": {
+    "first_draft_correct": 2,
+    "second_draft_correct": 4,
+    "first_only_correct": 0,
+    "second_only_correct": 2,
+    "oracle_correct_available": 4,
+    "paired_accuracy_delta": 0.08333333333333333,
+    "exact_mcnemar_p": 0.5,
+    "companies": 22,
+    "company_cluster_delta_95": [
+      0.0,
+      0.2
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "HOLX/2009/page_127.pdf-2",
+      "official": [
+        true,
+        true
+      ],
+      "reported": [
+        true,
+        true
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "AMT/2003/page_102.pdf-1",
+      "official": [
+        false,
+        true
+      ],
+      "reported": [
+        false,
+        true
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "GS/2015/page_188.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "C/2015/page_96.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "MAS/2017/page_27.pdf-3",
+      "official": [
+        false,
+        true
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 2,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "MO/2014/page_39.pdf-4",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "UPS/2007/page_49.pdf-3",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "PPG/2008/page_52.pdf-4",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 2,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "HST/2018/page_135.pdf-1",
+      "official": [
+        true,
+        true
+      ],
+      "reported": [
+        true,
+        true
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "AON/2007/page_171.pdf-3",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "HII/2015/page_88.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "IPG/2006/page_77.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 3,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "ABMD/2012/page_79.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 2,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "MMM/2007/page_23.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "AMT/2007/page_127.pdf-3",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 2,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "ECL/2017/page_69.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 2,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "PPG/2018/page_85.pdf-3",
+      "official": [
+        true,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "ALXN/2016/page_153.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 2,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "PNC/2008/page_122.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "CB/2008/page_229.pdf-4",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "GIS/2017/page_31.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "RSG/2018/page_94.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 2,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "MRO/2003/page_84.pdf-4",
+      "official": [
+        false,
+        true
+      ],
+      "reported": [
+        false,
+        true
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "JPM/2015/page_137.pdf-3",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    }
+  ],
+  "peak_sampled_rss": 3641585664,
+  "draft_resources": [
+    {
+      "executable": 24,
+      "median_steps": 2.0,
+      "median_seconds": 19.20299999999952,
+      "peak_sampled_rss": 2291302400,
+      "peak_job_commit": 2590371840,
+      "min_host_available_sampled": null,
+      "prompt_eval_tokens": 21216,
+      "decode_eval_runs": 2987
+    },
+    {
+      "executable": 24,
+      "median_steps": 3.0,
+      "median_seconds": 34.54650000000038,
+      "peak_sampled_rss": 3641585664,
+      "peak_job_commit": 3943620608,
+      "min_host_available_sampled": null,
+      "prompt_eval_tokens": 21216,
+      "decode_eval_runs": 3073
+    }
+  ]
+}

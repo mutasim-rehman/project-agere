@@ -1,0 +1,147 @@
+{
+  "questions": 16,
+  "direct": {
+    "exact": 1.0,
+    "f1": 1.0,
+    "valid": 16,
+    "scale_label_match": 9,
+    "wrong_exact_fixed_by_gold_scale": 0,
+    "peak_sampled_rss": 2455351296,
+    "exact_rate": 0.0625,
+    "f1_mean": 0.0625,
+    "median_seconds": 10.180000000000291,
+    "peak_job_commit": 2764140544,
+    "prompt_eval_tokens": 8105,
+    "decode_eval_runs": 790
+  },
+  "program": {
+    "exact": 1.0,
+    "f1": 1.0,
+    "valid": 16,
+    "scale_label_match": 10,
+    "wrong_exact_fixed_by_gold_scale": 0,
+    "peak_sampled_rss": 2464796672,
+    "exact_rate": 0.0625,
+    "f1_mean": 0.0625,
+    "median_seconds": 19.195999999999913,
+    "peak_job_commit": 2765717504,
+    "prompt_eval_tokens": 13587,
+    "decode_eval_runs": 2018
+  },
+  "cases": [
+    {
+      "case_id": "b52777f48f07b250eebaea8e6c36cf53",
+      "exact": {
+        "direct": false,
+        "program": true
+      }
+    },
+    {
+      "case_id": "ecf8c64874e490a53fb6a23cb7278288",
+      "exact": {
+        "program": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "75b650843c8490b8e97800106458054e",
+      "exact": {
+        "direct": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "025d93338e17a74b2fcc27d26cd34c66",
+      "exact": {
+        "program": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "a64fcaa5b8d251906fe0ee2eb98bf789",
+      "exact": {
+        "direct": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "54ff3c7940ee85a3a1ab2a9e6c2b9f47",
+      "exact": {
+        "program": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "81f27f178ff97cd0cb12a0f45cd45614",
+      "exact": {
+        "direct": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "ce838d2c3887ab922bbdff374a871455",
+      "exact": {
+        "program": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "f63cf2dbd39ae8b2fa764502fba37fd1",
+      "exact": {
+        "direct": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "5fbdfcb6a47b1714e3887cbfbd07bbb3",
+      "exact": {
+        "program": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "9d8a4bd1a58a100ae2c3fd8b605a490b",
+      "exact": {
+        "direct": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "384652f35c86ced5380b62f1894a09d4",
+      "exact": {
+        "program": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "390baa093378259f494e86e91cc01b87",
+      "exact": {
+        "direct": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "44c87be78fc887a1b92b03c2fe97aacf",
+      "exact": {
+        "program": false,
+        "direct": true
+      }
+    },
+    {
+      "case_id": "22869fbea2bc86a141760ce9a81655b7",
+      "exact": {
+        "direct": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "447ad393b52fd1a88f955445e374bda2",
+      "exact": {
+        "program": false,
+        "direct": false
+      }
+    }
+  ],
+  "direct_only_correct": 1,
+  "program_only_correct": 1
+}

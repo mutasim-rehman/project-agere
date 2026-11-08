@@ -1,0 +1,1082 @@
+{
+  "windows-natural-pairs/cases.jsonl": {
+    "arms": [
+      {
+        "questions": 6,
+        "annotated_spans_complete": 3,
+        "reference_bindable_with_original_catalog": 6,
+        "final_correct": 0,
+        "wrong_final_correct_prefix": 1,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 1,
+        "final_or_endpoint_or_percent_match": 1
+      },
+      {
+        "questions": 6,
+        "annotated_spans_complete": 3,
+        "reference_bindable_with_original_catalog": 6,
+        "final_correct": 0,
+        "wrong_final_correct_prefix": 1,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 1,
+        "final_or_endpoint_or_percent_match": 1
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "BLL/2012/page_31.pdf-3",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "AAL/2010/page_72.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "MKTX/2012/page_42.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "DVN/2018/page_35.pdf-2",
+        "arms": [
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "MSI/2014/page_76.pdf-2",
+        "arms": [
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "K/2006/page_52.pdf-3",
+        "arms": [
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      }
+    ]
+  },
+  "windows-adapter-pilot/cases.jsonl": {
+    "arms": [
+      {
+        "questions": 6,
+        "annotated_spans_complete": 6,
+        "reference_bindable_with_original_catalog": 6,
+        "final_correct": 0,
+        "wrong_final_correct_prefix": 0,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 0,
+        "final_or_endpoint_or_percent_match": 0
+      },
+      {
+        "questions": 6,
+        "annotated_spans_complete": 6,
+        "reference_bindable_with_original_catalog": 6,
+        "final_correct": 1,
+        "wrong_final_correct_prefix": 1,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 1,
+        "final_or_endpoint_or_percent_match": 2
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "SYY/2005/page_70.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "DXC/2018/page_56.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "DISH/2010/page_117.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "EL/2008/page_59.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "ABMD/2005/page_29.pdf-3",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "PKG/2002/page_52.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      }
+    ]
+  },
+  "windows-capacity-pilot/cases.jsonl": {
+    "arms": [
+      {
+        "questions": 6,
+        "annotated_spans_complete": 5,
+        "reference_bindable_with_original_catalog": 5,
+        "final_correct": 1,
+        "wrong_final_correct_prefix": 2,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 2,
+        "final_or_endpoint_or_percent_match": 3
+      },
+      {
+        "questions": 6,
+        "annotated_spans_complete": 5,
+        "reference_bindable_with_original_catalog": 5,
+        "final_correct": 0,
+        "wrong_final_correct_prefix": 2,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 2,
+        "final_or_endpoint_or_percent_match": 2
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "VNO/2014/page_57.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "DRE/2005/page_30.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "SLB/2015/page_59.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "CE/2013/page_16.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "DG/2010/page_136.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "V/2010/page_28.pdf-1",
+        "arms": [
+          {
+            "complete": false,
+            "bindable": false,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": false,
+            "bindable": false,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      }
+    ]
+  },
+  "windows-endpoint-study/planned-length-cases.jsonl": {
+    "arms": [
+      {
+        "questions": 16,
+        "annotated_spans_complete": 14,
+        "reference_bindable_with_original_catalog": 15,
+        "final_correct": 1,
+        "wrong_final_correct_prefix": 3,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 3,
+        "final_or_endpoint_or_percent_match": 4
+      },
+      {
+        "questions": 16,
+        "annotated_spans_complete": 14,
+        "reference_bindable_with_original_catalog": 15,
+        "final_correct": 3,
+        "wrong_final_correct_prefix": 1,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 1,
+        "final_or_endpoint_or_percent_match": 4
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "DISCA/2011/page_49.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "CDW/2017/page_38.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "ALLE/2015/page_24.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "MO/2016/page_19.pdf-4",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "DG/2009/page_77.pdf-1",
+        "arms": [
+          {
+            "complete": false,
+            "bindable": false,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": false,
+            "bindable": false,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "TFX/2017/page_78.pdf-3",
+        "arms": [
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "GRMN/2006/page_68.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "TMUS/2017/page_29.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "NCLH/2018/page_64.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "L/2009/page_84.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "GPN/2013/page_87.pdf-3",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "NKE/2009/page_43.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "MAR/2018/page_43.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "SNA/2018/page_31.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "MS/2007/page_179.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "GRMN/2008/page_73.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      }
+    ]
+  },
+  "windows-retrieval-study/cases.jsonl": {
+    "arms": [
+      {
+        "questions": 16,
+        "annotated_spans_complete": 14,
+        "reference_bindable_with_original_catalog": 15,
+        "final_correct": 1,
+        "wrong_final_correct_prefix": 3,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 3,
+        "final_or_endpoint_or_percent_match": 4
+      },
+      {
+        "questions": 16,
+        "annotated_spans_complete": 15,
+        "reference_bindable_with_original_catalog": 15,
+        "final_correct": 4,
+        "wrong_final_correct_prefix": 1,
+        "wrong_final_percent_scale_match": 0,
+        "wrong_final_prefix_or_scale_match": 1,
+        "final_or_endpoint_or_percent_match": 5
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "DISCA/2011/page_49.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "CDW/2017/page_38.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "ALLE/2015/page_24.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "MO/2016/page_19.pdf-4",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "DG/2009/page_77.pdf-1",
+        "arms": [
+          {
+            "complete": false,
+            "bindable": false,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": false,
+            "bindable": false,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "TFX/2017/page_78.pdf-3",
+        "arms": [
+          {
+            "complete": false,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "GRMN/2006/page_68.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "TMUS/2017/page_29.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "NCLH/2018/page_64.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "L/2009/page_84.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "GPN/2013/page_87.pdf-3",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "NKE/2009/page_43.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "MAR/2018/page_43.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": true,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "SNA/2018/page_31.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "MS/2007/page_179.pdf-2",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": true,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      },
+      {
+        "case_id": "GRMN/2008/page_73.pdf-1",
+        "arms": [
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          },
+          {
+            "complete": true,
+            "bindable": true,
+            "final_correct": false,
+            "correct_prefix": false,
+            "gold_matching_percent_adjustments": []
+          }
+        ]
+      }
+    ]
+  }
+}

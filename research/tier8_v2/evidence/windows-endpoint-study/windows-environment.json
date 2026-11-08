@@ -1,0 +1,21 @@
+{
+  "os": "Windows",
+  "windows_release": "11",
+  "windows_build": "10.0.26200",
+  "architecture": "AMD64",
+  "cpu_model": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "cpu_name": "AMD Ryzen 5 8645HS w/ Radeon 760M Graphics",
+  "cpu_logical": 12,
+  "cpu_physical": 6,
+  "physical_memory_bytes": 16390729728,
+  "python": "3.12.14",
+  "packages": {
+    "psutil": "7.2.2",
+    "numpy": "2.5.4",
+    "tokenizers": "0.23.3",
+    "transformers": "5.20.1",
+    "torch": "2.6.0+cu124"
+  },
+  "runtime_build": "llama.cpp b12202 d6be06557 Windows x64 CPU",
+  "runtime_archive_sha256": "75d108e6f91907638fef0cbdf4cc230e56bd9eac71bbffb209ae8da1f932590e"
+}

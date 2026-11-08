@@ -1,373 +1,185 @@
 /**
- * Executive Overview Page - Visual Research Dashboard
+ * Overview: the research story in one screen.
  */
 
 window.App.registerPage('overview', {
     async render(container, app) {
-        const aggr = app.state.data.aggregates || await app.fetchJson('data/derived_aggregates.json');
-        const jobs = aggr ? aggr.jobs_16gb : {};
+        const jobs = await Data.jobs16();
+        const { mas, sas } = await Data.pair('primary');
+        const effects = (await app.fetchJson('data/tier16_v2/paired_effects.json')) || [];
+        const primaryC = effects.find(e => e.comparison === 'primary' && e.endpoint === 'case_success/correct') || {};
+        const tr = await Data.transitions('primary');
+        const cases = await Data.cases16();
+        const tier8 = await Data.tier8Conditions();
 
-        const mas = jobs['tier16-mas-primary'] || {};
-        const sas = jobs['tier16-sas-primary'] || {};
+        const masRescues = tr.wrong.correct + tr.withheld.correct;
+        const sasCorrectMasWithheld = tr.correct.withheld;
+        const ratio = mas.C ? sas.C / mas.C : Infinity;
+        const speed = sas.secPerCase / mas.secPerCase;
+        const costPerCorrect = mas.secPerCorrect / sas.secPerCorrect;
+        const repair = jobs['tier16-mas-repair_ablation'];
+        const repairExtraH = repair.hours - mas.hours;
+
+        const waffle = (arm) => {
+            const rows = cases.filter(c => c.job === `tier16-${arm}-primary`);
+            const order = { correct: 0, wrong: 1, withheld: 2 };
+            rows.sort((a, b) => order[a.reported_outcome] - order[b.reported_outcome] || a.case_id.localeCompare(b.case_id));
+            return `<div class="waffle">${rows.map((r, i) =>
+                `<i class="w-${r.reported_outcome}" style="--d:${i}" title="${UI.esc(r.case_id)} · ${r.reported_outcome}" onclick="App.pages.cases.openByKey('${r.job}','${UI.esc(r.case_id)}')"></i>`
+            ).join('')}</div>`;
+        };
+
+        const ctrl8 = { sas: tier8.find(c => c.job === 'diagnostic_audit-control_sas-full-01'), mas: tier8.find(c => c.job === 'diagnostic_audit-control_mas-full-01') };
 
         container.innerHTML = `
-            <!-- 4 Primary Research KPI Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- KPI 1: Accuracy Delta -->
-                <div class="stat-card border-l-4 border-l-[#DC2626]">
-                    <div class="stat-card-label">
-                        <span>Accuracy Delta (MAS - SAS)</span>
-                        <span class="badge badge-wrong">p = 6.10e-5</span>
-                    </div>
-                    <div class="stat-card-value text-[#DC2626]">-45.6%</div>
-                    <div class="stat-card-meta">
-                        Holm-adjusted significance • n = 160
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#DC2626]" style="width: 45.6%;"></div>
-                    </div>
-                </div>
+            ${UI.hero({
+                eyebrow: 'Headline finding · 16 GB tier',
+                title: `One quantized 14B model answers <span class="grad-text">${ratio.toFixed(1)}×</span> more questions correctly than a three-model full-precision team`,
+                sub: `Same 160 FinQA questions, same memory ceiling, same token budget. The team rarely gets answers wrong, but only because it declines to answer ${UI.pct(mas.H, mas.n, 0)}% of the time.`,
+                right: `
+                    <div class="flex flex-col gap-2 items-start lg:items-end">
+                        <span class="badge badge-correct"><i data-lucide="check-circle-2" class="w-3 h-3"></i>Holm p = ${UI.fmtP(primaryC.holm_primary4_p)}</span>
+                        <span class="badge">Δ correct ${(primaryC.delta * 100).toFixed(1)} pp · 95% CI [${(primaryC.ci_low * 100).toFixed(1)}, ${(primaryC.ci_high * 100).toFixed(1)}]</span>
+                        <span class="badge">50 report clusters · 36 companies</span>
+                    </div>`
+            })}
 
-                <!-- KPI 2: SAS Accuracy -->
-                <div class="stat-card border-l-4 border-l-[#15803D]">
-                    <div class="stat-card-label">
-                        <span>SAS 14B Monolith</span>
-                        <span class="badge badge-correct">Q4_K_M</span>
-                    </div>
-                    <div class="stat-card-value text-[#15803D]">50.6%</div>
-                    <div class="stat-card-meta">
-                        81 / 160 correct answers
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#15803D]" style="width: 50.6%;"></div>
-                    </div>
-                </div>
-
-                <!-- KPI 3: MAS Accuracy -->
-                <div class="stat-card border-l-4 border-l-[#2563EB]">
-                    <div class="stat-card-label">
-                        <span>MAS 3-Agent Team</span>
-                        <span class="badge badge-mas">FP16</span>
-                    </div>
-                    <div class="stat-card-value text-[#2563EB]">5.0%</div>
-                    <div class="stat-card-meta">
-                        8 / 160 correct answers
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#2563EB]" style="width: 5.0%;"></div>
-                    </div>
-                </div>
-
-                <!-- KPI 4: MAS Withholding -->
-                <div class="stat-card border-l-4 border-l-[#D97706]">
-                    <div class="stat-card-label">
-                        <span>MAS Policy Withholding</span>
-                        <span class="badge badge-withheld">Verifier Gate</span>
-                    </div>
-                    <div class="stat-card-value text-[#D97706]">73.8%</div>
-                    <div class="stat-card-meta">
-                        118 / 160 withheld by verifier
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#D97706]" style="width: 73.8%;"></div>
-                    </div>
-                </div>
+            <div class="grid grid-cols-2 xl:grid-cols-4 gap-4">
+                ${UI.kpi({ label: 'SAS correct answers', value: 100 * sas.acc, decimals: 1, suffix: '%', foot: `${sas.C} of ${sas.n} · Qwen2.5-14B Q4`, tone: 'sas', icon: 'target', i: 1 })}
+                ${UI.kpi({ label: 'MAS correct answers', value: 100 * mas.acc, decimals: 1, suffix: '%', foot: `${mas.C} of ${mas.n} · 1.5B + 3B + 0.5B F16`, tone: 'mas', icon: 'users', i: 2 })}
+                ${UI.kpi({ label: 'MAS declines to answer', value: 100 * mas.withheldRate, decimals: 1, suffix: '%', foot: `${mas.H} withheld vs ${sas.H} for SAS`, tone: 'withheld', icon: 'shield-off', i: 3 })}
+                ${UI.kpi({ label: 'MAS precision when it answers', value: 100 * mas.precision, decimals: 1, suffix: '%', foot: `MAS ${UI.pct(mas.C, mas.C + mas.W)}% vs SAS ${UI.pct(sas.C, sas.C + sas.W)}%: a near tie`, tone: 'correct', icon: 'crosshair', i: 4 })}
             </div>
 
-            <!-- Primary Visual Row: Outcome Breakdown & Donut Distribution -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <!-- Visual 1: 16 GB Evaluation Outcome Breakdown -->
-                <div class="card lg:col-span-7">
-                    <div class="card-header-clean">
-                        <div>
-                            <h3 class="text-sm font-bold text-[#172033]">16 GB Evaluation Outcome Breakdown</h3>
-                            <p class="text-xs text-[#64748B]">Correct vs Incorrect vs Withheld (n = 160 cases per arm)</p>
-                        </div>
-                        <span class="badge badge-sas">Dual-Metric</span>
-                    </div>
-                    <div class="pt-4">
-                        <div class="w-full h-72">
-                            <canvas id="overview-outcome-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 xl:grid-cols-5 gap-6">
+                ${UI.card({
+                    cls: 'xl:col-span-3', i: 5,
+                    title: 'Every question, one square',
+                    sub: 'Primary profile. Click any square to inspect that case.',
+                    right: UI.outcomeLegend(),
+                    body: `
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <div class="flex items-baseline justify-between mb-3">
+                                    <span class="text-sm font-semibold c-sas">SAS · single 14B</span>
+                                    <span class="font-mono text-xs t-secondary">${sas.C} / ${sas.W} / ${sas.H}</span>
+                                </div>
+                                ${waffle('sas')}
+                            </div>
+                            <div>
+                                <div class="flex items-baseline justify-between mb-3">
+                                    <span class="text-sm font-semibold c-mas">MAS · 3-agent team</span>
+                                    <span class="font-mono text-xs t-secondary">${mas.C} / ${mas.W} / ${mas.H}</span>
+                                </div>
+                                ${waffle('mas')}
+                            </div>
+                        </div>`
+                })}
 
-                <!-- Visual 2: MAS vs SAS Decision Distribution Donut -->
-                <div class="card lg:col-span-5 flex flex-col justify-between">
-                    <div class="card-header-clean">
-                        <div>
-                            <h3 class="text-sm font-bold text-[#172033]">Decision Outcome Proportions</h3>
-                            <p class="text-xs text-[#64748B]">MAS Team verifier withholding vs SAS baseline</p>
-                        </div>
-                        <span class="badge badge-mas">Distribution</span>
-                    </div>
-                    <div class="pt-3 flex-1 flex items-center justify-center">
-                        <div class="w-full h-64">
-                            <canvas id="overview-donut-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
+                <section class="xl:col-span-2 space-y-3">
+                    <div class="eyebrow reveal" style="--i:5">What the data says</div>
+                    ${UI.insight({ i: 6, tone: 'sas', icon: 'trophy', title: `SAS wins on useful answers by ${Math.abs(primaryC.delta * 100).toFixed(1)} points`, body: `The interval stays far from zero under both report- and company-level clustering, and under both scoring metrics.` })}
+                    ${UI.insight({ i: 7, tone: 'warn', icon: 'scale', title: 'MAS is not more careful, just quieter', body: `When it does answer, MAS is right ${UI.pct(mas.C, mas.C + mas.W)}% of the time vs ${UI.pct(sas.C, sas.C + sas.W)}% for SAS. The gap is coverage: ${UI.pct(mas.C + mas.W, mas.n)}% vs ${UI.pct(sas.C + sas.W, sas.n)}%.` })}
+                    ${UI.insight({ i: 8, tone: 'bad', icon: 'life-buoy', title: `MAS rescued ${masRescues} questions SAS missed`, body: `Of SAS's ${sas.C} correct answers, MAS withheld ${sasCorrectMasWithheld}. The team adds no complementary coverage.` })}
+                    ${UI.insight({ i: 9, tone: 'mas', icon: 'timer', title: `${speed.toFixed(1)}× faster per question, ${costPerCorrect.toFixed(1)}× costlier per correct answer`, body: `MAS spends ${Math.round(mas.secPerCorrect / 60)} CPU-minutes per correct answer vs ${Math.round(sas.secPerCorrect / 60)} for SAS.` })}
+                    ${UI.insight({ i: 10, tone: 'bad', icon: 'wrench', title: `${repair.repairs} repair attempts changed nothing`, body: `The repair loop added ${repairExtraH.toFixed(2)} h of MAS inference, and every final delivery state was identical to the primary profile.` })}
+                </section>
             </div>
 
-            <!-- Secondary Visual Row: Cross-Tier Comparison & Comparative Specifications -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <!-- Visual 3: Hardware RAM Tier Comparison Chart -->
-                <div class="card lg:col-span-6">
-                    <div class="card-header-clean">
-                        <div>
-                            <h3 class="text-sm font-bold text-[#172033]">Accuracy by Hardware RAM Tier</h3>
-                            <p class="text-xs text-[#64748B]">8 GB Adapted Natural FinQA vs 16 GB Pretrained FinQA</p>
-                        </div>
-                        <span class="badge badge-mas">Hardware Scaling</span>
-                    </div>
-                    <div class="pt-4">
-                        <div class="w-full h-64">
-                            <canvas id="overview-tier-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Visual 4: Comparative Architecture Cards -->
-                <div class="card lg:col-span-6 flex flex-col justify-between">
-                    <div class="card-header-clean">
-                        <div>
-                            <h3 class="text-sm font-bold text-[#172033]">Deployment Arm Comparison (16 GB Analyst Tier)</h3>
-                            <p class="text-xs text-[#64748B]">Constrained to 12.8 GB process-tree RSS cap</p>
-                        </div>
-                        <span class="badge badge-sas">12.8 GB RSS</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                        <!-- MAS Spec Card -->
-                        <div class="p-4 rounded-lg bg-[#EFF6FF] border border-[#BFDBFE] space-y-2.5">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-xs text-[#2563EB] uppercase font-mono">MAS-FP16 Team</span>
-                                <span class="badge badge-mas">3 Models</span>
-                            </div>
-                            <div class="text-xs text-[#172033] font-medium">Qwen2.5 1.5B + 7B + 3B (FP16)</div>
-                            <div class="space-y-1.5 pt-2 border-t border-[#DBEAFE] text-xs font-mono">
-                                <div class="flex justify-between text-[#64748B]">
-                                    <span>Accuracy:</span>
-                                    <strong class="text-[#2563EB]">5.0% (8/160)</strong>
-                                </div>
-                                <div class="flex justify-between text-[#64748B]">
-                                    <span>Withheld:</span>
-                                    <strong class="text-[#D97706]">73.8% (118/160)</strong>
-                                </div>
-                                <div class="flex justify-between text-[#64748B]">
-                                    <span>Peak RSS:</span>
-                                    <strong class="text-[#172033]">10.18 GB</strong>
-                                </div>
-                                <div class="flex justify-between text-[#64748B]">
-                                    <span>Avg Latency:</span>
-                                    <strong class="text-[#172033]">367.6s / correct</strong>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- SAS Spec Card -->
-                        <div class="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] space-y-2.5">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-xs text-[#64748B] uppercase font-mono">SAS-Quant Monolith</span>
-                                <span class="badge badge-sas">Single 14B</span>
-                            </div>
-                            <div class="text-xs text-[#172033] font-medium">Qwen2.5-14B (GGUF Q4_K_M)</div>
-                            <div class="space-y-1.5 pt-2 border-t border-[#E2E8F0] text-xs font-mono">
-                                <div class="flex justify-between text-[#64748B]">
-                                    <span>Accuracy:</span>
-                                    <strong class="text-[#15803D]">50.6% (81/160)</strong>
-                                </div>
-                                <div class="flex justify-between text-[#64748B]">
-                                    <span>Withheld:</span>
-                                    <strong class="text-[#172033]">13.1% (21/160)</strong>
-                                </div>
-                                <div class="flex justify-between text-[#64748B]">
-                                    <span>Peak RSS:</span>
-                                    <strong class="text-[#172033]">9.37 GB</strong>
-                                </div>
-                                <div class="flex justify-between text-[#64748B]">
-                                    <span>Avg Latency:</span>
-                                    <strong class="text-[#15803D]">54.1s / correct (6.8x)</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                ${UI.card({
+                    i: 11,
+                    title: 'Coverage vs precision',
+                    sub: 'Each bubble is one 16 GB job. Bubble size is CPU inference hours. Up and to the right is better.',
+                    body: `<div class="h-80"><canvas id="ov-bubble"></canvas></div>`
+                })}
+                ${UI.card({
+                    i: 12,
+                    title: 'All six 16 GB jobs at a glance',
+                    sub: 'Reported-answer outcomes for 160 questions per job',
+                    right: UI.outcomeLegend(),
+                    body: `
+                        <div class="space-y-4 mt-2">
+                            ${Data.PROFILES.map(p => ['sas', 'mas'].map(arm => {
+                                const j = jobs[`tier16-${arm}-${p}`];
+                                return `
+                                    <div>
+                                        <div class="flex items-center justify-between text-xs mb-1.5">
+                                            <span class="flex items-center gap-2">${UI.armBadge(arm)}<span class="t-secondary">${Data.PROFILE_LABEL[p]}</span></span>
+                                            <span class="font-mono t-muted">${UI.pct(j.C, j.n)}% correct · ${j.hours.toFixed(1)} h</span>
+                                        </div>
+                                        ${UI.stackbar(j.C, j.W, j.H, j.n)}
+                                    </div>`;
+                            }).join('')).join('')}
+                        </div>`
+                })}
             </div>
+
+            ${UI.card({
+                i: 13,
+                title: 'Does the gap hold at 8 GB?',
+                sub: 'Correct-answer rate by tier. Different questions, adaptation and backends per tier, so this is descriptive, not a RAM-scaling law.',
+                body: `
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                        <div class="lg:col-span-2 h-64"><canvas id="ov-tier"></canvas></div>
+                        <div class="space-y-3">
+                            ${UI.insight({ tone: 'sas', icon: 'trending-up', title: 'SAS leads in both tiers', body: `8 GB reserved control: SAS ${ctrl8.sas.reported.C}/${ctrl8.sas.n} vs MAS ${ctrl8.mas.reported.C}/${ctrl8.mas.n}. At 16 GB the gap widens to ${sas.C} vs ${mas.C}.` })}
+                            ${UI.insight({ tone: 'warn', icon: 'alert-circle', title: 'Not a causal RAM effect', body: 'Recipes, question sources and adaptation differ between tiers.' })}
+                        </div>
+                    </div>`
+            })}
         `;
 
-        this.renderCharts(mas, sas);
+        this.renderCharts(jobs, sas, mas, ctrl8);
     },
 
-    renderCharts(mas, sas) {
-        // Chart 1: Outcome Breakdown (Bar Chart)
-        const ctx1 = document.getElementById('overview-outcome-chart');
-        if (ctx1) {
-            new Chart(ctx1, {
-                type: 'bar',
-                data: {
-                    labels: ['MAS-FP16 (Specialist Team)', 'SAS-Quant (Monolith Baseline)'],
-                    datasets: [
-                        {
-                            label: 'Correct Answer',
-                            data: [mas.reported_correct || 8, sas.reported_correct || 81],
-                            backgroundColor: '#15803D',
-                            borderRadius: 4
-                        },
-                        {
-                            label: 'Incorrect Answer',
-                            data: [mas.wrong || 34, sas.wrong || 58],
-                            backgroundColor: '#DC2626',
-                            borderRadius: 4
-                        },
-                        {
-                            label: 'Withheld by Policy',
-                            data: [mas.withheld || 118, sas.withheld || 21],
-                            backgroundColor: '#D97706',
-                            borderRadius: 4
-                        }
-                    ]
+    renderCharts(jobs, sas, mas, ctrl8) {
+        const k = UI.colors();
+        const pts = Object.values(jobs).map(j => ({
+            x: 100 * j.coverage, y: j.precision == null ? 0 : 100 * j.precision, r: 6 + 2.2 * Math.sqrt(j.hours * 4),
+            label: `${j.arm.toUpperCase()} · ${Data.PROFILE_LABEL[j.profile]}`, j
+        }));
+        UI.chart('ov-bubble', {
+            type: 'bubble',
+            data: {
+                datasets: ['sas', 'mas'].map(arm => ({
+                    label: arm === 'sas' ? 'SAS (14B Q4)' : 'MAS (3-agent F16)',
+                    data: pts.filter(p => p.j.arm === arm),
+                    backgroundColor: UI.alpha(arm, 0.35), borderColor: k[arm], borderWidth: 2, hoverBorderWidth: 3
+                }))
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                animation: { duration: 1400, easing: 'easeOutElastic', delay: ctx => ctx.dataIndex * 120 },
+                plugins: {
+                    legend: { position: 'top', align: 'end' },
+                    tooltip: { callbacks: { label: ctx => {
+                        const j = ctx.raw.j;
+                        return [`${ctx.raw.label}`, `Coverage ${(100 * j.coverage).toFixed(1)}% · Precision ${j.precision == null ? '—' : (100 * j.precision).toFixed(1) + '%'}`, `${j.C} correct / ${j.W} wrong / ${j.H} withheld · ${j.hours.toFixed(1)} h`];
+                    } } }
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { 
-                            position: 'top', 
-                            labels: { color: '#64748B', font: { size: 11, family: 'Inter' }, boxWidth: 12 } 
-                        },
-                        tooltip: {
-                            backgroundColor: '#172033',
-                            titleColor: '#FFFFFF',
-                            bodyColor: '#F8FAFC',
-                            borderColor: '#E2E8F0',
-                            borderWidth: 1,
-                            padding: 10,
-                            callbacks: {
-                                label: (c) => ` ${c.dataset.label}: ${c.raw} cases (${((c.raw/160)*100).toFixed(1)}%)`
-                            }
-                        }
-                    },
-                    scales: {
-                        x: { 
-                            stacked: true, 
-                            grid: { display: false }, 
-                            ticks: { color: '#64748B', font: { size: 11, family: 'Inter' } } 
-                        },
-                        y: { 
-                            stacked: true, 
-                            max: 160, 
-                            grid: { color: '#E9EEF5' }, 
-                            ticks: { color: '#64748B', font: { size: 11, family: 'JetBrains Mono' } } 
-                        }
-                    }
+                scales: {
+                    x: { min: -5, max: 100, title: { display: true, text: 'Coverage: share of questions answered (%)' }, grid: { color: k.grid } },
+                    y: { min: -5, max: 100, title: { display: true, text: 'Precision: correct when answered (%)' }, grid: { color: k.grid } }
                 }
-            });
-        }
+            }
+        });
 
-        // Chart 2: Outcome Proportions Donut Chart
-        const ctxDonut = document.getElementById('overview-donut-chart');
-        if (ctxDonut) {
-            new Chart(ctxDonut, {
-                type: 'doughnut',
-                data: {
-                    labels: ['MAS Withheld (73.8%)', 'MAS Incorrect (21.3%)', 'MAS Correct (5.0%)', 'SAS Correct (50.6%)', 'SAS Incorrect (36.3%)', 'SAS Withheld (13.1%)'],
-                    datasets: [{
-                        data: [118, 34, 8, 81, 58, 21],
-                        backgroundColor: [
-                            '#D97706', // MAS Withheld
-                            '#EF4444', // MAS Incorrect
-                            '#2563EB', // MAS Correct
-                            '#15803D', // SAS Correct
-                            '#F87171', // SAS Incorrect
-                            '#FBBF24'  // SAS Withheld
-                        ],
-                        borderWidth: 2,
-                        borderColor: '#FFFFFF'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                color: '#64748B',
-                                font: { size: 10, family: 'Inter' },
-                                boxWidth: 10,
-                                padding: 8
-                            }
-                        },
-                        tooltip: {
-                            backgroundColor: '#172033',
-                            titleColor: '#FFFFFF',
-                            bodyColor: '#F8FAFC',
-                            borderColor: '#E2E8F0',
-                            borderWidth: 1,
-                            padding: 10,
-                            callbacks: {
-                                label: (c) => ` ${c.label}: ${c.raw} cases (${((c.raw/160)*100).toFixed(1)}%)`
-                            }
-                        }
-                    },
-                    cutout: '62%'
-                }
-            });
-        }
-
-        // Chart 3: Accuracy by Hardware Tier
-        const ctx2 = document.getElementById('overview-tier-chart');
-        if (ctx2) {
-            new Chart(ctx2, {
-                type: 'bar',
-                data: {
-                    labels: ['8 GB Tier (Adapted Cohort)', '16 GB Tier (Pretrained Cohort)'],
-                    datasets: [
-                        {
-                            label: 'MAS-FP16 Accuracy %',
-                            data: [15.4, 5.0],
-                            backgroundColor: '#2563EB',
-                            borderRadius: 4
-                        },
-                        {
-                            label: 'SAS-Quant Accuracy %',
-                            data: [19.2, 50.6],
-                            backgroundColor: '#64748B',
-                            borderRadius: 4
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { 
-                            position: 'top', 
-                            labels: { color: '#64748B', font: { size: 11, family: 'Inter' }, boxWidth: 12 } 
-                        },
-                        tooltip: {
-                            backgroundColor: '#172033',
-                            titleColor: '#FFFFFF',
-                            bodyColor: '#F8FAFC',
-                            borderColor: '#E2E8F0',
-                            borderWidth: 1,
-                            padding: 10
-                        }
-                    },
-                    scales: {
-                        x: { 
-                            grid: { display: false }, 
-                            ticks: { color: '#64748B', font: { size: 11, family: 'Inter' } } 
-                        },
-                        y: { 
-                            max: 60, 
-                            grid: { color: '#E9EEF5' }, 
-                            ticks: { color: '#64748B', callback: v => v + '%', font: { size: 11, family: 'JetBrains Mono' } } 
-                        }
-                    }
-                }
-            });
-        }
+        UI.chart('ov-tier', {
+            type: 'bar',
+            data: {
+                labels: ['8 GB · reserved control (n=49)', '16 GB · primary (n=160)'],
+                datasets: [
+                    { label: 'SAS', data: [100 * ctrl8.sas.reported.C / ctrl8.sas.n, 100 * sas.acc], backgroundColor: UI.alpha('sas', 0.85), borderRadius: 8, barPercentage: 0.7, categoryPercentage: 0.6 },
+                    { label: 'MAS', data: [100 * ctrl8.mas.reported.C / ctrl8.mas.n, 100 * mas.acc], backgroundColor: UI.alpha('mas', 0.85), borderRadius: 8, barPercentage: 0.7, categoryPercentage: 0.6 }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                animation: { delay: ctx => ctx.type === 'data' ? ctx.dataIndex * 200 + ctx.datasetIndex * 120 : 0 },
+                plugins: { legend: { position: 'top', align: 'end' }, tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}% correct` } } },
+                scales: { x: { grid: { display: false } }, y: { beginAtZero: true, suggestedMax: 60, ticks: { callback: v => v + '%' } } }
+            }
+        });
     }
 });

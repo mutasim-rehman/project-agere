@@ -1,186 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Agere — Research Analytics Platform</title>
-    
-    <!-- Light-Theme Research Design System -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Tailwind CSS (Light-Theme Configuration) -->
+    <title>Project Agere — Research Analytics</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23a78bfa'/><stop offset='1' stop-color='%2338bdf8'/></linearGradient></defs><rect width='32' height='32' rx='8' fill='url(%23g)'/><text x='16' y='22' font-family='Arial' font-weight='700' font-size='16' text-anchor='middle' fill='white'>A</text></svg>">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        background: '#F5F7FA',
-                        surface: '#FFFFFF',
-                        border: '#E2E8F0',
-                        primary: '#2563EB',
-                        secondary: '#64748B',
-                        dark: '#172033'
-                    }
-                }
-            }
+            darkMode: ['class', '[data-theme="dark"]'],
+            corePlugins: { preflight: true }
         }
     </script>
-    
-    <!-- Charting & Icon Engines -->
+    <link rel="stylesheet" href="css/style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-[#F5F7FA] text-[#172033]">
+<body>
+    <div class="ambient"></div>
     <div class="app-container">
-        <!-- Sidebar Navigation (Clean White, Subtle Divider) -->
         <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="sidebar-logo">
-                    <!-- Geometric Interconnected Analytical Network Logo -->
-                    <svg class="w-5 h-5 text-[#2563EB]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="5" r="2.5" fill="#EFF6FF"/>
-                        <circle cx="5" cy="18" r="2.5" fill="#EFF6FF"/>
-                        <circle cx="19" cy="18" r="2.5" fill="#EFF6FF"/>
-                        <line x1="12" y1="7.5" x2="5" y2="15.5"/>
-                        <line x1="12" y1="7.5" x2="19" y2="15.5"/>
-                        <line x1="7.5" y1="18" x2="16.5" y2="18"/>
-                    </svg>
-                </div>
-                <div class="sidebar-brand-text">
-                    <div class="font-bold text-sm tracking-tight text-[#172033]">PROJECT AGERE</div>
-                    <div class="text-[11px] text-[#64748B] font-medium tracking-tight">Research Analytics</div>
+            <div class="p-4 flex items-center gap-3 border-b border-[var(--border-color)]">
+                <div class="brand-mark">A</div>
+                <div class="brand-text">
+                    <div class="font-bold text-sm tracking-tight t-primary">Project Agere</div>
+                    <div class="text-[11px] t-muted">Local LLM deployment study</div>
                 </div>
             </div>
 
-            <div class="sidebar-nav">
-                <div class="nav-group-title">Evaluation</div>
+            <nav class="flex-1 overflow-y-auto py-2">
+                <div class="nav-group-title">Story</div>
                 <a class="nav-item active" data-tab="overview">
-                    <i data-lucide="layout-grid" class="w-4 h-4"></i>
-                    <span class="nav-label">Executive Overview</span>
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span class="nav-label">Overview</span>
                 </a>
                 <a class="nav-item" data-tab="comparison">
-                    <i data-lucide="git-compare" class="w-4 h-4"></i>
-                    <span class="nav-label">MAS vs SAS Comparison</span>
+                    <i data-lucide="swords" class="w-4 h-4"></i>
+                    <span class="nav-label">MAS vs SAS</span>
                 </a>
                 <a class="nav-item" data-tab="cases">
-                    <i data-lucide="list-filter" class="w-4 h-4"></i>
+                    <i data-lucide="search" class="w-4 h-4"></i>
                     <span class="nav-label">Case Explorer</span>
                     <span class="nav-badge">1,728</span>
                 </a>
 
                 <div class="nav-group-title">Analysis</div>
                 <a class="nav-item" data-tab="statistics">
-                    <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
-                    <span class="nav-label">Statistical Tests</span>
+                    <i data-lucide="sigma" class="w-4 h-4"></i>
+                    <span class="nav-label">Statistics</span>
                     <span class="nav-badge">126</span>
                 </a>
                 <a class="nav-item" data-tab="pipeline">
                     <i data-lucide="workflow" class="w-4 h-4"></i>
-                    <span class="nav-label">Pipeline & Costs</span>
+                    <span class="nav-label">Pipeline & Cost</span>
                 </a>
-
-                <div class="nav-group-title">Infrastructure</div>
                 <a class="nav-item" data-tab="hardware">
-                    <i data-lucide="cpu" class="w-4 h-4"></i>
-                    <span class="nav-label">Hardware & RAM</span>
+                    <i data-lucide="memory-stick" class="w-4 h-4"></i>
+                    <span class="nav-label">Memory & Swap</span>
                 </a>
                 <a class="nav-item" data-tab="runs">
-                    <i data-lucide="history" class="w-4 h-4"></i>
-                    <span class="nav-label">Runs & Evidence</span>
+                    <i data-lucide="layers" class="w-4 h-4"></i>
+                    <span class="nav-label">8 GB Tier & Runs</span>
                 </a>
 
                 <div class="nav-group-title">Reference</div>
                 <a class="nav-item" data-tab="datasets">
-                    <i data-lucide="database" class="w-4 h-4"></i>
-                    <span class="nav-label">Datasets</span>
+                    <i data-lucide="building-2" class="w-4 h-4"></i>
+                    <span class="nav-label">Companies & Data</span>
                 </a>
                 <a class="nav-item" data-tab="models">
-                    <i data-lucide="sliders" class="w-4 h-4"></i>
-                    <span class="nav-label">Models & Config</span>
+                    <i data-lucide="boxes" class="w-4 h-4"></i>
+                    <span class="nav-label">Models & Tiers</span>
                 </a>
                 <a class="nav-item" data-tab="provenance">
-                    <i data-lucide="file-check-2" class="w-4 h-4"></i>
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
                     <span class="nav-label">Provenance</span>
                 </a>
-            </div>
+            </nav>
 
-            <!-- Sidebar Metadata Footer -->
-            <div class="sidebar-footer p-3.5 border-t border-[#E2E8F0] text-xs text-[#64748B] flex items-center justify-between">
-                <span class="font-medium text-[#172033]">1,728 Cases</span>
-                <span class="badge badge-mas">Phase 3 Final</span>
+            <div class="sidebar-footer p-4 border-t border-[var(--border-color)]">
+                <div class="flex items-center gap-2 text-[11px] t-secondary">
+                    <span class="pulse-dot"></span> Phase 3 · analysis locked
+                </div>
+                <div class="text-[11px] t-muted font-mono mt-1">16 GB · 11.5 GB app ceiling</div>
             </div>
         </aside>
 
-        <!-- Main Workspace -->
-        <main class="main-content">
-            <!-- Header Bar -->
+        <main class="main-content" id="main-scroll">
             <header class="top-header">
-                <div class="flex items-center gap-3">
-                    <h1 id="page-title" class="text-base font-bold text-[#172033] tracking-tight">
-                        Executive Overview
-                    </h1>
-                    <span class="text-[#CBD5E1]">/</span>
-                    <span class="badge badge-mas">Phase 3 Final</span>
-                    <span class="badge badge-sas">16 GB RUPP Parity</span>
+                <div class="min-w-0">
+                    <h1 id="page-title" class="text-base font-semibold t-primary tracking-tight truncate">Overview</h1>
+                    <div id="page-subtitle" class="text-xs t-muted truncate"></div>
                 </div>
-
-                <div class="flex items-center gap-2">
-                    <button id="export-btn" class="btn text-xs" onclick="window.App.exportData()">
-                        <i data-lucide="download" class="w-3.5 h-3.5 text-[#64748B]"></i> Export JSON
+                <div class="flex items-center gap-2 shrink-0">
+                    <button id="theme-toggle" class="btn" title="Toggle theme">
+                        <i data-lucide="sun" class="w-4 h-4"></i>
                     </button>
-                    <button class="btn btn-primary text-xs" onclick="window.App.showReproduceModal()">
-                        <i data-lucide="play" class="w-3.5 h-3.5"></i> Reproduce
+                    <button class="btn" onclick="window.App.exportData()" title="Download the data loaded on this page">
+                        <i data-lucide="download" class="w-4 h-4"></i><span class="hidden md:inline">Export</span>
+                    </button>
+                    <button class="btn btn-primary" onclick="window.App.showReproduceModal()">
+                        <i data-lucide="terminal-square" class="w-4 h-4"></i><span class="hidden md:inline">Reproduce</span>
                     </button>
                 </div>
             </header>
 
-            <!-- Dynamic Page Content -->
-            <div id="content-container" class="p-6 space-y-6">
-                <!-- Dynamically loaded -->
-            </div>
+            <div id="content-container" class="p-6 space-y-6"></div>
         </main>
     </div>
 
-    <!-- Case Detail Modal -->
-    <div id="case-modal" class="modal-overlay">
+    <div id="case-modal" class="modal-overlay" onclick="if (event.target === this) window.App.closeModal('case-modal')">
         <div class="modal-card">
             <div class="modal-header">
                 <div>
-                    <h3 id="modal-case-title" class="text-sm font-bold text-[#172033]">Case Inspection</h3>
-                    <div id="modal-case-subtitle" class="text-xs text-[#64748B] font-mono mt-0.5"></div>
+                    <h3 id="modal-case-title" class="text-sm font-semibold t-primary">Case</h3>
+                    <div id="modal-case-subtitle" class="text-xs t-secondary font-mono mt-0.5"></div>
                 </div>
-                <button class="btn text-xs p-1" onclick="window.App.closeModal('case-modal')">
+                <button class="btn p-1.5" onclick="window.App.closeModal('case-modal')">
                     <i data-lucide="x" class="w-4 h-4"></i>
                 </button>
             </div>
-            <div id="modal-case-body" class="modal-body space-y-4">
-                <!-- Injected by case drilldown -->
-            </div>
+            <div id="modal-case-body" class="modal-body space-y-4"></div>
         </div>
     </div>
 
-    <!-- Figure Lightbox Modal -->
-    <div id="figure-modal" class="modal-overlay">
-        <div class="modal-card max-w-5xl">
+    <div id="figure-modal" class="modal-overlay" onclick="if (event.target === this) window.App.closeModal('figure-modal')">
+        <div class="modal-card" style="max-width: 1100px">
             <div class="modal-header">
                 <div>
-                    <h3 id="figure-modal-title" class="text-sm font-bold text-[#172033]">Publication Figure</h3>
-                    <div id="figure-modal-caption" class="text-xs text-[#64748B] mt-0.5"></div>
+                    <h3 id="figure-modal-title" class="text-sm font-semibold t-primary">Figure</h3>
+                    <div id="figure-modal-caption" class="text-xs t-secondary mt-0.5"></div>
                 </div>
-                <button class="btn text-xs p-1" onclick="window.App.closeModal('figure-modal')">
+                <button class="btn p-1.5" onclick="window.App.closeModal('figure-modal')">
                     <i data-lucide="x" class="w-4 h-4"></i>
                 </button>
             </div>
             <div class="modal-body text-center p-4">
-                <img id="figure-modal-img" src="" alt="Figure" class="max-h-[75vh] mx-auto rounded border border-[#E2E8F0]">
+                <img id="figure-modal-img" src="" alt="Figure" class="max-h-[75vh] mx-auto rounded-lg bg-white">
             </div>
         </div>
     </div>
 
-    <!-- Application Scripts -->
     <script src="js/app.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/data.js"></script>
     <script src="js/pages/overview.js"></script>
     <script src="js/pages/comparison.js"></script>
     <script src="js/pages/caseExplorer.js"></script>
@@ -193,9 +159,7 @@
     <script src="js/pages/provenance.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            window.App.init();
-        });
+        document.addEventListener('DOMContentLoaded', () => window.App.init());
     </script>
 </body>
 </html>

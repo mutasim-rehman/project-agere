@@ -1,0 +1,190 @@
+{
+  "reports": 16,
+  "totals": {
+    "accept_executable": {
+      "official": {
+        "wrong": 12,
+        "correct": 4,
+        "coverage": 1.0,
+        "accepted_error": 0.75
+      },
+      "reported": {
+        "wrong": 13,
+        "correct": 3,
+        "coverage": 1.0,
+        "accepted_error": 0.8125
+      }
+    },
+    "independent": {
+      "official": {
+        "withheld": 16,
+        "coverage": 0.0,
+        "accepted_error": null
+      },
+      "reported": {
+        "withheld": 16,
+        "coverage": 0.0,
+        "accepted_error": null
+      }
+    }
+  },
+  "resources": {
+    "independent": {
+      "calls": 16,
+      "peak_sampled_rss": 5185335296,
+      "peak_job_commit": 5434642432,
+      "median_seconds": 37.78900000000067
+    }
+  },
+  "cases": [
+    {
+      "case_id": "DISCA/2011/page_49.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "CDW/2017/page_38.pdf-1",
+      "official": true,
+      "reported": true,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "ALLE/2015/page_24.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "MO/2016/page_19.pdf-4",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": true
+    },
+    {
+      "case_id": "DG/2009/page_77.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "TFX/2017/page_78.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "GRMN/2006/page_68.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "TMUS/2017/page_29.pdf-2",
+      "official": true,
+      "reported": true,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "NCLH/2018/page_64.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "L/2009/page_84.pdf-1",
+      "official": true,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": true
+    },
+    {
+      "case_id": "GPN/2013/page_87.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "NKE/2009/page_43.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "MAR/2018/page_43.pdf-2",
+      "official": true,
+      "reported": true,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": true
+    },
+    {
+      "case_id": "SNA/2018/page_31.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    },
+    {
+      "case_id": "MS/2007/page_179.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": true
+    },
+    {
+      "case_id": "GRMN/2008/page_73.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "independent": "UNKNOWN"
+      },
+      "direct_reported_correct": false
+    }
+  ],
+  "direct_solver_alone_reported": {
+    "valid": 16,
+    "correct": 4,
+    "both_candidate_and_direct_correct": 1
+  }
+}

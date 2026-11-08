@@ -1,0 +1,144 @@
+{
+  "questions": 6,
+  "official": {
+    "first_draft_correct": 0,
+    "second_draft_correct": 0,
+    "oracle_correct_available": 0,
+    "correct_delivery": 0,
+    "wrong_delivery": 0,
+    "withheld": 6,
+    "single_order_1_wrong": 5,
+    "single_order_2_wrong": 4,
+    "single_order_2_withheld": 2,
+    "single_order_1_withheld": 1
+  },
+  "reported": {
+    "first_draft_correct": 0,
+    "second_draft_correct": 0,
+    "oracle_correct_available": 0,
+    "correct_delivery": 0,
+    "wrong_delivery": 0,
+    "withheld": 6,
+    "single_order_1_wrong": 5,
+    "single_order_2_wrong": 4,
+    "single_order_2_withheld": 2,
+    "single_order_1_withheld": 1
+  },
+  "cases": [
+    {
+      "case_id": "BLL/2012/page_31.pdf-3",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [
+        0,
+        1
+      ],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "correct_prefix_of_wrong_draft": false
+    },
+    {
+      "case_id": "AAL/2010/page_72.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [
+        0,
+        null
+      ],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "correct_prefix_of_wrong_draft": true
+    },
+    {
+      "case_id": "MKTX/2012/page_42.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [
+        0,
+        1
+      ],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "correct_prefix_of_wrong_draft": false
+    },
+    {
+      "case_id": "DVN/2018/page_35.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [
+        0,
+        1
+      ],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "correct_prefix_of_wrong_draft": false
+    },
+    {
+      "case_id": "MSI/2014/page_76.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [
+        null,
+        null
+      ],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "correct_prefix_of_wrong_draft": false
+    },
+    {
+      "case_id": "K/2006/page_52.pdf-3",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [
+        0,
+        1
+      ],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "correct_prefix_of_wrong_draft": false
+    }
+  ],
+  "peak_sampled_rss": 2464538624
+}

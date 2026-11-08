@@ -1,0 +1,239 @@
+{
+  "dataset-dev.json": {
+    "source_sha256": "27cc6c57487bbaba73041f93dba831a39b1cabe999c2ec0ddebc6f1200ff85bd",
+    "counts": {
+      "questions": 883,
+      "original_bindable": 703,
+      "closed_bindable": 718,
+      "added_quantities": 6770
+    },
+    "recovered": [
+      {
+        "case_id": "HOLX/2015/page_98.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 8
+      },
+      {
+        "case_id": "HOLX/2010/page_124.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "DISCA/2012/page_39.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 12
+      },
+      {
+        "case_id": "STZ/2006/page_68.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "HOLX/2008/page_142.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 21
+      },
+      {
+        "case_id": "EW/2016/page_79.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 2
+      },
+      {
+        "case_id": "EW/2016/page_79.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 8
+      },
+      {
+        "case_id": "HOLX/2012/page_113.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 3
+      },
+      {
+        "case_id": "MA/2008/page_126.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 8
+      },
+      {
+        "case_id": "GPN/2017/page_77.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 6
+      },
+      {
+        "case_id": "DISCA/2012/page_39.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 12
+      },
+      {
+        "case_id": "MRO/2017/page_111.pdf-4",
+        "previous": "unretrieved_operand",
+        "added_quantities": 1
+      },
+      {
+        "case_id": "ETR/2008/page_249.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 6
+      },
+      {
+        "case_id": "LKQ/2018/page_83.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 14
+      },
+      {
+        "case_id": "VRTX/2003/page_71.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 3
+      }
+    ]
+  },
+  "agere-finqa-test.json": {
+    "source_sha256": "831dbfb2e785dbc227f895ce3f24046433467aec67b09db2bd6ac7692a8a30dc",
+    "counts": {
+      "questions": 1147,
+      "original_bindable": 891,
+      "closed_bindable": 919,
+      "added_quantities": 8225
+    },
+    "recovered": [
+      {
+        "case_id": "ADBE/2008/page_89.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 9
+      },
+      {
+        "case_id": "GPN/2013/page_92.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 10
+      },
+      {
+        "case_id": "AMT/2003/page_102.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 2
+      },
+      {
+        "case_id": "AWK/2012/page_117.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 3
+      },
+      {
+        "case_id": "AAPL/2003/page_48.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 9
+      },
+      {
+        "case_id": "ILMN/2008/page_86.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 6
+      },
+      {
+        "case_id": "AAPL/2004/page_68.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 18
+      },
+      {
+        "case_id": "AES/2001/page_85.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "AES/2001/page_33.pdf-4",
+        "previous": "unretrieved_operand",
+        "added_quantities": 18
+      },
+      {
+        "case_id": "GPN/2013/page_92.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 12
+      },
+      {
+        "case_id": "GPN/2013/page_92.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 12
+      },
+      {
+        "case_id": "AON/2007/page_188.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 14
+      },
+      {
+        "case_id": "AMT/2008/page_94.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 2
+      },
+      {
+        "case_id": "HII/2015/page_88.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "DG/2009/page_77.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 2
+      },
+      {
+        "case_id": "PKG/2005/page_74.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "MRO/2006/page_93.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "AON/2007/page_188.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 5
+      },
+      {
+        "case_id": "ILMN/2008/page_86.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 6
+      },
+      {
+        "case_id": "AWK/2012/page_117.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 8
+      },
+      {
+        "case_id": "AES/2001/page_33.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 18
+      },
+      {
+        "case_id": "AAL/2013/page_172.pdf-2",
+        "previous": "unretrieved_operand",
+        "added_quantities": 3
+      },
+      {
+        "case_id": "ANET/2015/page_156.pdf-1",
+        "previous": "unretrieved_operand",
+        "added_quantities": 2
+      },
+      {
+        "case_id": "PKG/2005/page_74.pdf-4",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "DVN/2014/page_87.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "DVN/2012/page_77.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 4
+      },
+      {
+        "case_id": "AMT/2006/page_104.pdf-4",
+        "previous": "unretrieved_operand",
+        "added_quantities": 2
+      },
+      {
+        "case_id": "ABMD/2008/page_86.pdf-3",
+        "previous": "unretrieved_operand",
+        "added_quantities": 6
+      }
+    ]
+  }
+}
