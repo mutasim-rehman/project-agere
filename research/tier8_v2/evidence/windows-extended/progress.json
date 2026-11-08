@@ -1,0 +1,14 @@
+{
+  "deadline_utc": "2026-11-09T05:14:50+00:00",
+  "branch": "main",
+  "studies": {
+    "oracle-length-diagnostic": {
+      "status": "complete",
+      "expected": 16,
+      "completed": 16,
+      "summary": "oracle-length-summary.json",
+      "cases": "oracle-length-cases.jsonl",
+      "gold_informed": true
+    }
+  }
+}
