@@ -131,3 +131,37 @@ can correlate. Report correct, wrong and withheld separately.
 The format comparison reuses the frozen 96 reports from the
 precision and catalog work and is not an independent benchmark
 sample. The study runs under the 6.1 GB worker job limit.
+
+## Gold-informed operand-choice diagnostic
+
+Compare the unadapted SSD 3B Q4 drafter under its ordinary
+causal grammar and a grammar whose source IDs are restricted
+to values used by the annotated program. Both receive the
+same complete catalog in the prompt and the same evidence,
+instructions, unit options, 768 generated tokens and native
+Windows cap. The restriction retains every original catalog ID
+matching an annotated source value. It does not disclose which
+equal-valued cell is intended. Constants, operators, legal
+intermediate references and the one-to-eight step range remain
+available. Only the output grammar changes. The contrast
+measures the effect of ruling out other numerical operands,
+which can also block valid alternative formulas.
+
+The diagnostic includes all 15 remaining eligible reports
+after the named FinQA exclusions above and the 96-report
+cohort. Eligible reports have an executable reference that
+matches the official score under the same original catalog,
+at least two distinct cited numerical values in the reference,
+and a strictly smaller masked catalog. Selection does not use
+the drafter's outputs. It is an enriched diagnostic, with
+limited sample size and no claim of population-wide accuracy.
+
+Cohort SHA-256
+`737eea62bb15d17abf5df7b041a742d653d2d29380e0f5e2edb346017d4debec`.
+Gold mask SHA-256
+`b6b01a55f9d718b685d393148592ef16e415183a8f2d12a16fb971b4975548be`.
+Run `tier8_windows_natural_pairs.py run --oracle-operands ...`
+without an adapter and with `--job-commit-limit 6100000000`.
+Score all paired official execution and reported-answer outcomes
+against the frozen cohort. This is an answer-key intervention,
+outside the deployable accuracy comparisons.

@@ -94,6 +94,10 @@ def run(args):
     if args.oracle_lengths and (not args.adapter or args.capacity_control or args.planned_length
                                 or args.retrieval_cohort or args.precision_control or args.complete_catalog):
         raise ValueError("Oracle-length diagnostic requires only the adapted model")
+    if args.oracle_operands and (args.adapter or args.capacity_control or args.planned_length
+                                 or args.retrieval_cohort or args.precision_control
+                                 or args.complete_catalog or args.oracle_lengths):
+        raise ValueError("Oracle-operand diagnostic requires only the unadapted model")
     if args.complete_catalog:
         from tier8_windows_catalog_audit import load_prototype
         expanded_catalog = load_prototype()
@@ -104,6 +108,15 @@ def run(args):
     oracle = json.loads(args.oracle_lengths.read_bytes()) if args.oracle_lengths else {}
     if args.oracle_lengths and set(oracle) != {case["id"] for case in public}:
         raise ValueError("Oracle length diagnostic must cover the entire frozen cohort")
+    masks = json.loads(args.oracle_operands.read_bytes()) if args.oracle_operands else {}
+    if args.oracle_operands:
+        if set(masks) != {case["id"] for case in public}:
+            raise ValueError("Oracle operand diagnostic must cover the entire frozen cohort")
+        for case in public:
+            refs = masks[case["id"]]
+            atoms = atom_catalog(case["evidence"])
+            if not isinstance(refs, list) or not refs or not set(refs) < atoms.keys():
+                raise ValueError(f"Oracle operand mask must retain a proper subset on {case['id']}")
     alternative = {case["id"]: case for case in jsonl(args.retrieval_cohort)} if args.retrieval_cohort else {}
     if args.retrieval_cohort and set(alternative) != {case["id"] for case in public}:
         raise ValueError("Retrieval case IDs differ")
@@ -114,7 +127,7 @@ def run(args):
             drafts = [None, None]
             shortest = ("Use the shortest calculation that fully answers the question."
                         " Stop once the requested quantity is computed.")
-            matched = args.adapter or args.precision_control or args.complete_catalog
+            matched = args.adapter or args.precision_control or args.complete_catalog or masks
             instructions = (shortest, shortest) if matched else (
                 "Check that the final operation answers the exact question.", shortest)
             order = (1, 0) if matched and case_index % 2 else (0, 1)
@@ -143,7 +156,9 @@ def run(args):
                 model.drafter_weights = (str(args.precision_control[index].resolve())
                                          if args.precision_control else
                                          args.capacity_control if index == 1 else None)
-                schema = reference_schema(atoms, units, causal=True)
+                selectable = ({key: atom for key, atom in atoms.items() if key in masks[case["id"]]}
+                              if masks and index == 1 else atoms)
+                schema = reference_schema(selectable, units, causal=True)
                 planner_event, steps = None, None
                 limit = 768
                 if args.planned_length and index == 1:
@@ -165,7 +180,7 @@ def run(args):
                 plan, event = model.call("drafter", prompt + "\n" + instructions[index],
                                          schema, budget, limit, "program")
                 try:
-                    program = compile_plan(plan, atoms)
+                    program = compile_plan(plan, selectable)
                 except (ValueError, TypeError, AttributeError):
                     program = None
                 execution = checked(program, evidence)
@@ -174,17 +189,18 @@ def run(args):
                                      weights_override=model.drafter_weights, event=event,
                                      planned_steps=steps, planner_event=planner_event,
                                      catalog_size=len(atoms),
+                                     **({"selectable_catalog_size": len(selectable)} if masks else {}),
                                      evidence=evidence if alternative else None)
             model.adapter = None
             model.drafter_weights = None
             executable = all(not draft["candidate"]["execution"]["issues"] for draft in drafts)
             review_enabled = not (args.capacity_control or args.planned_length
                                   or args.retrieval_cohort or args.precision_control or args.complete_catalog
-                                  or args.oracle_lengths)
+                                  or args.oracle_lengths or masks)
             reviews = review(model, context, drafts, budget) if executable and review_enabled else []
             out.write(json.dumps(dict(case_id=case["id"], drafts=drafts, reviews=reviews,
                                       review_enabled=review_enabled,
-                                      oracle_diagnostic=bool(args.oracle_lengths),
+                                      oracle_diagnostic=bool(args.oracle_lengths or masks),
                                       reserved_tokens=budget.spent)) + "\n")
             out.flush()
             print(case["id"], [draft["candidate"]["execution"]["value"] for draft in drafts],
@@ -350,6 +366,8 @@ if __name__ == "__main__":
                            help="Compare original and span-complete source quantity catalogs")
     inference.add_argument("--oracle-lengths", type=Path,
                            help="Gold-informed diagnostic only: compare against exact annotated lengths")
+    inference.add_argument("--oracle-operands", type=Path,
+                           help="Gold-informed diagnostic only: restrict the grammar to listed source IDs")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):
