@@ -70,3 +70,36 @@ descriptive and carry no calibrated selective-risk guarantee.
 Use `tier8_windows_trained_critic.py independent` with the same
 frozen candidate cohort and `--direct-weights` pointing to the
 first SSD 7B Q4 shard. Score that ledger separately.
+
+## Matched trained-critic results
+
+Under official scoring, accepting all executable programs gives
+4 correct and 12 wrong answers. The control critic gives 3 correct,
+0 wrong and 13 withheld. The crossed critic gives 2 correct,
+0 wrong and 14 withheld. Reported-answer scoring counts the same
+accepted cases as correct, while its accept-all baseline counts
+3 correct and 13 wrong. The control retained all three candidates
+that matched both scoring conventions. The crossed condition
+lost one additional correct candidate without reducing observed
+wrong deliveries further. This does not support adopting the
+crossed training method over control.
+
+Both completed 16 calls, peaked at about 2.52 GB sampled RSS
+and 2.92 GB worker commit, and took about 17–18 seconds per
+review including model loading. Zero wrong answers among three
+accepted cases is an observation on a small replay, not a
+calibrated safety guarantee.
+
+## Frozen transfer replay
+
+We freeze all 21 narrow-evidence candidates from the separate
+retrieval replication. Narrow retrieval was chosen at the recipe
+level after the wider-evidence accuracy gain failed to replicate.
+No candidates are excluded by correctness. The same four critic
+training files were audited and no candidate report overlapped.
+The frozen input SHA-256 is
+`0dc7db01534ca92511ba26e239b40210f759441967c8e356d73c5ebda70e4bb6`.
+Run the same matched critics and report both metrics. This
+tests transfer to different reports and the narrow recipe,
+so a change in coverage may reflect candidate mix as well as
+review behavior.

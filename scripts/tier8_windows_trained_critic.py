@@ -26,7 +26,7 @@ def freeze(args):
             public = packets[row["case_id"]]
             if public["report_group"] in excluded:
                 continue
-            draft = row["drafts"][1]
+            draft = row["drafts"][args.draft_index]
             if draft.get("evidence") != public["evidence"]:
                 raise ValueError(f"Expanded candidate evidence mismatch for {row['case_id']}")
             out.write(json.dumps(dict(case_id=row["case_id"], report_group=public["report_group"],
@@ -165,6 +165,7 @@ if __name__ == "__main__":
     for name in ("cohort", "drafts", "output"):
         build.add_argument(f"--{name}", type=Path, required=True)
     build.add_argument("--exclude-records", type=Path, action="append", required=True)
+    build.add_argument("--draft-index", type=int, choices=(0, 1), default=1)
     build.set_defaults(run=freeze)
     run = commands.add_parser("replay")
     for name in ("cli", "weights", "cohort", "output", "control", "crossed"):
