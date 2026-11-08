@@ -36,3 +36,25 @@ execution correctness on all cases. Report paired gains and
 losses, evidence sufficiency, resource use, and reported-answer
 sensitivity. This tests weight quantization in one model family,
 without making a comparison to full precision or resident teams.
+
+## Results
+
+All 48 drafts executed under the job commit guard. Official
+execution correctness was 3/24 for Q4 and 5/24 for Q8. The
+matched contrast has three Q8-only correct reports, one
+Q4-only correct report and twenty ties, with exact two-sided
+McNemar p = 0.625. Reported-answer scoring counted 2/24 and
+4/24, with two gains and no losses. This is a small estimated
+gain rather than evidence of a reliable accuracy difference.
+
+Peak sampled RSS was 2.29 GB for Q4 and 3.64 GB for Q8. Peak
+worker commit was 2.59 and 3.94 GB. Median elapsed time including
+model load was 19.2 and 34.5 seconds. Both arms consumed 21,216
+prompt-evaluation tokens. Q4 made 2,987 decode evaluations and
+Q8 made 3,073. These counters distinguish observed computation
+from the shared 768-token ceiling.
+
+Both quantizations fit this sequential Windows configuration.
+The study isolates weight quantization for this checkpoint and
+runtime. It does not establish an 8 GB accuracy advantage from
+full precision, a 16 GB result, or a MAS/SAS architecture effect.
