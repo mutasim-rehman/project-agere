@@ -130,10 +130,15 @@ def summarize(args):
             scorer = metric.TaTQAEmAndF1()
             scorer(annotation, [pred["answer"]] if pred else [], pred_scale=pred["scale"] if pred else "")
             em, f1, _, _ = scorer.get_overall_metric()
+            scale_oracle = metric.TaTQAEmAndF1()
+            scale_oracle(annotation, [pred["answer"]] if pred else [], pred_scale=annotation["scale"])
+            oracle_em = scale_oracle.get_overall_metric()[0]
             labels[arm] = bool(em)
             result[arm]["exact"] += em
             result[arm]["f1"] += f1
             result[arm]["valid"] += pred is not None
+            result[arm]["scale_label_match"] += bool(pred and pred["scale"] == annotation["scale"])
+            result[arm]["wrong_exact_fixed_by_gold_scale"] += bool(oracle_em and not em)
             result[arm]["peak_sampled_rss"] = max(result[arm]["peak_sampled_rss"],
                                                   output["event"]["peak_sampled_rss"])
         result["cases"].append(dict(case_id=row["case_id"], exact=labels))

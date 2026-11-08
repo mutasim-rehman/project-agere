@@ -48,6 +48,11 @@ not equal the reserved generation ceilings.
 Median time including model load was 19.2 seconds for programs
 and 10.2 seconds for direct output. Peak sampled working-set
 RSS was 2.46 GB in both arms and peak job commit was 2.77 GB.
+The direct arm matched the reference scale label on 9/16 and
+the program arm on 10/16. An answer-key diagnostic supplying
+the correct scale did not rescue any wrong numeric prediction
+in either arm. The main accuracy shortfall therefore cannot be
+explained by choosing the wrong scale field alone.
 
 ## Frozen direct capacity comparison
 
