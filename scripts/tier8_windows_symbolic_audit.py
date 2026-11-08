@@ -87,7 +87,7 @@ def main():
                 stats["symbolic_only"] += program and not execution
                 scores.append(dict(execution=execution, symbolic=program, sliced_symbolic=sliced_program))
             cases.append(dict(case_id=row["case_id"], arms=scores))
-        result[path.parent.name] = dict(arms=arms, cases=cases)
+        result[f"{path.parent.name}/{path.name}"] = dict(arms=arms, cases=cases)
     print(json.dumps(result, indent=2))
 
 

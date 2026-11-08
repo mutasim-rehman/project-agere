@@ -62,3 +62,8 @@ Both quantizations fit this sequential Windows configuration.
 The study isolates weight quantization for this checkpoint and
 runtime. It does not establish an 8 GB accuracy advantage from
 full precision, a 16 GB result, or a MAS/SAS architecture effect.
+Both arms matched 3/24 normalized symbolic reference programs
+after backward slicing. The two extra Q8 execution matches
+therefore did not translate into a higher symbolic-match count.
+This secondary diagnostic distinguishes numerical result
+agreement from expression equivalence.

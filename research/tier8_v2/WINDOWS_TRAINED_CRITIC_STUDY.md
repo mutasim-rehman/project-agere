@@ -89,6 +89,9 @@ and 2.92 GB worker commit, and took about 17–18 seconds per
 review including model loading. Zero wrong answers among three
 accepted cases is an observation on a small replay, not a
 calibrated safety guarantee.
+All three control-accepted programs also matched the annotated
+symbolic expression in the normalized backward-slice audit.
+The one official-only candidate the control withheld did not.
 
 ## Frozen transfer replay
 
