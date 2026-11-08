@@ -12,6 +12,18 @@ elapsed times should not be compared across those hosts. Exact
 runtime and package metadata are in
 `evidence/windows-endpoint-study/windows-environment.json`.
 
+The frozen FinQA train, development and test snapshots share
+zero exact question or page IDs. Their company-year reports
+overlap: 243 of 278 test reports also occur in the raw training
+source and 93 occur in the raw development source. The splits
+can be page-disjoint while drawing from the same annual
+reports. This explains why whole-source report exclusion
+quickly exhausted the Windows cohorts. For each experiment,
+distinguish raw corpus overlap from actual audited fitting or
+evaluation exposure. The overlap itself does not demonstrate
+model memorization or leakage. Reproduction counts and source
+hashes are in `evidence/windows-temporal-rule/finqa-split-audit.json`.
+
 The research question is which intervention raises correct
 candidate or answer delivery under the 8 GB tier, and where
 generation or verification fails. Candidate-only results cannot
