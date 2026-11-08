@@ -37,8 +37,12 @@ def freeze(args):
     evaluate = official_evaluator(args.evaluator)
     exposed = {report_group(row["id"]) for path in args.exclude
                for row in json.loads(path.read_text(encoding="utf-8"))}
+    for path in args.exclude_cohort:
+        exposed.update(row["report_group"] for row in jsonl(path))
+    sample_size = 6 if args.reject_both else 4
+    salt = "win-verify-reject-v1|" if args.reject_both else "win-verify-v1|"
     source = json.loads(args.source.read_text(encoding="utf-8"))
-    source.sort(key=lambda row: hashlib.sha256(("win-verify-v1|" + row["id"]).encode()).digest())
+    source.sort(key=lambda row: hashlib.sha256((salt + row["id"]).encode()).digest())
     chosen, used, rejected = [], set(), Counter()
     for row in source:
         group = report_group(row["id"])
@@ -59,16 +63,24 @@ def freeze(args):
             if not choices:
                 raise ValueError("No scorer-concordant near miss")
             negative, wrong, change = select_negative(row["id"], choices)
+            if args.reject_both:
+                remaining = [item for item in choices if item[1]["value"] != wrong["value"]]
+                if not remaining:
+                    raise ValueError("No distinct second near miss")
+                other, other_wrong, other_change = select_negative(row["id"], remaining)
         except (ValueError, InvalidOperation) as exc:
             rejected[str(exc)] += 1
             continue
         chosen.append(dict(case_id=row["id"], report_group=group, question=public["question"],
                            evidence=evidence, positive=dict(program=positive, execution=correct),
                            negative=dict(program=negative, execution=wrong), mutation=change))
+        if args.reject_both:
+            chosen[-1].update(other_negative=dict(program=other, execution=other_wrong),
+                              other_mutation=other_change)
         used.add(group)
-        if len(chosen) == 4:
+        if len(chosen) == sample_size:
             break
-    if len(chosen) != 4:
+    if len(chosen) != sample_size:
         raise ValueError(f"Only {len(chosen)} eligible reports: {rejected}")
     with args.output.open("x", encoding="utf-8") as out:
         for case in chosen:
@@ -111,6 +123,72 @@ def replay(args):
                 print(case["case_id"], "pairwise", expected, raw, flush=True)
 
 
+def replay_reject(args):
+    model = Models(args)
+    cohort = jsonl(args.cohort)
+    if len(cohort) != 6 or len({case["report_group"] for case in cohort}) != 6:
+        raise ValueError("Expected six distinct reports")
+    schema = {"type": "object", "properties": {"choice": {"enum": ["A", "B", "NEITHER"]}},
+              "required": ["choice"], "additionalProperties": False}
+    args.output.mkdir(parents=True, exist_ok=False)
+    with (args.output / "replay.jsonl").open("x", encoding="utf-8") as out:
+        for index, case in enumerate(cohort):
+            context = ("Question: " + case["question"] + "\nFinancial report evidence by source ID:\n"
+                       + json.dumps(case["evidence"]))
+            groups = [("positive", "negative"), ("negative", "other_negative")]
+            if index % 2:
+                groups.reverse()
+            for group in groups:
+                for first, second in (group, group[::-1]):
+                    prompt = (context + "\nCandidate A:\n" + json.dumps(case[first])
+                              + "\nCandidate B:\n" + json.dumps(case[second])
+                              + "\nChoose A or B only if that program correctly answers the question."
+                                " Check its source operands, arithmetic, and units."
+                                " Return NEITHER if neither program is supported and correct.")
+                    raw, event = model.call("drafter", prompt, schema, TokenLedger(), 192, "pairwise_reject")
+                    expected = "A" if first == "positive" else "B" if second == "positive" else "NEITHER"
+                    choice = (raw or {}).get("choice", "INVALID")
+                    out.write(json.dumps(dict(case_id=case["case_id"], order=[first, second],
+                                              expected=expected, choice=choice, event=event)) + "\n")
+                    out.flush()
+                    print(case["case_id"], expected, choice, flush=True)
+
+
+def summarize_reject(args):
+    rows = jsonl(args.ledger)
+    cases = {row["case_id"] for row in rows}
+    if len(rows) != 24 or len(cases) != 6:
+        raise ValueError("Expected 24 presentations from six distinct reports")
+    result = {"reports": len(cases), "peak_sampled_rss": max(
+        row["event"]["peak_sampled_rss"] for row in rows)}
+    for name, reject_expected in (("one_correct", False), ("both_wrong", True)):
+        subsets = [[row for row in rows if row["case_id"] == case
+                    and (row["expected"] == "NEITHER") == reject_expected] for case in sorted(cases)]
+        if any(len(pair) != 2 or pair[0]["order"] != pair[1]["order"][::-1] for pair in subsets):
+            raise ValueError("Incomplete or duplicated presentation order")
+        agreed = Counter()
+        for pair in subsets:
+            selected = [row["order"][ord(row["choice"]) - ord("A")]
+                        if row["choice"] in ("A", "B") else None for row in pair]
+            if selected[0] is None or selected[0] != selected[1]:
+                agreed["withheld"] += 1
+            elif selected[0] == "positive":
+                agreed["correct_delivery"] += 1
+            else:
+                agreed["wrong_delivery"] += 1
+        result[name] = dict(
+            presentations=12,
+            correct=sum(row["choice"] == row["expected"] for pair in subsets for row in pair),
+            wrong_accepts=sum(row["choice"] in ("A", "B") and row["choice"] != row["expected"]
+                              for pair in subsets for row in pair),
+            withheld=sum(row["choice"] not in ("A", "B") for pair in subsets for row in pair),
+            reports_correct_both_orders=sum(all(row["choice"] == row["expected"] for row in pair)
+                                            for pair in subsets),
+            order_agreement_gate={key: agreed[key] for key in
+                                  ("correct_delivery", "wrong_delivery", "withheld")})
+    print(json.dumps(result, indent=2))
+
+
 def summarize(args):
     rows = jsonl(args.ledger)
     groups = {}
@@ -150,13 +228,22 @@ if __name__ == "__main__":
     for name in ("source", "evaluator", "output"):
         build.add_argument(f"--{name}", type=Path, required=True)
     build.add_argument("--exclude", type=Path, action="append", required=True)
+    build.add_argument("--exclude-cohort", type=Path, action="append", default=[])
+    build.add_argument("--reject-both", action="store_true")
     build.set_defaults(run=freeze)
     run = commands.add_parser("replay")
     for name in ("cli", "weights", "cohort", "output"):
         run.add_argument(f"--{name}", type=Path, required=True)
     run.set_defaults(run=replay)
+    reject = commands.add_parser("replay-reject")
+    for name in ("cli", "weights", "cohort", "output"):
+        reject.add_argument(f"--{name}", type=Path, required=True)
+    reject.set_defaults(run=replay_reject)
     report = commands.add_parser("summarize")
     report.add_argument("ledger", type=Path)
     report.set_defaults(run=summarize)
+    report_reject = commands.add_parser("summarize-reject")
+    report_reject.add_argument("ledger", type=Path)
+    report_reject.set_defaults(run=summarize_reject)
     args = parser.parse_args()
     args.run(args)
