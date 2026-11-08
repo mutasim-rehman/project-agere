@@ -46,6 +46,10 @@ Q4-only correct report and twenty ties, with exact two-sided
 McNemar p = 0.625. Reported-answer scoring counted 2/24 and
 4/24, with two gains and no losses. This is a small estimated
 gain rather than evidence of a reliable accuracy difference.
+Resampling the 22 companies as clusters gives a descriptive
+95% interval of −8 to +25 percentage points for the official
+paired difference. This retains company-level dependence but
+has limited resolution with four discordant reports.
 
 Peak sampled RSS was 2.29 GB for Q4 and 3.64 GB for Q8. Peak
 worker commit was 2.59 and 3.94 GB. Median elapsed time including

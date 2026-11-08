@@ -1,11 +1,12 @@
 """Generate and review two evidence-only FinQA candidates per report on Windows."""
 import argparse
-from collections import Counter
+from collections import Counter, defaultdict
 import hashlib
 import json
 from math import comb
 from pathlib import Path
 import re
+import random
 from statistics import median
 
 from evidence_atoms import atom_catalog, compile_plan, reference_schema
@@ -297,6 +298,19 @@ def summarize(args):
         stats["paired_accuracy_delta"] = (gains - losses) / len(rows)
         stats["exact_mcnemar_p"] = min(1, 2 * sum(
             comb(discordant, i) for i in range(min(gains, losses) + 1)) / 2 ** discordant)
+        companies = defaultdict(list)
+        for case in result["cases"]:
+            first, second = case[metric]
+            companies[case["case_id"].split("/", 1)[0]].append(int(second) - int(first))
+        groups = [(sum(deltas), len(deltas)) for deltas in companies.values()]
+        rng = random.Random(42)
+        replicates = []
+        for _ in range(2000):
+            sample = rng.choices(groups, k=len(groups))
+            replicates.append(sum(delta for delta, _ in sample) / sum(n for _, n in sample))
+        replicates.sort()
+        stats["companies"] = len(groups)
+        stats["company_cluster_delta_95"] = [replicates[50], replicates[1949]]
     print(json.dumps(result, indent=2))
 
 

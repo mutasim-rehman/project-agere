@@ -7,7 +7,12 @@
     "second_only_correct": 3,
     "oracle_correct_available": 6,
     "paired_accuracy_delta": 0.08333333333333333,
-    "exact_mcnemar_p": 0.625
+    "exact_mcnemar_p": 0.625,
+    "companies": 22,
+    "company_cluster_delta_95": [
+      -0.08,
+      0.25
+    ]
   },
   "reported": {
     "first_draft_correct": 2,
@@ -16,7 +21,12 @@
     "second_only_correct": 2,
     "oracle_correct_available": 4,
     "paired_accuracy_delta": 0.08333333333333333,
-    "exact_mcnemar_p": 0.5
+    "exact_mcnemar_p": 0.5,
+    "companies": 22,
+    "company_cluster_delta_95": [
+      0.0,
+      0.2
+    ]
   },
   "cases": [
     {
