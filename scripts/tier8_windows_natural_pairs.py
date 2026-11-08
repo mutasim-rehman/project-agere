@@ -110,6 +110,8 @@ def summarize(args):
     peaks = []
     for row in rows:
         annotation = gold[row["case_id"]]
+        evidence = packet(annotation)["evidence"]
+        complete_evidence = set(annotation["qa"]["gold_inds"]) <= evidence.keys()
         candidates = [draft["candidate"] for draft in row["drafts"]]
         peaks.extend(item["event"]["peak_sampled_rss"] for item in row["drafts"] + row["reviews"])
         indices = [review["index"] for review in row["reviews"]]
@@ -128,9 +130,25 @@ def summarize(args):
             official.append(correct)
         reported = [evaluate_financial(annotation, item["program"], item["execution"])["case_success"]
                     for item in candidates]
+        correct_prefix = False
+        for candidate, correct in zip(candidates, official):
+            program = candidate["program"]
+            if correct or not program:
+                continue
+            for length in range(1, len(program["steps"])):
+                prefix = {**program, "steps": program["steps"][:length]}
+                if checked(prefix, evidence)["issues"]:
+                    continue
+                try:
+                    if official_result(evaluate, annotation, prefix) == annotation["qa"]["exe_ans"]:
+                        correct_prefix = True
+                        break
+                except ValueError:
+                    continue
         result["cases"].append(dict(case_id=row["case_id"], official=official, reported=reported,
                                     duplicate_program=equivalent, selected_indices=indices,
-                                    delivered=delivered))
+                                    delivered=delivered, complete_annotated_evidence=complete_evidence,
+                                    correct_prefix_of_wrong_draft=correct_prefix))
         for metric, labels in (("official", official), ("reported", reported)):
             counts = result[metric]
             counts["first_draft_correct"] += labels[0]

@@ -43,3 +43,31 @@ frozen cohort and the same Windows CPU executable and SSD weights
 as the prior challenge, then `summarize` with the official
 evaluator and gold source. The source and evaluator hashes are
 listed in [the prior challenge](WINDOWS_VERIFIER_CHALLENGE.md).
+
+## Results
+
+All six questions produced two distinct executable programs. Neither
+draft matched the official execution result on any question. The
+reported-answer metric agreed on all 12 final programs. Even a
+perfect selector could have delivered zero correct final candidates.
+
+The first review order selected a wrong program on five questions
+and withheld one. The reversed order selected a wrong program on
+four and withheld two. Agreement withheld all six, filtering every
+observed wrong selection. It showed no useful delivery on these
+generated candidates. This differs from the constructed challenge,
+where three pairs with a correct candidate produced a correct delivery.
+
+The lexical evidence packet retained all annotated evidence spans
+on three questions. Candidate failure occurred with and without all
+annotated spans present. One wrong draft had an earlier prefix that
+matched the official answer. This gold-aware check reproduces the
+extra-operation failure on one new question. It cannot select an
+endpoint at inference time.
+
+Peak sampled working-set RSS was 2,464,538,624 bytes (2.46 GB).
+The study leaves paging and unsampled peaks unverified. With no
+correct final candidates, further tuning of the gate on these six
+questions has no path to useful delivery. A future experiment would
+need to improve retrieval or program generation first and validate
+candidate availability on new reports. Keep the 16 GB tier gated.
