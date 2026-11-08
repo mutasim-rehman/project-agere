@@ -61,7 +61,7 @@ class Models:
                "-f", str(prompt), "-jf", str(grammar), "-c", "4096", "-t", "8", "-ngl", "0",
                "--load-mode", "none", "--no-conversation", "--no-display-prompt",
                "--temp", "0", "--seed", "42", "-n", str(allowance)]
-        if self.adapter is not None and stage == "program":
+        if self.adapter is not None and stage in ("program", "trained_critic"):
             cmd.extend(("--lora", str(self.adapter.resolve())))
         started = time.monotonic()
         peak = 0
