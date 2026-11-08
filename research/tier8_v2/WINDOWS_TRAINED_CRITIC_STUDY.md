@@ -107,6 +107,18 @@ tests transfer to different reports and the narrow recipe,
 so a change in coverage may reflect candidate mix as well as
 review behavior.
 
+The transfer replay completed. The executable-only baseline
+delivered 2 correct and 19 wrong. Control delivered 1 correct,
+5 wrong and withheld 15. Crossed delivered 1 correct, 2 wrong
+and withheld 18. Both metrics agreed. The crossed critic
+reduced wrong delivery relative to control while retaining the
+same count of correct answers, but two of its three accepted
+answers were wrong. Neither reproduced the initial zero-wrong
+result. The narrow candidate pool contained only two correct
+programs, so the replay also had a low ceiling for correct
+delivery. The results are in
+`evidence/windows-extended/critic-transfer-summary.json`.
+
 ## Independent recomputation results
 
 The 7B independent solver produced 16 valid numbers and scored
