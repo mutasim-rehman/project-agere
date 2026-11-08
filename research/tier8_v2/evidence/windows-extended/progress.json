@@ -9,6 +9,10 @@
       "summary": "oracle-length-summary.json",
       "cases": "oracle-length-cases.jsonl",
       "gold_informed": true
+    },
+    "resident-role-preflight": {
+      "status": "running",
+      "started_utc": "2026-11-08T19:25:42.994260+00:00"
     }
   }
 }
