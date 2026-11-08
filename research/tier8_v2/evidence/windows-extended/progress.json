@@ -39,7 +39,7 @@
     "catalog96": {
       "status": "running",
       "expected": 96,
-      "completed": 48,
+      "completed": 72,
       "started_utc": "2026-11-08T21:02:34.882146+00:00"
     }
   }
