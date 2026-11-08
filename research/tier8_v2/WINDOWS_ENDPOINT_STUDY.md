@@ -168,9 +168,18 @@ comparison. The replay supports a recurring endpoint failure
 mechanism. Even an answer-key oracle found the correct endpoint
 in at most 11/96 per arm, leaving most failures outside the reach
 of any prefix selector. This is a retrospective analysis and
-the fixed rule still needs an independently frozen replication.
+the first-step rule is sensitive to cohort composition.
+
+On the earlier, report-disjoint 24-case precision ledger,
+20 Q4 and seven Q8 programs contained unused operations
+(13 Q4-only, zero Q8-only, seven both). The structural
+contrast recurred. First-step selection reduced the official
+scores from 3/24 to 1/24 and 5/24 to 1/24. The prefix oracle
+recovered no wrong final in either arm. This rules out a
+cohort-independent benefit from taking the first operation.
 
 Reproduce with `scripts/tier8_windows_endpoint_structure.py` on
 the frozen FinQA cohort and both archived ledgers. The case-level
 results are in
-`evidence/windows-extended/finqa96-endpoint-structure.json`.
+`evidence/windows-extended/finqa96-endpoint-structure.json` and
+`evidence/windows-precision-study/endpoint-structure.json`.
