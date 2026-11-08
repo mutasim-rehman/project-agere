@@ -53,3 +53,16 @@ two of the same reports. The annotated execution oracle across
 the two intervention outputs could answer five distinct reports
 out of 16, including one reference-flagged case. A deployment
 policy has no access to the oracle.
+
+## Cross-study failure diagnosis
+
+We replayed 100 saved draft records across five Windows
+comparisons, including repeated questions and repeated controls.
+An answer-key search found 15 wrong final drafts with an earlier
+exactly correct endpoint. It found zero wrong final drafts on
+percentage questions that could be made correct by multiplying or
+dividing the final result by 100 alone. This separates the observed
+endpoint problem from a simple final percent-conversion problem
+on these specific drafts. It does not imply that units are
+unimportant or that the draft records are independent observations.
+The original scores remain unchanged.
