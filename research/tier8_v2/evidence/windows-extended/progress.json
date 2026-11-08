@@ -35,6 +35,12 @@
       "finished_utc": "2026-11-08T21:02:28.243194+00:00",
       "summary": "precision96-summary.json",
       "cases": "precision96-cases.jsonl"
+    },
+    "catalog96": {
+      "status": "running",
+      "expected": 96,
+      "completed": 0,
+      "started_utc": "2026-11-08T21:02:34.882146+00:00"
     }
   }
 }
