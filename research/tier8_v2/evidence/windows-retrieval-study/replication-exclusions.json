@@ -1,0 +1,20 @@
+{
+  "exclusions": {
+    "research\\tier8_v2\\evidence\\windows-verifier-challenge\\cohort.jsonl": "2b6893f736dc51881bfefe2ea5134d4ff9ff6ac6dc4aa330256e0b4d0a2d2651",
+    "research\\tier8_v2\\evidence\\windows-reject-challenge\\cohort.jsonl": "f8878be4cf758be8da78eaac5e2fa34cafa1513a849fdba6961a29cc088be3ab",
+    "research\\tier8_v2\\evidence\\windows-natural-pairs\\cohort.jsonl": "eb0181eab853f0f4089334937e557462b0b6d61e41dfdddc96ec264e9844b8a1",
+    "research\\tier8_v2\\evidence\\windows-adapter-pilot\\cohort.jsonl": "71f2ff428ca6ee0ec6216312436faa504f536d546e291e392e53de8e8f5e016c",
+    "research\\tier8_v2\\evidence\\windows-capacity-pilot\\cohort.jsonl": "4b66b085ef95bd1e12e12f4a6b79c232a4b1ca6a3a9f778f9bbaded934a4b98d",
+    "research\\tier8_v2\\evidence\\windows-precision-study\\cohort.jsonl": "3a21930ab6502f5ddedee95793fe19a13d025e59eb7c49ff6545f09d124abfbf",
+    "research\\tier8_v2\\evidence\\windows-endpoint-study\\planned-length-cohort.jsonl": "09db944d5e793bfca0096c80d465d3070c058645649746b2c9d08b0df4584d01",
+    "research\\tier8_v2\\data\\finqa-cell-adaptation-train-02.jsonl": "ead20119e8557351e89b710bd20020a391ef2323f840dcb4ad9d4e3472c5865c",
+    "research\\tier8_v2\\data\\finqa-cell-adaptation-validation-02.jsonl": "9a59ba53a5d33c3296518abec942410f5e7aa58ca4966f614c42cfa5781ea3cd",
+    "research\\tier8_v2\\data\\finqa-development-public.jsonl": "5af58829000ea79291186ac8f2ef46a3d9b29846cd36aef164935ee78cca7a2e",
+    "H:\\AGERE\\datasets\\tier8_v2_continuation\\matched_01\\common_mas_actor\\examples.jsonl": "3fe70b688364884e95e8ade2b42072295ce53e86748f6518247ba8c3194bebb7",
+    "H:\\AGERE\\datasets\\tier8_v2_finqa\\dev_report100_01\\public.jsonl": "179237919324e7a31edb891d442a6e0e65dceb648b2ffb109dd901274874d3a8",
+    "H:\\AGERE\\datasets\\lab_tiers\\finance_reports_v1\\public.jsonl": "9611c2f650983b9cd8d04823824cbf1999d6bbb00fea9cea3c9894875cb9bf59",
+    "H:\\AGERE\\datasets\\tier8_v2_natural\\natural_reports62_01\\fitting-public.jsonl": "ef4200d887cc4078ae9ed2f84de07224d3be76181637371180e51bf00b34aa6d",
+    "H:\\AGERE\\datasets\\tier8_v2_natural\\natural_reports62_01\\model_selection-public.jsonl": "16ce1948a5238c5b36a14d1ecdc89e1395319f734a2da4523e64dccfce808437",
+    "H:\\AGERE\\datasets\\tier8_v2_natural\\natural_reports62_01\\diagnostic_audit-public.jsonl": "523a57b9d185a5f827fc68031677f46fe3a0075a84914f031d6cb2b11296990b"
+  }
+}

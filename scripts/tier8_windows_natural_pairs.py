@@ -23,6 +23,15 @@ def freeze(args):
                 for row in json.loads(path.read_text(encoding="utf-8"))}
     for path in args.exclude_cohort:
         excluded.update(row["report_group"] for row in jsonl(path))
+    for path in args.exclude_records:
+        for row in jsonl(path):
+            group = row.get("report_group")
+            if group is None:
+                identity = row.get("id") or row.get("case_id")
+                if not identity or "/" not in identity:
+                    raise ValueError(f"Cannot identify FinQA report in {path}")
+                group = report_group(identity)
+            excluded.add(group)
     source = json.loads(args.source.read_text(encoding="utf-8"))
     source.sort(key=lambda row: hashlib.sha256(("windows-natural-v1|" + row["id"]).encode()).digest())
     selected = []
@@ -266,6 +275,7 @@ if __name__ == "__main__":
         build.add_argument(f"--{name}", type=Path, required=True)
     build.add_argument("--exclude", type=Path, action="append", required=True)
     build.add_argument("--exclude-cohort", type=Path, action="append", required=True)
+    build.add_argument("--exclude-records", type=Path, action="append", default=[])
     build.add_argument("--count", type=int, default=6)
     build.set_defaults(run=freeze)
     inference = commands.add_parser("run")

@@ -91,3 +91,26 @@ Peak sampled RSS was 2.52 GB in both arms and peak job commit
 was 2.93 GB. Median drafting elapsed time rose from 19.8 s
 to 25.0 s. The paired signal warrants a larger frozen-cohort
 replication. The 16 GB tier remains gated.
+
+## Frozen replication
+
+We found 21 eligible additional test reports after excluding all
+previous Windows FinQA cohorts and the archived actual inputs to
+adapter fitting, adapter validation, prior 8 GB evaluations and
+the 16 GB evaluation. The exclusions are listed with hashes in
+`replication-exclusions.json`. Unlike the first pilot, this
+selection excludes recorded development inputs rather than every
+company-year in the public development-source archive. The
+cohort therefore tests transfer beyond recorded project exposure,
+without making a claim about pretraining or every development
+artifact.
+
+Use all 21 with one question per report in the fixed hash order.
+Keep both arms and the primary official execution metric identical
+to the 16-report retrieval comparison. No template, observed outcome
+or annotation can affect inclusion. The paired gains/losses and
+exact two-sided McNemar result are evaluated separately from the
+first pilot. The narrow and expanded evidence manifests are
+archived before inference, with SHA-256 values
+`e69c0a16d9fd602a853c0e5a91ebb0b694bce8f49b7860adfa81382cb8905e39`
+and `62a4ccf71a96caf0937019877d33b6dfe9b5adca8bd32ee75241634e4c50aecb`.
