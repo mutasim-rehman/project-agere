@@ -123,6 +123,7 @@ def summarize(args):
     totals = {arm: {"official": Counter(), "reported": Counter()}
               for arm in ("accept_executable", *conditions)}
     details = []
+    direct_reported = Counter()
     for row in rows:
         case = row["case_id"]
         candidate = cohort[case]["candidate"]
@@ -135,7 +136,19 @@ def summarize(args):
             official = False
         reported = evaluate_financial(annotation, program, execution)["case_success"]
         verdicts = {arm: data["verdict"] for arm, data in row["arms"].items()}
-        details.append(dict(case_id=case, official=official, reported=reported, verdicts=verdicts))
+        detail = dict(case_id=case, official=official, reported=reported, verdicts=verdicts)
+        if "independent" in row["arms"]:
+            direct = row["arms"]["independent"].get("direct") or {}
+            value, unit = direct.get("answer"), direct.get("unit")
+            valid = type(value) in (int, float) and unit in ("number", "percent", "fraction")
+            direct_reported["valid"] += valid
+            direct_correct = valid and evaluate_financial(
+                annotation, {"decision": "ANSWER", "answer_unit": unit},
+                {"value": str(value), "issues": []})["case_success"]
+            direct_reported["correct"] += direct_correct
+            direct_reported["both_candidate_and_direct_correct"] += direct_correct and reported
+            detail["direct_reported_correct"] = direct_correct
+        details.append(detail)
         for arm, accepted in {"accept_executable": executable,
                               **{k: executable and v == "PASS" for k, v in verdicts.items()}}.items():
             for metric, correct in (("official", official), ("reported", reported)):
@@ -155,7 +168,10 @@ def summarize(args):
             peak_sampled_rss=max((event["peak_sampled_rss"] for event in events), default=0),
             peak_job_commit=max(commits, default=None),
             median_seconds=median(event["elapsed_seconds"] for event in events) if events else None)
-    print(json.dumps(dict(reports=len(rows), totals=totals, resources=resources, cases=details), indent=2))
+    result = dict(reports=len(rows), totals=totals, resources=resources, cases=details)
+    if direct_reported:
+        result["direct_solver_alone_reported"] = direct_reported
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":

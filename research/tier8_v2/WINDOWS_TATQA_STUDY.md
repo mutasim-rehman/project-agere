@@ -71,3 +71,12 @@ The frozen capacity cohort SHA-256 is
 Use `freeze --count 40 --exclude-cohort` with the 16-case cohort,
 then `run --larger-direct qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf`.
 The same summary route reports the paired exact-match transitions.
+
+The completed 40-context run scored 5/40 for 3B and 6/40 for
+7B. Four questions were correct only with 3B and five only
+with 7B. The observed gain was one answer, with median time
+rising from 14.2 to 34.8 seconds and peak worker commit from
+2.76 to 5.43 GB. Supplying the gold scale in a separate
+diagnostic recovered five wrong 3B predictions and one wrong
+7B prediction. This comparison provides no clear accuracy
+advantage for the larger direct model.

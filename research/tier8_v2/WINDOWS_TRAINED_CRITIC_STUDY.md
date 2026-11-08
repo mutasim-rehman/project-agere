@@ -106,3 +106,14 @@ Run the same matched critics and report both metrics. This
 tests transfer to different reports and the narrow recipe,
 so a change in coverage may reflect candidate mix as well as
 review behavior.
+
+## Independent recomputation results
+
+The 7B independent solver produced 16 valid numbers and scored
+4/16 under reported-answer scoring when assessed on its own.
+The cited candidate matched the reported answer on one of the
+same questions. On that overlap, the candidate gave a fraction
+of 0.0174137 and the independent solver gave 1.75 percent. Both
+matched the reported label but differed beyond the frozen
+agreement tolerance. The agreement gate withheld all 16.
+Median time was 37.8 seconds and peak worker commit was 5.43 GB.
