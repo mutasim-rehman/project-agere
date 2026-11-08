@@ -57,3 +57,31 @@ common actor adapter and the frozen cohort. Score with `summarize`
 and supply the cohort to require all case IDs. The first condition is
 unrestricted adapted drafting and the second is planned-length
 adapted drafting. Both use the native Windows sampled 6.4 GB guard.
+
+### Completed count planning run
+
+All 32 drafts executed. The control produced one correct final
+program out of 16 by official execution scoring. Planned length
+produced three. The paired transitions were three recoveries,
+one regression and twelve ties. The gain was 12.5 percentage
+points on this cohort, with an exact two-sided McNemar p-value
+of 0.625. The secondary reported-answer metric counted zero
+correct control programs and three correct planned programs.
+The sole correct control program under official execution
+failed reported-answer scoring.
+
+The planner returned a usable count for all cases and all drafts
+matched the specified count. Three predictions matched the number
+of annotated operations, eleven were longer, and two were shorter.
+Alternative valid programs can have a different length. The
+intervention did not shorten programs on average by the median:
+2.5 operations in control versus 3.0 in planned. This run supports
+a local benefit from constraining topology before generation.
+It does not show that the gain came from reducing extra operations.
+
+Median time including loading and the planning call was 33.6 seconds
+versus 23.1 seconds for unrestricted drafting. Both peaked at
+about 2.52 GB sampled RSS. Some offline audits ran concurrently,
+so elapsed time is descriptive rather than a controlled CPU
+benchmark. No delivery gate was evaluated and the 16 GB tier
+remains gated.

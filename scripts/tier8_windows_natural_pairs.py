@@ -4,6 +4,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import re
 from statistics import median
 
 from evidence_atoms import atom_catalog, compile_plan, reference_schema
@@ -207,6 +208,7 @@ def summarize(args):
                 except ValueError:
                     continue
         result["cases"].append(dict(case_id=row["case_id"], official=official, reported=reported,
+                                    annotated_steps=len(re.findall(r"\b[a-z_]+\(", annotation["qa"]["program"])),
                                     planned_steps=[draft.get("planned_steps") for draft in row["drafts"]],
                                     duplicate_program=equivalent, selected_indices=indices,
                                     delivered=delivered, complete_annotated_evidence=complete_evidence,
