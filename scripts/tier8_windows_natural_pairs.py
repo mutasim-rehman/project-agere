@@ -84,6 +84,8 @@ def run(args):
         raise ValueError("Length planning requires the adapter and excludes capacity control")
     if args.retrieval_cohort and (not args.adapter or args.capacity_control or args.planned_length):
         raise ValueError("Retrieval comparison requires an adapter and no other intervention")
+    if args.preserve_base_catalog and not args.retrieval_cohort:
+        raise ValueError("A fixed base catalog requires paired retrieval evidence")
     if args.precision_control and (args.adapter or args.capacity_control or args.planned_length
                                    or args.retrieval_cohort or args.complete_catalog):
         raise ValueError("Matched precision comparison uses only its two base checkpoints")
@@ -124,7 +126,9 @@ def run(args):
                 evidence = current["evidence"]
                 context = ("Question: " + case["question"] + "\nFinancial report evidence by source ID:\n"
                            + json.dumps(evidence))
-                atoms = expanded_catalog(evidence) if args.complete_catalog and index == 1 else atom_catalog(evidence)
+                catalog_evidence = case["evidence"] if args.preserve_base_catalog else evidence
+                atoms = (expanded_catalog(catalog_evidence) if args.complete_catalog and index == 1
+                         else atom_catalog(catalog_evidence))
                 units = question_units(case["question"], "question")
                 catalog = "\n".join(f"{key}={atom['value']}@{atom['span_id']}" for key, atom in atoms.items())
                 prompt = (context + "\nQuantity references:\n" + catalog
@@ -338,6 +342,8 @@ if __name__ == "__main__":
                            help="Compare adapted drafting with and without a separate length prediction")
     inference.add_argument("--retrieval-cohort", type=Path,
                            help="Compare the same adapted drafter under alternate evidence packets")
+    inference.add_argument("--preserve-base-catalog", action="store_true",
+                           help="Keep the baseline quantity IDs and grammar in both retrieval arms")
     inference.add_argument("--precision-control", type=Path, nargs=2,
                            help="Compare two GGUF quantizations of the same base checkpoint")
     inference.add_argument("--job-commit-limit", type=int)

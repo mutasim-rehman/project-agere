@@ -128,3 +128,21 @@ independent pairs and fixed transition probabilities, not
 estimates of the actual effect or an assumption that
 company-year reports are always independent. The calculations
 are archived in `prospective-power.json`.
+
+## Evidence versus catalog mechanism
+
+A backward slice from the final result found that none of the
+three recovered programs used any newly appended source span.
+In fact, none of the 16 widened-arm final programs depended on
+an appended span. The additional context can still affect the
+model's selection of original operands. Widening also expands
+the selectable quantity catalog and thus changes grammar options.
+
+To separate those possibilities, use the shared 16-report pilot
+and compare narrow versus wide source text with the narrow
+quantity catalog and grammar fixed. Run the same paired retrieval
+command with `--preserve-base-catalog`. The widened text is
+still visible to the model, but all executable source IDs come
+from the narrow packet. This is a retrospective mechanism
+follow-up on the initial pilot, to be interpreted separately
+from the 21-report replication.
