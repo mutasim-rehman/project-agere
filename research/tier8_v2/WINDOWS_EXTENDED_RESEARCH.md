@@ -92,3 +92,22 @@ fit for a short inference probe under the shared 6.1 GB job.
 It does not measure sustained workload memory, paging, or
 end-to-end accuracy. The raw samples and summary are in the
 extended evidence directory.
+
+## Resident workload follow-up
+
+Use the same 21 frozen narrow-evidence reports as the critic
+transfer replay, but generate and review each candidate while
+both adapted roles remain resident. This checks sustained
+resource feasibility and end-to-end delivery. Both local
+workers use one 4,096-token slot, CPU only, a shared 6.1 GB
+job limit and sampled 6.4 GB guard. The JSON-constrained chat
+endpoint records actual completion tokens, prompt tokens,
+and elapsed time per stage.
+
+Use `tier8_windows_resident_probe.py --cohort` and score the
+ledger only if the frozen cohort and resource trace complete.
+The earlier Windows CLI replay uses a different prompting
+entry point and frozen candidates. Any accuracy difference
+between it and this run combines prompt/runtime and drafting
+differences with residency. This is a workload preflight,
+not a matched residency-only causal comparison.

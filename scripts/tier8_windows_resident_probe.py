@@ -11,7 +11,8 @@ import time
 
 import psutil
 
-from tier8_windows_pilot import CAP
+from tier8_v2_financial_pipeline import run_financial
+from tier8_windows_pilot import CAP, jsonl
 from windows_job_commit import CREATE_SUSPENDED, JobCommitLimit
 
 
@@ -39,6 +40,56 @@ def stop_worker(worker):
     if worker.poll() is None:
         worker.terminate()
     worker.wait(timeout=20)
+
+
+class ResidentModels:
+    def __init__(self, ports):
+        self.ports = dict(zip(("drafter", "verifier"), ports))
+
+    def call(self, role, content, schema, budget, limit, stage):
+        if stage == "program":
+            schema = schema["oneOf"][0]
+            for length in schema["properties"]["steps"]["oneOf"]:
+                length.pop("items")
+            content = content.replace("ANSWER or INSUFFICIENT", "ANSWER").replace(
+                "If necessary evidence is missing, use INSUFFICIENT and empty steps.",
+                "Attempt the best supported program using the available evidence.")
+        allowance = budget.allowance(limit)
+        started = time.monotonic()
+        status, response = request(self.ports[role], "/v1/chat/completions", {
+            "messages": [{"role": "user", "content": content}],
+            "temperature": 0, "seed": 42, "cache_prompt": False, "max_tokens": allowance,
+            "response_format": {"type": "json_object", "schema": schema}}, timeout=300)
+        if status != 200 or not response.get("choices"):
+            raise RuntimeError(f"Resident {stage} returned HTTP {status}: {response.get('error')}")
+        usage = response["usage"]
+        budget.charge(usage["completion_tokens"])
+        choice = response["choices"][0]
+        raw = choice["message"]["content"]
+        try:
+            parsed = json.loads(raw)
+        except (ValueError, TypeError):
+            parsed = None
+        return parsed, dict(role=role, stage=stage, raw=raw, token_ceiling=allowance,
+                            generated_tokens=usage["completion_tokens"],
+                            prompt_tokens=usage["prompt_tokens"], finish_reason=choice["finish_reason"],
+                            elapsed_seconds=time.monotonic() - started)
+
+
+def workload(cohort, out, ports, workers, breached):
+    rows = jsonl(cohort)
+    if not rows or len({row["id"] for row in rows}) != len(rows):
+        raise ValueError("Expected unique, frozen cohort IDs")
+    model = ResidentModels(ports)
+    for public in rows:
+        if breached.is_set() or any(worker.poll() is not None for worker in workers):
+            raise RuntimeError("Resident worker exited before completion")
+        result = run_financial(public, model, "mas", "none", representation="reference",
+                               unit_mode="question", selector="none", causal_mode="grammar",
+                               catalog_style="compact", critic_protocol="binary")
+        out.write(json.dumps(result) + "\n")
+        out.flush()
+        print(public["id"], result["delivered"], result["tokens"], flush=True)
 
 
 def run(args):
@@ -112,6 +163,9 @@ def run(args):
                 if status != 200 or not response.get("choices") or any(p.poll() is not None for p in workers):
                     raise RuntimeError(f"Resident inference returned HTTP {status}")
                 state["responses"].append(response["choices"][0]["message"]["content"])
+            if args.cohort:
+                with (args.output / "cases.jsonl").open("x", encoding="utf-8") as ledger:
+                    workload(args.cohort, ledger, ports, workers, breached)
             state["status"] = "completed"
         except (RuntimeError, OSError, ValueError) as exc:
             state.update(status="failed", error=str(exc))
@@ -134,4 +188,6 @@ if __name__ == "__main__":
     parser.add_argument("--adapter", type=Path, nargs=2, default=(None, None))
     parser.add_argument("--commit-limit", type=int, default=6_100_000_000)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--cohort", type=Path,
+                        help="Run a frozen FinQA cohort with both adapted roles resident")
     run(parser.parse_args())
