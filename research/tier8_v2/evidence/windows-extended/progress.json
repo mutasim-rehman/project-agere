@@ -15,6 +15,12 @@
       "started_utc": "2026-11-08T19:25:42.994260+00:00",
       "exit_code": 0,
       "finished_utc": "2026-11-08T19:25:55.953787+00:00"
+    },
+    "critic-transfer": {
+      "status": "running",
+      "expected": 21,
+      "completed": 0,
+      "started_utc": "2026-11-08T19:26:00.088121+00:00"
     }
   }
 }
