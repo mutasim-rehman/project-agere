@@ -89,9 +89,8 @@ def run(args):
     if args.precision_control and (args.adapter or args.capacity_control or args.planned_length
                                    or args.retrieval_cohort or args.complete_catalog):
         raise ValueError("Matched precision comparison uses only its two base checkpoints")
-    if args.complete_catalog and (not args.adapter or args.capacity_control or args.planned_length
-                                  or args.retrieval_cohort):
-        raise ValueError("Catalog comparison requires an adapter and no other intervention")
+    if args.complete_catalog and (args.capacity_control or args.planned_length or args.retrieval_cohort):
+        raise ValueError("Catalog comparison excludes other interventions")
     if args.oracle_lengths and (not args.adapter or args.capacity_control or args.planned_length
                                 or args.retrieval_cohort or args.precision_control or args.complete_catalog):
         raise ValueError("Oracle-length diagnostic requires only the adapted model")
@@ -115,7 +114,7 @@ def run(args):
             drafts = [None, None]
             shortest = ("Use the shortest calculation that fully answers the question."
                         " Stop once the requested quantity is computed.")
-            matched = args.adapter or args.precision_control
+            matched = args.adapter or args.precision_control or args.complete_catalog
             instructions = (shortest, shortest) if matched else (
                 "Check that the final operation answers the exact question.", shortest)
             order = (1, 0) if matched and case_index % 2 else (0, 1)
