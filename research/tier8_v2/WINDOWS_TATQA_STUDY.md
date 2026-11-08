@@ -33,3 +33,36 @@ The source dataset is CC BY 4.0. [Dataset card](https://huggingface.co/datasets/
 Use `scripts/tier8_windows_tatqa.py freeze`, `run` and
 `summarize`. The official evaluator requires SciPy, pandas and NumPy.
 The scorer's gold self-match was tested separately before inference.
+
+## Completed format comparison
+
+Both arms returned valid numeric predictions on all 16 questions.
+Both achieved exact match and arithmetic F1 of 1/16 (6.25%).
+Their only correct answers were on different questions. The
+program format therefore demonstrated no net accuracy gain in
+this pilot. It used 13,587 prompt-evaluation tokens and 2,018
+decode evaluations across the cohort, versus 8,105 and 790 for
+direct output. Decode evaluations are runtime counters and do
+not equal the reserved generation ceilings.
+
+Median time including model load was 19.2 seconds for programs
+and 10.2 seconds for direct output. Peak sampled working-set
+RSS was 2.46 GB in both arms and peak job commit was 2.77 GB.
+
+## Frozen direct capacity comparison
+
+The next TAT-QA comparison uses 40 additional table contexts
+selected by the same hash and arithmetic-tag rule, excluding
+all 16 previous table IDs. The 3B and 7B Q4 checkpoints both
+use the same direct numeric prompt, evidence packet, scale schema,
+runtime and limits. The 7B checkpoint is the two-shard model
+documented in [the FinQA capacity pilot](WINDOWS_DRAFTER_CAPACITY_PILOT.md).
+No adapters are used. This tests capacity at a fixed output
+format on a second benchmark, with size and checkpoint differing.
+The primary outcome is official exact match over all 40 questions.
+
+The frozen capacity cohort SHA-256 is
+`8091b5c09698c60d0e1c842ac9b593de53e582055243b79f1255fd90b9462d6d`.
+Use `freeze --count 40 --exclude-cohort` with the 16-case cohort,
+then `run --larger-direct qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf`.
+The same summary route reports the paired exact-match transitions.

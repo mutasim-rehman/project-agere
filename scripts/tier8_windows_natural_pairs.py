@@ -3,6 +3,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+from math import comb
 from pathlib import Path
 import re
 from statistics import median
@@ -264,6 +265,14 @@ def summarize(args):
             peak_job_commit=max(commit_peaks, default=None),
             prompt_eval_tokens=sum(prompt_tokens) if len(prompt_tokens) == len(events) else None,
             decode_eval_runs=sum(decode_runs) if len(decode_runs) == len(events) else None))
+    for metric in ("official", "reported"):
+        stats = result[metric]
+        gains = stats["second_only_correct"]
+        losses = stats["first_only_correct"]
+        discordant = gains + losses
+        stats["paired_accuracy_delta"] = (gains - losses) / len(rows)
+        stats["exact_mcnemar_p"] = min(1, 2 * sum(
+            comb(discordant, i) for i in range(min(gains, losses) + 1)) / 2 ** discordant)
     print(json.dumps(result, indent=2))
 
 

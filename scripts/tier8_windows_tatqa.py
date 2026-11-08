@@ -6,6 +6,7 @@ import hashlib
 import importlib
 import json
 from pathlib import Path
+from statistics import median
 import sys
 
 from evidence_atoms import atom_catalog, compile_plan, reference_schema
@@ -23,7 +24,8 @@ def freeze(args):
     ranked = sorted(((context, question) for context in source for question in context["questions"]
                      if question["answer_type"] == "arithmetic"),
                     key=lambda item: hashlib.sha256(("agere-tatqa-v1|" + item[1]["uid"]).encode()).digest())
-    rows, seen = [], set()
+    rows = []
+    seen = {row["table_id"] for path in args.exclude_cohort for row in jsonl(path)}
     for context, question in ranked:
         table = context["table"]
         if table["uid"] in seen:
@@ -66,6 +68,7 @@ def run(args):
     direct_schema = {"type": "object", "properties": {"calculation": {"type": "string"},
         "answer": {"type": "number"}, "scale": {"enum": list(SCALES)}},
         "required": ["calculation", "answer", "scale"], "additionalProperties": False}
+    conditions = ("direct", "direct_large") if args.larger_direct else ("direct", "program")
     with (args.output / "cases.jsonl").open("x", encoding="utf-8") as out:
         for index, row in enumerate(cohort):
             evidence = row["evidence"]
@@ -75,9 +78,10 @@ def run(args):
                                  " or empty for an unscaled number. A percent is in percentage points.")
             atoms = atom_catalog(evidence)
             arms = {}
-            for arm in (("direct", "program") if index % 2 == 0 else ("program", "direct")):
+            for arm in (conditions if index % 2 == 0 else conditions[::-1]):
                 budget = TokenLedger()
-                if arm == "direct":
+                model.drafter_weights = args.larger_direct if arm == "direct_large" else None
+                if arm in ("direct", "direct_large"):
                     prompt = (context + "\nCompute the answer using the evidence. State the arithmetic briefly"
                               " in calculation, then return a numeric answer and scale. " + scale_instruction)
                     raw, event = model.call("drafter", prompt, direct_schema, budget, 768, "direct")
@@ -113,7 +117,11 @@ def summarize(args):
     ids = {row["id"] for row in jsonl(args.cohort)}
     if len(rows) != len(ids) or {row["case_id"] for row in rows} != ids:
         raise ValueError("Case ledger differs from the frozen TAT-QA cohort")
-    result = {"questions": len(rows), "direct": Counter(), "program": Counter(), "cases": []}
+    second = "direct_large" if "direct_large" in rows[0]["arms"] else "program"
+    conditions = ("direct", second)
+    if any(set(row["arms"]) != set(conditions) for row in rows):
+        raise ValueError("Inconsistent conditions across TAT-QA cases")
+    result = {"questions": len(rows), **{arm: Counter() for arm in conditions}, "cases": []}
     for row in rows:
         annotation = gold[row["case_id"]]
         labels = {}
@@ -129,6 +137,19 @@ def summarize(args):
             result[arm]["peak_sampled_rss"] = max(result[arm]["peak_sampled_rss"],
                                                   output["event"]["peak_sampled_rss"])
         result["cases"].append(dict(case_id=row["case_id"], exact=labels))
+    result["direct_only_correct"] = sum(row["exact"]["direct"] and not row["exact"][second]
+                                        for row in result["cases"])
+    result[f"{second}_only_correct"] = sum(row["exact"][second] and not row["exact"]["direct"]
+                                           for row in result["cases"])
+    for arm in conditions:
+        events = [row["arms"][arm]["event"] for row in rows]
+        result[arm]["exact_rate"] = result[arm]["exact"] / len(rows)
+        result[arm]["f1_mean"] = result[arm]["f1"] / len(rows)
+        result[arm]["median_seconds"] = median(event["elapsed_seconds"] for event in events)
+        result[arm]["peak_job_commit"] = max((event["peak_job_commit"] for event in events
+                                              if event.get("peak_job_commit") is not None), default=None)
+        result[arm]["prompt_eval_tokens"] = sum(event.get("prompt_eval_tokens") or 0 for event in events)
+        result[arm]["decode_eval_runs"] = sum(event.get("decode_eval_runs") or 0 for event in events)
     print(json.dumps(result, indent=2))
 
 
@@ -139,11 +160,13 @@ if __name__ == "__main__":
     for name in ("source", "output"):
         build.add_argument(f"--{name}", type=Path, required=True)
     build.add_argument("--count", type=int, default=16)
+    build.add_argument("--exclude-cohort", type=Path, action="append", default=[])
     build.set_defaults(run=freeze)
     inference = commands.add_parser("run")
     for name in ("cli", "weights", "cohort", "output"):
         inference.add_argument(f"--{name}", type=Path, required=True)
     inference.add_argument("--job-commit-limit", type=int)
+    inference.add_argument("--larger-direct", help="Compare direct drafting with a larger GGUF")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("source", "cohort", "ledger", "metric-directory"):
