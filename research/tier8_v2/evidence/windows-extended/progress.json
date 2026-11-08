@@ -11,8 +11,10 @@
       "gold_informed": true
     },
     "resident-role-preflight": {
-      "status": "running",
-      "started_utc": "2026-11-08T19:25:42.994260+00:00"
+      "status": "complete",
+      "started_utc": "2026-11-08T19:25:42.994260+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T19:25:55.953787+00:00"
     }
   }
 }
