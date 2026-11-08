@@ -130,3 +130,47 @@ Use `run --oracle-lengths` with the same frozen cohort, adapter
 and a 6.1 GB worker commit limit. Compare paired outcomes with
 unrestricted drafting and report the previous predicted-count
 result separately.
+
+## Endpoint structure on the 96-report runs
+
+We replayed the existing first-executable-step baseline and an
+answer-key prefix oracle on both 96-report FinQA ledgers. The
+first-step rule always keeps the first operation of an executable
+program and preserves its declared unit. The oracle can select any
+executable prefix including the full program. The audit re-executes
+all prefixes with their original source packet. Neither arm
+requires another model call.
+
+In the matched precision comparison, 67 Q4 and 14 Q8 programs
+contained at least one operation outside the final answer's
+dependency graph. On paired reports, 56 had unused work only in Q4,
+three only in Q8, and eleven in both. The same outputs tied at
+2/96 on final official execution. Backward slicing preserved the
+execution result of every executable draft. After slicing, two
+programs per arm matched the symbolic reference.
+
+The first-step rule raised Q4's official matches from 2/96 to
+8/96 (eight gains, two losses) and Q8's from 2/96 to 6/96
+(six gains, two losses). Reported-answer scores went from
+2/96 to 7/96 and 2/96 to 3/96 respectively. The oracle reached
+11/96 for Q4 and 8/96 for Q8. Six wrong finals per arm depended
+on an earlier exact-matching prefix. Three wrong Q4 finals also
+had a matching prefix outside the final dependency graph. Thus
+unused work and continuing past a correct intermediate are
+separable failure modes. Removing unused steps leaves the final
+number unchanged, while selecting an earlier endpoint changes it.
+
+The original and expanded catalog drafts contained unused
+operations on 73 and 78 reports. Their first-step official scores
+were 5/96 and 6/96, versus 2/96 and 1/96 at the final endpoints.
+These two drafting recipes share reports with the precision
+comparison. The replay supports a recurring endpoint failure
+mechanism. Even an answer-key oracle found the correct endpoint
+in at most 11/96 per arm, leaving most failures outside the reach
+of any prefix selector. This is a retrospective analysis and
+the fixed rule still needs an independently frozen replication.
+
+Reproduce with `scripts/tier8_windows_endpoint_structure.py` on
+the frozen FinQA cohort and both archived ledgers. The case-level
+results are in
+`evidence/windows-extended/finqa96-endpoint-structure.json`.
