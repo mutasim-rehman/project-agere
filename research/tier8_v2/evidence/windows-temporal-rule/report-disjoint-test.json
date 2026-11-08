@@ -1,0 +1,161 @@
+{
+  "source_sha256": "831dbfb2e785dbc227f895ce3f24046433467aec67b09db2bd6ac7692a8a30dc",
+  "questions": 453,
+  "reports": 117,
+  "questions_excluded": 694,
+  "delivered": 3,
+  "withheld": 450,
+  "official_correct": 0,
+  "reported_correct": 0,
+  "delivered_reports": 3,
+  "withholding_reasons": {
+    "outside_template": 408,
+    "ambiguous_or_missing_row": 31,
+    "requested_scale_not_explicit": 5,
+    "ambiguous_or_missing_year": 4,
+    "nonnumeric_cell": 2
+  },
+  "records": [
+    {
+      "case_id": "SNA/2007/page_49.pdf-4",
+      "program": {
+        "decision": "ANSWER",
+        "answer_unit": "fraction",
+        "steps": [
+          {
+            "op": "subtract",
+            "left": {
+              "value": "1.11",
+              "span_id": "table_1"
+            },
+            "right": {
+              "value": "1.08",
+              "span_id": "table_1"
+            }
+          },
+          {
+            "op": "divide",
+            "left": {
+              "value": "#0",
+              "span_id": "STEP#0"
+            },
+            "right": {
+              "value": "1.08",
+              "span_id": "table_1"
+            }
+          }
+        ]
+      },
+      "execution": {
+        "value": "0.02777777777777777777777777778",
+        "issues": [],
+        "nodes": [
+          {
+            "step": 0,
+            "value": "0.03",
+            "source_spans": [
+              "table_1"
+            ]
+          },
+          {
+            "step": 1,
+            "value": "0.02777777777777777777777777778",
+            "source_spans": [
+              "table_1"
+            ]
+          }
+        ]
+      },
+      "official": false,
+      "reported": false
+    },
+    {
+      "case_id": "ZBH/2007/page_67.pdf-1",
+      "program": {
+        "decision": "ANSWER",
+        "answer_unit": "fraction",
+        "steps": [
+          {
+            "op": "subtract",
+            "left": {
+              "value": "1.0",
+              "span_id": "table_2"
+            },
+            "right": {
+              "value": "8.8",
+              "span_id": "table_2"
+            }
+          },
+          {
+            "op": "divide",
+            "left": {
+              "value": "#0",
+              "span_id": "STEP#0"
+            },
+            "right": {
+              "value": "8.8",
+              "span_id": "table_2"
+            }
+          }
+        ]
+      },
+      "execution": {
+        "value": "-0.8863636363636363636363636364",
+        "issues": [],
+        "nodes": [
+          {
+            "step": 0,
+            "value": "-7.8",
+            "source_spans": [
+              "table_2"
+            ]
+          },
+          {
+            "step": 1,
+            "value": "-0.8863636363636363636363636364",
+            "source_spans": [
+              "table_2"
+            ]
+          }
+        ]
+      },
+      "official": false,
+      "reported": false
+    },
+    {
+      "case_id": "ETFC/2012/page_43.pdf-3",
+      "program": {
+        "decision": "ANSWER",
+        "answer_unit": "number",
+        "steps": [
+          {
+            "op": "subtract",
+            "left": {
+              "value": "-16.9",
+              "span_id": "table_3"
+            },
+            "right": {
+              "value": "-14.9",
+              "span_id": "table_3"
+            }
+          }
+        ]
+      },
+      "execution": {
+        "value": "-2.0",
+        "issues": [],
+        "nodes": [
+          {
+            "step": 0,
+            "value": "-2.0",
+            "source_spans": [
+              "table_3"
+            ]
+          }
+        ]
+      },
+      "official": false,
+      "reported": false
+    }
+  ]
+}
