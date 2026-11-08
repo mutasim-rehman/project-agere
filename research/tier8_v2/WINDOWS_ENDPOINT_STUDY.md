@@ -85,3 +85,25 @@ about 2.52 GB sampled RSS. Some offline audits ran concurrently,
 so elapsed time is descriptive rather than a controlled CPU
 benchmark. No delivery gate was evaluated and the 16 GB tier
 remains gated.
+
+### Symbolic equivalence and unused work
+
+We applied the official FinQA symbolic comparator as a secondary
+diagnostic, normalizing numeric spellings consistently and keeping
+literal constants distinct from cited values. It agreed with the
+execution labels for the prior adapter and capacity cohorts. In
+the count study it accepted zero control programs and one planned
+program before pruning. Two planned programs repeated a correct
+division after an unused multiplication. Backward slicing from the
+final answer removes the unused calculations and raises the planned
+symbolic count to three. The official execution result was checked
+to remain unchanged for every executable program in the audit.
+
+The control's lone execution match uses a cited 100 in place of the
+reference's constant 100. It remains symbolically different after
+pruning. Conversely, the 7B capacity drafts had no unused operations,
+even though two continued past a correct intermediate result.
+Dead-operation pruning cleans up redundant work and cannot recover
+a correct intermediate value that the final output still depends on.
+The symbolic audit does not certify the source identity or semantic
+meaning of any matching expression.
