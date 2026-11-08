@@ -69,3 +69,25 @@ interpreted as committed memory successfully consumed. A separate
 7B CPU inference preflight completed under the 6.1 GB guard with
 5.42 GB reported peak commit and 5.01 GB sampled RSS. The resource
 probe does not validate the earlier sampled-only studies retroactively.
+
+## Completed candidate comparison
+
+All 32 drafts executed under the 6.1 GB job limit. Official
+execution correctness rose from 1/16 to 4/16, with three
+recoveries, zero regressions and thirteen ties. The exact
+two-sided paired McNemar p-value is 0.25. The secondary
+reported-answer count rose from 0/16 to 3/16. Candidate
+accuracy does not measure downstream delivery.
+
+Annotated evidence coverage rose from 14/16 to 15/16. All
+three recovered programs already had their annotated spans
+in the narrower packet. The one newly covered question
+remained incorrect. The data therefore do not support
+attributing the candidate gain to recovery of missing
+annotated evidence. Extra context can also change operand
+binding or decoding.
+
+Peak sampled RSS was 2.52 GB in both arms and peak job commit
+was 2.93 GB. Median drafting elapsed time rose from 19.8 s
+to 25.0 s. The paired signal warrants a larger frozen-cohort
+replication. The 16 GB tier remains gated.
