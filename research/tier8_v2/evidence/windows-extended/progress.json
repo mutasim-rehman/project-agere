@@ -47,10 +47,14 @@
       "cases": "catalog96-cases.jsonl"
     },
     "tatqa120": {
-      "status": "running",
+      "status": "complete",
       "expected": 120,
-      "completed": 96,
-      "started_utc": "2026-11-08T22:18:28.224632+00:00"
+      "completed": 120,
+      "started_utc": "2026-11-08T22:18:28.224632+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T23:55:06.384699+00:00",
+      "summary": "tatqa120-summary.json",
+      "cases": "tatqa120-cases.jsonl"
     }
   }
 }
