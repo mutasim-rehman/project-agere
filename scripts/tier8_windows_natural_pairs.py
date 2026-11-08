@@ -142,8 +142,8 @@ def summarize(args):
             official.append(correct)
         reported = [evaluate_financial(annotation, item["program"], item["execution"])["case_success"]
                     for item in candidates]
-        correct_prefix = False
-        for candidate, correct in zip(candidates, official):
+        correct_prefix_lengths = [[], []]
+        for index, (candidate, correct) in enumerate(zip(candidates, official)):
             program = candidate["program"]
             if correct or not program:
                 continue
@@ -153,14 +153,14 @@ def summarize(args):
                     continue
                 try:
                     if official_result(evaluate, annotation, prefix) == annotation["qa"]["exe_ans"]:
-                        correct_prefix = True
-                        break
+                        correct_prefix_lengths[index].append(length)
                 except ValueError:
                     continue
         result["cases"].append(dict(case_id=row["case_id"], official=official, reported=reported,
                                     duplicate_program=equivalent, selected_indices=indices,
                                     delivered=delivered, complete_annotated_evidence=complete_evidence,
-                                    correct_prefix_of_wrong_draft=correct_prefix))
+                                    correct_prefix_of_wrong_draft=any(correct_prefix_lengths),
+                                    correct_prefix_lengths=correct_prefix_lengths))
         for metric, labels in (("official", official), ("reported", reported)):
             counts = result[metric]
             counts["first_draft_correct"] += labels[0]
