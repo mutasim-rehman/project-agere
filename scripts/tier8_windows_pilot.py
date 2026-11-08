@@ -25,6 +25,7 @@ class Models:
         self.args = args
         self.forced = False
         self.calls = 0
+        self.adapter = None
 
     def call(self, role, content, schema, budget, limit, stage):
         if stage == "program":
@@ -55,6 +56,8 @@ class Models:
                "-f", str(prompt), "-jf", str(grammar), "-c", "4096", "-t", "8", "-ngl", "0",
                "--load-mode", "none", "--no-conversation", "--no-display-prompt",
                "--temp", "0", "--seed", "42", "-n", str(allowance)]
+        if self.adapter is not None and stage == "program":
+            cmd.extend(("--lora", str(self.adapter.resolve())))
         started = time.monotonic()
         peak = 0
         with prefix.with_suffix(".out").open("wb") as out, prefix.with_suffix(".log").open("wb") as log:

@@ -64,7 +64,7 @@ def run(args):
         raise ValueError("Expected six separate reports")
     args.output.mkdir(parents=True, exist_ok=False)
     with (args.output / "cases.jsonl").open("x", encoding="utf-8") as out:
-        for case in public:
+        for case_index, case in enumerate(public):
             context = ("Question: " + case["question"] + "\nFinancial report evidence by source ID:\n"
                        + json.dumps(case["evidence"]))
             atoms = atom_catalog(case["evidence"])
@@ -77,20 +77,25 @@ def run(args):
                         " Percent means percentage points and fraction means a dimensionless ratio."
                       + "\nAllowed units: " + ", ".join(units))
             budget = TokenLedger()
-            drafts = []
-            for instruction in ("Check that the final operation answers the exact question.",
-                                "Use the shortest calculation that fully answers the question."
-                                " Stop once the requested quantity is computed."):
+            drafts = [None, None]
+            shortest = ("Use the shortest calculation that fully answers the question."
+                        " Stop once the requested quantity is computed.")
+            instructions = (shortest, shortest) if args.adapter else (
+                "Check that the final operation answers the exact question.", shortest)
+            order = (1, 0) if args.adapter and case_index % 2 else (0, 1)
+            for index in order:
                 model.forced = True
-                plan, event = model.call("drafter", prompt + "\n" + instruction,
+                model.adapter = args.adapter if index == 1 else None
+                plan, event = model.call("drafter", prompt + "\n" + instructions[index],
                                          reference_schema(atoms, units, causal=True), budget, 768, "program")
                 try:
                     program = compile_plan(plan, atoms)
                 except (ValueError, TypeError, AttributeError):
                     program = None
                 execution = checked(program, case["evidence"])
-                drafts.append(dict(plan=plan, candidate=dict(program=program, execution=execution),
-                                   event=event))
+                drafts[index] = dict(plan=plan, candidate=dict(program=program, execution=execution),
+                                     adapter_applied=model.adapter is not None, event=event)
+            model.adapter = None
             executable = all(not draft["candidate"]["execution"]["issues"] for draft in drafts)
             reviews = review(model, context, drafts, budget) if executable else []
             out.write(json.dumps(dict(case_id=case["id"], drafts=drafts, reviews=reviews,
@@ -153,6 +158,8 @@ def summarize(args):
             counts = result[metric]
             counts["first_draft_correct"] += labels[0]
             counts["second_draft_correct"] += labels[1]
+            counts["first_only_correct"] += labels[0] and not labels[1]
+            counts["second_only_correct"] += labels[1] and not labels[0]
             counts["oracle_correct_available"] += any(labels)
             counts["correct_delivery"] += delivered is not None and labels[delivered]
             counts["wrong_delivery"] += delivered is not None and not labels[delivered]
@@ -178,6 +185,8 @@ if __name__ == "__main__":
     inference = commands.add_parser("run")
     for name in ("cli", "weights", "cohort", "output"):
         inference.add_argument(f"--{name}", type=Path, required=True)
+    inference.add_argument("--adapter", type=Path,
+                           help="Compare base vs. adapted under the same prompt")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):
