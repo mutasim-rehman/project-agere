@@ -11,6 +11,7 @@ import sys
 
 from evidence_atoms import atom_catalog, compile_plan, reference_schema
 from evidence_contract import TokenLedger
+from financial_review_protocol import BINARY_INSTRUCTION, BINARY_SCHEMA
 from tier8_v2_financial_pipeline import checked
 from tier8_v2_finqa import packet
 from tier8_windows_pilot import Models, jsonl
@@ -60,6 +61,8 @@ def normalize_prediction(value, scale):
 
 
 def run(args):
+    if args.actor_adapter and (args.larger_direct or not args.critic_adapter):
+        raise ValueError("Transfer study requires an actor and critic adapter and excludes larger direct")
     model = Models(args)
     cohort = jsonl(args.cohort)
     if len(cohort) != len({row["table_id"] for row in cohort}):
@@ -68,7 +71,10 @@ def run(args):
     direct_schema = {"type": "object", "properties": {"calculation": {"type": "string"},
         "answer": {"type": "number"}, "scale": {"enum": list(SCALES)}},
         "required": ["calculation", "answer", "scale"], "additionalProperties": False}
-    conditions = ("direct", "direct_large") if args.larger_direct else ("direct", "program")
+    if args.actor_adapter:
+        conditions = ("program", "adapted_program")
+    else:
+        conditions = ("direct", "direct_large") if args.larger_direct else ("direct", "program")
     with (args.output / "cases.jsonl").open("x", encoding="utf-8") as out:
         for index, row in enumerate(cohort):
             evidence = row["evidence"]
@@ -81,6 +87,7 @@ def run(args):
             for arm in (conditions if index % 2 == 0 else conditions[::-1]):
                 budget = TokenLedger()
                 model.drafter_weights = args.larger_direct if arm == "direct_large" else None
+                model.adapter = args.actor_adapter if arm == "adapted_program" else None
                 if arm in ("direct", "direct_large"):
                     prompt = (context + "\nCompute the answer using the evidence. State the arithmetic briefly"
                               " in calculation, then return a numeric answer and scale. " + scale_instruction)
@@ -103,6 +110,20 @@ def run(args):
                     execution = checked(program, evidence)
                     prediction = normalize_prediction(execution["value"], (program or {}).get("answer_unit"))
                 arms[arm] = dict(prediction=prediction, output=raw, event=event)
+                if arm not in ("direct", "direct_large"):
+                    arms[arm]["candidate"] = dict(program=program, execution=execution)
+                if arm == "adapted_program":
+                    verdict, review_event = None, None
+                    if prediction is not None:
+                        model.adapter = args.critic_adapter
+                        review_prompt = (context + "\nProposed program:\n" + json.dumps(program)
+                                         + "\nDeterministic execution:\n" + json.dumps(execution)
+                                         + "\n" + BINARY_INSTRUCTION)
+                        review, review_event = model.call("drafter", review_prompt, BINARY_SCHEMA,
+                                                          budget, 192, "trained_critic")
+                        verdict = (review or {}).get("verdict")
+                    arms["adapted_gated"] = dict(prediction=prediction if verdict == "PASS" else None,
+                                                 output=verdict, event=review_event)
             out.write(json.dumps(dict(case_id=row["id"], arms=arms)) + "\n")
             out.flush()
             print(row["id"], {arm: result["prediction"] for arm, result in arms.items()}, flush=True)
@@ -117,8 +138,12 @@ def summarize(args):
     ids = {row["id"] for row in jsonl(args.cohort)}
     if len(rows) != len(ids) or {row["case_id"] for row in rows} != ids:
         raise ValueError("Case ledger differs from the frozen TAT-QA cohort")
-    second = "direct_large" if "direct_large" in rows[0]["arms"] else "program"
-    conditions = ("direct", second)
+    if not rows:
+        raise ValueError("No TAT-QA cases to score")
+    if "adapted_program" in rows[0]["arms"]:
+        conditions = ("program", "adapted_program", "adapted_gated")
+    else:
+        conditions = ("direct", "direct_large" if "direct_large" in rows[0]["arms"] else "program")
     if any(set(row["arms"]) != set(conditions) for row in rows):
         raise ValueError("Inconsistent conditions across TAT-QA cases")
     result = {"questions": len(rows), **{arm: Counter() for arm in conditions}, "cases": []}
@@ -139,18 +164,25 @@ def summarize(args):
             result[arm]["valid"] += pred is not None
             result[arm]["scale_label_match"] += bool(pred and pred["scale"] == annotation["scale"])
             result[arm]["wrong_exact_fixed_by_gold_scale"] += bool(oracle_em and not em)
-            result[arm]["peak_sampled_rss"] = max(result[arm]["peak_sampled_rss"],
-                                                  output["event"]["peak_sampled_rss"])
+            if output["event"]:
+                result[arm]["peak_sampled_rss"] = max(result[arm]["peak_sampled_rss"],
+                                                      output["event"]["peak_sampled_rss"])
         result["cases"].append(dict(case_id=row["case_id"], exact=labels))
-    result["direct_only_correct"] = sum(row["exact"]["direct"] and not row["exact"][second]
-                                        for row in result["cases"])
-    result[f"{second}_only_correct"] = sum(row["exact"][second] and not row["exact"]["direct"]
+    first, second = conditions[:2]
+    result[f"{first}_only_correct"] = sum(row["exact"][first] and not row["exact"][second]
+                                          for row in result["cases"])
+    result[f"{second}_only_correct"] = sum(row["exact"][second] and not row["exact"][first]
                                            for row in result["cases"])
     for arm in conditions:
-        events = [row["arms"][arm]["event"] for row in rows]
+        events = [row["arms"][arm]["event"] for row in rows if row["arms"][arm]["event"]]
         result[arm]["exact_rate"] = result[arm]["exact"] / len(rows)
         result[arm]["f1_mean"] = result[arm]["f1"] / len(rows)
-        result[arm]["median_seconds"] = median(event["elapsed_seconds"] for event in events)
+        result[arm]["correct"] = int(result[arm]["exact"])
+        result[arm]["wrong"] = result[arm]["valid"] - result[arm]["correct"]
+        result[arm]["withheld"] = len(rows) - result[arm]["valid"]
+        result[arm]["accepted_error"] = (result[arm]["wrong"] / result[arm]["valid"]
+                                          if result[arm]["valid"] else None)
+        result[arm]["median_seconds"] = median(event["elapsed_seconds"] for event in events) if events else None
         result[arm]["peak_job_commit"] = max((event["peak_job_commit"] for event in events
                                               if event.get("peak_job_commit") is not None), default=None)
         result[arm]["prompt_eval_tokens"] = sum(event.get("prompt_eval_tokens") or 0 for event in events)
@@ -172,6 +204,8 @@ if __name__ == "__main__":
         inference.add_argument(f"--{name}", type=Path, required=True)
     inference.add_argument("--job-commit-limit", type=int)
     inference.add_argument("--larger-direct", help="Compare direct drafting with a larger GGUF")
+    inference.add_argument("--actor-adapter", type=Path)
+    inference.add_argument("--critic-adapter", type=Path)
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("source", "cohort", "ledger", "metric-directory"):

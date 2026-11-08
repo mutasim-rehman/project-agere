@@ -49,3 +49,25 @@ Both larger cohorts and the 21-candidate replay are frozen before
 the extended runs. The smaller numerical studies are pilots.
 All conclusions remain specific to the studied recipes and
 benchmarks. The 16 GB tier remains gated.
+
+## Frozen cross-benchmark adaptation and review
+
+A separate set of 72 TAT-QA arithmetic contexts excludes all
+176 contexts used or frozen in the previous TAT-QA comparisons.
+Frozen SHA-256
+`e22b617e9d483d6721399e7c471627fbe157bd642b47e39753b56ffef710dff7`.
+Compare the same 3B cited-program drafter with and without the
+FinQA common actor adapter. Use the same scale schema and
+evidence. Score the adapted draft before review and again after
+the existing control critic's binary gate. Only PASS delivers.
+Generation has a 768-token ceiling and review adds up to 192.
+Both roles are sequential under the Windows cap.
+
+Primary analysis compares unadapted and adapted exact matches,
+then reports how many correct and wrong candidates the gate
+retains. Use the official TAT-QA scorer with no FinQA label
+substitution. This tests transfer to a second task representation.
+No corpus-level company-year mapping is available between the
+two benchmarks, so source overlap across them remains unverified.
+Use `tier8_windows_tatqa.py run --actor-adapter ... --critic-adapter ...`
+with the common actor and matched control critic artifacts.
