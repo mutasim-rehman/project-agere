@@ -66,3 +66,42 @@ scoring, and a verifier comparison on fixed candidate programs. Keep the
 The completed case ledgers and machine-generated summary are archived
 under `evidence/windows-candidate-pilot`. The follow-up command was the
 same as above with `--output tmp\win-cli-one-step --limit 5 --one-step`.
+
+## Fixed-candidate verifier replay
+
+We held the five one-step candidates and their deterministic executions
+fixed. Each new verifier saw the same question, evidence, candidate and
+execution. The verdict-only prompt and schema were identical for both
+new model conditions. Candidate labels were excluded from the prompts.
+
+- The original 0.5B structured reviewer gave all three semantic checks
+  a PASS on all five. Every response also requested a repair or included
+  nonempty repair steps, so the existing consistency rule rejected all five.
+- Removing the repair consistency requirement offline accepts all five.
+  The fresh 0.5B verdict-only reviewer also returned PASS on all five.
+  Either policy delivers two correct and three wrong answers by reported
+  answer, or one correct and four wrong by raw execution.
+- The 3B verdict-only reviewer returned UNKNOWN on all five and withheld
+  everything. Peak sampled RSS was 1.46 GB for the 0.5B replay and
+  2.44 GB for the 3B replay.
+
+As a cross-check, the archived 24 adapted-drafter candidates had identical
+delivery decisions with and without the repair consistency requirement.
+That original reviewer delivered ten correct and eleven wrong answers
+under reported-answer scoring and withheld three. The contradictory
+repair fields in the Windows slice therefore explain its zero coverage
+locally. Removing the fields does not supply semantic discrimination.
+
+This follow-up uses the same exploratory cases. Every tested policy on
+the Windows candidates accepted all or withheld all. Further prompt
+selection on this slice would be weak evidence. Keep 16 GB gated.
+The next research design would first validate scoring, then compare
+verification on a fresh, prespecified set of fixed correct candidates
+and plausible near misses from distinct reports.
+
+Reproduce the two model conditions with
+`scripts/tier8_windows_verify.py` and the archived one-step case ledger
+as `--candidates`. Use the same `--cli` and `--weights` as above,
+separate output directories, and `--review-model verifier` or
+`--review-model drafter`. Both replay ledgers are archived alongside
+the paired generation ledgers.
