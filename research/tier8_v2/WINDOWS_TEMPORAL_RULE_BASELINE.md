@@ -55,3 +55,26 @@ scores remain as recorded, with no label replacement. A second
 reader would be needed for adjudicated labels. The rule's low
 coverage and disagreement with benchmark conventions prevent using
 it as a reliable delivery policy.
+
+## Reference consistency screen
+
+The follow-up replays every annotated program with the official
+FinQA evaluator. All 883 development and 1,147 test reference
+programs reproduced their stored execution label. We then compared
+that raw label against a separately supplied simple numeric
+reported answer, under the project's reported rounding rule.
+For a percentage, we allow both raw fractional and raw percentage
+point interpretations. This screen does not infer unit scaling
+for free-form answers and leaves non-simple-numeric labels out
+of the comparison.
+
+Of 851 eligible development questions, 110 labels were incompatible
+under those conventions. Of 1,100 eligible test questions, 129
+were incompatible. Among test exceptions, 87 differed by more
+than 1% and 77 by more than 10% of the reported magnitude, using
+the closer allowed percent interpretation and a small denominator
+floor. Twenty-one had opposite signs. These are reproducible
+screening flags, not a count of adjudicated annotation errors.
+The full exception list and source hashes are archived in
+`reference-consistency.json`. Primary comparisons retain the
+official labels and report the alternate metric separately.
