@@ -111,3 +111,23 @@ entry point and frozen candidates. Any accuracy difference
 between it and this run combines prompt/runtime and drafting
 differences with residency. This is a workload preflight,
 not a matched residency-only causal comparison.
+
+## Matched FinQA output-format control
+
+On the frozen 96-report FinQA cohort, run the same unadapted
+7B Q4 checkpoint with two output formats. The direct arm emits
+brief arithmetic, a number and a unit. The program arm emits
+source-bound executable operations and a unit. Both use the
+same evidence, unit choices and 768-token output ceiling.
+Report the shared reported-answer score and official execution
+matching for the program arm separately. FinQA's official
+program evaluator is not applied to direct text answers.
+
+For a secondary decision rule, accept the program only when
+the independently generated direct number agrees under the
+existing frozen unit conversion and numeric tolerance. This
+shares one checkpoint and source packet across arms. Errors
+can correlate. Report correct, wrong and withheld separately.
+The format comparison reuses the frozen 96 reports from the
+precision and catalog work and is not an independent benchmark
+sample. The study runs under the 6.1 GB worker job limit.
