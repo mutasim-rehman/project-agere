@@ -1,0 +1,484 @@
+{
+  "arms": [
+    {
+      "reports": 24,
+      "executable_official_match": 14,
+      "generated_correct": 3,
+      "witness_available_generated_wrong": 11,
+      "wrong_executable_missing_reference_number_in_final": 10,
+      "wrong_executable_missing_reference_number_anywhere": 9,
+      "wrong_executable_all_reference_numbers_in_final": 1,
+      "unretrieved_operand": 7,
+      "unsupported_operation": 3
+    },
+    {
+      "reports": 24,
+      "executable_official_match": 14,
+      "generated_correct": 5,
+      "unretrieved_operand": 7,
+      "witness_available_generated_wrong": 10,
+      "wrong_executable_missing_reference_number_in_final": 8,
+      "wrong_executable_missing_reference_number_anywhere": 8,
+      "wrong_executable_all_reference_numbers_in_final": 2,
+      "unsupported_operation": 3
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "HOLX/2009/page_127.pdf-2",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": true,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": true,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "AMT/2003/page_102.pdf-1",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 2,
+          "missing_reference_numbers_anywhere": 2
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": true,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "GS/2015/page_188.pdf-1",
+      "arms": [
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "C/2015/page_96.pdf-2",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        }
+      ]
+    },
+    {
+      "case_id": "MAS/2017/page_27.pdf-3",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 0,
+          "missing_reference_numbers_anywhere": 0
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": true,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "MO/2014/page_39.pdf-4",
+      "arms": [
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "UPS/2007/page_49.pdf-3",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        }
+      ]
+    },
+    {
+      "case_id": "PPG/2008/page_52.pdf-4",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        }
+      ]
+    },
+    {
+      "case_id": "HST/2018/page_135.pdf-1",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": true,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": true,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "AON/2007/page_171.pdf-3",
+      "arms": [
+        {
+          "witness": "unsupported_operation",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unsupported_operation",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "HII/2015/page_88.pdf-1",
+      "arms": [
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "IPG/2006/page_77.pdf-2",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 2,
+          "missing_reference_numbers_anywhere": 1
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 3,
+          "missing_reference_numbers_anywhere": 1
+        }
+      ]
+    },
+    {
+      "case_id": "ABMD/2012/page_79.pdf-2",
+      "arms": [
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "MMM/2007/page_23.pdf-1",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 2,
+          "missing_reference_numbers_anywhere": 0
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 0,
+          "missing_reference_numbers_anywhere": 0
+        }
+      ]
+    },
+    {
+      "case_id": "AMT/2007/page_127.pdf-3",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 2,
+          "missing_reference_numbers_anywhere": 2
+        }
+      ]
+    },
+    {
+      "case_id": "ECL/2017/page_69.pdf-2",
+      "arms": [
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "PPG/2018/page_85.pdf-3",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": true,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 0,
+          "missing_reference_numbers_anywhere": 0
+        }
+      ]
+    },
+    {
+      "case_id": "ALXN/2016/page_153.pdf-1",
+      "arms": [
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "PNC/2008/page_122.pdf-2",
+      "arms": [
+        {
+          "witness": "unsupported_operation",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unsupported_operation",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "CB/2008/page_229.pdf-4",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 1,
+          "missing_reference_numbers_anywhere": 1
+        }
+      ]
+    },
+    {
+      "case_id": "GIS/2017/page_31.pdf-1",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 2,
+          "missing_reference_numbers_anywhere": 1
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 2,
+          "missing_reference_numbers_anywhere": 2
+        }
+      ]
+    },
+    {
+      "case_id": "RSG/2018/page_94.pdf-1",
+      "arms": [
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unretrieved_operand",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "MRO/2003/page_84.pdf-4",
+      "arms": [
+        {
+          "witness": "unsupported_operation",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        },
+        {
+          "witness": "unsupported_operation",
+          "executable": true,
+          "correct": true,
+          "missing_live_reference_numbers": null,
+          "missing_reference_numbers_anywhere": null
+        }
+      ]
+    },
+    {
+      "case_id": "JPM/2015/page_137.pdf-3",
+      "arms": [
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 2,
+          "missing_reference_numbers_anywhere": 1
+        },
+        {
+          "witness": "executable_official_match",
+          "executable": true,
+          "correct": false,
+          "missing_live_reference_numbers": 2,
+          "missing_reference_numbers_anywhere": 2
+        }
+      ]
+    }
+  ]
+}

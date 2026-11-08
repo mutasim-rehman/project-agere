@@ -59,3 +59,40 @@ The expanded arm used 96,545 prompt-evaluation tokens versus
 86,773, with median drafting time 24.2 versus 23.0 seconds.
 Both peaked near 2.77 GB worker commit. See
 `evidence/windows-extended/catalog96-summary.json`.
+## Executable reference witness
+
+The reference-witness audit goes beyond catalog coverage. It
+binds the annotated program to the exact catalog used for each
+draft, checks that every operation can appear in the causal
+grammar, executes the compiled reference, and checks its number
+with the official evaluator. Where equal values occur in several
+cells, it uses an annotated span if available. That assignment
+shows numerical feasibility and leaves the intended cell identity
+underdetermined. An unsupported reference does not establish that
+every possible solution is unrepresentable.
+
+On the 96-report precision cohort, the audit found a runnable,
+officially correct witness for 82 reports. Both quantizations
+failed on 80 of those 82. Among those 80 failures, the final
+dependency graph omitted at least one distinct cited reference
+value on 61 Q4 reports and 47 Q8 reports. On 44 Q4 and 45 Q8
+reports, the missing value appeared nowhere in the draft. This
+distinguishes omitted values from values selected in operations
+that do not contribute to the answer. On the earlier 24-report
+cohort, a witness existed for 14 reports. Among witness-backed
+failures, the final graph omitted a reference value on 10/11 Q4
+and 8/10 Q8 reports.
+
+The expanded catalog admitted two additional executable
+witnesses (82 to 84) in the 96-report catalog comparison. Wrong
+drafts with an available witness increased from 80 to 83.
+More representation support alone did not improve generation on
+these reports. Missing a reference value is an annotation-relative
+diagnostic. Equivalent formulas may use different values and
+including every reference value does not guarantee a correct
+formula or source binding.
+
+Reproduce with `scripts/tier8_windows_reference_witness.py`.
+The archived evidence includes the individual witness status,
+draft result and omitted-value counts for both 96-report
+comparisons and the earlier 24-report precision comparison.
