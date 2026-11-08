@@ -41,3 +41,21 @@ catalog expansion supplies possible operands without proving
 their semantic relevance. These five cases were selected for
 the representational defect, and the result cannot be read as
 a 40-point improvement on general FinQA.
+
+## Unselected 96-report follow-up
+
+The same catalog change was tested with the unadapted 3B Q4
+checkpoint on 96 frozen reports. The original catalog scored
+2/96 and the span-complete catalog scored 1/96, with no gains
+and one regression. Both scoring conventions agreed. Only
+two questions in the cohort had annotated programs that became
+representable under the complete catalog; neither was answered
+correctly. The full-cohort comparison therefore did not support
+adopting expansion as a general accuracy intervention. It also
+differs from the targeted diagnostic in checkpoint adaptation
+and case selection.
+
+The expanded arm used 96,545 prompt-evaluation tokens versus
+86,773, with median drafting time 24.2 versus 23.0 seconds.
+Both peaked near 2.77 GB worker commit. See
+`evidence/windows-extended/catalog96-summary.json`.
