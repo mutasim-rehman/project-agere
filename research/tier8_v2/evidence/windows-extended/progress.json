@@ -17,10 +17,14 @@
       "finished_utc": "2026-11-08T19:25:55.953787+00:00"
     },
     "critic-transfer": {
-      "status": "running",
+      "status": "complete",
       "expected": 21,
-      "completed": 0,
-      "started_utc": "2026-11-08T19:26:00.088121+00:00"
+      "completed": 21,
+      "started_utc": "2026-11-08T19:26:00.088121+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T19:34:34.016354+00:00",
+      "summary": "critic-transfer-summary.json",
+      "cases": "critic-transfer-cases.jsonl"
     }
   }
 }

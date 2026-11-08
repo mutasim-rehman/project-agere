@@ -1,0 +1,256 @@
+{
+  "reports": 21,
+  "totals": {
+    "accept_executable": {
+      "official": {
+        "wrong": 19,
+        "correct": 2,
+        "coverage": 1.0,
+        "accepted_error": 0.9047619047619048
+      },
+      "reported": {
+        "wrong": 19,
+        "correct": 2,
+        "coverage": 1.0,
+        "accepted_error": 0.9047619047619048
+      }
+    },
+    "control": {
+      "official": {
+        "withheld": 15,
+        "correct": 1,
+        "wrong": 5,
+        "coverage": 0.2857142857142857,
+        "accepted_error": 0.8333333333333334
+      },
+      "reported": {
+        "withheld": 15,
+        "correct": 1,
+        "wrong": 5,
+        "coverage": 0.2857142857142857,
+        "accepted_error": 0.8333333333333334
+      }
+    },
+    "crossed": {
+      "official": {
+        "withheld": 18,
+        "wrong": 2,
+        "correct": 1,
+        "coverage": 0.14285714285714285,
+        "accepted_error": 0.6666666666666666
+      },
+      "reported": {
+        "withheld": 18,
+        "wrong": 2,
+        "correct": 1,
+        "coverage": 0.14285714285714285,
+        "accepted_error": 0.6666666666666666
+      }
+    }
+  },
+  "resources": {
+    "control": {
+      "calls": 21,
+      "peak_sampled_rss": 2514915328,
+      "peak_job_commit": 2924113920,
+      "median_seconds": 11.28099999999904
+    },
+    "crossed": {
+      "calls": 21,
+      "peak_sampled_rss": 2509529088,
+      "peak_job_commit": 2924355584,
+      "median_seconds": 11.5
+    }
+  },
+  "cases": [
+    {
+      "case_id": "DRE/2007/page_56.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "JPM/2014/page_70.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "UNP/2011/page_33.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "AAL/2013/page_172.pdf-1",
+      "official": true,
+      "reported": true,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "PASS"
+      }
+    },
+    {
+      "case_id": "K/2013/page_23.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "ETR/2016/page_23.pdf-4",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "CMCSA/2015/page_112.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "BKR/2017/page_56.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "LMT/2016/page_49.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "AES/2001/page_33.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "PASS",
+        "control": "PASS"
+      }
+    },
+    {
+      "case_id": "ETR/2013/page_21.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "PASS",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "BDX/2018/page_106.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "APD/2018/page_121.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "ETFC/2011/page_144.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "UNP/2007/page_25.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "PASS",
+        "crossed": "PASS"
+      }
+    },
+    {
+      "case_id": "SYY/2006/page_71.pdf-2",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "DG/2007/page_67.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "PASS",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "NWS/2017/page_119.pdf-1",
+      "official": true,
+      "reported": true,
+      "verdicts": {
+        "crossed": "PASS",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "TFX/2015/page_89.pdf-3",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "PASS",
+        "crossed": "FAIL"
+      }
+    },
+    {
+      "case_id": "HUM/2014/page_44.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "crossed": "FAIL",
+        "control": "FAIL"
+      }
+    },
+    {
+      "case_id": "AAL/2015/page_114.pdf-1",
+      "official": false,
+      "reported": false,
+      "verdicts": {
+        "control": "FAIL",
+        "crossed": "FAIL"
+      }
+    }
+  ]
+}
