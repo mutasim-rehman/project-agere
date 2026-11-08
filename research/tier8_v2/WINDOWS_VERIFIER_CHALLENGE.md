@@ -57,3 +57,25 @@ command takes the test source, evaluator and three `--exclude` files.
 Use `replay` with the archived cohort, the same native CLI and SSD
 weights as the initial pilot, and a fresh output directory. Run
 `summarize` on the resulting replay ledger.
+
+## Completed run
+
+All 24 calls completed. The 0.5B reviewer returned PASS for all four
+references and all four near misses. The 3B verdict-only reviewer
+returned UNKNOWN for all eight. Neither separated the labels, consistent
+with the earlier Windows slice. Peak sampled RSS was 1.47 GB and 2.45 GB,
+respectively.
+
+The 3B comparison selected the reference in five of eight presentations.
+It chose correctly in both orders on two reports, chose the wrong program
+in both orders on one, and changed which program it preferred when the
+order was reversed on one. Peak sampled RSS was 2.45 GB. The comparison
+reveals some discrimination even when the same checkpoint abstains on
+individual verdicts. Four reports are insufficient to establish an
+average improvement over the four-of-eight fixed-position baseline.
+
+This provides a stopping point for more verdict-only prompt variations.
+If the comparison is extended, freeze a fresh larger set with both
+one-correct and neither-correct pairs and provide a reject-both option.
+Evaluate false acceptance separately before testing delivery on natural
+candidate pools. Keep 16 GB gated.

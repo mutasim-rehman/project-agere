@@ -1,0 +1,33 @@
+{
+  "binary_verifier": {
+    "observations": 8,
+    "peak_sampled_rss": 1465819136,
+    "verdicts_by_label": {
+      "positive": {
+        "PASS": 4
+      },
+      "negative": {
+        "PASS": 4
+      }
+    }
+  },
+  "binary_drafter": {
+    "observations": 8,
+    "peak_sampled_rss": 2454224896,
+    "verdicts_by_label": {
+      "positive": {
+        "UNKNOWN": 4
+      },
+      "negative": {
+        "UNKNOWN": 4
+      }
+    }
+  },
+  "pairwise_drafter": {
+    "observations": 8,
+    "peak_sampled_rss": 2452287488,
+    "correct_choices": 5,
+    "correct_in_both_orders": 2,
+    "wrong_in_both_orders": 1
+  }
+}
