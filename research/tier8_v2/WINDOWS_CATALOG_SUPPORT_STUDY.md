@@ -29,3 +29,15 @@ Arm order alternates. The job limit is 6.1 GB with the
 Use `tier8_windows_natural_pairs.py run --complete-catalog`.
 Frozen cohort SHA-256
 `3548e4592a76d8628ac5187eda3b65eb5a9367ffae9cf25cf1727b3ed69de5fc`.
+
+## Completed enriched diagnostic
+
+The original catalog produced 0/5 correct final programs.
+The span-complete catalog produced 2/5 under both execution
+and reported-answer scoring, with two gains and no losses.
+Both recovered programs referenced a newly selectable quantity.
+A third incorrect program also used an added quantity, so
+catalog expansion supplies possible operands without proving
+their semantic relevance. These five cases were selected for
+the representational defect, and the result cannot be read as
+a 40-point improvement on general FinQA.
