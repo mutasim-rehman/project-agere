@@ -80,3 +80,29 @@ rising from 14.2 to 34.8 seconds and peak worker commit from
 diagnostic recovered five wrong 3B predictions and one wrong
 7B prediction. This comparison provides no clear accuracy
 advantage for the larger direct model.
+
+## 120-context replication on main
+
+With the same direct prompt, evidence budget, runtime, and two
+checkpoints on 120 additional arithmetic table contexts, the
+3B model scored 12/120 (10.0%) and the 7B scored 29/120
+(24.2%). Five contexts were correct only at 3B, 22 only at
+7B, and 93 tied. The paired increase was 14.2 percentage
+points, with two-sided exact McNemar p = 0.00151 using table
+contexts as pairs. The earlier 40-context comparison was
+inconclusive, so effect size should remain cohort-specific.
+
+The 7B model used 5.43 GB peak job commit versus 2.76 GB at
+3B. Median elapsed time including weight load rose from
+14.1 to 33.5 seconds. Both consumed 60,934 prompt tokens
+over the full cohort. Replacing predicted scale with the
+gold scale rescued 11 wrong 3B answers and five wrong 7B
+answers, so scale mistakes were more frequent at 3B but do
+not account for the full difference. The comparison changes
+checkpoint size at fixed direct output format. It does not
+attribute the gain to a multi-agent arrangement. The
+resource measurements come from the Windows job limit and
+sampled RSS on the host, without a paging measurement.
+
+See `evidence/windows-extended/tatqa120-summary.json` and
+`evidence/windows-extended/tatqa120-cases.jsonl`.
