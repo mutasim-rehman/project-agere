@@ -49,7 +49,7 @@
     "tatqa120": {
       "status": "running",
       "expected": 120,
-      "completed": 0,
+      "completed": 24,
       "started_utc": "2026-11-08T22:18:28.224632+00:00"
     }
   }
