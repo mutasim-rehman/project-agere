@@ -146,3 +146,29 @@ still visible to the model, but all executable source IDs come
 from the narrow packet. This is a retrospective mechanism
 follow-up on the initial pilot, to be interpreted separately
 from the 21-report replication.
+
+## Replication results
+
+All 42 programs executed under the memory guard. The narrower
+packet yielded 2/21 correct final programs and the wider packet
+yielded 1/21. The wider arm recovered one case and lost two,
+with 18 ties. Official execution and reported-answer scoring
+agreed on every candidate's correctness. Exact McNemar p = 1.
+The descriptive 18-company bootstrap interval for the −4.8
+percentage-point difference was −20.8 to +11.1 points.
+The original 1/16 to 4/16 gain did not replicate.
+
+The wider packet added two complete evidence cases, neither
+of which produced a correct program. Two expanded-arm programs
+used new spans in their final computation; both were ties
+under the correctness comparison. The one gain and two losses
+did not rely on newly appended spans. This reinforces the
+distinction between evidence coverage and candidate accuracy.
+
+The wider arm used 29,775 prompt-evaluation tokens versus
+18,169 for the narrower arm and raised median elapsed time
+from 18.9 to 26.3 seconds. Peak worker commit remained about
+2.93 GB and peak sampled RSS about 2.53 GB in each arm.
+The smallest sampled available host memory was 2.56 GB.
+We do not adopt wider retrieval as a general accuracy policy
+from these results. The 16 GB tier remains gated.
