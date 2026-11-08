@@ -71,3 +71,24 @@ No corpus-level company-year mapping is available between the
 two benchmarks, so source overlap across them remains unverified.
 Use `tier8_windows_tatqa.py run --actor-adapter ... --critic-adapter ...`
 with the common actor and matched control critic artifacts.
+
+## Completed preliminary controls
+
+Forcing the annotated operation count in the 16-report
+diagnostic scored 3/16 official matches versus 1/16 for its
+unrestricted control. The three correct reports are exactly
+the three recovered by the earlier model-predicted count.
+This gold-informed control therefore adds no correct question
+over predicted-count planning on this slice. It does not show
+that operation counts are always sufficient, and it uses no
+gold operands or answer values.
+
+The resident probe loaded two separate 3B Q4 workers with the
+actor and control critic adapters. Both answered a short
+loopback request while both remained resident. Peak shared
+worker commit was 5.26 GB and sampled worker-plus-controller
+RSS was 4.81 GB, with no observed cap breach. This establishes
+fit for a short inference probe under the shared 6.1 GB job.
+It does not measure sustained workload memory, paging, or
+end-to-end accuracy. The raw samples and summary are in the
+extended evidence directory.
