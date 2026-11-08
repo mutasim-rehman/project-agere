@@ -59,6 +59,8 @@ def review(model, context, drafts, budget):
 
 
 def run(args):
+    if args.capacity_control and not args.adapter:
+        raise ValueError("Capacity comparison requires the matched 3B adapter")
     model = Models(args)
     public = jsonl(args.cohort)
     if len(public) != 6 or len({case["report_group"] for case in public}) != 6:
@@ -86,7 +88,8 @@ def run(args):
             order = (1, 0) if args.adapter and case_index % 2 else (0, 1)
             for index in order:
                 model.forced = True
-                model.adapter = args.adapter if index == 1 else None
+                model.adapter = args.adapter if index == int(not args.capacity_control) else None
+                model.drafter_weights = args.capacity_control if index == 1 else None
                 plan, event = model.call("drafter", prompt + "\n" + instructions[index],
                                          reference_schema(atoms, units, causal=True), budget, 768, "program")
                 try:
@@ -95,11 +98,14 @@ def run(args):
                     program = None
                 execution = checked(program, case["evidence"])
                 drafts[index] = dict(plan=plan, candidate=dict(program=program, execution=execution),
-                                     adapter_applied=model.adapter is not None, event=event)
+                                     adapter_applied=model.adapter is not None,
+                                     weights_override=model.drafter_weights, event=event)
             model.adapter = None
+            model.drafter_weights = None
             executable = all(not draft["candidate"]["execution"]["issues"] for draft in drafts)
-            reviews = review(model, context, drafts, budget) if executable else []
+            reviews = review(model, context, drafts, budget) if executable and not args.capacity_control else []
             out.write(json.dumps(dict(case_id=case["id"], drafts=drafts, reviews=reviews,
+                                      review_enabled=not bool(args.capacity_control),
                                       reserved_tokens=budget.spent)) + "\n")
             out.flush()
             print(case["id"], [draft["candidate"]["execution"]["value"] for draft in drafts],
@@ -162,6 +168,8 @@ def summarize(args):
             counts["first_only_correct"] += labels[0] and not labels[1]
             counts["second_only_correct"] += labels[1] and not labels[0]
             counts["oracle_correct_available"] += any(labels)
+            if not row.get("review_enabled", True):
+                continue
             counts["correct_delivery"] += delivered is not None and labels[delivered]
             counts["wrong_delivery"] += delivered is not None and not labels[delivered]
             counts["withheld"] += delivered is None
@@ -196,6 +204,8 @@ if __name__ == "__main__":
         inference.add_argument(f"--{name}", type=Path, required=True)
     inference.add_argument("--adapter", type=Path,
                            help="Compare base vs. adapted under the same prompt")
+    inference.add_argument("--capacity-control",
+                           help="Compare adapted 3B vs. this larger GGUF filename, without review")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):

@@ -26,6 +26,7 @@ class Models:
         self.forced = False
         self.calls = 0
         self.adapter = None
+        self.drafter_weights = None
 
     def call(self, role, content, schema, budget, limit, stage):
         if stage == "program":
@@ -52,7 +53,8 @@ class Models:
         grammar.write_text(json.dumps(schema), encoding="utf-8")
         allowance = budget.allowance(limit)
         budget.charge(allowance)  # Conservative reservation; exact use is in the CLI log.
-        cmd = [str(self.args.cli.resolve()), "-m", str((self.args.weights / WEIGHTS[role]).resolve()),
+        weights = self.drafter_weights if role == "drafter" and self.drafter_weights else WEIGHTS[role]
+        cmd = [str(self.args.cli.resolve()), "-m", str((self.args.weights / weights).resolve()),
                "-f", str(prompt), "-jf", str(grammar), "-c", "4096", "-t", "8", "-ngl", "0",
                "--load-mode", "none", "--no-conversation", "--no-display-prompt",
                "--temp", "0", "--seed", "42", "-n", str(allowance)]
