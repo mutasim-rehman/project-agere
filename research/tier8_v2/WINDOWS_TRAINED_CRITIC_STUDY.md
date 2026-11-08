@@ -60,6 +60,13 @@ correct/wrong/withheld and memory results alongside the trained
 critics and accept-all comparator. The 6.1 GB worker commit
 limit applies to this control.
 
+We report both coverage and error among accepted cases, along
+with correct and wrong deliveries over all assigned questions.
+Rejecting every candidate has zero wrong deliveries and
+undefined accepted-case error. These fixed thresholds are
+descriptive and carry no calibrated selective-risk guarantee.
+[Selective classification](https://arxiv.org/abs/1705.08500)
+
 Use `tier8_windows_trained_critic.py independent` with the same
 frozen candidate cohort and `--direct-weights` pointing to the
 first SSD 7B Q4 shard. Score that ledger separately.

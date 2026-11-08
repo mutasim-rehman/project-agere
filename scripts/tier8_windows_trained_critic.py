@@ -5,6 +5,7 @@ from decimal import Decimal, InvalidOperation
 import hashlib
 import json
 from pathlib import Path
+from statistics import median
 
 from evidence_contract import TokenLedger
 from financial_review_protocol import BINARY_INSTRUCTION, BINARY_SCHEMA
@@ -140,9 +141,21 @@ def summarize(args):
             for metric, correct in (("official", official), ("reported", reported)):
                 outcome = "correct" if accepted and correct else "wrong" if accepted else "withheld"
                 totals[arm][metric][outcome] += 1
-    resources = {arm: max((row["arms"][arm]["event"]["peak_sampled_rss"] for row in rows
-                           if row["arms"][arm]["event"]), default=0) for arm in conditions}
-    print(json.dumps(dict(reports=len(rows), totals=totals, peak_sampled_rss=resources, cases=details), indent=2))
+    for metrics in totals.values():
+        for counts in metrics.values():
+            coverage = counts["correct"] + counts["wrong"]
+            counts["coverage"] = coverage / len(rows)
+            counts["accepted_error"] = counts["wrong"] / coverage if coverage else None
+    resources = {}
+    for arm in conditions:
+        events = [row["arms"][arm]["event"] for row in rows if row["arms"][arm]["event"]]
+        commits = [event["peak_job_commit"] for event in events
+                   if event.get("peak_job_commit") is not None]
+        resources[arm] = dict(calls=len(events),
+            peak_sampled_rss=max((event["peak_sampled_rss"] for event in events), default=0),
+            peak_job_commit=max(commits, default=None),
+            median_seconds=median(event["elapsed_seconds"] for event in events) if events else None)
+    print(json.dumps(dict(reports=len(rows), totals=totals, resources=resources, cases=details), indent=2))
 
 
 if __name__ == "__main__":

@@ -98,6 +98,8 @@ division after an unused multiplication. Backward slicing from the
 final answer removes the unused calculations and raises the planned
 symbolic count to three. The official execution result was checked
 to remain unchanged for every executable program in the audit.
+This uses the backward-dependency idea from software program slicing.
+[Weiser, Program Slicing](https://courses.cs.washington.edu/courses/cse503/11au/readings/weiser-slicing-icse81.pdf)
 
 The control's lone execution match uses a cited 100 in place of the
 reference's constant 100. It remains symbolically different after
