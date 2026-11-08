@@ -38,3 +38,28 @@ SSD files under `runs/tier8_matched_continuation`:
 Use `tier8_windows_trained_critic.py replay` with both adapters,
 the frozen cohort, and a 6.1 GB job commit limit. Run
 `summarize` with the saved ledger and pinned FinQA scorer.
+
+## Independent recomputation control
+
+Run a separate 7B Q4 direct solver on those same evidence
+packets. It sees the question and sources but never the
+candidate, calculated result, or review decisions. It returns a
+number and unit using a 192-token ceiling. The gate accepts the
+frozen program only when the independent result agrees in
+value and unit. Fraction and percentage points are normalized
+to the same ratio. Number and ratio remain distinct. The
+numeric tolerance is 0.00001 times the larger of one and the
+absolute program result.
+
+This borrows independent recomputation as a cross-check. Both
+models still share the same source packet and model family, so
+their errors can correlate. It is a sequential 7B reviewer with
+a different evidence interface and checkpoint, rather than a
+causal isolation of input visibility. Include its actual compute,
+correct/wrong/withheld and memory results alongside the trained
+critics and accept-all comparator. The 6.1 GB worker commit
+limit applies to this control.
+
+Use `tier8_windows_trained_critic.py independent` with the same
+frozen candidate cohort and `--direct-weights` pointing to the
+first SSD 7B Q4 shard. Score that ledger separately.

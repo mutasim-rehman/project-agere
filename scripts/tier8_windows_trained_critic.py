@@ -1,6 +1,7 @@
 """Evaluate matched trained critics on frozen, naturally generated drafts."""
 import argparse
 from collections import Counter
+from decimal import Decimal, InvalidOperation
 import hashlib
 import json
 from pathlib import Path
@@ -63,6 +64,51 @@ def replay(args):
             print(row["case_id"], {arm: result["verdict"] for arm, result in arms.items()}, flush=True)
 
 
+def independent(args):
+    rows = jsonl(args.cohort)
+    model = Models(args)
+    model.drafter_weights = args.direct_weights
+    schema = {"type": "object", "properties": {"answer": {"type": "number"},
+        "unit": {"enum": ["number", "fraction", "percent"]}},
+        "required": ["answer", "unit"], "additionalProperties": False}
+    args.output.mkdir(parents=True, exist_ok=False)
+    with (args.output / "replay.jsonl").open("x", encoding="utf-8") as out:
+        for row in rows:
+            prompt = ("Question: " + row["question"] + "\nFinancial report evidence by source ID:\n"
+                      + json.dumps(row["evidence"]) + "\nSolve the question from the evidence."
+                        " Return a numeric answer and its unit. Percent means percentage points,"
+                        " fraction means a dimensionless ratio, and number means the requested"
+                        " count or amount. Respect the question's scale.")
+            raw, event = model.call("drafter", prompt, schema, TokenLedger(), 192, "independent")
+            candidate = row["candidate"]
+            accepted = (not candidate["execution"]["issues"] and agrees(
+                raw, candidate["execution"]["value"], candidate["program"]["answer_unit"]))
+            arms = {"independent": dict(verdict="PASS" if accepted else "UNKNOWN", event=event,
+                                        direct=raw)}
+            out.write(json.dumps(dict(case_id=row["case_id"], arms=arms)) + "\n")
+            out.flush()
+            print(row["case_id"], accepted, raw, flush=True)
+
+
+def agrees(direct, executed, unit):
+    if not isinstance(direct, dict) or type(direct.get("answer")) not in (int, float):
+        return False
+    other_unit = direct.get("unit")
+    if unit not in ("number", "fraction", "percent") or other_unit not in ("number", "fraction", "percent"):
+        return False
+    if (unit == "number") != (other_unit == "number"):
+        return False
+    try:
+        left, right = Decimal(executed), Decimal(str(direct["answer"]))
+    except (InvalidOperation, TypeError):
+        return False
+    if not left.is_finite() or not right.is_finite():
+        return False
+    left = left / 100 if unit == "percent" else left
+    right = right / 100 if other_unit == "percent" else right
+    return abs(left - right) <= Decimal("0.00001") * max(1, abs(left))
+
+
 def summarize(args):
     cohort = {row["case_id"]: row for row in jsonl(args.cohort)}
     gold = {row["id"]: row for row in json.loads(args.source.read_bytes())}
@@ -70,8 +116,11 @@ def summarize(args):
     rows = jsonl(args.ledger)
     if len(rows) != len(cohort) or {row["case_id"] for row in rows} != set(cohort):
         raise ValueError("Critic replay is incomplete")
+    conditions = tuple(rows[0]["arms"])
+    if any(set(row["arms"]) != set(conditions) for row in rows):
+        raise ValueError("Critic conditions changed during replay")
     totals = {arm: {"official": Counter(), "reported": Counter()}
-              for arm in ("accept_executable", "control", "crossed")}
+              for arm in ("accept_executable", *conditions)}
     details = []
     for row in rows:
         case = row["case_id"]
@@ -92,7 +141,7 @@ def summarize(args):
                 outcome = "correct" if accepted and correct else "wrong" if accepted else "withheld"
                 totals[arm][metric][outcome] += 1
     resources = {arm: max((row["arms"][arm]["event"]["peak_sampled_rss"] for row in rows
-                           if row["arms"][arm]["event"]), default=0) for arm in ("control", "crossed")}
+                           if row["arms"][arm]["event"]), default=0) for arm in conditions}
     print(json.dumps(dict(reports=len(rows), totals=totals, peak_sampled_rss=resources, cases=details), indent=2))
 
 
@@ -109,6 +158,12 @@ if __name__ == "__main__":
         run.add_argument(f"--{name}", type=Path, required=True)
     run.add_argument("--job-commit-limit", type=int)
     run.set_defaults(run=replay)
+    blind = commands.add_parser("independent")
+    for name in ("cli", "weights", "cohort", "output"):
+        blind.add_argument(f"--{name}", type=Path, required=True)
+    blind.add_argument("--direct-weights", required=True)
+    blind.add_argument("--job-commit-limit", type=int)
+    blind.set_defaults(run=independent)
     report = commands.add_parser("summarize")
     for name in ("cohort", "ledger", "source", "evaluator"):
         report.add_argument(f"--{name}", type=Path, required=True)
