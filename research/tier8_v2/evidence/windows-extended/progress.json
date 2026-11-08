@@ -37,10 +37,14 @@
       "cases": "precision96-cases.jsonl"
     },
     "catalog96": {
-      "status": "running",
+      "status": "complete",
       "expected": 96,
-      "completed": 72,
-      "started_utc": "2026-11-08T21:02:34.882146+00:00"
+      "completed": 96,
+      "started_utc": "2026-11-08T21:02:34.882146+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T22:18:22.301028+00:00",
+      "summary": "catalog96-summary.json",
+      "cases": "catalog96-cases.jsonl"
     }
   }
 }
