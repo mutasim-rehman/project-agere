@@ -69,6 +69,9 @@ interpreted as committed memory successfully consumed. A separate
 7B CPU inference preflight completed under the 6.1 GB guard with
 5.42 GB reported peak commit and 5.01 GB sampled RSS. The resource
 probe does not validate the earlier sampled-only studies retroactively.
+Later Windows runner events also record the operating system's worker
+working-set high-water mark and sampled minimum host available memory.
+Those measurements are separate from the job's peak commit.
 
 ## Completed candidate comparison
 

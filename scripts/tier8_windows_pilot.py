@@ -65,6 +65,10 @@ class Models:
             cmd.extend(("--lora", str(self.adapter.resolve())))
         started = time.monotonic()
         peak = 0
+        worker_peak = 0
+        host_available_before = psutil.virtual_memory().available
+        host_available_min = host_available_before
+        controller = psutil.Process()
         commit_cap = getattr(self.args, "job_commit_limit", None)
         job_context = JobCommitLimit(commit_cap) if commit_cap else nullcontext()
         flags = subprocess.CREATE_NO_WINDOW | (CREATE_SUSPENDED if commit_cap else 0)
@@ -77,8 +81,11 @@ class Models:
                     job.assign(worker._handle)
                     process.resume()
                 while worker.poll() is None:
-                    rss = process.memory_info().rss + psutil.Process().memory_info().rss
+                    worker_memory = process.memory_info()
+                    rss = worker_memory.rss + controller.memory_info().rss
                     peak = max(rss, peak)
+                    worker_peak = max(worker_peak, worker_memory.peak_wset)
+                    host_available_min = min(host_available_min, psutil.virtual_memory().available)
                     if peak > CAP or time.monotonic() - started > 300:
                         raise RuntimeError(f"Runtime limit exceeded at {prefix}")
                     time.sleep(0.2)
@@ -103,6 +110,9 @@ class Models:
             parsed = None
         return parsed, dict(role=role, stage=stage, raw=raw, token_ceiling=allowance,
                             peak_sampled_rss=peak, elapsed_seconds=time.monotonic() - started,
+                            peak_worker_working_set=worker_peak,
+                            host_available_before=host_available_before,
+                            host_available_min_sampled=host_available_min,
                             job_commit_limit=commit_cap, peak_job_commit=commit_peak,
                             prompt_eval_tokens=int(prompt_perf[2]) if prompt_perf else None,
                             prompt_eval_ms=float(prompt_perf[1]) if prompt_perf else None,

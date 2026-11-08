@@ -277,6 +277,8 @@ def summarize(args):
                          if event.get("prompt_eval_tokens") is not None]
         decode_runs = [event["decode_eval_runs"] for event in events
                        if event.get("decode_eval_runs") is not None]
+        host_available = [event["host_available_min_sampled"] for event in events
+                          if event.get("host_available_min_sampled") is not None]
         result["draft_resources"].append(dict(
             executable=sum(not draft["candidate"]["execution"]["issues"] for draft in drafts),
             median_steps=median(len((draft["plan"] or {}).get("steps", [])) for draft in drafts),
@@ -284,6 +286,7 @@ def summarize(args):
                                   (draft.get("planner_event") or {}).get("elapsed_seconds", 0) for draft in drafts),
             peak_sampled_rss=max(event["peak_sampled_rss"] for event in events),
             peak_job_commit=max(commit_peaks, default=None),
+            min_host_available_sampled=min(host_available, default=None),
             prompt_eval_tokens=sum(prompt_tokens) if len(prompt_tokens) == len(events) else None,
             decode_eval_runs=sum(decode_runs) if len(decode_runs) == len(events) else None))
     for metric in ("official", "reported"):
