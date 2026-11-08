@@ -34,6 +34,9 @@ def freeze(args):
                 group = report_group(identity)
             excluded.add(group)
     source = json.loads(args.source.read_text(encoding="utf-8"))
+    if args.include_ids:
+        include = set(json.loads(args.include_ids.read_text(encoding="utf-8")))
+        source = [row for row in source if row["id"] in include]
     source.sort(key=lambda row: hashlib.sha256(("windows-natural-v1|" + row["id"]).encode()).digest())
     selected = []
     for row in source:
@@ -81,8 +84,14 @@ def run(args):
     if args.retrieval_cohort and (not args.adapter or args.capacity_control or args.planned_length):
         raise ValueError("Retrieval comparison requires an adapter and no other intervention")
     if args.precision_control and (args.adapter or args.capacity_control or args.planned_length
-                                   or args.retrieval_cohort):
+                                   or args.retrieval_cohort or args.complete_catalog):
         raise ValueError("Matched precision comparison uses only its two base checkpoints")
+    if args.complete_catalog and (not args.adapter or args.capacity_control or args.planned_length
+                                  or args.retrieval_cohort):
+        raise ValueError("Catalog comparison requires an adapter and no other intervention")
+    if args.complete_catalog:
+        from tier8_windows_catalog_audit import load_prototype
+        expanded_catalog = load_prototype()
     model = Models(args)
     public = jsonl(args.cohort)
     if not public or len({case["report_group"] for case in public}) != len(public):
@@ -108,7 +117,7 @@ def run(args):
                 evidence = current["evidence"]
                 context = ("Question: " + case["question"] + "\nFinancial report evidence by source ID:\n"
                            + json.dumps(evidence))
-                atoms = atom_catalog(evidence)
+                atoms = expanded_catalog(evidence) if args.complete_catalog and index == 1 else atom_catalog(evidence)
                 units = question_units(case["question"], "question")
                 catalog = "\n".join(f"{key}={atom['value']}@{atom['span_id']}" for key, atom in atoms.items())
                 prompt = (context + "\nQuantity references:\n" + catalog
@@ -118,7 +127,8 @@ def run(args):
                             " Percent means percentage points and fraction means a dimensionless ratio."
                           + "\nAllowed units: " + ", ".join(units))
                 model.forced = True
-                use_adapter = args.planned_length or args.retrieval_cohort or index == int(not args.capacity_control)
+                use_adapter = (args.planned_length or args.retrieval_cohort or args.complete_catalog
+                               or index == int(not args.capacity_control))
                 model.adapter = args.adapter if use_adapter else None
                 model.drafter_weights = (str(args.precision_control[index].resolve())
                                          if args.precision_control else
@@ -151,12 +161,13 @@ def run(args):
                                      adapter_applied=model.adapter is not None,
                                      weights_override=model.drafter_weights, event=event,
                                      planned_steps=steps, planner_event=planner_event,
+                                     catalog_size=len(atoms),
                                      evidence=evidence if alternative else None)
             model.adapter = None
             model.drafter_weights = None
             executable = all(not draft["candidate"]["execution"]["issues"] for draft in drafts)
             review_enabled = not (args.capacity_control or args.planned_length
-                                  or args.retrieval_cohort or args.precision_control)
+                                  or args.retrieval_cohort or args.precision_control or args.complete_catalog)
             reviews = review(model, context, drafts, budget) if executable and review_enabled else []
             out.write(json.dumps(dict(case_id=case["id"], drafts=drafts, reviews=reviews,
                                       review_enabled=review_enabled,
@@ -286,6 +297,8 @@ if __name__ == "__main__":
     build.add_argument("--exclude-cohort", type=Path, action="append", required=True)
     build.add_argument("--exclude-records", type=Path, action="append", default=[])
     build.add_argument("--count", type=int, default=6)
+    build.add_argument("--include-ids", type=Path,
+                       help="Limit the cohort to named IDs for an explicitly enriched diagnostic")
     build.set_defaults(run=freeze)
     inference = commands.add_parser("run")
     for name in ("cli", "weights", "cohort", "output"):
@@ -301,6 +314,8 @@ if __name__ == "__main__":
     inference.add_argument("--precision-control", type=Path, nargs=2,
                            help="Compare two GGUF quantizations of the same base checkpoint")
     inference.add_argument("--job-commit-limit", type=int)
+    inference.add_argument("--complete-catalog", action="store_true",
+                           help="Compare original and span-complete source quantity catalogs")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):
