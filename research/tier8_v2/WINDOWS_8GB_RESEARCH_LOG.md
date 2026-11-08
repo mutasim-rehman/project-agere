@@ -4,6 +4,13 @@ Window opened at 21:58 Pakistan time on November 8, 2026. The
 three-hour window closes at approximately 00:58 on November 9.
 All studies use native Windows CPU inference. The 16 GB tier
 remains gated. Commits are pushed to the current research branch.
+The host is Windows 11 on a Ryzen 5 8645HS with 16.39 decimal GB
+of physical memory. The 8 GB tier is simulated by the worker
+limits, not by restricting the whole host to 8 GB. The current
+Windows CPU differs from the host in the historical study, so
+elapsed times should not be compared across those hosts. Exact
+runtime and package metadata are in
+`evidence/windows-endpoint-study/windows-environment.json`.
 
 The research question is which intervention raises correct
 candidate or answer delivery under the 8 GB tier, and where
