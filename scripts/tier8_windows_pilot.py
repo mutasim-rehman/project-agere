@@ -1,5 +1,6 @@
 """Paired FinQA pilot with native Windows CPU inference and sequential roles."""
 import argparse
+from contextlib import nullcontext
 import json
 from pathlib import Path
 import subprocess
@@ -8,6 +9,7 @@ import time
 import psutil
 
 from tier8_v2_financial_pipeline import evaluate_financial, run_financial
+from windows_job_commit import CREATE_SUSPENDED, JobCommitLimit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,10 +64,17 @@ class Models:
             cmd.extend(("--lora", str(self.adapter.resolve())))
         started = time.monotonic()
         peak = 0
-        with prefix.with_suffix(".out").open("wb") as out, prefix.with_suffix(".log").open("wb") as log:
-            worker = subprocess.Popen(cmd, stdout=out, stderr=log, creationflags=subprocess.CREATE_NO_WINDOW)
-            process = psutil.Process(worker.pid)
+        commit_cap = getattr(self.args, "job_commit_limit", None)
+        job_context = JobCommitLimit(commit_cap) if commit_cap else nullcontext()
+        flags = subprocess.CREATE_NO_WINDOW | (CREATE_SUSPENDED if commit_cap else 0)
+        with (prefix.with_suffix(".out").open("wb") as out,
+              prefix.with_suffix(".log").open("wb") as log, job_context as job):
+            worker = subprocess.Popen(cmd, stdout=out, stderr=log, creationflags=flags)
             try:
+                process = psutil.Process(worker.pid)
+                if job:
+                    job.assign(worker._handle)
+                    process.resume()
                 while worker.poll() is None:
                     rss = process.memory_info().rss + psutil.Process().memory_info().rss
                     peak = max(rss, peak)
@@ -78,6 +87,7 @@ class Models:
                 if worker.poll() is None:
                     worker.terminate()
                 worker.wait()
+            commit_peak = job.peak_commit() if job else None
         if worker.returncode:
             raise RuntimeError(f"Inference exited {worker.returncode}; see {prefix}.log")
         raw = prefix.with_suffix(".out").read_text(encoding="utf-8", errors="replace").strip()
@@ -88,7 +98,8 @@ class Models:
         except ValueError:
             parsed = None
         return parsed, dict(role=role, stage=stage, raw=raw, token_ceiling=allowance,
-                            peak_sampled_rss=peak, elapsed_seconds=time.monotonic() - started)
+                            peak_sampled_rss=peak, elapsed_seconds=time.monotonic() - started,
+                            job_commit_limit=commit_cap, peak_job_commit=commit_peak)
 
 
 def main():

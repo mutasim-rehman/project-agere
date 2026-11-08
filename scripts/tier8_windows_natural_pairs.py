@@ -67,35 +67,51 @@ def run(args):
         raise ValueError("Capacity comparison requires the matched 3B adapter")
     if args.planned_length and (not args.adapter or args.capacity_control):
         raise ValueError("Length planning requires the adapter and excludes capacity control")
+    if args.retrieval_cohort and (not args.adapter or args.capacity_control or args.planned_length):
+        raise ValueError("Retrieval comparison requires an adapter and no other intervention")
+    if args.precision_control and (args.adapter or args.capacity_control or args.planned_length
+                                   or args.retrieval_cohort):
+        raise ValueError("Matched precision comparison uses only its two base checkpoints")
     model = Models(args)
     public = jsonl(args.cohort)
     if not public or len({case["report_group"] for case in public}) != len(public):
         raise ValueError("Expected one question per report")
+    alternative = {case["id"]: case for case in jsonl(args.retrieval_cohort)} if args.retrieval_cohort else {}
+    if args.retrieval_cohort and set(alternative) != {case["id"] for case in public}:
+        raise ValueError("Retrieval case IDs differ")
     args.output.mkdir(parents=True, exist_ok=False)
     with (args.output / "cases.jsonl").open("x", encoding="utf-8") as out:
         for case_index, case in enumerate(public):
-            context = ("Question: " + case["question"] + "\nFinancial report evidence by source ID:\n"
-                       + json.dumps(case["evidence"]))
-            atoms = atom_catalog(case["evidence"])
-            units = question_units(case["question"], "question")
-            catalog = "\n".join(f"{key}={atom['value']}@{atom['span_id']}" for key, atom in atoms.items())
-            prompt = (context + "\nQuantity references:\n" + catalog
-                      + "\nReturn an arithmetic program with decision ANSWER, answer_unit, and steps."
-                        " Use catalog IDs as operands, CONST:value for permitted constants, and #0, #1"
-                        " for earlier results. The last step gives the requested answer."
-                        " Percent means percentage points and fraction means a dimensionless ratio."
-                      + "\nAllowed units: " + ", ".join(units))
             budget = TokenLedger()
             drafts = [None, None]
             shortest = ("Use the shortest calculation that fully answers the question."
                         " Stop once the requested quantity is computed.")
-            instructions = (shortest, shortest) if args.adapter else (
+            matched = args.adapter or args.precision_control
+            instructions = (shortest, shortest) if matched else (
                 "Check that the final operation answers the exact question.", shortest)
-            order = (1, 0) if args.adapter and case_index % 2 else (0, 1)
+            order = (1, 0) if matched and case_index % 2 else (0, 1)
             for index in order:
+                current = alternative[case["id"]] if index == 1 and alternative else case
+                if current["question"] != case["question"]:
+                    raise ValueError("Retrieval variant changed the question")
+                evidence = current["evidence"]
+                context = ("Question: " + case["question"] + "\nFinancial report evidence by source ID:\n"
+                           + json.dumps(evidence))
+                atoms = atom_catalog(evidence)
+                units = question_units(case["question"], "question")
+                catalog = "\n".join(f"{key}={atom['value']}@{atom['span_id']}" for key, atom in atoms.items())
+                prompt = (context + "\nQuantity references:\n" + catalog
+                          + "\nReturn an arithmetic program with decision ANSWER, answer_unit, and steps."
+                            " Use catalog IDs as operands, CONST:value for permitted constants, and #0, #1"
+                            " for earlier results. The last step gives the requested answer."
+                            " Percent means percentage points and fraction means a dimensionless ratio."
+                          + "\nAllowed units: " + ", ".join(units))
                 model.forced = True
-                model.adapter = args.adapter if args.planned_length or index == int(not args.capacity_control) else None
-                model.drafter_weights = args.capacity_control if index == 1 else None
+                use_adapter = args.planned_length or args.retrieval_cohort or index == int(not args.capacity_control)
+                model.adapter = args.adapter if use_adapter else None
+                model.drafter_weights = (str(args.precision_control[index].resolve())
+                                         if args.precision_control else
+                                         args.capacity_control if index == 1 else None)
                 schema = reference_schema(atoms, units, causal=True)
                 planner_event, steps = None, None
                 limit = 768
@@ -119,15 +135,17 @@ def run(args):
                     program = compile_plan(plan, atoms)
                 except (ValueError, TypeError, AttributeError):
                     program = None
-                execution = checked(program, case["evidence"])
+                execution = checked(program, evidence)
                 drafts[index] = dict(plan=plan, candidate=dict(program=program, execution=execution),
                                      adapter_applied=model.adapter is not None,
                                      weights_override=model.drafter_weights, event=event,
-                                     planned_steps=steps, planner_event=planner_event)
+                                     planned_steps=steps, planner_event=planner_event,
+                                     evidence=evidence if alternative else None)
             model.adapter = None
             model.drafter_weights = None
             executable = all(not draft["candidate"]["execution"]["issues"] for draft in drafts)
-            review_enabled = not (args.capacity_control or args.planned_length)
+            review_enabled = not (args.capacity_control or args.planned_length
+                                  or args.retrieval_cohort or args.precision_control)
             reviews = review(model, context, drafts, budget) if executable and review_enabled else []
             out.write(json.dumps(dict(case_id=case["id"], drafts=drafts, reviews=reviews,
                                       review_enabled=review_enabled,
@@ -151,7 +169,8 @@ def summarize(args):
     for row in rows:
         annotation = gold[row["case_id"]]
         evidence = packet(annotation)["evidence"]
-        complete_evidence = set(annotation["qa"]["gold_inds"]) <= evidence.keys()
+        annotated = set(annotation["qa"]["gold_inds"])
+        complete_evidence = annotated <= evidence.keys()
         candidates = [draft["candidate"] for draft in row["drafts"]]
         peaks.extend(item["event"]["peak_sampled_rss"] for item in row["drafts"] + row["reviews"])
         peaks.extend(draft["planner_event"]["peak_sampled_rss"] for draft in row["drafts"]
@@ -179,7 +198,8 @@ def summarize(args):
                 continue
             for length in range(1, len(program["steps"])):
                 prefix = {**program, "steps": program["steps"][:length]}
-                if checked(prefix, evidence)["issues"]:
+                candidate_evidence = row["drafts"][index].get("evidence") or evidence
+                if checked(prefix, candidate_evidence)["issues"]:
                     continue
                 try:
                     if official_result(evaluate, annotation, prefix) == annotation["qa"]["exe_ans"]:
@@ -190,6 +210,9 @@ def summarize(args):
                                     planned_steps=[draft.get("planned_steps") for draft in row["drafts"]],
                                     duplicate_program=equivalent, selected_indices=indices,
                                     delivered=delivered, complete_annotated_evidence=complete_evidence,
+                                    per_arm_complete_evidence=[
+                                        annotated <= (draft.get("evidence") or evidence).keys()
+                                        for draft in row["drafts"]],
                                     correct_prefix_of_wrong_draft=any(correct_prefix_lengths),
                                     correct_prefix_lengths=correct_prefix_lengths))
         for metric, labels in (("official", official), ("reported", reported)):
@@ -213,12 +236,17 @@ def summarize(args):
     result["draft_resources"] = []
     for index in range(2):
         drafts = [row["drafts"][index] for row in rows]
+        events = [event for draft in drafts
+                  for event in (draft["event"], draft.get("planner_event")) if event]
+        commit_peaks = [event["peak_job_commit"] for event in events
+                        if event.get("peak_job_commit") is not None]
         result["draft_resources"].append(dict(
             executable=sum(not draft["candidate"]["execution"]["issues"] for draft in drafts),
             median_steps=median(len((draft["plan"] or {}).get("steps", [])) for draft in drafts),
             median_seconds=median(draft["event"]["elapsed_seconds"] +
                                   (draft.get("planner_event") or {}).get("elapsed_seconds", 0) for draft in drafts),
-            peak_sampled_rss=max(draft["event"]["peak_sampled_rss"] for draft in drafts)))
+            peak_sampled_rss=max(event["peak_sampled_rss"] for event in events),
+            peak_job_commit=max(commit_peaks, default=None)))
     print(json.dumps(result, indent=2))
 
 
@@ -241,6 +269,11 @@ if __name__ == "__main__":
                            help="Compare adapted 3B vs. this larger GGUF filename, without review")
     inference.add_argument("--planned-length", action="store_true",
                            help="Compare adapted drafting with and without a separate length prediction")
+    inference.add_argument("--retrieval-cohort", type=Path,
+                           help="Compare the same adapted drafter under alternate evidence packets")
+    inference.add_argument("--precision-control", type=Path, nargs=2,
+                           help="Compare two GGUF quantizations of the same base checkpoint")
+    inference.add_argument("--job-commit-limit", type=int)
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):

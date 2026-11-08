@@ -1,0 +1,57 @@
+# Windows 8 GB evidence retrieval and resource controls
+
+## Development retrieval screen
+
+Across the public FinQA development split (883 questions from 224
+reports), the baseline top-eight lexical packet contained every
+annotated evidence span for 750 questions. BM25 under the same
+per-question evidence-plus-catalog token allowance covered 748.
+Reciprocal rank fusion of the original ranking, BM25 over full
+spans, and BM25 over table row labels covered 733. We measured
+token costs using the local Qwen tokenizer. [BM25](https://doi.org/10.1561/1500000019)
+[Reciprocal rank fusion](https://cormack.uwaterloo.ca/cormacksigir09-rrf.pdf)
+
+Keeping up to 16 lexical spans, bounded by twice the original
+budget and ordinarily by 2,300 evidence-plus-catalog tokens,
+covered 827 questions. It added 77 and lost none. The median
+evidence-plus-catalog length grew from 711 to 1,225 tokens.
+The paired report-cluster bootstrap interval for the coverage
+gain was +6.6 to +10.9 percentage points. This is a larger
+input budget and an annotated-evidence retrieval result.
+It does not measure answer correctness.
+
+## Candidate-generation test
+
+The wider lexical packet was selected using the development
+retrieval screen and frozen for the same 16 test reports as the
+count-planning comparison. The baseline and wider arms use the
+same adapted 3B checkpoint, drafting prompt, 768-token allowance
+and 4,096-token context. Each arm receives its own evidence
+packet and source catalog. We keep all 16 paired questions and
+measure official execution accuracy and annotated evidence coverage.
+This is a new intervention on the same test questions rather than
+an independent replication of the count-planning comparison.
+
+Frozen wider packet SHA-256
+`c3d6e58b2b182ee95f3ca15d263511897c515ddfeefe81c0720f3006fa705cb4`.
+The audit script can regenerate it with `--cohort` and
+`--method lexical16_bounded`. The paired runner takes it as
+`--retrieval-cohort`.
+
+## Native hard commit guard
+
+The runner can create each inference process suspended, assign it to
+a Windows Job Object with a 6.1 GB aggregate commit limit, then
+resume it. This leaves room within 6.4 GB for the Python controller.
+The sampled RSS guard remains separate. Job commit limits constrain
+virtual memory committed by the process group. They are distinct
+from RSS and do not demonstrate zero Windows paging.
+[Windows Job Object limits](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information)
+
+A deliberately oversized 96 MiB Python allocation failed inside
+a 64 MiB job with MemoryError. The job peak counter on that failed
+probe exceeded the limit, so failed-allocation peaks should not be
+interpreted as committed memory successfully consumed. A separate
+7B CPU inference preflight completed under the 6.1 GB guard with
+5.42 GB reported peak commit and 5.01 GB sampled RSS. The resource
+probe does not validate the earlier sampled-only studies retroactively.
