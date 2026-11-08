@@ -242,13 +242,19 @@ def summarize(args):
                   for event in (draft["event"], draft.get("planner_event")) if event]
         commit_peaks = [event["peak_job_commit"] for event in events
                         if event.get("peak_job_commit") is not None]
+        prompt_tokens = [event["prompt_eval_tokens"] for event in events
+                         if event.get("prompt_eval_tokens") is not None]
+        decode_runs = [event["decode_eval_runs"] for event in events
+                       if event.get("decode_eval_runs") is not None]
         result["draft_resources"].append(dict(
             executable=sum(not draft["candidate"]["execution"]["issues"] for draft in drafts),
             median_steps=median(len((draft["plan"] or {}).get("steps", [])) for draft in drafts),
             median_seconds=median(draft["event"]["elapsed_seconds"] +
                                   (draft.get("planner_event") or {}).get("elapsed_seconds", 0) for draft in drafts),
             peak_sampled_rss=max(event["peak_sampled_rss"] for event in events),
-            peak_job_commit=max(commit_peaks, default=None)))
+            peak_job_commit=max(commit_peaks, default=None),
+            prompt_eval_tokens=sum(prompt_tokens) if len(prompt_tokens) == len(events) else None,
+            decode_eval_runs=sum(decode_runs) if len(decode_runs) == len(events) else None))
     print(json.dumps(result, indent=2))
 
 

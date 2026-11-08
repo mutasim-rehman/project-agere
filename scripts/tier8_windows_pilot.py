@@ -3,6 +3,7 @@ import argparse
 from contextlib import nullcontext
 import json
 from pathlib import Path
+import re
 import subprocess
 import time
 
@@ -91,6 +92,9 @@ class Models:
         if worker.returncode:
             raise RuntimeError(f"Inference exited {worker.returncode}; see {prefix}.log")
         raw = prefix.with_suffix(".out").read_text(encoding="utf-8", errors="replace").strip()
+        runtime_log = prefix.with_suffix(".log").read_text(encoding="utf-8", errors="replace")
+        prompt_perf = re.search(r"prompt eval time =\s*([\d.]+) ms\s*/\s*(\d+) tokens", runtime_log)
+        decode_perf = re.search(r"(?<!prompt )\beval time =\s*([\d.]+) ms\s*/\s*(\d+) runs", runtime_log)
         try:
             parsed, end = json.JSONDecoder().raw_decode(raw)
             if raw[end:].strip() not in ("", "[end of text]"):
@@ -99,7 +103,11 @@ class Models:
             parsed = None
         return parsed, dict(role=role, stage=stage, raw=raw, token_ceiling=allowance,
                             peak_sampled_rss=peak, elapsed_seconds=time.monotonic() - started,
-                            job_commit_limit=commit_cap, peak_job_commit=commit_peak)
+                            job_commit_limit=commit_cap, peak_job_commit=commit_peak,
+                            prompt_eval_tokens=int(prompt_perf[2]) if prompt_perf else None,
+                            prompt_eval_ms=float(prompt_perf[1]) if prompt_perf else None,
+                            decode_eval_runs=int(decode_perf[2]) if decode_perf else None,
+                            decode_eval_ms=float(decode_perf[1]) if decode_perf else None)
 
 
 def main():
