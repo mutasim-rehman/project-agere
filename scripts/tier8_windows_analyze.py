@@ -64,9 +64,21 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("ledger", type=Path)
     parser.add_argument("--gold", type=Path)
+    parser.add_argument("--one-step-ledger", type=Path)
     args = parser.parse_args()
     rows = [json.loads(line) for line in args.ledger.read_text(encoding="utf-8").splitlines()]
     result = summarize(rows)
+    if args.one_step_ledger:
+        one_step = [json.loads(line) for line in
+                    args.one_step_ledger.read_text(encoding="utf-8").splitlines()]
+        if not one_step or not all(row.get("one_step") and row["forced"] for row in one_step):
+            raise ValueError("Expected one-step forced rows")
+        ids = {row["case_id"] for row in one_step}
+        unrestricted = [{**row, "forced": False} for row in rows
+                        if row["forced"] and row["case_id"] in ids]
+        contrast = summarize(unrestricted + one_step)
+        result["step_limit_contrast"] = {"pairs": contrast["pairs"],
+            "unrestricted_forced": contrast["baseline"], "one_step_forced": contrast["forced"]}
     if args.gold:
         public_path = (Path(__file__).resolve().parents[1]
                        / "research/tier8_v2/data/finqa-development-public.jsonl")

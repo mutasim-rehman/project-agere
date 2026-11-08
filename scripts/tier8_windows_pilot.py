@@ -37,6 +37,10 @@ class Models:
             content = content.replace("ANSWER or INSUFFICIENT", "ANSWER").replace(
                 "If necessary evidence is missing, use INSUFFICIENT and empty steps.",
                 "Attempt the best supported program using the available evidence.")
+            if self.args.one_step:
+                steps = schema["properties"]["steps"]
+                schema["properties"]["steps"] = steps["oneOf"][0]
+                content += "\nUse exactly one arithmetic operation."
         self.calls += 1
         prefix = self.args.output / f"call-{self.calls:03}"
         prompt = prefix.with_suffix(".prompt")
@@ -87,6 +91,8 @@ def main():
     for arg in ("cli", "weights", "gold", "output"):
         parser.add_argument(f"--{arg}", type=Path, required=True)
     parser.add_argument("--limit", type=int, default=24, choices=range(1, 25))
+    parser.add_argument("--one-step", action="store_true",
+                        help="Run only the one-step forced arm for a follow-up comparison")
     args = parser.parse_args()
     data = ROOT / "research/tier8_v2"
     ids = [row["case_id"] for row in jsonl(
@@ -100,14 +106,16 @@ def main():
     args.output.mkdir(parents=True, exist_ok=False)
     with (args.output / "cases.jsonl").open("x", encoding="utf-8") as ledger:
         for index, key in enumerate(ids):
-            for forced in (bool(index % 2), not bool(index % 2)):
+            order = (True,) if args.one_step else (bool(index % 2), not bool(index % 2))
+            for forced in order:
                 models.forced = forced
                 packet = {k: v for k, v in public[key].items() if k != "gold"}
                 result = run_financial(packet, models, "mas", "none", representation="reference",
                                        selector="none", causal_mode="grammar", catalog_style="compact",
                                        unit_mode="question")
                 score = evaluate_financial(gold[key], result["initial_answer"], result["initial_execution"])
-                ledger.write(json.dumps({**result, "forced": forced, "score": score}) + "\n")
+                ledger.write(json.dumps({**result, "forced": forced, "score": score,
+                                         "one_step": args.one_step}) + "\n")
                 ledger.flush()
                 print(key, forced, result["delivered"], score["case_success"], flush=True)
 
