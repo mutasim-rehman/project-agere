@@ -29,7 +29,7 @@
     "precision96": {
       "status": "running",
       "expected": 96,
-      "completed": 0,
+      "completed": 24,
       "started_utc": "2026-11-08T19:34:39.763922+00:00"
     }
   }
