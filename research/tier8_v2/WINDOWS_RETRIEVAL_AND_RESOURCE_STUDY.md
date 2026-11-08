@@ -117,3 +117,14 @@ first pilot. The narrow and expanded evidence manifests are
 archived before inference, with SHA-256 values
 `e69c0a16d9fd602a853c0e5a91ebb0b694bce8f49b7860adfa81382cb8905e39`
 and `62a4ccf71a96caf0937019877d33b6dfe9b5adca8bd32ee75241634e4c50aecb`.
+
+The 21-report replication is a directional check. Under an
+optimistic paired model of 18.75% gains and zero losses, the
+two-sided exact test has about 19% power at 21 independent
+report pairs and needs 41 for 80%. With 15% gains and 5%
+losses, it needs 168 pairs for 80%. With 10% gains and 5%
+losses, it needs 498. These are sensitivity scenarios under
+independent pairs and fixed transition probabilities, not
+estimates of the actual effect or an assumption that
+company-year reports are always independent. The calculations
+are archived in `prospective-power.json`.
