@@ -36,3 +36,33 @@ same arguments as the prior challenge plus `--exclude-cohort` pointing
 to its frozen cohort. Then use `replay-reject` on the new archived
 cohort and `summarize-reject` on the replay ledger. Inference is native
 Windows, CPU only, with a 6.4 GB sampled working-set guard.
+
+## Results
+
+All 24 presentations completed. Peak sampled working-set RSS was
+2,459,185,152 bytes (2.46 decimal GB). Measurements do not verify
+Windows paging or unsampled peaks.
+
+- With one correct candidate, single presentations produced eight
+  correct selections, one wrong selection, and three withholds out of
+  twelve. Agreement across reversed orders retained three correct
+  deliveries and withheld three of the six report pairs.
+- With both candidates wrong, single presentations produced five
+  false accepts and seven correct withholds out of twelve. Only three
+  reports returned NEITHER in both orders. The agreement rule withheld
+  on all six report pairs, because none selected the same wrong program
+  in both orders.
+
+Across both pair types, the agreement rule produced three correct,
+zero wrong, and nine withheld outcomes. It filtered all six observed
+wrong choices while retaining some coverage. The two presentations
+per pair and two pair types per report are dependent measurements.
+Zero observed wrong deliveries on six reports does not establish a
+low population error rate. This run used one reference and constructed
+errors rather than a naturally generated candidate pool.
+
+This is a concrete 8 GB result for the agreement rule. The next
+deployment-oriented question is whether two generated candidates
+provide enough correct programs for this rule to retain useful
+coverage, and whether correlated errors survive the agreement check.
+The 16 GB tier remains gated.
