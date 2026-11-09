@@ -77,6 +77,31 @@ def review(model, context, drafts, budget):
     return choices
 
 
+def constrain_shape(schema, shape, atoms):
+    """Fix the operation graph while leaving each source slot to the drafter."""
+    lengths = schema["oneOf"][0]["properties"]["steps"]["oneOf"]
+    if not isinstance(shape, list) or not 1 <= len(shape) <= len(lengths):
+        raise ValueError("Expected a bounded reference shape")
+    length = lengths[len(shape) - 1]
+    for step, options in zip(shape, length["prefixItems"]):
+        if not isinstance(step, dict) or set(step) != {"op", "left", "right"}:
+            raise ValueError("Invalid reference shape step")
+        narrowed = []
+        for branch in options["oneOf"]:
+            props = branch["properties"]
+            for key, value in step.items():
+                values = props[key]["enum"]
+                allowed = [ref for ref in values if ref in atoms] if value == "SOURCE" else (
+                    [value] if value in values else [])
+                props[key]["enum"] = allowed
+            if all(prop["enum"] for prop in props.values()):
+                narrowed.append(branch)
+        if len(narrowed) != 1:
+            raise ValueError("Shape must identify one grounded operation per step")
+        options["oneOf"] = narrowed
+    lengths[:] = [length]
+
+
 def run(args):
     if args.capacity_control and not args.adapter:
         raise ValueError("Capacity comparison requires the matched 3B adapter")
@@ -98,6 +123,8 @@ def run(args):
                                  or args.retrieval_cohort or args.precision_control
                                  or args.complete_catalog or args.oracle_lengths):
         raise ValueError("Oracle-operand diagnostic requires only the unadapted model")
+    if args.oracle_shape and not args.oracle_operands:
+        raise ValueError("Shape diagnostic requires the same operand mask in both arms")
     if args.complete_catalog:
         from tier8_windows_catalog_audit import load_prototype
         expanded_catalog = load_prototype()
@@ -109,6 +136,9 @@ def run(args):
     if args.oracle_lengths and set(oracle) != {case["id"] for case in public}:
         raise ValueError("Oracle length diagnostic must cover the entire frozen cohort")
     masks = json.loads(args.oracle_operands.read_bytes()) if args.oracle_operands else {}
+    shapes = json.loads(args.oracle_shape.read_bytes()) if args.oracle_shape else {}
+    if args.oracle_shape and set(shapes) != {case["id"] for case in public}:
+        raise ValueError("Oracle shape diagnostic must cover the entire frozen cohort")
     if args.oracle_operands:
         if set(masks) != {case["id"] for case in public}:
             raise ValueError("Oracle operand diagnostic must cover the entire frozen cohort")
@@ -157,8 +187,10 @@ def run(args):
                                          if args.precision_control else
                                          args.capacity_control if index == 1 else None)
                 selectable = ({key: atom for key, atom in atoms.items() if key in masks[case["id"]]}
-                              if masks and index == 1 else atoms)
+                              if masks and (index == 1 or shapes) else atoms)
                 schema = reference_schema(selectable, units, causal=True)
+                if shapes and index == 1:
+                    constrain_shape(schema, shapes[case["id"]], selectable)
                 planner_event, steps = None, None
                 limit = 768
                 if args.planned_length and index == 1:
@@ -368,6 +400,8 @@ if __name__ == "__main__":
                            help="Gold-informed diagnostic only: compare against exact annotated lengths")
     inference.add_argument("--oracle-operands", type=Path,
                            help="Gold-informed diagnostic only: restrict the grammar to listed source IDs")
+    inference.add_argument("--oracle-shape", type=Path,
+                           help="Gold-informed diagnostic only: fix reference shape in the second masked arm")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):

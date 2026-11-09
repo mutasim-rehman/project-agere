@@ -250,3 +250,21 @@ distributions provide no evidence of accuracy equivalence.
 See `finqa-operand-oracle-summary.json` and
 `finqa-operand-oracle-cases.jsonl` in the extended evidence
 directory.
+
+### Operation-structure diagnostic
+
+On the same 15 reports, compare two drafts with the same
+gold-informed operand mask. In the second arm, the grammar
+also fixes the operation sequence, constants, operand types,
+intermediate references, and final endpoint from the annotated
+program. Source-ID slots remain open across the full masked
+menu and the model still chooses the display unit. Both arms
+receive the original unmodified prompt and full catalog. This
+supplies a large part of the solution, so the contrast only
+measures what remains after providing the reference structure.
+
+Shape SHA-256
+`6896f0774bc6019af11b31fcd31a71c3845a532d9de4e6e056ff3f087a8536a5`.
+Use `run --oracle-operands ... --oracle-shape ...` under the
+same Windows worker limit. This is a follow-up on the same
+reports and provides no independent sample of method accuracy.

@@ -1,0 +1,167 @@
+{
+  "GPN/2018/page_94.pdf-2": [
+    {
+      "op": "multiply",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    }
+  ],
+  "ZBH/2007/page_67.pdf-1": [
+    {
+      "op": "subtract",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    },
+    {
+      "op": "divide",
+      "left": "#0",
+      "right": "SOURCE"
+    }
+  ],
+  "GS/2018/page_78.pdf-4": [
+    {
+      "op": "divide",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    }
+  ],
+  "ABC/2005/page_49.pdf-1": [
+    {
+      "op": "add",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    }
+  ],
+  "UA/2011/page_69.pdf-2": [
+    {
+      "op": "divide",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    }
+  ],
+  "HWM/2018/page_96.pdf-2": [
+    {
+      "op": "multiply",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    },
+    {
+      "op": "multiply",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    },
+    {
+      "op": "subtract",
+      "left": "#0",
+      "right": "#1"
+    }
+  ],
+  "BLL/2006/page_67.pdf-3": [
+    {
+      "op": "divide",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    }
+  ],
+  "STT/2014/page_54.pdf-2": [
+    {
+      "op": "subtract",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    },
+    {
+      "op": "divide",
+      "left": "#0",
+      "right": "SOURCE"
+    }
+  ],
+  "MMM/2013/page_75.pdf-2": [
+    {
+      "op": "subtract",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    },
+    {
+      "op": "divide",
+      "left": "#0",
+      "right": "SOURCE"
+    }
+  ],
+  "GPN/2014/page_92.pdf-1": [
+    {
+      "op": "multiply",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    },
+    {
+      "op": "divide",
+      "left": "#0",
+      "right": "CONST:1000000"
+    }
+  ],
+  "FIS/2010/page_70.pdf-2": [
+    {
+      "op": "divide",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    }
+  ],
+  "DISH/2011/page_122.pdf-4": [
+    {
+      "op": "multiply",
+      "left": "SOURCE",
+      "right": "CONST:1000"
+    },
+    {
+      "op": "add",
+      "left": "#0",
+      "right": "SOURCE"
+    }
+  ],
+  "AOS/2010/page_18.pdf-1": [
+    {
+      "op": "subtract",
+      "left": "SOURCE",
+      "right": "CONST:100"
+    },
+    {
+      "op": "divide",
+      "left": "#0",
+      "right": "CONST:100"
+    },
+    {
+      "op": "subtract",
+      "left": "SOURCE",
+      "right": "CONST:100"
+    },
+    {
+      "op": "divide",
+      "left": "#2",
+      "right": "CONST:100"
+    },
+    {
+      "op": "subtract",
+      "left": "#1",
+      "right": "#3"
+    }
+  ],
+  "CE/2009/page_65.pdf-2": [
+    {
+      "op": "add",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    }
+  ],
+  "FIS/2006/page_31.pdf-2": [
+    {
+      "op": "add",
+      "left": "SOURCE",
+      "right": "SOURCE"
+    },
+    {
+      "op": "divide",
+      "left": "SOURCE",
+      "right": "#0"
+    }
+  ]
+}
