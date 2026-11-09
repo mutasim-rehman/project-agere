@@ -128,3 +128,29 @@ Generate the added arm with `tier8_windows_tatqa.py run
 Join the frozen direct 7B and new program records by case ID
 before scoring. Run only if the preceding studies leave time
 for a complete comparison.
+
+## Cross-benchmark adapter and gate transfer
+
+On 72 separate arithmetic table contexts, the same 3B
+cited-program drafter scored 3/72 without the FinQA actor
+adapter and 8/72 with it. The paired changes were six gains
+and one loss (two-sided exact McNemar p = 0.125). Both arms
+produced 72 valid predictions. The observed gain remains
+uncertain. Supplying the gold scale rescued one wrong base
+prediction and eight wrong adapted predictions, so scale
+remained a material source of adapted-model errors.
+
+The FinQA control critic accepted 16 adapted predictions.
+It retained six of eight correct answers and ten of 64 wrong
+answers, yielding 6 correct, 10 wrong and 56 withheld.
+Accepted-answer error fell from 64/72 (88.9%) without review
+to 10/16 (62.5%) with review. This shows a selective tradeoff
+on these fixed candidates, with a substantial residual error
+rate and two correct answers lost.
+
+Both drafters received 61,449 prompt tokens across the cohort.
+Median times were 23.5 seconds for base generation, 18.2 for
+adapted generation, and 30.2 for the full adapted draft and
+review path. Peak worker commit was 2.77 GB at base and
+2.92 GB for the sequential adapted roles. See
+`evidence/windows-extended/tatqa-transfer72-summary.json`.
