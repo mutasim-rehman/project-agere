@@ -1,0 +1,156 @@
+# Evidence-only planning under the Windows 8 GB application budget
+
+## Motivation
+
+The answer-key operation-structure intervention recovered 10/15
+official matches with an answer-key operand shortlist, compared
+with 0/15 from the shortlist alone. This study tests whether a
+predictive structure stage helps with inputs available at inference.
+[Earlier diagnostic and resource results](WINDOWS_EXTENDED_RESEARCH.md)
+
+## Development and cohort audit
+
+The prototype uses 12 existing FinQA development packets, one per
+company-year report, ranked by SHA-256 with prefix
+`agere-shape-dev-v1|`. These cases are for development and are
+reported separately. Their public packet checksum with LF line endings is
+`14abf004b6c0f3b652af174c2a3c0eb0d6e8f24b0569c7195112e2c89b47fe9f`.
+The first prototype produced a usable structure on only one of 12
+development reports. Eleven proposed steps with no source-dependent
+operand. Before any held-out inference, we revised the planning grammar
+to predict only the operations and dependencies. The binding pass
+assigns quantities and standard constants. We retained the original
+development outputs separately.
+
+The revised planner produced a usable structure on 11 of 12
+development cases. Both the baseline and the revised arm delivered
+three correct answers by official execution. The baseline delivered
+four wrong and withheld five, while the revised arm delivered three
+wrong and withheld six. Under reported-answer scoring the two arms
+delivered five and four correct respectively. Median request time
+increased from 23.0 to 30.9 seconds. Both arms peaked at 5.26 GB
+worker commit. We froze the revised grammar before held-out inference.
+The pilot established that the planner could supply usable structures,
+with no observed accuracy gain on these development cases.
+
+The remaining FinQA test inventory shrinks to one eligible question
+on one report after excluding named project cohorts, prior Windows
+cohorts, and the recorded common actor and control critic training
+and validation report groups. We use TAT-QA for the held-out
+arithmetic comparison. The primary cohort contains 96 contexts from
+the benchmark's official development split, held out for this project.
+The secondary cohort contains all 28 remaining eligible contexts
+from the official test split. Both use one arithmetic question per
+table and the existing SHA-256 order. Eligibility requires a numerical
+catalog and excludes table IDs used by prior Agere TAT-QA comparisons.
+Normalized exact table duplicates are excluded. The primary cohort
+also excludes exact tables in the full official test split. The
+published raw data provide table IDs but do not map these records to
+company-year reports. Cross-context report overlap and checkpoint
+pretraining exposure remain unknown.
+[TAT-QA benchmark](https://aclanthology.org/2021.acl-long.254/)
+
+Frozen checksums (LF line endings for cohorts):
+
+- Primary cohort `e463671e33f56af56e6d8d1ad07720b3e75fa3c9a732746a541483fb44251ac0`
+- Secondary cohort `f494a4268baa1623b8159dc2d428c0cfaeb3235e99df5e9831bf923dcaa1a802`
+- Official development source `8da095a819af6db3c14877c6df2d4d29960e41d1a63dd1fa853507bd2a616af5`
+- Official test source and evaluator hashes are recorded in [the prior TAT-QA protocol](WINDOWS_TATQA_STUDY.md).
+
+## Prespecified comparison
+
+- **Direct 7B** emits a number and display scale, with a short
+  explanation. **Cited-program 7B** emits a source-referenced
+  executable program with a display scale. Both use the same
+  unadapted Qwen2.5 7B Q4 checkpoint, 960 generated tokens maximum
+  per question and no review. Alternate which runs first.
+- **Current MAS** runs the same common actor and control critic
+  adapters on two resident 3B Q4 workers. It reserves 768 tokens
+  for the draft and 192 for binary review.
+- **Planner MAS** uses the same two resident workers and review
+  instruction. The actor uses up to 192 tokens to predict operations,
+  unbound value slots, and dependencies. A valid connected
+  structure constrains a 576-token source-binding
+  draft. An empty, invalid, or disconnected structure falls back
+  to the ordinary grammar with the same 576-token cap. The critic
+  sees the resulting program, its execution, and the original
+  evidence. It gets up to 192 tokens. Both MAS arms deliver only
+  executable answers that the critic passes.
+
+All arms use the same evidence packets, 4,096-token context, eight
+CPU threads per worker, b12202 Windows runtime, 6.1 GB job commit
+limit and 6.4 GB sampled working-set guard. The resident pair uses
+the disabled RAM prompt cache validated earlier. The 7B runs use
+the sequential CLI. Their latency includes model load, so the
+clean planner latency contrast is the two resident MAS arms.
+These are application limits on the 16.39 GB Windows host.
+
+**Primary outcome** is the paired difference in official exact-match
+correct delivery between planner MAS and current MAS on the primary
+cohort. A practical improvement needs a positive paired interval
+and no observed increase in wrong deliveries. The secondary cohort
+checks the direction. Direct 7B and cited-program 7B are competitive
+comparators rather than matching controls for the planner. Report
+correct, wrong and withheld counts, candidate correctness before
+review, F1, elapsed time, peak memory and token counters. Resample
+paired table contexts for 95% intervals and report exact paired
+tests. Report-level clustering is unavailable from the source.
+
+For a secondary diagnostic, compare the final program's operator
+tree with the parseable benchmark derivation after replacing numeric
+leaves with placeholders and sorting commutative operands. This
+checks structural agreement without inspecting labels during
+generation. It does not recognize every equivalent formula.
+Unparseable derivations are excluded only from this diagnostic.
+
+Run `tier8_windows_tatqa.py run --matched-large-formats ...
+--generation-limit 960` for the 7B arms. Run
+`tier8_windows_resident_probe.py --unit-mode tatqa
+--disable-prompt-cache-ram` with `--planner direct` or
+`--planner shape` for the two MAS arms. Score only complete
+cohorts with `tier8_windows_planner_study.py`. Keep the two
+benchmark splits separate in scoring.
+
+## Primary held-out results
+
+All four arms completed the 96-context primary cohort. The
+counts below are correct, wrong, and withheld under official
+TAT-QA exact match.
+
+- Direct 7B delivered 19 correct and 76 wrong, with one withheld.
+- Cited-program 7B delivered 15 correct and 80 wrong, with one withheld.
+- Current MAS delivered six correct and 23 wrong, with 67 withheld.
+- Planner MAS delivered ten correct and 25 wrong, with 61 withheld.
+
+Planning gained four correct deliveries and lost none. The point
+estimate was +4.2 percentage points, with a paired context-bootstrap
+interval of +1.0 to +8.3 points. Only four pairs were discordant,
+and the two-sided exact paired test gave p = 0.125. The positive
+bootstrap interval should be read cautiously with such sparse
+discordance. Wrong delivery increased by two answers, failing
+the prespecified practical success criterion. Direct 7B delivered
+nine more correct answers than planner MAS.
+
+Before review, current MAS produced 26 correct candidates and
+planner MAS produced 25, with four gains and five losses. All
+four gains were delivered. Two gained cases also acquired a
+matching operator tree. On the other two, both drafts had a
+matching tree and the planned draft corrected the numerical answer.
+Across the 87 parseable reference derivations, structure matches
+fell from 46 to 40, with three gains and nine losses. This
+descriptive structure metric ignores leaf identity and algebraic
+equivalences.
+
+The planner supplied a connected shape on 57/96 contexts. The
+remaining 39 predictions had unused operations outside the
+final dependency graph. On all 39 fallback cases, the saved draft
+and verdict reproduced the unplanned baseline. The result therefore
+shows both limitations in predicting a usable shape and losses
+even when the predicted graph passes validation.
+
+Both MAS arms peaked at about 5.26 GB of worker commit. Median
+request time rose from 25.2 to 33.9 seconds, and actual generated
+tokens rose from 6,672 to 9,863 across the cohort. The 7B arms
+peaked at about 5.44 GB, with median times of 34.3 seconds direct
+and 46.8 seconds for programs, including load.
+[Primary scores and paired transitions](evidence/windows-planner-study/tatqa-dev-scores.json)

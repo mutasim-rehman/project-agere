@@ -1,0 +1,109 @@
+{
+  "protocol_commit": "1b1722fe",
+  "started_utc": "2026-11-09T06:02:58.450043+00:00",
+  "studies": {
+    "finqa-development": {
+      "status": "complete",
+      "expected": 12,
+      "completed": 12
+    },
+    "tatqa-smoke": {
+      "expected_contexts": 1,
+      "status": "complete",
+      "stages": {
+        "large": {
+          "status": "complete",
+          "completed": 1,
+          "started_utc": "2026-11-09T06:11:36.248462+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T06:12:49.846789+00:00"
+        },
+        "mas": {
+          "status": "complete",
+          "completed": 1,
+          "started_utc": "2026-11-09T06:12:53.611243+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T06:13:37.256363+00:00"
+        },
+        "planner": {
+          "status": "complete",
+          "completed": 1,
+          "started_utc": "2026-11-09T06:13:40.897434+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T06:14:24.583403+00:00"
+        }
+      },
+      "finished_utc": "2026-11-09T06:14:31.520673+00:00"
+    },
+    "tatqa-dev": {
+      "expected_contexts": 96,
+      "status": "complete",
+      "stages": {
+        "large": {
+          "status": "complete",
+          "completed": 96,
+          "started_utc": "2026-11-09T06:14:35.118483+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T08:30:13.362696+00:00"
+        },
+        "mas": {
+          "status": "complete",
+          "completed": 96,
+          "started_utc": "2026-11-09T08:30:17.692743+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T09:12:37.066333+00:00"
+        },
+        "planner": {
+          "status": "complete",
+          "completed": 96,
+          "started_utc": "2026-11-09T09:12:41.867004+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T10:09:02.129060+00:00"
+        }
+      },
+      "finished_utc": "2026-11-09T10:09:21.341061+00:00"
+    },
+    "tatqa-test": {
+      "expected_contexts": 28,
+      "status": "failed",
+      "stages": {
+        "planner": {
+          "status": "complete",
+          "completed": 28,
+          "started_utc": "2026-11-09T10:09:25.572712+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T10:26:45.269351+00:00"
+        },
+        "mas": {
+          "status": "complete",
+          "completed": 28,
+          "started_utc": "2026-11-09T10:26:50.017239+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T10:42:24.585842+00:00"
+        },
+        "large": {
+          "status": "failed",
+          "completed": 2,
+          "started_utc": "2026-11-09T10:42:29.315156+00:00",
+          "exit_code": 1,
+          "finished_utc": "2026-11-09T10:45:33.377528+00:00",
+          "recovery": {
+            "started_utc": "2026-11-09T10:59:08.717139+00:00",
+            "retained_pairs": 2,
+            "status": "failed",
+            "remaining_pairs": 26,
+            "completed": 2,
+            "reason": "CPU compute buffer allocation failed on first attempt",
+            "exit_code": 1,
+            "error": "7B recovery did not complete the frozen cohort",
+            "finished_utc": "2026-11-09T11:00:42.569137+00:00"
+          }
+        }
+      },
+      "finished_utc": "2026-11-09T11:00:42.569137+00:00"
+    }
+  },
+  "status": "failed",
+  "error": "7B recovery did not complete the frozen cohort",
+  "finished_utc": "2026-11-09T11:00:42.569137+00:00"
+}
