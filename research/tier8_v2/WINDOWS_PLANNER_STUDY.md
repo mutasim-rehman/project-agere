@@ -22,6 +22,17 @@ to predict only the operations and dependencies. The binding pass
 assigns quantities and standard constants. We retained the original
 development outputs separately.
 
+The revised planner produced a usable structure on 11 of 12
+development cases. Both the baseline and the revised arm delivered
+three correct answers by official execution. The baseline delivered
+four wrong and withheld five, while the revised arm delivered three
+wrong and withheld six. Under reported-answer scoring the two arms
+delivered five and four correct respectively. Median request time
+increased from 23.0 to 30.9 seconds. Both arms peaked at 5.26 GB
+worker commit. We froze the revised grammar before held-out inference.
+The pilot established that the planner could supply usable structures,
+with no observed accuracy gain on these development cases.
+
 The remaining FinQA test inventory shrinks to one eligible question
 on one report after excluding named project cohorts, prior Windows
 cohorts, and the recorded common actor and control critic training
