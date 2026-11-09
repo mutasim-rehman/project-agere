@@ -1,0 +1,163 @@
+{
+  "questions": 6,
+  "official": {
+    "first_draft_correct": 1,
+    "second_draft_correct": 0,
+    "first_only_correct": 1,
+    "second_only_correct": 0,
+    "oracle_correct_available": 1
+  },
+  "reported": {
+    "first_draft_correct": 1,
+    "second_draft_correct": 0,
+    "first_only_correct": 1,
+    "second_only_correct": 0,
+    "oracle_correct_available": 1
+  },
+  "cases": [
+    {
+      "case_id": "VNO/2014/page_57.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "correct_prefix_of_wrong_draft": true,
+      "correct_prefix_lengths": [
+        [
+          1
+        ],
+        []
+      ]
+    },
+    {
+      "case_id": "DRE/2005/page_30.pdf-1",
+      "official": [
+        true,
+        false
+      ],
+      "reported": [
+        true,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "correct_prefix_of_wrong_draft": true,
+      "correct_prefix_lengths": [
+        [],
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "case_id": "SLB/2015/page_59.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "correct_prefix_of_wrong_draft": true,
+      "correct_prefix_lengths": [
+        [
+          1
+        ],
+        []
+      ]
+    },
+    {
+      "case_id": "CE/2013/page_16.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "correct_prefix_of_wrong_draft": true,
+      "correct_prefix_lengths": [
+        [],
+        [
+          2,
+          5
+        ]
+      ]
+    },
+    {
+      "case_id": "DG/2010/page_136.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "V/2010/page_28.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    }
+  ],
+  "peak_sampled_rss": 5183520768,
+  "draft_resources": [
+    {
+      "executable": 6,
+      "median_steps": 2.0,
+      "median_seconds": 17.77350000000024,
+      "peak_sampled_rss": 2519715840
+    },
+    {
+      "executable": 6,
+      "median_steps": 8.0,
+      "median_seconds": 53.66449999999895,
+      "peak_sampled_rss": 5183520768
+    }
+  ]
+}
