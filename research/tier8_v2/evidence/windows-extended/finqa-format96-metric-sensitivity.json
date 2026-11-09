@@ -1,0 +1,996 @@
+{
+  "groups": {
+    "percent": {
+      "cases": 53,
+      "direct_reported": 23,
+      "program_reported": 19,
+      "direct_only": 10,
+      "program_only": 6,
+      "official_original": 0,
+      "unit_converted_official": 18,
+      "reported_and_converted_official": 18
+    },
+    "number": {
+      "cases": 40,
+      "direct_reported": 12,
+      "program_reported": 1,
+      "direct_only": 11,
+      "program_only": 0,
+      "official_original": 1,
+      "unit_converted_official": 1,
+      "reported_and_converted_official": 1
+    },
+    "unsupported": {
+      "cases": 3,
+      "direct_reported": 0,
+      "program_reported": 0,
+      "direct_only": 0,
+      "program_only": 0,
+      "official_original": 0,
+      "unit_converted_official": 0,
+      "reported_and_converted_official": 0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "DVN/2015/page_79.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        false,
+        true
+      ]
+    },
+    {
+      "case_id": "AWK/2017/page_148.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "GPN/2008/page_78.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "JPM/2010/page_281.pdf-3",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "STT/2007/page_111.pdf-4",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "PPG/2012/page_29.pdf-4",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "AON/2018/page_87.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "FIS/2017/page_64.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        false,
+        true
+      ]
+    },
+    {
+      "case_id": "AES/2010/page_227.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "BLL/2011/page_32.pdf-4",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "PNC/2012/page_65.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "AAL/2014/page_15.pdf-3",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "AMT/2014/page_160.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "AMT/2016/page_125.pdf-3",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "GPN/2010/page_89.pdf-3",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "AMT/2006/page_104.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ADI/2010/page_60.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        false,
+        true
+      ]
+    },
+    {
+      "case_id": "UPS/2012/page_32.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "GIS/2018/page_110.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "MSI/2008/page_69.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ILMN/2008/page_86.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "SNA/2007/page_69.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "PKG/2013/page_88.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "SNA/2013/page_83.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "KHC/2018/page_132.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "AAL/2016/page_8.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "AWK/2012/page_117.pdf-3",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "LMT/2014/page_91.pdf-3",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "PKG/2005/page_74.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "MRO/2013/page_19.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ADBE/1999/page_64.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "UNP/2010/page_21.pdf-4",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "DVN/2012/page_77.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ILMN/2003/page_58.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ANET/2015/page_156.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "STT/2006/page_95.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        false,
+        true
+      ]
+    },
+    {
+      "case_id": "ANSS/2016/page_47.pdf-2",
+      "group": "unsupported",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "BLK/2015/page_124.pdf-4",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "HWM/2015/page_173.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "EMR/2017/page_78.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "C/2018/page_175.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "MS/2013/page_139.pdf-1",
+      "group": "unsupported",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "INTC/2015/page_41.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "UPS/2016/page_114.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "PPG/2006/page_42.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "MSI/2007/page_70.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "RCL/2016/page_6.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "DRE/2008/page_46.pdf-4",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "UPS/2010/page_52.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "C/2009/page_45.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "NWS/2019/page_116.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "RCL/2012/page_75.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "UNP/2016/page_52.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "JKHY/2017/page_26.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "AWK/2018/page_146.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "FIS/2012/page_48.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ECL/2016/page_52.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ADI/2019/page_29.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "RSG/2013/page_123.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "RSG/2012/page_93.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "DRE/2012/page_40.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "AAPL/2006/page_100.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "AWK/2014/page_121.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "CDW/2015/page_93.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "RSG/2010/page_98.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ZBH/2009/page_58.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "SLG/2011/page_91.pdf-5",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "ABMD/2008/page_86.pdf-4",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "FIS/2016/page_9.pdf-4",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "MKTX/2004/page_99.pdf-4",
+      "group": "number",
+      "official_original": true,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "HOLX/2006/page_71.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "GIS/2015/page_62.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "PNC/2007/page_92.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "HOLX/2003/page_52.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "VRTX/2006/page_111.pdf-1",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "JPM/2012/page_140.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "ANSS/2012/page_93.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "MMM/2015/page_93.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "JKHY/2019/page_18.pdf-3",
+      "group": "unsupported",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ETFC/2012/page_43.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "IPG/2017/page_92.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "WRK/2018/page_107.pdf-4",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "ZBH/2008/page_57.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        false,
+        true
+      ]
+    },
+    {
+      "case_id": "EOG/2018/page_75.pdf-1",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "UNP/2018/page_74.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        true,
+        true
+      ]
+    },
+    {
+      "case_id": "ZBH/2015/page_57.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "AMAT/2018/page_33.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "CE/2016/page_19.pdf-3",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "PNC/2014/page_111.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "UA/2007/page_70.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        true,
+        false
+      ]
+    },
+    {
+      "case_id": "HIG/2004/page_140.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "AON/2015/page_96.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "MRK/2013/page_125.pdf-2",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "JPM/2003/page_106.pdf-4",
+      "group": "number",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "RL/2008/page_23.pdf-2",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": false,
+      "reported": [
+        false,
+        false
+      ]
+    },
+    {
+      "case_id": "D/2002/page_87.pdf-3",
+      "group": "percent",
+      "official_original": false,
+      "unit_converted_official": true,
+      "reported": [
+        false,
+        true
+      ]
+    }
+  ]
+}

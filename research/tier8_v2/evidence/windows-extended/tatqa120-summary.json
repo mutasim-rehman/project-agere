@@ -1,0 +1,883 @@
+{
+  "questions": 120,
+  "direct": {
+    "exact": 12.0,
+    "f1": 12.0,
+    "valid": 119,
+    "scale_label_match": 74,
+    "wrong_exact_fixed_by_gold_scale": 11,
+    "peak_sampled_rss": 2463637504,
+    "exact_rate": 0.1,
+    "f1_mean": 0.1,
+    "correct": 12,
+    "wrong": 107,
+    "withheld": 1,
+    "accepted_error": 0.8991596638655462,
+    "median_seconds": 14.093000000000757,
+    "peak_job_commit": 2764279808,
+    "prompt_eval_tokens": 60934,
+    "decode_eval_runs": 6604
+  },
+  "direct_large": {
+    "exact": 29.0,
+    "f1": 29.0,
+    "valid": 120,
+    "scale_label_match": 88,
+    "wrong_exact_fixed_by_gold_scale": 5,
+    "peak_sampled_rss": 5183234048,
+    "exact_rate": 0.24166666666666667,
+    "f1_mean": 0.24166666666666667,
+    "correct": 29,
+    "wrong": 91,
+    "withheld": 0,
+    "accepted_error": 0.7583333333333333,
+    "median_seconds": 33.5470000000023,
+    "peak_job_commit": 5434646528,
+    "prompt_eval_tokens": 60934,
+    "decode_eval_runs": 6880
+  },
+  "cases": [
+    {
+      "case_id": "d633fb7c75f19f95fc12d94db81cfd18",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "4c309d1eb940630e20f4996998ab95bd",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "794720eecb96c64e631c7736714b9a0c",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "2107061527e438ad49bd081d9b8392c8",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "bdf2411e367d4b93fb0247c42751491f",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "1b6e3106f22a0856f943f2fa08bf2294",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "70c55e39fabb49df3f4b9691eeebcd09",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "1aa43ed54e742a429bba7822397637f5",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "7d5b1a2ee87959576cb72f841d616f43",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "c7a09c0292dbc03de3784629cfd11cff",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "d8c4ae3dbabdfc9301e5633a4b367a10",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "25c53226518b6687085500e468d8cdfa",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "a78c175158624c362ead015b1806d7cd",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "b7857f91c53150cee03c580420450f59",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "a9b7f9425b6d18fc8f991061b1c2a038",
+      "exact": {
+        "direct": true,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "239ac320bf2943193d8bcf13605d6319",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "2e00b729e375a0fca9e63f606861dd65",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "34e05c377aa4cec6cc7ab6feedb0812c",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "5e354ce404fe55213d485be6172f32c0",
+      "exact": {
+        "direct": true,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "4ff6daa82c801aec0ba99bc66c830bc6",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "eeef320a4199b74356c5e18e58c33fb4",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "c58cbaa160664d5e1a4ca246ebd09f76",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "7ff2d34723fe38199b39c5fe13e2ba3d",
+      "exact": {
+        "direct": true,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "468c66eae0519507e989ecf48d8c818d",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "892d74a51c31d14f46d826fcacbd6fbb",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "5bbcaeb1ebcedc949361aba4d6559771",
+      "exact": {
+        "direct_large": true,
+        "direct": true
+      }
+    },
+    {
+      "case_id": "6cf8ec5b621c2ad7848f6a65ac0063d5",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "6711e31a89e63017b9d4f1ecc3290eec",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "68ac85a450ef19266a4be4741e6bd897",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "4730fdd9577c47fa63efacfc3b773fca",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "1c9eef3b4330d9355d61b054e3012322",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "4ee51ad50716c139cce384e37747d190",
+      "exact": {
+        "direct_large": true,
+        "direct": true
+      }
+    },
+    {
+      "case_id": "7b6cef8481c751f5416b64d0ae942fcb",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "f5dc025c5e3b7b49a4b72f32a4ef78fb",
+      "exact": {
+        "direct_large": false,
+        "direct": true
+      }
+    },
+    {
+      "case_id": "0d6caf7adf008d5425db9d32fe3d5f86",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "2d38fe94784e6bd8c829289e25502e89",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "3d33d87ea77fa49163aa10b88c3d2271",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "778d97a82e2a18ada4d6dd94efc1c0ff",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "1fa631df29dac2e9313cf6877ad47c6c",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "b33d187349988b3f56b048ac49529657",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "50e1010e3b83cce821940458113ec2c8",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "7e30e6244fab8ce36d11e7aa0d47f58f",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "36f8578e9531070d5949e61c20a32970",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "804b0e7ebbb7a8c33148970bfdebdc15",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "02ef914e94b3a357f695308d04295401",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "b2d5e2512b0988dd701480c344fb82bf",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "1b4108dfea9cc5047328dbdc7d31e766",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "5a50d960844f144f55a683de524e3378",
+      "exact": {
+        "direct_large": true,
+        "direct": true
+      }
+    },
+    {
+      "case_id": "e84ddc532bbe469b2f4a37e34ee3c695",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "c0f850593350bd8776f80b40b644394d",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "0d4eeda9b398c1aa8fd598019e3867c4",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "29caae87f7472e7a795629d3752bb631",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "65a6fe3c82ae4de86cd088dde95e149d",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "daf50cd76d7c12436fb7d7e5218a9aaf",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "5002aeb4d7417fa1b0b5dca12923bdbd",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "7f9ac26d62e28f2366b9453d13c78fc1",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "31a78c37b86b0c1ac0dc4732131233e1",
+      "exact": {
+        "direct": true,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "ca377d98215cea2372b367c005c102a8",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "5bd7ea8469c87b6cde53c6c825d5e8e0",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "468395ce97b1d47b3f3c4822764ab35c",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "6874ed03a9170f15145d98ccf84e17d3",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "70e27b8a8a85da05bcaa081478be5e68",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "a09bb1e2761e7fdd2b9eda19b7fdb103",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "7d7c31527d526e65e416107f9e9ec394",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "27f1a9c7a554b928ab4da0afb589b3f6",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "71f5d3793338046b7929bcf566bec801",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "fe113b8aef0f01f9d48afe157fd98009",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "2d073db9bcc59c9e9a3f32106033ba2c",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "0372329c6901d9328da3b462417969ef",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "3ce7272f8f518766da194ab78616180f",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "80f4540b447fc62c20f332f34250dc94",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "92aa68c1bd7cbb1438732b4a7d34e886",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "68f438d7411a9b2a3bed90fd19bace3d",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "b344fef21f3b22abbd0e88256224cbc2",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "3bff27eb2944cb199f863d6eb50bb06d",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "4e794582b026198625eccfadc37daddf",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "bb9a3100479471638a518e02f59ccc4e",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "e90582d9e4a6b07f6ba3a53e55b3d669",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "b1243c500ece480b14ddd985a4a37964",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "bb741115f47e1edd1da34d48b9953377",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "402e72e6ef2a4471a929dd05b244bc3c",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "a23b3dcb820703a1d9aea7dc33091afb",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "40acacac7f638d5cfdff96a4b1c0995d",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "ce93cfca1db46a3799ae96c2598be864",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "dd2fd021d7720c34a1d52c2d4cdfa2f3",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "f585885778f95bf1dbb2a00151125624",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "e54325bdf2794366d8cb0a710033de38",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "b743d4a975d51b79c22ec189c14fdf48",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "52feae4a2a95764370ca69097e651763",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "4ae17ecad17ddf2eae99a7aa58165f95",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "0360296840de0645325b8cb6306101ff",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "9884c3a46a0bc8177d41f911809279b7",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "63fca6b21cf24a7e5901c0de3c26c2e0",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "128c698b8fad151bf8516c2d51f1760b",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "679f03324e62ac16d07bc3e09c8e2376",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "581ad26e0a7cec2a3be471692d053337",
+      "exact": {
+        "direct_large": true,
+        "direct": true
+      }
+    },
+    {
+      "case_id": "e98fa8eaa37c759653ff1e3ca2b4a529",
+      "exact": {
+        "direct": true,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "01770061ab3fccc7c83c8a379c3d8851",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "65958d60296b1625b3351b6e788e7f5a",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "df27c6c6567c0b93f2a4b3702d885835",
+      "exact": {
+        "direct_large": false,
+        "direct": true
+      }
+    },
+    {
+      "case_id": "d2ef385fb6762a435a8c25c3163a94e8",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "017e9cc9b5693f7992e44c3f59416de1",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "1e3cc0c63a3c9543218090c8fd49a33a",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "1b268b9e5265aa05cd34accaa81cf8a2",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "de7c6cbe1acaca915dd63b6d612e0f00",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "76918162e712a6b2c30ada60084bdbd9",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "ffe49d757c2d5eb8dfe4a8993bfd7e1c",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "c3f167d0fa69423cf8289b65ff51bfa3",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "8f1101655c4a038e9329b62e134148a7",
+      "exact": {
+        "direct": false,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "640faac1ccb705ef422bfaa0f72e84f1",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "51af14d5cc53971b2408222f61104ee3",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "64c64f2b5e9e464475a8d59179676db9",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "e3b2df4a332e3330c527364044509f64",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "c03adf68f76d9c33c749dc50deb0f12a",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "62953088ddbe08b8b33930ea1c113feb",
+      "exact": {
+        "direct": true,
+        "direct_large": true
+      }
+    },
+    {
+      "case_id": "dda4bb48c5396171a69ab924da0c7af8",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "5b8b422ea976902a5f10dbb8bb17179e",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "a2cec9bc9e41a2d0e39353adf5e5d244",
+      "exact": {
+        "direct_large": false,
+        "direct": false
+      }
+    },
+    {
+      "case_id": "5adf6096fc83ec4212a9d0cece290e9c",
+      "exact": {
+        "direct": false,
+        "direct_large": false
+      }
+    },
+    {
+      "case_id": "218914f020d11b337a73438eac532cd0",
+      "exact": {
+        "direct_large": true,
+        "direct": false
+      }
+    }
+  ],
+  "direct_only_correct": 5,
+  "direct_large_only_correct": 22
+}

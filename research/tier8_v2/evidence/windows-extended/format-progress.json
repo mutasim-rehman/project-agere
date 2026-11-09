@@ -1,0 +1,9 @@
+{
+  "study": "7b-finqa-format96",
+  "expected": 96,
+  "completed": 96,
+  "status": "complete",
+  "started_utc": "2026-11-09T01:08:25.965848+00:00",
+  "exit_code": 0,
+  "finished_utc": "2026-11-09T03:23:43.422376+00:00"
+}
