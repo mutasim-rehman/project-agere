@@ -1,7 +1,7 @@
 {
   "study": "7b-tatqa-format72",
   "expected": 72,
-  "completed": 0,
+  "completed": 24,
   "status": "running",
   "started_utc": "2026-11-09T03:34:09.129706+00:00"
 }
