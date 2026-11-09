@@ -12,12 +12,9 @@ import sys
 from evidence_atoms import atom_catalog, compile_plan, reference_schema
 from evidence_contract import TokenLedger
 from financial_review_protocol import BINARY_INSTRUCTION, BINARY_SCHEMA
-from tier8_v2_financial_pipeline import checked
+from tier8_v2_financial_pipeline import checked, TATQA_SCALES as SCALES, TATQA_SCALE_INSTRUCTION
 from tier8_v2_finqa import packet
 from tier8_windows_pilot import Models, jsonl
-
-
-SCALES = ("", "thousand", "million", "billion", "percent")
 
 
 def freeze(args):
@@ -27,9 +24,18 @@ def freeze(args):
                     key=lambda item: hashlib.sha256(("agere-tatqa-v1|" + item[1]["uid"]).encode()).digest())
     rows = []
     seen = {row["table_id"] for path in args.exclude_cohort for row in jsonl(path)}
+    blocked_tables = set()
+    if args.exclude_duplicate_tables:
+        blocked_tables.update(table_signature(item["table"]) for item in source
+                              if item["table"]["uid"] in seen)
+        for path in args.exclude_source:
+            blocked_tables.update(table_signature(item["table"]) for item in json.loads(path.read_bytes()))
     for context, question in ranked:
         table = context["table"]
         if table["uid"] in seen:
+            continue
+        signature = table_signature(table) if args.exclude_duplicate_tables else None
+        if signature is not None and signature in blocked_tables:
             continue
         public = packet({"id": question["uid"], "table": table["table"],
                          "qa": {"question": question["question"]},
@@ -39,13 +45,19 @@ def freeze(args):
             continue
         rows.append({**public, "table_id": table["uid"]})
         seen.add(table["uid"])
+        if signature is not None:
+            blocked_tables.add(signature)
         if len(rows) == args.count:
             break
-    if len(rows) != args.count:
+    if not rows or (args.count is not None and len(rows) != args.count):
         raise ValueError("Insufficient distinct TAT-QA tables")
     with args.output.open("x", encoding="utf-8") as out:
         for row in rows:
             out.write(json.dumps(row) + "\n")
+
+
+def table_signature(table):
+    return tuple(tuple(" ".join(cell.split()).casefold() for cell in row) for row in table["table"])
 
 
 def normalize_prediction(value, scale):
@@ -65,6 +77,9 @@ def run(args):
         raise ValueError("Transfer study requires an actor and critic adapter and excludes larger direct")
     if args.program_weights and (args.larger_direct or args.actor_adapter or args.critic_adapter):
         raise ValueError("The single program arm excludes other model overrides and adapters")
+    if args.matched_large_formats and (args.larger_direct or args.program_weights
+                                        or args.actor_adapter or args.critic_adapter):
+        raise ValueError("Matched formats require a single unadapted checkpoint")
     model = Models(args)
     cohort = jsonl(args.cohort)
     if len(cohort) != len({row["table_id"] for row in cohort}):
@@ -77,6 +92,8 @@ def run(args):
         conditions = ("program", "adapted_program")
     elif args.program_weights:
         conditions = ("program",)
+    elif args.matched_large_formats:
+        conditions = ("direct_large", "program")
     else:
         conditions = ("direct", "direct_large") if args.larger_direct else ("direct", "program")
     with (args.output / "cases.jsonl").open("x", encoding="utf-8") as out:
@@ -84,18 +101,18 @@ def run(args):
             evidence = row["evidence"]
             context = ("Question: " + row["question"] + "\nFinancial report evidence by source ID:\n"
                        + json.dumps(evidence))
-            scale_instruction = ("Use the requested display scale: thousand, million, billion, percent,"
-                                 " or empty for an unscaled number. A percent is in percentage points.")
+            scale_instruction = TATQA_SCALE_INSTRUCTION
             atoms = atom_catalog(evidence)
             arms = {}
             for arm in (conditions if index % 2 == 0 else conditions[::-1]):
                 budget = TokenLedger()
-                model.drafter_weights = args.larger_direct if arm == "direct_large" else args.program_weights
+                model.drafter_weights = args.matched_large_formats or (
+                    args.larger_direct if arm == "direct_large" else args.program_weights)
                 model.adapter = args.actor_adapter if arm == "adapted_program" else None
                 if arm in ("direct", "direct_large"):
                     prompt = (context + "\nCompute the answer using the evidence. State the arithmetic briefly"
                               " in calculation, then return a numeric answer and scale. " + scale_instruction)
-                    raw, event = model.call("drafter", prompt, direct_schema, budget, 768, "direct")
+                    raw, event = model.call("drafter", prompt, direct_schema, budget, args.generation_limit, "direct")
                     prediction = normalize_prediction((raw or {}).get("answer"), (raw or {}).get("scale"))
                 else:
                     catalog = "\n".join(f"{key}={atom['value']}@{atom['span_id']}" for key, atom in atoms.items())
@@ -106,7 +123,7 @@ def run(args):
                                 " Use answer_unit as the display scale. " + scale_instruction)
                     model.forced = True
                     raw, event = model.call("drafter", prompt, reference_schema(atoms, SCALES, causal=True),
-                                            budget, 768, "program")
+                                            budget, args.generation_limit, "program")
                     try:
                         program = compile_plan(raw, atoms)
                     except (ValueError, TypeError, AttributeError):
@@ -203,7 +220,10 @@ if __name__ == "__main__":
     for name in ("source", "output"):
         build.add_argument(f"--{name}", type=Path, required=True)
     build.add_argument("--count", type=int, default=16)
+    build.add_argument("--all-eligible", action="store_const", const=None, dest="count")
     build.add_argument("--exclude-cohort", type=Path, action="append", default=[])
+    build.add_argument("--exclude-duplicate-tables", action="store_true")
+    build.add_argument("--exclude-source", type=Path, action="append", default=[])
     build.set_defaults(run=freeze)
     inference = commands.add_parser("run")
     for name in ("cli", "weights", "cohort", "output"):
@@ -211,6 +231,8 @@ if __name__ == "__main__":
     inference.add_argument("--job-commit-limit", type=int)
     inference.add_argument("--larger-direct", help="Compare direct drafting with a larger GGUF")
     inference.add_argument("--program-weights", help="Run just the unadapted cited-program arm on this GGUF")
+    inference.add_argument("--matched-large-formats", help="Compare both formats on this unadapted GGUF")
+    inference.add_argument("--generation-limit", type=int, choices=(768, 960), default=768)
     inference.add_argument("--actor-adapter", type=Path)
     inference.add_argument("--critic-adapter", type=Path)
     inference.set_defaults(run=run, one_step=False)

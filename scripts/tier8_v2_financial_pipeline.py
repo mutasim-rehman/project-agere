@@ -18,6 +18,13 @@ from program_endpoints import choose_endpoint
 from financial_review_protocol import BINARY_INSTRUCTION, BINARY_SCHEMA, binary_review
 
 
+TATQA_SCALES = ("", "thousand", "million", "billion", "percent")
+TATQA_SCALE_INSTRUCTION = (
+    "Use the requested display scale: thousand, million, billion, percent, "
+    "or empty for an unscaled number. A percent is in percentage points."
+)
+
+
 def program_schema(evidence, units=("number", "percent", "fraction")):
     operand = {"type": "object", "properties": {"value": {"type": "string"},
         "span_id": {"enum": sorted(evidence) + ["CONST"] + [f"STEP#{i}" for i in range(8)]}},
@@ -77,6 +84,8 @@ def patch_program(answer, updates, allowed, evidence):
 
 
 def question_units(question, mode):
+    if mode == "tatqa":
+        return TATQA_SCALES
     if mode == "free":
         return ("number", "percent", "fraction")
     if "%" in question or re.search(r"\bpercent(?:age)?\b", question, re.I):
@@ -156,8 +165,9 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             + ", ".join(str(n) for n in sorted(CONSTANTS))
             + ". The last step gives the answer. Do not copy numeric values into left/right. "
             "Allowed answer_unit: " + ", ".join(units)
-            + ". Percent means percentage points; fraction means a dimensionless ratio; number means the requested amount/count/ratio. "
-              "If necessary evidence is missing, use INSUFFICIENT and empty steps. Check the row labels and years carefully.")
+            + ". " + (TATQA_SCALE_INSTRUCTION if unit_mode == "tatqa" else
+                "Percent means percentage points; fraction means a dimensionless ratio; number means the requested amount/count/ratio.")
+            + " If necessary evidence is missing, use INSUFFICIENT and empty steps. Check the row labels and years carefully.")
     draft_prompt = context + "\n" + instruction
     if isinstance(selection, dict):
         draft_prompt += "\nA fallible evidence selector suggests these IDs; recheck all report evidence: " + json.dumps(selection)
@@ -305,7 +315,8 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
         if accepted:
             review = verify(answer, "verify_program_repair")
     execution = checked(answer, evidence)
-    return {"task": "finqa", "case_id": public["id"], "arm": arm, "repair": repair, "critic_protocol": critic_protocol,
+    return {"task": "tatqa" if unit_mode == "tatqa" else "finqa",
+            "case_id": public["id"], "arm": arm, "repair": repair, "critic_protocol": critic_protocol,
             "initial_answer": initial, "answer": answer, "initial_execution": initial_execution, "execution": execution,
             "initial_plan": initial_plan, "plan": plan, "representation": representation, "unit_mode": unit_mode, "selector": selector,
             "causal_mode": causal_mode, "catalog_style": catalog_style,
