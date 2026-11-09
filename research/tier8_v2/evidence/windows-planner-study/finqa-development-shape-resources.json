@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "worker_job_commit_limit": 6100000000,
+  "sampled_rss_limit": 6400000000,
+  "models": [
+    "H:\\AGERE\\weights\\tier8_v2\\qwen2.5-3b-instruct-q4_k_m.gguf",
+    "H:\\AGERE\\weights\\tier8_v2\\qwen2.5-3b-instruct-q4_k_m.gguf"
+  ],
+  "adapters": [
+    "H:\\AGERE\\runs\\tier8_matched_continuation\\common-actor-converted-01\\adapter-f16.gguf",
+    "H:\\AGERE\\runs\\tier8_matched_continuation\\control-critic-converted-01\\adapter-f16.gguf"
+  ],
+  "context_per_worker": 4096,
+  "peak_sampled_rss": 5011095552,
+  "responses": [
+    "READY",
+    "READY"
+  ],
+  "prompt_cache_ram_disabled": true,
+  "peak_worker_job_commit": 5262774272,
+  "sampled_rss_breached": false,
+  "worker_returncodes_before_cleanup": [
+    null,
+    null
+  ]
+}
