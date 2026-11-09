@@ -6,6 +6,17 @@
       "status": "complete",
       "expected": 12,
       "completed": 12
+    },
+    "tatqa-smoke": {
+      "expected_contexts": 1,
+      "status": "running",
+      "stages": {
+        "large": {
+          "status": "running",
+          "completed": 0,
+          "started_utc": "2026-11-09T06:11:36.248462+00:00"
+        }
+      }
     }
   }
 }
