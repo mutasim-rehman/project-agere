@@ -65,7 +65,7 @@
     },
     "tatqa-test": {
       "expected_contexts": 28,
-      "status": "recovering",
+      "status": "failed",
       "stages": {
         "planner": {
           "status": "complete",
@@ -90,16 +90,20 @@
           "recovery": {
             "started_utc": "2026-11-09T10:59:08.717139+00:00",
             "retained_pairs": 2,
-            "status": "running",
+            "status": "failed",
             "remaining_pairs": 26,
             "completed": 2,
-            "reason": "CPU compute buffer allocation failed on first attempt"
+            "reason": "CPU compute buffer allocation failed on first attempt",
+            "exit_code": 1,
+            "error": "7B recovery did not complete the frozen cohort",
+            "finished_utc": "2026-11-09T11:00:42.569137+00:00"
           }
         }
-      }
+      },
+      "finished_utc": "2026-11-09T11:00:42.569137+00:00"
     }
   },
-  "status": "recovering",
-  "error": "tatqa-test large completed 2/28, exit 1",
-  "finished_utc": "2026-11-09T10:45:37.321916+00:00"
+  "status": "failed",
+  "error": "7B recovery did not complete the frozen cohort",
+  "finished_utc": "2026-11-09T11:00:42.569137+00:00"
 }
