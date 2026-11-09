@@ -1,0 +1,8 @@
+{
+  "study": "finqa-shape-unmasked",
+  "gold_informed": true,
+  "expected": 15,
+  "completed": 0,
+  "status": "running",
+  "started_utc": "2026-11-09T04:50:36.590849+00:00"
+}
