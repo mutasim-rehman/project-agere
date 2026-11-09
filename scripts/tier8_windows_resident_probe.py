@@ -76,7 +76,7 @@ class ResidentModels:
                             elapsed_seconds=time.monotonic() - started)
 
 
-def workload(cohort, out, ports, workers, breached):
+def workload(cohort, out, ports, workers, breached, planner):
     rows = jsonl(cohort)
     if not rows or len({row["id"] for row in rows}) != len(rows):
         raise ValueError("Expected unique, frozen cohort IDs")
@@ -86,7 +86,7 @@ def workload(cohort, out, ports, workers, breached):
             raise RuntimeError("Resident worker exited before completion")
         result = run_financial(public, model, "mas", "none", representation="reference",
                                unit_mode="question", selector="none", causal_mode="grammar",
-                               catalog_style="compact", critic_protocol="binary")
+                               catalog_style="compact", critic_protocol="binary", planner=planner)
         out.write(json.dumps(result) + "\n")
         out.flush()
         print(public["id"], result["delivered"], result["tokens"], flush=True)
@@ -168,7 +168,7 @@ def run(args):
                 state["responses"].append(response["choices"][0]["message"]["content"])
             if args.cohort:
                 with (args.output / "cases.jsonl").open("x", encoding="utf-8") as ledger:
-                    workload(args.cohort, ledger, ports, workers, breached)
+                    workload(args.cohort, ledger, ports, workers, breached, args.planner)
             state["status"] = "completed"
         except (RuntimeError, OSError, ValueError) as exc:
             state.update(status="failed", error=str(exc))
@@ -195,4 +195,5 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--cohort", type=Path,
                         help="Run a frozen FinQA cohort with both adapted roles resident")
+    parser.add_argument("--planner", choices=("direct", "shape"), default="direct")
     run(parser.parse_args())

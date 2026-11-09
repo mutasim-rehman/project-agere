@@ -12,6 +12,7 @@ from statistics import median
 from evidence_atoms import atom_catalog, compile_plan, reference_schema
 from evidence_contract import TokenLedger
 from tier8_v2_demo_retrieval import report_group
+from tier8_v2_shape_planner import constrain_shape
 from tier8_v2_financial_pipeline import checked, evaluate_financial, question_units
 from tier8_v2_finqa import packet
 from tier8_windows_challenge import official_evaluator, official_result
@@ -75,31 +76,6 @@ def review(model, context, drafts, budget):
         index = {"A": order[0], "B": order[1]}.get(choice)
         choices.append(dict(order=order, choice=choice, index=index, event=event))
     return choices
-
-
-def constrain_shape(schema, shape, atoms):
-    """Fix the operation graph while leaving each source slot to the drafter."""
-    lengths = schema["oneOf"][0]["properties"]["steps"]["oneOf"]
-    if not isinstance(shape, list) or not 1 <= len(shape) <= len(lengths):
-        raise ValueError("Expected a bounded reference shape")
-    length = lengths[len(shape) - 1]
-    for step, options in zip(shape, length["prefixItems"]):
-        if not isinstance(step, dict) or set(step) != {"op", "left", "right"}:
-            raise ValueError("Invalid reference shape step")
-        narrowed = []
-        for branch in options["oneOf"]:
-            props = branch["properties"]
-            for key, value in step.items():
-                values = props[key]["enum"]
-                allowed = [ref for ref in values if ref in atoms] if value == "SOURCE" else (
-                    [value] if value in values else [])
-                props[key]["enum"] = allowed
-            if all(prop["enum"] for prop in props.values()):
-                narrowed.append(branch)
-        if len(narrowed) != 1:
-            raise ValueError("Shape must identify one grounded operation per step")
-        options["oneOf"] = narrowed
-    lengths[:] = [length]
 
 
 def run(args):

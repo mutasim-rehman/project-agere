@@ -13,6 +13,7 @@ from evidence_contract import TokenLedger
 from evidence_atoms import atom_catalog, reference_schema, reference_step_schema, compile_plan, patch_plan
 from program_graph import audit_graph, edge_candidates
 from tier8_v2_sketches import fit_sketches, choice_schema, instantiate_choice
+from tier8_v2_shape_planner import PLAN_TOKENS, predicted_shape_schema, shape_request
 from program_endpoints import choose_endpoint
 from financial_review_protocol import BINARY_INSTRUCTION, BINARY_SCHEMA, binary_review
 
@@ -100,6 +101,9 @@ def fit_demonstrations(prompt, demonstrations, models, role):
 
 
 def run_financial(public, models, arm, repair, *, event_sink=None, representation="literal", unit_mode="free", selector="suggest", causal_mode="check", catalog_style="full", demonstrations=(), analysis_tokens=0, planner="direct", critic_protocol="rich"):
+    if planner == "shape" and (representation != "reference" or causal_mode != "grammar"
+                               or repair != "none" or analysis_tokens or demonstrations):
+        raise ValueError("Shape planning requires causal reference drafting without repair or demonstrations")
     if critic_protocol not in ("rich", "binary"):
         raise ValueError("Unknown critic protocol")
     if critic_protocol == "binary" and repair not in ("none", "full"):
@@ -166,6 +170,8 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             None, analysis_tokens, "analyze_question")
         draft_prompt += "\nPreliminary reasoning (may be wrong; recheck the sources):\n" + str(notes)
     sketch_choice = None
+    shape_prediction = None
+    shape_used = False
     if planner == "sketch":
         if representation != "reference":
             raise ValueError("Sketch planning requires reference programs")
@@ -176,7 +182,17 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
         used_demos = [e["source_id"] for e in sketches]
     else:
         draft_prompt, used_demos = fit_demonstrations(draft_prompt, demonstrations, models, drafter)
-        plan = call(drafter, draft_prompt, schema, 768, "program")
+        draft_schema, draft_limit = schema, 768
+        if planner == "shape":
+            prompt, planning_schema = shape_request(source_context)
+            shape_prediction = call(drafter, prompt, planning_schema, PLAN_TOKENS, "plan_shape")
+            constrained = predicted_shape_schema(shape_prediction, schema, atoms)
+            if constrained is not None:
+                draft_schema = constrained
+                shape_used = True
+                draft_prompt += "\nBind source quantities to this proposed calculation: " + json.dumps(shape_prediction)
+            draft_limit -= PLAN_TOKENS
+        plan = call(drafter, draft_prompt, draft_schema, draft_limit, "program")
     initial_plan = deepcopy(plan)
     answer = decode(plan)
     initial = deepcopy(answer)
@@ -295,6 +311,7 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             "causal_mode": causal_mode, "catalog_style": catalog_style,
             "demonstrations_used": used_demos,
             "planner": planner, "sketch_choice": sketch_choice,
+            **({"shape_prediction": shape_prediction, "shape_used": shape_used} if planner == "shape" else {}),
             "analysis_tokens_requested": analysis_tokens, "analysis_notes": notes,
             "edge_repair": edge_trace,
             "endpoint_repair": endpoint_trace,
