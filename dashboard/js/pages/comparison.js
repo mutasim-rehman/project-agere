@@ -1,280 +1,213 @@
 /**
- * MAS vs SAS Comparison Page - Visual Research Dashboard
+ * MAS vs SAS head-to-head.
  */
 
 window.App.registerPage('comparison', {
-    async render(container, app) {
-        const pairedEffects = await app.fetchJson('data/tier16_v2/paired_effects.json') || [];
-        const metricDisagreements = await app.fetchJson('data/tier16_v2/metric_disagreements.json') || [];
-        const aggr = app.state.data.aggregates || await app.fetchJson('data/derived_aggregates.json');
-        const jobs = aggr ? aggr.jobs_16gb : {};
+    state: { profile: 'primary', metric: 'reported', endpoint: 'correct' },
 
-        const mas = jobs['tier16-mas-primary'] || {};
-        const sas = jobs['tier16-sas-primary'] || {};
+    async render(container, app) {
+        this.effects = (await app.fetchJson('data/tier16_v2/paired_effects.json')) || [];
+        this.disagreements = (await app.fetchJson('data/tier16_v2/metric_disagreements.json')) || [];
+
+        const seg = (group, options, active) => `
+            <div class="seg" data-group="${group}">
+                ${options.map(([v, l]) => `<button data-v="${v}" class="${v === active ? 'on' : ''}">${l}</button>`).join('')}
+            </div>`;
 
         container.innerHTML = `
-            <!-- Key Metric Visual Comparison Cards (Top) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="stat-card border-l-4 border-l-[#DC2626]">
-                    <div class="stat-card-label">
-                        <span>Reported Accuracy</span>
-                        <span class="badge badge-wrong">Δ -45.6%</span>
-                    </div>
-                    <div class="stat-card-value text-[#172033] flex items-baseline gap-2">
-                        <span class="text-[#2563EB] text-xl">5.0%</span>
-                        <span class="text-xs text-[#94A3B8]">vs</span>
-                        <span class="text-[#15803D] text-2xl">50.6%</span>
-                    </div>
-                    <div class="stat-card-meta">MAS (8/160) vs SAS (81/160)</div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#15803D]" style="width: 50.6%;"></div>
-                    </div>
-                </div>
+            ${UI.hero({
+                eyebrow: 'Head-to-head',
+                title: 'Same questions, same RAM, very different behaviour',
+                sub: 'Pick a profile and scoring metric. Every panel below recomputes from the 960 case outcomes.',
+                right: `
+                    <div class="flex flex-col gap-2 items-start lg:items-end">
+                        ${seg('profile', [['primary', 'Primary'], ['direct_control', 'Direct control'], ['repair_ablation', 'Repair ablation']], this.state.profile)}
+                        ${seg('metric', [['reported', 'Reported answer'], ['raw', 'Raw execution']], this.state.metric)}
+                    </div>`
+            })}
 
-                <div class="stat-card border-l-4 border-l-[#D97706]">
-                    <div class="stat-card-label">
-                        <span>Delivery Rate</span>
-                        <span class="badge badge-withheld">73.8% Withheld</span>
-                    </div>
-                    <div class="stat-card-value text-[#172033] flex items-baseline gap-2">
-                        <span class="text-[#D97706] text-xl">26.3%</span>
-                        <span class="text-xs text-[#94A3B8]">vs</span>
-                        <span class="text-[#172033] text-2xl">86.9%</span>
-                    </div>
-                    <div class="stat-card-meta">MAS Withholds 118 / 160 cases</div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#D97706]" style="width: 73.8%;"></div>
-                    </div>
-                </div>
+            <div id="cmp-insights" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
 
-                <div class="stat-card border-l-4 border-l-[#2563EB]">
-                    <div class="stat-card-label">
-                        <span>Raw Execution Match</span>
-                        <span class="badge badge-mas">Dual-Metric</span>
-                    </div>
-                    <div class="stat-card-value text-[#172033] flex items-baseline gap-2">
-                        <span class="text-[#2563EB] text-xl">30.0%</span>
-                        <span class="text-xs text-[#94A3B8]">vs</span>
-                        <span class="text-[#172033] text-2xl">50.6%</span>
-                    </div>
-                    <div class="stat-card-meta">Base execution before verifier filter</div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#2563EB]" style="width: 30.0%;"></div>
-                    </div>
-                </div>
-
-                <div class="stat-card border-l-4 border-l-[#15803D]">
-                    <div class="stat-card-label">
-                        <span>Inference Latency / Correct</span>
-                        <span class="badge badge-correct">6.8x Faster</span>
-                    </div>
-                    <div class="stat-card-value text-[#172033] flex items-baseline gap-2">
-                        <span class="text-[#64748B] text-xl">367.6s</span>
-                        <span class="text-xs text-[#94A3B8]">vs</span>
-                        <span class="text-[#15803D] text-2xl">54.1s</span>
-                    </div>
-                    <div class="stat-card-meta">SAS monolithic CPU efficiency</div>
-                    <div class="progress-track">
-                        <div class="progress-fill bg-[#15803D]" style="width: 85%;"></div>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 xl:grid-cols-5 gap-6">
+                ${UI.card({
+                    cls: 'xl:col-span-3', i: 2,
+                    title: 'Scoreboard',
+                    sub: 'Bars scale to the larger of the two arms. The green dot marks the better arm on each row.',
+                    right: `<div class="legend"><span><i class="sw" style="background:var(--color-sas)"></i>SAS</span><span><i class="sw" style="background:var(--color-mas)"></i>MAS</span></div>`,
+                    body: `<div id="cmp-vs"></div>`
+                })}
+                ${UI.card({
+                    cls: 'xl:col-span-2', i: 3,
+                    title: 'Where each question ends up',
+                    sub: 'Rows: SAS outcome. Columns: MAS outcome on the same question.',
+                    body: `<div id="cmp-heat"></div>`
+                })}
             </div>
 
-            <!-- Scientific Forest Plot (Plotly) -->
-            <div class="card">
-                <div class="card-header-clean">
-                    <div>
-                        <h3 class="text-sm font-bold text-[#172033]">Forest Plot: Paired Contrasts & Confidence Intervals</h3>
-                        <p class="text-xs text-[#64748B]">Effect size (Δ = MAS - SAS) with 95% Wald & Clustered CIs across key comparison endpoints</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs text-[#64748B]">Filter:</span>
-                        <select id="forest-filter" class="select-filter text-xs">
-                            <option value="primary" selected>Primary Comparison Only</option>
-                            <option value="all">All Comparisons (42)</option>
-                            <option value="direct_control">Direct Control Ablation</option>
-                            <option value="repair_ablation">Repair Ablation</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="pt-3">
-                    <div id="forest-plot-container" class="w-full h-80"></div>
-                </div>
-            </div>
+            ${UI.card({
+                i: 4,
+                title: 'Effect sizes across every paired contrast',
+                sub: 'Δ = right minus left arm in percentage points, with 95% report-cluster bootstrap intervals. Filled markers have cluster sign-flip p < 0.05.',
+                right: seg('endpoint', [['correct', 'Correct'], ['wrong', 'Wrong'], ['withheld', 'Withheld']], this.state.endpoint),
+                body: `<div id="cmp-forest" class="w-full h-80"></div>`
+            })}
 
-            <!-- Profile Ablation Visual Comparison Chart & Metric Disagreements Table -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                <!-- Visual Ablation Chart -->
-                <div class="card lg:col-span-5 flex flex-col justify-between">
-                    <div class="card-header-clean">
-                        <div>
-                            <h3 class="text-sm font-bold text-[#172033]">Profile Ablation Accuracy</h3>
-                            <p class="text-xs text-[#64748B]">Impact of Verifier & Repair components</p>
-                        </div>
-                        <span class="badge badge-mas">Ablation</span>
-                    </div>
-                    <div class="pt-4 flex-1">
-                        <div class="w-full h-64">
-                            <canvas id="ablation-comparison-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Table of Metric Disagreements -->
-                <div class="card lg:col-span-7">
-                    <div class="card-header-clean">
-                        <div>
-                            <h3 class="text-sm font-bold text-[#172033]">Metric Disagreements (48 Cases)</h3>
-                            <p class="text-xs text-[#64748B]">Reported answer format vs direct python execution disagreement</p>
-                        </div>
-                        <span class="badge badge-sas">Sample (15 shown)</span>
-                    </div>
-                    <div class="table-container mt-4 max-h-64 overflow-y-auto">
+            ${UI.disclosure({
+                i: 5,
+                title: `Metric disagreements (${this.disagreements.length} cases)`,
+                meta: 'Reported and raw-execution scoring disagree',
+                body: `
+                    <p class="text-xs t-secondary mb-3">Example: a model outputs 26.6667 with unit "number". That matches the rounded gold answer 26.7 but not the raw execution value 0.26667. These are numerical-convention differences, not necessarily model errors.</p>
+                    <div class="table-container max-h-96">
                         <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Case ID</th>
-                                    <th>Reported</th>
-                                    <th>Raw Exec</th>
-                                    <th>Predicted Output</th>
-                                    <th>Gold Answer</th>
-                                </tr>
-                            </thead>
+                            <thead><tr><th>Case</th><th>Reported</th><th>Raw exec</th><th>Model output</th><th>Unit</th><th>Gold answer</th><th>Gold exec</th></tr></thead>
                             <tbody>
-                                ${metricDisagreements.slice(0, 15).map(m => `
+                                ${this.disagreements.map(m => `
                                     <tr>
-                                        <td class="font-mono text-xs text-[#172033] font-medium">${m.case_id}</td>
-                                        <td>${m.reported_correct ? '<span class="badge badge-correct">Correct</span>' : '<span class="badge badge-wrong">False</span>'}</td>
-                                        <td>${m.raw_correct ? '<span class="badge badge-correct">Match</span>' : '<span class="badge badge-wrong">Mismatch</span>'}</td>
-                                        <td class="font-mono text-xs text-[#172033] truncate max-w-[120px]">${m.predicted ?? 'null'}</td>
-                                        <td class="font-mono text-xs text-[#2563EB] font-semibold">${m.gold_answer ?? 'null'}</td>
-                                    </tr>
-                                `).join('')}
+                                        <td class="font-mono text-xs">${UI.esc(m.case_id)}</td>
+                                        <td>${m.reported_correct ? '<span class="badge badge-correct">correct</span>' : '<span class="badge badge-wrong">wrong</span>'}</td>
+                                        <td>${m.raw_correct ? '<span class="badge badge-correct">correct</span>' : '<span class="badge badge-wrong">wrong</span>'}</td>
+                                        <td class="font-mono text-xs">${UI.esc(m.predicted ?? '—')}</td>
+                                        <td class="font-mono text-xs t-muted">${UI.esc(m.declared_unit ?? '—')}</td>
+                                        <td class="font-mono text-xs">${UI.esc(m.gold_answer ?? '—')}</td>
+                                        <td class="font-mono text-xs t-secondary">${UI.esc(m.gold_exe_ans ?? '—')}</td>
+                                    </tr>`).join('')}
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
+                    </div>`
+            })}
         `;
 
-        this.renderForestPlot(pairedEffects.filter(p => p.comparison === 'primary'));
-        this.renderAblationChart();
-
-        document.getElementById('forest-filter')?.addEventListener('change', (e) => {
-            const val = e.target.value;
-            const filtered = val === 'all' ? pairedEffects : pairedEffects.filter(p => p.comparison === val);
-            this.renderForestPlot(filtered);
+        container.querySelectorAll('.seg').forEach(g => {
+            g.addEventListener('click', e => {
+                const b = e.target.closest('button');
+                if (!b) return;
+                g.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+                this.state[g.dataset.group] = b.dataset.v;
+                if (g.dataset.group === 'endpoint') this.renderForest();
+                else this.update();
+            });
         });
+
+        await this.update();
     },
 
-    renderAblationChart() {
-        const ctx = document.getElementById('ablation-comparison-chart');
-        if (!ctx) return;
+    async update() {
+        const { profile, metric } = this.state;
+        const { mas, sas } = await Data.pair(profile);
+        const raw = metric === 'raw';
+        const pick = s => raw ? { C: s.rawC, W: s.rawW, H: s.rawH } : { C: s.C, W: s.W, H: s.H };
+        const m = pick(mas), s = pick(sas);
+        const n = mas.n;
+        const prec = x => (x.C + x.W) ? x.C / (x.C + x.W) : 0;
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Primary (Full Team)', 'Direct Control (No Verifier)', 'Repair Ablation (No Repair)'],
-                datasets: [
-                    {
-                        label: 'MAS-FP16 Accuracy %',
-                        data: [5.0, 0.0, 5.0],
-                        backgroundColor: '#2563EB',
-                        borderRadius: 4
-                    },
-                    {
-                        label: 'SAS-Quant Accuracy %',
-                        data: [50.6, 31.9, 50.6],
-                        backgroundColor: '#64748B',
-                        borderRadius: 4
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: { color: '#64748B', font: { size: 11, family: 'Inter' }, boxWidth: 12 }
-                    },
-                    tooltip: {
-                        backgroundColor: '#172033',
-                        titleColor: '#FFFFFF',
-                        bodyColor: '#F8FAFC',
-                        borderColor: '#E2E8F0',
-                        borderWidth: 1,
-                        padding: 10
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: { display: false },
-                        ticks: { color: '#64748B', font: { size: 10, family: 'Inter' } }
-                    },
-                    y: {
-                        max: 60,
-                        grid: { color: '#E9EEF5' },
-                        ticks: { color: '#64748B', callback: v => v + '%', font: { size: 10, family: 'JetBrains Mono' } }
-                    }
-                }
+        const rows = [
+            { label: 'Correct answers', s: s.C, m: m.C, fmt: v => `${v} · ${UI.pct(v, n)}%`, better: 'high' },
+            { label: 'Wrong answers', s: s.W, m: m.W, fmt: v => `${v} · ${UI.pct(v, n)}%`, better: 'low' },
+            { label: 'Withheld', s: s.H, m: m.H, fmt: v => `${v} · ${UI.pct(v, n)}%`, better: null },
+            { label: 'Precision when answering', s: 100 * prec(s), m: 100 * prec(m), fmt: v => `${v.toFixed(1)}%`, better: 'high' },
+            { label: 'CPU seconds / question', s: sas.secPerCase, m: mas.secPerCase, fmt: v => `${v.toFixed(0)} s`, better: 'low' },
+            { label: 'CPU seconds / correct', s: s.C ? sas.secs / s.C : 0, m: m.C ? mas.secs / m.C : 0, fmt: v => v ? `${UI.num(v)} s` : 'n/a', better: 'low', nullIsWorse: true },
+            { label: 'Generated tokens / question', s: sas.genPerCase, m: mas.genPerCase, fmt: v => v.toFixed(0), better: 'low' },
+            { label: 'Peak RSS (GB)', s: sas.peakGb, m: mas.peakGb, fmt: v => `${v.toFixed(2)} GB`, better: 'low' }
+        ];
+
+        document.getElementById('cmp-vs').innerHTML = rows.map(r => {
+            const max = Math.max(r.s, r.m) || 1;
+            let win = null;
+            if (r.better && r.s !== r.m) {
+                if (r.nullIsWorse && (!r.s || !r.m)) win = r.s ? 's' : 'm';
+                else win = (r.better === 'high' ? r.s > r.m : r.s < r.m) ? 's' : 'm';
             }
-        });
+            return `
+                <div class="vs-row">
+                    <div class="text-right">
+                        <div class="vs-val c-sas">${win === 's' ? '<span class="winner-dot"></span>' : ''}${r.fmt(r.s)}</div>
+                        <div class="vs-bar left"><div data-w="${100 * r.s / max}" style="background:var(--color-sas)"></div></div>
+                    </div>
+                    <div class="vs-label">${r.label}</div>
+                    <div>
+                        <div class="vs-val c-mas">${r.fmt(r.m)}${win === 'm' ? '<span class="winner-dot"></span>' : ''}</div>
+                        <div class="vs-bar"><div data-w="${100 * r.m / max}" style="background:var(--color-mas)"></div></div>
+                    </div>
+                </div>`;
+        }).join('');
+
+        const tr = await Data.transitions(profile, metric);
+        const states = ['correct', 'wrong', 'withheld'];
+        const total = states.reduce((a, r) => a + states.reduce((b, c) => b + tr[r][c], 0), 0);
+        const maxCell = Math.max(...states.flatMap(r => states.map(c => tr[r][c])));
+        const cellColor = (r, c) => r === c ? 'accent' : (c === 'correct' ? 'correct' : (r === 'correct' ? 'wrong' : 'withheld'));
+        document.getElementById('cmp-heat').innerHTML = `
+            <div class="heat-grid" style="grid-template-columns: 74px repeat(3, 1fr)">
+                <div></div>
+                ${states.map(c => `<div class="text-[11px] text-center c-mas font-semibold pb-1">MAS ${c}</div>`).join('')}
+                ${states.map((r, ri) => `
+                    <div class="text-[11px] c-sas font-semibold flex items-center">SAS ${r}</div>
+                    ${states.map((c, ci) => {
+                        const v = tr[r][c];
+                        const a = 0.08 + 0.75 * (v / (maxCell || 1));
+                        const tone = cellColor(r, c);
+                        const bg = tone === 'accent' ? `rgba(129,140,248,${a})` : UI.alpha(tone, a);
+                        return `<div class="heat-cell" style="background:${bg}; animation-delay:${(ri * 3 + ci) * 60}ms" title="SAS ${r} → MAS ${c}: ${v} questions">
+                            ${v}<small>${UI.pct(v, total, 0)}%</small></div>`;
+                    }).join('')}`).join('')}
+            </div>
+            <p class="text-xs t-secondary mt-4 leading-relaxed">
+                <span class="font-semibold c-correct">${tr.wrong.correct + tr.withheld.correct}</span> questions where only MAS was right,
+                <span class="font-semibold c-wrong">${tr.correct.wrong + tr.correct.withheld}</span> where only SAS was right.
+            </p>`;
+
+        const masOnly = tr.wrong.correct + tr.withheld.correct;
+        const sasOnly = tr.correct.wrong + tr.correct.withheld;
+        const metricName = raw ? 'raw execution' : 'reported answer';
+        document.getElementById('cmp-insights').innerHTML = [
+            UI.insight({ i: 1, tone: 'sas', icon: 'trophy', title: `SAS: ${s.C} correct vs MAS: ${m.C}`, body: `${Data.PROFILE_LABEL[profile]} profile, ${metricName} scoring. That is a ${UI.pct(s.C - m.C, n)}-point gap on the same ${n} questions.` }),
+            UI.insight({ i: 1, tone: 'warn', icon: 'shield-off', title: `MAS withholds ${UI.pct(m.H, n, 0)}% of questions`, body: `Fewer wrong answers (${m.W} vs ${s.W}) come from answering less, not from answering better.` }),
+            UI.insight({ i: 1, tone: masOnly ? 'good' : 'bad', icon: 'git-compare', title: `${masOnly} MAS-only wins vs ${sasOnly} SAS-only wins`, body: masOnly ? 'MAS adds some complementary coverage on this profile.' : 'MAS never solves a question that SAS missed, so routing between the two would not help.' })
+        ].join('');
+
+        if (window.lucide) lucide.createIcons();
+        UI.animateIn(document.getElementById('content-container'));
+        this.renderForest();
     },
 
-    renderForestPlot(pairedEffects) {
-        const container = document.getElementById('forest-plot-container');
-        if (!container || !window.Plotly) return;
-
-        const dataRows = pairedEffects.slice(0, 8);
-        const labels = dataRows.map(d => `${d.comparison} • ${d.endpoint.replace('case_success/', '').replace('raw_execution_match/', 'raw_')}`);
-        const deltas = dataRows.map(d => d.delta * 100);
-        const ciLows = dataRows.map(d => d.ci_low * 100);
-        const ciHighs = dataRows.map(d => d.ci_high * 100);
-
-        const errorMinus = deltas.map((d, i) => d - ciLows[i]);
-        const errorPlus = deltas.map((d, i) => ciHighs[i] - d);
+    renderForest() {
+        const el = document.getElementById('cmp-forest');
+        if (!el || !window.Plotly) return;
+        const k = UI.colors();
+        const metricKey = this.state.metric === 'raw' ? 'raw_execution_match' : 'case_success';
+        const endpoint = `${metricKey}/${this.state.endpoint}`;
+        const names = {
+            'primary': 'MAS − SAS · primary', 'direct_control': 'MAS − SAS · direct control', 'repair_ablation': 'MAS − SAS · repair ablation',
+            'sas-reasoned_vs_direct': 'SAS · reasoned − direct', 'mas-reasoned_vs_direct': 'MAS · reasoned − direct',
+            'sas-repair_vs_primary': 'SAS · repair − primary', 'mas-repair_vs_primary': 'MAS · repair − primary'
+        };
+        const rows = this.effects.filter(e => e.endpoint === endpoint);
+        const y = rows.map(r => names[r.comparison] || r.comparison);
+        const x = rows.map(r => 100 * r.delta);
+        const sig = rows.map(r => r.cluster_signflip_p < 0.05);
+        const color = rows.map((r, i) => r.comparison.startsWith('mas-') || r.comparison.startsWith('sas-') ? k[r.comparison.slice(0, 3)] : (x[i] < 0 ? k.wrong : k.correct));
 
         const trace = {
-            type: 'scatter',
-            mode: 'markers',
-            x: deltas,
-            y: labels,
-            error_x: {
-                type: 'data',
-                symmetric: false,
-                array: errorPlus,
-                arrayminus: errorMinus,
-                color: '#64748B',
-                thickness: 1.5,
-                width: 5
-            },
-            marker: {
-                color: deltas.map(d => d < 0 ? '#DC2626' : '#15803D'),
-                size: 8
-            },
-            hoverinfo: 'text',
-            text: dataRows.map(d => `Contrast: ${d.comparison}<br>Endpoint: ${d.endpoint}<br>Δ: ${(d.delta*100).toFixed(2)}%<br>95% CI: [${(d.ci_low*100).toFixed(2)}%, ${(d.ci_high*100).toFixed(2)}%]<br>p-value: ${d.cluster_signflip_p ? d.cluster_signflip_p.toExponential(2) : 'N/A'}`)
+            type: 'scatter', mode: 'markers', y,
+            x: x.map(() => 0),
+            error_x: { type: 'data', symmetric: false, array: rows.map(() => 0), arrayminus: rows.map(() => 0), color: k.muted, thickness: 2, width: 6 },
+            marker: { size: 13, color: color.map((c, i) => sig[i] ? c : 'rgba(0,0,0,0)'), line: { color, width: 2.5 }, symbol: 'diamond' },
+            hovertemplate: rows.map(r => `<b>${names[r.comparison] || r.comparison}</b><br>Δ ${(100 * r.delta).toFixed(1)} pp<br>95% CI [${(100 * r.ci_low).toFixed(1)}, ${(100 * r.ci_high).toFixed(1)}]<br>sign-flip p = ${UI.fmtP(r.cluster_signflip_p)}<extra></extra>`)
         };
-
-        const layout = {
-            margin: { l: 240, r: 30, t: 10, b: 40 },
-            paper_bgcolor: '#FFFFFF',
-            plot_bgcolor: '#FFFFFF',
-            xaxis: {
-                title: 'Effect Size (Δ = MAS - SAS in %)',
-                titlefont: { color: '#64748B', size: 11, family: 'Inter' },
-                tickfont: { color: '#64748B', size: 10, family: 'JetBrains Mono' },
-                gridcolor: '#E9EEF5',
-                zerolinecolor: '#94A3B8',
-                zerolinewidth: 1.5
-            },
-            yaxis: {
-                tickfont: { color: '#172033', size: 10, family: 'Inter' },
-                autorange: 'reversed'
-            }
-        };
-
-        Plotly.newPlot(container, [trace], layout, { responsive: true, displayModeBar: false });
+        const layout = UI.plotLayout({
+            margin: { l: 200, r: 30, t: 10, b: 45 },
+            showlegend: false,
+            xaxis: { title: { text: 'Δ percentage points' }, range: [-100, 100], zeroline: true, zerolinewidth: 2, ticksuffix: '' },
+            yaxis: { autorange: 'reversed', tickfont: { color: k.text, size: 11, family: 'Inter' }, gridcolor: k.grid },
+            shapes: [{ type: 'rect', xref: 'x', yref: 'paper', x0: -2, x1: 2, y0: 0, y1: 1, fillcolor: k.grid, line: { width: 0 } }]
+        });
+        Plotly.newPlot(el, [trace], layout, UI.plotConfig).then(() => {
+            Plotly.animate(el, {
+                data: [{ x, error_x: { type: 'data', symmetric: false, array: rows.map(r => 100 * (r.ci_high - r.delta)), arrayminus: rows.map(r => 100 * (r.delta - r.ci_low)), color: k.muted, thickness: 2, width: 6 } }],
+                traces: [0]
+            }, { transition: { duration: 900, easing: 'cubic-out' }, frame: { duration: 900, redraw: false } });
+        });
     }
 });
