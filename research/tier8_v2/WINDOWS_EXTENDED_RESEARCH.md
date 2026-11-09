@@ -133,6 +133,19 @@ Record memory peaks, allocator failures and paired answers.
 Run after the benchmark comparisons if time permits.
 [llama.cpp b12202 server options](https://github.com/ggml-org/llama.cpp/blob/b12202/tools/server/README.md)
 
+With the RAM prompt cache disabled, both workers completed all
+21 reports and logged zero prompt-cache allocation failures.
+The job peak counter fell to 5.264 GB and sampled combined RSS
+fell from 5.852 GB to 5.013 GB. The peak counter now leaves
+0.836 GB below the configured 6.1 GB limit on this workload.
+Every draft, verdict and delivery decision matched the
+default-cache run. Median request time was 22.1 seconds
+versus 22.5 in the earlier session. This is resource evidence
+for the specified context and workload on the current Windows
+host. Paging and whole-machine operation on 8 GB RAM remain
+unverified. See `resident-no-cache-summary.json`,
+`resident-no-cache-comparison.json` and the memory trace.
+
 ## Matched FinQA output-format control
 
 On the frozen 96-report FinQA cohort, run the same unadapted
