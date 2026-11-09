@@ -1,0 +1,10 @@
+{
+  "study": "finqa-shape-oracle",
+  "gold_informed": true,
+  "expected": 15,
+  "completed": 15,
+  "status": "complete",
+  "started_utc": "2026-11-09T04:38:22.494240+00:00",
+  "exit_code": 0,
+  "finished_utc": "2026-11-09T04:47:15.819884+00:00"
+}

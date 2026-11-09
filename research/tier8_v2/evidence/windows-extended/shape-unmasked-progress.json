@@ -1,0 +1,10 @@
+{
+  "study": "finqa-shape-unmasked",
+  "gold_informed": true,
+  "expected": 15,
+  "completed": 15,
+  "status": "complete",
+  "started_utc": "2026-11-09T04:50:36.590849+00:00",
+  "exit_code": 0,
+  "finished_utc": "2026-11-09T04:59:40.050417+00:00"
+}
