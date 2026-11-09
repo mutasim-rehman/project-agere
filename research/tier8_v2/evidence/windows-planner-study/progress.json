@@ -40,9 +40,11 @@
       "status": "running",
       "stages": {
         "large": {
-          "status": "running",
-          "completed": 72,
-          "started_utc": "2026-11-09T06:14:35.118483+00:00"
+          "status": "complete",
+          "completed": 96,
+          "started_utc": "2026-11-09T06:14:35.118483+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T08:30:13.362696+00:00"
         }
       }
     }
