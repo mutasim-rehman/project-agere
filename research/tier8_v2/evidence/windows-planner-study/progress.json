@@ -80,6 +80,11 @@
           "started_utc": "2026-11-09T10:26:50.017239+00:00",
           "exit_code": 0,
           "finished_utc": "2026-11-09T10:42:24.585842+00:00"
+        },
+        "large": {
+          "status": "running",
+          "completed": 0,
+          "started_utc": "2026-11-09T10:42:29.315156+00:00"
         }
       }
     }
