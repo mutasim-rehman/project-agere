@@ -59,7 +59,7 @@
     "tatqa-transfer72": {
       "status": "running",
       "expected": 72,
-      "completed": 0,
+      "completed": 24,
       "started_utc": "2026-11-08T23:55:14.200718+00:00"
     }
   }
