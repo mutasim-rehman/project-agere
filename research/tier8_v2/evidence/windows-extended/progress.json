@@ -1,0 +1,70 @@
+{
+  "deadline_utc": "2026-11-09T05:14:50+00:00",
+  "branch": "main",
+  "studies": {
+    "oracle-length-diagnostic": {
+      "status": "complete",
+      "expected": 16,
+      "completed": 16,
+      "summary": "oracle-length-summary.json",
+      "cases": "oracle-length-cases.jsonl",
+      "gold_informed": true
+    },
+    "resident-role-preflight": {
+      "status": "complete",
+      "started_utc": "2026-11-08T19:25:42.994260+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T19:25:55.953787+00:00"
+    },
+    "critic-transfer": {
+      "status": "complete",
+      "expected": 21,
+      "completed": 21,
+      "started_utc": "2026-11-08T19:26:00.088121+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T19:34:34.016354+00:00",
+      "summary": "critic-transfer-summary.json",
+      "cases": "critic-transfer-cases.jsonl"
+    },
+    "precision96": {
+      "status": "complete",
+      "expected": 96,
+      "completed": 96,
+      "started_utc": "2026-11-08T19:34:39.763922+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T21:02:28.243194+00:00",
+      "summary": "precision96-summary.json",
+      "cases": "precision96-cases.jsonl"
+    },
+    "catalog96": {
+      "status": "complete",
+      "expected": 96,
+      "completed": 96,
+      "started_utc": "2026-11-08T21:02:34.882146+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T22:18:22.301028+00:00",
+      "summary": "catalog96-summary.json",
+      "cases": "catalog96-cases.jsonl"
+    },
+    "tatqa120": {
+      "status": "complete",
+      "expected": 120,
+      "completed": 120,
+      "started_utc": "2026-11-08T22:18:28.224632+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-08T23:55:06.384699+00:00",
+      "summary": "tatqa120-summary.json",
+      "cases": "tatqa120-cases.jsonl"
+    },
+    "tatqa-transfer72": {
+      "status": "complete",
+      "expected": 72,
+      "completed": 72,
+      "started_utc": "2026-11-08T23:55:14.200718+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-09T00:59:42.662114+00:00",
+      "summary": "tatqa-transfer72-summary.json",
+      "cases": "tatqa-transfer72-cases.jsonl"
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 **Mutasim ur Rehman and Ahmad Raza** — Project Agere
 
-**Manuscript date:** 2 November 2026 (Phase 3 submission revision; experiments completed 30 October 2026)
+**Manuscript date:** 9 November 2026 (includes the Windows 8 GB follow-up)
 
 ---
 
@@ -13,6 +13,8 @@ Local financial document reasoning must balance answer quality against limited m
 Under reported-answer scoring, the primary SAS delivered 78 correct and 48 wrong answers and withheld 34; MAS delivered 5 correct and 3 wrong and withheld 152. The MAS minus SAS correct-delivery difference was -45.6 percentage points (95% report-cluster interval -53.9 to -36.6). Raw-execution scoring also favoured SAS in correct delivery (38 versus 5), although absolute performance depended strongly on unit and rounding conventions. Coverage was 78.8% for SAS and 5.0% for MAS. Only 10 MAS drafts were executable and five were correct, bounding the benefit of any accept/reject-only reviewer. Repair added inference time without a Pareto improvement. MAS used more sampled peak memory (10.93 versus 10.06 GB) and more time per reported-correct answer despite lower latency per question.
 
 These results favour the tested quantized monolith for useful answer delivery, while the team's lower wrong-answer count accompanies extensive withholding. The comparison does not isolate architecture or precision effects. Two swap failures required audited checkpoint continuation, so the completed accuracy evaluation is not an uninterrupted no-swap deployment validation.
+
+A separate Windows application-budget study tests why generation fails. A correct annotated program could execute from the existing evidence and catalog on 82 of 96 FinQA reports, and each tested 3B quantization missed 80 of those 82. On a 15-report diagnostic, providing the annotated operation structure recovered four official matches. Providing both structure and an operand shortlist recovered ten, while the shortlist alone recovered none. These controls identify a mechanism on the selected reports. The Windows study also adds 7B baselines and a resident-serving memory control.
 
 **Keywords:** local LLM deployment · multi-agent systems · post-training quantization · resource parity · financial question answering · selective prediction · cluster bootstrap · regulated finance
 
@@ -528,6 +530,16 @@ FinQANet values use the [authors' corrected results](https://github.com/czyssrs/
 
 Published scores establish that financial QA and specialist pipelines can work in other settings; they do not establish which recipe wins under our constraints. Differences in split, retrieval, training, backbone capacity, precision, abstention and scoring prevent a fair numerical ranking. An official-test evaluation with the official scorer, or rerunning these methods on the sealed cohort under the same resource limits, remains necessary for a matched external-baseline claim. We do not claim state-of-the-art benchmark performance.
 
+### 6.15 Windows 8 GB follow-up
+
+This follow-up uses native CPU inference on a Windows host with 16.39 GB of installed RAM. The worker job commit ceiling is 6.1 GB and the sampled working-set guard is 6.4 GB. These application limits differ from the original nominal 16 GB comparison. The results below describe the Windows recipes and leave paging and physical 8 GB feasibility unverified. [Protocol and case-level evidence](research/tier8_v2/WINDOWS_EXTENDED_RESEARCH.md)
+
+**Generation and recoverability.** On 96 additional FinQA reports, 82 admitted an executable annotated program that reproduced the official answer using the same evidence and catalog as the drafts. Both matched 3B quantizations missed 80 of the 82. On 15 further reports selected for an executable reference and a meaningful operand restriction, unrestricted drafting and the answer-key operand shortlist each scored 0/15. Supplying the annotated operation structure with the unrestricted catalog scored 4/15, and supplying both scored 10/15 official and 7/15 reported. The controls identify a role for operation structure and value assignment on these reports. Their sample and answer-key inputs limit conclusions about population frequency or inference-time gains.
+
+**Capacity, output format and delivery.** On 120 new TAT-QA arithmetic contexts, 7B direct scored 29/120 versus 12/120 at 3B, with 22 gains and five losses. At fixed 7B capacity, FinQA favoured direct answers over cited programs 35/96 versus 20/96 on the shared reported-answer metric. A separate unit conversion audit recovered 18 official execution matches among the cited programs. On 72 TAT-QA contexts the point estimate favoured cited programs 19/72 versus 14/72, with 14 program-only and nine direct-only matches. The uncertainty leaves the direction of the underlying TAT-QA format effect open. On a different 72-context transfer cohort, the adapted critic delivered six correct and ten wrong answers and withheld 56. It retained six of eight correct candidates.
+
+**Resident memory.** Both adapted 3B roles completed a 21-report run. Disabling the RAM prompt cache removed the logged cache allocation failure and lowered the job peak counter from 6.10 GB to 5.26 GB. All 21 drafts, verdicts and delivery decisions reproduced. The run retained the existing correct, wrong and withheld counts of five, four and twelve.
+
 ## 7. Example Outputs
 
 All examples come from saved responses in run `lab-16-115gb-recovery-02` (16 GB) or `tier8-8gb-v1` (8 GB). Text in quotation marks and JSON objects is copied verbatim, with "..." marking truncation. Unquoted lines (for example "eight chained subtractions" or `divide(A004=16944, ...)`) are our compact descriptions of the saved program, and timings, executor values and verdicts are taken from the saved trace. Evidence packets are abbreviated.
@@ -714,6 +726,8 @@ Affiliations, corresponding-author details, contributions, funding, competing in
 Under equal process-memory and generation budgets on commodity CPUs, a 4-bit 14B monolith delivered 78 correct answers out of 160 on held-out financial report questions, where a resident 1.5B/3B/0.5B F16 team delivered 5 under reported-answer scoring. The team's lower error count was the by-product of withholding 95% of questions. A stage decomposition shows that the deficit arises at candidate generation, so no accept/reject-only reviewer could have closed it on the fixed drafts, and the tested repair policy added cost without a Pareto improvement in correct and wrong delivery. Earlier 8 GB evidence points the same way. The contribution is a reproducible, resource-audited measurement and a coverage-aware way to read it, not a new algorithm.
 
 **Future work.**
+
+The immediate experiment is to predict a calculation structure from evidence alone, then compare the planned team with the matched team and both 7B baselines on held-out arithmetic contexts. Candidate accuracy and correct delivery are separate outcomes. This tests whether the recoverability demonstrated by the answer-key controls translates to usable accuracy under the Windows budget.
 
 1. Run the specified **32 GB** tier: Qwen2.5-32B Q4_K_M versus a 3B/7B/0.5B F16 team under a 25.6 GB ceiling, with an identical frozen protocol.
 2. Rerun the frozen 16 GB primary pair end to end under kernel swap prevention to obtain an uninterrupted deployment pass.
