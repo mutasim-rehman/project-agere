@@ -302,3 +302,56 @@ while leaving all original source IDs eligible in every source
 slot. Run `--oracle-shape ...` without `--oracle-operands`.
 This separates the contribution of the scaffold from the
 shortlist on these cases. Both remain answer-key interventions.
+
+With the unrestricted catalog, the scaffold raised both scores
+from 0/15 to 4/15. All four correct reports remained correct
+with the operand mask. Adding the mask to the scaffold recovered
+six additional official matches and three additional reported
+matches. The mask on its own recovered none. Both repeated
+control arms reproduced their saved plans on all 15 reports and
+all 30 scaffolded drafts obeyed the frozen operation structure.
+
+The remaining five official failures with both constraints
+assigned at least one source slot a different numerical value
+from the reference. Three other programs matched official
+execution but declared percentage points for a fractional
+result and failed reported-answer scoring. The pattern identifies
+separate limitations in constructing the calculation, assigning
+values to its slots, and labeling the output unit. The fixed
+scaffold supplies the annotated calculation and cannot establish
+an accuracy gain for a learned planner. The 15 reports are an
+enriched diagnostic sample and both unconstrained scores are at
+the floor. See `finqa-shape-oracle-summary.json` and
+`finqa-shape-unmasked-summary.json`.
+
+## Research conclusion
+
+Candidate generation is a measurable limitation even where a
+correct annotated program can execute from the available evidence.
+On 82 of 96 FinQA reports, both matched 3B quantizations had an
+executable reference witness and each still missed 80. The
+operand and structure controls show where performance recovers on
+the enriched diagnostic. Evidence expansion, denser catalogs,
+and Q8 weight quantization did not yield a reliable accuracy gain
+on their broader paired comparisons. The result is strongest as
+a mechanism study alongside the original comparison.
+
+The 7B direct model is a stronger comparator on the 120-context
+TAT-QA replication under the same Windows job budget. At fixed
+7B capacity, FinQA favored direct output under the common
+reported-answer metric, while the TAT-QA point estimate favored
+cited programs with substantial uncertainty. Program traces
+provide provenance, and the answer-only results depend on the
+benchmark and scorer. The critic reduces some wrong deliveries,
+withholds some correct drafts, and accepts wrong answers in the
+transfer and resident workloads.
+
+Disabling the resident RAM prompt cache yields the clearest
+engineering improvement. The two adapted roles ran all 21
+reports with the same outputs and lower measured peak job
+memory. These experiments use application-level limits on a
+16.39 GB Windows host. They leave physical 8 GB operation and
+paging unverified. The Windows continuation stays at the 8 GB
+tier. A deployable, evidence-only generation improvement would
+need an independent paired test against the stronger direct
+baseline before advancing to the 16 GB tier.
