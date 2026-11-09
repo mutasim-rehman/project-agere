@@ -1,0 +1,637 @@
+{
+  "questions": 72,
+  "program": {
+    "exact": 3.0,
+    "f1": 3.0,
+    "valid": 72,
+    "scale_label_match": 46,
+    "wrong_exact_fixed_by_gold_scale": 1,
+    "peak_sampled_rss": 2466082816,
+    "exact_rate": 0.041666666666666664,
+    "f1_mean": 0.041666666666666664,
+    "correct": 3,
+    "wrong": 69,
+    "withheld": 0,
+    "accepted_error": 0.9583333333333334,
+    "median_seconds": 23.54650000000038,
+    "peak_job_commit": 2766340096,
+    "prompt_eval_tokens": 61449,
+    "decode_eval_runs": 12263
+  },
+  "adapted_program": {
+    "exact": 8.0,
+    "f1": 8.0,
+    "valid": 72,
+    "scale_label_match": 44,
+    "wrong_exact_fixed_by_gold_scale": 8,
+    "peak_sampled_rss": 2522779648,
+    "exact_rate": 0.1111111111111111,
+    "f1_mean": 0.1111111111111111,
+    "correct": 8,
+    "wrong": 64,
+    "withheld": 0,
+    "accepted_error": 0.8888888888888888,
+    "median_seconds": 18.21150000000125,
+    "peak_job_commit": 2924642304,
+    "prompt_eval_tokens": 61449,
+    "decode_eval_runs": 6307
+  },
+  "adapted_gated": {
+    "exact": 6.0,
+    "f1": 6.0,
+    "valid": 16,
+    "scale_label_match": 8,
+    "wrong_exact_fixed_by_gold_scale": 7,
+    "peak_sampled_rss": 2521604096,
+    "exact_rate": 0.08333333333333333,
+    "f1_mean": 0.08333333333333333,
+    "correct": 6,
+    "wrong": 10,
+    "withheld": 56,
+    "accepted_error": 0.625,
+    "median_seconds": 11.875,
+    "peak_job_commit": 2924236800,
+    "prompt_eval_tokens": 56273,
+    "decode_eval_runs": 648
+  },
+  "cases": [
+    {
+      "case_id": "1e80db274ddc2d5ebbb38aa4a7765c20",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "c2e7eda7147e8c3a9b1f6b230d869de3",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "39fbd54fd82f8eae2ea6d58558abf2f4",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "ded47d610b8f3b512bbab0f4871e77b8",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "3866ee2e9510647061e1bbc60e0baa24",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "0528a4844c7fe36e5031a9e720e23301",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "64c253a197b5912fa08a3fd059ab1f1c",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "9bb338355175b5d2807c0684cacebadb",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "247b29ff672119850a618a5e59edf29e",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "69cd1d0d58cd57f71468c04c3c22d6ad",
+      "exact": {
+        "adapted_program": true,
+        "adapted_gated": true,
+        "program": false
+      }
+    },
+    {
+      "case_id": "dca2866a67dde74f8acfb646e68e7592",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "87d366c8668a8744847de1639376b574",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "4cc89377aa421d8d6eece5a7dce4de2d",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "a30c0da091bbd33f665ab11a25117074",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "ee85b9ce062cb99f0861b9c43d6f6eed",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "f941b2b683181af4f02a7edddcab3222",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "b78a785338a7b71fdc0668c0faf22fbe",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "164cd3004b3e0d5fce4c32cc1914c7aa",
+      "exact": {
+        "adapted_program": true,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "337883b1c9a3f437f0667434c832a52e",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "5a34f560307e440d8b4e9e4333a7efb7",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": true
+      }
+    },
+    {
+      "case_id": "948640e6ca1e1e5e9db834d77f172ca5",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "34ce841a6d50bf440e209af717efe5d2",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "60fc4cb62e02f1bc47519bc34b2cd6b1",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "c0f8990029e229b7880b128fd3d7bd12",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "4dcb5786a1d46ccef164d9683d82024c",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "e15eebce36f271b4600e40bce1206c1f",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "597d5836a7a82bfcbb8e31fd057dbe19",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "5f59078a2ecdcd977495c578e2b329a1",
+      "exact": {
+        "adapted_program": true,
+        "adapted_gated": true,
+        "program": false
+      }
+    },
+    {
+      "case_id": "fd96beba233f4b2ec8b7e5d2cf1c7aed",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "aa1a4abfc726aa791e451b80ae1e051e",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "81874d7dc91a57a810a23414c15c22bc",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "19132d43219b0633162cebfc20ebb77b",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "34e731041ee15ce907f66e0580266031",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "b3f09952dc5e77da6253497100ff5389",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "4cbfb35edba50a8f1b0181f045efabae",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "844c4d74af9231f62c7c193d54c0549e",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "a5a2a73fe4570829e894a26280020110",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "96b3812bfb44b33ce77e863ecacd6c44",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "91add58b02eb761d380b13df7a61401a",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "4cac7b64d2622f327e12348830541e09",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "34a544721ab7683ac3a3eb9109456529",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "d5da7f65e183feb832165f2d3215e6d4",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "011d3225e25d79356482bee4b7d7e681",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "3bed05f9d97830572944c41f44e1784c",
+      "exact": {
+        "adapted_program": true,
+        "adapted_gated": true,
+        "program": true
+      }
+    },
+    {
+      "case_id": "6e4e40783e5a0e72e00fd35299ee5a98",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "2b7119e561053bd5be0c178998cfa4a2",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "bc2171eaf3888041c97557e13d73a5d4",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "bd11d656bda1738c42b39479ace8fe80",
+      "exact": {
+        "adapted_program": true,
+        "adapted_gated": true,
+        "program": true
+      }
+    },
+    {
+      "case_id": "b1636f21bd8c658c3844bc1210c3977a",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "ab9c7e42aa1226af3843496e95aece8e",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "70d4a42e7a1b1ffd151d7579b8154b5b",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "df3c0983164b2b85c7ea5287f1cd20b5",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "66f7ee78ddac81aada8298fa087462f6",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "941e08f0c9de256e74de7472019108e7",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "fa9aaeae1690c3b2a3c35aa57c14378e",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "3f471aae069cf78f869f7952deeb98c9",
+      "exact": {
+        "adapted_program": true,
+        "adapted_gated": true,
+        "program": false
+      }
+    },
+    {
+      "case_id": "accb6822f54c2c318d11195c5e0e1e70",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "674fab11d7c05176edd76cbfb08bd9e1",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "120ae8592b150e9e9c919a62755fb008",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "eabb9c45a828ea60f34a060d95dba19b",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "df220b3182fb844ba41be97802f6deb3",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "4ae88a16a8a91f45e9dd01b80179494b",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "3e5ce768bd22c7caf20f1d1aef8f5223",
+      "exact": {
+        "program": false,
+        "adapted_program": true,
+        "adapted_gated": true
+      }
+    },
+    {
+      "case_id": "45f09c693d54605341cb3d4bc198028a",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "922ce7104fc57e4abeefb7ece1532a8f",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "ade6d7ae1bb6ec9be72d2adb7405213a",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "44caa96068a5c3f6e3584d1b363568f9",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "deb6986a5dece7b6d06424b482d598b6",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "7791f5213f047b3b90d65b2ea654b76e",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "778142aab02a00d46b51c30091282bcf",
+      "exact": {
+        "adapted_program": true,
+        "adapted_gated": false,
+        "program": false
+      }
+    },
+    {
+      "case_id": "656160ceb6aab3e4bedabb766fff7d20",
+      "exact": {
+        "program": false,
+        "adapted_program": false,
+        "adapted_gated": false
+      }
+    },
+    {
+      "case_id": "5138bbe5d9fd87f3554da2d3a4a9165d",
+      "exact": {
+        "adapted_program": false,
+        "adapted_gated": false,
+        "program": false
+      }
+    }
+  ],
+  "program_only_correct": 1,
+  "adapted_program_only_correct": 6
+}

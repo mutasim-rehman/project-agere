@@ -57,10 +57,14 @@
       "cases": "tatqa120-cases.jsonl"
     },
     "tatqa-transfer72": {
-      "status": "running",
+      "status": "complete",
       "expected": 72,
-      "completed": 48,
-      "started_utc": "2026-11-08T23:55:14.200718+00:00"
+      "completed": 72,
+      "started_utc": "2026-11-08T23:55:14.200718+00:00",
+      "exit_code": 0,
+      "finished_utc": "2026-11-09T00:59:42.662114+00:00",
+      "summary": "tatqa-transfer72-summary.json",
+      "cases": "tatqa-transfer72-cases.jsonl"
     }
   }
 }
