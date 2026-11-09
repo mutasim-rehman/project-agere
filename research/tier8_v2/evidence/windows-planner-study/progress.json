@@ -9,7 +9,7 @@
     },
     "tatqa-smoke": {
       "expected_contexts": 1,
-      "status": "running",
+      "status": "complete",
       "stages": {
         "large": {
           "status": "complete",
@@ -32,7 +32,8 @@
           "exit_code": 0,
           "finished_utc": "2026-11-09T06:14:24.583403+00:00"
         }
-      }
+      },
+      "finished_utc": "2026-11-09T06:14:31.520673+00:00"
     }
   }
 }
