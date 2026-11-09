@@ -1,0 +1,2785 @@
+{
+  "contexts": 96,
+  "counts": {
+    "direct7b": {
+      "wrong": 76,
+      "candidate_correct": 19,
+      "candidate_valid": 95,
+      "f1_sum": 19.0,
+      "shape_matches": 0,
+      "correct": 19,
+      "withheld": 1
+    },
+    "program7b": {
+      "wrong": 80,
+      "candidate_correct": 15,
+      "candidate_valid": 95,
+      "f1_sum": 15.0,
+      "shape_matches": 11,
+      "correct": 15,
+      "withheld": 1
+    },
+    "mas": {
+      "withheld": 67,
+      "candidate_correct": 26,
+      "candidate_valid": 96,
+      "f1_sum": 6.0,
+      "shape_matches": 46,
+      "wrong": 23,
+      "correct": 6
+    },
+    "planner_mas": {
+      "withheld": 61,
+      "candidate_correct": 25,
+      "candidate_valid": 96,
+      "f1_sum": 10.0,
+      "shape_matches": 40,
+      "wrong": 25,
+      "correct": 10
+    }
+  },
+  "resources": {
+    "direct7b": {
+      "median_seconds": 34.28899999999703,
+      "peak_job_commit": 5434822656,
+      "peak_sampled_rss": 5185761280,
+      "generated_tokens": null,
+      "decode_eval_runs": 6597
+    },
+    "program7b": {
+      "median_seconds": 46.7654999999977,
+      "peak_job_commit": 5436260352,
+      "peak_sampled_rss": 5187678208,
+      "generated_tokens": null,
+      "decode_eval_runs": 10385
+    },
+    "mas": {
+      "median_seconds": 25.17199999999866,
+      "peak_job_commit": 5264080896,
+      "peak_sampled_rss": 5018390528,
+      "generated_tokens": 6672,
+      "decode_eval_runs": null
+    },
+    "planner_mas": {
+      "median_seconds": 33.85199999999895,
+      "peak_job_commit": 5263335424,
+      "peak_sampled_rss": 5018742784,
+      "generated_tokens": 9863,
+      "decode_eval_runs": null
+    }
+  },
+  "reference_shapes": 87,
+  "planner_shape_used": 57,
+  "planner_contrasts": {
+    "mas": {
+      "correct": {
+        "gains": 4,
+        "losses": 0,
+        "rate_delta": 0.041666666666666664,
+        "paired_context_bootstrap_95": [
+          0.010416666666666666,
+          0.08333333333333333
+        ],
+        "exact_mcnemar_p": 0.125
+      },
+      "wrong": {
+        "gains": 6,
+        "losses": 4,
+        "rate_delta": 0.020833333333333332,
+        "paired_context_bootstrap_95": [
+          -0.041666666666666664,
+          0.08333333333333333
+        ],
+        "exact_mcnemar_p": 0.75390625
+      },
+      "candidate_correct": {
+        "gains": 4,
+        "losses": 5,
+        "rate_delta": -0.010416666666666666,
+        "paired_context_bootstrap_95": [
+          -0.07291666666666667,
+          0.052083333333333336
+        ],
+        "exact_mcnemar_p": 1.0
+      },
+      "shape_match": {
+        "gains": 3,
+        "losses": 9,
+        "rate_delta": -0.06896551724137931,
+        "paired_context_bootstrap_95": [
+          -0.14942528735632185,
+          0.011494252873563218
+        ],
+        "exact_mcnemar_p": 0.14599609375
+      }
+    },
+    "direct7b": {
+      "correct": {
+        "gains": 3,
+        "losses": 12,
+        "rate_delta": -0.09375,
+        "paired_context_bootstrap_95": [
+          -0.17708333333333334,
+          -0.020833333333333332
+        ],
+        "exact_mcnemar_p": 0.03515625
+      },
+      "wrong": {
+        "gains": 4,
+        "losses": 55,
+        "rate_delta": -0.53125,
+        "paired_context_bootstrap_95": [
+          -0.6458333333333334,
+          -0.4166666666666667
+        ],
+        "exact_mcnemar_p": 1.6979681549678105e-12
+      },
+      "candidate_correct": {
+        "gains": 16,
+        "losses": 10,
+        "rate_delta": 0.0625,
+        "paired_context_bootstrap_95": [
+          -0.041666666666666664,
+          0.16666666666666666
+        ],
+        "exact_mcnemar_p": 0.32693958282470703
+      }
+    },
+    "program7b": {
+      "correct": {
+        "gains": 6,
+        "losses": 11,
+        "rate_delta": -0.052083333333333336,
+        "paired_context_bootstrap_95": [
+          -0.13541666666666666,
+          0.03125
+        ],
+        "exact_mcnemar_p": 0.332305908203125
+      },
+      "wrong": {
+        "gains": 2,
+        "losses": 57,
+        "rate_delta": -0.5729166666666666,
+        "paired_context_bootstrap_95": [
+          -0.6770833333333334,
+          -0.46875
+        ],
+        "exact_mcnemar_p": 6.144390551909851e-15
+      },
+      "candidate_correct": {
+        "gains": 15,
+        "losses": 5,
+        "rate_delta": 0.10416666666666667,
+        "paired_context_bootstrap_95": [
+          0.020833333333333332,
+          0.19791666666666666
+        ],
+        "exact_mcnemar_p": 0.04138946533203125
+      },
+      "shape_match": {
+        "gains": 32,
+        "losses": 3,
+        "rate_delta": 0.3333333333333333,
+        "paired_context_bootstrap_95": [
+          0.21839080459770116,
+          0.4482758620689655
+        ],
+        "exact_mcnemar_p": 4.176981747150421e-07
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "8c0bb13b-4ba4-4349-a697-dd2ab11723f8",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "153f3925-277e-4fe8-8edc-50a5089420ea",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "5c59c850-a720-4b1f-b703-9e1d9ff8e242",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "29aed76e-30b8-4d76-be8c-b7a58731646b",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "8f5fc436-679e-40ae-8e2c-d142d7c5b0ce",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "4f7c8e0a-6ae9-40ee-bd16-06db6f96eaf1",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "6178e1a5-dfe9-4b6e-97db-b937df61e08d",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "a3e21403-222e-4328-8f7d-9383d2d91fe9",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "59f13f19-4494-4c54-8e9a-1b499d50021a",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "c50b6cab-faba-4d38-83da-62d564141452",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "d15e8080-5504-4eee-8571-ea83294e51c0",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "da0d6d2a-67e5-46ea-be1a-68797ec6b8ed",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "eb86d5f5-d1b0-4761-ae4c-417b8775ce5b",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "61610e9a-13c4-4670-8616-c6218f7793ad",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "9f7000b0-e7b7-48b2-bcc6-8f77209894f2",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "565fb688-b453-46ce-ba8f-bfe2375a80d8",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "073c6499-cf72-47f2-8874-7dfc67f1e251",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "9547b235-f8de-4c17-a9ac-e78277fcaf1a",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "a178c3fe-be6d-4272-8d2a-51609f5b2f7c",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "a9d3a57e-89ab-4345-b32c-f2bc615f218e",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "fd303846-a740-4d73-b19a-961fa0d7b71b",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "8f41c3a7-ef29-494c-aad5-7a3f25d10cb3",
+      "reference_shape_available": false,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "fec503e8-6f91-483e-856d-bb1278bd031f",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "ba6783f3-8207-419a-b407-3f688682caef",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "71384b98-32c8-46e6-a820-9551c8c10e2d",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "c07a4e8f-96eb-4b0d-b668-f7d6e64ed707",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "5c8c999e-354f-4693-9b2d-29e3c03cb2af",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "240b5a32-819a-4cbe-8420-0ab6dfe3b2eb",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "634122ee-5fb5-4e38-a552-5673e23987cf",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "60b10a63-4d7d-4ef8-9400-f0d8a6ee3ffe",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "93c3d11c-cf30-4464-a882-479f5f0b3f79",
+      "reference_shape_available": false,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "843a60c0-ee9c-49d6-8f7f-5347af1b238c",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "ff71e762-7a3d-4b9e-aa75-3ab148d8154c",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "beb114d0-5ff6-452b-ae71-774f70b9cca5",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "a44daafc-5a51-4eab-94df-2490c42a2161",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "1fe30b3b-c8d4-47e2-a4b2-d2a583da9ce7",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "79f658b0-e8e5-4b83-bdbe-4d4f96261c69",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "524463b6-b8d7-410d-926a-699f7b7cdd99",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "7b6c7193-cb2b-47b7-86e9-1c01771a9dac",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "c91ad938-6ad1-4481-8f6b-43ccd2f69926",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "6a441650-9d8a-43a0-8906-bec97a73ca2c",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "dab0e943-fc62-4e26-95e5-025b98ff9b57",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "1427bbad-0def-4340-a537-4713dad96ea7",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "5de0027a-4080-4423-8987-a11e2a2fc793",
+      "reference_shape_available": false,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "33de3029-3056-4598-bdff-30d9be4f52c3",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "56d8d92f-a555-4a26-a2ec-3dc9ad9795eb",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "b4aabd48-5010-425f-be30-c63f1c648c85",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "22e20f25-669a-46b9-8779-2768ba391955",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "c174c321-d180-4335-b562-e570536f0725",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "07ec204e-3922-4b5c-b1fd-9cb9311a53e5",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "191c3926-7356-4ab8-a8f9-41e7b7c8a492",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "f7cac790-05ae-4a55-a41d-836a6b415f88",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "238bb7d7-e790-4e50-8b62-a6c5df1d8dcd",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "54dd0e9e-c525-4bea-8bd7-b292e9dd9be3",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "acbacb07-2a66-418b-b6da-53424c35abd5",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "0ae9262d-c0fd-4b56-b896-2b37f90810bc",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "4990b27f-a8a6-4683-82f8-c1cf657ba9c1",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "4190424e-ce6e-4f5c-9175-51afdba156e5",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "032682c3-c3c1-4e3b-9554-05f68fdb4cc8",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "147f7c09-a627-4719-93ad-33661b5a4543",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "91f1515f-4771-403c-ba45-309079ea2723",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "6ba75fbd-3fd8-4756-b583-f696a50e39a7",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "bdcabe8e-6738-47d3-8412-40e5e9a359d0",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "cf67e41d-d7f2-4804-97a2-5c81fa266ad3",
+      "reference_shape_available": false,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "e4deb430-6bd6-4505-a2cc-facbd0d502bf",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "d21b8fe8-119a-4bd7-ba93-24cb28deb15c",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "0d1598eb-f32e-4b1e-9fbb-349b717126fb",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "bbf04869-c442-4909-a65d-c7bc89b6e726",
+      "reference_shape_available": false,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "13d32108-e758-457b-95a1-73f3bd918975",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "b2786c1a-37de-4120-b03c-32bf5c81f157",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "7cba7400-af25-4f71-a49d-35d5eec31458",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "078e34fa-b33a-43fe-afd3-d39b4cbd6a6b",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "4758b4f3-871c-42e4-a606-284e26845ed1",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "b679f4bd-7a0f-4b2e-b8fc-12f08a5749fe",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "a30ab3a2-f930-4bf4-9b52-35c9c504d992",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "24395900-adc1-4c9d-8ce9-bd21c5a54808",
+      "reference_shape_available": false,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "09ff3290-59c3-446b-a1dd-7fbf3b1d6dac",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "27a2fcde-d7aa-4fd6-af85-cbff18d62cd9",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "4cee3e03-ed30-4e2c-8718-e65ad795d4e8",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "8de2ed8c-c548-4bb9-982c-5d714675b443",
+      "reference_shape_available": false,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "258df1b4-3db1-4616-ae6b-c46a98b88dcf",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "5103aed0-b4e8-4fae-bf78-e2c9f4ba84cf",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "cb5ed53a-4e11-45ef-957a-842bb5bd7a8b",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "79f51c3d-59d3-4abc-b0cd-d9e28668fbf4",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "0fab7389-c8c7-4d84-995c-c2bdf63cb07f",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "33437a5b-9c80-4961-a8c6-9a31c6458cf8",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "359f9c4c-b405-40e5-88b5-86bfa0069b89",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "5f289981-f13d-4160-8879-c81dc0b7381e",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "6d9524f1-bfc7-42d0-91a1-3f9d831055d1",
+      "reference_shape_available": false,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "765f1e20-9c75-4611-99ef-68a193d7e101",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "e4f21617-1a84-40e4-bdf0-671df88cb862",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "79bc72ac-ecad-4b9e-92a9-df7ab98cdd7b",
+      "reference_shape_available": true,
+      "planner_shape_used": false,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "1068bcff-95a1-49cf-b41a-36b9ccb93c8b",
+      "reference_shape_available": false,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "withheld",
+          "reference_shape_match": null
+        }
+      }
+    },
+    {
+      "case_id": "9fa0bb46-4243-4629-81c2-3ba6e549fee0",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": true
+        }
+      }
+    },
+    {
+      "case_id": "0f59d1f7-562f-4f9a-a0ff-1abba61accbe",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": false
+        },
+        "planner_mas": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": false
+        }
+      }
+    },
+    {
+      "case_id": "25c87384-03af-40a7-85e3-e26341bf93cf",
+      "reference_shape_available": true,
+      "planner_shape_used": true,
+      "arms": {
+        "direct7b": {
+          "candidate_correct": false,
+          "outcome": "wrong",
+          "reference_shape_match": null
+        },
+        "program7b": {
+          "candidate_correct": true,
+          "outcome": "correct",
+          "reference_shape_match": false
+        },
+        "mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        },
+        "planner_mas": {
+          "candidate_correct": true,
+          "outcome": "withheld",
+          "reference_shape_match": true
+        }
+      }
+    }
+  ]
+}

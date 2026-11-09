@@ -37,7 +37,7 @@
     },
     "tatqa-dev": {
       "expected_contexts": 96,
-      "status": "running",
+      "status": "complete",
       "stages": {
         "large": {
           "status": "complete",
@@ -60,7 +60,8 @@
           "exit_code": 0,
           "finished_utc": "2026-11-09T10:09:02.129060+00:00"
         }
-      }
+      },
+      "finished_utc": "2026-11-09T10:09:21.341061+00:00"
     }
   }
 }
