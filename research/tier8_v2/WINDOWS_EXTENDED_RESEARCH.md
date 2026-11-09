@@ -281,3 +281,24 @@ Shape SHA-256
 Use `run --oracle-operands ... --oracle-shape ...` under the
 same Windows worker limit. This is a follow-up on the same
 reports and provides no independent sample of method accuracy.
+
+With both arms using the operand mask, the operation scaffold
+raised official matches from 0/15 to 10/15 and reported-answer
+matches from 0/15 to 7/15. All drafts executed. There were no
+regressions under either metric. Median time fell from 20.1 to
+13.9 seconds and both arms peaked at about 2.77 GB of worker
+commit. The structural intervention fixes several variables
+together. This comparison does not attribute the effect to any
+one of operation count, operation type, constant placement,
+dependency edges, or endpoint choice.
+
+### Operation structure without the operand mask
+
+Complete the two-by-two diagnostic by repeating the shape
+comparison with the original unrestricted catalog in both arms.
+Use the same 15 reports and operation structures. The first
+arm repeats unrestricted drafting. The second fixes the shape
+while leaving all original source IDs eligible in every source
+slot. Run `--oracle-shape ...` without `--oracle-operands`.
+This separates the contribution of the scaffold from the
+shortlist on these cases. Both remain answer-key interventions.

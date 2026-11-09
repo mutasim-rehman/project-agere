@@ -119,12 +119,11 @@ def run(args):
     if args.oracle_lengths and (not args.adapter or args.capacity_control or args.planned_length
                                 or args.retrieval_cohort or args.precision_control or args.complete_catalog):
         raise ValueError("Oracle-length diagnostic requires only the adapted model")
-    if args.oracle_operands and (args.adapter or args.capacity_control or args.planned_length
-                                 or args.retrieval_cohort or args.precision_control
-                                 or args.complete_catalog or args.oracle_lengths):
-        raise ValueError("Oracle-operand diagnostic requires only the unadapted model")
-    if args.oracle_shape and not args.oracle_operands:
-        raise ValueError("Shape diagnostic requires the same operand mask in both arms")
+    grammar_diagnostic = bool(args.oracle_operands or args.oracle_shape)
+    if grammar_diagnostic and (args.adapter or args.capacity_control or args.planned_length
+                               or args.retrieval_cohort or args.precision_control
+                               or args.complete_catalog or args.oracle_lengths):
+        raise ValueError("Gold grammar diagnostic requires only the unadapted model")
     if args.complete_catalog:
         from tier8_windows_catalog_audit import load_prototype
         expanded_catalog = load_prototype()
@@ -157,7 +156,7 @@ def run(args):
             drafts = [None, None]
             shortest = ("Use the shortest calculation that fully answers the question."
                         " Stop once the requested quantity is computed.")
-            matched = args.adapter or args.precision_control or args.complete_catalog or masks
+            matched = args.adapter or args.precision_control or args.complete_catalog or grammar_diagnostic
             instructions = (shortest, shortest) if matched else (
                 "Check that the final operation answers the exact question.", shortest)
             order = (1, 0) if matched and case_index % 2 else (0, 1)
@@ -221,18 +220,18 @@ def run(args):
                                      weights_override=model.drafter_weights, event=event,
                                      planned_steps=steps, planner_event=planner_event,
                                      catalog_size=len(atoms),
-                                     **({"selectable_catalog_size": len(selectable)} if masks else {}),
+                                     **({"selectable_catalog_size": len(selectable)} if grammar_diagnostic else {}),
                                      evidence=evidence if alternative else None)
             model.adapter = None
             model.drafter_weights = None
             executable = all(not draft["candidate"]["execution"]["issues"] for draft in drafts)
             review_enabled = not (args.capacity_control or args.planned_length
                                   or args.retrieval_cohort or args.precision_control or args.complete_catalog
-                                  or args.oracle_lengths or masks)
+                                  or args.oracle_lengths or grammar_diagnostic)
             reviews = review(model, context, drafts, budget) if executable and review_enabled else []
             out.write(json.dumps(dict(case_id=case["id"], drafts=drafts, reviews=reviews,
                                       review_enabled=review_enabled,
-                                      oracle_diagnostic=bool(args.oracle_lengths or masks),
+                                      oracle_diagnostic=bool(args.oracle_lengths or grammar_diagnostic),
                                       reserved_tokens=budget.spent)) + "\n")
             out.flush()
             print(case["id"], [draft["candidate"]["execution"]["value"] for draft in drafts],
@@ -401,7 +400,7 @@ if __name__ == "__main__":
     inference.add_argument("--oracle-operands", type=Path,
                            help="Gold-informed diagnostic only: restrict the grammar to listed source IDs")
     inference.add_argument("--oracle-shape", type=Path,
-                           help="Gold-informed diagnostic only: fix reference shape in the second masked arm")
+                           help="Gold-informed diagnostic only: fix reference shape in the second arm")
     inference.set_defaults(run=run, one_step=False)
     report = commands.add_parser("summarize")
     for name in ("ledger", "source", "evaluator"):
