@@ -1,7 +1,7 @@
 {
   "study": "7b-finqa-format96",
   "expected": 96,
-  "completed": 24,
+  "completed": 48,
   "status": "running",
   "started_utc": "2026-11-09T01:08:25.965848+00:00"
 }
