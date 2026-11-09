@@ -63,6 +63,8 @@ def normalize_prediction(value, scale):
 def run(args):
     if args.actor_adapter and (args.larger_direct or not args.critic_adapter):
         raise ValueError("Transfer study requires an actor and critic adapter and excludes larger direct")
+    if args.program_weights and (args.larger_direct or args.actor_adapter or args.critic_adapter):
+        raise ValueError("The single program arm excludes other model overrides and adapters")
     model = Models(args)
     cohort = jsonl(args.cohort)
     if len(cohort) != len({row["table_id"] for row in cohort}):
@@ -73,6 +75,8 @@ def run(args):
         "required": ["calculation", "answer", "scale"], "additionalProperties": False}
     if args.actor_adapter:
         conditions = ("program", "adapted_program")
+    elif args.program_weights:
+        conditions = ("program",)
     else:
         conditions = ("direct", "direct_large") if args.larger_direct else ("direct", "program")
     with (args.output / "cases.jsonl").open("x", encoding="utf-8") as out:
@@ -86,7 +90,7 @@ def run(args):
             arms = {}
             for arm in (conditions if index % 2 == 0 else conditions[::-1]):
                 budget = TokenLedger()
-                model.drafter_weights = args.larger_direct if arm == "direct_large" else None
+                model.drafter_weights = args.larger_direct if arm == "direct_large" else args.program_weights
                 model.adapter = args.actor_adapter if arm == "adapted_program" else None
                 if arm in ("direct", "direct_large"):
                     prompt = (context + "\nCompute the answer using the evidence. State the arithmetic briefly"
@@ -142,6 +146,8 @@ def summarize(args):
         raise ValueError("No TAT-QA cases to score")
     if "adapted_program" in rows[0]["arms"]:
         conditions = ("program", "adapted_program", "adapted_gated")
+    elif "direct_large" in rows[0]["arms"] and "program" in rows[0]["arms"]:
+        conditions = ("direct_large", "program")
     else:
         conditions = ("direct", "direct_large" if "direct_large" in rows[0]["arms"] else "program")
     if any(set(row["arms"]) != set(conditions) for row in rows):
@@ -204,6 +210,7 @@ if __name__ == "__main__":
         inference.add_argument(f"--{name}", type=Path, required=True)
     inference.add_argument("--job-commit-limit", type=int)
     inference.add_argument("--larger-direct", help="Compare direct drafting with a larger GGUF")
+    inference.add_argument("--program-weights", help="Run just the unadapted cited-program arm on this GGUF")
     inference.add_argument("--actor-adapter", type=Path)
     inference.add_argument("--critic-adapter", type=Path)
     inference.set_defaults(run=run, one_step=False)

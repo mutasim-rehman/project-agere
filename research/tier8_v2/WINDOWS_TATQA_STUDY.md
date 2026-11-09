@@ -106,3 +106,25 @@ sampled RSS on the host, without a paging measurement.
 
 See `evidence/windows-extended/tatqa120-summary.json` and
 `evidence/windows-extended/tatqa120-cases.jsonl`.
+
+## Frozen 7B output-format follow-up
+
+Compare the same unadapted 7B Q4 checkpoint using a direct
+numeric answer and a cited arithmetic program. Use the first
+72 contexts in the 120-context cohort's original hash order.
+The subset depends only on that order and the remaining
+Windows run time. The saved direct drafts are reused unchanged.
+The new program drafts receive the same evidence and 768-token
+ceiling, with the source-ID menu and program grammar required
+by that output format. Resource measurements are descriptive
+because the arms run in separate sessions. Accuracy is scored
+with official paired exact match. This reuses earlier cases and
+does not provide an independent replication sample.
+
+The 72-context cohort SHA-256 is
+`86c029647504f8350e15ed4450eb4a393b9d27dbcb5f4959623e6c7cb8c6b4ab`.
+Generate the added arm with `tier8_windows_tatqa.py run
+--program-weights ...` under the same 6.1 GB worker job cap.
+Join the frozen direct 7B and new program records by case ID
+before scoring. Run only if the preceding studies leave time
+for a complete comparison.
