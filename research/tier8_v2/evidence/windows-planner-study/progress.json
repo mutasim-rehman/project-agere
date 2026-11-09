@@ -24,6 +24,11 @@
           "started_utc": "2026-11-09T06:12:53.611243+00:00",
           "exit_code": 0,
           "finished_utc": "2026-11-09T06:13:37.256363+00:00"
+        },
+        "planner": {
+          "status": "running",
+          "completed": 0,
+          "started_utc": "2026-11-09T06:13:40.897434+00:00"
         }
       }
     }
