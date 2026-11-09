@@ -1,0 +1,10 @@
+{
+  "protocol_commit": "1b1722fe",
+  "started_utc": "2026-11-09T06:02:58.450043+00:00",
+  "studies": {
+    "finqa-development": {
+      "status": "running",
+      "expected": 12
+    }
+  }
+}
