@@ -1,0 +1,323 @@
+{
+  "counts": {
+    "tie": 18,
+    "tie_uses_added_span": 2,
+    "tie_newly_complete": 2,
+    "gain": 1,
+    "gain_uses_added_span": 0,
+    "gain_newly_complete": 0,
+    "loss": 2,
+    "loss_uses_added_span": 0,
+    "loss_newly_complete": 0
+  },
+  "cases": [
+    {
+      "case_id": "DRE/2007/page_56.pdf-3",
+      "transition": "tie",
+      "added_spans": [
+        "table_2",
+        "table_6",
+        "text_10",
+        "text_11",
+        "text_14",
+        "text_15",
+        "text_16",
+        "text_8"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "JPM/2014/page_70.pdf-2",
+      "transition": "gain",
+      "added_spans": [
+        "table_6",
+        "table_9",
+        "text_10",
+        "text_18",
+        "text_22",
+        "text_27",
+        "text_29",
+        "text_7"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "UNP/2011/page_33.pdf-2",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "table_2",
+        "text_17",
+        "text_19",
+        "text_22",
+        "text_23",
+        "text_4",
+        "text_9"
+      ],
+      "live_new_spans": [
+        "table_1",
+        "text_4"
+      ]
+    },
+    {
+      "case_id": "AAL/2013/page_172.pdf-1",
+      "transition": "loss",
+      "added_spans": [
+        "table_1",
+        "text_0",
+        "text_12",
+        "text_16",
+        "text_17",
+        "text_18",
+        "text_19",
+        "text_20"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "K/2013/page_23.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "table_8",
+        "text_0",
+        "text_10",
+        "text_11",
+        "text_30",
+        "text_7",
+        "text_9"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "ETR/2016/page_23.pdf-4",
+      "transition": "tie",
+      "added_spans": [
+        "table_2",
+        "table_3",
+        "table_4",
+        "table_5",
+        "table_6",
+        "table_7",
+        "text_1",
+        "text_5"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "CMCSA/2015/page_112.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "table_6",
+        "table_8",
+        "text_11",
+        "text_14",
+        "text_16",
+        "text_17",
+        "text_18"
+      ],
+      "live_new_spans": [
+        "table_8"
+      ]
+    },
+    {
+      "case_id": "BKR/2017/page_56.pdf-2",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "text_10",
+        "text_11",
+        "text_12",
+        "text_14",
+        "text_22",
+        "text_26",
+        "text_6"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "LMT/2016/page_49.pdf-3",
+      "transition": "tie",
+      "added_spans": [
+        "table_4",
+        "text_0",
+        "text_1",
+        "text_13",
+        "text_20",
+        "text_5"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "AES/2001/page_33.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "text_10",
+        "text_11",
+        "text_4",
+        "text_5",
+        "text_6",
+        "text_7",
+        "text_9"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "ETR/2013/page_21.pdf-3",
+      "transition": "tie",
+      "added_spans": [
+        "table_2",
+        "table_3",
+        "table_4",
+        "text_0",
+        "text_1",
+        "text_11",
+        "text_17",
+        "text_8"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "BDX/2018/page_106.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "table_2",
+        "table_8",
+        "text_0",
+        "text_11",
+        "text_12",
+        "text_13",
+        "text_5",
+        "text_8"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "APD/2018/page_121.pdf-2",
+      "transition": "tie",
+      "added_spans": [
+        "text_0",
+        "text_1",
+        "text_14",
+        "text_18",
+        "text_21",
+        "text_22",
+        "text_3",
+        "text_9"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "ETFC/2011/page_144.pdf-2",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "text_0",
+        "text_1",
+        "text_14",
+        "text_16",
+        "text_2",
+        "text_7",
+        "text_8"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "UNP/2007/page_25.pdf-3",
+      "transition": "tie",
+      "added_spans": [
+        "text_0",
+        "text_1",
+        "text_11",
+        "text_19",
+        "text_23",
+        "text_4",
+        "text_7",
+        "text_8"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "SYY/2006/page_71.pdf-2",
+      "transition": "tie",
+      "added_spans": [
+        "text_1",
+        "text_10",
+        "text_11",
+        "text_17",
+        "text_2",
+        "text_25",
+        "text_3",
+        "text_9"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "DG/2007/page_67.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "table_2",
+        "text_0",
+        "text_1",
+        "text_12",
+        "text_13",
+        "text_2",
+        "text_6"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "NWS/2017/page_119.pdf-1",
+      "transition": "loss",
+      "added_spans": [
+        "table_1",
+        "table_10",
+        "table_11",
+        "table_12",
+        "table_2",
+        "table_3",
+        "text_0",
+        "text_8"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "TFX/2015/page_89.pdf-3",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "table_2",
+        "text_1",
+        "text_12",
+        "text_18",
+        "text_4",
+        "text_5",
+        "text_6"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "HUM/2014/page_44.pdf-1",
+      "transition": "tie",
+      "added_spans": [],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "AAL/2015/page_114.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "table_2",
+        "table_3",
+        "table_4",
+        "table_5",
+        "text_10",
+        "text_12",
+        "text_13",
+        "text_6"
+      ],
+      "live_new_spans": []
+    }
+  ]
+}

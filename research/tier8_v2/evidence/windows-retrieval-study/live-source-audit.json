@@ -1,0 +1,241 @@
+{
+  "counts": {
+    "tie": 13,
+    "tie_uses_added_span": 0,
+    "tie_newly_complete": 1,
+    "gain": 3,
+    "gain_uses_added_span": 0,
+    "gain_newly_complete": 0
+  },
+  "cases": [
+    {
+      "case_id": "DISCA/2011/page_49.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "text_1",
+        "text_3",
+        "text_4",
+        "text_5",
+        "text_6",
+        "text_7"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "CDW/2017/page_38.pdf-1",
+      "transition": "gain",
+      "added_spans": [
+        "table_5",
+        "table_8",
+        "text_1",
+        "text_2",
+        "text_3",
+        "text_4",
+        "text_5",
+        "text_6"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "ALLE/2015/page_24.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "text_10",
+        "text_13",
+        "text_19",
+        "text_3",
+        "text_4",
+        "text_7",
+        "text_9"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "MO/2016/page_19.pdf-4",
+      "transition": "tie",
+      "added_spans": [
+        "text_1",
+        "text_10",
+        "text_11",
+        "text_12",
+        "text_13",
+        "text_28",
+        "text_3",
+        "text_8"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "DG/2009/page_77.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "text_11",
+        "text_12"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "TFX/2017/page_78.pdf-3",
+      "transition": "tie",
+      "added_spans": [
+        "text_11",
+        "text_12",
+        "text_13",
+        "text_14",
+        "text_15",
+        "text_16",
+        "text_18",
+        "text_19"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "GRMN/2006/page_68.pdf-2",
+      "transition": "tie",
+      "added_spans": [
+        "text_1",
+        "text_10",
+        "text_11",
+        "text_12",
+        "text_14",
+        "text_15",
+        "text_16",
+        "text_17"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "TMUS/2017/page_29.pdf-2",
+      "transition": "gain",
+      "added_spans": [
+        "text_0",
+        "text_1",
+        "text_10",
+        "text_11",
+        "text_12",
+        "text_13",
+        "text_14",
+        "text_16"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "NCLH/2018/page_64.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "table_2",
+        "table_3",
+        "table_4",
+        "table_6",
+        "text_0",
+        "text_13",
+        "text_23"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "L/2009/page_84.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "text_0",
+        "text_3",
+        "text_4",
+        "text_5",
+        "text_9"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "GPN/2013/page_87.pdf-3",
+      "transition": "tie",
+      "added_spans": [
+        "table_2",
+        "table_4",
+        "table_6",
+        "table_7",
+        "table_8",
+        "text_12",
+        "text_5",
+        "text_9"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "NKE/2009/page_43.pdf-2",
+      "transition": "tie",
+      "added_spans": [
+        "text_107",
+        "text_113",
+        "text_114",
+        "text_126",
+        "text_189",
+        "text_224",
+        "text_231",
+        "text_72"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "MAR/2018/page_43.pdf-2",
+      "transition": "gain",
+      "added_spans": [
+        "text_0",
+        "text_1",
+        "text_11",
+        "text_12",
+        "text_13",
+        "text_25",
+        "text_26",
+        "text_7"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "SNA/2018/page_31.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "text_1",
+        "text_10",
+        "text_11",
+        "text_12",
+        "text_13",
+        "text_6",
+        "text_8"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "MS/2007/page_179.pdf-2",
+      "transition": "tie",
+      "added_spans": [
+        "table_1",
+        "table_2",
+        "table_6",
+        "text_12",
+        "text_17",
+        "text_21",
+        "text_6",
+        "text_9"
+      ],
+      "live_new_spans": []
+    },
+    {
+      "case_id": "GRMN/2008/page_73.pdf-1",
+      "transition": "tie",
+      "added_spans": [
+        "text_10",
+        "text_11",
+        "text_12",
+        "text_13",
+        "text_14",
+        "text_15",
+        "text_17",
+        "text_4"
+      ],
+      "live_new_spans": []
+    }
+  ]
+}
