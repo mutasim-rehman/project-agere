@@ -48,7 +48,7 @@
         },
         "mas": {
           "status": "running",
-          "completed": 0,
+          "completed": 24,
           "started_utc": "2026-11-09T08:30:17.692743+00:00"
         }
       }
