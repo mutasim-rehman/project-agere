@@ -62,6 +62,17 @@
         }
       },
       "finished_utc": "2026-11-09T10:09:21.341061+00:00"
+    },
+    "tatqa-test": {
+      "expected_contexts": 28,
+      "status": "running",
+      "stages": {
+        "planner": {
+          "status": "running",
+          "completed": 0,
+          "started_utc": "2026-11-09T10:09:25.572712+00:00"
+        }
+      }
     }
   }
 }
