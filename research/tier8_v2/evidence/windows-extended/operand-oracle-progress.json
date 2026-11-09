@@ -1,0 +1,8 @@
+{
+  "study": "finqa-operand-oracle",
+  "gold_informed": true,
+  "expected": 15,
+  "completed": 0,
+  "status": "running",
+  "started_utc": "2026-11-09T03:23:50.238393+00:00"
+}
