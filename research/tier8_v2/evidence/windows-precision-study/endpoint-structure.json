@@ -1,0 +1,686 @@
+{
+  "cases.jsonl": {
+    "arms": [
+      {
+        "reports": 24,
+        "executable": 24,
+        "with_unused": 20,
+        "unused_operations": 34,
+        "final_correct": 3,
+        "first_correct": 1,
+        "first_gains": 0,
+        "first_losses": 2,
+        "final_reported": 2,
+        "first_reported": 1,
+        "first_reported_gains": 0,
+        "first_reported_losses": 1,
+        "oracle_correct": 3,
+        "wrong_final_with_unused_correct_prefix": 0,
+        "wrong_final_with_used_correct_prefix": 0
+      },
+      {
+        "reports": 24,
+        "executable": 24,
+        "with_unused": 7,
+        "unused_operations": 19,
+        "final_correct": 5,
+        "first_correct": 1,
+        "first_gains": 0,
+        "first_losses": 4,
+        "final_reported": 4,
+        "first_reported": 1,
+        "first_reported_gains": 0,
+        "first_reported_losses": 3,
+        "oracle_correct": 5,
+        "wrong_final_with_unused_correct_prefix": 0,
+        "wrong_final_with_used_correct_prefix": 0
+      }
+    ],
+    "paired": {
+      "both_executable": 24,
+      "both_with_unused": 7,
+      "only_first_with_unused": 13,
+      "only_second_with_unused": 0
+    },
+    "cases": [
+      {
+        "case_id": "HOLX/2009/page_127.pdf-2",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": true,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": true,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": true,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": true,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "AMT/2003/page_102.pdf-1",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": true,
+            "first_correct": true,
+            "correct_prefixes": [],
+            "final_reported": true,
+            "first_reported": true
+          }
+        ]
+      },
+      {
+        "case_id": "GS/2015/page_188.pdf-1",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "C/2015/page_96.pdf-2",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "MAS/2017/page_27.pdf-3",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": true,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "MO/2014/page_39.pdf-4",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [
+              2,
+              3
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "UPS/2007/page_49.pdf-3",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "PPG/2008/page_52.pdf-4",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [
+              1
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "HST/2018/page_135.pdf-1",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              2,
+              3
+            ],
+            "final_correct": true,
+            "first_correct": true,
+            "correct_prefixes": [
+              0,
+              1,
+              3
+            ],
+            "final_reported": true,
+            "first_reported": true
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": true,
+            "first_correct": false,
+            "correct_prefixes": [
+              6
+            ],
+            "final_reported": true,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "AON/2007/page_171.pdf-3",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "HII/2015/page_88.pdf-1",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [
+              2
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "IPG/2006/page_77.pdf-2",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0,
+              1
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "ABMD/2012/page_79.pdf-2",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "MMM/2007/page_23.pdf-1",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0,
+              2,
+              3
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "AMT/2007/page_127.pdf-3",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "ECL/2017/page_69.pdf-2",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "PPG/2018/page_85.pdf-3",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": true,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "ALXN/2016/page_153.pdf-1",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              2,
+              4,
+              6
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "PNC/2008/page_122.pdf-2",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "CB/2008/page_229.pdf-4",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "GIS/2017/page_31.pdf-1",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "RSG/2018/page_94.pdf-1",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              1,
+              2,
+              3
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "MRO/2003/page_84.pdf-4",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              2
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [],
+            "final_correct": true,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": true,
+            "first_reported": false
+          }
+        ]
+      },
+      {
+        "case_id": "JPM/2015/page_137.pdf-3",
+        "arms": [
+          {
+            "executable": true,
+            "unused_steps": [
+              0
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          },
+          {
+            "executable": true,
+            "unused_steps": [
+              3
+            ],
+            "final_correct": false,
+            "first_correct": false,
+            "correct_prefixes": [],
+            "final_reported": false,
+            "first_reported": false
+          }
+        ]
+      }
+    ]
+  }
+}

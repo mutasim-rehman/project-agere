@@ -1,0 +1,51 @@
+{
+  "sources": {
+    "train": {
+      "sha256": "49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6",
+      "distinct": {
+        "question": 6251,
+        "page": 2110,
+        "report": 741,
+        "company": 135
+      }
+    },
+    "development": {
+      "sha256": "27cc6c57487bbaba73041f93dba831a39b1cabe999c2ec0ddebc6f1200ff85bd",
+      "distinct": {
+        "question": 883,
+        "page": 299,
+        "report": 224,
+        "company": 97
+      }
+    },
+    "test": {
+      "sha256": "831dbfb2e785dbc227f895ce3f24046433467aec67b09db2bd6ac7692a8a30dc",
+      "distinct": {
+        "question": 1147,
+        "page": 380,
+        "report": 278,
+        "company": 100
+      }
+    }
+  },
+  "overlaps": {
+    "train_development": {
+      "question": 0,
+      "page": 0,
+      "report": 197,
+      "company": 96
+    },
+    "train_test": {
+      "question": 0,
+      "page": 0,
+      "report": 243,
+      "company": 99
+    },
+    "development_test": {
+      "question": 0,
+      "page": 0,
+      "report": 93,
+      "company": 78
+    }
+  }
+}

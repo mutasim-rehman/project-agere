@@ -1,0 +1,206 @@
+{
+  "reports": 6,
+  "draft_arms": [
+    {
+      "drafts": 6,
+      "keep_correct": 1,
+      "first_correct": 2,
+      "model_correct": 1,
+      "oracle_correct": 3,
+      "first_gains": 2,
+      "first_losses": 1,
+      "model_gains": 0,
+      "model_losses": 0,
+      "model_edits": 0,
+      "peak_review_rss": 2456686592
+    },
+    {
+      "drafts": 6,
+      "keep_correct": 0,
+      "first_correct": 1,
+      "model_correct": 0,
+      "oracle_correct": 2,
+      "first_gains": 1,
+      "first_losses": 0,
+      "model_gains": 0,
+      "model_losses": 0,
+      "model_edits": 0,
+      "peak_review_rss": 2458910720
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "VNO/2014/page_57.pdf-1",
+      "draft": 0,
+      "labels": {
+        "KEEP": false,
+        "P001": true
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "VNO/2014/page_57.pdf-1",
+      "draft": 1,
+      "labels": {
+        "KEEP": false,
+        "P001": false,
+        "P002": false,
+        "P003": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "DRE/2005/page_30.pdf-1",
+      "draft": 0,
+      "labels": {
+        "KEEP": true,
+        "P001": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": true
+    },
+    {
+      "case_id": "DRE/2005/page_30.pdf-1",
+      "draft": 1,
+      "labels": {
+        "KEEP": false,
+        "P001": true,
+        "P002": false,
+        "P003": false,
+        "P004": false,
+        "P005": false,
+        "P006": false,
+        "P007": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "SLB/2015/page_59.pdf-1",
+      "draft": 0,
+      "labels": {
+        "KEEP": false,
+        "P001": true
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "SLB/2015/page_59.pdf-1",
+      "draft": 1,
+      "labels": {
+        "KEEP": false,
+        "P001": false,
+        "P002": false,
+        "P003": false,
+        "P004": false,
+        "P005": false,
+        "P006": false,
+        "P007": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "CE/2013/page_16.pdf-1",
+      "draft": 0,
+      "labels": {
+        "KEEP": false,
+        "P001": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "CE/2013/page_16.pdf-1",
+      "draft": 1,
+      "labels": {
+        "KEEP": false,
+        "P001": false,
+        "P002": true,
+        "P003": false,
+        "P004": false,
+        "P005": true,
+        "P006": false,
+        "P007": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "DG/2010/page_136.pdf-1",
+      "draft": 0,
+      "labels": {
+        "KEEP": false,
+        "P001": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "DG/2010/page_136.pdf-1",
+      "draft": 1,
+      "labels": {
+        "KEEP": false,
+        "P001": false,
+        "P002": false,
+        "P003": false,
+        "P004": false,
+        "P005": false,
+        "P006": false,
+        "P007": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    },
+    {
+      "case_id": "V/2010/page_28.pdf-1",
+      "draft": 0,
+      "labels": {
+        "KEEP": false
+      },
+      "selected": null,
+      "model_correct": false
+    },
+    {
+      "case_id": "V/2010/page_28.pdf-1",
+      "draft": 1,
+      "labels": {
+        "KEEP": false,
+        "P001": false,
+        "P002": false,
+        "P003": false,
+        "P004": false,
+        "P005": false,
+        "P006": false,
+        "P007": false
+      },
+      "selected": {
+        "candidate_id": "KEEP"
+      },
+      "model_correct": false
+    }
+  ]
+}

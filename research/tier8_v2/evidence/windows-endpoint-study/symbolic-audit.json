@@ -1,0 +1,616 @@
+{
+  "windows-natural-pairs": {
+    "arms": [
+      {
+        "with_dead_operations": 5,
+        "dead_operations": 28,
+        "n": 6,
+        "execution_correct": 0,
+        "symbolic_correct": 0,
+        "sliced_symbolic_correct": 0,
+        "execution_only": 0,
+        "symbolic_only": 0
+      },
+      {
+        "with_dead_operations": 6,
+        "dead_operations": 37,
+        "n": 6,
+        "execution_correct": 0,
+        "symbolic_correct": 0,
+        "sliced_symbolic_correct": 0,
+        "execution_only": 0,
+        "symbolic_only": 0
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "BLL/2012/page_31.pdf-3",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "AAL/2010/page_72.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "MKTX/2012/page_42.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "DVN/2018/page_35.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "MSI/2014/page_76.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "K/2006/page_52.pdf-3",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      }
+    ]
+  },
+  "windows-adapter-pilot": {
+    "arms": [
+      {
+        "with_dead_operations": 5,
+        "dead_operations": 11,
+        "n": 6,
+        "execution_correct": 0,
+        "symbolic_correct": 0,
+        "sliced_symbolic_correct": 0,
+        "execution_only": 0,
+        "symbolic_only": 0
+      },
+      {
+        "with_dead_operations": 4,
+        "dead_operations": 8,
+        "n": 6,
+        "execution_correct": 1,
+        "symbolic_correct": 1,
+        "sliced_symbolic_correct": 1,
+        "execution_only": 0,
+        "symbolic_only": 0
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "SYY/2005/page_70.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "DXC/2018/page_56.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "DISH/2010/page_117.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "EL/2008/page_59.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": true,
+            "symbolic": true,
+            "sliced_symbolic": true
+          }
+        ]
+      },
+      {
+        "case_id": "ABMD/2005/page_29.pdf-3",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "PKG/2002/page_52.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      }
+    ]
+  },
+  "windows-capacity-pilot": {
+    "arms": [
+      {
+        "with_dead_operations": 5,
+        "dead_operations": 5,
+        "n": 6,
+        "execution_correct": 1,
+        "symbolic_correct": 1,
+        "sliced_symbolic_correct": 1,
+        "execution_only": 0,
+        "symbolic_only": 0
+      },
+      {
+        "with_dead_operations": 0,
+        "dead_operations": 0,
+        "n": 6,
+        "execution_correct": 0,
+        "symbolic_correct": 0,
+        "sliced_symbolic_correct": 0,
+        "execution_only": 0,
+        "symbolic_only": 0
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "VNO/2014/page_57.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "DRE/2005/page_30.pdf-1",
+        "arms": [
+          {
+            "execution": true,
+            "symbolic": true,
+            "sliced_symbolic": true
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "SLB/2015/page_59.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "CE/2013/page_16.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "DG/2010/page_136.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "V/2010/page_28.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      }
+    ]
+  },
+  "windows-endpoint-study": {
+    "arms": [
+      {
+        "with_dead_operations": 14,
+        "dead_operations": 30,
+        "n": 16,
+        "execution_correct": 1,
+        "symbolic_correct": 0,
+        "sliced_symbolic_correct": 0,
+        "execution_only": 1,
+        "symbolic_only": 0
+      },
+      {
+        "with_dead_operations": 11,
+        "dead_operations": 29,
+        "n": 16,
+        "execution_correct": 3,
+        "symbolic_correct": 1,
+        "sliced_symbolic_correct": 3,
+        "execution_only": 2,
+        "symbolic_only": 0
+      }
+    ],
+    "cases": [
+      {
+        "case_id": "DISCA/2011/page_49.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "CDW/2017/page_38.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": true,
+            "symbolic": false,
+            "sliced_symbolic": true
+          }
+        ]
+      },
+      {
+        "case_id": "ALLE/2015/page_24.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "MO/2016/page_19.pdf-4",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "DG/2009/page_77.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "TFX/2017/page_78.pdf-3",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "GRMN/2006/page_68.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "TMUS/2017/page_29.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "NCLH/2018/page_64.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "L/2009/page_84.pdf-1",
+        "arms": [
+          {
+            "execution": true,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "GPN/2013/page_87.pdf-3",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "NKE/2009/page_43.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "MAR/2018/page_43.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": true,
+            "symbolic": false,
+            "sliced_symbolic": true
+          }
+        ]
+      },
+      {
+        "case_id": "SNA/2018/page_31.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      },
+      {
+        "case_id": "MS/2007/page_179.pdf-2",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": true,
+            "symbolic": true,
+            "sliced_symbolic": true
+          }
+        ]
+      },
+      {
+        "case_id": "GRMN/2008/page_73.pdf-1",
+        "arms": [
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          },
+          {
+            "execution": false,
+            "symbolic": false,
+            "sliced_symbolic": false
+          }
+        ]
+      }
+    ]
+  }
+}

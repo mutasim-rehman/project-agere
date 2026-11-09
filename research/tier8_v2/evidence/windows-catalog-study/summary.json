@@ -1,0 +1,201 @@
+{
+  "questions": 5,
+  "official": {
+    "first_draft_correct": 0,
+    "second_draft_correct": 2,
+    "first_only_correct": 0,
+    "second_only_correct": 2,
+    "oracle_correct_available": 2,
+    "paired_accuracy_delta": 0.4,
+    "exact_mcnemar_p": 0.5,
+    "companies": 4,
+    "company_cluster_delta_95": [
+      0.0,
+      0.75
+    ]
+  },
+  "reported": {
+    "first_draft_correct": 0,
+    "second_draft_correct": 2,
+    "first_only_correct": 0,
+    "second_only_correct": 2,
+    "oracle_correct_available": 2,
+    "paired_accuracy_delta": 0.4,
+    "exact_mcnemar_p": 0.5,
+    "companies": 4,
+    "company_cluster_delta_95": [
+      0.0,
+      0.75
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "AMT/2008/page_94.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "AAPL/2003/page_48.pdf-2",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "DVN/2014/page_87.pdf-3",
+      "official": [
+        false,
+        true
+      ],
+      "reported": [
+        false,
+        true
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "AAPL/2004/page_68.pdf-1",
+      "official": [
+        false,
+        true
+      ],
+      "reported": [
+        false,
+        true
+      ],
+      "annotated_steps": 1,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": false,
+      "per_arm_complete_evidence": [
+        false,
+        false
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    },
+    {
+      "case_id": "MRO/2006/page_93.pdf-1",
+      "official": [
+        false,
+        false
+      ],
+      "reported": [
+        false,
+        false
+      ],
+      "annotated_steps": 2,
+      "planned_steps": [
+        null,
+        null
+      ],
+      "duplicate_program": false,
+      "selected_indices": [],
+      "delivered": null,
+      "complete_annotated_evidence": true,
+      "per_arm_complete_evidence": [
+        true,
+        true
+      ],
+      "correct_prefix_of_wrong_draft": false,
+      "correct_prefix_lengths": [
+        [],
+        []
+      ]
+    }
+  ],
+  "peak_sampled_rss": 2524282880,
+  "draft_resources": [
+    {
+      "executable": 5,
+      "median_steps": 1,
+      "median_seconds": 17.906000000002678,
+      "peak_sampled_rss": 2521292800,
+      "peak_job_commit": 2924544000,
+      "min_host_available_sampled": 4679192576,
+      "prompt_eval_tokens": 3931,
+      "decode_eval_runs": 465
+    },
+    {
+      "executable": 5,
+      "median_steps": 1,
+      "median_seconds": 17.92199999999866,
+      "peak_sampled_rss": 2524282880,
+      "peak_job_commit": 2924589056,
+      "min_host_available_sampled": 4447096832,
+      "prompt_eval_tokens": 4420,
+      "decode_eval_runs": 273
+    }
+  ]
+}

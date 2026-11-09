@@ -1,0 +1,80 @@
+{
+  "windows-endpoint-study/planned-length-summary.json": {
+    "flagged": 2,
+    "all": {
+      "official": {
+        "n": 16,
+        "first_correct": 1,
+        "second_correct": 3,
+        "gains": 3,
+        "losses": 1,
+        "exact_mcnemar_p": 0.625
+      },
+      "reported": {
+        "n": 16,
+        "first_correct": 0,
+        "second_correct": 3,
+        "gains": 3,
+        "losses": 0,
+        "exact_mcnemar_p": 0.25
+      }
+    },
+    "excluding_flags": {
+      "official": {
+        "n": 14,
+        "first_correct": 0,
+        "second_correct": 3,
+        "gains": 3,
+        "losses": 0,
+        "exact_mcnemar_p": 0.25
+      },
+      "reported": {
+        "n": 14,
+        "first_correct": 0,
+        "second_correct": 3,
+        "gains": 3,
+        "losses": 0,
+        "exact_mcnemar_p": 0.25
+      }
+    }
+  },
+  "windows-retrieval-study/inference-summary.json": {
+    "flagged": 2,
+    "all": {
+      "official": {
+        "n": 16,
+        "first_correct": 1,
+        "second_correct": 4,
+        "gains": 3,
+        "losses": 0,
+        "exact_mcnemar_p": 0.25
+      },
+      "reported": {
+        "n": 16,
+        "first_correct": 0,
+        "second_correct": 3,
+        "gains": 3,
+        "losses": 0,
+        "exact_mcnemar_p": 0.25
+      }
+    },
+    "excluding_flags": {
+      "official": {
+        "n": 14,
+        "first_correct": 0,
+        "second_correct": 3,
+        "gains": 3,
+        "losses": 0,
+        "exact_mcnemar_p": 0.25
+      },
+      "reported": {
+        "n": 14,
+        "first_correct": 0,
+        "second_correct": 3,
+        "gains": 3,
+        "losses": 0,
+        "exact_mcnemar_p": 0.25
+      }
+    }
+  }
+}
