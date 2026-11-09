@@ -41,7 +41,7 @@
       "stages": {
         "large": {
           "status": "running",
-          "completed": 0,
+          "completed": 24,
           "started_utc": "2026-11-09T06:14:35.118483+00:00"
         }
       }
