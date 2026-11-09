@@ -65,7 +65,7 @@
     },
     "tatqa-test": {
       "expected_contexts": 28,
-      "status": "failed",
+      "status": "recovering",
       "stages": {
         "planner": {
           "status": "complete",
@@ -86,12 +86,20 @@
           "completed": 2,
           "started_utc": "2026-11-09T10:42:29.315156+00:00",
           "exit_code": 1,
-          "finished_utc": "2026-11-09T10:45:33.377528+00:00"
+          "finished_utc": "2026-11-09T10:45:33.377528+00:00",
+          "recovery": {
+            "started_utc": "2026-11-09T10:59:08.717139+00:00",
+            "retained_pairs": 2,
+            "status": "running",
+            "remaining_pairs": 26,
+            "completed": 2,
+            "reason": "CPU compute buffer allocation failed on first attempt"
+          }
         }
       }
     }
   },
-  "status": "failed",
+  "status": "recovering",
   "error": "tatqa-test large completed 2/28, exit 1",
   "finished_utc": "2026-11-09T10:45:37.321916+00:00"
 }
