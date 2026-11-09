@@ -112,6 +112,27 @@ between it and this run combines prompt/runtime and drafting
 differences with residency. This is a workload preflight,
 not a matched residency-only causal comparison.
 
+The 21-report workload completed with both workers alive.
+The actor produced six official matches (five reported
+matches). The gate delivered five correct and four wrong,
+with 12 withheld under either metric. Median combined request
+time was 22.5 seconds. Sampled worker-plus-controller RSS
+peaked at 5.85 GB. The job peak counter read 6,100,828,160
+bytes versus the 6,100,000,000-byte configured limit. The
+actor server logged a failed prompt-cache allocation and
+reduced its cache limit before continuing. The peak counter
+does not resolve how many bytes the failed allocation actually
+committed. This is a workload completion with a cache fallback,
+and provides no evidence of headroom at default cache settings.
+[Windows job memory limit](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_basic_limit_information)
+
+Repeat the same frozen workload with `--disable-prompt-cache-ram`,
+which passes `--cache-ram 0` to both llama.cpp workers. Keep
+context, adapters, job limits, requests and scoring unchanged.
+Record memory peaks, allocator failures and paired answers.
+Run after the benchmark comparisons if time permits.
+[llama.cpp b12202 server options](https://github.com/ggml-org/llama.cpp/blob/b12202/tools/server/README.md)
+
 ## Matched FinQA output-format control
 
 On the frozen 96-report FinQA cohort, run the same unadapted

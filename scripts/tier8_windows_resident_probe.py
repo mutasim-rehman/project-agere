@@ -97,7 +97,8 @@ def run(args):
     state = {"status": "starting", "worker_job_commit_limit": args.commit_limit,
              "sampled_rss_limit": CAP, "models": [str(p) for p in args.model],
              "adapters": [str(p) if p else None for p in args.adapter],
-             "context_per_worker": 4096, "peak_sampled_rss": 0, "responses": []}
+             "context_per_worker": 4096, "peak_sampled_rss": 0, "responses": [],
+             "prompt_cache_ram_disabled": args.disable_prompt_cache_ram}
     workers, ports = [], []
     stopped = Event()
     breached = Event()
@@ -137,6 +138,8 @@ def run(args):
                 argv = [str(args.server.resolve()), "-m", str(model.resolve()), "--host", "127.0.0.1",
                         "--port", str(port), "-c", "4096", "-np", "1", "-t", "8", "-ngl", "0",
                         "--load-mode", "none", "--no-webui"]
+                if args.disable_prompt_cache_ram:
+                    argv.extend(("--cache-ram", "0"))
                 if adapter:
                     argv.extend(["--lora", str(adapter.resolve())])
                 worker = subprocess.Popen(argv, stdout=log, stderr=log,
@@ -187,6 +190,8 @@ if __name__ == "__main__":
     parser.add_argument("--model", type=Path, nargs=2, required=True)
     parser.add_argument("--adapter", type=Path, nargs=2, default=(None, None))
     parser.add_argument("--commit-limit", type=int, default=6_100_000_000)
+    parser.add_argument("--disable-prompt-cache-ram", action="store_true",
+                        help="Disable the server's RAM cache for saved prompts")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--cohort", type=Path,
                         help="Run a frozen FinQA cohort with both adapted roles resident")
