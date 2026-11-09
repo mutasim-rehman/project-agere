@@ -129,6 +129,22 @@ Join the frozen direct 7B and new program records by case ID
 before scoring. Run only if the preceding studies leave time
 for a complete comparison.
 
+The completed comparison scored 14/72 exact matches for
+direct and 19/72 for the program arm. Nine contexts were
+correct only with direct and 14 only with programs, for
+a program gain of 6.9 percentage points (two-sided exact
+McNemar p = 0.405). This is an uncertain difference. It
+also bounds the FinQA result, where the same checkpoint
+favored direct answers under the shared reported-answer
+metric. The two tasks use different data and evaluators.
+
+Median time was 33.2 seconds for direct and 44.1 seconds
+for programs. Both peaked at about 5.44 GB of worker commit.
+Direct used 36,530 prompt tokens and 3,948 decode evaluations,
+versus 60,305 and 7,658 for programs. A gold-scale substitution
+rescued three wrong direct answers and two wrong programs.
+See `evidence/windows-extended/tatqa-format72-summary.json`.
+
 ## Cross-benchmark adapter and gate transfer
 
 On 72 separate arithmetic table contexts, the same 3B
