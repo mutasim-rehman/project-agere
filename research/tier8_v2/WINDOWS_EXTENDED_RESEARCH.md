@@ -153,6 +153,43 @@ The format comparison reuses the frozen 96 reports from the
 precision and catalog work and is not an independent benchmark
 sample. The study runs under the 6.1 GB worker job limit.
 
+### FinQA output-format results
+
+Both 7B formats delivered an answer on all 96 reports. Under
+the shared reported-answer metric, direct scored 35/96 and
+program scored 20/96. Direct alone matched 21 reports and
+program alone matched six, for a paired difference of 15.6
+percentage points (two-sided exact McNemar p = 0.00592 at
+the report level). Median time was 32.0 seconds for direct
+and 48.9 for programs. Both used about 5.44 GB peak job
+commit. The agreement gate delivered three correct and two
+wrong, and withheld 91. That gate lost 17 of the 20
+reported-correct programs.
+
+The unmodified official execution match count was 1/96 for
+programs. A separate audit added a fixed divide-by-100 step
+only to programs declaring percentage points, then reran
+the same evaluator. This recovered 18 official matches,
+raising the unit-converted sensitivity score to 19/96.
+All 18 were already correct under the reported metric.
+One additional reported-correct program had a percent label
+and a conflicting official execution value. The original
+official score remains available, and the sensitivity
+analysis makes the unit convention explicit.
+
+The format difference was 23/53 versus 19/53 on percentage
+labels and 12/40 versus 1/40 on other supported numeric labels.
+Three references were outside the supported reported-answer
+syntax and neither arm received a match on them. These
+subgroups are descriptive. The direct advantage is for this
+task and shared answer score. The program arm also provides a
+cited execution trace that the direct arm does not supply.
+
+See `finqa-format96-summary.json` and
+`finqa-format96-metric-sensitivity.json` in the extended
+evidence directory. The original outputs and official scores
+are preserved.
+
 ## Gold-informed operand-choice diagnostic
 
 Compare the unadapted SSD 3B Q4 drafter under its ordinary
