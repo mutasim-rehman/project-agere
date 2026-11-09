@@ -75,9 +75,11 @@
           "finished_utc": "2026-11-09T10:26:45.269351+00:00"
         },
         "mas": {
-          "status": "running",
-          "completed": 24,
-          "started_utc": "2026-11-09T10:26:50.017239+00:00"
+          "status": "complete",
+          "completed": 28,
+          "started_utc": "2026-11-09T10:26:50.017239+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T10:42:24.585842+00:00"
         }
       }
     }
