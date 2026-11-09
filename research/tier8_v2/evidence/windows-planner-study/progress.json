@@ -54,9 +54,11 @@
           "finished_utc": "2026-11-09T09:12:37.066333+00:00"
         },
         "planner": {
-          "status": "running",
-          "completed": 72,
-          "started_utc": "2026-11-09T09:12:41.867004+00:00"
+          "status": "complete",
+          "completed": 96,
+          "started_utc": "2026-11-09T09:12:41.867004+00:00",
+          "exit_code": 0,
+          "finished_utc": "2026-11-09T10:09:02.129060+00:00"
         }
       }
     }
