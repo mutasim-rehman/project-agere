@@ -110,3 +110,47 @@ Run `tier8_windows_tatqa.py run --matched-large-formats ...
 `--planner shape` for the two MAS arms. Score only complete
 cohorts with `tier8_windows_planner_study.py`. Keep the two
 benchmark splits separate in scoring.
+
+## Primary held-out results
+
+All four arms completed the 96-context primary cohort. The
+counts below are correct, wrong, and withheld under official
+TAT-QA exact match.
+
+- Direct 7B delivered 19 correct and 76 wrong, with one withheld.
+- Cited-program 7B delivered 15 correct and 80 wrong, with one withheld.
+- Current MAS delivered six correct and 23 wrong, with 67 withheld.
+- Planner MAS delivered ten correct and 25 wrong, with 61 withheld.
+
+Planning gained four correct deliveries and lost none. The point
+estimate was +4.2 percentage points, with a paired context-bootstrap
+interval of +1.0 to +8.3 points. Only four pairs were discordant,
+and the two-sided exact paired test gave p = 0.125. The positive
+bootstrap interval should be read cautiously with such sparse
+discordance. Wrong delivery increased by two answers, failing
+the prespecified practical success criterion. Direct 7B delivered
+nine more correct answers than planner MAS.
+
+Before review, current MAS produced 26 correct candidates and
+planner MAS produced 25, with four gains and five losses. All
+four gains were delivered. Two gained cases also acquired a
+matching operator tree. On the other two, both drafts had a
+matching tree and the planned draft corrected the numerical answer.
+Across the 87 parseable reference derivations, structure matches
+fell from 46 to 40, with three gains and nine losses. This
+descriptive structure metric ignores leaf identity and algebraic
+equivalences.
+
+The planner supplied a connected shape on 57/96 contexts. The
+remaining 39 predictions had unused operations outside the
+final dependency graph. On all 39 fallback cases, the saved draft
+and verdict reproduced the unplanned baseline. The result therefore
+shows both limitations in predicting a usable shape and losses
+even when the predicted graph passes validation.
+
+Both MAS arms peaked at about 5.26 GB of worker commit. Median
+request time rose from 25.2 to 33.9 seconds, and actual generated
+tokens rose from 6,672 to 9,863 across the cohort. The 7B arms
+peaked at about 5.44 GB, with median times of 34.3 seconds direct
+and 46.8 seconds for programs, including load.
+[Primary scores and paired transitions](evidence/windows-planner-study/tatqa-dev-scores.json)
