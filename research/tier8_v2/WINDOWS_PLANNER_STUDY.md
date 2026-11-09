@@ -13,8 +13,8 @@ predictive structure stage helps with inputs available at inference.
 The prototype uses 12 existing FinQA development packets, one per
 company-year report, ranked by SHA-256 with prefix
 `agere-shape-dev-v1|`. These cases are for development and are
-reported separately. Their public packet checksum is
-`bdc2fefc4dd5d8cc8876128cb75cf73bbb0023f417cc973d44fa290aa896c7a4`.
+reported separately. Their public packet checksum with LF line endings is
+`14abf004b6c0f3b652af174c2a3c0eb0d6e8f24b0569c7195112e2c89b47fe9f`.
 
 The remaining FinQA test inventory shrinks to one eligible question
 on one report after excluding named project cohorts, prior Windows
@@ -33,10 +33,10 @@ company-year reports. Cross-context report overlap and checkpoint
 pretraining exposure remain unknown.
 [TAT-QA benchmark](https://aclanthology.org/2021.acl-long.254/)
 
-Frozen checksums:
+Frozen checksums (LF line endings for cohorts):
 
-- Primary cohort `6c8230d91fb3c06e6dbc025ad22e3afdd82c8e08cde97dab6a1cb65463e6d79f`
-- Secondary cohort `4aedb75c466bc30f9a6641b99567cae9df450b2f657c857d3fa540ba99f3989a`
+- Primary cohort `e463671e33f56af56e6d8d1ad07720b3e75fa3c9a732746a541483fb44251ac0`
+- Secondary cohort `f494a4268baa1623b8159dc2d428c0cfaeb3235e99df5e9831bf923dcaa1a802`
 - Official development source `8da095a819af6db3c14877c6df2d4d29960e41d1a63dd1fa853507bd2a616af5`
 - Official test source and evaluator hashes are recorded in [the prior TAT-QA protocol](WINDOWS_TATQA_STUDY.md).
 
