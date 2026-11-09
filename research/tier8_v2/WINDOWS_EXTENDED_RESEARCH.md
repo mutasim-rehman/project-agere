@@ -223,3 +223,30 @@ without an adapter and with `--job-commit-limit 6100000000`.
 Score all paired official execution and reported-answer outcomes
 against the frozen cohort. This is an answer-key intervention,
 outside the deployable accuracy comparisons.
+
+### Operand-choice diagnostic results
+
+All 30 drafts executed. Both conditions scored 0/15 under
+official execution and reported-answer scoring, despite an
+executable official-match reference on every report. The
+median number of selectable source IDs fell from 23 to two.
+Both arms used 11,542 prompt tokens. Median draft length fell
+from eight operations to three, and median time from 23.1 to
+19.7 seconds, with the same approximately 2.77 GB peak job
+commit.
+
+With the mask, eight final graphs contained all distinct
+reference source values, versus two without the mask. All
+eight still produced wrong answers. A correct earlier
+endpoint existed in three masked drafts and one control
+draft. Restricting operand values reduced extra calculation
+and improved reference-value coverage, yet left formula
+construction and endpoint selection unresolved on this
+cohort. The zero scores leave little room for a precise
+effect estimate. These are gold-informed diagnostics on
+15 eligible reports, and the control and masked score
+distributions provide no evidence of accuracy equivalence.
+
+See `finqa-operand-oracle-summary.json` and
+`finqa-operand-oracle-cases.jsonl` in the extended evidence
+directory.
