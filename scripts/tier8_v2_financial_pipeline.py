@@ -200,7 +200,8 @@ def run_financial(public, models, arm, repair, *, event_sink=None, representatio
             if constrained is not None:
                 draft_schema = constrained
                 shape_used = True
-                draft_prompt += "\nBind source quantities to this proposed calculation: " + json.dumps(shape_prediction)
+                draft_prompt += ("\nBind each VALUE in the proposed calculation to a source quantity or an allowed constant. "
+                                 "Check the order, denominator, and output unit.\n" + json.dumps(shape_prediction))
             draft_limit -= PLAN_TOKENS
         plan = call(drafter, draft_prompt, draft_schema, draft_limit, "program")
     initial_plan = deepcopy(plan)

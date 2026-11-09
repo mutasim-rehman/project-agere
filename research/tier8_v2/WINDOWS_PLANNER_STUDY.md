@@ -15,6 +15,12 @@ company-year report, ranked by SHA-256 with prefix
 `agere-shape-dev-v1|`. These cases are for development and are
 reported separately. Their public packet checksum with LF line endings is
 `14abf004b6c0f3b652af174c2a3c0eb0d6e8f24b0569c7195112e2c89b47fe9f`.
+The first prototype produced a usable structure on only one of 12
+development reports. Eleven proposed steps with no source-dependent
+operand. Before any held-out inference, we revised the planning grammar
+to predict only the operations and dependencies. The binding pass
+assigns quantities and standard constants. We retained the original
+development outputs separately.
 
 The remaining FinQA test inventory shrinks to one eligible question
 on one report after excluding named project cohorts, prior Windows
@@ -52,8 +58,8 @@ Frozen checksums (LF line endings for cohorts):
   for the draft and 192 for binary review.
 - **Planner MAS** uses the same two resident workers and review
   instruction. The actor uses up to 192 tokens to predict operations,
-  source placeholders, permitted constants, and dependencies.
-  A valid connected structure constrains a 576-token source-binding
+  unbound value slots, and dependencies. A valid connected
+  structure constrains a 576-token source-binding
   draft. An empty, invalid, or disconnected structure falls back
   to the ordinary grammar with the same 576-token cap. The critic
   sees the resulting program, its execution, and the original

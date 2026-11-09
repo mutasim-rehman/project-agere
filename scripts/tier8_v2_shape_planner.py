@@ -1,7 +1,7 @@
 """Predict a calculation structure before assigning source quantities."""
 from copy import deepcopy
 
-from evidence_calculator import CONSTANTS, OPERATIONS
+from evidence_calculator import OPERATIONS
 from program_graph import audit_graph
 
 
@@ -9,19 +9,20 @@ PLAN_TOKENS = 192
 
 
 def shape_request(context):
-    refs = ["SOURCE", *(f"#{i}" for i in range(7)),
-            *(f"CONST:{n}" for n in sorted(CONSTANTS))]
-    step = {"type": "object", "properties": {
-        "op": {"enum": list(OPERATIONS)}, "left": {"enum": refs}, "right": {"enum": refs}},
-        "required": ["op", "left", "right"], "additionalProperties": False}
-    schema = {"type": "object", "properties": {"steps": {
-        "type": "array", "items": step, "minItems": 0, "maxItems": 8}},
+    steps = []
+    for index in range(8):
+        refs = ["VALUE", *(f"#{i}" for i in range(index))]
+        steps.append({"type": "object", "properties": {
+            "op": {"enum": list(OPERATIONS)}, "left": {"enum": refs}, "right": {"enum": refs}},
+            "required": ["op", "left", "right"], "additionalProperties": False})
+    lengths = [{"const": []}] + [{"type": "array", "prefixItems": steps[:n],
+                                  "minItems": n, "maxItems": n} for n in range(1, 9)]
+    schema = {"type": "object", "properties": {"steps": {"oneOf": lengths}},
         "required": ["steps"], "additionalProperties": False}
     prompt = (context + "\nPlan the shortest arithmetic calculation that answers the exact question. "
               "Identify the requested operation, direction and denominator. "
-              "Use SOURCE wherever a quantity must be looked up in the report. "
+              "Write VALUE for a quantity to be filled in later, including a standard constant. "
               "Use #0, #1, and so on for earlier results. "
-              "Use CONST:value only for a standard counting or scaling constant. "
               "Every operation must contribute to the final result. "
               "Return only steps with op, left and right. Return empty steps if unsure.")
     return prompt, schema
@@ -55,13 +56,17 @@ def constrain_shape(schema, shape, atoms):
             props = branch["properties"]
             for key, value in step.items():
                 values = props[key]["enum"]
-                allowed = [ref for ref in values if ref in atoms] if value == "SOURCE" else (
-                    [value] if value in values else [])
+                if value == "VALUE" and key != "op":
+                    allowed = [ref for ref in values if ref in atoms or ref.startswith("CONST:")]
+                elif value == "SOURCE" and key != "op":
+                    allowed = [ref for ref in values if ref in atoms]
+                else:
+                    allowed = [value] if value in values else []
                 props[key]["enum"] = allowed
             if all(prop["enum"] for prop in props.values()):
                 narrowed.append(branch)
-        if len(narrowed) != 1:
-            raise ValueError("Shape must identify one grounded operation per step")
+        if not narrowed:
+            raise ValueError("Shape must identify a grounded operation per step")
         options["oneOf"] = narrowed
     lengths[:] = [length]
 
