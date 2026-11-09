@@ -55,7 +55,7 @@
         },
         "planner": {
           "status": "running",
-          "completed": 24,
+          "completed": 48,
           "started_utc": "2026-11-09T09:12:41.867004+00:00"
         }
       }
