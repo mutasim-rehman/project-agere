@@ -69,7 +69,7 @@
       "stages": {
         "planner": {
           "status": "running",
-          "completed": 0,
+          "completed": 24,
           "started_utc": "2026-11-09T10:09:25.572712+00:00"
         }
       }
