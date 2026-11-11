@@ -3652,3 +3652,8 @@ Git attributes explicitly mark PDF/PNG artifacts as binary. ReportLab PDFs can
 contain an initial text-only byte window; without the attribute Git treated PDF
 xref whitespace as source formatting. Binary attributes prevent inappropriate
 text normalization and leave the reviewed artifact bytes unchanged.
+
+
+### 2026-11-11 - Scientific coverage restoration started
+
+User requested a full comparison and restoration, preserving both manuscript versions. Fingerprints are frozen in paper/preserved_versions.json; revisions go under paper/revised_aaai. All three PDFs were read. Missing statistical details, synthetic outcomes, propositions, utility analysis and five examples require restoration or explicit justified exclusion. Correct overbroad cluster-test claims and repair utility; retain post-hoc status. Official AAAI-27 seven-content/nine-total rule verified; no numeric supplement cap is stated on the public main-track instructions. No new inference or changed outcomes.
