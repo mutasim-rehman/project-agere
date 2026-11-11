@@ -1,0 +1,89 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Cemri et~al.(2025)Cemri, Pan, Yang, Agrawal, Chopra, Tiwari, Keutzer, Parameswaran, Klein, Ramchandran, Zaharia, Gonzalez, and Stoica}]{mast}
+Cemri, M.; Pan, M.~Z.; Yang, S.; Agrawal, L.~A.; Chopra, B.; Tiwari, R.; Keutzer, K.; Parameswaran, A.; Klein, D.; Ramchandran, K.; Zaharia, M.; Gonzalez, J.~E.; and Stoica, I. 2025.
+\newblock {Why Do Multi-Agent LLM Systems Fail?}
+\newblock arXiv:2503.13657.
+
+\bibitem[{Chen et~al.(2023)Chen, Ma, Wang, and Cohen}]{pot}
+Chen, W.; Ma, X.; Wang, X.; and Cohen, W.~W. 2023.
+\newblock {Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks}.
+\newblock arXiv:2211.12588.
+
+\bibitem[{Chen et~al.(2021)Chen, Chen, Smiley, Shah, Borova, Langdon, Moussa, Beane, Huang, Routledge, and Wang}]{finqa}
+Chen, Z.; Chen, W.; Smiley, C.; Shah, S.; Borova, I.; Langdon, D.; Moussa, R.; Beane, M.; Huang, T.-H.; Routledge, B.; and Wang, W.~Y. 2021.
+\newblock {F}in{QA}: A Dataset of Numerical Reasoning over Financial Data.
+\newblock In Moens, M.-F.; Huang, X.; Specia, L.; and Yih, S. W.-t., eds., \emph{Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing}, 3697--3711. Online and Punta Cana, Dominican Republic: Association for Computational Linguistics.
+
+\bibitem[{Dettmers et~al.(2023)Dettmers, Pagnoni, Holtzman, and Zettlemoyer}]{qlora}
+Dettmers, T.; Pagnoni, A.; Holtzman, A.; and Zettlemoyer, L. 2023.
+\newblock {QLoRA: Efficient Finetuning of Quantized LLMs}.
+\newblock arXiv:2305.14314.
+
+\bibitem[{Du et~al.(2024)Du, Li, Torralba, Tenenbaum, and Mordatch}]{debate}
+Du, Y.; Li, S.; Torralba, A.; Tenenbaum, J.~B.; and Mordatch, I. 2024.
+\newblock Improving Factuality and Reasoning in Language Models through Multiagent Debate.
+\newblock In Salakhutdinov, R.; Kolter, Z.; Heller, K.; Weller, A.; Oliver, N.; Scarlett, J.; and Berkenkamp, F., eds., \emph{Proceedings of the 41st International Conference on Machine Learning}, volume 235 of \emph{Proceedings of Machine Learning Research}, 11733--11763. PMLR.
+
+\bibitem[{Gao et~al.(2023)Gao, Madaan, Zhou, Alon, Liu, Yang, Callan, and Neubig}]{pal}
+Gao, L.; Madaan, A.; Zhou, S.; Alon, U.; Liu, P.; Yang, Y.; Callan, J.; and Neubig, G. 2023.
+\newblock {PAL}: Program-aided Language Models.
+\newblock In Krause, A.; Brunskill, E.; Cho, K.; Engelhardt, B.; Sabato, S.; and Scarlett, J., eds., \emph{Proceedings of the 40th International Conference on Machine Learning}, volume 202 of \emph{Proceedings of Machine Learning Research}, 10764--10799. PMLR.
+
+\bibitem[{Geifman and El-Yaniv(2019)}]{selective}
+Geifman, Y.; and El-Yaniv, R. 2019.
+\newblock {S}elective{N}et: A Deep Neural Network with an Integrated Reject Option.
+\newblock In Chaudhuri, K.; and Salakhutdinov, R., eds., \emph{Proceedings of the 36th International Conference on Machine Learning}, volume~97 of \emph{Proceedings of Machine Learning Research}, 2151--2159. PMLR.
+
+\bibitem[{Gou et~al.(2024)Gou, Shao, Gong, Shen, Yang, Duan, and Chen}]{critic}
+Gou, Z.; Shao, Z.; Gong, Y.; Shen, Y.; Yang, Y.; Duan, N.; and Chen, W. 2024.
+\newblock {CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing}.
+\newblock arXiv:2305.11738.
+
+\bibitem[{Hall, Shome, and Eiers(2026)}]{verifin}
+Hall, B.; Shome, S.; and Eiers, W. 2026.
+\newblock {VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims}.
+\newblock arXiv:2608.10213.
+
+\bibitem[{Hu et~al.(2021)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen}]{lora}
+Hu, E.~J.; Shen, Y.; Wallis, P.; Allen-Zhu, Z.; Li, Y.; Wang, S.; Wang, L.; and Chen, W. 2021.
+\newblock {LoRA: Low-Rank Adaptation of Large Language Models}.
+\newblock arXiv:2106.09685.
+
+\bibitem[{Huang et~al.(2024)Huang, Chen, Mishra, Zheng, Yu, Song, and Zhou}]{selfcorrect}
+Huang, J.; Chen, X.; Mishra, S.; Zheng, H.~S.; Yu, A.~W.; Song, X.; and Zhou, D. 2024.
+\newblock {Large Language Models Cannot Self-Correct Reasoning Yet}.
+\newblock arXiv:2310.01798.
+
+\bibitem[{Jenq and Shen(2026)}]{budgetverify}
+Jenq, J.; and Shen, H. 2026.
+\newblock {BudgetVerify: Budget-Tiered Verification for Financial QA}.
+\newblock arXiv:2609.33052.
+
+\bibitem[{Madaan et~al.(2023)Madaan, Tandon, Gupta, Hallinan, Gao, Wiegreffe, Alon, Dziri, Prabhumoye, Yang, Gupta, Majumder, Hermann, Welleck, Yazdanbakhsh, and Clark}]{selfrefine}
+Madaan, A.; Tandon, N.; Gupta, P.; Hallinan, S.; Gao, L.; Wiegreffe, S.; Alon, U.; Dziri, N.; Prabhumoye, S.; Yang, Y.; Gupta, S.; Majumder, B.~P.; Hermann, K.; Welleck, S.; Yazdanbakhsh, A.; and Clark, P. 2023.
+\newblock {Self-Refine: Iterative Refinement with Self-Feedback}.
+\newblock arXiv:2303.17651.
+
+\bibitem[{Qwen et~al.(2024)Qwen, :, Yang, Yang, Zhang, Hui, Zheng, Yu, Li, Liu, Huang, Wei, Lin, Yang, Tu, Zhang, Yang, Yang, Zhou, Lin, Dang, Lu, Bao, Yang, Yu, Li, Xue, Zhang, Zhu, Men, Lin, Li, Tang, Xia, Ren, Ren, Fan, Su, Zhang, Wan, Liu, Cui, Zhang, and Qiu}]{qwen}
+Qwen; :; Yang, A.; Yang, B.; Zhang, B.; Hui, B.; Zheng, B.; Yu, B.; Li, C.; Liu, D.; Huang, F.; Wei, H.; Lin, H.; Yang, J.; Tu, J.; Zhang, J.; Yang, J.; Yang, J.; Zhou, J.; Lin, J.; Dang, K.; Lu, K.; Bao, K.; Yang, K.; Yu, L.; Li, M.; Xue, M.; Zhang, P.; Zhu, Q.; Men, R.; Lin, R.; Li, T.; Tang, T.; Xia, T.; Ren, X.; Ren, X.; Fan, Y.; Su, Y.; Zhang, Y.; Wan, Y.; Liu, Y.; Cui, Z.; Zhang, Z.; and Qiu, Z. 2024.
+\newblock {Qwen2.5 Technical Report}.
+\newblock arXiv:2412.15115.
+
+\bibitem[{Tran and Kiela(2026)}]{equalbudget}
+Tran, D.; and Kiela, D. 2026.
+\newblock {Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets}.
+\newblock arXiv:2604.02460.
+
+\bibitem[{Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery, and Zhou}]{selfconsistency}
+Wang, X.; Wei, J.; Schuurmans, D.; Le, Q.; Chi, E.; Narang, S.; Chowdhery, A.; and Zhou, D. 2023.
+\newblock {Self-Consistency Improves Chain of Thought Reasoning in Language Models}.
+\newblock arXiv:2203.11171.
+
+\bibitem[{Zhu et~al.(2021)Zhu, Lei, Huang, Wang, Zhang, Lv, Feng, and Chua}]{tatqa}
+Zhu, F.; Lei, W.; Huang, Y.; Wang, C.; Zhang, S.; Lv, J.; Feng, F.; and Chua, T.-S. 2021.
+\newblock {TAT}-{QA}: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance.
+\newblock In Zong, C.; Xia, F.; Li, W.; and Navigli, R., eds., \emph{Proceedings of the 59th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)}, 3277--3287. Online: Association for Computational Linguistics.
+
+\end{thebibliography}

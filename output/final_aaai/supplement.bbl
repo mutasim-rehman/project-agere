@@ -1,0 +1,19 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Dettmers et~al.(2023)Dettmers, Pagnoni, Holtzman, and Zettlemoyer}]{qlora}
+Dettmers, T.; Pagnoni, A.; Holtzman, A.; and Zettlemoyer, L. 2023.
+\newblock {QLoRA: Efficient Finetuning of Quantized LLMs}.
+\newblock arXiv:2305.14314.
+
+\bibitem[{Hu et~al.(2021)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen}]{lora}
+Hu, E.~J.; Shen, Y.; Wallis, P.; Allen-Zhu, Z.; Li, Y.; Wang, S.; Wang, L.; and Chen, W. 2021.
+\newblock {LoRA: Low-Rank Adaptation of Large Language Models}.
+\newblock arXiv:2106.09685.
+
+\bibitem[{Zhu et~al.(2021)Zhu, Lei, Huang, Wang, Zhang, Lv, Feng, and Chua}]{tatqa}
+Zhu, F.; Lei, W.; Huang, Y.; Wang, C.; Zhang, S.; Lv, J.; Feng, F.; and Chua, T.-S. 2021.
+\newblock {TAT}-{QA}: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance.
+\newblock In Zong, C.; Xia, F.; Li, W.; and Navigli, R., eds., \emph{Proceedings of the 59th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)}, 3277--3287. Online: Association for Computational Linguistics.
+
+\end{thebibliography}

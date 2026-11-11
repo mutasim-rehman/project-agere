@@ -1,0 +1,284 @@
+[
+  {
+    "key": "pot",
+    "url": "https://arxiv.org/abs/2211.12588",
+    "title": "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks",
+    "authors": [
+      "Chen, Wenhu",
+      "Ma, Xueguang",
+      "Wang, Xinyi",
+      "Cohen, William W."
+    ],
+    "year": 2023,
+    "metadata_sha256": "e55c3603e8570e4596ccb57b4825de39cddf652e886655595d4043a84aeb6118",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "selfcorrect",
+    "url": "https://arxiv.org/abs/2310.01798",
+    "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+    "authors": [
+      "Huang, Jie",
+      "Chen, Xinyun",
+      "Mishra, Swaroop",
+      "Zheng, Huaixiu Steven",
+      "Yu, Adams Wei",
+      "Song, Xinying",
+      "Zhou, Denny"
+    ],
+    "year": 2024,
+    "metadata_sha256": "b9a6cee520360f2c1b86754737bf469c7d9110545b158f1c59a3197a731e78fa",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "critic",
+    "url": "https://arxiv.org/abs/2305.11738",
+    "title": "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+    "authors": [
+      "Gou, Zhibin",
+      "Shao, Zhihong",
+      "Gong, Yeyun",
+      "Shen, Yelong",
+      "Yang, Yujiu",
+      "Duan, Nan",
+      "Chen, Weizhu"
+    ],
+    "year": 2024,
+    "metadata_sha256": "a0ee81d57b432bc7284b6187a7aed61f10bf4de4f518d50308b68e31e635b434",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "selfrefine",
+    "url": "https://arxiv.org/abs/2303.17651",
+    "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+    "authors": [
+      "Madaan, Aman",
+      "Tandon, Niket",
+      "Gupta, Prakhar",
+      "Hallinan, Skyler",
+      "Gao, Luyu",
+      "Wiegreffe, Sarah",
+      "Alon, Uri",
+      "Dziri, Nouha",
+      "Prabhumoye, Shrimai",
+      "Yang, Yiming",
+      "Gupta, Shashank",
+      "Majumder, Bodhisattwa Prasad",
+      "Hermann, Katherine",
+      "Welleck, Sean",
+      "Yazdanbakhsh, Amir",
+      "Clark, Peter"
+    ],
+    "year": 2023,
+    "metadata_sha256": "c34cbd3ef22ea0b9c95a8f3ddb430648b2513c21db3e71fd0ad79e54129025a4",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "mast",
+    "url": "https://arxiv.org/abs/2503.13657",
+    "title": "Why Do Multi-Agent LLM Systems Fail?",
+    "authors": [
+      "Cemri, Mert",
+      "Pan, Melissa Z.",
+      "Yang, Shuyi",
+      "Agrawal, Lakshya A.",
+      "Chopra, Bhavya",
+      "Tiwari, Rishabh",
+      "Keutzer, Kurt",
+      "Parameswaran, Aditya",
+      "Klein, Dan",
+      "Ramchandran, Kannan",
+      "Zaharia, Matei",
+      "Gonzalez, Joseph E.",
+      "Stoica, Ion"
+    ],
+    "year": 2025,
+    "metadata_sha256": "106aa092d7531f399a71a6866733cba3ae4470739cdf6996dfc4854b6d8403cd",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "equalbudget",
+    "url": "https://arxiv.org/abs/2604.02460",
+    "title": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+    "authors": [
+      "Tran, Dat",
+      "Kiela, Douwe"
+    ],
+    "year": 2026,
+    "metadata_sha256": "3c878d29b7a924b541d35aa29115d4a38ec5540ee1088b597cb11468d306e1cc",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "verifin",
+    "url": "https://arxiv.org/abs/2608.10213",
+    "title": "VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims",
+    "authors": [
+      "Hall, Bethel",
+      "Shome, Sachi",
+      "Eiers, William"
+    ],
+    "year": 2026,
+    "metadata_sha256": "aee221b469d08325418b58bb1321be5e5e3103e18fbd1ba1688942c03f8f7725",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "budgetverify",
+    "url": "https://arxiv.org/abs/2609.33052",
+    "title": "BudgetVerify: Budget-Tiered Verification for Financial QA",
+    "authors": [
+      "Jenq, Janet",
+      "Shen, Hongda"
+    ],
+    "year": 2026,
+    "metadata_sha256": "7e35304f88b7fa89e07d1f08565357f32ef3f7ca949fb07578edf01c97f9a651",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "qwen",
+    "url": "https://arxiv.org/abs/2412.15115",
+    "title": "Qwen2.5 Technical Report",
+    "authors": [
+      "Qwen",
+      ":",
+      "Yang, An",
+      "Yang, Baosong",
+      "Zhang, Beichen",
+      "Hui, Binyuan",
+      "Zheng, Bo",
+      "Yu, Bowen",
+      "Li, Chengyuan",
+      "Liu, Dayiheng",
+      "Huang, Fei",
+      "Wei, Haoran",
+      "Lin, Huan",
+      "Yang, Jian",
+      "Tu, Jianhong",
+      "Zhang, Jianwei",
+      "Yang, Jianxin",
+      "Yang, Jiaxi",
+      "Zhou, Jingren",
+      "Lin, Junyang",
+      "Dang, Kai",
+      "Lu, Keming",
+      "Bao, Keqin",
+      "Yang, Kexin",
+      "Yu, Le",
+      "Li, Mei",
+      "Xue, Mingfeng",
+      "Zhang, Pei",
+      "Zhu, Qin",
+      "Men, Rui",
+      "Lin, Runji",
+      "Li, Tianhao",
+      "Tang, Tianyi",
+      "Xia, Tingyu",
+      "Ren, Xingzhang",
+      "Ren, Xuancheng",
+      "Fan, Yang",
+      "Su, Yang",
+      "Zhang, Yichang",
+      "Wan, Yu",
+      "Liu, Yuqiong",
+      "Cui, Zeyu",
+      "Zhang, Zhenru",
+      "Qiu, Zihan"
+    ],
+    "year": 2024,
+    "metadata_sha256": "8e1d514cef3e0e69cdf1ea43ed9dfea95078b53081b7c152103fe6cec3f7d5cc",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "lora",
+    "url": "https://arxiv.org/abs/2106.09685",
+    "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "authors": [
+      "Hu, Edward J.",
+      "Shen, Yelong",
+      "Wallis, Phillip",
+      "Allen-Zhu, Zeyuan",
+      "Li, Yuanzhi",
+      "Wang, Shean",
+      "Wang, Lu",
+      "Chen, Weizhu"
+    ],
+    "year": 2021,
+    "metadata_sha256": "70bb70b4fd6d41b8a0f53fc5148017bf6ef5b73acba822027397f861aee135c6",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "qlora",
+    "url": "https://arxiv.org/abs/2305.14314",
+    "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+    "authors": [
+      "Dettmers, Tim",
+      "Pagnoni, Artidoro",
+      "Holtzman, Ari",
+      "Zettlemoyer, Luke"
+    ],
+    "year": 2023,
+    "metadata_sha256": "a8471d458d43767325628cf5b1e7b8d88f057a0d51f537f59bea77dd4d7a9b4b",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "selfconsistency",
+    "url": "https://arxiv.org/abs/2203.11171",
+    "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+    "authors": [
+      "Wang, Xuezhi",
+      "Wei, Jason",
+      "Schuurmans, Dale",
+      "Le, Quoc",
+      "Chi, Ed",
+      "Narang, Sharan",
+      "Chowdhery, Aakanksha",
+      "Zhou, Denny"
+    ],
+    "year": 2023,
+    "metadata_sha256": "4faf269a30515f59d4891c8b52a2fc14d1b5ed0acb89ebf2c1c2309e964dafad",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "finqa",
+    "url": "https://aclanthology.org/2021.emnlp-main.300.bib",
+    "sha256": "0973d57739967167e446cca0672dc38f9c4c7a2ac587f544819bf915090d1d7e",
+    "verified": "publisher BibTeX",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "tatqa",
+    "url": "https://aclanthology.org/2021.acl-long.254.bib",
+    "sha256": "a9f4b15645b1b2cd3e44b3b08bdac34d8538d567c0ccbc2982b50ce9dcb26cd0",
+    "verified": "publisher BibTeX",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "pal",
+    "url": "https://proceedings.mlr.press/v202/gao23f.html",
+    "verified": "publisher BibTeX",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "debate",
+    "url": "https://proceedings.mlr.press/v235/du24e.html",
+    "verified": "publisher BibTeX",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "selective",
+    "url": "https://proceedings.mlr.press/v97/geifman19a.html",
+    "verified": "publisher BibTeX",
+    "retrieved": "2026-11-11"
+  }
+]

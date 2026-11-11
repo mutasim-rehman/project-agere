@@ -1,0 +1,20 @@
+{
+  "main": {
+    "pages": 7,
+    "references_start_page": 7,
+    "letter_size": true,
+    "overfull_boxes": 0,
+    "undefined_references": 0,
+    "type3_fonts": false,
+    "sha256": "66c364c49b978168443af14582020f4fa2851138e01c54ca8c0bc9bda2daa8bd"
+  },
+  "supplement": {
+    "pages": 10,
+    "references_start_page": 10,
+    "letter_size": true,
+    "overfull_boxes": 0,
+    "undefined_references": 0,
+    "type3_fonts": false,
+    "sha256": "1efcdbae61b19df0c8496b544a12a04f9d45a1f5f72c256189634cb898b94980"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "official_page": "https://aaai.org/authorkit27/",
+  "official_zip": "https://aaai.org/wp-content/uploads/2026/05/AuthorKit27.zip",
+  "official_fetch": "HTTP 403; direct authenticity comparison unavailable",
+  "mirror_files": [
+    {
+      "template_file": "aaai2027.sty",
+      "url": "https://raw.githubusercontent.com/tabbycat7/aaai_2027_latex/main/aaai2027.sty",
+      "sha256": "391bce82815bf698b8e382dd3ae7e30c75d7ab46df140cb295b1266016bc8623"
+    },
+    {
+      "template_file": "aaai2027.bst",
+      "url": "https://raw.githubusercontent.com/tabbycat7/aaai_2027_latex/main/aaai2027.bst",
+      "sha256": "5db7765ba99de5c1e4686f9b3940a0add9c5e702f2164514462bec130ccb6e3c"
+    },
+    {
+      "template_file": "CameraReady2027.tex",
+      "url": "https://raw.githubusercontent.com/tabbycat7/aaai_2027_latex/main/CameraReady2027.tex",
+      "sha256": "db509cb393dae5c113bf29633e17d31a5fefa610aad09056569034f9bcff5b46"
+    }
+  ],
+  "status": "unmodified 2027 files from retained author-kit mirror; official-byte verification remains unresolved"
+}

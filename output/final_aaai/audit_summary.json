@@ -1,0 +1,11 @@
+{
+  "evidence_files": 3776,
+  "result_documents": 222,
+  "parse_issues": 0,
+  "tier16_cases": 960,
+  "memory_samples": 668817,
+  "attempts": 16,
+  "planner_primary_contexts": 96,
+  "planner_secondary_contexts": 28,
+  "inference_calls": 0
+}

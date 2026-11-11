@@ -1,0 +1,16 @@
+{
+  "method": "PyMuPDF 1.6x page rendering; visual contact-sheet review of all 17 pages and enlarged inspection of figure and dense table/command pages",
+  "pdf_sha256": {
+    "main": "66c364c49b978168443af14582020f4fa2851138e01c54ca8c0bc9bda2daa8bd",
+    "supplement": "1efcdbae61b19df0c8496b544a12a04f9d45a1f5f72c256189634cb898b94980"
+  },
+  "pages_reviewed": {
+    "main": 7,
+    "supplement": 10
+  },
+  "observed_clipping_or_overlap": false,
+  "unresolved_references": false,
+  "figures": "Readable labels and legends; actual-data vector graphics",
+  "correction": "CLI commands changed from path markup to verbatim so spaces are preserved; latest supplement rerendered and checked",
+  "limits": "Visual and compilation checks are not official-template authentication or independent scientific peer review"
+}
