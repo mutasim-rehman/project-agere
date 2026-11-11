@@ -1,0 +1,25 @@
+{
+  "original_files_preserved": 63,
+  "all_preserved_hashes_match": true,
+  "citations": 28,
+  "counts": {
+    "main": {
+      "pages": 8,
+      "words": 5527
+    },
+    "supplement": {
+      "pages": 29,
+      "words": 14998
+    }
+  },
+  "statistical_tests": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.042s\n\nOK",
+  "text_within_pages": true,
+  "compiled_pdf_hashes": {
+    "main": "beb87dfce0a1612ebcdb7f2e6a46b3da74f5ff61ef7c8feb0254f3b6a993ad7b",
+    "supplement": "1caf0cdd13f75b1f479b45a6bce017307dffc81d7d536cd4a3d1b9d00c10966d"
+  },
+  "analysis_environment": {
+    "python": "3.12.14"
+  },
+  "no_new_inference": true
+}

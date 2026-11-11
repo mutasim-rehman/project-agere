@@ -1,6 +1,6 @@
 {
-  "entries": 27,
-  "cited_entries": 27,
+  "entries": 28,
+  "cited_entries": 28,
   "missing_entries": [],
   "sources": [
     {
@@ -347,7 +347,12 @@
       "key": "fagerland",
       "url": "https://link.springer.com/article/10.1186/1471-2288-13-91",
       "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+    },
+    {
+      "key": "mcnemar",
+      "url": "https://link.springer.com/article/10.1007/BF02295996",
+      "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
     }
   ],
-  "version_note": "Bench360 uses 2026 arXiv revision; AWQ uses latest 2026 revision; Qwen uses corporate author from 2024 v1 title page, correcting prior metadata punctuation"
+  "version_note": "Bench360 cites its 2026 arXiv revision; AWQ cites its 2026 revision; Qwen uses Qwen Team from the 2024 v1 title page, correcting prior punctuation-only pseudo-author"
 }

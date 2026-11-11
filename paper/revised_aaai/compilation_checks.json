@@ -1,22 +1,22 @@
 {
   "main": {
     "pages": 8,
-    "words_pdf_extraction": 5520,
+    "words_pdf_extraction": 5527,
     "references_start_page": 7,
     "problems": [],
     "letter_size": true,
     "undefined_markers": false,
     "type3_fonts": false,
-    "sha256": "3d6eba88be52fc40c7872d15e6f62577b7b3ff54b5db35d697aeac5ffbe59ab6"
+    "sha256": "beb87dfce0a1612ebcdb7f2e6a46b3da74f5ff61ef7c8feb0254f3b6a993ad7b"
   },
   "supplement": {
-    "pages": 28,
-    "words_pdf_extraction": 14975,
+    "pages": 29,
+    "words_pdf_extraction": 14998,
     "references_start_page": 28,
     "problems": [],
     "letter_size": true,
     "undefined_markers": false,
     "type3_fonts": false,
-    "sha256": "555b03ec1b2799df1f36390f1a3e887053f68ab9970c81f44249dac609fd194a"
+    "sha256": "1caf0cdd13f75b1f479b45a6bce017307dffc81d7d536cd4a3d1b9d00c10966d"
   }
 }

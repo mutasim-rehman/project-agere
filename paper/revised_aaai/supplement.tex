@@ -208,11 +208,13 @@ Missing or limited evidence includes physical 8 GB/no-paging validation, an unin
 The original focused bibliography contains 17 references verified against primary arXiv metadata, ACL Anthology or PMLR publisher BibTeX. The accompanying literature audit records the claim supported by each source and comparison limits. Recent financial verification papers are identified as arXiv preprints; we do not invent venues or reproduce their performance under our budgets. Our numerical results come only from this repository, not from unrelated published leaderboards. LoRA, QLoRA, program execution, selective prediction and multiagent debate are prior methods, not originality claims.
 
 From a repository checkout, restore immutable evidence into a separate directory, substituting its path for PATH:
+\noindent\begin{minipage}{\textwidth}
 \begin{verbatim}
 python dashboard_handoff/restore_evidence.py --extract PATH
 python scripts/reporting/build_final_paper.py --evidence PATH
 python scripts/reporting/verify_final_scores.py --evidence PATH
 \end{verbatim}
+\end{minipage}
 These commands use preserved predictions and do not load model weights or run inference. Dependencies and exact input hashes are recorded with the paper. Compile each LaTeX source using PDFLaTeX, BibTeX and two additional PDFLaTeX passes. The main paper uses unmodified AAAI-2027 style/BibTeX files; this separate technical supplement uses one column for audit readability. Submission-specific administrative declarations, final author identities and any required checklist require author review; none is fabricated.
 
 \section{Historical Linux 8 GB Condition Census}

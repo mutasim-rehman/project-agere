@@ -9,8 +9,8 @@ O = original `output/pdf/RESEARCH_PAPER_AAAI.pdf`; M0/S0 = preserved shortened `
 - O: 37 pages; 16,802 extracted words.
 - M0: 7 pages; 5,130 extracted words.
 - S0: 10 pages; 5,346 extracted words.
-- M: 8 pages; 5,520 extracted words.
-- S: 28 pages; 14,975 extracted words.
+- M: 8 pages; 5,527 extracted words.
+- S: 29 pages; 14,998 extracted words.
 
 The original versus M0+S0 reduction was about 38%. The revised main remains concise; the expanded supplement restores supporting science. Added later Windows/planner evidence means this is not a verbatim recreation of the old manuscript.
 
@@ -182,7 +182,7 @@ For the pre-restoration locations: M0 §1 pp1–2; §2 pp1–2; §3 pp2–3; §4
 
 ## Raw evidence, computational checks and remaining weaknesses
 
-The restoration is not an audit only against prose. `coverage_evidence_checks.json` pins raw inputs. The reconciliation checks 960 historical 16 GB case rows against their raw ledgers and Ubuntu score/delivery records, and all 768 historical FinQA rows against 15 raw ledgers. It recomputes all 126 endpoint rows and 42 metric-specific transition/symmetry blocks, cross-checks probability tails with SciPy, reproduces report/company sensitivity and re-aggregates 350 synthetic saved-score rows. The established raw-score audit separately re-executes 1,920 Ubuntu programs, rescoring Windows FinQA/TAT-QA ledgers; all 668,817 memory samples across 16 attempts are checked. Ten existing known-value tests pass. These checks do not independently adjudicate financial truth or regenerate model/training trajectories.
+The restoration is not an audit only against prose. `coverage_evidence_checks.json` pins raw inputs. The reconciliation checks 960 historical 16 GB case rows against their raw ledgers and Ubuntu score/delivery records, independently executes/rescores all 768 earlier FinQA programs against their source packets, and independently rescores 350 synthetic answers from original documents and deterministic tools. It recomputes all 126 endpoint rows and 42 metric-specific transition/symmetry blocks, cross-checks probability tails with SciPy and reproduces report/company sensitivity. The established raw-score audit separately re-executes 1,920 Ubuntu programs, rescoring Windows FinQA/TAT-QA ledgers; all 668,817 memory samples across 16 attempts are checked. Ten existing known-value tests pass. These checks do not independently adjudicate financial truth or regenerate model/training trajectories.
 
 Remaining evidentiary weaknesses: one Qwen2.5 family; confounded recipe comparisons; shared/reused exploratory cohorts; deterministic selection and possible pretraining overlap; no TAT-QA report grouping; sparse planner gains; no complete secondary 7B baseline; Windows commit does not prove physical 8 GB/no paging; Ubuntu interruptions and missing original tarball/bootstrap log; no independent financial-label adjudication; incomplete optimized/factorial baselines. None is filled with estimated data.
 
@@ -192,4 +192,4 @@ No negative result was intentionally removed. Intentional exclusions are repetit
 
 The main document independently defines recipes, cohorts, resource controls, scoring conventions, candidate versus delivery, paired uncertainty, main baselines, oracle access, planner allocation/criterion and failure, interrupted comparison and validity limits. It states the original hypotheses and includes paired transitions and worked failure summaries. The supplement supplies detailed proofs, complete tests, historical controls and reproduction records; it is not required to discover a reversal, an undisclosed negative main result or the reason the planner criterion fails. This is an editorial/scientific assessment, not an external peer-review certification.
 
-Official venue requirements and unresolved template authentication are recorded in `VENUE_REQUIREMENTS.md`. The public official pages do not specify a numeric supplement cap; portal/file-size rules and the separate checklist must be checked before actual submission.
+Official venue requirements and unresolved template authentication are recorded in `VENUE_REQUIREMENTS.md`. The public official pages do not specify a numeric supplement cap; portal/file-size rules and the separate checklist must be checked before actual submission. `LITERATURE_COVERAGE.md` additionally records the treatment of every original reference/group, including citations not retained in the revised bibliography.

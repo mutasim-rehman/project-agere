@@ -1,0 +1,27 @@
+{
+  "pdf_sha256": {
+    "main": "beb87dfce0a1612ebcdb7f2e6a46b3da74f5ff61ef7c8feb0254f3b6a993ad7b",
+    "supplement": "1caf0cdd13f75b1f479b45a6bce017307dffc81d7d536cd4a3d1b9d00c10966d"
+  },
+  "pages_visually_reviewed": {
+    "main": {
+      "pages": 8,
+      "words": 5527
+    },
+    "supplement": {
+      "pages": 29,
+      "words": 14998
+    }
+  },
+  "method": "All pages rendered at 1.7x via PyMuPDF; all contact sheets reviewed; enlarged checks of figures, formal mathematics, dense statistical tables and CLI examples",
+  "corrections": [
+    "Kept short outcome tables together",
+    "Moved a stranded subsection heading with its table",
+    "Kept reproduction CLI commands together with spaces preserved",
+    "Corrected Qwen bibliography punctuation and verified version years"
+  ],
+  "observed_clipping_overlap_or_unreadable_glyphs": false,
+  "text_blocks_outside_page": [],
+  "main_content_limit": "Non-reference content ends on page seven; page eight contains references only",
+  "limits": "Document QA is not independent financial adjudication or official-template authentication; supplement portal limits and checklist remain author checks"
+}

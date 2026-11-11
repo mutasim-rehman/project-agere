@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Cameron and Miller(2015)}]{cameron}
@@ -51,6 +51,11 @@ Liu, C.; Liu, Q.; Zhu, Z.; Fei, H.; and Mahanti, A. 2025.
 \newblock {D}avid vs. Goliath: Cost-Efficient Financial {QA} via Cascaded Multi-Agent Reasoning.
 \newblock In Christodoulopoulos, C.; Chakraborty, T.; Rose, C.; and Peng, V., eds., \emph{Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2025}, 4212--4229. Suzhou, China: Association for Computational Linguistics.
 \newblock ISBN 979-8-89176-335-7.
+
+\bibitem[{McNemar(1947)}]{mcnemar}
+McNemar, Q. 1947.
+\newblock Note on the Sampling Error of the Difference between Correlated Proportions or Percentages.
+\newblock \emph{Psychometrika}, 12(2): 153--157.
 
 \bibitem[{Stuhlmann, Argerich, and Fürst(2026)}]{bench360}
 Stuhlmann, L.; Argerich, M.~F.; and Fürst, J. 2026.
