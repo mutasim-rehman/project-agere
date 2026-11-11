@@ -1,0 +1,278 @@
+[
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-mas-direct_control",
+    "full": {
+      "case_success": {
+        "correct_delivered": 0,
+        "wrong_delivered": 5,
+        "withheld": 155
+      },
+      "raw_execution_match": {
+        "correct_delivered": 0,
+        "wrong_delivered": 5,
+        "withheld": 155
+      }
+    },
+    "initial": {
+      "case_success": 0,
+      "raw_execution_match": 0
+    },
+    "candidate_repairs": {
+      "case_success": {
+        "gains": 0,
+        "regressions": 0
+      },
+      "raw_execution_match": {
+        "gains": 0,
+        "regressions": 0
+      }
+    },
+    "generated_tokens": 8392,
+    "prompt_tokens": 391395,
+    "inference_seconds": 3229.5815378950247,
+    "truncated_stages": 0,
+    "context_or_budget_skips": 0,
+    "repair_attempts": 0,
+    "source_supported_final_programs": 5,
+    "status": "complete",
+    "n": 160,
+    "expected": 160,
+    "cap_bytes": 11500000000,
+    "sampled_peak_tree_rss_bytes": 10934157312,
+    "cases_sha256": "d37f719623c31d88c00f094ba572c71002c83fc0a58c92f26dca6a061cba4ebc",
+    "attempts": 1,
+    "resumed_cases": 0,
+    "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-mas-primary",
+    "full": {
+      "case_success": {
+        "correct_delivered": 5,
+        "wrong_delivered": 3,
+        "withheld": 152
+      },
+      "raw_execution_match": {
+        "correct_delivered": 5,
+        "wrong_delivered": 3,
+        "withheld": 152
+      }
+    },
+    "initial": {
+      "case_success": 5,
+      "raw_execution_match": 5
+    },
+    "candidate_repairs": {
+      "case_success": {
+        "gains": 0,
+        "regressions": 0
+      },
+      "raw_execution_match": {
+        "gains": 0,
+        "regressions": 0
+      }
+    },
+    "generated_tokens": 29509,
+    "prompt_tokens": 746673,
+    "inference_seconds": 12178.310323008904,
+    "truncated_stages": 157,
+    "context_or_budget_skips": 0,
+    "repair_attempts": 0,
+    "source_supported_final_programs": 10,
+    "status": "complete",
+    "n": 160,
+    "expected": 160,
+    "cap_bytes": 11500000000,
+    "sampled_peak_tree_rss_bytes": 10945556480,
+    "cases_sha256": "eb35909211a059e30beb39b2653b85159896e83c99d12c8d09908ab4d3b57280",
+    "attempts": 1,
+    "resumed_cases": 0,
+    "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-mas-repair_ablation",
+    "full": {
+      "case_success": {
+        "correct_delivered": 5,
+        "wrong_delivered": 3,
+        "withheld": 152
+      },
+      "raw_execution_match": {
+        "correct_delivered": 5,
+        "wrong_delivered": 3,
+        "withheld": 152
+      }
+    },
+    "initial": {
+      "case_success": 5,
+      "raw_execution_match": 5
+    },
+    "candidate_repairs": {
+      "case_success": {
+        "gains": 0,
+        "regressions": 0
+      },
+      "raw_execution_match": {
+        "gains": 0,
+        "regressions": 0
+      }
+    },
+    "generated_tokens": 33917,
+    "prompt_tokens": 1223337,
+    "inference_seconds": 13613.058871676794,
+    "truncated_stages": 157,
+    "context_or_budget_skips": 0,
+    "repair_attempts": 152,
+    "source_supported_final_programs": 8,
+    "status": "complete",
+    "n": 160,
+    "expected": 160,
+    "cap_bytes": 11500000000,
+    "sampled_peak_tree_rss_bytes": 10946301952,
+    "cases_sha256": "22fef85167edbefe3815d26be8744f3fbb7fbb4b98dfc1528019a7572c82ade1",
+    "attempts": 3,
+    "resumed_cases": 114,
+    "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-direct_control",
+    "full": {
+      "case_success": {
+        "correct_delivered": 50,
+        "wrong_delivered": 66,
+        "withheld": 44
+      },
+      "raw_execution_match": {
+        "correct_delivered": 14,
+        "wrong_delivered": 102,
+        "withheld": 44
+      }
+    },
+    "initial": {
+      "case_success": 52,
+      "raw_execution_match": 15
+    },
+    "candidate_repairs": {
+      "case_success": {
+        "gains": 0,
+        "regressions": 0
+      },
+      "raw_execution_match": {
+        "gains": 0,
+        "regressions": 0
+      }
+    },
+    "generated_tokens": 14449,
+    "prompt_tokens": 295862,
+    "inference_seconds": 19129.805315920024,
+    "truncated_stages": 0,
+    "context_or_budget_skips": 0,
+    "repair_attempts": 0,
+    "source_supported_final_programs": 132,
+    "status": "complete",
+    "n": 160,
+    "expected": 160,
+    "cap_bytes": 11500000000,
+    "sampled_peak_tree_rss_bytes": 10069766144,
+    "cases_sha256": "30d94f5e1ca578996f49f741660cb1f9a3ae9d13b6c7d48e859f259f8cd0ddd0",
+    "attempts": 4,
+    "resumed_cases": 94,
+    "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-primary",
+    "full": {
+      "case_success": {
+        "correct_delivered": 78,
+        "wrong_delivered": 48,
+        "withheld": 34
+      },
+      "raw_execution_match": {
+        "correct_delivered": 38,
+        "wrong_delivered": 88,
+        "withheld": 34
+      }
+    },
+    "initial": {
+      "case_success": 84,
+      "raw_execution_match": 44
+    },
+    "candidate_repairs": {
+      "case_success": {
+        "gains": 0,
+        "regressions": 0
+      },
+      "raw_execution_match": {
+        "gains": 0,
+        "regressions": 0
+      }
+    },
+    "generated_tokens": 32657,
+    "prompt_tokens": 642686,
+    "inference_seconds": 42005.96844467498,
+    "truncated_stages": 159,
+    "context_or_budget_skips": 0,
+    "repair_attempts": 0,
+    "source_supported_final_programs": 150,
+    "status": "complete",
+    "n": 160,
+    "expected": 160,
+    "cap_bytes": 11500000000,
+    "sampled_peak_tree_rss_bytes": 10075340800,
+    "cases_sha256": "0226c122113378bc4d5452698f6276d3666310433755f6933fec644c40e73fb8",
+    "attempts": 3,
+    "resumed_cases": 107,
+    "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-repair_ablation",
+    "full": {
+      "case_success": {
+        "correct_delivered": 79,
+        "wrong_delivered": 50,
+        "withheld": 31
+      },
+      "raw_execution_match": {
+        "correct_delivered": 38,
+        "wrong_delivered": 91,
+        "withheld": 31
+      }
+    },
+    "initial": {
+      "case_success": 84,
+      "raw_execution_match": 44
+    },
+    "candidate_repairs": {
+      "case_success": {
+        "gains": 1,
+        "regressions": 0
+      },
+      "raw_execution_match": {
+        "gains": 0,
+        "regressions": 0
+      }
+    },
+    "generated_tokens": 35244,
+    "prompt_tokens": 759898,
+    "inference_seconds": 48952.44360175487,
+    "truncated_stages": 159,
+    "context_or_budget_skips": 0,
+    "repair_attempts": 34,
+    "source_supported_final_programs": 150,
+    "status": "complete",
+    "n": 160,
+    "expected": 160,
+    "cap_bytes": 11500000000,
+    "sampled_peak_tree_rss_bytes": 10087276544,
+    "cases_sha256": "e529c20d1a7b03027204b02350dbda2884ae8f0cf30eb908c97bb893916d8f57",
+    "attempts": 4,
+    "resumed_cases": 118,
+    "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+  }
+]

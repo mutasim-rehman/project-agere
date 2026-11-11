@@ -1,5 +1,7 @@
 # Ubuntu lab recovery and bounded runs
 
+> **11 November 2026:** the new [Ubuntu 16 GB run](research/tier16_v2/UBUNTU_COMPLETION.md) completed evaluation and replay after resumptions. SSD disconnections caused read/write failures and NTFS metadata errors; preservation used a read-only mount. The dashboard handoff includes verified case/memory/code evidence and exact-hash reconstructed replay files, with unrecovered artifacts explicitly listed. Do not force-mount a damaged filesystem or treat historical swap failures as valid.
+
 ## What the September 30 SSD evidence shows
 
 Inspected on the development PC with the SSD at `H:\AGERE`. The lab logs used

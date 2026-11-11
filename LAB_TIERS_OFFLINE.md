@@ -1,5 +1,7 @@
 # Ubuntu lab run: 16 GB and 32 GB, entirely offline after git pull
 
+> **Completed Ubuntu 16 GB replication, 11 November 2026:** see [results and preservation](research/tier16_v2/UBUNTU_COMPLETION.md) and the updated [launcher guide](research/tier16_v2/UBUNTU_REPLICATION.md). All six jobs and the replay audit are complete. The repository [dashboard handoff](dashboard_handoff/README.md) includes the new evidence without requiring the SSD. Original SSD export packaging remains unconfirmed after filesystem errors.
+
 The8GB prompt checks and closure audits are complete. The portable runtime and
 real SAS/MAS workflow smoke tests passed on28 October2026, including saved-response
 replay. The sealed handoff includes `configs/lab_tiers/freeze.json`; code/input

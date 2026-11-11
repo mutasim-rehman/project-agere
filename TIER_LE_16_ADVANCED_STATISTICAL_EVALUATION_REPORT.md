@@ -1,5 +1,7 @@
 # Advanced statistical evaluation: deployments at or below16 GB
 
+> **11 November 2026 addendum:** [the Ubuntu replication](research/tier16_v2/UBUNTU_COMPLETION.md) reproduced all final 16 GB delivery flags and score objects. Its distinct runtime/resource traces are preserved separately. This historical report and PDF have not been recomputed, and the replication adds no unique questions.
+
 ## Integrated empirical evidence, uncertainty and conditional theoretical framework
 
 **Date:**30 October2026. **Status:** pre-paper statistical dossier. No32 GB outcomes are available.

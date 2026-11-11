@@ -3,7 +3,7 @@
     "id": "tier16_v2/case_outcomes",
     "source": "research/tier16_v2/data/case_outcomes.csv",
     "path": "data/tier16_v2/case_outcomes.csv",
-    "sha256": "3d4a970da64c8aa751d8cfbf2975704439210b6411dbd6f9df1e9e18714dff49",
+    "sha256": "1689827366abeb276bfe376d2068e6953fb535d4c406d17e35077c1e0062167c",
     "columns": [
       "tier",
       "job",
@@ -29,20 +29,24 @@
       "completed_time"
     ],
     "rows": 960,
-    "browser_json": "data/tier16_v2/case_outcomes.json"
+    "browser_json": "data/tier16_v2/case_outcomes.json",
+    "original_export_sha256": "3d4a970da64c8aa751d8cfbf2975704439210b6411dbd6f9df1e9e18714dff49",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "tier16_v2/document_index",
     "source": "research/tier16_v2/data/document_index.json",
     "path": "data/tier16_v2/document_index.json",
-    "sha256": "ab0aa01f43d15da84986dfba25a206b8805838c57301fbdf53de62663b1151a0",
-    "json_type": "dict"
+    "sha256": "8539b1d0d293824a84a549ee3aa4bfd7a9c8a83cb06f6a88c64598541a4643e5",
+    "json_type": "dict",
+    "original_export_sha256": "ab0aa01f43d15da84986dfba25a206b8805838c57301fbdf53de62663b1151a0",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "tier16_v2/metric_disagreements",
     "source": "research/tier16_v2/data/metric_disagreements.csv",
     "path": "data/tier16_v2/metric_disagreements.csv",
-    "sha256": "1deb12b588b3661a9559c3e3ea064b942ae0a4a7f908d6a73b008213c277f3e8",
+    "sha256": "61e0b151605c9f04aef6d593e613079a61c121c95fa5cc9422ae9395e5260b38",
     "columns": [
       "case_id",
       "reported_correct",
@@ -53,13 +57,15 @@
       "gold_exe_ans"
     ],
     "rows": 48,
-    "browser_json": "data/tier16_v2/metric_disagreements.json"
+    "browser_json": "data/tier16_v2/metric_disagreements.json",
+    "original_export_sha256": "1deb12b588b3661a9559c3e3ea064b942ae0a4a7f908d6a73b008213c277f3e8",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "tier16_v2/paired_effects",
     "source": "research/tier16_v2/data/paired_effects.csv",
     "path": "data/tier16_v2/paired_effects.csv",
-    "sha256": "e3c274b4e406a151a3695d419afa8f020902ad0d041cf79c1767423ece44f4d6",
+    "sha256": "a02f98acc631042bcd0aa667de4c0ceb09c7f6317bd4a40bf52df9c390017f25",
     "columns": [
       "comparison",
       "endpoint",
@@ -75,13 +81,15 @@
       "company_ci_high"
     ],
     "rows": 42,
-    "browser_json": "data/tier16_v2/paired_effects.json"
+    "browser_json": "data/tier16_v2/paired_effects.json",
+    "original_export_sha256": "e3c274b4e406a151a3695d419afa8f020902ad0d041cf79c1767423ece44f4d6",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "tier16_v2/report_outcomes",
     "source": "research/tier16_v2/data/report_outcomes.csv",
     "path": "data/tier16_v2/report_outcomes.csv",
-    "sha256": "08f5be86673612ef9c14e62eb810d6269800d717d6baf2f4c21fa1f0f25f0b4f",
+    "sha256": "9b4911f11a9fb4b48dab37951ce0cddc0e116e3ef3d89f6c74412178a090f828",
     "columns": [
       "job",
       "report",
@@ -92,13 +100,15 @@
       "withheld"
     ],
     "rows": 600,
-    "browser_json": "data/tier16_v2/report_outcomes.json"
+    "browser_json": "data/tier16_v2/report_outcomes.json",
+    "original_export_sha256": "08f5be86673612ef9c14e62eb810d6269800d717d6baf2f4c21fa1f0f25f0b4f",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "tier16_v2/resource_events",
     "source": "research/tier16_v2/data/resource_events.csv",
     "path": "data/tier16_v2/resource_events.csv",
-    "sha256": "64ee434edd7493593339692d3cc454c10daf11487ec4fd7f992c973f20bec6d0",
+    "sha256": "d00f627d87a07c19e66aef451af1e09f46d5639c7f8ba7784b2d1210e8fc5bd7",
     "columns": [
       "relative",
       "memory_breach",
@@ -108,13 +118,15 @@
       "first_invalid_sample_time"
     ],
     "rows": 2,
-    "browser_json": "data/tier16_v2/resource_events.json"
+    "browser_json": "data/tier16_v2/resource_events.json",
+    "original_export_sha256": "64ee434edd7493593339692d3cc454c10daf11487ec4fd7f992c973f20bec6d0",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "tier16_v2/stage_metrics",
     "source": "research/tier16_v2/data/stage_metrics.csv",
     "path": "data/tier16_v2/stage_metrics.csv",
-    "sha256": "7c83a8caaf829767db2b441be990d361dc7f2835a059a1756a8a456dbd8305f1",
+    "sha256": "3864113fce799237d69099d748cf9415ffadda8f2d0d04acaeb02bbcae45ab58",
     "columns": [
       "job",
       "role",
@@ -127,34 +139,42 @@
       "context_or_budget_skips"
     ],
     "rows": 23,
-    "browser_json": "data/tier16_v2/stage_metrics.json"
+    "browser_json": "data/tier16_v2/stage_metrics.json",
+    "original_export_sha256": "7c83a8caaf829767db2b441be990d361dc7f2835a059a1756a8a456dbd8305f1",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "tier16_v2/statistical_analysis",
     "source": "research/tier16_v2/data/statistical_analysis.json",
     "path": "data/tier16_v2/statistical_analysis.json",
-    "sha256": "ab84afabc1b6258501657789081214e5a971ac5312bc38d1dacb1c5eee7c10cb",
-    "json_type": "dict"
+    "sha256": "f4e7d50c7e9c9b9300dae3000857392f95a986d06e856a6ef1477e43a0ab6eb5",
+    "json_type": "dict",
+    "original_export_sha256": "ab84afabc1b6258501657789081214e5a971ac5312bc38d1dacb1c5eee7c10cb",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "le16_v2/cross_tier_analysis",
     "source": "research/le16_v2/data/cross_tier_analysis.json",
     "path": "data/le16_v2/cross_tier_analysis.json",
-    "sha256": "48faeaf5e453b4e25b7aac308e3db4368a079271b3fe18cd2a9399bbfcc6924a",
-    "json_type": "dict"
+    "sha256": "cc7a4bacedb57e6ef6caac46e23046fd90030e3ffe38dc441e905506a1085044",
+    "json_type": "dict",
+    "original_export_sha256": "48faeaf5e453b4e25b7aac308e3db4368a079271b3fe18cd2a9399bbfcc6924a",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "le16_v2/historical_diagnostics",
     "source": "research/le16_v2/data/historical_diagnostics.json",
     "path": "data/le16_v2/historical_diagnostics.json",
-    "sha256": "c215a86f1716ec312ff540b4b74653b2f6cca265c1d4ee77208e4935aaea24ee",
-    "json_type": "dict"
+    "sha256": "d8cd0ac155098c357fd2cf2698695ac9a11dc7368d5ec7572ffd450853fc552d",
+    "json_type": "dict",
+    "original_export_sha256": "c215a86f1716ec312ff540b4b74653b2f6cca265c1d4ee77208e4935aaea24ee",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "le16_v2/tier8_case_outcomes",
     "source": "research/le16_v2/data/tier8_case_outcomes.csv",
     "path": "data/le16_v2/tier8_case_outcomes.csv",
-    "sha256": "1a55dfdd9ccc79b61d421b4e46f16216097bdcf7827133ae5e38bfdbf379f740",
+    "sha256": "1af7a31760c684d0ba65707e4e1e59ea2dc512e7423ecb819d9e65876de74e08",
     "columns": [
       "tier",
       "condition",
@@ -173,13 +193,15 @@
       "inference_seconds"
     ],
     "rows": 768,
-    "browser_json": "data/le16_v2/tier8_case_outcomes.json"
+    "browser_json": "data/le16_v2/tier8_case_outcomes.json",
+    "original_export_sha256": "1a55dfdd9ccc79b61d421b4e46f16216097bdcf7827133ae5e38bfdbf379f740",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "le16_v2/tier8_condition_inventory",
     "source": "research/le16_v2/data/tier8_condition_inventory.csv",
     "path": "data/le16_v2/tier8_condition_inventory.csv",
-    "sha256": "cc2dff005a206a2d613cad0d591c01eb1c4765d8f27ff3ac1c6db45ed0ef98da",
+    "sha256": "670e6b080fdccb03a7bfe7b4c41c56c2915018d4ff8f09ff4fa1d7861f471ed4",
     "columns": [
       "job",
       "metric",
@@ -194,20 +216,24 @@
       "peak_rss_bytes"
     ],
     "rows": 30,
-    "browser_json": "data/le16_v2/tier8_condition_inventory.json"
+    "browser_json": "data/le16_v2/tier8_condition_inventory.json",
+    "original_export_sha256": "cc2dff005a206a2d613cad0d591c01eb1c4765d8f27ff3ac1c6db45ed0ef98da",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "le16_v2/tier8_evidence_catalog",
     "source": "research/le16_v2/data/tier8_evidence_catalog.json",
     "path": "data/le16_v2/tier8_evidence_catalog.json",
-    "sha256": "398cd429c952044f86cbc729f88590ff75fbcd8762c0760545b46a152a420548",
-    "json_type": "list"
+    "sha256": "3931a57b0a07cfd2e5e31291add6a4b68cb8cf4d7bd2c853e262f4396600ead4",
+    "json_type": "list",
+    "original_export_sha256": "398cd429c952044f86cbc729f88590ff75fbcd8762c0760545b46a152a420548",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "paper/paper_statistical_tests",
     "source": "research/paper/data/paper_statistical_tests.csv",
     "path": "data/paper/paper_statistical_tests.csv",
-    "sha256": "d49bcac40b8d6c571dec7423566b0ba45ed0e1df3b8eaa9a50f95d55be3aef0f",
+    "sha256": "ff4919e98ce6f3f19cd7f3b9c94c562713f4aff3b0e145854502e0bfb3e25168",
     "columns": [
       "tier",
       "comparison",
@@ -247,20 +273,90 @@
       "stuart_maxwell_p"
     ],
     "rows": 126,
-    "browser_json": "data/paper/paper_statistical_tests.rows.json"
+    "browser_json": "data/paper/paper_statistical_tests.rows.json",
+    "original_export_sha256": "d49bcac40b8d6c571dec7423566b0ba45ed0e1df3b8eaa9a50f95d55be3aef0f",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "paper/paper_statistical_tests",
     "source": "research/paper/data/paper_statistical_tests.json",
     "path": "data/paper/paper_statistical_tests.json",
-    "sha256": "9c7dcf5bbddb2db672495fb8a7848c5f8641b6dd2fcd6dd941068fb6355771a4",
-    "json_type": "dict"
+    "sha256": "01ec58dc52f592c5cef08cbb0921186b08499a8f5fd310e337f6658efbcb6d95",
+    "json_type": "dict",
+    "original_export_sha256": "9c7dcf5bbddb2db672495fb8a7848c5f8641b6dd2fcd6dd941068fb6355771a4",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
   },
   {
     "id": "paper/paper_supplementary_analysis",
     "source": "research/paper/data/paper_supplementary_analysis.json",
     "path": "data/paper/paper_supplementary_analysis.json",
-    "sha256": "637efd990d0b5c7148300fffa3c78c1ce5cd0adefb5c154506af926660dabeed",
-    "json_type": "dict"
+    "sha256": "bc45004f2995de70710efee4ada32d4d17fac41017e660941fafcb4f60ad2a9f",
+    "json_type": "dict",
+    "original_export_sha256": "637efd990d0b5c7148300fffa3c78c1ce5cd0adefb5c154506af926660dabeed",
+    "checkout_line_endings": "LF; original Windows export used CRLF"
+  },
+  {
+    "id": "tier16_ubuntu/case_outcomes",
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/",
+    "path": "data/tier16_ubuntu/case_outcomes.json",
+    "sha256": "2951289ce7cb8d553a7b9765808cb9c98b73c42202f7056d8c026201fe31036d",
+    "json_type": "list",
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "rows": 960,
+    "browser_json": "data/tier16_ubuntu/case_outcomes.json"
+  },
+  {
+    "id": "tier16_ubuntu/job_summaries",
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/",
+    "path": "data/tier16_ubuntu/job_summaries.json",
+    "sha256": "bb84ec16706050ee9fe26987fa31c9bc46af40765fa4e1059e69ac025d4b7bd6",
+    "json_type": "list",
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "rows": 6,
+    "browser_json": "data/tier16_ubuntu/job_summaries.json"
+  },
+  {
+    "id": "tier16_ubuntu/stage_metrics",
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/",
+    "path": "data/tier16_ubuntu/stage_metrics.json",
+    "sha256": "11607204920a159c363cefed14d246925bccb8031c81dc946fc020b5070fd36a",
+    "json_type": "list",
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "rows": 3412,
+    "browser_json": "data/tier16_ubuntu/stage_metrics.json"
+  },
+  {
+    "id": "tier16_ubuntu/resource_events",
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/",
+    "path": "data/tier16_ubuntu/resource_events.json",
+    "sha256": "99d0bc1d2bc124c042d0e2d672dbec4455c07143c7e9aee8d91d6c257f703eb6",
+    "json_type": "list",
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "rows": 16,
+    "browser_json": "data/tier16_ubuntu/resource_events.json"
+  },
+  {
+    "id": "tier16_ubuntu/audited_analysis",
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/",
+    "path": "data/tier16_ubuntu/audited_analysis.json",
+    "sha256": "177ebc27017b5009a9d56b5d715e3a2e6211f2e7701e87ad647b9a4f65b10d70",
+    "json_type": "dict",
+    "run_id": "lab-16-ubuntu-noswap-v1"
+  },
+  {
+    "id": "tier16_ubuntu/manifest",
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/",
+    "path": "data/tier16_ubuntu/manifest.json",
+    "sha256": "1216487dcbb295067525a749a8729093e30366d488f64360f5769880fb9cb777",
+    "json_type": "dict",
+    "run_id": "lab-16-ubuntu-noswap-v1"
+  },
+  {
+    "id": "tier16_ubuntu/preservation",
+    "source": "Local preservation audit; see evidence inventory",
+    "path": "data/tier16_ubuntu/preservation.json",
+    "sha256": "361e65344019448e427f6b566f8d80630aafe5f0cd171ea35d6201a018b04bbb",
+    "json_type": "dict",
+    "run_id": "lab-16-ubuntu-noswap-v1"
   }
 ]

@@ -1,5 +1,7 @@
 # Phase 3 submission: Project Agere
 
+> **Post-submission preservation update, 11 November 2026:** the [Ubuntu 16 GB replication](research/tier16_v2/UBUNTU_COMPLETION.md) completed evaluation and replay. Its [SSD-free dashboard handoff](dashboard_handoff/README.md) is updated, with filesystem/export limitations recorded. The submitted paper, its figures, paper data and PDFs have not been revised.
+
 Submission revision: 2 November 2026. Experiments completed through 30 October 2026.
 
 ## Submission contents

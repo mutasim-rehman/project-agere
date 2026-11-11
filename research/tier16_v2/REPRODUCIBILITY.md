@@ -1,5 +1,7 @@
 # Reproduce analysis and documents
 
+> **11 November 2026:** the [Ubuntu completion addendum](UBUNTU_COMPLETION.md) documents the new run and its exact-hash replay reconstruction. To verify or restore both historical and Ubuntu evidence without an SSD, use `python3 dashboard_handoff/restore_evidence.py` (add `--extract restored_agere` to restore files). The commands below rebuild the historical analysis and documents; do not use them to overwrite the paper for this update.
+
 No neural inference/training is performed. Keep the original SSD connected; source hashes and the original result archive are verified. The code reads existing public/scoring artifacts and preserves original outputs.
 
 ```bash

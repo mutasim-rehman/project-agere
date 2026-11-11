@@ -1,5 +1,7 @@
 # Project Agere: Local LLM Deployment for Regulated Finance
 
+> **Ubuntu 16 GB replication, 11 November 2026:** all six jobs and the replay audit are complete (960 outputs, 160 unique questions). [Completion, results and preservation](research/tier16_v2/UBUNTU_COMPLETION.md) · [SSD-free dashboard handoff](dashboard_handoff/README.md). The new run is stored separately from historical results; the research paper has not been updated.
+
 > **Phase 3 submission, 2 November 2026:** start with [submission contents and reproduction instructions](SUBMISSION.md) and the [final research paper PDF](output/pdf/RESEARCH_PAPER.pdf). The completed evaluation covers evidence through 16 GB. Earlier setup/status notes below are historical; the submission guide identifies the final scope and remaining limitations.
 
 > **Dashboard developer handoff:** [portable data and evidence package](dashboard_handoff/README.md) — browser-readable JSON/CSV, SSD evidence archives, checksums and restoration instructions. Your dashboard developer can work from a GitHub clone without the external SSD.

@@ -1,5 +1,7 @@
 # Completed research documentation: nominal tiers up to 16 GB
 
+> **11 November 2026 update:** the separate [Ubuntu replication](research/tier16_v2/UBUNTU_COMPLETION.md) has completed all 960 outputs and its replay audit. The [dashboard handoff](dashboard_handoff/README.md) now preserves its cases, traces, logs and browser-ready inputs without the SSD. Historical reports/PDFs and the research paper remain unchanged; the addendum records resumed-run resource evidence and original SSD export limitations.
+
 For the 2 November 2026 Phase 3 submission, use [SUBMISSION.md](SUBMISSION.md). It maps all seven requirements to the final manuscript, explains the methodology changes and missing class-feedback record, and separates result re-analysis from full inference reproduction.
 
 Prepared 30 October 2026. The 16 GB accuracy audit, all six evaluation jobs and result export are complete. Historical swap failures remain recorded; the recovered study is not an uninterrupted no-swap deployment pass. The 32 GB tier has not been evaluated.
@@ -32,6 +34,6 @@ Keep reported-answer and raw-execution metrics together. Keep wrong delivery, co
 
 The original [8 GB empirical report](TIER_8_RESEARCH_REPORT.md) and [8 GB statistical PDF](TIER_8_V2_STATISTICAL_EVALUATION_REPORT.pdf) are preserved as historical references. The new dossier qualifies stronger earlier claims and incorporates later completed results.
 
-Raw authority: `AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-02/`, with its original results archive under `AGERE/runs/lab_tiers_v1/exports/`. Model weights, raw prompts/responses and full memory traces remain on SSD.
+Raw authority: `AGERE/runs/lab_tiers_v1/lab-16-115gb-recovery-02/`, with its original results archive under `AGERE/runs/lab_tiers_v1/exports/`. Model weights remain on SSD. Raw prompts/responses and full memory traces for the historical and Ubuntu runs are also preserved in the repository dashboard handoff; see its inventory and preservation qualifications.
 
 A portable documentation/data/figure/source bundle is stored at `AGERE/runs/reporting/tier16-le16-20261030/AGERE_LE16_RESEARCH_DOCUMENTATION_2026-10-30.zip`, with a SHA256 sidecar. It excludes model weights, runtimes and credentials. Original SSD inputs are still required to rebuild the raw-response audit; derived tables can be analysed separately.

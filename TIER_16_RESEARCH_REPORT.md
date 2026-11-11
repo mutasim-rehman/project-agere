@@ -1,5 +1,7 @@
 # Project Agere: 16 GB empirical research report
 
+> **11 November 2026 addendum:** a separate [Ubuntu replication](research/tier16_v2/UBUNTU_COMPLETION.md) completed all six jobs and reproduced the delivered flags and final scores for all 960 paired outputs. Its own runtime/resource evidence and SSD-free handoff are documented there. The historical figures, tables and resource-failure qualifications below remain unchanged. The research paper has not been revised.
+
 ## Spend It Together or Spend It Big? A resource-qualified deployment comparison
 
 **Analysis date:** 30 October 2026. **Evaluation period:** 28-30 October 2026.

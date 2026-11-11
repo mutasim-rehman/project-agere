@@ -1,5 +1,7 @@
 # Hypothesis and claim ledger
 
+> **11 November 2026:** the [Ubuntu replication](../tier16_v2/UBUNTU_COMPLETION.md) reproduced all final score objects and delivery flags. It supports recipe-specific repeatability, not a new task cohort, universal superiority, statistical equivalence, or algorithmic novelty. New resource evidence does not erase historical swap failures, and resumed execution is not an uninterrupted reliability test.
+
 The prespecified goal that resident MAS should reduce wrong delivery without losing correct delivery is not supported by the primary16 GB result. Correct-delivery intervals favor SAS under both scoring conventions, while wrong-delivery counts favor a much more withholding MAS. This does not prove universal SAS superiority, accept a global null, establish equivalence, or validate regulatory safety.
 
 The useful research contribution is a reproducible comparison of constrained deployment recipes, a coverage-aware interpretation, candidate/gate decomposition, metric-convention sensitivity and an honest repair/resource audit. No newly invented inference algorithm or globally novel feature is established. Engineering resumability, checksums and process-swap prevention support the measurement; they are not themselves evidence of algorithmic originality.

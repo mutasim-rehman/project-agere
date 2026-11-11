@@ -21751,5 +21751,2813 @@
     "category": "weights",
     "archive": "evidence/weights-001.zip",
     "archive_entry": "weights/hf-training/3b/generation_config.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261109T122129Z-6792.log",
+    "bytes": 651,
+    "sha256": "7fd1640fc5af90459cdaf1842fc44eb13ffa9dcab6edbc74421411385e728214",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261109T122129Z-6792.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261109T122219Z-6905.log",
+    "bytes": 2423,
+    "sha256": "6093c3229aa2ea9649ed81944d398a92edaf8cb02b7c82695a593aebb8bca1cd",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261109T122219Z-6905.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261109T125210Z-11604.log",
+    "bytes": 653,
+    "sha256": "8c74a478612bc392e4c05d11526ee5216c058ecc15a3d81678a07250c835554a",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261109T125210Z-11604.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261109T125256Z-12238.log",
+    "bytes": 1479,
+    "sha256": "8cbc5d10ac48c28e31c267d9d1db6a1169b1b3bee16a8e89a18c709c98c406e7",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261109T125256Z-12238.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261109T210745Z-66884.log",
+    "bytes": 653,
+    "sha256": "a87f21e97a174fbf3e5017ab8f83354d2e20767141a9a7edc57739f07ed2f213",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261109T210745Z-66884.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261109T210833Z-67021.log",
+    "bytes": 2411,
+    "sha256": "e94fd012f717550244eff6c10a2569536a9024ff187bbb2a85ed5384568eef1f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261109T210833Z-67021.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T084947Z-8237.log",
+    "bytes": 651,
+    "sha256": "ed6c21b8b5be7749f3b4c620998e5dd8dabf41d787ccf33cb67cbe6f6827fccd",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T084947Z-8237.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T085036Z-8387.log",
+    "bytes": 1022,
+    "sha256": "406059018d56128df2c8faa6b9ff22a27de9b1da02d3d5a33825c47378a949ba",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T085036Z-8387.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T085626Z-12343.log",
+    "bytes": 653,
+    "sha256": "3a5634c1b87338b17edcacecaca874a0dd9634b4bf3e52a8f39f6931b6d2da70",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T085626Z-12343.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T085712Z-12483.log",
+    "bytes": 1561,
+    "sha256": "60a293ba7a4606452244ad7e01cdcf8b225cb35f109c13611f255b59a099f541",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T085712Z-12483.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T094902Z-19309.log",
+    "bytes": 653,
+    "sha256": "5343a8959ed71429fe7f7b3378a47bb2f69bc6aaa35fe805fee1c7258728129d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T094902Z-19309.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T094950Z-19452.log",
+    "bytes": 1561,
+    "sha256": "83e02f50fb409c4bba75a6efbe74e47b32a0686e970f0abd620f1c4154d26b2c",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T094950Z-19452.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T135242Z-6698.log",
+    "bytes": 1545,
+    "sha256": "600be1281c71ba39b8763bed1679cf7d3cb94658ae357c089ab704db670057c3",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T135242Z-6698.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T135333Z-7031.log",
+    "bytes": 1545,
+    "sha256": "c1e393e77b9f0534a334c59570359e80dd6c22ad4507a9db008651c5dc89a97d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T135333Z-7031.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T135828Z-11115.log",
+    "bytes": 653,
+    "sha256": "b1980325ae112f9a841e910a482482020644f5a94078fe0f8de6d4065f4ac4cf",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T135828Z-11115.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261110T140417Z-11937.log",
+    "bytes": 3143,
+    "sha256": "b6918c5841af7c38280209a52ea21097cc289bd9f9fb90802d46d9b37afa1041",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261110T140417Z-11937.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T033020Z-139482.log",
+    "bytes": 655,
+    "sha256": "03ac603db1d3620225fc22a9fdbd475664ca629951e5cfd8b4ba45fe3ed261d1",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T033020Z-139482.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T033109Z-139627.log",
+    "bytes": 1652,
+    "sha256": "3f27f2a41e85c6e69ad2d5868d27a712339d1ebb34d41bae34690dacc68320fe",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T033109Z-139627.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T040500Z-147992.log",
+    "bytes": 655,
+    "sha256": "eede40e4c9003ddec7465758e5554bb472e9ecd9eee895d4527163e38196f613",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T040500Z-147992.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T040546Z-148136.log",
+    "bytes": 1652,
+    "sha256": "b00b5f74512050954c882cc50fd5baba49e4f541dff0bd03e89c34558dd37942",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T040546Z-148136.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T042508Z-152360.log",
+    "bytes": 655,
+    "sha256": "a8a02146379da7f72a33db38895f2089b4624eacedf4304d3d1f58570ac3c6b1",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T042508Z-152360.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T042556Z-152507.log",
+    "bytes": 2445,
+    "sha256": "6f62c860e90a46a6bf3194bc741cd875fb6b2d6a4655b026d212254b1f5b1f5d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T042556Z-152507.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T094414Z-8302.log",
+    "bytes": 340,
+    "sha256": "4fe0cdcbcabadbbb79936b5004e07003b9238e7489fc4905af008b9bd04a525b",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T094414Z-8302.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T100542Z-6538.log",
+    "bytes": 651,
+    "sha256": "3a150114770fb2601e8975f561efa7cc9dcc5fb2b3614ade4b500ae412471e15",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T100542Z-6538.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T100631Z-6698.log",
+    "bytes": 1694,
+    "sha256": "38983d7de75aeae3edc51b01b321a06ff6e21f1c1e38952769e8d4946eb685f1",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T100631Z-6698.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T122326Z-19891.log",
+    "bytes": 653,
+    "sha256": "c15560886334af989b0af32c1293200d01270b8e66ee883af0cfa0fd48f120d7",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T122326Z-19891.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/bootstrap/20261111T122415Z-20041.log",
+    "bytes": 3238,
+    "sha256": "6c70ab4de3be8dbfb8110aea5e28e84ddecb3925a2a3ec02acdf9199fd72a41a",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/bootstrap/20261111T122415Z-20041.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261109T122133Z-6817-preflight.log",
+    "bytes": 378,
+    "sha256": "1f6a801f8ca3fd2bac24f376d3e94d959d3bb388fb9134f089e8f481a02f3e7e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261109T122133Z-6817-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261109T122220Z-6924-run.log",
+    "bytes": 576,
+    "sha256": "d680b4c9a4054336ddd59a12f508e5a1c3fd5dc6aeb1da77414abc14f237ff27",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/commands/20261028T163513Z-10879-run.log",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261028T163513Z-10879-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261109T125211Z-11623-preflight.log",
+    "bytes": 379,
+    "sha256": "a7db040f8c261d6c3d3604109934a23503c885585640f7ab2c206b3ae881fc16",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261109T125211Z-11623-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261109T125257Z-12261-run.log",
+    "bytes": 576,
+    "sha256": "9c43bb81262667e87014cc620cecf1140abde822562a0d87f699309a5a26eea4",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261109T125257Z-12261-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261109T210747Z-66907-preflight.log",
+    "bytes": 379,
+    "sha256": "8cfe329e2b7b638d7722b5b58bc8a457fa8400a3293c4e06c78cfa037b4de6f7",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261109T210747Z-66907-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261109T210835Z-67041-run.log",
+    "bytes": 2137,
+    "sha256": "b66f00578b49df4c963b2f3941fb3c7688b36fa5f2aac54b5c1da877d16101af",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261109T210835Z-67041-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T084949Z-8256-preflight.log",
+    "bytes": 378,
+    "sha256": "6c3ee37ec9c776f526570c31953c37c58b3357045f49bd8bda535f2510a8e83c",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T084949Z-8256-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T085038Z-8411-run.log",
+    "bytes": 260,
+    "sha256": "5214605a6002c0b981807c5a4cc3b9d8914ad05eba51ac9c0128cebdb1f6986c",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/commands/20261028T145712Z-12830-run.log",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261028T145712Z-12830-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T085628Z-12362-preflight.log",
+    "bytes": 379,
+    "sha256": "eb3bfa0a2ec19f5738585a0de25dd14758d8e911d48bcf4967e780c9e8d2be0a",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T085628Z-12362-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T085714Z-12506-run.log",
+    "bytes": 658,
+    "sha256": "a58a4bdff5cac5c9411a8f43802e8c2b8a07e2372c0b310504f80c4208f5b768",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T085714Z-12506-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T094904Z-19332-preflight.log",
+    "bytes": 379,
+    "sha256": "74dca65fa10c1f9f3c5524dd1536990ff60057783df91f59083ec7c38c8e4372",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T094904Z-19332-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T094952Z-19476-run.log",
+    "bytes": 658,
+    "sha256": "59e5f1620ac15729529349549ec9f170ac83673231d98178af08af4faa4c640d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T094952Z-19476-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T135244Z-6717-preflight.log",
+    "bytes": 67,
+    "sha256": "d5d0d5826ed6abe53fc9f5383e7efc2c941c326b2b210491527740707ab3310a",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T135244Z-6717-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T135334Z-7050-preflight.log",
+    "bytes": 67,
+    "sha256": "d5d0d5826ed6abe53fc9f5383e7efc2c941c326b2b210491527740707ab3310a",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/commands/20261110T135244Z-6717-preflight.log",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T135244Z-6717-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T135828Z-11134-preflight.log",
+    "bytes": 379,
+    "sha256": "6f0e1d0a0f6c27087ff75cc36f80464c1cdbe7da30c081505dace72f6ac99c31",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T135828Z-11134-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261110T140419Z-11960-run.log",
+    "bytes": 2240,
+    "sha256": "cd09a7f881f84fdb57a3397c0c2960a8a1036a94015c5151a200f26ae9ab667f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261110T140419Z-11960-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T033022Z-139505-preflight.log",
+    "bytes": 380,
+    "sha256": "5910a1d7832e6506e521b967f18f2c69b422d7f98e6f3ae9682117765f50e4ec",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T033022Z-139505-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T033111Z-139650-run.log",
+    "bytes": 748,
+    "sha256": "9102e3425e548af36ae15bf39b80ea3b740915180315e21c418d449626a47034",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T033111Z-139650-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T040502Z-148015-preflight.log",
+    "bytes": 380,
+    "sha256": "3decf79912f0e1acf7d0fd8267c99e46204f708e53913fee1c2fdefd3bcbd6bf",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T040502Z-148015-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T040548Z-148159-run.log",
+    "bytes": 748,
+    "sha256": "43527028be6a13381d8ff1c020747759c4a07f09cd6c90d590d211386ac1b92d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T040548Z-148159-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T042509Z-152384-preflight.log",
+    "bytes": 380,
+    "sha256": "6b8f2a5ae28b9d0389ac9b0bab7c35f018f520e3d86c27adb8e01baa4194d6bf",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T042509Z-152384-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T042558Z-152526-run.log",
+    "bytes": 1541,
+    "sha256": "a942e172e538dadee3b7c2f8dd9ee375d6b3495abeebd94122dbb56b2ae0d4c8",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T042558Z-152526-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T100544Z-6559-preflight.log",
+    "bytes": 378,
+    "sha256": "b4fdc77a2a2ce8a921b8ead0620e9036cfd5659c9ab945c5a05267450c37e9bf",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T100544Z-6559-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T100633Z-6717-run.log",
+    "bytes": 792,
+    "sha256": "a1e114910fdb7df0dd058ba5225eb220263cdbdedf527cbdb21e7c0d242c3be5",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T100633Z-6717-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T122328Z-19914-preflight.log",
+    "bytes": 379,
+    "sha256": "843ef2551b4be6230c4e600786386ef9519ce6f49d0d786fe5a952581b6e2f78",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T122328Z-19914-preflight.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/commands/20261111T122417Z-20064-run.log",
+    "bytes": 1389,
+    "sha256": "a69411574b0bfb6a0eac2ca9868d13b66113476ee5628b36d6dac872984de033",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/commands/20261111T122417Z-20064-run.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/exports/lab-16-ubuntu-noswap-v1-results.tar.gz.sha256.json.tmp",
+    "bytes": 409,
+    "sha256": "fe97350f3c5a688f90c33af6c3068a0ec2084f69e8eb6923b6c1000706b59dce",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/exports/lab-16-ubuntu-noswap-v1-results.tar.gz.sha256.json.tmp"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/REPORT.md",
+    "bytes": 758,
+    "sha256": "59ead4d8dc48e9f3701a97450828edb28fee67d63686173a2c39edb7563bd922",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/REPORT.md",
+    "preservation_origin": "Regenerated from original sealed analysis code; no original report hash available"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/summary.json",
+    "bytes": 19177,
+    "sha256": "177ebc27017b5009a9d56b5d715e3a2e6211f2e7701e87ad647b9a4f65b10d70",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/summary.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-mas-direct_control-replayed.jsonl",
+    "bytes": 242759,
+    "sha256": "3392cad6eff29145a0f7b0e5ff846263ef6e5383fe73fddfc67d42459b81a05a",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-mas-direct_control-replayed.jsonl",
+    "preservation_origin": "Reconstructed from saved traces; exact original audit SHA256 match"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-mas-primary-replayed.jsonl",
+    "bytes": 242899,
+    "sha256": "a0392d4a2fb197ea44079f79a5111bfedb67d3844884576e03cff53a60acae8e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-mas-primary-replayed.jsonl",
+    "preservation_origin": "Reconstructed from saved traces; exact original audit SHA256 match"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-mas-repair_ablation-replayed.jsonl",
+    "bytes": 242847,
+    "sha256": "1b6d8f18f5fc6e90960cec63a58a8ca757f5d6dafa63852e06170dcc4cc82a8b",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-mas-repair_ablation-replayed.jsonl",
+    "preservation_origin": "Reconstructed from saved traces; exact original audit SHA256 match"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-sas-direct_control-replayed.jsonl",
+    "bytes": 241353,
+    "sha256": "c79cea1bf8ece15b1ab94e0ed3a4bc613caf49e8b157d84067cf9edc4d158486",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-sas-direct_control-replayed.jsonl",
+    "preservation_origin": "Reconstructed from saved traces; exact original audit SHA256 match"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-sas-primary-replayed.jsonl",
+    "bytes": 241478,
+    "sha256": "1e566efeaf28d192d85d99d1262d1e6500068cacca6d7d23261d682275dddf84",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-sas-primary-replayed.jsonl",
+    "preservation_origin": "Reconstructed from saved traces; exact original audit SHA256 match"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-sas-repair_ablation-replayed.jsonl",
+    "bytes": 241479,
+    "sha256": "c618a596ce2aa5dfbfb7b50a670a88c0cd0ed7b224e279407c19a9a14a7f2e70",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/analysis/tier16-sas-repair_ablation-replayed.jsonl",
+    "preservation_origin": "Reconstructed from saved traces; exact original audit SHA256 match"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/configs/lab_tiers/freeze.json",
+    "bytes": 14427,
+    "sha256": "2decdb51e9be8b9af3841d90c416204adc05e3a91f0dad8f9f84417dc395f938",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/configs/lab_tiers/freeze.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/configs/lab_tiers/memory_fit.json",
+    "bytes": 4991,
+    "sha256": "ee288db628d417f0b8778c1d9869033c13803a724abc5064518b5dac3d86e3e6",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-v2/code/configs/lab_tiers/memory_fit.json",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/configs/lab_tiers/memory_fit.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/configs/lab_tiers/protocol.json",
+    "bytes": 13096,
+    "sha256": "6c976796051b857ed10cc365c746f7591a48a7bb9d9e478819f62961770d30fa",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-v2/code/configs/lab_tiers/protocol.json",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/configs/lab_tiers/protocol.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/configs/lab_tiers/runtime_checksums.sha256",
+    "bytes": 98,
+    "sha256": "aac9be055edabc47fae41326198335a1365b35a1515c4fbf4cb3f4f5a21a28da",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/configs/lab_tiers/runtime_checksums.sha256",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/configs/lab_tiers/runtime_checksums.sha256"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/configs/lab_tiers/runtime_pin.json",
+    "bytes": 467,
+    "sha256": "cf81f860967bcb8bfdaf535a99754eb172dc38c479e86cb0f68f6d56f334b605",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/configs/lab_tiers/runtime_pin.json",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/configs/lab_tiers/runtime_pin.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/research/lab_tiers/PROTOCOL.md",
+    "bytes": 8217,
+    "sha256": "9fcaeb94c5af3bda02206878d7e33712ddab3a95ca118e58f8424b03741d0fed",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-v2/code/research/lab_tiers/PROTOCOL.md",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/research/lab_tiers/PROTOCOL.md"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/binary_verifier_score.py",
+    "bytes": 5496,
+    "sha256": "d9dd29663c2e2e738641ef471dbebb0024364230bfd3ddae7da027ce48ff89dc",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/binary_verifier_score.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/binary_verifier_score.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/cgroup_exec.py",
+    "bytes": 453,
+    "sha256": "0891e6b93ebff13b915335af97e75ae45c70aa84c781340d45ec53567b6c5cd5",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/cgroup_exec.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/cgroup_exec.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/completion_tokenization.py",
+    "bytes": 867,
+    "sha256": "b2a40a4a8f0443f00eb690a50e6167c2bc614409652a77e9ecc6def505ac808b",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/completion_tokenization.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/completion_tokenization.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/download_hf_snapshots.py",
+    "bytes": 7463,
+    "sha256": "83035310a6f908ace207e9c8d3e1348e7c589011f0f9c24f246e4d7db179e3f7",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/download_hf_snapshots.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/download_hf_snapshots.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/eval_checkpoints.py",
+    "bytes": 25063,
+    "sha256": "70dc66c29ae475b25b8123255d247beb16524d260ea547cd26db0f6b3521050d",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/eval_checkpoints.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/eval_checkpoints.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/evidence_atoms.py",
+    "bytes": 5638,
+    "sha256": "2d575a9b85fd77ae0d042986caefb318cfe6c2f235ca83b4d63f2dfc0e6039f7",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/evidence_atoms.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/evidence_atoms.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/evidence_calculator.py",
+    "bytes": 4088,
+    "sha256": "70f9eb44f55233d2945a36e7205ea5e3a6c6df945f299d7dc9c8265046a2ba52",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/evidence_calculator.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/evidence_calculator.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/evidence_cells.py",
+    "bytes": 4178,
+    "sha256": "805ed5c46359fc0ad8bb5f7cc8ac6abaf84500df3c30e7637d48ffc7947d196a",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/evidence_cells.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/evidence_cells.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/evidence_contract.py",
+    "bytes": 4789,
+    "sha256": "1779fcefc1455feced5e92620e160f3c6b9a3d0acb63783c823678ac019fc6eb",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/evidence_contract.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/evidence_contract.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/financial_review_protocol.py",
+    "bytes": 1027,
+    "sha256": "e79e12b6865c1b135611958132728c8813c065acea596f11d135e0b4cd3b86df",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/financial_review_protocol.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/financial_review_protocol.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/financial_trace_replay.py",
+    "bytes": 5431,
+    "sha256": "c309d4f9975abb80cbd812a1fba5643f1b73d5c8b9f6e4a15f43b8b1d28eb9d8",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/financial_trace_replay.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/financial_trace_replay.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/frozen_head_loss.py",
+    "bytes": 5530,
+    "sha256": "464d4d227f3400dbf553a1245d2ee821d540389d12fa56c1698c9f70fd325943",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/frozen_head_loss.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/frozen_head_loss.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/generate_tier8_visualizations.py",
+    "bytes": 14574,
+    "sha256": "54e71ffa816b03a6281503f2e956b470eb6dd905e6aefd9b12672d71c750449e",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/generate_tier8_visualizations.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/generate_tier8_visualizations.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/gguf_integrity.py",
+    "bytes": 4099,
+    "sha256": "7b3de148498dc6ee925a0f839d8035c34735cc2746f8128c46d3bba867d7d930",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/gguf_integrity.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/gguf_integrity.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_offline_bundle.py",
+    "bytes": 6632,
+    "sha256": "b3bdccf0e87b08227f45672f7687f4adf86ace2096ecd5be3ee141c7be45f58b",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/lab_offline_bundle.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/lab_offline_bundle.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_pipeline_smoke.py",
+    "bytes": 4314,
+    "sha256": "23b1e66ad6ca3a01b9c1b63e5e03eedab18e0abe6827382a8da2823808dc6c99",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/lab_pipeline_smoke.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/lab_pipeline_smoke.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_run.py",
+    "bytes": 13734,
+    "sha256": "b695d04ea73276f9ca2407dfbdf42018ed0143bd48b68f83e0eba7fa4f3d7a99",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/lab_run.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/lab_run.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_runtime_smoke.py",
+    "bytes": 3096,
+    "sha256": "e870288995039b0587e2ec6e5c35dd5a320327f08a38f15e493407458216db05",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/lab_runtime_smoke.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/lab_runtime_smoke.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+    "bytes": 30991,
+    "sha256": "52342613079f65485d0478d3a866641d46f7aa674cd48264f4783b6f86442ab8",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/code/scripts/lab_tiers.py",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/scripts/lab_tiers.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.sh",
+    "bytes": 2316,
+    "sha256": "56fdd13d56b5b38e1892a1de11635960b96238fb02d5d4d31eabff1dcf01927f",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/lab_tiers.sh",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/scripts/lab_tiers.sh"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers_all.sh",
+    "bytes": 2803,
+    "sha256": "f13657f562062ba46dd98d8a63d7098ca09cf1bb45169fdf5ff64a5efbe879dc",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-v2/code/scripts/lab_tiers_all.sh",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/scripts/lab_tiers_all.sh"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers_analyze.py",
+    "bytes": 10693,
+    "sha256": "add30d45af03ab9edb3f192f46e2d5b078358200495e400fe5aa6056926d355e",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/code/scripts/lab_tiers_analyze.py",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/scripts/lab_tiers_analyze.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers_close8.py",
+    "bytes": 7959,
+    "sha256": "49960187d14286b4c2999af42c3bc866452915827f3fc02440f42d928d328d54",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-v2/code/scripts/lab_tiers_close8.py",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/scripts/lab_tiers_close8.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers_common.py",
+    "bytes": 5093,
+    "sha256": "0d0c663a5c064a4dddfae44c9552321459b637a910371f67c238c0786cd2a4c1",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/lab_tiers_common.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/lab_tiers_common.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers_prepare.py",
+    "bytes": 8043,
+    "sha256": "f96a760715fe641acb4ce04ed8ce2b7b70b5dff3c90e7f190b125baecebbbfe8",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-v2/code/scripts/lab_tiers_prepare.py",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/scripts/lab_tiers_prepare.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers_recover.py",
+    "bytes": 8174,
+    "sha256": "91c4645d1789035bf9b227b83dc61ea120dc116bd48053c699d0d030de18c345",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/code/scripts/lab_tiers_recover.py",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/scripts/lab_tiers_recover.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/phase2.py",
+    "bytes": 44353,
+    "sha256": "d0e26ccabfe29674237803f6ffa13e0ca945caa8f45300318d2fbcfd0fef365d",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/phase2.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/phase2.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/phase3.py",
+    "bytes": 45752,
+    "sha256": "09b714c34209583f1e3e7fd4142cafd87925702af6ef1f5106c49ecf185f1103",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/phase3.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/phase3.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/prepare_project_datasets.py",
+    "bytes": 14438,
+    "sha256": "eda9ef829b8afa9e80381edf58edafa383b958c279bf0b63e661e74fb108fd55",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/prepare_project_datasets.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/prepare_project_datasets.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/program_binding_domains.py",
+    "bytes": 4258,
+    "sha256": "1c9e2fd6799ffa8164df31f72d1c85458698d3d5d10f8d31daeb229788ca3151",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/program_binding_domains.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/program_binding_domains.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/program_endpoints.py",
+    "bytes": 4847,
+    "sha256": "16db164e13ecc7a628cbef97346223a1e74c598a57fdfb777120e5f00eb3183f",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/program_endpoints.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/program_endpoints.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/program_graph.py",
+    "bytes": 4549,
+    "sha256": "3c8bbfa7960ad49c269fe2435a8596d90d0c71b72d05c54de85c1b5205051cc0",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/program_graph.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/program_graph.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/program_influence.py",
+    "bytes": 5181,
+    "sha256": "34accb8aaf09780a9ab238ab0b85fb173a3f7350484e62769244a0b4bb260546",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/program_influence.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/program_influence.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/sas_cpu_weight_storage.py",
+    "bytes": 1459,
+    "sha256": "0de563b143f81460fe46807040e8657121921957956653d1cdf0282e4a35738e",
+    "category": "runs",
+    "duplicate_of": "runs/tier8_sas_training/sas7b-joint-train-pread-02/sas_cpu_weight_storage.py.snapshot",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/sas_cpu_weight_storage.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/sas_frozen_cpu_prepare.py",
+    "bytes": 1236,
+    "sha256": "2371f6766c19635720158bd70f1066839126c1c193a3413341e8ae178633e487",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/sas_frozen_cpu_prepare.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/sas_frozen_cpu_prepare.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/sas_safetensors_pread.py",
+    "bytes": 920,
+    "sha256": "40929c8192ed450abd705102fb8e0e8d238e2c65de584fe0f9cded6c0ba012b7",
+    "category": "runs",
+    "duplicate_of": "runs/tier8_sas_training/sas7b-joint-train-pread-02/sas_safetensors_pread.py.snapshot",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/sas_safetensors_pread.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/shared_role_models.py",
+    "bytes": 5746,
+    "sha256": "bde95692aee9f1705e8380101406245cba8651623ba501e86eeb1a3262a3ad9d",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/shared_role_models.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/shared_role_models.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/source_program_quotient.py",
+    "bytes": 8612,
+    "sha256": "5f881dfb816baede0c3eb6b836f7d50469de501dbf3b7b00adfbe815f234a357",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/source_program_quotient.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/source_program_quotient.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/source_repair_pool.py",
+    "bytes": 4835,
+    "sha256": "669fde3be06710e910ed6b0d9eeb6cbfa070db4551b729fd3d9abddba834f5f4",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/source_repair_pool.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/source_repair_pool.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/supervised_logits.py",
+    "bytes": 1065,
+    "sha256": "01f2afbd5ed2de8a59eb89f012ac991b6a651ed58177b3be1e6a6cbe25607f61",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/supervised_logits.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/supervised_logits.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/table_header_materialization.py",
+    "bytes": 2338,
+    "sha256": "fe23e421569cf2cdb507a79850f09d864c12975b3a3fa2089c85985b5f048f71",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/table_header_materialization.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/table_header_materialization.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier16_memory_fit.py",
+    "bytes": 7292,
+    "sha256": "1460f393c5b027ea79425ff7336ca22ad37049a0de24c6eaf93f2364fec1980f",
+    "category": "runs",
+    "duplicate_of": "runs/tier16_fit_115_v3_ctx4096/probe-source.py",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/code/scripts/tier16_memory_fit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_artifact_paths.py",
+    "bytes": 642,
+    "sha256": "c4f342f83eb9f8e4cda870f1867dd86774d4822b03bc76721fb234d872184d89",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_artifact_paths.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_artifact_paths.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_external_analyze.py",
+    "bytes": 10402,
+    "sha256": "ed0aafb79693a5c6196ef6255070b33e6f4875127710c7dd74e813ae3814135c",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_external_analyze.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_external_analyze.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_external_eval.py",
+    "bytes": 15221,
+    "sha256": "387294f2db39d62d1d852f04bd9bfdda01ac4eeddc9fdc0844fd8ac3b8201387",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_external_eval.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_external_eval.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_external_recover.py",
+    "bytes": 11528,
+    "sha256": "60f5670edd488500375622c7248a0a5db9423227dbd355a00d873403b2564cb6",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_external_recover.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_external_recover.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_finetune.py",
+    "bytes": 6746,
+    "sha256": "475d55437adcd4b9353b19745753ccaab681f466e0a7dc40130e49ba6026b5fc",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_finetune.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_finetune.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_study.py",
+    "bytes": 39049,
+    "sha256": "5c457ed4c379dc5e54d59d82683da66fdedc909d4611fdff2aa0f50a415e580d",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_study.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_study.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_adapt.py",
+    "bytes": 14175,
+    "sha256": "69c5867ef27c2bca34fd4883d9a15db69132fb2999556db264ed09404fb60e8f",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_adapt.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_adapt.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_adaptation_data.py",
+    "bytes": 7174,
+    "sha256": "774f795a7ae55d1e3bc0451714331bda5a0fc1dca87c0acdc1435941ff3334e3",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_adaptation_data.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_adaptation_data.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_adaptation_prompts.py",
+    "bytes": 8246,
+    "sha256": "f190d39ee3eaa25d7e3eccef730af404fb84e709fd650492ed98c5358b682cd7",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_adaptation_prompts.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_adaptation_prompts.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_adaptation_sequence.py",
+    "bytes": 4714,
+    "sha256": "baaaef5d12e3f3f6d74ab3270eefdff931a2ea4c3c2bf8b18b9068c208bdfe95",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_adaptation_sequence.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_adaptation_sequence.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_adapter_convert.py",
+    "bytes": 6331,
+    "sha256": "d4bf0355e2da6136a3884485c3fa6ab0afeba0c68ac97faa02061deb8f1d8e25",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_adapter_convert.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_adapter_convert.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_adapter_proof.py",
+    "bytes": 9008,
+    "sha256": "524a931877551bc57ba90acd4f4a2eaffbe87ba80ba85f9592f996277a1354cd",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_adapter_proof.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_adapter_proof.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_adapter_runtime.py",
+    "bytes": 4070,
+    "sha256": "28243991d8ba9094f234f8bc0ceca44c476e1cb85662ca2475ccb44acf93035a",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_adapter_runtime.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_adapter_runtime.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_analyze.py",
+    "bytes": 5998,
+    "sha256": "dd4bbe0e712e2027622b3bde0183dd6ebf95c4f333159362b80a7ac325631e4e",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_analyze.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_analyze.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_baseline.py",
+    "bytes": 3627,
+    "sha256": "df3134b17169132a9e34fa91ccbae86537a88ce2ce7cb628534e4e5cd93408c4",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_baseline.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_baseline.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_binding_audit.py",
+    "bytes": 2966,
+    "sha256": "eae0091fc79d10509944cb122bddc5b40a8e3a20376465f25fcb06234ccc6225",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_binding_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_binding_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_candidate_model.py",
+    "bytes": 2308,
+    "sha256": "6221f5fb765ec77f213b6a9ab665caa6b96ee8ea63fa95fd44da14bbc5cf5cf9",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_candidate_model.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_candidate_model.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_capacity.py",
+    "bytes": 4328,
+    "sha256": "4ceb81ea6bd3da0217de8293aaa1b0e6f7d7221f5fca59d6bac74f0506ba3995",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_capacity.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_capacity.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_cell_audit.py",
+    "bytes": 5395,
+    "sha256": "141bac54231b03222076f512317c53ec41d4c7f941d037d8cfa48e91dfe5bc63",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_cell_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_cell_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_continuation_audit.py",
+    "bytes": 12212,
+    "sha256": "3e5b8dae4127f109cba31998156bf8fa9181492339a52844d6d4d47ab8f9438e",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_continuation_audit.py",
+    "archive": "evidence/datasets-001.zip",
+    "archive_entry": "datasets/tier8_v2_continuation/matched_01/audit-source-01.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_continuation_data.py",
+    "bytes": 14465,
+    "sha256": "c2532e6139b57ae71a7c1b9d922dca3ccd7b390d9eb3900cfd87aa45b3ac9d68",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_continuation_data.py",
+    "archive": "evidence/datasets-001.zip",
+    "archive_entry": "datasets/tier8_v2_continuation/matched_01/builder-source-01.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_continue.py",
+    "bytes": 25859,
+    "sha256": "9a1db53c39f2af93f6a9a5b074f65c944b1f75a8bbeec310378a3d8eeaf7acde",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_continue.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_continue.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_convert.py",
+    "bytes": 3017,
+    "sha256": "48232bdf463ec6d0ce3a38fd77b6542d0933078de534d4609d6fcf68fc2f6f44",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_convert.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_convert.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_converter_source.py",
+    "bytes": 3490,
+    "sha256": "2e104d725ac9d558c9905ec30f449e280ff52ec17d39767c1b07b007f8f3431e",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_converter_source.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_converter_source.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_artifact_audit.py",
+    "bytes": 13777,
+    "sha256": "0ea9dde82a1e106a643ee2f0a6a2f937afc1e6314bfcf1db07aa73fba52eec70",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_artifact_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_artifact_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_compare.py",
+    "bytes": 4643,
+    "sha256": "c2bc3dced263ef2fdec5daec49433b0c84a7f9be9a1e534f01a96006953952ae",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_compare.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_compare.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_curriculum.py",
+    "bytes": 11494,
+    "sha256": "e54020de92cd552fba3aae363d5f9ba9f1ac63b6c3f1ba5baa44e64ae0aad6f3",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_curriculum.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_curriculum.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_curriculum_audit.py",
+    "bytes": 5569,
+    "sha256": "f0ee6f6fdfd57f19a213ba21fb48269b9140bf6f72bc1a700c545f28fb42217c",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_curriculum_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_curriculum_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_data.py",
+    "bytes": 10844,
+    "sha256": "878476d460c9f9a774d2d110d82a4a19214caf121233ec57997c7328620311b1",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_data.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_data.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_policy_pair.py",
+    "bytes": 14249,
+    "sha256": "72229746e3fa4ed3d4fba2e72ce50504c4e0c57aad191c7e0b220c64ec82d43d",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_policy_pair.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_policy_pair.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_probe.py",
+    "bytes": 14909,
+    "sha256": "9ad00d0e0b2e22c892fbe7fb7da986a2214fee0c3e7fb4d3943d1d63eaddcc09",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_probe.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_probe.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_probe_analyze.py",
+    "bytes": 5228,
+    "sha256": "66a73711046e8a1d445bbfb99777fe9ecf52bd10c350b924a49a3046be28f4a5",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_probe_analyze.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_probe_analyze.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_quartet_audit.py",
+    "bytes": 9365,
+    "sha256": "ae4b68380e258afbc93baf4ca290f0233ade85c862dd95ac9ca038a36a1f01fc",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_quartet_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_critic_quartet_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_critic_quartets.py",
+    "bytes": 10783,
+    "sha256": "6061f01886ee36ad598af6738956a109023f93bbd5cc886b7e858bbe1b03cd63",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_critic_quartets.py",
+    "archive": "evidence/datasets-002.zip",
+    "archive_entry": "datasets/tier8_v2_critic/critic_quartets_01/builder-source-01.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_data.py",
+    "bytes": 4463,
+    "sha256": "dbe03ba8a18eefcf9bccfe91f0c605ea14d7232c23a3c30adc4d04c981fc0f33",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_data.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_data.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_delivery_analyze.py",
+    "bytes": 7822,
+    "sha256": "687beab1758b11375c99bee6378c61d12d0f4a1a2478c1ffc8c03f8978c61d21",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_delivery_analyze.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_delivery_analyze.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_demo_retrieval.py",
+    "bytes": 4773,
+    "sha256": "0a77a581ba43062bb036c27a732fa6cd63b642387ce26ebec69a6e88175d6b5f",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_demo_retrieval.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_demo_retrieval.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_demos.py",
+    "bytes": 6526,
+    "sha256": "9cb3cb2eaad2f3eda5fc9a4e14c3fff9076c071d710b853fb0d700d336844918",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_demos.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_demos.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_download.py",
+    "bytes": 4501,
+    "sha256": "f470d826c507fd37ba251833478e3d61702793850b9c5373e13ba1d9ec8bbb43",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_download.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_download.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_financial_pipeline.py",
+    "bytes": 22451,
+    "sha256": "dd7a230fddc87146dea85ccd5d46957935ae0b03bfbbdb7abebc90f1feb4d9b2",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_financial_pipeline.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_financial_pipeline.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_finqa.py",
+    "bytes": 3845,
+    "sha256": "029fb79694a8eacfe5c18f0c030532da21b84b4eb7d0f0882cf76096ede615f5",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_finqa.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_finqa.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_finqa_audit.py",
+    "bytes": 1984,
+    "sha256": "8dcef9fa460af1ead7b06f28edebd57e89237f042b7007154bdc3556ee6834a2",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_finqa_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_finqa_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_fresh_development.py",
+    "bytes": 5516,
+    "sha256": "2f3a9a6a54e1344b8044182eb885592ddffab20a69b08a80824d025029b4bca9",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_fresh_development.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_fresh_development.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_graph_audit.py",
+    "bytes": 3544,
+    "sha256": "8da390f37e949e850446833eb607b4154c980610fead6be16103eb75b4493900",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_graph_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_graph_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_hf_tokenizers.py",
+    "bytes": 6956,
+    "sha256": "bab9dd139455c4b1ecc5cc8eb06de9ad44bdc7e2e01a92eab0a9bab7d363e26a",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_hf_tokenizers.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_hf_tokenizers.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_influence_audit.py",
+    "bytes": 5177,
+    "sha256": "c2aba5b0a43ab70316a7df128e21c751ee5689952b0c5ccade1bf21787bd9994",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_influence_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_influence_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_influence_repair.py",
+    "bytes": 7151,
+    "sha256": "da13963292d77e2dedf1b09edddac5bf8596cb126208fc669025c89fb752f059",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_influence_repair.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_influence_repair.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_joint_posttrain.py",
+    "bytes": 10506,
+    "sha256": "ea3d2ec0ed7f2128074a22707eea71f0ffab7e51ec72f43656b3d0248bda9fe8",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_joint_posttrain.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_joint_posttrain.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_joint_posttrain_plan.py",
+    "bytes": 10614,
+    "sha256": "5a8ab65c4a04d63f77b53adbb5ef344c35c600efb3ad8f6717de30c25b4a938a",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_joint_posttrain_plan.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_joint_posttrain_plan.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_last_logit_proof.py",
+    "bytes": 9027,
+    "sha256": "567652b008dc1f9bc226de6fff8bb9f44167d4724326c6048dfc91b213f41c73",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_last_logit_proof.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_last_logit_proof.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_loss_check.py",
+    "bytes": 2926,
+    "sha256": "895c4e2c8c45a678b476e206267f11e413d117c438cbe114ee8eefb6b45c04d6",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_loss_check.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_loss_check.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_matched_sequence.py",
+    "bytes": 16670,
+    "sha256": "ccf173fb3656e7e14860f63828a680d4d1a4739b7f6f635069ce3327b24f5e5f",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_matched_sequence.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_matched_sequence.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_method_analyze.py",
+    "bytes": 20264,
+    "sha256": "0c874cc62c7a9d7f3a116dd9e22892615610dd6dfb7c21e41623a4a54467ade6",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_method_analyze.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_method_analyze.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_method_plan.py",
+    "bytes": 10580,
+    "sha256": "0c2bb4dda1c966e9147344e2b1b315ac8c84b8172d14cc20c98e377281da0732",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_method_plan.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_method_plan.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_natural_run.py",
+    "bytes": 38123,
+    "sha256": "3d777a2f3c11780f4c7ed373b9c906b192753b04792623eb70b9cb67658df4ac",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_natural_run.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_natural_run.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_natural_selection.py",
+    "bytes": 5681,
+    "sha256": "7a36629704c4755d620c3737fca65469aead341d9d3805b0b1e200305e46fc44",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_natural_selection.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_natural_selection.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_operand_risk_audit.py",
+    "bytes": 4637,
+    "sha256": "1d4b106d7dfda8d302bbb5c61cba434b385cc2788170bac5bee73aefe1983451",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_operand_risk_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_operand_risk_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_posttrain_plan.py",
+    "bytes": 8111,
+    "sha256": "ff82239aa445a3102b0d36a8ccc03eb6b8b722b783566d8cf76ff03ccf72c7d8",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_posttrain_plan.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_posttrain_plan.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_posttrain_queue.py",
+    "bytes": 12201,
+    "sha256": "ee26d8c80de2c6c93bea70f1420406ef48b90d805431a20808f300cc25b56510",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_posttrain_queue.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_posttrain_queue.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_prefix_audit.py",
+    "bytes": 3233,
+    "sha256": "a2c0353f9aa63058149424bc0b6439759205ddabf4802f8c77d400d409317641",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_prefix_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_prefix_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_proof_pilot.py",
+    "bytes": 3778,
+    "sha256": "3fd9bcb0a7da324770d11a6d5878c194b51031097254d2862f7acff267738d00",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_proof_pilot.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_proof_pilot.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_quartet_probe.py",
+    "bytes": 16842,
+    "sha256": "c10ae6cb6671c7bca85aa19de0b32e24f99a98eeb8b5eb1f976d8991e70ad98f",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_quartet_probe.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_quartet_probe.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_quotient_diagnostic.py",
+    "bytes": 3401,
+    "sha256": "1763054dc5022019e1ea87027f0bbb5e342c81b29e1d045f9c1b0da2a9625752",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_quotient_diagnostic.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_quotient_diagnostic.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_reclaim_cache.py",
+    "bytes": 3135,
+    "sha256": "f26402a70f83390eddb3c57701e82b06ec4cf361fbc179a5dfdc43008bfe4d1a",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_reclaim_cache.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_reclaim_cache.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_repair_opportunity.py",
+    "bytes": 9081,
+    "sha256": "a7e7a87fd40930d487c11328dc99f1534612d1b6a8e2141338e91a3703d181ec",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_repair_opportunity.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_repair_opportunity.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_replay.py",
+    "bytes": 12093,
+    "sha256": "127e26685c71c5dfb9e53b013b831389079627be9c143d5e133637f7e30e8992",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_replay.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_replay.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_replay_analyze.py",
+    "bytes": 10571,
+    "sha256": "7fa6b8ca5cb5f429baf7ae706a1227d3d40577625a84e6688ae96afec92011d1",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_replay_analyze.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_replay_analyze.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_representation_audit.py",
+    "bytes": 5297,
+    "sha256": "a18550647dd6977d01978d51710f54330dce1f34171bdc9a1f9725bcb44fcbcc",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_representation_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_representation_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_rules.py",
+    "bytes": 2920,
+    "sha256": "0c7eaf8550f9471a7e8387a9e38d75ed2db368b2e26351fd34b78242d0ac5275",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_rules.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_rules.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_run.py",
+    "bytes": 36211,
+    "sha256": "8bcd2429d213887c9e9a1ccdab37b18354d78a35b48ba75885406291c84790e2",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_run.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_run.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_sas_joint_data.py",
+    "bytes": 5879,
+    "sha256": "d4c5316d0215247dcbdb074c54c45b801a145ff43c49ab2cca09b9ba937b1143",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_sas_joint_data.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_sas_joint_data.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_sas_offload_fit.py",
+    "bytes": 28823,
+    "sha256": "457a1b9f889631a9871a3c939529766251945c96e2e3c227ac1b94f305da2346",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_sas_offload_fit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_sas_offload_fit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_sequence.py",
+    "bytes": 4152,
+    "sha256": "c90929038c478c5cde60e04b964655dc85ebf3281c9f73e21cc94c7b8c66e39f",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_sequence.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_sequence.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_sequence_recover.py",
+    "bytes": 7562,
+    "sha256": "3cf2f530bd3971000830866a077375c3359eaa1c7f1f67162556c0fecfd6f862",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_sequence_recover.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_sequence_recover.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_shared_role_dispatch.py",
+    "bytes": 4326,
+    "sha256": "ba9dc4b8432b904c25bbe6b386c5da9d55ecef920a2cb0c0be338b3f6e4caa8d",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_shared_role_dispatch.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_shared_role_dispatch.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_shared_role_proof.py",
+    "bytes": 9635,
+    "sha256": "fac3821af9e8de7592e59688c847414f7049201b7fb2b3056bbc50be6ec295fc",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_shared_role_proof.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_shared_role_proof.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_sketch_audit.py",
+    "bytes": 3846,
+    "sha256": "cafcb9e6783fbe6789beb343f040530bd066b6752b7d5ed9ef952c44f1f1adae",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_sketch_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_sketch_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_sketches.py",
+    "bytes": 3790,
+    "sha256": "8bc41ee3d3ecae07ee8b3c3bfb4fb4e080c7dd542826526ed82ec7695f6124ad",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_sketches.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_sketches.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_table_retrieval.py",
+    "bytes": 2681,
+    "sha256": "325162ffd73294091278c3862c7cc9bd4c569d3b74525db5716935b06058387b",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_table_retrieval.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_table_retrieval.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_training_base.py",
+    "bytes": 4197,
+    "sha256": "05d70fe6d43e24ceb0fc95d5ec1b6e96e94ba29f50dfc4c471777257be1fcb73",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_training_base.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_training_base.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_unit_audit.py",
+    "bytes": 6104,
+    "sha256": "712e1bdf1e620ee7d46b3d2e67bdca9b086b91e5c56d43859c6b04ca58777769",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_unit_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_unit_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/tier8_v2_verifier_audit.py",
+    "bytes": 3869,
+    "sha256": "cb78b0e61c2439e185de3254d4e8adc4b4325598138c872427e8ccba0a6998d2",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/tier8_v2_verifier_audit.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/tier8_v2_verifier_audit.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/verify_phase1_download.py",
+    "bytes": 3879,
+    "sha256": "8abce8d12725d5f140828c128d6d655668521c1f048b4f0573fe24c3f7372c9b",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-laptop-v1/code/scripts/verify_phase1_download.py",
+    "archive": "evidence/runs-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/ENGINEERING_SMOKE_ONLY/code/scripts/verify_phase1_download.py"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/manifest.json",
+    "bytes": 32052,
+    "sha256": "1216487dcbb295067525a749a8729093e30366d488f64360f5769880fb9cb777",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/manifest.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794301032351530254/change.json",
+    "bytes": 214,
+    "sha256": "96938be2a4977acadc86160a4c0223a0d4002ade9e2057b66d4fb5191f586c4e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794301032351530254/change.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794301032351530254/manifest-before.json",
+    "bytes": 32052,
+    "sha256": "1216487dcbb295067525a749a8729093e30366d488f64360f5769880fb9cb777",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/manifest.json",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/manifest.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794301032351530254/preflight.json",
+    "bytes": 2963,
+    "sha256": "85d8833ff1df231b877f9c7eab65e46fb4ab01f61867af494b6e265dc7776949",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794301032351530254/preflight.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794391591729207269/change.json",
+    "bytes": 214,
+    "sha256": "891cfae0765c78e0edddfcda0deee175168938b8a5011b8beda8e3ce7851ad25",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794391591729207269/change.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794391591729207269/manifest-before.json",
+    "bytes": 32052,
+    "sha256": "1b2c79e118605f543ebae11f7bbffe24045479ceeb7c0d08ff739a59bdee9bf9",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794391591729207269/manifest-before.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794391591729207269/preflight.json",
+    "bytes": 2963,
+    "sha256": "fe1a1407195a83690d222bb3ecc7ddb9c1beab3f220b4af3e281638518bdc6d4",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794391591729207269/preflight.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/state.json",
+    "bytes": 236,
+    "sha256": "25b9c86c5f0e790a53220a36b28a97710d01b255900baac942e828f6ac0e7dcf",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-cap.json",
+    "bytes": 213,
+    "sha256": "686496506a7eba7f0da457537c1597816b92630b176ead300b77ff9a7a09a1f1",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-cap.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/memory.jsonl",
+    "bytes": 1337664,
+    "sha256": "d437024fdf389e127ece886beb19683b5052e11873ad02968733e5640705b9cc",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/progress.json",
+    "bytes": 113,
+    "sha256": "9e9b83cab6ff2780eb565f088313d08f9dc01856e12c48725707a341bab5355c",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/stages.jsonl",
+    "bytes": 1310269,
+    "sha256": "fe56f85256fbd1fceab4a084c0dd74d22743feb355589c23c3fc135d8c227138",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/state.json",
+    "bytes": 888,
+    "sha256": "1b117aaa490db86f3f68348d341e7d7255d883af85b63ec9d81c01311ca79856",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001/worker.log",
+    "bytes": 21137,
+    "sha256": "c59f1d95cfb64fe17eecff61fd5d5eaa94be178925e831b270749f9d46547ae4",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-mas-direct_control/attempt-0001/worker.log",
+    "archive": "evidence/runs-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-mas-direct_control/attempt-0001/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/cases.jsonl",
+    "bytes": 1687171,
+    "sha256": "d37f719623c31d88c00f094ba572c71002c83fc0a58c92f26dca6a061cba4ebc",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/cases.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/manifest.json",
+    "bytes": 9254,
+    "sha256": "4ddd5579855c31537bf4af5627c14d3c70736efdfd6f5a2934982366ce06ec7a",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-mas-direct_control/manifest.json",
+    "archive": "evidence/runs-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-mas-direct_control/manifest.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/summary.json",
+    "bytes": 1068,
+    "sha256": "f066412f2e53d3922daf341475a511c51c240ddc041953124c159ebcfa8fa00c",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/summary.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/memory.jsonl",
+    "bytes": 4343573,
+    "sha256": "2a87fb115b153085bb55fa995286dd3d6c741a3067896ead5ae868a47ec93fe7",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/progress.json",
+    "bytes": 113,
+    "sha256": "2caa890b3d948f95c71f74ca9a532e42a1dc23bff258b958dce7f8d1dd489388",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/stages.jsonl",
+    "bytes": 2411401,
+    "sha256": "94d72741ba07d8c0531b6869527c8785f799e06056824b48e223e3621570bb41",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/state.json",
+    "bytes": 874,
+    "sha256": "8fa652a44bc0a370fdc3fb17e5ca86237b78e50fbb182ed081261163c60efe73",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001/worker.log",
+    "bytes": 21286,
+    "sha256": "1a459d258f7e1d5cc02f79b0cccf5837e27ff6b17b709d5acc031fd96a92fb2e",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-mas-primary/attempt-0001/worker.log",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/tier16-mas-primary/attempt-0001/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/cases.jsonl",
+    "bytes": 2844932,
+    "sha256": "eb35909211a059e30beb39b2653b85159896e83c99d12c8d09908ab4d3b57280",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/cases.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/manifest.json",
+    "bytes": 9249,
+    "sha256": "4643318ce263ec477b2543cae02c6be15d75d9abb1c8bf9d56b9137aa6da5ee2",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-mas-primary/manifest.json",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/tier16-mas-primary/manifest.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/summary.json",
+    "bytes": 1072,
+    "sha256": "c874c9d1ea4a4d4631093d7662e83bf4bdc9e80c9c6e033b0f6b41b1a71fa8ef",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/summary.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/memory.jsonl",
+    "bytes": 1731008,
+    "sha256": "dd9b4469186bdcd77d328edd1198f87b7257611d8e28f6b26c603e3b999c9006",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/progress.json",
+    "bytes": 112,
+    "sha256": "b8d5fbc21eff0653a9ef3df524f2022a8fd8267c1e97ae77329fab2262ab2e08",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/stages.jsonl",
+    "bytes": 1257641,
+    "sha256": "e05d0d9fca736c693b8224c3a4d6fd161c40b4031d55e69ce77512384eac18b0",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/state.json",
+    "bytes": 887,
+    "sha256": "0de6073018514574e1c958dc9ced0b8cc2685178b0448b008e8b4000db1a6ed7",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/worker.log",
+    "bytes": 7285,
+    "sha256": "8cf664ef598d36b74edfcba78a53afde54c6aa39883454503288372bf5dfb02f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/memory.jsonl",
+    "bytes": 1984631,
+    "sha256": "ac987bfaeeaa735f3d5ed47a95cb6dd97d2e2dc81909d29a195438c7a5e3b978",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/progress.json",
+    "bytes": 112,
+    "sha256": "8f16d222f255d3b679800cbfcd3546979a134f286eddb7ea8c9931087d9255b8",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/stages.jsonl",
+    "bytes": 1556386,
+    "sha256": "0e6a65e785d9acea1b4de1144eb1b1eb321154e2d99113bde596c53aca1bce8e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/state.json",
+    "bytes": 886,
+    "sha256": "dd8050d1425e20cacf18a709c468cb73d7932c9644138afea9bf7813dd0eefb2",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/worker.log",
+    "bytes": 8589,
+    "sha256": "e66e035512716b385eda9bb72ce1f37dfa089451ae2a4a6de39eb84b7d646a79",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/memory.jsonl",
+    "bytes": 1537980,
+    "sha256": "22b9ab971dfa9f1856fff522f824e1a09fba2fbc519691bd27040ed8afed6392",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/progress.json",
+    "bytes": 113,
+    "sha256": "5d162a1473348d8cb7dd79f16cb0337c80127e42d0f515217bdaaab35caacd8d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/stages.jsonl",
+    "bytes": 1159167,
+    "sha256": "9455044226a5b3635a7272cc14a9cd597b938889d373062485a4b8ba039734b6",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/state.json",
+    "bytes": 890,
+    "sha256": "4078692d3be609d685f73b177ecc0e99e0ae2d3bdfb989ee1781d0d55f85f443",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/worker.log",
+    "bytes": 6542,
+    "sha256": "4bd91da201a83b8c6e0a715c160f3876ad3678394c18d6d408c14eb5d5eca3ef",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/cases.jsonl",
+    "bytes": 4361808,
+    "sha256": "22fef85167edbefe3815d26be8744f3fbb7fbb4b98dfc1528019a7572c82ade1",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/cases.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/manifest.json",
+    "bytes": 9257,
+    "sha256": "0ef943c09e6d42469411d2e35f1a89ef25a002b35405f862efe822a67638a9d2",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-mas-repair_ablation/manifest.json",
+    "archive": "evidence/runs-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-mas-repair_ablation/manifest.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/summary.json",
+    "bytes": 1076,
+    "sha256": "6fca586a1a8465840aec24821fb2464488a72503cf03bc59f6db78bcb3407b3a",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/summary.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/memory.jsonl",
+    "bytes": 1593123,
+    "sha256": "9d05e5e4b3bd4befb05ab4901edb2ac65f252674411eaee62f3072ff0c3a504f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/progress.json",
+    "bytes": 111,
+    "sha256": "f94ccdba7157064717ba81b1dbf21711a400f65f2b7c61c1178cabceecc732f4",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/stages.jsonl",
+    "bytes": 220703,
+    "sha256": "338dc0ecbd474b6cf9d8b66210f0055c07588f90b9edc4175b8065ff36cd0f20",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/state-before-recovery-1794301078558473782.json",
+    "bytes": 803,
+    "sha256": "0369d508dbe254853d3cdafff72ffe4c0241d2b1b05d9d69b0115ccd8f899024",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/state-before-recovery-1794301078558473782.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/state.json",
+    "bytes": 971,
+    "sha256": "6758da4bb96c98472e8c44c5b979798565b367beb1479ea4d50e4d40593e1db8",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/worker.log",
+    "bytes": 4656,
+    "sha256": "b32cf5454be2eee6deceef5f43818b8dcb1e5533de0a3a490a948c99465760f9",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/memory.jsonl",
+    "bytes": 1197576,
+    "sha256": "047be6925e073ef0bff64431feca714f7e69412b4305e7f9b2ac276a4eb11606",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/progress.json",
+    "bytes": 113,
+    "sha256": "157b022a41f5ffd095947d8ff6b39ea8626fb61a8c4228e48641107d77431d84",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/stages.jsonl",
+    "bytes": 163158,
+    "sha256": "f4977777e1373259376e431334c346dbe960c801fd17ac23f7a17c4c623afc55",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/state.json",
+    "bytes": 885,
+    "sha256": "d785f4077fe8b849edbec58bec14da3bc4ec067132f7fcf43251cacc9837b130",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/worker.log",
+    "bytes": 3634,
+    "sha256": "9eeacef1e59fdbb95f0d8d5a3a2e324c851642e0c76e5ec2ab4f0b1b0e794937",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/memory.jsonl",
+    "bytes": 1543558,
+    "sha256": "45820524c2340337c9166f1d0a12cd4f1c7f9d1939c49abae1089932e1d9abc5",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/progress.json",
+    "bytes": 112,
+    "sha256": "d96e6a2aba22a5536a5f81c0f533e755d649ef7b5d75c321b8563913945c6739",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/stages.jsonl",
+    "bytes": 206627,
+    "sha256": "745aab65adc783e0d1fae43a74169fa7a1b3696d0869283b6f64f6e7db313525",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/state.json",
+    "bytes": 886,
+    "sha256": "7d41b552fa8fb389725c75b182eb4515c7ceb1a82e89deecc0cbdb33c4d3875f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/worker.log",
+    "bytes": 4260,
+    "sha256": "466f917a551838570a9bfd97bf316a8a3904b22334f739510bd366180826d5f5",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/memory.jsonl",
+    "bytes": 3349829,
+    "sha256": "b0d798e85e133f634f2d108750aa3e355dc2e263bdb3ce3ff1040f573f06c690",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/progress.json",
+    "bytes": 113,
+    "sha256": "5f37034a3146306404359fbc792d5d38fcbf82acd4c573f7abd2012551b8fc97",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/stages.jsonl",
+    "bytes": 431982,
+    "sha256": "f7f85669677698231ac888595146974dc21f5ab83a927ea21b82cb84551cd338",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/state.json",
+    "bytes": 889,
+    "sha256": "640303ef74f768be9996aea354748f4efa92a0a3b199b6d47c709db8f009b048",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/worker.log",
+    "bytes": 8639,
+    "sha256": "c9fe2a9db6bebb69eddfd547f96f1caac3b39644ed689206281a817572490bb3",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/cases.jsonl",
+    "bytes": 1597471,
+    "sha256": "30d94f5e1ca578996f49f741660cb1f9a3ae9d13b6c7d48e859f259f8cd0ddd0",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/cases.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/manifest.json",
+    "bytes": 8544,
+    "sha256": "43546e7b3db039cb5260c64ee4fdadd4425407016e9e3d5062743728eb8a3219",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-sas-direct_control/manifest.json",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/tier16-sas-direct_control/manifest.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/summary.json",
+    "bytes": 1077,
+    "sha256": "e48fcd5b4fe1a92a3e520a643b050766bbb910e947f9e60c4872cfed92cc0cfa",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/summary.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/memory.jsonl",
+    "bytes": 585337,
+    "sha256": "7fcf85444cd638f572f82b2b6071ec4477bfe3024f72d4e2ea67b542a578b6b6",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/progress.json",
+    "bytes": 112,
+    "sha256": "b30e65ad3e0c48f8c92dbe0b4feb34fd3468346d792e1efc6395737150e919d5",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/stages.jsonl",
+    "bytes": 75595,
+    "sha256": "ad759d7ad30913e51ec199f2945405aff1cbcc0ddd91a3db6b327c77f4a7e253",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/state.json",
+    "bytes": 867,
+    "sha256": "0b9b25c10e6cbe2d38752ab722292c475f9b7747085151b53f0f7b89f05a1c02",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/worker.log",
+    "bytes": 823,
+    "sha256": "9f24d5e37640689a1b3447412dc42cfe5ac16f1606539334933b4691b288b5f5",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/memory.jsonl",
+    "bytes": 10196551,
+    "sha256": "4da5e2932d5ef5e7b709cea43d0bf8d21696e256866526c6531ccb356329b537",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/progress.json",
+    "bytes": 114,
+    "sha256": "5f5c90ff82ae85a43bc51b0a6bdfaf41b721f78e3a039dbc109c9aeebd18ef66",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/stages.jsonl",
+    "bytes": 1319593,
+    "sha256": "2657aa5253844876edd39bbf9036d4b78af4f52e655d6f7aa95030313f92db76",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/state.json",
+    "bytes": 869,
+    "sha256": "e5d96d7da4dc52d0c51c74965f1c90baa258007496a8d4703ffe53911fa9b2e3",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/worker.log",
+    "bytes": 13252,
+    "sha256": "1f13831b9de5e5ba51274064e4dc6d0d2615449f7d5b820c86d36d6adade144d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/memory.jsonl",
+    "bytes": 5828247,
+    "sha256": "7270f3d6f2325a5bacca6d4c26b76dd2a06547c0d03e750bfb8f393fb2636d23",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/progress.json",
+    "bytes": 113,
+    "sha256": "10d618e798634c998161ca9bda7cac0874c2b20bd9ea04a0b54fa76cdefce64f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/stages.jsonl",
+    "bytes": 721316,
+    "sha256": "8d35011e854e172fb31cecb379c7cfcce91b1d34daad4e4208a7a3f6052297fc",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/state.json",
+    "bytes": 876,
+    "sha256": "a57a6586e59e160e0c3627a43dcc4ca1ae976e0e7a88c343328544e240e7b4cd",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/worker.log",
+    "bytes": 7007,
+    "sha256": "230aba729ce6268d1a0a28c456c3aac729d3e92fe578c4f7d83e0141a6a8684d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/cases.jsonl",
+    "bytes": 2711666,
+    "sha256": "0226c122113378bc4d5452698f6276d3666310433755f6933fec644c40e73fb8",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/cases.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/manifest.json",
+    "bytes": 8539,
+    "sha256": "598b1c36f183dc37162046fcea681fa62b80942a96c30d059acfe2ff6b792478",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-v2/tier16-sas-primary/manifest.json",
+    "archive": "evidence/runs-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-01/continuation-evidence/tier16-sas-primary/manifest.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/summary.json",
+    "bytes": 1078,
+    "sha256": "e65dbb82c954e587cda07a65985028e5767593819b6e38f05a699635f6560641",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/summary.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/memory.jsonl",
+    "bytes": 12790346,
+    "sha256": "110364cbfeda88a36c14b40bf1a46ea3ff80f688eec42beea1f69534777d18f0",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/progress.json",
+    "bytes": 113,
+    "sha256": "0c9b82f329c32d175494df4d15527700f448c2577dc778d2b5ceffbbbed8fbec",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/stages.jsonl",
+    "bytes": 1674427,
+    "sha256": "fa79c436edd6501ce114381123e6017b055c2e4ae214adee8c0aced8c9841a9c",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/state.json",
+    "bytes": 887,
+    "sha256": "1a9132ba3cc657ff3e34b9237d9fbe52855517f402436511aa48a72d683b6edb",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/worker.log",
+    "bytes": 14405,
+    "sha256": "0ca4e7b1f3016e4d38d34719eceb514dd8b87edd3c8c0e43c7627a4048d4fa4c",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/memory.jsonl",
+    "bytes": 734699,
+    "sha256": "87df28aee47a4c9d936ae5c5988ba3306abdad8d6409af35cecc10350d7ffae3",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/progress.json",
+    "bytes": 112,
+    "sha256": "78677e2d1524d412c9dece861ddab858587685e3a2d2e17974e2b95fe4afd5f8",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/stages.jsonl",
+    "bytes": 83951,
+    "sha256": "2b6a0a4cc54854e1fc236de88af796cc697a1a3c08ede82adfe4cdb9192108ed",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/state.json",
+    "bytes": 891,
+    "sha256": "04768a44f1575a18ecedffa3e654af5e6a3288349554040a1055991871d8728e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/worker.log",
+    "bytes": 697,
+    "sha256": "e36ca86d85ccbfa4319cd70a89eb7e9bdf8f6df928df47e52087cf871a16126e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/memory.jsonl",
+    "bytes": 333028,
+    "sha256": "d5478d980d70814362f53ad5ca7f9375bb473f8c6db32a69dc868c98b97101a8",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/progress.json",
+    "bytes": 113,
+    "sha256": "b79192cae49d5c9f8de8ae2e178b426f5aff0394de3229857ffdacd3f1dbf6e4",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/stages.jsonl",
+    "bytes": 39984,
+    "sha256": "c6f8ef1ddb798ebe3924db6c487e76e2d323e7551034533bdab8493678bc26cd",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/state.json",
+    "bytes": 890,
+    "sha256": "5cea5eca1fabf6a399a4307cc01b921932c4f207e31ee91a5d1abad0300360ee",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/worker.log",
+    "bytes": 570,
+    "sha256": "4e700cdb11ca4dfbc64174759ae9fb53b6d924748755aa1c644532a05169701d",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-002.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/memory.jsonl",
+    "bytes": 5568312,
+    "sha256": "55a17c26fe71c592c742b1370a2d219cc95aabcabd63a6f49569967f9fef927f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/memory.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/progress.json",
+    "bytes": 113,
+    "sha256": "7c5bad1917e6c049b7b03402d66d497ae4d0f7fa29e7dbcc71f176f3d75136e4",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/progress.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/stages.jsonl",
+    "bytes": 690301,
+    "sha256": "57d54093451e2f3f5f45fdc12846523f25fd013e31a5ba760273e8443b989be8",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/stages.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/state.json",
+    "bytes": 894,
+    "sha256": "05e44a8cc3fe72c7e064d7276caf202df934020d2fd6f833797059f1fa279285",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/state.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/worker.log",
+    "bytes": 5592,
+    "sha256": "54be1de05844ddefe15f53999194e5a4302948adbcbb81473c2e8b17ecfbb9c4",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004/worker.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/cases.jsonl",
+    "bytes": 3081957,
+    "sha256": "e529c20d1a7b03027204b02350dbda2884ae8f0cf30eb908c97bb893916d8f57",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/cases.jsonl"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/manifest.json",
+    "bytes": 8547,
+    "sha256": "459a8d0aa2068b9dc3da46c03da9786a45516a59cce68b4065a62b4b9ace99a1",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-sas-repair_ablation/manifest.json",
+    "archive": "evidence/runs-004.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-115gb-recovery-02/tier16-sas-repair_ablation/manifest.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/summary.json",
+    "bytes": 1079,
+    "sha256": "2b7be898a9a009323f9853cea3228f00c0656d379bb398c4f55f5715c385c522",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/summary.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-81MH3kHU",
+    "bytes": 289,
+    "sha256": "89adf03a7b8751c2417bda6c9703e28941750308ae7e61eafeaecb6d82231207",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-81MH3kHU"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-AGlaPSOu",
+    "bytes": 293,
+    "sha256": "567d2522cd194860cab806323e562a7c8cab7d6c4bd7b026c68801d2f5d1f182",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-AGlaPSOu"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-JWThHm0h",
+    "bytes": 287,
+    "sha256": "83cc4861c98159cf2b3e053d00db5bd42b10ee187fcba64dbe81558db436469e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-JWThHm0h"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-R1Mg9w8t",
+    "bytes": 289,
+    "sha256": "7569457ee22956ae9d12289de6683342503c244efa0714ac503a5f6496ba14ea",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-R1Mg9w8t"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-RtM1Yy1w",
+    "bytes": 293,
+    "sha256": "8b481d247ee36ba21b83f47fdca66d01a281ea326ff791c793ef6188d3ffc592",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-RtM1Yy1w"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-Tlf0zmIj",
+    "bytes": 143,
+    "sha256": "fdc006c793f7d640a7a801ec8935bebdcd32612b8dd4c7c921e0bea6e6a4059f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-Tlf0zmIj"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-VQiltwbC",
+    "bytes": 293,
+    "sha256": "6891f61ee8bcd192ab3086804b673cf6f00021d224fd427acdb210d4ca25fb66",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-VQiltwbC"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-k90zwpY8",
+    "bytes": 287,
+    "sha256": "0763653f0306949edb2f23853b52d86a279f0bce7d01dc1243236d157add0239",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-k90zwpY8"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-pr7dHK44",
+    "bytes": 144,
+    "sha256": "3d7e0d881317af574c122e2ae7b6459cbbea353303a4222bb77a68e266dd34f0",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-pr7dHK44"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-sifn9JA5",
+    "bytes": 143,
+    "sha256": "5ed4abc32c3be62256be14e29a5c4a0dfed20d51a6bd5b60f3b95c989c4d5aa3",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-sifn9JA5"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-sw8Vil8O",
+    "bytes": 143,
+    "sha256": "05a1b175f8071b154e38803280824c784304a10d7fccbd5a2a35d7afc00ab24f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-sw8Vil8O"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-sxK5EdF9",
+    "bytes": 143,
+    "sha256": "e7d907e834d1e63212f2be1281b95b841b3f8795b1f295ceb19a647a4ac97f9f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-sxK5EdF9"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-wM0K21Tn",
+    "bytes": 289,
+    "sha256": "2d03d89590a92d587ded0643d396daa802e8e9c58d61b097f504016389cfb13b",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-wM0K21Tn"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-xaBnXzF2",
+    "bytes": 142,
+    "sha256": "ff45dc095f7ba64070487dff944969618b10a8c2f840bc3c328e6e154f628c56",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-xaBnXzF2"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-zpnhk8UU",
+    "bytes": 289,
+    "sha256": "61ceecca484d0c161815870c99fd578dbd6fe36c3bd65eb2921e42aca97e290e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/ubuntu-scopes/attempt-zpnhk8UU"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/workflow-status.txt",
+    "bytes": 35,
+    "sha256": "3800ef64f2448c882b7319fb16e6059a96a4c0e14da428d0f4c300a9d81ecb4f",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/workflow-status.txt"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/workflow.log",
+    "bytes": 1152138,
+    "sha256": "ef10e5029f99de87a984e449701cbaabee2896b2df3dff5806e3fc8f7444fe49",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/workflow.log"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261109T122133Z-6817/report.json",
+    "bytes": 2963,
+    "sha256": "e7d4d3cc54b1f798e480ca3add8989ad5ccc05e85f3b5cccb5b79177a1388315",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261109T122133Z-6817/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261109T125211Z-11623/report.json",
+    "bytes": 2963,
+    "sha256": "352ca18f04020ae7ec610b3ddab1d556760dbb038920ff1fcfb280924b34357c",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261109T125211Z-11623/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261109T210747Z-66907/report.json",
+    "bytes": 2963,
+    "sha256": "5c7dc862a6a879c53094576e441322b4bdd2ed996bbe641a2377be7326d33051",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261109T210747Z-66907/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261110T084949Z-8256/report.json",
+    "bytes": 2963,
+    "sha256": "b21c44120633116ff7eaecfeccaca24f3013b2494110347f886e65739953d7ee",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261110T084949Z-8256/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261110T085628Z-12362/report.json",
+    "bytes": 2963,
+    "sha256": "85d8833ff1df231b877f9c7eab65e46fb4ab01f61867af494b6e265dc7776949",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794301032351530254/preflight.json",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794301032351530254/preflight.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261110T094904Z-19332/report.json",
+    "bytes": 2963,
+    "sha256": "b95eb0295503f10b8e4e74392021dc4d09c98b90d29b4181ab852fcf83e5b51a",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261110T094904Z-19332/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261110T135244Z-6717/failure.json",
+    "bytes": 65,
+    "sha256": "e1b2fd7eef861b92e9afabe6832031274109040e68038748ea08ca9d87fc09a1",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261110T135244Z-6717/failure.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261110T135334Z-7050/failure.json",
+    "bytes": 65,
+    "sha256": "e1b2fd7eef861b92e9afabe6832031274109040e68038748ea08ca9d87fc09a1",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/preflight/20261110T135244Z-6717/failure.json",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261110T135244Z-6717/failure.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261110T135828Z-11134/report.json",
+    "bytes": 2963,
+    "sha256": "76b4028ee34bef51852a19e770185a7f6fcc70cc53a170d147e2066c296fb19e",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261110T135828Z-11134/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261111T033022Z-139505/report.json",
+    "bytes": 2963,
+    "sha256": "74d8908314d939f50381c3b88cdf8c6427df2b907699bf296158daa37a0013ae",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261111T033022Z-139505/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261111T040502Z-148015/report.json",
+    "bytes": 2963,
+    "sha256": "8b69a47afa0ab65f4bfc5a271907b65388ef255b18b9b17ee37d62ff8d848ba9",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261111T040502Z-148015/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261111T042509Z-152384/report.json",
+    "bytes": 2963,
+    "sha256": "c13a43fac9a0d5556b01913f55ae8c6c4c039582e6a6ffedd0e652c38fbcac53",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261111T042509Z-152384/report.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261111T100544Z-6559/report.json",
+    "bytes": 2963,
+    "sha256": "fe1a1407195a83690d222bb3ecc7ddb9c1beab3f220b4af3e281638518bdc6d4",
+    "category": "runs",
+    "duplicate_of": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794391591729207269/preflight.json",
+    "archive": "evidence/ubuntu16-20261111-001.zip",
+    "archive_entry": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/resume-metadata-audit/1794391591729207269/preflight.json"
+  },
+  {
+    "source": "runs/lab_tiers_v1/preflight/20261111T122328Z-19914/report.json",
+    "bytes": 2963,
+    "sha256": "6e97fc18e505affec33630648ae25685c213f6e0bae543168171634e12708bc4",
+    "category": "runs",
+    "archive": "evidence/ubuntu16-20261111-003.zip",
+    "archive_entry": "runs/lab_tiers_v1/preflight/20261111T122328Z-19914/report.json"
   }
 ]

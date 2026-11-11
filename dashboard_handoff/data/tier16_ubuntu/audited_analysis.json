@@ -1,0 +1,510 @@
+{
+  "status": "complete_audited",
+  "protocol_id": "finance-deployment-lab-v2-115gb",
+  "tiers": [
+    16
+  ],
+  "primary_comparison": "tier16-primary",
+  "summaries": {
+    "tier16-mas-direct_control": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 0,
+          "wrong_delivered": 5,
+          "withheld": 155
+        },
+        "raw_execution_match": {
+          "correct_delivered": 0,
+          "wrong_delivered": 5,
+          "withheld": 155
+        }
+      },
+      "initial": {
+        "case_success": 0,
+        "raw_execution_match": 0
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 8392,
+      "prompt_tokens": 391395,
+      "inference_seconds": 3229.5815378950247,
+      "truncated_stages": 0,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 0,
+      "source_supported_final_programs": 5,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10934157312,
+      "cases_sha256": "d37f719623c31d88c00f094ba572c71002c83fc0a58c92f26dca6a061cba4ebc",
+      "attempts": 1,
+      "resumed_cases": 0,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-mas-primary": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 5,
+          "wrong_delivered": 3,
+          "withheld": 152
+        },
+        "raw_execution_match": {
+          "correct_delivered": 5,
+          "wrong_delivered": 3,
+          "withheld": 152
+        }
+      },
+      "initial": {
+        "case_success": 5,
+        "raw_execution_match": 5
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 29509,
+      "prompt_tokens": 746673,
+      "inference_seconds": 12178.310323008904,
+      "truncated_stages": 157,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 0,
+      "source_supported_final_programs": 10,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10945556480,
+      "cases_sha256": "eb35909211a059e30beb39b2653b85159896e83c99d12c8d09908ab4d3b57280",
+      "attempts": 1,
+      "resumed_cases": 0,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-mas-repair_ablation": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 5,
+          "wrong_delivered": 3,
+          "withheld": 152
+        },
+        "raw_execution_match": {
+          "correct_delivered": 5,
+          "wrong_delivered": 3,
+          "withheld": 152
+        }
+      },
+      "initial": {
+        "case_success": 5,
+        "raw_execution_match": 5
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 33917,
+      "prompt_tokens": 1223337,
+      "inference_seconds": 13613.058871676794,
+      "truncated_stages": 157,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 152,
+      "source_supported_final_programs": 8,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10946301952,
+      "cases_sha256": "22fef85167edbefe3815d26be8744f3fbb7fbb4b98dfc1528019a7572c82ade1",
+      "attempts": 3,
+      "resumed_cases": 114,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-sas-direct_control": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 50,
+          "wrong_delivered": 66,
+          "withheld": 44
+        },
+        "raw_execution_match": {
+          "correct_delivered": 14,
+          "wrong_delivered": 102,
+          "withheld": 44
+        }
+      },
+      "initial": {
+        "case_success": 52,
+        "raw_execution_match": 15
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 14449,
+      "prompt_tokens": 295862,
+      "inference_seconds": 19129.805315920024,
+      "truncated_stages": 0,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 0,
+      "source_supported_final_programs": 132,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10069766144,
+      "cases_sha256": "30d94f5e1ca578996f49f741660cb1f9a3ae9d13b6c7d48e859f259f8cd0ddd0",
+      "attempts": 4,
+      "resumed_cases": 94,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-sas-primary": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 78,
+          "wrong_delivered": 48,
+          "withheld": 34
+        },
+        "raw_execution_match": {
+          "correct_delivered": 38,
+          "wrong_delivered": 88,
+          "withheld": 34
+        }
+      },
+      "initial": {
+        "case_success": 84,
+        "raw_execution_match": 44
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 0,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 32657,
+      "prompt_tokens": 642686,
+      "inference_seconds": 42005.96844467498,
+      "truncated_stages": 159,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 0,
+      "source_supported_final_programs": 150,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10075340800,
+      "cases_sha256": "0226c122113378bc4d5452698f6276d3666310433755f6933fec644c40e73fb8",
+      "attempts": 3,
+      "resumed_cases": 107,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    },
+    "tier16-sas-repair_ablation": {
+      "full": {
+        "case_success": {
+          "correct_delivered": 79,
+          "wrong_delivered": 50,
+          "withheld": 31
+        },
+        "raw_execution_match": {
+          "correct_delivered": 38,
+          "wrong_delivered": 91,
+          "withheld": 31
+        }
+      },
+      "initial": {
+        "case_success": 84,
+        "raw_execution_match": 44
+      },
+      "candidate_repairs": {
+        "case_success": {
+          "gains": 1,
+          "regressions": 0
+        },
+        "raw_execution_match": {
+          "gains": 0,
+          "regressions": 0
+        }
+      },
+      "generated_tokens": 35244,
+      "prompt_tokens": 759898,
+      "inference_seconds": 48952.44360175487,
+      "truncated_stages": 159,
+      "context_or_budget_skips": 0,
+      "repair_attempts": 34,
+      "source_supported_final_programs": 150,
+      "status": "complete",
+      "n": 160,
+      "expected": 160,
+      "cap_bytes": 11500000000,
+      "sampled_peak_tree_rss_bytes": 10087276544,
+      "cases_sha256": "e529c20d1a7b03027204b02350dbda2884ae8f0cf30eb908c97bb893916d8f57",
+      "attempts": 4,
+      "resumed_cases": 118,
+      "memory_guard": "sampled RSS/no-swap monitor including controller; no claim of a hard cgroup limit"
+    }
+  },
+  "comparisons": {
+    "tier16-primary": {
+      "case_success": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -73,
+          "wrong_delivered": -45,
+          "withheld": 118
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.5403726708074534,
+            -0.3669064748201439
+          ],
+          "wrong_delivered": [
+            -0.3710691823899371,
+            -0.2
+          ],
+          "withheld": [
+            0.6453900709219859,
+            0.821656050955414
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      },
+      "raw_execution_match": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -33,
+          "wrong_delivered": -85,
+          "withheld": 118
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.28187919463087246,
+            -0.13513513513513514
+          ],
+          "wrong_delivered": [
+            -0.62,
+            -0.44242424242424244
+          ],
+          "withheld": [
+            0.6453900709219859,
+            0.821656050955414
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      }
+    },
+    "tier16-direct_control": {
+      "case_success": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -50,
+          "wrong_delivered": -61,
+          "withheld": 111
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.4,
+            -0.22857142857142856
+          ],
+          "wrong_delivered": [
+            -0.47701149425287354,
+            -0.28888888888888886
+          ],
+          "withheld": [
+            0.5968586387434555,
+            0.788235294117647
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      },
+      "raw_execution_match": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -14,
+          "wrong_delivered": -97,
+          "withheld": 111
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.13194444444444445,
+            -0.048484848484848485
+          ],
+          "wrong_delivered": [
+            -0.7023809523809523,
+            -0.50625
+          ],
+          "withheld": [
+            0.5968586387434555,
+            0.788235294117647
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      }
+    },
+    "tier16-repair_ablation": {
+      "case_success": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -74,
+          "wrong_delivered": -47,
+          "withheld": 121
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.5472972972972973,
+            -0.37254901960784315
+          ],
+          "wrong_delivered": [
+            -0.38405797101449274,
+            -0.21301775147928995
+          ],
+          "withheld": [
+            0.6666666666666666,
+            0.8397435897435898
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      },
+      "raw_execution_match": {
+        "n": 160,
+        "reports": 50,
+        "delta_direction": "MAS_minus_SAS",
+        "delta_counts": {
+          "correct_delivered": -33,
+          "wrong_delivered": -88,
+          "withheld": 121
+        },
+        "report_bootstrap_95_intervals": {
+          "correct_delivered": [
+            -0.28187919463087246,
+            -0.13513513513513514
+          ],
+          "wrong_delivered": [
+            -0.639751552795031,
+            -0.46153846153846156
+          ],
+          "withheld": [
+            0.6666666666666666,
+            0.8397435897435898
+          ]
+        },
+        "resamples": 10000,
+        "seed": 42,
+        "observed_pareto_only": false,
+        "limits": "Descriptive paired bootstrap, not proof of equality, population noninferiority or a novel method. No post-hoc equivalence margin."
+      }
+    }
+  },
+  "evidence_sha256": {
+    "tier16-mas-direct_control/attempt-0001/memory.jsonl": "d437024fdf389e127ece886beb19683b5052e11873ad02968733e5640705b9cc",
+    "analysis/tier16-mas-direct_control-replayed.jsonl": "3392cad6eff29145a0f7b0e5ff846263ef6e5383fe73fddfc67d42459b81a05a",
+    "tier16-mas-direct_control/manifest.json": "4ddd5579855c31537bf4af5627c14d3c70736efdfd6f5a2934982366ce06ec7a",
+    "tier16-mas-direct_control/summary.json": "f066412f2e53d3922daf341475a511c51c240ddc041953124c159ebcfa8fa00c",
+    "tier16-mas-direct_control/cases.jsonl": "d37f719623c31d88c00f094ba572c71002c83fc0a58c92f26dca6a061cba4ebc",
+    "tier16-mas-primary/attempt-0001/memory.jsonl": "2a87fb115b153085bb55fa995286dd3d6c741a3067896ead5ae868a47ec93fe7",
+    "analysis/tier16-mas-primary-replayed.jsonl": "a0392d4a2fb197ea44079f79a5111bfedb67d3844884576e03cff53a60acae8e",
+    "tier16-mas-primary/manifest.json": "4643318ce263ec477b2543cae02c6be15d75d9abb1c8bf9d56b9137aa6da5ee2",
+    "tier16-mas-primary/summary.json": "c874c9d1ea4a4d4631093d7662e83bf4bdc9e80c9c6e033b0f6b41b1a71fa8ef",
+    "tier16-mas-primary/cases.jsonl": "eb35909211a059e30beb39b2653b85159896e83c99d12c8d09908ab4d3b57280",
+    "tier16-mas-repair_ablation/attempt-0001/memory.jsonl": "dd9b4469186bdcd77d328edd1198f87b7257611d8e28f6b26c603e3b999c9006",
+    "tier16-mas-repair_ablation/attempt-0002/memory.jsonl": "ac987bfaeeaa735f3d5ed47a95cb6dd97d2e2dc81909d29a195438c7a5e3b978",
+    "tier16-mas-repair_ablation/attempt-0003/memory.jsonl": "22b9ab971dfa9f1856fff522f824e1a09fba2fbc519691bd27040ed8afed6392",
+    "analysis/tier16-mas-repair_ablation-replayed.jsonl": "1b6d8f18f5fc6e90960cec63a58a8ca757f5d6dafa63852e06170dcc4cc82a8b",
+    "tier16-mas-repair_ablation/manifest.json": "0ef943c09e6d42469411d2e35f1a89ef25a002b35405f862efe822a67638a9d2",
+    "tier16-mas-repair_ablation/summary.json": "6fca586a1a8465840aec24821fb2464488a72503cf03bc59f6db78bcb3407b3a",
+    "tier16-mas-repair_ablation/cases.jsonl": "22fef85167edbefe3815d26be8744f3fbb7fbb4b98dfc1528019a7572c82ade1",
+    "tier16-sas-direct_control/attempt-0001/memory.jsonl": "9d05e5e4b3bd4befb05ab4901edb2ac65f252674411eaee62f3072ff0c3a504f",
+    "tier16-sas-direct_control/attempt-0002/memory.jsonl": "047be6925e073ef0bff64431feca714f7e69412b4305e7f9b2ac276a4eb11606",
+    "tier16-sas-direct_control/attempt-0003/memory.jsonl": "45820524c2340337c9166f1d0a12cd4f1c7f9d1939c49abae1089932e1d9abc5",
+    "tier16-sas-direct_control/attempt-0004/memory.jsonl": "b0d798e85e133f634f2d108750aa3e355dc2e263bdb3ce3ff1040f573f06c690",
+    "analysis/tier16-sas-direct_control-replayed.jsonl": "c79cea1bf8ece15b1ab94e0ed3a4bc613caf49e8b157d84067cf9edc4d158486",
+    "tier16-sas-direct_control/manifest.json": "43546e7b3db039cb5260c64ee4fdadd4425407016e9e3d5062743728eb8a3219",
+    "tier16-sas-direct_control/summary.json": "e48fcd5b4fe1a92a3e520a643b050766bbb910e947f9e60c4872cfed92cc0cfa",
+    "tier16-sas-direct_control/cases.jsonl": "30d94f5e1ca578996f49f741660cb1f9a3ae9d13b6c7d48e859f259f8cd0ddd0",
+    "tier16-sas-primary/attempt-0001/memory.jsonl": "7fcf85444cd638f572f82b2b6071ec4477bfe3024f72d4e2ea67b542a578b6b6",
+    "tier16-sas-primary/attempt-0002/memory.jsonl": "4da5e2932d5ef5e7b709cea43d0bf8d21696e256866526c6531ccb356329b537",
+    "tier16-sas-primary/attempt-0003/memory.jsonl": "7270f3d6f2325a5bacca6d4c26b76dd2a06547c0d03e750bfb8f393fb2636d23",
+    "analysis/tier16-sas-primary-replayed.jsonl": "1e566efeaf28d192d85d99d1262d1e6500068cacca6d7d23261d682275dddf84",
+    "tier16-sas-primary/manifest.json": "598b1c36f183dc37162046fcea681fa62b80942a96c30d059acfe2ff6b792478",
+    "tier16-sas-primary/summary.json": "e65dbb82c954e587cda07a65985028e5767593819b6e38f05a699635f6560641",
+    "tier16-sas-primary/cases.jsonl": "0226c122113378bc4d5452698f6276d3666310433755f6933fec644c40e73fb8",
+    "tier16-sas-repair_ablation/attempt-0001/memory.jsonl": "110364cbfeda88a36c14b40bf1a46ea3ff80f688eec42beea1f69534777d18f0",
+    "tier16-sas-repair_ablation/attempt-0002/memory.jsonl": "87df28aee47a4c9d936ae5c5988ba3306abdad8d6409af35cecc10350d7ffae3",
+    "tier16-sas-repair_ablation/attempt-0003/memory.jsonl": "d5478d980d70814362f53ad5ca7f9375bb473f8c6db32a69dc868c98b97101a8",
+    "tier16-sas-repair_ablation/attempt-0004/memory.jsonl": "55a17c26fe71c592c742b1370a2d219cc95aabcabd63a6f49569967f9fef927f",
+    "analysis/tier16-sas-repair_ablation-replayed.jsonl": "c618a596ce2aa5dfbfb7b50a670a88c0cd0ed7b224e279407c19a9a14a7f2e70",
+    "tier16-sas-repair_ablation/manifest.json": "459a8d0aa2068b9dc3da46c03da9786a45516a59cce68b4065a62b4b9ace99a1",
+    "tier16-sas-repair_ablation/summary.json": "2b7be898a9a009323f9853cea3228f00c0656d379bb398c4f55f5715c385c522",
+    "tier16-sas-repair_ablation/cases.jsonl": "e529c20d1a7b03027204b02350dbda2884ae8f0cf30eb908c97bb893916d8f57"
+  },
+  "manifest_sha256": "1216487dcbb295067525a749a8729093e30366d488f64360f5769880fb9cb777",
+  "new_generation_calls": 0,
+  "novelty_established": false,
+  "null_hypothesis_proven": false,
+  "non_neural_reference_control": {
+    "always_withhold": {
+      "correct_delivered": 0,
+      "wrong_delivered": 0,
+      "withheld": 160
+    },
+    "note": "Shows why wrong-delivery reduction alone is not utility. Not claimed to solve numerical QA."
+  },
+  "limits": [
+    "Public FinQA development-source reports not used in the recorded8GB research selections. No guarantee of pretraining cleanliness or complete coverage of unrecorded human exposure. Numerical QA, not KYC/credit invention or mismatch recall.",
+    "Pretrained models in BOTH main arms; no compatible14B/32B trained adapters exist on SSD.8GB SFT results remain a separate experiment. No claim of equally optimal fine-tuning.",
+    "Paired effect estimates/intervals; no automatic proof of H0/equivalence. Other profiles/32GB secondary; no favorable-metric selection or best-only reporting.",
+    "One model family/checkpoint set/seed; actual prompts, model sizes and precision differ by deployment. Equal ceilings are not equal compute. Primary 16GB comparison; remaining profiles/32GB are secondary."
+  ]
+}

@@ -1,5 +1,7 @@
 # Evidence regimes
 
+> **11 November 2026 replication:** [Ubuntu 16 GB](../tier16_v2/UBUNTU_COMPLETION.md) repeats the same 160-question cohort and sealed deployment recipes. Its 960 outputs are additional executions, not additional independent questions. The cross-tier tables below retain the historical run; zero-swap scope evidence and interrupted execution are documented separately.
+
 | Dimension | Historical8 GB | Redeveloped8 GB FinQA | 16 GB FinQA |
 | --- | --- | --- | --- |
 | Task | Synthetic KYC/credit | Public train-source numerical QA | Public dev-source numerical QA |

@@ -1,5 +1,7 @@
 # 16 GB v2 statistical evaluation report
 
+> **11 November 2026 addendum:** [the Ubuntu replication](research/tier16_v2/UBUNTU_COMPLETION.md) reproduces all six outcome tables. Its timing/resource measurements are stored separately in the dashboard handoff. This historical statistical report and its PDF have not been recomputed; the additional run does not add independent questions.
+
 ## Paired financial-QA outcomes, conditional coverage and resource-qualified evidence
 
 **Analysis date:** 30 October 2026. **Evaluation period:** 28-30 October 2026.

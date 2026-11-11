@@ -1378,5 +1378,25 @@
     "source": "weights/tier8_v2/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf",
     "bytes": 689872288,
     "reason": "model tensor, cache, lock or unsupported non-data artifact"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/preflight-marker-L4rGqlxG",
+    "bytes": 0,
+    "reason": "Runtime lock or temporary preflight marker"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/preflight-marker-ZTu4v6Q9",
+    "bytes": 0,
+    "reason": "Runtime lock or temporary preflight marker"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/preflight-marker-ruAGUMbV",
+    "bytes": 0,
+    "reason": "Runtime lock or temporary preflight marker"
+  },
+  {
+    "source": "runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/workflow.lock",
+    "bytes": 0,
+    "reason": "Runtime lock or temporary preflight marker"
   }
 ]

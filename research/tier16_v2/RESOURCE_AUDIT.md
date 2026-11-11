@@ -1,5 +1,7 @@
 # Resource validity and chronology
 
+> **Ubuntu replication addendum, 11 November 2026:** the new run has six complete jobs, no recorded sampled memory/process-swap breaches across 16 worker attempts, and peak sampled RSS 10.946 GB under zero-swap Ubuntu scopes. Interruptions and SSD errors remain part of its history. See [completion and preservation](UBUNTU_COMPLETION.md); historical failures below remain invalid and are not overwritten.
+
 The application ceiling is 11.5 GB, including the controller. The separate 1 GB host reserve is not additional application usage; recovery adds a 100 MB launch cushion. The earlier 12.49 GB attempt stopped at a reserve check before model inference. Subsequent 8,192-context engineering probes encountered process swap, so the common context was reduced to 4,096 for both arms and tiers before the higher-tier accuracy run. Model weights and precision did not change.
 
 The first SAS primary attempt stopped after 145 completed cases on 44,011,520 bytes of process-tree swap, while sampled peak RSS was 10,056,552,448 bytes. The first continuation later stopped after seven direct-control SAS cases on 34,430,976 swap bytes, with sampled peak RSS 10,039,861,248 bytes. Every reused checkpoint preceded the first invalid sample; the original 145 cases also passed full vocabulary-only prompt, program, score, delivery and token-ledger replay before reuse. No completed cases were selected by quality.

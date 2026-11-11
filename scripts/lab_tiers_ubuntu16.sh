@@ -71,8 +71,14 @@ record_scope() {
         "$group" "$(cat "$cgroup/memory.swap.max")" "$(cat "$cgroup/memory.swap.current")" >> "$scope_log"
 }
 record_scope start
-trap 'rc=$?; if (( rc != 0 )); then record_scope failed || true; printf "FAILED exit=%s at %s\n" "$rc" "$(date -u +%FT%TZ)" > "$out/workflow-status.txt"; fi' EXIT
+stop_progress() { if [[ -n "${progress_pid:-}" ]]; then kill "$progress_pid" 2>/dev/null || true; wait "$progress_pid" 2>/dev/null || true; fi; }
+trap 'rc=$?; stop_progress; if (( rc != 0 )); then record_scope failed || true; printf "FAILED exit=%s at %s\n" "$rc" "$(date -u +%FT%TZ)" > "$out/workflow-status.txt"; fi' EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 printf 'RUNNING since %s\n' "$(date -u +%FT%TZ)" > "$out/workflow-status.txt"
+printf 'Live progress every 30s, including startup file reads. Large model checksums can take several minutes on USB 2.0.\n'
+python3 "$(dirname -- "${BASH_SOURCE[0]}")/lab_tiers_progress.py" "$out" --controller-pid "$$" &
+progress_pid=$!
 
 # Stage the original sealed code on the Ubuntu filesystem. The live checkout
 # contains later research edits and cannot serve as the old freeze.
@@ -107,9 +113,19 @@ PY
 )"
 export AGERE_SSD_ROOT="$ssd"
 check_swap
+preflight_marker="$(mktemp "$out/preflight-marker-XXXXXXXX")"
 bash "$code/scripts/lab_tiers.sh" preflight --tiers 16
+preflight_report="$(find "$ssd/runs/lab_tiers_v1/preflight" -name report.json -newer "$preflight_marker" -printf '%T@ %p\n' | sort -nr | head -1 | cut -d ' ' -f2-)"
+rm -- "$preflight_marker"
+[[ -n "$preflight_report" ]] || fail 'No fresh preflight report found.'
+python3 "$(dirname -- "${BASH_SOURCE[0]}")/lab_tiers_resume_metadata.py" "$out" "$preflight_report"
 check_swap
-bash "$code/scripts/lab_tiers.sh" run --tiers 16 --run-id "$identifier"
+if bash "$code/scripts/lab_tiers.sh" run --tiers 16 --run-id "$identifier"; then
+    run_rc=0
+else
+    run_rc=$?
+fi
+(( run_rc == 0 )) || exit "$run_rc"
 check_swap
 record_scope analysis_complete
 bash "$code/scripts/lab_tiers.sh" export --tiers 16 --run-id "$identifier"

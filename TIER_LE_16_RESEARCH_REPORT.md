@@ -1,5 +1,7 @@
 # Project Agere: research dossier for deployments at or below16 GB
 
+> **11 November 2026 update:** [the completed Ubuntu 16 GB replication](research/tier16_v2/UBUNTU_COMPLETION.md) adds a separate 960-output run on the same 160 questions, with identical delivered flags and final score objects. Do not add it to the independent-question denominator or pool resource histories. Its evidence is preserved in [dashboard_handoff](dashboard_handoff/README.md); the historical dossier below and the research paper retain their original numerical scope.
+
 ## Pre-paper draft: selective answering, memory allocation and failure-aware evidence
 
 **Date:**30 October2026. **Status:** empirical/pre-paper synthesis, not a submitted or accepted paper.

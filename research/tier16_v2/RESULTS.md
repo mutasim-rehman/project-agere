@@ -1,5 +1,7 @@
 # 16 GB complete results
 
+> **Ubuntu replication, 11 November 2026:** all six reported/raw outcome counts below were reproduced, with matching delivered flags and final score objects for all 960 paired outputs. Runtime and memory measurements differ; see [the new run table](UBUNTU_COMPLETION.md). The hours and peaks below belong to the historical recovery run.
+
 | Profile / arm | Reported C / W / H | Raw C / W / H | Time (h) | Peak RSS (GB) |
 | --- | --- | --- | --- | --- |
 | primary / SAS | 78 / 48 / 34 | 38 / 88 / 34 | 11.546 | 10.062 |

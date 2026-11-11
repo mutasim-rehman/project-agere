@@ -1,0 +1,489 @@
+[
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-mas-direct_control",
+    "attempt": "attempt-0001",
+    "status": "exited",
+    "completed_before": 0,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 11960,
+      "create_time": 1794319458.55
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-direct_control/attempt-0001"
+    ],
+    "worker": {
+      "pid": 30472,
+      "create_time": 1794328452.11
+    },
+    "exit_code": 0,
+    "peak_tree_rss_bytes": 10934157312,
+    "ended": 1794332588.9678888
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-mas-primary",
+    "attempt": "attempt-0001",
+    "status": "exited",
+    "completed_before": 0,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 67041,
+      "create_time": 1794258514.87
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-primary/attempt-0001"
+    ],
+    "worker": {
+      "pid": 97820,
+      "create_time": 1794273431.68
+    },
+    "exit_code": 0,
+    "peak_tree_rss_bytes": 10945556480,
+    "ended": 1794292762.2858374
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-mas-repair_ablation",
+    "attempt": "attempt-0001",
+    "status": "interrupted_or_failed",
+    "completed_before": 0,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 152526,
+      "create_time": 1794371157.28
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0001"
+    ],
+    "worker": {
+      "pid": 182770,
+      "create_time": 1794385439.31
+    },
+    "peak_tree_rss_bytes": 10935398400,
+    "ended": 1794390031.58286
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-mas-repair_ablation",
+    "attempt": "attempt-0002",
+    "status": "interrupted_or_failed",
+    "completed_before": 52,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 6717,
+      "create_time": 1794391593.34
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0002"
+    ],
+    "worker": {
+      "pid": 7463,
+      "create_time": 1794391637.61
+    },
+    "peak_tree_rss_bytes": 10946301952,
+    "ended": 1794396852.8665035
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-mas-repair_ablation",
+    "attempt": "attempt-0003",
+    "status": "exited",
+    "completed_before": 114,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 20064,
+      "create_time": 1794399857.58
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-mas-repair_ablation/attempt-0003"
+    ],
+    "worker": {
+      "pid": 20169,
+      "create_time": 1794399901.9
+    },
+    "exit_code": 0,
+    "peak_tree_rss_bytes": 10942124032,
+    "ended": 1794403917.390401
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-direct_control",
+    "attempt": "attempt-0001",
+    "status": "controller_lost_recovered",
+    "completed_before": 0,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 67041,
+      "create_time": 1794258514.87
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0001"
+    ],
+    "worker": {
+      "pid": 125829,
+      "create_time": 1794292762.36
+    },
+    "peak_tree_rss_bytes": 10053775360,
+    "recovery_time": 1794301078.562649,
+    "recovery_scope": "Durable samples only; no claim about unsampled RSS"
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-direct_control",
+    "attempt": "attempt-0002",
+    "status": "interrupted_or_failed",
+    "completed_before": 35,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 12506,
+      "create_time": 1794301033.99
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0002"
+    ],
+    "worker": {
+      "pid": 12614,
+      "create_time": 1794301078.76
+    },
+    "peak_tree_rss_bytes": 10064588800,
+    "ended": 1794304137.165711
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-direct_control",
+    "attempt": "attempt-0003",
+    "status": "interrupted_or_failed",
+    "completed_before": 62,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 19476,
+      "create_time": 1794304192.15
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0003"
+    ],
+    "worker": {
+      "pid": 19588,
+      "create_time": 1794304236.48
+    },
+    "peak_tree_rss_bytes": 10056142848,
+    "ended": 1794308174.1433253
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-direct_control",
+    "attempt": "attempt-0004",
+    "status": "exited",
+    "completed_before": 94,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 11960,
+      "create_time": 1794319458.55
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-direct_control/attempt-0004"
+    ],
+    "worker": {
+      "pid": 12884,
+      "create_time": 1794319901.92
+    },
+    "exit_code": 0,
+    "peak_tree_rss_bytes": 10069766144,
+    "ended": 1794328452.6205273
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-primary",
+    "attempt": "attempt-0001",
+    "status": "interrupted_or_failed",
+    "completed_before": 0,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 6924,
+      "create_time": 1794226940.34
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0001"
+    ],
+    "worker": {
+      "pid": 6950,
+      "create_time": 1794226983.89
+    },
+    "peak_tree_rss_bytes": 10047008768,
+    "ended": 1794228480.08821
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-primary",
+    "attempt": "attempt-0002",
+    "status": "interrupted_or_failed",
+    "completed_before": 5,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 12261,
+      "create_time": 1794228777.27
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0002"
+    ],
+    "worker": {
+      "pid": 12396,
+      "create_time": 1794228821.26
+    },
+    "peak_tree_rss_bytes": 10068549632,
+    "ended": 1794258463.69223
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-primary",
+    "attempt": "attempt-0003",
+    "status": "exited",
+    "completed_before": 107,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 67041,
+      "create_time": 1794258514.87
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-primary/attempt-0003"
+    ],
+    "worker": {
+      "pid": 67193,
+      "create_time": 1794258558.49
+    },
+    "exit_code": 0,
+    "peak_tree_rss_bytes": 10075340800,
+    "ended": 1794273431.6163146
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-repair_ablation",
+    "attempt": "attempt-0001",
+    "status": "interrupted_or_failed",
+    "completed_before": 0,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 11960,
+      "create_time": 1794319458.55
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0001"
+    ],
+    "worker": {
+      "pid": 38902,
+      "create_time": 1794332588.41
+    },
+    "peak_tree_rss_bytes": 10087276544,
+    "ended": 1794365215.4381511
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-repair_ablation",
+    "attempt": "attempt-0002",
+    "status": "interrupted_or_failed",
+    "completed_before": 111,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 139650,
+      "create_time": 1794367869.98
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0002"
+    ],
+    "worker": {
+      "pid": 139811,
+      "create_time": 1794367914.89
+    },
+    "peak_tree_rss_bytes": 10082586624,
+    "ended": 1794369792.4256132
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-repair_ablation",
+    "attempt": "attempt-0003",
+    "status": "interrupted_or_failed",
+    "completed_before": 115,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 148159,
+      "create_time": 1794369947.42
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0003"
+    ],
+    "worker": {
+      "pid": 148270,
+      "create_time": 1794369993.1
+    },
+    "peak_tree_rss_bytes": 10062974976,
+    "ended": 1794370849.3638618
+  },
+  {
+    "run_id": "lab-16-ubuntu-noswap-v1",
+    "job": "tier16-sas-repair_ablation",
+    "attempt": "attempt-0004",
+    "status": "exited",
+    "completed_before": 118,
+    "memory_breach": false,
+    "swap_breach": false,
+    "controller": {
+      "pid": 152526,
+      "create_time": 1794371157.28
+    },
+    "command": [
+      "/home/mutasim/.cache/agere/sealed-lab-2bc2c447e1e2c09f/.local/lab-offline-cpu-v2-7ea2c6784621/python.sh",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/code/scripts/lab_tiers.py",
+      "_worker",
+      "--ssd",
+      "/run/media/mutasim/Data/AGERE",
+      "--job-dir",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation",
+      "--attempt",
+      "/run/media/mutasim/Data/AGERE/runs/lab_tiers_v1/lab-16-ubuntu-noswap-v1/tier16-sas-repair_ablation/attempt-0004"
+    ],
+    "worker": {
+      "pid": 152633,
+      "create_time": 1794371202.04
+    },
+    "exit_code": 0,
+    "peak_tree_rss_bytes": 10084974592,
+    "ended": 1794385439.8467376
+  }
+]
