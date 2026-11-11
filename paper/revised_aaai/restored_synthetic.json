@@ -1,0 +1,32 @@
+{
+  "sas": {
+    "n": 175,
+    "json": 175,
+    "claim_sets": 175,
+    "invention": 125,
+    "grounded": 541,
+    "grounding_total": 641,
+    "mismatch_detected": 0,
+    "mismatch_total": 20,
+    "refusal_correct": 0,
+    "refusal_total": 59,
+    "tokens": 57312,
+    "seconds": 16007.14999999995,
+    "peak_rss": 5029531648
+  },
+  "mas": {
+    "n": 175,
+    "json": 111,
+    "claim_sets": 111,
+    "invention": 89,
+    "grounded": 233,
+    "grounding_total": 641,
+    "mismatch_detected": 0,
+    "mismatch_total": 20,
+    "refusal_correct": 0,
+    "refusal_total": 59,
+    "tokens": 118727,
+    "seconds": 10601.432000000044,
+    "peak_rss": 5539782656
+  }
+}

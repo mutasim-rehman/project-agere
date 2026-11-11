@@ -1,0 +1,22 @@
+{
+  "main": {
+    "pages": 8,
+    "words_pdf_extraction": 5520,
+    "references_start_page": 7,
+    "problems": [],
+    "letter_size": true,
+    "undefined_markers": false,
+    "type3_fonts": false,
+    "sha256": "3d6eba88be52fc40c7872d15e6f62577b7b3ff54b5db35d697aeac5ffbe59ab6"
+  },
+  "supplement": {
+    "pages": 28,
+    "words_pdf_extraction": 14975,
+    "references_start_page": 28,
+    "problems": [],
+    "letter_size": true,
+    "undefined_markers": false,
+    "type3_fonts": false,
+    "sha256": "555b03ec1b2799df1f36390f1a3e887053f68ab9970c81f44249dac609fd194a"
+  }
+}

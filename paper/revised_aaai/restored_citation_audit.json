@@ -1,0 +1,129 @@
+[
+  {
+    "key": "bench360",
+    "url": "https://arxiv.org/abs/2511.16682",
+    "title": "Bench360: Benchmarking Local LLM Inference from 360 Degrees",
+    "authors": [
+      "Stuhlmann, Linus",
+      "Argerich, Mauricio Fadel",
+      "Fürst, Jonathan"
+    ],
+    "year": 2026,
+    "metadata_sha256": "433fe7daefc236e84b9c306bca5d2d0dd345f2535141cf353d21efabd79510b1",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "dcrc",
+    "url": "https://arxiv.org/abs/2605.31064",
+    "title": "Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA",
+    "authors": [
+      "Chen, Hao",
+      "Tang, Xing",
+      "Liu, Qirui",
+      "Shi, Weijie",
+      "Li, Shiwei",
+      "Lyu, Fuyuan",
+      "Luo, Weihong",
+      "Du, Xiku",
+      "He, Xiuqiang"
+    ],
+    "year": 2026,
+    "metadata_sha256": "6f5fb158c14c40d1c9c4d725ef212ca36f7be2bdccad642b5a1472968b3e8c29",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "smallagents",
+    "url": "https://arxiv.org/abs/2601.11327",
+    "title": "Can Small Agents Collaborate to Beat a Single Large Language Model?",
+    "authors": [
+      "Żywot, Agata",
+      "Chen, Xinyi",
+      "Yuan, Yifei",
+      "Søgaard, Anders",
+      "de Rijke, Maarten"
+    ],
+    "year": 2026,
+    "metadata_sha256": "87dae05dc5832e2fdbfd76a5c7b4a52dd0977d737aeebb535448238b4cd3bd80",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "quantfail",
+    "url": "https://arxiv.org/abs/2607.27275",
+    "title": "Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents",
+    "authors": [
+      "Jang, Jiwon",
+      "Yang, Kisu",
+      "Lim, Heuiseok",
+      "Park, Hyunwoo"
+    ],
+    "year": 2026,
+    "metadata_sha256": "e6b92c91c21cef794fedb27af153419648dbfad8ff2a842f6fedba28a27f4aa1",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "awq",
+    "url": "https://arxiv.org/abs/2306.00978",
+    "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+    "authors": [
+      "Lin, Ji",
+      "Tang, Jiaming",
+      "Tang, Haotian",
+      "Yang, Shang",
+      "Chen, Wei-Ming",
+      "Wang, Wei-Chen",
+      "Xiao, Guangxuan",
+      "Dang, Xingyu",
+      "Gan, Chuang",
+      "Han, Song"
+    ],
+    "year": 2026,
+    "metadata_sha256": "b5be9e101f42e391c3c2fb8f7114480d1230e5f2463229f5db1b2bb769069a6a",
+    "verified": "primary arXiv metadata",
+    "retrieved": "2026-11-11"
+  },
+  {
+    "key": "finman",
+    "url": "https://aclanthology.org/2025.findings-emnlp.225.bib",
+    "sha256": "ad8c682291204fae0edac22d8c6b25f2ffe8abac096ed1034717686ceaa5d905",
+    "verified": "publisher BibTeX"
+  },
+  {
+    "key": "hoeffding",
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.1963.10500830",
+    "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+  },
+  {
+    "key": "holm",
+    "url": "https://www.jstor.org/stable/4615733",
+    "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+  },
+  {
+    "key": "cameron",
+    "url": "https://escholarship.org/uc/item/1jq5d0pq",
+    "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+  },
+  {
+    "key": "fagerland",
+    "url": "https://link.springer.com/article/10.1186/1471-2288-13-91",
+    "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+  },
+  {
+    "key": "mcnemar",
+    "url": "https://link.springer.com/article/10.1007/BF02295996",
+    "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+  },
+  {
+    "key": "qwen",
+    "url": "https://arxiv.org/html/2412.15115v1",
+    "verified": "Full-text title page names Qwen Team; removed punctuation-only pseudo-author from prior metadata parser",
+    "year": 2024
+  },
+  {
+    "key": "awq",
+    "note": "Cite current arXiv version v6 (2026), matching retrieved author list; original MLSys publication was 2024. No venue metadata is invented."
+  }
+]

@@ -1,0 +1,70 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Cameron and Miller(2015)}]{cameron}
+Cameron, A.~C.; and Miller, D.~L. 2015.
+\newblock A Practitioner's Guide to Cluster-Robust Inference.
+\newblock \emph{Journal of Human Resources}, 50(2): 317--372.
+
+\bibitem[{Chen et~al.(2026)Chen, Tang, Liu, Shi, Li, Lyu, Luo, Du, and He}]{dcrc}
+Chen, H.; Tang, X.; Liu, Q.; Shi, W.; Li, S.; Lyu, F.; Luo, W.; Du, X.; and He, X. 2026.
+\newblock {Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA}.
+\newblock arXiv:2605.31064.
+
+\bibitem[{Dettmers et~al.(2023)Dettmers, Pagnoni, Holtzman, and Zettlemoyer}]{qlora}
+Dettmers, T.; Pagnoni, A.; Holtzman, A.; and Zettlemoyer, L. 2023.
+\newblock {QLoRA: Efficient Finetuning of Quantized LLMs}.
+\newblock arXiv:2305.14314.
+
+\bibitem[{Fagerland, Lydersen, and Laake(2013)}]{fagerland}
+Fagerland, M.~W.; Lydersen, S.; and Laake, P. 2013.
+\newblock The {McNemar} Test for Binary Matched-Pairs Data: Mid-p and Asymptotic Are Better than Exact Conditional.
+\newblock \emph{BMC Medical Research Methodology}, 13: 91.
+
+\bibitem[{Hoeffding(1963)}]{hoeffding}
+Hoeffding, W. 1963.
+\newblock Probability Inequalities for Sums of Bounded Random Variables.
+\newblock \emph{Journal of the American Statistical Association}, 58(301): 13--30.
+
+\bibitem[{Holm(1979)}]{holm}
+Holm, S. 1979.
+\newblock A Simple Sequentially Rejective Multiple Test Procedure.
+\newblock \emph{Scandinavian Journal of Statistics}, 6(2): 65--70.
+
+\bibitem[{Hu et~al.(2021)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen}]{lora}
+Hu, E.~J.; Shen, Y.; Wallis, P.; Allen-Zhu, Z.; Li, Y.; Wang, S.; Wang, L.; and Chen, W. 2021.
+\newblock {LoRA: Low-Rank Adaptation of Large Language Models}.
+\newblock arXiv:2106.09685.
+
+\bibitem[{Jang et~al.(2026)Jang, Yang, Lim, and Park}]{quantfail}
+Jang, J.; Yang, K.; Lim, H.; and Park, H. 2026.
+\newblock {Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents}.
+\newblock arXiv:2607.27275.
+
+\bibitem[{Lin et~al.(2026)Lin, Tang, Tang, Yang, Chen, Wang, Xiao, Dang, Gan, and Han}]{awq}
+Lin, J.; Tang, J.; Tang, H.; Yang, S.; Chen, W.-M.; Wang, W.-C.; Xiao, G.; Dang, X.; Gan, C.; and Han, S. 2026.
+\newblock {AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration}.
+\newblock arXiv:2306.00978.
+
+\bibitem[{Liu et~al.(2025)Liu, Liu, Zhu, Fei, and Mahanti}]{finman}
+Liu, C.; Liu, Q.; Zhu, Z.; Fei, H.; and Mahanti, A. 2025.
+\newblock {D}avid vs. Goliath: Cost-Efficient Financial {QA} via Cascaded Multi-Agent Reasoning.
+\newblock In Christodoulopoulos, C.; Chakraborty, T.; Rose, C.; and Peng, V., eds., \emph{Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2025}, 4212--4229. Suzhou, China: Association for Computational Linguistics.
+\newblock ISBN 979-8-89176-335-7.
+
+\bibitem[{Stuhlmann, Argerich, and Fürst(2026)}]{bench360}
+Stuhlmann, L.; Argerich, M.~F.; and Fürst, J. 2026.
+\newblock {Bench360: Benchmarking Local LLM Inference from 360 Degrees}.
+\newblock arXiv:2511.16682.
+
+\bibitem[{Zhu et~al.(2021)Zhu, Lei, Huang, Wang, Zhang, Lv, Feng, and Chua}]{tatqa}
+Zhu, F.; Lei, W.; Huang, Y.; Wang, C.; Zhang, S.; Lv, J.; Feng, F.; and Chua, T.-S. 2021.
+\newblock {TAT}-{QA}: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance.
+\newblock In Zong, C.; Xia, F.; Li, W.; and Navigli, R., eds., \emph{Proceedings of the 59th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)}, 3277--3287. Online: Association for Computational Linguistics.
+
+\bibitem[{Żywot et~al.(2026)Żywot, Chen, Yuan, Søgaard, and de~Rijke}]{smallagents}
+Żywot, A.; Chen, X.; Yuan, Y.; Søgaard, A.; and de~Rijke, M. 2026.
+\newblock {Can Small Agents Collaborate to Beat a Single Large Language Model?}
+\newblock arXiv:2601.11327.
+
+\end{thebibliography}

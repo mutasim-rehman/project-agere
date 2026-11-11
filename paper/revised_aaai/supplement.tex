@@ -11,6 +11,7 @@
 \usepackage{longtable}
 \usepackage{seqsplit}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \urlstyle{rm}
 \def\UrlFont{\rm}
 \frenchspacing
@@ -21,6 +22,8 @@
 \date{}
 \begin{document}
 \maketitle
+\tableofcontents
+\clearpage
 \section{Scope and Evidence Status}
 This supplement accompanies the main paper and retains the broader research sequence, including weak baselines, unsuccessful interventions, diagnostic successes, failures to transfer, and resource interruptions. It is organized by evidential role rather than treating every development experiment as a confirmatory trial. Repeated questions, repeated controls and post-hoc diagnostic outputs are not pooled into a sample-size claim. No neural inference was run to prepare either manuscript. Historical files remain unchanged.
 
@@ -88,12 +91,14 @@ For Study A, let cluster $g$ contain $n_g$ questions and paired difference sum $
 
 Planner paired intervals reproduce the archived Python \path{random.Random(73)} procedure: 10,000 draws of 96 table-context differences, sorted indices 250 and 9749. For gains $b$, losses $c$, the two-sided exact McNemar value is $\min[1,2\sum_{k=0}^{\min(b,c)}\binom{b+c}{k}/2^{b+c}]$. With four gains and zero losses it is 0.125. Empirical resampling cannot invent a loss absent from four observed discordances, explaining why the positive percentile interval must not be presented as strong confirmatory evidence. The zero-width secondary correct-delivery interval is a degenerate empirical bootstrap, not proof of population equality.
 
-Older Windows paired summaries generally use 2,000 company-cluster draws with Python seed 42 and indices 50/1949; we retain that procedure instead of silently substituting a different interval. Exact question-pair tests assume independence of pairs; shared companies may violate it. Older 16 GB supplemental analyses include company sensitivity, equal-report weighting, leave-one-report-out checks and cluster sign-flip tests; these were post-hoc, with sign-exchangeability assumptions, and are retained in the original statistical package. The new paper does not elevate them into prespecified primary discoveries. No observed-power, noninferiority or equivalence claim is made. No seed/model uncertainty is inferred from a question bootstrap.
+Older Windows paired summaries generally use 2,000 company-cluster draws with Python seed 42 and indices 50/1949; we retain that procedure instead of silently substituting a different interval. Exact question-pair tests assume independence of pairs; shared companies may violate it. Older 16 GB supplemental analyses include company sensitivity, equal-report weighting, leave-one-report-out checks and cluster sign-flip tests. These post-hoc analyses are restored in Sections~\ref{sec:extended-a}--\ref{sec:statistics-restored}; sign-flip assumptions are explicit. The new paper does not elevate them into prespecified primary discoveries. No observed-power, noninferiority or equivalence claim is made. No seed/model uncertainty is inferred from a question bootstrap.
 
 \section{Complete Main-Study Outcome and Resource Tables}
-\begin{longtable}{lrrrrrrrr}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrrrrrrr}
 \toprule &\multicolumn{3}{c}{Reported}&\multicolumn{3}{c}{Raw}& Hours & RSS GB\\
-Profile / arm & C&W&H&C&W&H&&\\\midrule\endhead
+Profile / arm & C&W&H&C&W&H&&\\\midrule
 Primary SAS &78&48&34&38&88&34&11.668&10.075\\
 Primary MAS &5&3&152&5&3&152&3.383&10.946\\
 Direct SAS &50&66&44&14&102&44&5.314&10.070\\
@@ -101,13 +106,17 @@ Direct MAS &0&5&155&0&5&155&0.897&10.934\\
 Repair SAS &79&50&31&38&91&31&13.598&10.087\\
 Repair MAS &5&3&152&5&3&152&3.781&10.946\\
 \bottomrule
+
+\end{tabular}
 \caption{All Ubuntu conditions, $n=160$ each. Hours sum saved inference-stage time, excluding startup, interrupted work and restart overhead. Memory is sampled process-tree RSS in decimal GB.}
-\end{longtable}
+\end{table}
 
 The primary/repair initial programs, scores, execution and verdicts are matched. The analysis stage intentionally reaches its 128-token allowance on 159 SAS and 157 MAS primary questions; these events are not malformed final JSON or context skips. The sealed analysis reports zero context/budget-skipped calls in the six jobs. Removing unused operations by backward slicing preserves executable numerical values; selecting an earlier endpoint is a different, potentially answer-changing intervention.
 
-\begin{longtable}{llrrrr}
-\toprule Cohort & Arm & C & W & H & Correct candidates\\\midrule\endhead
+\begin{table}[htbp]
+\centering
+\begin{tabular}{llrrrr}
+\toprule Cohort & Arm & C & W & H & Correct candidates\\\midrule
 Primary 96 & Direct 7B &19&76&1&19\\
 &Program 7B&15&80&1&15\\
 &Current MAS&6&23&67&26\\
@@ -115,16 +124,22 @@ Primary 96 & Direct 7B &19&76&1&19\\
 Secondary 28&Current MAS&2&10&16&5\\
 &Planner MAS&2&10&16&3\\
 \bottomrule
-\caption{Held-out TAT-QA official exact-match outcomes. Direct/program candidates equal final predictions because those arms have no review. Secondary 7B jobs are incomplete and are not assigned whole-cohort scores.}
-\end{longtable}
 
-\begin{longtable}{lrrr}
+\end{tabular}
+\caption{Held-out TAT-QA official exact-match outcomes. Direct/program candidates equal final predictions because those arms have no review. Secondary 7B jobs are incomplete and are not assigned whole-cohort scores.}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrr}
 \toprule Primary baseline outcome & Planner correct & Planner wrong & Planner withheld\\\midrule
 Correct&6&0&0\\
 Wrong&2&19&2\\
 Withheld&2&6&59\\\bottomrule
+
+\end{tabular}
 \caption{All 96 paired delivery transitions. Four correct gains coexist with six newly wrong deliveries and four removals of wrong delivery (two corrected, two withheld).}
-\end{longtable}
+\end{table}
 Secondary transitions are two correct-to-correct, nine wrong-to-wrong, 15 withheld-to-withheld, one wrong-to-withheld and one withheld-to-wrong. Thus equal aggregate wrong counts do not mean identical behavior. Both correct delivery identities are unchanged. Seventeen of 28 predicted shapes are usable.
 
 \begin{figure}[t]
@@ -190,7 +205,7 @@ The SSD was mounted read-only after NTFS metadata errors. Six unreadable replay 
 Missing or limited evidence includes physical 8 GB/no-paging validation, an uninterrupted full Ubuntu run, complete secondary 7B baselines, TAT-QA report-level grouping, multiple model families/seeds, independent financial annotation adjudication, optimized baselines for every method and matched-latency system initialization. None is filled with estimated or fabricated data. No measured 32 GB result exists. The paper makes no calibrated safety, financial compliance, causal architecture or universally optimal precision claim.
 
 \section{Literature Verification and Reproduction Commands}
-The bibliography contains 17 references verified against primary arXiv metadata, ACL Anthology or PMLR publisher BibTeX. The accompanying literature audit records the claim supported by each source and comparison limits. Recent financial verification papers are identified as arXiv preprints; we do not invent venues or reproduce their performance under our budgets. Our numerical results come only from this repository, not from unrelated published leaderboards. LoRA, QLoRA, program execution, selective prediction and multiagent debate are prior methods, not originality claims.
+The original focused bibliography contains 17 references verified against primary arXiv metadata, ACL Anthology or PMLR publisher BibTeX. The accompanying literature audit records the claim supported by each source and comparison limits. Recent financial verification papers are identified as arXiv preprints; we do not invent venues or reproduce their performance under our budgets. Our numerical results come only from this repository, not from unrelated published leaderboards. LoRA, QLoRA, program execution, selective prediction and multiagent debate are prior methods, not originality claims.
 
 From a repository checkout, restore immutable evidence into a separate directory, substituting its path for PATH:
 \begin{verbatim}
@@ -202,7 +217,9 @@ These commands use preserved predictions and do not load model weights or run in
 
 \section{Historical Linux 8 GB Condition Census}
 The following is generated directly from the preserved condition inventory, without selecting conditions by outcome. It covers the exported natural-task development/selection/diagnostic conditions. Separate Windows experiments, synthetic regression tasks, external controls and unsuccessful execution attempts are described above and retained in the machine-readable artifact inventory. The labels retain original run names to make each row findable. R and X are the disclosed reported and raw historical scores, not interchangeable with official FinQA equivalence.
-\input{historical_inventory.tex}
+\input{historical_inventory_extended.tex}
+\clearpage
+\input{restored_analysis.tex}
 \bibliographystyle{aaai2027}
 \bibliography{references}
 \end{document}

@@ -1,0 +1,353 @@
+{
+  "entries": 27,
+  "cited_entries": 27,
+  "missing_entries": [],
+  "sources": [
+    {
+      "key": "pot",
+      "url": "https://arxiv.org/abs/2211.12588",
+      "title": "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks",
+      "authors": [
+        "Chen, Wenhu",
+        "Ma, Xueguang",
+        "Wang, Xinyi",
+        "Cohen, William W."
+      ],
+      "year": 2023,
+      "metadata_sha256": "e55c3603e8570e4596ccb57b4825de39cddf652e886655595d4043a84aeb6118",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "selfcorrect",
+      "url": "https://arxiv.org/abs/2310.01798",
+      "title": "Large Language Models Cannot Self-Correct Reasoning Yet",
+      "authors": [
+        "Huang, Jie",
+        "Chen, Xinyun",
+        "Mishra, Swaroop",
+        "Zheng, Huaixiu Steven",
+        "Yu, Adams Wei",
+        "Song, Xinying",
+        "Zhou, Denny"
+      ],
+      "year": 2024,
+      "metadata_sha256": "b9a6cee520360f2c1b86754737bf469c7d9110545b158f1c59a3197a731e78fa",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "critic",
+      "url": "https://arxiv.org/abs/2305.11738",
+      "title": "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing",
+      "authors": [
+        "Gou, Zhibin",
+        "Shao, Zhihong",
+        "Gong, Yeyun",
+        "Shen, Yelong",
+        "Yang, Yujiu",
+        "Duan, Nan",
+        "Chen, Weizhu"
+      ],
+      "year": 2024,
+      "metadata_sha256": "a0ee81d57b432bc7284b6187a7aed61f10bf4de4f518d50308b68e31e635b434",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "selfrefine",
+      "url": "https://arxiv.org/abs/2303.17651",
+      "title": "Self-Refine: Iterative Refinement with Self-Feedback",
+      "authors": [
+        "Madaan, Aman",
+        "Tandon, Niket",
+        "Gupta, Prakhar",
+        "Hallinan, Skyler",
+        "Gao, Luyu",
+        "Wiegreffe, Sarah",
+        "Alon, Uri",
+        "Dziri, Nouha",
+        "Prabhumoye, Shrimai",
+        "Yang, Yiming",
+        "Gupta, Shashank",
+        "Majumder, Bodhisattwa Prasad",
+        "Hermann, Katherine",
+        "Welleck, Sean",
+        "Yazdanbakhsh, Amir",
+        "Clark, Peter"
+      ],
+      "year": 2023,
+      "metadata_sha256": "c34cbd3ef22ea0b9c95a8f3ddb430648b2513c21db3e71fd0ad79e54129025a4",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "mast",
+      "url": "https://arxiv.org/abs/2503.13657",
+      "title": "Why Do Multi-Agent LLM Systems Fail?",
+      "authors": [
+        "Cemri, Mert",
+        "Pan, Melissa Z.",
+        "Yang, Shuyi",
+        "Agrawal, Lakshya A.",
+        "Chopra, Bhavya",
+        "Tiwari, Rishabh",
+        "Keutzer, Kurt",
+        "Parameswaran, Aditya",
+        "Klein, Dan",
+        "Ramchandran, Kannan",
+        "Zaharia, Matei",
+        "Gonzalez, Joseph E.",
+        "Stoica, Ion"
+      ],
+      "year": 2025,
+      "metadata_sha256": "106aa092d7531f399a71a6866733cba3ae4470739cdf6996dfc4854b6d8403cd",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "equalbudget",
+      "url": "https://arxiv.org/abs/2604.02460",
+      "title": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+      "authors": [
+        "Tran, Dat",
+        "Kiela, Douwe"
+      ],
+      "year": 2026,
+      "metadata_sha256": "3c878d29b7a924b541d35aa29115d4a38ec5540ee1088b597cb11468d306e1cc",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "verifin",
+      "url": "https://arxiv.org/abs/2608.10213",
+      "title": "VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims",
+      "authors": [
+        "Hall, Bethel",
+        "Shome, Sachi",
+        "Eiers, William"
+      ],
+      "year": 2026,
+      "metadata_sha256": "aee221b469d08325418b58bb1321be5e5e3103e18fbd1ba1688942c03f8f7725",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "budgetverify",
+      "url": "https://arxiv.org/abs/2609.33052",
+      "title": "BudgetVerify: Budget-Tiered Verification for Financial QA",
+      "authors": [
+        "Jenq, Janet",
+        "Shen, Hongda"
+      ],
+      "year": 2026,
+      "metadata_sha256": "7e35304f88b7fa89e07d1f08565357f32ef3f7ca949fb07578edf01c97f9a651",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "qwen",
+      "url": "https://arxiv.org/html/2412.15115v1",
+      "verified": "Full-text title page names Qwen Team; removed punctuation-only pseudo-author from prior metadata parser",
+      "year": 2024
+    },
+    {
+      "key": "lora",
+      "url": "https://arxiv.org/abs/2106.09685",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "authors": [
+        "Hu, Edward J.",
+        "Shen, Yelong",
+        "Wallis, Phillip",
+        "Allen-Zhu, Zeyuan",
+        "Li, Yuanzhi",
+        "Wang, Shean",
+        "Wang, Lu",
+        "Chen, Weizhu"
+      ],
+      "year": 2021,
+      "metadata_sha256": "70bb70b4fd6d41b8a0f53fc5148017bf6ef5b73acba822027397f861aee135c6",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "qlora",
+      "url": "https://arxiv.org/abs/2305.14314",
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "authors": [
+        "Dettmers, Tim",
+        "Pagnoni, Artidoro",
+        "Holtzman, Ari",
+        "Zettlemoyer, Luke"
+      ],
+      "year": 2023,
+      "metadata_sha256": "a8471d458d43767325628cf5b1e7b8d88f057a0d51f537f59bea77dd4d7a9b4b",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "selfconsistency",
+      "url": "https://arxiv.org/abs/2203.11171",
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "authors": [
+        "Wang, Xuezhi",
+        "Wei, Jason",
+        "Schuurmans, Dale",
+        "Le, Quoc",
+        "Chi, Ed",
+        "Narang, Sharan",
+        "Chowdhery, Aakanksha",
+        "Zhou, Denny"
+      ],
+      "year": 2023,
+      "metadata_sha256": "4faf269a30515f59d4891c8b52a2fc14d1b5ed0acb89ebf2c1c2309e964dafad",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "finqa",
+      "url": "https://aclanthology.org/2021.emnlp-main.300.bib",
+      "sha256": "0973d57739967167e446cca0672dc38f9c4c7a2ac587f544819bf915090d1d7e",
+      "verified": "publisher BibTeX",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "tatqa",
+      "url": "https://aclanthology.org/2021.acl-long.254.bib",
+      "sha256": "a9f4b15645b1b2cd3e44b3b08bdac34d8538d567c0ccbc2982b50ce9dcb26cd0",
+      "verified": "publisher BibTeX",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "pal",
+      "url": "https://proceedings.mlr.press/v202/gao23f.html",
+      "verified": "publisher BibTeX",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "debate",
+      "url": "https://proceedings.mlr.press/v235/du24e.html",
+      "verified": "publisher BibTeX",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "selective",
+      "url": "https://proceedings.mlr.press/v97/geifman19a.html",
+      "verified": "publisher BibTeX",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "bench360",
+      "url": "https://arxiv.org/abs/2511.16682",
+      "title": "Bench360: Benchmarking Local LLM Inference from 360 Degrees",
+      "authors": [
+        "Stuhlmann, Linus",
+        "Argerich, Mauricio Fadel",
+        "Fürst, Jonathan"
+      ],
+      "year": 2026,
+      "metadata_sha256": "433fe7daefc236e84b9c306bca5d2d0dd345f2535141cf353d21efabd79510b1",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "dcrc",
+      "url": "https://arxiv.org/abs/2605.31064",
+      "title": "Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA",
+      "authors": [
+        "Chen, Hao",
+        "Tang, Xing",
+        "Liu, Qirui",
+        "Shi, Weijie",
+        "Li, Shiwei",
+        "Lyu, Fuyuan",
+        "Luo, Weihong",
+        "Du, Xiku",
+        "He, Xiuqiang"
+      ],
+      "year": 2026,
+      "metadata_sha256": "6f5fb158c14c40d1c9c4d725ef212ca36f7be2bdccad642b5a1472968b3e8c29",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "smallagents",
+      "url": "https://arxiv.org/abs/2601.11327",
+      "title": "Can Small Agents Collaborate to Beat a Single Large Language Model?",
+      "authors": [
+        "Żywot, Agata",
+        "Chen, Xinyi",
+        "Yuan, Yifei",
+        "Søgaard, Anders",
+        "de Rijke, Maarten"
+      ],
+      "year": 2026,
+      "metadata_sha256": "87dae05dc5832e2fdbfd76a5c7b4a52dd0977d737aeebb535448238b4cd3bd80",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "quantfail",
+      "url": "https://arxiv.org/abs/2607.27275",
+      "title": "Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents",
+      "authors": [
+        "Jang, Jiwon",
+        "Yang, Kisu",
+        "Lim, Heuiseok",
+        "Park, Hyunwoo"
+      ],
+      "year": 2026,
+      "metadata_sha256": "e6b92c91c21cef794fedb27af153419648dbfad8ff2a842f6fedba28a27f4aa1",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "awq",
+      "url": "https://arxiv.org/abs/2306.00978",
+      "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+      "authors": [
+        "Lin, Ji",
+        "Tang, Jiaming",
+        "Tang, Haotian",
+        "Yang, Shang",
+        "Chen, Wei-Ming",
+        "Wang, Wei-Chen",
+        "Xiao, Guangxuan",
+        "Dang, Xingyu",
+        "Gan, Chuang",
+        "Han, Song"
+      ],
+      "year": 2026,
+      "metadata_sha256": "b5be9e101f42e391c3c2fb8f7114480d1230e5f2463229f5db1b2bb769069a6a",
+      "verified": "primary arXiv metadata",
+      "retrieved": "2026-11-11"
+    },
+    {
+      "key": "finman",
+      "url": "https://aclanthology.org/2025.findings-emnlp.225.bib",
+      "sha256": "ad8c682291204fae0edac22d8c6b25f2ffe8abac096ed1034717686ceaa5d905",
+      "verified": "publisher BibTeX"
+    },
+    {
+      "key": "hoeffding",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.1963.10500830",
+      "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+    },
+    {
+      "key": "holm",
+      "url": "https://www.jstor.org/stable/4615733",
+      "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+    },
+    {
+      "key": "cameron",
+      "url": "https://escholarship.org/uc/item/1jq5d0pq",
+      "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+    },
+    {
+      "key": "fagerland",
+      "url": "https://link.springer.com/article/10.1186/1471-2288-13-91",
+      "verified": "primary article/publisher or author institutional record inspected via browser; metadata transcribed, formulas derived explicitly in supplement"
+    }
+  ],
+  "version_note": "Bench360 uses 2026 arXiv revision; AWQ uses latest 2026 revision; Qwen uses corporate author from 2024 v1 title page, correcting prior metadata punctuation"
+}

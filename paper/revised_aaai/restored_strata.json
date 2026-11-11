@@ -1,0 +1,75 @@
+{
+  "1 step": {
+    "sas": {
+      "correct": 52,
+      "wrong": 29,
+      "withheld": 23
+    },
+    "mas": {
+      "withheld": 96,
+      "correct": 5,
+      "wrong": 3
+    }
+  },
+  "single add/subtract": {
+    "sas": {
+      "correct": 16,
+      "withheld": 12,
+      "wrong": 12
+    },
+    "mas": {
+      "withheld": 39,
+      "correct": 1
+    }
+  },
+  "table aggregate": {
+    "sas": {
+      "wrong": 3,
+      "correct": 2
+    },
+    "mas": {
+      "withheld": 5
+    }
+  },
+  "single ratio/product": {
+    "sas": {
+      "correct": 34,
+      "wrong": 14,
+      "withheld": 11
+    },
+    "mas": {
+      "withheld": 52,
+      "correct": 4,
+      "wrong": 3
+    }
+  },
+  "2 steps": {
+    "sas": {
+      "wrong": 14,
+      "correct": 26,
+      "withheld": 9
+    },
+    "mas": {
+      "withheld": 49
+    }
+  },
+  "multi-step arithmetic": {
+    "sas": {
+      "wrong": 19,
+      "correct": 26,
+      "withheld": 11
+    },
+    "mas": {
+      "withheld": 56
+    }
+  },
+  "3+ steps": {
+    "sas": {
+      "withheld": 2,
+      "wrong": 5
+    },
+    "mas": {
+      "withheld": 7
+    }
+  }
+}
