@@ -1,0 +1,225 @@
+{
+  "metrics": {
+    "tier16-mas-direct_control": {
+      "case_success": {
+        "correct": 0,
+        "wrong": 5,
+        "withheld": 155,
+        "candidate_correct": 0,
+        "correct_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "raw_execution_match": {
+        "correct": 0,
+        "wrong": 5,
+        "withheld": 155,
+        "candidate_correct": 0,
+        "correct_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "median_seconds": 18.486743252500673,
+      "inference_hours": 0.897105982748618,
+      "peak_rss": 10934157312
+    },
+    "tier16-mas-primary": {
+      "case_success": {
+        "correct": 5,
+        "wrong": 3,
+        "withheld": 152,
+        "candidate_correct": 5,
+        "correct_ci": [
+          0.0,
+          0.06977056764191043
+        ]
+      },
+      "raw_execution_match": {
+        "correct": 5,
+        "wrong": 3,
+        "withheld": 152,
+        "candidate_correct": 5,
+        "correct_ci": [
+          0.0,
+          0.06977056764191043
+        ]
+      },
+      "median_seconds": 54.581007755492465,
+      "inference_hours": 3.3828639786135843,
+      "peak_rss": 10945556480
+    },
+    "tier16-mas-repair_ablation": {
+      "case_success": {
+        "correct": 5,
+        "wrong": 3,
+        "withheld": 152,
+        "candidate_correct": 5,
+        "correct_ci": [
+          0.0,
+          0.06977056764191043
+        ]
+      },
+      "raw_execution_match": {
+        "correct": 5,
+        "wrong": 3,
+        "withheld": 152,
+        "candidate_correct": 5,
+        "correct_ci": [
+          0.0,
+          0.06977056764191043
+        ]
+      },
+      "median_seconds": 83.7090476754945,
+      "inference_hours": 3.781405242132443,
+      "peak_rss": 10946301952
+    },
+    "tier16-sas-direct_control": {
+      "case_success": {
+        "correct": 50,
+        "wrong": 66,
+        "withheld": 44,
+        "candidate_correct": 52,
+        "correct_ci": [
+          0.22627519986096628,
+          0.4011985288681895
+        ]
+      },
+      "raw_execution_match": {
+        "correct": 14,
+        "wrong": 102,
+        "withheld": 44,
+        "candidate_correct": 15,
+        "correct_ci": [
+          0.04736764247897851,
+          0.1329479768786127
+        ]
+      },
+      "median_seconds": 112.68320985849982,
+      "inference_hours": 5.313834809977784,
+      "peak_rss": 10069766144
+    },
+    "tier16-sas-primary": {
+      "case_success": {
+        "correct": 78,
+        "wrong": 48,
+        "withheld": 34,
+        "candidate_correct": 84,
+        "correct_ci": [
+          0.391304347826087,
+          0.575
+        ]
+      },
+      "raw_execution_match": {
+        "correct": 38,
+        "wrong": 88,
+        "withheld": 34,
+        "candidate_correct": 44,
+        "correct_ci": [
+          0.15476190476190477,
+          0.3225806451612903
+        ]
+      },
+      "median_seconds": 252.43646683649968,
+      "inference_hours": 11.668324567965273,
+      "peak_rss": 10075340800
+    },
+    "tier16-sas-repair_ablation": {
+      "case_success": {
+        "correct": 79,
+        "wrong": 50,
+        "withheld": 31,
+        "candidate_correct": 84,
+        "correct_ci": [
+          0.39610062756035913,
+          0.5816993464052288
+        ]
+      },
+      "raw_execution_match": {
+        "correct": 38,
+        "wrong": 91,
+        "withheld": 31,
+        "candidate_correct": 44,
+        "correct_ci": [
+          0.15476190476190477,
+          0.3225806451612903
+        ]
+      },
+      "median_seconds": 260.4453730565001,
+      "inference_hours": 13.597901000487465,
+      "peak_rss": 10087276544
+    }
+  },
+  "paired": {
+    "primary/case_success": {
+      "delta": -0.45625,
+      "report_ci": [
+        -0.538961038961039,
+        -0.36551724137931035
+      ],
+      "company_ci": [
+        -0.5347222222222222,
+        -0.3644051373012745
+      ]
+    },
+    "primary/raw_execution_match": {
+      "delta": -0.20625,
+      "report_ci": [
+        -0.2826086956521739,
+        -0.133720152966049
+      ],
+      "company_ci": [
+        -0.2814814814814815,
+        -0.14070155464824124
+      ]
+    },
+    "direct_control/case_success": {
+      "delta": -0.3125,
+      "report_ci": [
+        -0.4011985288681895,
+        -0.2262751998609663
+      ],
+      "company_ci": [
+        -0.38620689655172413,
+        -0.22940895466466846
+      ]
+    },
+    "direct_control/raw_execution_match": {
+      "delta": -0.0875,
+      "report_ci": [
+        -0.1329479768786127,
+        -0.047367642478978525
+      ],
+      "company_ci": [
+        -0.12962962962962962,
+        -0.05084745762711865
+      ]
+    },
+    "repair_ablation/case_success": {
+      "delta": -0.4625,
+      "report_ci": [
+        -0.5466690647482014,
+        -0.3706293706293706
+      ],
+      "company_ci": [
+        -0.5402334547012209,
+        -0.36666149068322984
+      ]
+    },
+    "repair_ablation/raw_execution_match": {
+      "delta": -0.20625,
+      "report_ci": [
+        -0.2826086956521739,
+        -0.133720152966049
+      ],
+      "company_ci": [
+        -0.2814814814814815,
+        -0.14070155464824124
+      ]
+    }
+  },
+  "memory_samples": 668817,
+  "attempts": 16,
+  "peak_rss": 10946301952
+}

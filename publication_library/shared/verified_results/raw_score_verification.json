@@ -1,0 +1,284 @@
+{
+  "tier16_programs_reexecuted_and_scored": 1920,
+  "finqa_paired_ledgers": [
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-adapter-pilot\\cases.jsonl",
+      "questions": 6,
+      "programs_reexecuted": 12,
+      "arm_counts": [
+        {
+          "official": 0,
+          "reported": 0
+        },
+        {
+          "official": 1,
+          "reported": 1
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-capacity-pilot\\cases.jsonl",
+      "questions": 6,
+      "programs_reexecuted": 12,
+      "arm_counts": [
+        {
+          "official": 1,
+          "reported": 1
+        },
+        {
+          "official": 0,
+          "reported": 0
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-catalog-study\\cases.jsonl",
+      "questions": 5,
+      "programs_reexecuted": 10,
+      "arm_counts": [
+        {
+          "official": 0,
+          "reported": 0
+        },
+        {
+          "official": 2,
+          "reported": 2
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-endpoint-study\\planned-length-cases.jsonl",
+      "questions": 16,
+      "programs_reexecuted": 32,
+      "arm_counts": [
+        {
+          "official": 1,
+          "reported": 0
+        },
+        {
+          "official": 3,
+          "reported": 3
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\catalog96-cases.jsonl",
+      "questions": 96,
+      "programs_reexecuted": 192,
+      "arm_counts": [
+        {
+          "official": 2,
+          "reported": 2
+        },
+        {
+          "official": 1,
+          "reported": 1
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\finqa-operand-oracle-cases.jsonl",
+      "questions": 15,
+      "programs_reexecuted": 30,
+      "arm_counts": [
+        {
+          "official": 0,
+          "reported": 0
+        },
+        {
+          "official": 0,
+          "reported": 0
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\finqa-shape-oracle-cases.jsonl",
+      "questions": 15,
+      "programs_reexecuted": 30,
+      "arm_counts": [
+        {
+          "official": 0,
+          "reported": 0
+        },
+        {
+          "official": 10,
+          "reported": 7
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\finqa-shape-unmasked-cases.jsonl",
+      "questions": 15,
+      "programs_reexecuted": 30,
+      "arm_counts": [
+        {
+          "official": 0,
+          "reported": 0
+        },
+        {
+          "official": 4,
+          "reported": 4
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\oracle-length-cases.jsonl",
+      "questions": 16,
+      "programs_reexecuted": 32,
+      "arm_counts": [
+        {
+          "official": 1,
+          "reported": 0
+        },
+        {
+          "official": 3,
+          "reported": 3
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\precision96-cases.jsonl",
+      "questions": 96,
+      "programs_reexecuted": 192,
+      "arm_counts": [
+        {
+          "official": 2,
+          "reported": 2
+        },
+        {
+          "official": 2,
+          "reported": 2
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-natural-pairs\\cases.jsonl",
+      "questions": 6,
+      "programs_reexecuted": 12,
+      "arm_counts": [
+        {
+          "official": 0,
+          "reported": 0
+        },
+        {
+          "official": 0,
+          "reported": 0
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-precision-study\\cases.jsonl",
+      "questions": 24,
+      "programs_reexecuted": 48,
+      "arm_counts": [
+        {
+          "official": 3,
+          "reported": 2
+        },
+        {
+          "official": 5,
+          "reported": 4
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-retrieval-study\\cases.jsonl",
+      "questions": 16,
+      "programs_reexecuted": 32,
+      "arm_counts": [
+        {
+          "official": 1,
+          "reported": 0
+        },
+        {
+          "official": 4,
+          "reported": 3
+        }
+      ]
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-retrieval-study\\replication-cases.jsonl",
+      "questions": 21,
+      "programs_reexecuted": 42,
+      "arm_counts": [
+        {
+          "official": 2,
+          "reported": 2
+        },
+        {
+          "official": 1,
+          "reported": 1
+        }
+      ]
+    }
+  ],
+  "tatqa_prediction_ledgers": [
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\tatqa-format72-cases.jsonl",
+      "questions": 72,
+      "correct": {
+        "program": 19,
+        "direct_large": 14
+      }
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\tatqa-transfer72-cases.jsonl",
+      "questions": 72,
+      "correct": {
+        "program": 3,
+        "adapted_program": 8,
+        "adapted_gated": 6
+      }
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-extended\\tatqa120-cases.jsonl",
+      "questions": 120,
+      "correct": {
+        "direct": 12,
+        "direct_large": 29
+      }
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-planner-study\\tatqa-dev-large-cases.jsonl",
+      "questions": 96,
+      "correct": {
+        "direct_large": 19,
+        "program": 15
+      }
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-planner-study\\tatqa-test-large-cases.jsonl",
+      "questions": 2,
+      "correct": {
+        "direct_large": 0,
+        "program": 0
+      }
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-tatqa-study\\capacity-cases.jsonl",
+      "questions": 40,
+      "correct": {
+        "direct": 5,
+        "direct_large": 6
+      }
+    },
+    {
+      "path": "research\\tier8_v2\\evidence\\windows-tatqa-study\\cases.jsonl",
+      "questions": 16,
+      "correct": {
+        "direct": 1,
+        "program": 1
+      }
+    }
+  ],
+  "finqa_format96_exact_summary_match": true,
+  "input_sha256": {
+    "finqa/test.json": "831dbfb2e785dbc227f895ce3f24046433467aec67b09db2bd6ac7692a8a30dc",
+    "finqa/evaluate.py": "845cd131cab843eceff256cf6d392978cc470a7da4a80107beb56027fdca5c13",
+    "tatqa/tatqa_metric.py": "2aeeac479f89f8c76300af1cc0e8d098eb86af84bc386b38b6ab4af484a6dea8",
+    "tatqa/tatqa_utils.py": "a84bb2f960737cf0a53733637a674cc4b20ef030a2be6a4b21dc2c4356f415ec",
+    "tatqa/tatqa_dataset_dev.json": "8da095a819af6db3c14877c6df2d4d29960e41d1a63dd1fa853507bd2a616af5",
+    "tatqa/tatqa_dataset_test.json": "c4d08418359c1d76468dec420ee748a37f48c06b63cb8ec2766f19d5d314b597"
+  },
+  "inference_calls": 0
+}

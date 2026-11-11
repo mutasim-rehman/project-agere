@@ -1,0 +1,112 @@
+{
+  "status": "CANONICAL-EVIDENCE-SNAPSHOT; venue adaptation not yet completed",
+  "source_commit": "7bc72dc1",
+  "experimental_inference_performed": false,
+  "authoritative_precedence": [
+    "raw experimental artifacts",
+    "recomputed verification outputs",
+    "manuscript prose"
+  ],
+  "research_questions": [
+    "Delivery trade-offs under common resource ceilings",
+    "Evidence versus candidate generation versus verification bottlenecks",
+    "Shared prompt and repair interventions",
+    "Memory, latency and work per useful delivery",
+    "Oracle recoverability versus deployable evidence-only planning"
+  ],
+  "hypotheses": {
+    "H1": "F16 team reduces wrong delivery without losing correct delivery: fails",
+    "H2": "Bundled analysis/demonstrations improve correct delivery: descriptively favorable, components confounded",
+    "H3": "Repair increases correct delivery without adding wrong delivery: fails",
+    "H4": "Smaller team parameters imply no greater resident memory: fails for these recipes"
+  },
+  "invariants": {
+    "study_a_primary_reported": {
+      "sas": [
+        78,
+        48,
+        34
+      ],
+      "mas": [
+        5,
+        3,
+        152
+      ]
+    },
+    "study_a_primary_raw": {
+      "sas": [
+        38,
+        88,
+        34
+      ],
+      "mas": [
+        5,
+        3,
+        152
+      ]
+    },
+    "planner_primary_96": {
+      "direct7b": [
+        19,
+        76,
+        1
+      ],
+      "program7b": [
+        15,
+        80,
+        1
+      ],
+      "mas": [
+        6,
+        23,
+        67
+      ],
+      "planner": [
+        10,
+        25,
+        61
+      ]
+    },
+    "planner_candidates": [
+      26,
+      25
+    ],
+    "planner_correct_exact_p": 0.125,
+    "planner_secondary_28_both": [
+      2,
+      10,
+      16
+    ],
+    "oracle_15_official": [
+      0,
+      0,
+      4,
+      10
+    ]
+  },
+  "state_order": "correct delivered / wrong delivered / withheld",
+  "files": {
+    "figures\\planner_effects.pdf": "8fe81e3dd554773f784c71021cdf5db859e43645c3bfbc985ccc2b4e94207d5f",
+    "figures\\planner_outcomes.pdf": "e22038c0c85c2d80283c8f9e83ad4d1eb41664ee5e8383ed375169b6ae38198f",
+    "figures\\resources.pdf": "51646a9cffe9c53ffe6328e5d03ce3a0da03325eddec1b3593672ccfe641d72c",
+    "figures\\restored_heterogeneity.pdf": "7b47de5802ac04265976bc37f585d3ec177d9e03198560423576613328247171",
+    "figures\\restored_stage_work.pdf": "6d1400562b23a2d7e441e37ac6d60ca97dca30c79e2b7e1c823537cb414e351c",
+    "figures\\restored_transitions.pdf": "415db28641170258b067f7f56145882baa1ce07b97da4724d3c96b438218c70e",
+    "figures\\restored_utility.pdf": "7ab1f7e924a6c3243bc6e48e3b3e8bb9fec73e3fc981d631badb3ceb7b97c56f",
+    "figures\\tier16_outcomes.pdf": "dde98b84a6fab98f29ac1c6d0baa1f31cdb73854b257ed48f335b0ec9ab0c4d1",
+    "source_inventory\\COVERAGE_AUDIT.md": "2e0b2b50e682e03e9f27a6a53e378d70ec62ff10d38e7f00cacae6b820d80afd",
+    "source_inventory\\LITERATURE_COVERAGE.md": "0357d723ca7443a9e69635483d0ec004e04b845c36207fe46b742972d83c9a2c",
+    "source_inventory\\preserved_versions.json": "413cd4a05bd264b0f68ea0b1d882f89d824b3dd41d41927e6feae5be55cb64fe",
+    "verified_results\\citation_coverage.json": "4e2e24ba48eedb1f1594a2f328aef2d082a8695669529232cb772a3f742d3fb8",
+    "verified_results\\coverage_evidence_checks.json": "adbd7b1d5b449e1ab8d3b7bed87226630b57a2de5ef6ff07f501b2e5b0e11efa",
+    "verified_results\\final_verification.json": "dd9739aecc30ca4f358f5f847ba918771302d8563d65d4cfeeb3efaa84240065",
+    "verified_results\\raw_score_verification.json": "bc86976db7d336e193acc0b4888f8093e7795591d54c3693bd4f1d2b58cf4b02",
+    "verified_results\\restored_primary_sensitivity.json": "0ead148225950816faf7cd3498975f5148275838b6366371867ae9b2ea366bb3",
+    "verified_results\\restored_resources.json": "37a87710dca645e4e66d0d9a7165ae9a101913a471c2b3f7b2b7b29f82751d75",
+    "verified_results\\restored_strata.json": "56902962c1f89cfb86e0fecf5571cdd31cd82b98df60873be7232217d88c9524",
+    "verified_results\\restored_synthetic.json": "55b452dfe72c2988c93f4cfbad08e9c089138b059193f30f64ee49f620ca1dda",
+    "verified_results\\restored_test_battery.json": "7c7eacd0de1a90ad8d7788aa762606b91bd36803bf4822612363c53af3d19d64",
+    "verified_results\\verified_planner.json": "0a1e42f46dc8647aed122e2ceee8981f98c06f4d4dca6ca00ea519b5487b791d",
+    "verified_results\\verified_tier16.json": "e7085544240ea6fea72f47e00da8c9964a09214e0f6ea90c0caff21fe530df70"
+  }
+}
