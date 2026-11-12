@@ -1,0 +1,17 @@
+{
+  "pal": {
+    "address": "Honolulu, Hawaii, USA",
+    "primary_source": "https://proceedings.mlr.press/v202/",
+    "verified": "2026-11-12"
+  },
+  "debate": {
+    "address": "Vienna, Austria",
+    "primary_source": "https://proceedings.mlr.press/v235/",
+    "verified": "2026-11-12"
+  },
+  "selective": {
+    "address": "Long Beach, California, USA",
+    "primary_source": "https://proceedings.mlr.press/v97/",
+    "verified": "2026-11-12"
+  }
+}

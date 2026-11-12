@@ -1,0 +1,32 @@
+[
+  {
+    "path": "publication_library/00_master_research/main.pdf",
+    "sha256": "e93ce5a2271eb2cdce1b77e925c13e7e6e4450368688350b1da19d818bee4669",
+    "matches_base_commit": true
+  },
+  {
+    "path": "publication_library/01_general_conference/main.pdf",
+    "sha256": "cfa429a6278ba153314170a94d27bf2fa81f7674c5180e3b4b20bdc25bf8fbfb",
+    "matches_base_commit": true
+  },
+  {
+    "path": "publication_library/02_general_journal/main.pdf",
+    "sha256": "7a41ef2ad63d52bbbb1f3fb4a02b79e698a17aa86cd8d2fb50fd1b7579dc4527",
+    "matches_base_commit": true
+  },
+  {
+    "path": "publication_library/03_preprint_arxiv/main.pdf",
+    "sha256": "8f08fe103d89289929aa057afe20a7beb7412cd2e614b501efa473da223ad2bf",
+    "matches_base_commit": true
+  },
+  {
+    "path": "publication_library/13_Springer_journal/main.pdf",
+    "sha256": "997bcb0f16b56a76e5ca9de80740e0b8c3e38b27de557242365370a3f640759e",
+    "matches_base_commit": true
+  },
+  {
+    "path": "publication_library/15_MDPI_MAKE/main.pdf",
+    "sha256": "b8aee8feaff155cb205cb0dd3384601099ccd390b7d5ffa45dd10246dbb265fc",
+    "matches_base_commit": true
+  }
+]

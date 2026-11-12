@@ -1,0 +1,24 @@
+{
+  "folder": "25_IEEE_CAI",
+  "pages": 7,
+  "words": 5077,
+  "sha256": "b150cd2054df883bb78a38fa25eaeba452bf8caca037161d3957359e90a17842",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "template_status": "Exact CAI-linked Papercept ieeeconf class, unmodified, based on IEEEtran1.6b; official overrideIEEEmargins command",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; NEEDS-GUIDELINE-REFRESH",
+  "visual_review": "All-page contact sheets and selected enlarged numerical pages inspected",
+  "scientific_coverage": "Canonical core retained; complete29-page audited supporting manuscript supplied"
+}

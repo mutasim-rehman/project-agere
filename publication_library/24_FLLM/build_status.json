@@ -1,0 +1,24 @@
+{
+  "folder": "24_FLLM",
+  "pages": 7,
+  "words": 5067,
+  "sha256": "bc52fddb2a9756536666969110ac53e7664ab4e8356a5c266eba4479a0c4ebdc",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "template_status": "IEEEtran1.8b conference, authentic CTAN maintainer distribution; event public kit download406",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; NEEDS-GUIDELINE-REFRESH",
+  "visual_review": "All-page contact sheets and selected enlarged numerical pages inspected",
+  "scientific_coverage": "Canonical core retained; complete29-page audited supporting manuscript supplied"
+}

@@ -22,7 +22,7 @@ def run():
     output=['# Adapted scientific-section and page mapping','',
             'Generated from expanded canonical TeX and actual compiled PDF text. Page matches locate headings; they do not independently validate a financial answer. Missing heading matches are explicit. Original 37-page item-level mapping remains in shared/source_inventory/COVERAGE_AUDIT.md.','']
     report=[]
-    for main in sorted(LIB.glob('*/main.pdf')) + sorted(LIB.glob('*/official_mdpi/main.pdf')):
+    for main in sorted(LIB.glob('*/main.pdf')) + sorted(LIB.glob('*/official_mdpi/main.pdf')) + sorted(LIB.glob('*/verified_citations/main.pdf')):
         d=main.parent
         pdfs=[main]
         sup=d/'supplementary/supplement.pdf'

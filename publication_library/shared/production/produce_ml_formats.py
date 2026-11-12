@@ -8,6 +8,7 @@ core=s.split(r'\section{Methods and Evaluation}',1)[1].split(r'\section{Discussi
 discussion=s.split(r'\section{Discussion and Limitations}',1)[1].split(r'\section{Conclusion}',1)[0]
 sup=(S/'supplement.tex').read_text().split(r'\section{Scope and Evidence Status}',1)[1].split(r'\bibliographystyle',1)[0]
 sup=r'\section{Scope and Evidence Status}'+sup
+sup=sup.replace('path for PATH:\n\\noindent','path for PATH:\n\n\\noindent')
 # Scope of these manuscript statements is the archived audited source, not the destination draft.
 sup=sup.replace('The main paper uses unmodified AAAI-2027 style/BibTeX files; this separate technical supplement uses one column for audit readability.', 'The archived audited source uses AAAI-2027 style/BibTeX files. This adaptation retains the same scientific evidence in the destination template; the appendix uses one column for readability.')
 configs={
@@ -44,6 +45,7 @@ for folder,c in configs.items():
   front=r'''\documentclass{article}
 \usepackage[preprint]{neurips_2026}
 \usepackage[T1]{fontenc}
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb,graphicx,booktabs,longtable,seqsplit}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
@@ -87,6 +89,10 @@ Codex assisted manuscript adaptation, data-derived plotting and code-based numer
 \bibliographystyle{'''+bst+r'''}
 \clearpage\appendix\onecolumn
 '''+sup+end+r'\end{document}'
+ if folder=='07_ICML':
+  text=text.replace(r'\path{870accc41953dcde885aabeb963d94aabdc0fbc3}',r'\texttt{\seqsplit{870accc41953dcde885aabeb963d94aabdc0fbc3}}')
+  f=d/'historical_inventory_extended.tex'
+  f.write_text(f.read_text().replace(r'model\_selection-baseline\_original\_critic\_common\_actor-full-01',r'\seqsplit{model\_selection-baseline\_original\_critic\_common\_actor-full-01}'))
  (d/'main.tex').write_text(text)
  (d/'.gitignore').write_text('*.aux\n*.log\n*.blg\n*.out\n')
  (d/'build.ps1').write_text("$ErrorActionPreference='Stop'\npdflatex -interaction=nonstopmode -halt-on-error main.tex\nif($LASTEXITCODE){throw 'LaTeX failed'}\nbibtex main\nif($LASTEXITCODE){throw 'BibTeX failed'}\npdflatex -interaction=nonstopmode -halt-on-error main.tex\nif($LASTEXITCODE){throw 'LaTeX failed'}\npdflatex -interaction=nonstopmode -halt-on-error main.tex\nif($LASTEXITCODE){throw 'LaTeX failed'}\n")

@@ -1,0 +1,14 @@
+{
+  "venue": "SN Computer Science",
+  "publisher": "Springer Nature",
+  "kind": "journal",
+  "issn": "2661-8907 / 2661-8915",
+  "instructions": "https://link.springer.com/journal/42979/submission-guidelines",
+  "template": "Official sn-jnl v3.1 December2024; sn-mathphys-num",
+  "policy": "https://www.springernature.com/gp/policies/editorial-policies/ai-manuscript-preparation",
+  "limit": "Structured abstract150\u2013250words: Purpose/Methods/Results/Conclusion;4\u20136keywords; no fixed article length cap asserted",
+  "rank": "Unverified: direct SCImago lookup403; no quartile claimed",
+  "fee": "Hybrid: subscription route has no APC; optional OA GBP2390/USD3290/EUR2690 before applicable taxes, subject to refresh",
+  "fee_source": "https://link.springer.com/journal/42979/how-to-publish-with-us",
+  "notes": "Structured166-word abstract and Statements and Declarations adapted specifically for this journal. Mathematical content supports permitted LaTeX use; numeric citation style and full29-page support retained. Actual authors must complete all declarations, reference/preprint eligibility and licenses."
+}

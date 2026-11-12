@@ -1,0 +1,13 @@
+{
+  "venue": "FLLM2026",
+  "publisher": "FLLM; technically co-sponsored by IEEE Spain Section",
+  "kind": "conference",
+  "instructions": "https://fllm-conference.org/2026/",
+  "template": "IEEEtran1.8b conference, authentic CTAN maintainer distribution; event public kit download406",
+  "policy": "https://open.ieee.org/author-guidelines-for-artificial-intelligence-ai-generated-text/",
+  "limit": "8pages including references; no headers/footers/page numbers in final",
+  "rank": "No journal quartile applies; no acceptance odds invented",
+  "fee": "Registration/presentation required; amount not verified",
+  "deadline": "Main2026-09-04; advanced2026-09-20; workshop2026-10-01 (allclosed); next edition unverified",
+  "notes": "Local-LLM financial-reasoning adaptation; related work follows results/limitations, with distinct abstract/introduction/conclusion. AI-system citation at every numbered section and full disclosure. Official call explicitly includes financial systems and complex reasoning. Conference guarantees possible submission to IEEE Xplore, not automatic indexing/acceptance. Final supplement route needs organizer verification."
+}

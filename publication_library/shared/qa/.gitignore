@@ -1,0 +1,8 @@
+# Full-size rendering cache; audited contact sheets and reference crops are retained.
+*-detail-*.png
+*-page-*.png
+*-enlarged-results.png
+*-corrected-page-*.png
+*-final-*.png
+make-page-*.png
+*-all.png

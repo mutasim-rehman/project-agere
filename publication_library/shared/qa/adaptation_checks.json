@@ -3733,6 +3733,498 @@
     ]
   },
   {
+    "folder": "11_IEEE_ICTAI",
+    "pages": 7,
+    "words": 5058,
+    "sha256": "67d4b1ae7462a7d8eea3ea31a02521f52916f42758535e32880ddbd1273ef210",
+    "figure_bytes_verified": [
+      "planner_effects.pdf",
+      "planner_outcomes.pdf",
+      "resources.pdf",
+      "restored_heterogeneity.pdf",
+      "restored_stage_work.pdf",
+      "restored_transitions.pdf",
+      "restored_utility.pdf",
+      "tier16_outcomes.pdf"
+    ],
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false,
+    "mapping": [
+      {
+        "source": "main.tex",
+        "heading": "Introduction",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Related Work",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Methods and Evaluation",
+        "locations": []
+      },
+      {
+        "source": "main.tex",
+        "heading": "Programs, Candidates and Delivery",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study A: Nominal 16 GB Deployment Recipes",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study B: Diagnostics and Evidence-Only Planning",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Scoring and Statistical Analysis",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Results",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p1",
+          "11_IEEE_ICTAI\\main.pdf:p3",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p3",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p8",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p9",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p10",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p15",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Resident F16 Team Mostly Withholds",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Evidence and Precision Do Not Resolve Generation",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Evidence-Only Planner Fails Its Criterion",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Stronger Baselines and Nontransferable Gains",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Discussion and Limitations",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Conclusion",
+        "locations": [
+          "11_IEEE_ICTAI\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Scope and Evidence Status",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Reproducibility Specification",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Study A: Frozen 16 GB Recipes",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows 8 GB Application Budget",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Adapter Provenance and Training",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Cohorts, Exposure and Prompt Availability",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Metrics and Statistical Details",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Complete Main-Study Outcome and Resource Tables",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Exploratory Sequence: Positive, Null and Adverse Findings",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Earlier Linux Development and Training",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows Candidate and Verifier Pilots",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p8"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Endpoint, Retrieval, Precision and Catalog Controls",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Baseline Capacity, Format, Review and Reference Checks",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Planner Development and Held-Out Result",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Resource Failures, Missing Evidence and Scope of Claims",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Literature Verification and Reproduction Commands",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical Linux 8 GB Condition Census",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Original Questions, Design Rationale and Historical Controls",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Questions and hypothesis dispositions",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Fairness, memory accounting and protocol choices",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical synthetic test outcomes, including denominator failures",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Extended Study A Outcomes and Resource Reconciliation",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired transitions and selective behavior",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Four endpoints, weighting and influence",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Candidate production, reference strata and scoring discordance",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Prompt, repair and resource costs",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p16"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Conditional Mathematical Analysis and Statistical Assumptions",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P1--P3: accounting, the gate bound and stage factorization",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P4--P5: preference-sensitive utility and corrected repair break-even",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P6: memory accounting with explicit residency assumptions",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P7: bounded-cluster uncertainty, with its limits",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P8--P10: score disagreements and procedure-specific evidence bounds",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Nonidentification and error propagation",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p1",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Statistical Derivations and Complete Numerical Battery",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired estimands and small-discordance inference (J1--J4)",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Transition tables, clustering and bootstrap (J5--J7)",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Sign procedures, multiplicity and interpretation (J8--J12)",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "All historical comparisons, both numerical scores",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Worked Examples and Measurement Failures",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Shared success: ABMD/2007/page\\_52.pdf-1",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Evidence found, calculation declined: AAPL/2003/page\\_24.pdf-1",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Executable does not mean meaningful: AAPL/2003/page\\_24.pdf-2",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Wrong team program accepted: PNC/2018/page\\_171.pdf-1",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "A scoring convention changes the label: ABMD/2007/page\\_52.pdf-2",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Synthetic sentinel misclassified as invention: CR-TEST-0001",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Restored Literature Context and Reproducibility Map",
+        "locations": [
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p2",
+          "11_IEEE_ICTAI\\supplementary\\supplement.pdf:p27"
+        ]
+      }
+    ]
+  },
+  {
     "folder": "12_Springer_LNCS",
     "pages": 14,
     "words": 5014,
@@ -4722,6 +5214,503 @@
     ]
   },
   {
+    "folder": "14_SN_Computer_Science",
+    "pages": 13,
+    "words": 4954,
+    "sha256": "58fd89dda7d7777a095c2ad16fc1fd9ddaa573e2060500274c51b18802c8bffe",
+    "figure_bytes_verified": [
+      "planner_effects.pdf",
+      "planner_outcomes.pdf",
+      "resources.pdf",
+      "restored_heterogeneity.pdf",
+      "restored_stage_work.pdf",
+      "restored_transitions.pdf",
+      "restored_utility.pdf",
+      "tier16_outcomes.pdf"
+    ],
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false,
+    "mapping": [
+      {
+        "source": "main.tex",
+        "heading": "Introduction",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Related Work",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Methods and Evaluation",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Programs, Candidates and Delivery",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study A: Nominal 16 GB Deployment Recipes",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study B: Diagnostics and Evidence-Only Planning",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Scoring and Statistical Analysis",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Results",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p1",
+          "14_SN_Computer_Science\\main.pdf:p2",
+          "14_SN_Computer_Science\\main.pdf:p5",
+          "14_SN_Computer_Science\\main.pdf:p11",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p3",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p8",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p9",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p10",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p15",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Resident F16 Team Mostly Withholds",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Evidence and Precision Do Not Resolve Generation",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p7"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Evidence-Only Planner Fails Its Criterion",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p8"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Stronger Baselines and Nontransferable Gains",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p9"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Discussion and Limitations",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p10"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Conclusion",
+        "locations": [
+          "14_SN_Computer_Science\\main.pdf:p1",
+          "14_SN_Computer_Science\\main.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Scope and Evidence Status",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Reproducibility Specification",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Study A: Frozen 16 GB Recipes",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows 8 GB Application Budget",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Adapter Provenance and Training",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Cohorts, Exposure and Prompt Availability",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Metrics and Statistical Details",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Complete Main-Study Outcome and Resource Tables",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Exploratory Sequence: Positive, Null and Adverse Findings",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Earlier Linux Development and Training",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows Candidate and Verifier Pilots",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p8"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Endpoint, Retrieval, Precision and Catalog Controls",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Baseline Capacity, Format, Review and Reference Checks",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Planner Development and Held-Out Result",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Resource Failures, Missing Evidence and Scope of Claims",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Literature Verification and Reproduction Commands",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical Linux 8 GB Condition Census",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Original Questions, Design Rationale and Historical Controls",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Questions and hypothesis dispositions",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Fairness, memory accounting and protocol choices",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical synthetic test outcomes, including denominator failures",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Extended Study A Outcomes and Resource Reconciliation",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired transitions and selective behavior",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Four endpoints, weighting and influence",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Candidate production, reference strata and scoring discordance",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Prompt, repair and resource costs",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p16"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Conditional Mathematical Analysis and Statistical Assumptions",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P1--P3: accounting, the gate bound and stage factorization",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P4--P5: preference-sensitive utility and corrected repair break-even",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P6: memory accounting with explicit residency assumptions",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P7: bounded-cluster uncertainty, with its limits",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P8--P10: score disagreements and procedure-specific evidence bounds",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Nonidentification and error propagation",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p1",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Statistical Derivations and Complete Numerical Battery",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired estimands and small-discordance inference (J1--J4)",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Transition tables, clustering and bootstrap (J5--J7)",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Sign procedures, multiplicity and interpretation (J8--J12)",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "All historical comparisons, both numerical scores",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Worked Examples and Measurement Failures",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Shared success: ABMD/2007/page\\_52.pdf-1",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Evidence found, calculation declined: AAPL/2003/page\\_24.pdf-1",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Executable does not mean meaningful: AAPL/2003/page\\_24.pdf-2",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Wrong team program accepted: PNC/2018/page\\_171.pdf-1",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "A scoring convention changes the label: ABMD/2007/page\\_52.pdf-2",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Synthetic sentinel misclassified as invention: CR-TEST-0001",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Restored Literature Context and Reproducibility Map",
+        "locations": [
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p2",
+          "14_SN_Computer_Science\\supplementary\\supplement.pdf:p27"
+        ]
+      }
+    ]
+  },
+  {
     "folder": "15_MDPI_MAKE",
     "pages": 36,
     "words": 18558,
@@ -5164,6 +6153,499 @@
         "heading": "Restored Literature Context and Reproducibility Map",
         "locations": [
           "15_MDPI_MAKE\\main.pdf:p33"
+        ]
+      }
+    ]
+  },
+  {
+    "folder": "16_MDPI_Computers",
+    "pages": 11,
+    "words": 5533,
+    "sha256": "343365592f9b7aa752bafe83ee7ab19e13eef32dd499bf4933ebd4336246fa21",
+    "figure_bytes_verified": [
+      "planner_effects.pdf",
+      "planner_outcomes.pdf",
+      "resources.pdf",
+      "restored_heterogeneity.pdf",
+      "restored_stage_work.pdf",
+      "restored_transitions.pdf",
+      "restored_utility.pdf",
+      "tier16_outcomes.pdf"
+    ],
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false,
+    "mapping": [
+      {
+        "source": "main.tex",
+        "heading": "Introduction",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Related Work",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Methods and Evaluation",
+        "locations": []
+      },
+      {
+        "source": "main.tex",
+        "heading": "Programs, Candidates and Delivery",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study A: Nominal 16 GB Deployment Recipes",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study B: Diagnostics and Evidence-Only Planning",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Scoring and Statistical Analysis",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Results",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p2",
+          "16_MDPI_Computers\\main.pdf:p5",
+          "16_MDPI_Computers\\main.pdf:p10",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p3",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p8",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p9",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p10",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p15",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Resident F16 Team Mostly Withholds",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Evidence and Precision Do Not Resolve Generation",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Evidence-Only Planner Fails Its Criterion",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Stronger Baselines and Nontransferable Gains",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p8"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Discussion and Limitations",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p9"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Conclusion",
+        "locations": [
+          "16_MDPI_Computers\\main.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Scope and Evidence Status",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Reproducibility Specification",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Study A: Frozen 16 GB Recipes",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows 8 GB Application Budget",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Adapter Provenance and Training",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Cohorts, Exposure and Prompt Availability",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Metrics and Statistical Details",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Complete Main-Study Outcome and Resource Tables",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Exploratory Sequence: Positive, Null and Adverse Findings",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Earlier Linux Development and Training",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows Candidate and Verifier Pilots",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p8"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Endpoint, Retrieval, Precision and Catalog Controls",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Baseline Capacity, Format, Review and Reference Checks",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Planner Development and Held-Out Result",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Resource Failures, Missing Evidence and Scope of Claims",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Literature Verification and Reproduction Commands",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical Linux 8 GB Condition Census",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Original Questions, Design Rationale and Historical Controls",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Questions and hypothesis dispositions",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Fairness, memory accounting and protocol choices",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical synthetic test outcomes, including denominator failures",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Extended Study A Outcomes and Resource Reconciliation",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired transitions and selective behavior",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Four endpoints, weighting and influence",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Candidate production, reference strata and scoring discordance",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Prompt, repair and resource costs",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p16"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Conditional Mathematical Analysis and Statistical Assumptions",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P1--P3: accounting, the gate bound and stage factorization",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P4--P5: preference-sensitive utility and corrected repair break-even",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P6: memory accounting with explicit residency assumptions",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P7: bounded-cluster uncertainty, with its limits",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P8--P10: score disagreements and procedure-specific evidence bounds",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Nonidentification and error propagation",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p1",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Statistical Derivations and Complete Numerical Battery",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired estimands and small-discordance inference (J1--J4)",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Transition tables, clustering and bootstrap (J5--J7)",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Sign procedures, multiplicity and interpretation (J8--J12)",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "All historical comparisons, both numerical scores",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Worked Examples and Measurement Failures",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Shared success: ABMD/2007/page\\_52.pdf-1",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Evidence found, calculation declined: AAPL/2003/page\\_24.pdf-1",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Executable does not mean meaningful: AAPL/2003/page\\_24.pdf-2",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Wrong team program accepted: PNC/2018/page\\_171.pdf-1",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "A scoring convention changes the label: ABMD/2007/page\\_52.pdf-2",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Synthetic sentinel misclassified as invention: CR-TEST-0001",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Restored Literature Context and Reproducibility Map",
+        "locations": [
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p2",
+          "16_MDPI_Computers\\supplementary\\supplement.pdf:p27"
         ]
       }
     ]
@@ -5641,7 +7123,7 @@
     "folder": "19_short_extended_abstract",
     "pages": 2,
     "words": 1128,
-    "sha256": "758c1996e6b5fc968135087c37997739fa8bfa908e00944f062ee491324d7a3c",
+    "sha256": "59e4b92c386a863637b3c933c5d81bf30f746adfa402586c9532adf89e7d0734",
     "figure_bytes_verified": [
       "planner_effects.pdf",
       "planner_outcomes.pdf",
@@ -6108,10 +7590,1492 @@
     ]
   },
   {
+    "folder": "23_MDPI_Information",
+    "pages": 11,
+    "words": 5549,
+    "sha256": "6760a3ba6721459fdbdcc7694b23b7a8c08a7418d9df88dbf304938ddfa9373a",
+    "figure_bytes_verified": [
+      "planner_effects.pdf",
+      "planner_outcomes.pdf",
+      "resources.pdf",
+      "restored_heterogeneity.pdf",
+      "restored_stage_work.pdf",
+      "restored_transitions.pdf",
+      "restored_utility.pdf",
+      "tier16_outcomes.pdf"
+    ],
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false,
+    "mapping": [
+      {
+        "source": "main.tex",
+        "heading": "Introduction",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Related Work",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Methods and Evaluation",
+        "locations": []
+      },
+      {
+        "source": "main.tex",
+        "heading": "Programs, Candidates and Delivery",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study A: Nominal 16 GB Deployment Recipes",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study B: Diagnostics and Evidence-Only Planning",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Scoring and Statistical Analysis",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Results",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p2",
+          "23_MDPI_Information\\main.pdf:p5",
+          "23_MDPI_Information\\main.pdf:p10",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p3",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p8",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p9",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p10",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p15",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Resident F16 Team Mostly Withholds",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Evidence and Precision Do Not Resolve Generation",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Evidence-Only Planner Fails Its Criterion",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Stronger Baselines and Nontransferable Gains",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p8"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Discussion and Limitations",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p9"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Conclusion",
+        "locations": [
+          "23_MDPI_Information\\main.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Scope and Evidence Status",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Reproducibility Specification",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Study A: Frozen 16 GB Recipes",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows 8 GB Application Budget",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Adapter Provenance and Training",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Cohorts, Exposure and Prompt Availability",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Metrics and Statistical Details",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Complete Main-Study Outcome and Resource Tables",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Exploratory Sequence: Positive, Null and Adverse Findings",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Earlier Linux Development and Training",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows Candidate and Verifier Pilots",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p8"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Endpoint, Retrieval, Precision and Catalog Controls",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Baseline Capacity, Format, Review and Reference Checks",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Planner Development and Held-Out Result",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Resource Failures, Missing Evidence and Scope of Claims",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Literature Verification and Reproduction Commands",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical Linux 8 GB Condition Census",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Original Questions, Design Rationale and Historical Controls",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Questions and hypothesis dispositions",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Fairness, memory accounting and protocol choices",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical synthetic test outcomes, including denominator failures",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Extended Study A Outcomes and Resource Reconciliation",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired transitions and selective behavior",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Four endpoints, weighting and influence",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Candidate production, reference strata and scoring discordance",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Prompt, repair and resource costs",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p16"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Conditional Mathematical Analysis and Statistical Assumptions",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P1--P3: accounting, the gate bound and stage factorization",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P4--P5: preference-sensitive utility and corrected repair break-even",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P6: memory accounting with explicit residency assumptions",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P7: bounded-cluster uncertainty, with its limits",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P8--P10: score disagreements and procedure-specific evidence bounds",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Nonidentification and error propagation",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p1",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Statistical Derivations and Complete Numerical Battery",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired estimands and small-discordance inference (J1--J4)",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Transition tables, clustering and bootstrap (J5--J7)",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Sign procedures, multiplicity and interpretation (J8--J12)",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "All historical comparisons, both numerical scores",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Worked Examples and Measurement Failures",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Shared success: ABMD/2007/page\\_52.pdf-1",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Evidence found, calculation declined: AAPL/2003/page\\_24.pdf-1",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Executable does not mean meaningful: AAPL/2003/page\\_24.pdf-2",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Wrong team program accepted: PNC/2018/page\\_171.pdf-1",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "A scoring convention changes the label: ABMD/2007/page\\_52.pdf-2",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Synthetic sentinel misclassified as invention: CR-TEST-0001",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Restored Literature Context and Reproducibility Map",
+        "locations": [
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p2",
+          "23_MDPI_Information\\supplementary\\supplement.pdf:p27"
+        ]
+      }
+    ]
+  },
+  {
+    "folder": "24_FLLM",
+    "pages": 7,
+    "words": 5067,
+    "sha256": "bc52fddb2a9756536666969110ac53e7664ab4e8356a5c266eba4479a0c4ebdc",
+    "figure_bytes_verified": [
+      "planner_effects.pdf",
+      "planner_outcomes.pdf",
+      "resources.pdf",
+      "restored_heterogeneity.pdf",
+      "restored_stage_work.pdf",
+      "restored_transitions.pdf",
+      "restored_utility.pdf",
+      "tier16_outcomes.pdf"
+    ],
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false,
+    "mapping": [
+      {
+        "source": "main.tex",
+        "heading": "Introduction",
+        "locations": [
+          "24_FLLM\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Related Work",
+        "locations": [
+          "24_FLLM\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Methods and Evaluation",
+        "locations": [
+          "24_FLLM\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Programs, Candidates and Delivery",
+        "locations": [
+          "24_FLLM\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study A: Nominal 16 GB Deployment Recipes",
+        "locations": [
+          "24_FLLM\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study B: Diagnostics and Evidence-Only Planning",
+        "locations": [
+          "24_FLLM\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Scoring and Statistical Analysis",
+        "locations": [
+          "24_FLLM\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Results",
+        "locations": [
+          "24_FLLM\\main.pdf:p1",
+          "24_FLLM\\main.pdf:p2",
+          "24_FLLM\\main.pdf:p6",
+          "24_FLLM\\supplementary\\supplement.pdf:p3",
+          "24_FLLM\\supplementary\\supplement.pdf:p8",
+          "24_FLLM\\supplementary\\supplement.pdf:p9",
+          "24_FLLM\\supplementary\\supplement.pdf:p10",
+          "24_FLLM\\supplementary\\supplement.pdf:p15",
+          "24_FLLM\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Resident F16 Team Mostly Withholds",
+        "locations": [
+          "24_FLLM\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Evidence and Precision Do Not Resolve Generation",
+        "locations": [
+          "24_FLLM\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Evidence-Only Planner Fails Its Criterion",
+        "locations": [
+          "24_FLLM\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Stronger Baselines and Nontransferable Gains",
+        "locations": [
+          "24_FLLM\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Discussion and Limitations",
+        "locations": [
+          "24_FLLM\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Conclusion",
+        "locations": [
+          "24_FLLM\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Scope and Evidence Status",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Reproducibility Specification",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Study A: Frozen 16 GB Recipes",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows 8 GB Application Budget",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Adapter Provenance and Training",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Cohorts, Exposure and Prompt Availability",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Metrics and Statistical Details",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Complete Main-Study Outcome and Resource Tables",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Exploratory Sequence: Positive, Null and Adverse Findings",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Earlier Linux Development and Training",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows Candidate and Verifier Pilots",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p8"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Endpoint, Retrieval, Precision and Catalog Controls",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Baseline Capacity, Format, Review and Reference Checks",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Planner Development and Held-Out Result",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Resource Failures, Missing Evidence and Scope of Claims",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Literature Verification and Reproduction Commands",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical Linux 8 GB Condition Census",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Original Questions, Design Rationale and Historical Controls",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Questions and hypothesis dispositions",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Fairness, memory accounting and protocol choices",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical synthetic test outcomes, including denominator failures",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Extended Study A Outcomes and Resource Reconciliation",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired transitions and selective behavior",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Four endpoints, weighting and influence",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Candidate production, reference strata and scoring discordance",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Prompt, repair and resource costs",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p16"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Conditional Mathematical Analysis and Statistical Assumptions",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P1--P3: accounting, the gate bound and stage factorization",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P4--P5: preference-sensitive utility and corrected repair break-even",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P6: memory accounting with explicit residency assumptions",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P7: bounded-cluster uncertainty, with its limits",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P8--P10: score disagreements and procedure-specific evidence bounds",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Nonidentification and error propagation",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p1",
+          "24_FLLM\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Statistical Derivations and Complete Numerical Battery",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired estimands and small-discordance inference (J1--J4)",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Transition tables, clustering and bootstrap (J5--J7)",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Sign procedures, multiplicity and interpretation (J8--J12)",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "All historical comparisons, both numerical scores",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Worked Examples and Measurement Failures",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Shared success: ABMD/2007/page\\_52.pdf-1",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Evidence found, calculation declined: AAPL/2003/page\\_24.pdf-1",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Executable does not mean meaningful: AAPL/2003/page\\_24.pdf-2",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Wrong team program accepted: PNC/2018/page\\_171.pdf-1",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "A scoring convention changes the label: ABMD/2007/page\\_52.pdf-2",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Synthetic sentinel misclassified as invention: CR-TEST-0001",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Restored Literature Context and Reproducibility Map",
+        "locations": [
+          "24_FLLM\\supplementary\\supplement.pdf:p2",
+          "24_FLLM\\supplementary\\supplement.pdf:p27"
+        ]
+      }
+    ]
+  },
+  {
+    "folder": "25_IEEE_CAI",
+    "pages": 7,
+    "words": 5077,
+    "sha256": "b150cd2054df883bb78a38fa25eaeba452bf8caca037161d3957359e90a17842",
+    "figure_bytes_verified": [
+      "planner_effects.pdf",
+      "planner_outcomes.pdf",
+      "resources.pdf",
+      "restored_heterogeneity.pdf",
+      "restored_stage_work.pdf",
+      "restored_transitions.pdf",
+      "restored_utility.pdf",
+      "tier16_outcomes.pdf"
+    ],
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false,
+    "mapping": [
+      {
+        "source": "main.tex",
+        "heading": "Introduction",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Related Work",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Methods and Evaluation",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Programs, Candidates and Delivery",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study A: Nominal 16 GB Deployment Recipes",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study B: Diagnostics and Evidence-Only Planning",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Scoring and Statistical Analysis",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Results",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p1",
+          "25_IEEE_CAI\\main.pdf:p3",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p3",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p8",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p9",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p10",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p15",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Resident F16 Team Mostly Withholds",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Evidence and Precision Do Not Resolve Generation",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Evidence-Only Planner Fails Its Criterion",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Stronger Baselines and Nontransferable Gains",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Discussion and Limitations",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Conclusion",
+        "locations": [
+          "25_IEEE_CAI\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Scope and Evidence Status",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Reproducibility Specification",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Study A: Frozen 16 GB Recipes",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows 8 GB Application Budget",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Adapter Provenance and Training",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Cohorts, Exposure and Prompt Availability",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Metrics and Statistical Details",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Complete Main-Study Outcome and Resource Tables",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Exploratory Sequence: Positive, Null and Adverse Findings",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Earlier Linux Development and Training",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows Candidate and Verifier Pilots",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p8"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Endpoint, Retrieval, Precision and Catalog Controls",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Baseline Capacity, Format, Review and Reference Checks",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Planner Development and Held-Out Result",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Resource Failures, Missing Evidence and Scope of Claims",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Literature Verification and Reproduction Commands",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical Linux 8 GB Condition Census",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Original Questions, Design Rationale and Historical Controls",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Questions and hypothesis dispositions",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Fairness, memory accounting and protocol choices",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical synthetic test outcomes, including denominator failures",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Extended Study A Outcomes and Resource Reconciliation",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired transitions and selective behavior",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Four endpoints, weighting and influence",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Candidate production, reference strata and scoring discordance",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Prompt, repair and resource costs",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p16"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Conditional Mathematical Analysis and Statistical Assumptions",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P1--P3: accounting, the gate bound and stage factorization",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P4--P5: preference-sensitive utility and corrected repair break-even",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P6: memory accounting with explicit residency assumptions",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P7: bounded-cluster uncertainty, with its limits",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P8--P10: score disagreements and procedure-specific evidence bounds",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Nonidentification and error propagation",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p1",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Statistical Derivations and Complete Numerical Battery",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired estimands and small-discordance inference (J1--J4)",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Transition tables, clustering and bootstrap (J5--J7)",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Sign procedures, multiplicity and interpretation (J8--J12)",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "All historical comparisons, both numerical scores",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Worked Examples and Measurement Failures",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Shared success: ABMD/2007/page\\_52.pdf-1",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Evidence found, calculation declined: AAPL/2003/page\\_24.pdf-1",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Executable does not mean meaningful: AAPL/2003/page\\_24.pdf-2",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Wrong team program accepted: PNC/2018/page\\_171.pdf-1",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "A scoring convention changes the label: ABMD/2007/page\\_52.pdf-2",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Synthetic sentinel misclassified as invention: CR-TEST-0001",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Restored Literature Context and Reproducibility Map",
+        "locations": [
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p2",
+          "25_IEEE_CAI\\supplementary\\supplement.pdf:p27"
+        ]
+      }
+    ]
+  },
+  {
     "folder": "15_MDPI_MAKE\\official_mdpi",
     "pages": 11,
-    "words": 5608,
-    "sha256": "9dea4c046dbe71d1b6b9cdb410ad063fc3c4f24f644e7970019ca9f23c03d6c7",
+    "words": 5581,
+    "sha256": "1fe014cc8d1a2377e219994f1f0fea251fd1e50f8c4a33d868f78fa668a1cf45",
     "figure_bytes_verified": [
       "planner_effects.pdf",
       "planner_outcomes.pdf",
@@ -6597,6 +9561,501 @@
         "locations": [
           "15_MDPI_MAKE\\official_mdpi\\supplementary\\supplement.pdf:p2",
           "15_MDPI_MAKE\\official_mdpi\\supplementary\\supplement.pdf:p27"
+        ]
+      }
+    ]
+  },
+  {
+    "folder": "13_Springer_journal\\verified_citations",
+    "pages": 13,
+    "words": 4883,
+    "sha256": "c9c19209a4f7d90637e1d161a25fcded51c67127ac44c15a2f5622153b86e25f",
+    "figure_bytes_verified": [
+      "planner_effects.pdf",
+      "planner_outcomes.pdf",
+      "resources.pdf",
+      "restored_heterogeneity.pdf",
+      "restored_stage_work.pdf",
+      "restored_transitions.pdf",
+      "restored_utility.pdf",
+      "tier16_outcomes.pdf"
+    ],
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false,
+    "mapping": [
+      {
+        "source": "main.tex",
+        "heading": "Introduction",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Related Work",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Methods and Evaluation",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Programs, Candidates and Delivery",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study A: Nominal 16 GB Deployment Recipes",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study B: Diagnostics and Evidence-Only Planning",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Scoring and Statistical Analysis",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Results",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p2",
+          "13_Springer_journal\\verified_citations\\main.pdf:p5",
+          "13_Springer_journal\\verified_citations\\main.pdf:p11",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p3",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p8",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p9",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p10",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p15",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Resident F16 Team Mostly Withholds",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p5"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Evidence and Precision Do Not Resolve Generation",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p7"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Evidence-Only Planner Fails Its Criterion",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p7"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Stronger Baselines and Nontransferable Gains",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p8"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Discussion and Limitations",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p10"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Conclusion",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\main.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Scope and Evidence Status",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Reproducibility Specification",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Study A: Frozen 16 GB Recipes",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p3"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows 8 GB Application Budget",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Adapter Provenance and Training",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p4"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Cohorts, Exposure and Prompt Availability",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Metrics and Statistical Details",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p5"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Complete Main-Study Outcome and Resource Tables",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p6"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Exploratory Sequence: Positive, Null and Adverse Findings",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Earlier Linux Development and Training",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p7"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows Candidate and Verifier Pilots",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p8"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Endpoint, Retrieval, Precision and Catalog Controls",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Baseline Capacity, Format, Review and Reference Checks",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Planner Development and Held-Out Result",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Resource Failures, Missing Evidence and Scope of Claims",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Literature Verification and Reproduction Commands",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p10"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical Linux 8 GB Condition Census",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p11"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Original Questions, Design Rationale and Historical Controls",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Questions and hypothesis dispositions",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Fairness, memory accounting and protocol choices",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p12"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical synthetic test outcomes, including denominator failures",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Extended Study A Outcomes and Resource Reconciliation",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired transitions and selective behavior",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Four endpoints, weighting and influence",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Candidate production, reference strata and scoring discordance",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Prompt, repair and resource costs",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p16"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Conditional Mathematical Analysis and Statistical Assumptions",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P1--P3: accounting, the gate bound and stage factorization",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P4--P5: preference-sensitive utility and corrected repair break-even",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P6: memory accounting with explicit residency assumptions",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P7: bounded-cluster uncertainty, with its limits",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P8--P10: score disagreements and procedure-specific evidence bounds",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Nonidentification and error propagation",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p1",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Statistical Derivations and Complete Numerical Battery",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired estimands and small-discordance inference (J1--J4)",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Transition tables, clustering and bootstrap (J5--J7)",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Sign procedures, multiplicity and interpretation (J8--J12)",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "All historical comparisons, both numerical scores",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Worked Examples and Measurement Failures",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Shared success: ABMD/2007/page\\_52.pdf-1",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Evidence found, calculation declined: AAPL/2003/page\\_24.pdf-1",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Executable does not mean meaningful: AAPL/2003/page\\_24.pdf-2",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Wrong team program accepted: PNC/2018/page\\_171.pdf-1",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "A scoring convention changes the label: ABMD/2007/page\\_52.pdf-2",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Synthetic sentinel misclassified as invention: CR-TEST-0001",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p27"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Restored Literature Context and Reproducibility Map",
+        "locations": [
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p2",
+          "13_Springer_journal\\verified_citations\\supplementary\\supplement.pdf:p27"
         ]
       }
     ]

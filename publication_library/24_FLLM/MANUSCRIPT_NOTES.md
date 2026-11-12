@@ -1,0 +1,5 @@
+# Scientific adaptation and QA
+
+Local-LLM financial-reasoning adaptation; related work follows results/limitations, with distinct abstract/introduction/conclusion. AI-system citation at every numbered section and full disclosure. Official call explicitly includes financial systems and complex reasoning. Conference guarantees possible submission to IEEE Xplore, not automatic indexing/acceptance. Final supplement route needs organizer verification.
+
+All canonical results, candidate/delivery distinction, failed planner, secondary null outcome, strong baselines, scorer sensitivity and resource qualifications remain. Core evidence reused; no experiments/outcomes changed. Comprehensive support preserves every historical/statistical/formal item in the original source audit. Actual heading/page mapping: ../ADAPTED_COVERAGE_MAP.md. All28 bibliography keys/eight local figure bytes match canonical source. Zero overfull boxes/unresolved references. Every main page contact-sheet inspected; selected numerical pages enlarged. Final author/declaration/license/anonymity review remains required.

@@ -1,0 +1,15 @@
+{
+  "venue": "Computers",
+  "publisher": "MDPI",
+  "kind": "journal",
+  "issn": "2073-431X",
+  "instructions": "https://www.mdpi.com/journal/computers/instructions",
+  "template": "Official MDPI ACS v6.5d 2026-10-19; computers/article/submit",
+  "policy": "https://www.mdpi.com/journal/computers/instructions",
+  "limit": "About200word maximum single-paragraph abstract;3\u201310keywords; no arbitrary main/supplement cap asserted",
+  "rank": "Publisher-confirmed2025 JCR Q2, Computer Science, Interdisciplinary Applications;57/185; not SCImago/CiteScore quartile",
+  "rank_source": "https://www.mdpi.com/journal/computers/history",
+  "fee": "CHF1800 plus applicable taxes; discounts/waivers not assumed",
+  "fee_source": "https://www.mdpi.com/journal/computers/apc",
+  "notes": "Adaptation emphasizes application budgets, latency, memory headroom, useful delivery and the output-preserving cache result. Full29-page support retains historical/statistical depth. Official class/assets unchanged; only draft metadata/keywords changed. GenAI assistance disclosed in Methods; actual authors complete declarations."
+}

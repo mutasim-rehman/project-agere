@@ -1,0 +1,155 @@
+{
+  "pdfs": [
+    {
+      "path": "publication_library/00_master_research/main.pdf",
+      "pages": 36,
+      "sha256": "e93ce5a2271eb2cdce1b77e925c13e7e6e4450368688350b1da19d818bee4669",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/01_general_conference/main.pdf",
+      "pages": 10,
+      "sha256": "cfa429a6278ba153314170a94d27bf2fa81f7674c5180e3b4b20bdc25bf8fbfb",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/02_general_journal/main.pdf",
+      "pages": 36,
+      "sha256": "7a41ef2ad63d52bbbb1f3fb4a02b79e698a17aa86cd8d2fb50fd1b7579dc4527",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/03_preprint_arxiv/main.pdf",
+      "pages": 36,
+      "sha256": "8f08fe103d89289929aa057afe20a7beb7412cd2e614b501efa473da223ad2bf",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/05_ICLR/main.pdf",
+      "pages": 11,
+      "sha256": "7a1cb004d2fd6fbc6a691374993c81ed4f85b8990fbd3a087b83db34aad273c6",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/06_NeurIPS/main.pdf",
+      "pages": 44,
+      "sha256": "d7479915bc50bfbcca120108a07348702e596b3053b0762c973c32b07c02fcf0",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/07_ICML/main.pdf",
+      "pages": 34,
+      "sha256": "ca512636690e7255e02500a7c9c0c9b36975e5dfb9bc83a59dd5204b3a422abe",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/10_IEEE_conference/main.pdf",
+      "pages": 7,
+      "sha256": "1c36d46246651f72e12efc4043083e9fdbad1892a0f0afadc9d0412a8637374c",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/11_IEEE_ICTAI/main.pdf",
+      "pages": 7,
+      "sha256": "67d4b1ae7462a7d8eea3ea31a02521f52916f42758535e32880ddbd1273ef210",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/12_Springer_LNCS/main.pdf",
+      "pages": 14,
+      "sha256": "b02c0f11cae6ba9d1684027e87b103c96c26bcf644e2d2e555a292f5c8ea9776",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/13_Springer_journal/main.pdf",
+      "pages": 13,
+      "sha256": "997bcb0f16b56a76e5ca9de80740e0b8c3e38b27de557242365370a3f640759e",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/14_SN_Computer_Science/main.pdf",
+      "pages": 13,
+      "sha256": "58fd89dda7d7777a095c2ad16fc1fd9ddaa573e2060500274c51b18802c8bffe",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/15_MDPI_MAKE/main.pdf",
+      "pages": 36,
+      "sha256": "b8aee8feaff155cb205cb0dd3384601099ccd390b7d5ffa45dd10246dbb265fc",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/16_MDPI_Computers/main.pdf",
+      "pages": 11,
+      "sha256": "343365592f9b7aa752bafe83ee7ab19e13eef32dd499bf4933ebd4336246fa21",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/17_general_workshop/main.pdf",
+      "pages": 3,
+      "sha256": "5394d4cd27cae466061da666de33c34c216d11b7e9b6617034c9657d52c526b7",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/19_short_extended_abstract/main.pdf",
+      "pages": 2,
+      "sha256": "59e4b92c386a863637b3c933c5d81bf30f746adfa402586c9532adf89e7d0734",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/23_MDPI_Information/main.pdf",
+      "pages": 11,
+      "sha256": "6760a3ba6721459fdbdcc7694b23b7a8c08a7418d9df88dbf304938ddfa9373a",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/24_FLLM/main.pdf",
+      "pages": 7,
+      "sha256": "bc52fddb2a9756536666969110ac53e7664ab4e8356a5c266eba4479a0c4ebdc",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/25_IEEE_CAI/main.pdf",
+      "pages": 7,
+      "sha256": "b150cd2054df883bb78a38fa25eaeba452bf8caca037161d3957359e90a17842",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/15_MDPI_MAKE/official_mdpi/main.pdf",
+      "pages": 11,
+      "sha256": "1fe014cc8d1a2377e219994f1f0fea251fd1e50f8c4a33d868f78fa668a1cf45",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    },
+    {
+      "path": "publication_library/13_Springer_journal/verified_citations/main.pdf",
+      "pages": 13,
+      "sha256": "c9c19209a4f7d90637e1d161a25fcded51c67127ac44c15a2f5622153b86e25f",
+      "type3_fonts": 0,
+      "unresolved_questionmarks": false
+    }
+  ],
+  "canonical_evidence_hashes_match": true,
+  "previous_six_pdfs_preserved": true,
+  "new_experimental_inference": false,
+  "springer_legacy_citation_note": "Use separately compiled verified_citations revision; scientific pages1\u201310 identical"
+}

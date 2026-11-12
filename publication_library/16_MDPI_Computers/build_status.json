@@ -1,0 +1,24 @@
+{
+  "folder": "16_MDPI_Computers",
+  "pages": 11,
+  "words": 5533,
+  "sha256": "343365592f9b7aa752bafe83ee7ab19e13eef32dd499bf4933ebd4336246fa21",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "template_status": "Official MDPI ACS v6.5d 2026-10-19; computers/article/submit",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; NEEDS-GUIDELINE-REFRESH",
+  "visual_review": "All-page contact sheets and selected enlarged numerical pages inspected",
+  "scientific_coverage": "Canonical core retained; complete29-page audited supporting manuscript supplied"
+}

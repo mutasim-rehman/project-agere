@@ -1,0 +1,13 @@
+{
+  "venue": "IEEE ICTAI2026",
+  "publisher": "IEEE Computer Society",
+  "kind": "conference",
+  "instructions": "https://ictai.computer.org/2026/submissions/",
+  "template": "IEEEtran1.8b conference, authentic CTAN maintainer distribution",
+  "policy": "https://open.ieee.org/author-guidelines-for-artificial-intelligence-ai-generated-text/",
+  "limit": "8pages including everything; up to2extra paid pages per official instructions",
+  "rank": "No journal quartile applies; no acceptance odds invented",
+  "fee": "Registration required; official page states USD100 per extra page; full registration amount unverified",
+  "deadline": "2026-07-21 AoE final deadline (closed);2026 event concluded; next edition requirements unverified",
+  "notes": "Tools/interface-oriented adaptation: distinctive title/abstract/introduction/conclusion, tool-protocol section and AI-system footnote citation at every numbered section. Double blind; anonymous main/support/code must be finalized. Supplement acceptance must be confirmed with the eventual event; do not assume the complete support can be uploaded unchanged."
+}

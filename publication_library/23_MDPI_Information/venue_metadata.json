@@ -1,0 +1,15 @@
+{
+  "venue": "Information",
+  "publisher": "MDPI",
+  "kind": "journal",
+  "issn": "2078-2489",
+  "instructions": "https://www.mdpi.com/journal/information/instructions",
+  "template": "Official MDPI ACS v6.5d 2026-10-19; information/article/submit",
+  "policy": "https://www.mdpi.com/journal/information/instructions",
+  "limit": "About200word maximum single-paragraph abstract;3\u201310keywords; no arbitrary length cap asserted",
+  "rank": "Publisher-confirmed2025 JCR Q2, Computer Science, Information Systems;98/266; not SCImago/CiteScore quartile",
+  "rank_source": "https://www.mdpi.com/journal/information/announcements/17729",
+  "fee": "CHF1800 plus applicable taxes; discounts/waivers not assumed",
+  "fee_source": "https://www.mdpi.com/journal/information/apc",
+  "notes": "Adaptation emphasizes provenance versus calculation semantics and selective delivery; no new information-theoretic law claimed. Full29-page support retained. GenAI assistance disclosed in Methods; actual author approval/declarations remain."
+}

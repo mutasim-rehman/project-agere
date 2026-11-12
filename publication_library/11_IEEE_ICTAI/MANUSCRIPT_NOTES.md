@@ -1,0 +1,5 @@
+# Scientific adaptation and QA
+
+Tools/interface-oriented adaptation: distinctive title/abstract/introduction/conclusion, tool-protocol section and AI-system footnote citation at every numbered section. Double blind; anonymous main/support/code must be finalized. Supplement acceptance must be confirmed with the eventual event; do not assume the complete support can be uploaded unchanged.
+
+All canonical results, candidate/delivery distinction, failed planner, secondary null outcome, strong baselines, scorer sensitivity and resource qualifications remain. Core evidence reused; no experiments/outcomes changed. Comprehensive support preserves every historical/statistical/formal item in the original source audit. Actual heading/page mapping: ../ADAPTED_COVERAGE_MAP.md. All28 bibliography keys/eight local figure bytes match canonical source. Zero overfull boxes/unresolved references. Every main page contact-sheet inspected; selected numerical pages enlarged. Final author/declaration/license/anonymity review remains required.

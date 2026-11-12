@@ -1,0 +1,145 @@
+[
+  {
+    "folder": "00_master_research",
+    "class_bytes": []
+  },
+  {
+    "folder": "02_general_journal",
+    "class_bytes": []
+  },
+  {
+    "folder": "01_general_conference",
+    "class_bytes": []
+  },
+  {
+    "folder": "03_preprint_arxiv",
+    "class_bytes": []
+  },
+  {
+    "folder": "15_MDPI_MAKE",
+    "class_bytes": []
+  },
+  {
+    "folder": "13_Springer_journal",
+    "class_bytes": [
+      {
+        "file": "sn-jnl.cls",
+        "sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc"
+      }
+    ]
+  },
+  {
+    "folder": "15_MDPI_MAKE/official_mdpi",
+    "class_bytes": [
+      {
+        "file": "mdpi.cls",
+        "sha256": "36d0ae0fe93576bcaa4efc21718488558a4a1329696d6a1fe6083082144e6ad2"
+      }
+    ]
+  },
+  {
+    "folder": "05_ICLR",
+    "class_bytes": []
+  },
+  {
+    "folder": "06_NeurIPS",
+    "class_bytes": []
+  },
+  {
+    "folder": "07_ICML",
+    "class_bytes": []
+  },
+  {
+    "folder": "10_IEEE_conference",
+    "class_bytes": [
+      {
+        "file": "IEEEtran.cls",
+        "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
+      }
+    ]
+  },
+  {
+    "folder": "12_Springer_LNCS",
+    "class_bytes": [
+      {
+        "file": "llncs.cls",
+        "sha256": "04ec99046ad9867f6cd54ffd1ef8c47c767b327d1baec77536db0528cd492fa2"
+      }
+    ]
+  },
+  {
+    "folder": "17_general_workshop",
+    "class_bytes": []
+  },
+  {
+    "folder": "19_short_extended_abstract",
+    "class_bytes": []
+  },
+  {
+    "folder": "14_SN_Computer_Science",
+    "class_bytes": [
+      {
+        "file": "sn-jnl.cls",
+        "sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc"
+      }
+    ]
+  },
+  {
+    "folder": "16_MDPI_Computers",
+    "class_bytes": [
+      {
+        "file": "mdpi.cls",
+        "sha256": "36d0ae0fe93576bcaa4efc21718488558a4a1329696d6a1fe6083082144e6ad2"
+      }
+    ]
+  },
+  {
+    "folder": "23_MDPI_Information",
+    "class_bytes": [
+      {
+        "file": "mdpi.cls",
+        "sha256": "36d0ae0fe93576bcaa4efc21718488558a4a1329696d6a1fe6083082144e6ad2"
+      }
+    ]
+  },
+  {
+    "folder": "11_IEEE_ICTAI",
+    "class_bytes": [
+      {
+        "file": "IEEEtran.cls",
+        "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
+      }
+    ]
+  },
+  {
+    "folder": "24_FLLM",
+    "class_bytes": [
+      {
+        "file": "IEEEtran.cls",
+        "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
+      }
+    ]
+  },
+  {
+    "folder": "25_IEEE_CAI",
+    "class_bytes": [
+      {
+        "file": "ieeeconf.cls",
+        "sha256": "4befef671c2a996889d325f5170d3387bf42aac9a37dcaa93724ad49816e4ec2"
+      },
+      {
+        "file": "IEEEtran.cls",
+        "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
+      }
+    ]
+  },
+  {
+    "folder": "13_Springer_journal/verified_citations",
+    "class_bytes": [
+      {
+        "file": "sn-jnl.cls",
+        "sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc"
+      }
+    ]
+  }
+]

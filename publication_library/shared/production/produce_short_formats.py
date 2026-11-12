@@ -1,6 +1,6 @@
 """Focused workshop and extended abstract; evidence is unchanged."""
 from pathlib import Path
-import shutil
+import shutil,re
 L=Path(__file__).resolve().parents[2];S=L/'shared/scientific_source'
 base=r'''
 \section{Question and Scope}
@@ -52,6 +52,7 @@ for folder,title,is_short in [
  text=r'''\documentclass[10pt,twocolumn,letterpaper]{article}
 \usepackage[margin=.75in]{geometry}
 \usepackage[T1]{fontenc}
+\usepackage{courier}
 \usepackage{newtxtext,amsmath,amssymb,graphicx,booktabs,natbib}
 \usepackage[hyphens]{url}
 \sloppy
@@ -67,6 +68,11 @@ The accompanying29-page audited supplement preserves complete methods, all cohor
 \bibliographystyle{plainnat}\bibliography{references}
 \end{document}
 '''
+ text=re.sub(r'(?<=[a-z])(?=\d)',' ',text).replace('Qwen 2.5','Qwen2.5')
+ if is_short:
+  text=re.sub(r'\\begin\{table\}\[t\].*?\\end\{table\}',lambda _:r'\begin{figure*}[t]\centering\includegraphics[width=.80\textwidth]{figures/planner_outcomes.pdf}\caption{All96-context arms: delivered outcomes and correct candidates. Planner delivery gains coexist with lower correct-candidate count.}\label{tab:planner}\end{figure*}',text,flags=re.S).replace(r'Table~\ref{tab:planner}',r'Figure~\ref{tab:planner}')
+ else:
+  text=text.replace(r'\section{Complementary Deployment Evidence}',r'\begin{figure*}[t]\centering\includegraphics[width=.60\textwidth]{figures/planner_effects.pdf}\caption{Planner-minus-MAS changes with paired context-bootstrap95\% intervals. Sparse exact-test evidence and the no-wrong-increase criterion remain essential.}\end{figure*}\section{Complementary Deployment Evidence}')
  (d/'main.tex').write_text(text)
  shutil.copy2(L/'07_ICML/build.ps1',d/'build.ps1');(d/'.gitignore').write_text('*.aux\n*.log\n*.blg\n*.out\n')
  print(d)

@@ -5,3 +5,5 @@ Can a memory-limited financial reasoning pipeline turn available evidence into c
 Across the measured recipes, more roles or stages do not reliably improve useful delivery. The tested team is generation-limited, while planning changes acceptance without a net increase in correct candidates. These observations motivate sharper evaluation of planning and verification under measured budgets, with broader generality left unresolved.
 
 Verified methods/results are reused centrally from the audited source. Supporting detail is included in a separate supplement. Original manuscripts are unchanged.
+
+2026-11-12 follow-up: actual PDF section/page mapping and canonical figure/bibliography-key checks repeated; representative enlarged numerical-results page inspected in addition to prior all-page contact sheets. Final author submission review remains. The generic Springer parent is superseded by its separately corrected citation revision.

@@ -1,0 +1,24 @@
+{
+  "folder": "13_Springer_journal/verified_citations",
+  "pages": 13,
+  "words": 4883,
+  "sha256": "c9c19209a4f7d90637e1d161a25fcded51c67127ac44c15a2f5622153b86e25f",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "template_status": "Official sn-jnl3.1; primary-verified PMLR location corrections",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; destination unselected",
+  "visual_review": "All pages rendered; unchanged scientific pages compared; enlarged corrected reference pages inspected",
+  "scientific_coverage": "Same scientific core and complete29-page support as preserved parent; three citation locations corrected"
+}

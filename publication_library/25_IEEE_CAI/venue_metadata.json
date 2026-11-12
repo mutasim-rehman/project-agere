@@ -1,0 +1,13 @@
+{
+  "venue": "IEEE CAI provisional2026 format",
+  "publisher": "IEEE",
+  "kind": "conference",
+  "instructions": "https://www.ieeesmc.org/cai-2026/author-instructions-and-templates-for-conference-proceedings/",
+  "template": "Exact CAI-linked Papercept ieeeconf class, unmodified, based on IEEEtran1.6b; official overrideIEEEmargins command",
+  "policy": "https://open.ieee.org/author-guidelines-for-artificial-intelligence-ai-generated-text/",
+  "limit": "6pages including references; up to2extra pages with additional charge; current7-page draft needs one extra page or human condensation",
+  "rank": "No journal quartile applies; no acceptance odds invented",
+  "fee": "Extra-page charge applies; amount/registration not verified",
+  "deadline": "2026 edition closed.2027 official landing page exists but no paper requirements verified; explicitly provisional",
+  "notes": "Application-reliability framing with distinct abstract/introduction/conclusion and section-level AI-tool citation. Exact official Papercept ZIP recovered despite web-reader restriction; no IEEEtran substitution. Double-blind review main/support/code requirements and final supplement route remain human actions."
+}
