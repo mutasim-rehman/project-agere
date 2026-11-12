@@ -1,0 +1,80 @@
+[
+  {
+    "folder": "00_master_research",
+    "pages": 36,
+    "words": 18445,
+    "compiled": true,
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "sha256": "e93ce5a2271eb2cdce1b77e925c13e7e6e4450368688350b1da19d818bee4669",
+    "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+    "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+    "policy_status": "HUMAN-REVIEW-REQUIRED",
+    "template_status": "General-purpose article class"
+  },
+  {
+    "folder": "02_general_journal",
+    "pages": 36,
+    "words": 18448,
+    "compiled": true,
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "sha256": "7a41ef2ad63d52bbbb1f3fb4a02b79e698a17aa86cd8d2fb50fd1b7579dc4527",
+    "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+    "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+    "policy_status": "HUMAN-REVIEW-REQUIRED",
+    "template_status": "General-purpose article class"
+  },
+  {
+    "folder": "01_general_conference",
+    "pages": 10,
+    "words": 4883,
+    "compiled": true,
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "sha256": "cfa429a6278ba153314170a94d27bf2fa81f7674c5180e3b4b20bdc25bf8fbfb",
+    "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+    "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+    "policy_status": "HUMAN-REVIEW-REQUIRED",
+    "template_status": "General-purpose article class"
+  },
+  {
+    "folder": "03_preprint_arxiv",
+    "pages": 36,
+    "words": 18426,
+    "compiled": true,
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "sha256": "8f08fe103d89289929aa057afe20a7beb7412cd2e614b501efa473da223ad2bf",
+    "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+    "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+    "policy_status": "HUMAN-REVIEW-REQUIRED",
+    "template_status": "General-purpose article class"
+  },
+  {
+    "folder": "15_MDPI_MAKE",
+    "pages": 36,
+    "words": 18558,
+    "compiled": true,
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "sha256": "b8aee8feaff155cb205cb0dd3384601099ccd390b7d5ffa45dd10246dbb265fc",
+    "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+    "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+    "policy_status": "HUMAN-REVIEW-REQUIRED",
+    "template_status": "Journal-permitted free-format initial draft; official kit download blocked"
+  },
+  {
+    "folder": "13_Springer_journal",
+    "pages": 13,
+    "words": 4877,
+    "compiled": true,
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "sha256": "997bcb0f16b56a76e5ca9de80740e0b8c3e38b27de557242365370a3f640759e",
+    "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+    "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+    "policy_status": "HUMAN-REVIEW-REQUIRED",
+    "template_status": "Official publisher sn-jnl v3.1"
+  }
+]

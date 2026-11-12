@@ -1,0 +1,13 @@
+{
+  "folder": "02_general_journal",
+  "pages": 36,
+  "words": 18448,
+  "compiled": true,
+  "undefined_references": false,
+  "overfull_boxes": 0,
+  "sha256": "7a41ef2ad63d52bbbb1f3fb4a02b79e698a17aa86cd8d2fb50fd1b7579dc4527",
+  "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+  "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+  "policy_status": "HUMAN-REVIEW-REQUIRED",
+  "template_status": "General-purpose article class"
+}

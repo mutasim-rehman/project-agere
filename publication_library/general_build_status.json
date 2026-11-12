@@ -1,0 +1,38 @@
+[
+  {
+    "folder": "00_master_research",
+    "pages": 36,
+    "words": 18445,
+    "sha256": "e93ce5a2271eb2cdce1b77e925c13e7e6e4450368688350b1da19d818bee4669",
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "status": "COMPILED; HUMAN-REVIEW-REQUIRED; visual QA pending"
+  },
+  {
+    "folder": "02_general_journal",
+    "pages": 36,
+    "words": 18448,
+    "sha256": "7a41ef2ad63d52bbbb1f3fb4a02b79e698a17aa86cd8d2fb50fd1b7579dc4527",
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "status": "COMPILED; HUMAN-REVIEW-REQUIRED; visual QA pending"
+  },
+  {
+    "folder": "01_general_conference",
+    "pages": 10,
+    "words": 4883,
+    "sha256": "cfa429a6278ba153314170a94d27bf2fa81f7674c5180e3b4b20bdc25bf8fbfb",
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "status": "COMPILED; HUMAN-REVIEW-REQUIRED; visual QA pending"
+  },
+  {
+    "folder": "03_preprint_arxiv",
+    "pages": 36,
+    "words": 18426,
+    "sha256": "8f08fe103d89289929aa057afe20a7beb7412cd2e614b501efa473da223ad2bf",
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "status": "COMPILED; HUMAN-REVIEW-REQUIRED; visual QA pending"
+  }
+]

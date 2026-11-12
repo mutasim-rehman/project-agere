@@ -1,0 +1,13 @@
+{
+  "folder": "13_Springer_journal",
+  "pages": 13,
+  "words": 4877,
+  "compiled": true,
+  "undefined_references": false,
+  "overfull_boxes": 0,
+  "sha256": "997bcb0f16b56a76e5ca9de80740e0b8c3e38b27de557242365370a3f640759e",
+  "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+  "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+  "policy_status": "HUMAN-REVIEW-REQUIRED",
+  "template_status": "Official publisher sn-jnl v3.1"
+}

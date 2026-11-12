@@ -3672,3 +3672,8 @@ Completed paper/COVERAGE_AUDIT.md: all 64 original sections/subsections, 38 tabl
 ### 2026-11-11 - Multi-venue publication library initiated
 
 Preserved the complete user task in publication_library/TASK_SPECIFICATION.md and established a canonical scientific inventory with shared verified results, uncertainty, figures, references and coverage records. No experimental inference or changed outcomes. Venue-specific drafting is pending official policy/template verification. Recorded a conflict between the task's AAAI generated-text prohibition statement and previously accessed official call language; use HUMAN-AUTHORING-REQUIRED conservatively until resolved. Initial official policy URLs for AAAI/ICLR/NeurIPS were inaccessible; MDPI LaTeX and IEEE Access preparation pages were accessed. No fees, quartiles or eligibility invented. The library is explicitly incomplete, with no empty manuscript placeholders or submission-ready claims.
+
+
+### 2026-11-12 - Publication manuscript production checkpoint
+
+Produced six substantive drafts with distinct framing and compiled PDFs: master, general journal, conference, preprint, MAKE permitted free-format initial article, and Springer official sn-jnl journal draft. Core numerical claims/figure bytes/bibliography keys checked; no unresolved refs/overfull boxes. Contact sheets inspected; enlarged final QA remains. Official Springer kit downloaded with hash/provenance, LPPL class retained. MDPI and IEEE Access kit downloads returned403; MAKE free-format route explicitly permitted by journal instructions. Access still outstanding; Wave1 incomplete, later waves not started. No invented fees/quartiles/readiness. Exact continuation in publication_library/CHECKPOINT.md. Original experiments/manuscripts unchanged.

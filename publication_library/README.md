@@ -1,9 +1,3 @@
 # Project Agere publication library
 
-Status: evidence foundation established; venue investigation and manuscript adaptation in progress. No venue-specific manuscript is yet marked complete or submission-ready.
-
-The full requested scope is preserved in TASK_SPECIFICATION.md. Canonical verified scientific results, uncertainty, resources, historical outcomes and coverage records are under shared/. MASTER_REFERENCES.bib contains the 28 source-traced references from the audited revision. Experimental artifacts take precedence over manuscript prose.
-
-Do not submit multiple versions concurrently. No automatic submission is authorized. AI-writing policies must be checked before venue-specific drafting; policy conflicts and inaccessible sources must be documented. No ranking, fee, deadline, template authentication or eligibility may be inferred from a successful compilation.
-
-Next: verify current official author/AI-use policies and obtain authentic templates, beginning with comprehensive master/general versions and journal targets; then adapt individual conference/workshop versions. Do not populate manuscript folders with empty files or relabeled PDFs.
+Six substantive adapted drafts now compile. Wave1 remains incomplete (IEEE Access outstanding), and later waves have not started. Exact deliverables/counts/status: production_status.json. Precise continuation: CHECKPOINT.md. No version is submission-ready. Shared audited science and sources are centralized under shared/. Each manuscript compiles independently from its local files. Full task: TASK_SPECIFICATION.md.

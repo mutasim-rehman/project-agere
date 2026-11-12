@@ -1,0 +1,412 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{20}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\url{https://doi.org/#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\bibcommenthead
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem[\protect\citeauthoryear{Liu et~al.}{2025}]{finman}
+\begin{bchapter}
+\bauthor{\bsnm{Liu}, \binits{C.}},
+\bauthor{\bsnm{Liu}, \binits{Q.}},
+\bauthor{\bsnm{Zhu}, \binits{Z.}},
+\bauthor{\bsnm{Fei}, \binits{H.}},
+\bauthor{\bsnm{Mahanti}, \binits{A.}}:
+\bctitle{{D}avid vs. goliath: Cost-efficient financial {QA} via cascaded multi-agent reasoning}.
+In: \beditor{\bsnm{Christodoulopoulos}, \binits{C.}},
+\beditor{\bsnm{Chakraborty}, \binits{T.}},
+\beditor{\bsnm{Rose}, \binits{C.}},
+\beditor{\bsnm{Peng}, \binits{V.}} (eds.)
+\bbtitle{Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2025},
+pp. \bfpage{4212}--\blpage{4229}.
+\bpublisher{Association for Computational Linguistics},
+\blocation{Suzhou, China}
+(\byear{2025}).
+\doiurl{10.18653/v1/2025.findings-emnlp.225} .
+\burl{https://aclanthology.org/2025.findings-emnlp.225/}
+\end{bchapter}
+\endbibitem
+
+%%% 2
+\bibitem[\protect\citeauthoryear{Chen et~al.}{2026}]{dcrc}
+\begin{botherref}
+\oauthor{\bsnm{Chen}, \binits{H.}},
+\oauthor{\bsnm{Tang}, \binits{X.}},
+\oauthor{\bsnm{Liu}, \binits{Q.}},
+\oauthor{\bsnm{Shi}, \binits{W.}},
+\oauthor{\bsnm{Li}, \binits{S.}},
+\oauthor{\bsnm{Lyu}, \binits{F.}},
+\oauthor{\bsnm{Luo}, \binits{W.}},
+\oauthor{\bsnm{Du}, \binits{X.}},
+\oauthor{\bsnm{He}, \binits{X.}}:
+{Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA}
+(2026).
+\url{https://arxiv.org/abs/2605.31064}
+\end{botherref}
+\endbibitem
+
+%%% 3
+\bibitem[\protect\citeauthoryear{Stuhlmann et~al.}{2026}]{bench360}
+\begin{botherref}
+\oauthor{\bsnm{Stuhlmann}, \binits{L.}},
+\oauthor{\bsnm{Argerich}, \binits{M.F.}},
+\oauthor{\bsnm{Fürst}, \binits{J.}}:
+{Bench360: Benchmarking Local LLM Inference from 360 Degrees}
+(2026).
+\url{https://arxiv.org/abs/2511.16682}
+\end{botherref}
+\endbibitem
+
+%%% 4
+\bibitem[\protect\citeauthoryear{Chen et~al.}{2021}]{finqa}
+\begin{bchapter}
+\bauthor{\bsnm{Chen}, \binits{Z.}},
+\bauthor{\bsnm{Chen}, \binits{W.}},
+\bauthor{\bsnm{Smiley}, \binits{C.}},
+\bauthor{\bsnm{Shah}, \binits{S.}},
+\bauthor{\bsnm{Borova}, \binits{I.}},
+\bauthor{\bsnm{Langdon}, \binits{D.}},
+\bauthor{\bsnm{Moussa}, \binits{R.}},
+\bauthor{\bsnm{Beane}, \binits{M.}},
+\bauthor{\bsnm{Huang}, \binits{T.-H.}},
+\bauthor{\bsnm{Routledge}, \binits{B.}},
+\bauthor{\bsnm{Wang}, \binits{W.Y.}}:
+\bctitle{{F}in{QA}: A dataset of numerical reasoning over financial data}.
+In: \beditor{\bsnm{Moens}, \binits{M.-F.}},
+\beditor{\bsnm{Huang}, \binits{X.}},
+\beditor{\bsnm{Specia}, \binits{L.}},
+\beditor{\bsnm{Yih}, \binits{S.W.-t.}} (eds.)
+\bbtitle{Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing},
+pp. \bfpage{3697}--\blpage{3711}.
+\bpublisher{Association for Computational Linguistics},
+\blocation{Online and Punta Cana, Dominican Republic}
+(\byear{2021}).
+\doiurl{10.18653/v1/2021.emnlp-main.300} .
+\burl{https://aclanthology.org/2021.emnlp-main.300/}
+\end{bchapter}
+\endbibitem
+
+%%% 5
+\bibitem[\protect\citeauthoryear{Zhu et~al.}{2021}]{tatqa}
+\begin{bchapter}
+\bauthor{\bsnm{Zhu}, \binits{F.}},
+\bauthor{\bsnm{Lei}, \binits{W.}},
+\bauthor{\bsnm{Huang}, \binits{Y.}},
+\bauthor{\bsnm{Wang}, \binits{C.}},
+\bauthor{\bsnm{Zhang}, \binits{S.}},
+\bauthor{\bsnm{Lv}, \binits{J.}},
+\bauthor{\bsnm{Feng}, \binits{F.}},
+\bauthor{\bsnm{Chua}, \binits{T.-S.}}:
+\bctitle{{TAT}-{QA}: A question answering benchmark on a hybrid of tabular and textual content in finance}.
+In: \beditor{\bsnm{Zong}, \binits{C.}},
+\beditor{\bsnm{Xia}, \binits{F.}},
+\beditor{\bsnm{Li}, \binits{W.}},
+\beditor{\bsnm{Navigli}, \binits{R.}} (eds.)
+\bbtitle{Proceedings of the 59th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)},
+pp. \bfpage{3277}--\blpage{3287}.
+\bpublisher{Association for Computational Linguistics},
+\blocation{Online}
+(\byear{2021}).
+\doiurl{10.18653/v1/2021.acl-long.254} .
+\burl{https://aclanthology.org/2021.acl-long.254/}
+\end{bchapter}
+\endbibitem
+
+%%% 6
+\bibitem[\protect\citeauthoryear{Gao et~al.}{2023}]{pal}
+\begin{bchapter}
+\bauthor{\bsnm{Gao}, \binits{L.}},
+\bauthor{\bsnm{Madaan}, \binits{A.}},
+\bauthor{\bsnm{Zhou}, \binits{S.}},
+\bauthor{\bsnm{Alon}, \binits{U.}},
+\bauthor{\bsnm{Liu}, \binits{P.}},
+\bauthor{\bsnm{Yang}, \binits{Y.}},
+\bauthor{\bsnm{Callan}, \binits{J.}},
+\bauthor{\bsnm{Neubig}, \binits{G.}}:
+\bctitle{{PAL}: Program-aided language models}.
+In: \beditor{\bsnm{Krause}, \binits{A.}},
+\beditor{\bsnm{Brunskill}, \binits{E.}},
+\beditor{\bsnm{Cho}, \binits{K.}},
+\beditor{\bsnm{Engelhardt}, \binits{B.}},
+\beditor{\bsnm{Sabato}, \binits{S.}},
+\beditor{\bsnm{Scarlett}, \binits{J.}} (eds.)
+\bbtitle{Proceedings of the 40th International Conference on Machine Learning}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{202},
+pp. \bfpage{10764}--\blpage{10799}.
+\bpublisher{PMLR},
+\blocation{Online}
+(\byear{2023}).
+\burl{https://proceedings.mlr.press/v202/gao23f.html}
+\end{bchapter}
+\endbibitem
+
+%%% 7
+\bibitem[\protect\citeauthoryear{Chen et~al.}{2023}]{pot}
+\begin{botherref}
+\oauthor{\bsnm{Chen}, \binits{W.}},
+\oauthor{\bsnm{Ma}, \binits{X.}},
+\oauthor{\bsnm{Wang}, \binits{X.}},
+\oauthor{\bsnm{Cohen}, \binits{W.W.}}:
+{Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks}
+(2023).
+\url{https://arxiv.org/abs/2211.12588}
+\end{botherref}
+\endbibitem
+
+%%% 8
+\bibitem[\protect\citeauthoryear{Du et~al.}{2024}]{debate}
+\begin{bchapter}
+\bauthor{\bsnm{Du}, \binits{Y.}},
+\bauthor{\bsnm{Li}, \binits{S.}},
+\bauthor{\bsnm{Torralba}, \binits{A.}},
+\bauthor{\bsnm{Tenenbaum}, \binits{J.B.}},
+\bauthor{\bsnm{Mordatch}, \binits{I.}}:
+\bctitle{Improving factuality and reasoning in language models through multiagent debate}.
+In: \beditor{\bsnm{Salakhutdinov}, \binits{R.}},
+\beditor{\bsnm{Kolter}, \binits{Z.}},
+\beditor{\bsnm{Heller}, \binits{K.}},
+\beditor{\bsnm{Weller}, \binits{A.}},
+\beditor{\bsnm{Oliver}, \binits{N.}},
+\beditor{\bsnm{Scarlett}, \binits{J.}},
+\beditor{\bsnm{Berkenkamp}, \binits{F.}} (eds.)
+\bbtitle{Proceedings of the 41st International Conference on Machine Learning}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{235},
+pp. \bfpage{11733}--\blpage{11763}.
+\bpublisher{PMLR},
+\blocation{Online}
+(\byear{2024}).
+\burl{https://proceedings.mlr.press/v235/du24e.html}
+\end{bchapter}
+\endbibitem
+
+%%% 9
+\bibitem[\protect\citeauthoryear{Wang et~al.}{2023}]{selfconsistency}
+\begin{botherref}
+\oauthor{\bsnm{Wang}, \binits{X.}},
+\oauthor{\bsnm{Wei}, \binits{J.}},
+\oauthor{\bsnm{Schuurmans}, \binits{D.}},
+\oauthor{\bsnm{Le}, \binits{Q.}},
+\oauthor{\bsnm{Chi}, \binits{E.}},
+\oauthor{\bsnm{Narang}, \binits{S.}},
+\oauthor{\bsnm{Chowdhery}, \binits{A.}},
+\oauthor{\bsnm{Zhou}, \binits{D.}}:
+{Self-Consistency Improves Chain of Thought Reasoning in Language Models}
+(2023).
+\url{https://arxiv.org/abs/2203.11171}
+\end{botherref}
+\endbibitem
+
+%%% 10
+\bibitem[\protect\citeauthoryear{Tran and Kiela}{2026}]{equalbudget}
+\begin{botherref}
+\oauthor{\bsnm{Tran}, \binits{D.}},
+\oauthor{\bsnm{Kiela}, \binits{D.}}:
+{Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets}
+(2026).
+\url{https://arxiv.org/abs/2604.02460}
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem[\protect\citeauthoryear{Cemri et~al.}{2025}]{mast}
+\begin{botherref}
+\oauthor{\bsnm{Cemri}, \binits{M.}},
+\oauthor{\bsnm{Pan}, \binits{M.Z.}},
+\oauthor{\bsnm{Yang}, \binits{S.}},
+\oauthor{\bsnm{Agrawal}, \binits{L.A.}},
+\oauthor{\bsnm{Chopra}, \binits{B.}},
+\oauthor{\bsnm{Tiwari}, \binits{R.}},
+\oauthor{\bsnm{Keutzer}, \binits{K.}},
+\oauthor{\bsnm{Parameswaran}, \binits{A.}},
+\oauthor{\bsnm{Klein}, \binits{D.}},
+\oauthor{\bsnm{Ramchandran}, \binits{K.}},
+\oauthor{\bsnm{Zaharia}, \binits{M.}},
+\oauthor{\bsnm{Gonzalez}, \binits{J.E.}},
+\oauthor{\bsnm{Stoica}, \binits{I.}}:
+{Why Do Multi-Agent LLM Systems Fail?}
+(2025).
+\url{https://arxiv.org/abs/2503.13657}
+\end{botherref}
+\endbibitem
+
+%%% 12
+\bibitem[\protect\citeauthoryear{Madaan et~al.}{2023}]{selfrefine}
+\begin{botherref}
+\oauthor{\bsnm{Madaan}, \binits{A.}},
+\oauthor{\bsnm{Tandon}, \binits{N.}},
+\oauthor{\bsnm{Gupta}, \binits{P.}},
+\oauthor{\bsnm{Hallinan}, \binits{S.}},
+\oauthor{\bsnm{Gao}, \binits{L.}},
+\oauthor{\bsnm{Wiegreffe}, \binits{S.}},
+\oauthor{\bsnm{Alon}, \binits{U.}},
+\oauthor{\bsnm{Dziri}, \binits{N.}},
+\oauthor{\bsnm{Prabhumoye}, \binits{S.}},
+\oauthor{\bsnm{Yang}, \binits{Y.}},
+\oauthor{\bsnm{Gupta}, \binits{S.}},
+\oauthor{\bsnm{Majumder}, \binits{B.P.}},
+\oauthor{\bsnm{Hermann}, \binits{K.}},
+\oauthor{\bsnm{Welleck}, \binits{S.}},
+\oauthor{\bsnm{Yazdanbakhsh}, \binits{A.}},
+\oauthor{\bsnm{Clark}, \binits{P.}}:
+{Self-Refine: Iterative Refinement with Self-Feedback}
+(2023).
+\url{https://arxiv.org/abs/2303.17651}
+\end{botherref}
+\endbibitem
+
+%%% 13
+\bibitem[\protect\citeauthoryear{Huang et~al.}{2024}]{selfcorrect}
+\begin{botherref}
+\oauthor{\bsnm{Huang}, \binits{J.}},
+\oauthor{\bsnm{Chen}, \binits{X.}},
+\oauthor{\bsnm{Mishra}, \binits{S.}},
+\oauthor{\bsnm{Zheng}, \binits{H.S.}},
+\oauthor{\bsnm{Yu}, \binits{A.W.}},
+\oauthor{\bsnm{Song}, \binits{X.}},
+\oauthor{\bsnm{Zhou}, \binits{D.}}:
+{Large Language Models Cannot Self-Correct Reasoning Yet}
+(2024).
+\url{https://arxiv.org/abs/2310.01798}
+\end{botherref}
+\endbibitem
+
+%%% 14
+\bibitem[\protect\citeauthoryear{Gou et~al.}{2024}]{critic}
+\begin{botherref}
+\oauthor{\bsnm{Gou}, \binits{Z.}},
+\oauthor{\bsnm{Shao}, \binits{Z.}},
+\oauthor{\bsnm{Gong}, \binits{Y.}},
+\oauthor{\bsnm{Shen}, \binits{Y.}},
+\oauthor{\bsnm{Yang}, \binits{Y.}},
+\oauthor{\bsnm{Duan}, \binits{N.}},
+\oauthor{\bsnm{Chen}, \binits{W.}}:
+{CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing}
+(2024).
+\url{https://arxiv.org/abs/2305.11738}
+\end{botherref}
+\endbibitem
+
+%%% 15
+\bibitem[\protect\citeauthoryear{Hall et~al.}{2026}]{verifin}
+\begin{botherref}
+\oauthor{\bsnm{Hall}, \binits{B.}},
+\oauthor{\bsnm{Shome}, \binits{S.}},
+\oauthor{\bsnm{Eiers}, \binits{W.}}:
+{VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims}
+(2026).
+\url{https://arxiv.org/abs/2608.10213}
+\end{botherref}
+\endbibitem
+
+%%% 16
+\bibitem[\protect\citeauthoryear{Jenq and Shen}{2026}]{budgetverify}
+\begin{botherref}
+\oauthor{\bsnm{Jenq}, \binits{J.}},
+\oauthor{\bsnm{Shen}, \binits{H.}}:
+{BudgetVerify: Budget-Tiered Verification for Financial QA}
+(2026).
+\url{https://arxiv.org/abs/2609.33052}
+\end{botherref}
+\endbibitem
+
+%%% 17
+\bibitem[\protect\citeauthoryear{Hu et~al.}{2021}]{lora}
+\begin{botherref}
+\oauthor{\bsnm{Hu}, \binits{E.J.}},
+\oauthor{\bsnm{Shen}, \binits{Y.}},
+\oauthor{\bsnm{Wallis}, \binits{P.}},
+\oauthor{\bsnm{Allen-Zhu}, \binits{Z.}},
+\oauthor{\bsnm{Li}, \binits{Y.}},
+\oauthor{\bsnm{Wang}, \binits{S.}},
+\oauthor{\bsnm{Wang}, \binits{L.}},
+\oauthor{\bsnm{Chen}, \binits{W.}}:
+{LoRA: Low-Rank Adaptation of Large Language Models}
+(2021).
+\url{https://arxiv.org/abs/2106.09685}
+\end{botherref}
+\endbibitem
+
+%%% 18
+\bibitem[\protect\citeauthoryear{Dettmers et~al.}{2023}]{qlora}
+\begin{botherref}
+\oauthor{\bsnm{Dettmers}, \binits{T.}},
+\oauthor{\bsnm{Pagnoni}, \binits{A.}},
+\oauthor{\bsnm{Holtzman}, \binits{A.}},
+\oauthor{\bsnm{Zettlemoyer}, \binits{L.}}:
+{QLoRA: Efficient Finetuning of Quantized LLMs}
+(2023).
+\url{https://arxiv.org/abs/2305.14314}
+\end{botherref}
+\endbibitem
+
+%%% 19
+\bibitem[\protect\citeauthoryear{Geifman and El-Yaniv}{2019}]{selective}
+\begin{bchapter}
+\bauthor{\bsnm{Geifman}, \binits{Y.}},
+\bauthor{\bsnm{El-Yaniv}, \binits{R.}}:
+\bctitle{{S}elective{N}et: A deep neural network with an integrated reject option}.
+In: \beditor{\bsnm{Chaudhuri}, \binits{K.}},
+\beditor{\bsnm{Salakhutdinov}, \binits{R.}} (eds.)
+\bbtitle{Proceedings of the 36th International Conference on Machine Learning}.
+\bsertitle{Proceedings of Machine Learning Research},
+vol. \bseriesno{97},
+pp. \bfpage{2151}--\blpage{2159}.
+\bpublisher{PMLR},
+\blocation{Online}
+(\byear{2019}).
+\burl{https://proceedings.mlr.press/v97/geifman19a.html}
+\end{bchapter}
+\endbibitem
+
+%%% 20
+\bibitem[\protect\citeauthoryear{{Qwen Team}}{2024}]{qwen}
+\begin{botherref}
+\oauthor{\bsnm{{Qwen Team}}}:
+{Qwen2.5 Technical Report}
+(2024).
+\url{https://arxiv.org/abs/2412.15115v1}
+\end{botherref}
+\endbibitem
+
+\end{thebibliography}

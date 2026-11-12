@@ -1,0 +1,3 @@
+# Content coverage — production checkpoint
+
+Every produced main retains the audited StudyA comparison, dual scores, candidate/delivery distinction, oracle diagnostics, failed planner criterion, secondary null outcome, stronger baselines and resource/validity qualifications. Long general/MAKE forms embed all restored supporting sections and generated tables. Conference/Springer supply the audited comprehensive supplement separately. All local vector figures match shared originals byte-for-byte; all bibliography key sets match the 28-entry master. This checks inheritance, not a fresh financial adjudication. Original source coverage audit remains in shared/source_inventory. Fine-grained adapted-section/page mapping and enlarged final visual QA remain outstanding.

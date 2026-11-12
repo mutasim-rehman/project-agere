@@ -1,0 +1,13 @@
+{
+  "folder": "01_general_conference",
+  "pages": 10,
+  "words": 4883,
+  "compiled": true,
+  "undefined_references": false,
+  "overfull_boxes": 0,
+  "sha256": "cfa429a6278ba153314170a94d27bf2fa81f7674c5180e3b4b20bdc25bf8fbfb",
+  "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+  "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+  "policy_status": "HUMAN-REVIEW-REQUIRED",
+  "template_status": "General-purpose article class"
+}

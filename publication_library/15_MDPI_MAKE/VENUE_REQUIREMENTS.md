@@ -1,0 +1,5 @@
+# Machine Learning and Knowledge Extraction (MAKE), MDPI
+
+Verified 2026-11-12: https://www.mdpi.com/journal/make/instructions and https://www.mdpi.com/authors/latex . Research Article; single-paragraph abstract about 200 words maximum; 3–10 keywords; Introduction, Materials and Methods, Results, Discussion/Conclusions and required author declarations. Official instructions explicitly permit free-format initial submissions and consistent reference style. This is that free-format draft, not an MDPI-class rendering. Numbered citations are used. Official ACS kit download returned HTTP 403; revision-stage template compliance remains unresolved. No fee, quartile or eligibility claim has yet been verified.
+
+Substantive GenAI use must be disclosed in Materials and Methods; this draft also contains a dedicated disclosure. Human authors must supply identities/contributions/funding/conflicts and approve all text. MAKE template terms restrict its use to submission, excluding preprint posting in that template. This draft is not submitted or marked submission-ready.

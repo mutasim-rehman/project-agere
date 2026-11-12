@@ -1,0 +1,3 @@
+# Submission roadmap — provisional, no submission authorized
+
+Finish Wave1 before generating conference variants. MAKE has relevant knowledge-extraction scope and an explicitly permitted free-format initial route; this does not establish competitiveness or acceptance likelihood. A named Springer journal requires separate scope/rules verification. IEEE Access is relevant to measured systems/reliability but its official kit remains inaccessible. Major AI conferences should be treated as ambitious until novelty/generality fit is reviewed. Fallback journals/conferences/workshops and verified ranking years are still under investigation. These versions describe one contribution and must not be submitted concurrently as independent papers.

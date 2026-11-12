@@ -1,0 +1,276 @@
+\section{Original Questions, Design Rationale and Historical Controls}\label{sec:design-restored}
+\subsection{Questions and hypothesis dispositions}
+The original four questions ask about correct/wrong/withheld delivery under common ceilings (RQ1), the stage at which failure appears (RQ2), the analysis-plus-demonstration bundle and repair (RQ3), and memory, latency and time per correct delivery (RQ4). They are retained alongside the later question about translating reference-informed diagnostic potential into evidence-only planning. They are related questions, not one pooled causal experiment.
+
+H1 is the primary operational proposal that the resident F16 team reduces wrong delivery without losing correct delivery. Its observed failure is substantial: reported correct delivery falls 78 to 5 while wrong delivery falls 48 to 3. H2 concerns the bundled prompt change: reported correct delivery increases 50 to 78 for SAS and 0 to 5 for MAS. That is descriptive support, not identification of the effect of analysis alone or demonstrations alone. H3 requires repair to increase correct delivery without increasing wrong delivery; SAS adds one correct and two wrong, while MAS changes neither. H4 predicts no higher team resident memory from its smaller parameter count; the observed peaks refute that prediction for these recipes. These are operational dispositions, not four independent discoveries. The frozen primary recipe and outcome definitions precede inference; the expanded significance-test battery, strata, loss functions and mathematical exposition were added later.
+
+The original gap concerning common resource limits is addressed only for the measured recipes and control mechanisms. The gap concerning fair baselines remains partly open: shared packets, tools and ceilings remove some differences, but not model size, precision, role allocation, training or prompts. The adaptation-versus-verification question has exploratory evidence, including correct-answer losses. The proposed compliance-metric gap is not closed by numerical QA. Both synthetic systems miss every planted mismatch and required missing-field refusal. No professional financial or legal validity follows.
+
+\subsection{Fairness, memory accounting and protocol choices}
+The original budget rule was $M_{\rm job}=\min(0.8M_{\rm tier},M_{\rm host}-M_{\rm idle}-1\,\mathrm{GB})$, with all GB decimal. The measured 16 GB host exposes approximately 15.44 GB to Linux. A 12.49 GB-cap attempt failed its reserve check; the frozen evaluation uses an 11.5 GB application RSS guard plus 1 GB reserve and 0.1 GB launch cushion (12.6 GB available before launch). This is a sampling/launch policy, not an OS guarantee that all applications together never exceed memory.
+
+The original 8,192-context engineering probes swapped. Reducing both arms to 4,096 before the accuracy run gave neutral-input sampled peaks of approximately 9.98 GB for SAS and 10.85 GB for MAS without observed swap in those probes. The comparison keeps eight CPU threads, no GPU layers, no memory mapping, greedy decoding, seed 42, F16 KV cache and reset-per-call policy. Sharing the same total generation ceiling does not imply equal actual generated or prompt tokens, model calls, elapsed time, FLOPs or energy. FLOPs and energy were not measured; an older sentence implying otherwise is corrected here.
+
+Study A uses instruction-tuned checkpoints without project adapters. Earlier adapters target 7B/3B bases and cannot simply be applied to 14B. Applying an existing adapter on only one side would introduce another asymmetry, but the absence of such adaptation does not make either recipe optimal. The 8 GB adapted experiments, historical synthetic team, and 16 GB F16 team use different systems. Separate model residency is not shared-backbone adapter serving, and a single model can make several stage calls.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{llr}\toprule
+Study A role & GGUF precision & File bytes\\\midrule
+SAS 14B & Q4\_K\_M & 8,988,110,336\\
+MAS 1.5B extractor & F16 & 3,093,669,024\\
+MAS 3B drafter & F16 & 6,178,316,832\\
+MAS 0.5B reviewer & F16 & 994,156,512\\
+MAS total & Separate files & 10,266,142,368\\\bottomrule
+\end{tabular}
+\caption{Recorded model-file sizes, distinct from RSS, commit, KV-cache size and total host memory.}\label{tab:weights}
+\end{table}
+
+\subsection{Historical synthetic test outcomes, including denominator failures}\label{sec:synthetic}
+The original Windows study tests 100 synthetic KYC and 75 synthetic credit cases, using a 7B Q4 SAS and a resident 1.5B/0.5B/0.5B F16 MAS at context 2,048 and a 6.4 GB sampled cap. It is distinct from the later 3B quantized resident pair. The 150-case development suite is rule-solvable; these tasks provide output-contract and pipeline diagnostics, not evidence that language models are necessary or that the system performs real regulatory work.
+
+\begin{table}[ht]\centering
+\begin{tabular}{lrr}\toprule
+Metric & SAS & MAS\\\midrule
+Valid JSON / all test cases & 175/175 & 111/175\\
+Invention flag / complete claim sets & 125/175 & 89/111\\
+Grounded claims / evaluated claims & 541/641 & 233/641\\
+Detected planted mismatch / eligible & 0/20 & 0/20\\
+Correct missing-field refusal / eligible & 0/59 & 0/59\\
+Generated tokens / case (mean) & 327.5 & 678.4\\
+Inference seconds / case (mean) & 91.5 & 60.6\\
+Peak recorded RSS (GB) & 5.030 & 5.540\\\bottomrule
+\end{tabular}
+\caption{Historical 175-case outcomes re-aggregated from saved case scores. The invention denominators differ because 64 MAS outputs are malformed; 80.2\% versus 71.4\% is not a matched unconditional error comparison. Grounding is claim-level, not an independent sample of 641 tasks.}\label{tab:synthetic}
+\end{table}
+
+Credit-only MAS validity is 52\% and claim grounding 18.2\% in the original summaries. Development hardening changed valid JSON from 100\% to 19.3\% for SAS and 62\% to zero for MAS; the recorded workflow reverted to the original baselines before opening the test set. The original closed-book FRAMES check was SAS 1/100 versus MAS 2/100; the later external control reported above reverses that ordering at 2/100 versus 1/100. These are different runs, not an inconsistency to erase or evidence of retrieval competence.
+
+The historical Windows memory-mapped configuration reported approximately 6.59 GB working-set RSS at context 4,096 and 6.47 GB at 2,048 for a 4.68 GB model; direct loading avoided that observed cap breach. This does not establish that all Windows mmap accounting is erroneous. Combining Q4\_0 KV cache and flash attention on that CPU produced zero valid JSON out of 150 development cases; F16 KV without flash attention was used thereafter. The two settings were changed together, so the cause is not separately identified. A later shared-backbone probe reduced sampled RSS from approximately 4.83 to 2.57 GB with matching probe logits; it did not establish end-to-end financial accuracy or substitute for the separately resident experimental systems.
+
+\section{Extended Study A Outcomes and Resource Reconciliation}\label{sec:extended-a}
+\subsection{Paired transitions and selective behavior}
+\begin{figure}[ht]\centering
+\includegraphics[width=.94\textwidth]{figures/restored_transitions.pdf}
+\caption{Every primary question in the paired C/W/H transition tables. The numerical score changes which deliveries count as correct but never changes delivery itself. These are observations on the same 160 questions, not separate cohorts.}\label{fig:transitions-restored}
+\end{figure}
+Under reported scoring the team has no uniquely correct delivery: the paired correct gains/losses are 0/73. Under raw scoring the gains/losses are 1/34. Therefore the unqualified old statement that MAS never succeeds where SAS fails was too broad. Reported wrong gains/losses are 1/46; raw wrong gains/losses 0/85. Withholding gains/losses are 118/0 under both metrics. The reported transition table decomposes its Bowker statistic as $1+72+46=119$; the raw table gives $1+34+84=119$. The dominant movement is delivery to withholding, not correction.
+
+Primary reported precision among delivered answers is 78/126 for SAS and 5/8 for MAS. Case-IID Wilson 95\% intervals are approximately [53.2,69.9]\% and [30.6,86.3]\%, respectively; they are descriptive because selected deliveries differ and questions share reports. Primary correct-delivery Wilson intervals are [41.1,56.4]\% and [1.3,7.1]\%; wrong-delivery intervals are [23.4,37.5]\% and [0.6,5.4]\%. These cannot replace paired cluster intervals or justify equal reliability.
+
+\newpage
+\subsection{Four endpoints, weighting and influence}
+\input{primary_intervals.tex}
+\input{primary_sensitivity.tex}
+\input{cluster_tests.tex}
+Holm-adjusted report sign-flip values for the four correct/wrong endpoints are all $6.1034\times10^{-5}$. The corresponding report score-test adjusted values are $1.92\times10^{-6}$, $3.68\times10^{-6}$, $4.26\times10^{-5}$ and $2.54\times10^{-7}$ in reported-C, reported-W, raw-C, raw-W order. These are post-hoc diagnostics under different assumptions, not multiple independent confirmations. Three sign-flip results have zero more-extreme Monte Carlo draws, and one has one; their values reflect the finite 65,536-draw resolution. Company score-test $p$-values are larger (for reported correct, approximately $1.27\times10^{-4}$). The old claim that every cluster-aware adjusted value is at most $6.1\times10^{-5}$ does not extend to company-level variants.
+
+On reported correct delivery SAS is higher on 33 reports, ties on 17, and is lower on none; raw correct delivery has 21 reports favoring SAS and 29 ties despite one question-level MAS gain. The question-weighted and equal-report estimands differ. Leave-one-report-out ranges show observed influence, not sampling confidence. Deterministic hash-based selection and potential common-company dependence limit population interpretation.
+
+\subsection{Candidate production, reference strata and scoring discordance}
+\begin{table}[ht]\centering
+\begin{tabular}{lrrrrrrr}\toprule
+Arm & Executable & Correct draft & C & W & Correct rejected & Wrong rejected & Invalid\\\midrule
+SAS & 150 & 84 & 78 & 48 & 6 & 18 & 10\\
+MAS & 10 & 5 & 5 & 3 & 0 & 2 & 150\\\bottomrule
+\end{tabular}
+\caption{Primary reported-score candidate/gate accounting. Invalid includes INSUFFICIENT. A review PASS does not override invalid execution.}\label{tab:stage-account}
+\end{table}
+
+Writing $q$ for executable fraction, $p$ for correct given executable, $a$ for acceptance of correct candidates and $b$ for acceptance of wrong executable candidates gives SAS $(q,p,a,b)=(150/160,84/150,78/84,48/66)$ and MAS $(10/160,5/10,5/5,3/5)$. Thus the reviewer accepts 72.7\% and 60\% of wrong executable candidates, respectively. The equality $C/N=qpa$ is exact descriptive accounting; it does not identify which intervention would change any factor independently. In the later planner study the candidate pool changes, so this fixed-pool calculation must be repeated for each arm.
+
+\input{strata.tex}
+\begin{figure}[ht]\centering
+\includegraphics[width=.94\textwidth]{figures/restored_heterogeneity.pdf}
+\caption{Report heterogeneity and reference-defined complexity. Repeated report-rate pairs are drawn with proportional marker area. Right: observed correct-delivery rates; stratum counts and all wrong/withheld outcomes are in Table~\ref{tab:strata}. These exploratory partitions do not isolate causal difficulty.}\label{fig:heterogeneity}
+\end{figure}
+There are 104 one-operation, 49 two-operation, four three-operation and three five-operation reference programs. All 56 multi-operation questions are withheld by MAS. Five questions use a table aggregate; the source-reference grammar does not directly implement max/min/sum/average. A reference operation is not necessarily the only valid solution, so grammar mismatch is a threat to comparability, not proof of impossibility.
+
+All annotated spans are retrieved on 138 questions. SAS delivers 74 reported-correct with three invalid/insufficient programs there; MAS delivers five with 128 invalid/insufficient. In the remaining 22, SAS has four correct and MAS zero. Annotated retrieval completeness is a reference-dependent diagnostic, not proof that the question is unambiguous, that all cell identities are bound correctly, or that prompting makes the evidence usable.
+
+Among 126 SAS deliveries, reported/raw agreement is 34 correct under both, 44 reported-only, four raw-only and 44 incorrect under both. All eight MAS deliveries agree across scores. A supported answer can therefore fail one convention while passing another. Neither convention is silently substituted for official FinQA execution scoring, and unsupported labels remain in denominators.
+
+\subsection{Prompt, repair and resource costs}
+The full paired battery below retains the direct-to-primary and primary-to-repair contrasts under both scores. SAS reported bundle gain is 28/160 with report interval [+9.76,+24.55] pp; its raw gain is 24/160 with [+8.59,+21.62]. MAS gains 5/160 with [0,+6.98]. The SAS raw wrong-delivery decrease has interval [$-17.96,+0.72$] pp: it should not be called robust merely because the case-IID exact test is near 0.05. The two prompt components are inseparable here.
+
+Primary and repair initial candidates match on all cases. SAS repair releases one reported-correct and two wrong answers (zero raw-correct, three raw-wrong); MAS attempts 152 repairs without changing delivery. Final source-supported MAS candidates fall from ten to eight in the original trace accounting. A degenerate no-change interval does not prove equivalence in future cases.
+
+\input{resources_extended.tex}
+\input{stages.tex}
+\begin{figure}[ht]\centering
+\includegraphics[width=.94\textwidth]{figures/restored_stage_work.pdf}
+\caption{Stage work in the Ubuntu primary pair, summed from saved inference durations. This exposes coordination work but does not isolate a causal overhead penalty: models and prompts differ. Startup, aborted work and recovery time are excluded.}\label{fig:stage-work}
+\end{figure}
+
+Original primary medians are SAS 251.4 s and MAS 53.8 s; original amortized seconds per reported-correct answer are 532.9 and 1,751.4. Hence the historical statement of approximately 3.29 times more work per correct answer applies to that run only. Original primary prompt tokens average 4,016.8 and 4,666.7, while generated tokens average 204.1 and 184.4. The Ubuntu repeat has different durations even though scores agree. It must not inherit the original speed ratios or the original MAS repair increment of 1.25 hours. Table~\ref{tab:resource-reconcile} reports both runs distinctly.
+
+The historical chronology is: a failed reserve check; context reduction after swap-prone probes; SAS primary swap of 44,011,520 bytes after 145 saved cases; a replay-checked continuation that later records 34,430,976 bytes of swap after seven direct-control cases; and a final continuation preserving 327 cases under kernel swap prevention. The original complete accuracy audit remains resource-invalid as an uninterrupted no-swap test. The separate Ubuntu repeat contributes zero observed swap over its saved samples, not a retroactive erasure of those failures. Its own interruptions and damaged export are disclosed in the resource section above.
+
+\section{Conditional Mathematical Analysis and Statistical Assumptions}\label{sec:formal}
+The following are established identities and conditional bounds, not novel theorems. Counts are capital $C,W,H$; rates divide by $N$. Probabilistic claims require the stated sampling assumptions and do not follow solely from deterministic trace replay.
+
+\subsection{P1--P3: accounting, the gate bound and stage factorization}
+For each case exactly one of correct delivery, wrong delivery and withholding occurs, hence $C+W+H=N$ and $\Delta C+\Delta W+\Delta H=0$. Proof: sum the exhaustive, mutually exclusive indicators. Always-withhold gives zero errors but also zero correct delivery. This identity explains why fewer wrong answers alone does not establish improvement.
+
+For a fixed candidate set, let $A$ be the cases with correct executable candidates and $D$ the delivered cases. A gate that only accepts or rejects obeys $C_{\rm gate}=|A\cap D|\leq |A|$. Proof: an intersection is a subset of $A$. This bound assumes no rewrite, repair, new evidence or alternative candidate selection. Study A MAS has $|A|=5$, so an ideal gate over its existing drafts cannot reach SAS's 78 reported-correct deliveries. It does not rule out improved generation, representation, role allocation or a different candidate pool.
+
+Let $E$ denote an executable candidate and $K$ numerical correctness, with delivery requiring $E$. Define $q=\Pr(E)$, $p=\Pr(K\mid E)$, $a=\Pr(D\mid E,K)$ and $b=\Pr(D\mid E,\neg K)$. Then
+\begin{equation}\label{eq:stage}
+ C/N=qpa,\qquad W/N=q(1-p)b,\qquad H/N=1-qpa-q(1-p)b.
+\end{equation}
+These empirical-frequency equalities follow from the chain rule, not independence. When a conditioning set is empty its conditional rate is undefined; the corresponding joint count remains zero. Reporting fictitious zero conditional accuracy in such a cell would be misleading.
+
+\subsection{P4--P5: preference-sensitive utility and corrected repair break-even}\label{sec:utility}
+For chosen penalties $\lambda,\kappa\geq0$, define
+\begin{equation}
+ U=(C-\lambda W-\kappa H)/N.
+\end{equation}
+The original observed primary reported-score difference is
+\begin{equation}
+ U_{\rm SAS}-U_{\rm MAS}=(73-45\lambda+118\kappa)/160,
+\end{equation}
+and the raw-score difference is $(33-85\lambda+118\kappa)/160$. Proof: substitute the observed counts. Thus switch points are $(73+118\kappa)/45$ and $(33+118\kappa)/85$, respectively. These are sample-specific preference calculations, not calibrated institutional risk thresholds or prospective optimization results.
+
+At $\kappa=0$, reported-score MAS beats SAS only for $\lambda>73/45\approx1.622$ and beats always-withhold only for $\lambda<5/3\approx1.667$. Both constraints are necessary for MAS to be best among these three policies. With withholding cost, the MAS-versus-always-withhold condition becomes $\lambda<(5+8\kappa)/3$. The raw-score SAS/MAS switch at $\kappa=0$ is $33/85\approx0.388$; one must not transfer the narrow reported-score optimality region to raw scoring. No empirical estimate of the appropriate penalties is available.
+
+Repair changes SAS by $(\Delta C,\Delta W,\Delta H)=(1,2,-3)$ reported and $(0,3,-3)$ raw. Consequently
+\begin{equation}\label{eq:repair}
+ \Delta U_{\rm rep}=(1-2\lambda+3\kappa)/160,\qquad
+ \Delta U_{\rm raw}=(-3\lambda+3\kappa)/160.
+\end{equation}
+The old manuscript omitted $3\kappa$; its formula is correct only at zero withholding cost. Subtract an additional measured-cost term $\gamma\Delta t$ if time is priced per question. A positive time cost lowers repair utility, but does not automatically make it negative for every penalty choice. MAS's unchanged outcomes give zero outcome-utility change; additional work is unfavorable if time has positive cost. Under the prespecified correct/wrong criterion SAS repair fails regardless of a post-hoc favorable loss function.
+
+\begin{figure}[ht]\centering
+\includegraphics[width=.94\textwidth]{figures/restored_utility.pdf}
+\caption{Observed reported-score utility with the always-withhold policy included. Curves are exact transformations of counts, not fitted predictions or confidence bands. Loss weights were not estimated from a financial institution.}\label{fig:utility}
+\end{figure}
+
+\subsection{P6: memory accounting with explicit residency assumptions}
+If each distinct tensor $j$ has $n_j$ stored elements with effective storage $b_j$ bits per element, its storage is $n_jb_j/8$. If all such storage is actually resident simultaneously without swapping/compression, and runtime buffers occupy disjoint resident pages, a bookkeeping bound is
+\begin{equation}
+ M_{\rm resident}\geq\sum_j n_j b_j/8+M_{\rm KV}+M_{\rm other}.
+\end{equation}
+Proof: add the disjoint resident allocations, counting a truly shared tensor once. Effective bits must include block scales and other encoding overhead. File headers, padding, shared mapped pages and allocator reporting prevent treating file size as an exact RSS component. Summed process RSS may double-count shared pages; the experiments use no mmap, but this is not a universal memory-accounting theorem. Windows commit is a different measure. Table~\ref{tab:weights} explains why fewer parameters can occupy more storage at higher precision without claiming a causal precision effect on accuracy.
+
+\subsection{P7: bounded-cluster uncertainty, with its limits}
+For independent report contributions $D_g\in[-1,1]$ and fixed weights $w_g=n_g/N$, Hoeffding's inequality \citep{hoeffding} yields
+\begin{equation}
+ \Pr\!\left(\left|\sum_g w_g(D_g-\mathbb E D_g)\right|\geq\epsilon\right)
+ \leq2\exp\!\left(-\frac{\epsilon^2}{2\sum_gw_g^2}\right),\qquad
+ G_{\rm eff}=1/\sum_g w_g^2.
+\end{equation}
+The range of $w_gD_g$ is $2w_g$; substituting these ranges into the bounded-sum inequality proves the expression. Setting its right side to $\alpha$ gives half-width $\sqrt{2\sum_gw_g^2\log(2/\alpha)}$. Replacing $\alpha$ by $\alpha/4$ and applying the union bound gives a four-endpoint bound, assuming all four marginal conditions hold.
+
+Observed sizes give $G_{\rm eff}=36.99$ for reports and 19.88 for companies, with 95\% half-widths 44.66 and 60.93 pp. The report four-endpoint half-width is 52.38 pp. The reported-correct $-45.625$ pp difference barely excludes zero with the report single-endpoint bound, but not with the family or company bound. This is conservative conditional uncertainty for fixed observed weights, not a design-based guarantee for deterministic report selection, a random-denominator population ratio, or dependence across companies. The effective-cluster number is weight concentration, not the literal number of independent reports.
+
+\subsection{P8--P10: score disagreements and procedure-specific evidence bounds}
+P8 follows by partitioning deliveries into both-correct, reported-only, raw-only and neither: $C_{\rm rep}-C_{\rm raw}=R_{\rm only}-E_{\rm only}$. Thus $78-38=44-4$. It does not decide which scoring convention best represents the task.
+
+For P9, conditional exact McNemar with $n_d=b+c>0$ discordances has minimum two-sided value $\min(1,2^{1-n_d})$, attained when all discordances point one way. Proof: the smallest nonempty binomial tail under probability $1/2$ is $2^{-n_d}$; double it. Thus this procedure requires at least six discordances for $p<0.05$ and eight for $p<0.0125$. Four planner gains give $p=0.125$; five MAS prompt-bundle gains give $p=0.0625$. This is \emph{not} a claim that no other test could reject, nor evidence of no effect.
+
+For P10, define the recorded cluster score statistic $Q=(\sum_g S_g)^2/\sum_g S_g^2$, where $S_g$ sums paired event differences and the denominator is nonzero. Cauchy--Schwarz gives $Q\leq G'$ for $G'$ nonzero cluster sums. Under the particular asymptotic $\chi^2_1$ reference, its computed tail is at least $\Pr(\chi^2_1\geq G')$. For $G'=33$ this is approximately $9.2\times10^{-9}$. The inequality bounds this statistic and reference tail only. The old claim that \emph{no valid cluster test} can provide smaller $p$-values is false: other statistics, reference distributions and assumptions have different attainable values. The archived code calls this statistic ``Durkalski''; here it is called the \emph{cluster score statistic} and its formula is supplied without claiming every variant in that literature is equivalent.
+
+\subsection{Nonidentification and error propagation}
+Across tiers, RAM, checkpoints, precision, adaptation, prompts, runtime and tasks vary together. Any observed outcomes can be matched by multiple response functions assigning different effects to RAM; the effect of changing RAM alone is unidentified without additional controlled comparisons or modeling assumptions. The same is true of a universal architecture effect. Within Study A, the bottleneck is descriptively located before delivery, but its cause can involve prompts, representation, role allocation, source suggestions or model capability.
+
+A message-only Markov chain/data-processing account would require downstream access to evidence only through upstream messages. Here every role also sees source evidence. Correlated errors and poor verification are observed, but a Markov cascade, an information-loss rate or a causal coordination penalty is not estimated. Stage durations quantify observed work; they do not identify the counterfactual cost of removing a role while preserving capability.
+
+\section{Statistical Derivations and Complete Numerical Battery}\label{sec:statistics-restored}
+\subsection{Paired estimands and small-discordance inference (J1--J4)}
+For the paired-proportion setting of \citet{mcnemar}, let $d_i=y_{Ri}-y_{Li}\in\{-1,0,1\}$ and $\widehat\Delta=N^{-1}\sum_i d_i=(b-c)/N$. Under independent case pairs,
+\begin{equation}
+ \operatorname{Var}(\widehat\Delta)=\{\operatorname{Var}(y_R)+\operatorname{Var}(y_L)-2\operatorname{Cov}(y_R,y_L)\}/N.
+\end{equation}
+Dropping the covariance by treating arms as independent changes the sampling model. Under the multinomial paired model, a plug-in variance is $\{(b+c)-(b-c)^2/N\}/N^2$. The resulting Wald interval can misbehave near boundaries; it is not the primary uncertainty interval.
+
+Conditional on $n_d=b+c$, the null of equal event probabilities gives $b\sim\mathrm{Binomial}(n_d,1/2)$, and
+\begin{equation}
+ p_{\rm exact}=\min\left(1,2\sum_{k=0}^{\min(b,c)}{n_d\choose k}2^{-n_d}\right).
+\end{equation}
+This exactness is conditional on independent/exchangeable pairs under the binomial model; it does not survive arbitrary within-report dependence. The asymptotic statistic is $(b-c)^2/n_d$; the implementation's corrected version is $\max(|b-c|-1,0)^2/n_d$. Both use $\chi^2_1$ approximations. The maximum with zero is required to match the code when $b=c$. At zero discordance we conventionally report $p=1$ with undefined chi-square statistics, not equivalence.
+
+Exact conditional tests can be conservative \citep{fagerland}. Retaining them alongside bootstrap intervals exposes sparse data rather than choosing the favorable procedure. With five gains and no losses among 160 cases the Wald interval excludes zero but exact $p=0.0625$; with four gains among 96, the percentile bootstrap can also exclude zero. Neither discrepancy licenses a confident population improvement. There is no post-hoc observed-power calculation.
+
+\subsection{Transition tables, clustering and bootstrap (J5--J7)}
+For states C/W/H and paired counts $n_{ij}$, Bowker symmetry uses $Q_B=\sum_{i<j}(n_{ij}-n_{ji})^2/(n_{ij}+n_{ji})$, omitting empty pairs. Its asymptotic df is the number of nonempty pairs. Stuart--Maxwell tests marginal homogeneity with $\delta_i=n_{i\cdot}-n_{\cdot i}$, $V_{ii}=n_{i\cdot}+n_{\cdot i}-2n_{ii}$ and $V_{ij}=-(n_{ij}+n_{ji})$. Dropping a redundant category gives $Q_{SM}=\delta^\top V^+\delta$, rank df, and undefined statistics at rank zero. These are case-IID, large-sample diagnostics; sparse off-diagonal cells and shared reports limit their tail probabilities even when the numerical statistics are reproduced exactly.
+
+For independent clusters with sums $S_g=\sum_{i\in g}d_i$ and fixed sizes, $\operatorname{Var}(\widehat\Delta)=N^{-2}\sum_g\operatorname{Var}(S_g)$. The recorded CR1 estimate is
+\begin{equation}
+ \widehat V_{CR1}=\frac{G}{G-1}\frac{1}{N^2}\sum_g(S_g-\widehat\Delta n_g)^2.
+\end{equation}
+Its normal-tail $z$ test is asymptotic; the $G/(G-1)$ factor does not guarantee small-sample validity. Cluster-robust methods allow within-cluster dependence under appropriate independent-cluster regularity conditions \citep{cameron}. The score statistic of P10 instead uses uncentered squared cluster sums under its zero-mean null. It reduces to the uncorrected McNemar statistic for singleton clusters. Neither procedure is universally finite-sample valid.
+
+The empirical variance ratio $\widehat V_{CR1}/\widehat V_{IID}$ is a descriptive design effect, not proof that one study has exactly $N/\mathrm{DEFF}$ independent observations. The earlier draft also inferred an intraclass correlation from a common-correlation approximation; heterogeneous binary paired differences do not identify such an ICC. We retain the computed design effects, but exclude that unsupported interpretation.
+
+Cluster bootstrap draws $G$ whole reports with replacement, retaining all paired questions, and recomputes $\sum_g S_g^*/\sum_g n_g^*$. It targets a question-weighted ratio under exchangeable independent report sampling with finite moments and nonzero denominator. Equal-report averaging instead estimates $G^{-1}\sum_g S_g/n_g$. Neither is automatically appropriate to every target population. The 10,000-draw NumPy seed-42 implementation uses linear percentiles; source audit Python-indexed quantiles are kept separately. Percentile intervals are approximate and may under-cover with few discordant clusters. If all observed changes have one sign, the bootstrap cannot synthesize unseen opposite changes; it need not touch zero. This corrects the old blanket statement that such intervals always do so.
+
+\subsection{Sign procedures, multiplicity and interpretation (J8--J12)}
+Under independent cluster sums symmetric about zero, conditioning on magnitudes makes the signs exchangeable. Enumerating all sign assignments yields an exact conditional sign-flip test; the recorded implementation enumerates at most 18 nonzero clusters and otherwise uses 65,536 random assignments with $(E+1)/(R+1)$, not zero. The report sign test instead conditions on nonzero sums and assumes independent equiprobable signs, ignoring magnitudes. Zero average effect alone implies neither null. These tests are supplemental, not randomized-treatment inference.
+
+For valid marginal $p$-values, Holm's sorted adjustment is $\widetilde p_{(j)}=\min(1,\max_{\ell\leq j}(m-\ell+1)p_{(\ell)})$ \citep{holm}. If the first true null is rejected when $m_0$ true nulls remain, its threshold is no larger than $\alpha/m_0$; the union bound gives family error at most $\alpha$ without independent tests. This guarantee requires valid input $p$-values; it does not repair invalid cluster assumptions. The four original correct/wrong endpoints form the disclosed family; withholding is algebraically determined. Excluding its test from this family is a design choice, not a theorem forbidding testing withholding for another question.
+
+Wilson intervals invert the independent-binomial score inequality. With $z=1.96$, their endpoints are
+\begin{equation}
+ \frac{\widehat p+z^2/(2n)\ \pm\ z\sqrt{\widehat p(1-\widehat p)/n+z^2/(4n^2)}}{1+z^2/n}.
+\end{equation}
+They remain inside [0,1] but do not account for report dependence or differing selected delivery sets. Risk differences are directly interpretable here and remain finite when discordant odds ratios separate ($b=0$ or $c=0$). This does not imply that every logistic, linear-probability or cluster-robust regression is invalid; those alternatives require their own specifications and assumptions. None is needed to reproduce these descriptive paired contrasts.
+
+All inferential interpretations depend on a hypothetical exchangeable-case/report population, despite deterministic cohort construction and greedy decoding. There are no seed, checkpoint-family or financial-expert uncertainty estimates. Non-significance does not establish equivalence without a margin and suitable design. A small $p$-value neither makes a negative result novel nor resolves the correct/wrong/withheld trade-off. The supplemental battery is retained for transparency, not to multiply apparent evidential strength.
+
+\subsection{All historical comparisons, both numerical scores}
+The following tables reproduce all 21 saved comparisons and all 126 C/W/H endpoint rows, including raw-score 8 GB comparisons that the old PDF relegated to CSV. Values are independently recomputed after checking derived outcomes against the original raw ledgers. The complete JSON additionally retains Wald intervals, both asymptotic McNemar variants, CR1, company score tests, report sign tests and transition matrices; selected primary statistics are also printed above. Repeated arms, questions, reference scores and tests do not increase the independent sample size.
+
+Among 28 reported C/W endpoints in the 8 GB comparison family, five case-IID exact tests are below 0.05 before adjustment; none survives Holm adjustment (minimum about 0.36). The reserved MAS critic wrong-delivery decrease 17 to 9 has unchanged reported correct count 4 to 4 but raw correct decreases 8 to 7. Thus even a favorable error comparison cannot override the both-score no-correct-loss rule. The detailed battery makes this adverse trade-off visible.
+
+\paragraph{16 GB comparison key.}
+\input{legend_tier16.tex}
+\input{battery_tier16.tex}
+\input{symmetry_tier16.tex}
+\paragraph{Earlier 8 GB FinQA comparison key.}
+\input{legend_tier8.tex}
+\input{battery_tier8.tex}
+\input{symmetry_tier8.tex}
+
+\section{Worked Examples and Measurement Failures}\label{sec:examples}
+These examples are purposively selected illustrations, not a frequency estimate. The four original financial cases and the synthetic credit case are restored, plus a score-disagreement example. Programs below are compact renderings of saved traces; they are not invented model quotations. Full recorded responses, scores, source annotations and both historical/Ubuntu records are supplied in \path{worked_example_traces.json}. Historical per-stage timing is not copied into the Ubuntu interpretation.
+
+\subsection{Shared success: ABMD/2007/page\_52.pdf-1}
+The question asks for the possible Impella purchase price including contingent payments. The reference is $56.3=11.2+45.1$ million. Catalog values A013=45.1 at text\_3 and A017=11.2 at text\_4 support both arms' one-step addition. Both executions give 56.3 and both reviewers PASS; both scoring conventions agree. The extractor selected text\_3, text\_4, text\_5 and text\_6. This case demonstrates that the team can solve some tasks, not that specialization is superior.
+
+\subsection{Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1}
+The question asks for retail-segment capital expenditures before 2003, exclusive of that year's amount. The relevant sentence supplies total 290 and current-year 92, giving 198. SAS executes subtract(A005,A007), obtains 198, receives PASS and is correct under both scores. MAS selects the relevant text\_16 along with text\_17 and text\_18, but its program is
+\begin{verbatim}
+{"decision":"INSUFFICIENT","answer_unit":"number","steps":[]}
+\end{verbatim}
+The reviewer returns FAIL and the answer is withheld. Its analysis restates the requested subtraction but does not produce it. This distinguishes evidence access from candidate construction; a causal capacity floor is not identified.
+
+\subsection{Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2}
+The question asks for the greatest gross-margin percentage over three years; the reference table maximum is 27.9. SAS produces eight chained subtractions, executing to 6.1 percent, and its 14B reviewer PASSes it. MAS divides A009=27 by A010=2003, executing to approximately 0.0134798, with declared percent units; its reviewer FAILs it. The saved execution value is used here rather than treating the rounded display 0.0135 as exact. A year is used as a numerical operand. Both candidates are wrong, but only SAS delivers. The grammar lacks a direct max operation; the source-member guarantee does not establish semantic suitability.
+
+\subsection{Wrong team program accepted: PNC/2018/page\_171.pdf-1}
+The question asks for home-equity lines as a percentage of total credit commitments. SAS calculates $100(16944/181612)=9.32977997$ percent and receives PASS. It matches the reported 9.3\% but not the unnormalized raw execution reference; describing it simply as correct without naming the metric would hide this distinction.
+
+MAS computes $(31/169278)\times100/169278\approx1.08183407\times10^{-7}$ with fraction units and receives PASS. Its operands come from recorded source spans, but the calculation answers neither the reference nor a demonstrated alternative financial interpretation. It is wrong under both metrics. This is the single reported-score correct-to-wrong SAS-to-MAS transition.
+
+\subsection{A scoring convention changes the label: ABMD/2007/page\_52.pdf-2}
+SAS computes a ratio 0.5948190206 and multiplies by 100, declaring percent units. The resulting 59.48190206 matches the rounded reported label 59.5\% after unit normalization, but fails direct comparison to raw reference 0.59482. MAS emits INSUFFICIENT; although its reviewer PASSes that response, invalid execution prevents delivery. Review acceptance is therefore not itself delivery. This example illustrates both scale sensitivity and the deterministic execution guard.
+
+\subsection{Synthetic sentinel misclassified as invention: CR-TEST-0001}
+The credit packet supplies operating profit 52,852,800 PKR and debt service 13,000,000, yielding DSCR 4.0656, and current assets/liabilities 211,000,000/70,000,000, yielding 3.0143 after rounding. SAS emits valid JSON, both calculator citations and the supplied adverse-credit status. It copies the source sentinel NOT\_PROVIDED for the last-review date, citing the actual source line, while the output contract requires MISSING. The historical scorer flags this as an invented field (S6). We retain that score but do not reinterpret it as fabricated source content.
+
+MAS's fenced outputs fail the strict JSON contract (M2), and its draft uses nonexistent calculator-style status/date spans. Its saved complete-claim-set status is false and invention field null; the 89/111 aggregate excludes it. This explains why formatting, refusal-contract and grounding errors must not be collapsed into a single factual hallucination rate. The restored examples expose limitations in the measurement as well as in the models.
+
+\section{Restored Literature Context and Reproducibility Map}\label{sec:lit-restored}
+FinMAN's financial formula/extraction/calculation decomposition and lightweight checking \citep{finman} are close antecedents. DCRC combines learned evidence auditing, program synthesis and execution \citep{dcrc}. Bench360 measures task/system trade-offs across engines, hardware and quantization choices \citep{bench360}. These motivate the recipe comparison but do not supply performance measurements for our settings. The main paper also discusses program reasoning, tool-assisted correction, selective prediction, debate, equal-budget comparisons and multiagent failure taxonomies. Positive small-agent collaboration under tool access \citep{smallagents} does not conflict with our bounded negative result. Weight quantization methods such as AWQ \citep{awq} address compression; our GGUF recipe is not an AWQ implementation. Quantized-agent process failures can change even when headline rewards remain similar \citep{quantfail}; we do not import that paper's error rates or attribute our errors to quantization alone. The study does not claim to be the first system with provenance, role specialization, executable arithmetic, repair or abstention.
+
+Peripheral surveys of medical collaboration, cooking benchmarks, quantum-security agents and broad regulatory instruments are not restored as separate subsections: they do not validate these financial experiments. In particular, an assertion that named regulations universally require on-premises inference is not supported here. Unverified venue/version claims and external percentage gains are not copied. The coverage audit identifies these exclusions, and the original bibliography remains preserved; a shorter bibliography is not presented as an exhaustive systematic review.
+
+The reproducibility hierarchy is: frozen raw packets and case ledgers; independent program execution/scoring; reconciliation with derived case tables; recomputed statistical tables; manuscript figures and numerical text. Hashes of original manuscripts are in \path{../preserved_versions.json}; restoration input fingerprints and checks are in \path{coverage_evidence_checks.json}. Original complete audit records and evaluator dependencies remain in \path{../../output/final_aaai/}. The handoff restore utility reconstructs the preserved evidence tree without model inference. Original unavailable SSD export/log artifacts are still unavailable; new documentation is not a substitute for those missing bytes.
+
+\begin{verbatim}
+python scripts/reporting/coverage_evidence.py --evidence PATH
+python -m unittest tests.test_reporting_statistics
+python -m unittest tests.test_paper_statistical_tests
+\end{verbatim}
+
+Terminology: SAS uses one model instance for potentially several stages; MAS has separate resident role instances. Q4\_K\_M names the GGUF weight quantization, not a four-bit activation or KV-cache claim. F16 names stored half-precision weights. RSS denotes resident-set accounting; Windows commit is committed virtual-memory accounting and is not a physical-RAM guarantee. Coverage is $(C+W)/N$; selective error is $W/(C+W)$ when any answers are delivered; pp denotes percentage points. Historical KYC/credit tasks test synthetic output contracts, not professional due diligence. No 32 GB measurement, general scaling curve or autonomous financial-decision validation is supplied.

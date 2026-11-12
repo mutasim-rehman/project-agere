@@ -1,0 +1,13 @@
+{
+  "folder": "03_preprint_arxiv",
+  "pages": 36,
+  "words": 18426,
+  "compiled": true,
+  "undefined_references": false,
+  "overfull_boxes": 0,
+  "sha256": "8f08fe103d89289929aa057afe20a7beb7412cd2e614b501efa473da223ad2bf",
+  "visual_review": "All-page contact-sheet review; no observed overlap/clipping; enlarged submission QA remains",
+  "scientific_coverage": "Core methods/results reused from audited canonical source; extended history embedded or separate",
+  "policy_status": "HUMAN-REVIEW-REQUIRED",
+  "template_status": "General-purpose article class"
+}
