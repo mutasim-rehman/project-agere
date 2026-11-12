@@ -1,0 +1,24 @@
+{
+  "folder": "19_short_extended_abstract",
+  "pages": 2,
+  "words": 1128,
+  "sha256": "758c1996e6b5fc968135087c37997739fa8bfa908e00944f062ee491324d7a3c",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "template_status": "General-purpose article class; two columns,10point, US Letter",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; destination-specific refresh required",
+  "visual_review": "All-page contact sheets plus enlarged numerical pages; wide figures preserve readable labels",
+  "scientific_coverage": "Core science retained or explicitly condensed; complete canonical supporting manuscript included"
+}

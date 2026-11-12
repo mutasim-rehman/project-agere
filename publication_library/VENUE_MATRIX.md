@@ -21,3 +21,12 @@ Recovery update: MAKE official-template alternative at 15_MDPI_MAKE/official_mdp
 - IJCAI2027: 08_IJCAI evidence/content map and authentic officialkit. New generated prose prohibited; no manuscript/PDF claimed. Seven main/nine total; supplement50MB; Jan4/11 2027 abstract/full deadlines. Human authorship, eligibility, primary-paper fee status and reciprocal-review obligations remain author actions.
 
 Wave2 fit is ambitious: model-family/task narrowness, confounding, sparse prospective gains and incomplete baselines remain material. No acceptance odds or ranking invented.
+
+## Wave3 production
+
+- IEEE generic conference: 10_IEEE_conference/main.pdf,7pages/5038words, IEEEtran1.8b conference/IEEEtranBST, complete29-page support. Authentic CTAN maintainer distribution, not IEEE Access. Event cap/fees/deadline/anonymity not yet selected; human AI-section citation/version review remains.
+- Springer LNCS/LNAI: 12_Springer_LNCS/main.pdf,14pages/5014words, official publisher-linked LNCS class/splncs04BST, complete29-page support. Event-specific length/fees/deadline and ESM rules require refresh. Publisher AI disclosure/human-accountability obligations remain.
+- General workshop: 17_general_workshop/main.pdf,3pages/1568words plus29-page support. Focused failure-transfer account, general two-column article format, no named-workshop compliance claim.
+- Short/extended abstract: 19_short_extended_abstract/main.pdf,2pages/1128words plus29-page support. Candidate/delivery divergence framing; generic format and no named-event readiness claim.
+- Real ICLR workshop: 18_ICLR_workshop, official2026 MAL-GAI kit + factual content map/verified evidence; HUMAN-AUTHORING-REQUIRED, generated papers prohibited. Main6–8/blueprint2–4pages excluding refs/appendix, non-archival, double blind;2026 closed, future edition unverified.
+- Second workshop alternative: 22_AIWild_workshop, official2026 Agents in the Wild kit + factual content map/evidence; HUMAN-AUTHORING-REQUIRED, primarily human-authored papers required. Regular10/short4pages excluding refs/support, non-archival,double blind;2026 closed, future edition unverified.

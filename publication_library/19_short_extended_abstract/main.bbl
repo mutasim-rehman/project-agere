@@ -1,0 +1,33 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Chen et~al.(2021)Chen, Chen, Smiley, Shah, Borova, Langdon, Moussa, Beane, Huang, Routledge, and Wang]{finqa}
+Zhiyu Chen, Wenhu Chen, Charese Smiley, Sameena Shah, Iana Borova, Dylan Langdon, Reema Moussa, Matt Beane, Ting-Hao Huang, Bryan Routledge, and William~Yang Wang.
+\newblock {F}in{QA}: A dataset of numerical reasoning over financial data.
+\newblock In Marie-Francine Moens, Xuanjing Huang, Lucia Specia, and Scott Wen-tau Yih, editors, \emph{Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing}, pages 3697--3711, Online and Punta Cana, Dominican Republic, November 2021. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2021.emnlp-main.300}.
+\newblock URL \url{https://aclanthology.org/2021.emnlp-main.300/}.
+
+\bibitem[Geifman and El-Yaniv(2019)]{selective}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock {S}elective{N}et: A deep neural network with an integrated reject option.
+\newblock In Kamalika Chaudhuri and Ruslan Salakhutdinov, editors, \emph{Proceedings of the 36th International Conference on Machine Learning}, volume~97 of \emph{Proceedings of Machine Learning Research}, pages 2151--2159. PMLR, 09--15 Jun 2019.
+\newblock URL \url{https://proceedings.mlr.press/v97/geifman19a.html}.
+
+\bibitem[{Qwen Team}(2024)]{qwen}
+{Qwen Team}.
+\newblock {Qwen2.5 Technical Report}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2412.15115v1}.
+
+\bibitem[Zhu et~al.(2021)Zhu, Lei, Huang, Wang, Zhang, Lv, Feng, and Chua]{tatqa}
+Fengbin Zhu, Wenqiang Lei, Youcheng Huang, Chao Wang, Shuo Zhang, Jiancheng Lv, Fuli Feng, and Tat-Seng Chua.
+\newblock {TAT}-{QA}: A question answering benchmark on a hybrid of tabular and textual content in finance.
+\newblock In Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli, editors, \emph{Proceedings of the 59th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)}, pages 3277--3287, Online, August 2021. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2021.acl-long.254}.
+\newblock URL \url{https://aclanthology.org/2021.acl-long.254/}.
+
+\end{thebibliography}

@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{mast}
+Cemri, M., Pan, M.Z., Yang, S., Agrawal, L.A., Chopra, B., Tiwari, R., Keutzer, K., Parameswaran, A., Klein, D., Ramchandran, K., Zaharia, M., Gonzalez, J.E., Stoica, I.: {Why Do Multi-Agent LLM Systems Fail?} (2025), \url{https://arxiv.org/abs/2503.13657}
+
+\bibitem{dcrc}
+Chen, H., Tang, X., Liu, Q., Shi, W., Li, S., Lyu, F., Luo, W., Du, X., He, X.: {Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA} (2026), \url{https://arxiv.org/abs/2605.31064}
+
+\bibitem{pot}
+Chen, W., Ma, X., Wang, X., Cohen, W.W.: {Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks} (2023), \url{https://arxiv.org/abs/2211.12588}
+
+\bibitem{finqa}
+Chen, Z., Chen, W., Smiley, C., Shah, S., Borova, I., Langdon, D., Moussa, R., Beane, M., Huang, T.H., Routledge, B., Wang, W.Y.: {F}in{QA}: A dataset of numerical reasoning over financial data. In: Moens, M.F., Huang, X., Specia, L., Yih, S.W.t. (eds.) Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. pp. 3697--3711. Association for Computational Linguistics, Online and Punta Cana, Dominican Republic (Nov 2021). \doi{10.18653/v1/2021.emnlp-main.300}, \url{https://aclanthology.org/2021.emnlp-main.300/}
+
+\bibitem{qlora}
+Dettmers, T., Pagnoni, A., Holtzman, A., Zettlemoyer, L.: {QLoRA: Efficient Finetuning of Quantized LLMs} (2023), \url{https://arxiv.org/abs/2305.14314}
+
+\bibitem{debate}
+Du, Y., Li, S., Torralba, A., Tenenbaum, J.B., Mordatch, I.: Improving factuality and reasoning in language models through multiagent debate. In: Salakhutdinov, R., Kolter, Z., Heller, K., Weller, A., Oliver, N., Scarlett, J., Berkenkamp, F. (eds.) Proceedings of the 41st International Conference on Machine Learning. Proceedings of Machine Learning Research, vol.~235, pp. 11733--11763. PMLR (21--27 Jul 2024), \url{https://proceedings.mlr.press/v235/du24e.html}
+
+\bibitem{pal}
+Gao, L., Madaan, A., Zhou, S., Alon, U., Liu, P., Yang, Y., Callan, J., Neubig, G.: {PAL}: Program-aided language models. In: Krause, A., Brunskill, E., Cho, K., Engelhardt, B., Sabato, S., Scarlett, J. (eds.) Proceedings of the 40th International Conference on Machine Learning. Proceedings of Machine Learning Research, vol.~202, pp. 10764--10799. PMLR (23--29 Jul 2023), \url{https://proceedings.mlr.press/v202/gao23f.html}
+
+\bibitem{selective}
+Geifman, Y., El-Yaniv, R.: {S}elective{N}et: A deep neural network with an integrated reject option. In: Chaudhuri, K., Salakhutdinov, R. (eds.) Proceedings of the 36th International Conference on Machine Learning. Proceedings of Machine Learning Research, vol.~97, pp. 2151--2159. PMLR (09--15 Jun 2019), \url{https://proceedings.mlr.press/v97/geifman19a.html}
+
+\bibitem{critic}
+Gou, Z., Shao, Z., Gong, Y., Shen, Y., Yang, Y., Duan, N., Chen, W.: {CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing} (2024), \url{https://arxiv.org/abs/2305.11738}
+
+\bibitem{verifin}
+Hall, B., Shome, S., Eiers, W.: {VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims} (2026), \url{https://arxiv.org/abs/2608.10213}
+
+\bibitem{lora}
+Hu, E.J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., Wang, L., Chen, W.: {LoRA: Low-Rank Adaptation of Large Language Models} (2021), \url{https://arxiv.org/abs/2106.09685}
+
+\bibitem{selfcorrect}
+Huang, J., Chen, X., Mishra, S., Zheng, H.S., Yu, A.W., Song, X., Zhou, D.: {Large Language Models Cannot Self-Correct Reasoning Yet} (2024), \url{https://arxiv.org/abs/2310.01798}
+
+\bibitem{budgetverify}
+Jenq, J., Shen, H.: {BudgetVerify: Budget-Tiered Verification for Financial QA} (2026), \url{https://arxiv.org/abs/2609.33052}
+
+\bibitem{finman}
+Liu, C., Liu, Q., Zhu, Z., Fei, H., Mahanti, A.: {D}avid vs. goliath: Cost-efficient financial {QA} via cascaded multi-agent reasoning. In: Christodoulopoulos, C., Chakraborty, T., Rose, C., Peng, V. (eds.) Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2025. pp. 4212--4229. Association for Computational Linguistics, Suzhou, China (Nov 2025). \doi{10.18653/v1/2025.findings-emnlp.225}, \url{https://aclanthology.org/2025.findings-emnlp.225/}
+
+\bibitem{selfrefine}
+Madaan, A., Tandon, N., Gupta, P., Hallinan, S., Gao, L., Wiegreffe, S., Alon, U., Dziri, N., Prabhumoye, S., Yang, Y., Gupta, S., Majumder, B.P., Hermann, K., Welleck, S., Yazdanbakhsh, A., Clark, P.: {Self-Refine: Iterative Refinement with Self-Feedback} (2023), \url{https://arxiv.org/abs/2303.17651}
+
+\bibitem{qwen}
+{Qwen Team}: {Qwen2.5 Technical Report} (2024), \url{https://arxiv.org/abs/2412.15115v1}
+
+\bibitem{bench360}
+Stuhlmann, L., Argerich, M.F., Fürst, J.: {Bench360: Benchmarking Local LLM Inference from 360 Degrees} (2026), \url{https://arxiv.org/abs/2511.16682}
+
+\bibitem{equalbudget}
+Tran, D., Kiela, D.: {Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets} (2026), \url{https://arxiv.org/abs/2604.02460}
+
+\bibitem{selfconsistency}
+Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery, A., Zhou, D.: {Self-Consistency Improves Chain of Thought Reasoning in Language Models} (2023), \url{https://arxiv.org/abs/2203.11171}
+
+\bibitem{tatqa}
+Zhu, F., Lei, W., Huang, Y., Wang, C., Zhang, S., Lv, J., Feng, F., Chua, T.S.: {TAT}-{QA}: A question answering benchmark on a hybrid of tabular and textual content in finance. In: Zong, C., Xia, F., Li, W., Navigli, R. (eds.) Proceedings of the 59th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). pp. 3277--3287. Association for Computational Linguistics, Online (Aug 2021). \doi{10.18653/v1/2021.acl-long.254}, \url{https://aclanthology.org/2021.acl-long.254/}
+
+\end{thebibliography}

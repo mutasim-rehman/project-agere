@@ -457,6 +457,136 @@ Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF
 
 Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 34 pages. Supplement retained: False.
 
+## 10_IEEE_conference
+
+- `main.tex` / Introduction: 10_IEEE_conference\main.pdf:p1
+- `main.tex` / Related Work: 10_IEEE_conference\main.pdf:p1
+- `main.tex` / Methods and Evaluation: 10_IEEE_conference\main.pdf:p1
+- `main.tex` / Programs, Candidates and Delivery: 10_IEEE_conference\main.pdf:p1
+- `main.tex` / Study A: Nominal 16 GB Deployment Recipes: 10_IEEE_conference\main.pdf:p2
+- `main.tex` / Study B: Diagnostics and Evidence-Only Planning: 10_IEEE_conference\main.pdf:p2
+- `main.tex` / Scoring and Statistical Analysis: 10_IEEE_conference\main.pdf:p3
+- `main.tex` / Results: 10_IEEE_conference\main.pdf:p1; 10_IEEE_conference\main.pdf:p3; 10_IEEE_conference\supplementary\supplement.pdf:p3; 10_IEEE_conference\supplementary\supplement.pdf:p8; 10_IEEE_conference\supplementary\supplement.pdf:p9; 10_IEEE_conference\supplementary\supplement.pdf:p10; 10_IEEE_conference\supplementary\supplement.pdf:p15; 10_IEEE_conference\supplementary\supplement.pdf:p18
+- `main.tex` / The Resident F16 Team Mostly Withholds: 10_IEEE_conference\main.pdf:p3
+- `main.tex` / Evidence and Precision Do Not Resolve Generation: 10_IEEE_conference\main.pdf:p3
+- `main.tex` / The Evidence-Only Planner Fails Its Criterion: 10_IEEE_conference\main.pdf:p4
+- `main.tex` / Stronger Baselines and Nontransferable Gains: 10_IEEE_conference\main.pdf:p5
+- `main.tex` / Discussion and Limitations: 10_IEEE_conference\main.pdf:p6
+- `main.tex` / Conclusion: 10_IEEE_conference\main.pdf:p6
+- `supplement.tex` / Scope and Evidence Status: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p3
+- `supplement.tex` / Reproducibility Specification: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p3
+- `supplement.tex` / Study A: Frozen 16 GB Recipes: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p3
+- `supplement.tex` / Windows 8 GB Application Budget: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p4
+- `supplement.tex` / Adapter Provenance and Training: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p4
+- `supplement.tex` / Cohorts, Exposure and Prompt Availability: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p5
+- `supplement.tex` / Metrics and Statistical Details: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p5
+- `supplement.tex` / Complete Main-Study Outcome and Resource Tables: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p6
+- `supplement.tex` / Exploratory Sequence: Positive, Null and Adverse Findings: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p7
+- `supplement.tex` / Earlier Linux Development and Training: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p7
+- `supplement.tex` / Windows Candidate and Verifier Pilots: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p8
+- `supplement.tex` / Endpoint, Retrieval, Precision and Catalog Controls: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p9
+- `supplement.tex` / Baseline Capacity, Format, Review and Reference Checks: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p9
+- `supplement.tex` / Planner Development and Held-Out Result: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p10
+- `supplement.tex` / Resource Failures, Missing Evidence and Scope of Claims: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p10
+- `supplement.tex` / Literature Verification and Reproduction Commands: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p10
+- `supplement.tex` / Historical Linux 8 GB Condition Census: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p11
+- `supplement.tex` / Original Questions, Design Rationale and Historical Controls: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p12
+- `supplement.tex` / Questions and hypothesis dispositions: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p12
+- `supplement.tex` / Fairness, memory accounting and protocol choices: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p12
+- `supplement.tex` / Historical synthetic test outcomes, including denominator failures: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p13
+- `supplement.tex` / Extended Study A Outcomes and Resource Reconciliation: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p13
+- `supplement.tex` / Paired transitions and selective behavior: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p13
+- `supplement.tex` / Four endpoints, weighting and influence: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p14
+- `supplement.tex` / Candidate production, reference strata and scoring discordance: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p15
+- `supplement.tex` / Prompt, repair and resource costs: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p16
+- `supplement.tex` / Conditional Mathematical Analysis and Statistical Assumptions: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p18
+- `supplement.tex` / P1--P3: accounting, the gate bound and stage factorization: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p18
+- `supplement.tex` / P4--P5: preference-sensitive utility and corrected repair break-even: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p18
+- `supplement.tex` / P6: memory accounting with explicit residency assumptions: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p18
+- `supplement.tex` / P7: bounded-cluster uncertainty, with its limits: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p19
+- `supplement.tex` / P8--P10: score disagreements and procedure-specific evidence bounds: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p19
+- `supplement.tex` / Nonidentification and error propagation: 10_IEEE_conference\supplementary\supplement.pdf:p1; 10_IEEE_conference\supplementary\supplement.pdf:p20
+- `supplement.tex` / Statistical Derivations and Complete Numerical Battery: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p20
+- `supplement.tex` / Paired estimands and small-discordance inference (J1--J4): 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p20
+- `supplement.tex` / Transition tables, clustering and bootstrap (J5--J7): 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p20
+- `supplement.tex` / Sign procedures, multiplicity and interpretation (J8--J12): 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p21
+- `supplement.tex` / All historical comparisons, both numerical scores: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p21
+- `supplement.tex` / Worked Examples and Measurement Failures: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p26
+- `supplement.tex` / Shared success: ABMD/2007/page\_52.pdf-1: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p26
+- `supplement.tex` / Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p26
+- `supplement.tex` / Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p26
+- `supplement.tex` / Wrong team program accepted: PNC/2018/page\_171.pdf-1: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p27
+- `supplement.tex` / A scoring convention changes the label: ABMD/2007/page\_52.pdf-2: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p27
+- `supplement.tex` / Synthetic sentinel misclassified as invention: CR-TEST-0001: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p27
+- `supplement.tex` / Restored Literature Context and Reproducibility Map: 10_IEEE_conference\supplementary\supplement.pdf:p2; 10_IEEE_conference\supplementary\supplement.pdf:p27
+
+Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 7 pages. Supplement retained: True.
+
+## 12_Springer_LNCS
+
+- `main.tex` / Introduction: 12_Springer_LNCS\main.pdf:p1
+- `main.tex` / Related Work: 12_Springer_LNCS\main.pdf:p1
+- `main.tex` / Methods and Evaluation: 12_Springer_LNCS\main.pdf:p2
+- `main.tex` / Programs, Candidates and Delivery: 12_Springer_LNCS\main.pdf:p2
+- `main.tex` / Study A: Nominal 16 GB Deployment Recipes: 12_Springer_LNCS\main.pdf:p3
+- `main.tex` / Study B: Diagnostics and Evidence-Only Planning: 12_Springer_LNCS\main.pdf:p4
+- `main.tex` / Scoring and Statistical Analysis: 12_Springer_LNCS\main.pdf:p5
+- `main.tex` / Results: 12_Springer_LNCS\main.pdf:p2; 12_Springer_LNCS\main.pdf:p5; 12_Springer_LNCS\supplementary\supplement.pdf:p3; 12_Springer_LNCS\supplementary\supplement.pdf:p8; 12_Springer_LNCS\supplementary\supplement.pdf:p9; 12_Springer_LNCS\supplementary\supplement.pdf:p10; 12_Springer_LNCS\supplementary\supplement.pdf:p15; 12_Springer_LNCS\supplementary\supplement.pdf:p18
+- `main.tex` / The Resident F16 Team Mostly Withholds: 12_Springer_LNCS\main.pdf:p5
+- `main.tex` / Evidence and Precision Do Not Resolve Generation: 12_Springer_LNCS\main.pdf:p7
+- `main.tex` / The Evidence-Only Planner Fails Its Criterion: 12_Springer_LNCS\main.pdf:p7
+- `main.tex` / Stronger Baselines and Nontransferable Gains: 12_Springer_LNCS\main.pdf:p9
+- `main.tex` / Discussion and Limitations: 12_Springer_LNCS\main.pdf:p10
+- `main.tex` / Conclusion: 12_Springer_LNCS\main.pdf:p11
+- `supplement.tex` / Scope and Evidence Status: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p3
+- `supplement.tex` / Reproducibility Specification: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p3
+- `supplement.tex` / Study A: Frozen 16 GB Recipes: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p3
+- `supplement.tex` / Windows 8 GB Application Budget: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p4
+- `supplement.tex` / Adapter Provenance and Training: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p4
+- `supplement.tex` / Cohorts, Exposure and Prompt Availability: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p5
+- `supplement.tex` / Metrics and Statistical Details: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p5
+- `supplement.tex` / Complete Main-Study Outcome and Resource Tables: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p6
+- `supplement.tex` / Exploratory Sequence: Positive, Null and Adverse Findings: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p7
+- `supplement.tex` / Earlier Linux Development and Training: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p7
+- `supplement.tex` / Windows Candidate and Verifier Pilots: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p8
+- `supplement.tex` / Endpoint, Retrieval, Precision and Catalog Controls: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p9
+- `supplement.tex` / Baseline Capacity, Format, Review and Reference Checks: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p9
+- `supplement.tex` / Planner Development and Held-Out Result: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p10
+- `supplement.tex` / Resource Failures, Missing Evidence and Scope of Claims: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p10
+- `supplement.tex` / Literature Verification and Reproduction Commands: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p10
+- `supplement.tex` / Historical Linux 8 GB Condition Census: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p11
+- `supplement.tex` / Original Questions, Design Rationale and Historical Controls: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p12
+- `supplement.tex` / Questions and hypothesis dispositions: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p12
+- `supplement.tex` / Fairness, memory accounting and protocol choices: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p12
+- `supplement.tex` / Historical synthetic test outcomes, including denominator failures: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p13
+- `supplement.tex` / Extended Study A Outcomes and Resource Reconciliation: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p13
+- `supplement.tex` / Paired transitions and selective behavior: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p13
+- `supplement.tex` / Four endpoints, weighting and influence: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p14
+- `supplement.tex` / Candidate production, reference strata and scoring discordance: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p15
+- `supplement.tex` / Prompt, repair and resource costs: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p16
+- `supplement.tex` / Conditional Mathematical Analysis and Statistical Assumptions: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p18
+- `supplement.tex` / P1--P3: accounting, the gate bound and stage factorization: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p18
+- `supplement.tex` / P4--P5: preference-sensitive utility and corrected repair break-even: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p18
+- `supplement.tex` / P6: memory accounting with explicit residency assumptions: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p18
+- `supplement.tex` / P7: bounded-cluster uncertainty, with its limits: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p19
+- `supplement.tex` / P8--P10: score disagreements and procedure-specific evidence bounds: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p19
+- `supplement.tex` / Nonidentification and error propagation: 12_Springer_LNCS\supplementary\supplement.pdf:p1; 12_Springer_LNCS\supplementary\supplement.pdf:p20
+- `supplement.tex` / Statistical Derivations and Complete Numerical Battery: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p20
+- `supplement.tex` / Paired estimands and small-discordance inference (J1--J4): 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p20
+- `supplement.tex` / Transition tables, clustering and bootstrap (J5--J7): 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p20
+- `supplement.tex` / Sign procedures, multiplicity and interpretation (J8--J12): 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p21
+- `supplement.tex` / All historical comparisons, both numerical scores: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p21
+- `supplement.tex` / Worked Examples and Measurement Failures: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p26
+- `supplement.tex` / Shared success: ABMD/2007/page\_52.pdf-1: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p26
+- `supplement.tex` / Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p26
+- `supplement.tex` / Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p26
+- `supplement.tex` / Wrong team program accepted: PNC/2018/page\_171.pdf-1: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p27
+- `supplement.tex` / A scoring convention changes the label: ABMD/2007/page\_52.pdf-2: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p27
+- `supplement.tex` / Synthetic sentinel misclassified as invention: CR-TEST-0001: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p27
+- `supplement.tex` / Restored Literature Context and Reproducibility Map: 12_Springer_LNCS\supplementary\supplement.pdf:p2; 12_Springer_LNCS\supplementary\supplement.pdf:p27
+
+Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 14 pages. Supplement retained: True.
+
 ## 13_Springer_journal
 
 - `main.tex` / Introduction: 13_Springer_journal\main.pdf:p1
@@ -586,6 +716,136 @@ Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF
 - `supplement.tex` / Restored Literature Context and Reproducibility Map: 15_MDPI_MAKE\main.pdf:p33
 
 Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 36 pages. Supplement retained: False.
+
+## 17_general_workshop
+
+- `main.tex` / Introduction: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Related Work: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Methods and Evaluation: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Programs, Candidates and Delivery: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Study A: Nominal 16 GB Deployment Recipes: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Study B: Diagnostics and Evidence-Only Planning: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Scoring and Statistical Analysis: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Results: 17_general_workshop\main.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p3; 17_general_workshop\supplementary\supplement.pdf:p8; 17_general_workshop\supplementary\supplement.pdf:p9; 17_general_workshop\supplementary\supplement.pdf:p10; 17_general_workshop\supplementary\supplement.pdf:p15; 17_general_workshop\supplementary\supplement.pdf:p18
+- `main.tex` / The Resident F16 Team Mostly Withholds: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Evidence and Precision Do Not Resolve Generation: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / The Evidence-Only Planner Fails Its Criterion: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Stronger Baselines and Nontransferable Gains: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Discussion and Limitations: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Conclusion: 17_general_workshop\main.pdf:p2
+- `supplement.tex` / Scope and Evidence Status: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p3
+- `supplement.tex` / Reproducibility Specification: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p3
+- `supplement.tex` / Study A: Frozen 16 GB Recipes: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p3
+- `supplement.tex` / Windows 8 GB Application Budget: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p4
+- `supplement.tex` / Adapter Provenance and Training: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p4
+- `supplement.tex` / Cohorts, Exposure and Prompt Availability: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p5
+- `supplement.tex` / Metrics and Statistical Details: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p5
+- `supplement.tex` / Complete Main-Study Outcome and Resource Tables: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p6
+- `supplement.tex` / Exploratory Sequence: Positive, Null and Adverse Findings: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p7
+- `supplement.tex` / Earlier Linux Development and Training: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p7
+- `supplement.tex` / Windows Candidate and Verifier Pilots: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p8
+- `supplement.tex` / Endpoint, Retrieval, Precision and Catalog Controls: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p9
+- `supplement.tex` / Baseline Capacity, Format, Review and Reference Checks: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p9
+- `supplement.tex` / Planner Development and Held-Out Result: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p10
+- `supplement.tex` / Resource Failures, Missing Evidence and Scope of Claims: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p10
+- `supplement.tex` / Literature Verification and Reproduction Commands: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p10
+- `supplement.tex` / Historical Linux 8 GB Condition Census: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p11
+- `supplement.tex` / Original Questions, Design Rationale and Historical Controls: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p12
+- `supplement.tex` / Questions and hypothesis dispositions: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p12
+- `supplement.tex` / Fairness, memory accounting and protocol choices: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p12
+- `supplement.tex` / Historical synthetic test outcomes, including denominator failures: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p13
+- `supplement.tex` / Extended Study A Outcomes and Resource Reconciliation: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p13
+- `supplement.tex` / Paired transitions and selective behavior: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p13
+- `supplement.tex` / Four endpoints, weighting and influence: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p14
+- `supplement.tex` / Candidate production, reference strata and scoring discordance: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p15
+- `supplement.tex` / Prompt, repair and resource costs: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p16
+- `supplement.tex` / Conditional Mathematical Analysis and Statistical Assumptions: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p18
+- `supplement.tex` / P1--P3: accounting, the gate bound and stage factorization: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p18
+- `supplement.tex` / P4--P5: preference-sensitive utility and corrected repair break-even: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p18
+- `supplement.tex` / P6: memory accounting with explicit residency assumptions: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p18
+- `supplement.tex` / P7: bounded-cluster uncertainty, with its limits: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p19
+- `supplement.tex` / P8--P10: score disagreements and procedure-specific evidence bounds: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p19
+- `supplement.tex` / Nonidentification and error propagation: 17_general_workshop\supplementary\supplement.pdf:p1; 17_general_workshop\supplementary\supplement.pdf:p20
+- `supplement.tex` / Statistical Derivations and Complete Numerical Battery: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p20
+- `supplement.tex` / Paired estimands and small-discordance inference (J1--J4): 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p20
+- `supplement.tex` / Transition tables, clustering and bootstrap (J5--J7): 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p20
+- `supplement.tex` / Sign procedures, multiplicity and interpretation (J8--J12): 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p21
+- `supplement.tex` / All historical comparisons, both numerical scores: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p21
+- `supplement.tex` / Worked Examples and Measurement Failures: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p26
+- `supplement.tex` / Shared success: ABMD/2007/page\_52.pdf-1: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p26
+- `supplement.tex` / Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p26
+- `supplement.tex` / Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p26
+- `supplement.tex` / Wrong team program accepted: PNC/2018/page\_171.pdf-1: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p27
+- `supplement.tex` / A scoring convention changes the label: ABMD/2007/page\_52.pdf-2: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p27
+- `supplement.tex` / Synthetic sentinel misclassified as invention: CR-TEST-0001: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p27
+- `supplement.tex` / Restored Literature Context and Reproducibility Map: 17_general_workshop\supplementary\supplement.pdf:p2; 17_general_workshop\supplementary\supplement.pdf:p27
+
+Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 3 pages. Supplement retained: True.
+
+## 19_short_extended_abstract
+
+- `main.tex` / Introduction: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Related Work: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Methods and Evaluation: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Programs, Candidates and Delivery: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Study A: Nominal 16 GB Deployment Recipes: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Study B: Diagnostics and Evidence-Only Planning: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Scoring and Statistical Analysis: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Results: 19_short_extended_abstract\main.pdf:p1; 19_short_extended_abstract\main.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p3; 19_short_extended_abstract\supplementary\supplement.pdf:p8; 19_short_extended_abstract\supplementary\supplement.pdf:p9; 19_short_extended_abstract\supplementary\supplement.pdf:p10; 19_short_extended_abstract\supplementary\supplement.pdf:p15; 19_short_extended_abstract\supplementary\supplement.pdf:p18
+- `main.tex` / The Resident F16 Team Mostly Withholds: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Evidence and Precision Do Not Resolve Generation: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / The Evidence-Only Planner Fails Its Criterion: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Stronger Baselines and Nontransferable Gains: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Discussion and Limitations: HEADING NOT MATCHED; inspect condensed/replaced framing.
+- `main.tex` / Conclusion: 19_short_extended_abstract\main.pdf:p2
+- `supplement.tex` / Scope and Evidence Status: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p3
+- `supplement.tex` / Reproducibility Specification: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p3
+- `supplement.tex` / Study A: Frozen 16 GB Recipes: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p3
+- `supplement.tex` / Windows 8 GB Application Budget: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p4
+- `supplement.tex` / Adapter Provenance and Training: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p4
+- `supplement.tex` / Cohorts, Exposure and Prompt Availability: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p5
+- `supplement.tex` / Metrics and Statistical Details: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p5
+- `supplement.tex` / Complete Main-Study Outcome and Resource Tables: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p6
+- `supplement.tex` / Exploratory Sequence: Positive, Null and Adverse Findings: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p7
+- `supplement.tex` / Earlier Linux Development and Training: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p7
+- `supplement.tex` / Windows Candidate and Verifier Pilots: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p8
+- `supplement.tex` / Endpoint, Retrieval, Precision and Catalog Controls: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p9
+- `supplement.tex` / Baseline Capacity, Format, Review and Reference Checks: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p9
+- `supplement.tex` / Planner Development and Held-Out Result: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p10
+- `supplement.tex` / Resource Failures, Missing Evidence and Scope of Claims: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p10
+- `supplement.tex` / Literature Verification and Reproduction Commands: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p10
+- `supplement.tex` / Historical Linux 8 GB Condition Census: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p11
+- `supplement.tex` / Original Questions, Design Rationale and Historical Controls: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p12
+- `supplement.tex` / Questions and hypothesis dispositions: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p12
+- `supplement.tex` / Fairness, memory accounting and protocol choices: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p12
+- `supplement.tex` / Historical synthetic test outcomes, including denominator failures: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p13
+- `supplement.tex` / Extended Study A Outcomes and Resource Reconciliation: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p13
+- `supplement.tex` / Paired transitions and selective behavior: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p13
+- `supplement.tex` / Four endpoints, weighting and influence: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p14
+- `supplement.tex` / Candidate production, reference strata and scoring discordance: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p15
+- `supplement.tex` / Prompt, repair and resource costs: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p16
+- `supplement.tex` / Conditional Mathematical Analysis and Statistical Assumptions: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p18
+- `supplement.tex` / P1--P3: accounting, the gate bound and stage factorization: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p18
+- `supplement.tex` / P4--P5: preference-sensitive utility and corrected repair break-even: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p18
+- `supplement.tex` / P6: memory accounting with explicit residency assumptions: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p18
+- `supplement.tex` / P7: bounded-cluster uncertainty, with its limits: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p19
+- `supplement.tex` / P8--P10: score disagreements and procedure-specific evidence bounds: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p19
+- `supplement.tex` / Nonidentification and error propagation: 19_short_extended_abstract\supplementary\supplement.pdf:p1; 19_short_extended_abstract\supplementary\supplement.pdf:p20
+- `supplement.tex` / Statistical Derivations and Complete Numerical Battery: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p20
+- `supplement.tex` / Paired estimands and small-discordance inference (J1--J4): 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p20
+- `supplement.tex` / Transition tables, clustering and bootstrap (J5--J7): 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p20
+- `supplement.tex` / Sign procedures, multiplicity and interpretation (J8--J12): 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p21
+- `supplement.tex` / All historical comparisons, both numerical scores: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p21
+- `supplement.tex` / Worked Examples and Measurement Failures: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p26
+- `supplement.tex` / Shared success: ABMD/2007/page\_52.pdf-1: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p26
+- `supplement.tex` / Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p26
+- `supplement.tex` / Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p26
+- `supplement.tex` / Wrong team program accepted: PNC/2018/page\_171.pdf-1: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p27
+- `supplement.tex` / A scoring convention changes the label: ABMD/2007/page\_52.pdf-2: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p27
+- `supplement.tex` / Synthetic sentinel misclassified as invention: CR-TEST-0001: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p27
+- `supplement.tex` / Restored Literature Context and Reproducibility Map: 19_short_extended_abstract\supplementary\supplement.pdf:p2; 19_short_extended_abstract\supplementary\supplement.pdf:p27
+
+Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 2 pages. Supplement retained: True.
 
 ## 15_MDPI_MAKE\official_mdpi
 

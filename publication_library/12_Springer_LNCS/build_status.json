@@ -1,0 +1,24 @@
+{
+  "folder": "12_Springer_LNCS",
+  "pages": 14,
+  "words": 5014,
+  "sha256": "b02c0f11cae6ba9d1684027e87b103c96c26bcf644e2d2e555a292f5c8ea9776",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "template_status": "Official publisher-linked LNCS class/BST; provenance in template/provenance.json",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; destination-specific refresh required",
+  "visual_review": "All-page contact sheets plus enlarged numerical pages; wide figures preserve readable labels",
+  "scientific_coverage": "Core science retained or explicitly condensed; complete canonical supporting manuscript included"
+}
