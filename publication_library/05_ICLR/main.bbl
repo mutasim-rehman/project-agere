@@ -1,0 +1,118 @@
+\begin{thebibliography}{20}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cemri et~al.(2025)Cemri, Pan, Yang, Agrawal, Chopra, Tiwari, Keutzer, Parameswaran, Klein, Ramchandran, Zaharia, Gonzalez, and Stoica]{mast}
+Mert Cemri, Melissa~Z. Pan, Shuyi Yang, Lakshya~A. Agrawal, Bhavya Chopra, Rishabh Tiwari, Kurt Keutzer, Aditya Parameswaran, Dan Klein, Kannan Ramchandran, Matei Zaharia, Joseph~E. Gonzalez, and Ion Stoica.
+\newblock {Why Do Multi-Agent LLM Systems Fail?}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2503.13657}.
+
+\bibitem[Chen et~al.(2026)Chen, Tang, Liu, Shi, Li, Lyu, Luo, Du, and He]{dcrc}
+Hao Chen, Xing Tang, Qirui Liu, Weijie Shi, Shiwei Li, Fuyuan Lyu, Weihong Luo, Xiku Du, and Xiuqiang He.
+\newblock {Fighting Numerical Hallucinations via Data-centric Compilation for Online Financial QA}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.31064}.
+
+\bibitem[Chen et~al.(2023)Chen, Ma, Wang, and Cohen]{pot}
+Wenhu Chen, Xueguang Ma, Xinyi Wang, and William~W. Cohen.
+\newblock {Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2211.12588}.
+
+\bibitem[Chen et~al.(2021)Chen, Chen, Smiley, Shah, Borova, Langdon, Moussa, Beane, Huang, Routledge, and Wang]{finqa}
+Zhiyu Chen, Wenhu Chen, Charese Smiley, Sameena Shah, Iana Borova, Dylan Langdon, Reema Moussa, Matt Beane, Ting-Hao Huang, Bryan Routledge, and William~Yang Wang.
+\newblock {F}in{QA}: A dataset of numerical reasoning over financial data.
+\newblock In Marie-Francine Moens, Xuanjing Huang, Lucia Specia, and Scott Wen-tau Yih (eds.), \emph{Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing}, pp.\  3697--3711, Online and Punta Cana, Dominican Republic, November 2021. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2021.emnlp-main.300}.
+\newblock URL \url{https://aclanthology.org/2021.emnlp-main.300/}.
+
+\bibitem[Dettmers et~al.(2023)Dettmers, Pagnoni, Holtzman, and Zettlemoyer]{qlora}
+Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer.
+\newblock {QLoRA: Efficient Finetuning of Quantized LLMs}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2305.14314}.
+
+\bibitem[Du et~al.(2024)Du, Li, Torralba, Tenenbaum, and Mordatch]{debate}
+Yilun Du, Shuang Li, Antonio Torralba, Joshua~B. Tenenbaum, and Igor Mordatch.
+\newblock Improving factuality and reasoning in language models through multiagent debate.
+\newblock In Ruslan Salakhutdinov, Zico Kolter, Katherine Heller, Adrian Weller, Nuria Oliver, Jonathan Scarlett, and Felix Berkenkamp (eds.), \emph{Proceedings of the 41st International Conference on Machine Learning}, volume 235 of \emph{Proceedings of Machine Learning Research}, pp.\  11733--11763. PMLR, 21--27 Jul 2024.
+\newblock URL \url{https://proceedings.mlr.press/v235/du24e.html}.
+
+\bibitem[Gao et~al.(2023)Gao, Madaan, Zhou, Alon, Liu, Yang, Callan, and Neubig]{pal}
+Luyu Gao, Aman Madaan, Shuyan Zhou, Uri Alon, Pengfei Liu, Yiming Yang, Jamie Callan, and Graham Neubig.
+\newblock {PAL}: Program-aided language models.
+\newblock In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett (eds.), \emph{Proceedings of the 40th International Conference on Machine Learning}, volume 202 of \emph{Proceedings of Machine Learning Research}, pp.\  10764--10799. PMLR, 23--29 Jul 2023.
+\newblock URL \url{https://proceedings.mlr.press/v202/gao23f.html}.
+
+\bibitem[Geifman \& El-Yaniv(2019)Geifman and El-Yaniv]{selective}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock {S}elective{N}et: A deep neural network with an integrated reject option.
+\newblock In Kamalika Chaudhuri and Ruslan Salakhutdinov (eds.), \emph{Proceedings of the 36th International Conference on Machine Learning}, volume~97 of \emph{Proceedings of Machine Learning Research}, pp.\  2151--2159. PMLR, 09--15 Jun 2019.
+\newblock URL \url{https://proceedings.mlr.press/v97/geifman19a.html}.
+
+\bibitem[Gou et~al.(2024)Gou, Shao, Gong, Shen, Yang, Duan, and Chen]{critic}
+Zhibin Gou, Zhihong Shao, Yeyun Gong, Yelong Shen, Yujiu Yang, Nan Duan, and Weizhu Chen.
+\newblock {CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2305.11738}.
+
+\bibitem[Hall et~al.(2026)Hall, Shome, and Eiers]{verifin}
+Bethel Hall, Sachi Shome, and William Eiers.
+\newblock {VeriFin: A Neurosymbolic Framework for Verifying LLM-Generated Financial Claims}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2608.10213}.
+
+\bibitem[Hu et~al.(2021)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and Chen]{lora}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA: Low-Rank Adaptation of Large Language Models}, 2021.
+\newblock URL \url{https://arxiv.org/abs/2106.09685}.
+
+\bibitem[Huang et~al.(2024)Huang, Chen, Mishra, Zheng, Yu, Song, and Zhou]{selfcorrect}
+Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu~Steven Zheng, Adams~Wei Yu, Xinying Song, and Denny Zhou.
+\newblock {Large Language Models Cannot Self-Correct Reasoning Yet}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2310.01798}.
+
+\bibitem[Jenq \& Shen(2026)Jenq and Shen]{budgetverify}
+Janet Jenq and Hongda Shen.
+\newblock {BudgetVerify: Budget-Tiered Verification for Financial QA}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2609.33052}.
+
+\bibitem[Liu et~al.(2025)Liu, Liu, Zhu, Fei, and Mahanti]{finman}
+Chenghao Liu, Qian Liu, Ziqin Zhu, Hao Fei, and Aniket Mahanti.
+\newblock {D}avid vs. goliath: Cost-efficient financial {QA} via cascaded multi-agent reasoning.
+\newblock In Christos Christodoulopoulos, Tanmoy Chakraborty, Carolyn Rose, and Violet Peng (eds.), \emph{Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2025}, pp.\  4212--4229, Suzhou, China, November 2025. Association for Computational Linguistics.
+\newblock ISBN 979-8-89176-335-7.
+\newblock \doi{10.18653/v1/2025.findings-emnlp.225}.
+\newblock URL \url{https://aclanthology.org/2025.findings-emnlp.225/}.
+
+\bibitem[Madaan et~al.(2023)Madaan, Tandon, Gupta, Hallinan, Gao, Wiegreffe, Alon, Dziri, Prabhumoye, Yang, Gupta, Majumder, Hermann, Welleck, Yazdanbakhsh, and Clark]{selfrefine}
+Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bodhisattwa~Prasad Majumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh, and Peter Clark.
+\newblock {Self-Refine: Iterative Refinement with Self-Feedback}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2303.17651}.
+
+\bibitem[{Qwen Team}(2024)]{qwen}
+{Qwen Team}.
+\newblock {Qwen2.5 Technical Report}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2412.15115v1}.
+
+\bibitem[Stuhlmann et~al.(2026)Stuhlmann, Argerich, and Fürst]{bench360}
+Linus Stuhlmann, Mauricio~Fadel Argerich, and Jonathan Fürst.
+\newblock {Bench360: Benchmarking Local LLM Inference from 360 Degrees}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2511.16682}.
+
+\bibitem[Tran \& Kiela(2026)Tran and Kiela]{equalbudget}
+Dat Tran and Douwe Kiela.
+\newblock {Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2604.02460}.
+
+\bibitem[Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery, and Zhou]{selfconsistency}
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed~Chi, Sharan Narang, Aakanksha Chowdhery, and Denny Zhou.
+\newblock {Self-Consistency Improves Chain of Thought Reasoning in Language Models}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2203.11171}.
+
+\bibitem[Zhu et~al.(2021)Zhu, Lei, Huang, Wang, Zhang, Lv, Feng, and Chua]{tatqa}
+Fengbin Zhu, Wenqiang Lei, Youcheng Huang, Chao Wang, Shuo Zhang, Jiancheng Lv, Fuli Feng, and Tat-Seng Chua.
+\newblock {TAT}-{QA}: A question answering benchmark on a hybrid of tabular and textual content in finance.
+\newblock In Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli (eds.), \emph{Proceedings of the 59th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)}, pp.\  3277--3287, Online, August 2021. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2021.acl-long.254}.
+\newblock URL \url{https://aclanthology.org/2021.acl-long.254/}.
+
+\end{thebibliography}

@@ -1,0 +1,25 @@
+{
+  "folder": "07_ICML",
+  "pages": 34,
+  "words": 19037,
+  "sha256": "ca512636690e7255e02500a7c9c0c9b36975e5dfb9bc83a59dd5204b3a422abe",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "main_content_end_page": 7,
+  "template_status": "TEMPLATE-VERIFIED; icml2026",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; NEEDS-GUIDELINE-REFRESH",
+  "visual_review": "All-page contact sheets and selected enlarged numerical pages inspected",
+  "scientific_coverage": "All canonical headings retained in main/support; full audit map available"
+}

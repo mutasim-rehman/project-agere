@@ -262,6 +262,201 @@ Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF
 
 Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 36 pages. Supplement retained: False.
 
+## 05_ICLR
+
+- `main.tex` / Introduction: 05_ICLR\main.pdf:p1
+- `main.tex` / Related Work: 05_ICLR\main.pdf:p8
+- `main.tex` / Methods and Evaluation: 05_ICLR\main.pdf:p1
+- `main.tex` / Programs, Candidates and Delivery: 05_ICLR\main.pdf:p1
+- `main.tex` / Study A: Nominal 16 GB Deployment Recipes: 05_ICLR\main.pdf:p2
+- `main.tex` / Study B: Diagnostics and Evidence-Only Planning: 05_ICLR\main.pdf:p2
+- `main.tex` / Scoring and Statistical Analysis: 05_ICLR\main.pdf:p3
+- `main.tex` / Results: 05_ICLR\main.pdf:p1; 05_ICLR\main.pdf:p3; 05_ICLR\main.pdf:p8; 05_ICLR\main.pdf:p9; 05_ICLR\supplementary\supplement.pdf:p3; 05_ICLR\supplementary\supplement.pdf:p8; 05_ICLR\supplementary\supplement.pdf:p9; 05_ICLR\supplementary\supplement.pdf:p10; 05_ICLR\supplementary\supplement.pdf:p15; 05_ICLR\supplementary\supplement.pdf:p18
+- `main.tex` / The Resident F16 Team Mostly Withholds: 05_ICLR\main.pdf:p3
+- `main.tex` / Evidence and Precision Do Not Resolve Generation: 05_ICLR\main.pdf:p5
+- `main.tex` / The Evidence-Only Planner Fails Its Criterion: 05_ICLR\main.pdf:p5
+- `main.tex` / Stronger Baselines and Nontransferable Gains: 05_ICLR\main.pdf:p7
+- `main.tex` / Discussion and Limitations: 05_ICLR\main.pdf:p7
+- `main.tex` / Conclusion: 05_ICLR\main.pdf:p9
+- `supplement.tex` / Scope and Evidence Status: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p3
+- `supplement.tex` / Reproducibility Specification: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p3
+- `supplement.tex` / Study A: Frozen 16 GB Recipes: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p3
+- `supplement.tex` / Windows 8 GB Application Budget: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p4
+- `supplement.tex` / Adapter Provenance and Training: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p4
+- `supplement.tex` / Cohorts, Exposure and Prompt Availability: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p5
+- `supplement.tex` / Metrics and Statistical Details: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p5
+- `supplement.tex` / Complete Main-Study Outcome and Resource Tables: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p6
+- `supplement.tex` / Exploratory Sequence: Positive, Null and Adverse Findings: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p7
+- `supplement.tex` / Earlier Linux Development and Training: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p7
+- `supplement.tex` / Windows Candidate and Verifier Pilots: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p8
+- `supplement.tex` / Endpoint, Retrieval, Precision and Catalog Controls: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p9
+- `supplement.tex` / Baseline Capacity, Format, Review and Reference Checks: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p9
+- `supplement.tex` / Planner Development and Held-Out Result: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p10
+- `supplement.tex` / Resource Failures, Missing Evidence and Scope of Claims: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p10
+- `supplement.tex` / Literature Verification and Reproduction Commands: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p10
+- `supplement.tex` / Historical Linux 8 GB Condition Census: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p11
+- `supplement.tex` / Original Questions, Design Rationale and Historical Controls: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p12
+- `supplement.tex` / Questions and hypothesis dispositions: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p12
+- `supplement.tex` / Fairness, memory accounting and protocol choices: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p12
+- `supplement.tex` / Historical synthetic test outcomes, including denominator failures: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p13
+- `supplement.tex` / Extended Study A Outcomes and Resource Reconciliation: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p13
+- `supplement.tex` / Paired transitions and selective behavior: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p13
+- `supplement.tex` / Four endpoints, weighting and influence: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p14
+- `supplement.tex` / Candidate production, reference strata and scoring discordance: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p15
+- `supplement.tex` / Prompt, repair and resource costs: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p16
+- `supplement.tex` / Conditional Mathematical Analysis and Statistical Assumptions: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p18
+- `supplement.tex` / P1--P3: accounting, the gate bound and stage factorization: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p18
+- `supplement.tex` / P4--P5: preference-sensitive utility and corrected repair break-even: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p18
+- `supplement.tex` / P6: memory accounting with explicit residency assumptions: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p18
+- `supplement.tex` / P7: bounded-cluster uncertainty, with its limits: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p19
+- `supplement.tex` / P8--P10: score disagreements and procedure-specific evidence bounds: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p19
+- `supplement.tex` / Nonidentification and error propagation: 05_ICLR\supplementary\supplement.pdf:p1; 05_ICLR\supplementary\supplement.pdf:p20
+- `supplement.tex` / Statistical Derivations and Complete Numerical Battery: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p20
+- `supplement.tex` / Paired estimands and small-discordance inference (J1--J4): 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p20
+- `supplement.tex` / Transition tables, clustering and bootstrap (J5--J7): 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p20
+- `supplement.tex` / Sign procedures, multiplicity and interpretation (J8--J12): 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p21
+- `supplement.tex` / All historical comparisons, both numerical scores: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p21
+- `supplement.tex` / Worked Examples and Measurement Failures: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p26
+- `supplement.tex` / Shared success: ABMD/2007/page\_52.pdf-1: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p26
+- `supplement.tex` / Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p26
+- `supplement.tex` / Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p26
+- `supplement.tex` / Wrong team program accepted: PNC/2018/page\_171.pdf-1: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p27
+- `supplement.tex` / A scoring convention changes the label: ABMD/2007/page\_52.pdf-2: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p27
+- `supplement.tex` / Synthetic sentinel misclassified as invention: CR-TEST-0001: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p27
+- `supplement.tex` / Restored Literature Context and Reproducibility Map: 05_ICLR\supplementary\supplement.pdf:p2; 05_ICLR\supplementary\supplement.pdf:p27
+
+Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 11 pages. Supplement retained: True.
+
+## 06_NeurIPS
+
+- `main.tex` / Introduction: 06_NeurIPS\main.pdf:p1; 06_NeurIPS\main.pdf:p38
+- `main.tex` / Related Work: 06_NeurIPS\main.pdf:p1
+- `main.tex` / Methods and Evaluation: 06_NeurIPS\main.pdf:p2
+- `main.tex` / Programs, Candidates and Delivery: 06_NeurIPS\main.pdf:p2
+- `main.tex` / Study A: Nominal 16 GB Deployment Recipes: 06_NeurIPS\main.pdf:p3
+- `main.tex` / Study B: Diagnostics and Evidence-Only Planning: 06_NeurIPS\main.pdf:p3
+- `main.tex` / Scoring and Statistical Analysis: 06_NeurIPS\main.pdf:p4
+- `main.tex` / Results: 06_NeurIPS\main.pdf:p1; 06_NeurIPS\main.pdf:p2; 06_NeurIPS\main.pdf:p5; 06_NeurIPS\main.pdf:p12; 06_NeurIPS\main.pdf:p17; 06_NeurIPS\main.pdf:p18; 06_NeurIPS\main.pdf:p20; 06_NeurIPS\main.pdf:p24; 06_NeurIPS\main.pdf:p28; 06_NeurIPS\main.pdf:p38; 06_NeurIPS\main.pdf:p39; 06_NeurIPS\main.pdf:p40; 06_NeurIPS\main.pdf:p41; 06_NeurIPS\main.pdf:p42
+- `main.tex` / The Resident F16 Team Mostly Withholds: 06_NeurIPS\main.pdf:p5
+- `main.tex` / Evidence and Precision Do Not Resolve Generation: 06_NeurIPS\main.pdf:p5
+- `main.tex` / The Evidence-Only Planner Fails Its Criterion: 06_NeurIPS\main.pdf:p6
+- `main.tex` / Stronger Baselines and Nontransferable Gains: 06_NeurIPS\main.pdf:p7
+- `main.tex` / Discussion and Limitations: 06_NeurIPS\main.pdf:p8; 06_NeurIPS\main.pdf:p38
+- `main.tex` / Conclusion: 06_NeurIPS\main.pdf:p9; 06_NeurIPS\main.pdf:p39
+- `supplement.tex` / Scope and Evidence Status: 06_NeurIPS\main.pdf:p12
+- `supplement.tex` / Reproducibility Specification: 06_NeurIPS\main.pdf:p12
+- `supplement.tex` / Study A: Frozen 16 GB Recipes: 06_NeurIPS\main.pdf:p12
+- `supplement.tex` / Windows 8 GB Application Budget: 06_NeurIPS\main.pdf:p13
+- `supplement.tex` / Adapter Provenance and Training: 06_NeurIPS\main.pdf:p13
+- `supplement.tex` / Cohorts, Exposure and Prompt Availability: 06_NeurIPS\main.pdf:p14
+- `supplement.tex` / Metrics and Statistical Details: 06_NeurIPS\main.pdf:p14
+- `supplement.tex` / Complete Main-Study Outcome and Resource Tables: 06_NeurIPS\main.pdf:p15
+- `supplement.tex` / Exploratory Sequence: Positive, Null and Adverse Findings: 06_NeurIPS\main.pdf:p16
+- `supplement.tex` / Earlier Linux Development and Training: 06_NeurIPS\main.pdf:p16
+- `supplement.tex` / Windows Candidate and Verifier Pilots: 06_NeurIPS\main.pdf:p17
+- `supplement.tex` / Endpoint, Retrieval, Precision and Catalog Controls: 06_NeurIPS\main.pdf:p18
+- `supplement.tex` / Baseline Capacity, Format, Review and Reference Checks: 06_NeurIPS\main.pdf:p18
+- `supplement.tex` / Planner Development and Held-Out Result: 06_NeurIPS\main.pdf:p19
+- `supplement.tex` / Resource Failures, Missing Evidence and Scope of Claims: 06_NeurIPS\main.pdf:p19
+- `supplement.tex` / Literature Verification and Reproduction Commands: 06_NeurIPS\main.pdf:p20
+- `supplement.tex` / Historical Linux 8 GB Condition Census: 06_NeurIPS\main.pdf:p20
+- `supplement.tex` / Original Questions, Design Rationale and Historical Controls: 06_NeurIPS\main.pdf:p22
+- `supplement.tex` / Questions and hypothesis dispositions: 06_NeurIPS\main.pdf:p22
+- `supplement.tex` / Fairness, memory accounting and protocol choices: 06_NeurIPS\main.pdf:p22
+- `supplement.tex` / Historical synthetic test outcomes, including denominator failures: 06_NeurIPS\main.pdf:p22
+- `supplement.tex` / Extended Study A Outcomes and Resource Reconciliation: 06_NeurIPS\main.pdf:p23
+- `supplement.tex` / Paired transitions and selective behavior: 06_NeurIPS\main.pdf:p23
+- `supplement.tex` / Four endpoints, weighting and influence: 06_NeurIPS\main.pdf:p24
+- `supplement.tex` / Candidate production, reference strata and scoring discordance: 06_NeurIPS\main.pdf:p25
+- `supplement.tex` / Prompt, repair and resource costs: 06_NeurIPS\main.pdf:p26
+- `supplement.tex` / Conditional Mathematical Analysis and Statistical Assumptions: 06_NeurIPS\main.pdf:p27
+- `supplement.tex` / P1--P3: accounting, the gate bound and stage factorization: 06_NeurIPS\main.pdf:p27
+- `supplement.tex` / P4--P5: preference-sensitive utility and corrected repair break-even: 06_NeurIPS\main.pdf:p28
+- `supplement.tex` / P6: memory accounting with explicit residency assumptions: 06_NeurIPS\main.pdf:p28
+- `supplement.tex` / P7: bounded-cluster uncertainty, with its limits: 06_NeurIPS\main.pdf:p29
+- `supplement.tex` / P8--P10: score disagreements and procedure-specific evidence bounds: 06_NeurIPS\main.pdf:p29
+- `supplement.tex` / Nonidentification and error propagation: 06_NeurIPS\main.pdf:p30
+- `supplement.tex` / Statistical Derivations and Complete Numerical Battery: 06_NeurIPS\main.pdf:p30
+- `supplement.tex` / Paired estimands and small-discordance inference (J1--J4): 06_NeurIPS\main.pdf:p30
+- `supplement.tex` / Transition tables, clustering and bootstrap (J5--J7): 06_NeurIPS\main.pdf:p30
+- `supplement.tex` / Sign procedures, multiplicity and interpretation (J8--J12): 06_NeurIPS\main.pdf:p31
+- `supplement.tex` / All historical comparisons, both numerical scores: 06_NeurIPS\main.pdf:p31
+- `supplement.tex` / Worked Examples and Measurement Failures: 06_NeurIPS\main.pdf:p35
+- `supplement.tex` / Shared success: ABMD/2007/page\_52.pdf-1: 06_NeurIPS\main.pdf:p36
+- `supplement.tex` / Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1: 06_NeurIPS\main.pdf:p36
+- `supplement.tex` / Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2: 06_NeurIPS\main.pdf:p36
+- `supplement.tex` / Wrong team program accepted: PNC/2018/page\_171.pdf-1: 06_NeurIPS\main.pdf:p36
+- `supplement.tex` / A scoring convention changes the label: ABMD/2007/page\_52.pdf-2: 06_NeurIPS\main.pdf:p36
+- `supplement.tex` / Synthetic sentinel misclassified as invention: CR-TEST-0001: 06_NeurIPS\main.pdf:p36
+- `supplement.tex` / Restored Literature Context and Reproducibility Map: 06_NeurIPS\main.pdf:p37
+
+Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 44 pages. Supplement retained: False.
+
+## 07_ICML
+
+- `main.tex` / Introduction: 07_ICML\main.pdf:p1
+- `main.tex` / Related Work: 07_ICML\main.pdf:p1
+- `main.tex` / Methods and Evaluation: 07_ICML\main.pdf:p2
+- `main.tex` / Programs, Candidates and Delivery: 07_ICML\main.pdf:p2
+- `main.tex` / Study A: Nominal 16 GB Deployment Recipes: 07_ICML\main.pdf:p2
+- `main.tex` / Study B: Diagnostics and Evidence-Only Planning: 07_ICML\main.pdf:p3
+- `main.tex` / Scoring and Statistical Analysis: 07_ICML\main.pdf:p3
+- `main.tex` / Results: 07_ICML\main.pdf:p2; 07_ICML\main.pdf:p3; 07_ICML\main.pdf:p10; 07_ICML\main.pdf:p15; 07_ICML\main.pdf:p16; 07_ICML\main.pdf:p17; 07_ICML\main.pdf:p21; 07_ICML\main.pdf:p25
+- `main.tex` / The Resident F16 Team Mostly Withholds: 07_ICML\main.pdf:p3
+- `main.tex` / Evidence and Precision Do Not Resolve Generation: 07_ICML\main.pdf:p5
+- `main.tex` / The Evidence-Only Planner Fails Its Criterion: 07_ICML\main.pdf:p5
+- `main.tex` / Stronger Baselines and Nontransferable Gains: 07_ICML\main.pdf:p5
+- `main.tex` / Discussion and Limitations: 07_ICML\main.pdf:p6
+- `main.tex` / Conclusion: 07_ICML\main.pdf:p1; 07_ICML\main.pdf:p7
+- `supplement.tex` / Scope and Evidence Status: 07_ICML\main.pdf:p10
+- `supplement.tex` / Reproducibility Specification: 07_ICML\main.pdf:p10
+- `supplement.tex` / Study A: Frozen 16 GB Recipes: 07_ICML\main.pdf:p10
+- `supplement.tex` / Windows 8 GB Application Budget: 07_ICML\main.pdf:p11
+- `supplement.tex` / Adapter Provenance and Training: 07_ICML\main.pdf:p11
+- `supplement.tex` / Cohorts, Exposure and Prompt Availability: 07_ICML\main.pdf:p12
+- `supplement.tex` / Metrics and Statistical Details: 07_ICML\main.pdf:p12
+- `supplement.tex` / Complete Main-Study Outcome and Resource Tables: 07_ICML\main.pdf:p13
+- `supplement.tex` / Exploratory Sequence: Positive, Null and Adverse Findings: 07_ICML\main.pdf:p14
+- `supplement.tex` / Earlier Linux Development and Training: 07_ICML\main.pdf:p14
+- `supplement.tex` / Windows Candidate and Verifier Pilots: 07_ICML\main.pdf:p15
+- `supplement.tex` / Endpoint, Retrieval, Precision and Catalog Controls: 07_ICML\main.pdf:p15
+- `supplement.tex` / Baseline Capacity, Format, Review and Reference Checks: 07_ICML\main.pdf:p16
+- `supplement.tex` / Planner Development and Held-Out Result: 07_ICML\main.pdf:p16
+- `supplement.tex` / Resource Failures, Missing Evidence and Scope of Claims: 07_ICML\main.pdf:p17
+- `supplement.tex` / Literature Verification and Reproduction Commands: 07_ICML\main.pdf:p17
+- `supplement.tex` / Historical Linux 8 GB Condition Census: 07_ICML\main.pdf:p17
+- `supplement.tex` / Original Questions, Design Rationale and Historical Controls: 07_ICML\main.pdf:p19
+- `supplement.tex` / Questions and hypothesis dispositions: 07_ICML\main.pdf:p19
+- `supplement.tex` / Fairness, memory accounting and protocol choices: 07_ICML\main.pdf:p19
+- `supplement.tex` / Historical synthetic test outcomes, including denominator failures: 07_ICML\main.pdf:p20
+- `supplement.tex` / Extended Study A Outcomes and Resource Reconciliation: 07_ICML\main.pdf:p20
+- `supplement.tex` / Paired transitions and selective behavior: 07_ICML\main.pdf:p20
+- `supplement.tex` / Four endpoints, weighting and influence: 07_ICML\main.pdf:p21
+- `supplement.tex` / Candidate production, reference strata and scoring discordance: 07_ICML\main.pdf:p22
+- `supplement.tex` / Prompt, repair and resource costs: 07_ICML\main.pdf:p23
+- `supplement.tex` / Conditional Mathematical Analysis and Statistical Assumptions: 07_ICML\main.pdf:p24
+- `supplement.tex` / P1--P3: accounting, the gate bound and stage factorization: 07_ICML\main.pdf:p24
+- `supplement.tex` / P4--P5: preference-sensitive utility and corrected repair break-even: 07_ICML\main.pdf:p25
+- `supplement.tex` / P6: memory accounting with explicit residency assumptions: 07_ICML\main.pdf:p26
+- `supplement.tex` / P7: bounded-cluster uncertainty, with its limits: 07_ICML\main.pdf:p26
+- `supplement.tex` / P8--P10: score disagreements and procedure-specific evidence bounds: 07_ICML\main.pdf:p26
+- `supplement.tex` / Nonidentification and error propagation: 07_ICML\main.pdf:p26
+- `supplement.tex` / Statistical Derivations and Complete Numerical Battery: 07_ICML\main.pdf:p27
+- `supplement.tex` / Paired estimands and small-discordance inference (J1--J4): 07_ICML\main.pdf:p27
+- `supplement.tex` / Transition tables, clustering and bootstrap (J5--J7): 07_ICML\main.pdf:p27
+- `supplement.tex` / Sign procedures, multiplicity and interpretation (J8--J12): 07_ICML\main.pdf:p28
+- `supplement.tex` / All historical comparisons, both numerical scores: 07_ICML\main.pdf:p28
+- `supplement.tex` / Worked Examples and Measurement Failures: 07_ICML\main.pdf:p32
+- `supplement.tex` / Shared success: ABMD/2007/page\_52.pdf-1: 07_ICML\main.pdf:p32
+- `supplement.tex` / Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1: 07_ICML\main.pdf:p32
+- `supplement.tex` / Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2: 07_ICML\main.pdf:p33
+- `supplement.tex` / Wrong team program accepted: PNC/2018/page\_171.pdf-1: 07_ICML\main.pdf:p33
+- `supplement.tex` / A scoring convention changes the label: ABMD/2007/page\_52.pdf-2: 07_ICML\main.pdf:p33
+- `supplement.tex` / Synthetic sentinel misclassified as invention: CR-TEST-0001: 07_ICML\main.pdf:p33
+- `supplement.tex` / Restored Literature Context and Reproducibility Map: 07_ICML\main.pdf:p33
+
+Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 34 pages. Supplement retained: False.
+
 ## 13_Springer_journal
 
 - `main.tex` / Introduction: 13_Springer_journal\main.pdf:p1

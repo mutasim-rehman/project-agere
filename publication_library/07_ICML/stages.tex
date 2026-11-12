@@ -1,0 +1,19 @@
+{\small\setlength{\tabcolsep}{3pt}\begin{longtable}{llp{.31\textwidth}rrr}
+\caption{Primary stage totals in both runs. Prompt tokens count every call; they are not one context window. Stages execute sequentially while model weights remain resident.}\label{tab:stages}\\
+Run & Arm & Stage & Hours & Output tok & Prompt tok\\\toprule\endfirsthead
+Run & Arm & Stage & Hours & Output tok & Prompt tok\\\toprule\endhead
+Hist. & MAS & extractor/select\_evidence & 0.237 & 4121 & 128047\\
+Hist. & MAS & drafter/analyze\_question & 0.960 & 20441 & 134127\\
+Hist. & MAS & drafter/program & 1.186 & 3507 & 390092\\
+Hist. & MAS & verifier/verify\_program & 0.049 & 1440 & 94407\\
+Hist. & SAS & sas/analyze\_question & 2.952 & 20479 & 134127\\
+Hist. & SAS & sas/program & 6.656 & 11058 & 383588\\
+Hist. & SAS & sas/verify\_program & 1.938 & 1120 & 124971\\
+Ubuntu & MAS & extractor/select\_evidence & 0.346 & 4121 & 128047\\
+Ubuntu & MAS & drafter/analyze\_question & 1.264 & 20441 & 134127\\
+Ubuntu & MAS & drafter/program & 1.701 & 3507 & 390092\\
+Ubuntu & MAS & verifier/verify\_program & 0.072 & 1440 & 94407\\
+Ubuntu & SAS & sas/analyze\_question & 2.983 & 20479 & 134127\\
+Ubuntu & SAS & sas/program & 6.725 & 11058 & 383588\\
+Ubuntu & SAS & sas/verify\_program & 1.961 & 1120 & 124971\\
+\bottomrule\end{longtable}}

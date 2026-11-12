@@ -1,0 +1,25 @@
+{
+  "folder": "06_NeurIPS",
+  "pages": 44,
+  "words": 22189,
+  "sha256": "d7479915bc50bfbcca120108a07348702e596b3053b0762c973c32b07c02fcf0",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "main_content_end_page": 9,
+  "template_status": "TEMPLATE-VERIFIED; neurips2026",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; NEEDS-GUIDELINE-REFRESH",
+  "visual_review": "All-page contact sheets and selected enlarged numerical pages inspected",
+  "scientific_coverage": "All canonical headings retained in main/support; full audit map available"
+}

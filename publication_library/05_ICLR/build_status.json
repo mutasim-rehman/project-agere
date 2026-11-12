@@ -1,0 +1,25 @@
+{
+  "folder": "05_ICLR",
+  "pages": 11,
+  "words": 6007,
+  "sha256": "7a1cb004d2fd6fbc6a691374993c81ed4f85b8990fbd3a087b83db34aad273c6",
+  "figure_bytes_verified": [
+    "planner_effects.pdf",
+    "planner_outcomes.pdf",
+    "resources.pdf",
+    "restored_heterogeneity.pdf",
+    "restored_stage_work.pdf",
+    "restored_transitions.pdf",
+    "restored_utility.pdf",
+    "tier16_outcomes.pdf"
+  ],
+  "bibliography_keys": 28,
+  "overfull_boxes": 0,
+  "undefined": false,
+  "compiled": true,
+  "main_content_end_page": 9,
+  "template_status": "TEMPLATE-VERIFIED; iclr2027",
+  "policy_status": "HUMAN-REVIEW-REQUIRED; NEEDS-GUIDELINE-REFRESH",
+  "visual_review": "All-page contact sheets and selected enlarged numerical pages inspected",
+  "scientific_coverage": "All canonical headings retained in main/support; full audit map available"
+}

@@ -1,0 +1,17 @@
+{\small\setlength{\tabcolsep}{3pt}\begin{longtable}{llrrrrr}
+\caption{Timing and sampled-RSS reconciliation across original recovery and Ubuntu repeat. Summed inference excludes aborted work, model loading and restart overhead. Seconds per correct is amortized measured work, not expected retries to solve a question; undefined at zero correct.}\label{tab:resource-reconcile}\\
+Run & Recipe & Hours & Median s & s/correct & Output tok & RSS GB\\\toprule\endfirsthead
+Run & Recipe & Hours & Median s & s/correct & Output tok & RSS GB\\\toprule\endhead
+Historical & mas-direct control & 0.821 & 17.5 & -- & 8392 & 10.901\\
+Historical & mas-primary & 2.432 & 53.8 & 1751.4 & 29509 & 10.929\\
+Historical & mas-repair ablation & 3.682 & 81.9 & 2651.2 & 33917 & 10.913\\
+Historical & sas-direct control & 5.266 & 112.2 & 379.1 & 14449 & 10.040\\
+Historical & sas-primary & 11.546 & 251.4 & 532.9 & 32657 & 10.062\\
+Historical & sas-repair ablation & 13.494 & 259.9 & 614.9 & 35244 & 10.074\\
+Ubuntu & mas-direct control & 0.897 & 18.5 & -- & 8392 & 10.934\\
+Ubuntu & mas-primary & 3.383 & 54.6 & 2435.7 & 29509 & 10.946\\
+Ubuntu & mas-repair ablation & 3.781 & 83.7 & 2722.6 & 33917 & 10.946\\
+Ubuntu & sas-direct control & 5.314 & 112.7 & 382.6 & 14449 & 10.070\\
+Ubuntu & sas-primary & 11.668 & 252.4 & 538.5 & 32657 & 10.075\\
+Ubuntu & sas-repair ablation & 13.598 & 260.4 & 619.7 & 35244 & 10.087\\
+\bottomrule\end{longtable}}

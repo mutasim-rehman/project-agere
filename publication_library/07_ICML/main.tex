@@ -1,0 +1,374 @@
+\documentclass{article}
+\usepackage{microtype,graphicx,booktabs,longtable,seqsplit}
+\usepackage{hyperref}
+\usepackage[preprint]{icml2026}
+\usepackage{amsmath,amssymb}
+\sloppy
+\icmltitlerunning{Candidate Quality and Selective Delivery}
+\begin{document}
+\twocolumn[
+\icmltitle{Evaluating Candidate Quality and Selective Delivery Under Local Inference Budgets}
+\begin{icmlauthorlist}
+\icmlauthor{Anonymous Authors}{anon}
+\end{icmlauthorlist}
+\icmlaffiliation{anon}{Author details withheld for review draft}
+\icmlkeywords{financial reasoning, selective prediction, evaluation}
+\vskip 0.3in
+]
+\printAffiliationsAndNotice{}
+\begin{abstract}We evaluate candidate generation and selective delivery separately in local financial reasoning. Under common application ceilings, a resident F16 team delivers five reported-correct answers on 160 FinQA questions versus 78 for a larger quantized recipe. Reference-informed constraints recover ten of 15 later diagnostic cases, but an evidence-only planner on 96 TAT-QA contexts changes correct deliveries from six to ten and wrong deliveries from 23 to 25 while correct candidates fall from 26 to 25. It fails its prespecified practical criterion; the exact paired correct-delivery p-value is 0.125 and a secondary cohort gives no delivery gain. Paired analysis, stronger baselines, scoring sensitivity and resource qualifications bound the conclusions to evaluated recipes.\end{abstract}
+\section{Introduction}
+Resource-limited inference recipes are often compared using a single delivered-answer score. That score mixes candidate construction with the decision to release an answer. A pipeline can reduce wrong answers by withholding most useful output, or increase correct delivery by accepting different candidates without improving generation. We study these distinctions using executable financial calculations and saved acceptance decisions.
+
+Our evaluation treats candidate correctness, delivered correctness, wrong delivery and withholding as different observables. A larger-budget comparison on 160 FinQA questions finds five versus 78 reported-correct deliveries for a resident F16 team and a larger quantized single-model recipe. Later Windows experiments show reference-executable evidence alongside wrong candidate generation. Answer-key constraints recover ten of 15 diagnostic cases, while a practical evidence-only planner on 96 TAT-QA contexts decreases correct candidates and adds wrong deliveries, failing its prespecified adoption rule.
+
+We analyze paired transitions, scorer sensitivity, stronger direct/program baselines and resource cost. The contribution is evaluation and failure analysis of specific recipes, not a new learning algorithm or a causal scaling law. Different tiers change models, precision and runtime, so they must remain complementary studies. The complete historical evidence and conditional mathematical analyses follow the references.\section{Related Work}
+\paragraph{Financial and program-based reasoning.}
+FinMAN already decomposes financial QA into formula selection, extraction, calculation and lightweight verification \citep{finman}; DCRC learns evidence auditing and executable program synthesis \citep{dcrc}. Bench360 measures deployment quality/resource trade-offs across inference configurations \citep{bench360}. We do not claim these components or the general need for resource-aware evaluation as novel, nor reproduce those systems under our ceilings.
+FinQA provides expert questions and annotated programs over financial reports \citep{finqa}. TAT-QA combines tables and text with arithmetic and other answer types \citep{tatqa}; our experiments cover numerical FinQA and arithmetic TAT-QA subsets, not full benchmark leaderboards. PAL separates program synthesis from execution \citep{pal}. Program of Thoughts evaluates executable reasoning on financial datasets, including FinQA and TAT-QA, and discusses semantic binding \citep{pot}. Our source-reference grammar restricts operand provenance, but does not establish that the selected operands or formula answer the question. We test this limitation rather than claim a new program-reasoning method.
+
+\paragraph{Planning, collaboration and verification.}
+Multiagent debate reports gains from repeated exchange \citep{debate}; self-consistency samples multiple reasoning paths \citep{selfconsistency}. We do not replicate either protocol. Tran and Kiela \citep{equalbudget} compare single- and multiagent reasoning under matched thinking-token budgets. Our ceilings include generated tokens across stages but do not equalize actual tokens, parameter-weighted compute or FLOPs. MAST analyzes system-design, inter-agent and verification failures across broader frameworks \citep{mast}. Our evidence is narrower: saved arithmetic programs permit direct inspection of candidate correctness, source binding and final delivery.
+
+Self-Refine demonstrates iterative self-feedback \citep{selfrefine}; Huang et al.\ \citep{selfcorrect} find intrinsic reasoning correction unreliable without external feedback. CRITIC incorporates tool feedback \citep{critic}. These results motivate controls for both positive and negative effects of review. In recent financial QA work, VeriFin independently authorizes facts and formulas using XBRL and symbolic verification \citep{verifin}; our source-membership checks are substantially weaker. BudgetVerify learns which verification tier to invoke from offline correctness and cost outcomes \citep{budgetverify}. We neither reproduce those systems nor claim priority for verification, repair or budget allocation. Our diagnostic reference structures explicitly supply information unavailable to an ordinary learned planner.
+
+\paragraph{Adaptation and selective delivery.}
+LoRA and QLoRA provide established parameter-efficient adaptation mechanisms \citep{lora,qlora}; role adapters are experimental components, not our novelty. Selective prediction distinguishes coverage from error among accepted predictions \citep{selective}. Accordingly, we report correct, wrong and withheld outcomes over all questions. A lower wrong-delivery rate alone is not an improvement, and zero observed errors on a small constructed challenge is not a safety guarantee.
+
+\section{Methods and Evaluation}
+\subsection{Programs, Candidates and Delivery}
+All models belong to the Qwen2.5 instruction-tuned family \citep{qwen}. Public evidence packets are built without answer labels. FinQA packets use lexical top-eight source-unit retrieval. The source-quantity catalog maps reference IDs to numerical values and source spans. Program generation uses constrained JSON with arithmetic operations (addition, subtraction, multiplication and division), supported constants, and references to earlier steps. A deterministic executor checks source membership and evaluates the final step. This provides arithmetic and provenance checks, not financial semantic validation.
+
+Let $K_i$ indicate a correct executable candidate and $D_i$ indicate delivery on question $i$. The main rates are
+\begin{align}
+ C &= n^{-1}\sum_i D_i K_i,\\
+ W &= n^{-1}\sum_i D_i(1-K_i),\\
+ H &= n^{-1}\sum_i(1-D_i),\qquad C+W+H=1.
+\end{align}
+For repair policies, $K_i$ refers to the final candidate; initial candidates are reported separately. A gate with no repair cannot deliver more correct answers than exist in its candidate pool. Candidate and delivery accuracy therefore answer different questions. Invalid outputs, refusals and rejected programs remain in denominators as withheld. Conditional error $W/(C+W)$ is descriptive of each policy's selected answers, not a matched comparison at fixed coverage.
+
+\subsection{Study A: Nominal 16 GB Deployment Recipes}
+The frozen cohort contains 160 FinQA development-source numerical questions from 50 company-year reports and 36 companies. Reports were selected by fixed ID hash after excluding recorded earlier report exposure; every eligible question in a selected report was retained. Public packets and scoring annotations are separate. Public-data and checkpoint pretraining overlap are not ruled out.
+
+The single-agent system (SAS) uses an unadapted Qwen2.5-14B-Instruct Q4\_K\_M model for the pipeline. The multiagent system (MAS) keeps distinct unadapted 1.5B F16 extractor, 3B F16 drafter and 0.5B F16 verifier instances resident. The extractor suggests sources; the program and its execution are checked before delivery. This comparison changes parameter allocation, precision and role specialization together. ``SAS'' describes one model instance, not one model call.
+
+Both recipes use CPU-only inference, eight threads, context 4,096, greedy decoding, seed 42, no memory mapping, and a 2,048 generated-token ceiling per question across stages. The primary profile includes a 128-token analysis allowance, two fixed training demonstrations, binary review and no repair. The direct control removes both analysis and demonstrations; the repair ablation adds full regeneration and review. These are bundled profile contrasts. Equal ceilings do not imply equal expenditure.
+
+The completed Ubuntu run uses the frozen original code and pinned \texttt{llama-cpp-python} 0.3.16 runtime. It retains 16 worker attempts across interruptions, with an 11.5 decimal GB sampled controller-plus-worker RSS ceiling and a scope configured with \texttt{MemorySwapMax=0}. The Linux host reports approximately 15.44 GB usable physical RAM and a Ryzen 5 8645HS CPU. The historical run had process-swap failures; its resource invalidity is retained. The Ubuntu run repeats the same questions and is not a new statistical sample.
+
+\subsection{Study B: Diagnostics and Evidence-Only Planning}
+Windows comparisons use native \texttt{llama.cpp} b12202 CPU inference on a Ryzen 5 8645HS, generally context 4,096 and eight threads. Later runs impose a 6.1 GB aggregate worker Job Object commit ceiling in addition to the sampled 6.4 GB working-set guard. Earlier sampled-only pilots are not retroactively hard-capped. Commit, resident memory and paging are distinct quantities.
+
+Exploratory interventions examine retrieval, catalog coverage, Q4/Q8 precision from a common F16 source, endpoint selection, model capacity, output format and review. Cohorts and their reuse are enumerated in the supplement. A 15-report enriched FinQA diagnostic requires that the annotated program be executable from the original catalog. Its two-by-two intervention supplies either the reference operand-value shortlist, reference operation scaffold, both, or neither. The scaffold fixes operations, constants, operand types, dependencies and endpoint. It is a substantial answer-key intervention; the shortlist can exclude valid alternatives and does not resolve equal-valued cell identities.
+
+The deployable follow-up predicts operations and dependency edges from the question and evidence only. Its grammar uses unbound \texttt{VALUE} slots; a binding pass chooses actual source references and constants. Empty, invalid or disconnected shapes fall back to ordinary drafting. A 12-report development pilot motivated this revised grammar, which was frozen before held-out inference. No reference program or answer is supplied to this planner.
+
+The main held-out cohort comprises 96 arithmetic table contexts from official TAT-QA development data, held out within this project. The secondary cohort comprises all 28 remaining eligible contexts from the official test data. Selection uses fixed hash ordering, one question per table, a nonempty numerical catalog, exclusions of prior table IDs, and normalized exact-table deduplication. Development contexts also exclude exact tables in the full test split. The source does not provide company-year mappings; report overlap across contexts and across benchmarks remains unverified. FinQA had only one eligible report left after recorded evaluation and actual adapter-training exclusions, motivating this benchmark change.
+
+Four arms share evidence and a 960-token generation ceiling. Direct 7B emits a number and scale; program 7B emits a cited program and scale. Both use the same unadapted 7B Q4 checkpoint. Current MAS uses two separately resident 3B Q4 instances with fixed common-actor and control-critic adapters, allocating 768 tokens to drafting and 192 to review. Planner MAS allocates 192 to structure, 576 to binding (also the fallback cap), and 192 to the unchanged critic. Only executable candidates receiving PASS are delivered. This is a planner-plus-budget-allocation intervention, not planning at unchanged draft allowance. Both resident arms disable the RAM prompt cache.
+
+The prespecified primary endpoint is planner-minus-MAS correct delivery. Practical success requires a positive paired interval \emph{and no observed increase in wrong delivery}. The secondary cohort checks direction. The 7B arms are competitive comparators, not matched controls for the planner. Full templates, adapters, hashes and decoding details are in the reproducibility supplement and preserved traces.
+
+\subsection{Scoring and Statistical Analysis}
+Study A retains two historical numerical scores: reported-answer rounding with declared units, and raw execution-reference matching within $\max(10^{-5},10^{-5}|y|)$ of reference $y$. Neither is official FinQA program equivalence. Windows FinQA program experiments additionally translate arithmetic programs for the pinned official execution evaluator. Direct answers are compared with programs using their shared reported-answer metric, not an inapplicable program-equivalence score. TAT-QA uses the authors' pinned exact-match and F1 evaluator with predicted scales. Numerical label agreement does not establish unique or semantically correct provenance.
+
+Study A intervals resample the 50 whole reports, retaining paired questions and question weighting, using 10,000 draws; company clustering is a sensitivity analysis. The paper's recomputation uses NumPy seed 42 and percentile quantiles. Its small endpoint differences from the original Python bootstrap are implementation differences, not changes in outcomes. Planner intervals reproduce the archived 10,000 paired table-context bootstrap draws (Python seed 73), alongside two-sided exact McNemar tests. Context pairs cannot substitute for unavailable report clusters. Tests for other interventions are exploratory; no multiplicity-adjusted discovery or equivalence claim is made. Bootstrap intervals reflect sampled cases, not seed or model-family variability. Sparse discordance can make percentile bootstrap intervals misleadingly reassuring.
+
+\section{Results}
+\subsection{The Resident F16 Team Mostly Withholds}
+\begin{figure*}[t]
+\centering\includegraphics[width=\textwidth]{figures/tier16_outcomes.pdf}
+\caption{Study A: all six completed Ubuntu jobs, each on the same 160 questions. Segments show correct (teal), wrong (orange) and withheld (gray); labels are counts where space permits. Both scoring conventions are retained. Fewer MAS errors accompany substantially lower correct delivery.}
+\label{fig:tier16}
+\end{figure*}
+The primary SAS delivers 78 correct, 48 wrong and withholds 34 under reported-answer scoring; MAS delivers 5 correct, 3 wrong and withholds 152 (Figure~\ref{fig:tier16}). The MAS-minus-SAS correct-delivery difference is $-45.6$ percentage points, with a report-cluster 95\% interval $[-53.9,-36.6]$. Raw execution matching changes SAS correct delivery to 38 and wrong delivery to 88, while MAS remains at 5 and 3. Thus the direction is robust to these scores, but the magnitude is not interchangeable across them.
+
+Reported-score transitions are SAS-correct to MAS-correct/wrong/withheld: 5/1/72; SAS-wrong: 0/2/46; SAS-withheld: 0/0/34. Thus 46 avoided wrong deliveries accompany 72 lost correct deliveries through withholding, plus one correct-to-wrong transition. SAS has higher correct delivery on 33 reports, ties on 17, and loses on none. This is specific to reported scoring: raw scoring has one MAS-only correct answer. Conditional precision is 78/126 versus 5/8 (61.9\% versus 62.5\%), at 78.8\% versus 5.0\% coverage; similar precision does not establish equivalent usefulness. The other report-cluster effects are reported wrong $-28.1$ pp [$-37.1,-20.1$], raw correct $-20.6$ [$-28.3,-13.4$], and raw wrong $-53.1$ [$-61.9,-44.1$]. Company clustering and alternative weighting preserve these directions (supplement).
+
+Candidate analysis locates the primary failure. SAS produces 150 executable candidates, 84 reported-correct; review withholds six correct and 18 executable wrong candidates. MAS produces only ten executable candidates, five reported-correct; it delivers all five correct and three wrong, withholding two executable wrong candidates. Its other 150 program-stage outputs are INSUFFICIENT, although all 160 responses parse as JSON. The team is therefore mainly generation-limited, not a strong solver hidden behind an excessively conservative final gate.
+
+All annotated evidence spans occur in 138/160 packets. Within that reference-dependent stratum, SAS delivers 74 correct answers and MAS five; MAS still has 128 insufficient/invalid outputs. This descriptive audit does not prove unique catalog expressibility or causal sufficiency of retrieval. It does show that missing annotated spans alone cannot explain the observed coverage collapse.
+
+For example, AAPL/2003/page\_24.pdf-1 supplies 290 and 92 in the selected sentence. SAS subtracts them to obtain the reference 198; MAS selects the sentence but emits INSUFFICIENT. Conversely, on PNC/2018/page\_171.pdf-1 the team passes a source-cited but numerically wrong calculation. These traces illustrate separate generation and verification failures; they do not isolate model capacity as their cause. The grammar lacks direct aggregate operations, and MAS withholds all 56 cases whose reference programs have multiple steps. Full traces and reference-defined strata appear in the supplement.
+
+Direct control yields SAS 50/66/44 and MAS 0/5/155 correct/wrong/withheld. Repair yields SAS 79/50/31 and MAS 5/3/152. Initial candidates match the no-repair primary across paired cases. SAS repair releases one additional reported-correct and two wrong answers; by raw execution it releases zero correct and three wrong. MAS attempts 152 repairs without improving final delivery. More stages do not resolve the observed generation shortfall.
+
+The Ubuntu run repeats all 960 historical delivery flags and score objects. Its 668,817 memory samples across 16 attempts show zero process-swap bytes and a maximum RSS of 10.946 GB, below the 11.5 GB sampled ceiling. This is stronger resource evidence than the earlier swap-affected run, but not uninterrupted execution or a bound on unsampled peaks. Primary SAS/MAS sampled peaks are 10.075/10.946 GB. Summed primary inference time is 11.668 hours for SAS and 3.383 for MAS; the latter's speed accompanies pervasive insufficient answers. Restart overhead and aborted work are excluded.
+
+\subsection{Evidence and Precision Do Not Resolve Generation}
+On 96 additional FinQA reports, an annotated correct program can execute from the original evidence/catalog on 82. Each matched 3B Q4 and Q8 condition misses 80 of those 82 and achieves only 2/96 official execution matches overall. The Q4/Q8 comparison has two gains and two losses, with a company-cluster difference interval about $[-4.3,+4.0]$ points. Increasing weight precision does not establish a general gain here; it is not evidence that precision never matters.
+
+Wider lexical retrieval improves complete annotated-span coverage from 750/883 to 827/883 in a development screen. A 16-report generation pilot improves from 1 to 4 official matches, but a separate 21-report replication changes 2 to 1 (one gain, two losses). All three initial gains use only original spans. Expanding the catalog improves an enriched five-report diagnostic from 0 to 2, but changes 2/96 to 1/96 on the broader cohort. Retrieval coverage, catalog expressibility and generated accuracy are distinct outcomes.
+
+The 15-report answer-key diagnostic shows where conditional potential remains (Table~\ref{tab:oracle}). Operand restriction alone leaves accuracy at zero despite reducing the median selectable IDs from 23 to two. Structure alone recovers four answers; structure plus the shortlist recovers ten official matches but seven reported matches. The remaining five official failures assign at least one source slot a different numerical value from the reference; three additional official-correct outputs mislabel a fractional result as percentage points. Because the scaffold supplies most of the calculation, this is not a learned planning result or an upper bound over all valid reasoning strategies.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lrr}
+\toprule
+Constraint ($n=15$) & Execution & Reported\\
+\midrule
+Neither & 0 & 0\\
+Operand shortlist only & 0 & 0\\
+Operation structure only & 4 & 4\\
+Structure and shortlist & 10 & 7\\
+\bottomrule
+\end{tabular}
+\caption{Enriched FinQA diagnostic, correct candidates. The last three rows use reference information unavailable at deployment. No deployment accuracy claim follows from these scores.}
+\label{tab:oracle}
+\end{table}
+
+\subsection{The Evidence-Only Planner Fails Its Criterion}
+\begin{figure*}[t]
+\centering\includegraphics[width=\textwidth]{figures/planner_outcomes.pdf}
+\caption{Primary held-out TAT-QA cohort. Left: all correct, wrong and withheld deliveries. Right: correct candidates before review versus correct final deliveries. Planning delivers more correct answers but generates fewer correct candidates and more wrong deliveries.}
+\label{fig:planner}
+\end{figure*}
+All four arms complete the 96-context cohort (Figure~\ref{fig:planner}). Direct 7B delivers 19 correct, 76 wrong and withholds one; program 7B delivers 15, 80 and one. Current MAS delivers 6, 23 and 67; planner MAS delivers 10, 25 and 61. Planning gains four correct deliveries and loses none: $+4.2$ percentage points, paired context-bootstrap 95\% interval $[+1.0,+8.3]$. However, only four pairs are discordant, giving exact $p=0.125$. We do not treat the positive percentile interval as reliable evidence of a population gain. Wrong deliveries increase by two, so the prespecified practical criterion fails regardless of that interval.
+
+Correct candidates decline from 26 to 25, with four gains and five losses. All four candidate gains are delivered. Two gains acquire a matching operator tree; the other two already had matching tree structure and improve numerical binding. Among 87 parseable reference derivations, operator-tree matches fall from 46 to 40 (three gains, nine losses). This diagnostic replaces numerical leaves with placeholders and sorts commutative arguments; it does not recognize all algebraic equivalences or verify source identities. Figure~\ref{fig:effects} reports uncertainty for these paired changes.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{figures/planner_effects.pdf}
+\caption{Planner-minus-MAS effects with archived 95\% paired context-bootstrap intervals. Correct delivery has only four discordant pairs (exact $p=0.125$). Wrong delivery is an adverse outcome; its observed increase fails the practical criterion. Tree agreement uses 87 parseable cases.}
+\label{fig:effects}
+\end{figure}
+Connected shapes are usable on 57/96 contexts. The other 39 have operations outside the final dependency graph and fall back; all 39 saved drafts and verdicts reproduce the baseline. Passing structural validation does not guarantee a correct calculation. The fixed critic rejects 20 of 26 correct baseline candidates and 15 of 25 planner candidates. Its changed acceptance pattern improves correct delivery without a net generation gain and still accepts 25 wrong planned answers.
+
+On the separate 28-context official-test cohort, both MAS arms deliver two correct, ten wrong and withhold 16; correct candidates decrease from five to three. This is a small negative directional check, not proof of equality. The 7B comparison stops after two contexts because of a 352,342,016-byte CPU compute-buffer allocation failure; a recovery attempt also fails. We retain the partial records but do not report a complete four-arm official-test comparison.
+
+Planning also costs time: median resident request latency increases from 25.2 to 33.9 seconds; generated tokens increase from 6,672 to 9,863. Peak worker commit remains about 5.26 GB (Figure~\ref{fig:resources}). Direct and program 7B medians are 34.3 and 46.8 seconds with approximately 5.44 GB peak commit, but include model loading and are not matched resident latency comparisons.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=\textwidth]{figures/resources.pdf}
+\caption{Primary held-out resources. Left: resident request-time distributions (median, quartiles and 1.5-IQR whiskers; outliers omitted from display, retained in data). Right: observed peak worker commit and configured limit. Peaks are descriptive measurements, not physical-RAM feasibility bounds; cross-arm loading policies differ.}
+\label{fig:resources}
+\end{figure*}
+
+\subsection{Stronger Baselines and Nontransferable Gains}
+The result is not that larger or direct models always fail to help. On 120 fresh TAT-QA contexts, direct 7B scores 29 versus 12 for direct 3B (22 gains, five losses; exact paired $p=0.00151$). An earlier 40-context comparison is inconclusive at six versus five. On the shared 96-report FinQA cohort, fixed 7B direct output scores 35 versus 20 for cited programs under reported-answer matching (21 direct-only, six program-only; $p=0.00592$). In contrast, a 72-context TAT-QA subset favors programs 19 versus 14 (14 program-only, nine direct-only; $p=0.405$). Output-format effects depend on task, representation and scoring; no universal direct-answer advantage is supported.
+
+Scoring sensitivity is substantial. FinQA's unmodified official execution score for those 7B programs is 1/96. A post-hoc declared-percent conversion recovers 18, yielding 19/96; the original score is retained. Three unsupported reported-reference labels remain in denominators. These observations do not license replacing the primary scorer with a favorable convention.
+
+FinQA actor adaptation transfers to 72 other TAT-QA contexts with correct candidates increasing from three to eight (six gains, one loss; $p=0.125$); the critic delivers six correct, ten wrong and withholds 56. On fixed FinQA candidates, an initially favorable trained-critic pilot does not reproduce zero wrong deliveries in a 21-report transfer: control delivers 1/5/15 and crossed critic 1/2/18. Earlier crossed-critic development also fails its no-correct-loss adoption rule against the stronger original critic. These observations remain part of the negative sequence.
+
+The clearest engineering improvement is cache configuration. On a fixed resident 21-report workload, disabling RAM prompt caching preserves every draft, verdict and delivery while reducing peak worker commit from approximately 6.101 to 5.264 GB and eliminating logged prompt-cache allocation failures. The default-cache completion involved allocation fallback near the cap. This change improves observed resource headroom, not reasoning accuracy, and does not prove absence of Windows paging.
+
+\section{Discussion and Limitations}
+The evidence supports a sequence of distinct constraints. In Study A, the selected F16 team generally does not attempt a useful calculation. In Study B, available reference-executable evidence can coexist with wrong candidate programs. Supplying reference structure exposes conditional potential, but predicting usable structure remains difficult, source assignment can still fail, and review can discard correct candidates or accept wrong ones. The planner's final delivery increase is therefore insufficient evidence of a generation improvement.
+
+This is an empirical result about specific Qwen2.5 recipes, prompts, grammars and financial subsets. Parameter size and precision are confounded in Study A; the Windows planner changes draft allocation as well as adding a stage. Greedy single-seed experiments do not estimate training-seed or stochastic-decoding variance. Repeated development studies, enriched oracle diagnostics and reused cohorts cannot be pooled as independent confirmations. Project-held-out public data do not establish freedom from pretraining contamination; FinQA splits overlap at report level, and TAT-QA report clusters are unavailable. Sparse paired improvements and multiple exploratory comparisons limit inferential strength.
+
+Resource claims are equally bounded. Windows job commit is not physical RAM feasibility; sampled RSS can miss peaks. Linux swap-disabled scope records and zero sampled process swap strengthen the Ubuntu evidence, but the run was interrupted and the SSD suffered filesystem errors. Seven unreadable analysis artifacts were reconstructed offline: all six replay hashes and all 40 recorded evidence hashes match, as does the regenerated summary; the regenerated text report has no original recorded hash. The original export tarball and one bootstrap log remain unavailable. Separately verified repository archives preserve the usable evidence. These qualifications preclude claims of uninterrupted deployment reliability.
+
+We have not evaluated frontier models, alternative families, a broad prompt search, trained planners, XBRL-authorized formulas, or all published verification baselines. We report numerical benchmark agreement rather than expert financial adjudication, calibration or operational safety. Full prompts may contain ambiguity, and correct numbers do not ensure correct provenance. The systems' error rates do not support autonomous financial decisions. The supplement retains historical positive, null and adverse findings, unsuccessful resource attempts and a machine-readable artifact census; no historical result is silently revised.
+
+\section{Conclusion}Useful delivery cannot be inferred from candidate generation, a low wrong-answer rate or an oracle diagnostic alone. In these recipes the resident team largely withholds, and evidence-only planning fails its practical requirement despite a favorable correct-delivery count. Paired transitions and resource/scoring qualifications provide a more defensible evaluation than a single aggregate accuracy. These observations do not establish a general architectural or precision effect.
+\label{main-content-end}
+\section*{Impact Statement}
+The observed errors and withholding do not support autonomous financial decisions. Public benchmark agreement is not professional financial validity. The purpose is to expose failure modes and avoid unwarranted deployment claims; actual authors must confirm data/model licenses and release restrictions.
+\section*{AI assistance and responsibility}
+Codex assisted manuscript adaptation, data-derived plotting and code-based numerical checks against preserved artifacts. No new experimental inference was performed for manuscript preparation. Actual authors must review all content and complete applicable disclosures; this draft does not attest to their approval or originality review.
+\bibliography{references}
+\bibliographystyle{icml2026}
+\clearpage\appendix\onecolumn
+\section{Scope and Evidence Status}
+This supplement accompanies the main paper and retains the broader research sequence, including weak baselines, unsuccessful interventions, diagnostic successes, failures to transfer, and resource interruptions. It is organized by evidential role rather than treating every development experiment as a confirmatory trial. Repeated questions, repeated controls and post-hoc diagnostic outputs are not pooled into a sample-size claim. No neural inference was run to prepare either manuscript. Historical files remain unchanged.
+
+The paper package includes an artifact inventory with hashes, an unfiltered collection of 222 result/score/analysis documents selected by filename from the research and preserved-evidence trees, independently regenerated headline metrics, and raw-score checks. The collection is a machine-readable census, not 222 independent experiments. The complete research notes and \path{DECISIONS.md} remain authoritative for chronology. Superseded experiments, failed training fits and incomplete jobs remain in the repository and archives. The historical manuscript is preserved separately and should not be used for the new Ubuntu resource measurements.
+
+\paragraph{Verification levels.}
+All 20 handoff archives and their 2,930 mapped source files pass recorded byte-length and SHA-256 checks. The broader inventory records 3,776 research and preserved files, including duplicated evidence representations. Main Ubuntu results were recomputed from raw case ledgers: 1,920 initial/final programs were re-executed and rescored, all 960 records reconciled with the published export, and all stage-generated-token sums checked against the 2,048 ceiling. All 668,817 memory samples from 16 worker attempts pass the recorded RSS and process-swap checks. Fourteen Windows FinQA paired ledgers were re-executed and rescored using the pinned official evaluator and reported-answer scorer; seven TAT-QA prediction ledgers were rescored. The 96-context planner and 28-context secondary MAS outcomes were independently rescored using the official TAT-QA implementation. Older result documents are retained with their original audit provenance; the present checks do not claim independent expert adjudication of every financial label or a fresh replay of every historical training trajectory.
+
+\section{Reproducibility Specification}
+\subsection{Study A: Frozen 16 GB Recipes}
+The Ubuntu run identifier is \path{lab-16-ubuntu-noswap-v1}. The frozen protocol identifier is \path{finance-deployment-lab-v2-115gb}. The public corpus contains 160 questions from 50 company-year reports (36 companies), selected from FinQA development data by report hash after recorded prior-exposure exclusions. This is not official-test performance. Six jobs combine two arms with primary, direct-control and repair-ablation profiles. The paired unit is the original question, with report clustering; 960 outputs do not represent 960 independent questions.
+
+\begin{longtable}{p{.26\textwidth}p{.67\textwidth}}
+\toprule Setting & Recorded configuration\\\midrule\endhead
+Single model & Qwen2.5-14B-Instruct, GGUF Q4\_K\_M; no project adapter.\\
+Resident team & Qwen2.5-1.5B-Instruct F16 source suggestion; 3B F16 program drafting; 0.5B F16 binary verification. Separate simultaneously loaded model instances, no shared backbone.\\
+Inference & CPU only, 8 threads, context 4,096, greedy temperature zero, seed 42, GPU layers zero, \path{use_mmap=False}.\\
+Output budget & 2,048 generated tokens per case across all stages. Actual token use differs by arm/profile; prompt tokens sum every call, not one context window.\\
+Primary & Analysis allowance 128; two fixed training demonstrations; binary review; no repair.\\
+Direct control & Removes both analysis and demonstrations, retaining the structured program and review pipeline. It is not the direct-number Windows comparator.\\
+Repair ablation & Same primary initial trajectory plus full regeneration/review after failure. Initial trajectories are matched; later candidates may change.\\
+Evidence & Lexical IDF/length-normalized top-eight source units; compact quantity catalog; answer keys absent from generation packets. MAS receives source suggestions.\\
+Runtime & \path{llama-cpp-python} 0.3.16, NumPy 2.5.4, psutil 7.2.2; Python 3.12.15; Linux 7.0.0-38-generic, glibc 2.43, x86-64.\\
+Hardware & AMD Ryzen 5 8645HS; Linux physical RAM recorded as 15,438,376,960 bytes. GPU is not used for these inference runs.\\
+Resource control & 11,500,000,000-byte sampled controller-plus-worker RSS guard, process-swap monitor, and user scope reporting \path{MemorySwapMax=0}; not a hard RSS cgroup limit.\\
+Resume & Original manifests and per-attempt traces retained across interruption/reboot. A one-page usable-RAM reporting drift was reconciled only with the remaining guarded identity fields matching.\\
+\bottomrule
+\end{longtable}
+
+Model-file and source SHA-256 values are preserved in \path{reproducibility/identities.json}; no large model tensors are bundled with the paper. The original source public-packet hash is \texttt{\seqsplit{9611c2f650983b9cd8d04823824cbf1999d6bbb00fea9cea3c9894875cb9bf59}}. Exact prompt text and responses for every original stage are in the restored case ledgers. Representative complete prompts, selected mechanically as the first recorded case in each job, are included in \path{reproducibility/prompts/}. They are examples of recorded inputs, not replacements for the frozen templates or full case-specific evidence.
+
+\subsection{Windows 8 GB Application Budget}
+Windows 11 build 10.0.26200 runs on an AMD Ryzen 5 8645HS with 6 physical/12 logical CPUs and 16,390,729,728 physical bytes. The inference executable is \path{llama.cpp} b12202, revision \path{d6be06557}, x64 CPU. Its distribution archive hash is retained with the environment record. The reported environment includes Python 3.12.14 and psutil 7.2.2. Both resident workers use context 4,096 and eight CPU threads; execution of drafting/review stages is sequential while both weights remain loaded. The shared Job Object has a 6,100,000,000-byte commit limit, and the separate working-set guard is 6,400,000,000 bytes. The initial Windows pilots used sampled RSS only; tables and narratives do not upgrade their guard retrospectively.
+
+The direct/program 7B comparator uses the two-shard Qwen2.5-7B-Instruct Q4\_K\_M checkpoint. Small-model conditions use the recorded Qwen2.5-3B-Instruct Q4 checkpoints; the matched Q4/Q8 study quantizes one shared F16 source and must not be conflated with comparisons using other pre-existing files. Role-adapted runs attach the common actor or control critic LoRA to the appropriate separate 3B instance. Artifact names, sizes and hashes distinguish these identities in the archived model and launch records. All paper generation is based on those identities; matching a parameter count alone is not sufficient to reproduce a condition.
+
+For the held-out planner, temperature is zero and the common generation ceiling is 960. Current MAS reserves 768/192 for draft/review; planner MAS reserves 192/576/192 for shape/binding/review. A rejected shape still consumes its planning work and falls back within the 576-token drafting allowance. Direct/program 7B each reserve 960 without review. Their sequential CLI duration includes loading; resident pair request times exclude initial worker loading. The measured latency difference between the two resident arms is the cleanest planner contrast. Prompt RAM caching is disabled with \path{--cache-ram 0}; context length is unchanged.
+
+\subsection{Adapter Provenance and Training}
+Adaptation is an established baseline component \citep{lora,qlora}, not evidence of algorithmic novelty. Initial 3B adaptation uses an NF4 training base from \path{unsloth/Qwen2.5-3B-Instruct-bnb-4bit}, pinned revision \path{2672b588848527e456d320c11926c794539f47d5}. The deployment GGUF Q4\_K\_M base is a different quantization; exact full-precision weight equivalence is not asserted. Invalid source-binding corpus revision 01 was superseded and is not presented as usable training data.
+
+The valid initial corpus has 761 examples fitting the full 1,024-token context constraint, split 661 train/100 validation by recorded report groups. The completed initial epoch uses 83 optimizer updates and 14,966,784 trainable parameters across 504 changed adapter tensors. A full-logit fit failed with GPU OOM before its first update. The successful supervised-suffix-logit implementation retains all context and supervised targets; software equivalence checks and both failed/successful attempts are retained. Teacher-forced loss is not QA accuracy. Training has its own GPU/host memory accounting and is not claimed to fit the CPU inference tier.
+
+The common actor continues from the initial actor with 128 training examples, 32 validation examples and 16 optimizer updates. The matched control critic continues from its recorded initializer with 384 training examples and 48 updates. Its validation groups contain 192 crossed, 192 mutation and 32 replay-critic examples. The continuation recipe uses learning rate $10^{-4}$, zero weight decay, clipping norm 1, accumulation 8, one epoch, seed 42, optimizer reset, rank 8, LoRA alpha 16, dropout 0.05 and all-linear target modules. Training versions include PyTorch 2.6.0+cu124, Transformers 4.57.1, PEFT 0.17.1, bitsandbytes 0.48.1 and Accelerate 1.10.1. Initializer, data, optimizer and conversion manifests are retained. Native application checks establish that adapters alter outputs, not that they improve QA. The converted common actor SHA-256 is \texttt{\seqsplit{4e21beca69dcf7bf2b9e89df7d189c74740d98acebe08501fd7e848bb7155d3e}}.
+
+\subsection{Cohorts, Exposure and Prompt Availability}
+FinQA train/development/test snapshots share no exact question or page IDs in the recorded audit but do overlap at company-year level: 243 of 278 test reports appear in the raw training source and 93 in raw development. Exclusion of actually used fitting/validation reports differs from exclusion of an entire public source split. We describe exclusions per study, not as a universal ``unseen test'' guarantee. The 96-report precision/catalog/format cohort is shared, not three independent replications. The oracle matrix uses the same 15 enriched reports in every arm. The 72-context TAT-QA format comparison reuses a hash-ordered subset of the 120-context capacity cohort; the separate 72-context adaptation-transfer cohort excludes earlier contexts. The held-out planner primary and secondary cohorts exclude prior table IDs and exact table duplicates, but no report mapping or pretraining audit is available.
+
+The TAT-QA dataset/evaluator source is pinned at repository revision \texttt{\seqsplit{870accc41953dcde885aabeb963d94aabdc0fbc3}}. Downloaded evaluator and data bytes match all recorded hashes. Primary/secondary planner packet hashes are respectively \texttt{\seqsplit{e463671e33f56af56e6d8d1ad07720b3e75fa3c9a732746a541483fb44251ac0}} and \texttt{\seqsplit{f494a4268baa1623b8159dc2d428c0cfaeb3235e99df5e9831bf923dcaa1a802}}, using LF line endings. TAT-QA is attributed to its authors \citep{tatqa}; the data card specifies CC BY 4.0. Third-party source files retain upstream provenance; inclusion does not change their licenses.
+
+Windows resident ledgers retain responses, usage and decisions but do not embed every rendered prompt. Exact prompts are reconstructible from the frozen packet and versioned pipeline/template code. The paper package records these source hashes and includes the relevant template files; it does not falsely describe missing rendered prompts as observed logs. Template text includes question/evidence, source catalog, program grammar and scale instructions; review sees the candidate and deterministic execution without labels. The planner uses only operations, dependencies and VALUE placeholders. Complete reference programs appear only in explicitly labeled oracle diagnostics and controlled candidate challenges.
+
+\section{Metrics and Statistical Details}
+\paragraph{Historical reported-answer score.}
+The evaluator parses supported simple numerical reported labels and their rounding precision. Predicted percentage points are divided by 100; percent labels require percent/fraction output units, while ordinary numerical labels require number/fraction units. The normalized value must fall within the larger of reported rounding tolerance and $10^{-5}$, with a valid ANSWER decision and no execution issues. Unsupported labels remain in the denominator. This historical rule can disagree with the raw execution reference and should not be interpreted as official program equivalence.
+
+\paragraph{Raw execution score.}
+For finite predicted $\hat y$ and raw reference $y$, the numerical condition is $|\hat y-y|\leq\max(10^{-5},10^{-5}|y|)$. Correct delivery additionally requires the pipeline to deliver. The stored raw-correct field is a numerical score; source support and review are separate. Primary SAS has 34 deliveries correct by both scores, 44 reported-only, four raw-only and 44 wrong by both. Thus 48/126 delivered answers change correctness label; the two scores are not nested. Primary MAS has five correct by both and three wrong by both.
+
+\paragraph{Official benchmark evaluators.}
+Windows FinQA program outputs are translated to the benchmark's arithmetic token representation and evaluated using the pinned implementation, then compared with stored execution labels. Its evaluator hash is \texttt{\seqsplit{845cd131cab843eceff256cf6d392978cc470a7da4a80107beb56027fdca5c13}}. TAT-QA uses the authors' \path{TaTQAEmAndF1} implementation, hash \texttt{\seqsplit{2aeeac479f89f8c76300af1cc0e8d098eb86af84bc386b38b6ab4af484a6dea8}}, with predicted numerical scale. On the reported arithmetic single-number comparisons, summed F1 equals summed exact match; it is not an additional independent success endpoint.
+
+\paragraph{Cluster bootstrap.}
+For Study A, let cluster $g$ contain $n_g$ questions and paired difference sum $s_g$. Each draw samples the 50 reports with replacement and computes $\sum_g s_g/\sum_g n_g$ over sampled clusters. We use 10,000 draws, NumPy \path{default_rng(42)}, and linear 2.5/97.5 percentiles. The primary reported correct-delivery interval is $[-0.538961,-0.365517]$ and company-cluster sensitivity is $[-0.534722,-0.364405]$. The corresponding raw interval is $[-0.282609,-0.133720]$. These are resampling estimates under the observed cluster structure, not randomized-treatment causal intervals. The original sealed analysis uses Python RNG/quantile indexing; its original interval $[-0.540373,-0.366906]$ is retained, not overwritten.
+
+Planner paired intervals reproduce the archived Python \path{random.Random(73)} procedure: 10,000 draws of 96 table-context differences, sorted indices 250 and 9749. For gains $b$, losses $c$, the two-sided exact McNemar value is $\min[1,2\sum_{k=0}^{\min(b,c)}\binom{b+c}{k}/2^{b+c}]$. With four gains and zero losses it is 0.125. Empirical resampling cannot invent a loss absent from four observed discordances, explaining why the positive percentile interval must not be presented as strong confirmatory evidence. The zero-width secondary correct-delivery interval is a degenerate empirical bootstrap, not proof of population equality.
+
+Older Windows paired summaries generally use 2,000 company-cluster draws with Python seed 42 and indices 50/1949; we retain that procedure instead of silently substituting a different interval. Exact question-pair tests assume independence of pairs; shared companies may violate it. Older 16 GB supplemental analyses include company sensitivity, equal-report weighting, leave-one-report-out checks and cluster sign-flip tests. These post-hoc analyses are restored in Sections~\ref{sec:extended-a}--\ref{sec:statistics-restored}; sign-flip assumptions are explicit. The new paper does not elevate them into prespecified primary discoveries. No observed-power, noninferiority or equivalence claim is made. No seed/model uncertainty is inferred from a question bootstrap.
+
+\section{Complete Main-Study Outcome and Resource Tables}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule &\multicolumn{3}{c}{Reported}&\multicolumn{3}{c}{Raw}& Hours & RSS GB\\
+Profile / arm & C&W&H&C&W&H&&\\\midrule
+Primary SAS &78&48&34&38&88&34&11.668&10.075\\
+Primary MAS &5&3&152&5&3&152&3.383&10.946\\
+Direct SAS &50&66&44&14&102&44&5.314&10.070\\
+Direct MAS &0&5&155&0&5&155&0.897&10.934\\
+Repair SAS &79&50&31&38&91&31&13.598&10.087\\
+Repair MAS &5&3&152&5&3&152&3.781&10.946\\
+\bottomrule
+
+\end{tabular}
+\caption{All Ubuntu conditions, $n=160$ each. Hours sum saved inference-stage time, excluding startup, interrupted work and restart overhead. Memory is sampled process-tree RSS in decimal GB.}
+\end{table}
+
+The primary/repair initial programs, scores, execution and verdicts are matched. The analysis stage intentionally reaches its 128-token allowance on 159 SAS and 157 MAS primary questions; these events are not malformed final JSON or context skips. The sealed analysis reports zero context/budget-skipped calls in the six jobs. Removing unused operations by backward slicing preserves executable numerical values; selecting an earlier endpoint is a different, potentially answer-changing intervention.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{llrrrr}
+\toprule Cohort & Arm & C & W & H & Correct candidates\\\midrule
+Primary 96 & Direct 7B &19&76&1&19\\
+&Program 7B&15&80&1&15\\
+&Current MAS&6&23&67&26\\
+&Planner MAS&10&25&61&25\\
+Secondary 28&Current MAS&2&10&16&5\\
+&Planner MAS&2&10&16&3\\
+\bottomrule
+
+\end{tabular}
+\caption{Held-out TAT-QA official exact-match outcomes. Direct/program candidates equal final predictions because those arms have no review. Secondary 7B jobs are incomplete and are not assigned whole-cohort scores.}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrr}
+\toprule Primary baseline outcome & Planner correct & Planner wrong & Planner withheld\\\midrule
+Correct&6&0&0\\
+Wrong&2&19&2\\
+Withheld&2&6&59\\\bottomrule
+
+\end{tabular}
+\caption{All 96 paired delivery transitions. Four correct gains coexist with six newly wrong deliveries and four removals of wrong delivery (two corrected, two withheld).}
+\end{table}
+Secondary transitions are two correct-to-correct, nine wrong-to-wrong, 15 withheld-to-withheld, one wrong-to-withheld and one withheld-to-wrong. Thus equal aggregate wrong counts do not mean identical behavior. Both correct delivery identities are unchanged. Seventeen of 28 predicted shapes are usable.
+
+\begin{figure}[t]
+\centering\includegraphics[width=.95\textwidth]{figures/resources.pdf}
+\caption{Primary held-out planner resources. Left: distribution of resident request time; boxes show interquartile ranges, median and standard 1.5-IQR whiskers, with outliers omitted from display but retained in data. Right: measured peak worker commit, not physical RAM or an uncertainty interval. Direct/program 7B timing includes load and is therefore reported separately in text.}
+\end{figure}
+
+\section{Exploratory Sequence: Positive, Null and Adverse Findings}
+\subsection{Earlier Linux Development and Training}
+The original structured synthetic development suite is solved by a generator-aware deterministic parser (150/150); the 24 temporal KYC probes are also solved by a compact rule control. These are regression/mechanism tests and cannot establish the necessity or superiority of an LLM. A four-case shared-weight pilot improves delivered coverage from zero to one while candidate correctness remains one; patch repair has no gain. Shared residency and successful fitting establish resource behavior, not semantic capability.
+
+On the repeatedly reused first 24 FinQA development questions, the stronger 7B SAS with 128-token analysis and two demonstrations delivers 13 correct, five wrong and withholds six by reported scoring. Longer 256-token analysis yields 11 correct and nine wrong; more table coverage leaves 13 correct. Symbolic cancellation feedback corrects no answers beyond plain retry in a two-trigger pilot. The 3B MAS with analysis/demonstrations produces four reported-correct candidates but delivers three correct, one wrong and withholds 20. Longer analysis does not improve its four correct candidates and increases wrong delivery to ten. These are development comparisons, not optimized-system bounds.
+
+Matched no-analysis/no-demonstration actor adaptation changes 0/24 reported-correct candidates (all refusals) to 11/24, with ten correct, 11 wrong and three withheld. The gain is real on reused data, but starts from a weak floor baseline. A larger unadapted 3B verifier with the same 11 correct drafts withholds all 24, demonstrating that stronger nominal verifier capacity alone does not ensure useful selective delivery.
+
+Matched critic continuation on 52 questions/15 report groups yields control 3/19/30 and crossed 3/15/34 by reported scoring; the wrong-rate interval includes zero. Against the stronger original critic's 4/22/26, crossed loses one correct delivery and fails the no-correct-loss rule. Repair changes no final outcomes relative to saved no-repair prefixes. A reserved 49-question/15-report diagnostic yields control 4/17/28 versus crossed 4/9/36 under reported scoring, but raw correct delivery falls from eight to seven. Selecting only the favorable metric would conceal failure of the both-metric adoption criterion. SAS and additional baseline conditions are all retained in the condition census below.
+
+The matched SAS continuation on the same 52-question selection cohort changes reported outcomes from 9/20/23 (control) to 9/10/33 (crossed), but raw correct delivery decreases from 11 to ten. The unadapted analysis/demonstration baseline gives 9/24/19 reported and 10/23/19 raw. Thus the crossed SAS can improve wrong delivery against that baseline without an observed correct-count loss, yet still fails the both-metric no-loss comparison against the matched trained control. These are different reference systems, not interchangeable success claims.
+
+On a controlled 12-report/24-program mutation probe, a trained critic accepts 11 of 12 reference programs and zero mutations; the plain reviewer withholds all. A question-blind depth-three program-feature tree scores 275/382 on original synthetic validation, and an extended-corpus tree 295/382 on its own validation; both exceed the 50\% majority baseline without seeing questions. On the reused natural24 pool, original/extended trees yield reported 5/8/11 and 5/5/14, versus the original neural critic's 11/4/9. These positive neural and shallow-control results show both discriminative potential and shortcut opportunities, not proof of neural shortcut use or broad semantic understanding. The neural gain remains development evidence.
+
+A source-header materialization prototype adds 183 catalog quantities while preserving all 1,922 original quantities across 73 fitting packets, and restores reference operand coverage on four questions. A proposed 292-case-arm neural comparison was prepared but not run. Executable source support is verified; a QA gain is not measured. It is not counted as a completed method success.
+
+External exploratory controls use original unadapted recipes: MortarBench local typed matching is 39/90 for SAS and 26/90 for MAS, based on partial JSON/XML evidence from nine prepared loan cases; this is not the official full benchmark protocol. The FRAMES closed-book control gives 2/100 and 1/100 under strict matching, unchanged by punctuation sensitivity; evidence URLs are not retrieved. These controls do not establish retrieval or multi-hop generalization. Their scoring and exposure limitations prevent treating them as confirmatory evidence for the adapted financial program systems.
+
+\subsection{Windows Candidate and Verifier Pilots}
+The initial planned 24-pair Windows candidate comparison stops after five complete pairs for post-hoc diagnosis. Refusal-allowed yields five refusals. Forced attempts yield zero reported-correct and one raw-correct candidate; a forced-one-step follow-up on the same five yields two reported-correct and one raw-correct. The original reviewer withholds everything. Removing contradictory repair fields or using a verdict-only 0.5B reviewer accepts all five (two reported-correct, three wrong); a 3B verdict-only reviewer withholds all. This exposes a local schema-policy problem but not semantic discrimination.
+
+On four new reports with reference/near-miss candidates, the 0.5B reviewer accepts all eight and the 3B reviewer withholds all eight. Forced 3B comparison selects the reference in five of eight order presentations, only two of four reports in both orders. On six new reports with a reject-both option, a reversed-order agreement rule yields three correct, zero wrong and nine withheld across the two pair types per report. These dependent, reference-enriched challenges do not estimate natural-pool delivery risk.
+
+The next six-report natural-pair pilot produces no correct final candidate in either draft and withholds all six. A separate six-report base/adapted pilot produces zero versus one correct candidate, yet agreement delivers zero correct, two wrong and withholds four. Thus the apparently error-free constructed result fails to transfer. A six-report adapted-3B versus unadapted-7B program pilot produces one versus zero correct final candidates, with more resources used by 7B; an answer-key prefix selector could recover four reports, but no deployable endpoint selector is demonstrated.
+
+\subsection{Endpoint, Retrieval, Precision and Catalog Controls}
+Model-predicted operation count on 16 reports changes official correct candidates from one to three (three gains, one loss). A gold-count control also yields three, on exactly the same recovered reports; gold count adds no recovery beyond predicted count on that slice. A retrospective endpoint selector makes no change in its initial test. On the 96-report matched precision cohort, a first-step rule changes Q4 official accuracy from 2 to 8 and Q8 from 2 to 6. On the earlier 24 reports it instead reduces Q4 from 3 to 1 and Q8 from 5 to 1. This cross-cohort reversal prevents a general recommendation to truncate at the first operation. The answer-key prefix oracle reaches at most 11/96 per arm, leaving most errors outside prefix selection.
+
+Unused operations occur in 67/96 Q4 versus 14/96 Q8 outputs (and 20/24 versus 7/24 in the earlier cohort). Slicing preserves final execution results; it does not create an accuracy gain. Precision raises initial official matching from 3/24 to 5/24 (one loss, three gains; $p=0.625$), with unchanged 3/24 normalized symbolic matches. Its 96-report replication is 2 versus 2; reported scoring also ties but with one discordance in each direction rather than the two official discordances each way. Q8 raises peak commit from about 2.59 to 3.94 GB and median latency from 20.6 to 32.2 seconds in that replication.
+
+Retrieval screens on 883 development questions cover all annotated spans for lexical8 750, BM25 748, reciprocal-rank fusion 733, BGE-small 728 and BGE/lexical hybrid 748. Wider lexical retrieval covers 827, adding 77 with no losses, at a larger token allowance (median evidence/catalog tokens 711 to 1,225). Numerical reference bindability rises 703 to 767; source identity and model success remain separate. The pilot's 1/16 to 4/16 generation gain ($p=0.25$) fails directionally at 2/21 to 1/21 ($p=1$). The latter company-cluster interval is $[-20.8,+11.1]$ percentage points, and median latency rises 18.9 to 26.3 seconds. A fixed-catalog follow-up was proposed to separate additional text from catalog options, but no completed result is identified in the retained retrieval evidence; it is not counted as an executed ablation.
+
+Catalog completion makes 28 additional annotated test programs numerically bindable in its source screen. Five enriched neural cases improve 0 to 2; on the unselected shared 96 reports accuracy changes 2 to 1, despite reference-executable witnesses increasing 82 to 84. On the separate 15-report oracle matrix, repeated unrestricted controls reproduce their plans. All four structure-only successes remain correct with the shortlist. Structure plus shortlist yields ten official and seven reported successes; it fixes multiple variables simultaneously and is neither a deployable method nor a single-factor mechanism attribution.
+
+\subsection{Baseline Capacity, Format, Review and Reference Checks}
+The initial 16-context TAT-QA format pilot gives 1/16 for both 3B direct and program output, on different questions. The 40-context direct-capacity comparison gives 5/40 for 3B and 6/40 for 7B (four 3B-only, five 7B-only); a 120-context replication gives 12 versus 29 (five versus 22 unique successes). Gold-scale substitution rescues 11 wrong 3B and five wrong 7B answers in that replication, showing that scale selection matters but does not explain the full gap. This is an answer-key sensitivity, not deployed accuracy.
+
+Fixed-7B format controls favor direct output on FinQA's shared reported metric, 35/96 versus 20/96, but favor programs with substantial uncertainty on TAT-QA, 19/72 versus 14/72. The FinQA agreement gate retains only three correct, two wrong and withholds 91, losing 17 of 20 reported-correct programs. Its percentage-label subgroup is direct 23/53 versus program 19/53; other supported numerical labels are 12/40 versus 1/40; three unsupported labels receive no match. The original official program score 1/96, converted sensitivity 19/96 and reported score 20/96 are retained separately.
+
+The initial trained-critic replay on 16 wider-evidence candidates appears favorable under reported scoring: control keeps three correct with zero wrong. The transfer replay on 21 narrow candidates has an executable-only baseline of two correct/19 wrong; control yields 1/5/15, crossed 1/2/18. Both lose one correct candidate, and two of three crossed-accepted outputs are wrong. Independent 7B recomputation on the initial 16 yields four correct answers alone, but the agreement gate withholds all; one overlapping correct answer pair differs beyond the frozen tolerance despite matching the reported label separately.
+
+On 72 separate TAT-QA contexts, actor adaptation improves candidates from 3 to 8, and review delivers 6/10/56; ten of 16 accepted answers are wrong. A resident 21-report workload produces six official-correct (five reported-correct) candidates and delivers 5/4/12 under both scores. Disabling RAM prompt caching preserves all plans/verdicts/deliveries, reduces sampled RSS from 5.852 to 5.013 GB and job peak from 6.101 to 5.264 GB. The default-cache job logs failed allocation and fallback, whereas the disabled-cache run logs none. A failed-allocation peak does not identify exactly how many bytes were successfully committed.
+
+A temporal growth rule applied to 453 questions from 117 report-disjoint test reports delivers only three, none matching either benchmark score. Individual discrepancies include plausible financial interpretations and incompatible reference conventions; they are not adjudicated gold-label corrections. A broader consistency screen reproduces every stored annotated execution result for 883 development and 1,147 test questions, then flags reported/raw incompatibility on 110/851 eligible development labels and 129/1,100 eligible test labels. These are screening flags, not 239 proven annotation errors. Official primary labels and all cases are retained.
+
+\subsection{Planner Development and Held-Out Result}
+The initial 12-report prototype produces a usable shape on only one report; 11 predictions are constant-only. Revising the grammar to unbound VALUE slots yields usable shapes on 11/12. Official final correct deliveries remain three in both arms; wrong decreases four to three and withheld increases five to six. Reported-correct delivery falls five to four. Median latency rises 23.0 to 30.9 seconds. This is development evidence for producing valid shapes, not an accuracy gain. The revision precedes held-out inference.
+
+In the main 96-context cohort the four correct-delivery gains have no losses, but wrong delivery rises two and candidate correctness falls one. The main paper reports this failed practical criterion prominently. At 28 secondary contexts there is no correct-delivery change, and two correct candidates are lost. The incomplete 7B test prefix and recovery attempt remain archived; completion of MAS does not imply completion of the four-arm comparison. No new test experiments are substituted for those failures.
+
+\section{Resource Failures, Missing Evidence and Scope of Claims}
+Early Linux training OOMs, converter/application interface issues, capacity probes, historical process swap, interrupted external evaluation, default-cache allocation fallback, secondary 7B allocation failures and Ubuntu SSD disconnections are retained. They are neither silently excluded nor pooled into successful end-to-end timing. The original 16 GB recovery run's score completeness did not validate its no-swap claim. The Ubuntu run supplies a separate resource-qualified repeat, with the same questions and scores.
+
+The SSD was mounted read-only after NTFS metadata errors. Six unreadable replay JSONLs were reconstructed using sealed analysis code and pinned 0.3.16 vocabulary-only tokenizers; their hashes, all 40 analysis-evidence hashes and the entire summary match the original audit. The text report was regenerated without an original recorded hash. The original results tarball and one bootstrap log remain unavailable, and a workflow marker still reads RUNNING. Therefore evaluation and replay completion are supported, but successful original packaging is not. Repository handoff ZIPs verify independently. Model tensors were not rehashed during manuscript preparation and are not included in portable evidence.
+
+Missing or limited evidence includes physical 8 GB/no-paging validation, an uninterrupted full Ubuntu run, complete secondary 7B baselines, TAT-QA report-level grouping, multiple model families/seeds, independent financial annotation adjudication, optimized baselines for every method and matched-latency system initialization. None is filled with estimated or fabricated data. No measured 32 GB result exists. The paper makes no calibrated safety, financial compliance, causal architecture or universally optimal precision claim.
+
+\section{Literature Verification and Reproduction Commands}
+The original focused bibliography contains 17 references verified against primary arXiv metadata, ACL Anthology or PMLR publisher BibTeX. The accompanying literature audit records the claim supported by each source and comparison limits. Recent financial verification papers are identified as arXiv preprints; we do not invent venues or reproduce their performance under our budgets. Our numerical results come only from this repository, not from unrelated published leaderboards. LoRA, QLoRA, program execution, selective prediction and multiagent debate are prior methods, not originality claims.
+
+From a repository checkout, restore immutable evidence into a separate directory, substituting its path for PATH:
+
+\noindent\begin{minipage}{\textwidth}
+\begin{verbatim}
+python dashboard_handoff/restore_evidence.py --extract PATH
+python scripts/reporting/build_final_paper.py --evidence PATH
+python scripts/reporting/verify_final_scores.py --evidence PATH
+\end{verbatim}
+\end{minipage}
+These commands use preserved predictions and do not load model weights or run inference. Dependencies and exact input hashes are recorded with the paper. Compile each LaTeX source using PDFLaTeX, BibTeX and two additional PDFLaTeX passes. The archived audited source uses AAAI-2027 style/BibTeX files. This adaptation retains the same scientific evidence in the destination template; the appendix uses one column for readability. Submission-specific administrative declarations, final author identities and any required checklist require author review; none is fabricated.
+
+\section{Historical Linux 8 GB Condition Census}
+The following is generated directly from the preserved condition inventory, without selecting conditions by outcome. It covers the exported natural-task development/selection/diagnostic conditions. Separate Windows experiments, synthetic regression tasks, external controls and unsuccessful execution attempts are described above and retained in the machine-readable artifact inventory. The labels retain original run names to make each row findable. R and X are the disclosed reported and raw historical scores, not interchangeable with official FinQA equivalence.
+\input{historical_inventory_extended.tex}
+\clearpage
+\input{restored_analysis.tex}
+\end{document}

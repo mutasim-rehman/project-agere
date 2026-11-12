@@ -17,3 +17,5 @@ Compliant fallback: retain existing canonical engineering evidence; obtain the Z
 ## Existing versions
 
 Recomputed all seven available main PDFs: bibliography key sets match all 28 canonical entries, eight local vector figure files each match canonical bytes, no overfull boxes/unresolved citations. Detailed heading/page mapping produced in ADAPTED_COVERAGE_MAP.md, including the Springer main and its comprehensive supplement. New MDPI and existing Springer contact sheets/enlarged results inspected; other existing forms still require enlarged final inspection. No old PDFs overwritten.
+
+Native computer-use @oai/sky runtime also failed initialization with the same missing kernel-assets path error. No browser UI or authenticated service was accessed. New ICLR/NeurIPS/ICML PDFs compiled, all pages contact-sheet inspected and selected numerical pages enlarged. AAAI/IJCAI prose production is policy-blocked, not silently waived.
