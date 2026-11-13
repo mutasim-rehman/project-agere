@@ -1,6 +1,6 @@
 # Venue/version comparison �2026-11-12
 
-21actual main PDFs, including a superseded preserved Springer PDF and its separately compiled citation correction.19scientific versions; MAKE also has two format alternatives. Four policy-based human-authoring packages; one substantive but uncompiled Access source. No version is submission-ready. Closed editions are archival/provisional formats, not open calls. See BIBLIOGRAPHY_CORRECTION.md before using the old Springer draft.
+22actual main PDFs, including a superseded preserved Springer PDF and its separately compiled citation correction.20scientific versions; MAKE also has two format alternatives. Four policy-based human-authoring packages; one substantive but uncompiled Access source. No version is submission-ready. Closed editions are archival/provisional formats, not open calls. See BIBLIOGRAPHY_CORRECTION.md before using the old Springer draft.
 
 | Venue | Publisher | Type | Ranking/category/year | Fit | Competitiveness | Limits | Template | References | Support | Fees | Deadlines | Folder | Compile | Policy | Human actions | Verified | Official sources |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -32,3 +32,11 @@
 | IEEE CAI provisional2026 format | IEEE | conference | No journal quartile applies; no acceptance odds invented | High empirical application fit | No acceptance odds; editorial novelty review | 6pages including references; up to2extra pages with additional charge; current7-page draft needs one extra page or human condensation | Exact CAI-linked Papercept ieeeconf class, unmodified, based on IEEEtran1.6b; official overrideIEEEmargins command | numeric | Separate29pages; final venue rules must be confirmed | Extra-page charge applies; amount/registration not verified | 2026 edition closed.2027 official landing page exists but no paper requirements verified; explicitly provisional | 25_IEEE_CAI | COMPILED | HUMAN-REVIEW-REQUIRED; not submission-ready | Author/declaration/license/AI/version review; edition/portal/anonymous evidence checks | 2026-11-12 | https://www.ieeesmc.org/cai-2026/author-instructions-and-templates-for-conference-proceedings/; https://open.ieee.org/author-guidelines-for-artificial-intelligence-ai-generated-text/ |
 
 Only Computers/Information alternative quartiles are authenticated: publisher-confirmed2025JCRQ2 in their named categories. SN Computer Science directSCImago403; no quartile claimed. Q3/Q4 diversity remains unverified. No conference quartile, acceptance odds or automatic indexing promised. Exact full requirements and human actions reside in each project.
+
+## TMLR addition — 2026-11-13
+
+| Venue | Format and limits | Fees / schedule | Evidence and policy status | Official sources |
+|---|---|---|---|---|
+| TMLR | Official TMLR kit; no fixed cap; 40-page PDF, core9 + declarations/references + appendix pp13–40; anonymous support PDF/ZIP <=100 MB | No author fees; rolling | Complete adapted draft, compiled/visually checked; human review, originality/no overlapping archival publication or parallel submission, profiles/quotas/declarations required | [Author guide](https://jmlr.org/tmlr/author-guide.html), [editorial policies](https://jmlr.org/tmlr/editorial-policies.html), [official kit](https://github.com/JmlrOrg/tmlr-style-file) |
+
+Machine-readable full row: venue_manifest.json. No journal quartile or acceptance probability is asserted.

@@ -1,0 +1,161 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/size10.clo)) (./tmlr.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (./fancyhdr.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/seqsplit/seqsplit.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/url/url.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./main.out) (./main.out) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{d:/project-agere/.local/texlive/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Underfull \vbox (badness 10000) has occurred while \output is active [2] (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [3{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+Underfull \vbox (badness 4859) has occurred while \output is active [4]
+Underfull \vbox (badness 10000) has occurred while \output is active [5 <./figures/tier16_outcomes.pdf>]
+Underfull \vbox (badness 1803) has occurred while \output is active [6] [7 <./figures/planner_outcomes.pdf> <./figures/planner_effects.pdf>] [8 <./figures/resources.pdf>] [9] (./main.bbl [10] [11]) [12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+[]\T1/lmr/m/n/10 The TAT-QA dataset/evaluator source is pinned at repos-i-tory re-vi-sion
+
+Underfull \hbox (badness 2326) in paragraph at lines 218--219
+\T1/lmtt/m/n/10 870accc41953dcde885aabeb963d94aabdc0fbc3$\T1/lmr/m/n/10 . Down-loaded eval-u-a-tor and data bytes match all
+[15]
+Underfull \vbox (badness 5908) has occurred while \output is active [16] [17]
+Underfull \vbox (badness 2042) has occurred while \output is active [18]
+Underfull \vbox (badness 6332) has occurred while \output is active [19] [20] [21] (./historical_inventory_extended.tex
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]|\T1/lmr/m/n/9 model_selection-
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|\T1/lmr/m/n/9 model_selection-
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/lmr/m/n/9 baseline_original_critic_common_actor-
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/lmr/m/n/9 model_selection-baseline_sas-analysis128-
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 model_selection-control_sas-analysis128-
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]|\T1/lmr/m/n/9 model_selection-crossed_sas-analysis128-
+) [22] (./restored_analysis.tex [23] [24] [25 <./figures/restored_transitions.pdf>] (./primary_intervals.tex) (./primary_sensitivity.tex) (./cluster_tests.tex) (./strata.tex [26]) [27 <./figures/restored_heterogeneity.pdf>] (./resources_extended.tex) (./stages.tex [28]) [29 <./figures/restored_stage_work.pdf>] [30] [31 <./figures/restored_utility.pdf>]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 189.
+
+[32] [33] (./legend_tier16.tex) (./battery_tier16.tex [34]) (./symmetry_tier16.tex) (./legend_tier8.tex [35]) (./battery_tier8.tex [36]) (./symmetry_tier8.tex [37]) [38] [39]) [40] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)<d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (40 pages, 520786 bytes).
+Transcript written on main.log.
+This is BibTeX, Version 0.99e (TeX Live 2026)
+The top-level auxiliary file: main.aux
+The style file: tmlr.bst
+Database file #1: references.bib
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/size10.clo)) (./tmlr.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (./fancyhdr.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/seqsplit/seqsplit.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/url/url.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./main.out) (./main.out) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{d:/project-agere/.local/texlive/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Underfull \vbox (badness 10000) has occurred while \output is active [2] (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [3{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+Underfull \vbox (badness 4859) has occurred while \output is active [4]
+Underfull \vbox (badness 10000) has occurred while \output is active [5 <./figures/tier16_outcomes.pdf>]
+Underfull \vbox (badness 1803) has occurred while \output is active [6] [7 <./figures/planner_outcomes.pdf> <./figures/planner_effects.pdf>] [8 <./figures/resources.pdf>] [9] (./main.bbl [10] [11]) [12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+[]\T1/lmr/m/n/10 The TAT-QA dataset/evaluator source is pinned at repos-i-tory re-vi-sion
+
+Underfull \hbox (badness 2326) in paragraph at lines 218--219
+\T1/lmtt/m/n/10 870accc41953dcde885aabeb963d94aabdc0fbc3$\T1/lmr/m/n/10 . Down-loaded eval-u-a-tor and data bytes match all
+[15]
+Underfull \vbox (badness 5908) has occurred while \output is active [16] [17]
+Underfull \vbox (badness 2042) has occurred while \output is active [18]
+Underfull \vbox (badness 6332) has occurred while \output is active [19] [20] [21] (./historical_inventory_extended.tex
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]|\T1/lmr/m/n/9 model_selection-
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|\T1/lmr/m/n/9 model_selection-
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/lmr/m/n/9 baseline_original_critic_common_actor-
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/lmr/m/n/9 model_selection-baseline_sas-analysis128-
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 model_selection-control_sas-analysis128-
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]|\T1/lmr/m/n/9 model_selection-crossed_sas-analysis128-
+) [22] (./restored_analysis.tex [23] [24] [25 <./figures/restored_transitions.pdf>] (./primary_intervals.tex) (./primary_sensitivity.tex) (./cluster_tests.tex) (./strata.tex [26]) [27 <./figures/restored_heterogeneity.pdf>] (./resources_extended.tex) (./stages.tex [28]) [29 <./figures/restored_stage_work.pdf>] [30] [31 <./figures/restored_utility.pdf>]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 189.
+
+[32] [33] (./legend_tier16.tex) (./battery_tier16.tex [34]) (./symmetry_tier16.tex) (./legend_tier8.tex [35]) (./battery_tier8.tex [36]) (./symmetry_tier8.tex [37]) [38] [39]) [40] (./main.aux) )
+(see the transcript file for additional information)<d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (40 pages, 520786 bytes).
+Transcript written on main.log.
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/size10.clo)) (./tmlr.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))) (./fancyhdr.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty)) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/seqsplit/seqsplit.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/url/url.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def) (./main.aux) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)) (./main.out) (./main.out) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd) (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{d:/project-agere/.local/texlive/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Underfull \vbox (badness 10000) has occurred while \output is active [2] (d:/project-agere/.local/texlive/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd) [3{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+Underfull \vbox (badness 4859) has occurred while \output is active [4]
+Underfull \vbox (badness 10000) has occurred while \output is active [5 <./figures/tier16_outcomes.pdf>]
+Underfull \vbox (badness 1803) has occurred while \output is active [6] [7 <./figures/planner_outcomes.pdf> <./figures/planner_effects.pdf>] [8 <./figures/resources.pdf>] [9] (./main.bbl [10] [11]) [12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+[]\T1/lmr/m/n/10 The TAT-QA dataset/evaluator source is pinned at repos-i-tory re-vi-sion
+
+Underfull \hbox (badness 2326) in paragraph at lines 218--219
+\T1/lmtt/m/n/10 870accc41953dcde885aabeb963d94aabdc0fbc3$\T1/lmr/m/n/10 . Down-loaded eval-u-a-tor and data bytes match all
+[15]
+Underfull \vbox (badness 5908) has occurred while \output is active [16] [17]
+Underfull \vbox (badness 2042) has occurred while \output is active [18]
+Underfull \vbox (badness 6332) has occurred while \output is active [19] [20] [21] (./historical_inventory_extended.tex
+Underfull \hbox (badness 10000) in paragraph at lines 10--10
+[]|\T1/lmr/m/n/9 model_selection-
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]|\T1/lmr/m/n/9 model_selection-
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\T1/lmr/m/n/9 baseline_original_critic_common_actor-
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/lmr/m/n/9 model_selection-baseline_sas-analysis128-
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|\T1/lmr/m/n/9 model_selection-control_sas-analysis128-
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]|\T1/lmr/m/n/9 model_selection-crossed_sas-analysis128-
+) [22] (./restored_analysis.tex [23] [24] [25 <./figures/restored_transitions.pdf>] (./primary_intervals.tex) (./primary_sensitivity.tex) (./cluster_tests.tex) (./strata.tex [26]) [27 <./figures/restored_heterogeneity.pdf>] (./resources_extended.tex) (./stages.tex [28]) [29 <./figures/restored_stage_work.pdf>] [30] [31 <./figures/restored_utility.pdf>]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 189.
+
+[32] [33] (./legend_tier16.tex) (./battery_tier16.tex [34]) (./symmetry_tier16.tex) (./legend_tier8.tex [35]) (./battery_tier8.tex [36]) (./symmetry_tier8.tex [37]) [38] [39]) [40] (./main.aux) )
+(see the transcript file for additional information)<d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/project-agere/.local/texlive/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (40 pages, 520786 bytes).
+Transcript written on main.log.

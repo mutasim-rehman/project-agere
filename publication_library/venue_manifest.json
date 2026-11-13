@@ -714,5 +714,36 @@
     "policy": "HUMAN-REVIEW-REQUIRED; not submission-ready",
     "human_actions": "Author/declaration/license/AI/version review; edition/portal/anonymous evidence checks",
     "last_verified": "2026-11-12"
+  },
+  {
+    "folder": "26_TMLR",
+    "venue": "Transactions on Machine Learning Research (TMLR)",
+    "publisher": "TMLR/JMLR",
+    "type": "journal",
+    "ranking": "No quartile claimed or needed for this user-selected destination",
+    "topic_fit": "Empirical behavior/failure analysis of learned reasoning and delivery systems",
+    "competitiveness": "Evidence and reader-interest standard; no acceptance prediction",
+    "limits": "No fixed page limit; justify length",
+    "template": "Official TMLR article 10pt / tmlr.sty, tmlr.bst; 7bf90efe",
+    "citation_style": "Author-year",
+    "supplement": "Full appendix after references, pp13\u201340; optional anonymous PDF/ZIP <=100 MB",
+    "fees": "No author fees",
+    "deadline": "Rolling; confirm live portal",
+    "official_sources": [
+      "https://jmlr.org/tmlr/author-guide.html",
+      "https://jmlr.org/tmlr/editorial-policies.html",
+      "https://jmlr.org/tmlr/acceptance-criteria.html",
+      "https://jmlr.org/tmlr/ethics.html",
+      "https://github.com/JmlrOrg/tmlr-style-file"
+    ],
+    "manuscript": "26_TMLR/main.tex",
+    "pdf": "26_TMLR/main.pdf",
+    "pages": 40,
+    "words": 19192,
+    "compilation": "COMPILED",
+    "scientific_coverage": "Complete core and embedded technical appendix; 60 canonical headings, 8 figure byte matches, 28 master references; no changed outcomes",
+    "policy": "HUMAN-REVIEW-REQUIRED; not submitted or submission-ready",
+    "human_actions": "Scientific/originality/authorship/license/CC BY review; OpenReview profiles, quotas, declarations and anonymous reproducibility package",
+    "last_verified": "2026-11-13"
   }
 ]

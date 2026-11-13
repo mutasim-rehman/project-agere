@@ -1237,6 +1237,71 @@ Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF
 
 Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 7 pages. Supplement retained: True.
 
+## 26_TMLR
+
+- `main.tex` / Introduction: 26_TMLR\main.pdf:p1
+- `main.tex` / Related Work: 26_TMLR\main.pdf:p2
+- `main.tex` / Methods and Evaluation: 26_TMLR\main.pdf:p2
+- `main.tex` / Programs, Candidates and Delivery: 26_TMLR\main.pdf:p2
+- `main.tex` / Study A: Nominal 16 GB Deployment Recipes: 26_TMLR\main.pdf:p3
+- `main.tex` / Study B: Diagnostics and Evidence-Only Planning: 26_TMLR\main.pdf:p3
+- `main.tex` / Scoring and Statistical Analysis: 26_TMLR\main.pdf:p4
+- `main.tex` / Results: 26_TMLR\main.pdf:p1; 26_TMLR\main.pdf:p2; 26_TMLR\main.pdf:p4; 26_TMLR\main.pdf:p13; 26_TMLR\main.pdf:p19; 26_TMLR\main.pdf:p20; 26_TMLR\main.pdf:p21; 26_TMLR\main.pdf:p26; 26_TMLR\main.pdf:p30
+- `main.tex` / The Resident F16 Team Mostly Withholds: 26_TMLR\main.pdf:p4
+- `main.tex` / Evidence and Precision Do Not Resolve Generation: 26_TMLR\main.pdf:p6
+- `main.tex` / The Evidence-Only Planner Fails Its Criterion: 26_TMLR\main.pdf:p6
+- `main.tex` / Stronger Baselines and Nontransferable Gains: 26_TMLR\main.pdf:p8
+- `main.tex` / Discussion and Limitations: 26_TMLR\main.pdf:p9
+- `main.tex` / Conclusion: 26_TMLR\main.pdf:p9
+- `supplement.tex` / Scope and Evidence Status: 26_TMLR\main.pdf:p13
+- `supplement.tex` / Reproducibility Specification: 26_TMLR\main.pdf:p13
+- `supplement.tex` / Study A: Frozen 16 GB Recipes: 26_TMLR\main.pdf:p13
+- `supplement.tex` / Windows 8 GB Application Budget: 26_TMLR\main.pdf:p14
+- `supplement.tex` / Adapter Provenance and Training: 26_TMLR\main.pdf:p14
+- `supplement.tex` / Cohorts, Exposure and Prompt Availability: 26_TMLR\main.pdf:p15
+- `supplement.tex` / Metrics and Statistical Details: 26_TMLR\main.pdf:p15
+- `supplement.tex` / Complete Main-Study Outcome and Resource Tables: 26_TMLR\main.pdf:p16
+- `supplement.tex` / Exploratory Sequence: Positive, Null and Adverse Findings: 26_TMLR\main.pdf:p18
+- `supplement.tex` / Earlier Linux Development and Training: 26_TMLR\main.pdf:p18
+- `supplement.tex` / Windows Candidate and Verifier Pilots: 26_TMLR\main.pdf:p19
+- `supplement.tex` / Endpoint, Retrieval, Precision and Catalog Controls: 26_TMLR\main.pdf:p19
+- `supplement.tex` / Baseline Capacity, Format, Review and Reference Checks: 26_TMLR\main.pdf:p20
+- `supplement.tex` / Planner Development and Held-Out Result: 26_TMLR\main.pdf:p21
+- `supplement.tex` / Resource Failures, Missing Evidence and Scope of Claims: 26_TMLR\main.pdf:p21
+- `supplement.tex` / Literature Verification and Reproduction Commands: 26_TMLR\main.pdf:p21
+- `supplement.tex` / Historical Linux 8 GB Condition Census: 26_TMLR\main.pdf:p22
+- `supplement.tex` / Original Questions, Design Rationale and Historical Controls: 26_TMLR\main.pdf:p23
+- `supplement.tex` / Questions and hypothesis dispositions: 26_TMLR\main.pdf:p23
+- `supplement.tex` / Fairness, memory accounting and protocol choices: 26_TMLR\main.pdf:p23
+- `supplement.tex` / Historical synthetic test outcomes, including denominator failures: 26_TMLR\main.pdf:p23
+- `supplement.tex` / Extended Study A Outcomes and Resource Reconciliation: 26_TMLR\main.pdf:p24
+- `supplement.tex` / Paired transitions and selective behavior: 26_TMLR\main.pdf:p24
+- `supplement.tex` / Four endpoints, weighting and influence: 26_TMLR\main.pdf:p26
+- `supplement.tex` / Candidate production, reference strata and scoring discordance: 26_TMLR\main.pdf:p26
+- `supplement.tex` / Prompt, repair and resource costs: 26_TMLR\main.pdf:p28
+- `supplement.tex` / Conditional Mathematical Analysis and Statistical Assumptions: 26_TMLR\main.pdf:p29
+- `supplement.tex` / P1--P3: accounting, the gate bound and stage factorization: 26_TMLR\main.pdf:p29
+- `supplement.tex` / P4--P5: preference-sensitive utility and corrected repair break-even: 26_TMLR\main.pdf:p30
+- `supplement.tex` / P6: memory accounting with explicit residency assumptions: 26_TMLR\main.pdf:p30
+- `supplement.tex` / P7: bounded-cluster uncertainty, with its limits: 26_TMLR\main.pdf:p31
+- `supplement.tex` / P8--P10: score disagreements and procedure-specific evidence bounds: 26_TMLR\main.pdf:p31
+- `supplement.tex` / Nonidentification and error propagation: 26_TMLR\main.pdf:p32
+- `supplement.tex` / Statistical Derivations and Complete Numerical Battery: 26_TMLR\main.pdf:p32
+- `supplement.tex` / Paired estimands and small-discordance inference (J1--J4): 26_TMLR\main.pdf:p32
+- `supplement.tex` / Transition tables, clustering and bootstrap (J5--J7): 26_TMLR\main.pdf:p32
+- `supplement.tex` / Sign procedures, multiplicity and interpretation (J8--J12): 26_TMLR\main.pdf:p33
+- `supplement.tex` / All historical comparisons, both numerical scores: 26_TMLR\main.pdf:p34
+- `supplement.tex` / Worked Examples and Measurement Failures: 26_TMLR\main.pdf:p38
+- `supplement.tex` / Shared success: ABMD/2007/page\_52.pdf-1: 26_TMLR\main.pdf:p38
+- `supplement.tex` / Evidence found, calculation declined: AAPL/2003/page\_24.pdf-1: 26_TMLR\main.pdf:p38
+- `supplement.tex` / Executable does not mean meaningful: AAPL/2003/page\_24.pdf-2: 26_TMLR\main.pdf:p38
+- `supplement.tex` / Wrong team program accepted: PNC/2018/page\_171.pdf-1: 26_TMLR\main.pdf:p39
+- `supplement.tex` / A scoring convention changes the label: ABMD/2007/page\_52.pdf-2: 26_TMLR\main.pdf:p39
+- `supplement.tex` / Synthetic sentinel misclassified as invention: CR-TEST-0001: 26_TMLR\main.pdf:p39
+- `supplement.tex` / Restored Literature Context and Reproducibility Map: 26_TMLR\main.pdf:p39
+
+Verified 8 local figure files against canonical bytes; 28 bibliography keys. PDF: 40 pages. Supplement retained: False.
+
 ## 15_MDPI_MAKE\official_mdpi
 
 - `main.tex` / Introduction: 15_MDPI_MAKE\official_mdpi\main.pdf:p1

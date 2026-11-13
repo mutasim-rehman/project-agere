@@ -1,0 +1,4 @@
+tmlr.sty -text whitespace=-blank-at-eol
+tmlr.bst -text whitespace=-blank-at-eol
+fancyhdr.sty -text whitespace=-blank-at-eol
+template/** -text whitespace=-blank-at-eol

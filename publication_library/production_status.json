@@ -429,5 +429,18 @@
     "policy_status": "HUMAN-REVIEW-REQUIRED; destination unselected",
     "visual_review": "All pages rendered; unchanged scientific pages compared; enlarged corrected reference pages inspected",
     "scientific_coverage": "Same scientific core and complete29-page support as preserved parent; three citation locations corrected"
+  },
+  {
+    "folder": "26_TMLR",
+    "pages": 40,
+    "words": 19192,
+    "compiled": true,
+    "undefined_references": false,
+    "overfull_boxes": 0,
+    "sha256": "e3720b7b8aebf899837b02c6218802a2469f4a72d0da751fd7c3801e50c7da3e",
+    "visual_review": "All 40 pages inspected in contact sheets; enlarged results, references, impact and repaired footer pages checked; no observed overlap/clipping",
+    "scientific_coverage": "Complete core and embedded technical appendix; 60 canonical headings, 8 figure byte matches, 28 master references; no changed outcomes",
+    "policy_status": "HUMAN-REVIEW-REQUIRED",
+    "template_status": "Official JmlrOrg TMLR kit commit 7bf90efe; unmodified style/bst/fancyhdr"
   }
 ]

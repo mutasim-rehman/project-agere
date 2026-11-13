@@ -9072,6 +9072,455 @@
     ]
   },
   {
+    "folder": "26_TMLR",
+    "pages": 40,
+    "words": 19192,
+    "sha256": "e3720b7b8aebf899837b02c6218802a2469f4a72d0da751fd7c3801e50c7da3e",
+    "figure_bytes_verified": [
+      "planner_effects.pdf",
+      "planner_outcomes.pdf",
+      "resources.pdf",
+      "restored_heterogeneity.pdf",
+      "restored_stage_work.pdf",
+      "restored_transitions.pdf",
+      "restored_utility.pdf",
+      "tier16_outcomes.pdf"
+    ],
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false,
+    "mapping": [
+      {
+        "source": "main.tex",
+        "heading": "Introduction",
+        "locations": [
+          "26_TMLR\\main.pdf:p1"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Related Work",
+        "locations": [
+          "26_TMLR\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Methods and Evaluation",
+        "locations": [
+          "26_TMLR\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Programs, Candidates and Delivery",
+        "locations": [
+          "26_TMLR\\main.pdf:p2"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study A: Nominal 16 GB Deployment Recipes",
+        "locations": [
+          "26_TMLR\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Study B: Diagnostics and Evidence-Only Planning",
+        "locations": [
+          "26_TMLR\\main.pdf:p3"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Scoring and Statistical Analysis",
+        "locations": [
+          "26_TMLR\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Results",
+        "locations": [
+          "26_TMLR\\main.pdf:p1",
+          "26_TMLR\\main.pdf:p2",
+          "26_TMLR\\main.pdf:p4",
+          "26_TMLR\\main.pdf:p13",
+          "26_TMLR\\main.pdf:p19",
+          "26_TMLR\\main.pdf:p20",
+          "26_TMLR\\main.pdf:p21",
+          "26_TMLR\\main.pdf:p26",
+          "26_TMLR\\main.pdf:p30"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Resident F16 Team Mostly Withholds",
+        "locations": [
+          "26_TMLR\\main.pdf:p4"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Evidence and Precision Do Not Resolve Generation",
+        "locations": [
+          "26_TMLR\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "The Evidence-Only Planner Fails Its Criterion",
+        "locations": [
+          "26_TMLR\\main.pdf:p6"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Stronger Baselines and Nontransferable Gains",
+        "locations": [
+          "26_TMLR\\main.pdf:p8"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Discussion and Limitations",
+        "locations": [
+          "26_TMLR\\main.pdf:p9"
+        ]
+      },
+      {
+        "source": "main.tex",
+        "heading": "Conclusion",
+        "locations": [
+          "26_TMLR\\main.pdf:p9"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Scope and Evidence Status",
+        "locations": [
+          "26_TMLR\\main.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Reproducibility Specification",
+        "locations": [
+          "26_TMLR\\main.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Study A: Frozen 16 GB Recipes",
+        "locations": [
+          "26_TMLR\\main.pdf:p13"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows 8 GB Application Budget",
+        "locations": [
+          "26_TMLR\\main.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Adapter Provenance and Training",
+        "locations": [
+          "26_TMLR\\main.pdf:p14"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Cohorts, Exposure and Prompt Availability",
+        "locations": [
+          "26_TMLR\\main.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Metrics and Statistical Details",
+        "locations": [
+          "26_TMLR\\main.pdf:p15"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Complete Main-Study Outcome and Resource Tables",
+        "locations": [
+          "26_TMLR\\main.pdf:p16"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Exploratory Sequence: Positive, Null and Adverse Findings",
+        "locations": [
+          "26_TMLR\\main.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Earlier Linux Development and Training",
+        "locations": [
+          "26_TMLR\\main.pdf:p18"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Windows Candidate and Verifier Pilots",
+        "locations": [
+          "26_TMLR\\main.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Endpoint, Retrieval, Precision and Catalog Controls",
+        "locations": [
+          "26_TMLR\\main.pdf:p19"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Baseline Capacity, Format, Review and Reference Checks",
+        "locations": [
+          "26_TMLR\\main.pdf:p20"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Planner Development and Held-Out Result",
+        "locations": [
+          "26_TMLR\\main.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Resource Failures, Missing Evidence and Scope of Claims",
+        "locations": [
+          "26_TMLR\\main.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Literature Verification and Reproduction Commands",
+        "locations": [
+          "26_TMLR\\main.pdf:p21"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical Linux 8 GB Condition Census",
+        "locations": [
+          "26_TMLR\\main.pdf:p22"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Original Questions, Design Rationale and Historical Controls",
+        "locations": [
+          "26_TMLR\\main.pdf:p23"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Questions and hypothesis dispositions",
+        "locations": [
+          "26_TMLR\\main.pdf:p23"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Fairness, memory accounting and protocol choices",
+        "locations": [
+          "26_TMLR\\main.pdf:p23"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Historical synthetic test outcomes, including denominator failures",
+        "locations": [
+          "26_TMLR\\main.pdf:p23"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Extended Study A Outcomes and Resource Reconciliation",
+        "locations": [
+          "26_TMLR\\main.pdf:p24"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired transitions and selective behavior",
+        "locations": [
+          "26_TMLR\\main.pdf:p24"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Four endpoints, weighting and influence",
+        "locations": [
+          "26_TMLR\\main.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Candidate production, reference strata and scoring discordance",
+        "locations": [
+          "26_TMLR\\main.pdf:p26"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Prompt, repair and resource costs",
+        "locations": [
+          "26_TMLR\\main.pdf:p28"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Conditional Mathematical Analysis and Statistical Assumptions",
+        "locations": [
+          "26_TMLR\\main.pdf:p29"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P1--P3: accounting, the gate bound and stage factorization",
+        "locations": [
+          "26_TMLR\\main.pdf:p29"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P4--P5: preference-sensitive utility and corrected repair break-even",
+        "locations": [
+          "26_TMLR\\main.pdf:p30"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P6: memory accounting with explicit residency assumptions",
+        "locations": [
+          "26_TMLR\\main.pdf:p30"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P7: bounded-cluster uncertainty, with its limits",
+        "locations": [
+          "26_TMLR\\main.pdf:p31"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "P8--P10: score disagreements and procedure-specific evidence bounds",
+        "locations": [
+          "26_TMLR\\main.pdf:p31"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Nonidentification and error propagation",
+        "locations": [
+          "26_TMLR\\main.pdf:p32"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Statistical Derivations and Complete Numerical Battery",
+        "locations": [
+          "26_TMLR\\main.pdf:p32"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Paired estimands and small-discordance inference (J1--J4)",
+        "locations": [
+          "26_TMLR\\main.pdf:p32"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Transition tables, clustering and bootstrap (J5--J7)",
+        "locations": [
+          "26_TMLR\\main.pdf:p32"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Sign procedures, multiplicity and interpretation (J8--J12)",
+        "locations": [
+          "26_TMLR\\main.pdf:p33"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "All historical comparisons, both numerical scores",
+        "locations": [
+          "26_TMLR\\main.pdf:p34"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Worked Examples and Measurement Failures",
+        "locations": [
+          "26_TMLR\\main.pdf:p38"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Shared success: ABMD/2007/page\\_52.pdf-1",
+        "locations": [
+          "26_TMLR\\main.pdf:p38"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Evidence found, calculation declined: AAPL/2003/page\\_24.pdf-1",
+        "locations": [
+          "26_TMLR\\main.pdf:p38"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Executable does not mean meaningful: AAPL/2003/page\\_24.pdf-2",
+        "locations": [
+          "26_TMLR\\main.pdf:p38"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Wrong team program accepted: PNC/2018/page\\_171.pdf-1",
+        "locations": [
+          "26_TMLR\\main.pdf:p39"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "A scoring convention changes the label: ABMD/2007/page\\_52.pdf-2",
+        "locations": [
+          "26_TMLR\\main.pdf:p39"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Synthetic sentinel misclassified as invention: CR-TEST-0001",
+        "locations": [
+          "26_TMLR\\main.pdf:p39"
+        ]
+      },
+      {
+        "source": "supplement.tex",
+        "heading": "Restored Literature Context and Reproducibility Map",
+        "locations": [
+          "26_TMLR\\main.pdf:p39"
+        ]
+      }
+    ]
+  },
+  {
     "folder": "15_MDPI_MAKE\\official_mdpi",
     "pages": 11,
     "words": 5581,

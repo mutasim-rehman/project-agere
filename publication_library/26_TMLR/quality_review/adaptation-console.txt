@@ -1,0 +1,178 @@
+[
+  {
+    "folder": "00_master_research",
+    "pages": 36,
+    "words": 18445,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "01_general_conference",
+    "pages": 10,
+    "words": 4883,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "02_general_journal",
+    "pages": 36,
+    "words": 18448,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "03_preprint_arxiv",
+    "pages": 36,
+    "words": 18426,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "05_ICLR",
+    "pages": 11,
+    "words": 6007,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "06_NeurIPS",
+    "pages": 44,
+    "words": 22189,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "07_ICML",
+    "pages": 34,
+    "words": 19037,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "10_IEEE_conference",
+    "pages": 7,
+    "words": 5038,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "11_IEEE_ICTAI",
+    "pages": 7,
+    "words": 5058,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "12_Springer_LNCS",
+    "pages": 14,
+    "words": 5014,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "13_Springer_journal",
+    "pages": 13,
+    "words": 4877,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "14_SN_Computer_Science",
+    "pages": 13,
+    "words": 4954,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "15_MDPI_MAKE",
+    "pages": 36,
+    "words": 18558,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "16_MDPI_Computers",
+    "pages": 11,
+    "words": 5533,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "17_general_workshop",
+    "pages": 3,
+    "words": 1568,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "19_short_extended_abstract",
+    "pages": 2,
+    "words": 1128,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "23_MDPI_Information",
+    "pages": 11,
+    "words": 5549,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "24_FLLM",
+    "pages": 7,
+    "words": 5067,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "25_IEEE_CAI",
+    "pages": 7,
+    "words": 5077,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "26_TMLR",
+    "pages": 40,
+    "words": 19192,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "15_MDPI_MAKE\\official_mdpi",
+    "pages": 11,
+    "words": 5581,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  },
+  {
+    "folder": "13_Springer_journal\\verified_citations",
+    "pages": 13,
+    "words": 4883,
+    "bibliography_keys": 28,
+    "overfull_boxes": 0,
+    "undefined": false
+  }
+]

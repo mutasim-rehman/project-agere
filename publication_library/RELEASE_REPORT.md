@@ -51,3 +51,7 @@ Original six manuscript PDFs match4eca965d byte-for-byte. Every frozen canonical
 ## Exact next implementation step
 
 Obtain the authentic Access ZIP through an ordinary authorized publisher/Overleaf session; verify class/assets against its provenance; reconcile frontmatter in09_IEEE_Access/main.tex; compile with shared/production/build_library.py --folder 09_IEEE_Access; inspect every page and rerun adaptation/numerical checks. Do not bypass authentication or replace the Access class with generic IEEEtran. Human authors must independently write the four policy-restricted versions.
+
+## TMLR addition — 2026-11-13
+
+Added [26_TMLR/main.pdf](26_TMLR/main.pdf) and [main.tex](26_TMLR/main.tex): 40 pages / 19,192 extracted words, official TMLR style commit7bf90efe. Nine-page core; impact/transparency/references throughp12; complete technical appendix pp13–40. All40pages reviewed, 0overfull/undefined/Type3. Eight canonical figures, 28 master references, 60 canonical headings retained; all prior21mainPDF hashes unchanged. Library now22mainPDFs /20scientific versions plus two format/citation alternatives. Human author and originality review remains; no submission performed. Access/policy-based blocks elsewhere unchanged.

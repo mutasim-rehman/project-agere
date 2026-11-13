@@ -25,3 +25,7 @@ The generic3-page workshop draft and2-page extended abstract support focused fee
 ## Suggested sequence
 
 Actual authors first review the corrected current drafts, evidence limits, authorship and disclosures. Then choose an archival destination based on scope, desired length, budget and policy compliance. Prepare a single compliant submission and its evidence package. A preprint is an option only after checking the target's current anonymity/overlap rules, arXiv account/category/endorsement/license obligations and author approval. After a decision/withdrawal, adapt to the next destination if needed. Do not manufacture new experiments or strengthen conclusions to fit a venue.
+
+## TMLR addition — 2026-11-13
+
+TMLR is a possible author-review destination for the bounded empirical behavior/failure-analysis contribution. It has no author fees or fixed page cap and evaluates evidence and reader interest; this does not establish acceptance prospects. The full supported result sequence is in26_TMLR/main.pdf. Its stricter originality rule disallows expanded archival conference papers and overlapping archival publication/acceptance/parallel submission; authors must verify actual status before selecting it. Preprints and explicitly non-archival work can overlap under the current policy. Review its venue-specific checklist before choosing one destination.
